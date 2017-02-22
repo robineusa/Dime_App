@@ -1,0 +1,127 @@
+﻿@model List<SelectListItem>
+<html>
+<head>
+    @Styles.Render("~/AdminLTEplugins/daterangepicker/css")
+    @Styles.Render("~/AdminLTEplugins/icheck/css")
+    @Styles.Render("~/AdminLTEplugins/colorpicker/css")
+    @Styles.Render("~/AdminLTEplugins/timepicker/css")
+    @Styles.Render("~/AdminLTEplugins/select2/css")
+    @Styles.Render("~/AdminLTEdist/css")
+    @Styles.Render("~/AdminLTEdist/css/skins")
+</head>
+
+<body>
+    <div style="width:90%; margin-left:1%;">
+        <div data-ng-controller="PreguntasController" ng-init="init(@Newtonsoft.Json.JsonConvert.SerializeObject(Model)) id="mainDiv">
+            @for (int i = 0; i < 5; i++)
+            {
+                <div class="callout bg-gray-light">
+                    <p>Pregunta @(i + 1)</p>
+                </div>
+                    <div class="select">
+                        @Html.DropDownList("pregunta" + (i + 1), Model, "--Seleccione Pregunta Preferida--", new { @class = "form-control select2", @style = "width:50%;margin-bottom:2px; margin-top:-15px;" })
+
+                    </div>
+                    @Html.TextBox("respuesta" + (i + 1), null, new { @name = "respName" + (i + 1), @class = "form-control", @style = "width:50%;margin-bottom:10px;" })
+                    }
+                </div>
+        <br />
+        <label id="redText" style="color:red"></label>
+        <br />
+        <input type="submit" class="btn btn-danger" value="Aceptar" id="btnRegistrar" />
+        <br />
+        <br />
+    </div>
+
+@section Scripts {
+        @Scripts.Render("~/AdminLTEplugins/select2/js")
+        @Scripts.Render("~/AdminLTEplugins/input-mask/js")
+        @Scripts.Render("~/AdminLTEplugins/momentjs/js")
+        @Scripts.Render("~/AdminLTEplugins/daterangepicker/js")
+        @Scripts.Render("~/AdminLTEplugins/colorpicker/js")
+        @Scripts.Render("~/AdminLTEplugins/timepicker/js")
+        @Scripts.Render("~/AdminLTEplugins/icheck/js")
+        @Scripts.Render("~/Scripts/Forms/Advanced")
+    }
+    <script>
+        $("#btnRegistrar").on("click", function () {
+            var idUsuario = @ViewBag.IdUsuario;
+            var datosFullUsuario = "@ViewBag.DatosFullUsuario";
+            var sesionUsuario = @ViewBag.SesionUsuario;
+
+            if(datosFullUsuario=== "True")
+            {
+                if(sesionUsuario)
+                    window.location.href = "/"
+
+            }else
+            {
+
+
+            }
+
+        });
+        $("#btnRegistrar").on("click", function () {
+
+            var resultPreguntas = [];
+            for (var i = 0; i < 5; i++) {
+                resultPreguntas[i] = ($("#pregunta" + (i + 1)).val());
+            }
+
+            if (PreguntasDiferentes(resultPreguntas) == true)
+            {resultPreguntas = [];
+                for (var i = 0; i < 5; i++) {
+                    resultPreguntas[i] = ($("#pregunta" + (i + 1)).val());
+                }
+                var idUsuario = @ViewBag.IdUsuario;
+                var datosFullUsuario = "@ViewBag.DatosFullUsuario";
+                var sesionUsuario = @ViewBag.SesionUsuario;
+                var resultRespuestas = [];
+                for (var i = 0; i < 5; i++) {
+                    resultRespuestas[i] = ($("#respuesta" + (i + 1)).val());
+                }
+
+                $("#redText").empty();
+
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Account/SRegistroPreguntasDesbloqueoConfirmation",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify({ respuestas: resultRespuestas,preguntas:resultPreguntas, idUsuario: idUsuario,
+                        datosFullUsuario: datosFullUsuario, sesionUsuario:sesionUsuario }),
+                    dataType: "json",
+                    crossDomain: true,
+                    success: function(result){
+                        console.log(result);
+                        window.location.href = result;
+                    }
+                });
+
+            }
+            else {
+
+                $("#redText").empty();
+                $("#redText").append('Las preguntas deben ser diferentes');
+
+            }
+
+
+        })
+
+        function PreguntasDiferentes(preguntasPassed) {
+            var preguntas = preguntasPassed;
+            for (var i = 0; i <= (preguntas.length+1) ; i++) {
+                var valor = preguntas[0];
+                preguntas.splice(0, 1);
+                if (preguntas.indexOf(valor) != -1)
+                    return false;
+            }
+            return true;
+        }
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,504 @@
+﻿#buscarCuenta {
+}
+
+#buscarCuentaTable {
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 90%;
+    width: 100%;
+}
+
+    #buscarCuentaTable tr {
+    }
+
+    #buscarCuentaTable td {
+        background-color: transparent;
+        color: gray;
+        padding: 2px;
+        border-color: #a0a0b4;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    #buscarCuentaTable th {
+        background-color: #cbcbd6;
+        color: #2a2a2a;
+        text-align: center;
+        padding: 2px;
+        border-color: #a0a0b4;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    #buscarCuentaTable .tableRows {
+        border: 1px solid black;
+        width: 150px;
+    }
+
+.modal-header {
+    background-color: #333;
+    color: white;
+}
+
+
+.tab-dime-first {
+    background-color: #dcdcdc;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    border-top-right-radius: 5px;
+    padding-right: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+}
+
+.k-header .k-link{
+   
+   word-wrap: break-word;
+}
+
+.tab-dime-second {
+      padding-bottom: 10px;
+    padding-left: 5px;
+    border-top-right-radius: 5px;
+    padding-right: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+       border-right:outset ;
+       border-left:outset;
+       border-bottom:outset;
+ 
+
+}
+
+
+
+
+.icono_carrete_5 {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    background: url(../../Resources/Images/Layout/apc.png) center no-repeat;
+    background-size: 50px 50px;
+    -moz-transition: 1s;
+}
+
+    .icono_carrete_5:hover {
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+        -moz-transition: 0.5s;
+    }
+
+        .icono_carrete_5:hover:after {
+            content: 'Ajustes Por Campañas';
+            position: absolute;
+            z-index: 98;
+            margin-left: 50px;
+            margin-top: 11px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            color: #eee;
+            font-family: Century Gothic;
+            font-size: 10px;
+            /*padding: 5px 15px;*/
+            text-align: center;
+            text-shadow: 1px 1px 1px #000;
+            width: 100px;
+        }
+
+.icono_carrete_6 {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    background: url(../../Resources/Images/Layout/apc1.png) center no-repeat;
+    background-size: 50px 50px;
+    -moz-transition: 1s;
+}
+
+    .icono_carrete_6:hover {
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+        -moz-transition: 0.5s;
+    }
+
+        .icono_carrete_6:hover:after {
+            content: 'Ajustes Por Compensación';
+            position: absolute;
+            z-index: 98;
+            margin-left: 50px;
+            margin-top: 11px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            color: #eee;
+            font-family: Century Gothic;
+            font-size: 10px;
+            /*padding: 5px 15px;*/
+            text-align: center;
+            text-shadow: 1px 1px 1px #000;
+            width: 100px;
+        }
+
+.icono_carrete_7 {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    background: url(../../Resources/Images/Layout/apc2.png) center no-repeat;
+    background-size: 50px 50px;
+    -moz-transition: 1s;
+}
+
+    .icono_carrete_7:hover {
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+        -moz-transition: 0.5s;
+    }
+
+        .icono_carrete_7:hover:after {
+            content: 'Ajustes Por Diferencia Tarifas';
+            position: absolute;
+            z-index: 98;
+            margin-left: 50px;
+            margin-top: 11px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            color: #eee;
+            font-family: Century Gothic;
+            font-size: 10px;
+            /*padding: 5px 15px;*/
+            text-align: center;
+            text-shadow: 1px 1px 1px #000;
+            width: 100px;
+        }
+
+.icono_carrete_8 {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    background: url(../../Resources/Images/Layout/apc3.png) center no-repeat;
+    background-size: 50px 50px;
+    -moz-transition: 1s;
+}
+
+
+    .icono_carrete_8:hover {
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+        -moz-transition: 0.5s;
+    }
+
+
+        .icono_carrete_8:hover:after {
+            content: 'Ajustes Por Prorrateos';
+            position: absolute;
+            z-index: 98;
+            margin-left: 50px;
+            margin-top: 11px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            color: #eee;
+            font-family: Century Gothic;
+            font-size: 10px;
+            /*padding: 5px 15px;*/
+            text-align: center;
+            text-shadow: 1px 1px 1px #000;
+            width: 100px;
+        }
+
+#TablaCalculadoraCapanas {
+}
+
+    #TablaCalculadoraCapanas th.titulo {
+        background-color: #333;
+        text-align: center;
+        color: white;
+        font-style: bold;
+        font-weight: 600;
+        border-style: solid;
+        border-width: 1px;
+        border-color: white;
+    }
+
+    #TablaCalculadoraCapanas th.titulo2 {
+        background-color: #8c8c8c;
+        text-align: left;
+        padding-left: 2px;
+        color: black;
+        font-style: bold;
+        font-weight: 500;
+        border-style: solid;
+        border-width: 1px;
+        border-color: white;
+    }
+
+    #TablaCalculadoraCapanas td.Disputa {
+        background-color: #fee6e6;
+        text-align: left;
+        padding-left: 2px;
+        color: black;
+        font-style: bold;
+        font-weight: 500;
+        border-style: solid;
+        border-width: 1px;
+        border-color: white;
+    }
+
+.ControlDisputa {
+    width: 100%;
+    background-color: transparent;
+    border-style: none;
+}
+
+.onoffswitch {
+    position: relative;
+    width: 90px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid #999999;
+    border-radius: 20px;
+}
+
+.onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+        display: block;
+        float: left;
+        width: 50%;
+        height: 30px;
+        padding: 0;
+        line-height: 30px;
+        font-size: 14px;
+        color: white;
+        font-family: Trebuchet, Arial, sans-serif;
+        font-weight: bold;
+        box-sizing: border-box;
+    }
+
+    .onoffswitch-inner:before {
+        content: "ON";
+        padding-left: 10px;
+        background-color: #C2345A;
+        color: #FFFFFF;
+    }
+
+    .onoffswitch-inner:after {
+        content: "OFF";
+        padding-right: 10px;
+        background-color: #EEEEEE;
+        color: #999999;
+        text-align: right;
+    }
+
+.onoffswitch-switch {
+    display: block;
+    width: 20px;
+    margin: 6px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    right: 56px;
+    border: 2px solid #999999;
+    border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}
+
+
+.table-first th{
+  background-color:orange;
+  width:200px;
+  font-size:large;
+  font-family:'Bell MT';
+ text-align:center;
+
+}
+
+.table-first tr:nth-child(even){
+  background-color:aliceblue;
+  font-size:medium;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.table-first tr:nth-child(odd){
+  background-color:lightyellow;
+  font-size:medium;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+
+}
+
+
+
+.table-first tr:last-child td:last-child {
+    border-bottom-right-radius: 5px;
+}
+
+.table-first tr:last-child td:first-child {
+    border-bottom-left-radius: 5px;
+}
+.table-first tr:first-child th:first-child {
+    border-top-left-radius: 5px;
+}
+.table-first tr:first-child th:last-child {
+    border-top-right-radius: 5px;
+}
+
+
+
+
+.k-grid-header .k-header .k-link  {
+    min-width:100%;
+    overflow: visible;
+    white-space: normal;
+}
+
+.first-button{
+    width:150px;
+    height:40px;
+    border-radius:10px;
+    align-content:center;
+    margin-left:auto;
+    margin-right:auto;
+   display:block;
+
+   font-family:'Century Schoolbook';
+   background: rgba(255,109,77,1);
+background: -moz-linear-gradient(left, rgba(255,109,77,1) 12%, rgba(255,100,67,1) 16%, rgba(255,64,25,1) 33%, rgba(255,51,10,1) 39%, rgba(255,47,5,1) 45%, rgba(255,51,10,1) 45%, rgba(255,47,5,1) 57%, rgba(255,109,77,1) 74%);
+background: -webkit-gradient(left top, right top, color-stop(12%, rgba(255,109,77,1)), color-stop(16%, rgba(255,100,67,1)), color-stop(33%, rgba(255,64,25,1)), color-stop(39%, rgba(255,51,10,1)), color-stop(45%, rgba(255,47,5,1)), color-stop(45%, rgba(255,51,10,1)), color-stop(57%, rgba(255,47,5,1)), color-stop(74%, rgba(255,109,77,1)));
+background: -webkit-linear-gradient(left, rgba(255,109,77,1) 12%, rgba(255,100,67,1) 16%, rgba(255,64,25,1) 33%, rgba(255,51,10,1) 39%, rgba(255,47,5,1) 45%, rgba(255,51,10,1) 45%, rgba(255,47,5,1) 57%, rgba(255,109,77,1) 74%);
+background: -o-linear-gradient(left, rgba(255,109,77,1) 12%, rgba(255,100,67,1) 16%, rgba(255,64,25,1) 33%, rgba(255,51,10,1) 39%, rgba(255,47,5,1) 45%, rgba(255,51,10,1) 45%, rgba(255,47,5,1) 57%, rgba(255,109,77,1) 74%);
+background: linear-gradient(to right, rgba(255,109,77,1) 12%, rgba(255,100,67,1) 16%, rgba(255,64,25,1) 33%, rgba(255,51,10,1) 39%, rgba(255,47,5,1) 45%, rgba(255,51,10,1) 45%, rgba(255,47,5,1) 57%, rgba(255,109,77,1) 74%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6d4d', endColorstr='#ff6d4d', GradientType=1 );
+
+-webkit-box-shadow: -1px 8px 12px 7px rgba(0,0,0,0.55);
+-moz-box-shadow: -1px 8px 12px 7px rgba(0,0,0,0.55);
+box-shadow: -1px 8px 12px 7px rgba(0,0,0,0.55);
+}
+
+
+.first-button:hover {
+
+   background: aliceblue;
+}
+
+
+
+
+.datepickerdemoBasicUsage {
+  /** Demo styles for mdCalendar. */ }
+  .datepickerdemoBasicUsage md-content {
+    padding-bottom: 200px; }
+  .datepickerdemoBasicUsage .validation-messages {
+    font-size: 12px;
+    color: #dd2c00;
+    margin-left: 15px; }
+
+
+input.form-control:read-only{
+    background-color:#f6f6f6;
+   
+}
+
+.icono_carrete_2{
+  width: 50px;
+  height: 50px;
+  background-color: transparent; 
+  background: url(../../Resources/Images/Layout/Logo_BS.png) center no-repeat;
+  background-size: 50px 50px;
+  -moz-transition: 1s;
+}
+.icono_carrete_2:hover{
+   -webkit-transform:scale(1.5);
+-moz-transform:scale(1.5);
+-ms-transform:scale(1.5);
+-o-transform:scale(1.5);
+transform:scale(1.5);
+   -moz-transition: 0.5s;
+}
+.icono_carrete_2:hover:after{
+    content: 'Comunidad Virtual - Buen Servicio'; 
+    position: absolute;
+    z-index: 98;
+    margin-left: -125px;
+    margin-top: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 11px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 100px;
+
+}
+
+.icono_carrete_4{
+  width: 50px;
+  height: 50px;
+  background-color: transparent; 
+  background: url(../../Resources/Images/Layout/Dam_Modificado1.png) center no-repeat;
+  background-size: 50px 50px;
+   -moz-transition: 1s;
+}
+.icono_carrete_4:hover{
+   -webkit-transform:scale(1.5);
+-moz-transform:scale(1.5);
+-ms-transform:scale(1.5);
+-o-transform:scale(1.5);
+transform:scale(1.5);
+   -moz-transition: 0.5s;
+}
+.icono_carrete_4:hover:after{
+    content: 'Asistente Virtual  Pregúntale a DAM'; 
+    position: absolute;
+    z-index: 98;
+    margin-left: -125px;
+    margin-top: 11px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 11px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 100px;
+
+}

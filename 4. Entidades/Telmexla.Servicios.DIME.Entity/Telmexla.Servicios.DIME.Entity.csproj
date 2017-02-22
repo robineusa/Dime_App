@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{395D1809-BE70-4B2A-9413-46708EDFB957}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Telmexla.Servicios.DIME.Entity</RootNamespace>
+    <AssemblyName>Telmexla.Servicios.DIME.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Acceso.cs" />
+    <Compile Include="ActivacionClaroVideo.cs" />
+    <Compile Include="ActivacionClaroVideoCollection.cs" />
+    <Compile Include="BalanceScoreCard.cs" />
+    <Compile Include="BalanceScoreCardCollection.cs" />
+    <Compile Include="BasePersonalHolo.cs" />
+    <Compile Include="BuscarCuentasViewModel.cs" />
+    <Compile Include="CambioEstrato.cs" />
+    <Compile Include="CambioEstratoCollection.cs" />
+    <Compile Include="CierreCiclo.cs" />
+    <Compile Include="CierreCicloCollection.cs" />
+    <Compile Include="ClaroVideo.cs" />
+    <Compile Include="ClaroVideoCollection.cs" />
+    <Compile Include="ClientesTodo.cs" />
+    <Compile Include="ConvenioElectronico.cs" />
+    <Compile Include="ConvenioElectronicoCollection.cs" />
+    <Compile Include="CuentasSiembraHD.cs" />
+    <Compile Include="CuentasSiembraHDCollection.cs" />
+    <Compile Include="CuentasSiguienteMejorOferta.cs" />
+    <Compile Include="DatoConsultaDirecciones.cs" />
+    <Compile Include="DatoConsultaGestion.cs" />
+    <Compile Include="DatosAdicionalesCliente.cs" />
+    <Compile Include="DocsisOverlap.cs" />
+    <Compile Include="DocsisOverlapCollection.cs" />
+    <Compile Include="GestionMatriz.cs" />
+    <Compile Include="GestionMatrizColleciton.cs" />
+    <Compile Include="GestionOutbound.cs" />
+    <Compile Include="Graficos.cs" />
+    <Compile Include="InboundModel.cs" />
+    <Compile Include="Ingreso.cs" />
+    <Compile Include="IngresosSoporte.cs" />
+    <Compile Include="IngresoTraslado.cs" />
+    <Compile Include="IngresoTrasladoCollection.cs" />
+    <Compile Include="LiberacionHomePass.cs" />
+    <Compile Include="LiberacionHomePassCollection.cs" />
+    <Compile Include="Linea.cs" />
+    <Compile Include="MaestroMarcacione.cs" />
+    <Compile Include="MaestroMarcacioneCollection.cs" />
+    <Compile Include="MaestroNodo.cs" />
+    <Compile Include="MaestroNodoCollection.cs" />
+    <Compile Include="ModosLogin.cs" />
+    <Compile Include="NotasIngreso.cs" />
+    <Compile Include="NotasTraslado.cs" />
+    <Compile Include="NotificacionesBuenServicio.cs" />
+    <Compile Include="NotificacionesBuenServicioCollection.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="PqrMaestroCodCierre.cs" />
+    <Compile Include="PqrMaestroCodCierreCollection.cs" />
+    <Compile Include="PreguntasDesbloqueo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroSesion.cs" />
+    <Compile Include="SiembraHD.cs" />
+    <Compile Include="SiembraHDCollection.cs" />
+    <Compile Include="SiguienteMejorOferta.cs" />
+    <Compile Include="TablaActualizarInbound.cs" />
+    <Compile Include="TmpMaestroHobbiesCliente.cs" />
+    <Compile Include="TraficoTraslado.cs" />
+    <Compile Include="TraficoTrasladoCollection.cs" />
+    <Compile Include="Usuario.cs" />
+    <Compile Include="UsuariosNotificados.cs" />
+    <Compile Include="UsuariosXAcceso.cs" />
+    <Compile Include="UsuariosXPreguntasDesb.cs" />
+    <Compile Include="ViewModelBlending.cs" />
+    <Compile Include="ViewModelAdminUsuario.cs" />
+    <Compile Include="ViewModelCambioEstrato.cs" />
+    <Compile Include="ViewModelCuentasSiembraHD.cs" />
+    <Compile Include="ViewModelGraficos.cs" />
+    <Compile Include="ViewModelNodos.cs" />
+    <Compile Include="ViewModelNotificacionesBS.cs" />
+    <Compile Include="ViewModelTipificacionMarcaciones.cs" />
+    <Compile Include="ViewModelTraslados.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Telmexla.Servicios.DIME.Entity.dll" />
+    <Content Include="bin\Debug\Telmexla.Servicios.DIME.Entity.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
