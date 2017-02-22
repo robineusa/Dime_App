@@ -9,19 +9,19 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
-    public class GestionBlendingController : Controller
+    [ExpiringFilter]
+    public class GestionBlendingController : MyController
     {
         // GET: GestionBlending
         WSD.MaestrosServiceClient mastersServices;
         WSD.BlendingServiceClient blendingServices;
         WSD.InboundServiceClient inboundServices;
   
-        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
         }
-        [AllowAnonymous]
+
         public ActionResult Cierre_Ciclo(string cuentaSeleccionada, string idaGestionar)
         {
 
@@ -60,7 +60,6 @@ namespace Dime.Controllers
 
 
 
-        [AllowAnonymous]
         [HttpPost]
         public ActionResult Guardar_Cierre_Ciclo(ViewModelBlending model)
         {
@@ -71,7 +70,7 @@ namespace Dime.Controllers
             blendingServices.GuardarCierreCiclo(idUsuarioActual, model.DatosCliente, model.CierreCicloGestionado);
             return RedirectToAction("Cierre_Ciclo", "GestionBlending");
         }
-        [AllowAnonymous]
+  
         public ActionResult Convenio_Electronico(string  cuentaSeleccionada, string idConvenioGestionado)
         {
             blendingServices = new WSD.BlendingServiceClient();
@@ -104,7 +103,6 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         [HttpPost]
         public ActionResult Guarda_Convenio_Electronico(ViewModelBlending model)
         {//Session de prueba remover cuando se hagan sesiones////////////7
@@ -120,7 +118,6 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         public ActionResult Docsis(string cuentaSeleccionada, string idaGestionar)
         {
             blendingServices = new WSD.BlendingServiceClient();
@@ -153,7 +150,6 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         [HttpPost]
         public ActionResult GuardaDocsis(ViewModelBlending model)
         {
@@ -167,7 +163,6 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         public ActionResult Claro_Video(string cuentaSeleccionada, string idaGestionar)
         {  
             blendingServices = new WSD.BlendingServiceClient();
@@ -198,7 +193,6 @@ namespace Dime.Controllers
             return View(model);
         }
 
-        [AllowAnonymous]
         [HttpPost]
         public ActionResult Guarda_Claro_Video(ViewModelBlending model)
         {
@@ -212,8 +206,7 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
-        public JsonResult TiposDeContactoList(decimal gestion)
+         public JsonResult TiposDeContactoList(decimal gestion)
         {
             mastersServices = new WSD.MaestrosServiceClient();
             mastersServices.ClientCredentials.Authenticate();
@@ -224,8 +217,7 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
-        public JsonResult TiposCierresList(decimal idContacto)
+         public JsonResult TiposCierresList(decimal idContacto)
         {
             mastersServices = new WSD.MaestrosServiceClient();
             mastersServices.ClientCredentials.Authenticate();
@@ -237,7 +229,6 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         public JsonResult TiposRazonesList(decimal idCierre)
         {
             mastersServices = new WSD.MaestrosServiceClient();
@@ -249,7 +240,6 @@ namespace Dime.Controllers
             };
         }
 
-        [AllowAnonymous]
         public JsonResult TiposCausasList(decimal idRazon)
         {
             mastersServices = new WSD.MaestrosServiceClient();
@@ -262,7 +252,6 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         public JsonResult TiposMotivosList(decimal idCausa)
         {
             mastersServices = new WSD.MaestrosServiceClient();

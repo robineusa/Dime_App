@@ -1,0 +1,31 @@
+﻿@model List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>
+@{
+    ViewBag.Title = "Solicitudes Cambio de Estrato";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+
+    <div class="box box-primary">
+
+        <div class="box-body">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="gridViewSolicitudesCambioDeEstrato"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts{
+    <script>
+        var jsonSolicitudesCambioDeEstrato = @Html.Raw(Json.Encode(Model));
+    </script>
+
+    <script src="~/Scripts/Traslados/SolicitudesCambioDeEstrato.js?1.0.1"></script>
+}
+
+

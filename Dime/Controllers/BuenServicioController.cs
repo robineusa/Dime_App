@@ -11,11 +11,12 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
-    public class BuenServicioController : Controller
+    [ExpiringFilter]
+    public class BuenServicioController : MyController
     {
          WSD.NotificacionesBuenServicioServiceClient BuenServicioServices;
         // GET: BuenServicio
-        [AllowAnonymous]
+        
         [HttpGet]
         public ActionResult Notificaciones()
         {
@@ -25,7 +26,7 @@ namespace Dime.Controllers
             return View(modelo);
         }
 
-        [AllowAnonymous]
+        
         [HttpPost]
         public ActionResult Notificaciones(HttpPostedFileBase file)
         {
@@ -41,7 +42,7 @@ namespace Dime.Controllers
             return Content("/ImagesClient/" + file.FileName);
         }
 
-        [AllowAnonymous]
+    
         [HttpPost]
         public ActionResult GuardaImagen(ViewModelNotificacionesBS model, HttpPostedFileBase file)
         {
@@ -55,7 +56,7 @@ namespace Dime.Controllers
             BuenServicioServices.RegistrarNotificado(model.NotificacionBuenServicio);
             return RedirectToAction("Notificaciones", "BuenServicio");
         }
-        [AllowAnonymous]
+  
         [HttpGet]
         public ActionResult Visualizador_Imagenes(string Id_Imagen)
         {
@@ -68,7 +69,7 @@ namespace Dime.Controllers
             return View(model);
         }
 
-        [AllowAnonymous]
+    
         [HttpGet]
         public ActionResult Guardar_Usuario_Notificado(string Imagen, string Ruta, string Id, string Descripcion)
         {

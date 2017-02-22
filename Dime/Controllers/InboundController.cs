@@ -10,6 +10,7 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
+    [ExpiringFilter]
     public class InboundController : MyController
     {
       
@@ -23,7 +24,7 @@ namespace Dime.Controllers
         /// </summary>
         /// <param name="choosenCuenta"></param>
         /// <returns></returns>
-        [AllowAnonymous]
+        
         [HttpGet]
         public ActionResult Index(string choosenCuenta)
         {
@@ -40,7 +41,7 @@ namespace Dime.Controllers
 
 
      
-        [AllowAnonymous]
+      
         [HttpPost]
         public ActionResult Index(InboundModel model, string cambiarDatos)
         {
@@ -115,7 +116,7 @@ namespace Dime.Controllers
 
 
 
-         [AllowAnonymous]
+      
         public JsonResult IngresosListDeCuenta(string cuenta)
         {
             inboundService = new WSD.InboundServiceClient();
@@ -130,7 +131,7 @@ namespace Dime.Controllers
 
 
 
-        [AllowAnonymous]
+   
         [HttpGet]
         public ActionResult Actualizar(string id, string nombMarcacion)
         {   inboundService = new WSD.InboundServiceClient(); marcacionService = new WSD.MarcacionesServiceClient();
@@ -151,7 +152,7 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
+        
         [HttpPost]
         public ActionResult Actualizar(InboundModel model)
         {
@@ -172,7 +173,7 @@ namespace Dime.Controllers
 
 
 
-        [AllowAnonymous]
+     
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;

@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Formulario para la Consulta de Casos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <table>
+        <tr>
+            <td style="width:200px;padding:5px;">Cuenta Cliente:</td>
+            <td style="width:200px;padding:5px;">Id de Ingreso:</td>
+            @if (Session["ModoLogin"] != null && Session["ModoLogin"].ToString().Equals("1"))
+            {
+                <td style="width:200px;padding:5px;">Ticket RR:</td>
+                <td style="width:200px;padding:5px;">Usuario  de Creación:</td>
+            }
+        </tr>
+        <tr>
+            <td style="width:200px; padding:5px;" >
+                <input  type="text" class="form-control"  id="cuentaCliente"/>
+            </td>
+            <td style="width:200px;padding:5px;">
+                <input type="text" class="form-control" id="idIngreso" />
+            </td>
+            @if (Session["ModoLogin"] != null && Session["ModoLogin"].ToString().Equals("1"))
+            {
+                <td style="width:200px; padding:5px;">
+                    <input type="text" class="form-control" id="ticketRR" />
+                </td>
+                <td style="width:200px;padding:5px;">
+                    <input type="text" class="form-control" id="usuarioCreacion" />
+                </td>
+            }
+        </tr>
+    </table>
+</div>
+
+<br />
+<br />
+
+
+<div>
+
+    <div  id="gridViewConsulta"></div>
+
+</div>
+
+
+@section scripts
+{<script>
+    var modoLoginUsuario = @Session["ModoLogin"].ToString();
+    var urlConsultaCuenta = '@Url.Action("ConsultaCasosAbiertosPorCuenta", "Consultas")';
+    var urlConsultaIdIngreso = '@Url.Action("ConsultaCasosAbiertosPorIdIngreso", "Consultas")';
+    var urlConsultaTicket = '@Url.Action("ConsultaCasosAbiertosPorTicketRr", "Consultas")';
+    var urlConsultaUserCreacion = '@Url.Action("ConsultaCasosAbiertosPorUsuarioCreacion", "Consultas")';
+    </script>
+<script src="~/Scripts/Consultas/ConsultaCasosAbiertos.js?1.0.2"></script>
+}

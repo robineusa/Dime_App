@@ -10,29 +10,30 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
-    public class AlertasController : Controller
+    [ExpiringFilter]
+    public class AlertasController : MyController
     {
         WSD.ActivacionClaroVideoServiceClient clarovideowebservice;
         WSD.ActivacionSiembraHDServiceClient acsiembrahdwebservice;
 
         // GET: Alertas
-        [AllowAnonymous]
+       
         public ActionResult Convenio_Electronico()
         {
             return View();
         }
-        [AllowAnonymous]
+        
         public ActionResult Elegido_Fijo_Movil()
         {
             return View();
         }
-        [AllowAnonymous]
+        
         [HttpGet]
         public ActionResult Claro_Video()
         {
             return View();
         }
-        [AllowAnonymous]
+        
         [HttpPost]
         public ActionResult Claro_Video(ActivacionClaroVideo model)
         {
@@ -48,13 +49,13 @@ namespace Dime.Controllers
 
             return RedirectToAction("Index", "Inbound");
         }
-        [AllowAnonymous]
+        
         [HttpGet]
         public ActionResult Siguiente_Mejor_Oferta()
         {
             return View();
         }
-        [AllowAnonymous]
+        
         [HttpPost]
         public ActionResult Siguiente_Mejor_Oferta(SiguienteMejorOferta model , string TipCon, string Gest, string Cier, string Raz)
         {
@@ -72,7 +73,7 @@ namespace Dime.Controllers
 
             return RedirectToAction("Index", "Inbound");
         }
-        [AllowAnonymous]
+       
         [HttpPost]
         public ActionResult Siembra_HD(ViewModelCuentasSiembraHD model, string cuentaCliente, string Ofrecimiento)
         {
@@ -89,7 +90,7 @@ namespace Dime.Controllers
             return RedirectToAction("Index", "Inbound");
         }
 
-        [AllowAnonymous]
+       
         [HttpGet]
         public ActionResult Siembra_HD()
         {

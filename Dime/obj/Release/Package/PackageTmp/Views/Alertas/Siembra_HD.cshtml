@@ -1,0 +1,57 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelCuentasSiembraHD
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Siembra_HD</title>
+    @Styles.Render("~/AdminLTEbootstrap/css")
+    @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+</head>
+<body>
+@using (Html.BeginForm("Siembra_HD", "Alertas", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
+{
+    <div>
+        <hr />
+        <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+            <i class="fa fa-gift"></i>
+            <h3 class="box-title">Ofrecimiento</h3>
+        </div>
+        <div class="callout" style="margin-bottom: 0 ;border-color:#918de9 !important; background-color:gainsboro !important; color: black !important">
+            <div class="row">
+                @Html.TextBoxFor(m => m.ListaCuentasSiembraHD.First().CuentaCliente, null, new { @class = "", @id = "cuenta", @style = "display:none", @name = "cuentaCliente" })
+                @Html.TextBoxFor(m => m.ListaCuentasSiembraHD.First().Ofrecimiento, null, new { @class = "form-control input-sm", @id = "ofrecimiento", @name = "ofrecimientoCliente", @style = "margin-left:5px; width:100%; height:70px;" })
+
+            </div>
+            <br />
+        </div>
+        <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+            <i class="fa fa-exchange"></i>
+            <h3 class="box-title">Aceptacion</h3>
+        </div>
+        <div class="callout" style="margin-bottom: 0 ;border-color:#918de9 !important; background-color:gainsboro !important; color: black !important">
+            <div class="col-xs-2" style="width:auto;color:black; margin-left: -20px;">
+                <small>El cliente acepto el ofrecimiento:</small>
+            </div>
+            <br />
+            <div class="form-group" style="margin-left: -5px;">
+                @Html.DropDownListFor(m => m.entidadSiembraHD.AceptacionSiembraHD, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="SI" },
+                            new SelectListItem{Text="NO", Value="NO" } }, "",
+                             new { @class = "form-control input-sm", @style = "width:20%" })
+                @Html.ValidationMessageFor(m => m.entidadSiembraHD.AceptacionSiembraHD, "", new { @class = "text-danger" })
+            </div>
+        </div>
+            <br />
+            <button id="btnSubmitActivacionSiembra" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;">Guardar</button>
+        </div>
+}
+    <script>
+        $("#cuenta").val($("#inputCuenta").val());
+        $("#ofrecimiento").val(jsonOfrecimientosSiembra[0].Ofrecimiento);
+    </script>
+</body>
+</html>

@@ -9,20 +9,19 @@ using System.Web.Mvc;
 
 namespace Dime.Controllers
 {
-    public class ConsultasAdminController : Controller
+    [ExpiringFilter]
+    public class ConsultasAdminController : MyController
     {
 
         WSD.CasosAdminServiceClient casosAdminService;
         WSD.BlendingServiceClient blendingService;
 
-        [AllowAnonymous]
         public ActionResult Paloteo()
         {
             return View();
         }
 
 
-        [AllowAnonymous]
         public JsonResult PaloteoConsulta(string fechaInicial, string fechaFinal)
         {   casosAdminService = new WSD.CasosAdminServiceClient();
             casosAdminService.ClientCredentials.Authenticate();
@@ -36,7 +35,6 @@ namespace Dime.Controllers
 
 
 
-        [AllowAnonymous]
         public ActionResult ConsultasBlending()
         {
             return View();
@@ -44,8 +42,7 @@ namespace Dime.Controllers
 
 
 
-        [AllowAnonymous]
-        public JsonResult JsonConvenioElectronico(string fechaInicio, string fechaFin)
+         public JsonResult JsonConvenioElectronico(string fechaInicio, string fechaFin)
         {
             blendingService = new WSD.BlendingServiceClient();
             blendingService.ClientCredentials.Authenticate();
@@ -60,7 +57,6 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         public JsonResult JsonClaroVideo(string fechaInicio, string fechaFin)
         {
             blendingService = new WSD.BlendingServiceClient();
@@ -77,7 +73,6 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         public JsonResult JsonDocsisOverlap(string fechaInicio, string fechaFin)
         {
             blendingService = new WSD.BlendingServiceClient();
@@ -92,7 +87,6 @@ namespace Dime.Controllers
             };
         }
 
-        [AllowAnonymous]
         public JsonResult JsonCierreCiclo(string fechaInicio, string fechaFin)
         {
             blendingService = new WSD.BlendingServiceClient();
@@ -107,7 +101,7 @@ namespace Dime.Controllers
             };
         }
 
-        [AllowAnonymous]
+   
         public JsonResult JsonListaGestionAdmin(string fechaInicio, string fechaFin, string aliado)
         {
             casosAdminService = new WSD.CasosAdminServiceClient();
@@ -123,7 +117,7 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
+     
         public JsonResult JsonAliadosNames()
         {
             casosAdminService = new WSD.CasosAdminServiceClient();

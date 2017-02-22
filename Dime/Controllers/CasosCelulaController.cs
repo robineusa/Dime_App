@@ -9,7 +9,8 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
-    public class CasosCelulaController : Controller
+    [ExpiringFilter]
+    public class CasosCelulaController : MyController
     {
 
 
@@ -20,7 +21,6 @@ namespace Dime.Controllers
 
 
 
-        [AllowAnonymous]
         public ActionResult CasosAbiertos()
         {
             casosCellService = new WSD.CasosCelulaServiceClient();
@@ -30,12 +30,12 @@ namespace Dime.Controllers
             return View(model);
         }
 
-        [AllowAnonymous]
+
         public ActionResult ConsultaCasos()
         {
             return View();
         }
-        [AllowAnonymous]
+
         public ActionResult CasosSeguimientos()
         {
             casosCellService = new WSD.CasosCelulaServiceClient();
@@ -46,7 +46,7 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
+
         public JsonResult JsonListHistorialCaso(int idIngreso)
         {
             inboundService = new WSD.InboundServiceClient();
@@ -59,7 +59,7 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
+
         public JsonResult JsonDatosClienteYMarcacion(int cuenta, string marcacion)
         {
             inboundService = new WSD.InboundServiceClient();marcacionwebservice = new WSD.MarcacionesServiceClient();
@@ -76,7 +76,7 @@ namespace Dime.Controllers
             };
         }
 
-        [AllowAnonymous]
+  
         public JsonResult AccesoACaso(int idIngreso)
         {
             casosCellService = new WSD.CasosCelulaServiceClient();
@@ -90,7 +90,7 @@ namespace Dime.Controllers
             };
         }
 
-        [AllowAnonymous]
+  
         public JsonResult LineaLogeado()
         {
             return new JsonResult
@@ -100,7 +100,7 @@ namespace Dime.Controllers
             };
         }
 
-        [AllowAnonymous]
+ 
         public JsonResult SubmitDataDepuraCasos(Ingreso ingreso, string observaciones, string aplicaRechazo, string razonRechazo, IngresosSoporte ingresoSoporte, string razonSoporte, string subrazon1Soporte, string subrazon2Soporte)
         {
             try
@@ -125,7 +125,7 @@ namespace Dime.Controllers
             }
         }
 
-        [AllowAnonymous]
+ 
         public JsonResult RazonesSoporteIngresos()
         {
              casosCellService = new WSD.CasosCelulaServiceClient();
@@ -141,7 +141,6 @@ namespace Dime.Controllers
 
 
 
-        [AllowAnonymous]
         public JsonResult Subrazones1DeRazonSoporteIngresos(int idRazon)
         {
             casosCellService = new WSD.CasosCelulaServiceClient();
@@ -155,7 +154,7 @@ namespace Dime.Controllers
 
         }
 
-        [AllowAnonymous]
+
         public JsonResult Subrazones2DeSubrazonSoporteIngresos(int idSubrazon1)
         {
             casosCellService = new WSD.CasosCelulaServiceClient();
@@ -169,7 +168,6 @@ namespace Dime.Controllers
 
         }
 
-        [AllowAnonymous]
         public JsonResult InformacionSoporteIngreso(int idIngreso)
         {
             casosCellService = new WSD.CasosCelulaServiceClient();

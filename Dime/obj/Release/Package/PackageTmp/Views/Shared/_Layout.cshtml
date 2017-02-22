@@ -1,0 +1,1012 @@
+﻿@using Dime.Extensions
+<!DOCTYPE html>
+<html ng-app="dimeApp">
+<head>
+
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dime</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+
+    @Styles.Render("~/AdminLTEplugins/font-awesome/css")
+    @Styles.Render("~/AdminLTEplugins/ionicons/css")
+    @Styles.Render("~/AdminLTEbootstrap/css")
+    @Styles.Render("~/AdminLTEdist/css")
+    @Styles.Render("~/AdminLTEdist/css/skins")
+    @Styles.Render("~/AdminLTEplugins/kendo2016.3.11/css")
+    @Scripts.Render("~/AdminLTEplugins/jquery/js")
+    @Scripts.Render("~/AdminLTEdist/js/angularjs")
+    <script src="~/AdminLTE/plugins/jquery-ui/js/jquery-ui.js"></script>
+    <script src="~/Scripts/Signal/jquery.signalR-2.2.1.js"></script>
+    <script src="~/Scripts/Signal/jquery.signalR-2.2.1.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script src="~/Scripts/Shared/Helper.js?1.1.9"></script>
+    <script src="~/Scripts/Shared/_Layout.js?1.0.4"></script>
+
+    <script>
+        var appPath = '@Url.Content("~")';
+    </script>
+    <script src="~/ViewsAlr/app.js?1.0.3"></script>
+    <script src="~/ControllersAlr/mainAccessController.js?1.0.3"></script>
+    <script src="~/ControllersAlr/ConsultaGestionController.js?1.0.7"></script>
+    <script src="~/ControllersAlr/DepuraCasosCellController.js?1.1.3"></script>
+    <script src="~/ControllersAlr/AdminCasosController.js?1.1.6"></script>
+    <link href="~/Styles/Elements/Dime2.css?1.0.5" rel="stylesheet" />
+
+</head>
+<body id="Body_Layout" class="hold-transition skin-red sidebar-mini">
+
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="#" class="logo">
+                <span class="logo-mini"><b>D</b>ime</span>
+                <span class="logo-lg"><b>Plataforma</b> Dime</span>
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only"></span>
+                </a>
+                
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        @*<li class="dropdown messages-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="label label-success">8</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">Usted tiene 8 mensajes</li>
+                                <li>
+                                        <ul class="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <div class="pull-left">
+                                                        <img src="~/AdminLTEdist/img/user.svg" class="img-circle" alt="User Image">
+                                                    </div>
+                                                    <h4>
+                                                        Euipo de Apoyo
+                                                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                                    </h4>
+                                                    <p>Why not buy a new awesome theme?</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="pull-left">
+                                                        <img src="~/AdminLTEdist/img/user.svg" class="img-circle" alt="User Image">
+                                                    </div>
+                                                    <h4>
+                                                        AdminLTE Design Team
+                                                        <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                                                    </h4>
+                                                    <p>Why not buy a new awesome theme?</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="pull-left">
+                                                        <img src="~/AdminLTEdist/img/user.svg" class="img-circle" alt="User Image">
+                                                    </div>
+                                                    <h4>
+                                                        Developers
+                                                        <small><i class="fa fa-clock-o"></i> Today</small>
+                                                    </h4>
+                                                    <p>Why not buy a new awesome theme?</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="pull-left">
+                                                        <img src="~/AdminLTEdist/img/user.svg" class="img-circle" alt="User Image">
+                                                    </div>
+                                                    <h4>
+                                                        Sales Department
+                                                        <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                                                    </h4>
+                                                    <p>Why not buy a new awesome theme?</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <div class="pull-left">
+                                                        <img src="~/AdminLTEdist/img/user.svg" class="img-circle" alt="User Image">
+                                                    </div>
+                                                    <h4>
+                                                        Reviewers
+                                                        <small><i class="fa fa-clock-o"></i> 2 days</small>
+                                                    </h4>
+                                                    <p>Why not buy a new awesome theme?</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <li class="footer"><a href="#">See All Messages</a></li>
+                            </ul>
+                        </li>*@
+                        @*<li class="dropdown notifications-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="label label-warning">10</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 10 notifications</li>
+                                <li>
+                                        <ul class="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                                                    page and may cause design problems
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-users text-red"></i> 5 new members joined
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-user text-red"></i> You changed your username
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <li class="footer"><a href="#">View all</a></li>
+                            </ul>
+                        </li>*@
+                        @*<li class="dropdown tasks-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-flag-o"></i>
+                                <span class="label label-danger">9</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header">You have 9 tasks</li>
+                                <li>
+                                        <ul class="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <h3>
+                                                        Design some buttons
+                                                        <small class="pull-right">20%</small>
+                                                    </h3>
+                                                    <div class="progress xs">
+                                                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">20% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <h3>
+                                                        Create a nice theme
+                                                        <small class="pull-right">40%</small>
+                                                    </h3>
+                                                    <div class="progress xs">
+                                                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">40% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <h3>
+                                                        Some task I need to do
+                                                        <small class="pull-right">60%</small>
+                                                    </h3>
+                                                    <div class="progress xs">
+                                                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">60% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <h3>
+                                                        Make beautiful transitions
+                                                        <small class="pull-right">80%</small>
+                                                    </h3>
+                                                    <div class="progress xs">
+                                                        <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">80% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <li class="footer">
+                                    <a href="#">View all tasks</a>
+                                </li>
+                            </ul>
+                        </li>*@
+                        @Html.Partial("_LoginPartial")
+                        <li>
+                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                <div id="User" class="user-panel">
+                    <div class="pull-left image">
+                        <img src="~/AdminLTE/dist/img/user.svg" class="img-circle" alt="User Image">
+                    </div>
+                    <div class="pull-left info">
+                        @*<p>@User.Identity.GetUserNameIdentifier() @Session["NombreUsuario"]</p>*@
+                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+                <form action="#" method="get" class="sidebar-form">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control" placeholder="Buscar...">
+                        <span class="input-group-btn">
+                            <button type="submit" name="search" id="search-btn" class="btn btn-flat">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                <ul class="sidebar-menu">
+                    <li class="header">MENÚ PRINCIPAL</li>
+                    @if (Session["ModoLogin"].ToString() == "1")
+                    {
+                    <li id="left-sidebar-menu-dashboard" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-dashboard text-yellow"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardAsesor", "Home")"><i class="fa fa-circle-o text-aqua"></i> Dashboard Asesor</a></li>
+                            <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardCelula", "Home")"><i class="fa fa-circle-o text-red"></i> Dashboard Célula</a></li>
+                            @if (Session["Dashboard Administrador"] != null) { <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardAdministrador", "Home")"><i class="fa fa-circle-o text-orange"></i> Dashboard Administrador</a></li>}
+                        </ul>
+                    </li>
+                    }
+                    <li id="left-sidebar-menu-charts" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-pie-chart text-aqua"></i>
+                            <span>Reportes</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            @if (Session["Reporte Asesor"] != null) { <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("ReporteAsesor", "Reportes")"><i class="fa fa-circle-o text-aqua"></i> Reporte Asesor</a></li>}
+                            @if (Session["Reportes Celula"] != null) {<li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("ReporteCelula", "Reportes")"><i class="fa fa-circle-o text-red"></i> Reporte Célula</a></li>}
+                            @if (Session["Reporte Asdministrador"] != null) {<li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("ReporteAdministrador", "Reportes")"><i class="fa fa-circle-o text-orange"></i> Reporte Administrador</a></li>}
+                        </ul>
+
+                    </li>
+                    @if (Session["ModoLogin"].ToString() == "1")
+                    {
+                        <li class="header">MENÚ ADMINISTRADOR</li>
+                    }
+                    @if (Session["Administracion de Casos Sac"] != null) {
+                    <li id="left-sidebar-menu-charts" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-list-ol text-red"></i>
+                            <span>Casos</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("ConsultaCasosAbiertos", "Consultas")"><i class="fa fa-search"></i>Consulta</a></li>
+                        </ul>
+                    </li>
+                    }
+                    @if (Session["Administracion Marcaciones"] != null) {
+                    <li id="left-sidebar-menu-charts" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-bookmark text-aqua"></i>
+                            <span>Marcaciones</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("NuevasMarcaciones", "Marcaciones")"><i class="fa fa-plus-square"></i>Agregar Marcación</a></li>
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("ActualizarMarcaciones", "Marcaciones")"><i class="fa fa-pencil-square"></i>Actualizar Marcación</a></li>
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("CodigosCierre", "Marcaciones")"><i class="fa fa-pencil-square"></i>Códigos de Cierre</a></li>
+                        </ul>
+
+                    </li>
+                    }
+                    @if (Session["Administracion Nodos"] != null)
+                    {
+                    <li id="left-sidebar-menu-charts" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-code-fork" aria-hidden="true"></i>
+                            <span>Administrar Nodos</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("RegistrarNodo", "AdminNodos")"><i class="fa fa-plus-square"></i>Agregar Nodo</a></li>
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("ListaNodosCreados", "AdminNodos")"><i class="fa fa-pencil-square"></i>Actualizar Nodo</a></li>
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("ListaNodosCreados", "AdminNodos")"><i class="fa fa-list" aria-hidden="true"></i>Lista Nodos Creados</a></li>
+                        </ul>
+
+                    </li>
+                    }
+                    @if (Session["Administracion Usuarios"] != null)
+                    {
+                    <li id="left-sidebar-menu-charts" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-users text-orange"></i>
+                            <span>Usuarios</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("Creacion", "AdminUsuarios")"><i class="fa fa-user-plus"></i>Creación</a></li>
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("AccesosUsuarios", "AdminUsuarios")"><i class="fa fa-user-secret"></i>Accesos</a></li>
+                        </ul>
+
+                    </li>
+                    }
+                    @if (Session["Notificaciones Buen Servicio"] != null)
+                    {
+                    <li id="left-sidebar-menu-charts" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-pencil-square-o text-green"></i>
+                            <span>Buen Servicio</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("Notificaciones", "BuenServicio")"><i class="fa fa-sticky-note-o"></i>Notificaciones</a></li>
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="#"><i class="fa fa-comments-o"></i>Comunicacion Global</a></li>
+                        </ul>
+
+                    </li>
+                    }
+                    @if (Session["ModoLogin"].ToString() == "3")
+                    {
+                    <li class="header">MENÚ CELULA</li>
+                    }
+                    @if (Session["Escalamientos Sac"] != null) { 
+                    <li id="left-sidebar-menu-charts" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-th-list text-yellow"></i>
+                            <span>Casos</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("CasosAbiertos", "CasosCelula")"><i class="fa fa-list-ul" aria-hidden="true"></i>Casos Abiertos</a></li>
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("ConsultaCasosAbiertos", "Consultas")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Casos</a></li>
+                        </ul>
+
+                    </li>
+                    }
+                    @if (Session["Seguimientos Sac"] != null)
+                    {
+                    <li id="left-sidebar-menu-charts" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-eye text-aqua"></i>
+                            <span>Seguimiento</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("CasosSeguimientos", "CasosCelula")"><i class="fa fa-circle-o" aria-hidden="true"></i>Casos en Seguimiento</a></li>
+                        </ul>
+
+                    </li>
+                    }
+                    @if (Session["Gestion Traslados Celula"] != null)
+                    {
+                    <li id="left-sidebar-menu-multilevel" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-truck text-red" aria-hidden="true"></i> <span>Gestiones Traslados</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#"><i class="fa fa-map-marker text-red" aria-hidden="true"></i>Creación de Dirección<i class="fa fa-angle-left pull-right"></i></a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="@Url.Action("DireccionesCreadasTraslados", "Traslados")"><i class="fa fa-list-ul" aria-hidden="true"></i>Casos Abiertos</a>
+                                        <a href="@Url.Action("SeguimientosSolicitudesCreacionDireccion", "Traslados")"><i class="fa fa-eye" aria-hidden="true"></i>Seguimientos</a>
+                                        <a href="@Url.Action("ConsultaGestionCreacionDr", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-map-signs text-orange" aria-hidden="true"></i>Cambios de Estrato<i class="fa fa-angle-left pull-right"></i></a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="@Url.Action("SolicitudesCambioDeEstrato", "Traslados")"><i class="fa fa-list-ul" aria-hidden="true"></i>Casos Abiertos</a>
+                                        <a href="@Url.Action("SeguimientosCambioDeEstrato", "Traslados")"><i class="fa fa-eye" aria-hidden="true"></i>Seguimientos</a>
+                                        <a href="@Url.Action("ConsultaGestionCambioDeEstrato", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-home text-aqua" aria-hidden="true"></i>Liberaciones de HHPP<i class="fa fa-angle-left pull-right"></i></a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="@Url.Action("SolicitudesLiberacionHomePass", "Traslados")"><i class="fa fa-list-ul" aria-hidden="true"></i>Casos Abiertos</a>
+                                        <a href="@Url.Action("SeguimientosLiberacionHomePass", "Traslados")"><i class="fa fa-eye" aria-hidden="true"></i>Seguimientos</a>
+                                        <a href="@Url.Action("ConsultaGestionLiberaciondeHomePass", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-building text-yellow" aria-hidden="true"></i>Creación de Matrices<i class="fa fa-angle-left pull-right"></i></a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="#"><i class="fa fa-list-ul text-yellow" aria-hidden="true"></i>Cacasos Abiertos<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="@Url.Action("SolicitudesCreacionMatrices", "Traslados")"><i class="fa fa-circle-o" aria-hidden="true"></i>Creación Matrices</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("SolicitudesGestionMatrices", "Traslados")"><i class="fa fa-circle-o" aria-hidden="true"></i>Gestión Matrices</a>
+                                            </li>
+                                        </ul>
+
+
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-eye text-yellow" aria-hidden="true"></i>Seguimientos<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="@Url.Action("SeguimientosSolicitudesCreacionMatriz", "Traslados")"><i class="fa fa-circle-o" aria-hidden="true"></i>Creación Matrices</a>
+                                            </li>
+                                            <li>
+                                                <a href="@Url.Action("SeguimientosSolicitudesGestionMatrices", "Traslados")"><i class="fa fa-circle-o" aria-hidden="true"></i>Gestión Matrices</a>
+                                            </li>
+                                        </ul>
+
+
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-search text-yellow" aria-hidden="true"></i>Consultas<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="@Url.Action("ConsultaGestionMatrices", "Traslados")"><i class="fa fa-circle-o" aria-hidden="true"></i>Consulta de Gestión</a>
+                                            </li>
+
+                                        </ul>
+
+
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    }
+                    @if (Session["ModoLogin"].ToString() == "2")
+                    {
+                    <li class="header">MENÚ ASESOR</li>
+                    }
+                    @if (Session["Gestion Inbound"] != null) {
+                    <li id="left-sidebar-menu-charts" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-phone-square text-orange"></i>
+                            <span>Gestiones Inbound</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        @if (Session["Tipificacor Sac"] != null) { 
+                        <ul class="treeview-menu">
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("Index", "Inbound")"><i class="fa fa-phone" aria-hidden="true"></i>Tipificador</a></li>
+
+                        </ul>
+                        }
+                    </li>
+                    }
+                    @if (Session["Gestion Blending"] != null) {
+                    <li id="left-sidebar-menu-multilevel" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-th-large text-green"></i> <span>Gestiones Blending</span><i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            @*<li><a href="#"><i class="fa fa-circle-o"></i> Activación</a></li>*@
+                            @if (Session["Blending Cierre de Ciclo"] != null) { <li><a href="@Url.Action("Cierre_Ciclo", "GestionBlending")"><i class="fa fa-circle-o"></i> Cierre de Ciclo</a></li>}
+                            @if (Session["Blending Claro Video"] != null) {<li><a href="@Url.Action("Claro_Video", "GestionBlending")"><i class="fa fa-circle-o"></i> Claro Video</a></li>}
+                            @if (Session["Blending Convenio Electronico"] != null) {<li><a href="@Url.Action("Convenio_Electronico", "GestionBlending")"><i class="fa fa-circle-o"></i> Convenio Electrónico</a></li>}
+                            @*<li><a href="#"><i class="fa fa-circle-o"></i> Detractores</a></li>*@
+                            @*<li><a href="#"><i class="fa fa-circle-o"></i> Fraudes</a></li>*@
+                            @*<li><a href="#"><i class="fa fa-circle-o"></i> Logística Inversa</a></li>*@
+                            @*<li><a href="#"><i class="fa fa-circle-o"></i> Reincidencia</a></li>*@
+                            @*<li><a href="#"><i class="fa fa-circle-o"></i> Ventas</a></li>*@
+                            @if (Session["Blending Docsis"] != null) {<li><a href="@Url.Action("Docsis", "GestionBlending")"><i class="fa fa-circle-o"></i> Docsis Overlap</a></li>}
+                        </ul>
+
+                    </li>
+                    }
+                    @if (Session["Gestion Traslados"] != null) { 
+                    <li id="left-sidebar-menu-multilevel" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-truck text-red" aria-hidden="true"></i> <span>Gestiones Traslados</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#"><i class="fa fa-map-marker text-red" aria-hidden="true"></i>Creación de Dirección<i class="fa fa-angle-left pull-right"></i></a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="@Url.Action("SolicitudCrearDireccion", "Traslados")"><i class="fa fa-external-link" aria-hidden="true"></i>Generar Solicitud</a>
+                                        <a href="@Url.Action("DireccionesCreadasOutbound", "Traslados")"><i class="fa fa-phone-square" aria-hidden="true"></i>Gestión Outbound</a>
+                                        <a href="@Url.Action("SeguimientosSolicitudesCreacionDireccionOutbound", "Traslados")"><i class="fa fa-phone-square" aria-hidden="true"></i>Seguimientos Outbound</a>
+                                        <a href="@Url.Action("ConsultaGestionCreacionDr", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-map-signs text-orange" aria-hidden="true"></i>Cambios de Estrato<i class="fa fa-angle-left pull-right"></i></a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="@Url.Action("SolicitudCambioDeEstrato", "Traslados")"><i class="fa fa-external-link" aria-hidden="true"></i>Generar Solicitud</a>
+                                        <a href="@Url.Action("ConsultaGestionCambioDeEstrato", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-home text-aqua" aria-hidden="true"></i>Liberaciones de HHPP<i class="fa fa-angle-left pull-right"></i></a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="@Url.Action("SolicitudLiberacionHomePass", "Traslados")"><i class="fa fa-external-link" aria-hidden="true"></i>Generar Solicitud</a>
+                                        <a href="@Url.Action("ConsultaGestionLiberaciondeHomePass", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-building text-yellow" aria-hidden="true"></i>Creación de Matrices<i class="fa fa-angle-left pull-right"></i></a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="@Url.Action("SolicitudMatrices", "Traslados")"><i class="fa fa-external-link" aria-hidden="true"></i>Generar Solicitud</a>
+                                        <a href="@Url.Action("ConsultaGestionMatrices", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    }
+                    <li class="header">CONSULTAS</li>
+                     @if (Session["Consultas Asesor"] != null) {
+                    <li id="left-sidebar-menu-multilevel" class="treeview">
+                        <a href="#">
+                            <i class="fa  fa-search  text-aqua"></i> <span>Consultas Asesor</span><i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("ConsultaGestion", "ConsultasAsesor")"><i class="fa  fa-search-plus"></i>Gestión</a></li>
+                            <li><a href="@Url.Action("ConsultaRechazos", "Consultas")"><i class="fa  fa-search-plus"></i>Rechazos</a></li>
+                            <li><a href="@Url.Action("ConsultaSeguimientos", "ConsultasAsesor")"><i class="fa  fa-search-plus"></i>Seguimientos</a></li>
+                            <li><a href="@Url.Action("DireccionesCreadasTraslados", "Traslados")"><i class="fa  fa-search-plus"></i>Direcciones Creadas</a></li>
+                        </ul>
+                    </li>
+                     }
+                     @if (Session["Consultas Celula"] != null)
+                     {
+                    <li id="left-sidebar-menu-multilevel" class="treeview">
+                        <a href="#">
+                            <i class="fa  fa-search  text-red"></i> <span>Consultas Célula</span><i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="@Url.Action("ConsultaGestion", "ConsultasCelula")"><i class="fa  fa-search-plus"></i> Consulta de Gestión</a></li>
+                        </ul>
+                    </li>
+                     }
+                     @if (Session["Consultas Administracion"] != null)
+                     {
+                    <li id="left-sidebar-menu-multilevel" class="treeview">
+                        <a href="#">
+                            <i class="fa  fa-search  text-orange" aria-hidden="true"></i> <span>Consultas Administrador</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="#"><i class="fa fa-search text-orange" aria-hidden="true"></i>Consultas Sac<i class="fa fa-angle-left pull-right"></i></a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="#"><i class="fa fa-circle-o"></i>Gestiones Inbound<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="@Url.Action("Paloteo", "ConsultasAdmin")"><i class="fa fa-circle-o"></i> Consulta de Paloteo</a></li>
+                                            <li><a href="~/#/ConsultaGestionAdmin"><i class="fa fa-circle-o"></i> Consulta de Gestión</a></li>
+                                            <li><a href="@Url.Action("ConsultaRechazos", "Consultas")"><i class="fa fa-circle-o"></i> Consulta de Rechazos</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-circle-o"></i>Gestiones Outbound<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="~/#/mainAccessBlending"><i class="fa fa-circle-o"></i>Consulta Blending</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-search text-orange" aria-hidden="true"></i>Consultas Traslados<i class="fa fa-angle-left pull-right"></i></a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a href="#"><i class="fa fa-circle-o"></i>Consulta General<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="@Url.Action("ConsultaAdminIngresosTraslados", "Traslados")"><i class="fa fa-circle-o"></i>Ingresos Traslados</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-circle-o"></i>Consulta por Gestión<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="@Url.Action("ConsultaAdminIngresosCrearDireccion", "Traslados")"><i class="fa fa-circle-o"></i>Creación de Dirección</a></li>
+                                            <li><a href="@Url.Action("ConsultaAdminIngresosCambioEstrato", "Traslados")"><i class="fa fa-circle-o"></i> Cambio de Estrato</a></li>
+                                            <li><a href="@Url.Action("ConsultaAdminIngresosLiberaciones", "Traslados")"><i class="fa fa-circle-o"></i> Liberaciones de HHPP</a></li>
+                                            <li><a href="@Url.Action("ConsultaAdminIngresosMatrices", "Traslados")"><i class="fa fa-circle-o"></i> Gestión Matrices</a></li>
+
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    }
+
+                    <li class="header">MANUALES DE USUARIO</li>
+                    <li id="left-sidebar-menu-multilevel" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-book"></i> <span>Manuales de Usuario</span><i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            @if (Session["Manual de Usuario Asesor"] != null) { 
+                            <li id="left-sidebar-menu-documentation">
+                                <a href="@Url.Action("ManualAsesor", "Manuales")">
+                                    <i class="fa fa-book text-aqua"></i>
+                                    <span>Manual - Asesor</span>
+                                </a>
+                            </li>
+                            }
+                            @if (Session["Manual de Usuario Celula"] != null)
+                            {
+                            <li id="left-sidebar-menu-documentation">
+                                <a href="@Url.Action("ManualCelula", "Manuales")">
+                                    <i class="fa fa-book text-red"></i>
+                                    <span>Manual - Célula</span>
+                                </a>
+                            </li>
+                            }
+                            @if (Session["Manual de Usuario Adnministrador"] != null)
+                            {
+                            <li id="left-sidebar-menu-documentation">
+                                <a href="@Url.Action("ManualAdministrador", "Manuales")">
+                                    <i class="fa fa-book text-orange"></i>
+                                    <span>Manual - Administrador</span>
+                                </a>
+                            </li>
+                            }
+                        </ul>
+                    </li>
+
+                    <li class="header">ACCESOS PÚBLICOS</li>
+                    <li id="left-sidebar-menu-multilevel" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-external-link"></i> <span>Links Corporativos</span><i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                                <li id="left-sidebar-menu-documentation">
+                                    <a href="#Visor_1"  data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                                        <i class="fa fa-link text-aqua"></i>
+                                        <span>Visor 1</span>
+                                        
+                                    </a>
+                                </li>
+                                <li id="left-sidebar-menu-documentation">
+                                    <a href="#">
+                                        <i class="fa fa-link text-red"></i>
+                                        <span>Visor 2</span>
+                                    </a>
+                                </li>
+                                <li id="left-sidebar-menu-documentation">
+                                    <a href="#CCAA" data-toggle="modal" data-backdrop="static" data-keyboard="false">                                        
+                                        <i class="fa fa-link text-orange"></i>
+                                        <span>CCAA</span>
+                                    </a>
+                                </li>
+                            <li id="left-sidebar-menu-documentation">
+                                <a href="#">
+                                    <i class="fa fa-link text-yellow"></i>
+                                    <span>1Click</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    @ViewBag.Title
+                    <small>@ViewBag.SubTitle</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i>@ViewBag.SubTitle</a></li>
+                    <li class="active">@ViewBag.Title</li>
+                </ol>
+            </section>
+            <section class="content" style="min-height:1500px;">
+                <div class="col-md-4" style="z-index:999; float: left; position: absolute; display:block">
+                    <div id="ChatGeneral" style="display:none">
+                        <div id="ChatGeneral2" class="box box-danger direct-chat direct-chat-danger" style="display: block;">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Notificaciones Globales</h3>
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-box-tool" data-widget="remove">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="box-body" style="display: block;">
+                                <div id="Administrador" class="direct-chat-messages">
+
+                                </div>
+                                <div class="direct-chat-contacts">
+                                    <ul class="contacts-list">
+                                        <li>
+                                            <a href="#">
+                                                <img class="contacts-list-img" src="/AdminLTE/dist/img/user.svg">
+                                                <div class="contacts-list-info">
+                                                    <span class="contacts-list-name">
+                                                        Count Dracula
+                                                        <small class="contacts-list-date pull-right">2/28/2015</small>
+                                                    </span>
+                                                    <span class="contacts-list-msg">How have you been? I was...</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <a id="BuenServicioHREF" href="#Buen_Servicio" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                </a>
+                @RenderBody()
+                <div class="col-md-3" style="z-index:999; float: left; position: absolute; display:block; left:20%;">
+                    <div id="ChatPrivado" style="display:block">
+                        
+
+                        </div>
+                    </div>
+                    <ng-view></ng-view>
+</section>
+        </div>
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 2.0.0
+            </div>
+            <strong>Aplicación | Dime </strong>
+        </footer>
+        <aside class="control-sidebar control-sidebar-dark">
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <li><a href="#control-sidebar-home-tab" data-toggle="tab" class="active"><i class="fa fa-calculator text-aqua"></i></a></li>
+                <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="control-sidebar-home-tab">
+
+                    <a href="#campanas" onclick="LlamarCalculosCampanas();" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                        <div id="Calculadora1" class="icono_carrete_5">
+                        </div>
+                    </a>
+                    <a href="#compensacion" onclick="LlamarCalculosCompensacion();" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                        <div id="Calculadora2" class="icono_carrete_6"></div>
+                    </a>
+                    <a href="#diferenciaTarifas" onclick="return LlamarCalculosDiferenciaTarifas()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                        <div id="Calculadora3" class="icono_carrete_7"></div>
+                    </a>
+                    <a href="#prorrateos" onclick="return LlamarCalculosProrrateos()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                        <div id="Calculadora4" class="icono_carrete_8"></div>
+                    </a>
+                    <a href="http://comunidadvirtual.claro.com.co">
+                        <div class="icono_carrete_2"></div>
+                    </a>
+                    <div class="inbenta-banner">
+                        <a class="openAssistant" href="#">
+                            <div class="icono_carrete_4" id="Div4"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="tab-pane" id="control-sidebar-stats-tab">
+                    AQUI LOS SKIN PARA CAMBIAR
+                </div>
+                <div class="tab-pane" id="control-sidebar-settings-tab">
+                    AQUI PONER ALGO
+                </div>
+            </div>
+        </aside>
+
+
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!--paneles calculadoras-->
+    <div>
+        <div id="campanas" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px;">
+                    <div class="modal-header" style="width:1000px;">
+                        <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                        <h2 class="modal-title"><i class="fa fa-calculator" style="color:#a41e34;" aria-hidden="true"></i>   Calculadora de Ajustes por Campañas</h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <div id="campanasBody"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="compensacion" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px;">
+                    <div class="modal-header" style="width:1000px;">
+                        <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                        <h2 class="modal-title"><i class="fa fa-calculator" style="color:#de584d;" aria-hidden="true"></i>  Calculadora de Ajustes por Compensación</h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <div id="compensacionBody"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="diferenciaTarifas" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px;">
+                    <div class="modal-header" style="width:1000px;">
+                        <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                        <h2 class="modal-title"><i class="fa fa-calculator" style="color:#3c9987;" aria-hidden="true"></i>  Calculadora de Ajustes por Diferencia de Tarifas</h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <div id="diferenciaTarifasBody"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="prorrateos" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px;">
+                    <div class="modal-header" style="width:1000px;">
+                        <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                        <h2 class="modal-title"><i class="fa fa-calculator" aria-hidden="true" style="color:#c33357;"></i>  Calculadora de Ajustes por Prorrateos</h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <div id="prorrateosBody"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="Buen_Servicio" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px; background-color:transparent">
+                    <div class="modal-header" style="width:1000px; background-color:transparent; border-bottom: none; margin-top:20px;">
+                        <button id="CerrarBS" type="button" onclick="return GuardarUsuarioNotificado()" class="close" style="color:white; margin-right:-35px;" data-dismiss="modal">X</button>
+
+                        <h2 class="modal-title"></h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
+
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <a id="LinkBS" href="#" target="_blank">
+                                    <img id="imgBS" src="#" style="max-width:103%;" />
+                                </a>
+                                <input id="Nombre_Imagen" type="hidden" />
+                                <input id="Ruta_Imagen" type="hidden" />
+                                <input id="Id_Notificado" type="hidden" />
+                                <input id="Descripcion_Imagen" type="hidden" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Visor_1" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px; background-color:transparent">
+                    <div class="modal-header" style="width:1000px; background-color:transparent; border-bottom: none; margin-top:20px;">
+                        <button type="button" class="close" style="color:white; margin-right:-35px;" data-dismiss="modal">X</button>
+                        <h2 class="modal-title"></h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
+
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <iframe style="width: 103%; background-color: #ffffff; height: 700px; border: none;" src="http://172.18.10.27/mascara/logon.jsf"></iframe>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="CCAA" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px; background-color:transparent">
+                    <div class="modal-header" style="width:1000px; background-color:transparent; border-bottom: none; margin-top:20px;">
+                        <button type="button" class="close" style="color:white; margin-right:-35px;" data-dismiss="modal">X</button>
+                        <h2 class="modal-title"></h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
+
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <iframe style="width: 103%; background-color: #ffffff; height: 700px; border: none;" src="http://172.18.10.156/iwaycc/login"></iframe>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+        var urlCampanasView = '@Url.Action("Campanas","Calculadoras")';
+        var urlCompensacionView = '@Url.Action("Compensacion", "Calculadoras")';
+        var urlDiferenciaTarifasView = '@Url.Action("DiferenciaTarifas", "Calculadoras")';
+        var urlProrrateosView = '@Url.Action("Prorrateos", "Calculadoras")';
+        var UserConnect = '@Session["Usuario"]';
+        $(function () {
+            $('#ChatGeneral').draggable();
+            $('#Drag').draggable();
+        });
+    </script>
+
+    @RenderSection("menu", required: false)
+    @Scripts.Render("~/AdminLTEbootstrap/js")
+    @Scripts.Render("~/AdminLTEplugins/slimscroll/js")
+    @Scripts.Render("~/AdminLTEplugins/fastclick/js")
+    @*@Scripts.Render("/ScriptsShared/_Layout")*@
+    @Scripts.Render("~/AdminLTEdist/js")
+    @Scripts.Render("~/AdminLTEplugins/kendo2016.3.11/js")
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

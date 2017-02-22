@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Actualización de Datos";
+    Layout = "~/Views/Shared/_RecordarContrasena.cshtml";
+}
+<div class="box box-danger">
+    <div class="box-header with-border">
+        <h4 class="box-title">Para nosotros es muy importante contar con esta información adicional tuya, por eso te invitamos a que diligencies el siguiente formulario con tus datos personales.</h4>
+    </div>
+    <div id="shareRegistroDatos"> </div>
+</div>
+
+@section scripts{
+<script>
+
+        $(document).ready(function() {
+            var scopeId = @ViewBag.IdUsuario;
+            var scopeSesion = @ViewBag.Sesion;
+    $.ajax({
+        type: "GET",
+        url: '/Account/SRegistroDatosUsuario',
+        contentType: "application/json; charset=utf-8",
+        data: { idUsuario:scopeId , sesionUsuario : scopeSesion} ,
+        dataType: "html",
+        success: function (result) {
+            $('#shareRegistroDatos').html(result);
+        }
+         });
+        })
+
+</script>
+
+
+}

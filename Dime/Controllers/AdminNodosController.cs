@@ -10,18 +10,19 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
-    public class AdminNodosController : Controller
+    [ExpiringFilter]
+    public class AdminNodosController : MyController
     {
         // GET: AdminNodos
         WSD.MaestroNodoServiceClient maestroNodosWebService;
 
-        [AllowAnonymous]
+        
         [HttpGet]
         public ActionResult RegistrarNodo()
         {
             return View();
         }
-        [AllowAnonymous]
+        
         [HttpPost]
         public ActionResult RegistrarNodo(MaestroNodo modelo)
         {
@@ -51,7 +52,7 @@ namespace Dime.Controllers
             return View(modelo);
            
         }
-        [AllowAnonymous]
+       
         public ActionResult ListaNodosCreados()
         {
             maestroNodosWebService = new WSD.MaestroNodoServiceClient();
@@ -60,7 +61,7 @@ namespace Dime.Controllers
             modelo = maestroNodosWebService.ListaNodosCreados();
             return View(modelo);
         }
-        [AllowAnonymous]
+        
         [HttpGet]
         public ActionResult ActualizarNodo(int id)
         {
@@ -69,7 +70,7 @@ namespace Dime.Controllers
             model.MaestroNodo= maestroNodosWebService.GetInformacionNodoId(Convert.ToInt32(id));
             return View(model);
         }
-        [AllowAnonymous]
+        
         [HttpPost]
         public ActionResult ActualizarNodo(ViewModelNodos model)
         {

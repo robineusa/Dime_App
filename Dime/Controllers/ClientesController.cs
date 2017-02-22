@@ -9,14 +9,15 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
-    public class ClientesController : Controller
+    [ExpiringFilter]
+    public class ClientesController : MyController
     {
 
 
         WSD.InboundServiceClient inboundService;
 
         // GET: Clientes
-        [AllowAnonymous]
+        
         [HttpGet]
         public ViewResult BuscarCuentasPorCedulaInbound()
         {
@@ -28,7 +29,6 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         [HttpPost]
         public ViewResult BuscarCuentasPorCedula(String cedula, string actionName, string controllerName, string selectOptions)
         {
@@ -43,7 +43,6 @@ namespace Dime.Controllers
             return View("TableBuscarCuentas",model);
         }
 
-        [AllowAnonymous]
         [HttpGet]
         public ViewResult BuscarCuentasPorCedulaConfirmation(String cedula, string actionName, string controllerName)
         {

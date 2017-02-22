@@ -1,0 +1,20 @@
+﻿@model String
+
+@Styles.Render("~/AdminLTEbootstrap/css")
+@Styles.Render("~/AdminLTEplugins/font-awesome/css")
+@Styles.Render("~/AdminLTEplugins/ionicons/css")
+@Styles.Render("~/AdminLTEdist/css")
+@Styles.Render("~/AdminLTEplugins/icheck/css/sqare/blue")
+
+<div class="text-danger" style="width:600px; font-size:15px;padding:7px;text-align:left; color:darkslategray; background-color:rgba(196, 196, 196, 0.87);border-radius:5px;">
+    <i class="icon fa fa-warning text-black" style="font-size:30px; float:left;margin-top:-2px;"></i>
+    <p>@Model</p>
+    
+</div>
+<br />
+<br />
+@Scripts.Render("~/AdminLTEplugins/jquery/js")
+@Scripts.Render("~/AdminLTEbootstrap/js")
+@Scripts.Render("~/AdminLTEplugins/icheck/js")
+@Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+@Scripts.Render("~/Scripts/Account/Login")

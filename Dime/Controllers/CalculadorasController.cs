@@ -8,14 +8,15 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
-    public class CalculadorasController : Controller
+    [ExpiringFilter]
+    public class CalculadorasController : MyController
     {
 
         WSD.InboundServiceClient inboundService;
 
 
         // GET: Calculadoras
-        [AllowAnonymous]
+ 
         [HttpGet]
         public ViewResult Campanas()
         {
@@ -23,7 +24,6 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         [HttpGet]
         public ViewResult Compensacion()
         {
@@ -31,7 +31,6 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         [HttpPost]
         public PartialViewResult DatosClientePorCuenta(string cuenta)
         {   inboundService = new WSD.InboundServiceClient();
@@ -42,7 +41,7 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
+       
         [HttpGet]
         public ViewResult DiferenciaTarifas()
         {
@@ -51,7 +50,7 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
+       
         [HttpGet]
         public ViewResult Prorrateos()
         {

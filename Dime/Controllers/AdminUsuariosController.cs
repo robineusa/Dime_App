@@ -9,13 +9,14 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
-    public class AdminUsuariosController : Controller
+    [ExpiringFilter]
+    public class AdminUsuariosController : MyController
     {
 
         private WSD.LoginServiceClient loginService;
 
         // GET: AdminUsuarios
-        [AllowAnonymous]
+        
         [HttpGet]
         public ActionResult Creacion()
         {   ViewModelAdminUsuario model = new ViewModelAdminUsuario();
@@ -23,7 +24,7 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
+        
         [HttpPost]
         public ActionResult Creacion(ViewModelAdminUsuario model, string opcionMando)
         { 
@@ -77,7 +78,7 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
+       
         [HttpGet]
         public JsonResult PosiblesAccesosYLineasDePerfil(int idPerfil)
         {
@@ -96,7 +97,7 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
+        
         [HttpGet]
         public ActionResult AccesosUsuarios()
         {
@@ -106,7 +107,7 @@ namespace Dime.Controllers
 
 
 
-        [AllowAnonymous]
+       
         [HttpPost]
         public ActionResult AccesosUsuarios(ViewModelAdminUsuario model, string opcionMando)
         {
@@ -166,7 +167,7 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
+        
         [HttpGet]
         public JsonResult JsonUsuariosDeAliadoYPerfil(string aliado, int idPerfil)
         {
@@ -181,7 +182,7 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
+        
         [HttpGet]
         public JsonResult PosiblesAccesosDeUsuario(int cedUsuario)
         {
@@ -199,14 +200,14 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
+        
         [HttpGet]
         public ViewResult UsuariosMasivos()
         {
             return View("AdminUsuariosMasivo");
         }
 
-        [AllowAnonymous]
+        
         [HttpGet]
         public JsonResult CotejarInformacionMasivo(IList<string> cedulas)
         {
@@ -228,7 +229,7 @@ namespace Dime.Controllers
             };
         }
 
-        [AllowAnonymous]
+        
         [HttpPost]
         public JsonResult GuardarUsuariosMasivos(IList<string> cedulas, string accesosCrear, int perfilCrear, int lineaCrear, string contraMasiva  )
         {

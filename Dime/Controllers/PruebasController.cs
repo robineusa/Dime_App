@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dime.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,10 +7,10 @@ using System.Web.Mvc;
 
 namespace Dime.Controllers
 {
-    public class PruebasController : Controller
+    [ExpiringFilter]
+    public class PruebasController : MyController
     {
         // GET: Pruebas
-        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();

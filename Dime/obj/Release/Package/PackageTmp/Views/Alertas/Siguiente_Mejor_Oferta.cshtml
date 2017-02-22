@@ -1,0 +1,258 @@
+﻿@model Telmexla.Servicios.DIME.Entity.SiguienteMejorOferta
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Siguiente Mejor Oferta</title>
+    @Styles.Render("~/AdminLTEbootstrap/css")
+    @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+</head>
+<body>
+    @using (Html.BeginForm("Siguiente_Mejor_Oferta", "Alertas", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
+    {
+        <div>
+            <hr />
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-info"></i>
+                <h3 class="box-title"> Informacion Básica del Cliente</h3>
+            </div>
+            <div class="callout" style="margin-bottom: 0 ;border-color:#1e89ef !important; background-color:gainsboro !important; color: black !important">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <small>Cuenta Cliente:</small>
+                    </div>
+                    <div class="col-xs-2">
+                        <small>Nombre del Cliente:  </small>
+                    </div>
+                    <div class="col-xs-2">
+                        <small>Apellido del Cliente:  </small>
+                    </div>
+                    <div class="col-xs-2" style="width: 30%;">
+                        <small>Documento de Identidad:  </small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2">
+                        @Html.TextBoxFor(m => m.CuentaCliente, null, new { @class = "form-control input-sm", @id = "Cuenta_Cliente", style = "width:150px;", @name = "cuentaCliente" })
+                    </div>
+                    <div class="col-xs-2">
+                        <input id="Nombre_ClienteSMO" type="text" class="form-control input-sm" style="width:150px;" />
+                    </div>
+                    <div class="col-xs-2">
+                        <input id="Apellido_ClienteSMO" type="text" class="form-control input-sm" style="width:150px;" />
+                    </div>
+                    <div class="col-xs-2">
+                        <input id="Cedula_Cliente" type="text" class="form-control input-sm" style="width:150px;" />
+                    </div>
+                </div>
+            </div><br />
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-gift"></i>
+                <h3 class="box-title">Ofrecimientos</h3>
+            </div>
+
+            <div class="callout" style="margin-bottom: 0 ;border-color:#1e89ef !important; background-color:gainsboro !important; color: black !important">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td style="padding:1px;" width="200">
+                                <small>Primer Ofrecimiento:  </small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="padding:1px; width:1200px;">
+                                <input class="form-control input-sm" id="Ofrecimiento1SMO" style="width:100%; height:70px;" value="" type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <small>El cliente acepto este ofrecimiento?</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    @*<label>
+                                            <input id="ofre1" class="minimal" data-val="true" data-val-required="El campo checkBOfrecimiento1 es obligatorio." name="CierreCicloGestionado.checkBOfrecimiento1" onclick="document.getElementById('ofre1No').checked = false" value="true" type="checkbox"><input name="CierreCicloGestionado.checkBOfrecimiento1" value="false" type="hidden">
+                                            Si
+                                        </label>
+                                        <label>
+                                            <input onclick="document.getElementById('ofre1').checked=false" name="Ofrecimiento" class="minimal" id="ofre1No" type="checkbox">
+                                            No
+                                        </label>*@
+                                    @Html.DropDownListFor(m => m.Ofrecimiento1, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="1" },
+                                    new SelectListItem{Text="NO", Value="0" } }, "",
+                                    new { @class = "form-control input-sm", @style = "width:20%", id = "DDLOfre1" })
+
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div id="2ofre" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="padding:1px;" width="200">
+                                    <small>Segundo Ofrecimiento:  </small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="padding:1px; width:1200px;">
+                                    <input class="form-control input-sm" id="Ofrecimiento2SMO" style="width:100%; height:70px;" value="" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <small>El cliente acepto este ofrecimiento?</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        @*<label>
+                                    <input id="ofre2" class="minimal" data-val="true" data-val-required="El campo checkBOfrecimiento1 es obligatorio." name="CierreCicloGestionado.checkBOfrecimiento1" onclick="document.getElementById('ofre2No').checked = false" value="true" type="checkbox"><input name="CierreCicloGestionado.checkBOfrecimiento1" value="false" type="hidden">
+                                    Si
+                                </label>
+                                <label>
+                                    <input onclick="document.getElementById('ofre2').checked=false" name="Ofrecimiento" class="minimal" id="ofre2No" type="checkbox">
+                                    No
+                                </label>*@
+                                        @Html.DropDownListFor(m => m.Ofrecimiento2, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="1" },
+                                    new SelectListItem{Text="NO", Value="0" } }, "",
+                                    new { @class = "form-control input-sm", @style = "width:20%", @onchange = "return Ofrecimiento2()", id = "DDLOfre2" })
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="3ofre" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="padding:1px;" width="200">
+                                    <small>Tercer Ofrecimiento:  </small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="padding:1px; width:1200px;">
+                                    <input class="form-control input-sm" id="Ofrecimiento3SMO" name="GestionOutInfo.Ofrecimiento1" style="width:100%; height:70px;" value="" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <small>El cliente acepto este ofrecimiento?</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        @*<label>
+                                    <input id="ofre3" class="minimal" data-val="true" data-val-required="El campo checkBOfrecimiento1 es obligatorio." name="CierreCicloGestionado.checkBOfrecimiento1" onclick="document.getElementById('ofre3No').checked = false" value="true" type="checkbox"><input name="CierreCicloGestionado.checkBOfrecimiento1" value="false" type="hidden">
+                                    Si
+                                </label>
+                                <label>
+                                    <input onclick="document.getElementById('ofre3').checked=false" name="Ofrecimiento" class="minimal" id="ofre3No" type="checkbox">
+                                    No
+                                </label>*@
+                                        @Html.DropDownListFor(m => m.Ofrecimiento3, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="1" },
+                                    new SelectListItem{Text="NO", Value="0" } }, "",
+                                    new { @class = "form-control input-sm", @style = "width:20%", @onchange = "return Ofrecimiento3()", id = "DDLOfre3" })
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br />
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-sitemap"></i>
+                <h3 class="box-title">Árbol de Tipificación</h3>
+            </div>
+            <div class="callout" style="margin-bottom: 0 ;border-color:#1e89ef !important; background-color:gainsboro !important; color: black !important">
+                <br />
+                <div class="form-group">
+                    <table>
+                        <tr style="margin-left:5px;">
+                            <td width="200" style="padding-left:1px;">
+                                <small>Tipo Contacto: </small>
+                            </td>
+                            <td width="200" style="padding-left:1px;">
+                                <small>Gestión: </small>
+                            </td>
+                            <td width="200" style="padding-left:1px;">
+                                <small>Cierre: </small>
+                            </td>
+                            <td width="200" style="padding-left:1px;">
+                                <small>Razon: </small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left:1px; width:200px;">
+                                @Html.DropDownListFor(m => m.TipoContacto, new List<SelectListItem> { }, "", new { Id = "tipoContactosSelect", @class = "form-control", onchange = "SetearCierresChoices();" })
+                                @Html.ValidationMessageFor(m => m.TipoContacto, "", new { @class = "text-danger" })
+                                <input id="TipCon" type="hidden" name="TipCon" />
+                            </td>
+                            <td style="padding-left:1px; width:220px;">
+                                @Html.DropDownListFor(m => m.Gestion, new List<SelectListItem> {  }, "", new { Id = "tiposCierresSelect", @class = "form-control", onchange = "SetearRazonesChoices();" })
+                                @Html.ValidationMessageFor(m => m.Gestion, "", new { @class = "text-danger" })
+                                <input id="Gest" type="hidden" name="Gest" />
+                            </td>
+                            <td style="padding-left:4px; width:260px;">
+                                @Html.DropDownListFor(m => m.Cierre, new List<SelectListItem> { }, "", new { Id = "tiposRazonSelect", @class = "form-control", onchange = "SetearCausaChoices();" })
+                                @Html.ValidationMessageFor(m => m.Cierre, "", new { @class = "text-danger" })
+                                <input id="Cier" type="hidden" name="Cier" />
+                            </td>
+                            <td style="padding-left:4px; width:260px;">
+                                @Html.DropDownListFor(m => m.Razon, new List<SelectListItem> { }, "", new { Id = "tiposCausasSelect", @class = "form-control", onchange = "TextoRazon();" })
+                                @Html.ValidationMessageFor(m => m.Razon, "", new { @class = "text-danger" })
+                                <input id="Raz" type="hidden" name="Raz" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <br />
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-comment"></i>
+                <h3 class="box-title">Observaciónes</h3>
+            </div>
+            <div class="callout" style="margin-bottom: 0 ;border-color:#1e89ef !important; background-color:gainsboro !important; color: black !important">
+                <br />
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.Observaciones, null, new { @class = "form-control input-sm", @style = "margin-left:5px; width:100%; height:70px;" })
+                </div>
+            </div>
+            <br />
+            <button id="btnSubmitActivacionSMO" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;">Guardar</button>
+        </div>
+    }
+
+
+    <script>
+        $("#Cuenta_Cliente").val($("#inputCuenta").val());
+        $("#Nombre_ClienteSMO").val($("#Nombre_Cliente").val());
+        $("#Apellido_ClienteSMO").val($("#Apellido_Cliente").val());
+        $("#Cedula_Cliente").val($("#inputCedula").val());
+        $("#Ofrecimiento1SMO").val(jsonOfrecimientosSMO[0].Ofrecimiento1);
+        $("#Ofrecimiento2SMO").val(jsonOfrecimientosSMO[0].Ofrecimiento2);
+        $("#Ofrecimiento3SMO").val(jsonOfrecimientosSMO[0].Ofrecimiento3);
+        var urlControlTipoContatoList = '@Url.Action("TiposDeContactoList","GestionBlending")';
+        var urlControlTiposCierresList = '@Url.Action("TiposCierresList", "GestionBlending")';
+        var urlControlTiposRazonesList = '@Url.Action("TiposRazonesList", "GestionBlending")';
+        var urlControlTiposCausasList = '@Url.Action("TiposCausasList", "GestionBlending")';
+        var urlControlTiposMotivosList = '@Url.Action("TiposMotivosList", "GestionBlending")';
+    </script>
+
+    <script src="~/Scripts/Alertas/SiguienteMejorOferta.js?1.0.2"></script>
+</body>
+</html>

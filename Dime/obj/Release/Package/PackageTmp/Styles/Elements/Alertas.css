@@ -1,0 +1,253 @@
+﻿#Menu_Opciones {
+    margin-top:-20px; 
+    width:420%;
+    margin-left: 10px;
+    position: relative;
+    float: left;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    padding:6px;
+    height: 55px;
+}
+
+.latir{
+    background-color: rgba(38,44,52,0.6);
+    padding: 5px;
+    animation: 2.5s infinite latidico;
+    height:44px;
+    border-radius:5px;
+
+}
+
+@keyframes latidico {
+  0% {
+          transform: translate(0%,0%) scale(1);
+  }
+  94% {
+    background-color: #16899b;
+          transform: translate(0%,0%) scale(1);
+  }
+  98% {
+    background-color: #169eae;
+          transform: translate(0%,0%) scale(1.35); /* Alem do scale mantemos o translate, para o ponto continuar centrado ao variar de tamanho */
+  }
+  100% {
+    background-color: #0b87a7;
+          transform: translate(0%,0%) scale(1);
+  }
+}
+@keyframes Sombras {
+  0% {
+          transform: scale(1);
+  }
+  94% {
+              transform: scale(1);
+  }
+  98% {
+             transform: scale(1.35); /* Alem do scale mantemos o translate, para o ponto continuar centrado ao variar de tamanho */
+  }
+  100% {
+    
+          transform:scale(1);
+  }
+}
+
+@keyframes latido {
+  0% {
+          transform: translate(-50%,-50%) scale(1);
+  }
+  20% {
+    background-color: #0b87a7;
+          transform: translate(-50%,-50%) scale(1.15);
+  }
+  40% {
+    background-color: #0b87a7;
+          transform: translate(-50%,-50%) scale(1);
+  }
+}
+#Icono_1 {
+    float: left;
+    width:35px; 
+    height:35px;
+    background: url(../../Resources/Images/Inbound/correo.png) center no-repeat;
+    background-size: 32px 32px;
+    margin-top: 0;
+    margin-left: 10px;
+    position: relative;
+}
+#Icono_1:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 1s infinite ;
+}
+#Icono_1:hover:after{
+ content: 'Activar Convenio Electrónico'; 
+    position: absolute;
+    z-index: 98;
+   margin-left: -45px;
+    margin-top: 47px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 150px;
+    animation: 1s infinite ;
+}
+#Icono_2 {
+    float: left;
+    width:35px; 
+    height:35px;
+    background: url(../../Resources/Images/Inbound/Elegido.png) center no-repeat;
+    background-size: 32px 32px;
+    margin-top: 0;
+    margin-left: 12px;
+    position: relative;
+}
+#Icono_2:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 1s infinite ;
+}
+#Icono_2:hover:after{
+ content: 'Activar Elegido Fijo Móvil'; 
+    position: absolute;
+    z-index: 98;
+   margin-left: -45px;
+    margin-top: 47px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 150px;
+    animation: 1s infinite ;
+}
+#Icono_3 {
+    float: left;
+    width:35px; 
+    height:35px;
+    background: url(../../Resources/Images/Inbound/Claro_Video.png) center no-repeat;
+    background-size: 50px 32px;
+    margin-top: 0;
+    margin-left: 12px;
+    position: relative;
+}
+#Icono_3:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 1s infinite ;
+}
+#Icono_3:hover:after{
+ content: 'Activar Claro Video'; 
+    position: absolute;
+    z-index: 98;
+   margin-left: -45px;
+    margin-top: 47px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 150px;
+    animation: 1s infinite ;
+}
+#Icono_4 {
+    float: left;
+    width:35px; 
+    height:35px;
+    background: url(../../Resources/Images/Inbound/Carrito.png) center no-repeat;
+    background-size: 32px 32px;
+    margin-top: 0;
+    margin-left: 12px;
+    position: relative;
+}
+#Icono_4:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 1s infinite ;
+}
+#Icono_4:hover:after{
+ content: 'Activar Siguiente Mejor Oferta'; 
+    position: absolute;
+    z-index: 98;
+   margin-left: -45px;
+    margin-top: 47px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 150px;
+    animation: 1s infinite ;
+}
+#Icono_5 {
+    float: left;
+    width:35px; 
+    height:35px;
+    background: url(../../Resources/Images/Inbound/hd2.png) center no-repeat;
+    background-size: 32px 32px;
+    margin-top: 0;
+    margin-left: 12px;
+    position: relative;
+}
+#Icono_5:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 1s infinite ;
+}
+#Icono_5:hover:after{
+ content: 'Activar Siembra HD'; 
+    position: absolute;
+    z-index: 98;
+   margin-left: -45px;
+    margin-top: 47px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 150px;
+    animation: 1s infinite ;
+}
+

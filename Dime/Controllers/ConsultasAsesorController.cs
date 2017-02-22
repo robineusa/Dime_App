@@ -9,21 +9,19 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
-    public class ConsultasAsesorController : Controller
+    [ExpiringFilter]
+    public class ConsultasAsesorController : MyController
     {
 
        private  WSD.InboundServiceClient inboundService;
 
 
         // GET: ConsultasAsesor
-        [AllowAnonymous]
         public ActionResult ConsultaGestion()
         {
             return View();
         }
 
-
-        [AllowAnonymous]
         public JsonResult ConsultaGestionData(string fechaInicial, string fechaFinal)
         {
             DateTime inicial = Convert.ToDateTime(fechaInicial);
@@ -43,7 +41,6 @@ namespace Dime.Controllers
 
    
 
-        [AllowAnonymous]
         public ActionResult ConsultaSeguimientos()
         { 
             inboundService = new WSD.InboundServiceClient();

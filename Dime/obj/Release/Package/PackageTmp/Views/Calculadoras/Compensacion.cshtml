@@ -1,0 +1,248 @@
+﻿
+    @{
+        Layout = null;
+    }
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Campanas</title>
+    </head>
+    <body>
+        <div class="callout" style="margin-bottom: 0 ;border-color:#de584d; background-color:gainsboro !important; color: black !important">
+            <div class="row">
+                <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
+                    <small>Este ajuste por compensación únicamente se realiza en el momento en el que el cliente lo solicite, de lo contrario proceda a realizar un ajuste normal:</small>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div>
+            <button class="btn" id="btnReiniciar" style="background-color:#de584d;border-color:#de584d;color:white;">Reiniciar Calculos</button>
+        </div>
+        <div>
+        <hr />
+            <div class="info-box" id="pregunta1">
+                <span class="info-box-icon" style="background-color:#de584d;color:white;"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+                <div class="info-box-content bg-gray-light" style="height:90px;font-weight:600;">
+                    <span class="info-box-text">¿La cuenta fue desconectada injustificadamente?</span>
+                
+                        <input type="radio" class="minimal siRadio" id="radioSiCuentaInjustificadamente">
+                        Si
+                        &nbsp; &nbsp; &nbsp;
+                        <input type="radio" class="minimal noRadio" id="radioNoCuentaInjustificadamente">
+                        No
+                  
+                </div>
+            </div>
+            <div class="info-box" id="pregunta2" style="display:none;">
+                <span class="info-box-icon" style="background-color:#de584d;color:white;"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+                <div class="info-box-content bg-gray-light" style="height:90px;font-weight:600;">
+                    <span class="info-box-text">¿La cuenta presento fallas técnicas?</span>
+                        <input type="radio" class="minimal siRadio" id="radioSiCuentaFallasTecnicas">
+                        Si
+                        &nbsp; &nbsp; &nbsp;
+                        <input type="radio" class="minimal noRadio" id="radioNoCuentaFallasTecnicas">
+                        No
+                 </div>
+            </div>
+            <div class="info-box" id="pregunta3" style="display:none;">
+                <span class="info-box-icon" style="background-color:#de584d;color:white;"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+                <div class="info-box-content bg-gray-light" style="height:90px;font-weight:600;">
+                    <span class="info-box-text">¿El equipo terminal presento fallas?</span>
+                        <input type="radio" class="minimal siRadio" id="radioSiEquipoFalla">
+                        Si
+                        &nbsp; &nbsp; &nbsp;
+                        <input type="radio" class="minimal noRadio">
+                        No
+                </div>
+            </div>
+            <div class="info-box" id="pregunta4" style="display:none;">
+                <span class="info-box-icon" style="background-color:#de584d;color:white;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>
+                <div class="info-box-content bg-gray-light" style="height:90px;font-weight:600;">
+                    <span class="info-box-text">No aplica compensación, por favor valide y según proceso escale un ajuste simple.</span>
+                </div>
+            </div>
+                <div id="primeraParte" style="display:none;">
+                    <ul class="timeline">
+                        <li>
+                            <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;color:white;background-color:#de584d">1</i>
+                        </li>
+                    </ul>
+                    <hr />
+                    <div>
+                        <div class="callout" style="margin-bottom: 0 ;border-color:#de584d; background-color:gainsboro !important; color: black !important">
+                            <div class="row">
+                                <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
+                                    <small>Inicialmente debes ingresar las fechas y horas de la afectación:</small>
+                                </div>
+                            </div>
+                        </div>
+                       <div>
+                            <table>
+                                <tr>
+                                    <td width="200">Fecha Inicial:</td>
+                                    <td width="200">Fecha Final:</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" class="form-control input-sm" id="fechaInicialCompen" /> </td>
+                                    <td><input type="text" class="form-control input-sm" id="fechaFinalCompen" /> </td>
+                                </tr>
+                                <tr>
+                                    <td width="200">Cantidad de Horas:</td>
+                                    <td width="200">Cantidad de Días:</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" class="form-control input-sm" id="cantidadHoras" disabled /> </td>
+                                    <td><input type="text" class="form-control input-sm" id="cantidadDias" disabled /> </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div id="segundaParte" style="display:none;">
+                    <ul class="timeline">
+                        <li>
+                            <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;color:white;background-color:#de584d">2</i>
+                        </li>
+                    </ul>
+                    <hr />
+                    <div>
+                        <div class="callout callout-warning" style="margin-bottom: 0 ;border-color:#de584d; background-color:gainsboro !important; color: black !important">
+                            <div class="row">
+                                <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
+                                    <small>Seleccione los servicios afectados:</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <input type="checkbox" class="minimal" id="checkInternet">
+                                Internet
+                                &nbsp; &nbsp; &nbsp;
+                                <input type="checkbox" class="minimal" id="checkTelefonia">
+                                Telefonia
+                        </div>
+                    </div>
+                    <hr />
+                    <ul class="timeline">
+                        <li>
+                            <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;color:white;background-color:#de584d">3</i>
+                        </li>
+                    </ul>
+                    <hr />
+                    <div>
+                        <div class="callout callout-warning" style="margin-bottom: 0 ;border-color:#de584d; background-color:gainsboro !important; color: black !important">
+                            <div class="row">
+                                <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
+                                    <small>Ingrese la renta de los servicios afectados:</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td width="200">
+                                        Renta Internet:
+                                        <input type="text" class="form-control input-sm" id="rentaInternet" disabled />
+                                    </td>
+                                    <td width="200">
+                                        Renta Telefonía:
+                                        <input type="text" class="form-control input-sm" id="rentaTelefonia" disabled />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <hr />
+
+                    <ul class="timeline">
+                        <li>
+                            <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;color:white;background-color:#de584d">4</i>
+                        </li>
+                    </ul>
+                    <hr />
+                    <div>
+                        <div class="callout callout-warning" style="margin-bottom: 0 ;border-color:#de584d; background-color:gainsboro !important; color: black !important">
+                            <div class="row">
+                                <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
+                                    <small>A continuación se muestra el resumen del calculo de los ajustes:</small>
+                                </div>
+                            </div>
+                        </div><br />
+                        <div>
+                            <table id="buscarCuentaTable">
+
+                                <tr>
+                                    <th width="250">EL AJUSTE POR COMPENSACÓN DE INTERNET ES:</th>
+                                    <td width="100"><input type="text" class="form-control input-sm" style="background-color:#fee6e6;border-style:none;font-size:18px;" id="ajusteCompInternet" disabled /> </td>
+                                    <th width="250">← VALOR A COMPENSAR - NO GENERA DISPUTA</th>
+
+                                </tr>
+                                <tr>
+                                    <th>EL AJUSTE POR COMPENSACION DE TELEFONIA ES:</th>
+                                    <td><input type="text" class="form-control input-sm" style="background-color:#fee6e6;border-style:none;font-size:18px;" id="ajusteCompTelf" disabled /> </td>
+                                    <th>← VALOR A COMPENSAR - NO GENERA DISPUTA</th>
+
+                                </tr>
+                                <tr>
+                                    <th>EL AJUSTE POR FALLAS EN EL SERVICIO DE INTERNET ES DE:</th>
+                                    <td><input type="text" class="form-control input-sm" style="background-color:#fee6e6;border-style:none;font-size:18px;" id="ajusteCompFallasInternet" disabled /> </td>
+                                    <th>← VALOR A AJUSTAR - GENERA DISPUTA</th>
+                                </tr>
+                                <tr>
+                                    <th>EL AJUSTE POR FALLAS EN EL SERVICIO DE TELEFONIA ES DE:</th>
+                                    <td><input type="text" class="form-control input-sm" style="background-color:#fee6e6;border-style:none;font-size:18px;" id="ajusteCompFallasTelf" disabled /> </td>
+                                    <th>← VALOR A AJUSTAR - GENERA DISPUTA</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <hr />
+                    <ul class="timeline">
+                        <li>
+                            <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;color:white;background-color:#de584d">5</i>
+                        </li>
+                    </ul>
+                    <hr />
+                    <div class="callout callout-warning" style="margin-bottom: 0 ;border-color:#de584d; background-color:gainsboro !important; color: black !important">
+                        <div class="row">
+                            <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
+                                <small>La siguiente es la nota que debes copiar y pegar en la herramienta RR (AS400) en las notas F7 dentro de la carpeta de Ajustes, si no existe la carpeta debes crearla:</small>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div>
+                        <textarea style="height:100px; width:950px;background-color:#fee6e6;border-style:none" id="areaTextoCompensacion"></textarea>
+                    </div>
+                    <br />
+                    <br />
+                </div>
+            <div class="info-box" id="Aviso1" style="display:none;">
+                <span class="info-box-icon" style="background-color:#de584d;color:white;"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                <div class="info-box-content bg-gray-light" style="height:90px;font-weight:600;">
+                    <p>Esta solicitud no aplica para ajuste por compensación, ya que debe superar las 7 horas de afectación, por favor reinicie los cálculos y verifique las fechas, o continúe con la siguiente condición.</p>
+                </div>
+            </div>
+            <div class="info-box" id="Aviso2" style="display:none;">
+                <span class="info-box-icon" style="background-color:#de584d;color:white;"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                <div class="info-box-content bg-gray-light" style="height:90px;font-weight:600;">
+                    <p>Esta solicitud no aplica para ajuste por compensación, ya que debe superar las 48 horas de afectación, por favor reinicie los cálculos y verifique las fechas, o continúe con la siguiente condición.</p>
+                </div>
+            </div>
+            <div class="info-box" id="Aviso3" style="display:none;">
+                <span class="info-box-icon" style="background-color:#de584d;color:white;"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
+                <div class="info-box-content bg-gray-light" style="height:90px;font-weight:600;">
+                    <p>Esta solicitud no aplica para ajuste por compensación, ya que debe superar las 48 horas de afectación, por favor valide y escale ajuste simple.</p>
+                </div>
+            </div>
+            </div>
+        <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
+        @*<script src="~/AdminLTE/documentation/js/jquery.datetimepicker.min.js"></script>*@
+        <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.js"></script>
+        <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
+        <script src="~/Scripts/Calculadoras/Compensacion.js"></script>
+
+</body>
+</html>

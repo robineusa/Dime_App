@@ -10,12 +10,12 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
-    public class DashboardController : Controller
+    [ExpiringFilter]
+    public class DashboardController : MyController
     {
 
         WSD.GraficosServiceClient graficosservice = new WSD.GraficosServiceClient();
 
-        [AllowAnonymous]
         [HttpGet]
         public ActionResult DashboardAsesor()
         {

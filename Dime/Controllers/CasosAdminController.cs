@@ -9,13 +9,14 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
-    public class CasosAdminController : Controller
+    [ExpiringFilter]
+    public class CasosAdminController : MyController
     {
 
         WSD.CasosAdminServiceClient casosAdminService;
         WSD.CasosCelulaServiceClient casosCelulaService;
 
-        [AllowAnonymous]
+      
         [HttpGet]
         public JsonResult GetUsuariosCelula()
         {
@@ -29,7 +30,7 @@ namespace Dime.Controllers
             };
         }
 
-        [AllowAnonymous]
+        
         [HttpGet]
         public JsonResult GetInfoCaso(string  idIngreso)
         {
@@ -45,7 +46,6 @@ namespace Dime.Controllers
 
 
 
-        [AllowAnonymous]
         [HttpPost]
         public JsonResult GuardarCambioIngreso(Ingreso ingreso, string notas, string cambioHecho, string lineaEscalado, string usuarioCambiado, string estadoNuevo )
         {  

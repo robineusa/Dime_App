@@ -224,9 +224,6 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
-    <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\WSD\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -489,456 +486,6 @@
     <Content Include="ImagesClient\Islas-andaman.jpg" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\TempPE\Service References.WSD.Reference.cs.dll" />
-    <Content Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Release\Dime.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Release\Dime.csprojResolveAssemblyReference.cache" />
-    <Content Include="obj\Release\Dime.dll" />
-    <Content Include="obj\Release\Dime.pdb" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\bootstrap\css\bootstrap.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\bootstrap\css\bootstrap.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\bootstrap\js\bootstrap.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\bootstrap\js\bootstrap.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\bootstrap\js\ui-bootstrap-tpls-2.4.0.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\css\admin-lte.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\css\admin-lte.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular-animate\angular-animate.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular-animate\angular-animate.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular-aria\angular-aria.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular-aria\angular-aria.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular-material\angular-material-mocks.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular-material\angular-material.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular-material\angular-material.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular-messages\angular-messages.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular-messages\angular-messages.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular-route.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular-ui\ui-bootstrap-tpls.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular-ui\ui-bootstrap-tpls.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular-ui\ui-bootstrap.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular-ui\ui-bootstrap.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular\angular.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\dist\js\angular\angular.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.black.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.black.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.blueopal.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.blueopal.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.bootstrap.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.bootstrap.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.common-bootstrap.core.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.common-bootstrap.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.common-fiori.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.common-material.core.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.common-material.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.common-nova.core.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.common-nova.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.common-office365.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.common.core.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.common.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.black.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.blueopal.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.bootstrap.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.default.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.fiori.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.flat.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.highcontrast.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.material.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.materialblack.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.metro.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.metroblack.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.moonlight.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.nova.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.office365.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.silver.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.dataviz.uniform.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.default.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.default.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.fiori.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.fiori.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.flat.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.flat.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.highcontrast.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.highcontrast.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.material.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.material.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.materialblack.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.materialblack.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.metro.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.metro.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.metroblack.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.metroblack.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.mobile.all.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.mobile.android.dark.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.mobile.android.light.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.mobile.blackberry.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.mobile.common.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.mobile.fiori.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.mobile.flat.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.mobile.ios.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.mobile.material.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.mobile.meego.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.mobile.nova.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.mobile.office365.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.mobile.wp8.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.moonlight.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.moonlight.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.nova.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.nova.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.office365.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.office365.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.rtl.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.silver.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.silver.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.uniform.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\css\kendo.uniform.mobile.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\angular.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\jquery.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\jszip.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.all.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.angular.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.angular2.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.autocomplete.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.binder.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.button.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.calendar.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.color.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.colorpicker.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.columnmenu.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.columnsorter.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.combobox.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.core.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.data.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.data.odata.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.data.signalr.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.data.xml.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dataviz.barcode.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dataviz.chart.funnel.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dataviz.chart.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dataviz.chart.polar.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dataviz.core.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dataviz.diagram.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dataviz.gauge.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dataviz.map.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dataviz.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dataviz.mobile.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dataviz.qrcode.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dataviz.sparkline.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dataviz.stock.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dataviz.themes.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dataviz.treemap.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.datepicker.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.datetimepicker.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dialog.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dom.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.draganddrop.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.drawing.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.dropdownlist.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.editable.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.editor.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.excel.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.filebrowser.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.filtercell.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.filtermenu.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.fx.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.gantt.list.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.gantt.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.gantt.timeline.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.grid.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.groupable.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.imagebrowser.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.list.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.listview.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.maskedtextbox.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mediaplayer.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.menu.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.actionsheet.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.application.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.button.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.buttongroup.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.collapsible.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.drawer.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.listview.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.loader.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.modalview.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.navbar.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.pane.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.popover.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.scroller.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.scrollview.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.shim.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.splitview.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.switch.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.tabstrip.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.mobile.view.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.multiselect.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.notification.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.numerictextbox.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.ooxml.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.pager.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.panelbar.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.pdf.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.pivot.configurator.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.pivot.fieldmenu.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.pivotgrid.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.popup.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.progressbar.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.reorderable.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.resizable.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.responsivepanel.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.router.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.scheduler.agendaview.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.scheduler.dayview.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.scheduler.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.scheduler.monthview.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.scheduler.recurrence.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.scheduler.timelineview.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.scheduler.view.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.selectable.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.slider.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.sortable.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.splitter.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.spreadsheet.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.tabstrip.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.timepicker.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.timezones.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.toolbar.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.tooltip.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.touch.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.treelist.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.treeview.draganddrop.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.treeview.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.upload.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.userevents.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.validator.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.view.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.virtuallist.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.web.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.webcomponents.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\kendo.window.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\Kendo2016.3.11\js\pako_deflate.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\plugins\Amcharts\amcharts.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\plugins\Amcharts\export.css" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\plugins\Amcharts\export.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\plugins\Amcharts\gauge.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\plugins\Amcharts\none.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\plugins\Amcharts\serial.js" />
-    <Content Include="obj\Release\Package\PackageTmp\AdminLTE\plugins\fonts\fontawesome-webfont.svg" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Antlr3.Runtime.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Dime.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Dime.dll.config" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\EntityFramework.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\EntityFramework.SqlServer.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\es\Microsoft.AspNet.SignalR.Core.resources.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\es\Microsoft.AspNet.SignalR.SystemWeb.resources.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\es\Microsoft.Owin.resources.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\es\Microsoft.Owin.Security.resources.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.AspNet.Identity.Core.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.AspNet.Identity.Owin.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.AspNet.SignalR.Core.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.Owin.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.Owin.Host.SystemWeb.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.Owin.Security.Cookies.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.Owin.Security.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.Owin.Security.Facebook.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.Owin.Security.Google.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.Owin.Security.OAuth.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.Owin.Security.Twitter.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.Web.Infrastructure.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Newtonsoft.Json.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Owin.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\csc.exe" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.CodeAnalysis.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.CSharp.Core.targets" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.VisualBasic.Core.targets" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Collections.Immutable.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Reflection.Metadata.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\vbc.exe" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\VBCSCompiler.exe" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\VBCSCompiler.exe.config" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Helpers.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Mvc.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Optimization.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Razor.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.WebPages.Deployment.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.WebPages.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.WebPages.Razor.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Telmexla.Servicios.DIME.Entity.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\WebGrease.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\Content\angular-material.css" />
-    <Content Include="obj\Release\Package\PackageTmp\Content\angular-material.layout-attributes.css" />
-    <Content Include="obj\Release\Package\PackageTmp\Content\angular-material.layout-attributes.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\Content\angular-material.layouts.css" />
-    <Content Include="obj\Release\Package\PackageTmp\Content\angular-material.layouts.ie_fixes.css" />
-    <Content Include="obj\Release\Package\PackageTmp\Content\angular-material.layouts.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\Content\angular-material.min.css" />
-    <Content Include="obj\Release\Package\PackageTmp\Content\Imagenes\Logo_Dime.PNG" />
-    <Content Include="obj\Release\Package\PackageTmp\Content\ui-bootstrap-csp.css" />
-    <Content Include="obj\Release\Package\PackageTmp\ControllersAlr\AdminCasosController.js" />
-    <Content Include="obj\Release\Package\PackageTmp\ControllersAlr\ConsultaGestionController.js" />
-    <Content Include="obj\Release\Package\PackageTmp\ControllersAlr\DepuraCasosCellController.js" />
-    <Content Include="obj\Release\Package\PackageTmp\FactoriesAlr\cribsFactory.js" />
-    <Content Include="obj\Release\Package\PackageTmp\ImagesClient\5.jpg" />
-    <Content Include="obj\Release\Package\PackageTmp\ImagesClient\edificios-de-singapur-en-vista-de-noche-220x176.jpg" />
-    <Content Include="obj\Release\Package\PackageTmp\ImagesClient\Fondox.net_edificios-de-noche_1366x768.jpg" />
-    <Content Include="obj\Release\Package\PackageTmp\ImagesClient\fotos-paisajes-naturales-suiza-alpes-suizos-swiss-natural-scenery-hd-photo-wallpapers-10.jpg" />
-    <Content Include="obj\Release\Package\PackageTmp\ImagesClient\hd.png" />
-    <Content Include="obj\Release\Package\PackageTmp\ImagesClient\Islas-andaman.jpg" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.Acceso.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.BalanceScoreCard.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.BasePersonalHolo.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.CambioEstrato1.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.CambioEstrato2.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.CierreCiclo1.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.CierreCiclo2.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.CierreCiclo3.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClaroVideo1.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClaroVideo2.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClaroVideo3.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClientesTodo1.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClientesTodo2.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClientesTodo3.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.ConvenioElectronico2.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.ConvenioElectronico3.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.ConvenioElectronico4.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.CuentasSiembraHD1.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.CuentasSiguienteMejorOferta1.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.DatosAdicionalesCliente1.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.DatosAdicionalesCliente2.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.DatosAdicionalesCliente3.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.DocsisOverlap1.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.DocsisOverlap2.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.DocsisOverlap3.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.GestionMatriz1.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.GestionOutbound1.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.GestionOutbound2.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.GestionOutbound3.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.Graficos.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.Ingreso1.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.Ingreso2.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.Ingreso3.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.IngresosSoporte.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.LiberacionHomePass.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.Linea.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroMarcacione1.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroMarcacione2.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroMarcacione3.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroNodo.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.NotasTraslado.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.NotificacionesBuenServicio.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.PqrMaestroCodCierre1.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.PqrMaestroCodCierre2.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.PqrMaestroCodCierre3.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.PreguntasDesbloqueo1.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.PreguntasDesbloqueo2.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.PreguntasDesbloqueo3.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.Usuario1.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.Usuario2.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Properties\DataSources\Telmexla.Servicios.DIME.Entity.Usuario3.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Documents\Formato_Carga_Masiva_Siriac.xls" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\Excel-icon.png" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\gris01.png" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\Inbound\Carrito.png" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\Inbound\Claro_Video.png" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\Inbound\correo.png" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\Inbound\Elegido.png" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\Inbound\hd2.png" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\Layout\apc.png" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\Layout\apc1.png" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\Layout\apc2.png" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\Layout\apc3.png" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\Layout\Dam_Modificado1.png" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\Layout\Logo_BS.png" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\Logo.png" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\logo1.gif" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\Logo_Dime.gif" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Images\Verde.gif" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Videos\Primer_Login.mp4" />
-    <Content Include="obj\Release\Package\PackageTmp\Resources\Videos\VideoPrueba.mp4" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\AdminNodos\ListaNodosCreados.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\AdminUsuarios\Accesos.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\AdminUsuarios\CrearUsuariosMasivos.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\AdminUsuarios\xls.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Alertas\SiguienteMejorOferta.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\BuenServicio\Visualizador_Imagenes.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Calculadoras\Advanced.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Consultas_Admin\Consulta_Gestion.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Consultas_Admin\Consulta_Paloteo.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Consultas_Admin\Consulta_Rechazos.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Dashboard\DashboardAsesor.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Manuales\ManualAdministrador.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Manuales\ManualAsesor.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Manuales\ManualCelula.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Reportes\ReporteAsesor.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Reportes\ReporteCelula.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Shared\Helper.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Shared\_LockScreen.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Signal\jquery.signalR-2.2.1.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Signal\jquery.signalR-2.2.1.min.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\ConsultaAdminIngresosCambioEstrato.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\ConsultaAdminIngresosCrearDireccion.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\ConsultaAdminIngresosLiberaciones.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\ConsultaAdminIngresosMatrices.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\ConsultaAdminIngresosTraslados.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\ConsultaGestionCambioDeEstrato.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\ConsultaGestionCreacionDr.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\ConsultaGestionLiberaciondeHomePass.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\ConsultaGestionMatrices.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\DireccionesCreadasOutbound.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\DireccionesCreadasTraslados.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\GestionarCambioDeEstratoCelula.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\GestionarCreacionDeMatriz.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\GestionarDireccionCelula.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\GestionarDireccionOutbound.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\GestionarLiberacionHomePassCelula.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\GestionMatricesCelula.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\SeguimientosCambioDeEstrato.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\SeguimientosLiberacionHomePass.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\SeguimientosSolicitudesCreacionDireccion.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\SeguimientosSolicitudesCreacionDireccionOutbound.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\SeguimientosSolicitudesCreacionMatriz.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\SeguimientosSolicitudesGestionMatrices.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\SolicitudCambioDeEstrato.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\SolicitudCrearDireccion.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\SolicitudesCambioDeEstrato.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\SolicitudesCreacionMatrices.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\SolicitudesGestionMatrices.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\SolicitudesLiberacionHomePass.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\SolicitudLiberacionHomePass.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Scripts\Traslados\SolicitudMatrices.js" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.DatoConsultaGestion.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.DatoConsultaGestionAdmin.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.DatoConsultaPaloteo.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.DatoConsultaRechazo.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.GestionDeCelulaUsr.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.LogCierreCiclo.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.LogClaroVideo.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.LogDocsisOverlap.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.MaestroOutboundCausa.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.MaestroOutboundCierre.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.MaestroOutboundMotivo.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.MaestroOutboundRazon.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.MaestroOutboundTipoContacto.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.RazonIngresoSoporte.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.Subrazon1IngresoSoporte.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.Subrazon2IngresoSoporte.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.TablaActualizarInbound.datasource" />
-    <Content Include="obj\Release\Package\PackageTmp\Service References\WSD\Dime.WSD.UsuariosMasivoData.datasource" />
-    <Content Include="obj\Release\TempPE\Service References.WSD.Reference.cs.dll" />
-    <Content Include="obj\Release\TransformWebConfig\assist\Web.config" />
-    <Content Include="obj\Release\TransformWebConfig\original\Web.config" />
-    <Content Include="obj\Release\TransformWebConfig\transformed\Web.config" />
-    <Content Include="obj\Release\_WPPLastBuildInfo.txt" />
     <Content Include="Resources\Images\Excel-icon.png" />
     <Content Include="Resources\Images\gris01.png" />
     <Content Include="Resources\Images\Inbound\Carrito.png" />
@@ -1027,6 +574,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BalanceScoreCard.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Graficos.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CuentasSiguienteMejorOferta1.datasource" />
+    <None Include="Properties\PublishProfiles\a 55.pubxml" />
     <None Include="Properties\PublishProfiles\Al .55.pubxml" />
     <Content Include="Scripts\Shared\_LockScreen.js" />
     <Content Include="Scripts\Signal\jquery.signalR-2.2.1.js" />
@@ -1062,6 +610,7 @@
     <Content Include="Scripts\Traslados\SolicitudesLiberacionHomePass.js" />
     <Content Include="Scripts\Traslados\SolicitudLiberacionHomePass.js" />
     <Content Include="Scripts\Traslados\SolicitudMatrices.js" />
+    <Content Include="Resources\Documents\Formato_Carga_Masiva_Siriac.xls" />
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaGestion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -1101,9 +650,6 @@
     <Content Include="Service References\WSD\Dime.WSD.MaestroOutboundTipoContacto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\WSD\Dime.WSD.TablaActualizarInbound.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\WSD\Dime.WSD.RazonIngresoSoporte.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -1113,32 +659,19 @@
     <Content Include="Service References\WSD\Dime.WSD.Subrazon2IngresoSoporte.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Resources\Documents\Formato_Carga_Masiva_Siriac.xls" />
-    <None Include="Service References\WSD\configuration91.svcinfo" />
-    <None Include="Service References\WSD\configuration.svcinfo" />
+    <Content Include="Service References\WSD\Dime.WSD.TablaActualizarInbound.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Service References\WSD\Dime.WSD.UsuariosMasivoData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\WSD\Dime.WSD.CuentasSiguienteMejorOferta.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
+    <None Include="Service References\WSD\WebService.disco" />
+    <None Include="Service References\WSD\configuration91.svcinfo" />
+    <None Include="Service References\WSD\configuration.svcinfo" />
     <None Include="Service References\WSD\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService.wsdl" />
-    <None Include="Service References\WSD\WebService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService1.disco" />
-    <None Include="Service References\WSD\WebService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService11.disco" />
-    <None Include="Service References\WSD\WebService12.disco" />
-    <None Include="Service References\WSD\WebService13.disco" />
-    <None Include="Service References\WSD\WebService14.disco" />
-    <None Include="Service References\WSD\WebService.disco" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
     <Content Include="Styles\Elements\General.css" />
@@ -1695,95 +1228,6 @@
     <Content Include="Views\AdminNodos\ListaNodosCreados.cshtml" />
     <Content Include="Views\AdminNodos\RegistrarNodo.cshtml" />
     <Content Include="Views\BuenServicio\Visualizador_Imagenes.cshtml" />
-    <None Include="Service References\WSD\WebService1.wsdl" />
-    <None Include="Service References\WSD\WebService11.wsdl" />
-    <None Include="Service References\WSD\WebService12.wsdl" />
-    <None Include="Service References\WSD\WebService13.wsdl" />
-    <None Include="Service References\WSD\WebService14.wsdl" />
-    <None Include="Service References\WSD\WebService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService4.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService5.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService51.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService510.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService511.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService512.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService513.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService514.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService515.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService516.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService517.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService518.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService519.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService52.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService520.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService521.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService522.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService523.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService524.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService53.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService54.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService55.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService56.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService57.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService58.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService59.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Views\Manuales\ManualAdministrador.cshtml" />
     <Content Include="Views\Manuales\ManualAsesor.cshtml" />
     <Content Include="Views\Manuales\ManualCelula.cshtml" />
@@ -1793,6 +1237,22 @@
     <Content Include="Views\Traslados\ConsultaAdminIngresosMatrices.cshtml" />
     <Content Include="Views\Traslados\ConsultaAdminIngresosTraslados.cshtml" />
     <Content Include="Views\AdminUsuarios\AdminUsuariosMasivo.cshtml" />
+    <None Include="Service References\WSD\WebService.wsdl" />
+    <None Include="Service References\WSD\WebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1823,8 +1283,6 @@
     <Folder Include="AdminLTE\Kendo2016.3.11\js\cultures\" />
     <Folder Include="AdminLTE\Kendo2016.3.11\js\messages\" />
     <Folder Include="App_Data\" />
-    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\Views\" />
-    <Folder Include="obj\Release\TransformWebConfig\transformed\Views\" />
     <Folder Include="Views\CasosAdmin\" />
   </ItemGroup>
   <ItemGroup>

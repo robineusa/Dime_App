@@ -8,18 +8,17 @@ using System.Web.Mvc;
 
 namespace Dime.Controllers
 {
-    public class ConsultasCelulaController : Controller
+    [ExpiringFilter]
+    public class ConsultasCelulaController : MyController
     {
         WSD.CasosCelulaServiceClient casosCelulaService;
 
         // GET: ConsultasCelula
-        [AllowAnonymous]
         public ActionResult ConsultaGestion()
         {
             return View();
         }
 
-        [AllowAnonymous]
         public JsonResult ConsultaGestionPost(string fechaInicial, string fechaFinal)
         {   casosCelulaService = new WSD.CasosCelulaServiceClient();
             casosCelulaService.ClientCredentials.Authenticate();

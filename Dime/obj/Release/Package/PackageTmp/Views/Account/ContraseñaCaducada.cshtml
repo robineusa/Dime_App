@@ -1,0 +1,97 @@
+﻿@{ 
+    ViewBag.Title= "Cambiar Contraseña";
+    Layout = "~/Views/Shared/_RecordarContrasena.cshtml";
+}
+<html>
+
+<head>
+
+</head>
+<body>
+    @Scripts.Render("~/AdminLTEplugins/jquery/js")
+   
+    <div class="box box-danger">
+        <div class="box-header with-border bg-gray-light">
+            <h4 class="box-title">
+                Por favor ingrese una nueva contraseña para realizar el cambio de la anterior.
+            </h4>
+        </div>
+        <br />
+        <div class="form-group" data-ng-app="MyApp">
+            <div data-ng-controller="Part5Controller">
+
+                <div class="btn-group btn-group-xs" style="padding:7px">
+                    <button class="btn btn-danger" id="btnDanger">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</button>
+                    <button class="btn btn-warning" id="btnWarning" style="display:none">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</button>
+                    <button class="btn btn-success" id="btnSuccess" style="display:none">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</button>
+                    {{data.label}}
+                </div>
+                {{data.message}}
+                <input class="form-control" id="contraStrong" data_ng_model="data.message" style="display:none" />
+                <div id="result" style="width:90%; margin-left:1%;">
+               
+                    <label>Nueva Contraseña</label>
+                    <input type="password" class="form-control" data_ng_change = "changeAct()" data_ng_model = "myValue" placeholder="Ingrese nueva contraseña" autocomplete="off" id="firstPass" style="width:200px;" />
+                    <br />
+                    <label>Confirmar Contraseña</label>
+                    <input type="password" class="form-control"   placeholder="Repita contraseña" autocomplete="off" id="secondPass" style="width:200px;" />
+                    <br />
+                    <input type="submit" class="btn btn-danger" value="Aceptar" id="btnRestablecer" />
+                    <br />
+                    <br />
+                </div>
+
+             </div>
+         </div>
+
+
+                &nbsp;&nbsp;<input type="button" class="btn btn-danger" value="Continuar" id="btnContinuar" onClick="location.href='/Account/Login' " style="display:none;" />
+                <br />
+                <br />
+
+            </div>
+    <script src="~/AdminLTE/dist/js/angular/angular.min.js"></script>
+    <script src="~/Scripts/Account/ScriptLogin1.js"></script>
+            <script>
+
+
+                $("#btnRestablecer").on('click', function () {
+                    var id =   @ViewBag.Id;
+                    var contrasena = ($("#firstPass").val());
+
+                    if( $("#contraStrong").val() === "Seguridad: Nivel Alto"   )
+                        {
+
+                    if (($("#firstPass").val()) === ($("#secondPass").val()))
+                    {
+
+                        $.ajax({
+                            type: "POST",
+                            url: '@Url.Action("RegistrarNuevaContraseña", "Account")',
+                            contentType: "application/json; charset=utf-8",
+                            data: JSON.stringify({ contrasena: contrasena, id : id}),
+                            dataType: "html",
+                            success: function (result) {
+                                $('#result').html(result);
+                                $('#btnContinuar').show();
+                            },
+                            error:function (request, status, error) {
+                                alert(request.responseText);
+                            }
+
+                        });
+
+
+                    }
+                    else {
+                        $("#result").append(("<p>Las contraseñas deben ser iguales</p>"));
+                    }
+                    }else{
+                        $("#result").append(("<p>Las contraseña no es lo suficientemente fuerte</p>"));
+                    }
+
+                })
+
+            </script>
+</body>
+</html>

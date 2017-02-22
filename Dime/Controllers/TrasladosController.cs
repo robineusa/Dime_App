@@ -9,21 +9,19 @@ using System.Web.Mvc;
 using Telmexla.Servicios.DIME.Entity;
 namespace Dime.Controllers
 {
-
-    public class TrasladosController : Controller
+    [ExpiringFilter]
+    public class TrasladosController : MyController
     {
         WSD.TrasladosServiceClient trasladowebservice;
         WSD.MaestroNodoServiceClient maestronodosservice;
 
         // GET: Traslados
-        [AllowAnonymous]
         [HttpGet]
         public ActionResult SolicitudCrearDireccion()
         {
             Session["FechaInicial"] = DateTime.Now;
             return View();
         }
-        [AllowAnonymous]
         [HttpPost]
         public ActionResult SolicitudCrearDireccion(ViewModelTraslados modelo)
         {
@@ -79,7 +77,7 @@ namespace Dime.Controllers
             }
             return View(modelo);
         }
-        [AllowAnonymous]
+
         public ActionResult DireccionesCreadasTraslados()
         {
             trasladowebservice = new WSD.TrasladosServiceClient();
@@ -88,7 +86,7 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaSolicitudesCrearDireccion();
             return View(modelo);
         }
-        [AllowAnonymous]
+
         [HttpGet]
         public ActionResult GestionarDireccionCelula(int id)
         {
@@ -135,7 +133,7 @@ namespace Dime.Controllers
             model.InformacionNodo = maestronodosservice.GetInformacionNodo(nodo);
             return View(model);
         }
-        [AllowAnonymous]
+
         [HttpPost]
         public ActionResult GestionarDireccionCelula(ViewModelTraslados modelo)
         {
@@ -174,7 +172,7 @@ namespace Dime.Controllers
             return RedirectToAction("DireccionesCreadasTraslados");
 
         }
-        [AllowAnonymous]
+    
         public ActionResult SeguimientosSolicitudesCreacionDireccion()
         {
             trasladowebservice = new WSD.TrasladosServiceClient();
@@ -183,7 +181,7 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaSeguimientosDireccionesCelula(Session["Usuario"].ToString());
             return View(modelo);
         }
-        [AllowAnonymous]
+      
         [HttpGet]
         public ActionResult DireccionesCreadasOutbound()
         {
@@ -194,7 +192,7 @@ namespace Dime.Controllers
             return View(modelo);
 
         }
-        [AllowAnonymous]
+       
         [HttpGet]
         public ActionResult GestionarDireccionOutbound(int id)
         {
@@ -240,7 +238,7 @@ namespace Dime.Controllers
             model.InformacionNodo = maestronodosservice.GetInformacionNodo(nodo);
             return View(model);
         }
-        [AllowAnonymous]
+       
         [HttpPost]
         public ActionResult GestionarDireccionOutbound(ViewModelTraslados modelo)
         {
@@ -280,7 +278,7 @@ namespace Dime.Controllers
             return RedirectToAction("DireccionesCreadasOutbound");
 
         }
-        [AllowAnonymous]
+   
         [HttpGet]
         public ActionResult SeguimientosSolicitudesCreacionDireccionOutbound()
         {
@@ -290,7 +288,7 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaSeguimientosDireccionesOutbound(Session["Usuario"].ToString());
             return View(modelo);
         }
-        [AllowAnonymous]
+    
         [HttpPost]
         public ActionResult ConsultaGestionCreacionDr(string fechaInicial, string fechaFinal)
         {
@@ -303,7 +301,7 @@ namespace Dime.Controllers
             return View(modelo);
 
         }
-        [AllowAnonymous]
+    
         [HttpGet]
         public ActionResult ConsultaGestionCreacionDr()
         {
@@ -311,14 +309,14 @@ namespace Dime.Controllers
         }
         //proceso cambio de estrato
 
-        [AllowAnonymous]
+     
         [HttpGet]
         public ActionResult SolicitudCambioDeEstrato()
         {
             Session["FechaInicial"] = DateTime.Now;
             return View();
         }
-        [AllowAnonymous]
+     
         [HttpPost]
         public ActionResult SolicitudCambioDeEstrato(ViewModelTraslados modelo)
         {
@@ -376,7 +374,7 @@ namespace Dime.Controllers
             }
             return View(modelo);
         }
-        [AllowAnonymous]
+     
         public ActionResult SolicitudesCambioDeEstrato()
         {
             trasladowebservice = new WSD.TrasladosServiceClient();
@@ -385,7 +383,7 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaSolicitudesCambioEstrato();
             return View(modelo);
         }
-        [AllowAnonymous]
+ 
         [HttpGet]
         public ActionResult GestionarCambioDeEstratoCelula(int id)
         {
@@ -432,7 +430,7 @@ namespace Dime.Controllers
             model.InformacionNodo = maestronodosservice.GetInformacionNodo(nodo);
             return View(model);
         }
-        [AllowAnonymous]
+   
         [HttpPost]
         public ActionResult GestionarCambioDeEstratoCelula(ViewModelTraslados modelo)
         {
@@ -473,7 +471,7 @@ namespace Dime.Controllers
             return RedirectToAction("SolicitudesCambioDeEstrato");
 
         }
-        [AllowAnonymous]
+      
         public ActionResult SeguimientosCambioDeEstrato()
         {
             trasladowebservice = new WSD.TrasladosServiceClient();
@@ -482,7 +480,7 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaSeguimientosCambiodeEstratoCelula(Session["Usuario"].ToString());
             return View(modelo);
         }
-        [AllowAnonymous]
+      
         [HttpPost]
         public ActionResult ConsultaGestionCambioDeEstrato(string fechaInicial, string fechaFinal)
         {
@@ -495,7 +493,7 @@ namespace Dime.Controllers
             return View(modelo);
 
         }
-        [AllowAnonymous]
+      
         [HttpGet]
         public ActionResult ConsultaGestionCambioDeEstrato()
         {
@@ -503,14 +501,13 @@ namespace Dime.Controllers
         }
         ///PROCESO LIBERACION DE HOME PASS
         
-        [AllowAnonymous]
         [HttpGet]
         public ActionResult SolicitudLiberacionHomePass()
         {
             Session["FechaInicial"] = DateTime.Now;
             return View();
         }
-        [AllowAnonymous]
+  
         [HttpPost]
         public ActionResult SolicitudLiberacionHomePass(ViewModelTraslados modelo)
         {
@@ -570,7 +567,7 @@ namespace Dime.Controllers
             }
             return View(modelo);
         }
-        [AllowAnonymous]
+   
         public ActionResult SolicitudesLiberacionHomePass()
         {
             trasladowebservice = new WSD.TrasladosServiceClient();
@@ -579,7 +576,7 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaSolicitudesLiberacionesHomePass();
             return View(modelo);
         }
-        [AllowAnonymous]
+ 
         [HttpGet]
         public ActionResult GestionarLiberacionHomePassCelula(int id)
         {
@@ -626,7 +623,7 @@ namespace Dime.Controllers
             model.InformacionNodo = maestronodosservice.GetInformacionNodo(nodo);
             return View(model);
         }
-        [AllowAnonymous]
+
         [HttpPost]
         public ActionResult GestionarLiberacionHomePassCelula(ViewModelTraslados modelo)
         {
@@ -668,7 +665,7 @@ namespace Dime.Controllers
             return RedirectToAction("SolicitudesLiberacionHomePass");
 
         }
-        [AllowAnonymous]
+    
         public ActionResult SeguimientosLiberacionHomePass()
         {
             trasladowebservice = new WSD.TrasladosServiceClient();
@@ -677,7 +674,7 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaSeguimientosLiberacionHomePassCelula(Session["Usuario"].ToString());
             return View(modelo);
         }
-        [AllowAnonymous]
+ 
         [HttpPost]
         public ActionResult ConsultaGestionLiberaciondeHomePass(string fechaInicial, string fechaFinal)
         {
@@ -690,7 +687,7 @@ namespace Dime.Controllers
             return View(modelo);
 
         }
-        [AllowAnonymous]
+      
         [HttpGet]
         public ActionResult ConsultaGestionLiberaciondeHomePass()
         {
@@ -699,14 +696,14 @@ namespace Dime.Controllers
 
         ///PROCESO GESTION DE MATRICES
         ///
-        [AllowAnonymous]
+  
         [HttpGet]
         public ActionResult SolicitudMatrices()
         {
             Session["FechaInicial"] = DateTime.Now;
             return View();
         }
-        [AllowAnonymous]
+  
         [HttpPost]
         public ActionResult SolicitudMatrices(ViewModelTraslados modelo)
         {
@@ -762,7 +759,7 @@ namespace Dime.Controllers
             }
             return View(modelo);
         }
-        [AllowAnonymous]
+
         public ActionResult SolicitudesCreacionMatrices()
         {
             trasladowebservice = new WSD.TrasladosServiceClient();
@@ -771,7 +768,7 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaSolicitudesCreaciondeMatriz();
             return View(modelo);
         }
-        [AllowAnonymous]
+     
         [HttpGet]
         public ActionResult GestionarCreacionDeMatriz(int id)
         {
@@ -825,7 +822,7 @@ namespace Dime.Controllers
             model.InformacionNodo = maestronodosservice.GetInformacionNodo(nodo);
             return View(model);
         }
-        [AllowAnonymous]
+
         [HttpPost]
         public ActionResult GestionarCreacionDeMatriz(ViewModelTraslados modelo)
         {
@@ -871,7 +868,7 @@ namespace Dime.Controllers
             return RedirectToAction("SolicitudesCreacionMatrices");
 
         }
-        [AllowAnonymous]
+
         public ActionResult SeguimientosSolicitudesCreacionMatriz()
         {
 
@@ -881,7 +878,7 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaSeguimientosCrearMatrizCelula(Session["Usuario"].ToString());
             return View(modelo);
         }
-        [AllowAnonymous]
+
         [HttpGet]
         public ActionResult SolicitudesGestionMatrices()
         {
@@ -892,7 +889,7 @@ namespace Dime.Controllers
             return View(modelo);
 
         }
-        [AllowAnonymous]
+ 
         [HttpGet]
         public ActionResult GestionMatricesCelula(int id)
         {
@@ -946,7 +943,7 @@ namespace Dime.Controllers
             model.InformacionNodo = maestronodosservice.GetInformacionNodo(nodo);
             return View(model);
         }
-        [AllowAnonymous]
+
         [HttpPost]
         public ActionResult GestionMatricesCelula(ViewModelTraslados modelo)
         {
@@ -992,7 +989,7 @@ namespace Dime.Controllers
             return RedirectToAction("SolicitudesGestionMatrices");
 
         }
-        [AllowAnonymous]
+
         [HttpGet]
         public ActionResult SeguimientosSolicitudesGestionMatrices()
         {
@@ -1002,7 +999,7 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaSeguimientosGestionMatricesCelula(Session["Usuario"].ToString());
             return View(modelo);
         }
-        [AllowAnonymous]
+
         [HttpPost]
         public ActionResult ConsultaGestionMatrices(string fechaInicial, string fechaFinal)
         {
@@ -1015,19 +1012,19 @@ namespace Dime.Controllers
             return View(modelo);
 
         }
-        [AllowAnonymous]
+
         [HttpGet]
         public ActionResult ConsultaGestionMatrices()
         {
             return View();
         }
-        [AllowAnonymous]
+  
         [HttpGet]
         public ActionResult ConsultaAdminIngresosTraslados()
         {
             return View();
         }
-        [AllowAnonymous]
+  
         [HttpPost]
         public ActionResult ConsultaAdminIngresosTraslados(string fechaInicial, string fechaFinal)
         {
@@ -1039,13 +1036,13 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaGeneralIngresosTraslados(FI, FF);
             return View(modelo);
         }
-        [AllowAnonymous]
+   
         [HttpGet]
         public ActionResult ConsultaAdminIngresosCrearDireccion()
         {
             return View();
         }
-        [AllowAnonymous]
+      
         [HttpPost]
         public ActionResult ConsultaAdminIngresosCrearDireccion(string fechaInicial, string fechaFinal)
         {
@@ -1057,13 +1054,13 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaGeneralIngresosCrearDireccion(FI, FF);
             return View(modelo);
         }
-        [AllowAnonymous]
+      
         [HttpGet]
         public ActionResult ConsultaAdminIngresosCambioEstrato()
         {
             return View();
         }
-        [AllowAnonymous]
+
         [HttpPost]
         public ActionResult ConsultaAdminIngresosCambioEstrato(string fechaInicial, string fechaFinal)
         {
@@ -1075,13 +1072,13 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaGeneralIngresosCambiEstrato(FI, FF);
             return View(modelo);
         }
-        [AllowAnonymous]
+   
         [HttpGet]
         public ActionResult ConsultaAdminIngresosLiberaciones()
         {
             return View();
         }
-        [AllowAnonymous]
+     
         [HttpPost]
         public ActionResult ConsultaAdminIngresosLiberaciones(string fechaInicial, string fechaFinal)
         {
@@ -1093,13 +1090,13 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaGeneralIngresosLiberaciones(FI, FF);
             return View(modelo);
         }
-        [AllowAnonymous]
+     
         [HttpGet]
         public ActionResult ConsultaAdminIngresosMatrices()
         {
             return View();
         }
-        [AllowAnonymous]
+   
         [HttpPost]
         public ActionResult ConsultaAdminIngresosMatrices(string fechaInicial, string fechaFinal)
         {

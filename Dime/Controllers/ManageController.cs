@@ -6,10 +6,12 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Dime.Models;
+using Dime.Helpers;
 
 namespace Dime.Controllers
 {
-    public class ManageController : Controller
+    [ExpiringFilter]
+    public class ManageController : MyController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;

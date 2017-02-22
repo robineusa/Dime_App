@@ -12,12 +12,11 @@ namespace Dime.Helpers
         //Aca igual se puede hacer vencimiento de sesion a 30 min if Session["timeCheck"] -Date.Now() >30 then ctx.Session= null;
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-
             HttpContext ctx = HttpContext.Current;
-            if (filterContext.HttpContext.Session["user"] == null)
+            if (HttpContext.Current.Session["ModoLogin"] == null)
             {
-                (filterContext.Controller as MyController).RedirectToAction();
-
+                filterContext.Result = new RedirectResult("~/Account/Login");
+                return;
             }
 
             base.OnActionExecuting(filterContext);

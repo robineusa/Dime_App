@@ -10,12 +10,12 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
-
-    public class MarcacionesController : Controller
+    [ExpiringFilter]
+    public class MarcacionesController : MyController
     {
         WSD.MarcacionesServiceClient marcacionwebservice;
         
-        [AllowAnonymous]
+
         public ActionResult NuevasMarcaciones(string idActualizar)
         {
             marcacionwebservice = new WSD.MarcacionesServiceClient();
@@ -29,7 +29,6 @@ namespace Dime.Controllers
 
 
 
-        [AllowAnonymous]
         [HttpPost, ValidateInput(false)]
         public ActionResult NuevasMarcaciones(MaestroMarcacione modelo)
         {  
@@ -53,7 +52,6 @@ namespace Dime.Controllers
             return View();
         }
 
-        [AllowAnonymous]
         [HttpGet]
         public ActionResult ActualizarMarcaciones()
         {
@@ -62,7 +60,6 @@ namespace Dime.Controllers
 
 
 
-        [AllowAnonymous]
         public ActionResult TipificacionMarcaciones(string cuenta)
         {
 
@@ -70,13 +67,11 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         public ActionResult TipificacionMarcacionesPost(ViewModelTipificacionMarcaciones model)
         {
             return View();
         }
 
-        [AllowAnonymous]
         public ActionResult EliminarMarcacion(int idMarcacion)
         {
             marcacionwebservice = new WSD.MarcacionesServiceClient();
@@ -85,7 +80,6 @@ namespace Dime.Controllers
             return RedirectToAction("ActualizarMarcaciones");
         }
 
-        [AllowAnonymous]
         public ActionResult AgregarActuCodigoCierre(int? idCierre)
         {
             marcacionwebservice = new WSD.MarcacionesServiceClient();
@@ -96,7 +90,7 @@ namespace Dime.Controllers
             return View(modelo);
         }
 
-        [AllowAnonymous]
+
         [HttpPost]
         public ActionResult AgregarActuCodigoCierre(PqrMaestroCodCierre model)
         {
@@ -117,7 +111,7 @@ namespace Dime.Controllers
             return View(model);
         }
 
-        [AllowAnonymous]
+
         public ActionResult CodigosCierre()
         {
             marcacionwebservice = new WSD.MarcacionesServiceClient();
@@ -127,7 +121,6 @@ namespace Dime.Controllers
             return View(modelo);
         }
 
-        [AllowAnonymous]
         public ActionResult EliminarCodigoCierre(int id)
         {
             marcacionwebservice = new WSD.MarcacionesServiceClient();
@@ -136,7 +129,6 @@ namespace Dime.Controllers
             return RedirectToAction("CodigosCierre");
         }
 
-        [AllowAnonymous]
         public JsonResult ListaMarcaciones()
         {
             marcacionwebservice = new WSD.MarcacionesServiceClient();
@@ -149,7 +141,6 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         public JsonResult PosiblesMarcaciones(string key)
         {
             marcacionwebservice = new WSD.MarcacionesServiceClient();
@@ -160,7 +151,6 @@ namespace Dime.Controllers
             };
         }
 
-        [AllowAnonymous]
         public JsonResult CodigosDeCierre(string submarcacion)
         {
             marcacionwebservice = new WSD.MarcacionesServiceClient();
@@ -173,7 +163,6 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         public JsonResult DatosDeMarcacion(int marcacion)
         {
             marcacionwebservice = new WSD.MarcacionesServiceClient();

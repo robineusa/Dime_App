@@ -10,12 +10,12 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
-    public class ReportesController : Controller
+    [ExpiringFilter]
+    public class ReportesController : MyController
     {
         WSD.BalanceScoreCardServiceClient balancescorecardservice = new WSD.BalanceScoreCardServiceClient();
 
         // GET: Reportes
-        [AllowAnonymous]
         public ActionResult ReporteAsesor()
         {
             balancescorecardservice = new WSD.BalanceScoreCardServiceClient();
@@ -26,7 +26,6 @@ namespace Dime.Controllers
             if (modelo == null) {}
             return View(modelo);
         }
-        [AllowAnonymous]
         [HttpGet]
         public ActionResult ReporteCelula()
         {
@@ -36,7 +35,6 @@ namespace Dime.Controllers
             modelo = balancescorecardservice.IndicadoresUsuario(Convert.ToDecimal(Session["Usuario"].ToString()));
             return View(modelo);
         }
-        [AllowAnonymous]
         public ActionResult ReporteAdministrador()
         {
             return View();

@@ -8,13 +8,13 @@ using System.Web.Mvc;
 
 namespace Dime.Controllers
 {
-    public class ConsultasController : Controller
+    [ExpiringFilter]
+    public class ConsultasController : MyController
     {
         private  WSD.CasosCelulaServiceClient casosCelulaService;
         private WSD.CasosAdminServiceClient casosAdminService;
         private WSD.InboundServiceClient inboundService;
 
-        [AllowAnonymous]
         public ActionResult ConsultaCasosAbiertos()
         {
            
@@ -23,7 +23,6 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         public JsonResult ConsultaCasosAbiertosPorCuenta(string cuenta)
         {
 
@@ -38,7 +37,6 @@ namespace Dime.Controllers
 
 
 
-        [AllowAnonymous]
         public JsonResult ConsultaCasosAbiertosPorIdIngreso(string idIngreso)
         {
 
@@ -52,7 +50,6 @@ namespace Dime.Controllers
             };
         }
 
-        [AllowAnonymous]
         public JsonResult ConsultaCasosAbiertosPorTicketRr(string noTicket)
         {
 
@@ -67,7 +64,6 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
         public JsonResult ConsultaCasosAbiertosPorUsuarioCreacion(string ccUsuario)
         {
 
@@ -82,13 +78,11 @@ namespace Dime.Controllers
         }
 
 
-        [AllowAnonymous]
-        public ActionResult ConsultaRechazos()
+         public ActionResult ConsultaRechazos()
         {
             return View();
         }
 
-        [AllowAnonymous]
         public JsonResult ConsultaRechazosData(string fechaInicial, string fechaFinal)
         {
        
