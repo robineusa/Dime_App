@@ -272,8 +272,8 @@
                             <i class="fa fa-dashboard text-yellow"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardAsesor", "Home")"><i class="fa fa-circle-o text-aqua"></i> Dashboard Asesor</a></li>
-                            <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardCelula", "Home")"><i class="fa fa-circle-o text-red"></i> Dashboard Célula</a></li>
+                            @*<li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardAsesor", "Home")"><i class="fa fa-circle-o text-aqua"></i> Dashboard Asesor</a></li>
+                            <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardCelula", "Home")"><i class="fa fa-circle-o text-red"></i> Dashboard Célula</a></li>*@
                             @if (Session["Dashboard Administrador"] != null) { <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardAdministrador", "Home")"><i class="fa fa-circle-o text-orange"></i> Dashboard Administrador</a></li>}
                         </ul>
                     </li>
@@ -353,8 +353,7 @@
 
                     </li>
                     }
-                    @if (Session["Notificaciones Buen Servicio"] != null)
-                    {
+                    
                     <li id="left-sidebar-menu-charts" class="treeview">
                         <a href="#">
                             <i class="fa fa-pencil-square-o text-green"></i>
@@ -367,7 +366,7 @@
                         </ul>
 
                     </li>
-                    }
+                    
                     @if (Session["ModoLogin"].ToString() == "3")
                     {
                     <li class="header">MENÚ CELULA</li>
@@ -691,29 +690,29 @@
                             <i class="fa fa-external-link"></i> <span>Links Corporativos</span><i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                                <li id="left-sidebar-menu-documentation">
+                                <li id="">
                                     <a href="#Visor_1"  data-toggle="modal" data-backdrop="static" data-keyboard="false">
                                         <i class="fa fa-link text-aqua"></i>
                                         <span>Visor 1</span>
                                         
                                     </a>
                                 </li>
-                                <li id="left-sidebar-menu-documentation">
-                                    <a href="#">
+                                <li id="">
+                                    <a href="#Visor_2" data-toggle="modal" data-backdrop="static" data-keyboard="false">
                                         <i class="fa fa-link text-red"></i>
                                         <span>Visor 2</span>
                                     </a>
                                 </li>
-                                <li id="left-sidebar-menu-documentation">
+                                <li id="">
                                     <a href="#CCAA" data-toggle="modal" data-backdrop="static" data-keyboard="false">                                        
                                         <i class="fa fa-link text-orange"></i>
                                         <span>CCAA</span>
                                     </a>
                                 </li>
-                            <li id="left-sidebar-menu-documentation">
-                                <a href="#">
-                                    <i class="fa fa-link text-yellow"></i>
-                                    <span>1Click</span>
+                            <li id="">
+                                <a href="#Agendamiento" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                                    <i class="fa fa-link text-green"></i>
+                                    <span>Agendamiento</span>
                                 </a>
                             </li>
                         </ul>
@@ -960,6 +959,27 @@
             </div>
         </div>
 
+        <div id="Visor_2" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px; background-color:transparent">
+                    <div class="modal-header" style="width:1000px; background-color:transparent; border-bottom: none; margin-top:20px;">
+                        <button type="button" class="close" style="color:white; margin-right:-35px;" data-dismiss="modal">X</button>
+                        <h2 class="modal-title"></h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
+
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <iframe style="width: 103%; background-color: #ffffff; height: 700px; border: none;" src="https://visorunico.claro.com.co/visorLogin"></iframe>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="CCAA" class="modal">
             <div class="modal-dialog" style="width:1000px;">
                 <div class="modal-content" style="width:1000px; background-color:transparent">
@@ -974,6 +994,27 @@
                             <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
                                 <iframe style="width: 103%; background-color: #ffffff; height: 700px; border: none;" src="http://172.18.10.156/iwaycc/login"></iframe>
                                 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Agendamiento" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px; background-color:transparent">
+                    <div class="modal-header" style="width:1000px; background-color:transparent; border-bottom: none; margin-top:20px;">
+                        <button type="button" class="close" style="color:white; margin-right:-35px;" data-dismiss="modal">X</button>
+                        <h2 class="modal-title"></h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
+
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <iframe style="width: 103%; background-color: #ffffff; height: 700px; border: none;" src="http://agendamiento.cable.net.co/"></iframe>
+
                             </div>
                         </div>
                     </div>
