@@ -1,0 +1,259 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelBlending
+@{
+    ViewBag.Title = "Convenio Electronico";
+    ViewBag.SubTitle = "Gestión Blending";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guarda_Convenio_Electronico", "GestionBlending", FormMethod.Post, new { id = "datosCliente", role = "form" }))
+{
+    <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
+        <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
+            <div class="row">
+                <div class="col-xs-2">
+                    <small>Número de Cuenta:</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <table>
+                        <tr>
+                            <td>
+                                @Html.TextBoxFor(m => m.DatosCliente.Cuenta, new { @class = "form-control input-sm", Id = "cuentaCliente" })
+                            </td>
+                            <td>
+
+                                @if (Model.DatosCliente.Nombre.Equals("No existen datos"))
+                                {
+                                    <label style="color:red; display:inline-block"> &nbsp;&nbsp; @Model.DatosCliente.Nombre</label>
+                                }
+                            </td>
+                        </tr>
+                    </table>
+                    @Html.HiddenFor(m=>m.ConvenioElecGestionado.Id)
+  
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-9" style="width:100%; ">
+
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321"><a href="#Datos_Basicos" style="background-color: transparent;" data-toggle="tab">Datos Básicos</a></li>
+                    <li id="Li2"><a style="background-color: transparent;" href="#Historico" data-toggle="tab">Mi Histórico</a></li>
+                    <li id="Li3"><a style="background-color: transparent;" href="#Seguimientos" data-toggle="tab">Mis Seguimientos</a></li>
+                </ul>
+
+                <div class="tab-content" style="padding-left:0; padding-top: 0">
+                    <div class="active tab-pane" id="Datos_Basicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                        <br />
+                        <table>
+                            <tr>
+                                <td width="200" style="padding:1px;">
+                                    <small>Nombre del Cliente:  </small>
+
+                                <td width="200" style="padding:1px;">
+                                    <small>Apellido del Cliente:  </small>
+                                </td>
+
+                                <td width="200" style="padding:1px;">
+                                    <small>Dir. Instalación:  </small>
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    <small>Dir. Correspondencia:  </small>
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    <small>Teléfono Telmex: </small>
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    <small>Teléfono 1:</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:1px;">
+                                    @Html.TextBoxFor(m=>m.DatosCliente.Nombre, new {@class="form-control input-sm"  })
+                                </td>
+                                <td style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.DatosCliente.Apellido, new { @class = "form-control input-sm" })
+                                </td>
+
+                                <td style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.DatosCliente.DirInstalacion, new { @class = "form-control input-sm" })
+                                </td>
+                                <td style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.DatosCliente.DirCorrespondencia, new { @class = "form-control input-sm" })
+                                </td>
+                                <td style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.DatosCliente.TelefonoTelmex, new { @class = "form-control input-sm"})
+                                </td>
+                                <td style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.DatosCliente.Telefono1, new { @class = "form-control input-sm" })
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td style="padding:1px;">
+                                    <small>Teléfono 2: </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Teléfono 3:  </small>
+                                </td>
+
+                                <td style="padding:1px;">
+                                    <small>Móvil Actual: </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Correo Actual: </small>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.DatosCliente.Telefono2, new { @class = "form-control input-sm" })
+                                </td>
+                                <td style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.DatosCliente.Telefono3, new { @class = "form-control input-sm" })
+                                </td>
+                                <td style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.DatosCliente.TelefonoConv, new { @class = "form-control input-sm"})
+                                </td>
+                                <td style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.DatosCliente.Correo, new { @class = "form-control input-sm" })
+                                </td>
+
+                            </tr>
+
+                        </table>
+
+                    </div>
+                    <div class="tab-pane" id="Historico" style="background-color:#dcdcdc; padding-left:10px; padding-right:10px; padding-top:10px; padding-bottom:10px;">
+             
+                        <div id="historicoGrid"></div>
+                    </div>
+                    <div class="tab-pane" id="Seguimientos" style="background-color:#dcdcdc; padding-left:10px; padding-right:10px; padding-top:10px; padding-bottom:10px;">
+                        <div id="seguimientosGrid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header">
+                                <i class="fa fa-sitemap"></i> Árbol de Tipificación
+                                @* <small class="pull-right">Date: 2/10/2014</small>*@
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <br />
+                                <div class="form-group">
+                                    <table>
+                                        <tr>
+                                            <td style="padding-left:1px; width:300px;">
+                                                <label>Tipo contacto</label>
+                                                @Html.DropDownListFor(m=>m.ConvenioElecGestionado.TipoContacto, new List<SelectListItem> { new SelectListItem { Text = "--Seleccione--", Value = "--Select Option--" } }, new { @class = "form-control", id = "tipoContactosSelect", onchange = "SetearCierresChoices();"  })
+                                     
+                                            </td>
+
+                                            <td style="padding-left:4px; width:400px;"  >
+                                                <label>Cierre</label>
+                                                @Html.DropDownListFor(m=>m.ConvenioElecGestionado.Cierre, new List<SelectListItem> { new SelectListItem { Text = "--Seleccione--", Value = "--Select Option--" } }, new { @class = "form-control", id= "tiposCierresSelect", onchange = "SetearRazonesChoices();" })
+                                    
+                                                                                            
+                                            </td>
+                                            <td style="padding-left:4px; width:500px;">
+                                                <label>Razón</label>
+                                                @Html.DropDownListFor(m=>m.ConvenioElecGestionado.Razon, new List<SelectListItem> { new SelectListItem { Text = "--Seleccione--", Value = "--Select Option--" } }, new { @class = "form-control", id= "tiposRazonSelect", onchange = "SetearRazonChoice();" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <h2 class="page-header" style="margin-top:40px">
+                                <i class="fa fa-calendar-plus-o "></i> Seguimientos
+                            </h2>
+                            <div id="3_ofre" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <div class="box-body">
+                                    <table id="Calendario_Seguimiento" style="display:block; margin-bottom: 0px;">
+                                        <tr>
+                                            <td style="padding:1px;">
+                                                <small>Seleccione Fecha y Hora del Seguimiento: </small>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:1px;">
+                                                @{
+
+                                                    Model.ConvenioElecGestionado.FechaSeguimiento = null;
+                                                }
+                                                @Html.TextBoxFor(m=>m.ConvenioElecGestionado.FechaSeguimiento, new { @class = "form-control input-sm", id = "CE_Fecha" , placeholder = "Seleccione Fecha" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <h2 class="page-header" style="margin-top: 40px;">
+                                <i class="fa fa-keyboard-o"></i> Datos Actualizables
+                            </h2>
+                            <div id="3_ofre" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <br />
+                                <div class="form-group">
+                                    <table>
+                                        <tr>
+                                            <td width="200" style="padding:1px;">
+                                                <small>Correo Nuevo: </small>
+                                            </td>
+                                            <td width="200" style="padding: 1px;">
+                                                <small>Móvil Nuevo: </small>
+                                            </td>
+                                            <td width="200" style="padding: 1px;">
+                                                <small>Dir. Correspondencia Nueva: </small>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:1px;">
+                                                @Html.TextBoxFor(m => m.ConvenioElecGestionado.NuevoCorreo, new { @class = "form-control input-sm"})
+                                            </td>
+                                            <td style="padding:1px;">
+                                                @Html.TextBoxFor(m => m.ConvenioElecGestionado.MovilNuevo, new { @class = "form-control input-sm" })
+                                            </td>
+                                            <td style="padding:1px;">
+                                                @Html.TextBoxFor(m => m.ConvenioElecGestionado.NuevaDireccionCorrespondencia, new { @class = "form-control input-sm" })
+                                            </td>
+                                        </tr>
+                                    </table>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-block btn-primary" name="cambiarDatos" value="true" style="width:10%;  margin-left:1%;">Guardar</button>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+
+}
+
+@section Scripts{
+    <script>
+        var urlControlTipoContatoList = '@Url.Action("TiposDeContactoList","GestionBlending")';
+        var urlControlTiposCierresList = '@Url.Action("TiposCierresList", "GestionBlending")';
+        var urlControlTiposRazonesList = '@Url.Action("TiposRazonesList", "GestionBlending")';
+        var  dataHistoricoGestion = @Html.Raw(Json.Encode(Model.HistoricoConvenioElectronico));
+   </script>
+<script src="/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.1"></script>
+<link href="/Styles/Elements/jquery.datetimepicker.css?1.0.1" rel="stylesheet" />
+    <script src="~/Scripts/Gestion_Blending/Convenio_Electronico.js?1.0.2"></script>
+
+
+}

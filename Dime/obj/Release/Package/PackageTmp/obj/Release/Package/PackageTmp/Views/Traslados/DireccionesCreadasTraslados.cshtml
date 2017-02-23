@@ -1,0 +1,31 @@
+﻿@model List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>
+@{
+    ViewBag.Title = "Solicitudes Creación de Dirección";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+
+    <div class="box box-primary">
+
+        <div class="box-body">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="gridViewDirecciones"></div>
+                  
+                    </div>
+                </div>
+            </div>
+      </div>
+  
+</div>
+
+@section Scripts{
+    <script>
+        var jsonDireccionesCrear = @Html.Raw(Json.Encode(Model));
+    </script>
+
+    <script src="~/Scripts/Traslados/DireccionesCreadasTraslados.js?1.0.2"></script>
+}
+
+

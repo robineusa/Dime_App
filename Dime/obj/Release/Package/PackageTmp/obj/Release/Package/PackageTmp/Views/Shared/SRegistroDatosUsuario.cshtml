@@ -1,0 +1,93 @@
+﻿@model Telmexla.Servicios.DIME.Entity.Usuario
+
+<html>
+<head>
+    <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css?2.0.1" rel="stylesheet" />
+    @Styles.Render("~/AdminLTEplugins/daterangepicker/css")
+    @Styles.Render("~/AdminLTEplugins/icheck/css")
+    @Styles.Render("~/AdminLTEplugins/colorpicker/css")
+    @Styles.Render("~/AdminLTEplugins/timepicker/css")
+    @Styles.Render("~/AdminLTEplugins/select2/css")
+    @Styles.Render("~/AdminLTEdist/css")
+    @Styles.Render("~/AdminLTEdist/css/skins")
+    @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+
+</head>
+
+<body>
+    <div style="width:100%; margin-left:15px;">
+        @using (Html.BeginForm("SRegistroDatosUsuarioConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+        {
+            <div data-ng-controller="PreguntasController" id="mainDiv">
+                <br />
+                @Html.LabelFor(m => m.Genero)
+                <br />
+                @Html.DropDownListFor(m => m.Genero, new SelectList(ViewBag.GenderOptions),new { @class = "form-control select2", @style="width:20%;"})
+                <br />
+                @Html.LabelFor(m => m.Correo)
+                <br />
+                @Html.TextBoxFor(m => m.Correo, new { @class = "form-control", @style = "width:20%;",@placeholder="Correo electrónico",@type="Email"})
+                @Html.ValidationMessageFor(m => m.Correo, "", new { @class = "text-danger" })
+                <br />
+                @Html.LabelFor(m => m.FechaNacimiento)
+                <br />
+                @Html.TextBoxFor(m => m.FechaNacimiento,new { @class = "form-control", @style = "width:20%;", @placeholder = "Seleccione una fecha", onfocus = "this.blur()" })
+                @Html.ValidationMessageFor(m => m.FechaNacimiento, "", new { @class = "text-danger" })
+                <br />
+                @Html.LabelFor(m => m.Telefono)
+                <br />
+                @Html.TextBoxFor(m => m.Telefono,new { @class = "form-control", @style = "width:20%;", @placeholder = "telefono de contacto", onkeypress = "return justNumbers(event);" })
+                @Html.ValidationMessageFor(m => m.Telefono, "", new { @class = "text-danger" })
+                <br />
+                @Html.HiddenFor(m => m.Id, new { @value = Model.Id })
+                @Html.HiddenFor(m => m.Contrasena, new { @value = ViewBag.Sesion })
+                <br />
+                <input type="submit" class="btn btn-danger" value="Aceptar" id="btnRegistrar" />
+
+                <br />
+            </div>
+
+        }
+        <br />
+    </div>
+
+    <script src="~/AdminLTE/plugins/jquery/js/jQuery-2.1.4.min.js"></script>
+    <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
+    <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
+ 
+    <script>
+        $.datetimepicker.setLocale('es');
+        $('#FechaNacimiento').datetimepicker({
+            format: 'Y-m-d',
+            timepicker: false,
+            maxDate: '0',
+
+        });
+
+        function justNumbers(e) {
+            var keynum = window.event ? window.event.keyCode : e.which;
+            if ((keynum == 8) || (keynum == 46))
+                return true;
+
+            return /\d/.test(String.fromCharCode(keynum));
+        }
+    </script>
+    @section Scripts {
+        @Scripts.Render("~/AdminLTEplugins/select2/js")
+        @Scripts.Render("~/AdminLTEplugins/input-mask/js")
+        @Scripts.Render("~/AdminLTEplugins/momentjs/js")
+        @Scripts.Render("~/AdminLTEplugins/daterangepicker/js")
+        @Scripts.Render("~/AdminLTEplugins/colorpicker/js")
+        @Scripts.Render("~/AdminLTEplugins/timepicker/js")
+        @Scripts.Render("~/AdminLTEplugins/icheck/js")
+
+    }
+
+
+</body>
+
+
+</html>
+
+
+

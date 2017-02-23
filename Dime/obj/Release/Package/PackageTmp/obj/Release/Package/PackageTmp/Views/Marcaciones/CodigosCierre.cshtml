@@ -1,0 +1,27 @@
+﻿@model  Telmexla.Servicios.DIME.Entity.PqrMaestroCodCierreCollection
+@{
+    ViewBag.Title = "Códigos de Cierre";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div class="box box-primary">
+ 
+        <br />
+            <a href=@Url.Action("AgregarActuCodigoCierre", "Marcaciones") style="margin:15px;" >
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <span class="glyphicon-class" style="font-size:medium;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Agregar Nuevo Código de Cierre</span>
+            </a> 
+            <div id="codigosGridView" style="margin:15px">
+            </div>
+            <br />
+
+</div>
+
+
+@section scripts{
+    <script>
+        var listaCodigos = @Html.Raw(Json.Encode(Model));
+    </script>
+
+    <script src="~/Scripts/Marcaciones/Codigos.js?1.0.8"></script>
+}

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Dime</title>
+    @Styles.Render("~/AdminLTEbootstrap/css")
+    @Styles.Render("~/AdminLTEdist/css")
+    @Styles.Render("~/AdminLTEdist/css/skins")
+    @Styles.Render("~/AdminLTEplugins/ionicons/css")
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="content-wrapper">
+                <section class="content-header">
+                    <div class="info-box bg-red">
+                        <span class="info-box-icon"><i class="ion ion-unlocked"></i></span>
+                        <div class="info-box-content">
+                            <h2>@ViewBag.Title</h2>
+                        </div>
+                    </div>
+
+                     
+                </section>
+                <section class="content">
+                    @RenderBody()
+                </section>
+            </div>
+         </div>
+    </div>
+
+            @Scripts.Render("~/AdminLTEplugins/jquery/js")
+            @RenderSection("scripts", required: false)
+            @Scripts.Render("~/AdminLTEbootstrap/js")
+            <script src="~/AdminLTE/plugins/angular/angular.min.js"></script>
+    @Scripts.Render("~/AdminLTEplugins/chartjs/js")
+    @Scripts.Render("~/AdminLTEplugins/jvectormap/js")
+    @Scripts.Render("~/AdminLTEplugins/sparkline/js")
+    @Scripts.Render("~/Scripts/Home/DashboardV2")
+   
+</body>
+</html>
+

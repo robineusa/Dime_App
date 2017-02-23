@@ -1,0 +1,209 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelTraslados
+@{
+    ViewBag.Title = "Gestión Solicitudes Cambio de Estrato";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("GestionarCambioDeEstratoCelula", "Traslados", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
+{
+    <div class="row">
+
+        <div class="box box-primary">
+
+            <div class="box-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Historico de interacciones</h4>
+                        <hr style="border-color:gray;border-width:2px;margin-top:-3px;" />
+                        <div id="InteraccionesCambiodeEstrato"></div>
+
+                    </div>
+                </div>
+                <h4>Información de la Solicitud</h4>
+                <hr style="border-color:gray;border-width:2px;margin-top:-3px;" />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="tab-content">
+                            <div class="tab-pane tab-dime-first active" role="tabpanel" id="inforacioningreso">
+                                <table>
+                                    <tr>
+                                        <td width="200">
+                                            <small>Id de Solicitud:</small>
+                                            @Html.TextBoxFor(m => m.CambioEstratoInicial.IdTransaccion, new { @class = "form-control input-sm", id = "idTransaccion", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Fecha de la Solicitud:</small>
+                                            @Html.TextBoxFor(m => m.CambioEstratoInicial.FechaTransaccion, new { @class = "form-control input-sm", id = "fechaTransaccion", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Usuario Solicitud:</small>
+                                            @Html.TextBoxFor(m => m.CambioEstratoInicial.UsuarioTransaccion, new { @class = "form-control input-sm", id = "usuarioSolicitud", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Linea de Ingreso:</small>
+                                            @Html.TextBoxFor(m => m.CambioEstratoInicial.NombreLineaTransaccion, new { @class = "form-control input-sm", id = "lineaIngreso", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Cuenta del Cliente:</small>
+                                            @Html.TextBoxFor(m => m.CambioEstratoInicial.CuentaCliente, new { @class = "form-control input-sm", id = "cuedntaCliente", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Teléfono Celular:</small>
+                                            @Html.TextBoxFor(m => m.CambioEstratoInicial.TelefonoCelular, new { @class = "form-control input-sm", id = "telefonoCelular", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Teléfono Fijo:</small>
+                                            @Html.TextBoxFor(m => m.CambioEstratoInicial.TelefonoFijo, new { @class = "form-control input-sm", id = "telefonoFijo", @readonly = "true" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="200">
+                                            <small>Correo Electrónico:</small>
+                                            @Html.TextBoxFor(m => m.CambioEstratoInicial.CorreoElectronico, new { @class = "form-control input-sm", id = "correo", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Fecha Actualización:</small>
+                                            @Html.TextBoxFor(m => m.CambioEstrato.FechaTransaccion, new { @class = "form-control input-sm", id = "fechaultimaactua", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Usuario Actualización:</small>
+                                            @Html.TextBoxFor(m => m.CambioEstrato.UsuarioTransaccion, new { @class = "form-control input-sm", id = "usuarioultimaactualizacion", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Estrato Cliente:</small>
+                                            @Html.TextBoxFor(m => m.CambioEstratoInicial.Estrato, new { @class = "form-control input-sm", id = "estrato", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Nodo:</small>
+                                            @Html.TextBoxFor(m => m.CambioEstratoInicial.Nodo, new { @class = "form-control input-sm", id = "nodo", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Nombre Nodo:</small>
+                                            @Html.TextBoxFor(m => m.InformacionNodo.NombreNodo, new { @class = "form-control input-sm", id = "nombrenodo", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Código División:</small>
+                                            @Html.TextBoxFor(m => m.InformacionNodo.Div, new { @class = "form-control input-sm", id = "coddivision", @readonly = "true" })
+                                        </td>
+
+
+                                    </tr>
+                                    <tr>
+                                        <td width="200">
+                                            <small>Código Comunidad:</small>
+                                            @Html.TextBoxFor(m => m.InformacionNodo.Com, new { @class = "form-control input-sm", id = "codcomunidad", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Área:</small>
+                                            @Html.TextBoxFor(m => m.InformacionNodo.Area, new { @class = "form-control input-sm", id = "area", @readonly = "true" })
+                                        </td>
+
+                                        <td width="200">
+                                            <small>Distrito:</small>
+                                            @Html.TextBoxFor(m => m.InformacionNodo.Distrito, new { @class = "form-control input-sm", id = "distrito", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Unidad de Gestión:</small>
+                                            @Html.TextBoxFor(m => m.InformacionNodo.Ugestion, new { @class = "form-control input-sm", id = "ugestion", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Estado del Nodo:</small>
+                                            @Html.TextBoxFor(m => m.InformacionNodo.Estado, new { @class = "form-control input-sm", id = "estadoNodo", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Red:</small>
+                                            @Html.TextBoxFor(m => m.InformacionNodo.Red, new { @class = "form-control input-sm", id = "red", @readonly = "true" })
+                                        </td>
+                                        <td width="200">
+                                            <small>Ciudad:</small>
+                                            @Html.TextBoxFor(m => m.InformacionNodo.NombreComunidad, new { @class = "form-control input-sm", id = "ciudad", @readonly = "true" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="200">
+                                            <small>Departamento:</small>
+                                            @Html.TextBoxFor(m => m.InformacionNodo.Departamento, new { @class = "form-control input-sm", id = "departamento", @readonly = "true" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1200" colspan="7">
+                                            <small>Dirección a Crear:</small>
+                                            @Html.TextBoxFor(m => m.CambioEstratoInicial.Direccion, new { @class = "form-control input-sm", id = "telefonoFijo", @readonly = "true" })
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4>Gestión Celula Cambio de Estrato</h4>
+                <hr style="border-color:gray;border-width:2px;margin-top:-3px;" />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="tab-content">
+                            <div class="tab-pane tab-dime-first active" role="tabpanel" id="gestioncelulacrdireccion">
+                                <table>
+                                    <tr>
+                                        <td width="300">
+                                            <small>Gestión Realizada:</small>
+                                            @Html.DropDownListFor(m => m.CambioEstratoVacia.Subrazon, new List<SelectListItem> {
+                                                                                               new SelectListItem{Text="ARCHIVO BORROSO", Value="ARCHIVO BORROSO" },
+                                                                                               new SelectListItem{Text="CUENTA DESCONECTADA", Value="CUENTA DESCONECTADA" },
+                                                                                               new SelectListItem{Text="DATOS ERRADOS", Value="DATOS ERRADOS" },
+                                                                                               new SelectListItem{Text="DESISTE DE TRASLADO", Value="DESISTE DE TRASLADO" },
+                                                                                               new SelectListItem{Text="DIRECCION NO COINCIDE", Value="DIRECCION NO COINCIDE" },
+                                                                                               new SelectListItem{Text="ESTRATO YA ASIGNADO", Value="ESTRATO YA ASIGNADO" },
+                                                                                               new SelectListItem{Text="HHPP COMERCIAL", Value="HHPP COMERCIAL" },
+                                                                                               new SelectListItem{Text="NO ADJUNTA ARCHIVO", Value="NO ADJUNTA ARCHIVO" },
+                                                                                               new SelectListItem{Text="NO COBERTURA", Value="NO COBERTURA" },
+                                                                                               new SelectListItem{Text="NO CONTACTO PARA ENVIO DE SOPORTE", Value="NO CONTACTO PARA ENVIO DE SOPORTE" },
+                                                                                               new SelectListItem{Text="NO RESPONDE PLANTILLA", Value="NO RESPONDE PLANTILLA" },
+                                                                                               new SelectListItem{Text="OT ABIERTA", Value="OT ABIERTA" },
+                                                                                               new SelectListItem{Text="PROCESO MATRIZ", Value="PROCESO MATRIZ" },
+                                                                                               new SelectListItem{Text="SOPORTE INCOMPLETO", Value="SOPORTE INCOMPLETO" },
+                                                                                               new SelectListItem{Text="SUPERA FECHA DE EXPEDICION", Value="SUPERA FECHA DE EXPEDICION" },
+                                                                                               new SelectListItem{Text="TRASLADO OK", Value="TRASLADO OK" },},
+                                                               "--SELECCIONE--", new { @class = "form-control input-sm", @id = "Subrazon" })
+                                        </td>
+                                        <td width="300">
+                                            <small>Estado del Caso:</small>
+                                            @Html.DropDownListFor(m => m.CambioEstratoVacia.EstadoTransaccion, new List<SelectListItem> {
+                                                                                             new SelectListItem{Text="FINALIZADO", Value="FINALIZADO" },
+                                                                                             new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" },},
+                                                               "--SELECCIONE--", new { @class = "form-control input-sm", @id = "estado" })
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <td width="1200">
+                                            <small>Observaciones:</small>
+                                            @Html.TextAreaFor(m => m.CambioEstratoVacia.Observacion, new { @style = "width: 100%; height: 100px;max-height: 100px;max-width:1200px;" })
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="">
+                    <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;">Guardar Datos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts{
+    <script>
+        var jsonInteraccionesCambioEstrato = @Html.Raw(Json.Encode(Model.ListaCambioEstrato));
+    </script>
+
+    <script src="~/Scripts/Traslados/GestionarCambioDeEstratoCelula.js?1.0.1"></script>
+}
+
+
