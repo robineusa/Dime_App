@@ -89,7 +89,7 @@ function trasladarIpsAServidor()
 
             $.ajax({
                 type: "POST",
-                url: "/Account/AsignarIpsUsuario",
+                url: urlRegistroIp,
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify({ ipPrivada: myIP, ipPublica: userip }),
                 dataType: "JSON",

@@ -85,6 +85,10 @@
     @Scripts.Render("~/AdminLTEbootstrap/js")
     @Scripts.Render("~/AdminLTEplugins/icheck/js")
     @Scripts.Render("~/AdminLTEplugins/jquery- /js")
+    <script>
+        var urlRegistroIp = '@Url.Action("AsignarIpsUsuario", "Account")';
+    </script>
+
     <script type="text/javascript" src="https://l2.io/ip.js?var=userip">        //Para traer ip publica del servidor
         var userip;
     </script>
