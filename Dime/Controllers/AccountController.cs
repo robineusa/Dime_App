@@ -161,8 +161,14 @@ namespace Dime.Controllers
 
             if (datosFullUsuario == "True")
             {
-                RegistrarVariablesDeSesion(Convert.ToInt32(idUsuario));
-                    switch (Convert.ToInt32(sesionUsuario))
+                bool existeUsuarioEnHolos = false;
+                RegistrarVariablesDeSesion(Convert.ToInt32(idUsuario), out existeUsuarioEnHolos);
+                if (existeUsuarioEnHolos == false)
+                {
+                    ViewBag.Error = "El usuario no registra en la base personal holos como activo";
+                    return View("Login");
+                }
+                switch (Convert.ToInt32(sesionUsuario))
                          {
                     case (int)IDS_MODOS_ACCESOS.IngresoAdministrador:
                                 return Json(Url.Action("ReporteAdministrador", "Reportes"));
@@ -200,20 +206,32 @@ namespace Dime.Controllers
                 loginService = new WSD.LoginServiceClient();
                 loginService.ClientCredentials.Authenticate();
                 mUsuario.Id = (int)loginService.RecibirIdUsuario(mUsuario.Cedula);
+                bool existeUsuarioEnHolos = false;
                 //-1 bloqueado, diferente a 0 la sesion que tiene acceso
                 if (mUsuario.Id != 0 )
                 {
                     int sesion = loginService.AutenticarUsuarioEnSesion(mUsuario);
                     if (sesion != 0 && sesion != -1)
                     {
-                        RegistrarVariablesDeSesion(mUsuario.Id);
+                        RegistrarVariablesDeSesion(mUsuario.Id, out existeUsuarioEnHolos);
+                        if(existeUsuarioEnHolos == false)
+                        {
+                            ViewBag.Error = "El usuario no registra en la base personal holos como activo";
+                            return View("Login");
+                        }
                         if (loginService.ContraseñaCaducada(mUsuario.Id)) { Session["UserBackward"] = mUsuario.Id;   return RedirectToAction("ContraseñaCaducada", "Account"); }
                         bool registroCompletoPreguntas = loginService.PreguntasDesbloqueoCompletas(mUsuario.Id);
                         bool datosCompletoUsuario = loginService.DatosUsuarioCompleto(mUsuario.Id);
                         if (registroCompletoPreguntas && datosCompletoUsuario)
                         {
-                            RegistrarVariablesDeSesion(mUsuario.Id);
-                           if(!loginService.Capacitado(mUsuario.Id)) return RedirectToAction("Presentacion", "Account", new {sesion = sesion, id= mUsuario.Id });
+                            RegistrarVariablesDeSesion(mUsuario.Id, out existeUsuarioEnHolos);
+                            if (existeUsuarioEnHolos == false)
+                            {
+                                ViewBag.Error = "El usuario no registra en la base personal holos como activo";
+                                return View("Login");
+                            }
+
+                            if (!loginService.Capacitado(mUsuario.Id)) return RedirectToAction("Presentacion", "Account", new {sesion = sesion, id= mUsuario.Id });
 
                             switch (sesion)
                             {
@@ -298,11 +316,14 @@ namespace Dime.Controllers
         }
 
         [AllowAnonymous]
-        public void RegistrarVariablesDeSesion(int idUsuario)
+        public void RegistrarVariablesDeSesion(int idUsuario, out bool  usuarioEnHolos)
         {
             loginService = new WSD.LoginServiceClient();
             loginService.ClientCredentials.Authenticate();
             Usuario usuarioLogeado = loginService.RecibirUsuarioConId(idUsuario);
+            if (loginService.ExisteUsuarioHolos(Convert.ToDecimal(usuarioLogeado.Cedula)))
+            {
+            usuarioEnHolos = true;
             Session["IdUsuario"] = usuarioLogeado.Id;
             Session["Usuario"] = Convert.ToInt32(usuarioLogeado.Cedula);
             Session["NombreUsuario"] = usuarioLogeado.Nombre.ToString();
@@ -310,11 +331,14 @@ namespace Dime.Controllers
             Session["LineaLogeado"] = loginService.LineaDeUsuarioPorId(Convert.ToInt32(usuarioLogeado.IdLinea));   //  "CELULA VISITA SOPORTE";
             Session["ModoLogin"] = loginService.ModoLoginPorId(Convert.ToInt32(usuarioLogeado.IdLinea));  //1
             RegistrarSesionUsuario(Session["IpPrivada"].ToString(), Session["IpPublica"].ToString());
-
             List<string> accesosDeUsuario = loginService.ListaAccesosDeUsuario( Convert.ToInt32(usuarioLogeado.Cedula));
             foreach(string acceso in accesosDeUsuario)
             {
                 Session[acceso] = 0;
+            }
+            }else
+            {
+                usuarioEnHolos = false;
             }
         }
 

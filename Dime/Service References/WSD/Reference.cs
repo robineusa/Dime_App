@@ -4876,6 +4876,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ModoLoginPorId", ReplyAction="http://tempuri.org/ILoginService/ModoLoginPorIdResponse")]
         System.Threading.Tasks.Task<string> ModoLoginPorIdAsync(int idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ExisteUsuarioHolos", ReplyAction="http://tempuri.org/ILoginService/ExisteUsuarioHolosResponse")]
+        bool ExisteUsuarioHolos(decimal cedula);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ExisteUsuarioHolos", ReplyAction="http://tempuri.org/ILoginService/ExisteUsuarioHolosResponse")]
+        System.Threading.Tasks.Task<bool> ExisteUsuarioHolosAsync(decimal cedula);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -5167,6 +5173,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<string> ModoLoginPorIdAsync(int idUsuario) {
             return base.Channel.ModoLoginPorIdAsync(idUsuario);
+        }
+        
+        public bool ExisteUsuarioHolos(decimal cedula) {
+            return base.Channel.ExisteUsuarioHolos(cedula);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ExisteUsuarioHolosAsync(decimal cedula) {
+            return base.Channel.ExisteUsuarioHolosAsync(cedula);
         }
     }
     
