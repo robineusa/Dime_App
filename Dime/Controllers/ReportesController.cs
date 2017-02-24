@@ -23,7 +23,9 @@ namespace Dime.Controllers
             BalanceScoreCard modelo = new BalanceScoreCard();
             var usuario = Session["Usuario"].ToString();
             modelo = balancescorecardservice.IndicadoresUsuario(Convert.ToDecimal(usuario));
-            if (modelo == null) {}
+            if (modelo == null) {
+                return View();
+            }
             return View(modelo);
         }
         [HttpGet]

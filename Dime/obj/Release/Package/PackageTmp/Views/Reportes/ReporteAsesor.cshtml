@@ -1,12 +1,13 @@
 ﻿@model Telmexla.Servicios.DIME.Entity.BalanceScoreCard
 @{
-    ViewBag.Title = "Balance Score Card Asesor";
+    ViewBag.Title = "Balanced Score Card Asesor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="row">
 
     <div class="box box-primary">
-
+        @if (Model != null)
+        {
         <div class="box-body">
 
             <div class="row">
@@ -172,6 +173,21 @@
                 </div>
             </div>
         </div>
+        }
+        else
+        {
+            <div class="error-page">
+                <h2 class="headline text-red" style="margin-top:-18px;">501</h2>
+                <div class="error-content">
+                    <h3><i class="fa fa-warning text-red"></i> Oops! No existe información.</h3>
+                    <p style="text-align:justify;">
+                        La información que se relaciona en esta vista, no se encuentra disponible para el usuario que inicio sesión, por favor intente más tarde.
+                        Usted puede <a href="@Url.Action("ReporteAsesor", "Reportes")">regresar al Inicio</a>
+                    </p>
+
+                </div>
+            </div>
+        }
     </div>
 
 </div>

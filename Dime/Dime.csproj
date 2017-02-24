@@ -2213,53 +2213,27 @@
     <Content Include="AdminLTE\plugins\timepicker\js\bootstrap-timepicker.js" />
     <Content Include="AdminLTE\plugins\timepicker\js\bootstrap-timepicker.min.js" />
     <Content Include="bin\Antlr3.Runtime.dll" />
-    <Content Include="bin\Antlr3.Runtime.pdb" />
     <Content Include="bin\AutoMapper.dll" />
-    <Content Include="bin\Dime.dll" />
     <Content Include="bin\Dime.dll.config" />
-    <Content Include="bin\Dime.pdb" />
     <Content Include="bin\EntityFramework.dll" />
     <Content Include="bin\EntityFramework.SqlServer.dll" />
-    <Content Include="bin\EntityFramework.SqlServer.xml" />
-    <Content Include="bin\EntityFramework.xml" />
-    <Content Include="bin\es\Microsoft.AspNet.SignalR.Core.resources.dll" />
-    <Content Include="bin\es\Microsoft.AspNet.SignalR.SystemWeb.resources.dll" />
-    <Content Include="bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll" />
-    <Content Include="bin\es\Microsoft.Owin.resources.dll" />
-    <Content Include="bin\es\Microsoft.Owin.Security.resources.dll" />
     <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Core.xml" />
     <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.xml" />
     <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Owin.xml" />
     <Content Include="bin\Microsoft.AspNet.SignalR.Core.dll" />
-    <Content Include="bin\Microsoft.AspNet.SignalR.Core.xml" />
     <Content Include="bin\Microsoft.AspNet.SignalR.SystemWeb.dll" />
-    <Content Include="bin\Microsoft.AspNet.SignalR.SystemWeb.xml" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="bin\Microsoft.Owin.dll" />
     <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
-    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.xml" />
     <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Cookies.xml" />
     <Content Include="bin\Microsoft.Owin.Security.dll" />
     <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Facebook.xml" />
     <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Google.xml" />
     <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.xml" />
     <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.OAuth.xml" />
     <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Twitter.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.xml" />
-    <Content Include="bin\Microsoft.Owin.xml" />
     <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
     <Content Include="bin\Newtonsoft.Json.dll" />
-    <Content Include="bin\Newtonsoft.Json.xml" />
     <Content Include="bin\Owin.dll" />
     <Content Include="bin\roslyn\csc.exe" />
     <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
@@ -2274,21 +2248,12 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="bin\System.Web.Helpers.dll" />
-    <Content Include="bin\System.Web.Helpers.xml" />
     <Content Include="bin\System.Web.Mvc.dll" />
-    <Content Include="bin\System.Web.Mvc.xml" />
     <Content Include="bin\System.Web.Optimization.dll" />
-    <Content Include="bin\System.Web.Optimization.xml" />
     <Content Include="bin\System.Web.Razor.dll" />
-    <Content Include="bin\System.Web.Razor.xml" />
     <Content Include="bin\System.Web.WebPages.Deployment.dll" />
-    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
     <Content Include="bin\System.Web.WebPages.dll" />
     <Content Include="bin\System.Web.WebPages.Razor.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.xml" />
-    <Content Include="bin\Telmexla.Servicios.DIME.Entity.dll" />
-    <Content Include="bin\Telmexla.Servicios.DIME.Entity.pdb" />
     <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\angular-material.css" />
     <Content Include="Content\angular-material.layout-attributes.css" />
@@ -2939,8 +2904,6 @@
     <Content Include="AdminLTE\plugins\input-mask\js\phone-codes\phone-be.json" />
     <Content Include="AdminLTE\plugins\input-mask\js\phone-codes\phone-codes.json" />
     <None Include="AdminLTE\plugins\jquery-validate\js\jquery.validate-vsdoc.js" />
-    <None Include="Properties\PublishProfiles\a 55.pubxml" />
-    <None Include="Properties\PublishProfiles\Al .55.pubxml" />
     <Content Include="Scripts\Shared\_LockScreen.js" />
     <Content Include="Scripts\Signal\jquery.signalR-2.2.1.js" />
     <Content Include="Scripts\Signal\jquery.signalR-2.2.1.min.js" />
@@ -3030,7 +2993,7 @@
     <Content Include="Service References\WSD\Dime.WSD.UsuariosMasivoData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Properties\PublishProfiles\LocalRobin.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Service References\WSD\WebService.disco" />
     <None Include="Service References\WSD\configuration91.svcinfo" />
     <None Include="Service References\WSD\configuration.svcinfo" />
@@ -3077,9 +3040,6 @@
     <Content Include="Scripts\Gestion_Blending\Docsis.js" />
     <Content Include="Scripts\Gestion_Blending\jquery.datetimepicker.full.js" />
     <Content Include="Scripts\Inbound\Actualizar.js" />
-    <None Include="Properties\PublishProfiles\Dime_Capacitacion.pubxml" />
-    <None Include="Properties\PublishProfiles\Local.pubxml" />
-    <None Include="Properties\PublishProfiles\web Service.pubxml" />
     <Content Include="Scripts\Marcaciones\ActualizarMarcaciones.js" />
     <Content Include="Scripts\Marcaciones\AddUpdCodigoCierre.js" />
     <Content Include="Scripts\Marcaciones\AgregarMarcacion.js" />
@@ -3230,6 +3190,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bin\es\" />
     <Folder Include="Views\CasosAdmin\" />
   </ItemGroup>
   <ItemGroup>
