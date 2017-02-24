@@ -6,7 +6,8 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\inetpub\wwwroot\Dime</_PublishTargetUrl>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAKSxrBI28XkCYJ6ZOcN9DqwAAAAACAAAAAAAQZgAAAAEAACAAAAAkJo8C9FhCs/0YAKXLpkHkM/oZvRqdPF3EikljySgvYwAAAAAOgAAAAAIAACAAAADm79FFZF4uVy5quljJh3/KXDpaJihSVxK8XD+xOYcHKyAAAADSjUCuxPqaloPU/O1NVE+0KHXK0q3xXQrk2xCJyynb6EAAAAB79Cn7woIETOv4Lab3EZHhNssuPUH/3zaU81EAvNQp8X2W6lnJ1RJOiv/I2xKDG5hFJEov49kYNtKXg+OoZYYh</EncryptedPassword>
+    <_PublishTargetUrl>ftp://172.18.175.55/DIME</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="AdminLTE/bootstrap/css/bootstrap.css">
@@ -7513,7 +7514,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/22/2017 14:43:59</publishTime>
     </File>
     <File Include="bin/Dime.dll">
-      <publishTime>02/24/2017 13:23:15</publishTime>
+      <publishTime>02/24/2017 13:52:32</publishTime>
     </File>
     <File Include="bin/Dime.dll.config">
       <publishTime>02/22/2017 21:28:40</publishTime>
@@ -8668,7 +8669,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/21/2017 15:33:22</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/24/2017 11:35:08</publishTime>
+      <publishTime>02/24/2017 13:52:36</publishTime>
     </File>
   </ItemGroup>
 </Project>
