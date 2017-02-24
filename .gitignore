@@ -3,3 +3,8 @@
 4. Entidades/Telmexla.Servicios.DIME.Entity/bin/Release/Telmexla.Servicios.DIME.Entity.dll
 *.pdb
 *.dll
+*.suo
+.vs/config/applicationhost.config
+*.pdb
+4. Entidades/Telmexla.Servicios.DIME.Entity/bin/Debug/Telmexla.Servicios.DIME.Entity.dll
+*.dll
