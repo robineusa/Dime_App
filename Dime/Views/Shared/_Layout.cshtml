@@ -10,15 +10,17 @@
     <title>Dime</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-
-    
     <link href="~/AdminLTE/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
 
     @Styles.Render("~/AdminLTEbootstrap/css")
     @Styles.Render("~/AdminLTEdist/css")
     @Styles.Render("~/AdminLTEdist/css/skins")
-    @Styles.Render("~/AdminLTEplugins/kendo2016.3.11/css")
+    
+    <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.min.css" rel="stylesheet" />
+    <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.mobile.min.css" rel="stylesheet" />
+
     @Scripts.Render("~/AdminLTEplugins/jquery/js")
     @Scripts.Render("~/AdminLTEdist/js/angularjs")
     <script src="~/AdminLTE/plugins/jquery-ui/js/jquery-ui.js"></script>
@@ -1045,10 +1047,12 @@
     @Scripts.Render("~/AdminLTEbootstrap/js")
     @Scripts.Render("~/AdminLTEplugins/slimscroll/js")
     @Scripts.Render("~/AdminLTEplugins/fastclick/js")
-    @Scripts.Render("/ScriptsShared/_Layout")
+    @Scripts.Render("~/ScriptsShared/_Layout")
     @Scripts.Render("~/AdminLTEdist/js")
-    @Scripts.Render("~/AdminLTEplugins/kendo2016.3.11/js")
-
+    
+    <script src="~/AdminLTE/Kendo2016.3.11/js/jszip.min.js"></script>
+    <script src="~/AdminLTE/Kendo2016.3.11/js/kendo.all.min.js"></script>
+    <script src="~/AdminLTE/Kendo2016.3.11/js/kendo.web.min.js"></script>
     @RenderSection("scripts", required: false)
 
 </body>
