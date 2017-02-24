@@ -185,7 +185,10 @@ function checkMarcacion(eve)
 
 function MarcacionYaCasoAbierto(marcacion)
 {
-    var dataOfOpenedCases = $("#viewHistoricoCasosAbiertos").data().kendoGrid.dataSource.view();
+    var dataOfOpenedCasesData = $("#viewHistoricoCasosAbiertos").data();
+    var dataOfOpenedCases = [];
+    if (dataOfOpenedCasesData!= undefined)
+     dataOfOpenedCases = dataOfOpenedCasesData.kendoGrid.dataSource.view();
     for (var i = 0; i < dataOfOpenedCases.length; i++)
     {
         if(marcacion==dataOfOpenedCases[i].Marcacion )

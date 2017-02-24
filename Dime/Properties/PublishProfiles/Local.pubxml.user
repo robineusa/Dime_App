@@ -8134,7 +8134,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/22/2017 10:55:31</publishTime>
     </File>
     <File Include="Scripts/Inbound/Index.js">
-      <publishTime>02/22/2017 10:55:31</publishTime>
+      <publishTime>02/24/2017 07:16:24</publishTime>
     </File>
     <File Include="Scripts/Manuales/ManualAdministrador.js">
       <publishTime>02/22/2017 10:55:31</publishTime>
@@ -8350,7 +8350,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/22/2017 10:55:32</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>02/23/2017 15:03:10</publishTime>
+      <publishTime>02/24/2017 07:12:43</publishTime>
     </File>
     <File Include="Views/Account/Presentacion.cshtml">
       <publishTime>02/22/2017 10:55:32</publishTime>
@@ -8455,13 +8455,13 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/22/2017 10:55:32</publishTime>
     </File>
     <File Include="Views/GestionBlending/Cierre_Ciclo.cshtml">
-      <publishTime>02/22/2017 10:55:32</publishTime>
+      <publishTime>02/24/2017 09:02:41</publishTime>
     </File>
     <File Include="Views/GestionBlending/Claro_Video.cshtml">
-      <publishTime>02/22/2017 10:55:32</publishTime>
+      <publishTime>02/24/2017 09:53:06</publishTime>
     </File>
     <File Include="Views/GestionBlending/Convenio_Electronico.cshtml">
-      <publishTime>02/22/2017 10:55:32</publishTime>
+      <publishTime>02/24/2017 09:54:55</publishTime>
     </File>
     <File Include="Views/GestionBlending/Docsis.cshtml">
       <publishTime>02/22/2017 10:55:32</publishTime>
@@ -8482,7 +8482,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/22/2017 10:55:32</publishTime>
     </File>
     <File Include="Views/Inbound/Index.cshtml">
-      <publishTime>02/22/2017 10:55:32</publishTime>
+      <publishTime>02/24/2017 07:18:42</publishTime>
     </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>02/22/2017 10:55:32</publishTime>

@@ -17,3 +17,4 @@ C:\Users\Alejandro\Documents\GitHub\Dime_App\Dime\bin\Telmexla.Servicios.DIME.En
 C:\Users\Alejandro\Documents\GitHub\Dime_App\Dime\bin\Telmexla.Servicios.DIME.Entity.pdb
 C:\Users\Alejandro\Documents\GitHub\Dime_App\Dime\obj\Release\Dime.dll
 C:\Users\Alejandro\Documents\GitHub\Dime_App\Dime\obj\Release\Dime.pdb
+C:\Users\Alejandro\Documents\GitHub\Dime_App\Dime\obj\Release\Dime.csprojResolveAssemblyReference.cache
