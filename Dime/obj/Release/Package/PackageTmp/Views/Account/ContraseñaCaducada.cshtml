@@ -43,13 +43,15 @@
 
              </div>
          </div>
-
-
-                &nbsp;&nbsp;<input type="button" class="btn btn-danger" value="Continuar" id="btnContinuar" onClick="location.href='/Account/Login' " style="display:none;" />
+        &nbsp;&nbsp;
+        @using(Html.BeginForm("Login", "Account")) {
+                <input type="submit" class="btn btn-danger" value="Continuar" id="btnContinuar"  style="display:none;" />
+        }
                 <br />
                 <br />
 
             </div>
+
     <script src="~/AdminLTE/dist/js/angular/angular.min.js"></script>
     <script src="~/Scripts/Account/ScriptLogin1.js"></script>
             <script>
