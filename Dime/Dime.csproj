@@ -2375,6 +2375,7 @@
     <Content Include="Scripts\Manuales\ManualCelula.js" />
     <Content Include="Scripts\Reportes\ReporteAsesor.js" />
     <Content Include="Scripts\Reportes\ReporteCelula.js" />
+    <Content Include="Scripts\Shared\ChatHub.js" />
     <Content Include="Scripts\Shared\Helper.js" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CambioEstrato.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ConvenioElectronico.datasource" />
