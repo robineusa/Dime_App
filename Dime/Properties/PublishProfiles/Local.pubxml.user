@@ -7513,25 +7513,25 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/22/2017 14:43:59</publishTime>
     </File>
     <File Include="bin/Dime.dll">
-      <publishTime>02/24/2017 14:42:54</publishTime>
+      <publishTime>02/24/2017 15:44:42</publishTime>
     </File>
     <File Include="bin/Dime.dll.config">
-      <publishTime>02/22/2017 21:28:40</publishTime>
+      <publishTime>02/24/2017 15:12:55</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>02/03/2015 09:32:26</publishTime>
+      <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>02/03/2015 09:32:26</publishTime>
+      <publishTime>03/02/2015 09:32:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
-      <publishTime>03/04/2015 17:07:22</publishTime>
+      <publishTime>04/03/2015 17:07:22</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
-      <publishTime>03/04/2015 17:07:22</publishTime>
+      <publishTime>04/03/2015 17:07:22</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
-      <publishTime>03/04/2015 17:07:22</publishTime>
+      <publishTime>04/03/2015 17:07:22</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.SignalR.Core.dll">
       <publishTime>02/22/2017 12:52:37</publishTime>
@@ -7573,7 +7573,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>07/25/2012 11:48:56</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>03/08/2014 20:33:56</publishTime>
+      <publishTime>08/03/2014 20:33:56</publishTime>
     </File>
     <File Include="bin/Owin.dll">
       <publishTime>11/13/2012 12:19:34</publishTime>
@@ -7621,7 +7621,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/28/2015 04:02:18</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>11/02/2014 15:26:04</publishTime>
+      <publishTime>02/11/2014 15:26:04</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
       <publishTime>01/28/2015 04:02:32</publishTime>
@@ -8260,58 +8260,58 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/21/2017 15:33:21</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaGestion.datasource">
-      <publishTime>02/22/2017 15:41:48</publishTime>
+      <publishTime>02/24/2017 15:44:03</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaGestionAdmin.datasource">
-      <publishTime>02/22/2017 15:41:49</publishTime>
+      <publishTime>02/24/2017 15:44:04</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaPaloteo.datasource">
-      <publishTime>02/22/2017 15:41:49</publishTime>
+      <publishTime>02/24/2017 15:44:04</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaRechazo.datasource">
-      <publishTime>02/22/2017 15:41:49</publishTime>
+      <publishTime>02/24/2017 15:44:03</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.GestionDeCelulaUsr.datasource">
-      <publishTime>02/22/2017 15:41:49</publishTime>
+      <publishTime>02/24/2017 15:44:04</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogCierreCiclo.datasource">
-      <publishTime>02/22/2017 15:41:49</publishTime>
+      <publishTime>02/24/2017 15:44:03</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogClaroVideo.datasource">
-      <publishTime>02/22/2017 15:41:49</publishTime>
+      <publishTime>02/24/2017 15:44:03</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogDocsisOverlap.datasource">
-      <publishTime>02/22/2017 15:41:49</publishTime>
+      <publishTime>02/24/2017 15:44:03</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundCausa.datasource">
-      <publishTime>02/22/2017 15:41:49</publishTime>
+      <publishTime>02/24/2017 15:44:03</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundCierre.datasource">
-      <publishTime>02/22/2017 15:41:49</publishTime>
+      <publishTime>02/24/2017 15:44:03</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundMotivo.datasource">
-      <publishTime>02/22/2017 15:41:49</publishTime>
+      <publishTime>02/24/2017 15:44:03</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundRazon.datasource">
-      <publishTime>02/22/2017 15:41:49</publishTime>
+      <publishTime>02/24/2017 15:44:03</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundTipoContacto.datasource">
-      <publishTime>02/22/2017 15:41:49</publishTime>
+      <publishTime>02/24/2017 15:44:03</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.RazonIngresoSoporte.datasource">
-      <publishTime>02/22/2017 15:41:49</publishTime>
+      <publishTime>02/24/2017 15:44:04</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.Subrazon1IngresoSoporte.datasource">
-      <publishTime>02/22/2017 15:41:49</publishTime>
+      <publishTime>02/24/2017 15:44:04</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.Subrazon2IngresoSoporte.datasource">
-      <publishTime>02/22/2017 15:41:49</publishTime>
+      <publishTime>02/24/2017 15:44:04</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.TablaActualizarInbound.datasource">
-      <publishTime>02/22/2017 15:41:48</publishTime>
+      <publishTime>02/24/2017 15:44:03</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.UsuariosMasivoData.datasource">
-      <publishTime>02/22/2017 15:41:48</publishTime>
+      <publishTime>02/24/2017 15:44:03</publishTime>
     </File>
     <File Include="Styles/Elements/Alertas.css">
       <publishTime>02/21/2017 15:33:21</publishTime>
@@ -8668,7 +8668,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/21/2017 15:33:22</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/24/2017 14:42:58</publishTime>
+      <publishTime>02/24/2017 15:44:45</publishTime>
     </File>
   </ItemGroup>
 </Project>

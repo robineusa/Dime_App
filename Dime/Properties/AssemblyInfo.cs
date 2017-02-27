@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Dime")]
-[assembly: AssemblyDescription("Created by Bartosz Rachwal")]
+[assembly: AssemblyDescription("Aplicacion gestion Contac Center")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("The National Institute of Advanced Industrial Science and Technology, Japan.")]
-[assembly: AssemblyProduct("Asp.Net MVC application with AdminLTE Layout")]
-[assembly: AssemblyCopyright("Copyright © 2016. Bartosz Rachwal. The National Institute of Advanced Industrial Science and Technology, Japan.")]
+[assembly: AssemblyCompany("Claro, Colombia.")]
+[assembly: AssemblyProduct("Aplicacion Dime")]
+[assembly: AssemblyCopyright("Copyright © 2017. Julio Cuervo, David Gomez, Robinson Neusa. Gestion de la Informacion - Claro, Colombia.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
