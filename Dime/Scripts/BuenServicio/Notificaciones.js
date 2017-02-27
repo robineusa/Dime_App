@@ -1,7 +1,6 @@
 ﻿$(document).ready(function () {
 
     $("#btnCargarArchivo").on("click", function () {
-        var x = $("#file").val();
         var inputFileImage = document.getElementById("file");
         var file = inputFileImage.files[0];
         var data = new FormData();
@@ -11,7 +10,7 @@
                 type: "POST",
                 data: data,
                 contentType: false,
-                url: '/BuenServicio/Notificaciones',
+                url: 'Notificaciones',
                 processData: false,
                 cache: false,
                 success: function (result) {
@@ -57,7 +56,7 @@ function ShowGridNotificaciones(jsondataNotificaciones) {
         {
             field: "Nombre_Imagen",
             title: "Nombre",
-            template: '<img src="../../ImagesClient/#=Nombre_Imagen#" alt="image" style="width:100px; height:100px;"/>',
+            template: '<img src="../ImagesClient/#=Nombre_Imagen#" alt="image" style="width:100px; height:100px;"/>',
             width: 70,
             filterable: false, headerAttributes: { style: "white-space: normal" }
         },
@@ -71,5 +70,5 @@ function ShowGridNotificaciones(jsondataNotificaciones) {
 function ActualizarCaso(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = '/BuenServicio/Visualizador_Imagenes?Id_Imagen=' + dataItem.Id;
+    window.location.href = 'Visualizador_Imagenes?Id_Imagen=' + dataItem.Id;
 }

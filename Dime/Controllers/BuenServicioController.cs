@@ -32,14 +32,14 @@ namespace Dime.Controllers
         {
             try
             {
-                string path = Path.Combine(Server.MapPath("~/ImagesClient"), Path.GetFileName(file.FileName));
+                string path = Path.Combine(Server.MapPath("../ImagesClient"), Path.GetFileName(file.FileName));
                 file.SaveAs(path);
             }
             catch (Exception ex)
             {
                 ViewBag.Message = "ERROR:" + ex.Message.ToString();
             }
-            return Content("/ImagesClient/" + file.FileName);
+            return Content("../ImagesClient/" + file.FileName);
         }
 
     
@@ -64,7 +64,7 @@ namespace Dime.Controllers
             BuenServicioServices.ClientCredentials.Authenticate();
             ViewModelNotificacionesBS model = new ViewModelNotificacionesBS();
             model.NotificacionBuenServicio = BuenServicioServices.ImagenporId(Convert.ToInt32(Id_Imagen));
-            ViewBag.NombreImagen = "/ImagesClient/" + model.NotificacionBuenServicio.Nombre_Imagen;
+            ViewBag.NombreImagen = "../ImagesClient/" + model.NotificacionBuenServicio.Nombre_Imagen;
             ViewBag.Url = model.NotificacionBuenServicio.Link_Direccionamiento;
             return View(model);
         }
