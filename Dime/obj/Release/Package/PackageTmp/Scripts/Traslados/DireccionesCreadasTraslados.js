@@ -35,5 +35,5 @@
 function ActualizarCaso(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = '/Traslados/GestionarDireccionCelula?id=' + dataItem.IngresoTrasladoGetSet.IdTransaccion;
+    window.location.href = 'GestionarDireccionCelula?id=' + dataItem.IngresoTrasladoGetSet.IdTransaccion;
 }

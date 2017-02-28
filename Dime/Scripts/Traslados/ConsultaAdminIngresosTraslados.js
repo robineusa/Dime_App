@@ -1,6 +1,4 @@
-﻿
-
-function cambiarfechas() {
+﻿function cambiarfechas() {
     for (var i = 0; i < jsonconsultaadminit.length; i++) {
         jsonconsultaadminit[i].IngresoTrasladoGetSet.FechaApertura = kendo.toString(kendo.parseDate(jsonconsultaadminit[i].IngresoTrasladoGetSet.FechaApertura, 'yyyy-MM-dd'), 'yyyy-MM-dd');
         jsonconsultaadminit[i].IngresoTrasladoGetSet.HoraApertura = kendo.toString(kendo.parseDate(jsonconsultaadminit[i].IngresoTrasladoGetSet.HoraApertura, 'HH:mm:ss'), 'HH:mm:ss');

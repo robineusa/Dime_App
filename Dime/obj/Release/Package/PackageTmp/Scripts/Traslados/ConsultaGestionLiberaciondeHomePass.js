@@ -58,10 +58,10 @@ function ActualizarCaso(e) {
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
 
     if (dataItem.LiberacionHomePass.Razon == "GESTION BACKOFFICE") {
-        window.location.href = '/Traslados/GestionarLiberacionHomePassCelula?id=' + dataItem.LiberacionHomePass.IdTransaccion;
+        window.location.href = 'GestionarLiberacionHomePassCelula?id=' + dataItem.LiberacionHomePass.IdTransaccion;
     }
     else if (dataItem.LiberacionHomePass.Razon == "SOLICITUD INBOUND") {
-        window.location.href = '/Traslados/ConsultaGestionLiberaciondeHomePass';
+        window.location.href = 'ConsultaGestionLiberaciondeHomePass';
     }
 
 

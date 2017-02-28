@@ -1,6 +1,4 @@
-﻿
-
-function cambiarfechas() {
+﻿function cambiarfechas() {
     for (var i = 0; i < jsonconsultaadminit.length; i++) {
         jsonconsultaadminit[i].NotaTrasladoGetSet.FechaTransaccion = kendo.toString(kendo.parseDate(jsonconsultaadminit[i].NotaTrasladoGetSet.FechaTransaccion, 'yyyy-MM-dd HH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
         

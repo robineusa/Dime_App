@@ -1,6 +1,4 @@
-﻿
-
-function cambiarfechas() {
+﻿function cambiarfechas() {
     for (var i = 0; i < jsonconsultaadminit.length; i++) {
         jsonconsultaadminit[i].LiberacionHomePass.FechaTransaccion = kendo.toString(kendo.parseDate(jsonconsultaadminit[i].LiberacionHomePass.FechaTransaccion, 'yyyy-MM-dd HH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
 

@@ -57,11 +57,11 @@ function ActualizarCaso(e) {
 
     if (dataItem.NotaTrasladoGetSet.Razon == "GESTION BACKOFFICE")
     {
-        window.location.href = '/Traslados/GestionarDireccionCelula?id=' + dataItem.NotaTrasladoGetSet.IdTransaccion;
+        window.location.href = 'GestionarDireccionCelula?id=' + dataItem.NotaTrasladoGetSet.IdTransaccion;
     }
     else if (dataItem.NotaTrasladoGetSet.Razon == "GESTION OUTBOUND")
     {
-        window.location.href = '/Traslados/GestionarDireccionOutbound?id=' + dataItem.NotaTrasladoGetSet.IdTransaccion;
+        window.location.href = 'GestionarDireccionOutbound?id=' + dataItem.NotaTrasladoGetSet.IdTransaccion;
     }
 
     

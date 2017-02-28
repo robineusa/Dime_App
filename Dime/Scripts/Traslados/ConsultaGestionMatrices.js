@@ -56,13 +56,13 @@ function ActualizarCaso(e) {
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
 
     if (dataItem.NotaTrasladoGetSet.Razon == "GESTION BACKOFFICE CREACION") {
-        window.location.href = '/Traslados/GestionarCreacionDeMatriz?id=' + dataItem.NotaTrasladoGetSet.IdTransaccion;
+        window.location.href = 'GestionarCreacionDeMatriz?id=' + dataItem.NotaTrasladoGetSet.IdTransaccion;
     }
     else if (dataItem.NotaTrasladoGetSet.Razon == "GESTION BACKOFFICE GESTION") {
-        window.location.href = '/Traslados/GestionMatricesCelula?id=' + dataItem.NotaTrasladoGetSet.IdTransaccion;
+        window.location.href = 'GestionMatricesCelula?id=' + dataItem.NotaTrasladoGetSet.IdTransaccion;
     }
     else if (dataItem.NotaTrasladoGetSet.Razon == "SOLICITUD INBOUND") {
-        window.location.href = '/Traslados/ConsultaGestionMatrices';
+        window.location.href = 'ConsultaGestionMatrices';
     }
 
 

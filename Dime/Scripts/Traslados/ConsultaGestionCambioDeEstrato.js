@@ -57,10 +57,10 @@ function ActualizarCaso(e) {
     e.preventDefault();
    
     if (dataItem.NotaTrasladoGetSet.Razon == "GESTION BACKOFFICE") {
-        window.location.href = '/Traslados/GestionarCambioDeEstratoCelula?id=' + dataItem.NotaTrasladoGetSet.IdTransaccion;
+        window.location.href = 'GestionarCambioDeEstratoCelula?id=' + dataItem.NotaTrasladoGetSet.IdTransaccion;
     }
     else if (dataItem.NotaTrasladoGetSet.Razon == "SOLICITUD INBOUND") {
-        window.location.href = '/Traslados/ConsultaGestionCambioDeEstrato';
+        window.location.href = 'ConsultaGestionCambioDeEstrato';
     }
 }
 $.datetimepicker.setLocale('es');
