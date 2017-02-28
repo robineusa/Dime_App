@@ -1,11 +1,12 @@
 ﻿$(document).ready(function () {
-
+    
     $("#btnCargarArchivo").on("click", function () {
         var inputFileImage = document.getElementById("file");
         var file = inputFileImage.files[0];
         var data = new FormData();
         data.append('file', file);
-        if (x != null) {
+        var x = $("#file").val();
+        if (x != "") {
             $.ajax({
                 type: "POST",
                 data: data,
