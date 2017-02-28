@@ -63,7 +63,7 @@ function Llama_Metodos(connect, UserConnect) {
                                             '<span class="direct-chat-name pull-left">' + V_Usuario + '</span>' +
                                             '<span class="direct-chat-timestamp pull-right">&nbsp;&nbsp;' + V_Fecha + '</span>' +
                                         '</div>' +
-                                        '<img class="direct-chat-img" src="/AdminLTE/dist/img/user.svg" alt="Message User Image">' +
+                                        '<img class="direct-chat-img" src="../AdminLTE/dist/img/user.svg" alt="Message User Image">' +
                                         '<div id="MensajeGlobalR" class="direct-chat-text" style="text-align: justify;">'
                                             + V_Message +
                                         '</div>' +
@@ -73,7 +73,7 @@ function Llama_Metodos(connect, UserConnect) {
                                             '<span class="direct-chat-name pull-right">' + V_Usuario + '</span>' +
                                             '<span class="direct-chat-timestamp pull-left">&nbsp;&nbsp;' + V_Fecha + '</span>' +
                                         '</div>' +
-                                        '<img class="direct-chat-img" src="/AdminLTE/dist/img/user.svg" alt="Message User Image">' +
+                                        '<img class="direct-chat-img" src="../AdminLTE/dist/img/user.svg" alt="Message User Image">' +
                                         '<div id="MensajeGlobalR" class="direct-chat-text" style="text-align: justify;">'
                                             + V_Message +
                                         '</div>' +
