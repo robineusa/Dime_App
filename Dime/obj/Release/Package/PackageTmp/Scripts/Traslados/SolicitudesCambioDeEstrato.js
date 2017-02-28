@@ -36,5 +36,5 @@ $("#gridViewSolicitudesCambioDeEstrato").kendoGrid({
 function ActualizarCaso(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = '/Traslados/GestionarCambioDeEstratoCelula?id=' + dataItem.IngresoTrasladoGetSet.IdTransaccion;
+    window.location.href = 'GestionarCambioDeEstratoCelula?id=' + dataItem.IngresoTrasladoGetSet.IdTransaccion;
 }

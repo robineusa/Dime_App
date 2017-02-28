@@ -51,6 +51,7 @@
     }
 
     $("#listaPermisosCrearMasivo").val("");
+    $("#listaPermisosCrear").val("");
     $("#listaUsuariosMasivo").val("");
 
 });
@@ -93,6 +94,32 @@ function LlenarAccesosDePerfilConsulta() {
 
 function SelectCrearAcceso(e) {
     if ($(e.target).is(':checked')) {
+        if ($("#listaPermisosCrear").val() != "") {
+            $("#listaPermisosCrear").val($("#listaPermisosCrear").val() + "-" + $(e.target).val());
+        } else {
+            $("#listaPermisosCrear").val($(e.target).val());
+        }
+
+    } else {
+        var listaPermisos = $("#listaPermisosCrear").val().split('-');
+        var resultado = "";
+        for (var i = 0; i < listaPermisos.length; i++) {
+            if (listaPermisos[i] != $(e.target).val()) {
+                if (resultado != "") {
+                    resultado = resultado + "-" + listaPermisos[i];
+                } else {
+                    resultado = listaPermisos[i];
+                }
+
+            }
+        }
+
+        $("#listaPermisosCrear").val(resultado);
+    }
+}
+
+function SelectCrearAccesoMasivo(e) {
+    if ($(e.target).is(':checked')) {
         if ($("#listaPermisosCrearMasivo").val() != "") {
             $("#listaPermisosCrearMasivo").val($("#listaPermisosCrearMasivo").val() + "-" + $(e.target).val());
         } else {
@@ -117,9 +144,12 @@ function SelectCrearAcceso(e) {
     }
 }
 
+
 function LlenarAccesosDePerfilCreacion(data) {
     $("#accesosPrivilegiosCreacion").empty();
     $("#accesosPrivilegiosConsulta").empty();
+    $("#listaPermisosCrearMasivo").val("");
+    $("#listaPermisosCrear").val("");
     var table = document.getElementById("accesosPrivilegiosCreacion");
     var i = 0;
     do {
@@ -151,7 +181,6 @@ function IdPerfilDeUsuarioActual(cedulaUsuario)
                 $("#aliadoSelected").append("<option value=" + json[i] + ">" + json[i] + "</option>");
             }
         }
-
     })
 }
 
@@ -195,6 +224,8 @@ function ConsultarUsuariosDeAliadoYPerfil()
 }
 
 function TraerPosiblesLineasYAccesosDePerfil() {
+    $("#listaPermisosCrearMasivo").val("");
+
     $.ajax({
         type: "GET",
         url: urlPosiblesLineasAccesos,
@@ -218,6 +249,8 @@ function TraerPosiblesLineasYAccesosDePerfil() {
 
 
 function TraerPosiblesAccesosDePerfilMasivo() {
+    $("#listaPermisosCrearMasivo").val("");
+
     $.ajax({
         type: "GET",
         url: urlPosiblesLineasAccesos,
@@ -234,8 +267,6 @@ function TraerPosiblesAccesosDePerfilMasivo() {
             }
             LlenarAccesosDePerfilMasivos(json);
         }
-
-
     });
 };
 
@@ -250,18 +281,14 @@ function LlenarAccesosDePerfilMasivos(data) {
             var newCell = row.insertCell(j);
             newCell.style.padding = "4px";
             newCell.innerHTML = '  <label style="font-weight: 400; padding:5px;  border-color: burlywood; background-color:rgba(222, 184, 135, 0.8); width:100%">' +
-                                               ' <input type="checkbox" class="minimal" value="' + data.accesos[i].Id + '" onchange="SelectCrearAcceso(event);"  /> ' + data.accesos[i].Nombre +
+                                               ' <input type="checkbox" class="minimal" value="' + data.accesos[i].Id + '" onchange="SelectCrearAccesoMasivo(event);"  /> ' + data.accesos[i].Nombre +
                                     '</label>';
         }
-
     } while (i < data.accesos.length)
-
 }
 
 
 function GuardarTotalAccesosNuevos() {
-
-
              var grid = $("#gridViewConsulta").data("kendoGrid");
              var gridDataArray = $('#gridViewConsulta').data('kendoGrid')._data;
             for (var i =1; i <= (grid.table.children().length+1); i++)
