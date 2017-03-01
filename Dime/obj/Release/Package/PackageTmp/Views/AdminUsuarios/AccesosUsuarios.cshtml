@@ -140,7 +140,7 @@
                                     <small>Contraseña: </small>
                                 </td>
                                 <td width="200" style="padding:1px;" align="center">
-                                    <!-- <small>Usuario Bloqueado: </small>--> 
+                                     <small>Cambiar Contraseña: </small>
                                 </td>
 
                             </tr>
@@ -153,10 +153,10 @@
                                     @Html.DropDownListFor(m => m.IdLinea, new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm", id = "lineaSelectCreacion" })
                                 </td>
                                 <td style="padding:1px;">
-                                    @Html.TextBoxFor(m => m.Contraseña, new { @class = "form-control input-sm" })
+                                    @Html.TextBoxFor(m => m.Contraseña, new { @class = "form-control input-sm", disabled=true, id="tbContra"})
                                 </td>
                                 <td style="padding:1px;" align="center">
-                                  <!--  Html.CheckBoxFor(m => m.UsuarioBloqueado, new { class= "checkbox" })--> 
+                                    <input type="checkbox"  id="cBCambiarContra"  class= "checkbox" onchange="$('#tbContra').prop('disabled', function(i, v) { return !v; }); "  />
                                 </td>
                             </tr>
                         </table>

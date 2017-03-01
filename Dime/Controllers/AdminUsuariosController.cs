@@ -132,8 +132,12 @@ namespace Dime.Controllers
 
             if(opcionMando.Equals("ActualizarAcceso"))
             {
-                string[] permisos = model.PermisosOtorgados.Split('-');
-                List<string> listaPermisos = permisos.OfType<string>().ToList();
+                string[] permisos;
+                List<string> listaPermisos = new List<string>();
+                if (model.PermisosOtorgados!= null)
+                {   permisos = model.PermisosOtorgados.Split('-');
+                    listaPermisos = permisos.OfType<string>().ToList();
+                }
                 int idUsuario = loginService.RecibirIdUsuario(model.UsuarioHolos.Cedula);
                 if (idUsuario != 0)
                 {

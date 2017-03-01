@@ -17,3 +17,14 @@
 *.dll
 *.cache
 4. Entidades/Telmexla.Servicios.DIME.Entity/obj/Debug/Telmexla.Servicios.DIME.Entity.csproj.FileListAbsolute.txt
+*.dll
+Dime/bin/Telmexla.Servicios.DIME.Entity.pdb
+*.cache
+Dime/obj/Debug/Dime.dll
+*.pdb
+*.cache
+*.txt
+*.pdb
+Dime/obj/Release/Package/PackageTmp/bin/Dime.dll
+*.cache
+*.pubxml
