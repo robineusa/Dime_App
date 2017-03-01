@@ -6714,6 +6714,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaGeneralIngresosmatrices", ReplyAction="http://tempuri.org/ITrasladosService/ListaGeneralIngresosmatricesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaGeneralIngresosmatricesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ConsultaIngresosTrasladosAsesor", ReplyAction="http://tempuri.org/ITrasladosService/ConsultaIngresosTrasladosAsesorResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ConsultaIngresosTrasladosAsesor(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ConsultaIngresosTrasladosAsesor", ReplyAction="http://tempuri.org/ITrasladosService/ConsultaIngresosTrasladosAsesorResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ConsultaIngresosTrasladosAsesorAsync(decimal CuentaCliente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -7085,6 +7091,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaGeneralIngresosmatricesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
             return base.Channel.ListaGeneralIngresosmatricesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ConsultaIngresosTrasladosAsesor(decimal CuentaCliente) {
+            return base.Channel.ConsultaIngresosTrasladosAsesor(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ConsultaIngresosTrasladosAsesorAsync(decimal CuentaCliente) {
+            return base.Channel.ConsultaIngresosTrasladosAsesorAsync(CuentaCliente);
         }
     }
     

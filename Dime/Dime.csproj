@@ -2917,6 +2917,7 @@
     <Content Include="Scripts\Traslados\ConsultaGestionCreacionDr.js" />
     <Content Include="Scripts\Traslados\ConsultaGestionLiberaciondeHomePass.js" />
     <Content Include="Scripts\Traslados\ConsultaGestionMatrices.js" />
+    <Content Include="Scripts\Traslados\ConsultaIngresosTraslados.js" />
     <Content Include="Scripts\Traslados\DireccionesCreadasOutbound.js" />
     <Content Include="Scripts\Traslados\DireccionesCreadasTraslados.js" />
     <Content Include="Scripts\Traslados\GestionarCambioDeEstratoCelula.js" />
@@ -3183,6 +3184,7 @@
     <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Traslados\ConsultaIngresosTraslados.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

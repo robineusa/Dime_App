@@ -6750,6 +6750,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ITrasladosService_ConsultaIngresosTrasladosAsesor_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ITrasladosService_ConsultaIngresosTrasladosAsesor_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IMaestroNodoService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -8754,6 +8792,12 @@
   <wsdl:message name="ITrasladosService_ListaGeneralIngresosmatrices_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListaGeneralIngresosmatricesResponse" />
   </wsdl:message>
+  <wsdl:message name="ITrasladosService_ConsultaIngresosTrasladosAsesor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaIngresosTrasladosAsesor" />
+  </wsdl:message>
+  <wsdl:message name="ITrasladosService_ConsultaIngresosTrasladosAsesor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaIngresosTrasladosAsesorResponse" />
+  </wsdl:message>
   <wsdl:message name="IMaestroNodoService_InsertarNodo_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertarNodo" />
   </wsdl:message>
@@ -9462,6 +9506,10 @@
     <wsdl:operation name="ListaGeneralIngresosmatrices">
       <wsdl:input wsaw:Action="http://tempuri.org/ITrasladosService/ListaGeneralIngresosmatrices" message="tns:ITrasladosService_ListaGeneralIngresosmatrices_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITrasladosService/ListaGeneralIngresosmatricesResponse" message="tns:ITrasladosService_ListaGeneralIngresosmatrices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIngresosTrasladosAsesor">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITrasladosService/ConsultaIngresosTrasladosAsesor" message="tns:ITrasladosService_ConsultaIngresosTrasladosAsesor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITrasladosService/ConsultaIngresosTrasladosAsesorResponse" message="tns:ITrasladosService_ConsultaIngresosTrasladosAsesor_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IMaestroNodoService">
@@ -11220,6 +11268,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_ITrasladosService_ListaGeneralIngresosmatrices_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIngresosTrasladosAsesor">
+      <soap12:operation soapAction="http://tempuri.org/ITrasladosService/ConsultaIngresosTrasladosAsesor" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ITrasladosService_ConsultaIngresosTrasladosAsesor_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ITrasladosService_ConsultaIngresosTrasladosAsesor_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

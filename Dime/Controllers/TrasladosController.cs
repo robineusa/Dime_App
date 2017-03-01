@@ -1108,5 +1108,26 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaGeneralIngresosmatrices(FI, FF);
             return View(modelo);
         }
+        [HttpGet]
+        public ActionResult ConsultaIngresosTraslados()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ConsultaIngresosTraslados(string CuentaCliente)
+        {
+            trasladowebservice = new WSD.TrasladosServiceClient();
+            trasladowebservice.ClientCredentials.Authenticate();
+            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
+            if(CuentaCliente!=null && CuentaCliente!="")
+            {
+                modelo = trasladowebservice.ConsultaIngresosTrasladosAsesor(Convert.ToDecimal(CuentaCliente));
+            }
+            else {
+                return RedirectToAction("ConsultaIngresosTraslados");
+            }
+            
+            return View(modelo);
+        }
     }
 }
