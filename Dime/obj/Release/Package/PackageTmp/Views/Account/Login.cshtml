@@ -14,8 +14,9 @@
 
     @Styles.Render("~/AdminLTEbootstrap/css")
     
-    <link href="~/AdminLTE/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="~/AdminLTE/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
 
     @Styles.Render("~/AdminLTEdist/css")
     @Styles.Render("~/AdminLTEplugins/ichecwk/css/sqare/blue")
@@ -49,12 +50,12 @@
             <div class="form-group has-feedback">
                 @Html.TextBoxFor(m => m.Cedula, new { @class = "form-control", placeholder = "Cedula", onkeypress = "return justNumbers(event);",@autocomplete = "off" })
                 @Html.ValidationMessageFor(m => m.Cedula, "", new { @class = "text-danger" })
-                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                <span class="ion-person form-control-feedback"></span>
             </div>
                 <div class="form-group has-feedback">
                     @Html.PasswordFor(m => m.Contrasena, new { @class = "form-control", type = "password", placeholder = "Contraseña"})
                     @Html.ValidationMessageFor(m => m.Contrasena, "", new { @class = "text-danger" })
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    <span class="ion-locked form-control-feedback"></span>
                 </div>
                 <div class="row">
                     <div class="col-xs-4" style="width:100%;">
@@ -85,8 +86,8 @@
   
     @Scripts.Render("~/AdminLTEplugins/jquery/js")
     @Scripts.Render("~/AdminLTEbootstrap/js")
-    @Scripts.Render("~/AdminLTEplugins/icheck/js")
-    @Scripts.Render("~/AdminLTEplugins/jquery- /js")
+    @*@Scripts.Render("~/AdminLTEplugins/icheck/js")*@
+    @*@Scripts.Render("~/AdminLTEplugins/jquery- /js")*@
     <script>
         var urlRegistroIp = '@Url.Action("AsignarIpsUsuario", "Account")';
     </script>
