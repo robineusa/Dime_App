@@ -1,6 +1,6 @@
-﻿var IVA_ACTUAL = 16;
+﻿var IVA_ACTUAL = 0;
 var Valor_Negativo = -1;
-var Iva_Final = 1.16;
+var Iva_Final = 0.0;
 var SinDisputa = 'SIN DISPUTAS';
 
 $('#estrato').keyup(function () {
@@ -18,6 +18,15 @@ $('#porcentajeDescuento').keyup(function () {
 $('#areaOfrecimiento').change(function () {
     ValidacionCamposNulos();
     resetearValores();
+})
+$('#ivacalculo').keyup(function () {
+    IVA_ACTUAL = $('#ivacalculo').val();
+    if (IVA_ACTUAL == 16) {
+        Iva_Final = 1.16;
+    }else
+        if (IVA_ACTUAL == 19) {
+            Iva_Final = 1.19;
+        } else { }
 })
 $('#porcentajeDescuento').keyup(function () {
     ValidacionCamposNulos();
