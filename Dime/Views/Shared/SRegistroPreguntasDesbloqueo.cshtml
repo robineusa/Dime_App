@@ -44,6 +44,9 @@
         @Scripts.Render("~/Scripts/Forms/Advanced")
     }
     <script>
+
+        var urlSRegistroPregConfirm = '@Url.Action("SRegistroPreguntasDesbloqueoConfirmation", "Account")';
+
         $("#btnRegistrar").on("click", function () {
             var idUsuario = @ViewBag.IdUsuario;
             var datosFullUsuario = "@ViewBag.DatosFullUsuario";
@@ -86,7 +89,7 @@
 
                 $.ajax({
                     type: "POST",
-                    url: "/Account/SRegistroPreguntasDesbloqueoConfirmation",
+                    url: urlSRegistroPregConfirm,
                     contentType: "application/json; charset=utf-8",
                     data: JSON.stringify({ respuestas: resultRespuestas,preguntas:resultPreguntas, idUsuario: idUsuario,
                         datosFullUsuario: datosFullUsuario, sesionUsuario:sesionUsuario }),

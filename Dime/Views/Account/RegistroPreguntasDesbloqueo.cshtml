@@ -20,6 +20,7 @@
 @section scripts{
 
     <script>
+        var urlSRegistropPreguntasDesbloqueo = '@Url.Action("SRegistroPreguntasDesbloqueo","Account")';
 
         $(document).ready(function() {
             var scopeId = @ViewBag.IdUsuario;
@@ -27,7 +28,7 @@
             var sesionUsuario = @ViewBag.SesionUsuario;
             $.ajax({
                 type: "GET",
-                url: '/Account/SRegistroPreguntasDesbloqueo',
+                url: urlSRegistropPreguntasDesbloqueo,
                 contentType: "application/json; charset=utf-8",
                 data: { idUsuario:scopeId, datosFullUsuario:datosFullUsuario, sesionUsuario:sesionUsuario } ,
                 dataType: "html",

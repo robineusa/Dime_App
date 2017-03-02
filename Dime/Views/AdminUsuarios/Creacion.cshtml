@@ -6,374 +6,361 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
-
-<div class="row">
-    <div class="col-md-9" style="width:100%; ">
-
-        <div class="nav-tabs-custom">
-@using (Html.BeginForm("Creacion", "AdminUsuarios", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
+@if (Session["Administracion Usuarios"] != null)
 {
-            <ul class="nav nav-tabs">
-                <li id="Li1" class="active" style="background-color: #dcdcdc;"><a href="#Datos_Usuario" style="background-color: transparent;" data-toggle="tab">Creacion de Usuarios</a></li>
-                <li id="Li2"><a style="background-color: transparent;" href="#Consulta_Usuario" data-toggle="tab" id="consultaUsuarioTab" >Consulta de Usuarios</a></li>
-            </ul>
-            <div class="tab-content" style="padding-left:0; padding-top: 0">
-                <div class="active tab-pane" id="Datos_Usuario" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
-                    <br />
-
-                    <strong><i class="fa fa-chevron-circle-down"></i> Datos del Usuario en Holos:</strong>
-                    @if (ViewBag.UsuarioExiste != null)
-                    {
-                        <label style="color:red" >@ViewBag.UsuarioExiste</label>
-                    }
-               
-                    <table>
-                        <tr>
-                            <td width="200" style="padding:1px;">
-                                <small>Documento de identidad:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Nombre del Usuario:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Aliado:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Nombre Linea:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Usuario RR:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Usuario Agendamiento:  </small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:1px;">
-                                @Html.TextBoxFor(m => m.UsuarioHolos.Cedula, new { @class = "form-control input-sm", id = "cedulaCreacion"})
-                             </td>
-                            <td style="padding:1px;">
-                                @Html.TextBoxFor(m => m.UsuarioHolos.Nombre, new
-                           {
-                               @class = "form-control input-sm",
-                               Value = Model.UsuarioHolos.Nombre1 + " " + Model.UsuarioHolos.Nombre2 +
-" " + Model.UsuarioHolos.Apellido1 + " " + Model.UsuarioHolos.Apellido2
-                          , @readonly="true"  })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.TextBoxFor(m => m.UsuarioHolos.Aliado, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Aliado, @readonly="true" })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.TextBoxFor(m => m.UsuarioHolos.NombreLinea, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.NombreLinea, @readonly="true" })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.TextBoxFor(m => m.UsuarioHolos.UsuarioRr, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.UsuarioRr, @readonly="true" })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.TextBoxFor(m => m.UsuarioHolos.UsuarioAgendamiento, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.UsuarioAgendamiento, @readonly="true" })
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="200" style="padding:1px;">
-                                <small>Usuario Gerencia:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Estado:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Canal:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Operación:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Grupo:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Cargo:  </small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:1px;">
-                                @Html.TextBoxFor(m => m.UsuarioHolos.UsuarioGerencia, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.UsuarioGerencia, @readonly="true" })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.TextBoxFor(m => m.UsuarioHolos.Estado, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Estado, @readonly="true" })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.TextBoxFor(m => m.UsuarioHolos.Canal, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Canal, @readonly="true" })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.TextBoxFor(m => m.UsuarioHolos.Operacion, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Operacion, @readonly="true" })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.TextBoxFor(m => m.UsuarioHolos.Grupo, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Grupo, @readonly="true" })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.TextBoxFor(m => m.UsuarioHolos.Cargo, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Cargo, @readonly="true" })
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="200" style="padding:1px;">
-                                <small>Segmento:  </small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:1px;">
-                                @Html.TextBoxFor(m => m.UsuarioHolos.Segmento, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Segmento, @readonly="true" })
-                            </td>
-                        </tr>
-                    </table>
-                    <br />
-                    <br />
-                    <strong><i class="fa fa-chevron-circle-down"></i> Perfil y Nombre de Línea a Otorgar:</strong>
-                    <table>
-                        <tr>
-                            <td width="200" style="padding:1px;">
-                                <small>Perfil:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Nombre Linea:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Contraseña: </small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:1px;">
-                                @Html.DropDownListFor(m => m.IdPerfil, new List<SelectListItem>() { new SelectListItem { Text="ADMINISTRADOR", Value="1"}, new SelectListItem { Text = "ASESOR", Value = "2" } ,
-                                                                                                    new SelectListItem { Text = "CÉLULA", Value = "3" } }, "-Seleccione-", new { @class = "form-control input-sm", id = "perfilSelectedCreate", onchange = "TraerPosiblesLineasYAccesosDePerfil()" })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.DropDownListFor(m => m.IdLinea, new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm", id = "lineaSelectCreacion" })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.TextBoxFor(m => m.Contraseña, new { @class = "form-control input-sm" })
-                            </td>
-                        </tr>
-                    </table>
-                    <br />
-                   
-                     <strong><i class="fa fa-chevron-circle-down"></i> Accesos y privilegios a Otorgar:</strong>
-                    <br />
-                    <table id="accesosPrivilegiosCreacion">
-                        <tr>
-                            <td width="200" style="padding:1px;"></td>
-                            <td width="200" style="padding:1px;"></td>
-                            <td width="200" style="padding:1px;"></td>
-                            <td width="200" style="padding:1px;"></td>
-                            <td width="200" style="padding:1px;"></td>
-                        </tr>
-                    </table>
-                    @Html.TextBoxFor(m => m.PermisosOtorgados, new { @style = "display:none", id = "listaPermisosCrear" })
- 
-                </div>
-
-
-
-                <div class="tab-pane" id="Consulta_Usuario" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
-                    <br />
-                    <strong><i class="fa fa-chevron-circle-down"></i> Datos del Usuario en Holos:</strong>
-                    @if (ViewBag.UsuarioExiste != null)
-                    {
-                        <label style="color:red">@ViewBag.UsuarioExiste</label>
-                    }
-                    <table>
-                        <tr>
-                            <td width="200" style="padding:1px;">
-                                <small>Documento de identidad:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Nombre del Usuario:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Aliado:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Nombre Linea:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Usuario RR:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Usuario Agendamiento:  </small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:1px;">
-                                <input class = "form-control input-sm" id="cedulaConsulta" value="@Model.UsuarioHolos.Cedula" />
-                            </td>
-                            <td style="padding:1px;">
-                                <input class="form-control input-sm" value="@(Model.UsuarioHolos.Nombre1 + " " + Model.UsuarioHolos.Nombre2 +
-                            " " + Model.UsuarioHolos.Apellido1 + " " + Model.UsuarioHolos.Apellido2)" readonly/>
-
-                            </td>
-                            <td style="padding:1px;">
-                                <input class="form-control input-sm" value="@Model.UsuarioHolos.Aliado" readonly />
-                             </td>
-                            <td style="padding:1px;">
-                                <input class="form-control input-sm" value="@Model.UsuarioHolos.NombreLinea" readonly/>
-                            </td>
-                            <td style="padding:1px;">
-                                <input class="form-control input-sm" value="@Model.UsuarioHolos.UsuarioRr" readonly/>
-                            </td>
-                            <td style="padding:1px;">
-                                <input class="form-control input-sm" value="@Model.UsuarioHolos.UsuarioAgendamiento" readonly/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="200" style="padding:1px;">
-                                <small>Usuario Gerencia:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Estado:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Canal:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Operación:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Grupo:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Cargo:  </small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:1px;">
-                                <input class="form-control input-sm" value="@Model.UsuarioHolos.UsuarioGerencia"  readonly/>
-                            </td>
-                            <td style="padding:1px;">
-                                <input class="form-control input-sm" value="@Model.UsuarioHolos.Estado" readonly/>
-                            </td>
-                            <td style="padding:1px;">
-                                <input class="form-control input-sm" value="@Model.UsuarioHolos.Canal" readonly/>
-                            </td>
-                            <td style="padding:1px;">
-                                <input class="form-control input-sm" value="@Model.UsuarioHolos.Operacion" readonly/>
-                            </td>
-                            <td style="padding:1px;">
-                                <input class="form-control input-sm" value="@Model.UsuarioHolos.Grupo" readonly/>
-                            </td>
-                            <td style="padding:1px;">
-                                <input class="form-control input-sm" value="@Model.UsuarioHolos.Cargo" readonly/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="200" style="padding:1px;">
-                                <small>Segmento:  </small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:1px;">
-                                <input class="form-control input-sm" value="@Model.UsuarioHolos.Segmento" readonly />
-                            </td>
-                        </tr>
-                    </table>
-                    <br />
-                    <strong><i class="fa fa-chevron-circle-down"></i> Perfil y Nombre de línea:</strong>
-                    <table>
-                        <tr>
-                            <td width="200" style="padding:1px;">
-                                <small>Perfil:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Nombre Linea:  </small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:1px;">
-                                @Html.TextBox("nombPerfil", Model.NombrePerfil, new { @class = "form-control input-sm" , @readonly="true" })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.TextBox("nombLinea", Model.NombreLinea, new { @class = "form-control input-sm", @readonly = "true" })
-                            </td>
-                        </tr>
-                    </table>
-
-                    <br />
-            
-                    <strong><i class="fa fa-chevron-circle-down"></i> Accesos y privilegios:</strong>
-                    <br />
-                  
-                        <table id="accesosPrivilegiosConsulta">
-                       
-                            <tr>
-                                <td width="200" style="padding:1px;">
+    using (Html.BeginForm("Creacion", "AdminUsuarios", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
+    {
+        <div class="row">
+            <div class="col-md-9" style="width:100%; ">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321;"><a href="#Datos_Usuario" style="background-color: transparent;" data-toggle="tab">Creacion de Usuarios</a></li>
+                        <li id="Li2"><a style="background-color: transparent;" href="#Consulta_Usuario" data-toggle="tab" id="consultaUsuarioTab">Consulta de Usuarios</a></li>
+                    </ul>
+                    <div class="tab-content" style="padding-left:0; padding-top: 0">
+                        <div class="active tab-pane" id="Datos_Usuario" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                            <br />
+                            <strong><i class="fa fa-chevron-circle-down"></i> Datos del Usuario en Holos:</strong>
+                            @if (ViewBag.UsuarioExiste != null)
+                            {
+                                <label style="color:red">@ViewBag.UsuarioExiste</label>
+                            }
+                            <table>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Documento de identidad:  </small>
                                     </td>
-                                <td width="200" style="padding:1px;">
-                                    
-                                </td>
-                                <td width="200" style="padding:1px;">
-                                    
-                                </td>
-                                <td width="200" style="padding:1px;">
-                                    
-                                </td>
-                                <td width="200" style="padding:1px;">
-                                    
-                                </td>
-                            </tr>
-                        </table>
-             
+                                    <td width="200" style="padding:1px;">
+                                        <small>Nombre del Usuario:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Aliado:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Nombre Linea:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Usuario RR:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Usuario Agendamiento:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.UsuarioHolos.Cedula, new { @class = "form-control input-sm", id = "cedulaCreacion" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.UsuarioHolos.Nombre, new
+                                   {
+                                       @class = "form-control input-sm",
+                                       Value = Model.UsuarioHolos.Nombre1 + " " + Model.UsuarioHolos.Nombre2 +
+" " + Model.UsuarioHolos.Apellido1 + " " + Model.UsuarioHolos.Apellido2
+       ,
+                                       @readonly = "true"
+                                   })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.UsuarioHolos.Aliado, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Aliado, @readonly = "true" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.UsuarioHolos.NombreLinea, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.NombreLinea, @readonly = "true" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.UsuarioHolos.UsuarioRr, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.UsuarioRr, @readonly = "true" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.UsuarioHolos.UsuarioAgendamiento, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.UsuarioAgendamiento, @readonly = "true" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Usuario Gerencia:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Estado:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Canal:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Operación:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Grupo:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Cargo:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.UsuarioHolos.UsuarioGerencia, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.UsuarioGerencia, @readonly = "true" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.UsuarioHolos.Estado, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Estado, @readonly = "true" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.UsuarioHolos.Canal, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Canal, @readonly = "true" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.UsuarioHolos.Operacion, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Operacion, @readonly = "true" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.UsuarioHolos.Grupo, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Grupo, @readonly = "true" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.UsuarioHolos.Cargo, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Cargo, @readonly = "true" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Segmento:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.UsuarioHolos.Segmento, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Segmento, @readonly = "true" })
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <br />
+                            <strong><i class="fa fa-chevron-circle-down"></i> Perfil y Nombre de Línea a Otorgar:</strong>
+                            <table>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Perfil:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Nombre Linea:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Contraseña: </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        @Html.DropDownListFor(m => m.IdPerfil, new List<SelectListItem>() { new SelectListItem { Text="ADMINISTRADOR", Value="1"}, new SelectListItem { Text = "ASESOR", Value = "2" } ,
+                                                                                                    new SelectListItem { Text = "CÉLULA", Value = "3" } }, "-Seleccione-", new { @class = "form-control input-sm", id = "perfilSelectedCreate", onchange = "TraerPosiblesLineasYAccesosDePerfil()" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.DropDownListFor(m => m.IdLinea, new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm", id = "lineaSelectCreacion" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.Contraseña, new { @class = "form-control input-sm" })
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <br />
+                            <strong><i class="fa fa-chevron-circle-down"></i> Accesos y privilegios a Otorgar:</strong>
+                            <br />
+                            <div class="form-group">
+                                <table id="accesosPrivilegiosCreacion">
+                                    <tr>
+                                        <td width="200" style="padding-left:4px;"></td>
+                                        <td width="200" style="padding:1px;"></td>
+                                        <td width="200" style="padding:1px;"></td>
+                                        <td width="200" style="padding:1px;"></td>
+                                        <td width="200" style="padding:1px;"></td>
+                                    </tr>
+                                </table>
+                                @Html.TextBoxFor(m => m.PermisosOtorgados, new { @style = "display:none", id = "listaPermisosCrear" })
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="Consulta_Usuario" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                            <br />
+                            <strong><i class="fa fa-chevron-circle-down"></i> Datos del Usuario en Holos:</strong>
+                            @if (ViewBag.UsuarioExiste != null)
+                            {
+                                <label style="color:red">@ViewBag.UsuarioExiste</label>
+                            }
+                            <table>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Documento de identidad:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Nombre del Usuario:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Aliado:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Nombre Linea:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Usuario RR:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Usuario Agendamiento:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" id="cedulaConsulta" value="@Model.UsuarioHolos.Cedula" />
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" value="@(Model.UsuarioHolos.Nombre1 + " " + Model.UsuarioHolos.Nombre2 +
+" " + Model.UsuarioHolos.Apellido1 + " " + Model.UsuarioHolos.Apellido2)" readonly />
+
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" value="@Model.UsuarioHolos.Aliado" readonly />
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" value="@Model.UsuarioHolos.NombreLinea" readonly />
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" value="@Model.UsuarioHolos.UsuarioRr" readonly />
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" value="@Model.UsuarioHolos.UsuarioAgendamiento" readonly />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Usuario Gerencia:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Estado:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Canal:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Operación:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Grupo:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Cargo:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" value="@Model.UsuarioHolos.UsuarioGerencia" readonly />
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" value="@Model.UsuarioHolos.Estado" readonly />
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" value="@Model.UsuarioHolos.Canal" readonly />
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" value="@Model.UsuarioHolos.Operacion" readonly />
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" value="@Model.UsuarioHolos.Grupo" readonly />
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" value="@Model.UsuarioHolos.Cargo" readonly />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Segmento:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" value="@Model.UsuarioHolos.Segmento" readonly />
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <br />
+                            <strong><i class="fa fa-chevron-circle-down"></i> Perfil y Nombre de línea:</strong>
+                            <table>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Perfil:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Nombre Linea:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        @Html.TextBox("nombPerfil", Model.NombrePerfil, new { @class = "form-control input-sm", @readonly = "true" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBox("nombLinea", Model.NombreLinea, new { @class = "form-control input-sm", @readonly = "true" })
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <br />
+                            <strong><i class="fa fa-chevron-circle-down"></i> Accesos y privilegios:</strong>
+                            <br />
+                            <div class="form-group">
+                                <table id="accesosPrivilegiosConsulta">
+
+                                    <tr>
+                                        <td width="200" style="padding:1px;"></td>
+                                        <td width="200" style="padding:1px;"></td>
+                                        <td width="200" style="padding:1px;"></td>
+                                        <td width="200" style="padding:1px;"></td>
+                                        <td width="200" style="padding:1px;"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="box-footer">
+                        <button id="consultarUsuarioConsulta" type="submit" name="opcionMando" value="ConsultarConsulta" style="display:none"></button>
+                        <button id="consultarUsuario" type="submit" name="opcionMando" value="ConsultarCreando" style="display:none"></button>
+                        <button id="Crear_Usuario" type="submit" class="btn btn-block btn-primary btn-lg" name="opcionMando" value="CrearUsuario" style="width:15%;  margin-left:42.5%;">Crear Usuario</button>
+
+                    </div>
+
+                    <button id="crearUsuariosMasivo" class="btn  btn-info " style="width:10%;  margin-left:75%;" onclick="UsuariosMasivoModal()">Crear Usuarios Masivo</button>
+                    <br />
+                    <br />
+
 
                 </div>
             </div>
-            <br />
-            <div class="box-footer">
-                <button id="consultarUsuarioConsulta" type="submit" name="opcionMando" value="ConsultarConsulta" style="display:none"></button>
-                <button id="consultarUsuario" type="submit" name="opcionMando" value="ConsultarCreando" style="display:none"></button>
-                <button id="Crear_Usuario" type="submit" class="btn btn-block btn-primary btn-lg" name="opcionMando" value="CrearUsuario" style="width:15%;  margin-left:42.5%;">Crear Usuario</button>
-
-            </div>
-}
-            <button id="crearUsuariosMasivo" class="btn  btn-info " style="width:10%;  margin-left:75%;" onclick="UsuariosMasivoModal()">Crear Usuarios Masivo</button>
-            <br />
-            <br />
-
-
         </div>
-    </div>
-</div>
+    }
 
 
 
+    <a href="#usuariosMasivosTab" onclick="LlamarUsuarioMasivosHtml();" data-toggle="modal" data-backdrop="static" data-keyboard="false" id="linkUsuarioMasivoModal">
+    </a>
 
-<a href="#usuariosMasivosTab" onclick="LlamarUsuarioMasivosHtml();" data-toggle="modal" data-backdrop="static" data-keyboard="false" id="linkUsuarioMasivoModal">
-</a>
-
-<div id="usuariosMasivosTab" class="modal">
-    <div class="modal-dialog" style="width:1000px;">
-        <div class="modal-content" style="width:1000px;">
-            <div class="modal-header" style="width:1000px;">
-                <button type="button" class="close" style="color:#ff0000;" data-dismiss="modal" >&times;</button>
-                <h2 class="modal-title"><i class="fa fa-venus-mars" style="color:#ff0000;" aria-hidden="true"></i>   CARGA MASIVA DE USUARIOS</h2>
-            </div>
-            <div class="modal-body" style="width:1000px;">
-                <br />
-                <div class="row">
-                    <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
-                        <div id="usuariosMasivosBody"></div>
+    <div id="usuariosMasivosTab" class="modal">
+        <div class="modal-dialog" style="width:1000px;">
+            <div class="modal-content" style="width:1000px;">
+                <div class="modal-header" style="width:1000px;">
+                    <button type="button" class="close" style="color:#ff0000;" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title"><i class="fa fa-cloud-upload" style="color:#ff0000;" aria-hidden="true"></i>   CARGA MASIVA DE USUARIOS</h2>
+                </div>
+                <div class="modal-body" style="width:1000px;">
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                            <div id="usuariosMasivosBody"></div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
-
     </div>
-</div>
 
-@section Scripts{
-    <script>
-        var segundaPestañaAbierta = @Html.Raw(Json.Encode(@ViewBag.SegundaPestañaAbierta));
-        var urlPosiblesLineasAccesos = '@Url.Action("PosiblesAccesosYLineasDePerfil", "AdminUsuarios")';
-        var urlPosiblesAccesosDeUsuario = '@Url.Action("PosiblesAccesosDeUsuario", "AdminUsuarios")';
-        var urlAccesosUsuariosMasivoHtml  =  '@Url.Action("UsuariosMasivos", "AdminUsuarios")';
-        var cedulaUsuario = @Html.Raw(Json.Encode(Model.UsuarioHolos.Cedula));
+    @section Scripts{
+        <script>
+            var segundaPestañaAbierta = @Html.Raw(Json.Encode(@ViewBag.SegundaPestañaAbierta));
+            var urlPosiblesLineasAccesos = '@Url.Action("PosiblesAccesosYLineasDePerfil", "AdminUsuarios")';
+            var urlPosiblesAccesosDeUsuario = '@Url.Action("PosiblesAccesosDeUsuario", "AdminUsuarios")';
+            var urlAccesosUsuariosMasivoHtml  =  '@Url.Action("UsuariosMasivos", "AdminUsuarios")';
+            var cedulaUsuario = @Html.Raw(Json.Encode(Model.UsuarioHolos.Cedula));
 
-    </script>
-    <script src="~/Scripts/AdminUsuarios/Creacion.js?1.2.6"></script>
+        </script>
+        <script src="~/Scripts/AdminUsuarios/Creacion.js?1.2.8"></script>
+    }
 }
