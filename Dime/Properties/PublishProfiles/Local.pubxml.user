@@ -7513,10 +7513,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/22/2017 14:43:59</publishTime>
     </File>
     <File Include="bin/Dime.dll">
-      <publishTime>02/28/2017 14:35:29</publishTime>
+      <publishTime>03/01/2017 09:35:41</publishTime>
     </File>
     <File Include="bin/Dime.dll.config">
-      <publishTime>02/28/2017 12:52:23</publishTime>
+      <publishTime>03/01/2017 08:31:06</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/02/2015 09:32:26</publishTime>
@@ -8199,6 +8199,9 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="Scripts/Traslados/ConsultaGestionMatrices.js">
       <publishTime>02/28/2017 09:47:47</publishTime>
     </File>
+    <File Include="Scripts/Traslados/ConsultaIngresosTraslados.js">
+      <publishTime>03/01/2017 08:31:08</publishTime>
+    </File>
     <File Include="Scripts/Traslados/DireccionesCreadasOutbound.js">
       <publishTime>02/28/2017 09:47:47</publishTime>
     </File>
@@ -8266,58 +8269,58 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/21/2017 15:33:21</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaGestion.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaGestionAdmin.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaPaloteo.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaRechazo.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.GestionDeCelulaUsr.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogCierreCiclo.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogClaroVideo.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogDocsisOverlap.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundCausa.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundCierre.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundMotivo.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundRazon.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundTipoContacto.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.RazonIngresoSoporte.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.Subrazon1IngresoSoporte.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.Subrazon2IngresoSoporte.datasource">
-      <publishTime>02/28/2017 14:34:39</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.TablaActualizarInbound.datasource">
-      <publishTime>02/28/2017 14:34:38</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.UsuariosMasivoData.datasource">
-      <publishTime>02/28/2017 14:34:38</publishTime>
+      <publishTime>03/01/2017 07:26:32</publishTime>
     </File>
     <File Include="Styles/Elements/Alertas.css">
       <publishTime>02/21/2017 15:33:21</publishTime>
@@ -8512,7 +8515,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/21/2017 15:33:21</publishTime>
     </File>
     <File Include="Views/Marcaciones/NuevasMarcaciones.cshtml">
-      <publishTime>02/21/2017 15:33:21</publishTime>
+      <publishTime>03/01/2017 08:31:09</publishTime>
     </File>
     <File Include="Views/Marcaciones/TipificacionMarcaciones.cshtml">
       <publishTime>02/21/2017 15:33:21</publishTime>
@@ -8548,7 +8551,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/24/2017 14:39:56</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>02/28/2017 12:52:23</publishTime>
+      <publishTime>03/01/2017 08:31:09</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>02/21/2017 15:33:22</publishTime>
@@ -8582,6 +8585,9 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     </File>
     <File Include="Views/Traslados/ConsultaGestionMatrices.cshtml">
       <publishTime>02/24/2017 14:48:28</publishTime>
+    </File>
+    <File Include="Views/Traslados/ConsultaIngresosTraslados.cshtml">
+      <publishTime>03/01/2017 08:31:09</publishTime>
     </File>
     <File Include="Views/Traslados/DireccionesCreadasOutbound.cshtml">
       <publishTime>02/21/2017 15:33:22</publishTime>
@@ -8626,7 +8632,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/21/2017 15:33:22</publishTime>
     </File>
     <File Include="Views/Traslados/SolicitudCambioDeEstrato.cshtml">
-      <publishTime>02/21/2017 15:33:22</publishTime>
+      <publishTime>02/28/2017 14:50:53</publishTime>
     </File>
     <File Include="Views/Traslados/SolicitudCrearDireccion.cshtml">
       <publishTime>02/24/2017 11:50:18</publishTime>
@@ -8644,10 +8650,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/21/2017 15:33:22</publishTime>
     </File>
     <File Include="Views/Traslados/SolicitudLiberacionHomePass.cshtml">
-      <publishTime>02/21/2017 15:33:22</publishTime>
+      <publishTime>02/28/2017 14:50:53</publishTime>
     </File>
     <File Include="Views/Traslados/SolicitudMatrices.cshtml">
-      <publishTime>02/21/2017 15:33:22</publishTime>
+      <publishTime>02/28/2017 14:50:53</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>02/21/2017 15:33:22</publishTime>
@@ -8674,7 +8680,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>02/21/2017 15:33:22</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/28/2017 13:37:30</publishTime>
+      <publishTime>03/01/2017 09:36:22</publishTime>
     </File>
   </ItemGroup>
 </Project>
