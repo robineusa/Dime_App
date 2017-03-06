@@ -6,6 +6,93 @@
  */
 //alert(UserConnect);
 
+
+var lockScreenShow = false;
+var closingPage = false;
+var mouseMovedTimeAgo = false;
+var lockScreenTrigger = setTimeout(function () {
+}, 20000);
+
+
+$(document).ready(function () {
+    ResetearDivs();
+    if (closingPage == false) {
+        ResetearTiempoLockScreen();
+    }
+});
+
+
+window.onbeforeunload = function (e) {
+    closingPage = true;
+    clearTimeout(lockScreenTrigger);
+    lockScreenTrigger = setTimeout(function () {
+        console.log("ejecutado  borrado");
+    }, 20000);
+    console.log("page exit");
+};
+
+/**/
+window.onmousemove = function (e) {
+    if (lockScreenShow == false && closingPage == false) {
+        ResetearTiempoLockScreen();
+    }
+    /*if (mouseMovedTimeAgo == false)
+        {
+    if (lockScreenShow == false && closingPage== false) {
+        ResetearTiempoLockScreen();
+        mouseMovedTimeAgo = true;
+        ResetTimeMuseMoved();
+       }
+       }
+       */
+}
+
+function ResetTimeMouseMoved() {
+    setTimeout(function () {
+        mouseMovedTimeAgo = false;
+    }, 5000)
+}
+
+window.onclick = function (event) {
+    if (lockScreenShow == false && closingPage == false) {
+        ResetearTiempoLockScreen();
+    }
+}
+
+
+window.onkeypress = function (event) {
+    if (lockScreenShow == false) {
+        ResetearTiempoLockScreen();
+    }
+}
+
+
+function ResetearTiempoLockScreen() {
+    console.log("resetea lock");
+    if (closingPage == false) {
+        clearTimeout(lockScreenTrigger);
+        lockScreenTrigger = setTimeout(function () {
+            lockScreenShow = true;
+            $("#lockScreenActivate").click();
+        }, 20000);
+    }
+}
+
+
+
+function LockScreen() {
+    $.ajax({
+        type: "GET",
+        url: urlLockScreen,
+        dataType: "html",
+        success: function (result) {
+            $("#lockScreenDiv").html(result);
+        }
+
+    })
+
+}
+
 function LlamarCalculosCampanas() {
 
     $.ajax({
@@ -66,6 +153,7 @@ function ResetearDivs() {
     $('#compensacionBody').html(vacio);
     $('#campanasBody').html(vacio);
     $('#prorrateosBody').html(vacio);
+    $("#lockScreenDiv").html(vacio);
 }
 
 (function ($, AdminLTE) {
