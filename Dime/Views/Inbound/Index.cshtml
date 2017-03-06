@@ -83,11 +83,11 @@
     <div class="row">
         <div class="col-md-9" style="width:100%; ">
             <div class="nav-tabs-custom">
-                    <ul class="nav nav-tabs">
-                        <li  class="active"><a id="Li1" href="#datosBasicos" aria-controls="datosBasicos" data-toggle="tab" role="tab" style="background-color:#dcdcdc;">Datos Básicos</a></li>
-                        <li ><a id="Li2" href="#datosAdicionales" aria-controls="datosAdicionales" data-toggle="tab" role="tab" style="background-color:#f6f6f6;">Datos Adicionales</a></li>
-                    </ul>
-                
+                <ul class="nav nav-tabs">
+                    <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321"><a href="#datosBasicos" aria-controls="datosBasicos" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Básicos</a></li>
+                    <li id="Li2"><a href="#datosAdicionales" aria-controls="datosAdicionales" data-toggle="tab" role="tab" style="background-color: transparent;">Datos Adicionales</a></li>
+                </ul>
+
 
                 <div class="tab-content" style="padding-left:0; padding-top: 0">
                     <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosBasicos">
@@ -324,239 +324,223 @@
                 <div class="box-footer">
                     <button type="submit" style="display:none;" class="btn btn-primary" name="cambiarDatos" value="sacarDatos" id="submitGetDatos">Submit</button>
                 </div>
-                <br />
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="active"><a id="Li3" href="#tipificacion" aria-controls="tipificacion" role="tab" data-toggle="tab" style="background-color:#dcdcdc; ">Tipificación</a></li>
+                    <li role="presentation"><a id="Li4" href="#historicoDeCasos" aria-controls="historicoDeCasos" role="tab" data-toggle="tab" style="background-color:#f6f6f6;">Histórico de Casos</a></li>
+                </ul>
+                <div class="tab-content" style="padding-left:0; padding-top: 0">
+                    <div class="tab-pane tab-dime-first active" role="tabpanel" id="tipificacion">
 
+                        <div style="padding-left:5px; padding-top:10px;">
+                            <small>Ingrese datos para consultar:</small> <br />
 
+                            <input type="text" class="form-control input-sm" id="keyMarcacion" style="width:200px; display:inline" autocomplete="off" />
+                            <label id="avisoNoResultado" style="color:red; display:inline "> </label>
 
+                            <br />
+                            <br />
+                            <div style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px; padding-top:12px;">
+                                <ul style="list-style-type:none" id="listaMarcaciones"></ul><br />
+                                <label id="avisoYaMarcacionEnCaso" style="color:red"> </label>
+                                @Html.HiddenFor(m => m.ModelTipiMarca.IngresoTipMarcacion.TiempoRespuesta, new { id = "marcaTiempo" })
+                            </div>
 
+                            <br />
+                            <table>
+                                <tr>
+                                    <td width="300" style="padding:1px;">
+                                        <small>Servicio:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
 
-                <div class="row">
-                    <div class="col-md-10">
-
-
-                        <div role="tabpanel">
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active"><a id="Li3" href="#tipificacion" aria-controls="tipificacion" role="tab" data-toggle="tab" style="background-color:#dcdcdc; ">Tipificación</a></li>
-                                <li role="presentation"><a id="Li4" href="#historicoDeCasos" aria-controls="historicoDeCasos" role="tab" data-toggle="tab" style="background-color:#f6f6f6;">Histórico de Casos</a></li>
-                            </ul>
-
-                        </div>
-
-
-                        <div class="tab-content">
-                            <div class="tab-pane tab-dime-first active" role="tabpanel" id="tipificacion">
-
-                                <div style="padding-left:5px; padding-top:10px;">
-                                    <small>Ingrese datos para consultar:</small> <br />
-
-                                    <input type="text" class="form-control input-sm" id="keyMarcacion" style="width:200px; display:inline" autocomplete="off" />
-                                    <label id="avisoNoResultado" style="color:red; display:inline "> </label>
-
-                                    <br />
-                                    <br />
-                                    <div style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px; padding-top:12px;">
-                                        <ul style="list-style-type:none" id="listaMarcaciones"></ul><br />
-                                        <label id="avisoYaMarcacionEnCaso" style="color:red"> </label>
-                                        @Html.HiddenFor(m => m.ModelTipiMarca.IngresoTipMarcacion.TiempoRespuesta, new { id = "marcaTiempo" })
-                                    </div>
-
-                                    <br />
-                                    <table>
-                                        <tr>
-                                            <td width="300" style="padding:1px;">
-                                                <small>Servicio:  </small>
-                                            </td>
-                                        </tr>
-                                        <tr>
-
-                                            <td style="padding:1px;">
-                                                @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.IdServicio, new List<SelectListItem> {new SelectListItem{Text="--Seleccione--", Value="0" },new SelectListItem{Text="TV", Value="1" },
+                                    <td style="padding:1px;">
+                                        @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.IdServicio, new List<SelectListItem> {new SelectListItem{Text="--Seleccione--", Value="0" },new SelectListItem{Text="TV", Value="1" },
                                                                                              new SelectListItem{Text="@", Value="2" }, new SelectListItem{Text="VOZ", Value="3" } , new SelectListItem { Text = "TV - VOZ", Value = "4" },
                                                                                          new SelectListItem { Text = "TV - @", Value = "5" }, new SelectListItem { Text = "VOZ - @", Value = "6" },new SelectListItem { Text = "TV - @ - VOZ", Value = "7" }}, new { @class = "form-control input-sm", style = "display:inline" })
-                                                @if (ViewBag.ErrorTextBoxServicio != null)
-                                                {
-                                                    <label id="avisoNoResultado" style="color:red; display:inline "> @ViewBag.ErrorTextBoxServicio.ToString()</label>
-                                                }
-                                            </td>
+                                        @if (ViewBag.ErrorTextBoxServicio != null)
+                                        {
+                                            <label id="avisoNoResultado" style="color:red; display:inline "> @ViewBag.ErrorTextBoxServicio.ToString()</label>
+                                        }
+                                    </td>
 
-                                        </tr>
-                                        <tr>
+                                </tr>
+                                <tr>
 
-                                            <td width="300" style="padding:1px;">
-                                                <small>Macroproceso:  </small>
-                                            </td>
-                                        </tr>
-                                        <tr>
+                                    <td width="300" style="padding:1px;">
+                                        <small>Macroproceso:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
 
-                                            <td style="padding:1px;">@Html.TextBoxFor(m => m.ModelTipiMarca.IngresoTipMarcacion.Macroproceso, new { @class = "form-control input-sm", id = "tbMacroproceso", @readonly = "true" })</td>
-                                        </tr>
-                                    </table>
+                                    <td style="padding:1px;">@Html.TextBoxFor(m => m.ModelTipiMarca.IngresoTipMarcacion.Macroproceso, new { @class = "form-control input-sm", id = "tbMacroproceso", @readonly = "true" })</td>
+                                </tr>
+                            </table>
 
-                                    <br />
-                                    <label>
-                                        Posible Causa
-                                    </label>
-                                    <div id="lbPosibleCausa" style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px;  padding:12px;">
-                                    </div>
-                                    <br />
-                                    <label>
-                                        Que Hacer
-                                    </label>
-                                    <div id="lbQueHacer" style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px; padding:12px;">
-                                    </div>
-                                    <br />
-                                    <label>
-                                        Códigos de Cierre
-                                    </label>
-                                    <div id="lbCodigosCierre" style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px; padding:12px; ">
-                                    </div>
-                                    <br />
-                                    <label>
-                                        Área Usuario a Escalar:
-                                    </label>
-                                    <div id="lbUsuarioAEscalar" style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px; padding:12px; ">
-                                    </div>
+                            <br />
+                            <label>
+                                Posible Causa
+                            </label>
+                            <div id="lbPosibleCausa" style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px;  padding:12px;">
+                            </div>
+                            <br />
+                            <label>
+                                Que Hacer
+                            </label>
+                            <div id="lbQueHacer" style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px; padding:12px;">
+                            </div>
+                            <br />
+                            <label>
+                                Códigos de Cierre
+                            </label>
+                            <div id="lbCodigosCierre" style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px; padding:12px; ">
+                            </div>
+                            <br />
+                            <label>
+                                Área Usuario a Escalar:
+                            </label>
+                            <div id="lbUsuarioAEscalar" style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px; padding:12px; ">
+                            </div>
 
-                                    <table>
-                                        <tr>
-                                            <td width="300" style="padding:1px;">
-                                                <small>Marcación:  </small>
+                            <table>
+                                <tr>
+                                    <td width="300" style="padding:1px;">
+                                        <small>Marcación:  </small>
 
-                                            <td width="300" style="padding:1px;">
-                                                <small>Tipo de Atención:  </small>
-                                            </td>
+                                    <td width="300" style="padding:1px;">
+                                        <small>Tipo de Atención:  </small>
+                                    </td>
 
-                                            <td width="300" style="padding:1px;">
-                                                <small>Producto Asociado:  </small>
-                                            </td>
-                                            <td width="300" style="padding:1px;">
-                                                <small>SPC:  </small>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding:1px;">@Html.TextBoxFor(m => m.ModelTipiMarca.IngresoTipMarcacion.Marcacion, new { @class = "form-control input-sm", id = "tbMarcacion", @readonly = "true" })</td>
-                                            <td style="padding:1px;">@Html.TextBox("tbTipoAtencion", null, new { @class = "form-control input-sm", @readonly = "true" })</td>
-                                            <td style="padding:1px;">@Html.TextBox("tbProductoAsociado", null, new { @class = "form-control input-sm", @readonly = "true" })</td>
-                                            <td style="padding:1px;">@Html.TextBox("tbSpc", null, new { @class = "form-control input-sm", @readonly = "true" })</td>
-                                        </tr>
-                                    </table>
-                                    <br />
-                                    <div>
-                                        <label>
-                                            Notas:
-                                        </label><br />
+                                    <td width="300" style="padding:1px;">
+                                        <small>Producto Asociado:  </small>
+                                    </td>
+                                    <td width="300" style="padding:1px;">
+                                        <small>SPC:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">@Html.TextBoxFor(m => m.ModelTipiMarca.IngresoTipMarcacion.Marcacion, new { @class = "form-control input-sm", id = "tbMarcacion", @readonly = "true" })</td>
+                                    <td style="padding:1px;">@Html.TextBox("tbTipoAtencion", null, new { @class = "form-control input-sm", @readonly = "true" })</td>
+                                    <td style="padding:1px;">@Html.TextBox("tbProductoAsociado", null, new { @class = "form-control input-sm", @readonly = "true" })</td>
+                                    <td style="padding:1px;">@Html.TextBox("tbSpc", null, new { @class = "form-control input-sm", @readonly = "true" })</td>
+                                </tr>
+                            </table>
+                            <br />
+                            <div>
+                                <label>
+                                    Notas:
+                                </label><br />
 
-                                        @Html.TextAreaFor(m => m.ModelTipiMarca.Observaciones, new { @style = "width: 100%; height: 80px; resize: none;" })
-                                    </div>
+                                @Html.TextAreaFor(m => m.ModelTipiMarca.Observaciones, new { @style = "width: 100%; height: 80px; resize: none;" })
+                            </div>
 
 
-                                </div>
-                                <br />
+                        </div>
+                        <br />
 
-                                <div style="background-color: dimgray ; color:white; border-radius:5px;text-align:left; ">
+                        <div style="background-color: dimgray ; color:white; border-radius:5px;text-align:left; ">
 
-                                    <table>
-                                        <tr>
-                                            <td width="300" style="padding:5px;">
-                                                <small>Estado Caso:  </small>
+                            <table>
+                                <tr>
+                                    <td width="300" style="padding:5px;">
+                                        <small>Estado Caso:  </small>
 
-                                            <td width="300" style="padding:5px;">
-                                                <small>Area a Escalar:  </small>
-                                            </td>
+                                    <td width="300" style="padding:5px;">
+                                        <small>Area a Escalar:  </small>
+                                    </td>
 
-                                            <td width="300" style="padding:5px;">
-                                                <small>Número de PQRÑ RR::  </small>
-                                            </td>
+                                    <td width="300" style="padding:5px;">
+                                        <small>Número de PQRÑ RR::  </small>
+                                    </td>
 
-                                        </tr>
-                                        <tr>
-                                            <td style="padding:5px;">
-                                                @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.IdEstado, new List<SelectListItem> {new SelectListItem{Text="ABIERTO", Value="1" },
+                                </tr>
+                                <tr>
+                                    <td style="padding:5px;">
+                                        @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.IdEstado, new List<SelectListItem> {new SelectListItem{Text="ABIERTO", Value="1" },
                                                                                              new SelectListItem{Text="CERRADO", Value="2" }, new SelectListItem{Text="SEGUIMIENTO", Value="3" }}, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddState", onchange = "ChangeStateCase();" })
-                                            </td>
-                                            <td style="padding:5px;">
-                                                @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {new SelectListItem{Text="CÉLULA AJUSTES", Value="CELULA AJUSTES" },
+                                    </td>
+                                    <td style="padding:5px;">
+                                        @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {new SelectListItem{Text="CÉLULA AJUSTES", Value="CELULA AJUSTES" },
                                                                                              new SelectListItem{Text="CÉLULA FACTURACION Y CARTERA", Value="CELULA FACTURACION Y CARTERA" }, new SelectListItem{Text="CELULA OPERACIONES", Value="CELULA OPERACIONES" },
                                                                                                new SelectListItem{Text="CÉLULA PQR", Value="CELULA PQR" },new SelectListItem{Text="CÉLULA ALTO VALOR", Value="CELULA ALTO VALOR" }, new SelectListItem{Text="CÉLULA ALTO VALOR VIP", Value="CELULA ALTO VALOR VIP" },
                                                                                                 new SelectListItem {Text="CÉLULA SOPORTE", Value="CELULA SOPORTE" } }, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalar", @onchange = "AEscalarCambiado()" })
-                                            </td>
-                                            <td style="padding:5px;">@Html.TextBoxFor(m => m.ModelTipiMarca.IngresoTipMarcacion.Ticket, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddLlamada" })</td>
+                                    </td>
+                                    <td style="padding:5px;">@Html.TextBoxFor(m => m.ModelTipiMarca.IngresoTipMarcacion.Ticket, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddLlamada" })</td>
 
-                                        </tr>
-                                    </table>
+                                </tr>
+                            </table>
 
-                                    <table id="cellSoporteTable" style="display:none">
-                                        <tr>
-                                            <td width="300" style="padding:5px;">
-                                                <small>Incidencia CCAA:  </small>
-                                            </td>
-                                            <td width="300" style="padding:5px;">
-                                                <small>Quien Autoriza:  </small>
-                                            </td>
-                                            <td width="300" style="padding:5px;">
-                                                <small>Tipo de Segumiento:  </small>
-                                            </td>
-                                            <td width="300" style="padding:5px;">
-                                                <small>CCAA Indica Visita Tecnica: </small>
-                                            </td>
+                            <table id="cellSoporteTable" style="display:none">
+                                <tr>
+                                    <td width="300" style="padding:5px;">
+                                        <small>Incidencia CCAA:  </small>
+                                    </td>
+                                    <td width="300" style="padding:5px;">
+                                        <small>Quien Autoriza:  </small>
+                                    </td>
+                                    <td width="300" style="padding:5px;">
+                                        <small>Tipo de Segumiento:  </small>
+                                    </td>
+                                    <td width="300" style="padding:5px;">
+                                        <small>CCAA Indica Visita Tecnica: </small>
+                                    </td>
 
-                                        </tr>
-                                        <tr>
-                                            <td style="padding:5px;">
-                                                @Html.TextBoxFor(m => m.ModelTipiMarca.IngresoSoporte.IncidenciaCcaa, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;" })
-                                            </td>
-                                            <td style="padding:5px;">
-                                                @Html.TextBoxFor(m => m.ModelTipiMarca.IngresoSoporte.NombreAutoriza, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;" })
+                                </tr>
+                                <tr>
+                                    <td style="padding:5px;">
+                                        @Html.TextBoxFor(m => m.ModelTipiMarca.IngresoSoporte.IncidenciaCcaa, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;" })
+                                    </td>
+                                    <td style="padding:5px;">
+                                        @Html.TextBoxFor(m => m.ModelTipiMarca.IngresoSoporte.NombreAutoriza, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;" })
 
-                                            </td>
-                                            <td style="padding:5px;">
-                                                @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoSoporte.TipoSegumiento, new List<SelectListItem> {new SelectListItem{Text="--Seleccione--", Value="0" },new SelectListItem{Text="Programación de visita tecnica", Value="CELULA VISITA SOPORTE" },
+                                    </td>
+                                    <td style="padding:5px;">
+                                        @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoSoporte.TipoSegumiento, new List<SelectListItem> {new SelectListItem{Text="--Seleccione--", Value="0" },new SelectListItem{Text="Programación de visita tecnica", Value="CELULA VISITA SOPORTE" },
                                                                                              new SelectListItem{Text="Seguimiento por CCAA", Value="CELULA SEGUIMIENTO SOPORTE" }}, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalarSoporte", onchange = "CambioEscalaSoporte()" })
-                                            </td>
-                                            <td style="padding:5px;">
-                                                @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoSoporte.CcaaIndicaVisitaTecnica, new List<SelectListItem> { new SelectListItem { Text = "--Seleccione--", Value = "0" },
+                                    </td>
+                                    <td style="padding:5px;">
+                                        @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoSoporte.CcaaIndicaVisitaTecnica, new List<SelectListItem> { new SelectListItem { Text = "--Seleccione--", Value = "0" },
                                                     new SelectListItem{Text="SI", Value="SI" },
                                                                                              new SelectListItem{Text="NO", Value="NO" }}, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;" })
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <br />
-                                </div>
-
-                                <br />
-                                <button id="btnSubmitCaso" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;" disabled>Guardar Datos</button>
-
-
-                            </div>
-                            <div class="tab-pane tab-dime-first" role="tabpanel" id="historicoDeCasos">
-                                <br />
-
-                                <label style="background-color: green; color: aliceblue; font-weight:400; padding:5px; border-radius:5px; border-color:black; ">
-                                    CASOS ABIERTOS:
-                                </label>
-                                <br />
-
-                                <div id="viewHistoricoCasosAbiertos"></div>
-                                <br />
-                                <br />
-
-
-                                <label style="background-color:red; color: aliceblue; font-weight:400; padding:5px; border-radius:5px; border-color:black;">
-                                    CASOS CERRADOS:
-
-                                </label>
-                                <br />
-
-
-
-                                <div id="viewHistoricoCasosCerrados"></div>
-                            </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
                         </div>
+
+                        <br />
+                        <button id="btnSubmitCaso" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;" disabled>Guardar Datos</button>
 
 
                     </div>
-                </div>
+                    <div class="tab-pane tab-dime-first" role="tabpanel" id="historicoDeCasos">
+                        <br />
 
+                        <label style="background-color: green; color: aliceblue; font-weight:400; padding:5px; border-radius:5px; border-color:black; ">
+                            CASOS ABIERTOS:
+                        </label>
+                        <br />
+
+                        <div id="viewHistoricoCasosAbiertos"></div>
+                        <br />
+                        <br />
+
+
+                        <label style="background-color:red; color: aliceblue; font-weight:400; padding:5px; border-radius:5px; border-color:black;">
+                            CASOS CERRADOS:
+
+                        </label>
+                        <br />
+
+
+
+                        <div id="viewHistoricoCasosCerrados"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -714,7 +698,7 @@
     </script>
 
 
-    <script src="~/Scripts/Inbound/Index.js?1.0.7"></script>
+    <script src="~/Scripts/Inbound/Index.js?1.0.8"></script>
 
 }
 
