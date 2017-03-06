@@ -11,7 +11,7 @@ var lockScreenShow = false;
 var closingPage = false;
 var mouseMovedTimeAgo = false;
 var lockScreenTrigger = setTimeout(function () {
-}, 20000);
+}, 200000);
 
 
 $(document).ready(function () {
@@ -27,7 +27,7 @@ window.onbeforeunload = function (e) {
     clearTimeout(lockScreenTrigger);
     lockScreenTrigger = setTimeout(function () {
         console.log("ejecutado  borrado");
-    }, 20000);
+    }, 200000);
     console.log("page exit");
 };
 
@@ -74,7 +74,7 @@ function ResetearTiempoLockScreen() {
         lockScreenTrigger = setTimeout(function () {
             lockScreenShow = true;
             $("#lockScreenActivate").click();
-        }, 20000);
+        }, 200000);
     }
 }
 

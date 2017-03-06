@@ -311,7 +311,6 @@ namespace Dime.Controllers
         [AllowAnonymous]
         public PartialViewResult SLockScreen()
         {
-
          return PartialView("SLockScreen","Account");
         }
 
@@ -324,13 +323,17 @@ namespace Dime.Controllers
             if (loginService.ExisteUsuarioHolos(Convert.ToDecimal(usuarioLogeado.Cedula)))
             {
             usuarioEnHolos = true;
+            string ipPrivada = Session["IpPrivada"].ToString(); string ipPublica = Session["IpPublica"].ToString();
+            RegistrarSesionUsuario(ipPrivada, ipPublica, usuarioLogeado.Id);
+            Session.Clear();
             Session["IdUsuario"] = usuarioLogeado.Id;
             Session["Usuario"] = Convert.ToInt32(usuarioLogeado.Cedula);
             Session["NombreUsuario"] = usuarioLogeado.Nombre.ToString();
             Session["AliadoLogeado"] = loginService.AliadoDeUsuario(usuarioLogeado.Cedula); //"BRM"
             Session["LineaLogeado"] = loginService.LineaDeUsuarioPorId(Convert.ToInt32(usuarioLogeado.IdLinea));   //  "CELULA VISITA SOPORTE";
             Session["ModoLogin"] = loginService.ModoLoginPorId(Convert.ToInt32(usuarioLogeado.IdLinea));  //1
-            RegistrarSesionUsuario(Session["IpPrivada"].ToString(), Session["IpPublica"].ToString());
+            Session["IpPrivada"] = ipPrivada;
+            Session["IpPublica"] = ipPublica;
             List<string> accesosDeUsuario = loginService.ListaAccesosDeUsuario( Convert.ToInt32(usuarioLogeado.Cedula));
             foreach(string acceso in accesosDeUsuario)
             {
@@ -342,16 +345,18 @@ namespace Dime.Controllers
             }
         }
 
+ 
+        
 
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult  RegistrarSesionUsuario(string ipPrivada, string ipPublica)
+        public ActionResult  RegistrarSesionUsuario(string ipPrivada, string ipPublica, int idUsuario)
         {
             loginService = new WSD.LoginServiceClient();
             loginService.ClientCredentials.Authenticate();
                 RegistroSesion registroSesion = new RegistroSesion();
                 registroSesion.EsIngreso = true;
-                registroSesion.IdUsuario =Convert.ToInt32(Session["IdUsuario"]);
+                registroSesion.IdUsuario = idUsuario;
                 registroSesion.IpPrivadaCreacion = ipPrivada;
                 registroSesion.IpPublicaCreacion = ipPublica;
                 registroSesion.FechaCreacion = DateTime.Now;
@@ -415,8 +420,8 @@ namespace Dime.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("DashboardAsesor", "Home");
+            Session.Clear();
+            return RedirectToAction("Login", "Account");
         }
 
 
