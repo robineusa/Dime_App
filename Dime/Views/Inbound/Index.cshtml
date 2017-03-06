@@ -4,8 +4,9 @@
     ViewBag.Subtitle = "Asesor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
+@if (Session["Tipificacor Sac"] != null)
+{
+using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
 {
     <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
         <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
@@ -87,10 +88,8 @@
                     <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321"><a href="#datosBasicos" aria-controls="datosBasicos" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Básicos</a></li>
                     <li id="Li2"><a href="#datosAdicionales" aria-controls="datosAdicionales" data-toggle="tab" role="tab" style="background-color: transparent;">Datos Adicionales</a></li>
                 </ul>
-
-
                 <div class="tab-content" style="padding-left:0; padding-top: 0">
-                    <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosBasicos">
+                    <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosBasicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
                         <table>
                             <tr>
                                 <td><br /></td>
@@ -226,7 +225,7 @@
                         </table>
                     </div>
 
-                    <div role="tabpanel" class="tab-pane tab-dime-first" id="datosAdicionales">
+                    <div role="tabpanel" class="tab-pane tab-dime-first" id="datosAdicionales" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
                         <table>
                             <tr>
                                 <td style="padding:1px;"><br /></td>
@@ -318,32 +317,30 @@
                                 </td>
                             </tr>
                         </table>
-
                     </div>
                 </div>
-                <div class="box-footer">
+                <div class="box-footer" style="display:none">
                     <button type="submit" style="display:none;" class="btn btn-primary" name="cambiarDatos" value="sacarDatos" id="submitGetDatos">Submit</button>
                 </div>
             </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9" style="width:100%;">
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
-                    <li role="presentation" class="active"><a id="Li3" href="#tipificacion" aria-controls="tipificacion" role="tab" data-toggle="tab" style="background-color:#dcdcdc; ">Tipificación</a></li>
-                    <li role="presentation"><a id="Li4" href="#historicoDeCasos" aria-controls="historicoDeCasos" role="tab" data-toggle="tab" style="background-color:#f6f6f6;">Histórico de Casos</a></li>
+                    <li id="Li3" class="active"style="background-color:#dcdcdc; border-color: #c23321"><a href="#tipificacion" aria-controls="tipificacion" role="tab" data-toggle="tab" style="background-color:transparent; ">Tipificación</a></li>
+                    <li id="Li4"><a href="#historicoDeCasos" aria-controls="historicoDeCasos" role="tab" data-toggle="tab" style="background-color:transparent;">Histórico de Casos</a></li>
                 </ul>
                 <div class="tab-content" style="padding-left:0; padding-top: 0">
-                    <div class="tab-pane tab-dime-first active" role="tabpanel" id="tipificacion">
+                    <div class="active tab-pane" role="tabpanel" id="tipificacion" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                        <div class="form-group" style="padding-left:5px;">
 
-                        <div style="padding-left:5px; padding-top:10px;">
                             <small>Ingrese datos para consultar:</small> <br />
-
                             <input type="text" class="form-control input-sm" id="keyMarcacion" style="width:200px; display:inline" autocomplete="off" />
                             <label id="avisoNoResultado" style="color:red; display:inline "> </label>
 
                             <br />
                             <br />
-                            <div style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px; padding-top:12px;">
+                            <div style="background-color:#f6f6f6;  width: 74%; height:auto;  border-radius:5px; padding-top:12px;">
                                 <ul style="list-style-type:none" id="listaMarcaciones"></ul><br />
                                 <label id="avisoYaMarcacionEnCaso" style="color:red"> </label>
                                 @Html.HiddenFor(m => m.ModelTipiMarca.IngresoTipMarcacion.TiempoRespuesta, new { id = "marcaTiempo" })
@@ -385,25 +382,25 @@
                             <label>
                                 Posible Causa
                             </label>
-                            <div id="lbPosibleCausa" style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px;  padding:12px;">
+                            <div id="lbPosibleCausa" style="background-color:#f6f6f6; width: 74%; height:auto;  border-radius:5px;  padding:12px;">
                             </div>
                             <br />
                             <label>
                                 Que Hacer
                             </label>
-                            <div id="lbQueHacer" style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px; padding:12px;">
+                            <div id="lbQueHacer" style="background-color:#f6f6f6;  width: 74%; height:auto;  border-radius:5px; padding:12px;">
                             </div>
                             <br />
                             <label>
                                 Códigos de Cierre
                             </label>
-                            <div id="lbCodigosCierre" style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px; padding:12px; ">
+                            <div id="lbCodigosCierre" style="background-color:#f6f6f6; width: 74%; height:auto;  border-radius:5px; padding:12px; ">
                             </div>
                             <br />
                             <label>
                                 Área Usuario a Escalar:
                             </label>
-                            <div id="lbUsuarioAEscalar" style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px; padding:12px; ">
+                            <div id="lbUsuarioAEscalar" style="background-color:#f6f6f6; width: 74%; height:auto;  border-radius:5px; padding:12px; ">
                             </div>
 
                             <table>
@@ -435,14 +432,14 @@
                                     Notas:
                                 </label><br />
 
-                                @Html.TextAreaFor(m => m.ModelTipiMarca.Observaciones, new { @style = "width: 100%; height: 80px; resize: none;" })
+                                @Html.TextAreaFor(m => m.ModelTipiMarca.Observaciones, new { @style = "width: 74%; height: 80px; resize: none;" })
                             </div>
 
 
                         </div>
                         <br />
 
-                        <div style="background-color: dimgray ; color:white; border-radius:5px;text-align:left; ">
+                        <div style="background-color: dimgray ; color:white; border-radius:5px;text-align:left; width:74%;">
 
                             <table>
                                 <tr>
@@ -702,4 +699,30 @@
 
 }
 
+}
+else
+{
+    <div class="row">
 
+        <div class="box box-primary">
+
+            <div class="box-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-page">
+                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                            <div class="error-content">
+                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                <p style="text-align:justify;">
+                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                    Por favor solicite al administrador del sistema el acceso correspondiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

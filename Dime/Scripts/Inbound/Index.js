@@ -63,11 +63,15 @@ $(document).ready(function () {
 
         $("#Li4").css('background-color', '#f6f6f6');
         $("#Li3").css("background-color", "#dcdcdc");
+        $("#Li3").css("border-color", "#c23321");
+        $("#Li4").css("border-color", "transparent");
     });
 
     $("#Li4").click(function () {
         $("#Li3").css("background-color", "#f6f6f6");
         $("#Li4").css("background-color", "#dcdcdc");
+        $("#Li3").css("border-color", "transparent");
+        $("#Li4").css("border-color", "#c23321");
     });
 
     TraerFormTipificacion();
