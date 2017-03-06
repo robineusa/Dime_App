@@ -5,137 +5,143 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-@using (Html.BeginForm("NuevasMarcaciones", "Marcaciones", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+@if (Session["Administracion Marcaciones"] != null)
 {
-    if (Session["Administracion Marcaciones"] != null)
-    { 
-<div class="row">
-
-    <div class="box box-primary">
-        <div class="info-box" id="pregunta1" style="margin-left:20px;margin-top:5px;">
-            <span class="info-box-icon bg-red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>
-            <div class="info-box-content bg-gray-light" style="height:90px;font-weight:600;padding-top:35px;">
-                <span class="info-box-text" style="text-align:left,center; text-transform:initial;">Este es el proceso para agregar una nueva marcación, recuerda haber consultado antes que la marcación no esté ya creada, y agregue la información de acuerdo a la marcación que va a crear.</span>
-            </div>
-        </div>
-        <hr />
-        <table style="margin-left:20px;min-width:1200px;">
-            <tr>
-                <td width="100">
-                    <small>Razón</small>
-                    @Html.TextBoxFor(m => m.Razon, null, new { id = "Razon", @class = "form-control input-sm", @maxlength = "3", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
-                    @Html.HiddenFor(m => m.Id)
-                </td>
-                <td width="100" style="padding-left:2px;">
-                    <small>Sub Razón</small>
-                    @Html.TextBoxFor(m => m.Subrazon, null, new { id = "Subrazon", @class = "form-control input-sm", @maxlength = "3", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
-                </td>
-                <td width="100" style="padding-left:2px;">
-                    <small>Sub Marcación</small>
-                    @Html.TextBoxFor(m => m.Submarcacion, null, new { id = "subMarcacion", @class = "form-control input-sm" })
-                </td>
-                <td width="100" style="padding-left:2px;">
-                    <small>Estado Marcación</small>
-                    @Html.DropDownListFor(m => m.EstadoMarcacion, new List<SelectListItem> {new SelectListItem{Text="ACTIVA", Value="ACTIVA" },
+    using (Html.BeginForm("NuevasMarcaciones", "Marcaciones", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+    {
+        if (Session["Administracion Marcaciones"] != null)
+        {
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-danger">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="info-box" id="pregunta1" style="margin-left:0px;margin-top:5px;">
+                                    <span class="info-box-icon bg-red"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>
+                                    <div class="info-box-content bg-gray-light" style="height:90px;font-weight:600;padding-top:35px;">
+                                        <span class="info-box-text" style="text-align:left,center; text-transform:initial;">Este es el proceso para agregar una nueva marcación, recuerda haber consultado antes que la marcación no esté ya creada, y agregue la información de acuerdo a la marcación que va a crear.</span>
+                                    </div>
+                                </div>
+                                <br />
+                                <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                    <div class="box-body">
+                                        <table style="margin-left:20px;min-width:1200px;">
+                                            <tr>
+                                                <td width="100">
+                                                    <small>Razón</small>
+                                                    @Html.TextBoxFor(m => m.Razon, null, new { id = "Razon", @class = "form-control input-sm", @maxlength = "3", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
+                                                    @Html.HiddenFor(m => m.Id)
+                                                </td>
+                                                <td width="100" style="padding-left:2px;">
+                                                    <small>Sub Razón</small>
+                                                    @Html.TextBoxFor(m => m.Subrazon, null, new { id = "Subrazon", @class = "form-control input-sm", @maxlength = "3", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
+                                                </td>
+                                                <td width="100" style="padding-left:2px;">
+                                                    <small>Sub Marcación</small>
+                                                    @Html.TextBoxFor(m => m.Submarcacion, null, new { id = "subMarcacion", @class = "form-control input-sm" })
+                                                </td>
+                                                <td width="100" style="padding-left:2px;">
+                                                    <small>Estado Marcación</small>
+                                                    @Html.DropDownListFor(m => m.EstadoMarcacion, new List<SelectListItem> {new SelectListItem{Text="ACTIVA", Value="ACTIVA" },
                                                                                              new SelectListItem{Text="INACTIVA", Value="INACTIVA" },},
-                                                                                                                 "-SELECCIONE-", new { id = "estadoMarcacion", @class = "form-control input-sm" })
-                </td>
-                <td width="100" style="padding-left:2px;">
-                    <small>SPC</small>
-                    @Html.DropDownListFor(m => m.Spc, new List<SelectListItem> {new SelectListItem{Text="SI", Value="SI" },
+                                                                              "-SELECCIONE-", new { id = "estadoMarcacion", @class = "form-control input-sm" })
+                                                </td>
+                                                <td width="100" style="padding-left:2px;">
+                                                    <small>SPC</small>
+                                                    @Html.DropDownListFor(m => m.Spc, new List<SelectListItem> {new SelectListItem{Text="SI", Value="SI" },
                                                                                              new SelectListItem{Text="NO", Value="NO" },},
-                                                                                                                 "-SELECCIONE-", new { id = "Spc", @class = "form-control input-sm" })
-                </td>
-                <td width="200" style="padding-left:2px;">
-                    <small>Clase</small>
-                    @Html.DropDownListFor(m => m.Clase, new List<SelectListItem> {new SelectListItem{Text="GESTION INTERNA", Value="GESTION INTERNA" },
+                                                                              "-SELECCIONE-", new { id = "Spc", @class = "form-control input-sm" })
+                                                </td>
+                                                <td width="200" style="padding-left:2px;">
+                                                    <small>Clase</small>
+                                                    @Html.DropDownListFor(m => m.Clase, new List<SelectListItem> {new SelectListItem{Text="GESTION INTERNA", Value="GESTION INTERNA" },
                                                                                 new SelectListItem{Text="PETICION", Value="PET" },
                                                                                              new SelectListItem{Text="QUEJA", Value="QUE" },
                                                                                                   new SelectListItem{Text="TICKET", Value="TICKET" },                                              },
-                                                                                                                 "-SELECCIONE-", new { id = "Clase", @class = "form-control input-sm" })
-                </td>
-                <td width="300" style="padding-left:2px;">
-                    <small>QMF</small>
-                    @Html.TextBoxFor(m => m.Qmf, null, new { id = "Qmf", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
-                </td>
-                <td width="400" style="padding-left:2px;">
-                    <small>Descripción</small>
-                    @Html.TextBoxFor(m => m.Descripcion, null, new { id = "Descripcion", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
-                </td>
-                
-                
-            </tr>
-        </table>
-        <table style="margin-left:20px;min-width:1200px;">
-            <tr>
-                <td width="200" style="padding-left:2px;">
-                    <small>Posible Causa</small>
-                    @Html.TextBoxFor(m => m.PosibleCausa, null, new { id = "PosibleCausa", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
-                </td>
-                <td width="200" style="padding-left:2px;">
-                    <small>Macroproceso</small>
-                    @Html.TextBoxFor(m => m.Macroproceso, null, new { id = "Macroproceso", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
-                </td>
-                <td width="200" style="padding-left:2px;">
-                    <small>Reporte Trimestral</small>
-                    @Html.DropDownListFor(m => m.ReporteTrimestral, new List<SelectListItem> {new SelectListItem{Text="EXCLUYE", Value="EXCLUYE" },
+                                                                              "-SELECCIONE-", new { id = "Clase", @class = "form-control input-sm" })
+                                                </td>
+                                                <td width="300" style="padding-left:2px;">
+                                                    <small>QMF</small>
+                                                    @Html.TextBoxFor(m => m.Qmf, null, new { id = "Qmf", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
+                                                </td>
+                                                <td width="400" style="padding-left:2px;">
+                                                    <small>Descripción</small>
+                                                    @Html.TextBoxFor(m => m.Descripcion, null, new { id = "Descripcion", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
+                                                </td>
+
+
+                                            </tr>
+                                        </table>
+                                        <table style="margin-left:20px;min-width:1200px;">
+                                            <tr>
+                                                <td width="200" style="padding-left:2px;">
+                                                    <small>Posible Causa</small>
+                                                    @Html.TextBoxFor(m => m.PosibleCausa, null, new { id = "PosibleCausa", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
+                                                </td>
+                                                <td width="200" style="padding-left:2px;">
+                                                    <small>Macroproceso</small>
+                                                    @Html.TextBoxFor(m => m.Macroproceso, null, new { id = "Macroproceso", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
+                                                </td>
+                                                <td width="200" style="padding-left:2px;">
+                                                    <small>Reporte Trimestral</small>
+                                                    @Html.DropDownListFor(m => m.ReporteTrimestral, new List<SelectListItem> {new SelectListItem{Text="EXCLUYE", Value="EXCLUYE" },
                                                                                              new SelectListItem{Text="NO EXCLUYE", Value="NO EXCLUYE" },},
-                                                                                                                 "-SELECCIONE-", new { id = "reporteTrimestral", @class = "form-control input-sm" })
-                </td>
-                <td width="200" style="padding-left:2px;">
-                    <small>Responsable</small>
-                    @Html.TextBoxFor(m => m.Responsable, null, new { id = "Responsable", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
-                </td>
-                <td width="200" style="padding-left:2px;">
-                    <small>Área Responsable</small>
-                    @Html.TextBoxFor(m => m.AreaResponsable, null, new { id = "areaResponsable", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
-                </td>
-                
-                <td width="200" style="padding-left:2px;">
-                    <small>Servicios</small>
-                    @Html.TextBoxFor(m => m.Servicios, null, new { id = "Servicios", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
-                </td>
-                <td width="200" style="padding-left:2px;">
-                    <small>Canal Habilitado</small>
-                    @Html.TextBoxFor(m => m.CanalHabilitado, null, new { id = "canalHabilitado", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
-                </td>
-                
-                
-                
-            </tr>
-            <tr>
-                <td width="200" style="padding-left:2px;">
-                    <small>Área y Usuario a Escalar</small>
-                    @Html.TextBoxFor(m => m.AreayUsuarioEscala, null, new { id = "areaUsuarioEscalar", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
-                </td>
-                <td width="200" style="padding-left:2px;">
-                    <small>Quien Finaliza</small>
-                    @Html.TextBoxFor(m => m.QuienFinaliza, null, new { id = "quienFinaliza", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
-                </td>
-                <td width="200" style="padding-left:2px;">
-                    <small>Tipologías CUN</small>
-                    @Html.TextBoxFor(m => m.TipologiasCun, null, new { id = "tipologiasCun", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
-                </td>
-                <td width="200" style="padding-left:2px;">
-                    <small>Canal</small>
-                    @Html.DropDownListFor(m => m.Canal, new List<SelectListItem> {new SelectListItem{Text="ESCRITO", Value="ESCRITO" },
+                                                                              "-SELECCIONE-", new { id = "reporteTrimestral", @class = "form-control input-sm" })
+                                                </td>
+                                                <td width="200" style="padding-left:2px;">
+                                                    <small>Responsable</small>
+                                                    @Html.TextBoxFor(m => m.Responsable, null, new { id = "Responsable", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
+                                                </td>
+                                                <td width="200" style="padding-left:2px;">
+                                                    <small>Área Responsable</small>
+                                                    @Html.TextBoxFor(m => m.AreaResponsable, null, new { id = "areaResponsable", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
+                                                </td>
+
+                                                <td width="200" style="padding-left:2px;">
+                                                    <small>Servicios</small>
+                                                    @Html.TextBoxFor(m => m.Servicios, null, new { id = "Servicios", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
+                                                </td>
+                                                <td width="200" style="padding-left:2px;">
+                                                    <small>Canal Habilitado</small>
+                                                    @Html.TextBoxFor(m => m.CanalHabilitado, null, new { id = "canalHabilitado", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
+                                                </td>
+
+
+
+                                            </tr>
+                                            <tr>
+                                                <td width="200" style="padding-left:2px;">
+                                                    <small>Área y Usuario a Escalar</small>
+                                                    @Html.TextBoxFor(m => m.AreayUsuarioEscala, null, new { id = "areaUsuarioEscalar", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
+                                                </td>
+                                                <td width="200" style="padding-left:2px;">
+                                                    <small>Quien Finaliza</small>
+                                                    @Html.TextBoxFor(m => m.QuienFinaliza, null, new { id = "quienFinaliza", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
+                                                </td>
+                                                <td width="200" style="padding-left:2px;">
+                                                    <small>Tipologías CUN</small>
+                                                    @Html.TextBoxFor(m => m.TipologiasCun, null, new { id = "tipologiasCun", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
+                                                </td>
+                                                <td width="200" style="padding-left:2px;">
+                                                    <small>Canal</small>
+                                                    @Html.DropDownListFor(m => m.Canal, new List<SelectListItem> {new SelectListItem{Text="ESCRITO", Value="ESCRITO" },
                                                                                              new SelectListItem{Text="PRESENCIAL", Value="PRESENCIAL" },
                                                                                                   new SelectListItem{Text="PYME", Value="PYME" },
                                                                                                        new SelectListItem{Text="SOPORTE", Value="SOPORTE" },
                                                                                                             new SelectListItem{Text="WEB", Value="WEB" },},
-                                                                                                                 "-SELECCIONE-", new { id = "Canal", @class = "form-control input-sm" })
-                </td>
-                <td width="200" style="padding-left:2px;">
-                    <small>Tipo Marcación</small>
-                    @Html.DropDownListFor(m => m.TipoMarcacion, new List<SelectListItem> {new SelectListItem{Text="GENERICA", Value="GENERICA" },
+                                                                              "-SELECCIONE-", new { id = "Canal", @class = "form-control input-sm" })
+                                                </td>
+                                                <td width="200" style="padding-left:2px;">
+                                                    <small>Tipo Marcación</small>
+                                                    @Html.DropDownListFor(m => m.TipoMarcacion, new List<SelectListItem> {new SelectListItem{Text="GENERICA", Value="GENERICA" },
                                                                                              new SelectListItem{Text="GESTION INTERNA", Value="GESTION INTERNA" },
                                                                                                   new SelectListItem{Text="SERVICIO", Value="SERVICIO" },},
-                                                                                                                 "-SELECCIONE-", new { id = "tipoMarcacion", @class = "form-control input-sm" })
-                </td>
-                <td width="200" style="padding-left:2px;">
-                    <small>Tiempo de Respuesta</small>
-                    @Html.DropDownListFor(m => m.CantidadDias, new List<SelectListItem> {new SelectListItem{Text="1", Value="1" },
+                                                                              "-SELECCIONE-", new { id = "tipoMarcacion", @class = "form-control input-sm" })
+                                                </td>
+                                                <td width="200" style="padding-left:2px;">
+                                                    <small>Tiempo de Respuesta</small>
+                                                    @Html.DropDownListFor(m => m.CantidadDias, new List<SelectListItem> {new SelectListItem{Text="1", Value="1" },
                                                                                             new SelectListItem{Text="2", Value="2" },
                                                                                             new SelectListItem{Text="3", Value="3" },
                                                                                             new SelectListItem{Text="4", Value="4" },
@@ -150,41 +156,46 @@
                                                                                             new SelectListItem{Text="13", Value="13" },
                                                                                             new SelectListItem{Text="14", Value="14" },
                                                                                             new SelectListItem{Text="15", Value="15" },},
-                                                                                                                 "-SELECCIONE-", new { id = "cantidadDias", @class = "form-control input-sm" })
-                </td>
-            </tr>
-        </table>
-        <table style="margin-left:20px;min-width:1200px;">
-            <tr>
-                <td width="100%" style="padding-left:2px; ">
-                    <small>Que Hacer</small>
-                </td>
-            </tr>
+                                                                              "-SELECCIONE-", new { id = "cantidadDias", @class = "form-control input-sm" })
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table style="margin-left:20px;min-width:1200px;">
+                                            <tr>
+                                                <td width="100%" style="padding-left:2px; ">
+                                                    <small>Que Hacer</small>
+                                                </td>
+                                            </tr>
 
-        </table>
-        <div style="max-width:1400px;margin-left:20px;min-width:1200px;">
-            @Html.TextAreaFor(m => m.QueHacerHtml, new { id = "editor1", name = "editor1", rows = "10", cols = "80" })
+                                        </table>
+                                        <div style="max-width:1400px;margin-left:20px;min-width:1200px;">
+                                            @Html.TextAreaFor(m => m.QueHacerHtml, new { id = "editor1", name = "editor1", rows = "10", cols = "80" })
 
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="box-footer" style="margin-left:10px;">
+                                    <button type="submit" class="btn btn-primary" name="cambiarDatos" value="sacarDatos" id="submitGetDatos">Guardar</button>
+                                </div>
+                                <div class="box-footer" style="margin-left :10px; display: none;">
+                                    @Html.ValidationMessageFor(m => m.Razon, "", new { @class = "text-danger" })<br />
+                                    @Html.ValidationMessageFor(m => m.Subrazon, "", new { @class = "text-danger" })<br />
+                                    @Html.ValidationMessageFor(m => m.Descripcion, "", new { @class = "text-danger" })<br />
+                                    @Html.ValidationMessageFor(m => m.PosibleCausa, "", new { @class = "text-danger" }) <br />
+                                    @Html.ValidationMessageFor(m => m.QueHacerHtml, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-             
-           
-        
-        <div class="box-footer" style="margin-left:10px;">
-            <button type="submit" class="btn btn-primary" name="cambiarDatos" value="sacarDatos" id="submitGetDatos">Guardar</button>
-        </div>
-        <div class="box-footer" style="margin-left:10px;">
-            @Html.ValidationMessageFor(m => m.Razon, "", new { @class = "text-danger" })<br />
-            @Html.ValidationMessageFor(m => m.Subrazon, "", new { @class = "text-danger" })<br />
-            @Html.ValidationMessageFor(m => m.Descripcion, "", new { @class = "text-danger" })<br />
-            @Html.ValidationMessageFor(m => m.PosibleCausa, "", new { @class = "text-danger" }) <br />
-            @Html.ValidationMessageFor(m => m.QueHacerHtml, "", new { @class = "text-danger" })
-        </div>
-        <hr />
-    </div>
-        </div>
-    }
-    else
-    {
+
+        }
+        else
+        {
         <div class="row">
 
             <div class="box box-primary">
@@ -212,13 +223,37 @@
 
         </div>
 
-    }
-}
-        @section Scripts {
-            @Scripts.Render("~/AdminLTEplugins/ckeditor/js")
-            @Scripts.Render("~/AdminLTEplugins/bootstrap-wysihtml5/js")
-            @Scripts.Render("~/ScriptsForms/Editors")
-            @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
-
-            <script src="/Scripts/Marcaciones/AgregarMarcacion.js?1.0.2"></script>
         }
+    }
+@section Scripts {
+    @Scripts.Render("~/AdminLTEplugins/ckeditor/js")
+    @Scripts.Render("~/AdminLTEplugins/bootstrap-wysihtml5/js")
+    @Scripts.Render("~/ScriptsForms/Editors")
+    @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+
+    <script src="/Scripts/Marcaciones/AgregarMarcacion.js?1.0.2"></script>
+}
+}
+else
+{
+    <div class="row">
+        <div class="box box-primary">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-page">
+                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                            <div class="error-content">
+                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                <p style="text-align:justify;">
+                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                    Por favor solicite al administrador del sistema el acceso correspondiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
