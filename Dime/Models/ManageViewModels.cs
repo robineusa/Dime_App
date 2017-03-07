@@ -48,6 +48,7 @@ namespace Dime.Models
 
         [Required]
         [StringLength(100, ErrorMessage = "Debe haber al menos {2} caracteres de longitud.", MinimumLength = 6)]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$", ErrorMessage = "La contraseña debe incluir una mayuscula, una minuscula y un numero.")]
         [DataType(DataType.Password)]
         [Display(Name = "Nueva Contraseña")]
         public string NewPassword { get; set; }

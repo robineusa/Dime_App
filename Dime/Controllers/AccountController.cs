@@ -371,7 +371,6 @@ namespace Dime.Controllers
         {
             Session["IpPublica"] = ipPublica;
             Session["IpPrivada"] = ipPrivada;
-
             return Json(true);
             //realizar try por si no funcionae exception retornar a error
         }
