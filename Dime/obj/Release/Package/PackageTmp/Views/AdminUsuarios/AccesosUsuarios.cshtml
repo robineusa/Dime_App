@@ -5,9 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-@using (Html.BeginForm("AccesosUsuarios", "AdminUsuarios", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
+@if (Session["Administracion Usuarios"] != null)
 {
+using (Html.BeginForm("AccesosUsuarios", "AdminUsuarios", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
+{   
     <div class="row">
         <div class="col-md-9" style="width:100%; ">
 
@@ -53,13 +54,13 @@
                                 </td>
                                 <td style="padding:1px;">
                                     @Html.TextBoxFor(m => m.UsuarioHolos.Nombre, new
-                           {
-                               @class = "form-control input-sm",
-                               Value = Model.UsuarioHolos.Nombre1 + " " + Model.UsuarioHolos.Nombre2 +
+                               {
+                                   @class = "form-control input-sm",
+                                   Value = Model.UsuarioHolos.Nombre1 + " " + Model.UsuarioHolos.Nombre2 +
 " " + Model.UsuarioHolos.Apellido1 + " " + Model.UsuarioHolos.Apellido2
-                          ,
-                               @readonly = "true"
-                           })
+   ,
+                                   @readonly = "true"
+                               })
                                 </td>
                                 <td style="padding:1px;">
                                     @Html.TextBoxFor(m => m.UsuarioHolos.Aliado, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Aliado, @readonly = "true" })
@@ -153,7 +154,7 @@
                                     @Html.DropDownListFor(m => m.IdLinea, new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm", id = "lineaSelectCreacion" })
                                 </td>
                                 <td style="padding:1px;">
-                                    @Html.TextBoxFor(m => m.Contraseña, new { @class = "form-control input-sm", disabled=true, id="tbContra"})
+                                    @Html.TextBoxFor(m => m.Contraseña, new { @class = "form-control input-sm", disabled = true, id = "tbContra" })
                                 </td>
                                 <td style="padding:1px;" align="center">
                                     <input type="checkbox"  id="cBCambiarContra"  class= "checkbox" onchange="$('#tbContra').prop('disabled', function(i, v) { return !v; }); "  />
@@ -210,8 +211,10 @@
                                 </td>
                                 <td style="padding:1px;">
                                     @Html.DropDownList("perfilSelected", new List<SelectListItem>() { new SelectListItem { Text="ADMINISTRADOR", Value="1"}, new SelectListItem { Text = "ASESOR", Value = "2" } ,
-                                                                                                    new SelectListItem { Text = "CÉLULA", Value = "3" } }, "-Seleccione-", new { @class = "form-control input-sm",
-                                                                                                    @onchange= "ConsultarUsuariosDeAliadoYPerfil()"
+                                                                                                    new SelectListItem { Text = "CÉLULA", Value = "3" } }, "-Seleccione-", new
+                                                                                                    {
+                                                                                                        @class = "form-control input-sm",
+                                                                                                        @onchange = "ConsultarUsuariosDeAliadoYPerfil()"
                                                                                                     })
                                 </td>
                             </tr>
@@ -224,8 +227,8 @@
 
                         <strong><i class="fa fa-chevron-circle-down"></i> Perfil a otorgar:</strong>
 
-                        @Html.DropDownListFor(m=>m.IdPerfilMasivo, new List<SelectListItem>() { new SelectListItem { Text="ADMINISTRADOR", Value="1"}, new SelectListItem { Text = "ASESOR", Value = "2" } ,
-                                                                                                    new SelectListItem { Text = "CÉLULA", Value = "3" } }, "-Seleccione-", new { @class = "form-control input-sm", onchange = "TraerPosiblesAccesosDePerfilMasivo()", @style="width:200px", id= "perfilSelectedCreateMasivo" })
+                        @Html.DropDownListFor(m => m.IdPerfilMasivo, new List<SelectListItem>() { new SelectListItem { Text="ADMINISTRADOR", Value="1"}, new SelectListItem { Text = "ASESOR", Value = "2" } ,
+                                                                                                    new SelectListItem { Text = "CÉLULA", Value = "3" } }, "-Seleccione-", new { @class = "form-control input-sm", onchange = "TraerPosiblesAccesosDePerfilMasivo()", @style = "width:200px", id = "perfilSelectedCreateMasivo" })
 
                         <br />
                         <strong><i class="fa fa-chevron-circle-down"></i> Linea a otorgar:</strong>
@@ -242,7 +245,7 @@
                                 <td width="200" style="padding:1px;"></td>
                             </tr>
                         </table>
-                        @Html.TextBoxFor(m=>m.PermisosOtorgadosMasivos , new { @style = "display:none", id= "listaPermisosCrearMasivo" })
+                        @Html.TextBoxFor(m => m.PermisosOtorgadosMasivos, new { @style = "display:none", id = "listaPermisosCrearMasivo" })
                         @Html.TextBoxFor(m => m.UsuariosACambiarMasivo, new { @style = "display:none", id = "listaUsuariosMasivo" })
                     </div>
                 </div>
@@ -258,9 +261,8 @@
         </div>
     </div>
 }
-
-@section Scripts{
-    <script>
+    @section Scripts{
+        <script>
         var segundaPestañaAbierta = @Html.Raw(Json.Encode(@ViewBag.SegundaPestañaAbierta));
         var urlPosiblesAliados= '@Url.Action("JsonAliadosNames", "ConsultasAdmin")';
         var urlUsuariosConsulta = '@Url.Action("JsonUsuariosDeAliadoYPerfil", "AdminUsuarios")';
@@ -269,6 +271,34 @@
         var perfilUsuario =  @Html.Raw(Json.Encode(Model.IdPerfil ));
         var lineaUsuario = @Html.Raw(Json.Encode(Model.NombreLinea ));
         var urlPosiblesAccesosDeUsuario = '@Url.Action("PosiblesAccesosDeUsuario", "AdminUsuarios")';
-    </script>
-    <script src="~/Scripts/AdminUsuarios/Accesos.js?1.1.8"></script>
+        </script>
+        <script src="~/Scripts/AdminUsuarios/Accesos.js?1.1.0"></script>
+    }
 }
+else
+{
+    <div class="row">
+
+        <div class="box box-primary">
+
+            <div class="box-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-page">
+                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                            <div class="error-content">
+                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                <p style="text-align:justify;">
+                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                    Por favor solicite al administrador del sistema el acceso correspondiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

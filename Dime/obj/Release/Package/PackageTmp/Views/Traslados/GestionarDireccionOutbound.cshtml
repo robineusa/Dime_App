@@ -6,134 +6,137 @@
 @using (Html.BeginForm("GestionarDireccionOutbound", "Traslados", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
 {
     <div class="row">
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top: 40px;">
+                                <i class="fa fa-history"></i>&nbsp;&nbsp; Historico de Interacciones
+                            </h2>
+                            <div id="interaccionesSolicitudSeleccionadaOutbound"></div>
 
-        <div class="box box-primary">
-
-            <div class="box-body">
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <h4>Historico de interacciones</h4>
-                        <hr style="border-color:gray;border-width:2px;margin-top:-3px;" />
-                        <div id="interaccionesSolicitudSeleccionadaOutbound"></div>
-
+                        </div>
                     </div>
-                </div>
-                <h4>Información de la Solicitud</h4>
-                <hr style="border-color:gray;border-width:2px;margin-top:-3px;" />
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="tab-content">
-                            <div class="tab-pane tab-dime-first active" role="tabpanel" id="inforacioningreso">
-                                <table>
-                                    <tr>
-                                        <td width="200">
-                                            <small>Id de Solicitud:</small>
-                                            @Html.TextBoxFor(m => m.NotaTrasladoInicial.IdTransaccion, new { @class = "form-control input-sm", id = "idTransaccion", @readonly = "true" })
-                                        </td>
-                                        <td width="200">
-                                            <small>Fecha de la Solicitud:</small>
-                                            @Html.TextBoxFor(m => m.NotaTrasladoInicial.FechaTransaccion, new { @class = "form-control input-sm", id = "fechaTransaccion", @readonly = "true" })
-                                        </td>
-                                        <td width="200">
-                                            <small>Usuario Solicitud:</small>
-                                            @Html.TextBoxFor(m => m.NotaTrasladoInicial.UsuarioTransaccion, new { @class = "form-control input-sm", id = "usuarioSolicitud", @readonly = "true" })
-                                        </td>
-                                        <td width="200">
-                                            <small>Linea de Ingreso:</small>
-                                            @Html.TextBoxFor(m => m.NotaTrasladoInicial.NombreLineaTransaccion, new { @class = "form-control input-sm", id = "lineaIngreso", @readonly = "true" })
-                                        </td>
-                                        <td width="200">
-                                            <small>Cuenta del Cliente:</small>
-                                            @Html.TextBoxFor(m => m.NotaTrasladoInicial.CuentaCliente, new { @class = "form-control input-sm", id = "cuedntaCliente", @readonly = "true" })
-                                        </td>
-                                        <td width="200">
-                                            <small>Teléfono Celular:</small>
-                                            @Html.TextBoxFor(m => m.NotaTrasladoInicial.TelefonoCelular, new { @class = "form-control input-sm", id = "telefonoCelular", @readonly = "true" })
-                                        </td>
-                                        <td width="200">
-                                            <small>Teléfono Fijo:</small>
-                                            @Html.TextBoxFor(m => m.NotaTrasladoInicial.TelefonoFijo, new { @class = "form-control input-sm", id = "telefonoFijo", @readonly = "true" })
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="200">
-                                            <small>Fecha Actualización:</small>
-                                            @Html.TextBoxFor(m => m.NotaTraslado.FechaTransaccion, new { @class = "form-control input-sm", id = "fechaultimaactua", @readonly = "true" })
-                                        </td>
-                                        <td width="200">
-                                            <small>Usuario Actualización:</small>
-                                            @Html.TextBoxFor(m => m.NotaTraslado.UsuarioTransaccion, new { @class = "form-control input-sm", id = "usuarioultimaactualizacion", @readonly = "true" })
-                                        </td>
-                                        <td width="200">
-                                            <small>Estrato Cliente:</small>
-                                            @Html.TextBoxFor(m => m.NotaTrasladoInicial.Estrato, new { @class = "form-control input-sm", id = "estrato", @readonly = "true" })
-                                        </td>
-                                        <td width="200">
-                                            <small>Nodo:</small>
-                                            @Html.TextBoxFor(m => m.NotaTrasladoInicial.Nodo, new { @class = "form-control input-sm", id = "nodo", @readonly = "true" })
-                                        </td>
-                                        <td width="200">
-                                            <small>Nombre Nodo:</small>
-                                            @Html.TextBoxFor(m => m.InformacionNodo.NombreNodo, new { @class = "form-control input-sm", id = "nombrenodo", @readonly = "true" })
-                                        </td>
-                                        <td width="200">
-                                            <small>Código División:</small>
-                                            @Html.TextBoxFor(m => m.InformacionNodo.Div, new { @class = "form-control input-sm", id = "coddivision", @readonly = "true" })
-                                        </td>
-                                        <td width="200">
-                                            <small>Código Comunidad:</small>
-                                            @Html.TextBoxFor(m => m.InformacionNodo.Com, new { @class = "form-control input-sm", id = "codcomunidad", @readonly = "true" })
-                                        </td>
+                    <h4>Información de la Solicitud</h4>
+                    <hr style="border-color:gray;border-width:2px;margin-top:-3px;" />
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top: 40px;">
+                                <i class="fa fa-info"></i>&nbsp;&nbsp; Información de la Solicitud
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <div class="box-body" id="inforacioningreso">
+                                    <table>
+                                        <tr>
+                                            <td width="200">
+                                                <small>Id de Solicitud:</small>
+                                                @Html.TextBoxFor(m => m.NotaTrasladoInicial.IdTransaccion, new { @class = "form-control input-sm", id = "idTransaccion", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Fecha de la Solicitud:</small>
+                                                @Html.TextBoxFor(m => m.NotaTrasladoInicial.FechaTransaccion, new { @class = "form-control input-sm", id = "fechaTransaccion", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Usuario Solicitud:</small>
+                                                @Html.TextBoxFor(m => m.NotaTrasladoInicial.UsuarioTransaccion, new { @class = "form-control input-sm", id = "usuarioSolicitud", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Linea de Ingreso:</small>
+                                                @Html.TextBoxFor(m => m.NotaTrasladoInicial.NombreLineaTransaccion, new { @class = "form-control input-sm", id = "lineaIngreso", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Cuenta del Cliente:</small>
+                                                @Html.TextBoxFor(m => m.NotaTrasladoInicial.CuentaCliente, new { @class = "form-control input-sm", id = "cuedntaCliente", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Teléfono Celular:</small>
+                                                @Html.TextBoxFor(m => m.NotaTrasladoInicial.TelefonoCelular, new { @class = "form-control input-sm", id = "telefonoCelular", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Teléfono Fijo:</small>
+                                                @Html.TextBoxFor(m => m.NotaTrasladoInicial.TelefonoFijo, new { @class = "form-control input-sm", id = "telefonoFijo", @readonly = "true" })
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="200">
+                                                <small>Fecha Actualización:</small>
+                                                @Html.TextBoxFor(m => m.NotaTraslado.FechaTransaccion, new { @class = "form-control input-sm", id = "fechaultimaactua", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Usuario Actualización:</small>
+                                                @Html.TextBoxFor(m => m.NotaTraslado.UsuarioTransaccion, new { @class = "form-control input-sm", id = "usuarioultimaactualizacion", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Estrato Cliente:</small>
+                                                @Html.TextBoxFor(m => m.NotaTrasladoInicial.Estrato, new { @class = "form-control input-sm", id = "estrato", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Nodo:</small>
+                                                @Html.TextBoxFor(m => m.NotaTrasladoInicial.Nodo, new { @class = "form-control input-sm", id = "nodo", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Nombre Nodo:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.NombreNodo, new { @class = "form-control input-sm", id = "nombrenodo", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Código División:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Div, new { @class = "form-control input-sm", id = "coddivision", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Código Comunidad:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Com, new { @class = "form-control input-sm", id = "codcomunidad", @readonly = "true" })
+                                            </td>
 
-                                    </tr>
-                                    <tr>
-                                        <td width="200">
-                                            <small>Área:</small>
-                                            @Html.TextBoxFor(m => m.InformacionNodo.Area, new { @class = "form-control input-sm", id = "area", @readonly = "true" })
-                                        </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="200">
+                                                <small>Área:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Area, new { @class = "form-control input-sm", id = "area", @readonly = "true" })
+                                            </td>
 
-                                        <td width="200">
-                                            <small>Distrito:</small>
-                                            @Html.TextBoxFor(m => m.InformacionNodo.Distrito, new { @class = "form-control input-sm", id = "distrito", @readonly = "true" })
-                                        </td>
-                                        <td width="200">
-                                            <small>Unidad de Gestión:</small>
-                                            @Html.TextBoxFor(m => m.InformacionNodo.Ugestion, new { @class = "form-control input-sm", id = "ugestion", @readonly = "true" })
-                                        </td>
-                                        <td width="200">
-                                            <small>Estado del Nodo:</small>
-                                            @Html.TextBoxFor(m => m.InformacionNodo.Estado, new { @class = "form-control input-sm", id = "estadoNodo", @readonly = "true" })
-                                        </td>
-                                        <td width="200">
-                                            <small>Red:</small>
-                                            @Html.TextBoxFor(m => m.InformacionNodo.Red, new { @class = "form-control input-sm", id = "red", @readonly = "true" })
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="1200" colspan="7">
-                                            <small>Dirección a Crear:</small>
-                                            @Html.TextBoxFor(m => m.NotaTrasladoInicial.DireccionACrear, new { @class = "form-control input-sm", id = "telefonoFijo", @readonly = "true" })
-                                        </td>
-                                    </tr>
-                                </table>
+                                            <td width="200">
+                                                <small>Distrito:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Distrito, new { @class = "form-control input-sm", id = "distrito", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Unidad de Gestión:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Ugestion, new { @class = "form-control input-sm", id = "ugestion", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Estado del Nodo:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Estado, new { @class = "form-control input-sm", id = "estadoNodo", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Red:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Red, new { @class = "form-control input-sm", id = "red", @readonly = "true" })
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="1200" colspan="7">
+                                                <small>Dirección a Crear:</small>
+                                                @Html.TextBoxFor(m => m.NotaTrasladoInicial.DireccionACrear, new { @class = "form-control input-sm", id = "telefonoFijo", @readonly = "true" })
+                                            </td>
+                                        </tr>
+                                    </table>
 
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <h4>Gestión Outbound Creación de Dirección</h4>
-                <hr style="border-color:gray;border-width:2px;margin-top:-3px;" />
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="tab-content">
-                            <div class="tab-pane tab-dime-first active" role="tabpanel" id="gestioncelulacrdireccion">
-                                <table>
-                                    <tr>
-                                        <td width="300">
-                                            <small>Gestión Realizada:</small>
-                                            @Html.DropDownListFor(m => m.NotaTrasladoVacia.Subrazon, new List<SelectListItem> {new SelectListItem{Text="AGENDADO", Value="AGENDADO" },
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top: 40px;">
+                                <i class="fa fa-clock-o"></i>&nbsp;&nbsp; Gestión Outbound Creación de Dirección
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <div class="box-body" id="gestioncelulacrdireccion">
+                                    <table>
+                                        <tr>
+                                            <td width="300">
+                                                <small>Gestión Realizada:</small>
+                                                @Html.DropDownListFor(m => m.NotaTrasladoVacia.Subrazon, new List<SelectListItem> {new SelectListItem{Text="AGENDADO", Value="AGENDADO" },
                                                                                              new SelectListItem{Text="DESISTE DE TRASLADO", Value="DISISTE DE TRASLADO" },
                                                                                              new SelectListItem{Text="ESCALADO A BACK", Value="ESCALADO A BACK" },
                                                                                              new SelectListItem{Text="NO CONTACTO", Value="NO CONTACTO" },
@@ -142,32 +145,33 @@
                                                                                              new SelectListItem{Text="SOLICITA CANCELACION", Value="SOLICITA CANCELACION" },
                                                                                              new SelectListItem{Text="SOLICITUD MAL ESCALADA", Value="SOLICITUD MAL ESCALADA" },},
                                                                "--SELECCIONE--", new { @class = "form-control input-sm" })
-                                        </td>
-                                        <td width="300">
-                                            <small>Estado del Caso:</small>
-                                            @Html.DropDownListFor(m => m.NotaTrasladoVacia.EstadoTransaccion, new List<SelectListItem> {new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" },
+                                            </td>
+                                            <td width="300">
+                                                <small>Estado del Caso:</small>
+                                                @Html.DropDownListFor(m => m.NotaTrasladoVacia.EstadoTransaccion, new List<SelectListItem> {new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" },
                                                                                              new SelectListItem{Text="FINALIZADO", Value="FINALIZADO" },},
                                                                "--SELECCIONE--", new { @class = "form-control input-sm" })
-                                        </td>
-                                    </tr>
-                                </table>
-                                <table>
-                                    <tr>
-                                        <td width="1200">
-                                            <small>Observaciones:</small>
-                                            @Html.TextAreaFor(m => m.NotaTrasladoVacia.Observacion, new { @style = "width: 100%; height: 100px;max-height: 100px;max-width:1200px;" })
-                                        </td>
-                                    </tr>
-                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <td width="1200">
+                                                <small>Observaciones:</small>
+                                                @Html.TextAreaFor(m => m.NotaTrasladoVacia.Observacion, new { @style = "width: 100%; height: 100px;max-height: 100px;max-width:1200px;" })
+                                            </td>
+                                        </tr>
+                                    </table>
 
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <br />
-                <div class="">
-                    <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;">Guardar Datos</button>
+                    <br />
+                    <div class="">
+                        <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;">Guardar Datos</button>
+                    </div>
                 </div>
             </div>
         </div>

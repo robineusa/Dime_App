@@ -4,9 +4,9 @@
     ViewBag.SubTitle = "Gestión Blending";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
-@using (Html.BeginForm("GuardaDocsis", "GestionBlending", FormMethod.Post, new { id = "", role = "form" }))
+@if (Session["Blending Docsis"] != null)
+{
+using (Html.BeginForm("GuardaDocsis", "GestionBlending", FormMethod.Post, new { id = "", role = "form" }))
 {
 <div class="callout callout-warning" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
     <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
@@ -338,4 +338,30 @@
 
 
 }
+}
+else
+{
+<div class="row">
 
+    <div class="box box-primary">
+
+        <div class="box-body">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="error-page">
+                        <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                        <div class="error-content">
+                            <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                            <p style="text-align:justify;">
+                                La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                Por favor solicite al administrador del sistema el acceso correspondiente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}

@@ -13,12 +13,14 @@
 @section scripts{
 <script>
 
+    var urlSRegistroDatoUsuario = '@Url.Action("SRegistroDatosUsuario", "Account")';
+
         $(document).ready(function() {
             var scopeId = @ViewBag.IdUsuario;
             var scopeSesion = @ViewBag.Sesion;
     $.ajax({
         type: "GET",
-        url: '/Account/SRegistroDatosUsuario',
+        url: urlSRegistroDatoUsuario,
         contentType: "application/json; charset=utf-8",
         data: { idUsuario:scopeId , sesionUsuario : scopeSesion} ,
         dataType: "html",

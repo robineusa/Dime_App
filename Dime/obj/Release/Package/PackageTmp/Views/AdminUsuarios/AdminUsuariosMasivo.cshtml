@@ -2,169 +2,198 @@
 @{
     Layout = null;
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title>CARGA MASIVA DE USUARIOS</title>
-</head>
-<body>
-  <br />
-  <br />
+@if (Session["Administracion Usuarios"] != null)
+{
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>CARGA MASIVA DE USUARIOS</title>
+    </head>
+    <body>
+        <br />
+        <br />
 
 
-    <ul class="timeline">
-        <li>
-            <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#ff0000;color:white;">1</i>
-        </li>
-    </ul>
+        <ul class="timeline">
+            <li>
+                <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#ff0000;color:white;">1</i>
+            </li>
+        </ul>
 
-    <hr />
-    <div>
-        <div class="callout" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
-            <div class="row">
-                <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
-                    <small>Inicialmente debe descargar el Excel adjunto y llenar UNICAMENTE la columna "Cedula"::</small>
-                </div>
-            </div>
-        </div>
-
+        <hr />
         <div>
-            <a href="~/Resources/Documents/Formato_Carga_Masiva_Siriac.xls">
-                <img src="~/Resources/Images/Excel-icon.png" width="200" height="200" />
-            </a>
-        </div>
-    </div>
-    <hr />
+            <div class="callout" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
+                <div class="row">
+                    <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
+                        <small>Inicialmente debe descargar el Excel adjunto y llenar UNICAMENTE la columna "Cedula"::</small>
+                    </div>
+                </div>
+            </div>
 
-    <ul class="timeline">
-        <li>
-            <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#ff0000;color:white;">2</i>
-        </li>
-    </ul>
-    <hr />
-    <div>
-        <div class="callout callout-danger" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
-            <div class="row">
-                <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
-                    <small>Agregue el Excel en formato "97-2003 .XLS" ya diligenciado de la manera correcta y carguelo:</small>
-                </div>
+            <div>
+                <a href="~/Resources/Documents/Formato_Carga_Masiva_Siriac.xls">
+                    <img src="~/Resources/Images/Excel-icon.png" width="200" height="200" />
+                </a>
             </div>
         </div>
-        <div>
-            <br />
-            <table>
-                <tr>
-                    <td width="150" style="padding:8px;">  <input type="file"  class="btn-file" id="my_file_input" /></td>
-                </tr>
+        <hr />
 
-            </table>
-        </div>
-    </div>
-    <hr />
-    <ul class="timeline">
-        <li>
-            <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#ff0000;color:white;">3</i>
-        </li>
-    </ul>
-    <hr />
-    <div>
-        <div class="callout callout-danger" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
-            <div class="row">
-                <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
-                    <small>Visualize la información cargada desde Excel y que fue cotejada en Holos:</small>
-                </div>
-            </div>
-        </div><br />
-        <div id="infoCotejeadaGrid">
-           
-        </div>
-    </div>
-    <hr />
-    <ul class="timeline">
-        <li>
-            <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#ff0000;color:white;">4</i>
-        </li>
-    </ul>
-    <hr />
-    <div>
-        <div class="callout callout-danger" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
-            <div class="row">
-                <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
-                    <small>Seleccione un Perfil, el Nombre de Linea a la que pertenecen y establezca una Contraseña. (Tenga en cuenta que esto se aplicara para todos los usuarios de la misma forma en que se seleccione): </small>
-                </div>
-            </div>
-        </div><br />
+        <ul class="timeline">
+            <li>
+                <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#ff0000;color:white;">2</i>
+            </li>
+        </ul>
+        <hr />
         <div>
-            <table id="perfilUsuarios" style="display:none">
-                <tr>
-                    <td width="200" style="padding:1px;">
-                        <small>Perfil:  </small>
-                    </td>
-                    <td width="200" style="padding:1px;">
-                        <small>Nombre Linea:  </small>
-                    </td>
-                    <td width="200" style="padding:1px;">
-                        <small>Contraseña: </small>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding:1px;">
-                        @Html.DropDownList("perfilCreate", new List<SelectListItem>() { new SelectListItem { Text="ADMINISTRADOR", Value="1"}, new SelectListItem { Text = "ASESOR", Value = "2" } ,
+            <div class="callout callout-danger" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
+                <div class="row">
+                    <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
+                        <small>Agregue el Excel en formato "97-2003 .XLS" ya diligenciado de la manera correcta y carguelo:</small>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <br />
+                <table>
+                    <tr>
+                        <td width="150" style="padding:8px;">  <input type="file" class="btn-file" id="my_file_input" /></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <hr />
+        <ul class="timeline">
+            <li>
+                <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#ff0000;color:white;">3</i>
+            </li>
+        </ul>
+        <hr />
+        <div>
+            <div class="callout callout-danger" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
+                <div class="row">
+                    <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
+                        <small>Visualize la información cargada desde Excel y que fue cotejada en Holos:</small>
+                    </div>
+                </div>
+            </div><br />
+            <div id="infoCotejeadaGrid">
+
+            </div>
+        </div>
+        <hr />
+        <ul class="timeline">
+            <li>
+                <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#ff0000;color:white;">4</i>
+            </li>
+        </ul>
+        <hr />
+        <div>
+            <div class="callout callout-danger" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
+                <div class="row">
+                    <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
+                        <small>Seleccione un Perfil, el Nombre de Linea a la que pertenecen y establezca una Contraseña. (Tenga en cuenta que esto se aplicara para todos los usuarios de la misma forma en que se seleccione): </small>
+                    </div>
+                </div>
+            </div><br />
+            <div>
+                <table id="perfilUsuarios" style="display:none">
+                    <tr>
+                        <td width="200" style="padding:1px;">
+                            <small>Perfil:  </small>
+                        </td>
+                        <td width="200" style="padding:1px;">
+                            <small>Nombre Linea:  </small>
+                        </td>
+                        <td width="200" style="padding:1px;">
+                            <small>Contraseña: </small>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:1px;">
+                            @Html.DropDownList("perfilCreate", new List<SelectListItem>() { new SelectListItem { Text="ADMINISTRADOR", Value="1"}, new SelectListItem { Text = "ASESOR", Value = "2" } ,
                                                                                                     new SelectListItem { Text = "CÉLULA", Value = "3" } }, "-Seleccione-", new { @class = "form-control input-sm", onchange = "TraerPosiblesLineasYAccesosDePerfil()" })
-                    </td>
-                    <td style="padding:1px;">
-                        @Html.DropDownList("lineaCreacion", new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm" })
-                    </td>
-                    <td style="padding:1px;">
-                        @Html.TextBox("contraAssigned","", new { @class = "form-control input-sm" })
-                    </td>
-                </tr>
-            </table>
+                        </td>
+                        <td style="padding:1px;">
+                            @Html.DropDownList("lineaCreacion", new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm" })
+                        </td>
+                        <td style="padding:1px;">
+                            @Html.TextBox("contraAssigned", "", new { @class = "form-control input-sm" })
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </div>
-    </div>
-    <hr />
+        <hr />
 
-    <ul class="timeline">
-        <li>
-            <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#ff0000;color:white;">5</i>
-        </li>
-    </ul>
-    <hr />
-    <div>
-        <div class="callout callout-danger" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
-            <div class="row">
-                <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
-                    <small>Seleccione cuales son los Accesos que se otorgaran en la plataforma a los Usuarios: </small>
+        <ul class="timeline">
+            <li>
+                <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#ff0000;color:white;">5</i>
+            </li>
+        </ul>
+        <hr />
+        <div>
+            <div class="callout callout-danger" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
+                <div class="row">
+                    <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
+                        <small>Seleccione cuales son los Accesos que se otorgaran en la plataforma a los Usuarios: </small>
+                    </div>
+                </div>
+            </div><br />
+            <div>
+                <table id="accesosCreacion">
+                    <tr>
+                        <td width="200" style="padding:1px;"></td>
+                        <td width="200" style="padding:1px;"></td>
+                        <td width="200" style="padding:1px;"></td>
+                        <td width="200" style="padding:1px;"></td>
+                        <td width="200" style="padding:1px;"></td>
+                    </tr>
+                </table>
+
+                @Html.TextBox("listaPermisosCrearMas", "", new { @style = "display:none" })
+                <br />
+                <button id="Crear_Usuarios" class="btn btn-block btn-primary btn-lg" style="width:15%;  margin-left:42.5%;" onclick="GuardarUsuarios()">Crear Usuarios</button>
+                <label style="color:red" id="mensajeFinal"></label>
+            </div>
+        </div>
+        <hr />
+        <script>
+
+            var consultaCotejadaUrl = "@Url.Action("CotejarInformacionMasivo", "AdminUsuarios")";
+            var urlLineasAccesos = '@Url.Action("PosiblesAccesosYLineasDePerfil", "AdminUsuarios")';
+            var urlCrearUsuariosMasivo = '@Url.Action("GuardarUsuariosMasivos", "AdminUsuarios")';
+        </script>
+        <script src="~/Scripts/AdminUsuarios/CrearUsuariosMasivos.js?1.1.2"></script>
+        <script src="~/Scripts/AdminUsuarios/xls.js"></script>
+
+
+    </body>
+</html>
+}
+else
+{
+    <div class="row">
+
+        <div class="box box-primary">
+
+            <div class="box-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-page">
+                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                            <div class="error-content">
+                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                <p style="text-align:justify;">
+                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                    Por favor solicite al administrador del sistema el acceso correspondiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div><br />
-        <div>
-            <table id="accesosCreacion">
-                <tr>
-                    <td width="200" style="padding:1px;"></td>
-                    <td width="200" style="padding:1px;"></td>
-                    <td width="200" style="padding:1px;"></td>
-                    <td width="200" style="padding:1px;"></td>
-                    <td width="200" style="padding:1px;"></td>
-                </tr>
-            </table>
-
-            @Html.TextBox("listaPermisosCrearMas","", new { @style = "display:none" })
-            <br />
-            <button id="Crear_Usuarios"  class="btn btn-block btn-primary btn-lg" style="width:15%;  margin-left:42.5%;" onclick="GuardarUsuarios()">Crear Usuarios</button>
-            <label style="color:red" id="mensajeFinal"></label>
-          </div>
+        </div>
     </div>
-    <hr />
-    <script>
-       
-        var consultaCotejadaUrl = "@Url.Action("CotejarInformacionMasivo", "AdminUsuarios")";
-        var urlLineasAccesos = '@Url.Action("PosiblesAccesosYLineasDePerfil", "AdminUsuarios")';
-        var urlCrearUsuariosMasivo = '@Url.Action("GuardarUsuariosMasivos", "AdminUsuarios")';
-    </script>
-    <script src="~/Scripts/AdminUsuarios/CrearUsuariosMasivos.js?1.1.2"></script>
-    <script src="~/Scripts/AdminUsuarios/xls.js"></script>
-
-
-</body>
-</html>
+}
