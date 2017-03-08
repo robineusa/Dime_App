@@ -2913,6 +2913,10 @@
     <Content Include="Scripts\Traslados\ConsultaAdminIngresosLiberaciones.js" />
     <Content Include="Scripts\Traslados\ConsultaAdminIngresosMatrices.js" />
     <Content Include="Scripts\Traslados\ConsultaAdminIngresosTraslados.js" />
+    <Content Include="Scripts\Traslados\ConsultaClienteCambiodeEstrato.js" />
+    <Content Include="Scripts\Traslados\ConsultaClienteCreacionDireccion.js" />
+    <Content Include="Scripts\Traslados\ConsultaClienteLiberacionHomePass.js" />
+    <Content Include="Scripts\Traslados\ConsultaClienteMatrices.js" />
     <Content Include="Scripts\Traslados\ConsultaGestionCambioDeEstrato.js" />
     <Content Include="Scripts\Traslados\ConsultaGestionCreacionDr.js" />
     <Content Include="Scripts\Traslados\ConsultaGestionLiberaciondeHomePass.js" />
@@ -3185,6 +3189,10 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\Traslados\ConsultaIngresosTraslados.cshtml" />
+    <Content Include="Views\Traslados\ConsultaClienteCreacionDireccion.cshtml" />
+    <Content Include="Views\Traslados\ConsultaClienteCambiodeEstrato.cshtml" />
+    <Content Include="Views\Traslados\ConsultaClienteLiberacionHomePass.cshtml" />
+    <Content Include="Views\Traslados\ConsultaClienteMatrices.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1129,5 +1129,97 @@ namespace Dime.Controllers
             
             return View(modelo);
         }
+        [HttpGet]
+        public ActionResult ConsultaClienteCreacionDireccion()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ConsultaClienteCreacionDireccion(string CuentaCliente)
+        {
+            trasladowebservice = new WSD.TrasladosServiceClient();
+            trasladowebservice.ClientCredentials.Authenticate();
+            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
+            if (CuentaCliente != null && CuentaCliente != "")
+            {
+                modelo = trasladowebservice.ListaGeneralIngresosCrearDireccionAsesor(Convert.ToDecimal(CuentaCliente));
+            }
+            else
+            {
+                return RedirectToAction("ConsultaClienteCreacionDireccion");
+            }
+
+            return View(modelo);
+
+        }
+        [HttpGet]
+        public ActionResult ConsultaClienteCambiodeEstrato()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ConsultaClienteCambiodeEstrato(string CuentaCliente)
+        {
+            trasladowebservice = new WSD.TrasladosServiceClient();
+            trasladowebservice.ClientCredentials.Authenticate();
+            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
+            if (CuentaCliente != null && CuentaCliente != "")
+            {
+                modelo = trasladowebservice.ListaGeneralIngresosCambiEstratoAsesor(Convert.ToDecimal(CuentaCliente));
+            }
+            else
+            {
+                return RedirectToAction("ConsultaClienteCambiodeEstrato");
+            }
+
+            return View(modelo);
+
+        }
+        [HttpGet]
+        public ActionResult ConsultaClienteLiberacionHomePass()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ConsultaClienteLiberacionHomePass(string CuentaCliente)
+        {
+            trasladowebservice = new WSD.TrasladosServiceClient();
+            trasladowebservice.ClientCredentials.Authenticate();
+            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
+            if (CuentaCliente != null && CuentaCliente != "")
+            {
+                modelo = trasladowebservice.ListaGeneralIngresosLiberacionesAsesor(Convert.ToDecimal(CuentaCliente));
+            }
+            else
+            {
+                return RedirectToAction("ConsultaClienteLiberacionHomePass");
+            }
+
+            return View(modelo);
+
+        }
+        [HttpGet]
+        public ActionResult ConsultaClienteMatrices()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ConsultaClienteMatrices(string CuentaCliente)
+        {
+            trasladowebservice = new WSD.TrasladosServiceClient();
+            trasladowebservice.ClientCredentials.Authenticate();
+            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
+            if (CuentaCliente != null && CuentaCliente != "")
+            {
+                modelo = trasladowebservice.ListaGeneralIngresosmatricesAsesor(Convert.ToDecimal(CuentaCliente));
+            }
+            else
+            {
+                return RedirectToAction("ConsultaClienteMatrices");
+            }
+
+            return View(modelo);
+
+        }
     }
 }
