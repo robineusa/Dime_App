@@ -274,10 +274,8 @@
                         </ul>
 
                     </li>
-                    @if (Session["ModoLogin"].ToString() == "1")
-                    {
-                        <li class="header">MENÚ ADMINISTRADOR</li>
-                    }
+                      <li class="header">MENÚ ACCESOS</li>
+                    
                     @if (Session["Administracion de Casos Sac"] != null)
                     {
                         <li id="left-sidebar-menu-charts" class="treeview">
@@ -363,10 +361,6 @@
                         var UserConnect2 = '@Session["NombreUsuario"].ToString()';
                         </script>
                     }
-                    @if (Session["ModoLogin"].ToString() == "3")
-                    {
-                        <li class="header">MENÚ CELULA</li>
-                    }
                     @if (Session["Escalamientos Sac"] != null)
                     {
                         <li id="left-sidebar-menu-charts" class="treeview">
@@ -400,7 +394,7 @@
                     {
                         <li id="left-sidebar-menu-multilevel" class="treeview">
                             <a href="#">
-                                <i class="fa fa-truck text-red" aria-hidden="true"></i> <span>Gestiones Traslados</span>
+                                <i class="fa fa-truck text-red" aria-hidden="true"></i> <span>BackOffice Traslados</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -410,7 +404,6 @@
                                         <li>
                                             <a href="@Url.Action("DireccionesCreadasTraslados", "Traslados")"><i class="fa fa-list-ul" aria-hidden="true"></i>Casos Abiertos</a>
                                             <a href="@Url.Action("SeguimientosSolicitudesCreacionDireccion", "Traslados")"><i class="fa fa-eye" aria-hidden="true"></i>Seguimientos</a>
-                                            <a href="@Url.Action("ConsultaGestionCreacionDr", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -420,7 +413,6 @@
                                         <li>
                                             <a href="@Url.Action("SolicitudesCambioDeEstrato", "Traslados")"><i class="fa fa-list-ul" aria-hidden="true"></i>Casos Abiertos</a>
                                             <a href="@Url.Action("SeguimientosCambioDeEstrato", "Traslados")"><i class="fa fa-eye" aria-hidden="true"></i>Seguimientos</a>
-                                            <a href="@Url.Action("ConsultaGestionCambioDeEstrato", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -430,7 +422,6 @@
                                         <li>
                                             <a href="@Url.Action("SolicitudesLiberacionHomePass", "Traslados")"><i class="fa fa-list-ul" aria-hidden="true"></i>Casos Abiertos</a>
                                             <a href="@Url.Action("SeguimientosLiberacionHomePass", "Traslados")"><i class="fa fa-eye" aria-hidden="true"></i>Seguimientos</a>
-                                            <a href="@Url.Action("ConsultaGestionLiberaciondeHomePass", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -463,26 +454,13 @@
 
 
                                         </li>
-                                        <li>
-                                            <a href="#"><i class="fa fa-search text-yellow" aria-hidden="true"></i>Consultas<i class="fa fa-angle-left pull-right"></i></a>
-                                            <ul class="treeview-menu">
-                                                <li>
-                                                    <a href="@Url.Action("ConsultaGestionMatrices", "Traslados")"><i class="fa fa-circle-o" aria-hidden="true"></i>Consulta de Gestión</a>
-                                                </li>
-
-                                            </ul>
-
-
-                                        </li>
+                                        
                                     </ul>
                                 </li>
                             </ul>
                         </li>
                     }
-                    @if (Session["ModoLogin"].ToString() == "2")
-                    {
-                        <li class="header">MENÚ ASESOR</li>
-                    }
+                   
                     @if (Session["Gestion Inbound"] != null)
                     {
                         <li id="left-sidebar-menu-charts" class="treeview">
@@ -533,7 +511,7 @@
                     {
                         <li id="left-sidebar-menu-multilevel" class="treeview">
                             <a href="#">
-                                <i class="fa fa-truck text-red" aria-hidden="true"></i> <span>Gestiones Traslados</span>
+                                <i class="fa fa-phone-square text-red" aria-hidden="true"></i> <span>Inbound Traslados</span>
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
@@ -544,7 +522,6 @@
                                             <a href="@Url.Action("SolicitudCrearDireccion", "Traslados")"><i class="fa fa-external-link" aria-hidden="true"></i>Generar Solicitud</a>
                                             <a href="@Url.Action("DireccionesCreadasOutbound", "Traslados")"><i class="fa fa-phone-square" aria-hidden="true"></i>Gestión Outbound</a>
                                             <a href="@Url.Action("SeguimientosSolicitudesCreacionDireccionOutbound", "Traslados")"><i class="fa fa-phone-square" aria-hidden="true"></i>Seguimientos Outbound</a>
-                                            <a href="@Url.Action("ConsultaGestionCreacionDr", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -553,7 +530,6 @@
                                     <ul class="treeview-menu">
                                         <li>
                                             <a href="@Url.Action("SolicitudCambioDeEstrato", "Traslados")"><i class="fa fa-external-link" aria-hidden="true"></i>Generar Solicitud</a>
-                                            <a href="@Url.Action("ConsultaGestionCambioDeEstrato", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -562,7 +538,6 @@
                                     <ul class="treeview-menu">
                                         <li>
                                             <a href="@Url.Action("SolicitudLiberacionHomePass", "Traslados")"><i class="fa fa-external-link" aria-hidden="true"></i>Generar Solicitud</a>
-                                            <a href="@Url.Action("ConsultaGestionLiberaciondeHomePass", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -571,18 +546,10 @@
                                     <ul class="treeview-menu">
                                         <li>
                                             <a href="@Url.Action("SolicitudMatrices", "Traslados")"><i class="fa fa-external-link" aria-hidden="true"></i>Generar Solicitud</a>
-                                            <a href="@Url.Action("ConsultaGestionMatrices", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-search text-green" aria-hidden="true"></i>Consulta General<i class="fa fa-angle-left pull-right"></i></a>
-                                    <ul class="treeview-menu">
-                                        <li>
-                                            <a href="@Url.Action("ConsultaIngresosTraslados", "Traslados")"><i class="fa fa-search-plus" aria-hidden="true"></i>Ingresos Traslados</a>
-                                        </li>
-                                    </ul>
-                                </li>
+                                
                             </ul>
                         </li>
                     }
@@ -666,7 +633,62 @@
                             </ul>
                         </li>
                     }
-
+                    @if (Session["Consultas Traslados"] != null)
+                    {
+                        <li id="left-sidebar-menu-multilevel" class="treeview">
+                            <a href="#">
+                                <i class="fa fa-search text-red" aria-hidden="true"></i> <span>Consultas Traslados</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li>
+                                    <a href="#"><i class="fa fa-map-marker text-red" aria-hidden="true"></i>Creación de Dirección<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="@Url.Action("ConsultaClienteCreacionDireccion", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Cunsultar Cliente</a>
+                                            <a href="@Url.Action("ConsultaGestionCreacionDr", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                            
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-map-signs text-orange" aria-hidden="true"></i>Cambios de Estrato<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="@Url.Action("ConsultaClienteCambiodeEstrato", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Cunsultar Cliente</a>
+                                            <a href="@Url.Action("ConsultaGestionCambioDeEstrato", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-home text-aqua" aria-hidden="true"></i>Liberaciones de HHPP<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="@Url.Action("ConsultaClienteLiberacionHomePass", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Cunsultar Cliente</a>
+                                            <a href="@Url.Action("ConsultaGestionLiberaciondeHomePass", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-building text-yellow" aria-hidden="true"></i>Creación de Matrices<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="@Url.Action("ConsultaClienteMatrices", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Cunsultar Cliente</a>
+                                            <a href="@Url.Action("ConsultaGestionMatrices", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-search text-green" aria-hidden="true"></i>Consulta General<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="@Url.Action("ConsultaIngresosTraslados", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Ingresos Traslados</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    }
                     <li class="header">MANUALES DE USUARIO</li>
                     <li id="left-sidebar-menu-multilevel" class="treeview">
                         <a href="#">
