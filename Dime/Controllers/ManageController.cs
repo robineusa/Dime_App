@@ -9,6 +9,7 @@ using Dime.Models;
 using Dime.Helpers;
 using Telmexla.Servicios.DIME.Entity;
 using System;
+using System.Collections.Generic;
 
 namespace Dime.Controllers
 {
@@ -28,9 +29,9 @@ namespace Dime.Controllers
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
-                : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
-                : message == ManageMessageId.SetTwoFactorSuccess ? "Your two-factor authentication provider has been set."
+                message == ManageMessageId.ChangePasswordSuccess ? "Su contraseña fue cambiada."
+                : message == ManageMessageId.ChangeDataSuccess ? "Sus datos personales se han cambiado."
+                : message == ManageMessageId.ChangeQuestionsSuccess ? "Sus preguntas de seguridad han sido cambiadas."
                 : message == ManageMessageId.Error ? "An error has occurred."
                 : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
@@ -42,7 +43,33 @@ namespace Dime.Controllers
         }
 
 
+        public ActionResult ChangeDataUser()
+        {
+           
+            return View();
+        }
 
+        public ActionResult ChangeSecurityQuestions()
+        {
+
+            loginService = new WSD.LoginServiceClient();
+            loginService.ClientCredentials.Authenticate();
+            List<PreguntasDesbloqueo> opcionesPreguntas = loginService.ObtenerPosiblesPreguntas();
+            List<SelectListItem> selectItems = new List<SelectListItem>();
+            ViewBag.IdUsuario = Session["IdUsuario"].ToString();
+            ViewBag.DatosFullUsuario = "False";
+            ViewBag.SesionUsuario = "0";
+            foreach (var item in opcionesPreguntas)
+            {
+                selectItems.Add(new SelectListItem
+                {
+                    Text = item.Nombre,
+                    Value = item.Id.ToString()
+                });
+            }
+
+            return View(selectItems);
+        }
 
 
         /*
@@ -125,8 +152,8 @@ namespace Dime.Controllers
         {
             AddPhoneSuccess,
             ChangePasswordSuccess,
-            SetTwoFactorSuccess,
-            SetPasswordSuccess,
+            ChangeQuestionsSuccess,
+            ChangeDataSuccess,
             RemoveLoginSuccess,
             RemovePhoneSuccess,
             Error

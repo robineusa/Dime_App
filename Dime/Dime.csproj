@@ -2370,6 +2370,7 @@
     <Content Include="Scripts\Consultas_Admin\Consulta_Paloteo.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Rechazos.js" />
     <Content Include="Scripts\Dashboard\DashboardAsesor.js" />
+    <Content Include="Scripts\Manage\ChangeSecurityQuestions.js" />
     <Content Include="Scripts\Manuales\ManualAdministrador.js" />
     <Content Include="Scripts\Manuales\ManualAsesor.js" />
     <Content Include="Scripts\Manuales\ManualCelula.js" />
@@ -3097,11 +3098,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
@@ -3194,6 +3192,8 @@
     <Content Include="Views\Traslados\ConsultaClienteCambiodeEstrato.cshtml" />
     <Content Include="Views\Traslados\ConsultaClienteLiberacionHomePass.cshtml" />
     <Content Include="Views\Traslados\ConsultaClienteMatrices.cshtml" />
+    <Content Include="Views\Manage\ChangeDataUser.cshtml" />
+    <Content Include="Views\Manage\ChangeSecurityQuestions.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

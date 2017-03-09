@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Telmexla.Servicios.DIME.Entity;
+using static Dime.Controllers.ManageController;
 
 namespace Dime.Controllers
 {
@@ -181,6 +182,7 @@ namespace Dime.Controllers
                              return View();
                             }
                }
+            if (sesionUsuario.Equals("0")) return Json(Url.Action("Index", "Manage", new { message = ManageMessageId.ChangeQuestionsSuccess })); 
 
            return  Json(Url.Action("RegistroDatosUsuario", "Account", new {idUsuario = idUsuario, sesionUsuario= sesionUsuario }));
         }
@@ -303,8 +305,10 @@ namespace Dime.Controllers
         {   loginService = new WSD.LoginServiceClient();
             loginService.ClientCredentials.Authenticate();
             loginService.RegistrarActualizarDatosUsuario(model);
+           
             if (!loginService.Capacitado(model.Id)) return RedirectToAction("Presentacion", "Account", new { sesion = model.Contrasena, id = model.Id });
-            return RedirectToAction("Login", "Account");
+            if (Session["IdUsuario"] != null) return RedirectToAction("Index", "Manage", new { message = ManageMessageId.ChangeDataSuccess });
+           return RedirectToAction("Login", "Account");
         }
 
         [HttpGet]
