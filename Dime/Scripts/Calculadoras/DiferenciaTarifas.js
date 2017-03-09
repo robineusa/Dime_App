@@ -1,5 +1,5 @@
-﻿var Iva = 16;
-var Iva2 = 1.16;
+﻿var Iva = 0;
+var Iva2 = 0.0;
 var ValorFacturadoCliente = 0;
 var ValorDiferenciaFacturacion = 0;
 var ValorTotalParaAjustar = 0;
@@ -34,6 +34,19 @@ function TraerDatosCliente() {
 
 }
 //inicio de los calculos
+
+$('#ivacalculo').keyup(function () {
+    Iva = $('#ivacalculo').val();
+    if (Iva == 16) {
+        Iva2 = 1.16;
+        resetearValoresDiferencia();
+    } else
+        if (Iva == 19) {
+            Iva2 = 1.19;
+            resetearValoresDiferencia();
+        } else { }
+})
+
 $('#valSinIvaDifeTele').keyup(function () {
     resetearValoresDiferencia();
 });

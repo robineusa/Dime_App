@@ -1,5 +1,5 @@
-﻿var Iva =16;
-var Iva2 = 1.16;
+﻿var Iva =0;
+var Iva2 = 0.0;
 var SinDisputa = 'SIN DISPUTAS';
 
 $("#cuentaClienteProrra").on("keyup", function (e) {
@@ -41,6 +41,20 @@ function TraerDatosCliente() {
 
 
 }
+$('#ivacalculo').keyup(function () {
+    Iva = $('#ivacalculo').val();
+    if (Iva == 16) {
+        Iva2 = 1.16;
+        CalculoFechas();
+        CalculosIvaInicialProrrateos();
+    } else
+        if (Iva == 19) {
+            Iva2 = 1.19;
+            CalculoFechas();
+            CalculosIvaInicialProrrateos();
+        } else { }
+})
+
 $('#fechaInicialProrra').change(function () {
     CalculoFechas();
 });
