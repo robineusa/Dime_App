@@ -674,7 +674,7 @@ $('#fechaInicialProrra').datetimepicker({
 $('#fechaProxCorteProrra').datetimepicker({
     format: 'd-m-Y',
     timepicker: false,
-    maxDate: '0',
+   
 
 });
 
