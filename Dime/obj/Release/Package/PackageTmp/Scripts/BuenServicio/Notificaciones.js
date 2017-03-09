@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    
+    alert();
     $("#btnCargarArchivo").on("click", function () {
         var inputFileImage = document.getElementById("file");
         var file = inputFileImage.files[0];

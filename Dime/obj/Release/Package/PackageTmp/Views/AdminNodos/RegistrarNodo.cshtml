@@ -5,89 +5,118 @@
 }
 @using (Html.BeginForm("RegistrarNodo", "AdminNodos", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
 {
-    <div class="row">
+    if (Session["Administracion Nodos"] != null)
+    {
+        <div class="row">
 
-        <div class="box box-primary">
+            <div class="box box-primary">
 
-            <div class="box-body">
+                <div class="box-body">
 
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="tab-content" style="width:1100px;">
-                            <div role="tabpanel" class="tab-pane tab-dime-first active " id="solicitudcreaciondireccion">
-                                <table>
-                                    <tr>
-                                        <td width="200" style="padding:1px;">
-                                            <small>Nodo:</small>
-                                            @Html.TextBoxFor(m => m.Nodo, null, new { id = "nodo", @class = "form-control input-sm" })
-                                        </td>
-                                        <td width="200" style="padding:1px;">
-                                            <small>Nombre Nodo:</small>
-                                            @Html.TextBoxFor(m => m.NombreNodo, null, new { id = "nombrenodo", @class = "form-control input-sm" })
-                                        </td>
-                                        <td width="200" style="padding:1px;">
-                                            <small>Div:</small>
-                                            @Html.TextBoxFor(m => m.Div, null, new { id = "div", @class = "form-control input-sm" })
-                                        </td>
-                                        <td width="200" style="padding:1px;">
-                                            <small>Com:</small>
-                                            @Html.TextBoxFor(m => m.Com, null, new { id = "com", @class = "form-control input-sm" })
-                                        </td>
-                                        <td width="200" style="padding:1px;">
-                                            <small>Divisional:</small>
-                                            @Html.TextBoxFor(m => m.Divisional, null, new { id = "divisional", @class = "form-control input-sm" })
-                                        </td>
-                                        <td width="200" style="padding:1px;">
-                                            <small>Area:</small>
-                                            @Html.TextBoxFor(m => m.Area, null, new { id = "area", @class = "form-control input-sm" })
-                                        </td>
-                                        <td width="200" style="padding:1px;">
-                                            <small>Distrito:</small>
-                                            @Html.TextBoxFor(m => m.Distrito, null, new { id = "distrito", @class = "form-control input-sm" })
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="200" style="padding:1px;">
-                                            <small>Ugestion:</small>
-                                            @Html.TextBoxFor(m => m.Ugestion, null, new { id = "ugestion", @class = "form-control input-sm" })
-                                        </td>
-                                        <td width="200" style="padding:1px;">
-                                            <small>Estado:</small>
-                                            @Html.DropDownListFor(m => m.Estado, new List<SelectListItem> {new SelectListItem{Text="ACT", Value="ACT" },
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="tab-content" style="width:1100px;">
+                                <div role="tabpanel" class="tab-pane tab-dime-first active " id="solicitudcreaciondireccion">
+                                    <table>
+                                        <tr>
+                                            <td width="200" style="padding:1px;">
+                                                <small>Nodo:</small>
+                                                @Html.TextBoxFor(m => m.Nodo, null, new { id = "nodo", @class = "form-control input-sm" })
+                                            </td>
+                                            <td width="200" style="padding:1px;">
+                                                <small>Nombre Nodo:</small>
+                                                @Html.TextBoxFor(m => m.NombreNodo, null, new { id = "nombrenodo", @class = "form-control input-sm" })
+                                            </td>
+                                            <td width="200" style="padding:1px;">
+                                                <small>Div:</small>
+                                                @Html.TextBoxFor(m => m.Div, null, new { id = "div", @class = "form-control input-sm" })
+                                            </td>
+                                            <td width="200" style="padding:1px;">
+                                                <small>Com:</small>
+                                                @Html.TextBoxFor(m => m.Com, null, new { id = "com", @class = "form-control input-sm" })
+                                            </td>
+                                            <td width="200" style="padding:1px;">
+                                                <small>Divisional:</small>
+                                                @Html.TextBoxFor(m => m.Divisional, null, new { id = "divisional", @class = "form-control input-sm" })
+                                            </td>
+                                            <td width="200" style="padding:1px;">
+                                                <small>Area:</small>
+                                                @Html.TextBoxFor(m => m.Area, null, new { id = "area", @class = "form-control input-sm" })
+                                            </td>
+                                            <td width="200" style="padding:1px;">
+                                                <small>Distrito:</small>
+                                                @Html.TextBoxFor(m => m.Distrito, null, new { id = "distrito", @class = "form-control input-sm" })
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="200" style="padding:1px;">
+                                                <small>Ugestion:</small>
+                                                @Html.TextBoxFor(m => m.Ugestion, null, new { id = "ugestion", @class = "form-control input-sm" })
+                                            </td>
+                                            <td width="200" style="padding:1px;">
+                                                <small>Estado:</small>
+                                                @Html.DropDownListFor(m => m.Estado, new List<SelectListItem> {new SelectListItem{Text="ACT", Value="ACT" },
                                                                                              new SelectListItem{Text="NACT", Value="NACT" }},
-                                                                                                       "--SELECCIONE--", new { @class = "form-control input-sm" })
-                                        </td>
-                                        <td width="200" style="padding:1px;">
-                                            <small>Red:</small>
-                                            @Html.TextBoxFor(m => m.Red, null, new { id = "red", @class = "form-control input-sm" })
-                                        </td>
-                                        <td width="200" style="padding:1px;">
-                                            <small>Aliado:</small>
-                                            @Html.TextBoxFor(m => m.Aliado, null, new { id = "aliado", @class = "form-control input-sm" })
-                                        </td>
-                                        <td width="200" style="padding:1px;">
-                                            <small>Nombre Comunidad:</small>
-                                            @Html.TextBoxFor(m => m.NombreComunidad, null, new { id = "comunidad", @class = "form-control input-sm" })
-                                        </td>
-                                        <td width="200" style="padding:1px;">
-                                            <small>Departamento:</small>
-                                            @Html.TextBoxFor(m => m.Departamento, null, new { id = "departamento", @class = "form-control input-sm" })
-                                        </td>
-                                    </tr>
-                                </table>
+                                         "--SELECCIONE--", new { @class = "form-control input-sm" })
+                                            </td>
+                                            <td width="200" style="padding:1px;">
+                                                <small>Red:</small>
+                                                @Html.TextBoxFor(m => m.Red, null, new { id = "red", @class = "form-control input-sm" })
+                                            </td>
+                                            <td width="200" style="padding:1px;">
+                                                <small>Aliado:</small>
+                                                @Html.TextBoxFor(m => m.Aliado, null, new { id = "aliado", @class = "form-control input-sm" })
+                                            </td>
+                                            <td width="200" style="padding:1px;">
+                                                <small>Nombre Comunidad:</small>
+                                                @Html.TextBoxFor(m => m.NombreComunidad, null, new { id = "comunidad", @class = "form-control input-sm" })
+                                            </td>
+                                            <td width="200" style="padding:1px;">
+                                                <small>Departamento:</small>
+                                                @Html.TextBoxFor(m => m.Departamento, null, new { id = "departamento", @class = "form-control input-sm" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
-                            </div>
-                        <br />
-                                    <button type="submit" class="btn btn-primary" name="cdgardar" value="true" style="width:10%; height:40px;">Guardar Datos</button><br />
                             <br />
-                        @if (ViewBag.nodoExisteError != null)
-                        {
-                            <label style="font-size:16px; color:red;font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight: 400;">@ViewBag.nodoExisteError.ToString() </label>
-                        }
+                            <button type="submit" class="btn btn-primary" name="cdgardar" value="true" style="width:10%; height:40px;">Guardar Datos</button><br />
+                            <br />
+                            @if (ViewBag.nodoExisteError != null)
+                            {
+                                <label style="font-size:16px; color:red;font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight: 400;">@ViewBag.nodoExisteError.ToString() </label>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <div class="row">
+
+            <div class="box box-primary">
+
+                <div class="box-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="error-page">
+                                <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                                <div class="error-content">
+                                    <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                    <p style="text-align:justify;">
+                                        La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                        Por favor solicite al administrador del sistema el acceso correspondiente.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
         </div>
-
-    </div>
+    }
 }

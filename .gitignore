@@ -28,3 +28,7 @@ Dime/obj/Debug/Dime.dll
 Dime/obj/Release/Package/PackageTmp/bin/Dime.dll
 *.cache
 *.pubxml
+*.suo
+.vs/config/applicationhost.config
+4. Entidades/Telmexla.Servicios.DIME.Entity/obj/Debug/Telmexla.Servicios.DIME.Entity.csproj.FileListAbsolute.txt
+*.cache

@@ -89,7 +89,7 @@ function Llama_Metodos(connect, UserConnect) {
         if (UserConnect2 != 'Buen Servicio') {
             var x = document.getElementById('BuenServicioHREF');
             x.click();
-            $('#imgBS').attr("src", '/ImagesClient/' + Nombre_Imagen);
+            $('#imgBS').attr("src", '../ImagesClient/' + Nombre_Imagen);
             $('#LinkBS').attr("href", Ruta_Imagen);
             $('#Nombre_Imagen').val(Nombre_Imagen);
             $('#Ruta_Imagen').val(Ruta_Imagen);

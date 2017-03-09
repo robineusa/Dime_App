@@ -212,7 +212,7 @@ function ConsultarUsuariosDeAliadoYPerfil()
         type: "GET",
         url: urlUsuariosConsulta,
         contentType: "application/json; charset=utf-8",
-        data: { aliado: $("#aliadoSelected").val(), idPerfil: $("#perfilSelected").val() },
+        data: { aliado: $("#aliadoSelected").find(":selected").text(), idPerfil: $("#perfilSelected").val() },
         dataType: "json",
         success: function (result) {
             $("#gridViewConsulta").empty();

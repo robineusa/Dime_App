@@ -3,8 +3,10 @@
     ViewBag.Title = "Gestión Solicitudes Cambio de Estrato";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("GestionarCambioDeEstratoCelula", "Traslados", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
+@if (Session["Gestion Traslados Celula"] != null)
 {
+    using (Html.BeginForm("GestionarCambioDeEstratoCelula", "Traslados", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
+    {
     <div class="row">
 
         <div class="box box-primary">
@@ -165,14 +167,14 @@
                                                                                                new SelectListItem{Text="SOPORTE INCOMPLETO", Value="SOPORTE INCOMPLETO" },
                                                                                                new SelectListItem{Text="SUPERA FECHA DE EXPEDICION", Value="SUPERA FECHA DE EXPEDICION" },
                                                                                                new SelectListItem{Text="TRASLADO OK", Value="TRASLADO OK" },},
-                                                               "--SELECCIONE--", new { @class = "form-control input-sm", @id = "Subrazon" })
+                                "--SELECCIONE--", new { @class = "form-control input-sm", @id = "Subrazon" })
                                         </td>
                                         <td width="300">
                                             <small>Estado del Caso:</small>
                                             @Html.DropDownListFor(m => m.CambioEstratoVacia.EstadoTransaccion, new List<SelectListItem> {
                                                                                              new SelectListItem{Text="FINALIZADO", Value="FINALIZADO" },
                                                                                              new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" },},
-                                                               "--SELECCIONE--", new { @class = "form-control input-sm", @id = "estado" })
+                                "--SELECCIONE--", new { @class = "form-control input-sm", @id = "estado" })
                                         </td>
                                     </tr>
                                 </table>
@@ -197,7 +199,7 @@
             </div>
         </div>
     </div>
-}
+    }
 @section Scripts{
     <script>
         var jsonInteraccionesCambioEstrato = @Html.Raw(Json.Encode(Model.ListaCambioEstrato));
@@ -205,5 +207,28 @@
 
     <script src="~/Scripts/Traslados/GestionarCambioDeEstratoCelula.js?1.0.1"></script>
 }
-
+}
+else
+{
+    <div class="row">
+        <div class="box box-primary">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-page">
+                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                            <div class="error-content">
+                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                <p style="text-align:justify;">
+                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                    Por favor solicite al administrador del sistema el acceso correspondiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
 
