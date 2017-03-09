@@ -1,6 +1,6 @@
 ﻿
 $(function Buen_Servicio() {
-
+    //alert('1');
     var connect = $.connection.myHub;
     
     Llama_Metodos(connect);
@@ -17,6 +17,7 @@ function Registra_Eventos(connect) {
         if (msg.length > 0) {
             connect.server.sendMessagePublic('Buen Servicio', $("#MensajeBS").val());
             $("#MensajeBS").val('');
+            connect.server.connect();
         }
     });
     $('#NotificarBS').click(function () {
@@ -31,7 +32,7 @@ function Registra_Eventos(connect) {
         
     });
 
-    connect.server.connect();
+    
 }
 
 function Llama_Metodos(connect, UserConnect) {
@@ -96,9 +97,12 @@ function Llama_Metodos(connect, UserConnect) {
         //play_single_sound();
     }
 
-    connect.client.onConnected = function (id, userName, allUsers, messages) {
-        
-        // Add Existing Messages
+    connect.client.onConnected = function (messages) {
+        alert('alertas');
+        if (messages.length > 0) {
+            $('#number_Mensajes').append('<span class="label label-success">' + messages.length + '</span>');
+        }
+        //Add Existing Messages
         for (i = 0; i < messages.length; i++) {
             AddMessage(messages[i].UserName, messages[i].Message);
         }
@@ -107,7 +111,7 @@ function Llama_Metodos(connect, UserConnect) {
 }
 
 function AddMessage(userName, message) {
-    $('#messages-menu').append('<div class="message"><span class="userName">' + userName + '</span>: ' + message + '</div>');
+    $('#ul_mess_dropdown_menu').append('<li class="header"> Usted tiene' + messages.length + '</span>: ' + message + '</div>');
 
     var height = $('#divChatWindow')[0].scrollHeight;
     $('#divChatWindow').scrollTop(height);

@@ -26,7 +26,7 @@ namespace Dime
         public void Connect()
         {
             // send to caller
-            Clients.Caller.onConnected(ConnectedUsers, CurrentMessage); 
+            Clients.All.onConnected(CurrentMessage); 
         }
         public void SendPrivateMessage(string fromUserId, string toUserId, string message)
         {
