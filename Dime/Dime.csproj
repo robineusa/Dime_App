@@ -2946,6 +2946,9 @@
     <Content Include="Scripts\Traslados\SolicitudLiberacionHomePass.js" />
     <Content Include="Scripts\Traslados\SolicitudMatrices.js" />
     <Content Include="Resources\Documents\Formato_Carga_Masiva_Siriac.xls" />
+    <None Include="Properties\PublishProfiles\DIME.pubxml" />
+    <None Include="Properties\PublishProfiles\Dime_Capacitacion.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaGestion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -3000,9 +3003,6 @@
     <Content Include="Service References\WSD\Dime.WSD.UsuariosMasivoData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Properties\PublishProfiles\DIME.pubxml" />
-    <None Include="Properties\PublishProfiles\Dime_Capacitacion.pubxml" />
-    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Service References\WSD\WebService.disco" />
     <None Include="Service References\WSD\configuration91.svcinfo" />
     <None Include="Service References\WSD\configuration.svcinfo" />
@@ -3171,6 +3171,13 @@
     <Content Include="Views\Traslados\ConsultaAdminIngresosMatrices.cshtml" />
     <Content Include="Views\Traslados\ConsultaAdminIngresosTraslados.cshtml" />
     <Content Include="Views\AdminUsuarios\AdminUsuariosMasivo.cshtml" />
+    <Content Include="Views\Traslados\ConsultaIngresosTraslados.cshtml" />
+    <Content Include="Views\Traslados\ConsultaClienteCreacionDireccion.cshtml" />
+    <Content Include="Views\Traslados\ConsultaClienteCambiodeEstrato.cshtml" />
+    <Content Include="Views\Traslados\ConsultaClienteLiberacionHomePass.cshtml" />
+    <Content Include="Views\Traslados\ConsultaClienteMatrices.cshtml" />
+    <Content Include="Views\Manage\ChangeDataUser.cshtml" />
+    <Content Include="Views\Manage\ChangeSecurityQuestions.cshtml" />
     <None Include="Service References\WSD\WebService.wsdl" />
     <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
@@ -3187,13 +3194,6 @@
     <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\Traslados\ConsultaIngresosTraslados.cshtml" />
-    <Content Include="Views\Traslados\ConsultaClienteCreacionDireccion.cshtml" />
-    <Content Include="Views\Traslados\ConsultaClienteCambiodeEstrato.cshtml" />
-    <Content Include="Views\Traslados\ConsultaClienteLiberacionHomePass.cshtml" />
-    <Content Include="Views\Traslados\ConsultaClienteMatrices.cshtml" />
-    <Content Include="Views\Manage\ChangeDataUser.cshtml" />
-    <Content Include="Views\Manage\ChangeSecurityQuestions.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3214,13 +3214,13 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\4. Entidades\Telmexla.Servicios.DIME.Entity\Telmexla.Servicios.DIME.Entity.csproj">
       <Project>{395d1809-be70-4b2a-9413-46708edfb957}</Project>
       <Name>Telmexla.Servicios.DIME.Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\WSD\" />
