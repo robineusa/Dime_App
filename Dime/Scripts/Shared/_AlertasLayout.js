@@ -28,9 +28,6 @@ function Registra_Eventos(connect) {
             $("#EnviarMSGlobalBS").click();
         }
     });
-    $("#Revisar_notificaciones").click(function () {
-        
-    });
 
     
 }
