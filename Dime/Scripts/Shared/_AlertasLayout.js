@@ -28,15 +28,22 @@ function Registra_Eventos(connect) {
             $("#EnviarMSGlobalBS").click();
         }
     });
-
+    $('#ListNotify').click(function () {
+        connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
+    });
+    $('#BListNotify').click(function () {
+        alert();
+        connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
+    });
     
 }
 
 function Llama_Metodos(connect, UserConnect) {
     
-    connect.client.addMessage = function (userName, message) {
+    connect.client.addMessage = function (id, userName, message) {
         var V_Usuario = $('<div/>').text(userName).html();
         var V_Message = $('<div/>').text(message).html();
+        $('#IdMsj').val(id);
         var f = new Date();
         var dd = f.getDate();
         var mm = f.getMonth() + 1;
@@ -58,10 +65,11 @@ function Llama_Metodos(connect, UserConnect) {
                                             '<span class="direct-chat-timestamp pull-right">&nbsp;&nbsp;' + V_Fecha + '</span>' +
                                         '</div>' +
                                         '<img class="direct-chat-img" src="../AdminLTE/dist/img/user.svg" alt="Message User Image">' +
-                                        '<div id="MensajeGlobalR" class="direct-chat-text" style="text-align: justify;">'
+                                        '<div id="MensajeGlobalRU" class="direct-chat-text" style="text-align: justify;">'
                                             + V_Message +
                                         '</div>' +
                                     '</div>');
+        $("#Administrador").append('<button id="BListNotify" style="display:block"></button>');
         $("#AdministradorBS").append('<div class="direct-chat-msg right">' +
                                         '<div id="UserGlobal" class="direct-chat-info clearfix">' +
                                             '<span class="direct-chat-name pull-right">' + V_Usuario + '</span>' +
@@ -75,6 +83,7 @@ function Llama_Metodos(connect, UserConnect) {
         if (UserConnect2 != 'Buen Servicio') {
             $("#ChatGeneral").css('display', 'block');
             $("#ChatGeneral2").css('display', 'block');
+            setTimeout('EjecutaBTN()', 2000);
         } else { /*$("#ChatGeneral2").css('display', 'block');*/ }
 
     }
@@ -95,7 +104,6 @@ function Llama_Metodos(connect, UserConnect) {
     }
 
     connect.client.onConnected = function (messages) {
-        alert('alertas');
         if (messages.length > 0) {
             $('#number_Mensajes').append('<span class="label label-success">' + messages.length + '</span>');
         }
@@ -133,3 +141,7 @@ function GuardarUsuarioNotificado() {
     });
 }
 
+function EjecutaBTN() {
+    var x = document.getElementById('BListNotify');
+    x.click();
+}

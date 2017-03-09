@@ -232,6 +232,7 @@
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="UserDetail.cs" />
+    <Compile Include="UsersNotify.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminLTE\bootstrap\css\bootstrap.css" />
