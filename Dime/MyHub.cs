@@ -16,29 +16,17 @@ namespace Dime
         #endregion
         public void sendMessagePublic(string userName, string message)
         {
+            AddMessageinCache(userName, message);
             Clients.All.addMessage(userName, message);
         }
         public void notificacion(string Nombre_Imagen, string Ruta_Imagen, string Id_Notificado, string Descripcion_Imagen)
         {
             Clients.All.broadcastMessage(Nombre_Imagen, Ruta_Imagen, Id_Notificado, Descripcion_Imagen);
         }
-        public void Connect(string userName, string id)
+        public void Connect()
         {
-            //var id = Context.ConnectionId;
-
-
-            if (ConnectedUsers.Count(x => x.ConnectionId == id) == 0)
-            {
-                ConnectedUsers.Add(new UserDetail { ConnectionId = id, UserName = userName });
-
-                // send to caller
-                Clients.Caller.onConnected(id, userName, ConnectedUsers, CurrentMessage);
-
-                // send to all except caller client
-                Clients.AllExcept(id).onNewUserConnected(id, userName);
-
-            }
-
+            // send to caller
+            Clients.Caller.onConnected(ConnectedUsers, CurrentMessage); 
         }
         public void SendPrivateMessage(string fromUserId, string toUserId, string message)
         {
@@ -56,20 +44,12 @@ namespace Dime
             }
 
         }
+        private void AddMessageinCache(string userName, string message)
+        {
+            CurrentMessage.Add(new MessageDetail { UserName = userName, Message = message });
 
-        //public override System.Threading.Tasks.Task OnDisconnected()
-        //{
-        //    var item = ConnectedUsers.FirstOrDefault(x => x.ConnectionId == Context.ConnectionId);
-        //    if (item != null)
-        //    {
-        //        ConnectedUsers.Remove(item);
-
-        //        var id = Context.ConnectionId;
-        //        Clients.All.onUserDisconnected(id, item.UserName);
-
-        //    }
-
-        //    return base.OnDisconnected();
-        //}
+            if (CurrentMessage.Count > 100)
+                CurrentMessage.RemoveAt(0);
+        }
     }
 }
