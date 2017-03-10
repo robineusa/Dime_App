@@ -1,69 +1,65 @@
 ﻿@model Telmexla.Servicios.DIME.Entity.ViewModelTraslados
 @{
     ViewBag.Title = "Solicitudes Matrices";
+    ViewBag.Subtitle = "Traslados";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("SolicitudMatrices", "Traslados", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+@if (Session["Gestion Traslados"] != null)
 {
+    using (Html.BeginForm("SolicitudMatrices", "Traslados", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+    {
+        <div class="row">
+            <div class="col-md-9" style="width:100%; ">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li id="Li1" style="background-color: #dcdcdc; border-color: #c23321" class="active"><a href="#solicitudcreaciondireccion" aria-controls="solicitudcreaciondireccion" data-toggle="tab" role="tab" style="background-color:#dcdcdc;">Creación de Dirección</a></li>
+                        @*<li role="presentation"><a id="Li2" href="#gestionrealizada" aria-controls="gestionRealizada" data-toggle="tab" role="tab" style="background-color:#f6f6f6;">Gestión Realizada</a></li>*@
+                    </ul>
 
-    <div class="row">
-
-        <div class="box box-primary">
-
-            <div class="box-body">
-
-                <div class="row">
-                    <div class="col-md-9">
-
-                        <div role="tabpanel" style="width:1100px;">
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active"><a id="Li1" href="#solicitudcreaciondireccion" aria-controls="solicitudcreaciondireccion" data-toggle="tab" role="tab" style="background-color:#dcdcdc;">Creación de Dirección</a></li>
-                                @*<li role="presentation"><a id="Li2" href="#gestionrealizada" aria-controls="gestionRealizada" data-toggle="tab" role="tab" style="background-color:#f6f6f6;">Gestión Realizada</a></li>*@
-                            </ul>
-                        </div>
-
-                        <div class="tab-content" style="width:1100px;">
-                            <div role="tabpanel" class="tab-pane tab-dime-first active " id="solicitudcreaciondireccion">
-                                <table>
-                                    <tr>
-                                        <td width="200" style="padding:1px;">
-                                            <small>Tipo de Dirección:  </small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding:1px;">
-                                            @Html.DropDownList("tipoDireccion", new List<SelectListItem> {new SelectListItem{Text="Basica", Value="Basica" },
+                    <div class="tab-content" style="padding-left:0; padding-top: 0">
+                        <div role="tabpanel" class="tab-pane tab-dime-first active" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;" id="solicitudcreaciondireccion">
+                            <br />
+                            <table>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Tipo de Dirección:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        @Html.DropDownList("tipoDireccion", new List<SelectListItem> {new SelectListItem{Text="Basica", Value="Basica" },
                                                                                              new SelectListItem{Text="Barrio Manzana", Value="Barrio Manzana" },
                                                                                              new SelectListItem{Text="Intraducible", Value="Intraducible" },
                                                                                              new SelectListItem{Text="Multiorigen", Value="Multiorigen" } },
                                                                                                               "--Seleccione--", new { @class = "form-control input-sm" })
-                                        </td>
+                                    </td>
 
+                                </tr>
+                            </table>
+                            <br />
+                            <hr style="border-color:#c23321; margin-top:5px; border-width:2px;" />
+                            <div id="tabladirBasica" style="display:none">
+                                <table>
+                                    <tr>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Tipo de Vía:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Vía Principal:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Cuadrante:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Placa:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Complemento:</small>
+                                        </td>
                                     </tr>
-                                </table>
-                                <hr style="border-color:steelblue; margin-top:5px; border-width:2px;" />
-                                <div id="tabladirBasica" style="display:none">
-                                    <table>
-                                        <tr>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Tipo de Vía:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Vía Principal:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Cuadrante:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Placa:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Complemento:</small>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding:1px;">
-                                                @Html.DropDownList("dbtipoDeVia", new List<SelectListItem> {new SelectListItem{Text="ANILLO", Value="ANILLO" },
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.DropDownList("dbtipoDeVia", new List<SelectListItem> {new SelectListItem{Text="ANILLO", Value="ANILLO" },
                                                                                              new SelectListItem{Text="AUTOPISTA", Value="AUTOPISTA" },
                                                                                              new SelectListItem{Text="AV", Value="AV" },
                                                                                              new SelectListItem{Text="AVCL", Value="AVCL" },
@@ -77,107 +73,107 @@
                                                                                              new SelectListItem{Text="DG", Value="DG" },
                                                                                              new SelectListItem{Text="TR", Value="TR" } },
                                                                                                           "--SELECCIONE--", new { @class = "form-control input-sm" })
-                                            </td>
-                                            <td><input type="text" class="form-control input-sm" id="db_viaprincipal" /> </td>
-                                            <td><input type="text" class="form-control input-sm" id="db_cuadrante" /> </td>
-                                            <td><input type="text" class="form-control input-sm" id="db_placa" /> </td>
-                                            <td><input type="text" class="form-control input-sm" id="db_complemento" /> </td>
-                                        </tr>
+                                        </td>
+                                        <td><input type="text" class="form-control input-sm" id="db_viaprincipal" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="db_cuadrante" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="db_placa" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="db_complemento" /> </td>
+                                    </tr>
 
-                                    </table>
+                                </table>
 
-                                </div>
-                                <div id="tabladirbarriomanzana" style="display:none">
-                                    <table>
-                                        <tr>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Barrio:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Placa:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Complemento:</small>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="text" class="form-control input-sm" id="dbm_barrio" /> </td>
-                                            <td><input type="text" class="form-control input-sm" id="dbm_placa" /> </td>
-                                            <td><input type="text" class="form-control input-sm" id="dbm_complemento" /> </td>
-                                        </tr>
+                            </div>
+                            <div id="tabladirbarriomanzana" style="display:none">
+                                <table>
+                                    <tr>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Barrio:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Placa:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Complemento:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control input-sm" id="dbm_barrio" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="dbm_placa" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="dbm_complemento" /> </td>
+                                    </tr>
 
-                                    </table>
-                                </div>
-                                <div id="tabladirintraducible" style="display:none">
-                                    <table>
-                                        <tr>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Vía o Vereda:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Nombre Vereda o Vía:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>KM:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Sector:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Nombre del Sector:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Urbanización o Finca:</small>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="text" class="form-control input-sm" id="di_viavereda" /> </td>
-                                            <td><input type="text" class="form-control input-sm" id="di_nombreviavereda" /> </td>
-                                            <td><input type="text" class="form-control input-sm" id="di_kilometro" /> </td>
-                                            <td><input type="text" class="form-control input-sm" id="di_sector" /> </td>
-                                            <td><input type="text" class="form-control input-sm" id="di_nombredelsector" /> </td>
-                                            <td><input type="text" class="form-control input-sm" id="di_urbofinca" /> </td>
-                                        </tr>
-                                        <tr>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Placa:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Complemento:</small>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="text" class="form-control input-sm" id="di_placa" /> </td>
-                                            <td><input type="text" class="form-control input-sm" id="di_complemento" /> </td>
-                                        </tr>
+                                </table>
+                            </div>
+                            <div id="tabladirintraducible" style="display:none">
+                                <table>
+                                    <tr>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Vía o Vereda:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Nombre Vereda o Vía:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>KM:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Sector:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Nombre del Sector:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Urbanización o Finca:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control input-sm" id="di_viavereda" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="di_nombreviavereda" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="di_kilometro" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="di_sector" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="di_nombredelsector" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="di_urbofinca" /> </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Placa:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Complemento:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control input-sm" id="di_placa" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="di_complemento" /> </td>
+                                    </tr>
 
-                                    </table>
-                                </div>
-                                <div id="tabladirmultiorigen" style="display:none">
-                                    <table>
-                                        <tr>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Tipo de Vía:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Vía Principal:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Cuadrante:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Barrio:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Placa:</small>
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Complemento:</small>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding:1px;">
-                                                @Html.DropDownList("dmtipoDeVia", new List<SelectListItem> {new SelectListItem{Text="ANILLO", Value="ANILLO" },
+                                </table>
+                            </div>
+                            <div id="tabladirmultiorigen" style="display:none">
+                                <table>
+                                    <tr>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Tipo de Vía:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Vía Principal:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Cuadrante:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Barrio:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Placa:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Complemento:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.DropDownList("dmtipoDeVia", new List<SelectListItem> {new SelectListItem{Text="ANILLO", Value="ANILLO" },
                                                                                              new SelectListItem{Text="AUTOPISTA", Value="AUTOPISTA" },
                                                                                              new SelectListItem{Text="AV", Value="AV" },
                                                                                              new SelectListItem{Text="AVCL", Value="AVCL" },
@@ -191,102 +187,101 @@
                                                                                              new SelectListItem{Text="DG", Value="DG" },
                                                                                              new SelectListItem{Text="TR", Value="TR" } },
                                                                                                        "--SELECCIONE--", new { @class = "form-control input-sm" })
-                                            </td>
-                                            <td><input type="text" class="form-control input-sm" id="dm_viaprincipal" /> </td>
-                                            <td><input type="text" class="form-control input-sm" id="dm_cuadrante" /> </td>
-                                            <td><input type="text" class="form-control input-sm" id="dm_barrio" /> </td>
-                                            <td><input type="text" class="form-control input-sm" id="dm_placa" /> </td>
-                                            <td><input type="text" class="form-control input-sm" id="dm_complemento" /> </td>
-                                        </tr>
+                                        </td>
+                                        <td><input type="text" class="form-control input-sm" id="dm_viaprincipal" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="dm_cuadrante" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="dm_barrio" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="dm_placa" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="dm_complemento" /> </td>
+                                    </tr>
 
-                                    </table>
-                                </div>
-                                <div id="complemetodireccion">
-                                    <table>
-                                        <tr>
-                                            <td width="1000" style="padding:1px;" colspan="5">
-                                                <small>Dirección Principal Edificio:</small>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td width="1000" colspan="5">
-                                                @Html.TextBoxFor(m => m.GestionMatriz.Direccion, null, new { id = "cd_direccionfinal", @class = "form-control input-sm", @style = "text-transform:uppercase;", @readonly = "true" })
-                                            </td>
-                                        </tr>
-                                       
-                                        <tr>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Tipo de Gestión Matriz:</small>
-                                                @Html.DropDownListFor(m => m.GestionMatriz.TipoGestionMatriz, new List<SelectListItem> {new SelectListItem{Text="CREAR MATRIZ", Value="CREAR MATRIZ" },
+                                </table>
+                            </div>
+                            <div id="complemetodireccion">
+                                <table>
+                                    <tr>
+                                        <td width="1000" style="padding:1px;" colspan="5">
+                                            <small>Dirección Principal Edificio:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1000" colspan="5">
+                                            @Html.TextBoxFor(m => m.GestionMatriz.Direccion, null, new { id = "cd_direccionfinal", @class = "form-control input-sm", @style = "text-transform:uppercase;", @readonly = "true" })
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Tipo de Gestión Matriz:</small>
+                                            @Html.DropDownListFor(m => m.GestionMatriz.TipoGestionMatriz, new List<SelectListItem> {new SelectListItem{Text="CREAR MATRIZ", Value="CREAR MATRIZ" },
                                                                                              new SelectListItem{Text="GESTIONAR MATRIZ", Value="GESTIONAR MATRIZ" }},
-                                                                                                       "--SELECCIONE--", new { @class = "form-control input-sm",@id="tipogestionmatriz" })
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Tipo Cliente:</small>
-                                                @Html.TextBoxFor(m => m.GestionMatriz.TipoCliente, null, new { id = "tipocliente", @class = "form-control input-sm" })
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Cuenta Cliente:</small>
-                                                @Html.TextBoxFor(m => m.IngresoTraslado.CuentaCliente, null, new { id = "cuentacliente", @class = "form-control input-sm" })
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Cuenta Matriz:</small>
-                                                @Html.TextBoxFor(m => m.GestionMatriz.CuentaMatriz, null, new { id = "cuentamatriz", @class = "form-control input-sm" })
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Orden de Trabajo:</small>
-                                                @Html.TextBoxFor(m => m.GestionMatriz.OrdenTrabajo, null, new { id = "ordendetrabajo", @class = "form-control input-sm" })
-                                            </td>
-                                            
+                                                                                                       "--SELECCIONE--", new { @class = "form-control input-sm", @id = "tipogestionmatriz" })
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Tipo Cliente:</small>
+                                            @Html.TextBoxFor(m => m.GestionMatriz.TipoCliente, null, new { id = "tipocliente", @class = "form-control input-sm" })
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Cuenta Cliente:</small>
+                                            @Html.TextBoxFor(m => m.IngresoTraslado.CuentaCliente, null, new { id = "cuentacliente", @class = "form-control input-sm" })
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Cuenta Matriz:</small>
+                                            @Html.TextBoxFor(m => m.GestionMatriz.CuentaMatriz, null, new { id = "cuentamatriz", @class = "form-control input-sm" })
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Orden de Trabajo:</small>
+                                            @Html.TextBoxFor(m => m.GestionMatriz.OrdenTrabajo, null, new { id = "ordendetrabajo", @class = "form-control input-sm" })
+                                        </td>
 
-                                            </tr>
-                                        <tr>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Nodo:</small>
-                                                @Html.TextBoxFor(m => m.GestionMatriz.Nodo, null, new { id = "nodo", @class = "form-control input-sm" })
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Nombre Conjunto - Edificio:</small>
-                                                @Html.TextBoxFor(m => m.GestionMatriz.NombreConjuntoEdificio, null, new { id = "nombreconjuntoedificio", @class = "form-control input-sm" })
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Teléfono Cliente:</small>
-                                                @Html.TextBoxFor(m => m.GestionMatriz.TelefonoCLiente, null, new { id = "telefonocliente", @class = "form-control input-sm" })
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Teléfono Administrador:</small>
-                                                @Html.TextBoxFor(m => m.GestionMatriz.TelefonoAdministrador, null, new { id = "telefonoadministrador", @class = "form-control input-sm" })
-                                            </td>
-                                            <td width="200" style="padding:1px;">
-                                                <small>Nombre Administrador:</small>
-                                                @Html.TextBoxFor(m => m.GestionMatriz.NombreAdministrador, null, new { id = "nombreadministrador", @class = "form-control input-sm" })
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td width="1000" style="padding:1px;" colspan="5">
-                                                <small>Observaciones:</small>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td width="1000" colspan="5">
-                                                @Html.TextBoxFor(m => m.GestionMatriz.Observacion, null, new { id = "cd_observaciones", @class = "form-control input-sm", @style = "text-transform:uppercase;height:50px;min-height:50px;max-height:50px;" })
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    
-                                </div>
-                                @if (ViewBag.NodoRepetidoError != null)
-                                {
-                                    <label style="font-size:16px; color:red;font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight: 400;">@ViewBag.NodoRepetidoError.ToString() </label>
-                                }
-                                @if (ViewBag.CuentayaescaladaError != null)
-                                {
-                                    <label style="font-size:16px; color:red;font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight: 400;">@ViewBag.CuentayaescaladaError.ToString() </label>
-                                }
-                                <br />
-                                <button type="submit" class="btn btn-primary" name="cdgardar" value="true" style="width:10%; height:40px;">Guardar Datos</button><br />
 
-                                @*@Html.ValidationMessageFor(m => m.NotaTraslado.DireccionACrear, "", new { @class = "text-danger" })<br />
+                                    </tr>
+                                    <tr>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Nodo:</small>
+                                            @Html.TextBoxFor(m => m.GestionMatriz.Nodo, null, new { id = "nodo", @class = "form-control input-sm" })
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Nombre Conjunto - Edificio:</small>
+                                            @Html.TextBoxFor(m => m.GestionMatriz.NombreConjuntoEdificio, null, new { id = "nombreconjuntoedificio", @class = "form-control input-sm" })
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Teléfono Cliente:</small>
+                                            @Html.TextBoxFor(m => m.GestionMatriz.TelefonoCLiente, null, new { id = "telefonocliente", @class = "form-control input-sm" })
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Teléfono Administrador:</small>
+                                            @Html.TextBoxFor(m => m.GestionMatriz.TelefonoAdministrador, null, new { id = "telefonoadministrador", @class = "form-control input-sm" })
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Nombre Administrador:</small>
+                                            @Html.TextBoxFor(m => m.GestionMatriz.NombreAdministrador, null, new { id = "nombreadministrador", @class = "form-control input-sm" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1000" style="padding:1px;" colspan="5">
+                                            <small>Observaciones:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1000" colspan="5">
+                                            @Html.TextBoxFor(m => m.GestionMatriz.Observacion, null, new { id = "cd_observaciones", @class = "form-control input-sm", @style = "text-transform:uppercase;height:50px;min-height:50px;max-height:50px;" })
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                            @if (ViewBag.NodoRepetidoError != null)
+                            {
+                                <label style="font-size:16px; color:red;font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight: 400;">@ViewBag.NodoRepetidoError.ToString() </label>
+                            }
+                            @if (ViewBag.CuentayaescaladaError != null)
+                            {
+                                <label style="font-size:16px; color:red;font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight: 400;">@ViewBag.CuentayaescaladaError.ToString() </label>
+                            }
+                            
+
+                            @*@Html.ValidationMessageFor(m => m.NotaTraslado.DireccionACrear, "", new { @class = "text-danger" })<br />
                                 @Html.ValidationMessageFor(m => m.NotaTraslado.Estrato, "", new { @class = "text-danger" })<br />
                                 @Html.ValidationMessageFor(m => m.NotaTraslado.Nodo, "", new { @class = "text-danger" })<br />
                                 @Html.ValidationMessageFor(m => m.NotaTraslado.TelefonoCelular, "", new { @class = "text-danger" }) <br />
@@ -294,22 +289,42 @@
                                 @Html.ValidationMessageFor(m => m.NotaTraslado.CuentaCliente, "", new { @class = "text-danger" })*@
 
 
-                            </div>
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-primary" name="cdgardar" value="true" style="width:10%; height:40px; margin-left:1.5%;">Guardar Datos</button><br />
+                        <div role="tabpanel" class="tab-pane tab-dime-first" id="gestionrealizada">
 
-                            <div role="tabpanel" class="tab-pane tab-dime-first" id="gestionrealizada">
-                                
-                            </div>
+                        </div>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @section Scripts{
+        <script src="~/Scripts/Traslados/SolicitudMatrices.js?1.0.1"></script>
+    }
+}
+else
+{
+    <div class="row">
+        <div class="box box-primary">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-page">
+                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                            <div class="error-content">
+                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                <p style="text-align:justify;">
+                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                    Por favor solicite al administrador del sistema el acceso correspondiente.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
     </div>
-}
-@section Scripts{
-    <script src="~/Scripts/Traslados/SolicitudMatrices.js?1.0.1"></script>
 }

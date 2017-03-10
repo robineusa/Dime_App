@@ -1,6 +1,6 @@
 ﻿
 $(function Buen_Servicio() {
-
+    
     var connect = $.connection.myHub;
     
     Llama_Metodos(connect);
@@ -15,8 +15,9 @@ function Registra_Eventos(connect) {
         
         var msg = $("#MensajeBS").val();
         if (msg.length > 0) {
-            connect.server.sendMessagePublic('Buen Servicio', $("#MensajeBS").val());
+            connect.server.sendMessagePublic(UserConnect, $("#MensajeBS").val());
             $("#MensajeBS").val('');
+            connect.server.connect(UserConnect2);
         }
     });
     $('#NotificarBS').click(function () {
@@ -27,16 +28,19 @@ function Registra_Eventos(connect) {
             $("#EnviarMSGlobalBS").click();
         }
     });
-    $("#Revisar_notificaciones").click(function () {
-        
+    $('#ListNotify').click(function () {
+        connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
+    });
+    $('#BListNotify').click(function () {
+        connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
     });
 
-    connect.server.connect();
+    connect.server.connect(UserConnect2);
 }
 
 function Llama_Metodos(connect, UserConnect) {
     
-    connect.client.addMessage = function (userName, message) {
+    connect.client.addMessage = function (id, userName, message) {
         var V_Usuario = $('<div/>').text(userName).html();
         var V_Message = $('<div/>').text(message).html();
         var f = new Date();
@@ -60,10 +64,11 @@ function Llama_Metodos(connect, UserConnect) {
                                             '<span class="direct-chat-timestamp pull-right">&nbsp;&nbsp;' + V_Fecha + '</span>' +
                                         '</div>' +
                                         '<img class="direct-chat-img" src="../AdminLTE/dist/img/user.svg" alt="Message User Image">' +
-                                        '<div id="MensajeGlobalR" class="direct-chat-text" style="text-align: justify;">'
+                                        '<div id="MensajeGlobalRU" class="direct-chat-text" style="text-align: justify;">'
                                             + V_Message +
                                         '</div>' +
                                     '</div>');
+        
         $("#AdministradorBS").append('<div class="direct-chat-msg right">' +
                                         '<div id="UserGlobal" class="direct-chat-info clearfix">' +
                                             '<span class="direct-chat-name pull-right">' + V_Usuario + '</span>' +
@@ -77,8 +82,9 @@ function Llama_Metodos(connect, UserConnect) {
         if (UserConnect2 != 'Buen Servicio') {
             $("#ChatGeneral").css('display', 'block');
             $("#ChatGeneral2").css('display', 'block');
+            setTimeout('EjecutaBTN()', 0);
         } else { /*$("#ChatGeneral2").css('display', 'block');*/ }
-
+        $('#IdMsj').val(id);
     }
 
     connect.client.broadcastMessage = function (Nombre_Imagen, Ruta_Imagen, Id_Notificado, Descripcion_Imagen) {
@@ -96,9 +102,12 @@ function Llama_Metodos(connect, UserConnect) {
         //play_single_sound();
     }
 
-    connect.client.onConnected = function (id, userName, allUsers, messages) {
-        
-        // Add Existing Messages
+    connect.client.onConnected = function (messages) {
+        if (messages.length > 0) {
+            if (UserConnect2 != 'Buen Servicio')
+                $('#number_Mensajes').append('<span class="label label-success">' + messages.length + '</span>');
+        }
+        //Add Existing Messages
         for (i = 0; i < messages.length; i++) {
             AddMessage(messages[i].UserName, messages[i].Message);
         }
@@ -107,7 +116,7 @@ function Llama_Metodos(connect, UserConnect) {
 }
 
 function AddMessage(userName, message) {
-    $('#messages-menu').append('<div class="message"><span class="userName">' + userName + '</span>: ' + message + '</div>');
+    $('#ul_mess_dropdown_menu').append('<li class="header"> Usted tiene' + messages.length + '</span>: ' + message + '</div>');
 
     var height = $('#divChatWindow')[0].scrollHeight;
     $('#divChatWindow').scrollTop(height);
@@ -132,3 +141,6 @@ function GuardarUsuarioNotificado() {
     });
 }
 
+function EjecutaBTN() {
+    document.getElementById('BListNotify').click();
+}

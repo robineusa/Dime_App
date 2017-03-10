@@ -1,6 +1,7 @@
 ﻿@model Telmexla.Servicios.DIME.Entity.ViewModelTraslados
 @{
     ViewBag.Title = "Gestión de Matrices";
+    ViewBag.Subtitle = "Traslados";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using (Html.BeginForm("GestionMatricesCelula", "Traslados", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))

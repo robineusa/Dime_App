@@ -1,0 +1,54 @@
+﻿@model List<SelectListItem>
+@{
+    ViewBag.Title = "Cambiar Preguntas de Seguridad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="box box-danger">
+    <div class="box-header with-border bg-gray-light">
+        <h4 class="box-title">
+            Este formulario te va a permitir realizar el cambio de preguntas de seguridad para su cuenta registrada.
+        </h4>
+    </div>
+    <br />
+    <div style="width:90%; margin-left:1%;">
+        <div id="mainDiv">
+            @for (int i = 0; i < 5; i++)
+            {
+                <div class="callout bg-gray-light">
+                    <p>Pregunta @(i + 1)</p>
+                </div>
+                <div>
+                    @Html.DropDownList("pregunta" + (i + 1), Model, "--Seleccione Pregunta Preferida--", new { @class = "form-control select2", @style = "width:50%;margin-bom:2px; margin-top:-15px;" })
+
+                </div>
+                @Html.TextBox("respuesta" + (i + 1), null, new { @name = "respName" + (i + 1), @class = "form-control", @style = "width:50%;margin-bottom:10px;" })
+            }
+        </div>
+        <br />
+        <label id="redText" style="color:red"></label>
+        <br />
+        <input class="btn btn-danger" value="Aceptar" id="btnRegistrar" type="button" />
+        <br />
+        <br />
+    </div>
+</div>
+    @section Scripts {
+
+    <script>
+        var urlSRegistroPregConfirm = '@Url.Action("SRegistroPreguntasDesbloqueoConfirmation", "Account")';
+        var idUsuarioPage = @Session["IdUsuario"].ToString();
+        var datosFullUsuarioPage = "False";
+        var sesionUsuarioPage =   "0";
+    </script>
+
+
+    <script src="~/Scripts/Manage/ChangeSecurityQuestions.js?1.0.4"></script>
+
+    }
+
+
+
+
+
+

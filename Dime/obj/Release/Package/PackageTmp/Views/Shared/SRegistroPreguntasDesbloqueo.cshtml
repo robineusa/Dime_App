@@ -1,25 +1,19 @@
 ﻿@model List<SelectListItem>
 <html>
 <head>
-    @Styles.Render("~/AdminLTEplugins/daterangepicker/css")
-    @Styles.Render("~/AdminLTEplugins/icheck/css")
-    @Styles.Render("~/AdminLTEplugins/colorpicker/css")
-    @Styles.Render("~/AdminLTEplugins/timepicker/css")
-    @Styles.Render("~/AdminLTEplugins/select2/css")
-    @Styles.Render("~/AdminLTEdist/css")
-    @Styles.Render("~/AdminLTEdist/css/skins")
+
 </head>
 
 <body>
     <div style="width:90%; margin-left:1%;">
-        <div data-ng-controller="PreguntasController" ng-init="init(@Newtonsoft.Json.JsonConvert.SerializeObject(Model)) id="mainDiv">
+        <div   id="mainDiv">
             @for (int i = 0; i < 5; i++)
             {
                 <div class="callout bg-gray-light">
                     <p>Pregunta @(i + 1)</p>
                 </div>
-                    <div class="select">
-                        @Html.DropDownList("pregunta" + (i + 1), Model, "--Seleccione Pregunta Preferida--", new { @class = "form-control select2", @style = "width:50%;margin-bottom:2px; margin-top:-15px;" })
+                    <div >
+                        @Html.DropDownList("pregunta" + (i + 1), Model, "--Seleccione Pregunta Preferida--", new { @class = "form-control select2", @style = "width:50%;margin-bom:2px; margin-top:-15px;" })
 
                     </div>
                     @Html.TextBox("respuesta" + (i + 1), null, new { @name = "respName" + (i + 1), @class = "form-control", @style = "width:50%;margin-bottom:10px;" })
@@ -34,36 +28,12 @@
     </div>
 
 @section Scripts {
-        @Scripts.Render("~/AdminLTEplugins/select2/js")
-        @Scripts.Render("~/AdminLTEplugins/input-mask/js")
-        @Scripts.Render("~/AdminLTEplugins/momentjs/js")
-        @Scripts.Render("~/AdminLTEplugins/daterangepicker/js")
-        @Scripts.Render("~/AdminLTEplugins/colorpicker/js")
-        @Scripts.Render("~/AdminLTEplugins/timepicker/js")
-        @Scripts.Render("~/AdminLTEplugins/icheck/js")
-        @Scripts.Render("~/Scripts/Forms/Advanced")
+    
     }
     <script>
 
         var urlSRegistroPregConfirm = '@Url.Action("SRegistroPreguntasDesbloqueoConfirmation", "Account")';
 
-        $("#btnRegistrar").on("click", function () {
-            var idUsuario = @ViewBag.IdUsuario;
-            var datosFullUsuario = "@ViewBag.DatosFullUsuario";
-            var sesionUsuario = @ViewBag.SesionUsuario;
-
-            if(datosFullUsuario=== "True")
-            {
-                if(sesionUsuario)
-                    window.location.href = "/"
-
-            }else
-            {
-
-
-            }
-
-        });
         $("#btnRegistrar").on("click", function () {
 
             var resultPreguntas = [];
@@ -110,7 +80,7 @@
             }
 
 
-        })
+        });
 
         function PreguntasDiferentes(preguntasPassed) {
             var preguntas = preguntasPassed;
@@ -121,8 +91,11 @@
                     return false;
             }
             return true;
-        }
+        };
+
 </script>
+
+
 </body>
 </html>
 

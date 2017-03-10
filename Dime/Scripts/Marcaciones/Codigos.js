@@ -43,13 +43,13 @@ function CodigosGrid(){
 function ActualizarCodigoCierre(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = '/Marcaciones/AgregarActuCodigoCierre?idCierre=' + dataItem.Id;
+    window.location.href = 'AgregarActuCodigoCierre?idCierre=' + dataItem.Id;
 
 };
 
 function EliminarCodigoCierre(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = '/Marcaciones/EliminarCodigoCierre?id=' + dataItem.Id
+    window.location.href = 'EliminarCodigoCierre?id=' + dataItem.Id
 
 };
