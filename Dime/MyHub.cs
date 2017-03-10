@@ -48,7 +48,7 @@ namespace Dime
             }
             // send to caller
             Clients.All.onConnected(ListTemporal);
-            //ListTemporal.Clear();
+            ListTemporal.Clear();
         }
         public void UsurioNotify(int IdNotify, string userName)
         {

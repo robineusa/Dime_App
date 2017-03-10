@@ -1,9 +1,11 @@
 ﻿var MensajesaGuardar;
+
 $(function Buen_Servicio() {
     
     var connect = $.connection.myHub;
     
     Llama_Metodos(connect);
+    
     $('#Mensaje').focus();
     $.connection.hub.start().done(function () {
         Registra_Eventos(connect, UserConnect2);
@@ -14,6 +16,7 @@ function Registra_Eventos(connect) {
     $('#EnviarMSGlobalBS').click(function () {
         
         var msg = $("#MensajeBS").val();
+        
         if (msg.length > 0) {
             connect.server.sendMessagePublic(UserConnect, $("#MensajeBS").val());
             $("#MensajeBS").val('');
@@ -38,7 +41,7 @@ function Registra_Eventos(connect) {
         connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
     });
     
-
+    
     connect.server.connect(UserConnect2);
 }
 
@@ -111,14 +114,15 @@ function Llama_Metodos(connect, UserConnect) {
         if (messages.length > 0) {
             if (UserConnect2 != 'Buen Servicio') {
                 $('#messHeader').append('Usted tiene ' + messages.length + ' Mensajes Nuevos');
-                $('#number_Mensajes').append('<span class="label label-success">' + messages.length + '</span>');
+                $('#number_Mensajes').append('<span id="MensajeCount" class="label label-success">' + messages.length + '</span>');
 
                 for (i = 0; i < messages.length; i++) {
                     AddMessage(messages[i].Id, messages[i].UserName, messages[i].Message);
                 }
-                
+
             }
         }
+        else { alert(); $('#MensajeCount').css('display:', 'none'); }
         //Add Existing Messages
         
     }
