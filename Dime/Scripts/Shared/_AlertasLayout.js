@@ -1,6 +1,6 @@
 ﻿
 $(function Buen_Servicio() {
-    //alert('1');
+    
     var connect = $.connection.myHub;
     
     Llama_Metodos(connect);
@@ -15,9 +15,9 @@ function Registra_Eventos(connect) {
         
         var msg = $("#MensajeBS").val();
         if (msg.length > 0) {
-            connect.server.sendMessagePublic('Buen Servicio', $("#MensajeBS").val());
+            connect.server.sendMessagePublic(UserConnect, $("#MensajeBS").val());
             $("#MensajeBS").val('');
-            connect.server.connect();
+            connect.server.connect(UserConnect2);
         }
     });
     $('#NotificarBS').click(function () {
@@ -32,10 +32,10 @@ function Registra_Eventos(connect) {
         connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
     });
     $('#BListNotify').click(function () {
-        alert();
         connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
     });
-    
+
+    connect.server.connect(UserConnect2);
 }
 
 function Llama_Metodos(connect, UserConnect) {
@@ -43,7 +43,6 @@ function Llama_Metodos(connect, UserConnect) {
     connect.client.addMessage = function (id, userName, message) {
         var V_Usuario = $('<div/>').text(userName).html();
         var V_Message = $('<div/>').text(message).html();
-        $('#IdMsj').val(id);
         var f = new Date();
         var dd = f.getDate();
         var mm = f.getMonth() + 1;
@@ -69,7 +68,7 @@ function Llama_Metodos(connect, UserConnect) {
                                             + V_Message +
                                         '</div>' +
                                     '</div>');
-        $("#Administrador").append('<button id="BListNotify" style="display:block"></button>');
+        
         $("#AdministradorBS").append('<div class="direct-chat-msg right">' +
                                         '<div id="UserGlobal" class="direct-chat-info clearfix">' +
                                             '<span class="direct-chat-name pull-right">' + V_Usuario + '</span>' +
@@ -83,9 +82,9 @@ function Llama_Metodos(connect, UserConnect) {
         if (UserConnect2 != 'Buen Servicio') {
             $("#ChatGeneral").css('display', 'block');
             $("#ChatGeneral2").css('display', 'block');
-            setTimeout('EjecutaBTN()', 2000);
+            setTimeout('EjecutaBTN()', 0);
         } else { /*$("#ChatGeneral2").css('display', 'block');*/ }
-
+        $('#IdMsj').val(id);
     }
 
     connect.client.broadcastMessage = function (Nombre_Imagen, Ruta_Imagen, Id_Notificado, Descripcion_Imagen) {
@@ -105,7 +104,8 @@ function Llama_Metodos(connect, UserConnect) {
 
     connect.client.onConnected = function (messages) {
         if (messages.length > 0) {
-            $('#number_Mensajes').append('<span class="label label-success">' + messages.length + '</span>');
+            if (UserConnect2 != 'Buen Servicio')
+                $('#number_Mensajes').append('<span class="label label-success">' + messages.length + '</span>');
         }
         //Add Existing Messages
         for (i = 0; i < messages.length; i++) {
@@ -142,6 +142,5 @@ function GuardarUsuarioNotificado() {
 }
 
 function EjecutaBTN() {
-    var x = document.getElementById('BListNotify');
-    x.click();
+    document.getElementById('BListNotify').click();
 }
