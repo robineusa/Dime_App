@@ -96,13 +96,13 @@ function ShowGridMarcaciones(dataUp) {
 function ActualizarMarcacion(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = '/Marcaciones/NuevasMarcaciones?idActualizar=' + dataItem.Id;
+    window.location.href = 'NuevasMarcaciones?idActualizar=' + dataItem.Id;
 
 };
 
 function EliminarMarcacion(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = '/Marcaciones/EliminarMarcacion?idMarcacion=' + dataItem.Id
+    window.location.href = 'EliminarMarcacion?idMarcacion=' + dataItem.Id
 
 };

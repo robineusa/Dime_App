@@ -3,6 +3,7 @@ using Dime.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -67,6 +68,8 @@ namespace Dime.Controllers
         {
             return View("Login");
         }
+
+
 
 
         [AllowAnonymous]
@@ -189,7 +192,37 @@ namespace Dime.Controllers
 
 
 
+        [AllowAnonymous]
+        [HttpGet]
+        public JsonResult UnlockScreen(string cedula, string contra)
+        {
+            loginService = new WSD.LoginServiceClient();
+            loginService.ClientCredentials.Authenticate();
+            Usuario usuario = new Usuario();
+            usuario.Id = (int)loginService.RecibirIdUsuario(Convert.ToDecimal(cedula));
+            usuario.Cedula = Convert.ToDecimal(cedula);
+            usuario.Contrasena = contra;
+            int sesion = loginService.AutenticarUsuarioEnSesion(usuario);
+            if (sesion != 0 && sesion != -1)
+            {
+                bool existeUsuarioEnHolos = true;
+                RegistrarVariablesDeSesion(usuario.Id, out existeUsuarioEnHolos);
+                return new JsonResult
+                {
+                    Data = JsonConvert.SerializeObject(true),
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
 
+                };
+            }else
+            {
+                return new JsonResult
+                {
+                    Data = JsonConvert.SerializeObject(false),
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+
+                };
+            }
+        }
 
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
@@ -326,9 +359,14 @@ namespace Dime.Controllers
             Usuario usuarioLogeado = loginService.RecibirUsuarioConId(idUsuario);
             if (loginService.ExisteUsuarioHolos(Convert.ToDecimal(usuarioLogeado.Cedula)))
             {
+                string ipPrivada="";
+                string ipPublica="";
             usuarioEnHolos = true;
-            string ipPrivada = Session["IpPrivada"].ToString(); string ipPublica = Session["IpPublica"].ToString();
-            RegistrarSesionUsuario(ipPrivada, ipPublica, usuarioLogeado.Id);
+                if(Session["IpPrivada"]!=null)
+                {
+                     ipPrivada = Session["IpPrivada"].ToString();  ipPublica = Session["IpPublica"].ToString();
+                    RegistrarSesionUsuario(ipPrivada, ipPublica, usuarioLogeado.Id);
+                }
             Session.Clear();
             Session["IdUsuario"] = usuarioLogeado.Id;
             Session["Usuario"] = Convert.ToInt32(usuarioLogeado.Cedula);
@@ -336,8 +374,12 @@ namespace Dime.Controllers
             Session["AliadoLogeado"] = loginService.AliadoDeUsuario(usuarioLogeado.Cedula); //"BRM"
             Session["LineaLogeado"] = loginService.LineaDeUsuarioPorId(Convert.ToInt32(usuarioLogeado.IdLinea));   //  "CELULA VISITA SOPORTE";
             Session["ModoLogin"] = loginService.ModoLoginPorId(Convert.ToInt32(usuarioLogeado.IdLinea));  //1
-            Session["IpPrivada"] = ipPrivada;
-            Session["IpPublica"] = ipPublica;
+                if (Session["IpPrivada"] != null)
+                {
+                    Session["IpPrivada"] = ipPrivada;
+                    Session["IpPublica"] = ipPublica;
+                }
+
             List<string> accesosDeUsuario = loginService.ListaAccesosDeUsuario( Convert.ToInt32(usuarioLogeado.Cedula));
             foreach(string acceso in accesosDeUsuario)
             {
@@ -419,8 +461,6 @@ namespace Dime.Controllers
 
    
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
             Session.Clear();

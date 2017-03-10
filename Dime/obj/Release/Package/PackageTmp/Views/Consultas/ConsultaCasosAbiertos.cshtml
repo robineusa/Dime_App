@@ -1,26 +1,26 @@
 ﻿
 @{
     ViewBag.Title = "Consulta de Casos";
-    ViewBag.Subtitle = "Escalamientos a Célula";
+    ViewBag.Subtitle = "";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@if (Session["Escalamientos Sac"] != null)
+@if (Session["Escalamientos Sac"] != null || Session["Administracion de Casos Sac"] != null)
 {
     <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
         <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
             <div class="row">
-                <div class="col-xs-2">
+                <div class="col-xs-2" style="width: 150px;">
                     <small>Cuenta Cliente:</small>
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-2" style="width: 160px;">
                     <small>Id de Ingreso:</small>
                 </div>
                 @if (Session["ModoLogin"] != null && Session["ModoLogin"].ToString().Equals("1"))
                 {
-                    <div class="col-xs-2">
+                    <div class="col-xs-2" style="width: 150px;">
                         <small>RR:</small>
                     </div>
-                    <div class="col-xs-2">
+                    <div class="col-xs-2" style="width: 160px;">
                         <small>Usuario  de Creación:</small>
                     </div>
                 }
@@ -29,19 +29,19 @@
                 <div class="col-xs-4">
                     <table>
                         <tr>
-                            <td style="width:200px; padding:1px;">
-                                <input type="text" class="form-control" id="cuentaCliente" />
+                            <td style="padding:1px;">
+                                <input style="width:150px;" type="text" class="form-control" id="cuentaCliente" />
                             </td>
-                            <td style="width:200px;padding:1px;">
-                                <input type="text" class="form-control" id="idIngreso" />
+                            <td style="padding:1px;">
+                                <input style="width:150px;" type="text" class="form-control" id="idIngreso" />
                             </td>
                             @if (Session["ModoLogin"] != null && Session["ModoLogin"].ToString().Equals("1"))
                             {
-                                <td style="width:200px; padding:1px;">
-                                    <input type="text" class="form-control" id="ticketRR" />
+                                <td style="padding:1px;">
+                                    <input style="width:150px;" type="text" class="form-control" id="ticketRR" />
                                 </td>
-                                <td style="width:200px;padding:1px;">
-                                    <input type="text" class="form-control" id="usuarioCreacion" />
+                                <td style="padding:1px;">
+                                    <input style="width:150px;" type="text" class="form-control" id="usuarioCreacion" />
                                 </td>
                             }
                         </tr>
