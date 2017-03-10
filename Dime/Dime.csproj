@@ -2359,6 +2359,7 @@
     <Content Include="Resources\Images\Verde.gif" />
     <Content Include="Resources\Videos\Primer_Login.mp4" />
     <Content Include="Resources\Videos\VideoPrueba.mp4" />
+    <Content Include="Scripts\Account\SLockScreen.js" />
     <Content Include="Scripts\AdminNodos\ListaNodosCreados.js" />
     <Content Include="Scripts\AdminUsuarios\Accesos.js" />
     <Content Include="Scripts\AdminUsuarios\CrearUsuariosMasivos.js" />

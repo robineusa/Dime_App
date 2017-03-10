@@ -6,12 +6,11 @@
  */
 //alert(UserConnect);
 
-
 var lockScreenShow = false;
 var closingPage = false;
 var mouseMovedTimeAgo = false;
 var lockScreenTrigger = setTimeout(function () {
-}, 200000);
+}, (20000*3*20));
 
 
 $(document).ready(function () {
@@ -23,13 +22,19 @@ $(document).ready(function () {
 
 
 window.onbeforeunload = function (e) {
+    KillTimeLockScreen();
+};
+
+function KillTimeLockScreen()
+{
     closingPage = true;
     clearTimeout(lockScreenTrigger);
     lockScreenTrigger = setTimeout(function () {
         console.log("ejecutado  borrado");
-    }, 200000);
+    }, (20000 * 3 * 20));
     console.log("page exit");
-};
+
+}
 
 /**/
 window.onmousemove = function (e) {
@@ -74,7 +79,7 @@ function ResetearTiempoLockScreen() {
         lockScreenTrigger = setTimeout(function () {
             lockScreenShow = true;
             $("#lockScreenActivate").click();
-        }, 200000);
+        }, (20000 * 3 * 20));
     }
 }
 
@@ -88,9 +93,7 @@ function LockScreen() {
         success: function (result) {
             $("#lockScreenDiv").html(result);
         }
-
     })
-
 }
 
 function LlamarCalculosCampanas() {
