@@ -13,7 +13,7 @@ namespace Dime
         static List<UserDetail> ConnectedUsers = new List<UserDetail>();
         static List<MessageDetail> CurrentMessage = new List<MessageDetail>();
         static List<UsersNotify> UsuariosNoti = new List<UsersNotify>();
-
+        static List<MessageDetail> ListTemporal = new List<MessageDetail>();
 
         #endregion
         public void sendMessagePublic(string userName, string message)
@@ -26,15 +26,29 @@ namespace Dime
         {
             Clients.All.broadcastMessage(Nombre_Imagen, Ruta_Imagen, Id_Notificado, Descripcion_Imagen);
         }
-        public void Connect()
+        public void Connect(string User)
         {
-            for (int i = 1; i <= CurrentMessage.LongCount(); i++)
+            if (User != "Buen Servicio")
             {
-                var UsuarioDeNotif = UsuariosNoti.FirstOrDefault(x => x.Id_Notify == i );
-                //var MenNoNotif = CurrentMessage.FirstOrDefault(x => x.Id == UsuarioDeNotif.Id);
+                if (CurrentMessage.LongCount() != 0)
+                {
+                    for (int i = 0; i < CurrentMessage.LongCount(); i++)
+                    {
+                        var UsuarioDeNotif = UsuariosNoti.FirstOrDefault(x => x.Id_Notify == i && x.UserNotif == User);
+                        if (UsuarioDeNotif == null)
+                        {
+                            var MenNoNotif = CurrentMessage.FirstOrDefault(x => x.Id == i);
+                            var Validacion = ListTemporal.Exists(x => x.Id == i);
+                            if (Validacion == false)
+                                ListTemporal.Add(new MessageDetail { Id = MenNoNotif.Id, Message = MenNoNotif.Message, UserName = MenNoNotif.UserName });
+
+                        }
+                    }
+                }
             }
             // send to caller
-            Clients.All.onConnected(CurrentMessage); 
+            Clients.All.onConnected(ListTemporal);
+            //ListTemporal.Clear();
         }
         public void UsurioNotify(int IdNotify, string userName)
         {
@@ -60,17 +74,17 @@ namespace Dime
         }
         private void AddMessageinCache(string userName, string message)
         {
-            var id = 1;
-            CurrentMessage.Add(new MessageDetail { Id = id++, UserName = userName, Message = message });
+            var id = CurrentMessage.Count;
+            CurrentMessage.Add(new MessageDetail { Id = id, UserName = userName, Message = message });
 
             if (CurrentMessage.Count > 100)
                 CurrentMessage.RemoveAt(0);
-            
+
         }
         private void AddMessageinCache2(int id2, string userName)
         {
-            var id = 1;
-            UsuariosNoti.Add(new UsersNotify { Id = id++, Id_Notify = id2, UserNotif =  ""});
+            var id = UsuariosNoti.Count;
+            UsuariosNoti.Add(new UsersNotify { Id = id, Id_Notify = id2, UserNotif = userName });
 
             if (UsuariosNoti.Count > 100)
                 UsuariosNoti.RemoveAt(0);
