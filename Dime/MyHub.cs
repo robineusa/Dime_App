@@ -72,7 +72,7 @@ namespace Dime
             }
 
         }
-        private void AddMessageinCache(string userName, string message)
+        public void AddMessageinCache(string userName, string message)
         {
             var id = CurrentMessage.Count;
             CurrentMessage.Add(new MessageDetail { Id = id, UserName = userName, Message = message });
@@ -81,7 +81,7 @@ namespace Dime
                 CurrentMessage.RemoveAt(0);
 
         }
-        private void AddMessageinCache2(int id2, string userName)
+        public void AddMessageinCache2(int id2, string userName)
         {
             var id = UsuariosNoti.Count;
             UsuariosNoti.Add(new UsersNotify { Id = id, Id_Notify = id2, UserNotif = userName });

@@ -1,4 +1,4 @@
-﻿
+﻿var MensajesaGuardar;
 $(function Buen_Servicio() {
     
     var connect = $.connection.myHub;
@@ -28,12 +28,16 @@ function Registra_Eventos(connect) {
             $("#EnviarMSGlobalBS").click();
         }
     });
-    $('#ListNotify').click(function () {
-        connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
+    $('#messages_menu').click(function () {
+        for (i = 0; i < MensajesaGuardar.length; i++) {
+            connect.server.addMessageinCache2(MensajesaGuardar[i].Id, UserConnect2);
+        }
+        connect.server.connect(UserConnect2);
     });
     $('#BListNotify').click(function () {
         connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
     });
+    
 
     connect.server.connect(UserConnect2);
 }
@@ -103,23 +107,37 @@ function Llama_Metodos(connect, UserConnect) {
     }
 
     connect.client.onConnected = function (messages) {
+        MensajesaGuardar = messages;
         if (messages.length > 0) {
-            if (UserConnect2 != 'Buen Servicio')
+            if (UserConnect2 != 'Buen Servicio') {
+                $('#messHeader').append('Usted tiene ' + messages.length + ' Mensajes Nuevos');
                 $('#number_Mensajes').append('<span class="label label-success">' + messages.length + '</span>');
+
+                for (i = 0; i < messages.length; i++) {
+                    AddMessage(messages[i].Id, messages[i].UserName, messages[i].Message);
+                }
+                
+            }
         }
         //Add Existing Messages
-        for (i = 0; i < messages.length; i++) {
-            AddMessage(messages[i].UserName, messages[i].Message);
-        }
+        
     }
     
 }
 
-function AddMessage(userName, message) {
-    $('#ul_mess_dropdown_menu').append('<li class="header"> Usted tiene' + messages.length + '</span>: ' + message + '</div>');
+function AddMessage(id, userName, message) {
+    $('#MensajesNoNotificados').append('<li>'+
+                                            '<a href="#">'+
+                                                '<div class="pull-left">'+
+                                                    '<img src="../AdminLTE/dist/img/user.svg" class="img-circle" alt="User Image">'+
+                                                '</div>'+
+                                                '<h4>'+
+                                                    '<small><i class="fa fa-clock-o"></i> 5 mins</small>'+
+                                                        '</h4>'+ userName +
+                                                        '<p>' + message + '</p>' +
+                                                    '</a>'+
+                                                '</li>');
 
-    var height = $('#divChatWindow')[0].scrollHeight;
-    $('#divChatWindow').scrollTop(height);
 }
 
 function GuardarUsuarioNotificado() {

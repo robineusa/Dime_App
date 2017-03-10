@@ -25,75 +25,16 @@
 
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        <li id="messages-menu" class="dropdown messages-menu">
+                        <li id="messages_menu" class="dropdown messages-menu">
                                 <a id="number_Mensajes" href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="fa fa-envelope-o"></i>
                                     @*<span class="label label-success">8</span>*@
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header">Usted tiene 8 mensajes</li>
-                                    <li>
-                                            <ul class="menu">
-                                                <li>
-                                                    <a href="#">
-                                                        <div class="pull-left">
-                                                            <img src="../AdminLTEdist/img/user.svg" class="img-circle" alt="User Image">
-                                                        </div>
-                                                        <h4>
-                                                            Euipo de Apoyo
-                                                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                                        </h4>
-                                                        <p>Why not buy a new awesome theme?</p>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <div class="pull-left">
-                                                            <img src="~/AdminLTEdist/img/user.svg" class="img-circle" alt="User Image">
-                                                        </div>
-                                                        <h4>
-                                                            AdminLTE Design Team
-                                                            <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                                                        </h4>
-                                                        <p>Why not buy a new awesome theme?</p>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <div class="pull-left">
-                                                            <img src="~/AdminLTEdist/img/user.svg" class="img-circle" alt="User Image">
-                                                        </div>
-                                                        <h4>
-                                                            Developers
-                                                            <small><i class="fa fa-clock-o"></i> Today</small>
-                                                        </h4>
-                                                        <p>Why not buy a new awesome theme?</p>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <div class="pull-left">
-                                                            <img src="~/AdminLTEdist/img/user.svg" class="img-circle" alt="User Image">
-                                                        </div>
-                                                        <h4>
-                                                            Sales Department
-                                                            <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                                                        </h4>
-                                                        <p>Why not buy a new awesome theme?</p>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <div class="pull-left">
-                                                            <img src="~/AdminLTEdist/img/user.svg" class="img-circle" alt="User Image">
-                                                        </div>
-                                                        <h4>
-                                                            Reviewers
-                                                            <small><i class="fa fa-clock-o"></i> 2 days</small>
-                                                        </h4>
-                                                        <p>Why not buy a new awesome theme?</p>
-                                                    </a>
-                                                </li>
+                                <ul id="ul_mess_dropdown_menu" class="dropdown-menu">
+                                    <li id="messHeader" style="text-align: center;" class="header"></li>
+                                    <li >
+                                            <ul id="MensajesNoNotificados" class="menu">
+                                                
                                             </ul>
                                         </li>
                                     <li class="footer"><a href="#">See All Messages</a></li>
@@ -813,8 +754,8 @@
                             
                         </div>
                     </div>
-                    <input type="text" id="IdMsj" style="display:block;" />
-                    <button id="BListNotify" style="display:block">Text</button>
+                    <input type="text" id="IdMsj" style="display:none;" />
+                    <button id="BListNotify" style="display:none">Text</button>
                 </div>
                 
                 <a id="BuenServicioHREF" href="#Buen_Servicio" data-toggle="modal" data-backdrop="static" data-keyboard="false">
