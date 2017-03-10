@@ -23,9 +23,19 @@ $('#ivacalculo').keyup(function () {
     IVA_ACTUAL = $('#ivacalculo').val();
     if (IVA_ACTUAL == 16) {
         Iva_Final = 1.16;
+        ValidacionCamposNulos();
+        resetearValores();
+        resetearValoresDiferencia();
+        CalculoFechas();
+        CalculosIvaInicialProrrateos();
     }else
         if (IVA_ACTUAL == 19) {
             Iva_Final = 1.19;
+            ValidacionCamposNulos();
+            resetearValores();
+            resetearValoresDiferencia();
+            CalculoFechas();
+            CalculosIvaInicialProrrateos();
         } else { }
 })
 $('#porcentajeDescuento').keyup(function () {

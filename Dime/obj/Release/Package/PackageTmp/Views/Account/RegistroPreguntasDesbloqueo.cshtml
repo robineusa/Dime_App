@@ -18,7 +18,23 @@
 
 
 @section scripts{
+@Styles.Render("~/AdminLTEplugins/daterangepicker/css")
+@Styles.Render("~/AdminLTEplugins/icheck/css")
+@Styles.Render("~/AdminLTEplugins/colorpicker/css")
+@Styles.Render("~/AdminLTEplugins/timepicker/css")
+@Styles.Render("~/AdminLTEplugins/select2/css")
+@Styles.Render("~/AdminLTEdist/css")
+@Styles.Render("~/AdminLTEdist/css/skins")
 
+
+@Scripts.Render("~/AdminLTEplugins/select2/js")
+@Scripts.Render("~/AdminLTEplugins/input-mask/js")
+@Scripts.Render("~/AdminLTEplugins/momentjs/js")
+@Scripts.Render("~/AdminLTEplugins/daterangepicker/js")
+@Scripts.Render("~/AdminLTEplugins/colorpicker/js")
+@Scripts.Render("~/AdminLTEplugins/timepicker/js")
+@Scripts.Render("~/AdminLTEplugins/icheck/js")
+@Scripts.Render("~/Scripts/Forms/Advanced")
     <script>
         var urlSRegistropPreguntasDesbloqueo = '@Url.Action("SRegistroPreguntasDesbloqueo","Account")';
 

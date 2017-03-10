@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Cambiar Datos de Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="box box-danger">
+    <div class="box-header with-border">
+        <h4 class="box-title">Para nosotros es muy importante contar con esta información adicional tuya, por eso te invitamos a que diligencies el siguiente formulario con tus datos personales.</h4>
+    </div>
+    <div id="shareRegistroDatos"> </div>
+</div>
+
+@section scripts{
+    <script>
+
+    var urlSRegistroDatoUsuario = '@Url.Action("SRegistroDatosUsuario", "Account")';
+
+        $(document).ready(function() {
+            var scopeId =  @Session["IdUsuario"].ToString();
+            var scopeSesion = 0;
+    $.ajax({
+        type: "GET",
+        url: urlSRegistroDatoUsuario,
+        contentType: "application/json; charset=utf-8",
+        data: { idUsuario:scopeId , sesionUsuario : scopeSesion} ,
+        dataType: "html",
+        success: function (result) {
+            $('#shareRegistroDatos').html(result);
+        }
+         });
+        })
+
+    </script>
+
+
+}
