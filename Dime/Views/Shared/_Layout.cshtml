@@ -7,7 +7,16 @@
     <title>Dime</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
+    @Styles.Render("~/AdminLTEbootstrap/css")
+    @Styles.Render("~/AdminLTEdist/css")
+    @Styles.Render("~/AdminLTEdist/css/skins")
+    <link href="~/AdminLTE/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="~/AdminLTE/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.min.css" rel="stylesheet" />
+    <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.mobile.min.css" rel="stylesheet" />
 
+    
     <script src="https://claro-co-cv.inbenta.com/jsonp/inbenta.js?banner=no&nombre=@Session["NombreUsuario"]&Cedula=@Session["Usuario"]&User=@Session["Usuario"]&source=SIRIAC&operacion=@Session["AliadoLogeado"]"></script>
 </head>
 <body id="Body_Layout" class="hold-transition skin-red sidebar-mini" >
@@ -988,17 +997,6 @@
         <div id="lockScreenDiv"></div>
 
     </div>
-    <link href="~/AdminLTE/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
-    <link href="~/AdminLTE/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-
-    @Styles.Render("~/AdminLTEbootstrap/css")
-    @Styles.Render("~/AdminLTEdist/css")
-    @Styles.Render("~/AdminLTEdist/css/skins")
-
-    <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.common.min.css" rel="stylesheet" />
-    <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.min.css" rel="stylesheet" />
-    <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.mobile.min.css" rel="stylesheet" />
-
     @Scripts.Render("~/AdminLTEplugins/jquery/js")
     @Scripts.Render("~/AdminLTEdist/js/angularjs")
     <script src="~/AdminLTE/plugins/jquery-ui/js/jquery-ui.js"></script>

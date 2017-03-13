@@ -7513,7 +7513,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/07/2017 08:54:53</publishTime>
     </File>
     <File Include="bin/Dime.dll">
-      <publishTime>03/10/2017 11:56:06</publishTime>
+      <publishTime>03/13/2017 06:44:37</publishTime>
     </File>
     <File Include="bin/Dime.dll.config">
       <publishTime>03/09/2017 14:07:42</publishTime>
@@ -7989,6 +7989,9 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="Scripts/Account/ScriptLogin1.js">
       <publishTime>03/07/2017 08:54:46</publishTime>
     </File>
+    <File Include="Scripts/Account/SLockScreen.js">
+      <publishTime>03/10/2017 15:06:50</publishTime>
+    </File>
     <File Include="Scripts/AdminNodos/ListaNodosCreados.js">
       <publishTime>03/07/2017 08:54:46</publishTime>
     </File>
@@ -8134,7 +8137,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/07/2017 08:54:48</publishTime>
     </File>
     <File Include="Scripts/Marcaciones/ActualizarMarcaciones.js">
-      <publishTime>03/10/2017 12:12:42</publishTime>
+      <publishTime>03/10/2017 13:45:34</publishTime>
     </File>
     <File Include="Scripts/Marcaciones/AddUpdCodigoCierre.js">
       <publishTime>03/07/2017 08:54:48</publishTime>
@@ -8143,7 +8146,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/07/2017 08:54:48</publishTime>
     </File>
     <File Include="Scripts/Marcaciones/Codigos.js">
-      <publishTime>03/10/2017 12:02:56</publishTime>
+      <publishTime>03/10/2017 13:45:34</publishTime>
     </File>
     <File Include="Scripts/Marcaciones/TipificadorMarcaciones.js">
       <publishTime>03/07/2017 08:54:48</publishTime>
@@ -8161,10 +8164,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/07/2017 08:54:48</publishTime>
     </File>
     <File Include="Scripts/Shared/_AlertasLayout.js">
-      <publishTime>03/10/2017 06:18:17</publishTime>
+      <publishTime>03/13/2017 06:36:06</publishTime>
     </File>
     <File Include="Scripts/Shared/_Layout.js">
-      <publishTime>03/07/2017 08:54:48</publishTime>
+      <publishTime>03/10/2017 15:06:50</publishTime>
     </File>
     <File Include="Scripts/Shared/_LockScreen.js">
       <publishTime>03/07/2017 08:54:48</publishTime>
@@ -8377,7 +8380,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/07/2017 08:54:51</publishTime>
     </File>
     <File Include="Views/Account/SLockScreen.cshtml">
-      <publishTime>03/07/2017 08:54:51</publishTime>
+      <publishTime>03/10/2017 15:06:50</publishTime>
     </File>
     <File Include="Views/AdminNodos/ActualizarNodo.cshtml">
       <publishTime>03/07/2017 08:54:51</publishTime>
@@ -8527,16 +8530,16 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/07/2017 08:54:52</publishTime>
     </File>
     <File Include="Views/Marcaciones/ActualizarMarcaciones.cshtml">
-      <publishTime>03/10/2017 12:12:58</publishTime>
+      <publishTime>03/10/2017 13:45:34</publishTime>
     </File>
     <File Include="Views/Marcaciones/AgregarActuCodigoCierre.cshtml">
-      <publishTime>03/10/2017 12:04:07</publishTime>
+      <publishTime>03/10/2017 13:45:34</publishTime>
     </File>
     <File Include="Views/Marcaciones/CodigosCierre.cshtml">
       <publishTime>03/07/2017 08:54:52</publishTime>
     </File>
     <File Include="Views/Marcaciones/NuevasMarcaciones.cshtml">
-      <publishTime>03/10/2017 12:04:32</publishTime>
+      <publishTime>03/10/2017 13:45:34</publishTime>
     </File>
     <File Include="Views/Marcaciones/TipificacionMarcaciones.cshtml">
       <publishTime>03/10/2017 12:04:27</publishTime>
@@ -8572,10 +8575,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/07/2017 08:54:52</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>03/10/2017 06:18:18</publishTime>
+      <publishTime>03/13/2017 06:43:21</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
-      <publishTime>03/08/2017 11:59:00</publishTime>
+      <publishTime>03/10/2017 15:06:50</publishTime>
     </File>
     <File Include="Views/Shared/_RecordarContrasena.cshtml">
       <publishTime>03/07/2017 08:54:52</publishTime>
@@ -8713,7 +8716,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/07/2017 08:54:53</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/10/2017 11:56:59</publishTime>
+      <publishTime>03/13/2017 06:45:28</publishTime>
     </File>
   </ItemGroup>
 </Project>

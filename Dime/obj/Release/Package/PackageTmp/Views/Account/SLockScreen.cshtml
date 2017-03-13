@@ -13,58 +13,50 @@
     <a href="#ventanaPrincipal" class="btn btn-primary btn-lg" data-toggle="modal" id="modalActivar" style="visibility:hidden" data-backdrop="static" data-keyboard="false">Ver Modal</a>
 
     <div class="hold-transition lockscreen modal fade" id="ventanaPrincipal">
-        <div class="lockscreen-wrapper">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
             <div class="lockscreen-logo">
-                <b>Dime</b>
+                <img src="~/Resources/Images/Logo.png" width="400" height="400" /><br />
             </div>
-            <div class="lockscreen-name">@User.Identity.GetUserNameIdentifier()</div>
+           <br />
+           <br />
             <div class="lockscreen-item">
+          
                 <div class="lockscreen-image">
-                    <img src="~/AdminLTE/dist/img/user.svg" alt="User Image">
+                    <img src="~/AdminLTE/dist/img/user.svg" width="100" height="100" >
                 </div>
-                <form class="lockscreen-credentials" onsubmit="return false;">
+                <div class="lockscreen-credentials">
                     <div class="input-group">
                         <input type="password" class="form-control" placeholder="password" id="lockPassword">
                         <div class="input-group-btn">
-                            <button type="button" class="btn"><i class="fa fa-arrow-right text-muted"></i></button>
+                            <button type="button" class="btn" id="bUnlock"><i class="fa fa-arrow-right text-muted"></i></button>
                         </div>
                     </div>
-                </form>
+                </div>
+               
             </div>
+            <label style="color:red; display:none" id="contraIncorrecta">La contraseña es incorrecta</label>
+
             <div class="help-block text-center">
                 Ingrese su contraseña para recuperar la sesion
             </div>
             <div class="text-center">
                 <a href="@Url.Action("Login", "Account")">O inicie sesión con un usuario diferente</a>
             </div>
-        </div>
+       
     </div>
-
-
-
-  
-
     <script>
-
-        $('input').on('keydown', function (event) {
-   
-            var x = event.which;
-            if (x === 13) {
-                event.preventDefault();
-            }
-        });
-
-        $(document).ready(function () {
-
-            $("#modalActivar").click();
-            setTimeout(function () {
-                console.log("a fgocus");
-                $("#lockPassword").focus();
-            }, 1000);
-         
-        })
+        var urlCerrarSesion = '@Url.Action("LogOff", "Account")';
+        var urlUnlockScreen = '@Url.Action("UnlockScreen","Account")';
+        var cedulaUsuario = '@Session["Usuario"]';
     </script>
-
+    <script src="~/Scripts/Account/SLockScreen.js?1.0.2"></script>
 </body>
 </html>
 
