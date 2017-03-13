@@ -100,5 +100,10 @@ namespace Dime
                     UsuariosNoti.RemoveAt(0);
             }
         }
+
+        public void todosMensajes()
+        {
+            Clients.All.todosMsm(CurrentMessage);
+        }
     }
 }

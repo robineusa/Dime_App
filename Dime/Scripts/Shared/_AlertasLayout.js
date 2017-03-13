@@ -21,6 +21,7 @@ function Registra_Eventos(connect) {
             connect.server.sendMessagePublic(UserConnect, $("#MensajeBS").val());
             $("#MensajeBS").val('');
             connect.server.connect(UserConnect2);
+            
         }
     });
     $('#NotificarBS').click(function () {
@@ -128,6 +129,7 @@ function Llama_Metodos(connect, UserConnect) {
     }
     
     connect.client.connectEver = function (messages) {
+        MensajesaGuardar = messages;
         $('#MensajeCount').empty();
         if (messages.length > 0) {
                 $('#MensajesNoNotificados').empty();
@@ -136,6 +138,7 @@ function Llama_Metodos(connect, UserConnect) {
                 }
         }
         else {
+            $('#MensajesNoNotificados').empty();
             $('#MensajesNoNotificados').append('<li>' +
                                          '<div>' +
                                              '<h4 style="text-align: center;"> No existen Mensajes</h4>' +
@@ -182,3 +185,4 @@ function GuardarUsuarioNotificado() {
 function EjecutaBTN() {
     document.getElementById('BListNotify').click();
 }
+
