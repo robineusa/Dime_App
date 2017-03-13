@@ -47,8 +47,15 @@ namespace Dime
                 }
             }
             // send to caller
-            Clients.All.onConnected(ListTemporal);
-            ListTemporal.Clear();
+            if (ListTemporal.LongCount() == 0)
+            {
+                Clients.All.connectEver(CurrentMessage);
+            }
+            else {
+                Clients.All.onConnected(ListTemporal);
+                ListTemporal.Clear();
+            }
+            
         }
         public void UsurioNotify(int IdNotify, string userName)
         {
@@ -84,11 +91,14 @@ namespace Dime
         public void AddMessageinCache2(int id2, string userName)
         {
             var id = UsuariosNoti.Count;
-            UsuariosNoti.Add(new UsersNotify { Id = id, Id_Notify = id2, UserNotif = userName });
+            var Validacion2 = UsuariosNoti.Exists(x => x.Id_Notify == id2 && x.UserNotif == userName);
 
-            if (UsuariosNoti.Count > 100)
-                UsuariosNoti.RemoveAt(0);
-
+            if (Validacion2 == false)
+            {
+                UsuariosNoti.Add(new UsersNotify { Id = id, Id_Notify = id2, UserNotif = userName });
+                if (UsuariosNoti.Count > 100)
+                    UsuariosNoti.RemoveAt(0);
+            }
         }
     }
 }

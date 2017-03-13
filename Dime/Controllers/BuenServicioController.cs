@@ -88,5 +88,11 @@ namespace Dime.Controllers
             BuenServicioServices.RegistrarUsuarionotificado(model);
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Mensajes_BuenServicio()
+        {
+            return View();
+        }
     }
 }

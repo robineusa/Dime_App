@@ -32,17 +32,19 @@ function Registra_Eventos(connect) {
         }
     });
     $('#messages_menu').click(function () {
-        for (i = 0; i < MensajesaGuardar.length; i++) {
-            connect.server.addMessageinCache2(MensajesaGuardar[i].Id, UserConnect2);
+        if (MensajesaGuardar.length > 0) {
+            for (i = 0; i < MensajesaGuardar.length; i++) {
+                connect.server.addMessageinCache2(MensajesaGuardar[i].Id, UserConnect2);
+            }
         }
         connect.server.connect(UserConnect2);
     });
     $('#BListNotify').click(function () {
         connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
     });
-    
-    
+
     connect.server.connect(UserConnect2);
+    
 }
 
 function Llama_Metodos(connect, UserConnect) {
@@ -113,8 +115,8 @@ function Llama_Metodos(connect, UserConnect) {
         MensajesaGuardar = messages;
         if (messages.length > 0) {
             if (UserConnect2 != 'Buen Servicio') {
-                $('#messHeader').append('Usted tiene ' + messages.length + ' Mensajes Nuevos');
-                $('#number_Mensajes').append('<span id="MensajeCount" class="label label-success">' + messages.length + '</span>');
+                //$('#messHeader').append('Usted tiene ' + messages.length + ' Mensajes Nuevos');
+                $('#MensajeCount').append('' + messages.length + '');
 
                 for (i = 0; i < messages.length; i++) {
                     AddMessage(messages[i].Id, messages[i].UserName, messages[i].Message);
@@ -122,11 +124,27 @@ function Llama_Metodos(connect, UserConnect) {
 
             }
         }
-        else { alert(); $('#MensajeCount').css('display:', 'none'); }
-        //Add Existing Messages
-        
+        else { $('#MensajeCount').empty();}
     }
     
+    connect.client.connectEver = function (messages) {
+        $('#MensajeCount').empty();
+        if (messages.length > 0) {
+                $('#MensajesNoNotificados').empty();
+                for (i = messages.length-1; i > messages.length - 4; i--) {
+                    AddMessage(messages[i].Id, messages[i].UserName, messages[i].Message);
+                }
+        }
+        else {
+            $('#MensajesNoNotificados').append('<li>' +
+                                         '<div>' +
+                                             '<h4 style="text-align: center;"> No existen Mensajes</h4>' +
+                                         '</div>' +
+                                     '</li>');
+            //$('#SeeAllmsn').empty();
+            
+        }
+    }
 }
 
 function AddMessage(id, userName, message) {
@@ -134,13 +152,11 @@ function AddMessage(id, userName, message) {
                                             '<a href="#">'+
                                                 '<div class="pull-left">'+
                                                     '<img src="../AdminLTE/dist/img/user.svg" class="img-circle" alt="User Image">'+
-                                                '</div>'+
-                                                '<h4>'+
-                                                    '<small><i class="fa fa-clock-o"></i> 5 mins</small>'+
-                                                        '</h4>'+ userName +
-                                                        '<p>' + message + '</p>' +
-                                                    '</a>'+
-                                                '</li>');
+                                                '</div>'
+                                                + userName +
+                                                '<p>' + message + '</p>' +
+                                            '</a>'+
+                                        '</li>');
 
 }
 
