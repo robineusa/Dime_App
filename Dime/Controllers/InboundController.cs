@@ -35,6 +35,7 @@ namespace Dime.Controllers
             model.HobbyOptions = new List<SelectListItem>();
             model.HobbyOptions.Add(new SelectListItem { Text = "Datos adicionales no cargados", Value = "Datos adicionales no cargados" });
             string createText = "Hello and Welcome" + Environment.NewLine;
+            model.LineaDeUsuarioActual = Session["LineaLogeado"].ToString();
             if (choosenCuenta != null) { model.ClientesTodos.Cuenta = int.Parse(choosenCuenta); RedirectToAction("Index", "Inbound", model); }
             return View(model);
         }
@@ -49,7 +50,6 @@ namespace Dime.Controllers
             inboundService.ClientCredentials.Authenticate();
             acsiembrahdwebservice = new WSD.ActivacionSiembraHDServiceClient();
             acsiembrahdwebservice.ClientCredentials.Authenticate();
-
             int cuentaCliente = model.ClientesTodos.Cuenta;
             model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(cuentaCliente);
             if ( cambiarDatos!=null && cambiarDatos.Equals("true"))
@@ -110,6 +110,7 @@ namespace Dime.Controllers
 
             model.DatosAdcionalesCliente = inboundService.TraerDatosAdicionalesCliente(cuentaCliente)?? new DatosAdicionalesCliente();
             model.iniciarOptionsVista();
+            model.LineaDeUsuarioActual = Session["LineaLogeado"].ToString();
             return View(model);
         }
 

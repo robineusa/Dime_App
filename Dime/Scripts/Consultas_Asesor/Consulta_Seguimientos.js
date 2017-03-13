@@ -84,14 +84,7 @@ function ShowGridSeguimientos(data) {
               { field: "UsuarioUltimaActualizacion", title: "Usuario Ultima Actualización", width: 80, headerAttributes: { style: "white-space: normal" } },
                { field: "Macroproceso", title: "Macroproceso", width: 80, headerAttributes: { style: "white-space: normal" } },
                 { field: "Marcacion", title: "Marcación", width: 80, headerAttributes: { style: "white-space: normal" } },
-                 { field: "IdEstado", title: "Estado", width: 80, headerAttributes: { style: "white-space: normal" } },
-                     {
-                           field: "icon",
-                           title: "Semáforo",
-                           template: '<img src="../../Resources/Images/#=Semaforo#" alt="image" style="width:50px; height:50px;"/>',
-                           width: 70,
-                           filterable: false, headerAttributes: { style: "white-space: normal" }
-                       } 
+                 { field: "IdEstado", title: "Estado", width: 80, headerAttributes: { style: "white-space: normal" } } 
         ]
 
 

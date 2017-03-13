@@ -1,10 +1,8 @@
-﻿$(document).ready(function () {
+﻿
 
-
+$(document).ready(function () {
 
 checkMarcacion(idMarcacionEntrada);
-
-
 $("#keyMarcacion").on("keyup", function (e) {
     var code = e.keyCode || e.which;
     if (code == 13) {
@@ -126,7 +124,10 @@ function CargarGridHistorial()
     });
 
     var grid = $("#tablaHistorial").data("kendoGrid");
-    grid.dataSource.sort({ field: "FechaNota", dir: "desc" });
+    var dsSort = [];
+    dsSort.push({ field: "FechaNota", dir: "desc" });
+    dsSort.push({ field: "HoraNota", dir: "desc" });
+    grid.dataSource.sort(dsSort);
 }
 
 function ChangeStateCase() {

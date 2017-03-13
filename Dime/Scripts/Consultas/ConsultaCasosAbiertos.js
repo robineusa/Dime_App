@@ -126,7 +126,7 @@ function CargarDatosDeUsuarioCreacion(ccUsuario) {
     }
 
 
-function ShowGridGestiones(data) {
+    function ShowGridGestiones(data) {
         $("#gridViewConsulta").kendoGrid({
 
             toolbar: ["excel"],
