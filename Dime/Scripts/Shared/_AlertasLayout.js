@@ -1,4 +1,4 @@
-﻿var MensajesaGuardar;
+﻿var MensajesaGuardar = null;
 
 $(function Buen_Servicio() {
     
@@ -18,7 +18,25 @@ function Registra_Eventos(connect) {
         var msg = $("#MensajeBS").val();
         
         if (msg.length > 0) {
-            connect.server.sendMessagePublic(UserConnect, $("#MensajeBS").val());
+
+            var f = new Date();
+            var dd = f.getDate();
+            var mm = f.getMonth() + 1;
+            var yy = f.getFullYear();
+            var hh = f.getHours();
+            var m = f.getMinutes();
+            if (dd < 10) {
+                dd = '0' + dd
+            }
+            if (mm < 10) {
+                mm = '0' + mm
+            }
+            if (m < 10) {
+                m = '0' + m
+            }
+            var Fecha = dd + '-' + mm + '-' + yy + ' ' + hh + ':' + m;
+
+            connect.server.sendMessagePublic(UserConnect, $("#MensajeBS").val(), Fecha.toString());
             $("#MensajeBS").val('');
             connect.server.connect(UserConnect2);
             
@@ -39,11 +57,12 @@ function Registra_Eventos(connect) {
             }
         }
         connect.server.connect(UserConnect2);
+        MensajesaGuardar = null;
+        $('#MensajeCount').empty();
     });
     $('#BListNotify').click(function () {
         connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
     });
-
     connect.server.connect(UserConnect2);
     
 }
@@ -64,6 +83,10 @@ function Llama_Metodos(connect, UserConnect) {
         }
         if (mm < 10) {
             mm = '0' + mm
+        }
+
+        if (m < 10) {
+            m = '0' + m
         }
 
         var V_Fecha = dd + '-' + mm + '-' + yy + '&nbsp;&nbsp;' + hh + ':' + m;
@@ -113,9 +136,10 @@ function Llama_Metodos(connect, UserConnect) {
     }
 
     connect.client.onConnected = function (messages) {
-        MensajesaGuardar = messages;
+        
         if (messages.length > 0) {
             if (UserConnect2 != 'Buen Servicio') {
+                MensajesaGuardar = messages;
                 //$('#messHeader').append('Usted tiene ' + messages.length + ' Mensajes Nuevos');
                 $('#MensajeCount').append('' + messages.length + '');
 
@@ -129,8 +153,9 @@ function Llama_Metodos(connect, UserConnect) {
     }
     
     connect.client.connectEver = function (messages) {
-        MensajesaGuardar = messages;
-        $('#MensajeCount').empty();
+        //if (UserConnect2 == 'Buen Servicio') {
+            
+        //}
         if (messages.length > 0) {
                 $('#MensajesNoNotificados').empty();
                 for (i = messages.length-1; i > messages.length - 4; i--) {
@@ -152,7 +177,7 @@ function Llama_Metodos(connect, UserConnect) {
 
 function AddMessage(id, userName, message) {
     $('#MensajesNoNotificados').append('<li>'+
-                                            '<a href="#">'+
+                                            '<a href="#" style="cursor:default;">'+
                                                 '<div class="pull-left">'+
                                                     '<img src="../AdminLTE/dist/img/user.svg" class="img-circle" alt="User Image">'+
                                                 '</div>'

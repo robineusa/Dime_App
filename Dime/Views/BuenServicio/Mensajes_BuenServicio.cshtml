@@ -52,7 +52,7 @@
                 $('#MensajesBS').empty();
                 if (messagesG.length > 0) {
                     for (i = 0; i < messagesG.length; i++) {
-                        AddMessageG(messagesG[i].Id, messagesG[i].UserName, messagesG[i].Message);
+                        AddMessageG(messagesG[i].Id, messagesG[i].UserName, messagesG[i].Message, messagesG[i].Fecha_Entrega);
                     }
                 }
                 else {
@@ -61,11 +61,12 @@
             }
         }
 
-        function AddMessageG(id, userName, message) {
+        function AddMessageG(id, userName, message, Fecha) {
             
             $("#MensajesBS").append('<div class="direct-chat-msg right">' +
                                         '<div id="UserGlobal" class="direct-chat-info clearfix">' +
                                             '<span class="direct-chat-name pull-right">' + userName + '</span>' +
+                                            '<span class="direct-chat-timestamp pull-left">&nbsp;&nbsp;' + Fecha + '</span>' +
                                         '</div>' +
                                         '<img class="direct-chat-img" src="../AdminLTE/dist/img/user.svg" alt="Message User Image">' +
                                         '<div id="MensajeGlobalR" class="direct-chat-text" style="text-align: justify;">'

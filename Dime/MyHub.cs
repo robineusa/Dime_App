@@ -16,9 +16,9 @@ namespace Dime
         static List<MessageDetail> ListTemporal = new List<MessageDetail>();
 
         #endregion
-        public void sendMessagePublic(string userName, string message)
+        public void sendMessagePublic(string userName, string message, string fecha)
         {
-            AddMessageinCache(userName, message);
+            AddMessageinCache(userName, message, fecha);
             var NoNotif = CurrentMessage.FirstOrDefault(x => x.Message == message);
             Clients.All.addMessage(NoNotif.Id, userName, message);
         }
@@ -40,7 +40,7 @@ namespace Dime
                             var MenNoNotif = CurrentMessage.FirstOrDefault(x => x.Id == i);
                             var Validacion = ListTemporal.Exists(x => x.Id == i);
                             if (Validacion == false)
-                                ListTemporal.Add(new MessageDetail { Id = MenNoNotif.Id, Message = MenNoNotif.Message, UserName = MenNoNotif.UserName });
+                                ListTemporal.Add(new MessageDetail { Id = MenNoNotif.Id, Message = MenNoNotif.Message, UserName = MenNoNotif.UserName, Fecha_Entrega = MenNoNotif.Fecha_Entrega});
 
                         }
                     }
@@ -52,7 +52,7 @@ namespace Dime
                 Clients.All.connectEver(CurrentMessage);
             }
             else {
-                Clients.All.onConnected(ListTemporal);
+                Clients.Caller.onConnected(ListTemporal);
                 ListTemporal.Clear();
             }
             
@@ -79,10 +79,10 @@ namespace Dime
             }
 
         }
-        public void AddMessageinCache(string userName, string message)
+        public void AddMessageinCache(string userName, string message, string fecha)
         {
             var id = CurrentMessage.Count;
-            CurrentMessage.Add(new MessageDetail { Id = id, UserName = userName, Message = message });
+            CurrentMessage.Add(new MessageDetail { Id = id, UserName = userName, Message = message, Fecha_Entrega = fecha });
 
             if (CurrentMessage.Count > 100)
                 CurrentMessage.RemoveAt(0);
