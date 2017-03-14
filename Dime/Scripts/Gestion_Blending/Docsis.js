@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    $("#cuentaCliente").prop("disabled", true);
+    $("#cuentaCliente").prop("readonly", true);
     $("#Li1").click(function () {
 
         $("#Li2").css('background-color', 'transparent');

@@ -5,10 +5,9 @@ $(document).ready(function () {
 checkMarcacion(idMarcacionEntrada);
 $("#keyMarcacion").on("keyup", function (e) {
     var code = e.keyCode || e.which;
-    if (code == 13) {
-        var keyWord = $("#keyMarcacion").val();
+          var keyWord = $("#keyMarcacion").val();
         ConsultarMarcacionesPorPalabra(keyWord);
-    }
+
 })
 CambioEscalaSoporte();
 

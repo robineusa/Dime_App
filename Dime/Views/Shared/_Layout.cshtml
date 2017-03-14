@@ -15,7 +15,9 @@
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.common.min.css" rel="stylesheet" />
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.min.css" rel="stylesheet" />
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.mobile.min.css" rel="stylesheet" />
-
+    <script>
+        var appPath = '@Url.Content("~")';
+    </script>
     
     <script src="https://claro-co-cv.inbenta.com/jsonp/inbenta.js?banner=no&nombre=@Session["NombreUsuario"]&Cedula=@Session["Usuario"]&User=@Session["Usuario"]&source=SIRIAC&operacion=@Session["AliadoLogeado"]"></script>
 </head>

@@ -105,11 +105,10 @@ namespace Dime.Controllers
 
         [HttpPost]
         public ActionResult Guarda_Convenio_Electronico(ViewModelBlending model)
-        {//Session de prueba remover cuando se hagan sesiones////////////7
+        {
             int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
             model.ConvenioElecGestionado.AliadoGestion = Session["AliadoLogeado"].ToString();
             model.ConvenioElecGestionado.LineaGestion = Session["LineaLogeado"].ToString();
-            //Session de prueba remover cuando se hagan sesiones //////////
             blendingServices = new WSD.BlendingServiceClient();
             blendingServices.ClientCredentials.Authenticate();
             blendingServices.GuardarGestionConvenioElectronico(idUsuarioActual, model.DatosCliente, model.ConvenioElecGestionado);
@@ -198,7 +197,6 @@ namespace Dime.Controllers
         {
             int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
             model.ClaroVideoGestionado.AliadoGestion = Session["AliadoLogeado"].ToString();
-            //Session de prueba remover cuando se hagan sesiones //////////
             blendingServices = new WSD.BlendingServiceClient();
             blendingServices.ClientCredentials.Authenticate();
             blendingServices.GuardarGestionClaroVideo(idUsuarioActual, model.DatosCliente, model.ClaroVideoGestionado);

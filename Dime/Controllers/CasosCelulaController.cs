@@ -173,6 +173,8 @@ namespace Dime.Controllers
             casosCellService = new WSD.CasosCelulaServiceClient();
             casosCellService.ClientCredentials.Authenticate();
             var result = casosCellService.IngresoSoportePorId(idIngreso);
+            if (result == null) result = new IngresosSoporte();
+
             return new JsonResult
             {
                 Data = JsonConvert.SerializeObject(result),
