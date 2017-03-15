@@ -23,9 +23,7 @@
                                 <br />
                                 <div id="tablaHistorial"></div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
 
@@ -44,6 +42,7 @@
                                     <br />
                                     <div style="background-color:#f6f6f6;  width:80%; height:auto;  border-radius:5px; padding-top:12px;">
                                         <ul style="list-style-type:none" id="listaMarcaciones"></ul><br />
+                                        <label id="avisoYaMarcacionEnCaso" style="color:red"> </label>
                                         @Html.HiddenFor(m => m.ModelTipiMarca.IngresoTipMarcacion.TiempoRespuesta, new { id = "marcaTiempo" })
                                     </div>
 
@@ -286,10 +285,11 @@
     var datosDeMarcacionUrl = "@Url.Action("DatosDeMarcacion", "Marcaciones")";
     var idMarcacionEntrada = @Model.MarcacionEntrada;
     var urlCodigosDeCierre = "@Url.Action("CodigosDeCierre", "Marcaciones")";
-   var jsonHistorialCaso = @Html.Raw(Json.Encode(Model.HistorialCaso));
+    var jsonHistorialCaso = @Html.Raw(Json.Encode(Model.HistorialCaso));
+    var hitorialUrl =  "@Url.Action("IngresosListDeCuenta", "Inbound")";
 
     </script>
 
 
-<script src="~/Scripts/Inbound/Actualizar.js?1.1.3"></script>
+<script src="~/Scripts/Inbound/Actualizar.js?1.1.0"></script>
 }
