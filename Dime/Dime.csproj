@@ -2369,6 +2369,7 @@
     <Content Include="Scripts\Alertas\SiguienteMejorOferta.js" />
     <Content Include="Scripts\BuenServicio\Visualizador_Imagenes.js" />
     <Content Include="Scripts\Calculadoras\Advanced.js" />
+    <Content Include="Scripts\Calculadoras\Rentas.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Gestion.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Paloteo.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Rechazos.js" />

@@ -71,17 +71,17 @@
                         <td width="50"><input type="checkbox" id="cbTvBasica" /></td>
                         <td width="35">&nbsp;</td>
                         <td width="50">5 MB</td>
-                        <td width="50"><input type="checkbox" id="cbTvBasica" /></td>
+                        <td width="50"><input type="checkbox" id="cb5Mb" /></td>
                     </tr>
                     <tr>
                         <td width="30"> &nbsp;</td>
                         <td width="60">&nbsp;</td>
                         <td width="30">&nbsp;</td>
                         <td width="50">Avanzada</td>
-                        <td width="50"><input type="checkbox" id="cbTvBasica" /></td>
+                        <td width="50"><input type="checkbox" id="cbTvAvanzada" /></td>
                         <td width="35">&nbsp;</td>
                         <td width="50">10 MB</td>
-                        <td width="50"><input type="checkbox" id="cbTvBasica" /></td>
+                        <td width="50"><input type="checkbox" id="cb10Mb" /></td>
                     </tr>
                     <tr>
                         <td width="30"> &nbsp;</td>
@@ -91,7 +91,7 @@
                         <td width="50">&nbsp;</td>
                         <td width="35">&nbsp;</td>
                         <td width="50">20 MB</td>
-                        <td width="50"><input type="checkbox" id="cbTvBasica" /></td>
+                        <td width="50"><input type="checkbox" id="cb20Mb" /></td>
                     </tr>
                     <tr>
                         <td width="30"> &nbsp;</td>
@@ -101,7 +101,7 @@
                         <td width="50">&nbsp;</td>
                         <td width="35">&nbsp;</td>
                         <td width="50">50 MB</td>
-                        <td width="50"><input type="checkbox" id="cbTvBasica" /></td>
+                        <td width="50"><input type="checkbox" id="cb50Mb" /></td>
                     </tr>
                     <tr>
                         <td width="30"> &nbsp;</td>
@@ -111,7 +111,7 @@
                         <td width="50">&nbsp;</td>
                         <td width="35">&nbsp;</td>
                         <td width="50">100 MB</td>
-                        <td width="50"><input type="checkbox" id="cbTvBasica" /></td>
+                        <td width="50"><input type="checkbox" id="cb100Mb" /></td>
                     </tr>
                 </table>
             </div>
@@ -121,17 +121,15 @@
                 <table>
                     <tr>
                         <td style="padding:2px; width:50px">Tarifa Comparada:</td>
-                           <td width="50"><input type="text" class="form-control input-sm" id="tbRentaActual" readonly /></td>
+                           <td width="50"><input type="text" class="form-control input-sm" id="tbTarifaComparada" readonly /></td>
                     </tr>
                     <tr>
-                        <td style="padding:2px; width:50px">Incluye:</td>
-                        <td style="padding:2px; width:100px"><input type="text" class="form-control input-sm" id="tbRentaActual" readonly /> </td>
-                        <td style="padding:2px; width:100px"><input type="text" class="form-control input-sm" id="tbRentaActual" readonly /> </td>
+                        <td style="padding:2px; width:50px">Incluye HD:</td>
+                        <td style="padding:2px; width:100px"><input type="text" class="form-control input-sm" id="tbIncluyeHD" readonly /> </td>
                     </tr>
                     <tr>
-                        <td style="padding:2px; width:50px">Incluye:</td>
-                        <td style="padding:2px; width:100px"><input type="text" class="form-control input-sm" id="tbRentaActual" readonly /> </td>
-                        <td style="padding:2px; width:100px"><input type="text" class="form-control input-sm" id="tbRentaActual" readonly /> </td>
+                        <td style="padding:2px; width:50px">Incluye CV:</td>
+                        <td style="padding:2px; width:100px"><input type="text" class="form-control input-sm" id="tbIncluyeCV" readonly /> </td>
                     </tr>
 
                 </table>
@@ -155,155 +153,113 @@
                 <table>
                     <tr>
                         <td style="padding:2px; width:100px">Total Decos</td>
-                        <td width="50"><input type="checkbox" id="cbTvBasica" /></td>
+                        <td width="50"><input type="text" class="form-control input-sm" id="tbTotalDecos" readonly /></td>
                     </tr>
                     <tr>
                         <td style="padding:2px; width:100px">Cantidad Decos HD</td>
-                        <td width="50"><input type="checkbox" id="cbTvBasica" /></td>
+                        <td width="50"><input type="text" class="form-control input-sm" id="tbDecosHD" readonly /></td>
                     </tr>
                 </table>
                 <br />
                 <table>
                     <tr>
                         <td style="padding:2px; width:100px">Producto</td>
-                        <td width="50">&nbsp;</td>
-                        <td style="padding:2px; width:100px">Promo</td>
-                        <td width="50">&nbsp;</td>
-                        <td style="padding:2px; width:100px">Plena</td>
+                        <td width="50">Promo</td>
+                        <td style="padding:2px; width:100px">&nbsp;</td>
+                        <td width="50">Plena</td>
+                        <td style="padding:2px; width:100px">&nbsp;</td>
                         <td width="50">&nbsp;</td>
                     </tr>
                     <tr>
                         <td style="padding:2px; width:100px">HBO</td>
-                        <td width="50"><input type="checkbox" id="cbTvBasica" /></td>
-                        <td style="padding:2px; width:100px">$25900</td>
-                        <td width="50"><input type="checkbox" id="cbTvBasica" /></td>
-                        <td style="padding:2px; width:100px">$33900</td>
+                        <td width="50"><input type="checkbox" id="cbPromoHBO" value="25900" /></td>
+                        <td style="padding:2px; width:100px">$25.900</td>
+                        <td width="50"><input type="checkbox" id="cbPlenaHBO" value="33900" /></td>
+                        <td style="padding:2px; width:100px">$33.900</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:2px; width:100px">FOX</td>
+                        <td width="50"><input type="checkbox" id="cbPromoFOX" value="25900" /></td>
+                        <td style="padding:2px; width:100px">$25.900</td>
+                        <td width="50"><input type="checkbox" id="cbPlenaFOX" value="30900" /></td>
+                        <td style="padding:2px; width:100px">$30.900</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:2px; width:100px">UFC</td>
+                        <td width="50"><input type="checkbox" id="cbPromoUFC" value="30900" /></td>
+                        <td style="padding:2px; width:100px">$30.900</td>
+                        <td width="50"><input type="checkbox" id="cbPlenaUFC" value="30900" /></td>
+                        <td style="padding:2px; width:100px">$30.900</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:2px; width:100px">Golden</td>
+                        <td width="50"><input type="checkbox" id="cbPromoGolden" value="22000" /></td>
+                        <td style="padding:2px; width:100px">$22.000</td>
+                        <td width="50"><input type="checkbox" id="cbPlenaGolden" value="31000" /></td>
+                        <td style="padding:2px; width:100px">$31.000</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:2px; width:100px">Revista</td>
+                        <td width="50"><input type="checkbox" id="cbPromoRevista" value="3500" /></td>
+                        <td style="padding:2px; width:100px">$3.500</td>
+                        <td width="50"><input type="checkbox" id="cbPlenaRevista" value="3500" /></td>
+                        <td style="padding:2px; width:100px">$3.500</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:2px; width:100px">HotPack</td>
+                        <td width="50"><input type="checkbox" id="cbPromoHotPack" value="22900" /></td>
+                        <td style="padding:2px; width:100px">$22.900</td>
+                        <td width="50"><input type="checkbox" id="cbPlenaHotPack" value="30900" /></td>
+                        <td style="padding:2px; width:100px">$30.900</td>
                     </tr>
                 </table>
             </div>
             <div class="col-md-6">
-             
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <b>Total Renta Ofrecida</b>
+             <table>
+                 <tr>
+                     <td style="padding:2px; width:100px">Autollenado</td>
+                     <td style="padding:2px; width:40px"> &nbsp;+</td>
+                     <td style="padding:2px; width:100px">Adicionales</td>
+                     <td style="padding:2px; width:40px"> &nbsp;=</td>
+                     <td style="padding:2px; width:100px">Renta Ofrecida</td>
+                 </tr>
+                 <tr>
+                     <td width="50"><input type="text" class="form-control input-sm" id="tbAutollenado" readonly /></td>
+                     <td style="padding:2px; width:40px"> &nbsp;</td>
+                     <td width="50"><input type="text" class="form-control input-sm" id="tbAdicionales" readonly /></td>
+                     <td style="padding:2px; width:40px"> &nbsp;</td>
+                     <td width="50"><input type="text" class="form-control input-sm" id="tbRentaOfrecida" readonly /></td>
+                 </tr>
+
+             </table>
+                <br />
+                <br />
+                <b>Incremento</b>
+                <table>
+                    <tr>
+                        <td style="padding:2px; width:100px">Total Renta Ofrecida</td>
+                        <td style="padding:2px; width:40px"> &nbsp;-</td>
+                        <td style="padding:2px; width:100px">Renta Actual</td>
+                        <td style="padding:2px; width:40px"> &nbsp;=</td>
+                        <td style="padding:2px; width:100px">Incremento</td>
+                    </tr>
+                    <tr>
+                        <td width="50"><input type="text" class="form-control input-sm" id="tbRentaOfrecidaRestar" readonly /></td>
+                        <td style="padding:2px; width:40px"> &nbsp;</td>
+                        <td width="50"><input type="text" class="form-control input-sm" id="tbRentaActual" readonly /></td>
+                        <td style="padding:2px; width:40px"> &nbsp;</td>
+                        <td width="50"><input type="text" class="form-control input-sm" id="tbIncremento" readonly /></td>
+                    </tr>
+
+                </table>
             </div>
           
-        </div>
-    </div>
-    <hr />
-    <ul class="timeline">
-        <li>
-            <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#a41e34;color:white;">3</i>
-        </li>
-    </ul>
-    <hr />
-    <div>
-        <div class="callout callout-danger" style="margin-bottom: 0 ;border-color:#a41e34 !important; background-color:gainsboro !important; color: black !important">
-            <div class="row">
-                <div class="col-xs-2" style="width:auto;font-size:14px;color:black">
-                    <small>A continuacion ingrese los valores que el cliente factura en RR (AS400) sin Iva, de acuerdo a los servicios sobre los cuales se le aplica el calculo del descuento de la campaña:</small>
-                </div>
-            </div>
-        </div><br />
-        <div>
-            <table id="TablaCalculadoraCapanas">
-                <tr>
-                    <th width="150" class="titulo">Servicio</th>
-                    <th width="150" class="titulo">Valor Sin Iva</th>
-                    <th width="150" class="titulo">Iva del Servicio</th>
-                    <th width="150" class="titulo">Valor con Iva</th>
-                    <th width="150" class="titulo">Diferencia Según Campaña</th>
-                </tr>
-                <tr>
-                    <th class="titulo2">TELEVISION</th>
-                    <td><input type="text" class="form-control input-sm" id="valSinIvaTele" onfocusout="return resetearValores();" /> </td>
-                    <td><input type="text" class="form-control input-sm" id="ivaServiTele" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="valConIvaTele" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="difSegunCampañaTele" disabled /> </td>
-                </tr>
-                <tr>
-                    <th class="titulo2">INTERNET</th>
-                    <td><input type="text" class="form-control input-sm" id="valSinIvaInter" onfocusout="return resetearValores();" /> </td>
-                    <td><input type="text" class="form-control input-sm" id="ivaServiInter" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="valConIvaInter" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="difSegunCampañaInter" disabled /> </td>
-                </tr>
-                <tr>
-                    <th class="titulo2">TELEFONIA</th>
-                    <td><input type="text" class="form-control input-sm" id="valSinIvaTelf" onfocusout="return resetearValores();" /> </td>
-                    <td><input type="text" class="form-control input-sm" id="ivaServiTelf" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="valConIvaTelf" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="difSegunCampañaTelf" disabled /> </td>
-                </tr>
-                <tr>
-                    <th class="titulo2">FUNCIONALIDADES</th>
-                    <td><input type="text" class="form-control input-sm" id="valSinIvaFunc" onfocusout="return resetearValores();" /> </td>
-                    <td><input type="text" class="form-control input-sm" id="ivaServiFunc" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="valConIvaFunc" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="difSegunCampañaFunc" disabled /> </td>
-                </tr>
-                <tr>
-                    <th class="titulo2">LD 30</th>
-                    <td><input type="text" class="form-control input-sm" id="valSinIvaLD" /> </td>
-                    <td><input type="text" class="form-control input-sm" id="ivaServiLD" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="valConIvaLD" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="difSegunCampañaLD" disabled /> </td>
-                </tr>
-                <tr>
-                    <th class="titulo2">HBO</th>
-                    <td><input type="text" class="form-control input-sm" id="valSinIvaHBO" onfocusout="return resetearValores();" /> </td>
-                    <td><input type="text" class="form-control input-sm" id="ivaServiHBO" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="valConIvaHBO" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="difSegunCampañaHBO" disabled /> </td>
-                </tr>
-                <tr>
-                    <th class="titulo2">MOVIE PACK</th>
-                    <td><input type="text" class="form-control input-sm" id="valSinIvaMovPack" onfocusout="return resetearValores();" /> </td>
-                    <td><input type="text" class="form-control input-sm" id="ivaServiMovPack" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="valConIvaMovPack" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="difSegunCampañaMovPack" disabled /> </td>
-                </tr>
-                <tr>
-                    <th class="titulo2">TELEVISION HD</th>
-                    <td><input type="text" class="form-control input-sm" id="valSinIvaTeleHD" onfocusout="return resetearValores();" /> </td>
-                    <td><input type="text" class="form-control input-sm" id="ivaServiTeleHD" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="valConIvaTeleHD" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="difSegunCampañaTeleHD" disabled /> </td>
-                </tr>
-
-                <tr>
-                    <th class="titulo2">SPICE TV</th>
-                    <td><input type="text" class="form-control input-sm" id="valSinIvaSpiceTele" onfocusout="return resetearValores();" /> </td>
-                    <td><input type="text" class="form-control input-sm" id="ivaServiSpiceTele" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="valConIvaSpiceTele" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="difSegunCampañaSpiceTele" disabled /> </td>
-                </tr>
-                <tr>
-                    <th class="titulo2">VENUS</th>
-                    <td><input type="text" class="form-control input-sm" id="valSinIvaVenus" onfocusout="return resetearValores();" /> </td>
-                    <td><input type="text" class="form-control input-sm" id="ivaServiVenus" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="valConIvaVenus" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="difSegunCampañaVenus" disabled /> </td>
-                </tr>
-                <tr>
-                    <th class="titulo2">PVR - DECOS</th>
-                    <td><input type="text" class="form-control input-sm" id="valSinIvaPvrDecos" onfocusout="return resetearValores();" /> </td>
-                    <td><input type="text" class="form-control input-sm" id="ivaServiPvrDecos" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="valConIvaPvrDecos" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="difSegunCampañaPvrDecos" disabled /> </td>
-                </tr>
-                <tr>
-                    <th class="titulo2">WIFI</th>
-                    <td><input type="text" class="form-control input-sm" id="valSinIvaWifi" onfocusout="return resetearValores();" /> </td>
-                    <td><input type="text" class="form-control input-sm" id="ivaServiWifi" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="valConIvaWifi" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="difSegunCampañaWifi" disabled /> </td>
-                </tr>
-                <tr>
-                    <th class="titulo2">CLARO VIDEO</th>
-                    <td><input type="text" class="form-control input-sm" id="valSinIvaClaroVideo" onfocusout="return resetearValores();" /> </td>
-                    <td><input type="text" class="form-control input-sm" id="ivaServiClaroVideo" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="valConIvaClaroVideo" disabled /> </td>
-                    <td><input type="text" class="form-control input-sm" id="difSegunCampañaClaroVideo" disabled /> </td>
-                </tr>
-            </table>
         </div>
     </div>
     <hr />
@@ -316,6 +272,7 @@
     </script>
     <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
     <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
-    <script src="~/Scripts/Calculadoras/Campanas.js"></script>
+    <script src="~/Scripts/Calculadoras/Rentas.js"></script>
+
 </body>
 </html>
