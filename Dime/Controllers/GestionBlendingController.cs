@@ -63,6 +63,11 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult Guardar_Cierre_Ciclo(ViewModelBlending model)
         {
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
             int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
             model.CierreCicloGestionado.AliadoGestion = Session["AliadoLogeado"].ToString();
             blendingServices = new WSD.BlendingServiceClient();

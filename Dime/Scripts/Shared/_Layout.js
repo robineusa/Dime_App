@@ -147,6 +147,17 @@ function LlamarCalculosProrrateos() {
     })
 }
 
+function LlamarCalculosRentas() {
+
+    $.ajax({
+        type: "GET",
+        url: urlRentasView,
+        dataType: "html",
+        success: function (result) {
+            $('#rentasBody').html(result);
+        }
+    })
+}
 
 
 function ResetearDivs() {
@@ -157,6 +168,7 @@ function ResetearDivs() {
     $('#campanasBody').html(vacio);
     $('#prorrateosBody').html(vacio);
     $("#lockScreenDiv").html(vacio);
+    $("#rentasBody").html(vacio);
 }
 
 (function ($, AdminLTE) {

@@ -216,6 +216,45 @@
             width: 100px;
         }
 
+.icono_carrete_9 {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    background: url(../../Resources/Images/Layout/apc4.png) center no-repeat;
+    background-size: 53px 53px;
+    -moz-transition: 1s;
+}
+
+
+    .icono_carrete_9:hover {
+        -webkit-transform: scale(1.5);
+        -moz-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+        -o-transform: scale(1.5);
+        transform: scale(1.5);
+        -moz-transition: 0.5s;
+    }
+
+
+        .icono_carrete_9:hover:after {
+            content: 'Calculadora Rentas';
+            position: absolute;
+            z-index: 98;
+            margin-left: 50px;
+            margin-top: 11px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            color: #eee;
+            font-family: Century Gothic;
+            font-size: 10px;
+            /*padding: 5px 15px;*/
+            text-align: center;
+            text-shadow: 1px 1px 1px #000;
+            width: 100px;
+        }
+
+
+
 #TablaCalculadoraCapanas {
 }
 

@@ -57,5 +57,14 @@ namespace Dime.Controllers
 
             return View("Prorrateos");
         }
+
+
+        [HttpGet]
+        public ViewResult Rentas()
+        {
+            return View("Rentas");
+        }
+
+
     }
 }
