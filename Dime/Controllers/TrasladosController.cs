@@ -49,8 +49,7 @@ namespace Dime.Controllers
 
                     if (ModelState.IsValid == true)
                     {
-                        
-                        modelo.NotaTraslado.Observacion = modelo.NotaTraslado.Observacion.ToUpper();
+                        if (modelo.NotaTraslado.Observacion == null || modelo.NotaTraslado.Observacion == "") { modelo.NotaTraslado.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else {  modelo.NotaTraslado.Observacion = modelo.NotaTraslado.Observacion.ToUpper(); }
                         modelo.NotaTraslado.DireccionACrear = modelo.NotaTraslado.DireccionACrear.ToUpper();
                         modelo.NotaTraslado.Nodo = modelo.NotaTraslado.Nodo.ToUpper();
 
@@ -156,6 +155,9 @@ namespace Dime.Controllers
             modelo.IngresoTraslado.IdTransaccion = Convert.ToDecimal(modelo.NotaTrasladoInicial.IdTransaccion);
             modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
             modelo.IngresoTraslado.EstadoTransaccion = modelo.NotaTrasladoVacia.EstadoTransaccion;
+
+            if (modelo.NotaTrasladoVacia.Observacion==null || modelo.NotaTrasladoVacia.Observacion == ""){ modelo.NotaTrasladoVacia.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.NotaTrasladoVacia.Observacion = modelo.NotaTrasladoVacia.Observacion.ToUpper(); }
+
 
             DateTime fechainiciotransaccion = Convert.ToDateTime(Session["FechaInicial"].ToString());
             DateTime fechafintransaccion = DateTime.Now;
@@ -263,6 +265,8 @@ namespace Dime.Controllers
             modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
             modelo.IngresoTraslado.EstadoTransaccion = modelo.NotaTrasladoVacia.EstadoTransaccion;
 
+            if (modelo.NotaTrasladoVacia.Observacion == null || modelo.NotaTrasladoVacia.Observacion == "") { modelo.NotaTrasladoVacia.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.NotaTrasladoVacia.Observacion = modelo.NotaTrasladoVacia.Observacion.ToUpper(); }
+
             DateTime fechainiciotransaccion = Convert.ToDateTime(Session["FechaInicial"].ToString());
             DateTime fechafintransaccion = DateTime.Now;
 
@@ -350,8 +354,7 @@ namespace Dime.Controllers
                         modelo.TraficoTraslados.CanalTransaccion = "SOLICITUD INBOUND";
                         //fin de transaccion
 
-
-                        modelo.CambioEstrato.Observacion = modelo.CambioEstrato.Observacion.ToUpper();
+                        if (modelo.CambioEstrato.Observacion==null || modelo.CambioEstrato.Observacion == "") { modelo.CambioEstrato.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.CambioEstrato.Observacion = modelo.CambioEstrato.Observacion.ToUpper(); }
                         modelo.CambioEstrato.Direccion = modelo.CambioEstrato.Direccion.ToUpper();
                         modelo.CambioEstrato.Nodo = modelo.CambioEstrato.Nodo.ToUpper();
 
@@ -456,6 +459,8 @@ namespace Dime.Controllers
             modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
             modelo.IngresoTraslado.EstadoTransaccion = modelo.CambioEstratoVacia.EstadoTransaccion;
 
+            if (modelo.CambioEstratoVacia.Observacion == null || modelo.CambioEstratoVacia.Observacion == "") { modelo.CambioEstratoVacia.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.CambioEstratoVacia.Observacion = modelo.CambioEstratoVacia.Observacion.ToUpper(); }
+
             DateTime fechainiciotransaccion = Convert.ToDateTime(Session["FechaInicial"].ToString());
             DateTime fechafintransaccion = DateTime.Now;
 
@@ -543,8 +548,8 @@ namespace Dime.Controllers
                         modelo.TraficoTraslados.CanalTransaccion = "SOLICITUD INBOUND";
                         //fin de transaccion
 
+                        if (modelo.LiberacionHomePass.Observacion==null || modelo.LiberacionHomePass.Observacion == "") { modelo.LiberacionHomePass.Observacion = "SIN OBSERVACIONES -AUTOMATICO SISTEMAS"; } else { modelo.LiberacionHomePass.Observacion = modelo.LiberacionHomePass.Observacion.ToUpper();}
                         modelo.LiberacionHomePass.CuentaOcupa = modelo.IngresoTraslado.CuentaCliente;
-                        modelo.LiberacionHomePass.Observacion = modelo.LiberacionHomePass.Observacion.ToUpper();
                         modelo.LiberacionHomePass.Direccion = modelo.LiberacionHomePass.Direccion.ToUpper();
                         modelo.LiberacionHomePass.Nodo = modelo.LiberacionHomePass.Nodo.ToUpper();
 
@@ -650,6 +655,8 @@ namespace Dime.Controllers
             modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
             modelo.IngresoTraslado.EstadoTransaccion = modelo.LiberacionHomePassVacia.EstadoTransaccion;
 
+            if (modelo.LiberacionHomePassVacia.Observacion==null || modelo.LiberacionHomePassVacia.Observacion == "") { modelo.LiberacionHomePassVacia.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.LiberacionHomePassVacia.Observacion = modelo.LiberacionHomePassVacia.Observacion.ToUpper(); }
+
             DateTime fechainiciotransaccion = Convert.ToDateTime(Session["FechaInicial"].ToString());
             DateTime fechafintransaccion = DateTime.Now;
 
@@ -732,7 +739,7 @@ namespace Dime.Controllers
                     if (ModelState.IsValid == true)
                     {
                         //ingreso traslado
-                        modelo.GestionMatriz.Observacion = modelo.GestionMatriz.Observacion.ToUpper();
+                        if(modelo.GestionMatriz.Observacion==null || modelo.GestionMatriz.Observacion == "") { modelo.GestionMatriz.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.GestionMatriz.Observacion = modelo.GestionMatriz.Observacion.ToUpper(); }
                         modelo.GestionMatriz.Direccion = modelo.GestionMatriz.Direccion.ToUpper();
                         modelo.GestionMatriz.Nodo = modelo.GestionMatriz.Nodo.ToUpper();
 
@@ -849,6 +856,7 @@ namespace Dime.Controllers
             modelo.GestionMatrizVacia.Razon = "GESTION BACKOFFICE CREACION";
             modelo.GestionMatrizVacia.UsuarioBackOfficeCreacion = Session["Usuario"].ToString();
 
+            if(modelo.GestionMatrizVacia.Observacion==null || modelo.GestionMatrizVacia.Observacion == "") { modelo.GestionMatrizVacia.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.GestionMatrizVacia.Observacion = modelo.GestionMatrizVacia.Observacion.ToUpper(); }
             modelo.IngresoTraslado.IdTransaccion = Convert.ToDecimal(modelo.GestionMatrizInicial.IdTransaccion);
             modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
             modelo.IngresoTraslado.EstadoTransaccion = modelo.GestionMatrizVacia.EstadoTransaccion;
@@ -969,6 +977,8 @@ namespace Dime.Controllers
             modelo.GestionMatrizVacia.Razon = "GESTION BACKOFFICE GESTION";
             modelo.GestionMatrizVacia.UsuarioBackOfficeCreacion = modelo.GestionMatriz.UsuarioBackOfficeCreacion;
             modelo.GestionMatrizVacia.UsuarioBackOfficeGestion = Session["Usuario"].ToString();
+
+            if (modelo.GestionMatrizVacia.Observacion == null || modelo.GestionMatrizVacia.Observacion == "") { modelo.GestionMatrizVacia.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.GestionMatrizVacia.Observacion = modelo.GestionMatrizVacia.Observacion.ToUpper(); }
 
             modelo.IngresoTraslado.IdTransaccion = Convert.ToDecimal(modelo.GestionMatrizInicial.IdTransaccion);
             modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
