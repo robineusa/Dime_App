@@ -60,7 +60,7 @@ function ShowGridAbiertos(data) {
                 { field: "IdEstado", title: "Estado", width: 80, headerAttributes: { style: "white-space: normal" } },
           { field: "AliadoApertura", title: "Aliado Apertura", width: 80, headerAttributes: { style: "white-space: normal" } },
           { field: "NombreLineaIngreso", title: "Linea Ingreso", width: 80, headerAttributes: { style: "white-space: normal" } },
-         { field: "NombreLineaEscalado", title: "Linea Escalado", width: 100, template: "#= kendo.toString(kendo.parseDate(HoraUltimaActualizacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", headerAttributes: { style: "white-space: normal" } },
+         { field: "NombreLineaEscalado", title: "Linea Escalado", width: 80, headerAttributes: { style: "white-space: normal" } }
             /*  {
                   field: "icon",
                   title: "Semáforo",

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dime</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-@section scripts{
+
     @Styles.Render("~/AdminLTEbootstrap/css")
     @Styles.Render("~/AdminLTEdist/css")
     @Styles.Render("~/AdminLTEdist/css/skins")
@@ -15,7 +15,9 @@
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.common.min.css" rel="stylesheet" />
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.min.css" rel="stylesheet" />
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.mobile.min.css" rel="stylesheet" />
-}
+    <script>
+        var appPath = '@Url.Content("~")';
+    </script>
     
     <script src="https://claro-co-cv.inbenta.com/jsonp/inbenta.js?banner=no&nombre=@Session["NombreUsuario"]&Cedula=@Session["Usuario"]&User=@Session["Usuario"]&source=SIRIAC&operacion=@Session["AliadoLogeado"]"></script>
 </head>
@@ -37,7 +39,7 @@
                         <li id="messages_menu" class="dropdown messages-menu">
                                 <a id="number_Mensajes" href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="fa fa-envelope-o"></i>
-                                    @*<span class="label label-success">8</span>*@
+                                    <span id="MensajeCount" class="label label-success"></span>
                                 </a>
                                 <ul id="ul_mess_dropdown_menu" class="dropdown-menu">
                                     <li id="messHeader" style="text-align: center;" class="header"></li>
@@ -46,7 +48,7 @@
                                                 
                                             </ul>
                                         </li>
-                                    <li class="footer"><a href="#">See All Messages</a></li>
+                                    <li id="SeeAllmsn" class="footer"><a href="@Url.Action("Mensajes_BuenServicio", "BuenServicio")">Ver Todos los Mensajes</a></li>
                                 </ul>
                             </li>
                         <li class="dropdown notifications-menu">
@@ -55,11 +57,11 @@
                                     <span class="label label-warning">10</span>
                                 </a>
                             <ul id="ul_mess_dropdown_menu" class="dropdown-menu">
-                                <li id="messHeader" style="text-align: center;" class="header"></li>
+                                @*<li id="messHeader" style="text-align: center;" class="header"></li>*@
                                 <li>
                                     <ul id="MensajesNoNotificados" class="menu"></ul>
                                 </li>
-                                <li class="footer"><a href="#">See All Messages</a></li>
+                                <li class="footer"><a href="#">Ver Todos las Notificaciones</a></li>
                             </ul>
                             </li>
                         <li class="dropdown tasks-menu">
@@ -781,6 +783,9 @@
                     <a href="#prorrateos" onclick="return LlamarCalculosProrrateos()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
                         <div id="Calculadora4" class="icono_carrete_8"></div>
                     </a>
+                    <a href="#rentas" onclick="return LlamarCalculosRentas()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                        <div id="Calculadora5" class="icono_carrete_9"></div>
+                    </a>
                     <a href="http://comunidadvirtual.claro.com.co" target="_blank">
                         <div class="icono_carrete_2"></div>
                     </a>
@@ -875,6 +880,25 @@
                         <div class="row">
                             <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
                                 <div id="prorrateosBody"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="rentas" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px;">
+                    <div class="modal-header" style="width:1000px;">
+                        <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                        <h2 class="modal-title"><i class="fa fa-shopping-cart" aria-hidden="true" style="color:#ff0000;"></i>  Calculadora de Rentas</h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <div id="rentasBody"></div>
                             </div>
                         </div>
                     </div>
@@ -1004,7 +1028,7 @@
     <script src="~/Scripts/Signal/jquery.signalR-2.2.1.min.js"></script>
     <script src="~/signalr/hubs"></script>
     <script src="~/Scripts/Shared/Helper.js?1.1.9"></script>
-    <script src="~/Scripts/Shared/_Layout.js?1.4.3"></script>
+    <script src="~/Scripts/Shared/_Layout.js?1.4.5"></script>
 
 
     <script src="~/ViewsAlr/app.js?1.0.3"></script>
@@ -1012,14 +1036,15 @@
     <script src="~/ControllersAlr/ConsultaGestionController.js?1.0.7"></script>
     <script src="~/ControllersAlr/DepuraCasosCellController.js?1.1.3"></script>
     <script src="~/ControllersAlr/AdminCasosController.js?1.1.6"></script>
-    <link href="~/Styles/Elements/Dime2.css?1.0.5" rel="stylesheet" />
-    <script src="~/Scripts/Shared/_AlertasLayout.js?1.1.3"></script>
+    <link href="~/Styles/Elements/Dime2.css?1.0.8" rel="stylesheet" />
+    <script src="~/Scripts/Shared/_AlertasLayout.js?1.1.6"></script>
 
     <script>
     var urlCampanasView = '@Url.Action("Campanas","Calculadoras")';
     var urlCompensacionView = '@Url.Action("Compensacion", "Calculadoras")';
     var urlDiferenciaTarifasView = '@Url.Action("DiferenciaTarifas", "Calculadoras")';
     var urlProrrateosView = '@Url.Action("Prorrateos", "Calculadoras")';
+    var urlRentasView = '@Url.Action("Rentas", "Calculadoras")';
     var urlLockScreen = '@Url.Action("SLockScreen", "Account")';
     $(function () {
         $('#ChatGeneral').draggable();

@@ -293,7 +293,6 @@ function ChangeStateCase() {
 function CargarHistoricoCasos()
 {
     var cuentaActual = $("#inputCuenta").val();
-
     $.ajax({
         type: "POST",
         url: hitorialUrl,
@@ -310,7 +309,6 @@ function CargarHistoricoCasos()
                                   }
 
     });
-
 };
 
 function SetearEstadoHistoricos(dataUp) {

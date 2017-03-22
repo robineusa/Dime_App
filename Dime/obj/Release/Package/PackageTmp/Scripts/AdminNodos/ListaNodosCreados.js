@@ -61,5 +61,5 @@ $("#gridViewNodos").kendoGrid({
 function ActualizarCaso(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = '/AdminNodos/ActualizarNodo?id=' + dataItem.IdNodo;
+    window.location.href = 'ActualizarNodo?id=' + dataItem.IdNodo;
 }

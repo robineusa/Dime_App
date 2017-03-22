@@ -1,16 +1,14 @@
-﻿$(document).ready(function () {
+﻿
+var jsonHistorialCasosCuenta = [];
 
-
+$(document).ready(function () {
 
 checkMarcacion(idMarcacionEntrada);
-
-
 $("#keyMarcacion").on("keyup", function (e) {
     var code = e.keyCode || e.which;
-    if (code == 13) {
-        var keyWord = $("#keyMarcacion").val();
+          var keyWord = $("#keyMarcacion").val();
         ConsultarMarcacionesPorPalabra(keyWord);
-    }
+
 })
 CambioEscalaSoporte();
 
@@ -20,6 +18,7 @@ SetearEstadoHistoricos(jsonHistorialCaso);
 CargarFormatoFechaHistorial();
 CargarGridHistorial();
 VerificarEstadoCaso();
+CargarHistoricoCasos();
 
 function VerificarEstadoCaso()
 {
@@ -126,7 +125,10 @@ function CargarGridHistorial()
     });
 
     var grid = $("#tablaHistorial").data("kendoGrid");
-    grid.dataSource.sort({ field: "FechaNota", dir: "desc" });
+    var dsSort = [];
+    dsSort.push({ field: "FechaNota", dir: "desc" });
+    dsSort.push({ field: "HoraNota", dir: "desc" });
+    grid.dataSource.sort(dsSort);
 }
 
 function ChangeStateCase() {
@@ -179,19 +181,23 @@ function checkMarcacion(eve) {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
-            $("#tbMacroproceso").val(json.Macroproceso);
-            $("#tbMarcacion").val(json.Submarcacion);
-            $("#tbTipoAtencion").val(json.Clase);
-            $("#tbProductoAsociado").val(json.Servicios);
-            $("#tbSpc").val(json.Spc);
-            $("#lbQueHacer").empty();
-            $("#lbQueHacer").append(json.QueHacerHtml);
-            $("#lbPosibleCausa").empty();
-            $("#lbPosibleCausa").append(json.PosibleCausa);
-            $("#lbUsuarioAEscalar").empty();
-            $("#lbUsuarioA  Escalar").append(json.AreayUsuarioEscala);
-            $("#marcaTiempo").val(json.CantidadDias);
-            SetTextCodigosCierre(json.Subrazon)
+            if (MarcacionYaCasoAbierto(json.Submarcacion) === false || json.Submarcacion==  getURLParameter('nombMarcacion')) {
+                $("#tbMacroproceso").val(json.Macroproceso);
+                $("#tbMarcacion").val(json.Submarcacion);
+                $("#tbTipoAtencion").val(json.Clase);
+                $("#tbProductoAsociado").val(json.Servicios);
+                $("#tbSpc").val(json.Spc);
+                $("#lbQueHacer").empty();
+                $("#lbQueHacer").append(json.QueHacerHtml);
+                $("#lbPosibleCausa").empty();
+                $("#lbPosibleCausa").append(json.PosibleCausa);
+                $("#lbUsuarioAEscalar").empty();
+                $("#lbUsuarioAEscalar").append(json.AreayUsuarioEscala);
+                $("#marcaTiempo").val(json.CantidadDias);
+                SetTextCodigosCierre(json.Subrazon)
+            } else {
+                $("#avisoYaMarcacionEnCaso").text("Ya existe un caso abierto con esta marcación");
+            }
         },
         error: function (request, status, error) {
             alert(request.responseText + " " + status + "  " + error);
@@ -199,7 +205,48 @@ function checkMarcacion(eve) {
 
     });
 
+
+
 }
+function getURLParameter(name) {
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+}
+
+function MarcacionYaCasoAbierto(marcacion) {
+
+    if (jsonHistorialCasosCuenta != undefined)
+    console.log(jsonHistorialCasosCuenta);
+    console.log("historial casos");
+    for (var i = 0; i < jsonHistorialCasosCuenta.length; i++) {
+        if (jsonHistorialCasosCuenta[i].IdEstado != 2
+            && marcacion == jsonHistorialCasosCuenta[i].Marcacion) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+function CargarHistoricoCasos() {
+    var dataHistorial = $("#tablaHistorial").data();
+    var dataOfHistorial = [];
+    if (dataHistorial != undefined)
+       {
+        dataOfHistorial = dataHistorial.kendoGrid.dataSource.view();
+        var cuentaActual = dataOfHistorial[0].CuentaCliente;
+    $.ajax({
+        type: "POST",
+        url: hitorialUrl,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ cuenta: cuentaActual }),
+        dataType: "json",
+        success: function (result) {
+            jsonHistorialCasosCuenta = JSON.parse(result);
+
+        }
+      });
+    }
+};
 
 function AEscalarCambiado() {
     var valueAEscalar = $("#ddEscalar").val();

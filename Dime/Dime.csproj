@@ -2352,7 +2352,6 @@
     <Content Include="Resources\Images\Layout\apc1.png" />
     <Content Include="Resources\Images\Layout\apc2.png" />
     <Content Include="Resources\Images\Layout\apc3.png" />
-    <Content Include="Resources\Images\Layout\apc4.png" />
     <Content Include="Resources\Images\Layout\Dam_Modificado1.png" />
     <Content Include="Resources\Images\Layout\Logo_BS.png" />
     <Content Include="Resources\Images\Logo.png" />
@@ -2952,6 +2951,7 @@
     <Content Include="Resources\Documents\Formato_Carga_Masiva_Siriac.xls" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\Dime_Capacitacion.pubxml" />
+    <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaGestion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>

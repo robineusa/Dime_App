@@ -1074,12 +1074,12 @@
   <xs:complexType name="MaestroNodo">
     <xs:sequence>
       <xs:element minOccurs="0" name="Aliado" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Area" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Area" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Com" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Distrito" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Distrito" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Div" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Divisional" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Divisional" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaCreacion" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="IdNodo" type="xs:decimal" />
@@ -1087,8 +1087,9 @@
       <xs:element minOccurs="0" name="NombreComunidad" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreNodo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Red" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Ugestion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Ugestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zona" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MaestroNodo" nillable="true" type="tns:MaestroNodo" />

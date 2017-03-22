@@ -14,10 +14,11 @@ namespace Telmexla.Servicios.DIME.Entity
         public string NombreNodo { get; set; }
         public string Div { get; set; } 
         public string Com { get; set; } 
-        public decimal Divisional { get; set; }
-        public decimal Area { get; set; }
-        public decimal Distrito { get; set; }
-        public decimal Ugestion { get; set; }
+        public string Divisional { get; set; }
+        public string Area { get; set; }
+        public string Zona { get; set; }
+        public string Distrito { get; set; }
+        public string Ugestion { get; set; }
         public string Usuario { get; set; }
         public System.DateTime? FechaCreacion { get; set; } 
         public string Estado { get; set; } 
