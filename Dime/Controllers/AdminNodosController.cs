@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
@@ -55,13 +56,22 @@ namespace Dime.Controllers
        
         public ActionResult ListaNodosCreados()
         {
+            List<MaestroNodo> modelo = new List<MaestroNodo>();
+            return View(modelo);
+        }
+     
+        public JsonResult ListaNodosCreadosJson()
+        {
             maestroNodosWebService = new WSD.MaestroNodoServiceClient();
             maestroNodosWebService.ClientCredentials.Authenticate();
             List<MaestroNodo> modelo = new List<MaestroNodo>();
-            modelo = maestroNodosWebService.ListaNodosCreados();
-            return View(modelo);
+            //modelo = maestroNodosWebService.ListaNodosCreados();
+            var jsonResult = Json(JsonConvert.SerializeObject(maestroNodosWebService.ListaNodosCreados()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
         }
-        
+
         [HttpGet]
         public ActionResult ActualizarNodo(int id)
         {
