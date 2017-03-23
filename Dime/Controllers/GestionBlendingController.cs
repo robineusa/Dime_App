@@ -68,11 +68,18 @@ namespace Dime.Controllers
             {
                 return View(model);
             }
-            int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
-            model.CierreCicloGestionado.AliadoGestion = Session["AliadoLogeado"].ToString();
-            blendingServices = new WSD.BlendingServiceClient();
-            blendingServices.ClientCredentials.Authenticate();
-            blendingServices.GuardarCierreCiclo(idUsuarioActual, model.DatosCliente, model.CierreCicloGestionado);
+            if (model.DatosCliente.Cuenta.Equals(0))
+            {
+                ViewBag.NoDatos = "ERROR: No se puede guardar por que no hay cuentas para gestionar";
+            }
+            else {
+                int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
+                model.CierreCicloGestionado.AliadoGestion = Session["AliadoLogeado"].ToString();
+                blendingServices = new WSD.BlendingServiceClient();
+                blendingServices.ClientCredentials.Authenticate();
+                blendingServices.GuardarCierreCiclo(idUsuarioActual, model.DatosCliente, model.CierreCicloGestionado);
+                
+            }
             return RedirectToAction("Cierre_Ciclo", "GestionBlending");
         }
   

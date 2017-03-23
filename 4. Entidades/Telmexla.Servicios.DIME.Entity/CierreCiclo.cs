@@ -10,12 +10,14 @@
 // TargetFrameworkVersion = 4.51
 #pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Telmexla.Servicios.DIME.Entity
 {
 
     public class CierreCiclo
     {
+        
         public int Id { get; set; } // ID (Primary key)
         public System.DateTime? FechaGestion { get; set; } // FECHA_GESTION
         public string UsuarioGestion { get; set; } // USUARIO_GESTION (length: 50)
@@ -60,13 +62,23 @@ namespace Telmexla.Servicios.DIME.Entity
         public decimal? PServicio34 { get; set; } // P_SERVICIO_34
         public decimal? PServicio35 { get; set; } // P_SERVICIO_35
         public decimal? PServicio36 { get; set; } // P_SERVICIO_36
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string TipoContacto { get; set; } // TIPO_CONTACTO (length: 50)
+
+        [Required(ErrorMessage = "Seleccione una opcion")]
         public string Gestion { get; set; } // GESTION (length: 100)
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string Cierre { get; set; } // CIERRE (length: 100)
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string Razon { get; set; } // RAZON (length: 100)
         public string Obervaciones { get; set; } // OBERVACIONES (length: 1000)
         public string Base { get; set; } // BASE (length: 50)
         public string OperacionGestion { get; set; } // OPERACION_GESTION (length: 50)
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string Motivo { get; set; } // MOTIVO (length: 100)
         public string Seguimiento { get; set; } // SEGUIMIENTO (length: 2)
         public System.DateTime? FechaSeguimiento { get; set; } // FECHA_SEGUIMIENTO
