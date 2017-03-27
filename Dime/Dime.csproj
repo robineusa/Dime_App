@@ -3200,6 +3200,7 @@
     </None>
     <Content Include="Views\BuenServicio\Mensajes_BuenServicio.cshtml" />
     <Content Include="Views\Calculadoras\Rentas.cshtml" />
+    <Content Include="Views\AdminTraslados\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

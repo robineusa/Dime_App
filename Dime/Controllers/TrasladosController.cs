@@ -82,7 +82,7 @@ namespace Dime.Controllers
             trasladowebservice = new WSD.TrasladosServiceClient();
             trasladowebservice.ClientCredentials.Authenticate();
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaSolicitudesCrearDireccion();
+            modelo = trasladowebservice.ListaSolicitudesCrearDireccion(Session["Usuario"].ToString());
             return View(modelo);
         }
 
@@ -190,7 +190,7 @@ namespace Dime.Controllers
             trasladowebservice = new WSD.TrasladosServiceClient();
             trasladowebservice.ClientCredentials.Authenticate();
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaDireccionesCreadasOutbound();
+            modelo = trasladowebservice.ListaDireccionesCreadasOutbound(Session["Usuario"].ToString());
             return View(modelo);
 
         }
@@ -1231,5 +1231,6 @@ namespace Dime.Controllers
             return View(modelo);
 
         }
+        
     }
 }
