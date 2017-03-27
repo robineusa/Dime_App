@@ -118,12 +118,19 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult Guarda_Convenio_Electronico(ViewModelBlending model)
         {
-            int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
-            model.ConvenioElecGestionado.AliadoGestion = Session["AliadoLogeado"].ToString();
-            model.ConvenioElecGestionado.LineaGestion = Session["LineaLogeado"].ToString();
-            blendingServices = new WSD.BlendingServiceClient();
-            blendingServices.ClientCredentials.Authenticate();
-            blendingServices.GuardarGestionConvenioElectronico(idUsuarioActual, model.DatosCliente, model.ConvenioElecGestionado);
+            if (model.DatosCliente.Cuenta.Equals(0))
+            {
+                ViewBag.NoDatos = "ERROR: No se puede guardar por que no hay cuentas para gestionar";
+            }
+            else
+            {
+                int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
+                model.ConvenioElecGestionado.AliadoGestion = Session["AliadoLogeado"].ToString();
+                model.ConvenioElecGestionado.LineaGestion = Session["LineaLogeado"].ToString();
+                blendingServices = new WSD.BlendingServiceClient();
+                blendingServices.ClientCredentials.Authenticate();
+                blendingServices.GuardarGestionConvenioElectronico(idUsuarioActual, model.DatosCliente, model.ConvenioElecGestionado);
+            }
             return RedirectToAction("Convenio_Electronico", "GestionBlending");
 
         }
