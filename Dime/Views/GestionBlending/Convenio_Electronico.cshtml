@@ -156,19 +156,19 @@ using (Html.BeginForm("Guarda_Convenio_Electronico", "GestionBlending", FormMeth
                                         <tr>
                                             <td style="padding-left:1px; width:300px;">
                                                 <label>Tipo contacto</label>
-                                                @Html.DropDownListFor(m=>m.ConvenioElecGestionado.TipoContacto, new List<SelectListItem> { new SelectListItem { Text = "--Seleccione--", Value = "--Select Option--" } }, new { @class = "form-control", id = "tipoContactosSelect", onchange = "SetearCierresChoices();"  })
-                                     
+                                                @Html.DropDownListFor(m=>m.ConvenioElecGestionado.TipoContacto, new List<SelectListItem> { }, "--Select Option--", new { @class = "form-control", id = "tipoContactosSelect", onchange = "SetearCierresChoices();"  })
+                                                @Html.ValidationMessageFor(m => m.ConvenioElecGestionado.TipoContacto, "", new { @class = "text-danger" })
                                             </td>
 
                                             <td style="padding-left:4px; width:400px;"  >
                                                 <label>Cierre</label>
-                                                @Html.DropDownListFor(m=>m.ConvenioElecGestionado.Cierre, new List<SelectListItem> { new SelectListItem { Text = "--Seleccione--", Value = "--Select Option--" } }, new { @class = "form-control", id= "tiposCierresSelect", onchange = "SetearRazonesChoices();" })
-                                    
-                                                                                            
+                                                @Html.DropDownListFor(m=>m.ConvenioElecGestionado.Cierre, new List<SelectListItem> { }, "--Select Option--", new { @class = "form-control", id= "tiposCierresSelect", onchange = "SetearRazonesChoices();" })
+                                                @Html.ValidationMessageFor(m => m.ConvenioElecGestionado.Cierre, "", new { @class = "text-danger" })                                        
                                             </td>
                                             <td style="padding-left:4px; width:500px;">
                                                 <label>Razón</label>
-                                                @Html.DropDownListFor(m=>m.ConvenioElecGestionado.Razon, new List<SelectListItem> { new SelectListItem { Text = "--Seleccione--", Value = "--Select Option--" } }, new { @class = "form-control", id= "tiposRazonSelect", onchange = "SetearRazonChoice();" })
+                                                @Html.DropDownListFor(m=>m.ConvenioElecGestionado.Razon, new List<SelectListItem> { }, "--Select Option--", new { @class = "form-control", id= "tiposRazonSelect", onchange = "SetearRazonChoice();" })
+                                                @Html.ValidationMessageFor(m => m.ConvenioElecGestionado.Razon, "", new { @class = "text-danger" })
                                             </td>
                                         </tr>
                                     </table>
@@ -237,6 +237,10 @@ using (Html.BeginForm("Guarda_Convenio_Electronico", "GestionBlending", FormMeth
                 <br />
                 <div class="box-footer">
                     <button type="submit" class="btn btn-block btn-primary" name="cambiarDatos" value="true" style="width:10%;  margin-left:1%;">Guardar</button>
+                    @if (Model.DatosCliente.Nombre.Equals("No existen datos"))
+                    {
+                        <p class="text-danger">No se puede guardar registros por que no existen cuentas para gestionar</p>
+                    }
                 </div>
                 <br />
             </div>
@@ -255,7 +259,7 @@ using (Html.BeginForm("Guarda_Convenio_Electronico", "GestionBlending", FormMeth
 <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
 <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
 <script src="~/Scripts/Gestion_Blending/Convenio_Electronico.js?1.0.3"></script>
-
+@Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
 
 }
 }
