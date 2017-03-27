@@ -10,6 +10,8 @@
 // TargetFrameworkVersion = 4.51
 #pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
 
+using System.ComponentModel.DataAnnotations;
+
 namespace Telmexla.Servicios.DIME.Entity
 {
 
@@ -34,9 +36,17 @@ namespace Telmexla.Servicios.DIME.Entity
         public decimal? Movil1 { get; set; } // MOVIL_1
         public decimal? Movil2 { get; set; } // MOVIL_2
         public string PaqueteActual { get; set; } // PAQUETE_ACTUAL (length: 15)
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string TipoDeContacto { get; set; } // TIPO_DE_CONTACTO (length: 100)
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string Gestion { get; set; } // GESTION (length: 100)
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string Cierre { get; set; } // CIERRE (length: 100)
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string Razon { get; set; } // RAZON (length: 100)
         public string Observaciones { get; set; } // OBSERVACIONES (length: 200)
         public string NombreUsuarioGestion { get; set; } // NOMBRE_USUARIO_GESTION (length: 100)
