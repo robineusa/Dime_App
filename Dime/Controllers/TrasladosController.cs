@@ -383,7 +383,7 @@ namespace Dime.Controllers
             trasladowebservice = new WSD.TrasladosServiceClient();
             trasladowebservice.ClientCredentials.Authenticate();
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaSolicitudesCambioEstrato();
+            modelo = trasladowebservice.ListaSolicitudesCambioEstrato(Session["Usuario"].ToString());
             return View(modelo);
         }
  
@@ -578,7 +578,7 @@ namespace Dime.Controllers
             trasladowebservice = new WSD.TrasladosServiceClient();
             trasladowebservice.ClientCredentials.Authenticate();
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaSolicitudesLiberacionesHomePass();
+            modelo = trasladowebservice.ListaSolicitudesLiberacionesHomePass(Session["Usuario"].ToString());
             return View(modelo);
         }
  
@@ -772,7 +772,7 @@ namespace Dime.Controllers
             trasladowebservice = new WSD.TrasladosServiceClient();
             trasladowebservice.ClientCredentials.Authenticate();
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaSolicitudesCreaciondeMatriz();
+            modelo = trasladowebservice.ListaSolicitudesCreaciondeMatriz(Session["Usuario"].ToString());
             return View(modelo);
         }
      
@@ -893,7 +893,7 @@ namespace Dime.Controllers
             trasladowebservice = new WSD.TrasladosServiceClient();
             trasladowebservice.ClientCredentials.Authenticate();
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaSolicitudesGestionMatriz();
+            modelo = trasladowebservice.ListaSolicitudesGestionMatriz(Session["Usuario"].ToString());
             return View(modelo);
 
         }

@@ -25,13 +25,14 @@
     { field: "IngresoTrasladoGetSet.CuentaCliente", title: "Cuenta Ocupa", width: 100 },
     { field: "LiberacionHomePass.CuentaTraslada", title: "Cuenta Traslada", width: 100 },
     { field: "IngresoTrasladoGetSet.FechaApertura", title: "Fecha Apertura", width: 100, template: "#= kendo.toString(kendo.parseDate(IngresoTrasladoGetSet.FechaApertura, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", filterable: false },
+    { field: "IngresoTrasladoGetSet.HoraUltimaActualizacion", title: "Fecha Actualizacion", width: 100, template: "#= kendo.toString(kendo.parseDate(IngresoTrasladoGetSet.HoraUltimaActualizacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", filterable: false },
     { field: "IngresoTrasladoGetSet.UsuarioApertura", title: "Usr Apertura", width: 100 },
     { field: "IngresoTrasladoGetSet.EstadoTransaccion", title: "Estado Transacción", width: 100 },
     { field: "IngresoTrasladoGetSet.NombreLineaIngreso", title: "Linea Ingreso", width: 100 },
     { field: "IngresoTrasladoGetSet.NombreLineaEscalado", title: "Linea Escalado", width: 100 },
     { field: "LiberacionHomePass.MotivoLiberacion", title: "Motivo Liberación", width: 100 }
     ]
-
+    
 });
 
 function ActualizarCaso(e) {

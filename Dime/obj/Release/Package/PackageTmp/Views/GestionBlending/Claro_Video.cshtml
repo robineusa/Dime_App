@@ -187,19 +187,23 @@ using (Html.BeginForm("Guarda_Claro_Video", "GestionBlending", FormMethod.Post, 
                                     <tr>
                                         <td style="padding-left:1px; width:200px;">
                                             <label>Tipo contacto</label>
-                                            @Html.DropDownListFor(m => m.ClaroVideoGestionado.TipoDeContacto, new List<SelectListItem> { new SelectListItem { Text = "--Seleccione --", Value = "--Seleccione--" } }, new { @class = "form-control", onchange = "SetearCierresChoices();", id = "tipoContactosSelect" })
+                                            @Html.DropDownListFor(m => m.ClaroVideoGestionado.TipoDeContacto, new List<SelectListItem> { }, "--Seleccione --", new { @class = "form-control", onchange = "SetearCierresChoices();", id = "tipoContactosSelect" })
+                                            @Html.ValidationMessageFor(m => m.ClaroVideoGestionado.TipoDeContacto, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding-left:1px; width:220px;">
                                             <label>Gestión</label>
-                                            @Html.DropDownListFor(m => m.ClaroVideoGestionado.TipoDeGestion, new List<SelectListItem> { new SelectListItem { Text = "--Seleccione--", Value = "--Seleccione--" } }, new { @class = "form-control", onchange = "SetearRazonesChoices();", id = "tiposCierresSelect" })
+                                            @Html.DropDownListFor(m => m.ClaroVideoGestionado.TipoDeGestion, new List<SelectListItem> { }, "--Seleccione --", new { @class = "form-control", onchange = "SetearRazonesChoices();", id = "tiposCierresSelect" })
+                                            @Html.ValidationMessageFor(m => m.ClaroVideoGestionado.TipoDeGestion, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding-left:4px; width:260px;">
                                             <label>Cierre</label>
-                                            @Html.DropDownListFor(m => m.ClaroVideoGestionado.Cierre, new List<SelectListItem> { new SelectListItem { Text = "--Seleccione--", Value = "--Seleccione--" } }, new { @class = "form-control", onchange = "SetearCausaChoices();", id = "tiposRazonSelect" })
+                                            @Html.DropDownListFor(m => m.ClaroVideoGestionado.Cierre, new List<SelectListItem> { }, "--Seleccione --", new { @class = "form-control", onchange = "SetearCausaChoices();", id = "tiposRazonSelect" })
+                                            @Html.ValidationMessageFor(m => m.ClaroVideoGestionado.Cierre, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding-left:4px; width:260px;">
                                             <label>Razón</label>
-                                            @Html.DropDownListFor(m => m.ClaroVideoGestionado.Razon, new List<SelectListItem> { new SelectListItem { Text = "--Seleccione--", Value = "--Seleccione--" } }, new { @class = "form-control", id = "tiposCausasSelect" })
+                                            @Html.DropDownListFor(m => m.ClaroVideoGestionado.Razon, new List<SelectListItem> { }, "--Seleccione --", new { @class = "form-control", id = "tiposCausasSelect" })
+                                            @Html.ValidationMessageFor(m => m.ClaroVideoGestionado.Razon, "", new { @class = "text-danger" })
                                         </td>
                                     </tr>
                                 </table>
@@ -278,6 +282,10 @@ using (Html.BeginForm("Guarda_Claro_Video", "GestionBlending", FormMethod.Post, 
             <br />
             <div class="box-footer">
                 <button type="submit" class="btn btn-block btn-primary" name="cambiarDatos" value="true" style="width:10%;  margin-left:1%;">Guardar</button>
+                @if (Model.DatosCliente.Nombre.Equals("No existen datos"))
+                {
+                    <p class="text-danger">No se puede guardar registros por que no existen cuentas para gestionar</p>
+                }
             </div>
             <br />
         </div>
@@ -296,7 +304,7 @@ using (Html.BeginForm("Guarda_Claro_Video", "GestionBlending", FormMethod.Post, 
 <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
 <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
 <script src="~/Scripts/Gestion_Blending/Claro_Video.js?1.0.3"></script>
-
+@Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
 
 }
 }
