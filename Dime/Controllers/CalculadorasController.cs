@@ -1,4 +1,5 @@
 ﻿using Dime.Helpers;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Dime.Controllers
     {
 
         WSD.InboundServiceClient inboundService;
-
+        WSD.ActivacionSiembraHDServiceClient siembraHdService;
 
         // GET: Calculadoras
  
@@ -66,5 +67,16 @@ namespace Dime.Controllers
         }
 
 
+        public JsonResult DatosActualesCliente(string cuenta)
+        {
+            siembraHdService = new WSD.ActivacionSiembraHDServiceClient();
+            siembraHdService.ClientCredentials.Authenticate();
+            var result = siembraHdService.RentaActualPorCuentaCalRentas(cuenta);
+            return new JsonResult
+            {
+                Data = JsonConvert.SerializeObject(result),
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
     }
 }

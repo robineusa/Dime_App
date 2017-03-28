@@ -24,6 +24,12 @@
 
         <table>
             <tr>
+                <td style="padding:2px; width:16.6%">Cuenta:</td>
+            </tr>
+            <tr>
+                <td style="padding:2px; width:16.6%"><input type="text" class="form-control input-sm" id="tbCuenta" /> </td>
+            </tr>
+            <tr>
                 <td style="padding:2px; width:20%">Estrato:</td>
                 <td style="padding:2px; width:20%">Tiene Campaña Vigente:</td>
                 <td style="padding:2px; width:20%">Fecha Vencimiento Campaña:</td>
@@ -37,6 +43,37 @@
                 <td style="padding:2px; width:20%"><input type="text" class="form-control input-sm" id="tbTarifaActual" readonly/> </td>
                 <td style="padding:2px; width:20%"><input type="text" class="form-control input-sm" id="tbRentaActual" readonly /> </td>
                 
+            </tr>
+            <tr>
+                <td style="padding:2px; width:20%">Voz:</td>
+                <td style="padding:2px; width:20%">Tv:</td>
+                <td style="padding:2px; width:20%">Internet:</td>
+
+            </tr>
+            <tr>
+                <td style="padding:2px; width:20%"><input type="text" class="form-control input-sm" id="tbVozInfo" readonly /> </td>
+                <td style="padding:2px; width:20%"><input type="text" class="form-control input-sm" id="tbTvInfo" readonly /> </td>
+                <td style="padding:2px; width:20%"><input type="text" class="form-control input-sm" id="tbInternetInfo" readonly /> </td>
+            </tr>
+            <tr>
+                <td style="padding:2px; width:16.6%">HBO:</td>
+                <td style="padding:2px; width:16.6%">FOX:</td>
+                <td style="padding:2px; width:16.6%">UFC:</td>
+                <td style="padding:2px; width:16.6%">Golden:</td>
+                <td style="padding:2px; width:16.6%">Revista:</td>
+            </tr>
+            <tr>
+                <td style="padding:2px; width:16.6%"><input type="text" class="form-control input-sm" id="tbHBOInfo" readonly /> </td>
+                <td style="padding:2px; width:16.6%"><input type="text" class="form-control input-sm" id="tbFoxInfo" readonly /> </td>
+                <td style="padding:2px; width:16.6%"><input type="text" class="form-control input-sm" id="tbUFCInfo" readonly /> </td>
+                <td style="padding:2px; width:16.6%"><input type="text" class="form-control input-sm" id="tbGoldenInfo" readonly /> </td>
+                <td style="padding:2px; width:16.6%"><input type="text" class="form-control input-sm" id="tbRevistaInfo" readonly /> </td>
+            </tr>
+            <tr>
+                <td style="padding:2px; width:16.6%">HotPack:</td>
+            </tr>
+            <tr>
+                <td style="padding:2px; width:16.6%"><input type="text" class="form-control input-sm" id="tbHotPackInfo" readonly /> </td>
             </tr>
         </table>
     </div>
@@ -68,7 +105,7 @@
                         <td width="60"><input type="checkbox" id="cbVoz" /></td>
                         <td width="30">&nbsp;</td>
                         <td width="50">Básica</td>
-                        <td width="50"><input type="checkbox" id="cbTvBasica" /></td>
+                        <td width="50"><input type="checkbox" id="cbTvBasica" name="tvCheck" /></td>
                         <td width="35">&nbsp;</td>
                         <td width="50">5 MB</td>
                         <td width="50"><input type="checkbox" id="cb5Mb" /></td>
@@ -78,7 +115,7 @@
                         <td width="60">&nbsp;</td>
                         <td width="30">&nbsp;</td>
                         <td width="50">Avanzada</td>
-                        <td width="50"><input type="checkbox" id="cbTvAvanzada" /></td>
+                        <td width="50"><input type="checkbox" id="cbTvAvanzada" name="tvCheck" /></td>
                         <td width="35">&nbsp;</td>
                         <td width="50">10 MB</td>
                         <td width="50"><input type="checkbox" id="cb10Mb" /></td>
@@ -252,7 +289,7 @@
                     <tr>
                         <td width="50"><input type="text" class="form-control input-sm" id="tbRentaOfrecidaRestar" readonly /></td>
                         <td style="padding:2px; width:40px"> &nbsp;</td>
-                        <td width="50"><input type="text" class="form-control input-sm" id="tbRentaActual" readonly /></td>
+                        <td width="50"><input type="text" class="form-control input-sm" id="tbRentaActualDos" readonly /></td>
                         <td style="padding:2px; width:40px"> &nbsp;</td>
                         <td width="50"><input type="text" class="form-control input-sm" id="tbIncremento" readonly /></td>
                     </tr>
@@ -269,10 +306,11 @@
 
     <script>
         var consultDatosCuentaDivUrl = "@Url.Action("DatosClientePorCuenta", "Calculadoras")";
+        var urlConsultaDatosActuales = "@Url.Action("DatosActualesCliente", "Calculadoras")";
     </script>
     <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
     <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
-    <script src="~/Scripts/Calculadoras/Rentas.js"></script>
+    <script src="~/Scripts/Calculadoras/Rentas.js?1.0.1"></script>
 
 </body>
 </html>
