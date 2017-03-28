@@ -111,6 +111,11 @@ namespace Dime.Controllers
             model.DatosAdcionalesCliente = inboundService.TraerDatosAdicionalesCliente(cuentaCliente)?? new DatosAdicionalesCliente();
             model.iniciarOptionsVista();
             model.LineaDeUsuarioActual = Session["LineaLogeado"].ToString();
+            //model.ModelTipiMarca.IngresoTipMarcacion.IdServicio = 0;
+            //model.ModelTipiMarca.IngresoTipMarcacion.Macroproceso = "";
+            //model.ModelTipiMarca.IngresoTipMarcacion.Marcacion = "";
+            model.ModelTipiMarca = null;
+
             return View(model);
         }
 
@@ -168,7 +173,7 @@ namespace Dime.Controllers
             }).ToList();
             model.MarcacionEntrada =Convert.ToInt32(model.ModelTipiMarca.IngresoTipMarcacion.IdIngreso);
             model.LineaDeUsuarioActual = Session["LineaLogeado"].ToString();
-            return RedirectToAction("Actualizar", new { id = model.ModelTipiMarca.IngresoTipMarcacion.IdIngreso, nombMarcacion= model.ModelTipiMarca.IngresoTipMarcacion.Marcacion });
+            return RedirectToAction("Index", "Inbound");/*, new { id = model.ModelTipiMarca.IngresoTipMarcacion.IdIngreso, nombMarcacion= model.ModelTipiMarca.IngresoTipMarcacion.Marcacion*/ 
         }
 
 
