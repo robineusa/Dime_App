@@ -6452,10 +6452,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<bool> ExisteCuentaEscaladaAsync(decimal cuenta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaSolicitudesCrearDireccion", ReplyAction="http://tempuri.org/ITrasladosService/ListaSolicitudesCrearDireccionResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesCrearDireccion();
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesCrearDireccion(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaSolicitudesCrearDireccion", ReplyAction="http://tempuri.org/ITrasladosService/ListaSolicitudesCrearDireccionResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesCrearDireccionAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesCrearDireccionAsync(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaInteraccionesCrearDireccion", ReplyAction="http://tempuri.org/ITrasladosService/ListaInteraccionesCrearDireccionResponse")]
         System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.NotasTraslado> ListaInteraccionesCrearDireccion(int id);
@@ -6482,10 +6482,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSeguimientosDireccionesCelulaAsync(string usrABackOffice);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaDireccionesCreadasOutbound", ReplyAction="http://tempuri.org/ITrasladosService/ListaDireccionesCreadasOutboundResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaDireccionesCreadasOutbound();
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaDireccionesCreadasOutbound(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaDireccionesCreadasOutbound", ReplyAction="http://tempuri.org/ITrasladosService/ListaDireccionesCreadasOutboundResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaDireccionesCreadasOutboundAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaDireccionesCreadasOutboundAsync(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/TransaccionEnGestionOut", ReplyAction="http://tempuri.org/ITrasladosService/TransaccionEnGestionOutResponse")]
         bool TransaccionEnGestionOut(int id, string usrOut);
@@ -6520,10 +6520,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<bool> ExisteCuentaEscaladaCambioEstratoAsync(decimal cuenta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaSolicitudesCambioEstrato", ReplyAction="http://tempuri.org/ITrasladosService/ListaSolicitudesCambioEstratoResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesCambioEstrato();
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesCambioEstrato(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaSolicitudesCambioEstrato", ReplyAction="http://tempuri.org/ITrasladosService/ListaSolicitudesCambioEstratoResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesCambioEstratoAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesCambioEstratoAsync(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaInteraccionesCambioEstrato", ReplyAction="http://tempuri.org/ITrasladosService/ListaInteraccionesCambioEstratoResponse")]
         System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CambioEstrato> ListaInteraccionesCambioEstrato(int id);
@@ -6573,11 +6573,11 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaSolicitudesLiberacionesHomePass", ReplyAction="http://tempuri.org/ITrasladosService/ListaSolicitudesLiberacionesHomePassResponse" +
             "")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesLiberacionesHomePass();
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesLiberacionesHomePass(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaSolicitudesLiberacionesHomePass", ReplyAction="http://tempuri.org/ITrasladosService/ListaSolicitudesLiberacionesHomePassResponse" +
             "")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesLiberacionesHomePassAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesLiberacionesHomePassAsync(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaInteraccionesLiberacionHomePass", ReplyAction="http://tempuri.org/ITrasladosService/ListaInteraccionesLiberacionHomePassResponse" +
             "")]
@@ -6630,10 +6630,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<bool> ExisteCuentaEscaladaMatrizAsync(decimal cuenta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaSolicitudesCreaciondeMatriz", ReplyAction="http://tempuri.org/ITrasladosService/ListaSolicitudesCreaciondeMatrizResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesCreaciondeMatriz();
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesCreaciondeMatriz(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaSolicitudesCreaciondeMatriz", ReplyAction="http://tempuri.org/ITrasladosService/ListaSolicitudesCreaciondeMatrizResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesCreaciondeMatrizAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesCreaciondeMatrizAsync(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaInteraccionesMatrices", ReplyAction="http://tempuri.org/ITrasladosService/ListaInteraccionesMatricesResponse")]
         System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionMatriz> ListaInteraccionesMatrices(int id);
@@ -6660,10 +6660,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSeguimientosCrearMatrizCelulaAsync(string usrABackOffice);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaSolicitudesGestionMatriz", ReplyAction="http://tempuri.org/ITrasladosService/ListaSolicitudesGestionMatrizResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesGestionMatriz();
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesGestionMatriz(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaSolicitudesGestionMatriz", ReplyAction="http://tempuri.org/ITrasladosService/ListaSolicitudesGestionMatrizResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesGestionMatrizAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesGestionMatrizAsync(string Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/TransaccionGestionMatrizEnGestion", ReplyAction="http://tempuri.org/ITrasladosService/TransaccionGestionMatrizEnGestionResponse")]
         bool TransaccionGestionMatrizEnGestion(int id, string usrOut);
@@ -6795,12 +6795,12 @@ namespace Dime.WSD {
             return base.Channel.ExisteCuentaEscaladaAsync(cuenta);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesCrearDireccion() {
-            return base.Channel.ListaSolicitudesCrearDireccion();
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesCrearDireccion(string Usuario) {
+            return base.Channel.ListaSolicitudesCrearDireccion(Usuario);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesCrearDireccionAsync() {
-            return base.Channel.ListaSolicitudesCrearDireccionAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesCrearDireccionAsync(string Usuario) {
+            return base.Channel.ListaSolicitudesCrearDireccionAsync(Usuario);
         }
         
         public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.NotasTraslado> ListaInteraccionesCrearDireccion(int id) {
@@ -6835,12 +6835,12 @@ namespace Dime.WSD {
             return base.Channel.ListaSeguimientosDireccionesCelulaAsync(usrABackOffice);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaDireccionesCreadasOutbound() {
-            return base.Channel.ListaDireccionesCreadasOutbound();
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaDireccionesCreadasOutbound(string Usuario) {
+            return base.Channel.ListaDireccionesCreadasOutbound(Usuario);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaDireccionesCreadasOutboundAsync() {
-            return base.Channel.ListaDireccionesCreadasOutboundAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaDireccionesCreadasOutboundAsync(string Usuario) {
+            return base.Channel.ListaDireccionesCreadasOutboundAsync(Usuario);
         }
         
         public bool TransaccionEnGestionOut(int id, string usrOut) {
@@ -6883,12 +6883,12 @@ namespace Dime.WSD {
             return base.Channel.ExisteCuentaEscaladaCambioEstratoAsync(cuenta);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesCambioEstrato() {
-            return base.Channel.ListaSolicitudesCambioEstrato();
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesCambioEstrato(string Usuario) {
+            return base.Channel.ListaSolicitudesCambioEstrato(Usuario);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesCambioEstratoAsync() {
-            return base.Channel.ListaSolicitudesCambioEstratoAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesCambioEstratoAsync(string Usuario) {
+            return base.Channel.ListaSolicitudesCambioEstratoAsync(Usuario);
         }
         
         public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CambioEstrato> ListaInteraccionesCambioEstrato(int id) {
@@ -6947,12 +6947,12 @@ namespace Dime.WSD {
             return base.Channel.ExisteCuentaEscaladaLiberacionHomePassAsync(cuenta);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesLiberacionesHomePass() {
-            return base.Channel.ListaSolicitudesLiberacionesHomePass();
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesLiberacionesHomePass(string Usuario) {
+            return base.Channel.ListaSolicitudesLiberacionesHomePass(Usuario);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesLiberacionesHomePassAsync() {
-            return base.Channel.ListaSolicitudesLiberacionesHomePassAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesLiberacionesHomePassAsync(string Usuario) {
+            return base.Channel.ListaSolicitudesLiberacionesHomePassAsync(Usuario);
         }
         
         public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.LiberacionHomePass> ListaInteraccionesLiberacionHomePass(int id) {
@@ -7011,12 +7011,12 @@ namespace Dime.WSD {
             return base.Channel.ExisteCuentaEscaladaMatrizAsync(cuenta);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesCreaciondeMatriz() {
-            return base.Channel.ListaSolicitudesCreaciondeMatriz();
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesCreaciondeMatriz(string Usuario) {
+            return base.Channel.ListaSolicitudesCreaciondeMatriz(Usuario);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesCreaciondeMatrizAsync() {
-            return base.Channel.ListaSolicitudesCreaciondeMatrizAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesCreaciondeMatrizAsync(string Usuario) {
+            return base.Channel.ListaSolicitudesCreaciondeMatrizAsync(Usuario);
         }
         
         public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionMatriz> ListaInteraccionesMatrices(int id) {
@@ -7051,12 +7051,12 @@ namespace Dime.WSD {
             return base.Channel.ListaSeguimientosCrearMatrizCelulaAsync(usrABackOffice);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesGestionMatriz() {
-            return base.Channel.ListaSolicitudesGestionMatriz();
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesGestionMatriz(string Usuario) {
+            return base.Channel.ListaSolicitudesGestionMatriz(Usuario);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesGestionMatrizAsync() {
-            return base.Channel.ListaSolicitudesGestionMatrizAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesGestionMatrizAsync(string Usuario) {
+            return base.Channel.ListaSolicitudesGestionMatrizAsync(Usuario);
         }
         
         public bool TransaccionGestionMatrizEnGestion(int id, string usrOut) {

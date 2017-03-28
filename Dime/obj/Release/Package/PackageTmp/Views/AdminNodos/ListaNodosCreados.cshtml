@@ -20,6 +20,7 @@
         </div>
     </div>
 
+
 </div>
 }
 else
@@ -50,8 +51,9 @@ else
 }
 @section Scripts{
     <script>
-        var jsonMNodos = @Html.Raw(Json.Encode(Model));
+        @*var jsonMNodos = @Html.Raw(Json.Encode(Model));*@
+        var urlListaKendo = '@Url.Action("ListaNodosCreadosJson", "AdminNodos")';
     </script>
 
-    <script src="~/Scripts/AdminNodos/ListaNodosCreados.js?1.0.1"></script>
+    <script src="~/Scripts/AdminNodos/ListaNodosCreados.js?1.0.4"></script>
 }

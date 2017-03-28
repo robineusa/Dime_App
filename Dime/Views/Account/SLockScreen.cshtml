@@ -22,10 +22,9 @@
         <br />
 
             <div class="lockscreen-logo">
-                <img src="~/Resources/Images/Logo.png" width="400" height="400" /><br />
+                <img src="~/Resources/Images/Logo.png" width="300" height="300" /><br />
             </div>
-           <br />
-           <br />
+          
             <div class="lockscreen-item">
           
                 <div class="lockscreen-image">
@@ -33,7 +32,7 @@
                 </div>
                 <div class="lockscreen-credentials">
                     <div class="input-group">
-                        <input type="password" class="form-control" placeholder="password" id="lockPassword">
+                        <input type="password" class="form-control" placeholder="Contraseña" id="lockPassword">
                         <div class="input-group-btn">
                             <button type="button" class="btn" id="bUnlock"><i class="fa fa-arrow-right text-muted"></i></button>
                         </div>
@@ -44,7 +43,7 @@
             <label style="color:red; display:none" id="contraIncorrecta">La contraseña es incorrecta</label>
 
             <div class="help-block text-center">
-                Ingrese su contraseña para recuperar la sesion
+                Ingrese su contraseña para recuperar la sesión
             </div>
             <div class="text-center">
                 <a href="@Url.Action("Login", "Account")">O inicie sesión con un usuario diferente</a>

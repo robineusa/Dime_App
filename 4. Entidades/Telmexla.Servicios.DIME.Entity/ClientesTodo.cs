@@ -9,12 +9,15 @@
 // TargetFrameworkVersion = 4.51
 #pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
 
+using System.ComponentModel.DataAnnotations;
+
 namespace Telmexla.Servicios.DIME.Entity
 {
 
     // TBL_CLIENTES_TODOS
     public class ClientesTodo
     {
+        [Required(ErrorMessage = "La cuenta no puede ser vacía")]
         public int Cuenta { get; set; } // CUENTA (Primary key)
         public double? HomePass { get; set; } // HOME_PASS
         public string Estado { get; set; } // ESTADO (length: 8)
