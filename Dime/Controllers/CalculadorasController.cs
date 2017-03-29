@@ -71,10 +71,10 @@ namespace Dime.Controllers
         {
             siembraHdService = new WSD.ActivacionSiembraHDServiceClient();
             siembraHdService.ClientCredentials.Authenticate();
-            var result = siembraHdService.RentaActualPorCuentaCalRentas(cuenta);
+            //var result = siembraHdService.RentaActualPorCuentaCalRentas(cuenta);
             return new JsonResult
             {
-                Data = JsonConvert.SerializeObject(result),
+                //Data = JsonConvert.SerializeObject(result),
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
