@@ -2949,6 +2949,7 @@
     <Content Include="Scripts\Traslados\SolicitudLiberacionHomePass.js" />
     <Content Include="Scripts\Traslados\SolicitudMatrices.js" />
     <Content Include="Resources\Documents\Formato_Carga_Masiva_Siriac.xls" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\Dime_Capacitacion.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
@@ -3016,7 +3017,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\WSD\WebService.wsdl" />
+    <None Include="Service References\WSD\WebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\WSD\WebService1.disco" />
+    <None Include="Service References\WSD\WebService.disco" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
     <Content Include="Styles\Elements\General.css" />
@@ -3188,6 +3194,18 @@
     <Content Include="Views\BuenServicio\Mensajes_BuenServicio.cshtml" />
     <Content Include="Views\Calculadoras\Rentas.cshtml" />
     <None Include="Service References\WSD\WebService1.wsdl" />
+    <None Include="Service References\WSD\WebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
     </None>

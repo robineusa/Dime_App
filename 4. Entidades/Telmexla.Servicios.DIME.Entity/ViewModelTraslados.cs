@@ -26,7 +26,10 @@ namespace Telmexla.Servicios.DIME.Entity
         private GestionMatriz gestionMatrizInicial;
         private GestionMatriz gestionMatrizVacia;
         private List<GestionMatriz> listaGestionMatriz;
-
+        private TrasladoNoCobertura trasladosNoCobertura;
+        private TrasladoNoCobertura trasladosNoCoberturaInicial;
+        private TrasladoNoCobertura trasladosNoCoberturaVacia;
+        private List<TrasladoNoCobertura> listaTrasladosNoCobertura;
 
         public ViewModelTraslados()
         {
@@ -277,6 +280,58 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 listaGestionMatriz = value;
+            }
+        }
+
+        public TrasladoNoCobertura TrasladosNoCobertura
+        {
+            get
+            {
+                return trasladosNoCobertura;
+            }
+
+            set
+            {
+                trasladosNoCobertura = value;
+            }
+        }
+
+        public List<TrasladoNoCobertura> ListaTrasladosNoCobertura
+        {
+            get
+            {
+                return listaTrasladosNoCobertura;
+            }
+
+            set
+            {
+                listaTrasladosNoCobertura = value;
+            }
+        }
+
+        public TrasladoNoCobertura TrasladosNoCoberturaInicial
+        {
+            get
+            {
+                return trasladosNoCoberturaInicial;
+            }
+
+            set
+            {
+                trasladosNoCoberturaInicial = value;
+            }
+        }
+
+        public TrasladoNoCobertura TrasladosNoCoberturaVacia
+        {
+            get
+            {
+                return trasladosNoCoberturaVacia;
+            }
+
+            set
+            {
+                trasladosNoCoberturaVacia = value;
             }
         }
     }

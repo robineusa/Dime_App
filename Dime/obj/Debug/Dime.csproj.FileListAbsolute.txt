@@ -92,6 +92,7 @@ C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Telmexla.Servicios.DIME.
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.csprojResolveAssemblyReference.cache
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.dll
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.pdb
+C:\Users\robin\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.csprojResolveAssemblyReference.cache
 C:\Users\robin\Documents\GitHub\Dime_App\Dime\bin\roslyn\csc.exe
 C:\Users\robin\Documents\GitHub\Dime_App\Dime\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\robin\Documents\GitHub\Dime_App\Dime\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -109,6 +110,5 @@ C:\Users\robin\Documents\GitHub\Dime_App\Dime\bin\Dime.dll
 C:\Users\robin\Documents\GitHub\Dime_App\Dime\bin\Dime.pdb
 C:\Users\robin\Documents\GitHub\Dime_App\Dime\bin\Telmexla.Servicios.DIME.Entity.dll
 C:\Users\robin\Documents\GitHub\Dime_App\Dime\bin\Telmexla.Servicios.DIME.Entity.pdb
-C:\Users\robin\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.csprojResolveAssemblyReference.cache
 C:\Users\robin\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.dll
 C:\Users\robin\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.pdb

@@ -4628,6 +4628,1059 @@ namespace Dime.WSD {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SmoRentaActual", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class SmoRentaActual : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AdultosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> AntiguedadField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> ArriendoDecosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> CampanaAplicadaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> CantidadDecosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> CantidadHdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> CantidadPvrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClaroVideoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClasificacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CuentaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> DiferenciaRentasField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstratoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> ExcluidosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> FechaFinCampaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FoxField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GldField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HboField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> HomAdicionalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> HomAduField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> HomCvField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> HomFoxField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> HomGldField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> HomHboField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> HomIpField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> HomPvrHdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> HomRevistaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> HomTotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> HomUfcField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> HomePassField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IncluyeHdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IncluyePvrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InclyeClarovideoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> IpField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> OtField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> PvrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RentaAdicionalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RentaAduField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RentaBasicaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RentaCvField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RentaFoxField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RentaHboField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RentaHdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<long> RentaHomologadaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RentaInternetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RentaOtrosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RentaPvrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RentaRevistaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RentaTotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RentaTvField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> RentaVozField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RevistaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SrvHdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TarifaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TarifaHomologadaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TipoServicioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TipoTvField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UfcField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> ValidacionEstratoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> VariasLineasField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VelocidadHomologadaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> VelocidadInternetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> VerificacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VozField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Adultos {
+            get {
+                return this.AdultosField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AdultosField, value) != true)) {
+                    this.AdultosField = value;
+                    this.RaisePropertyChanged("Adultos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Antiguedad {
+            get {
+                return this.AntiguedadField;
+            }
+            set {
+                if ((this.AntiguedadField.Equals(value) != true)) {
+                    this.AntiguedadField = value;
+                    this.RaisePropertyChanged("Antiguedad");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> ArriendoDecos {
+            get {
+                return this.ArriendoDecosField;
+            }
+            set {
+                if ((this.ArriendoDecosField.Equals(value) != true)) {
+                    this.ArriendoDecosField = value;
+                    this.RaisePropertyChanged("ArriendoDecos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> CampanaAplicada {
+            get {
+                return this.CampanaAplicadaField;
+            }
+            set {
+                if ((this.CampanaAplicadaField.Equals(value) != true)) {
+                    this.CampanaAplicadaField = value;
+                    this.RaisePropertyChanged("CampanaAplicada");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> CantidadDecos {
+            get {
+                return this.CantidadDecosField;
+            }
+            set {
+                if ((this.CantidadDecosField.Equals(value) != true)) {
+                    this.CantidadDecosField = value;
+                    this.RaisePropertyChanged("CantidadDecos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> CantidadHd {
+            get {
+                return this.CantidadHdField;
+            }
+            set {
+                if ((this.CantidadHdField.Equals(value) != true)) {
+                    this.CantidadHdField = value;
+                    this.RaisePropertyChanged("CantidadHd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> CantidadPvr {
+            get {
+                return this.CantidadPvrField;
+            }
+            set {
+                if ((this.CantidadPvrField.Equals(value) != true)) {
+                    this.CantidadPvrField = value;
+                    this.RaisePropertyChanged("CantidadPvr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ClaroVideo {
+            get {
+                return this.ClaroVideoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClaroVideoField, value) != true)) {
+                    this.ClaroVideoField = value;
+                    this.RaisePropertyChanged("ClaroVideo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Clasificacion {
+            get {
+                return this.ClasificacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClasificacionField, value) != true)) {
+                    this.ClasificacionField = value;
+                    this.RaisePropertyChanged("Clasificacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Cuenta {
+            get {
+                return this.CuentaField;
+            }
+            set {
+                if ((this.CuentaField.Equals(value) != true)) {
+                    this.CuentaField = value;
+                    this.RaisePropertyChanged("Cuenta");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> DiferenciaRentas {
+            get {
+                return this.DiferenciaRentasField;
+            }
+            set {
+                if ((this.DiferenciaRentasField.Equals(value) != true)) {
+                    this.DiferenciaRentasField = value;
+                    this.RaisePropertyChanged("DiferenciaRentas");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estrato {
+            get {
+                return this.EstratoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstratoField, value) != true)) {
+                    this.EstratoField = value;
+                    this.RaisePropertyChanged("Estrato");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Excluidos {
+            get {
+                return this.ExcluidosField;
+            }
+            set {
+                if ((this.ExcluidosField.Equals(value) != true)) {
+                    this.ExcluidosField = value;
+                    this.RaisePropertyChanged("Excluidos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> FechaFinCampa {
+            get {
+                return this.FechaFinCampaField;
+            }
+            set {
+                if ((this.FechaFinCampaField.Equals(value) != true)) {
+                    this.FechaFinCampaField = value;
+                    this.RaisePropertyChanged("FechaFinCampa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Fox {
+            get {
+                return this.FoxField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FoxField, value) != true)) {
+                    this.FoxField = value;
+                    this.RaisePropertyChanged("Fox");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Gld {
+            get {
+                return this.GldField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GldField, value) != true)) {
+                    this.GldField = value;
+                    this.RaisePropertyChanged("Gld");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Hbo {
+            get {
+                return this.HboField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HboField, value) != true)) {
+                    this.HboField = value;
+                    this.RaisePropertyChanged("Hbo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> HomAdicional {
+            get {
+                return this.HomAdicionalField;
+            }
+            set {
+                if ((this.HomAdicionalField.Equals(value) != true)) {
+                    this.HomAdicionalField = value;
+                    this.RaisePropertyChanged("HomAdicional");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> HomAdu {
+            get {
+                return this.HomAduField;
+            }
+            set {
+                if ((this.HomAduField.Equals(value) != true)) {
+                    this.HomAduField = value;
+                    this.RaisePropertyChanged("HomAdu");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> HomCv {
+            get {
+                return this.HomCvField;
+            }
+            set {
+                if ((this.HomCvField.Equals(value) != true)) {
+                    this.HomCvField = value;
+                    this.RaisePropertyChanged("HomCv");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> HomFox {
+            get {
+                return this.HomFoxField;
+            }
+            set {
+                if ((this.HomFoxField.Equals(value) != true)) {
+                    this.HomFoxField = value;
+                    this.RaisePropertyChanged("HomFox");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> HomGld {
+            get {
+                return this.HomGldField;
+            }
+            set {
+                if ((this.HomGldField.Equals(value) != true)) {
+                    this.HomGldField = value;
+                    this.RaisePropertyChanged("HomGld");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> HomHbo {
+            get {
+                return this.HomHboField;
+            }
+            set {
+                if ((this.HomHboField.Equals(value) != true)) {
+                    this.HomHboField = value;
+                    this.RaisePropertyChanged("HomHbo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> HomIp {
+            get {
+                return this.HomIpField;
+            }
+            set {
+                if ((this.HomIpField.Equals(value) != true)) {
+                    this.HomIpField = value;
+                    this.RaisePropertyChanged("HomIp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> HomPvrHd {
+            get {
+                return this.HomPvrHdField;
+            }
+            set {
+                if ((this.HomPvrHdField.Equals(value) != true)) {
+                    this.HomPvrHdField = value;
+                    this.RaisePropertyChanged("HomPvrHd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> HomRevista {
+            get {
+                return this.HomRevistaField;
+            }
+            set {
+                if ((this.HomRevistaField.Equals(value) != true)) {
+                    this.HomRevistaField = value;
+                    this.RaisePropertyChanged("HomRevista");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> HomTotal {
+            get {
+                return this.HomTotalField;
+            }
+            set {
+                if ((this.HomTotalField.Equals(value) != true)) {
+                    this.HomTotalField = value;
+                    this.RaisePropertyChanged("HomTotal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> HomUfc {
+            get {
+                return this.HomUfcField;
+            }
+            set {
+                if ((this.HomUfcField.Equals(value) != true)) {
+                    this.HomUfcField = value;
+                    this.RaisePropertyChanged("HomUfc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> HomePass {
+            get {
+                return this.HomePassField;
+            }
+            set {
+                if ((this.HomePassField.Equals(value) != true)) {
+                    this.HomePassField = value;
+                    this.RaisePropertyChanged("HomePass");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IncluyeHd {
+            get {
+                return this.IncluyeHdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IncluyeHdField, value) != true)) {
+                    this.IncluyeHdField = value;
+                    this.RaisePropertyChanged("IncluyeHd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IncluyePvr {
+            get {
+                return this.IncluyePvrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IncluyePvrField, value) != true)) {
+                    this.IncluyePvrField = value;
+                    this.RaisePropertyChanged("IncluyePvr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InclyeClarovideo {
+            get {
+                return this.InclyeClarovideoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InclyeClarovideoField, value) != true)) {
+                    this.InclyeClarovideoField = value;
+                    this.RaisePropertyChanged("InclyeClarovideo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Ip {
+            get {
+                return this.IpField;
+            }
+            set {
+                if ((this.IpField.Equals(value) != true)) {
+                    this.IpField = value;
+                    this.RaisePropertyChanged("Ip");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Ot {
+            get {
+                return this.OtField;
+            }
+            set {
+                if ((this.OtField.Equals(value) != true)) {
+                    this.OtField = value;
+                    this.RaisePropertyChanged("Ot");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Productos {
+            get {
+                return this.ProductosField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductosField, value) != true)) {
+                    this.ProductosField = value;
+                    this.RaisePropertyChanged("Productos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Pvr {
+            get {
+                return this.PvrField;
+            }
+            set {
+                if ((this.PvrField.Equals(value) != true)) {
+                    this.PvrField = value;
+                    this.RaisePropertyChanged("Pvr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RentaAdicional {
+            get {
+                return this.RentaAdicionalField;
+            }
+            set {
+                if ((this.RentaAdicionalField.Equals(value) != true)) {
+                    this.RentaAdicionalField = value;
+                    this.RaisePropertyChanged("RentaAdicional");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RentaAdu {
+            get {
+                return this.RentaAduField;
+            }
+            set {
+                if ((this.RentaAduField.Equals(value) != true)) {
+                    this.RentaAduField = value;
+                    this.RaisePropertyChanged("RentaAdu");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RentaBasica {
+            get {
+                return this.RentaBasicaField;
+            }
+            set {
+                if ((this.RentaBasicaField.Equals(value) != true)) {
+                    this.RentaBasicaField = value;
+                    this.RaisePropertyChanged("RentaBasica");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RentaCv {
+            get {
+                return this.RentaCvField;
+            }
+            set {
+                if ((this.RentaCvField.Equals(value) != true)) {
+                    this.RentaCvField = value;
+                    this.RaisePropertyChanged("RentaCv");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RentaFox {
+            get {
+                return this.RentaFoxField;
+            }
+            set {
+                if ((this.RentaFoxField.Equals(value) != true)) {
+                    this.RentaFoxField = value;
+                    this.RaisePropertyChanged("RentaFox");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RentaHbo {
+            get {
+                return this.RentaHboField;
+            }
+            set {
+                if ((this.RentaHboField.Equals(value) != true)) {
+                    this.RentaHboField = value;
+                    this.RaisePropertyChanged("RentaHbo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RentaHd {
+            get {
+                return this.RentaHdField;
+            }
+            set {
+                if ((this.RentaHdField.Equals(value) != true)) {
+                    this.RentaHdField = value;
+                    this.RaisePropertyChanged("RentaHd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<long> RentaHomologada {
+            get {
+                return this.RentaHomologadaField;
+            }
+            set {
+                if ((this.RentaHomologadaField.Equals(value) != true)) {
+                    this.RentaHomologadaField = value;
+                    this.RaisePropertyChanged("RentaHomologada");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RentaInternet {
+            get {
+                return this.RentaInternetField;
+            }
+            set {
+                if ((this.RentaInternetField.Equals(value) != true)) {
+                    this.RentaInternetField = value;
+                    this.RaisePropertyChanged("RentaInternet");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RentaOtros {
+            get {
+                return this.RentaOtrosField;
+            }
+            set {
+                if ((this.RentaOtrosField.Equals(value) != true)) {
+                    this.RentaOtrosField = value;
+                    this.RaisePropertyChanged("RentaOtros");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RentaPvr {
+            get {
+                return this.RentaPvrField;
+            }
+            set {
+                if ((this.RentaPvrField.Equals(value) != true)) {
+                    this.RentaPvrField = value;
+                    this.RaisePropertyChanged("RentaPvr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RentaRevista {
+            get {
+                return this.RentaRevistaField;
+            }
+            set {
+                if ((this.RentaRevistaField.Equals(value) != true)) {
+                    this.RentaRevistaField = value;
+                    this.RaisePropertyChanged("RentaRevista");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RentaTotal {
+            get {
+                return this.RentaTotalField;
+            }
+            set {
+                if ((this.RentaTotalField.Equals(value) != true)) {
+                    this.RentaTotalField = value;
+                    this.RaisePropertyChanged("RentaTotal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RentaTv {
+            get {
+                return this.RentaTvField;
+            }
+            set {
+                if ((this.RentaTvField.Equals(value) != true)) {
+                    this.RentaTvField = value;
+                    this.RaisePropertyChanged("RentaTv");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> RentaVoz {
+            get {
+                return this.RentaVozField;
+            }
+            set {
+                if ((this.RentaVozField.Equals(value) != true)) {
+                    this.RentaVozField = value;
+                    this.RaisePropertyChanged("RentaVoz");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Revista {
+            get {
+                return this.RevistaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RevistaField, value) != true)) {
+                    this.RevistaField = value;
+                    this.RaisePropertyChanged("Revista");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SrvHd {
+            get {
+                return this.SrvHdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SrvHdField, value) != true)) {
+                    this.SrvHdField = value;
+                    this.RaisePropertyChanged("SrvHd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Tarifa {
+            get {
+                return this.TarifaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TarifaField, value) != true)) {
+                    this.TarifaField = value;
+                    this.RaisePropertyChanged("Tarifa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TarifaHomologada {
+            get {
+                return this.TarifaHomologadaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TarifaHomologadaField, value) != true)) {
+                    this.TarifaHomologadaField = value;
+                    this.RaisePropertyChanged("TarifaHomologada");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TipoServicio {
+            get {
+                return this.TipoServicioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TipoServicioField, value) != true)) {
+                    this.TipoServicioField = value;
+                    this.RaisePropertyChanged("TipoServicio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TipoTv {
+            get {
+                return this.TipoTvField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TipoTvField, value) != true)) {
+                    this.TipoTvField = value;
+                    this.RaisePropertyChanged("TipoTv");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Ufc {
+            get {
+                return this.UfcField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UfcField, value) != true)) {
+                    this.UfcField = value;
+                    this.RaisePropertyChanged("Ufc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> ValidacionEstrato {
+            get {
+                return this.ValidacionEstratoField;
+            }
+            set {
+                if ((this.ValidacionEstratoField.Equals(value) != true)) {
+                    this.ValidacionEstratoField = value;
+                    this.RaisePropertyChanged("ValidacionEstrato");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> VariasLineas {
+            get {
+                return this.VariasLineasField;
+            }
+            set {
+                if ((this.VariasLineasField.Equals(value) != true)) {
+                    this.VariasLineasField = value;
+                    this.RaisePropertyChanged("VariasLineas");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VelocidadHomologada {
+            get {
+                return this.VelocidadHomologadaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VelocidadHomologadaField, value) != true)) {
+                    this.VelocidadHomologadaField = value;
+                    this.RaisePropertyChanged("VelocidadHomologada");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> VelocidadInternet {
+            get {
+                return this.VelocidadInternetField;
+            }
+            set {
+                if ((this.VelocidadInternetField.Equals(value) != true)) {
+                    this.VelocidadInternetField = value;
+                    this.RaisePropertyChanged("VelocidadInternet");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Verificacion {
+            get {
+                return this.VerificacionField;
+            }
+            set {
+                if ((this.VerificacionField.Equals(value) != true)) {
+                    this.VerificacionField = value;
+                    this.RaisePropertyChanged("Verificacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Voz {
+            get {
+                return this.VozField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VozField, value) != true)) {
+                    this.VozField = value;
+                    this.RaisePropertyChanged("Voz");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IWebService")]
     public interface IWebService {
@@ -6750,6 +7803,64 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaGeneralIngresosmatricesAsesor", ReplyAction="http://tempuri.org/ITrasladosService/ListaGeneralIngresosmatricesAsesorResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaGeneralIngresosmatricesAsesorAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/InsertIngresoTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/InsertIngresoTrasladoNoCoberturaResponse")]
+        void InsertIngresoTrasladoNoCobertura(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/InsertIngresoTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/InsertIngresoTrasladoNoCoberturaResponse")]
+        System.Threading.Tasks.Task InsertIngresoTrasladoNoCoberturaAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ExisteCuentaEscaladaTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ExisteCuentaEscaladaTrasladoNoCoberturaRespo" +
+            "nse")]
+        bool ExisteCuentaEscaladaTrasladoNoCobertura(decimal cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ExisteCuentaEscaladaTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ExisteCuentaEscaladaTrasladoNoCoberturaRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<bool> ExisteCuentaEscaladaTrasladoNoCoberturaAsync(decimal cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaSolicitudesTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ListaSolicitudesTrasladoNoCoberturaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesTrasladoNoCobertura(string Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaSolicitudesTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ListaSolicitudesTrasladoNoCoberturaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesTrasladoNoCoberturaAsync(string Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaInteraccionesTrasladosNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ListaInteraccionesTrasladosNoCoberturaRespon" +
+            "se")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura> ListaInteraccionesTrasladosNoCobertura(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaInteraccionesTrasladosNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ListaInteraccionesTrasladosNoCoberturaRespon" +
+            "se")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura>> ListaInteraccionesTrasladosNoCoberturaAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ActualizarSolicitudTrasladosNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ActualizarSolicitudTrasladosNoCoberturaRespo" +
+            "nse")]
+        void ActualizarSolicitudTrasladosNoCobertura(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ActualizarSolicitudTrasladosNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ActualizarSolicitudTrasladosNoCoberturaRespo" +
+            "nse")]
+        System.Threading.Tasks.Task ActualizarSolicitudTrasladosNoCoberturaAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/TransaccionEnGestionTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/TransaccionEnGestionTrasladoNoCoberturaRespo" +
+            "nse")]
+        bool TransaccionEnGestionTrasladoNoCobertura(int id, string usrABackOffice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/TransaccionEnGestionTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/TransaccionEnGestionTrasladoNoCoberturaRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<bool> TransaccionEnGestionTrasladoNoCoberturaAsync(int id, string usrABackOffice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaSeguimientosTrasladoNoCoberturaCelula", ReplyAction="http://tempuri.org/ITrasladosService/ListaSeguimientosTrasladoNoCoberturaCelulaRe" +
+            "sponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSeguimientosTrasladoNoCoberturaCelula(string usrABackOffice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaSeguimientosTrasladoNoCoberturaCelula", ReplyAction="http://tempuri.org/ITrasladosService/ListaSeguimientosTrasladoNoCoberturaCelulaRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSeguimientosTrasladoNoCoberturaCelulaAsync(string usrABackOffice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListGestionTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ListGestionTrasladoNoCoberturaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListGestionTrasladoNoCobertura(System.DateTime FechaInicial, System.DateTime FechaFinal, string usrTransac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListGestionTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ListGestionTrasladoNoCoberturaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListGestionTrasladoNoCoberturaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, string usrTransac);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -7162,6 +8273,70 @@ namespace Dime.WSD {
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaGeneralIngresosmatricesAsesorAsync(decimal CuentaCliente) {
             return base.Channel.ListaGeneralIngresosmatricesAsesorAsync(CuentaCliente);
         }
+        
+        public void InsertIngresoTrasladoNoCobertura(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion) {
+            base.Channel.InsertIngresoTrasladoNoCobertura(ingreso, traslado, transaccion);
+        }
+        
+        public System.Threading.Tasks.Task InsertIngresoTrasladoNoCoberturaAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion) {
+            return base.Channel.InsertIngresoTrasladoNoCoberturaAsync(ingreso, traslado, transaccion);
+        }
+        
+        public bool ExisteCuentaEscaladaTrasladoNoCobertura(decimal cuenta) {
+            return base.Channel.ExisteCuentaEscaladaTrasladoNoCobertura(cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ExisteCuentaEscaladaTrasladoNoCoberturaAsync(decimal cuenta) {
+            return base.Channel.ExisteCuentaEscaladaTrasladoNoCoberturaAsync(cuenta);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSolicitudesTrasladoNoCobertura(string Usuario) {
+            return base.Channel.ListaSolicitudesTrasladoNoCobertura(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSolicitudesTrasladoNoCoberturaAsync(string Usuario) {
+            return base.Channel.ListaSolicitudesTrasladoNoCoberturaAsync(Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura> ListaInteraccionesTrasladosNoCobertura(int id) {
+            return base.Channel.ListaInteraccionesTrasladosNoCobertura(id);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura>> ListaInteraccionesTrasladosNoCoberturaAsync(int id) {
+            return base.Channel.ListaInteraccionesTrasladosNoCoberturaAsync(id);
+        }
+        
+        public void ActualizarSolicitudTrasladosNoCobertura(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion) {
+            base.Channel.ActualizarSolicitudTrasladosNoCobertura(ingreso, traslado, transaccion);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarSolicitudTrasladosNoCoberturaAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion) {
+            return base.Channel.ActualizarSolicitudTrasladosNoCoberturaAsync(ingreso, traslado, transaccion);
+        }
+        
+        public bool TransaccionEnGestionTrasladoNoCobertura(int id, string usrABackOffice) {
+            return base.Channel.TransaccionEnGestionTrasladoNoCobertura(id, usrABackOffice);
+        }
+        
+        public System.Threading.Tasks.Task<bool> TransaccionEnGestionTrasladoNoCoberturaAsync(int id, string usrABackOffice) {
+            return base.Channel.TransaccionEnGestionTrasladoNoCoberturaAsync(id, usrABackOffice);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaSeguimientosTrasladoNoCoberturaCelula(string usrABackOffice) {
+            return base.Channel.ListaSeguimientosTrasladoNoCoberturaCelula(usrABackOffice);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaSeguimientosTrasladoNoCoberturaCelulaAsync(string usrABackOffice) {
+            return base.Channel.ListaSeguimientosTrasladoNoCoberturaCelulaAsync(usrABackOffice);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListGestionTrasladoNoCobertura(System.DateTime FechaInicial, System.DateTime FechaFinal, string usrTransac) {
+            return base.Channel.ListGestionTrasladoNoCobertura(FechaInicial, FechaFinal, usrTransac);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListGestionTrasladoNoCoberturaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, string usrTransac) {
+            return base.Channel.ListGestionTrasladoNoCoberturaAsync(FechaInicial, FechaFinal, usrTransac);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -7357,6 +8532,14 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/InsertarSMOInbound", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/InsertarSMOInboundResponse")]
         System.Threading.Tasks.Task InsertarSMOInboundAsync(Telmexla.Servicios.DIME.Entity.SiguienteMejorOferta smo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/RentaActualPorCuentaCalRentas", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/RentaActualPorCuentaCalRentasRespo" +
+            "nse")]
+        Dime.WSD.SmoRentaActual RentaActualPorCuentaCalRentas(string cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/RentaActualPorCuentaCalRentas", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/RentaActualPorCuentaCalRentasRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<Dime.WSD.SmoRentaActual> RentaActualPorCuentaCalRentasAsync(string cuenta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -7416,6 +8599,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task InsertarSMOInboundAsync(Telmexla.Servicios.DIME.Entity.SiguienteMejorOferta smo) {
             return base.Channel.InsertarSMOInboundAsync(smo);
+        }
+        
+        public Dime.WSD.SmoRentaActual RentaActualPorCuentaCalRentas(string cuenta) {
+            return base.Channel.RentaActualPorCuentaCalRentas(cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<Dime.WSD.SmoRentaActual> RentaActualPorCuentaCalRentasAsync(string cuenta) {
+            return base.Channel.RentaActualPorCuentaCalRentasAsync(cuenta);
         }
     }
     

@@ -15,6 +15,7 @@ namespace Telmexla.Servicios.DIME.Entity
         private LiberacionHomePass liberacionHomePass;
         private GestionMatriz gestionMatrices;
         private GestionMatriz gestionMatriz;
+        private TrasladoNoCobertura trasladosNoCobertura;
         public DatoConsultaDirecciones()
         {
             ingresoTraslado = new IngresoTraslado();
@@ -24,6 +25,7 @@ namespace Telmexla.Servicios.DIME.Entity
             liberacionHomePass = new LiberacionHomePass();
             gestionMatrices = new GestionMatriz();
             gestionMatriz = new GestionMatriz();
+            trasladosNoCobertura = new TrasladoNoCobertura();
         }
 
         public IngresoTraslado IngresoTrasladoGetSet
@@ -114,6 +116,19 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 gestionMatriz = value;
+            }
+        }
+
+        public TrasladoNoCobertura TrasladosNoCobertura
+        {
+            get
+            {
+                return trasladosNoCobertura;
+            }
+
+            set
+            {
+                trasladosNoCobertura = value;
             }
         }
     }

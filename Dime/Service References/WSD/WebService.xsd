@@ -986,6 +986,7 @@
       <xs:element minOccurs="0" name="LiberacionHomePass" nillable="true" type="tns:LiberacionHomePass" />
       <xs:element minOccurs="0" name="MaestroNodo" nillable="true" type="tns:MaestroNodo" />
       <xs:element minOccurs="0" name="NotaTrasladoGetSet" nillable="true" type="tns:NotasTraslado" />
+      <xs:element minOccurs="0" name="TrasladosNoCobertura" nillable="true" type="tns:TrasladoNoCobertura" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DatoConsultaDirecciones" nillable="true" type="tns:DatoConsultaDirecciones" />
@@ -1093,6 +1094,28 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MaestroNodo" nillable="true" type="tns:MaestroNodo" />
+  <xs:complexType name="TrasladoNoCobertura">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanalTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DireccionTraslado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estrato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaTransaccion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdTransaccion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreLineaTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Razon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subrazon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoCelular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoFijo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioBackOffice" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioTransaccion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrasladoNoCobertura" nillable="true" type="tns:TrasladoNoCobertura" />
   <xs:complexType name="ArrayOfNotasTraslado">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="NotasTraslado" nillable="true" type="tns:NotasTraslado" />
@@ -1117,6 +1140,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfGestionMatriz" nillable="true" type="tns:ArrayOfGestionMatriz" />
+  <xs:complexType name="ArrayOfTrasladoNoCobertura">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrasladoNoCobertura" nillable="true" type="tns:TrasladoNoCobertura" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTrasladoNoCobertura" nillable="true" type="tns:ArrayOfTrasladoNoCobertura" />
   <xs:complexType name="ArrayOfMaestroNodo">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="MaestroNodo" nillable="true" type="tns:MaestroNodo" />
@@ -1196,6 +1225,75 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SiguienteMejorOferta" nillable="true" type="tns:SiguienteMejorOferta" />
+  <xs:complexType name="SmoRentaActual">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Adultos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Antiguedad" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ArriendoDecos" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CampanaAplicada" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CantidadDecos" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CantidadHd" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CantidadPvr" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ClaroVideo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Clasificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuenta" type="xs:double" />
+      <xs:element minOccurs="0" name="DiferenciaRentas" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Estrato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Excluidos" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="FechaFinCampa" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Fox" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gld" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hbo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomAdicional" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="HomAdu" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="HomCv" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="HomFox" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="HomGld" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="HomHbo" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="HomIp" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="HomPvrHd" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="HomRevista" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="HomTotal" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="HomUfc" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="HomePass" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="IncluyeHd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncluyePvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InclyeClarovideo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ip" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Ot" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Productos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pvr" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RentaAdicional" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RentaAdu" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RentaBasica" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RentaCv" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RentaFox" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RentaHbo" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RentaHd" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RentaHomologada" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="RentaInternet" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RentaOtros" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RentaPvr" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RentaRevista" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RentaTotal" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RentaTv" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="RentaVoz" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Revista" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SrvHd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tarifa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TarifaHomologada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoServicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoTv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ufc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidacionEstrato" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="VariasLineas" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="VelocidadHomologada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VelocidadInternet" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Verificacion" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Voz" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SmoRentaActual" nillable="true" type="tns:SmoRentaActual" />
   <xs:complexType name="BalanceScoreCard">
     <xs:sequence>
       <xs:element minOccurs="0" name="Acdcalls" type="xs:decimal" />
