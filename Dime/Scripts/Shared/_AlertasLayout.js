@@ -9,6 +9,17 @@ $(function Buen_Servicio() {
     $('#Mensaje').focus();
     $.connection.hub.start().done(function () {
         Registra_Eventos(connect, UserConnect2);
+        $("#status").text('Connect');
+    });
+    $.connection.hub.disconnected(function () {
+        $("#status").text('Disconnected');
+        setTimeout(function () {
+            $.connection.hub.start().done(function () {
+                
+                Registra_Eventos(connect, UserConnect2);
+                $("#status").text('Connect');
+            });
+        }, 10000);
     });
 });
 
@@ -64,7 +75,6 @@ function Registra_Eventos(connect) {
         connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
     });
     connect.server.connect(UserConnect2);
-    
 }
 
 function Llama_Metodos(connect, UserConnect) {
