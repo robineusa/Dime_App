@@ -102,23 +102,23 @@
                     </tr>
                     <tr>
                         <td width="30"> &nbsp;</td>
-                        <td width="60"><input type="checkbox" id="cbVoz" /></td>
+                        <td width="60"><input type="radio" id="cbVoz" name="vozCheck" value="SI"/></td>
                         <td width="30">&nbsp;</td>
                         <td width="50">Básica</td>
-                        <td width="50"><input type="checkbox" id="cbTvBasica" name="tvCheck" /></td>
+                        <td width="50"><input type="radio" id="cbTvBasica" name="tvCheck" value="BASICA" /></td>
                         <td width="35">&nbsp;</td>
                         <td width="50">5 MB</td>
-                        <td width="50"><input type="checkbox" id="cb5Mb" /></td>
+                        <td width="50"><input type="radio" id="cb5Mb"  name="interCheck"/></td>
                     </tr>
                     <tr>
                         <td width="30"> &nbsp;</td>
                         <td width="60">&nbsp;</td>
                         <td width="30">&nbsp;</td>
                         <td width="50">Avanzada</td>
-                        <td width="50"><input type="checkbox" id="cbTvAvanzada" name="tvCheck" /></td>
+                        <td width="50"><input type="radio" id="cbTvAvanzada" name="tvCheck" value="AVANZADA" /></td>
                         <td width="35">&nbsp;</td>
                         <td width="50">10 MB</td>
-                        <td width="50"><input type="checkbox" id="cb10Mb" /></td>
+                        <td width="50"><input type="radio" id="cb10Mb" name="interCheck" /></td>
                     </tr>
                     <tr>
                         <td width="30"> &nbsp;</td>
@@ -128,7 +128,7 @@
                         <td width="50">&nbsp;</td>
                         <td width="35">&nbsp;</td>
                         <td width="50">20 MB</td>
-                        <td width="50"><input type="checkbox" id="cb20Mb" /></td>
+                        <td width="50"><input type="radio" id="cb20Mb" name="interCheck" /></td>
                     </tr>
                     <tr>
                         <td width="30"> &nbsp;</td>
@@ -138,7 +138,7 @@
                         <td width="50">&nbsp;</td>
                         <td width="35">&nbsp;</td>
                         <td width="50">50 MB</td>
-                        <td width="50"><input type="checkbox" id="cb50Mb" /></td>
+                        <td width="50"><input type="radio" id="cb50Mb" name="interCheck"/></td>
                     </tr>
                     <tr>
                         <td width="30"> &nbsp;</td>
@@ -148,17 +148,16 @@
                         <td width="50">&nbsp;</td>
                         <td width="35">&nbsp;</td>
                         <td width="50">100 MB</td>
-                        <td width="50"><input type="checkbox" id="cb100Mb" /></td>
+                        <td width="50"><input type="radio" id="cb100Mb" name="interCheck"/></td>
                     </tr>
                 </table>
             </div>
 
             <div class="col-sm-6">
-                <br />
-                <table>
+                  <table>
                     <tr>
                         <td style="padding:2px; width:50px">Tarifa Comparada:</td>
-                           <td width="50"><input type="text" class="form-control input-sm" id="tbTarifaComparada" readonly /></td>
+                           <td style="padding:2px; width:100px"><input type="text" class="form-control input-sm" id="tbTarifaComparada" readonly /></td>
                     </tr>
                     <tr>
                         <td style="padding:2px; width:50px">Incluye HD:</td>
@@ -168,7 +167,10 @@
                         <td style="padding:2px; width:50px">Incluye CV:</td>
                         <td style="padding:2px; width:100px"><input type="text" class="form-control input-sm" id="tbIncluyeCV" readonly /> </td>
                     </tr>
-
+                    <tr>
+                        <td style="padding:2px; width:50px">Incluye PVR:</td>
+                        <td style="padding:2px; width:100px"><input type="text" class="form-control input-sm" id="tbIncluyePVR" readonly /> </td>
+                    </tr>
                 </table>
             </div>
          
@@ -310,7 +312,7 @@
     </script>
     <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
     <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
-    <script src="~/Scripts/Calculadoras/Rentas.js?1.0.1"></script>
+    <script src="~/Scripts/Calculadoras/Rentas.js?1.0.7"></script>
 
 </body>
 </html>

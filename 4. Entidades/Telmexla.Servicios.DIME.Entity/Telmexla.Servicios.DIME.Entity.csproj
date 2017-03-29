@@ -135,6 +135,8 @@
     <Compile Include="TmpMaestroHobbiesCliente.cs" />
     <Compile Include="TraficoTraslado.cs" />
     <Compile Include="TraficoTrasladoCollection.cs" />
+    <Compile Include="TrasladoNoCobertura.cs" />
+    <Compile Include="TrasladoNoCoberturaCollection.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="UsuariosNotificados.cs" />
     <Compile Include="UsuariosXAcceso.cs" />
