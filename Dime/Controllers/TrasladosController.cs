@@ -1399,6 +1399,11 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaSeguimientosTrasladoNoCoberturaCelula(Session["Usuario"].ToString());
             return View(modelo);
         }
+        [HttpGet]
+        public ActionResult ConsultaGestionTrasladoNoCobertura()
+        {
+            return View();
+        }
         [HttpPost]
         public ActionResult ConsultaGestionTrasladoNoCobertura(string fechaInicial, string fechaFinal)
         {
