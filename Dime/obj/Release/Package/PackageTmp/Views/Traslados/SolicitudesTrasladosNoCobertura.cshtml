@@ -1,10 +1,10 @@
-﻿@model List<Telmexla.Servicios.DIME.Entity.MaestroNodo>
+﻿@model List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>
 @{
-    ViewBag.Title = "Lista de Nodos";
-    ViewBag.Subtitle = "Nodos";
+    ViewBag.Title = "Solicitudes Traslado No Cobertura";
+    ViewBag.Subtitle = "Traslados";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@if (Session["Administracion Nodos"] != null)
+@if (Session["Consultas Asesor"] != null || Session["Gestion Traslados Celula"] != null)
 {
     <div class="row">
         <div class="col-md-12">
@@ -12,10 +12,10 @@
                 <div class="box-body">
                     <div class="row">
                         <div class="col-xs-12">
-                            <h2 class="page-header" style="margin-top:25px"><i class="fa fa-navicon"></i> Lista de Nodos Existentes:</h2>
                             <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                                 <div class="box-body">
-                                    <div id="gridViewNodos"></div>
+                                    <br />
+                                    <div id="gridViewDirecciones"></div>
 
                                 </div>
                             </div>
@@ -25,15 +25,20 @@
             </div>
         </div>
     </div>
+
+    @section Scripts{
+        <script>
+        var jsonDireccionesCrear = @Html.Raw(Json.Encode(Model));
+        </script>
+
+        <script src="~/Scripts/Traslados/SolicitudesTrasladosNoCobertura.js?1.0.2"></script>
+    }
 }
 else
 {
     <div class="row">
-
         <div class="box box-primary">
-
             <div class="box-body">
-
                 <div class="row">
                     <div class="col-md-12">
                         <div class="error-page">
@@ -52,11 +57,4 @@ else
         </div>
     </div>
 }
-@section Scripts{
-    <script>
-        @*var jsonMNodos = @Html.Raw(Json.Encode(Model));*@
-        var urlListaKendo = '@Url.Action("ListaNodosCreadosJson", "AdminNodos")';
-    </script>
 
-    <script src="~/Scripts/AdminNodos/ListaNodosCreados.js?1.0.4"></script>
-}
