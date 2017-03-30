@@ -385,6 +385,15 @@
                                         
                                     </ul>
                                 </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-exchange text-green" aria-hidden="true"></i>Traslado No Cobertura<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="@Url.Action("SolicitudesTrasladosNoCobertura", "Traslados")"><i class="fa fa-list-ul" aria-hidden="true"></i>Casos Abiertos</a>
+                                            <a href="@Url.Action("SeguimientosTrasladoNoCobertura", "Traslados")"><i class="fa fa-eye" aria-hidden="true"></i>Seguimientos</a>
+                                        </li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     }
@@ -558,6 +567,7 @@
                                                 <li><a href="@Url.Action("ConsultaAdminIngresosCambioEstrato", "Traslados")"><i class="fa fa-circle-o"></i> Cambio de Estrato</a></li>
                                                 <li><a href="@Url.Action("ConsultaAdminIngresosLiberaciones", "Traslados")"><i class="fa fa-circle-o"></i> Liberaciones de HHPP</a></li>
                                                 <li><a href="@Url.Action("ConsultaAdminIngresosMatrices", "Traslados")"><i class="fa fa-circle-o"></i> Gestión Matrices</a></li>
+                                                <li><a href="@Url.Action("ConsultaAdminIngresosTrasladosNoCobertura", "Traslados")"><i class="fa fa-circle-o"></i> Traslado No Conertura</a></li>
 
                                             </ul>
                                         </li>
@@ -610,6 +620,15 @@
                                         <li>
                                             <a href="@Url.Action("ConsultaClienteMatrices", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Cunsultar Cliente</a>
                                             <a href="@Url.Action("ConsultaGestionMatrices", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa fa-exchange text-green" aria-hidden="true"></i>Traslado No Cobertura<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="@Url.Action("ConsultaClienteTrasladoNoCobertura", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Cunsultar Cliente</a>
+                                            <a href="@Url.Action("ConsultaGestionTrasladoNoCobertura", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
                                         </li>
                                     </ul>
                                 </li>

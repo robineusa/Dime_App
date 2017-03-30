@@ -7244,6 +7244,82 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ITrasladosService_ListaGeneralIngresosTrasladoNoCoberturaAsesor_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ITrasladosService_ListaGeneralIngresosTrasladoNoCoberturaAsesor_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ITrasladosService_ListaGeneralIngresosTrasladoNoCobertura_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ITrasladosService_ListaGeneralIngresosTrasladoNoCobertura_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IMaestroNodoService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -9364,6 +9440,18 @@
   <wsdl:message name="ITrasladosService_ListGestionTrasladoNoCobertura_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListGestionTrasladoNoCoberturaResponse" />
   </wsdl:message>
+  <wsdl:message name="ITrasladosService_ListaGeneralIngresosTrasladoNoCoberturaAsesor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaGeneralIngresosTrasladoNoCoberturaAsesor" />
+  </wsdl:message>
+  <wsdl:message name="ITrasladosService_ListaGeneralIngresosTrasladoNoCoberturaAsesor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaGeneralIngresosTrasladoNoCoberturaAsesorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITrasladosService_ListaGeneralIngresosTrasladoNoCobertura_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaGeneralIngresosTrasladoNoCobertura" />
+  </wsdl:message>
+  <wsdl:message name="ITrasladosService_ListaGeneralIngresosTrasladoNoCobertura_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaGeneralIngresosTrasladoNoCoberturaResponse" />
+  </wsdl:message>
   <wsdl:message name="IMaestroNodoService_InsertarNodo_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertarNodo" />
   </wsdl:message>
@@ -10130,6 +10218,14 @@
     <wsdl:operation name="ListGestionTrasladoNoCobertura">
       <wsdl:input wsaw:Action="http://tempuri.org/ITrasladosService/ListGestionTrasladoNoCobertura" message="tns:ITrasladosService_ListGestionTrasladoNoCobertura_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ITrasladosService/ListGestionTrasladoNoCoberturaResponse" message="tns:ITrasladosService_ListGestionTrasladoNoCobertura_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaGeneralIngresosTrasladoNoCoberturaAsesor">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITrasladosService/ListaGeneralIngresosTrasladoNoCoberturaAsesor" message="tns:ITrasladosService_ListaGeneralIngresosTrasladoNoCoberturaAsesor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITrasladosService/ListaGeneralIngresosTrasladoNoCoberturaAsesorResponse" message="tns:ITrasladosService_ListaGeneralIngresosTrasladoNoCoberturaAsesor_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaGeneralIngresosTrasladoNoCobertura">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITrasladosService/ListaGeneralIngresosTrasladoNoCobertura" message="tns:ITrasladosService_ListaGeneralIngresosTrasladoNoCobertura_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITrasladosService/ListaGeneralIngresosTrasladoNoCoberturaResponse" message="tns:ITrasladosService_ListaGeneralIngresosTrasladoNoCobertura_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IMaestroNodoService">
@@ -12035,6 +12131,28 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_ITrasladosService_ListGestionTrasladoNoCobertura_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaGeneralIngresosTrasladoNoCoberturaAsesor">
+      <soap12:operation soapAction="http://tempuri.org/ITrasladosService/ListaGeneralIngresosTrasladoNoCoberturaAsesor" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ITrasladosService_ListaGeneralIngresosTrasladoNoCoberturaAsesor_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ITrasladosService_ListaGeneralIngresosTrasladoNoCoberturaAsesor_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaGeneralIngresosTrasladoNoCobertura">
+      <soap12:operation soapAction="http://tempuri.org/ITrasladosService/ListaGeneralIngresosTrasladoNoCobertura" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ITrasladosService_ListaGeneralIngresosTrasladoNoCobertura_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ITrasladosService_ListaGeneralIngresosTrasladoNoCobertura_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

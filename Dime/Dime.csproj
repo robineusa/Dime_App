@@ -2917,14 +2917,17 @@
     <Content Include="Scripts\Traslados\ConsultaAdminIngresosLiberaciones.js" />
     <Content Include="Scripts\Traslados\ConsultaAdminIngresosMatrices.js" />
     <Content Include="Scripts\Traslados\ConsultaAdminIngresosTraslados.js" />
+    <Content Include="Scripts\Traslados\ConsultaAdminIngresosTrasladosNoCobertura.js" />
     <Content Include="Scripts\Traslados\ConsultaClienteCambiodeEstrato.js" />
     <Content Include="Scripts\Traslados\ConsultaClienteCreacionDireccion.js" />
     <Content Include="Scripts\Traslados\ConsultaClienteLiberacionHomePass.js" />
     <Content Include="Scripts\Traslados\ConsultaClienteMatrices.js" />
+    <Content Include="Scripts\Traslados\ConsultaClienteTrasladoNoCobertura.js" />
     <Content Include="Scripts\Traslados\ConsultaGestionCambioDeEstrato.js" />
     <Content Include="Scripts\Traslados\ConsultaGestionCreacionDr.js" />
     <Content Include="Scripts\Traslados\ConsultaGestionLiberaciondeHomePass.js" />
     <Content Include="Scripts\Traslados\ConsultaGestionMatrices.js" />
+    <Content Include="Scripts\Traslados\ConsultaGestionTrasladoNoCobertura.js" />
     <Content Include="Scripts\Traslados\ConsultaIngresosTraslados.js" />
     <Content Include="Scripts\Traslados\DireccionesCreadasOutbound.js" />
     <Content Include="Scripts\Traslados\DireccionesCreadasTraslados.js" />
@@ -2933,6 +2936,7 @@
     <Content Include="Scripts\Traslados\GestionarDireccionCelula.js" />
     <Content Include="Scripts\Traslados\GestionarDireccionOutbound.js" />
     <Content Include="Scripts\Traslados\GestionarLiberacionHomePassCelula.js" />
+    <Content Include="Scripts\Traslados\GestionarTrasladoNoCobertura.js" />
     <Content Include="Scripts\Traslados\GestionMatricesCelula.js" />
     <Content Include="Scripts\Traslados\SeguimientosCambioDeEstrato.js" />
     <Content Include="Scripts\Traslados\SeguimientosLiberacionHomePass.js" />
@@ -2940,12 +2944,14 @@
     <Content Include="Scripts\Traslados\SeguimientosSolicitudesCreacionDireccionOutbound.js" />
     <Content Include="Scripts\Traslados\SeguimientosSolicitudesCreacionMatriz.js" />
     <Content Include="Scripts\Traslados\SeguimientosSolicitudesGestionMatrices.js" />
+    <Content Include="Scripts\Traslados\SeguimientosTrasladoNoCobertura.js" />
     <Content Include="Scripts\Traslados\SolicitudCambioDeEstrato.js" />
     <Content Include="Scripts\Traslados\SolicitudCrearDireccion.js" />
     <Content Include="Scripts\Traslados\SolicitudesCambioDeEstrato.js" />
     <Content Include="Scripts\Traslados\SolicitudesCreacionMatrices.js" />
     <Content Include="Scripts\Traslados\SolicitudesGestionMatrices.js" />
     <Content Include="Scripts\Traslados\SolicitudesLiberacionHomePass.js" />
+    <Content Include="Scripts\Traslados\SolicitudesTrasladosNoCobertura.js" />
     <Content Include="Scripts\Traslados\SolicitudLiberacionHomePass.js" />
     <Content Include="Scripts\Traslados\SolicitudMatrices.js" />
     <Content Include="Resources\Documents\Formato_Carga_Masiva_Siriac.xls" />
@@ -3012,9 +3018,6 @@
     <None Include="Service References\WSD\configuration91.svcinfo" />
     <None Include="Service References\WSD\configuration.svcinfo" />
     <Content Include="Service References\WSD\Dime.WSD.SmoRentaActual.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.TrasladoNoCobertura.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\WSD\Reference.svcmap">
@@ -3227,6 +3230,11 @@
     </None>
     <Content Include="Views\Traslados\SolicitudTrasladoNoCobertura.cshtml" />
     <Content Include="Views\Traslados\SolicitudesTrasladosNoCobertura.cshtml" />
+    <Content Include="Views\Traslados\GestionarTrasladoNoCobertura.cshtml" />
+    <Content Include="Views\Traslados\SeguimientosTrasladoNoCobertura.cshtml" />
+    <Content Include="Views\Traslados\ConsultaGestionTrasladoNoCobertura.cshtml" />
+    <Content Include="Views\Traslados\ConsultaAdminIngresosTrasladosNoCobertura.cshtml" />
+    <Content Include="Views\Traslados\ConsultaClienteTrasladoNoCobertura.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

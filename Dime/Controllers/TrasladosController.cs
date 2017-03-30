@@ -1372,7 +1372,7 @@ namespace Dime.Controllers
             modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
             modelo.IngresoTraslado.EstadoTransaccion = modelo.TrasladosNoCoberturaVacia.EstadoTransaccion;
 
-            if (modelo.TrasladosNoCoberturaVacia.Observacion == null || modelo.TrasladosNoCoberturaVacia.Observacion == "") { modelo.TrasladosNoCoberturaVacia.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.NotaTrasladoVacia.Observacion = modelo.NotaTrasladoVacia.Observacion.ToUpper(); }
+            if (modelo.TrasladosNoCoberturaVacia.Observacion == null || modelo.TrasladosNoCoberturaVacia.Observacion == "") { modelo.TrasladosNoCoberturaVacia.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.TrasladosNoCoberturaVacia.Observacion = modelo.TrasladosNoCoberturaVacia.Observacion.ToUpper(); }
 
 
             DateTime fechainiciotransaccion = Convert.ToDateTime(Session["FechaInicial"].ToString());
@@ -1390,7 +1390,7 @@ namespace Dime.Controllers
             return RedirectToAction("SolicitudesTrasladosNoCobertura");
 
         }
-
+        [HttpGet]
         public ActionResult SeguimientosTrasladoNoCobertura()
         {
             trasladowebservice = new WSD.TrasladosServiceClient();
@@ -1399,6 +1399,64 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaSeguimientosTrasladoNoCoberturaCelula(Session["Usuario"].ToString());
             return View(modelo);
         }
+        [HttpGet]
+        public ActionResult ConsultaGestionTrasladoNoCobertura()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ConsultaGestionTrasladoNoCobertura(string fechaInicial, string fechaFinal)
+        {
+            trasladowebservice = new WSD.TrasladosServiceClient();
+            trasladowebservice.ClientCredentials.Authenticate();
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
+            modelo = trasladowebservice.ListGestionTrasladoNoCobertura(FI, FF, Session["Usuario"].ToString());
+            return View(modelo);
+
+        }
+        [HttpGet]
+        public ActionResult ConsultaAdminIngresosTrasladosNoCobertura()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ConsultaAdminIngresosTrasladosNoCobertura(string fechaInicial, string fechaFinal)
+        {
+            trasladowebservice = new WSD.TrasladosServiceClient();
+            trasladowebservice.ClientCredentials.Authenticate();
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
+            modelo = trasladowebservice.ListaGeneralIngresosTrasladoNoCobertura(FI, FF);
+            return View(modelo);
+        }
+        [HttpGet]
+        public ActionResult ConsultaClienteTrasladoNoCobertura()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ConsultaClienteTrasladoNoCobertura(string CuentaCliente)
+        {
+            trasladowebservice = new WSD.TrasladosServiceClient();
+            trasladowebservice.ClientCredentials.Authenticate();
+            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
+            if (CuentaCliente != null && CuentaCliente != "")
+            {
+                modelo = trasladowebservice.ListaGeneralIngresosTrasladoNoCoberturaAsesor(Convert.ToDecimal(CuentaCliente));
+            }
+            else
+            {
+                return RedirectToAction("ConsultaClienteTrasladoNoCobertura");
+            }
+
+            return View(modelo);
+
+        }
+
 
     }
 }
