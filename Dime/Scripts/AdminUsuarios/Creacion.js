@@ -25,7 +25,8 @@
     $('#cedulaCreacion').on("keyup", function (e) {
         var code = e.keyCode || e.which;
         if (code == 13) {
-           $("#consultarUsuario").click();
+            $("#consultarUsuario").click();
+
         }
     })
 

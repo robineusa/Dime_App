@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,7 +70,6 @@ namespace Telmexla.Servicios.DIME.Entity
                 idLinea = value;
             }
         }
-
         public string Contraseña
         {
             get
