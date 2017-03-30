@@ -1265,7 +1265,7 @@ namespace Dime.Controllers
 
                     if (ModelState.IsValid == true)
                     {
-                        if (modelo.TrasladosNoCobertura.Observacion == null || modelo.TrasladosNoCobertura.Observacion == "") { modelo.TrasladosNoCobertura.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.NotaTraslado.Observacion = modelo.NotaTraslado.Observacion.ToUpper(); }
+                        if (modelo.TrasladosNoCobertura.Observacion == null || modelo.TrasladosNoCobertura.Observacion == "") { modelo.TrasladosNoCobertura.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.TrasladosNoCobertura.Observacion = modelo.TrasladosNoCobertura.Observacion.ToUpper(); }
                         modelo.TrasladosNoCobertura.DireccionTraslado = modelo.TrasladosNoCobertura.DireccionTraslado.ToUpper();
                         modelo.TrasladosNoCobertura.Nodo = modelo.TrasladosNoCobertura.Nodo.ToUpper();
 

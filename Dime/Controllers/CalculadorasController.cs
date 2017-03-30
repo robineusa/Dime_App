@@ -67,7 +67,7 @@ namespace Dime.Controllers
         }
 
 
-<<<<<<< HEAD
+
         public JsonResult DatosActualesCliente(string cuenta)
         {
             siembraHdService = new WSD.ActivacionSiembraHDServiceClient();
@@ -79,18 +79,6 @@ namespace Dime.Controllers
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
-=======
-        //public JsonResult DatosActualesCliente(string cuenta)
-        //{
-        //    siembraHdService = new WSD.ActivacionSiembraHDServiceClient();
-        //    siembraHdService.ClientCredentials.Authenticate();
-        //    var result = siembraHdService.RentaActualPorCuentaCalRentas(cuenta);
-        //    return new JsonResult
-        //    {
-        //        Data = JsonConvert.SerializeObject(result),
-        //        JsonRequestBehavior = JsonRequestBehavior.AllowGet
-        //    };
-        //}
->>>>>>> origin/master
+        
     }
 }
