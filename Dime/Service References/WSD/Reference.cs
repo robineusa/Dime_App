@@ -7861,6 +7861,24 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListGestionTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ListGestionTrasladoNoCoberturaResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListGestionTrasladoNoCoberturaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, string usrTransac);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaGeneralIngresosTrasladoNoCoberturaAseso" +
+            "r", ReplyAction="http://tempuri.org/ITrasladosService/ListaGeneralIngresosTrasladoNoCoberturaAseso" +
+            "rResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaGeneralIngresosTrasladoNoCoberturaAsesor(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaGeneralIngresosTrasladoNoCoberturaAseso" +
+            "r", ReplyAction="http://tempuri.org/ITrasladosService/ListaGeneralIngresosTrasladoNoCoberturaAseso" +
+            "rResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaGeneralIngresosTrasladoNoCoberturaAsesorAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaGeneralIngresosTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ListaGeneralIngresosTrasladoNoCoberturaRespo" +
+            "nse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaGeneralIngresosTrasladoNoCobertura(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaGeneralIngresosTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ListaGeneralIngresosTrasladoNoCoberturaRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaGeneralIngresosTrasladoNoCoberturaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8336,6 +8354,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListGestionTrasladoNoCoberturaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, string usrTransac) {
             return base.Channel.ListGestionTrasladoNoCoberturaAsync(FechaInicial, FechaFinal, usrTransac);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaGeneralIngresosTrasladoNoCoberturaAsesor(decimal CuentaCliente) {
+            return base.Channel.ListaGeneralIngresosTrasladoNoCoberturaAsesor(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaGeneralIngresosTrasladoNoCoberturaAsesorAsync(decimal CuentaCliente) {
+            return base.Channel.ListaGeneralIngresosTrasladoNoCoberturaAsesorAsync(CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ListaGeneralIngresosTrasladoNoCobertura(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ListaGeneralIngresosTrasladoNoCobertura(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaGeneralIngresosTrasladoNoCoberturaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ListaGeneralIngresosTrasladoNoCoberturaAsync(FechaInicial, FechaFinal);
         }
     }
     

@@ -1,10 +1,10 @@
 ﻿@model List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>
 @{
-    ViewBag.Title = "Solicitudes Traslado No Cobertura";
+    ViewBag.Title = "Seguimientos Solicitudes Traslado No Cobertura";
     ViewBag.Subtitle = "Traslados";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@if (Session["Consultas Asesor"] != null || Session["Gestion Traslados Celula"] != null)
+@if (Session["Gestion Traslados Celula"] != null)
 {
     <div class="row">
         <div class="col-md-12">
@@ -15,8 +15,7 @@
                             <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                                 <div class="box-body">
                                     <br />
-                                    <div id="gridViewDirecciones"></div>
-
+                                    <div id="gridViewDireccionesSeguimiento"></div>
                                 </div>
                             </div>
                         </div>
@@ -25,13 +24,12 @@
             </div>
         </div>
     </div>
-
     @section Scripts{
         <script>
-        var jsonDireccionesCrear = @Html.Raw(Json.Encode(Model));
+                        var jsonDireccionesCrearSeguimiento = @Html.Raw(Json.Encode(Model));
         </script>
 
-        <script src="~/Scripts/Traslados/SolicitudesTrasladosNoCobertura.js?1.0.2"></script>
+        <script src="~/Scripts/Traslados/SeguimientosTrasladoNoCobertura.js?1.0.4"></script>
     }
 }
 else
@@ -57,4 +55,10 @@ else
         </div>
     </div>
 }
+
+
+
+
+
+
 
