@@ -35,7 +35,10 @@ namespace Dime.Controllers
             if (opcionMando.Equals("ConsultarCreando"))
             {
                 if (loginService.RecibirIdUsuario(model.UsuarioHolos.Cedula) != 0)
+                {
                     ViewBag.UsuarioExiste = "El usuario ya se encuentra registrado en DIME";
+                    ViewBag.Valida2 = "Usuario existente 2";
+                }
                 else
                 {
                     ViewBag.UsuarioExiste = "El usuario no se encuentra registrado en DIME";
@@ -50,7 +53,8 @@ namespace Dime.Controllers
                 ViewBag.SegundaPestañaAbierta = "True";
                 int idUsuario = loginService.RecibirIdUsuario(model.UsuarioHolos.Cedula);
                 if (idUsuario != 0)
-                { 
+                {
+                    ViewBag.Valida = "Usuario existente";
                     model.UsuarioHolos = loginService.ConsultarUsuarioHolos(model.UsuarioHolos.Cedula);
                     model.NombreLinea = loginService.LineaDeUsuario(idUsuario);
                     model.NombrePerfil= loginService.PerfilDeUsuario(idUsuario);
@@ -65,11 +69,15 @@ namespace Dime.Controllers
 
             if (opcionMando.Equals("CrearUsuario"))
             {
-                string[] permisos = model.PermisosOtorgados.Split('-');
-                List<string> listaPermisos = permisos.OfType<string>().ToList();
-                loginService.CrearUsuario(model.IdLinea, model.IdPerfil,model.UsuarioHolos, listaPermisos, model.Contraseña, Session["IdUsuario"].ToString());
-                ViewBag.UsuarioExiste = "Usuario creado exitosamente";
-                model.UsuarioHolos = null;
+                if (model.IdLinea != 0 && model.IdPerfil != 0 && model.Contraseña != "")
+                {
+                    string[] permisos = model.PermisosOtorgados.Split('-');
+                    List<string> listaPermisos = permisos.OfType<string>().ToList();
+                    loginService.CrearUsuario(model.IdLinea, model.IdPerfil, model.UsuarioHolos, listaPermisos, model.Contraseña, Session["IdUsuario"].ToString());
+                    ViewBag.UsuarioExiste = "Usuario creado exitosamente";
+                    model.UsuarioHolos = null;
+                }
+                else { ViewBag.UsuarioExiste = "Debe seleccionar el Perfil, Nombre Line y Contraseña antes de guardar"; }
             }
             if (model.UsuarioHolos == null) {
                  model = new ViewModelAdminUsuario();

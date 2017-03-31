@@ -1,5 +1,7 @@
 ﻿$("#cuentaCliente").on("keyup", function (e) {
-
+    $("#idIngreso").val('');
+    $("#ticketRR").val('');
+    $("#usuarioCreacion").val('');
     var code = e.keyCode || e.which;
     if(code == 13)
     {
@@ -9,7 +11,9 @@
 
 })
 $("#idIngreso").on("keyup", function (e) {
-
+    $("#cuentaCliente").val('');
+    $("#ticketRR").val('');
+    $("#usuarioCreacion").val('');
     var code = e.keyCode || e.which;
     if (code == 13) {
         var dato = $("#idIngreso").val();
@@ -19,7 +23,9 @@ $("#idIngreso").on("keyup", function (e) {
 })
 
 $("#ticketRR").on("keyup", function (e) {
-
+    $("#cuentaCliente").val('');
+    $("#idIngreso").val('');
+    $("#usuarioCreacion").val('');
     var code = e.keyCode || e.which;
     if (code == 13) {
         var dato = $("#ticketRR").val();
@@ -29,7 +35,9 @@ $("#ticketRR").on("keyup", function (e) {
 })
 
 $("#usuarioCreacion").on("keyup", function (e) {
-
+    $("#cuentaCliente").val('');
+    $("#idIngreso").val('');
+    $("#ticketRR").val('');
     var code = e.keyCode || e.which;
     if (code == 13) {
         var dato = $("#usuarioCreacion").val();
@@ -182,6 +190,7 @@ function CargarDatosDeUsuarioCreacion(ccUsuario) {
  }
 
     function ActualizarCaso(e) {
+        
         e.preventDefault();
         var cuentaActual = $("#inputCuenta").val();
         var dataItem = this.dataItem($(e.currentTarget).closest("tr"));

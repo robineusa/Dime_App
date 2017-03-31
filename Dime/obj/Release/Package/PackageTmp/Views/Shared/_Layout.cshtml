@@ -56,7 +56,7 @@
                         <li class="dropdown notifications-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="fa fa-bell-o"></i>
-                                    <span class="label label-warning">10</span>
+                                    <span class="label label-warning"></span>
                                 </a>
                             <ul id="ul_mess_dropdown_menu" class="dropdown-menu">
                                 @*<li id="messHeader" style="text-align: center;" class="header"></li>*@
@@ -69,11 +69,11 @@
                         <li class="dropdown tasks-menu">
                                 <a href="#/dropdown-menu" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="fa fa-flag-o"></i>
-                                    <span class="label label-danger">9</span>
+                                    <span class="label label-danger"></span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li class="header">You have 9 tasks</li>
-                                    <li>
+                                    <li class="header"></li>
+                                    @*<li>
                                             <ul class="menu">
                                                 <li>
                                                     <a href="#">
@@ -128,9 +128,9 @@
                                                     </a>
                                                 </li>
                                             </ul>
-                                        </li>
+                                        </li>*@
                                     <li class="footer">
-                                        <a href="#">View all tasks</a>
+                                        @*<a href="#">View all tasks</a>*@
                                     </li>
                                 </ul>
                             </li>
@@ -385,6 +385,15 @@
                                         
                                     </ul>
                                 </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-exchange text-green" aria-hidden="true"></i>Traslado No Cobertura<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="@Url.Action("SolicitudesTrasladosNoCobertura", "Traslados")"><i class="fa fa-list-ul" aria-hidden="true"></i>Casos Abiertos</a>
+                                            <a href="@Url.Action("SeguimientosTrasladoNoCobertura", "Traslados")"><i class="fa fa-eye" aria-hidden="true"></i>Seguimientos</a>
+                                        </li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     }
@@ -477,7 +486,14 @@
                                         </li>
                                     </ul>
                                 </li>
-                                
+                                <li>
+                                    <a href="#"><i class="fa fa-exchange text-green" aria-hidden="true"></i>Traslado No Cobertura<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="@Url.Action("SolicitudTrasladoNoCobertura", "Traslados")"><i class="fa fa-external-link" aria-hidden="true"></i>Generar Solicitud</a>
+                                        </li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     }
@@ -551,6 +567,7 @@
                                                 <li><a href="@Url.Action("ConsultaAdminIngresosCambioEstrato", "Traslados")"><i class="fa fa-circle-o"></i> Cambio de Estrato</a></li>
                                                 <li><a href="@Url.Action("ConsultaAdminIngresosLiberaciones", "Traslados")"><i class="fa fa-circle-o"></i> Liberaciones de HHPP</a></li>
                                                 <li><a href="@Url.Action("ConsultaAdminIngresosMatrices", "Traslados")"><i class="fa fa-circle-o"></i> Gestión Matrices</a></li>
+                                                <li><a href="@Url.Action("ConsultaAdminIngresosTrasladosNoCobertura", "Traslados")"><i class="fa fa-circle-o"></i> Traslado No Conertura</a></li>
 
                                             </ul>
                                         </li>
@@ -603,6 +620,15 @@
                                         <li>
                                             <a href="@Url.Action("ConsultaClienteMatrices", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Cunsultar Cliente</a>
                                             <a href="@Url.Action("ConsultaGestionMatrices", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa fa-exchange text-green" aria-hidden="true"></i>Traslado No Cobertura<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="@Url.Action("ConsultaClienteTrasladoNoCobertura", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Cunsultar Cliente</a>
+                                            <a href="@Url.Action("ConsultaGestionTrasladoNoCobertura", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -748,6 +774,7 @@
                 <a id="BuenServicioHREF" href="#Buen_Servicio" data-toggle="modal" data-backdrop="static" data-keyboard="false">
                     
                 </a>
+                <p id="status">7</p>
                 @RenderBody()
                 <div class="col-md-3" style="z-index:999; float: left; position: absolute; display:block; left:20%;">
                     <div id="ChatPrivado" style="display:block">
@@ -799,10 +826,10 @@
 
                 </div>
                 <div class="tab-pane" id="control-sidebar-stats-tab">
-                    AQUI LOS SKIN PARA CAMBIAR
+                    
                 </div>
                 <div class="tab-pane" id="control-sidebar-settings-tab">
-                    AQUI PONER ALGO
+                   
                 </div>
             </div>
         </aside>
@@ -1039,7 +1066,7 @@
     <script src="~/ControllersAlr/DepuraCasosCellController.js?1.1.3"></script>
     <script src="~/ControllersAlr/AdminCasosController.js?1.1.6"></script>
     <link href="~/Styles/Elements/Dime2.css?1.0.8" rel="stylesheet" />
-    <script src="~/Scripts/Shared/_AlertasLayout.js?1.1.6"></script>
+    <script src="~/Scripts/Shared/_AlertasLayout.js?1.1.7"></script>
 
     <script>
     var urlCampanasView = '@Url.Action("Campanas","Calculadoras")';
