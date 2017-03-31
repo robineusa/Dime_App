@@ -36,7 +36,8 @@ namespace Dime.Controllers
             model.HobbyOptions.Add(new SelectListItem { Text = "Datos adicionales no cargados", Value = "Datos adicionales no cargados" });
             string createText = "Hello and Welcome" + Environment.NewLine;
             model.LineaDeUsuarioActual = Session["LineaLogeado"].ToString();
-            if (choosenCuenta != null) { model.ClientesTodos.Cuenta = int.Parse(choosenCuenta); RedirectToAction("Index", "Inbound", model); }
+            if (choosenCuenta != null) { model.ModelTipiMarca.IngresoTipMarcacion.IdServicio = 0; model.ClientesTodos.Cuenta = int.Parse(choosenCuenta); RedirectToAction("Index", "Inbound", model); }
+  
             return View(model);
         }
 
@@ -115,7 +116,7 @@ namespace Dime.Controllers
             //model.ModelTipiMarca.IngresoTipMarcacion.Macroproceso = "";
             //model.ModelTipiMarca.IngresoTipMarcacion.Marcacion = "";
             model.ModelTipiMarca = null;
-
+            //model.ModelTipiMarca.IngresoTipMarcacion.IdServicio = 0;
             return View(model);
         }
 

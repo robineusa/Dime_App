@@ -14,7 +14,7 @@ using (Html.BeginForm("AccesosUsuarios", "AdminUsuarios", FormMethod.Post, new {
 
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
-                    <li id="Li1" class="active" style="background-color: #dcdcdc;"><a href="#Datos_Usuario" style="background-color: transparent;" data-toggle="tab">Accesos y Roles</a></li>
+                    <li id="Li1" class="active" style="background-color: #dcdcdc; border-color:#c23321"><a href="#Datos_Usuario" style="background-color: transparent;" data-toggle="tab">Accesos y Roles</a></li>
                     <li id="Li2"><a style="background-color: transparent;" href="#Consulta_Usuario" data-toggle="tab" id="consultaUsuarioTab">Accesos y Roles Masivo</a></li>
                 </ul>
                 <div class="tab-content" style="padding-left:0; padding-top: 0">
@@ -63,7 +63,7 @@ using (Html.BeginForm("AccesosUsuarios", "AdminUsuarios", FormMethod.Post, new {
                                })
                                 </td>
                                 <td style="padding:1px;">
-                                    @Html.TextBoxFor(m => m.UsuarioHolos.Aliado, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Aliado, @readonly = "true" })
+                                    @Html.TextBoxFor(m => m.UsuarioHolos.Aliado, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.Aliado, @readonly = "true", id="Aliado_Actu" })
                                 </td>
                                 <td style="padding:1px;">
                                     @Html.TextBoxFor(m => m.UsuarioHolos.NombreLinea, new { @class = "form-control input-sm", Value = Model.UsuarioHolos.NombreLinea, @readonly = "true" })
@@ -271,8 +271,9 @@ using (Html.BeginForm("AccesosUsuarios", "AdminUsuarios", FormMethod.Post, new {
         var perfilUsuario =  @Html.Raw(Json.Encode(Model.IdPerfil ));
         var lineaUsuario = @Html.Raw(Json.Encode(Model.NombreLinea ));
         var urlPosiblesAccesosDeUsuario = '@Url.Action("PosiblesAccesosDeUsuario", "AdminUsuarios")';
+        //$("#cedulaCreacion").val(0);
         </script>
-        <script src="~/Scripts/AdminUsuarios/Accesos.js?1.1.0"></script>
+        <script src="~/Scripts/AdminUsuarios/Accesos.js?1.1.1"></script>
     }
 }
 else

@@ -43,7 +43,7 @@ namespace Dime.Controllers
                 {
                     ViewBag.UsuarioExiste = "El usuario no se encuentra registrado en DIME";
                     model.UsuarioHolos = loginService.ConsultarUsuarioHolos(model.UsuarioHolos.Cedula);
-                    if (model.UsuarioHolos == null) ViewBag.UsuarioExiste = "El usuario no se encuentra registrado en RR";
+                    if (model.UsuarioHolos == null) ViewBag.UsuarioExiste = "El usuario no se encuentra registrado en HOLOS";
                 }
                   
             }
@@ -140,23 +140,28 @@ namespace Dime.Controllers
 
             if(opcionMando.Equals("ActualizarAcceso"))
             {
-                string[] permisos;
-                List<string> listaPermisos = new List<string>();
-                if (model.PermisosOtorgados!= null)
-                {   permisos = model.PermisosOtorgados.Split('-');
-                    listaPermisos = permisos.OfType<string>().ToList();
-                }
-                int idUsuario = loginService.RecibirIdUsuario(model.UsuarioHolos.Cedula);
-                if (idUsuario != 0)
+                if (model.UsuarioHolos.Aliado != null)
                 {
-                    loginService.ActualizarAccesosUsuario(idUsuario, model.IdPerfil, model.IdLinea, listaPermisos, model.Contraseña, Session["IdUsuario"].ToString());
-                    model = new ViewModelAdminUsuario();
-                    ViewBag.UsuarioExiste = "El usuario ha sido actualizado ";
+                    string[] permisos;
+                    List<string> listaPermisos = new List<string>();
+                    if (model.PermisosOtorgados != null)
+                    {
+                        permisos = model.PermisosOtorgados.Split('-');
+                        listaPermisos = permisos.OfType<string>().ToList();
+                    }
+                    int idUsuario = loginService.RecibirIdUsuario(model.UsuarioHolos.Cedula);
+                    if (idUsuario != 0)
+                    {
+                        loginService.ActualizarAccesosUsuario(idUsuario, model.IdPerfil, model.IdLinea, listaPermisos, model.Contraseña, Session["IdUsuario"].ToString());
+                        model = new ViewModelAdminUsuario();
+                        ViewBag.UsuarioExiste = "El usuario ha sido actualizado ";
+                    }
+                    else
+                    {
+                        ViewBag.UsuarioExiste = "El usuario ingresado no existe ";
+                    }
                 }
-                else
-                {
-                    ViewBag.UsuarioExiste = "El usuario ingresado no existe ";
-                }
+                else { ViewBag.UsuarioExiste = "Consulte primero el usuario "; }
             }
           if (opcionMando.Equals("ActualizarAccesosMasivos"))
             {
@@ -194,23 +199,28 @@ namespace Dime.Controllers
         }
 
 
-        
+
         [HttpGet]
         public JsonResult PosiblesAccesosDeUsuario(int cedUsuario)
         {
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
-            var result = new
+            if (cedUsuario != 0 )
             {
-                accesos = loginService.ListaAccesosDeUsuario(cedUsuario)
-            };
+                loginService = new WSD.LoginServiceClient();
+                loginService.ClientCredentials.Authenticate();
+                var result = new
+                {
+                    accesos = loginService.ListaAccesosDeUsuario(cedUsuario)
+                };
+                return new JsonResult
+                {
+                    Data = JsonConvert.SerializeObject(result),
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                };
+            }
             return new JsonResult
             {
-                Data = JsonConvert.SerializeObject(result),
-                JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
-
 
         
         [HttpGet]

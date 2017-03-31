@@ -355,9 +355,11 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
                                 <tr>
 
                                     <td style="padding:1px;">
-                                        @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.IdServicio, new List<SelectListItem> {new SelectListItem{Text="--Seleccione--", Value="0" },new SelectListItem{Text="TV", Value="1" },
+
+                                        @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.IdServicio, new List<SelectListItem> {new SelectListItem{Text="--Seleccione--", Value="0"  },new SelectListItem{Text="TV", Value="1" },
                                                                                              new SelectListItem{Text="@", Value="2" }, new SelectListItem{Text="VOZ", Value="3" } , new SelectListItem { Text = "TV - VOZ", Value = "4" },
-                                                                                         new SelectListItem { Text = "TV - @", Value = "5" }, new SelectListItem { Text = "VOZ - @", Value = "6" },new SelectListItem { Text = "TV - @ - VOZ", Value = "7" }}, new {@id= "TipiMarca_IngresoTipMarcacion_IdServicio", @class = "form-control input-sm", style = "display:inline" })
+                                                                                         new SelectListItem { Text = "TV - @", Value = "5" }, new SelectListItem { Text = "VOZ - @", Value = "6" },new SelectListItem { Text = "TV - @ - VOZ", Value = "7" }}, 
+                                                                                         new {@id= "TipiMarca_IngresoTipMarcacion_IdServicio", @class = "form-control input-sm", style = "display:inline" })
                                         @if (ViewBag.ErrorTextBoxServicio != null)
                                         {
                                             <label id="avisoNoResultado" style="color:red; display:inline "> @ViewBag.ErrorTextBoxServicio.ToString()</label>
@@ -713,9 +715,13 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
         $("#tbMacroproceso").val('');
         $("#tbMarcacion").val('');
         $("#TipiMarca_Observaciones").val('');
-        //document.getElementById('TipiMarca_IngresoTipMarcacion_IdServicio').value = 1;​​​​​​​​​​
-        //$('#TipiMarca_IngresoTipMarcacion_IdServicio option').attr('selected', 'selected');
-        $("#TipiMarca_IngresoTipMarcacion_IdServicio option").val("0");
+
+        setTimeout(function () {
+            $("#TipiMarca_IngresoTipMarcacion_IdServicio option:first").attr('selected','selected');
+
+        }, 1000);
+  
+        //$('select').val('')
     </script>
 
 
