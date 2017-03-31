@@ -102,13 +102,16 @@
                     </tr>
                     <tr>
                         <td width="30"> &nbsp;</td>
+                        <td width="60" style="display:none"><input id="cbVozNo"  type="radio"  name="vozCheck" value="NO" /></td>
                         <td width="60"><input type="radio" id="cbVoz" name="vozCheck" value="SI"/></td>
                         <td width="30">&nbsp;</td>
                         <td width="50">Básica</td>
+                        <td width="60" style="display:none"><input id="cbTvNO" type="radio" name="tvCheck" value="NO" /></td>
                         <td width="50"><input type="radio" id="cbTvBasica" name="tvCheck" value="BASICA" /></td>
                         <td width="35">&nbsp;</td>
                         <td width="50">5 MB</td>
-                        <td width="50"><input type="radio" id="cb5Mb"  name="interCheck"/></td>
+                        <td width="60" style="display:none"><input id="cbInterNO" type="radio" name="interCheck" value="NO" /></td>
+                        <td width="50"><input type="radio" id="cb5Mb"  name="interCheck"  value="5 MB"/></td>
                     </tr>
                     <tr>
                         <td width="30"> &nbsp;</td>
@@ -118,7 +121,7 @@
                         <td width="50"><input type="radio" id="cbTvAvanzada" name="tvCheck" value="AVANZADA" /></td>
                         <td width="35">&nbsp;</td>
                         <td width="50">10 MB</td>
-                        <td width="50"><input type="radio" id="cb10Mb" name="interCheck" /></td>
+                        <td width="50"><input type="radio" id="cb10Mb" name="interCheck"  value="10 MB"/></td>
                     </tr>
                     <tr>
                         <td width="30"> &nbsp;</td>
@@ -128,7 +131,7 @@
                         <td width="50">&nbsp;</td>
                         <td width="35">&nbsp;</td>
                         <td width="50">20 MB</td>
-                        <td width="50"><input type="radio" id="cb20Mb" name="interCheck" /></td>
+                        <td width="50"><input type="radio" id="cb20Mb" name="interCheck" value="20 MB"/></td>
                     </tr>
                     <tr>
                         <td width="30"> &nbsp;</td>
@@ -138,7 +141,7 @@
                         <td width="50">&nbsp;</td>
                         <td width="35">&nbsp;</td>
                         <td width="50">50 MB</td>
-                        <td width="50"><input type="radio" id="cb50Mb" name="interCheck"/></td>
+                        <td width="50"><input type="radio" id="cb50Mb" name="interCheck" value="50 MB"/></td>
                     </tr>
                     <tr>
                         <td width="30"> &nbsp;</td>
@@ -148,7 +151,7 @@
                         <td width="50">&nbsp;</td>
                         <td width="35">&nbsp;</td>
                         <td width="50">100 MB</td>
-                        <td width="50"><input type="radio" id="cb100Mb" name="interCheck"/></td>
+                        <td width="50"><input type="radio" id="cb100Mb" name="interCheck" value="100 MB"/></td>
                     </tr>
                 </table>
             </div>
@@ -156,8 +159,8 @@
             <div class="col-sm-6">
                   <table>
                     <tr>
-                        <td style="padding:2px; width:50px">Tarifa Comparada:</td>
-                           <td style="padding:2px; width:100px"><input type="text" class="form-control input-sm" id="tbTarifaComparada" readonly /></td>
+                        <td style="padding:2px; width:50px">Tarifa Ofrecida:</td>
+                           <td style="padding:2px; width:100px"><input type="text" class="form-control input-sm" id="tbTarifaOfrecida" readonly /></td>
                     </tr>
                     <tr>
                         <td style="padding:2px; width:50px">Incluye HD:</td>
@@ -192,11 +195,11 @@
                 <table>
                     <tr>
                         <td style="padding:2px; width:100px">Total Decos</td>
-                        <td width="50"><input type="text" class="form-control input-sm" id="tbTotalDecos" readonly /></td>
+                        <td width="50"><input type="text" class="adicionales form-control input-sm" id="tbTotalDecos" readonly /></td>
                     </tr>
                     <tr>
                         <td style="padding:2px; width:100px">Cantidad Decos HD</td>
-                        <td width="50"><input type="text" class="form-control input-sm" id="tbDecosHD" readonly /></td>
+                        <td width="50"><input type="text" class="adicionales form-control input-sm" id="tbDecosHD" readonly /></td>
                     </tr>
                 </table>
                 <br />
@@ -211,44 +214,44 @@
                     </tr>
                     <tr>
                         <td style="padding:2px; width:100px">HBO</td>
-                        <td width="50"><input type="checkbox" id="cbPromoHBO" value="25900" /></td>
+                        <td width="50"><input type="checkbox" id="cbPromoHBO" value="25900" class="adicionales" /></td>
                         <td style="padding:2px; width:100px">$25.900</td>
-                        <td width="50"><input type="checkbox" id="cbPlenaHBO" value="33900" /></td>
+                        <td width="50"><input type="checkbox" id="cbPlenaHBO" value="33900" class="adicionales" /></td>
                         <td style="padding:2px; width:100px">$33.900</td>
                     </tr>
                     <tr>
                         <td style="padding:2px; width:100px">FOX</td>
-                        <td width="50"><input type="checkbox" id="cbPromoFOX" value="25900" /></td>
+                        <td width="50"><input type="checkbox" id="cbPromoFOX" value="25900" class="adicionales" /></td>
                         <td style="padding:2px; width:100px">$25.900</td>
-                        <td width="50"><input type="checkbox" id="cbPlenaFOX" value="30900" /></td>
+                        <td width="50"><input type="checkbox" id="cbPlenaFOX" value="30900" class="adicionales" /></td>
                         <td style="padding:2px; width:100px">$30.900</td>
                     </tr>
                     <tr>
                         <td style="padding:2px; width:100px">UFC</td>
-                        <td width="50"><input type="checkbox" id="cbPromoUFC" value="30900" /></td>
+                        <td width="50"><input type="checkbox" id="cbPromoUFC" value="30900" class="adicionales" /></td>
                         <td style="padding:2px; width:100px">$30.900</td>
-                        <td width="50"><input type="checkbox" id="cbPlenaUFC" value="30900" /></td>
+                        <td width="50"><input type="checkbox" id="cbPlenaUFC" value="30900" class="adicionales" /></td>
                         <td style="padding:2px; width:100px">$30.900</td>
                     </tr>
                     <tr>
                         <td style="padding:2px; width:100px">Golden</td>
-                        <td width="50"><input type="checkbox" id="cbPromoGolden" value="22000" /></td>
+                        <td width="50"><input type="checkbox" id="cbPromoGolden" value="22000" class="adicionales" /></td>
                         <td style="padding:2px; width:100px">$22.000</td>
-                        <td width="50"><input type="checkbox" id="cbPlenaGolden" value="31000" /></td>
+                        <td width="50"><input type="checkbox" id="cbPlenaGolden" value="31000" class="adicionales" /></td>
                         <td style="padding:2px; width:100px">$31.000</td>
                     </tr>
                     <tr>
                         <td style="padding:2px; width:100px">Revista</td>
-                        <td width="50"><input type="checkbox" id="cbPromoRevista" value="3500" /></td>
+                        <td width="50"><input type="checkbox" id="cbPromoRevista" value="3500" class="adicionales" /></td>
                         <td style="padding:2px; width:100px">$3.500</td>
-                        <td width="50"><input type="checkbox" id="cbPlenaRevista" value="3500" /></td>
+                        <td width="50"><input type="checkbox" id="cbPlenaRevista" value="3500" class="adicionales" /></td>
                         <td style="padding:2px; width:100px">$3.500</td>
                     </tr>
                     <tr>
                         <td style="padding:2px; width:100px">HotPack</td>
-                        <td width="50"><input type="checkbox" id="cbPromoHotPack" value="22900" /></td>
+                        <td width="50"><input type="checkbox" id="cbPromoHotPack" value="22900" class="adicionales" /></td>
                         <td style="padding:2px; width:100px">$22.900</td>
-                        <td width="50"><input type="checkbox" id="cbPlenaHotPack" value="30900" /></td>
+                        <td width="50"><input type="checkbox" id="cbPlenaHotPack" value="30900" class="adicionales" /></td>
                         <td style="padding:2px; width:100px">$30.900</td>
                     </tr>
                 </table>
@@ -309,10 +312,11 @@
     <script>
         var consultDatosCuentaDivUrl = "@Url.Action("DatosClientePorCuenta", "Calculadoras")";
         var urlConsultaDatosActuales = "@Url.Action("DatosActualesCliente", "Calculadoras")";
+        var urlConsultaTarifaNueva = "@Url.Action("DatosActualesTarifa", "Calculadoras")";
     </script>
     <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
     <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
-    <script src="~/Scripts/Calculadoras/Rentas.js?1.0.7"></script>
+    <script src="~/Scripts/Calculadoras/Rentas.js?1.0.3/"></script>
 
 </body>
 </html>

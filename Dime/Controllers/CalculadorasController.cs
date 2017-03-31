@@ -67,30 +67,30 @@ namespace Dime.Controllers
         }
 
 
-<<<<<<< HEAD
+
         public JsonResult DatosActualesCliente(string cuenta)
         {
             siembraHdService = new WSD.ActivacionSiembraHDServiceClient();
             siembraHdService.ClientCredentials.Authenticate();
-            //var result = siembraHdService.RentaActualPorCuentaCalRentas(cuenta);
+            var result = siembraHdService.RentaActualPorCuentaCalRentas(cuenta);
             return new JsonResult
             {
-                //Data = JsonConvert.SerializeObject(result),
+                Data = JsonConvert.SerializeObject(result),
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
-=======
-        //public JsonResult DatosActualesCliente(string cuenta)
-        //{
-        //    siembraHdService = new WSD.ActivacionSiembraHDServiceClient();
-        //    siembraHdService.ClientCredentials.Authenticate();
-        //    var result = siembraHdService.RentaActualPorCuentaCalRentas(cuenta);
-        //    return new JsonResult
-        //    {
-        //        Data = JsonConvert.SerializeObject(result),
-        //        JsonRequestBehavior = JsonRequestBehavior.AllowGet
-        //    };
-        //}
->>>>>>> origin/master
+
+        public JsonResult DatosActualesTarifa(string estrato, string voz, string tv, string internet)
+        {
+            siembraHdService = new WSD.ActivacionSiembraHDServiceClient();
+            siembraHdService.ClientCredentials.Authenticate();
+            var result = siembraHdService.TarifaActualDeDatos(estrato,voz,tv,internet);
+            return new JsonResult
+            {
+                Data = JsonConvert.SerializeObject(result),
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
     }
 }
