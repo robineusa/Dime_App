@@ -16,9 +16,9 @@ namespace Dime
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            GlobalHost.Configuration.ConnectionTimeout = TimeSpan.FromSeconds(110);
-            GlobalHost.Configuration.DisconnectTimeout = TimeSpan.FromSeconds(30);
-            GlobalHost.Configuration.KeepAlive = TimeSpan.FromSeconds(10);
+            GlobalHost.Configuration.ConnectionTimeout = TimeSpan.FromDays(110);
+            GlobalHost.Configuration.DisconnectTimeout = TimeSpan.FromDays(30);
+            GlobalHost.Configuration.KeepAlive = TimeSpan.FromDays(10);
 
             //RouteTable.Routes.MapHubs();
         }
