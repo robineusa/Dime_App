@@ -148,5 +148,5 @@ function ActualizarCaso(e) {
     e.preventDefault();
     var cuentaActual = $("#inputCuenta").val();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = '/Inbound/Actualizar?id=' + dataItem.Ingreso.IdIngreso + "&nombMarcacion=" + dataItem.Ingreso.Marcacion;
+    window.location.href = '../Inbound/Actualizar?id=' + dataItem.Ingreso.IdIngreso + "&nombMarcacion=" + dataItem.Ingreso.Marcacion;
 }
