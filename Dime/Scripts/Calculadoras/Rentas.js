@@ -19,7 +19,7 @@ function Rentas()
     ConfigRadioButtonVoz();
     ConfigRadioButtonTV();
     ConfigRadioButtonInternet();
-
+    $('#tbAdicionales').val(0);
 }
 
 function ConfigRadioButtonVoz() {
@@ -91,10 +91,26 @@ function ActualizarParametros()
 
 function CalcularRentaOfrecidaYIncremento()
 {
-    $("#tbRentaOfrecida").val($("#tbAutollenado").val() + $("#tbAdicionales").val());
-    $("#tbRentaOfrecidaRestar").val($("#tbAutollenado").val() + $("#tbAdicionales").val());
-    $('#tbIncremento').val($("#tbRentaOfrecidaRestar").val() - $('#tbRentaActualDos').val());
+    var operacion = (parseInt($("#tbAutollenado").val()) + parseInt($("#tbAdicionales").val()) );
+    $("#tbRentaOfrecida").val(operacion);
+    operacion = (parseInt($("#tbAutollenado").val()) + parseInt($("#tbAdicionales").val()));
+    $("#tbRentaOfrecidaRestar").val(operacion);
+    operacion = (parseInt($("#tbRentaOfrecidaRestar").val()) - parseInt($('#tbRentaActualDos').val()));
+    $('#tbIncremento').val(operacion);
 }
+
+$("input[type=checkbox]").on("click", function () {
+    if ($(this).is(":not(:checked)"))
+    {
+        var resultado = parseInt(($('#tbAdicionales').val() == null) ? 0 : $('#tbAdicionales').val()) - parseInt($(this).val());
+        $('#tbAdicionales').val(resultado);
+    } else {
+        var resultado = parseInt(($('#tbAdicionales').val() == null) ? 0 : $('#tbAdicionales').val()) + parseInt($(this).val());
+        $('#tbAdicionales').val(resultado);
+    }
+        
+    CalcularRentaOfrecidaYIncremento();
+});
 
 
 function ConfigRadioButtonTV()
