@@ -1294,6 +1294,28 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SmoRentaActual" nillable="true" type="tns:SmoRentaActual" />
+  <xs:complexType name="SmoTarifaActual">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodTarifaRes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodTarifaSoho" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estrato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IncluyeHd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IncluyePvr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InclyeClarovideo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreTarifa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Paquete" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Periodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductoPaq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RentaPromocion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RentaTotal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Tarifa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoInternet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoTv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Voz" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SmoTarifaActual" nillable="true" type="tns:SmoTarifaActual" />
   <xs:complexType name="BalanceScoreCard">
     <xs:sequence>
       <xs:element minOccurs="0" name="Acdcalls" type="xs:decimal" />

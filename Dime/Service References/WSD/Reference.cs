@@ -5681,6 +5681,307 @@ namespace Dime.WSD {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SmoTarifaActual", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class SmoTarifaActual : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodTarifaResField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CodTarifaSohoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstratoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IncluyeHdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IncluyePvrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string InclyeClarovideoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreTarifaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PaqueteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PeriodoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductoPaqField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> RentaPromocionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> RentaTotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TarifaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TipoInternetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TipoTvField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VozField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CodTarifaRes {
+            get {
+                return this.CodTarifaResField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodTarifaResField, value) != true)) {
+                    this.CodTarifaResField = value;
+                    this.RaisePropertyChanged("CodTarifaRes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CodTarifaSoho {
+            get {
+                return this.CodTarifaSohoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CodTarifaSohoField, value) != true)) {
+                    this.CodTarifaSohoField = value;
+                    this.RaisePropertyChanged("CodTarifaSoho");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estrato {
+            get {
+                return this.EstratoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstratoField, value) != true)) {
+                    this.EstratoField = value;
+                    this.RaisePropertyChanged("Estrato");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IncluyeHd {
+            get {
+                return this.IncluyeHdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IncluyeHdField, value) != true)) {
+                    this.IncluyeHdField = value;
+                    this.RaisePropertyChanged("IncluyeHd");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string IncluyePvr {
+            get {
+                return this.IncluyePvrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IncluyePvrField, value) != true)) {
+                    this.IncluyePvrField = value;
+                    this.RaisePropertyChanged("IncluyePvr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InclyeClarovideo {
+            get {
+                return this.InclyeClarovideoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InclyeClarovideoField, value) != true)) {
+                    this.InclyeClarovideoField = value;
+                    this.RaisePropertyChanged("InclyeClarovideo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NombreTarifa {
+            get {
+                return this.NombreTarifaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreTarifaField, value) != true)) {
+                    this.NombreTarifaField = value;
+                    this.RaisePropertyChanged("NombreTarifa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Paquete {
+            get {
+                return this.PaqueteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaqueteField, value) != true)) {
+                    this.PaqueteField = value;
+                    this.RaisePropertyChanged("Paquete");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Periodo {
+            get {
+                return this.PeriodoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PeriodoField, value) != true)) {
+                    this.PeriodoField = value;
+                    this.RaisePropertyChanged("Periodo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductoPaq {
+            get {
+                return this.ProductoPaqField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductoPaqField, value) != true)) {
+                    this.ProductoPaqField = value;
+                    this.RaisePropertyChanged("ProductoPaq");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> RentaPromocion {
+            get {
+                return this.RentaPromocionField;
+            }
+            set {
+                if ((this.RentaPromocionField.Equals(value) != true)) {
+                    this.RentaPromocionField = value;
+                    this.RaisePropertyChanged("RentaPromocion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> RentaTotal {
+            get {
+                return this.RentaTotalField;
+            }
+            set {
+                if ((this.RentaTotalField.Equals(value) != true)) {
+                    this.RentaTotalField = value;
+                    this.RaisePropertyChanged("RentaTotal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Tarifa {
+            get {
+                return this.TarifaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TarifaField, value) != true)) {
+                    this.TarifaField = value;
+                    this.RaisePropertyChanged("Tarifa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TipoInternet {
+            get {
+                return this.TipoInternetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TipoInternetField, value) != true)) {
+                    this.TipoInternetField = value;
+                    this.RaisePropertyChanged("TipoInternet");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TipoTv {
+            get {
+                return this.TipoTvField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TipoTvField, value) != true)) {
+                    this.TipoTvField = value;
+                    this.RaisePropertyChanged("TipoTv");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Voz {
+            get {
+                return this.VozField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VozField, value) != true)) {
+                    this.VozField = value;
+                    this.RaisePropertyChanged("Voz");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IWebService")]
     public interface IWebService {
@@ -8574,6 +8875,12 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/RentaActualPorCuentaCalRentas", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/RentaActualPorCuentaCalRentasRespo" +
             "nse")]
         System.Threading.Tasks.Task<Dime.WSD.SmoRentaActual> RentaActualPorCuentaCalRentasAsync(string cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/TarifaActualDeDatos", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/TarifaActualDeDatosResponse")]
+        Dime.WSD.SmoTarifaActual TarifaActualDeDatos(string estrato, string voz, string tv, string internet);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/TarifaActualDeDatos", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/TarifaActualDeDatosResponse")]
+        System.Threading.Tasks.Task<Dime.WSD.SmoTarifaActual> TarifaActualDeDatosAsync(string estrato, string voz, string tv, string internet);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8641,6 +8948,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Dime.WSD.SmoRentaActual> RentaActualPorCuentaCalRentasAsync(string cuenta) {
             return base.Channel.RentaActualPorCuentaCalRentasAsync(cuenta);
+        }
+        
+        public Dime.WSD.SmoTarifaActual TarifaActualDeDatos(string estrato, string voz, string tv, string internet) {
+            return base.Channel.TarifaActualDeDatos(estrato, voz, tv, internet);
+        }
+        
+        public System.Threading.Tasks.Task<Dime.WSD.SmoTarifaActual> TarifaActualDeDatosAsync(string estrato, string voz, string tv, string internet) {
+            return base.Channel.TarifaActualDeDatosAsync(estrato, voz, tv, internet);
         }
     }
     

@@ -6,7 +6,8 @@
         $("#Li1").css("background-color", "#dcdcdc");
         $("#Crear_Usuario").css("display", "block");
         $("#Actualizar_Usuarios_Masivo").css("display", "none");
-        
+        $("#Li2").css("border-color", "transparent");
+        $("#Li1").css("border-color", "#c23321");
     });
 
     $("#Li2").click(function () {
@@ -14,7 +15,8 @@
         $("#Li2").css("background-color", "#dcdcdc");
         $("#Crear_Usuario").css("display", "none");
         $("#Actualizar_Usuarios_Masivo").css("display", "block");
-
+        $("#Li1").css("border-color", "transparent");
+        $("#Li2").css("border-color", "#c23321");
     });
 
 
@@ -70,19 +72,20 @@ function LlenarAccesosDePerfilConsulta() {
             $("#accesosPrivilegiosConsulta").empty();
             var table = document.getElementById("accesosPrivilegiosConsulta");
             var i = 0;
-            do {
+            if ($("#Aliado_Actu").val() != "") {
+                do {
+                    var row = table.insertRow(0);
+                    for (var j = 0; j < 7 && i < data.accesos.length; j++, i++) {
+                        var newCell = row.insertCell(j);
+                        newCell.style.padding = "4px";
 
-                var row = table.insertRow(0);
-                for (var j = 0; j < 7 && i < data.accesos.length; j++, i++) {
-                    var newCell = row.insertCell(j);
-                    newCell.style.padding = "4px";
-                    newCell.innerHTML = '  <label style="font-weight: 400; padding:5px;  border-color: burlywood; background-color:rgba(222, 184, 135, 0.8); width:100%">' +
-                                                       ' <input type="checkbox" class="minimal" checked disabled /> ' + data.accesos[i] +
-                                            '</label>';
-                }
+                        newCell.innerHTML = '  <label style="font-weight: 400; padding:5px;  border-color: burlywood; background-color:rgba(222, 184, 135, 0.8); width:100%">' +
+                                                           ' <input type="checkbox" class="minimal" checked disabled /> ' + data.accesos[i] +
+                                                '</label>';
+                    }
 
-            } while (i < data.accesos.length)
-
+                } while (i < data.accesos.length)
+            }
         }
 
 

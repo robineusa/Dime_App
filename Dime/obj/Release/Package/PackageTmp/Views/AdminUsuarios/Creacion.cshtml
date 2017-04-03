@@ -141,14 +141,18 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:1px;">
-                                        @Html.DropDownListFor(m => m.IdPerfil, new List<SelectListItem>() { new SelectListItem { Text="ADMINISTRADOR", Value="1"}, new SelectListItem { Text = "ASESOR", Value = "2" } ,
-                                                                                                    new SelectListItem { Text = "CÉLULA", Value = "3" } }, "-Seleccione-", new { @class = "form-control input-sm", id = "perfilSelectedCreate", onchange = "TraerPosiblesLineasYAccesosDePerfil()" })
+                                        @Html.DropDownListFor(m => m.IdPerfil, new List<SelectListItem>() { new SelectListItem { Text="-Seleccione-", Value="0"}, new SelectListItem { Text="ADMINISTRADOR", Value="1"}, new SelectListItem { Text = "ASESOR", Value = "2" } ,
+                                                                                                    new SelectListItem { Text = "CÉLULA", Value = "3" } },
+                                                                                                    new { @class = "form-control input-sm", id = "perfilSelectedCreate", onchange = "TraerPosiblesLineasYAccesosDePerfil()" })
+                                        
                                     </td>
                                     <td style="padding:1px;">
-                                        @Html.DropDownListFor(m => m.IdLinea, new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm", id = "lineaSelectCreacion" })
+                                        @Html.DropDownListFor(m => m.IdLinea, new List<SelectListItem>() { }, "-Seleccione-", new { @class = "form-control input-sm", id = "lineaSelectCreacion" })
+                                        
                                     </td>
                                     <td style="padding:1px;">
-                                        @Html.TextBoxFor(m => m.Contraseña, new { @class = "form-control input-sm" })
+                                        @Html.TextBoxFor(m => m.Contraseña, new { @class = "form-control input-sm", id="Contrase" })
+                                        
                                     </td>
                                 </tr>
                             </table>
@@ -318,7 +322,10 @@
                     <div class="box-footer">
                         <button id="consultarUsuarioConsulta" type="submit" name="opcionMando" value="ConsultarConsulta" style="display:none"></button>
                         <button id="consultarUsuario" type="submit" name="opcionMando" value="ConsultarCreando" style="display:none"></button>
-                        <button id="Crear_Usuario" type="submit" class="btn btn-block btn-primary btn-lg" name="opcionMando" value="CrearUsuario" style="width: 10%;margin-left: 1%;">Crear Usuario</button>
+                        @if ((ViewBag.Valida != "Usuario existente") && (ViewBag.Valida2 != "Usuario existente 2") && (ViewBag.UsuarioExiste != "El usuario no se encuentra registrado en RR"))
+                        {
+                            <button id="Crear_Usuario" type="submit" class="btn btn-block btn-primary btn-lg" name="opcionMando" value="CrearUsuario" style="width: 10%;margin-left: 1%;">Crear Usuario</button>
+                        }
 
                     </div>
 
@@ -364,10 +371,17 @@
             var urlPosiblesAccesosDeUsuario = '@Url.Action("PosiblesAccesosDeUsuario", "AdminUsuarios")';
             var urlAccesosUsuariosMasivoHtml  =  '@Url.Action("UsuariosMasivos", "AdminUsuarios")';
             var cedulaUsuario = @Html.Raw(Json.Encode(Model.UsuarioHolos.Cedula));
+            //$("#perfilSelectedCreate option[0]").val("0");
+            $('#perfilSelectedCreate option[1]').removeattr('selected', 'selected');
+            $('#perfilSelectedCreate option[2]').removeattr('selected', 'selected');
+            $('#perfilSelectedCreate option[3]').removeattr('selected', 'selected');
 
+            //$("#lineaSelectCreacion option").val("0");
+            $("#Contrase").val('');
         </script>
-        <script src="~/Scripts/AdminUsuarios/Creacion.js?1.2.8"></script>
-    }
+        <script src="~/Scripts/AdminUsuarios/Creacion.js?1.3.1"></script>
+        
+}
 }
 else
 {

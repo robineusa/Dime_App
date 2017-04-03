@@ -1,78 +1,74 @@
-﻿<div>
-
+﻿
+<section class="content-header">
+    <h1>
+        Consulta Gestión General
+        <small>Consultas Administardor</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i>Consultas Administrador</a></li>
+        <li class="active">Gestion General</li>
+    </ol>
+</section>
+<br />
+<div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
+    <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
+        <div class="row">
+            <div class="col-xs-2">
+                <small>Seleccione Aliado:</small>
+            </div>
+            <div class="col-xs-2">
+                <small>Seleccione Fecha inicial: </small>
+            </div>
+            <div class="col-xs-2">
+                <small>Seleccione Fecha final: </small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-5">
+                <table style="width:100%;">
+                    <tr>
+                        <td style="padding:1px;">
+                            <select class="form-control input-sm" style="width: 80%;" ng-model="selectedAliado" ng-options="x for x in aliados"></select>
+                        </td>
+                        <td style="padding:1px;">
+                            <input kendo-date-picker ng-model="dateIniString" k-ng-model="dateObjectIni" style="width: 100%;" class="form-control input-sm" />
+                            <!-- <pre>
+                               dateString: {{ dateIniString }}
+                               dateObject: {{ dateObjectIni | date:"EEEE, MMMM d, yyyy" }}
+                               typeof dateObject: {{ getType(dateObjectIni) }}
+                               dateObject instanceof Date: {{ isDate(dateObjectIni) }}
+                            </pre>-->
+                        </td>
+                        <td style="padding:1px;">
+                            <input kendo-date-picker ng-model="dateFinString" k-ng-model="dateObjectFin" style="width: 100%;" class="form-control input-sm" ng-change="LoadTable()" />
+                        </td>
+                    </tr>
+                </table>
+                <span><label id="warningLabel" style="color:red"></label></span>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div>
     <div class="row">
-
         <div class="col-md-12">
-            <div class="box box-solid">
-                <div class="box-header with-border">
-                    <h4 class="box-title"> <i class="fa fa-calendar"></i> Rango de Fechas</h4>
-                </div>
+            <div class="box box-danger">
                 <div class="box-body">
-                    <div class="col-md-6" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px; ">
-                        <div class="box-body ">
-                            <table style="margin-bottom: 0px;">
-                                <tr>
-                                    <td style="padding:1px; width:500px;">
-                                        <small>Seleccione Aliado:</small>
-                                    </td>
-                                    <td style="padding:1px; width:200px;">
-                                        <small>Seleccione Fecha inicial: </small>
-                                    </td>
-                                    <td style="padding:1px; width:200px;">
-                                        <small>Seleccione Fecha final: </small>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:1px;">
-                                        <select class="form-control input-sm" style="width: 80%;" ng-model="selectedAliado" ng-options="x for x in aliados" >
-                                        </select>
-                                    </td>
-                                    <td style="padding:1px;">
-                                        <input kendo-date-picker ng-model="dateIniString" k-ng-model="dateObjectIni" style="width: 100%;" class="form-control input-sm" />
-                                        <!-- <pre>
-                                               dateString: {{ dateIniString }}
-                                               dateObject: {{ dateObjectIni | date:"EEEE, MMMM d, yyyy" }}
-                                               typeof dateObject: {{ getType(dateObjectIni) }}
-                                               dateObject instanceof Date: {{ isDate(dateObjectIni) }}
-                                            </pre>-->
-                                    </td>
-                                    <td style="padding:1px;">
-                                        <input kendo-date-picker ng-model="dateFinString" k-ng-model="dateObjectFin" style="width: 100%;" class="form-control input-sm" ng-change="LoadTable()" />
-                                    </td>
-                                </tr>
-                            </table>
-                            <span><label id="warningLabel" style="color:red"></label></span>
-                        </div>
-                    </div>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <div class="row"><br /></div>
-                    <br />
-                    <div class="box box-primary">
-                        <div class="box-body">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <h2><i class="fa fa-search"></i> Resultados de Búsqueda:</h2><br />
-                                    <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
-                                        <div class="box-body">
-                                            <div id="gridViewConsulta"></div>
-                                        </div>
-                                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top:25px"><i class="fa fa-search"></i> Resultados de Búsqueda:</h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <div class="box-body">
+                                    <div id="gridViewConsulta"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
 </div>
 
 

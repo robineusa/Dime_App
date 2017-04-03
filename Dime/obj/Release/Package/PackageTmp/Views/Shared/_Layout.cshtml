@@ -717,6 +717,8 @@
             </section>
         </aside>
         <div class="content-wrapper">
+            @if (ViewBag.Title != null && ViewBag.Title != "")
+            {
             <section class="content-header">
                 <h1>
                     @ViewBag.Title
@@ -727,6 +729,7 @@
                     <li class="active">@ViewBag.Title</li>
                 </ol>
             </section>
+            }
             <section class="content" style="min-height:1500px;">
                 <div class="col-md-4" style="z-index:999; float: left; position: absolute; display:block">
                     <div id="ChatGeneral" style="display:none">
@@ -774,7 +777,7 @@
                 <a id="BuenServicioHREF" href="#Buen_Servicio" data-toggle="modal" data-backdrop="static" data-keyboard="false">
                     
                 </a>
-                <p id="status">7</p>
+                @*<p id="status">7</p>*@
                 @RenderBody()
                 <div class="col-md-3" style="z-index:999; float: left; position: absolute; display:block; left:20%;">
                     <div id="ChatPrivado" style="display:block">
