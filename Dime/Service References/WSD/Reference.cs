@@ -6849,10 +6849,10 @@ namespace Dime.WSD {
     public interface IBlendingService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/TraerMisDatosClienteAutomaticos", ReplyAction="http://tempuri.org/IBlendingService/TraerMisDatosClienteAutomaticosResponse")]
-        Telmexla.Servicios.DIME.Entity.ClientesTodo TraerMisDatosClienteAutomaticos(int idAsesor, string gestionBlendingActual);
+        Telmexla.Servicios.DIME.Entity.ClientesTodo TraerMisDatosClienteAutomaticos(int idAsesor, string gestionBlendingActual, string aliado, string linea);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/TraerMisDatosClienteAutomaticos", ReplyAction="http://tempuri.org/IBlendingService/TraerMisDatosClienteAutomaticosResponse")]
-        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.ClientesTodo> TraerMisDatosClienteAutomaticosAsync(int idAsesor, string gestionBlendingActual);
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.ClientesTodo> TraerMisDatosClienteAutomaticosAsync(int idAsesor, string gestionBlendingActual, string aliado, string linea);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/TraerHistorialConvenioElectroDeAsesor", ReplyAction="http://tempuri.org/IBlendingService/TraerHistorialConvenioElectroDeAsesorResponse" +
             "")]
@@ -6949,10 +6949,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.LogCierreCiclo>> ListaCierresCicloGestionadosAsync(System.DateTime fInicial, System.DateTime fFinal);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/TraerGestionOutboundInfoDeCuenta", ReplyAction="http://tempuri.org/IBlendingService/TraerGestionOutboundInfoDeCuentaResponse")]
-        Telmexla.Servicios.DIME.Entity.GestionOutbound TraerGestionOutboundInfoDeCuenta(int cuenta, string gestion);
+        Telmexla.Servicios.DIME.Entity.GestionOutbound TraerGestionOutboundInfoDeCuenta(int cuenta, string gestion, string aliado, string linea);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/TraerGestionOutboundInfoDeCuenta", ReplyAction="http://tempuri.org/IBlendingService/TraerGestionOutboundInfoDeCuentaResponse")]
-        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GestionOutbound> TraerGestionOutboundInfoDeCuentaAsync(int cuenta, string gestion);
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GestionOutbound> TraerGestionOutboundInfoDeCuentaAsync(int cuenta, string gestion, string aliado, string linea);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/TraerCierreCicloGestionado", ReplyAction="http://tempuri.org/IBlendingService/TraerCierreCicloGestionadoResponse")]
         Telmexla.Servicios.DIME.Entity.CierreCiclo TraerCierreCicloGestionado(int idGestionado);
@@ -6994,12 +6994,12 @@ namespace Dime.WSD {
                 base(binding, remoteAddress) {
         }
         
-        public Telmexla.Servicios.DIME.Entity.ClientesTodo TraerMisDatosClienteAutomaticos(int idAsesor, string gestionBlendingActual) {
-            return base.Channel.TraerMisDatosClienteAutomaticos(idAsesor, gestionBlendingActual);
+        public Telmexla.Servicios.DIME.Entity.ClientesTodo TraerMisDatosClienteAutomaticos(int idAsesor, string gestionBlendingActual, string aliado, string linea) {
+            return base.Channel.TraerMisDatosClienteAutomaticos(idAsesor, gestionBlendingActual, aliado, linea);
         }
         
-        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.ClientesTodo> TraerMisDatosClienteAutomaticosAsync(int idAsesor, string gestionBlendingActual) {
-            return base.Channel.TraerMisDatosClienteAutomaticosAsync(idAsesor, gestionBlendingActual);
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.ClientesTodo> TraerMisDatosClienteAutomaticosAsync(int idAsesor, string gestionBlendingActual, string aliado, string linea) {
+            return base.Channel.TraerMisDatosClienteAutomaticosAsync(idAsesor, gestionBlendingActual, aliado, linea);
         }
         
         public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ConvenioElectronico> TraerHistorialConvenioElectroDeAsesor(int idAsesor) {
@@ -7122,12 +7122,12 @@ namespace Dime.WSD {
             return base.Channel.ListaCierresCicloGestionadosAsync(fInicial, fFinal);
         }
         
-        public Telmexla.Servicios.DIME.Entity.GestionOutbound TraerGestionOutboundInfoDeCuenta(int cuenta, string gestion) {
-            return base.Channel.TraerGestionOutboundInfoDeCuenta(cuenta, gestion);
+        public Telmexla.Servicios.DIME.Entity.GestionOutbound TraerGestionOutboundInfoDeCuenta(int cuenta, string gestion, string aliado, string linea) {
+            return base.Channel.TraerGestionOutboundInfoDeCuenta(cuenta, gestion, aliado, linea);
         }
         
-        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GestionOutbound> TraerGestionOutboundInfoDeCuentaAsync(int cuenta, string gestion) {
-            return base.Channel.TraerGestionOutboundInfoDeCuentaAsync(cuenta, gestion);
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GestionOutbound> TraerGestionOutboundInfoDeCuentaAsync(int cuenta, string gestion, string aliado, string linea) {
+            return base.Channel.TraerGestionOutboundInfoDeCuentaAsync(cuenta, gestion, aliado, linea);
         }
         
         public Telmexla.Servicios.DIME.Entity.CierreCiclo TraerCierreCicloGestionado(int idGestionado) {

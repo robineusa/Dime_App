@@ -754,6 +754,8 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="idAsesor" type="xs:int" />
         <xs:element minOccurs="0" name="gestionBlendingActual" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="aliado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="linea" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -989,6 +991,8 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="cuenta" type="xs:int" />
         <xs:element minOccurs="0" name="gestion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="aliado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="linea" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
