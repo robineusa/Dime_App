@@ -221,9 +221,21 @@
                    }
                });
 
+
                var grid = $("#tablaHistorial").data("kendoGrid");
-               grid.dataSource.sort({ field: "FechaNota", dir: "desc" });
+     
+               var dsSort = [];
+               dsSort.push({ field: "HoraNota", dir: "desc" });
+               grid.dataSource.sort(dsSort);
+               console.log(grid[0]);
            };
+
+
+           function SetEstadoUltimoCaso()
+           {
+
+
+           }
 
 
            function CargarDatoServicioAfectado(json)
