@@ -4630,6 +4630,307 @@ namespace Dime.WSD {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TrasladoNoCobertura", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class TrasladoNoCobertura : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CanalTransaccionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal CuentaClienteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DireccionTrasladoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoTransaccionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstratoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FechaTransaccionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> IdTransaccionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NodoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreLineaTransaccionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ObservacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RazonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SubrazonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TelefonoCelularField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TelefonoFijoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsuarioBackOfficeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsuarioTransaccionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CanalTransaccion {
+            get {
+                return this.CanalTransaccionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CanalTransaccionField, value) != true)) {
+                    this.CanalTransaccionField = value;
+                    this.RaisePropertyChanged("CanalTransaccion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal CuentaCliente {
+            get {
+                return this.CuentaClienteField;
+            }
+            set {
+                if ((this.CuentaClienteField.Equals(value) != true)) {
+                    this.CuentaClienteField = value;
+                    this.RaisePropertyChanged("CuentaCliente");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DireccionTraslado {
+            get {
+                return this.DireccionTrasladoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DireccionTrasladoField, value) != true)) {
+                    this.DireccionTrasladoField = value;
+                    this.RaisePropertyChanged("DireccionTraslado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EstadoTransaccion {
+            get {
+                return this.EstadoTransaccionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoTransaccionField, value) != true)) {
+                    this.EstadoTransaccionField = value;
+                    this.RaisePropertyChanged("EstadoTransaccion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estrato {
+            get {
+                return this.EstratoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstratoField, value) != true)) {
+                    this.EstratoField = value;
+                    this.RaisePropertyChanged("Estrato");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FechaTransaccion {
+            get {
+                return this.FechaTransaccionField;
+            }
+            set {
+                if ((this.FechaTransaccionField.Equals(value) != true)) {
+                    this.FechaTransaccionField = value;
+                    this.RaisePropertyChanged("FechaTransaccion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> IdTransaccion {
+            get {
+                return this.IdTransaccionField;
+            }
+            set {
+                if ((this.IdTransaccionField.Equals(value) != true)) {
+                    this.IdTransaccionField = value;
+                    this.RaisePropertyChanged("IdTransaccion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nodo {
+            get {
+                return this.NodoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NodoField, value) != true)) {
+                    this.NodoField = value;
+                    this.RaisePropertyChanged("Nodo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NombreLineaTransaccion {
+            get {
+                return this.NombreLineaTransaccionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreLineaTransaccionField, value) != true)) {
+                    this.NombreLineaTransaccionField = value;
+                    this.RaisePropertyChanged("NombreLineaTransaccion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Observacion {
+            get {
+                return this.ObservacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ObservacionField, value) != true)) {
+                    this.ObservacionField = value;
+                    this.RaisePropertyChanged("Observacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Razon {
+            get {
+                return this.RazonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RazonField, value) != true)) {
+                    this.RazonField = value;
+                    this.RaisePropertyChanged("Razon");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Subrazon {
+            get {
+                return this.SubrazonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubrazonField, value) != true)) {
+                    this.SubrazonField = value;
+                    this.RaisePropertyChanged("Subrazon");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TelefonoCelular {
+            get {
+                return this.TelefonoCelularField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TelefonoCelularField, value) != true)) {
+                    this.TelefonoCelularField = value;
+                    this.RaisePropertyChanged("TelefonoCelular");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TelefonoFijo {
+            get {
+                return this.TelefonoFijoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TelefonoFijoField, value) != true)) {
+                    this.TelefonoFijoField = value;
+                    this.RaisePropertyChanged("TelefonoFijo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UsuarioBackOffice {
+            get {
+                return this.UsuarioBackOfficeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioBackOfficeField, value) != true)) {
+                    this.UsuarioBackOfficeField = value;
+                    this.RaisePropertyChanged("UsuarioBackOffice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UsuarioTransaccion {
+            get {
+                return this.UsuarioTransaccionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioTransaccionField, value) != true)) {
+                    this.UsuarioTransaccionField = value;
+                    this.RaisePropertyChanged("UsuarioTransaccion");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SmoRentaActual", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
     [System.SerializableAttribute()]
     public partial class SmoRentaActual : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -8106,10 +8407,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaGeneralIngresosmatricesAsesorAsync(decimal CuentaCliente);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/InsertIngresoTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/InsertIngresoTrasladoNoCoberturaResponse")]
-        void InsertIngresoTrasladoNoCobertura(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion);
+        void InsertIngresoTrasladoNoCobertura(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Dime.WSD.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/InsertIngresoTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/InsertIngresoTrasladoNoCoberturaResponse")]
-        System.Threading.Tasks.Task InsertIngresoTrasladoNoCoberturaAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion);
+        System.Threading.Tasks.Task InsertIngresoTrasladoNoCoberturaAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Dime.WSD.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ExisteCuentaEscaladaTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ExisteCuentaEscaladaTrasladoNoCoberturaRespo" +
             "nse")]
@@ -8127,19 +8428,19 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaInteraccionesTrasladosNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ListaInteraccionesTrasladosNoCoberturaRespon" +
             "se")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura> ListaInteraccionesTrasladosNoCobertura(int id);
+        System.Collections.Generic.List<Dime.WSD.TrasladoNoCobertura> ListaInteraccionesTrasladosNoCobertura(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaInteraccionesTrasladosNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ListaInteraccionesTrasladosNoCoberturaRespon" +
             "se")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura>> ListaInteraccionesTrasladosNoCoberturaAsync(int id);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.TrasladoNoCobertura>> ListaInteraccionesTrasladosNoCoberturaAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ActualizarSolicitudTrasladosNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ActualizarSolicitudTrasladosNoCoberturaRespo" +
             "nse")]
-        void ActualizarSolicitudTrasladosNoCobertura(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion);
+        void ActualizarSolicitudTrasladosNoCobertura(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Dime.WSD.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ActualizarSolicitudTrasladosNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/ActualizarSolicitudTrasladosNoCoberturaRespo" +
             "nse")]
-        System.Threading.Tasks.Task ActualizarSolicitudTrasladosNoCoberturaAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion);
+        System.Threading.Tasks.Task ActualizarSolicitudTrasladosNoCoberturaAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Dime.WSD.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/TransaccionEnGestionTrasladoNoCobertura", ReplyAction="http://tempuri.org/ITrasladosService/TransaccionEnGestionTrasladoNoCoberturaRespo" +
             "nse")]
@@ -8593,11 +8894,11 @@ namespace Dime.WSD {
             return base.Channel.ListaGeneralIngresosmatricesAsesorAsync(CuentaCliente);
         }
         
-        public void InsertIngresoTrasladoNoCobertura(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion) {
+        public void InsertIngresoTrasladoNoCobertura(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Dime.WSD.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion) {
             base.Channel.InsertIngresoTrasladoNoCobertura(ingreso, traslado, transaccion);
         }
         
-        public System.Threading.Tasks.Task InsertIngresoTrasladoNoCoberturaAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion) {
+        public System.Threading.Tasks.Task InsertIngresoTrasladoNoCoberturaAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Dime.WSD.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion) {
             return base.Channel.InsertIngresoTrasladoNoCoberturaAsync(ingreso, traslado, transaccion);
         }
         
@@ -8617,19 +8918,19 @@ namespace Dime.WSD {
             return base.Channel.ListaSolicitudesTrasladoNoCoberturaAsync(Usuario);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura> ListaInteraccionesTrasladosNoCobertura(int id) {
+        public System.Collections.Generic.List<Dime.WSD.TrasladoNoCobertura> ListaInteraccionesTrasladosNoCobertura(int id) {
             return base.Channel.ListaInteraccionesTrasladosNoCobertura(id);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura>> ListaInteraccionesTrasladosNoCoberturaAsync(int id) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.TrasladoNoCobertura>> ListaInteraccionesTrasladosNoCoberturaAsync(int id) {
             return base.Channel.ListaInteraccionesTrasladosNoCoberturaAsync(id);
         }
         
-        public void ActualizarSolicitudTrasladosNoCobertura(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion) {
+        public void ActualizarSolicitudTrasladosNoCobertura(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Dime.WSD.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion) {
             base.Channel.ActualizarSolicitudTrasladosNoCobertura(ingreso, traslado, transaccion);
         }
         
-        public System.Threading.Tasks.Task ActualizarSolicitudTrasladosNoCoberturaAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion) {
+        public System.Threading.Tasks.Task ActualizarSolicitudTrasladosNoCoberturaAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Dime.WSD.TrasladoNoCobertura traslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion) {
             return base.Channel.ActualizarSolicitudTrasladosNoCoberturaAsync(ingreso, traslado, transaccion);
         }
         
