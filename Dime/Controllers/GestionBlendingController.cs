@@ -43,7 +43,7 @@ namespace Dime.Controllers
                 if (model.DatosCliente != null)
                 model.GestionOutInfo = blendingServices.TraerGestionOutboundInfoDeCuenta(model.DatosCliente.Cuenta, "CIERRE_CICLO", Session["AliadoLogeado"].ToString(), Session["LineaLogeado"].ToString());
                 model.CierreCicloGestionado = blendingServices.TraerCierreCicloGestionado(Int32.Parse(idaGestionar));
-            }
+            }   
             //Setea que no existen datos cliente si no encuentra nada en la base de datos para gestionar.
             if (model.DatosCliente == null || model.GestionOutInfo == null)
             {
