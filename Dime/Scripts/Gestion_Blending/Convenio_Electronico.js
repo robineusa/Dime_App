@@ -138,7 +138,7 @@ function ShowGridSeguimientos(dataUp) {
 function showGestion(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = '/GestionBlending/Convenio_Electronico?cuentaSeleccionada=' + dataItem.CuentaCliente + "&idConvenioGestionado=" + dataItem.Id;
+    window.location.href = '../GestionBlending/Convenio_Electronico?cuentaSeleccionada=' + dataItem.CuentaCliente + "&idConvenioGestionado=" + dataItem.Id;
     console.log("cosas en gestionar");
     }
 
