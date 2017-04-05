@@ -165,6 +165,10 @@ namespace Dime.Controllers
         {
             inboundService = new WSD.InboundServiceClient();
             inboundService.ClientCredentials.Authenticate();
+            if (model.ModelTipiMarca.Observaciones == null)
+            {
+                model.ModelTipiMarca.Observaciones = "SIN NOTAS";
+            }
             model.ModelTipiMarca.IngresoTipMarcacion.UsuarioUltimaActualizacion = Session["IdUsuario"].ToString(); model.ModelTipiMarca.IngresoTipMarcacion.NombreLineaIngreso = Session["LineaLogeado"].ToString();
             inboundService.ActualizarIngresoInbound( model.ModelTipiMarca.IngresoTipMarcacion, model.ModelTipiMarca.Observaciones, model.ModelTipiMarca.LlamadaCliente, model.ModelTipiMarca.IngresoSoporte);
             var tablaHistorialCaso = inboundService.ListaHistorialCaso(Convert.ToInt32(model.ModelTipiMarca.IngresoTipMarcacion.IdIngreso));
