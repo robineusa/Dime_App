@@ -134,13 +134,12 @@
                        aplicaRechazo: $scope.selectedAplicaRechazo.id,
                        razonRechazo: $scope.razonRechazo,
                        ingresoSoporte: $scope.ingresoSoporte,
-                       razonSoporte: ($scope.Razon.name == null) ? "" : $scope.Razon.name,
-                       subrazon1Soporte: ($scope.Subrazon1.name == null) ? "" : $scope.Subrazon1.name,
-                       subrazon2Soporte: ($scope.Subrazon2.name == null) ? "" : $scope.Subrazon2.name
+                       razonSoporte: ($scope.Razon == null) ? "" : $scope.Razon.name,
+                       subrazon1Soporte: ($scope.Subrazon1 == null) ? "" : $scope.Subrazon1.name,
+                       subrazon2Soporte: ($scope.Subrazon2 == null) ? "" : $scope.Subrazon2.name
                }).then(function (data) {
-          
                    $("#labelMessage").text(data.data);
-
+                   window.location.href = 'CasosCelula/CasosAbiertos';
                });
            };
 

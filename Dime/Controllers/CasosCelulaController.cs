@@ -112,14 +112,14 @@ namespace Dime.Controllers
                 casosCellService.ActualizarIngresoPorCelula(ingreso, aplicaRechazo, razonRechazo, observaciones, ingresoSoporte);
                 return new JsonResult
             {
-                Data = "Datos guardados",
+                Data = "Datos guardados.",
                 JsonRequestBehavior = JsonRequestBehavior.DenyGet
             };
             }catch(Exception e)
             {
                 return new JsonResult
                 {
-                    Data = "Error al guardar los datos con referencia: "+ e.InnerException,
+                    Data = "Error al guardar los datos, verifique sus casos en seguimiento. "+ e.InnerException,
                     JsonRequestBehavior = JsonRequestBehavior.DenyGet
                 };
             }
