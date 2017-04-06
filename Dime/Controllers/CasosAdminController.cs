@@ -56,14 +56,14 @@ namespace Dime.Controllers
                 ingreso.IdEstado = Convert.ToInt32(estadoNuevo);
                 ingreso.UsuarioUltimaActualizacion = Session["IdUsuario"].ToString();
                 ingreso.NombreLineaIngreso = Session["LineaLogeado"].ToString();
-            casosAdminService = new WSD.CasosAdminServiceClient();
-            casosAdminService.ClientCredentials.Authenticate();
-             casosAdminService.ActualizarIngresoPorAdmin(ingreso, notas, cambioHecho);
-            return new JsonResult
-            {
-                Data = JsonConvert.SerializeObject("Actualización realizada"),
-                JsonRequestBehavior = JsonRequestBehavior.DenyGet
-            };
+                casosAdminService = new WSD.CasosAdminServiceClient();
+                casosAdminService.ClientCredentials.Authenticate();
+                casosAdminService.ActualizarIngresoPorAdmin(ingreso, notas, cambioHecho);
+                return new JsonResult
+                {
+                    Data = JsonConvert.SerializeObject("Actualización realizada"),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
             }catch(Exception e)
             {
                 return new JsonResult
@@ -72,7 +72,6 @@ namespace Dime.Controllers
                     JsonRequestBehavior = JsonRequestBehavior.DenyGet
                 };
             }
-
         }
 
 
