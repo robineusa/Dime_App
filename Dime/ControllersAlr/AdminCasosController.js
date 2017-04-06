@@ -93,7 +93,7 @@
                            }).then(function (data) {
                                //$("#labelMessage").text(data.data);
                                alert((data.data).toString());
-                               window.location.href = "../Consultas/ConsultaCasosAbiertos";
+                               window.location.href = "Consultas/ConsultaCasosAbiertos";
                            });
                        } else {
                            if ($scope.cambioHecho == "ESTADO" && $scope.IdEstado.id != 0) {
@@ -107,7 +107,7 @@
                                }).then(function (data) {
                                    //$("#labelMessage").text(data.data);
                                    alert((data.data).toString());
-                                   window.location.href = "../Consultas/ConsultaCasosAbiertos";
+                                   window.location.href = "Consultas/ConsultaCasosAbiertos";
                                });
                            } else {
                                if ($scope.cambioHecho == "USUARIO" && $scope.UsuarioBackoffice.id != 0) {
@@ -121,7 +121,7 @@
                                    }).then(function (data) {
                                        //$("#labelMessage").text(data.data);
                                        alert((data.data).toString());
-                                       window.location.href = "../Consultas/ConsultaCasosAbiertos";
+                                       window.location.href = "Consultas/ConsultaCasosAbiertos";
                                    });
                                } else { alert("Seleccione una Célula, UsuarioBack o Estado según corresponda"); }
                            }
