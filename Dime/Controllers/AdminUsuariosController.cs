@@ -69,15 +69,18 @@ namespace Dime.Controllers
 
             if (opcionMando.Equals("CrearUsuario"))
             {
-                if (model.IdLinea != 0 && model.IdPerfil != 0 && model.Contraseña != "")
+                if (model.UsuarioHolos.Aliado != null && model.UsuarioHolos.Cedula != 0)
                 {
-                    string[] permisos = model.PermisosOtorgados.Split('-');
-                    List<string> listaPermisos = permisos.OfType<string>().ToList();
-                    loginService.CrearUsuario(model.IdLinea, model.IdPerfil, model.UsuarioHolos, listaPermisos, model.Contraseña, Session["IdUsuario"].ToString());
-                    ViewBag.UsuarioExiste = "Usuario creado exitosamente";
-                    model.UsuarioHolos = null;
-                }
-                else { ViewBag.UsuarioExiste = "Debe seleccionar el Perfil, Nombre Line y Contraseña antes de guardar"; }
+                    if (model.IdLinea != 0 && model.IdPerfil != 0 && model.Contraseña != "")
+                    {
+                        string[] permisos = model.PermisosOtorgados.Split('-');
+                        List<string> listaPermisos = permisos.OfType<string>().ToList();
+                        loginService.CrearUsuario(model.IdLinea, model.IdPerfil, model.UsuarioHolos, listaPermisos, model.Contraseña, Session["IdUsuario"].ToString());
+                        ViewBag.UsuarioExiste = "Usuario creado exitosamente";
+                        model.UsuarioHolos = null;
+                    }
+                    else { ViewBag.UsuarioExiste = "Debe seleccionar el Perfil, Nombre Line y Contraseña antes de guardar"; }
+                } else { ViewBag.UsuarioExiste = "Debe consultar primero el usuario a crear"; }
             }
             if (model.UsuarioHolos == null) {
                  model = new ViewModelAdminUsuario();
