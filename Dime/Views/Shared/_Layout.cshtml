@@ -409,7 +409,7 @@
                     }
                     @if (Session["Gestion Blending"] != null)
                     {
-                        <li id="left-sidebar-menu-multilevel" class="treeview">
+                        /*<li id="left-sidebar-menu-multilevel" class="treeview">
                             <a href="#">
                                 <i class="fa fa-th-large text-green"></i> <span>Gestiones Blending</span><i class="fa fa-angle-left pull-right"></i>
                             </a>
@@ -434,7 +434,7 @@
                                     <li><a href="@Url.Action("Docsis", "GestionBlending")"><i class="fa fa-circle-o"></i> Docsis Overlap</a></li>}
                             </ul>
 
-                        </li>
+                        </li>*/
                     }
                     @if (Session["Gestion Traslados"] != null)
                     {
@@ -789,9 +789,9 @@
                     <a href="#prorrateos" onclick="return LlamarCalculosProrrateos()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
                         <div id="Calculadora4" class="icono_carrete_8"></div>
                     </a>
-                    <a href="#rentas" onclick="return LlamarCalculosRentas()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                    @*<a href="#rentas" onclick="return LlamarCalculosRentas()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
                         <div id="Calculadora5" class="icono_carrete_9"></div>
-                    </a>
+                    </a>*@
                     <a href="http://comunidadvirtual.claro.com.co" target="_blank">
                         <div class="icono_carrete_2"></div>
                     </a>
