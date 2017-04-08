@@ -151,7 +151,7 @@ function ShowGridSeguimientos(dataUp) {
 function showGestion(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = '/GestionBlending/Cierre_Ciclo?cuentaSeleccionada=' + dataItem.Cuenta + "&idaGestionar=" + dataItem.Id;
+    window.location.href = '../GestionBlending/Cierre_Ciclo?cuentaSeleccionada=' + dataItem.Cuenta + "&idaGestionar=" + dataItem.Id;
 
 }
 

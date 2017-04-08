@@ -24,30 +24,37 @@
                                                     <td width="200" style="padding:1px;">
                                                         <small>Id Nodo:</small>
                                                         @Html.TextBoxFor(m => m.MaestroNodo.IdNodo, null, new { id = "nodo", @class = "form-control input-sm", @readonly = "true" })
+                                                        @Html.ValidationMessageFor(m => m.MaestroNodo.IdNodo, "", new { @class = "text-danger" })
                                                     </td>
                                                     <td width="200" style="padding:1px;">
                                                         <small>Nodo:</small>
                                                         @Html.TextBoxFor(m => m.MaestroNodo.Nodo, null, new { id = "nodo", @class = "form-control input-sm" })
+                                                        @Html.ValidationMessageFor(m => m.MaestroNodo.Nodo, "", new { @class = "text-danger" })
                                                     </td>
                                                     <td width="200" style="padding:1px;">
                                                         <small>Nombre Nodo:</small>
                                                         @Html.TextBoxFor(m => m.MaestroNodo.NombreNodo, null, new { id = "nombrenodo", @class = "form-control input-sm" })
+                                                        @Html.ValidationMessageFor(m => m.MaestroNodo.NombreNodo, "", new { @class = "text-danger" })
                                                     </td>
                                                     <td width="200" style="padding:1px;">
                                                         <small>Div:</small>
                                                         @Html.TextBoxFor(m => m.MaestroNodo.Div, null, new { id = "div", @class = "form-control input-sm" })
+                                                        @Html.ValidationMessageFor(m => m.MaestroNodo.Div, "", new { @class = "text-danger" })
                                                     </td>
                                                     <td width="200" style="padding:1px;">
                                                         <small>Com:</small>
                                                         @Html.TextBoxFor(m => m.MaestroNodo.Com, null, new { id = "com", @class = "form-control input-sm" })
+                                                        @Html.ValidationMessageFor(m => m.MaestroNodo.Com, "", new { @class = "text-danger" })
                                                     </td>
                                                     <td width="200" style="padding:1px;">
                                                         <small>Divisional:</small>
                                                         @Html.TextBoxFor(m => m.MaestroNodo.Divisional, null, new { id = "divisional", @class = "form-control input-sm" })
+                                                        @Html.ValidationMessageFor(m => m.MaestroNodo.Divisional, "", new { @class = "text-danger" })
                                                     </td>
                                                     <td width="200" style="padding:1px;">
                                                         <small>Area:</small>
                                                         @Html.TextBoxFor(m => m.MaestroNodo.Area, null, new { id = "area", @class = "form-control input-sm" })
+                                                        @Html.ValidationMessageFor(m => m.MaestroNodo.Area, "", new { @class = "text-danger" })
                                                     </td>
 
                                                 </tr>
@@ -55,32 +62,38 @@
                                                     <td width="200" style="padding:1px;">
                                                         <small>Distrito:</small>
                                                         @Html.TextBoxFor(m => m.MaestroNodo.Distrito, null, new { id = "distrito", @class = "form-control input-sm" })
+                                                        @Html.ValidationMessageFor(m => m.MaestroNodo.Distrito, "", new { @class = "text-danger" })
                                                     </td>
                                                     <td width="200" style="padding:1px;">
                                                         <small>Ugestion:</small>
                                                         @Html.TextBoxFor(m => m.MaestroNodo.Ugestion, null, new { id = "ugestion", @class = "form-control input-sm" })
+                                                        @Html.ValidationMessageFor(m => m.MaestroNodo.Ugestion, "", new { @class = "text-danger" })
                                                     </td>
                                                     <td width="200" style="padding:1px;">
                                                         <small>Estado:</small>
                                                         @Html.DropDownListFor(m => m.MaestroNodo.Estado, new List<SelectListItem> {new SelectListItem{Text="ACT", Value="ACT" },
-                                                                                             new SelectListItem{Text="NACT", Value="NACT" }},
-                                                                        "--SELECCIONE--", new { @class = "form-control input-sm" })
+                                                                                             new SelectListItem{Text="NACT", Value="NACT" }}, "--SELECCIONE--", new { @class = "form-control input-sm" })
+                                                        @Html.ValidationMessageFor(m => m.MaestroNodo.Estado, "", new { @class = "text-danger" })
                                                     </td>
                                                     <td width="200" style="padding:1px;">
                                                         <small>Red:</small>
                                                         @Html.TextBoxFor(m => m.MaestroNodo.Red, null, new { id = "red", @class = "form-control input-sm" })
+                                                        @Html.ValidationMessageFor(m => m.MaestroNodo.Red, "", new { @class = "text-danger" })
                                                     </td>
                                                     <td width="200" style="padding:1px;">
                                                         <small>Aliado:</small>
                                                         @Html.TextBoxFor(m => m.MaestroNodo.Aliado, null, new { id = "aliado", @class = "form-control input-sm" })
+                                                        @Html.ValidationMessageFor(m => m.MaestroNodo.Aliado, "", new { @class = "text-danger" })
                                                     </td>
                                                     <td width="200" style="padding:1px;">
                                                         <small>Nombre Comunidad:</small>
                                                         @Html.TextBoxFor(m => m.MaestroNodo.NombreComunidad, null, new { id = "comunidad", @class = "form-control input-sm" })
+                                                        @Html.ValidationMessageFor(m => m.MaestroNodo.NombreComunidad, "", new { @class = "text-danger" })
                                                     </td>
                                                     <td width="200" style="padding:1px;">
                                                         <small>Departamento:</small>
                                                         @Html.TextBoxFor(m => m.MaestroNodo.Departamento, null, new { id = "departamento", @class = "form-control input-sm" })
+                                                        @Html.ValidationMessageFor(m => m.MaestroNodo.Departamento, "", new { @class = "text-danger" })
                                                     </td>
                                                 </tr>
                                             </table>
@@ -96,7 +109,10 @@
             </div>
         </div>
         </div>
+        @section Scripts{
+            @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
 
+        }
     }
     else
     {

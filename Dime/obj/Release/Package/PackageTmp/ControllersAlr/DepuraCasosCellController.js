@@ -134,13 +134,12 @@
                        aplicaRechazo: $scope.selectedAplicaRechazo.id,
                        razonRechazo: $scope.razonRechazo,
                        ingresoSoporte: $scope.ingresoSoporte,
-                       razonSoporte: $scope.Razon.name,
-                       subrazon1Soporte: $scope.Subrazon1.name,
-                       subrazon2Soporte: $scope.Subrazon2.name
+                       razonSoporte: ($scope.Razon == null) ? "" : $scope.Razon.name,
+                       subrazon1Soporte: ($scope.Subrazon1 == null) ? "" : $scope.Subrazon1.name,
+                       subrazon2Soporte: ($scope.Subrazon2 == null) ? "" : $scope.Subrazon2.name
                }).then(function (data) {
-          
                    $("#labelMessage").text(data.data);
-
+                   window.location.href = 'CasosCelula/CasosAbiertos';
                });
            };
 
@@ -222,9 +221,21 @@
                    }
                });
 
+
                var grid = $("#tablaHistorial").data("kendoGrid");
-               grid.dataSource.sort({ field: "FechaNota", dir: "desc" });
+     
+               var dsSort = [];
+               dsSort.push({ field: "HoraNota", dir: "desc" });
+               grid.dataSource.sort(dsSort);
+               console.log(grid[0]);
            };
+
+
+           function SetEstadoUltimoCaso()
+           {
+
+
+           }
 
 
            function CargarDatoServicioAfectado(json)

@@ -1140,12 +1140,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfGestionMatriz" nillable="true" type="tns:ArrayOfGestionMatriz" />
-  <xs:complexType name="ArrayOfTrasladoNoCobertura">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrasladoNoCobertura" nillable="true" type="tns:TrasladoNoCobertura" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTrasladoNoCobertura" nillable="true" type="tns:ArrayOfTrasladoNoCobertura" />
   <xs:complexType name="ArrayOfMaestroNodo">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="MaestroNodo" nillable="true" type="tns:MaestroNodo" />

@@ -136,7 +136,7 @@ function ShowGridSeguimientos(dataUp) {
 function showGestion(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = '/GestionBlending/Claro_Video?cuentaSeleccionada=' + dataItem.CuentaCliente + "&idaGestionar=" + dataItem.Id;
+    window.location.href = '../GestionBlending/Claro_Video?cuentaSeleccionada=' + dataItem.CuentaCliente + "&idaGestionar=" + dataItem.Id;
 
 }
 

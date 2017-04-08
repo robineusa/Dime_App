@@ -131,7 +131,7 @@ function TraerFormTipificacion() {
 
 
 function ActivarBuscarPorCedula() {
-    $("#modalActivar").click();
+    $("#modalActivarCuenta").click();
 
     $.ajax({
         type: "GET",

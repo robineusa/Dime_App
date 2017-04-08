@@ -37,8 +37,11 @@ function VerificarEstadoCaso()
             $("#linkModalAdvertencia").click();
             $("#submitDatos").prop("disabled", false);
             $("#keyMarcacion").prop("disabled", true);
-            $("#ddState").val("3");
-            $("#ddState").prop("disabled", true);
+            var x = document.getElementById("ddState");
+            x.remove(0);
+            var y = document.getElementById("ddState");
+            y.remove(0);
+            
             $("#ddEscalar").prop("disabled", true);
             $("#ddEscalar").val("NULL");
         }

@@ -1,4 +1,6 @@
-﻿$(document).ready(function () {
+﻿
+
+$(document).ready(function () {
     $.datetimepicker.setLocale('es');
     $('#Fecha_Inicial').datetimepicker({
         format: 'Y-m-d',
@@ -78,7 +80,16 @@ function CambiarAEstado(data) {
 
 
 function ShowGridGestiones(data) {
+    function cambiarfechas() {
+        for (var i = 0; i < data.length; i++) {
+            data[i].FechaInteraccion = kendo.toString(kendo.parseDate(data[i].FechaInteraccion, 'yyyy-MM-dd'), 'yyyy-MM-dd');
+            //data[i].HoraInteraccion = kendo.toString(kendo.parseDate(data[i].HoraInteraccion, 'yyyy-MM-dd HH:mm:ss'), 'HH:mm:ss');
+        }
 
+    }
+    if (data != null) {
+        cambiarfechas();
+    }
 
     $("#gridViewConsulta").kendoGrid({
         autoBind: true,
@@ -112,8 +123,30 @@ function ShowGridGestiones(data) {
             refresh: true,
             pageSizes: true,
             buttonCount: 5
-        }
-
+        },
+        columns: [
+            { field: "AliadoApertura", title: "Aliado", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Area", title: "Area", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "CuentaCliente", title: "Cuenta", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Distrito", title: "Distrito", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Division", title: "Division", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Estado", title: "Estado", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "FechaInteraccion", title: "Fecha Interaccion", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "HoraInteraccion", title: "Hora Interaccion", width: 80, template: "#= kendo.toString(kendo.parseDate(data.HoraInteraccion, 'yyyy-MM-dd HH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", headerAttributes: { style: "white-space: normal" } },
+            { field: "LlamadaCliente", title: "Llamada Cliente", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Macroproceso", title: "Macroproceso", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Marcacion", title: "Marcacion", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Nodo", title: "Nodo", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "NombreComunidad", title: "Nombre Comunidad", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "NombreLineaNota", title: "Nombre LineaNota", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "NombreUsuarioNota", title: "Nombre UsuarioNota", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Nota", title: "Nota", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "RolUsuarioNota", title: "Rol Usuario Nota", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Ticket", title: "Ticket", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "UsuarioNota", title: "Usuario Nota", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Zona", title: "Zona", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "IdEstado", title: "Estado", width: 80, headerAttributes: { style: "white-space: normal" } },
+        ]
     });
 
 

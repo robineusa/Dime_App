@@ -109,6 +109,7 @@ namespace Dime.Controllers
             casosCellService = new WSD.CasosCelulaServiceClient();
             casosCellService.ClientCredentials.Authenticate();
             ingreso.UsuarioApertura = Session["IdUsuario"].ToString(); ingreso.AliadoApertura = Session["AliadoLogeado"].ToString(); ingreso.NombreLineaIngreso = Session["LineaLogeado"].ToString();
+                ingreso.UsuarioUltimaActualizacion = Session["IdUsuario"].ToString();
                 casosCellService.ActualizarIngresoPorCelula(ingreso, aplicaRechazo, razonRechazo, observaciones, ingresoSoporte);
                 return new JsonResult
             {

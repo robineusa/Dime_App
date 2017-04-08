@@ -116,8 +116,8 @@ function ShowGridGestiones(data) {
            { field: "Ingreso.NombreLineaIngreso", title: "Linea Ingreso", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "Ingreso.NombreLineaEscalado", title: "Linea Escalado", width: 80, headerAttributes: { style: "white-space: normal" } },
              { field: "Ingreso.AliadoApertura", title: "Aliado Apertura", width: 80, headerAttributes: { style: "white-space: normal" } },
-            { field: "Ingreso.HoraApertura", title: "Fecha Apertura", width: 100, template: "#= kendo.toString(kendo.parseDate(Ingreso.HoraApertura, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", headerAttributes: { style: "white-space: normal" } },
-             { field: "Ingreso.FechaCierre", title: "Fecha Cierre", width: 100, template: "#= kendo.toString(kendo.parseDate(Ingreso.FechaCierre, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", headerAttributes: { style: "white-space: normal" } },
+            { field: "Ingreso.HoraApertura", title: "Fecha Apertura", width: 100, template: "#= kendo.toString(kendo.parseDate(Ingreso.HoraApertura, 'yyyy-MM-dd HH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", headerAttributes: { style: "white-space: normal" } },
+             { field: "Ingreso.FechaCierre", title: "Fecha Cierre", width: 100, template: "#= kendo.toString(kendo.parseDate(Ingreso.FechaCierre, 'yyyy-MM-dd HH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", headerAttributes: { style: "white-space: normal" } },
                   { field: "Ingreso.UsuarioApertura", title: "Usuario Apertura", width: 80, headerAttributes: { style: "white-space: normal" } },
                 { field: "Ingreso.UsuarioCierre", title: "Usuario Cierre", width: 80, headerAttributes: { style: "white-space: normal" } },
                     { field: "Ingreso.HoraUltimaActualizacion", title: "Fecha Ultima Actualización", width: 100, template: "#= kendo.toString(kendo.parseDate(Ingreso.HoraUltimaActualizacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", headerAttributes: { style: "white-space: normal" } },
@@ -148,5 +148,5 @@ function ActualizarCaso(e) {
     e.preventDefault();
     var cuentaActual = $("#inputCuenta").val();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = '/Inbound/Actualizar?id=' + dataItem.Ingreso.IdIngreso + "&nombMarcacion=" + dataItem.Ingreso.Marcacion;
+    window.location.href = '../Inbound/Actualizar?id=' + dataItem.Ingreso.IdIngreso + "&nombMarcacion=" + dataItem.Ingreso.Marcacion;
 }
