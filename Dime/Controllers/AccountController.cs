@@ -32,6 +32,8 @@ namespace Dime.Controllers
 
         public AccountController()
         {
+            loginService = new WSD.LoginServiceClient();
+            loginService.ClientCredentials.Authenticate();
         }
 
 
@@ -44,8 +46,6 @@ namespace Dime.Controllers
         [AllowAnonymous]
         public PartialViewResult ObtenerRecordarContra(string cedula)
         {
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
             List<string> preguntasIngreso;
             decimal temp;
             decimal? cedulaDecimal = decimal.TryParse(cedula, out temp) ? temp : default(decimal?);
@@ -75,8 +75,7 @@ namespace Dime.Controllers
         [AllowAnonymous]
         public PartialViewResult RestablecerContraseña(List<string> respuestas, string id)
         {
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
+
             int idUsuario = int.Parse(id);
             if ( idUsuario != 0)
             {
@@ -107,8 +106,7 @@ namespace Dime.Controllers
         [AllowAnonymous]
         public PartialViewResult RegistrarNuevaContraseña(string contrasena, string id)
         {
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
+ 
             int idUsuario = int.Parse(id);
             if (idUsuario != 0)
             {
@@ -135,8 +133,7 @@ namespace Dime.Controllers
         [AllowAnonymous]
         public PartialViewResult SRegistroPreguntasDesbloqueo(string idUsuario, string datosFullUsuario, string sesionUsuario)
         {
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
+
             List<PreguntasDesbloqueo> opcionesPreguntas = loginService.ObtenerPosiblesPreguntas();
             List<SelectListItem> selectItems = new List<SelectListItem>();
             ViewBag.IdUsuario = idUsuario;
@@ -155,8 +152,6 @@ namespace Dime.Controllers
         [AllowAnonymous]
         public ActionResult SRegistroPreguntasDesbloqueoConfirmation(List<string> respuestas, List<string> preguntas,  string idUsuario, string datosFullUsuario, string sesionUsuario )
         {
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
             List<PreguntasDesbloqueo> preguntasDesbloqueo = new List<PreguntasDesbloqueo>();
             foreach (var item in preguntas)
             { preguntasDesbloqueo.Add(new PreguntasDesbloqueo() { Id = Convert.ToInt32(item) });
@@ -196,8 +191,6 @@ namespace Dime.Controllers
         [HttpGet]
         public JsonResult UnlockScreen(string cedula, string contra)
         {
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
             Usuario usuario = new Usuario();
             usuario.Id = (int)loginService.RecibirIdUsuario(Convert.ToDecimal(cedula));
             usuario.Cedula = Convert.ToDecimal(cedula);
@@ -238,8 +231,6 @@ namespace Dime.Controllers
 
             if (mUsuario.Cedula != null && mUsuario.Contrasena != null)
             {
-                loginService = new WSD.LoginServiceClient();
-                loginService.ClientCredentials.Authenticate();
                 mUsuario.Id = (int)loginService.RecibirIdUsuario(mUsuario.Cedula);
                 bool existeUsuarioEnHolos = false;
                 //-1 bloqueado, diferente a 0 la sesion que tiene acceso
@@ -335,8 +326,7 @@ namespace Dime.Controllers
         [HttpPost]
         [AllowAnonymous]
         public ActionResult SRegistroDatosUsuarioConfirmation(Usuario model)
-        {   loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
+        {  
             loginService.RegistrarActualizarDatosUsuario(model);
            
             if (!loginService.Capacitado(model.Id)) return RedirectToAction("Presentacion", "Account", new { sesion = model.Contrasena, id = model.Id });
@@ -354,8 +344,6 @@ namespace Dime.Controllers
         [AllowAnonymous]
         public void RegistrarVariablesDeSesion(int idUsuario, out bool  usuarioEnHolos)
         {
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
             Usuario usuarioLogeado = loginService.RecibirUsuarioConId(idUsuario);
             if (loginService.ExisteUsuarioHolos(Convert.ToDecimal(usuarioLogeado.Cedula)))
             {
@@ -397,10 +385,7 @@ namespace Dime.Controllers
         [AllowAnonymous]
         [HttpPost]
         public ActionResult  RegistrarSesionUsuario(string ipPrivada, string ipPublica, int idUsuario)
-        {
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
-                RegistroSesion registroSesion = new RegistroSesion();
+        {       RegistroSesion registroSesion = new RegistroSesion();
                 registroSesion.EsIngreso = true;
                 registroSesion.IdUsuario = idUsuario;
                 registroSesion.IpPrivadaCreacion = ipPrivada;
@@ -485,8 +470,6 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult PresentacionPost(string sesionPassed, string id)
         {
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
             loginService.CapacitarUsuario(int.Parse(id));
 
             switch (int.Parse(sesionPassed))
