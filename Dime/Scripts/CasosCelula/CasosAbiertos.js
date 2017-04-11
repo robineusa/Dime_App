@@ -26,12 +26,17 @@ function ShowGridAbiertos(data) {
 
 
     $("#gridViewCasos").kendoGrid({
+        autoBind: true,
+        toolbar: ["excel"],
+        excel: {
+            fileName: "Export.xlsx",
+        },
         dataSource: {
             data: data,
             pageSize: 10,
 
         },
-
+       
         scrollable: true,
         filterable: {
             extra: false,
