@@ -15,12 +15,17 @@ namespace Dime.Controllers
     public class BuenServicioController : MyController
     {
          WSD.NotificacionesBuenServicioServiceClient BuenServicioServices;
+        public BuenServicioController()
+        {
+            BuenServicioServices = new WSD.NotificacionesBuenServicioServiceClient();
+            BuenServicioServices.ClientCredentials.Authenticate();
+        }
         // GET: BuenServicio
-        
+
         [HttpGet]
         public ActionResult Notificaciones()
         {
-            BuenServicioServices = new WSD.NotificacionesBuenServicioServiceClient(); BuenServicioServices.ClientCredentials.Authenticate();
+            
             ViewModelNotificacionesBS modelo = new ViewModelNotificacionesBS();
             modelo.ListaNotificacionesBSGetSet = BuenServicioServices.ListaImagenesBuenServicio();
             return View(modelo);
@@ -47,9 +52,7 @@ namespace Dime.Controllers
         public ActionResult GuardaImagen(ViewModelNotificacionesBS model, HttpPostedFileBase file)
         {
             var name = file.FileName;
-            BuenServicioServices = new WSD.NotificacionesBuenServicioServiceClient();
-            BuenServicioServices.ClientCredentials.Authenticate();
-
+            
             model.NotificacionBuenServicio.Usuario_Publicacion = Session["Usuario"].ToString();
             model.NotificacionBuenServicio.Nombre_Imagen = name;
             
@@ -60,8 +63,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult Visualizador_Imagenes(string Id_Imagen)
         {
-            BuenServicioServices = new WSD.NotificacionesBuenServicioServiceClient();
-            BuenServicioServices.ClientCredentials.Authenticate();
+           
             ViewModelNotificacionesBS model = new ViewModelNotificacionesBS();
             model.NotificacionBuenServicio = BuenServicioServices.ImagenporId(Convert.ToInt32(Id_Imagen));
             ViewBag.NombreImagen = "../ImagesClient/" + model.NotificacionBuenServicio.Nombre_Imagen;
@@ -74,8 +76,7 @@ namespace Dime.Controllers
         public ActionResult Guardar_Usuario_Notificado(string Imagen, string Ruta, string Id, string Descripcion)
         {
            
-            BuenServicioServices = new WSD.NotificacionesBuenServicioServiceClient();
-            BuenServicioServices.ClientCredentials.Authenticate();
+           
             UsuariosNotificados model = new UsuariosNotificados();
             model.Id_Notificado = Convert.ToInt32(Id);
             model.Usuario = Session["Usuario"].ToString();

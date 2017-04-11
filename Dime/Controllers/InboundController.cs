@@ -17,6 +17,17 @@ namespace Dime.Controllers
         WSD.InboundServiceClient inboundService;
         WSD.MarcacionesServiceClient marcacionService;
         WSD.ActivacionSiembraHDServiceClient acsiembrahdwebservice;
+        
+        public InboundController()
+        {
+            inboundService = new WSD.InboundServiceClient();
+            inboundService.ClientCredentials.Authenticate();
+            acsiembrahdwebservice = new WSD.ActivacionSiembraHDServiceClient();
+            acsiembrahdwebservice.ClientCredentials.Authenticate();
+           marcacionService = new WSD.MarcacionesServiceClient();
+            marcacionService.ClientCredentials.Authenticate();
+        }
+
 
         // GET: Inbound
         /// <summary>
@@ -24,12 +35,11 @@ namespace Dime.Controllers
         /// </summary>
         /// <param name="choosenCuenta"></param>
         /// <returns></returns>
-        
+
         [HttpGet]
         public ActionResult Index(string choosenCuenta)
         {
-            inboundService = new WSD.InboundServiceClient();
-            inboundService.ClientCredentials.Authenticate();
+            
             InboundModel model = new InboundModel();
             List<string> hobbieOptions = inboundService.ConsultarHobbiesOptions();
             model.HobbyOptions = new List<SelectListItem>();
@@ -47,10 +57,8 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult Index(InboundModel model, string cambiarDatos)
         {
-            inboundService = new WSD.InboundServiceClient();
-            inboundService.ClientCredentials.Authenticate();
-            acsiembrahdwebservice = new WSD.ActivacionSiembraHDServiceClient();
-            acsiembrahdwebservice.ClientCredentials.Authenticate();
+           
+            
             int cuentaCliente = model.ClientesTodos.Cuenta;
             model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(cuentaCliente);
             if ( cambiarDatos!=null && cambiarDatos.Equals("true"))
@@ -126,8 +134,7 @@ namespace Dime.Controllers
       
         public JsonResult IngresosListDeCuenta(string cuenta)
         {
-            inboundService = new WSD.InboundServiceClient();
-            inboundService.ClientCredentials.Authenticate();
+            
             return new JsonResult()
             {
                 Data = JsonConvert.SerializeObject(inboundService.ListaIngresosDeCuenta(cuenta)),
@@ -141,8 +148,8 @@ namespace Dime.Controllers
    
         [HttpGet]
         public ActionResult Actualizar(string id, string nombMarcacion)
-        {   inboundService = new WSD.InboundServiceClient(); marcacionService = new WSD.MarcacionesServiceClient();
-            marcacionService.ClientCredentials.Authenticate(); inboundService.ClientCredentials.Authenticate();
+        {   
+          
             InboundModel model = new InboundModel();
             var tablaHistorialCaso = inboundService.ListaHistorialCaso(Convert.ToInt32(id));
             model.HistorialCaso = tablaHistorialCaso.Select(x => new TablaActualizarInbound { CuentaCliente = x.CuentaCliente, FechaNota = x.FechaNota, HoraNota = x.HoraNota,
@@ -163,8 +170,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult Actualizar(InboundModel model)
         {
-            inboundService = new WSD.InboundServiceClient();
-            inboundService.ClientCredentials.Authenticate();
+           
             if (model.ModelTipiMarca.Observaciones == null)
             {
                 model.ModelTipiMarca.Observaciones = "SIN NOTAS";

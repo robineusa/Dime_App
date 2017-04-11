@@ -16,6 +16,13 @@ namespace Dime.Controllers
         WSD.CasosAdminServiceClient casosAdminService;
         WSD.BlendingServiceClient blendingService;
 
+        public ConsultasAdminController()
+        {
+            casosAdminService = new WSD.CasosAdminServiceClient();
+            casosAdminService.ClientCredentials.Authenticate();
+            blendingService = new WSD.BlendingServiceClient();
+            blendingService.ClientCredentials.Authenticate();
+        }
         public ActionResult Paloteo()
         {
             return View();
@@ -23,8 +30,7 @@ namespace Dime.Controllers
 
 
         public JsonResult PaloteoConsulta(string fechaInicial, string fechaFinal)
-        {   casosAdminService = new WSD.CasosAdminServiceClient();
-            casosAdminService.ClientCredentials.Authenticate();
+        {   
             DateTime inicial = Convert.ToDateTime(fechaInicial);
             DateTime final = Convert.ToDateTime(fechaFinal);
             return new JsonResult
@@ -44,8 +50,7 @@ namespace Dime.Controllers
 
          public JsonResult JsonConvenioElectronico(string fechaInicio, string fechaFin)
         {
-            blendingService = new WSD.BlendingServiceClient();
-            blendingService.ClientCredentials.Authenticate();
+            
             DateTime inicial = DateTime.ParseExact(fechaInicio, "M/d/yyyy", CultureInfo.InvariantCulture);
             DateTime final = DateTime.ParseExact(fechaFin, "M/d/yyyy", CultureInfo.InvariantCulture);
             return new JsonResult
@@ -59,8 +64,7 @@ namespace Dime.Controllers
 
         public JsonResult JsonClaroVideo(string fechaInicio, string fechaFin)
         {
-            blendingService = new WSD.BlendingServiceClient();
-            blendingService.ClientCredentials.Authenticate();
+            
             DateTime inicial = DateTime.ParseExact(fechaInicio, "M/d/yyyy", CultureInfo.InvariantCulture);
             DateTime final = DateTime.ParseExact(fechaFin, "M/d/yyyy", CultureInfo.InvariantCulture);
             var result = blendingService.ListaClaroVideosGestionados(inicial, final);
@@ -75,8 +79,7 @@ namespace Dime.Controllers
 
         public JsonResult JsonDocsisOverlap(string fechaInicio, string fechaFin)
         {
-            blendingService = new WSD.BlendingServiceClient();
-            blendingService.ClientCredentials.Authenticate();
+         
             DateTime inicial = DateTime.ParseExact(fechaInicio, "M/d/yyyy", CultureInfo.InvariantCulture);
             DateTime final = DateTime.ParseExact(fechaFin, "M/d/yyyy", CultureInfo.InvariantCulture);
             var result = blendingService.ListaDocsisOverlapGestionados(inicial, final);
@@ -89,8 +92,7 @@ namespace Dime.Controllers
 
         public JsonResult JsonCierreCiclo(string fechaInicio, string fechaFin)
         {
-            blendingService = new WSD.BlendingServiceClient();
-            blendingService.ClientCredentials.Authenticate();
+            
             DateTime inicial = DateTime.ParseExact(fechaInicio, "M/d/yyyy", CultureInfo.InvariantCulture);
             DateTime final = DateTime.ParseExact(fechaFin, "M/d/yyyy", CultureInfo.InvariantCulture);
             var result = blendingService.ListaCierresCicloGestionados(inicial, final);
@@ -104,8 +106,7 @@ namespace Dime.Controllers
    
         public JsonResult JsonListaGestionAdmin(string fechaInicio, string fechaFin, string aliado)
         {
-            casosAdminService = new WSD.CasosAdminServiceClient();
-            casosAdminService.ClientCredentials.Authenticate();
+           
             DateTime inicial = DateTime.ParseExact(fechaInicio, "M/d/yyyy", CultureInfo.InvariantCulture);
             DateTime final = DateTime.ParseExact(fechaFin, "M/d/yyyy", CultureInfo.InvariantCulture);
             var result = casosAdminService.ListaGestionAdmin(inicial, final, aliado);
@@ -120,8 +121,7 @@ namespace Dime.Controllers
      
         public JsonResult JsonAliadosNames()
         {
-            casosAdminService = new WSD.CasosAdminServiceClient();
-            casosAdminService.ClientCredentials.Authenticate();
+           
             var aliadosList = casosAdminService.ListaAliadosActualesDeHolos();
             return new JsonResult
             {

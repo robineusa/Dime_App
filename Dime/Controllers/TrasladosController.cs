@@ -14,6 +14,13 @@ namespace Dime.Controllers
     {
         WSD.TrasladosServiceClient trasladowebservice;
         WSD.MaestroNodoServiceClient maestronodosservice;
+        public TrasladosController()
+        {
+            trasladowebservice = new WSD.TrasladosServiceClient();
+            trasladowebservice.ClientCredentials.Authenticate();
+            maestronodosservice = new WSD.MaestroNodoServiceClient();
+            maestronodosservice.ClientCredentials.Authenticate();
+        }
 
         // GET: Traslados
         [HttpGet]
@@ -25,13 +32,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult SolicitudCrearDireccion(ViewModelTraslados modelo)
         {
-            //servicio maestro nodos
-            maestronodosservice = new WSD.MaestroNodoServiceClient();
-            maestronodosservice.ClientCredentials.Authenticate();
-
-            //servicio ingreso traslados
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+            
 
             DateTime fechainiciotransaccion = Convert.ToDateTime(Session["FechaInicial"].ToString());
             DateTime fechafintransaccion = DateTime.Now; 
@@ -79,8 +80,7 @@ namespace Dime.Controllers
 
         public ActionResult DireccionesCreadasTraslados()
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+            
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             modelo = trasladowebservice.ListaSolicitudesCrearDireccion(Session["Usuario"].ToString());
             return View(modelo);
@@ -90,9 +90,7 @@ namespace Dime.Controllers
         public ActionResult GestionarDireccionCelula(int id)
         {
             ViewModelTraslados model = new ViewModelTraslados();
-            trasladowebservice = new WSD.TrasladosServiceClient(); maestronodosservice = new WSD.MaestroNodoServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate(); maestronodosservice.ClientCredentials.Authenticate();
-
+           
             if (trasladowebservice.TransaccionEnGestion(id, Session["Usuario"].ToString()) == true)
             {
                 return RedirectToAction("DireccionesCreadasTraslados");
@@ -137,8 +135,7 @@ namespace Dime.Controllers
         public ActionResult GestionarDireccionCelula(ViewModelTraslados modelo)
         {
             modelo.IngresoTraslado = new IngresoTraslado();
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+            
             modelo.NotaTrasladoVacia.IdTransaccion = modelo.NotaTrasladoInicial.IdTransaccion;
             modelo.NotaTrasladoVacia.UsuarioTransaccion = Session["Usuario"].ToString();
             modelo.NotaTrasladoVacia.CanalTransaccion = "CELULA CREACION DIRECCION";
@@ -177,8 +174,7 @@ namespace Dime.Controllers
     
         public ActionResult SeguimientosSolicitudesCreacionDireccion()
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+            
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             modelo = trasladowebservice.ListaSeguimientosDireccionesCelula(Session["Usuario"].ToString());
             return View(modelo);
@@ -187,8 +183,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult DireccionesCreadasOutbound()
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+          
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             modelo = trasladowebservice.ListaDireccionesCreadasOutbound(Session["Usuario"].ToString());
             return View(modelo);
@@ -199,8 +194,7 @@ namespace Dime.Controllers
         public ActionResult GestionarDireccionOutbound(int id)
         {
             ViewModelTraslados model = new ViewModelTraslados();
-            trasladowebservice = new WSD.TrasladosServiceClient(); maestronodosservice = new WSD.MaestroNodoServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate(); maestronodosservice.ClientCredentials.Authenticate();
+           
 
             if (trasladowebservice.TransaccionEnGestionOut(id, Session["Usuario"].ToString()) == true)
             {
@@ -246,8 +240,7 @@ namespace Dime.Controllers
         {
             modelo.IngresoTraslado = new IngresoTraslado();
 
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+           
             modelo.NotaTrasladoVacia.IdTransaccion = modelo.NotaTrasladoInicial.IdTransaccion;
             modelo.NotaTrasladoVacia.UsuarioTransaccion = Session["Usuario"].ToString();
             modelo.NotaTrasladoVacia.CanalTransaccion = "OUTBOUND CREACION DIRECCION";
@@ -286,8 +279,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult SeguimientosSolicitudesCreacionDireccionOutbound()
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+            
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             modelo = trasladowebservice.ListaSeguimientosDireccionesOutbound(Session["Usuario"].ToString());
             return View(modelo);
@@ -296,8 +288,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaGestionCreacionDr(string fechaInicial, string fechaFinal)
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+            
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
@@ -324,13 +315,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult SolicitudCambioDeEstrato(ViewModelTraslados modelo)
         {
-            //servicio maestro nodos
-            maestronodosservice = new WSD.MaestroNodoServiceClient();
-            maestronodosservice.ClientCredentials.Authenticate();
-
-            //servicio ingreso traslados
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+           
 
             modelo.IngresoTraslado.UsuarioApertura = Session["Usuario"].ToString(); modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
             modelo.IngresoTraslado.NombreLineaIngreso = Session["LineaLogeado"].ToString(); modelo.IngresoTraslado.AliadoApertura = Session["AliadoLogeado"].ToString();
@@ -380,8 +365,7 @@ namespace Dime.Controllers
      
         public ActionResult SolicitudesCambioDeEstrato()
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+            
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             modelo = trasladowebservice.ListaSolicitudesCambioEstrato(Session["Usuario"].ToString());
             return View(modelo);
@@ -391,9 +375,6 @@ namespace Dime.Controllers
         public ActionResult GestionarCambioDeEstratoCelula(int id)
         {
             ViewModelTraslados model = new ViewModelTraslados();
-            trasladowebservice = new WSD.TrasladosServiceClient(); maestronodosservice = new WSD.MaestroNodoServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate(); maestronodosservice.ClientCredentials.Authenticate();
-
             if (trasladowebservice.TransaccionEnGestionCambioEstrato(id, Session["Usuario"].ToString()) == true)
             {
                 return RedirectToAction("SolicitudesCambioDeEstrato");
@@ -439,8 +420,7 @@ namespace Dime.Controllers
         {
             modelo.IngresoTraslado = new IngresoTraslado();
 
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+          
             modelo.CambioEstratoVacia.IdTransaccion = modelo.CambioEstratoInicial.IdTransaccion;
             modelo.CambioEstratoVacia.UsuarioTransaccion = Session["Usuario"].ToString();
             modelo.CambioEstratoVacia.CanalTransaccion = "CELULA CAMBIO DE ESTRATO";
@@ -479,8 +459,7 @@ namespace Dime.Controllers
       
         public ActionResult SeguimientosCambioDeEstrato()
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+          
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             modelo = trasladowebservice.ListaSeguimientosCambiodeEstratoCelula(Session["Usuario"].ToString());
             return View(modelo);
@@ -489,8 +468,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaGestionCambioDeEstrato(string fechaInicial, string fechaFinal)
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+           
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
@@ -516,15 +494,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult SolicitudLiberacionHomePass(ViewModelTraslados modelo)
         {
-            //servicio maestro nodos
-            maestronodosservice = new WSD.MaestroNodoServiceClient();
-            maestronodosservice.ClientCredentials.Authenticate();
-
-            //servicio ingreso traslados
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
-
-
+            
             modelo.IngresoTraslado.UsuarioApertura = Session["Usuario"].ToString(); modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
 
             modelo.IngresoTraslado.NombreLineaIngreso = Session["LineaLogeado"].ToString(); modelo.IngresoTraslado.AliadoApertura = Session["AliadoLogeado"].ToString();
@@ -575,8 +545,7 @@ namespace Dime.Controllers
    
         public ActionResult SolicitudesLiberacionHomePass()
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+            
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             modelo = trasladowebservice.ListaSolicitudesLiberacionesHomePass(Session["Usuario"].ToString());
             return View(modelo);
@@ -586,9 +555,7 @@ namespace Dime.Controllers
         public ActionResult GestionarLiberacionHomePassCelula(int id)
         {
             ViewModelTraslados model = new ViewModelTraslados();
-            trasladowebservice = new WSD.TrasladosServiceClient(); maestronodosservice = new WSD.MaestroNodoServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate(); maestronodosservice.ClientCredentials.Authenticate();
-
+           
             if (trasladowebservice.TransaccionEnGestionLiberacionHomePass(id, Session["Usuario"].ToString()) == true)
             {
                 return RedirectToAction("SolicitudesLiberacionHomePass");
@@ -634,9 +601,7 @@ namespace Dime.Controllers
         {
             modelo.IngresoTraslado = new IngresoTraslado();
 
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
-
+          
             modelo.LiberacionHomePassVacia.IdTransaccion = modelo.LiberacionHomePassInicial.IdTransaccion;
             modelo.LiberacionHomePassVacia.UsuarioTransaccion = Session["Usuario"].ToString();
             modelo.LiberacionHomePassVacia.CanalTransaccion = "CELULA LIBERACION DE HOMEPASS";
@@ -675,8 +640,7 @@ namespace Dime.Controllers
     
         public ActionResult SeguimientosLiberacionHomePass()
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+          
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             modelo = trasladowebservice.ListaSeguimientosLiberacionHomePassCelula(Session["Usuario"].ToString());
             return View(modelo);
@@ -685,8 +649,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaGestionLiberaciondeHomePass(string fechaInicial, string fechaFinal)
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+           
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
@@ -714,14 +677,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult SolicitudMatrices(ViewModelTraslados modelo)
         {
-            //servicio maestro nodos
-            maestronodosservice = new WSD.MaestroNodoServiceClient();
-            maestronodosservice.ClientCredentials.Authenticate();
-
-            //servicio ingreso traslados
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
-
+            
             DateTime fechainiciotransaccion = Convert.ToDateTime(Session["FechaInicial"].ToString());
             DateTime fechafintransaccion = DateTime.Now;
 
@@ -769,8 +725,7 @@ namespace Dime.Controllers
 
         public ActionResult SolicitudesCreacionMatrices()
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+         
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             modelo = trasladowebservice.ListaSolicitudesCreaciondeMatriz(Session["Usuario"].ToString());
             return View(modelo);
@@ -780,9 +735,7 @@ namespace Dime.Controllers
         public ActionResult GestionarCreacionDeMatriz(int id)
         {
             ViewModelTraslados model = new ViewModelTraslados();
-            trasladowebservice = new WSD.TrasladosServiceClient(); maestronodosservice = new WSD.MaestroNodoServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate(); maestronodosservice.ClientCredentials.Authenticate();
-
+           
             if (trasladowebservice.TransaccionCrearMatrizEnGestion(id, Session["Usuario"].ToString()) == true)
             {
                 return RedirectToAction("SolicitudesCreacionMatrices");
@@ -835,8 +788,7 @@ namespace Dime.Controllers
         {
             modelo.IngresoTraslado = new IngresoTraslado();
 
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+           
             modelo.GestionMatrizVacia.IdTransaccion = modelo.GestionMatrizInicial.IdTransaccion;
             modelo.GestionMatrizVacia.UsuarioTransaccion = Session["Usuario"].ToString();
             modelo.GestionMatrizVacia.CanalTransaccion = "CELULA CREACION MATRICES";
@@ -880,8 +832,7 @@ namespace Dime.Controllers
         public ActionResult SeguimientosSolicitudesCreacionMatriz()
         {
 
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+           
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             modelo = trasladowebservice.ListaSeguimientosCrearMatrizCelula(Session["Usuario"].ToString());
             return View(modelo);
@@ -902,9 +853,7 @@ namespace Dime.Controllers
         public ActionResult GestionMatricesCelula(int id)
         {
             ViewModelTraslados model = new ViewModelTraslados();
-            trasladowebservice = new WSD.TrasladosServiceClient(); maestronodosservice = new WSD.MaestroNodoServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate(); maestronodosservice.ClientCredentials.Authenticate();
-
+           
             if (trasladowebservice.TransaccionGestionMatrizEnGestion(id, Session["Usuario"].ToString()) == true)
             {
                 return RedirectToAction("SolicitudesGestionMatrices");
@@ -956,8 +905,7 @@ namespace Dime.Controllers
         public ActionResult GestionMatricesCelula(ViewModelTraslados modelo)
         {
             modelo.IngresoTraslado = new IngresoTraslado();
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+           
             modelo.GestionMatrizVacia.IdTransaccion = modelo.GestionMatrizInicial.IdTransaccion;
             modelo.GestionMatrizVacia.UsuarioTransaccion = Session["Usuario"].ToString();
             modelo.GestionMatrizVacia.CanalTransaccion = "CELULA GESTION MATRICES";
@@ -1003,8 +951,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult SeguimientosSolicitudesGestionMatrices()
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+           
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             modelo = trasladowebservice.ListaSeguimientosGestionMatricesCelula(Session["Usuario"].ToString());
             return View(modelo);
@@ -1013,8 +960,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaGestionMatrices(string fechaInicial, string fechaFinal)
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+         
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
@@ -1038,8 +984,6 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaAdminIngresosTraslados(string fechaInicial, string fechaFinal)
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
@@ -1056,8 +1000,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaAdminIngresosCrearDireccion(string fechaInicial, string fechaFinal)
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+           
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
@@ -1074,8 +1017,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaAdminIngresosCambioEstrato(string fechaInicial, string fechaFinal)
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+          
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
@@ -1092,8 +1034,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaAdminIngresosLiberaciones(string fechaInicial, string fechaFinal)
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+           
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
@@ -1110,8 +1051,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaAdminIngresosMatrices(string fechaInicial, string fechaFinal)
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+            
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
@@ -1126,8 +1066,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaIngresosTraslados(string CuentaCliente)
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+            
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             if(CuentaCliente!=null && CuentaCliente!="")
             {
@@ -1147,8 +1086,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaClienteCreacionDireccion(string CuentaCliente)
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+           
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             if (CuentaCliente != null && CuentaCliente != "")
             {
@@ -1170,8 +1108,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaClienteCambiodeEstrato(string CuentaCliente)
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+            
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             if (CuentaCliente != null && CuentaCliente != "")
             {
@@ -1193,8 +1130,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaClienteLiberacionHomePass(string CuentaCliente)
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+           
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             if (CuentaCliente != null && CuentaCliente != "")
             {
@@ -1216,8 +1152,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaClienteMatrices(string CuentaCliente)
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+            
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             if (CuentaCliente != null && CuentaCliente != "")
             {

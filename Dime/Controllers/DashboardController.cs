@@ -14,13 +14,17 @@ namespace Dime.Controllers
     public class DashboardController : MyController
     {
 
-        WSD.GraficosServiceClient graficosservice = new WSD.GraficosServiceClient();
+        WSD.GraficosServiceClient graficosservice;
+        public DashboardController()
+        {
+            graficosservice = new WSD.GraficosServiceClient();
+            graficosservice.ClientCredentials.Authenticate();
+        }
 
         [HttpGet]
         public ActionResult DashboardAsesor()
         {
-            graficosservice = new WSD.GraficosServiceClient();
-            graficosservice.ClientCredentials.Authenticate();
+           
             ViewModelGraficos modelo = new ViewModelGraficos();
             var datosgrafico = graficosservice.GraficoTrasladosGeneralAsesor(Session["Usuario"].ToString());
             modelo.ListaGrafico = datosgrafico.Select(x => new Graficos

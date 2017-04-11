@@ -17,7 +17,11 @@ namespace Dime.Controllers
         // GET: AdminNodos
         WSD.MaestroNodoServiceClient maestroNodosWebService;
 
-        
+        public AdminNodosController()
+        {
+            maestroNodosWebService = new WSD.MaestroNodoServiceClient();
+            maestroNodosWebService.ClientCredentials.Authenticate();
+        }
         [HttpGet]
         public ActionResult RegistrarNodo()
         {
@@ -29,8 +33,7 @@ namespace Dime.Controllers
         {
 
             //servicio maestro nodos
-            maestroNodosWebService = new WSD.MaestroNodoServiceClient();
-            maestroNodosWebService.ClientCredentials.Authenticate();
+           
 
             if (maestroNodosWebService.ExisteNodo(modelo.Nodo.Trim()) == false)
             {
@@ -62,8 +65,7 @@ namespace Dime.Controllers
      
         public JsonResult ListaNodosCreadosJson()
         {
-            maestroNodosWebService = new WSD.MaestroNodoServiceClient();
-            maestroNodosWebService.ClientCredentials.Authenticate();
+           
             List<MaestroNodo> modelo = new List<MaestroNodo>();
             //modelo = maestroNodosWebService.ListaNodosCreados();
             var jsonResult = Json(JsonConvert.SerializeObject(maestroNodosWebService.ListaNodosCreados()), JsonRequestBehavior.AllowGet);
@@ -76,7 +78,7 @@ namespace Dime.Controllers
         public ActionResult ActualizarNodo(int id)
         {
             ViewModelNodos model = new ViewModelNodos();
-            maestroNodosWebService = new WSD.MaestroNodoServiceClient();maestroNodosWebService.ClientCredentials.Authenticate();
+           
             model.MaestroNodo= maestroNodosWebService.GetInformacionNodoId(Convert.ToInt32(id));
             return View(model);
         }
@@ -86,7 +88,7 @@ namespace Dime.Controllers
         {
 
             model.MaestroNodo.Usuario = Session["Usuario"].ToString();
-            maestroNodosWebService = new WSD.MaestroNodoServiceClient(); maestroNodosWebService.ClientCredentials.Authenticate();
+         
             maestroNodosWebService.ActualizarInformacionNodo(model.MaestroNodo);
             return RedirectToAction("ListaNodosCreados");
         }

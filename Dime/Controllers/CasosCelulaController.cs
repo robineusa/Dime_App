@@ -18,13 +18,19 @@ namespace Dime.Controllers
         WSD.InboundServiceClient inboundService;
         WSD.MarcacionesServiceClient marcacionwebservice ;
          
-
-
-
-        public ActionResult CasosAbiertos()
+        public CasosCelulaController()
         {
             casosCellService = new WSD.CasosCelulaServiceClient();
             casosCellService.ClientCredentials.Authenticate();
+            inboundService = new WSD.InboundServiceClient();
+            inboundService.ClientCredentials.Authenticate();
+            marcacionwebservice = new WSD.MarcacionesServiceClient();
+            marcacionwebservice.ClientCredentials.Authenticate();
+        }
+
+
+        public ActionResult CasosAbiertos()
+        {          
             List<Ingreso> model;
             model = casosCellService.ListaCasosAbiertosDeCelulaUser(Session["LineaLogeado"].ToString(), Session["AliadoLogeado"].ToString());
             return View(model);
@@ -38,8 +44,6 @@ namespace Dime.Controllers
 
         public ActionResult CasosSeguimientos()
         {
-            casosCellService = new WSD.CasosCelulaServiceClient();
-            casosCellService.ClientCredentials.Authenticate();
             List<Ingreso> model;
             model = casosCellService.ListaCasosEnSeguimiento( Session["IdUsuario"].ToString());
             return View(model);
@@ -49,8 +53,7 @@ namespace Dime.Controllers
 
         public JsonResult JsonListHistorialCaso(int idIngreso)
         {
-            inboundService = new WSD.InboundServiceClient();
-            inboundService.ClientCredentials.Authenticate();
+           
             var result = inboundService.ListaHistorialCaso(idIngreso);
             return new JsonResult
             {   Data = JsonConvert.SerializeObject(result),
@@ -62,9 +65,7 @@ namespace Dime.Controllers
 
         public JsonResult JsonDatosClienteYMarcacion(int cuenta, string marcacion)
         {
-            inboundService = new WSD.InboundServiceClient();marcacionwebservice = new WSD.MarcacionesServiceClient();
-            inboundService.ClientCredentials.Authenticate(); marcacionwebservice.ClientCredentials.Authenticate();
-            int idMarcacion = marcacionwebservice.GetIdMarcacionPorNombre(marcacion);
+           int idMarcacion = marcacionwebservice.GetIdMarcacionPorNombre(marcacion);
             var result = new {
                          clienteInfo = inboundService.TraerClienteCompletoPorCuenta(cuenta),
                          marcacionInfo = marcacionwebservice.GetMarcacionPorId(idMarcacion)
@@ -79,8 +80,7 @@ namespace Dime.Controllers
   
         public JsonResult AccesoACaso(int idIngreso)
         {
-            casosCellService = new WSD.CasosCelulaServiceClient();
-            casosCellService.ClientCredentials.Authenticate();
+           
             bool result = casosCellService.CasoTomadoPorUsrBackActualizar(idIngreso, Session["IdUsuario"].ToString());
             result = !result;
             return new JsonResult
@@ -106,8 +106,7 @@ namespace Dime.Controllers
             try
             {
                 ingresoSoporte.Razon = razonSoporte; ingresoSoporte.Subrazon1 = subrazon1Soporte; ingresoSoporte.Subrazon2 = subrazon2Soporte;
-            casosCellService = new WSD.CasosCelulaServiceClient();
-            casosCellService.ClientCredentials.Authenticate();
+            
             ingreso.UsuarioApertura = Session["IdUsuario"].ToString(); ingreso.AliadoApertura = Session["AliadoLogeado"].ToString(); ingreso.NombreLineaIngreso = Session["LineaLogeado"].ToString();
                 ingreso.UsuarioUltimaActualizacion = Session["IdUsuario"].ToString();
                 casosCellService.ActualizarIngresoPorCelula(ingreso, aplicaRechazo, razonRechazo, observaciones, ingresoSoporte);
@@ -129,8 +128,7 @@ namespace Dime.Controllers
  
         public JsonResult RazonesSoporteIngresos()
         {
-             casosCellService = new WSD.CasosCelulaServiceClient();
-             casosCellService.ClientCredentials.Authenticate();
+            
             var result =  casosCellService.ListaRazonesSoporteIngresos();
              return new JsonResult
               {
@@ -144,8 +142,7 @@ namespace Dime.Controllers
 
         public JsonResult Subrazones1DeRazonSoporteIngresos(int idRazon)
         {
-            casosCellService = new WSD.CasosCelulaServiceClient();
-            casosCellService.ClientCredentials.Authenticate();
+           
             var result = casosCellService.ListaSubrazon1SoporteIngresos(idRazon);
             return new JsonResult
             {
@@ -158,8 +155,7 @@ namespace Dime.Controllers
 
         public JsonResult Subrazones2DeSubrazonSoporteIngresos(int idSubrazon1)
         {
-            casosCellService = new WSD.CasosCelulaServiceClient();
-            casosCellService.ClientCredentials.Authenticate();
+            
             var result = casosCellService.ListaSubrazon2SoporteIngresos(idSubrazon1);
             return new JsonResult
             {
@@ -171,8 +167,7 @@ namespace Dime.Controllers
 
         public JsonResult InformacionSoporteIngreso(int idIngreso)
         {
-            casosCellService = new WSD.CasosCelulaServiceClient();
-            casosCellService.ClientCredentials.Authenticate();
+            
             var result = casosCellService.IngresoSoportePorId(idIngreso);
             if (result == null) result = new IngresosSoporte();
 

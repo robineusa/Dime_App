@@ -15,6 +15,15 @@ namespace Dime.Controllers
         private WSD.CasosAdminServiceClient casosAdminService;
         private WSD.InboundServiceClient inboundService;
 
+        public ConsultasController()
+        {
+            casosCelulaService = new WSD.CasosCelulaServiceClient();
+            casosAdminService.ClientCredentials.Authenticate();
+            casosAdminService = new WSD.CasosAdminServiceClient();
+            casosAdminService.ClientCredentials.Authenticate();
+            inboundService = new WSD.InboundServiceClient();
+            inboundService.ClientCredentials.Authenticate();
+        }
         public ActionResult ConsultaCasosAbiertos()
         {
            
@@ -26,8 +35,7 @@ namespace Dime.Controllers
         public JsonResult ConsultaCasosAbiertosPorCuenta(string cuenta)
         {
 
-            casosCelulaService = new WSD.CasosCelulaServiceClient();
-            casosCelulaService.ClientCredentials.Authenticate();
+            
             return new JsonResult
             {
                 Data = JsonConvert.SerializeObject(casosCelulaService.ListaIngresosPorCuenta(cuenta)),
@@ -40,8 +48,7 @@ namespace Dime.Controllers
         public JsonResult ConsultaCasosAbiertosPorIdIngreso(string idIngreso)
         {
 
-            casosCelulaService = new WSD.CasosCelulaServiceClient();
-            casosCelulaService.ClientCredentials.Authenticate();
+           
 
             return new JsonResult
             {
@@ -53,8 +60,7 @@ namespace Dime.Controllers
         public JsonResult ConsultaCasosAbiertosPorTicketRr(string noTicket)
         {
 
-            casosAdminService = new WSD.CasosAdminServiceClient();
-            casosAdminService.ClientCredentials.Authenticate();
+            
 
             return new JsonResult
             {
@@ -67,8 +73,7 @@ namespace Dime.Controllers
         public JsonResult ConsultaCasosAbiertosPorUsuarioCreacion(string ccUsuario)
         {
 
-            casosAdminService = new WSD.CasosAdminServiceClient();
-            casosAdminService.ClientCredentials.Authenticate();
+           
 
             return new JsonResult
             {
@@ -88,8 +93,7 @@ namespace Dime.Controllers
        
             DateTime inicial = Convert.ToDateTime(fechaInicial);
             DateTime final = Convert.ToDateTime(fechaFinal);
-            inboundService = new WSD.InboundServiceClient();
-            inboundService.ClientCredentials.Authenticate();
+           
             string idUsuario = Session["IdUsuario"].ToString();
             bool perfilAdmin;
             if (Convert.ToInt32(Session["ModoLogin"]) == 1) perfilAdmin = true; else perfilAdmin = false;

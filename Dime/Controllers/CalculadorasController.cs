@@ -16,8 +16,16 @@ namespace Dime.Controllers
         WSD.InboundServiceClient inboundService;
         WSD.ActivacionSiembraHDServiceClient siembraHdService;
 
+        public CalculadorasController()
+        {
+            inboundService = new WSD.InboundServiceClient();
+            inboundService.ClientCredentials.Authenticate();
+            siembraHdService = new WSD.ActivacionSiembraHDServiceClient();
+            siembraHdService.ClientCredentials.Authenticate();
+        }
+
         // GET: Calculadoras
- 
+
         [HttpGet]
         public ViewResult Campanas()
         {
@@ -34,8 +42,7 @@ namespace Dime.Controllers
 
         [HttpPost]
         public PartialViewResult DatosClientePorCuenta(string cuenta)
-        {   inboundService = new WSD.InboundServiceClient();
-            inboundService.ClientCredentials.Authenticate();
+        {  
             ClientesTodo model = new ClientesTodo();
             model = inboundService.TraerClienteCompletoPorCuenta(int.Parse(cuenta));
             return PartialView("DatosClientePorCuenta", model);
@@ -70,8 +77,7 @@ namespace Dime.Controllers
 
         public JsonResult DatosActualesCliente(string cuenta)
         {
-            siembraHdService = new WSD.ActivacionSiembraHDServiceClient();
-            siembraHdService.ClientCredentials.Authenticate();
+           
             var result = siembraHdService.RentaActualPorCuentaCalRentas(cuenta);
             return new JsonResult
             {
@@ -82,8 +88,7 @@ namespace Dime.Controllers
 
         public JsonResult DatosActualesTarifa(string estrato, string voz, string tv, string internet)
         {
-            siembraHdService = new WSD.ActivacionSiembraHDServiceClient();
-            siembraHdService.ClientCredentials.Authenticate();
+           
             var result = siembraHdService.TarifaActualDeDatos(estrato,voz,tv,internet);
             return new JsonResult
             {

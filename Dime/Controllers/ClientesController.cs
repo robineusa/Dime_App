@@ -16,8 +16,13 @@ namespace Dime.Controllers
 
         WSD.InboundServiceClient inboundService;
 
+        public ClientesController()
+        {
+            inboundService = new WSD.InboundServiceClient();
+            inboundService.ClientCredentials.Authenticate();
+        }
         // GET: Clientes
-        
+
         [HttpGet]
         public ViewResult BuscarCuentasPorCedulaInbound()
         {
@@ -37,8 +42,7 @@ namespace Dime.Controllers
             ViewBag.SelectOptions = selectOptions;
             BuscarCuentasViewModel model = new BuscarCuentasViewModel();
             model.Cuentas = new List<ClientesTodo>();
-            inboundService = new WSD.InboundServiceClient();
-            inboundService.ClientCredentials.Authenticate();
+           
             model.Cuentas = inboundService.ConsultarCuentasPorcedula(cedula) ?? new List<ClientesTodo>();
             return View("TableBuscarCuentas",model);
         }
@@ -48,8 +52,7 @@ namespace Dime.Controllers
         {
             BuscarCuentasViewModel model = new BuscarCuentasViewModel();
             model.Cuentas = new List<ClientesTodo>();
-            inboundService = new WSD.InboundServiceClient();
-            inboundService.ClientCredentials.Authenticate();
+           
             model.Cuentas = inboundService.ConsultarCuentasPorcedula(cedula) ?? new List<ClientesTodo>();
             return View("TableBuscarCuentas", model);
         }

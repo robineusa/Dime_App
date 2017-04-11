@@ -13,13 +13,17 @@ namespace Dime.Controllers
     [ExpiringFilter]
     public class ReportesController : MyController
     {
-        WSD.BalanceScoreCardServiceClient balancescorecardservice = new WSD.BalanceScoreCardServiceClient();
+        WSD.BalanceScoreCardServiceClient balancescorecardservice; 
 
-        // GET: Reportes
-        public ActionResult ReporteAsesor()
+        public ReportesController()
         {
             balancescorecardservice = new WSD.BalanceScoreCardServiceClient();
             balancescorecardservice.ClientCredentials.Authenticate();
+        }
+        // GET: Reportes
+        public ActionResult ReporteAsesor()
+        {
+            
             BalanceScoreCard modelo = new BalanceScoreCard();
             var usuario = Session["Usuario"].ToString();
             modelo = balancescorecardservice.IndicadoresUsuario(Convert.ToDecimal(usuario));
@@ -31,8 +35,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult ReporteCelula()
         {
-            balancescorecardservice = new WSD.BalanceScoreCardServiceClient();
-            balancescorecardservice.ClientCredentials.Authenticate();
+            
             BalanceScoreCard modelo = new BalanceScoreCard();
             modelo = balancescorecardservice.IndicadoresUsuario(Convert.ToDecimal(Session["Usuario"].ToString()));
             return View(modelo);

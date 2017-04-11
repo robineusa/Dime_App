@@ -15,13 +15,18 @@ namespace Dime.Controllers
 
         WSD.CasosAdminServiceClient casosAdminService;
         WSD.CasosCelulaServiceClient casosCelulaService;
-
-      
-        [HttpGet]
-        public JsonResult GetUsuariosCelula()
+        public CasosAdminController()
         {
             casosAdminService = new WSD.CasosAdminServiceClient();
             casosAdminService.ClientCredentials.Authenticate();
+            casosCelulaService = new WSD.CasosCelulaServiceClient();
+            casosCelulaService.ClientCredentials.Authenticate();
+        }
+            
+        [HttpGet]
+        public JsonResult GetUsuariosCelula()
+        {
+          
             var result = casosAdminService.ListaUsuariosCelulaActual();
             return new JsonResult
             {
@@ -34,8 +39,7 @@ namespace Dime.Controllers
         [HttpGet]
         public JsonResult GetInfoCaso(string  idIngreso)
         {
-            casosCelulaService = new WSD.CasosCelulaServiceClient();
-            casosCelulaService.ClientCredentials.Authenticate();
+            
             var result = casosCelulaService.ListaIngresosPorId(idIngreso).FirstOrDefault();
             return new JsonResult
             {
@@ -56,9 +60,7 @@ namespace Dime.Controllers
                 ingreso.IdEstado = Convert.ToInt32(estadoNuevo);
                 ingreso.UsuarioUltimaActualizacion = Session["IdUsuario"].ToString();
                 ingreso.NombreLineaIngreso = Session["LineaLogeado"].ToString();
-                casosAdminService = new WSD.CasosAdminServiceClient();
-                casosAdminService.ClientCredentials.Authenticate();
-                casosAdminService.ActualizarIngresoPorAdmin(ingreso, notas, cambioHecho);
+                 casosAdminService.ActualizarIngresoPorAdmin(ingreso, notas, cambioHecho);
                 return new JsonResult
                 {
                     Data = JsonConvert.SerializeObject("Actualización realizada"),

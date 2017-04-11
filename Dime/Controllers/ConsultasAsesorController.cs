@@ -15,6 +15,11 @@ namespace Dime.Controllers
 
        private  WSD.InboundServiceClient inboundService;
 
+        public ConsultasAsesorController()
+        {
+            inboundService = new WSD.InboundServiceClient();
+            inboundService.ClientCredentials.Authenticate();
+        }
 
         // GET: ConsultasAsesor
         public ActionResult ConsultaGestion()
@@ -26,8 +31,7 @@ namespace Dime.Controllers
         {
             DateTime inicial = Convert.ToDateTime(fechaInicial);
             DateTime final = Convert.ToDateTime(fechaFinal);
-             inboundService  = new WSD.InboundServiceClient();
-            inboundService.ClientCredentials.Authenticate();
+            
             string idUsuario = Session["IdUsuario"].ToString();
             var resultadoFaca = inboundService.ConsultaGestion(inicial, final, idUsuario);
 
@@ -43,8 +47,7 @@ namespace Dime.Controllers
 
         public ActionResult ConsultaSeguimientos()
         { 
-            inboundService = new WSD.InboundServiceClient();
-            inboundService.ClientCredentials.Authenticate();
+          
             string idUsuario = Session["IdUsuario"].ToString();
             List<Ingreso> model = inboundService.ConsultaSegumiento(idUsuario);
             return View(model);

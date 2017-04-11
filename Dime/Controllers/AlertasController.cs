@@ -16,8 +16,16 @@ namespace Dime.Controllers
         WSD.ActivacionClaroVideoServiceClient clarovideowebservice;
         WSD.ActivacionSiembraHDServiceClient acsiembrahdwebservice;
 
+        public AlertasController()
+        {
+            clarovideowebservice = new WSD.ActivacionClaroVideoServiceClient();
+            clarovideowebservice.ClientCredentials.Authenticate();
+            acsiembrahdwebservice = new WSD.ActivacionSiembraHDServiceClient();
+            acsiembrahdwebservice.ClientCredentials.Authenticate();
+        }
+
         // GET: Alertas
-       
+
         public ActionResult Convenio_Electronico()
         {
             return View();
@@ -38,8 +46,7 @@ namespace Dime.Controllers
         public ActionResult Claro_Video(ActivacionClaroVideo model)
         {
 
-            clarovideowebservice = new WSD.ActivacionClaroVideoServiceClient();
-            clarovideowebservice.ClientCredentials.Authenticate();
+          
 
             model.UsuarioGestion = Session["Usuario"].ToString();
             model.NombreUsuario = Session["NombreUsuario"].ToString();
@@ -59,8 +66,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult Siguiente_Mejor_Oferta(SiguienteMejorOferta model , string TipCon, string Gest, string Cier, string Raz)
         {
-            acsiembrahdwebservice = new WSD.ActivacionSiembraHDServiceClient();
-            acsiembrahdwebservice.ClientCredentials.Authenticate();
+            
 
             model.UsuarioGestion = Session["Usuario"].ToString();
             model.AliadoGestion = Session["AliadoLogeado"].ToString();
@@ -77,8 +83,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult Siembra_HD(ViewModelCuentasSiembraHD model, string cuentaCliente, string Ofrecimiento)
         {
-            acsiembrahdwebservice = new WSD.ActivacionSiembraHDServiceClient();
-            acsiembrahdwebservice.ClientCredentials.Authenticate();
+           
 
             model.EntidadSiembraHD.UsuarioGestion = Session["Usuario"].ToString();
             model.EntidadSiembraHD.NombreUsuarioGestion = Session["NombreUsuario"].ToString();

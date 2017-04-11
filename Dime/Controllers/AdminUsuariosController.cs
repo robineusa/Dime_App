@@ -15,8 +15,14 @@ namespace Dime.Controllers
 
         private WSD.LoginServiceClient loginService;
 
+        public AdminUsuariosController()
+        {
+            loginService = new WSD.LoginServiceClient();
+            loginService.ClientCredentials.Authenticate();
+        }
+
         // GET: AdminUsuarios
-        
+
         [HttpGet]
         public ActionResult Creacion()
         {   ViewModelAdminUsuario model = new ViewModelAdminUsuario();
@@ -28,8 +34,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult Creacion(ViewModelAdminUsuario model, string opcionMando)
         { 
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
+           
             ViewBag.UsuarioExiste = null;
         
             if (opcionMando.Equals("ConsultarCreando"))
@@ -93,8 +98,7 @@ namespace Dime.Controllers
         [HttpGet]
         public JsonResult PosiblesAccesosYLineasDePerfil(int idPerfil)
         {
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
+            
             var result = new
             {
                 lineas =  loginService.ListaLineasDePerfil(idPerfil),
@@ -123,8 +127,7 @@ namespace Dime.Controllers
         public ActionResult AccesosUsuarios(ViewModelAdminUsuario model, string opcionMando)
         {
 
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
+           
             ViewBag.UsuarioExiste = null;
             if (opcionMando.Equals("ConsultaActualizarAcceso"))
             {
@@ -191,8 +194,7 @@ namespace Dime.Controllers
         [HttpGet]
         public JsonResult JsonUsuariosDeAliadoYPerfil(string aliado, int idPerfil)
         {
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
+           
             var result = loginService.ListaUsuariosDePerfilYAliado(idPerfil, aliado);
             return new JsonResult
             {
@@ -208,8 +210,7 @@ namespace Dime.Controllers
         {
             if (cedUsuario != 0 )
             {
-                loginService = new WSD.LoginServiceClient();
-                loginService.ClientCredentials.Authenticate();
+                
                 var result = new
                 {
                     accesos = loginService.ListaAccesosDeUsuario(cedUsuario)
@@ -236,8 +237,7 @@ namespace Dime.Controllers
         [HttpGet]
         public JsonResult CotejarInformacionMasivo(IList<string> cedulas)
         {
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
+            
 
             var result0 = loginService.ListaDatosUsuariosHolosPorCedulas(cedulas.ToList());
             var cedulasSinError = result0.Where(c => c.InfoRegistro  == null );
@@ -260,8 +260,7 @@ namespace Dime.Controllers
         {
             try
             { 
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
+           
             string[] permisos = accesosCrear.Split('-');
             List<string> listaPermisos = permisos.OfType<string>().ToList();
             loginService.GuardarUsuariosMasivosConAccesos(cedulas.ToList(), listaPermisos, perfilCrear, lineaCrear, contraMasiva,Convert.ToInt32(Session["IdUsuario"]));

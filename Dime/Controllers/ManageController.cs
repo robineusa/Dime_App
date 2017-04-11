@@ -20,12 +20,13 @@ namespace Dime.Controllers
 
         private WSD.LoginServiceClient loginService;
 
+
+
         public ManageController()
         {
+            loginService = new WSD.LoginServiceClient();
+            loginService.ClientCredentials.Authenticate();
         }
-
-
-
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
@@ -36,8 +37,7 @@ namespace Dime.Controllers
                 : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
                 : "";
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
+           
             var model = await loginService.RecibirUsuarioConIdAsync(Convert.ToInt32(Session["IdUsuario"].ToString()));
             return View(model);
         }
@@ -52,8 +52,6 @@ namespace Dime.Controllers
         public ActionResult ChangeSecurityQuestions()
         {
 
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
             List<PreguntasDesbloqueo> opcionesPreguntas = loginService.ObtenerPosiblesPreguntas();
             List<SelectListItem> selectItems = new List<SelectListItem>();
             ViewBag.IdUsuario = Session["IdUsuario"].ToString();
@@ -117,8 +115,7 @@ namespace Dime.Controllers
             {
                 return View(model);
             }
-            loginService = new WSD.LoginServiceClient();
-            loginService.ClientCredentials.Authenticate();
+          
             Usuario usuario = new Usuario();
             usuario.Id = Convert.ToInt32(Session["IdUsuario"].ToString());
             usuario.Cedula = Convert.ToInt32(Session["Usuario"].ToString());

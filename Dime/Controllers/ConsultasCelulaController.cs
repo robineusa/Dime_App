@@ -13,6 +13,12 @@ namespace Dime.Controllers
     {
         WSD.CasosCelulaServiceClient casosCelulaService;
 
+        public ConsultasCelulaController()
+        {
+            casosCelulaService = new WSD.CasosCelulaServiceClient();
+            casosCelulaService.ClientCredentials.Authenticate();
+        }
+
         // GET: ConsultasCelula
         public ActionResult ConsultaGestion()
         {
@@ -20,8 +26,7 @@ namespace Dime.Controllers
         }
 
         public JsonResult ConsultaGestionPost(string fechaInicial, string fechaFinal)
-        {   casosCelulaService = new WSD.CasosCelulaServiceClient();
-            casosCelulaService.ClientCredentials.Authenticate();
+        {   
             DateTime inicial = Convert.ToDateTime(fechaInicial);
             DateTime final = Convert.ToDateTime(fechaFinal);
             return new JsonResult
