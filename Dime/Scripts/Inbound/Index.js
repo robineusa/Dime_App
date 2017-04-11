@@ -36,12 +36,12 @@ $(document).ready(function () {
         ActivarBuscarPorCedula();
      
     })
- 
+
+    var choosenAccount = getQueryVariable('choosenCuenta');
     // si el formulario se carga con una cuenta encontrada en buscar cuentas por clientes
-    if (choosenCuenta != 0 && cedulaLlena == 0 )
+    if (choosenCuenta != 0 && cedulaLlena == 0 && choosenAccount!= null)
     {
         SubmitGetDatos();
-        
     }
 
     $("#Li1").click(function () {
@@ -88,6 +88,18 @@ $(document).ready(function () {
     CambioEscalaSoporte();
 });
 
+
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+            return pair[1];
+        }
+    }
+
+}
 
 function AEscalarCambiado()
 {

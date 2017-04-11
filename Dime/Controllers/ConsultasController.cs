@@ -18,7 +18,7 @@ namespace Dime.Controllers
         public ConsultasController()
         {
             casosCelulaService = new WSD.CasosCelulaServiceClient();
-            casosAdminService.ClientCredentials.Authenticate();
+            casosCelulaService.ClientCredentials.Authenticate();
             casosAdminService = new WSD.CasosAdminServiceClient();
             casosAdminService.ClientCredentials.Authenticate();
             inboundService = new WSD.InboundServiceClient();
