@@ -35,7 +35,7 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
 
             <div class="row">
 
-                @if (Model.ClientesTodos.Convenio == "SI" || Model.ClientesTodos.Clarovideo == "SI" || Model.ListaSiembraHD.Count > 0)
+                @if (Model.ClientesTodos.Convenio == "SI" || Model.ClientesTodos.Clarovideo == "SI" || Model.ListaSiembraHD.Count >0 || Model.ListaSMO != null)
                 {
                     <div class="col-xs-2" style="right:30px; float: right;">
                         <div id="Menu_Opciones" style="display:block;">
@@ -55,13 +55,13 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
                                         <div id="Icono_3" style="display: block"></div>
                                     </a>
                                 }
-                                @if (Model.ListaSMO.Count > 0)
+                                @if (Model.ListaSMO != null)
                                 {
                                     <a href="#MejorOferta" onclick="return LlamarSMO()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
                                         <div id="Icono_4" style="display: block"></div>
                                     </a>
                                 }
-                                @if (Model.ListaSiembraHD.Count > 0)
+                                @if (Model.ListaSiembraHD.Count >0)
                                 {
                                     <a href="#SiembraHD" onclick="return LlamarSiembraHD()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
                                         <div id="Icono_5" style="display: block"></div>
