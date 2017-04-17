@@ -67,9 +67,8 @@ namespace Dime.Controllers
                 model.DatosAdcionalesCliente.Cuenta = model.ClientesTodos.Cuenta;
                 inboundService.RegistrarActualizarDatosAdicionalesCliente(model.DatosAdcionalesCliente);
                 model.ModelTipiMarca.IngresoTipMarcacion.UsuarioApertura = Session["IdUsuario"].ToString();   model.ModelTipiMarca.IngresoTipMarcacion.AliadoApertura = Session["AliadoLogeado"].ToString();         model.ModelTipiMarca.IngresoTipMarcacion.NombreLineaIngreso = Session["LineaLogeado"].ToString();
-                    model.ModelTipiMarca.Observaciones = model.ModelTipiMarca.Observaciones.ToUpper();
-
-
+                if (model.ModelTipiMarca.Observaciones == null || model.ModelTipiMarca.Observaciones == "") { model.ModelTipiMarca.Observaciones = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { model.ModelTipiMarca.Observaciones = model.ModelTipiMarca.Observaciones.ToUpper(); }
+                    
                     if (model.ModelTipiMarca.IngresoSoporte != null && (model.ModelTipiMarca.IngresoSoporte.TipoSegumiento.Equals("CELULA VISITA SOPORTE") || model.ModelTipiMarca.IngresoSoporte.TipoSegumiento.Equals("CELULA SEGUIMIENTO SOPORTE")))
                     {
                         if(model.ModelTipiMarca.IngresoSoporte.IncidenciaCcaa!= 0 && model.ModelTipiMarca.IngresoSoporte.NombreAutoriza != "" 
