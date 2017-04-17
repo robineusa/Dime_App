@@ -986,7 +986,6 @@
       <xs:element minOccurs="0" name="LiberacionHomePass" nillable="true" type="tns:LiberacionHomePass" />
       <xs:element minOccurs="0" name="MaestroNodo" nillable="true" type="tns:MaestroNodo" />
       <xs:element minOccurs="0" name="NotaTrasladoGetSet" nillable="true" type="tns:NotasTraslado" />
-      <xs:element minOccurs="0" name="TrasladosNoCobertura" nillable="true" type="tns:TrasladoNoCobertura" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DatoConsultaDirecciones" nillable="true" type="tns:DatoConsultaDirecciones" />
@@ -1094,28 +1093,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MaestroNodo" nillable="true" type="tns:MaestroNodo" />
-  <xs:complexType name="TrasladoNoCobertura">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CanalTransaccion" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
-      <xs:element minOccurs="0" name="DireccionTraslado" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EstadoTransaccion" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Estrato" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="FechaTransaccion" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
-      <xs:element minOccurs="0" name="IdTransaccion" nillable="true" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Nodo" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="NombreLineaTransaccion" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Observacion" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Razon" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Subrazon" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TelefonoCelular" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TelefonoFijo" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UsuarioBackOffice" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UsuarioTransaccion" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TrasladoNoCobertura" nillable="true" type="tns:TrasladoNoCobertura" />
   <xs:complexType name="ArrayOfNotasTraslado">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="NotasTraslado" nillable="true" type="tns:NotasTraslado" />

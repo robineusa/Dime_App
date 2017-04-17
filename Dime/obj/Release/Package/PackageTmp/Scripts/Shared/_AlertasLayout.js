@@ -7,20 +7,22 @@ $(function Buen_Servicio() {
     Llama_Metodos(connect);
     
     $('#Mensaje').focus();
+    
     $.connection.hub.start().done(function () {
+        //alert('1' + UserConnect);
         Registra_Eventos(connect, UserConnect2);
-        $("#status").text('Connect');
+        //$("#status").text('Connect');
     });
-    $.connection.hub.disconnected(function () {
-        $("#status").text('Disconnected');
-        setTimeout(function () {
-            $.connection.hub.start().done(function () {
+    //$.connection.hub.disconnected(function () {
+    //    $("#status").text('Disconnected');
+    //    setTimeout(function () {
+    //        $.connection.hub.start().done(function () {
                 
-                Registra_Eventos(connect, UserConnect2);
-                $("#status").text('Connect');
-            });
-        }, 10000);
-    });
+    //            Registra_Eventos(connect, UserConnect2);
+    //            $("#status").text('Connect');
+    //        });
+    //    }, 10000);
+    //});
 });
 
 function Registra_Eventos(connect) {
@@ -46,7 +48,7 @@ function Registra_Eventos(connect) {
                 m = '0' + m
             }
             var Fecha = dd + '-' + mm + '-' + yy + ' ' + hh + ':' + m;
-
+            
             connect.server.sendMessagePublic(UserConnect, $("#MensajeBS").val(), Fecha.toString());
             $("#MensajeBS").val('');
             connect.server.connect(UserConnect2);

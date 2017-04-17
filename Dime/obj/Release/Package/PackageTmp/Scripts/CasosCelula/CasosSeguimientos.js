@@ -19,6 +19,11 @@ function CambiarAEstado(data) {
 
 function ShowGridAbiertos(data) {
     $("#gridViewSeguimientos").kendoGrid({
+        autoBind: true,
+        toolbar: ["excel"],
+        excel: {
+            fileName: "Export.xlsx",
+        },
         dataSource: {
             data: data,
             pageSize: 10,
