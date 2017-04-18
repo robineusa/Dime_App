@@ -3916,720 +3916,6 @@ namespace Dime.WSD {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DatoConsultaPaloteo", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Business")]
-    [System.SerializableAttribute()]
-    public partial class DatoConsultaPaloteo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AliadoAperturaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AreaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal CuentaClienteField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DistritoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DivisionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> EstadoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> FechaInteraccionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> HoraInteraccionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> IdIngresoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LlamadaClienteField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MacroprocesoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MarcacionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NodoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreComunidadField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreLineaNotaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreUsuarioNotaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NotaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RolUsuarioNotaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> TicketField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UsuarioNotaCCField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ZonaField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AliadoApertura {
-            get {
-                return this.AliadoAperturaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AliadoAperturaField, value) != true)) {
-                    this.AliadoAperturaField = value;
-                    this.RaisePropertyChanged("AliadoApertura");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Area {
-            get {
-                return this.AreaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AreaField, value) != true)) {
-                    this.AreaField = value;
-                    this.RaisePropertyChanged("Area");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal CuentaCliente {
-            get {
-                return this.CuentaClienteField;
-            }
-            set {
-                if ((this.CuentaClienteField.Equals(value) != true)) {
-                    this.CuentaClienteField = value;
-                    this.RaisePropertyChanged("CuentaCliente");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Distrito {
-            get {
-                return this.DistritoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DistritoField, value) != true)) {
-                    this.DistritoField = value;
-                    this.RaisePropertyChanged("Distrito");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Division {
-            get {
-                return this.DivisionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DivisionField, value) != true)) {
-                    this.DivisionField = value;
-                    this.RaisePropertyChanged("Division");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Estado {
-            get {
-                return this.EstadoField;
-            }
-            set {
-                if ((this.EstadoField.Equals(value) != true)) {
-                    this.EstadoField = value;
-                    this.RaisePropertyChanged("Estado");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> FechaInteraccion {
-            get {
-                return this.FechaInteraccionField;
-            }
-            set {
-                if ((this.FechaInteraccionField.Equals(value) != true)) {
-                    this.FechaInteraccionField = value;
-                    this.RaisePropertyChanged("FechaInteraccion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> HoraInteraccion {
-            get {
-                return this.HoraInteraccionField;
-            }
-            set {
-                if ((this.HoraInteraccionField.Equals(value) != true)) {
-                    this.HoraInteraccionField = value;
-                    this.RaisePropertyChanged("HoraInteraccion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> IdIngreso {
-            get {
-                return this.IdIngresoField;
-            }
-            set {
-                if ((this.IdIngresoField.Equals(value) != true)) {
-                    this.IdIngresoField = value;
-                    this.RaisePropertyChanged("IdIngreso");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LlamadaCliente {
-            get {
-                return this.LlamadaClienteField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LlamadaClienteField, value) != true)) {
-                    this.LlamadaClienteField = value;
-                    this.RaisePropertyChanged("LlamadaCliente");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Macroproceso {
-            get {
-                return this.MacroprocesoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MacroprocesoField, value) != true)) {
-                    this.MacroprocesoField = value;
-                    this.RaisePropertyChanged("Macroproceso");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Marcacion {
-            get {
-                return this.MarcacionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MarcacionField, value) != true)) {
-                    this.MarcacionField = value;
-                    this.RaisePropertyChanged("Marcacion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Nodo {
-            get {
-                return this.NodoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NodoField, value) != true)) {
-                    this.NodoField = value;
-                    this.RaisePropertyChanged("Nodo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NombreComunidad {
-            get {
-                return this.NombreComunidadField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreComunidadField, value) != true)) {
-                    this.NombreComunidadField = value;
-                    this.RaisePropertyChanged("NombreComunidad");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NombreLineaNota {
-            get {
-                return this.NombreLineaNotaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreLineaNotaField, value) != true)) {
-                    this.NombreLineaNotaField = value;
-                    this.RaisePropertyChanged("NombreLineaNota");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NombreUsuarioNota {
-            get {
-                return this.NombreUsuarioNotaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreUsuarioNotaField, value) != true)) {
-                    this.NombreUsuarioNotaField = value;
-                    this.RaisePropertyChanged("NombreUsuarioNota");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Nota {
-            get {
-                return this.NotaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NotaField, value) != true)) {
-                    this.NotaField = value;
-                    this.RaisePropertyChanged("Nota");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RolUsuarioNota {
-            get {
-                return this.RolUsuarioNotaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RolUsuarioNotaField, value) != true)) {
-                    this.RolUsuarioNotaField = value;
-                    this.RaisePropertyChanged("RolUsuarioNota");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> Ticket {
-            get {
-                return this.TicketField;
-            }
-            set {
-                if ((this.TicketField.Equals(value) != true)) {
-                    this.TicketField = value;
-                    this.RaisePropertyChanged("Ticket");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UsuarioNotaCC {
-            get {
-                return this.UsuarioNotaCCField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UsuarioNotaCCField, value) != true)) {
-                    this.UsuarioNotaCCField = value;
-                    this.RaisePropertyChanged("UsuarioNotaCC");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Zona {
-            get {
-                return this.ZonaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ZonaField, value) != true)) {
-                    this.ZonaField = value;
-                    this.RaisePropertyChanged("Zona");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DatoConsultaGestionAdmin", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Business")]
-    [System.SerializableAttribute()]
-    public partial class DatoConsultaGestionAdmin : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AliadoAperturaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal CuentaClienteField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> FechaAperturaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> FechaCierreField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> FechaNotaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> FechaUltimaActualizacionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> HoraAperturaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> HoraUltimaActualizacionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> IdEstadoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> IdIngresoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MacroprocesoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MarcacionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreLineaEscaladoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreLineaIngresoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NotaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> TicketField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UsuarioField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UsuarioAperturaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UsuarioCierreField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UsuarioUltimaActualizacionField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AliadoApertura {
-            get {
-                return this.AliadoAperturaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AliadoAperturaField, value) != true)) {
-                    this.AliadoAperturaField = value;
-                    this.RaisePropertyChanged("AliadoApertura");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal CuentaCliente {
-            get {
-                return this.CuentaClienteField;
-            }
-            set {
-                if ((this.CuentaClienteField.Equals(value) != true)) {
-                    this.CuentaClienteField = value;
-                    this.RaisePropertyChanged("CuentaCliente");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> FechaApertura {
-            get {
-                return this.FechaAperturaField;
-            }
-            set {
-                if ((this.FechaAperturaField.Equals(value) != true)) {
-                    this.FechaAperturaField = value;
-                    this.RaisePropertyChanged("FechaApertura");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> FechaCierre {
-            get {
-                return this.FechaCierreField;
-            }
-            set {
-                if ((this.FechaCierreField.Equals(value) != true)) {
-                    this.FechaCierreField = value;
-                    this.RaisePropertyChanged("FechaCierre");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> FechaNota {
-            get {
-                return this.FechaNotaField;
-            }
-            set {
-                if ((this.FechaNotaField.Equals(value) != true)) {
-                    this.FechaNotaField = value;
-                    this.RaisePropertyChanged("FechaNota");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> FechaUltimaActualizacion {
-            get {
-                return this.FechaUltimaActualizacionField;
-            }
-            set {
-                if ((this.FechaUltimaActualizacionField.Equals(value) != true)) {
-                    this.FechaUltimaActualizacionField = value;
-                    this.RaisePropertyChanged("FechaUltimaActualizacion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> HoraApertura {
-            get {
-                return this.HoraAperturaField;
-            }
-            set {
-                if ((this.HoraAperturaField.Equals(value) != true)) {
-                    this.HoraAperturaField = value;
-                    this.RaisePropertyChanged("HoraApertura");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> HoraUltimaActualizacion {
-            get {
-                return this.HoraUltimaActualizacionField;
-            }
-            set {
-                if ((this.HoraUltimaActualizacionField.Equals(value) != true)) {
-                    this.HoraUltimaActualizacionField = value;
-                    this.RaisePropertyChanged("HoraUltimaActualizacion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> IdEstado {
-            get {
-                return this.IdEstadoField;
-            }
-            set {
-                if ((this.IdEstadoField.Equals(value) != true)) {
-                    this.IdEstadoField = value;
-                    this.RaisePropertyChanged("IdEstado");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> IdIngreso {
-            get {
-                return this.IdIngresoField;
-            }
-            set {
-                if ((this.IdIngresoField.Equals(value) != true)) {
-                    this.IdIngresoField = value;
-                    this.RaisePropertyChanged("IdIngreso");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Macroproceso {
-            get {
-                return this.MacroprocesoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MacroprocesoField, value) != true)) {
-                    this.MacroprocesoField = value;
-                    this.RaisePropertyChanged("Macroproceso");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Marcacion {
-            get {
-                return this.MarcacionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MarcacionField, value) != true)) {
-                    this.MarcacionField = value;
-                    this.RaisePropertyChanged("Marcacion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NombreLineaEscalado {
-            get {
-                return this.NombreLineaEscaladoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreLineaEscaladoField, value) != true)) {
-                    this.NombreLineaEscaladoField = value;
-                    this.RaisePropertyChanged("NombreLineaEscalado");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NombreLineaIngreso {
-            get {
-                return this.NombreLineaIngresoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreLineaIngresoField, value) != true)) {
-                    this.NombreLineaIngresoField = value;
-                    this.RaisePropertyChanged("NombreLineaIngreso");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Nota {
-            get {
-                return this.NotaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NotaField, value) != true)) {
-                    this.NotaField = value;
-                    this.RaisePropertyChanged("Nota");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> Ticket {
-            get {
-                return this.TicketField;
-            }
-            set {
-                if ((this.TicketField.Equals(value) != true)) {
-                    this.TicketField = value;
-                    this.RaisePropertyChanged("Ticket");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Usuario {
-            get {
-                return this.UsuarioField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UsuarioField, value) != true)) {
-                    this.UsuarioField = value;
-                    this.RaisePropertyChanged("Usuario");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UsuarioApertura {
-            get {
-                return this.UsuarioAperturaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UsuarioAperturaField, value) != true)) {
-                    this.UsuarioAperturaField = value;
-                    this.RaisePropertyChanged("UsuarioApertura");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UsuarioCierre {
-            get {
-                return this.UsuarioCierreField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UsuarioCierreField, value) != true)) {
-                    this.UsuarioCierreField = value;
-                    this.RaisePropertyChanged("UsuarioCierre");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UsuarioUltimaActualizacion {
-            get {
-                return this.UsuarioUltimaActualizacionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UsuarioUltimaActualizacionField, value) != true)) {
-                    this.UsuarioUltimaActualizacionField = value;
-                    this.RaisePropertyChanged("UsuarioUltimaActualizacion");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SmoRentaActual", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
     [System.SerializableAttribute()]
     public partial class SmoRentaActual : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -7675,10 +6961,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Ingreso>> ListaIngresosPorUsuarioCreacionAsync(string ccUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosAdminService/ListaPaloteo", ReplyAction="http://tempuri.org/ICasosAdminService/ListaPaloteoResponse")]
-        System.Collections.Generic.List<Dime.WSD.DatoConsultaPaloteo> ListaPaloteo(System.DateTime inicial, System.DateTime final);
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo> ListaPaloteo(System.DateTime inicial, System.DateTime final);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosAdminService/ListaPaloteo", ReplyAction="http://tempuri.org/ICasosAdminService/ListaPaloteoResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.DatoConsultaPaloteo>> ListaPaloteoAsync(System.DateTime inicial, System.DateTime final);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo>> ListaPaloteoAsync(System.DateTime inicial, System.DateTime final);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosAdminService/ListaAliadosActualesDeHolos", ReplyAction="http://tempuri.org/ICasosAdminService/ListaAliadosActualesDeHolosResponse")]
         System.Collections.Generic.List<string> ListaAliadosActualesDeHolos();
@@ -7687,10 +6973,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<System.Collections.Generic.List<string>> ListaAliadosActualesDeHolosAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosAdminService/ListaGestionAdmin", ReplyAction="http://tempuri.org/ICasosAdminService/ListaGestionAdminResponse")]
-        System.Collections.Generic.List<Dime.WSD.DatoConsultaGestionAdmin> ListaGestionAdmin(System.DateTime inicial, System.DateTime final, string aliado);
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaGestionAdmin> ListaGestionAdmin(System.DateTime inicial, System.DateTime final, string aliado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosAdminService/ListaGestionAdmin", ReplyAction="http://tempuri.org/ICasosAdminService/ListaGestionAdminResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.DatoConsultaGestionAdmin>> ListaGestionAdminAsync(System.DateTime inicial, System.DateTime final, string aliado);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaGestionAdmin>> ListaGestionAdminAsync(System.DateTime inicial, System.DateTime final, string aliado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosAdminService/ListaUsuariosCelulaActual", ReplyAction="http://tempuri.org/ICasosAdminService/ListaUsuariosCelulaActualResponse")]
         System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Usuario> ListaUsuariosCelulaActual();
@@ -7748,11 +7034,11 @@ namespace Dime.WSD {
             return base.Channel.ListaIngresosPorUsuarioCreacionAsync(ccUsuario);
         }
         
-        public System.Collections.Generic.List<Dime.WSD.DatoConsultaPaloteo> ListaPaloteo(System.DateTime inicial, System.DateTime final) {
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo> ListaPaloteo(System.DateTime inicial, System.DateTime final) {
             return base.Channel.ListaPaloteo(inicial, final);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.DatoConsultaPaloteo>> ListaPaloteoAsync(System.DateTime inicial, System.DateTime final) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo>> ListaPaloteoAsync(System.DateTime inicial, System.DateTime final) {
             return base.Channel.ListaPaloteoAsync(inicial, final);
         }
         
@@ -7764,11 +7050,11 @@ namespace Dime.WSD {
             return base.Channel.ListaAliadosActualesDeHolosAsync();
         }
         
-        public System.Collections.Generic.List<Dime.WSD.DatoConsultaGestionAdmin> ListaGestionAdmin(System.DateTime inicial, System.DateTime final, string aliado) {
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaGestionAdmin> ListaGestionAdmin(System.DateTime inicial, System.DateTime final, string aliado) {
             return base.Channel.ListaGestionAdmin(inicial, final, aliado);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.DatoConsultaGestionAdmin>> ListaGestionAdminAsync(System.DateTime inicial, System.DateTime final, string aliado) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaGestionAdmin>> ListaGestionAdminAsync(System.DateTime inicial, System.DateTime final, string aliado) {
             return base.Channel.ListaGestionAdminAsync(inicial, final, aliado);
         }
         
@@ -8104,6 +7390,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ListaGeneralIngresosmatricesAsesor", ReplyAction="http://tempuri.org/ITrasladosService/ListaGeneralIngresosmatricesAsesorResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaGeneralIngresosmatricesAsesorAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/InsertIngresoTrasladoFallido", ReplyAction="http://tempuri.org/ITrasladosService/InsertIngresoTrasladoFallidoResponse")]
+        void InsertIngresoTrasladoFallido(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoFallido notaTraslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/InsertIngresoTrasladoFallido", ReplyAction="http://tempuri.org/ITrasladosService/InsertIngresoTrasladoFallidoResponse")]
+        System.Threading.Tasks.Task InsertIngresoTrasladoFallidoAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoFallido notaTraslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8515,6 +7807,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ListaGeneralIngresosmatricesAsesorAsync(decimal CuentaCliente) {
             return base.Channel.ListaGeneralIngresosmatricesAsesorAsync(CuentaCliente);
+        }
+        
+        public void InsertIngresoTrasladoFallido(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoFallido notaTraslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion) {
+            base.Channel.InsertIngresoTrasladoFallido(ingreso, notaTraslado, transaccion);
+        }
+        
+        public System.Threading.Tasks.Task InsertIngresoTrasladoFallidoAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoFallido notaTraslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion) {
+            return base.Channel.InsertIngresoTrasladoFallidoAsync(ingreso, notaTraslado, transaccion);
         }
     }
     

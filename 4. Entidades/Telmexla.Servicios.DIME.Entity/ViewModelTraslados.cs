@@ -26,6 +26,8 @@ namespace Telmexla.Servicios.DIME.Entity
         private GestionMatriz gestionMatrizInicial;
         private GestionMatriz gestionMatrizVacia;
         private List<GestionMatriz> listaGestionMatriz;
+        private TrasladoFallido trasladoFallido;
+        private List<TrasladoFallido> listaTrasladoFallido;
        
 
         public ViewModelTraslados()
@@ -279,6 +281,31 @@ namespace Telmexla.Servicios.DIME.Entity
                 listaGestionMatriz = value;
             }
         }
-        
+
+        public TrasladoFallido TrasladoFallido
+        {
+            get
+            {
+                return trasladoFallido;
+            }
+
+            set
+            {
+                trasladoFallido = value;
+            }
+        }
+
+        public List<TrasladoFallido> ListaTrasladoFallido
+        {
+            get
+            {
+                return listaTrasladoFallido;
+            }
+
+            set
+            {
+                listaTrasladoFallido = value;
+            }
+        }
     }
 }

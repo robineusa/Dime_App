@@ -1166,7 +1166,44 @@ namespace Dime.Controllers
             return View(modelo);
 
         }
-        
+        // Traslados Fallidos
+        [HttpGet]
+        public ActionResult RegistrotrasladoFallido()
+        {
+            Session["FechaInicial"] = DateTime.Now;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult RegistrotrasladoFallido(ViewModelTraslados modelo)
+        {
+
+
+            DateTime fechainiciotransaccion = Convert.ToDateTime(Session["FechaInicial"].ToString());
+            DateTime fechafintransaccion = DateTime.Now;
+
+            modelo.IngresoTraslado.UsuarioApertura = Session["Usuario"].ToString(); modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
+
+            modelo.IngresoTraslado.NombreLineaIngreso = Session["LineaLogeado"].ToString(); modelo.IngresoTraslado.AliadoApertura = Session["AliadoLogeado"].ToString();
+
+                        if (modelo.TrasladoFallido.Observacion == null || modelo.TrasladoFallido.Observacion == "") { modelo.TrasladoFallido.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.TrasladoFallido.Observacion = modelo.TrasladoFallido.Observacion.ToUpper(); }
+                        modelo.TrasladoFallido.Direccion = modelo.TrasladoFallido.Direccion.ToUpper();
+            
+
+                        //datos de transaccion
+                        modelo.TraficoTraslados.InicioTransaccion = fechainiciotransaccion;
+                        modelo.TraficoTraslados.FinTransaccion = fechafintransaccion;
+                        modelo.TraficoTraslados.TipoTransaccion = "TRASLADO FALLIDO";
+                        modelo.TraficoTraslados.CanalTransaccion = "SOLICITUD INBOUND";
+                        //fin de transaccion
+
+                        trasladowebservice.InsertIngresoTrasladoFallido(modelo.IngresoTraslado, modelo.TrasladoFallido, modelo.TraficoTraslados);
+                        Session.Remove("FechaInicial");
+
+            return RedirectToAction("RegistrotrasladoFallido");
+          
+        }
+
+
 
 
     }

@@ -139,6 +139,8 @@
     <Compile Include="TmpMaestroHobbiesCliente.cs" />
     <Compile Include="TraficoTraslado.cs" />
     <Compile Include="TraficoTrasladoCollection.cs" />
+    <Compile Include="TrasladoFallido.cs" />
+    <Compile Include="TrasladoFallidoCollection.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="UsuariosNotificados.cs" />
     <Compile Include="UsuariosXAcceso.cs" />

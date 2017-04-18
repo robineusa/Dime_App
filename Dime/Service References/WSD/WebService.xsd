@@ -1117,6 +1117,35 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfGestionMatriz" nillable="true" type="tns:ArrayOfGestionMatriz" />
+  <xs:complexType name="TrasladoFallido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanalTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CorreoElectronico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CuentaMatriz" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CuentaOcupa" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CuentaTraslada" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoMatriz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstratoDestino" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstratoOrigen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaTransaccion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GestionPorTraslado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdTransaccion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MotivoTrasladoFallido" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreConjunto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreLineaTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TarifaActual" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TarifaNueva" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoCelular" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoFijo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioTransaccion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrasladoFallido" nillable="true" type="tns:TrasladoFallido" />
   <xs:complexType name="ArrayOfMaestroNodo">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="MaestroNodo" nillable="true" type="tns:MaestroNodo" />

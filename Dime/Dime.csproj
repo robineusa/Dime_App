@@ -2934,6 +2934,7 @@
     <Content Include="Scripts\Traslados\GestionarDireccionOutbound.js" />
     <Content Include="Scripts\Traslados\GestionarLiberacionHomePassCelula.js" />
     <Content Include="Scripts\Traslados\GestionMatricesCelula.js" />
+    <Content Include="Scripts\Traslados\RegistrotrasladoFallido.js" />
     <Content Include="Scripts\Traslados\SeguimientosCambioDeEstrato.js" />
     <Content Include="Scripts\Traslados\SeguimientosLiberacionHomePass.js" />
     <Content Include="Scripts\Traslados\SeguimientosSolicitudesCreacionDireccion.js" />
@@ -2950,17 +2951,13 @@
     <Content Include="Scripts\Traslados\SolicitudMatrices.js" />
     <Content Include="Resources\Documents\Formato_Carga_Masiva_Siriac.xls" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Business.DatoConsultaGestionAdmin.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\Dime_Capacitacion.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaGestion.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.DatoConsultaGestionAdmin.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.DatoConsultaPaloteo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaRechazo.datasource">
@@ -3241,6 +3238,7 @@
     <None Include="Service References\WSD\WebService59.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Traslados\RegistrotrasladoFallido.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

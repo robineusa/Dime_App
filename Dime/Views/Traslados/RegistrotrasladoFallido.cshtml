@@ -1,0 +1,412 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelTraslados
+@{
+    ViewBag.Title = "Registro de Traslados Fallidos";
+    ViewBag.Subtitle = "Traslados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Session["Gestion Traslados"] != null)
+{
+    using (Html.BeginForm("RegistrotrasladoFallido", "Traslados", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+    {
+        <div class="row">
+            <div class="col-md-9" style="width:100%; ">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li id="Li1" style="background-color: #dcdcdc; border-color: #c23321" class="active"><a href="#solicitudcreaciondireccion" aria-controls="solicitudcreaciondireccion" data-toggle="tab" role="tab" style="background-color:#dcdcdc;">Creación de Dirección</a></li>
+
+                    </ul>
+
+
+                    <div class="tab-content" style="padding-left:0; padding-top: 0">
+                        <div role="tabpanel" class="tab-pane tab-dime-first active" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;" id="solicitudcreaciondireccion">
+                            <br />
+                            <table>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Tipo de Dirección:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        @Html.DropDownList("tipoDireccion", new List<SelectListItem> {new SelectListItem{Text="Basica", Value="Basica" },
+                                                                                             new SelectListItem{Text="Barrio Manzana", Value="Barrio Manzana" },
+                                                                                             new SelectListItem{Text="Intraducible", Value="Intraducible" },
+                                                                                             new SelectListItem{Text="Multiorigen", Value="Multiorigen" } },
+                                                                                                              "--Seleccione--", new { @class = "form-control input-sm" })
+                                    </td>
+
+                                </tr>
+                            </table>
+                            <br />
+                            <hr style="border-color:#c23321; margin-top:5px; border-width:2px;" />
+                            <div id="tabladirBasica" style="display:none">
+                                <table>
+                                    <tr>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Tipo de Vía:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Vía Principal:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Cuadrante:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Placa:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Complemento:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.DropDownList("dbtipoDeVia", new List<SelectListItem> {new SelectListItem{Text="ANILLO", Value="ANILLO" },
+                                                                                             new SelectListItem{Text="AUTOPISTA", Value="AUTOPISTA" },
+                                                                                             new SelectListItem{Text="AV", Value="AV" },
+                                                                                             new SelectListItem{Text="AVCL", Value="AVCL" },
+                                                                                             new SelectListItem{Text="AVCR", Value="AVCR" },
+                                                                                             new SelectListItem{Text="BARRIO", Value="BARRIO" },
+                                                                                             new SelectListItem{Text="CARRERA", Value="CARRERA" },
+                                                                                             new SelectListItem{Text="CIR", Value="CIR" },
+                                                                                             new SelectListItem{Text="CIRCUMVALAR", Value="CIRCUMVALAR" },
+                                                                                             new SelectListItem{Text="CL", Value="CL" },
+                                                                                             new SelectListItem{Text="CR", Value="CR" },
+                                                                                             new SelectListItem{Text="DG", Value="DG" },
+                                                                                             new SelectListItem{Text="TR", Value="TR" } },
+                                                                                                          "--SELECCIONE--", new { @class = "form-control input-sm" })
+                                        </td>
+                                        <td><input type="text" class="form-control input-sm" id="db_viaprincipal" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="db_cuadrante" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="db_placa" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="db_complemento" /> </td>
+                                    </tr>
+
+                                </table>
+
+                            </div>
+                            <div id="tabladirbarriomanzana" style="display:none">
+                                <table>
+                                    <tr>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Barrio:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Placa:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Complemento:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control input-sm" id="dbm_barrio" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="dbm_placa" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="dbm_complemento" /> </td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                            <div id="tabladirintraducible" style="display:none">
+                                <table>
+                                    <tr>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Vía o Vereda:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Nombre Vereda o Vía:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>KM:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Sector:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Nombre del Sector:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Urbanización o Finca:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control input-sm" id="di_viavereda" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="di_nombreviavereda" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="di_kilometro" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="di_sector" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="di_nombredelsector" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="di_urbofinca" /> </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Placa:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Complemento:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control input-sm" id="di_placa" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="di_complemento" /> </td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                            <div id="tabladirmultiorigen" style="display:none">
+                                <table>
+                                    <tr>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Tipo de Vía:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Vía Principal:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Cuadrante:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Barrio:</small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Placa:</small>
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.DropDownList("dmtipoDeVia", new List<SelectListItem> {new SelectListItem{Text="ANILLO", Value="ANILLO" },
+                                                                                             new SelectListItem{Text="AUTOPISTA", Value="AUTOPISTA" },
+                                                                                             new SelectListItem{Text="AV", Value="AV" },
+                                                                                             new SelectListItem{Text="AVCL", Value="AVCL" },
+                                                                                             new SelectListItem{Text="AVCR", Value="AVCR" },
+                                                                                             new SelectListItem{Text="BARRIO", Value="BARRIO" },
+                                                                                             new SelectListItem{Text="CARRERA", Value="CARRERA" },
+                                                                                             new SelectListItem{Text="CIR", Value="CIR" },
+                                                                                             new SelectListItem{Text="CIRCUMVALAR", Value="CIRCUMVALAR" },
+                                                                                             new SelectListItem{Text="CL", Value="CL" },
+                                                                                             new SelectListItem{Text="CR", Value="CR" },
+                                                                                             new SelectListItem{Text="DG", Value="DG" },
+                                                                                             new SelectListItem{Text="TR", Value="TR" } },
+                                                                                                       "--SELECCIONE--", new { @class = "form-control input-sm" })
+                                        </td>
+                                        <td><input type="text" class="form-control input-sm" id="dm_viaprincipal" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="dm_cuadrante" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="dm_barrio" /> </td>
+                                        <td><input type="text" class="form-control input-sm" id="dm_placa" /> </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Complemento:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control input-sm" id="dm_complemento" /> </td>
+                                    </tr>
+                                </table>
+                            </div>
+                                <table>
+                                    <tr>
+                                        <td width="1000" style="padding:1px;" colspan="5">
+                                            <small>Dirección Final:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="1000" colspan="5">
+                                            @Html.TextBoxFor(m => m.TrasladoFallido.Direccion, null, new { id = "cd_direccionfinal", @class = "form-control input-sm", @style = "text-transform:uppercase;", @readonly = "true" })
+                                        </td>
+                                    </tr>
+                                </table>
+                            
+                                <table style="text-align:initial;">
+                                    <tr>
+                                        <td width="370" style="padding:1px;" colspan="5">
+                                            <small>Motivo Traslado Fallido:</small>
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+
+                                        <td width="370" style="padding:1px; text-align:initial;">
+                                            @Html.DropDownListFor(m => m.TrasladoFallido.MotivoTrasladoFallido, new List<SelectListItem> {new SelectListItem{Text="AUMENTO TARIFA TRASLADO", Value="AUMENTO TARIFA TRASLADO" },
+                                                                                             new SelectListItem{Text="CIENTE NO ESPERA TIEMPOS DE GESTION PARA EL TRASLADO", Value="CIENTE NO ESPERA TIEMPOS DE GESTION PARA EL TRASLADO" },
+                                                                                             new SelectListItem{Text="FUERA DE COBERTURA", Value="FUERA DE COBERTURA" },
+                                                                                             new SelectListItem{Text="HOME PASS OCUPADO", Value="HOME PASS OCUPADO" },
+                                                                                             new SelectListItem{Text="MATRIZ SIN ACOMETIDA", Value="MATRIZ SIN ACOMETIDA" }},
+                                                                                                       "--SELECCIONE--", new { @class = "form-control input-sm", @id = "MotivoTrasladoFallido" })
+                                        </td>
+                                       
+                                    </tr>
+                                    </table>
+                                <table>
+                                    <tr>
+                                        <td style="padding:5px;">
+                                            <div class="info-box" id="Aviso1" style="display:none;">
+                                                <span style="height:95px" class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
+                                                <div class="info-box-content">
+                                                    <span class="info-box-number">USAR SOLO CUANDO</span>
+                                                    <span style="text-transform:initial;" class="info-box-text">Dirección de traslado no tiene cobertura bajo ninguna red (Bidireccional, DTH, Unidireccional)</span> 
+                                                    <span style="text-transform:initial;" class="info-box-text">Direccion de traslado solo tiene cobertura DTH y cliente bidireccional no acepta traslado</span> 
+                                                    <span style="text-transform:initial;" class="info-box-text">Sector con cobertura en alguna red (Bidireccional, DTH, Unidireccional) pero aliado técnico confirma no es posible instalación</span> 
+                                                </div>
+                                            </div>
+                                            <div class="info-box" id="Aviso2" style="display:none;">
+                                                <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
+                                                <div class="info-box-content">
+                                                    <span class="info-box-number">USAR SOLO CUANDO</span>
+                                                    <span style="text-transform:initial;" class="info-box-text">Cliente no acepta cambio de tarifa por politicas comerciales que aplican a dirección de traslado</span>
+                                                    <span style="text-transform:initial;" class="info-box-text">Cliente no acepta cambio de tarifa por estrato que aplica a dirección de traslado</span>
+                                                </div>
+                                            </div>
+                                            <div class="info-box" id="Aviso3" style="display:none;">
+                                                <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
+                                                <div class="info-box-content">
+                                                    <span class="info-box-number">USAR SOLO CUANDO</span>
+                                                    <span style="text-transform:initial;" class="info-box-text">Después de gestión Back Office no fue posible liberar HHPP de traslado (solo uso back office)</span>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="info-box" id="Aviso4" style="display:none;">
+                                                <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
+                                                <div class="info-box-content">
+                                                    <span class="info-box-number">USAR SOLO CUANDO</span>
+                                                    <span style="text-transform:initial;" class="info-box-text">Matriz de traslado no tiene cableado (sin visita tecnica, visita tecnica) y esta fuera de PEN 2017</span>
+
+                                                </div>
+                                            </div>
+                                            <div class="info-box" id="Aviso5" style="display:none;">
+                                                <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
+                                                <div class="info-box-content">
+                                                    <span class="info-box-number">USAR SOLO CUANDO</span>
+                                                    <span style="text-transform:initial;" class="info-box-text">Cliente no desea esperar tiempos de gestión por escalamiento a Back Office traslados</span>
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            <div id="ControlesComplemento" style="height:auto;width:1000px;overflow:hidden;margin-top:-15px;margin-left:5px;">
+                                <div id="DCuentaCliente" style="padding:2px; width:200px;float:left;display:none;">
+                                    <small>Cuenta Cliente</small>
+                                    @Html.TextBoxFor(m => m.IngresoTraslado.CuentaCliente, null, new { id = "CuentaCliente", @class = "form-control input-sm" })
+                                </div>
+                                <div id="DCuentaOcupa" style="padding:2px; width:200px;float:left;display:none;">
+                                    <small>Cuenta Que Ocupa</small>
+                                    @Html.TextBoxFor(m => m.TrasladoFallido.CuentaOcupa, null, new { id = "CuentaOcupada", @class = "form-control input-sm" })
+                                </div>
+                                <div id="DCuentaTraslada" style="float:left;padding:2px; width:200px;display:none;">
+                                    <small>Cuenta Que Traslada</small>
+                                    @Html.TextBoxFor(m => m.TrasladoFallido.CuentaTraslada, null, new { id = "CuentaTraslada", @class = "form-control input-sm" })
+                                </div>
+                                <div id="DCuentaMatriz" style="float:left;padding:2px; width:200px;display:none;">
+                                    <small>Cuenta Matriz</small>
+                                    @Html.TextBoxFor(m => m.TrasladoFallido.CuentaMatriz, null, new { id = "CuentaMatriz", @class = "form-control input-sm" })
+                                </div>
+                                <div id="DNombreConjunto" style="float:left;padding:2px; width:200px;display:none;">
+                                    <small>Nombre del Conjunto</small>
+                                    @Html.TextBoxFor(m => m.TrasladoFallido.NombreConjunto, null, new { id = "NombreConjunto", @class = "form-control input-sm" })
+                                </div>
+                                <div id="DEstadoMatriz" style="float:left;padding:2px; width:250px;display:none;">
+                                    <small>Estado de Matriz</small>
+                                    @Html.DropDownListFor(m => m.TrasladoFallido.EstadoMatriz, new List<SelectListItem> {new SelectListItem{Text="REPLANTEAMIENTO DE ACOMETIDA", Value="REPLANTEAMIENTO DE ACOMETIDA" },
+                                                                                             new SelectListItem{Text="SIN VISITA TECNICA", Value="SIN VISITA TECNICA" },
+                                                                                             new SelectListItem{Text="TRABAJO DE ACOMETIDA", Value="TRABAJO DE ACOMETIDA" },
+                                                                                             new SelectListItem{Text="VISITA TECNICA", Value="VISITA TECNICA" }},
+                                                                                                       "--SELECCIONE--", new { @class = "form-control input-sm" })
+                                </div>
+                                <div id="DEstratoOrigen" style="float:left;padding:2px; width:200px;display:none;">
+                                    <small>Estrato Origen</small>
+                                    @Html.TextBoxFor(m => m.TrasladoFallido.EstratoOrigen, null, new { id = "EstratoOrigen", @class = "form-control input-sm" })
+                                </div>
+                                <div id="DEstratoDestino" style="float:left;padding:2px; width:200px;display:none;">
+                                    <small>Estrato Destino</small>
+                                    @Html.TextBoxFor(m => m.TrasladoFallido.EstratoDestino, null, new { id = "EstratoDestino", @class = "form-control input-sm" })
+                                </div>
+                                <div id="DTarifaActual" style="float:left;padding:2px; width:200px;display:none;">
+                                    <small>Tarifa Actual</small>
+                                    @Html.TextBoxFor(m => m.TrasladoFallido.TarifaActual, null, new { id = "TarifaActual", @class = "form-control input-sm" })
+                                </div>
+                                <div id="DTarifaNueva" style="float:left;padding:2px; width:200px;display:none;">
+                                    <small>Tarifa Nueva</small>
+                                    @Html.TextBoxFor(m => m.TrasladoFallido.TarifaNueva, null, new { id = "TarifaNueva", @class = "form-control input-sm" })
+                                </div>
+                                <div id="DGestionPorTraslado" style="float:left;padding:2px; width:200px;display:none;">
+                                    <small>Gestión Por Traslado</small>
+                                    @Html.DropDownListFor(m => m.TrasladoFallido.GestionPorTraslado, new List<SelectListItem> {new SelectListItem{Text="CAMBIO DE ESTRATO", Value="CAMBIO DE ESTRATO" },
+                                                                                               new SelectListItem{Text="CREACION DE HOME PASS", Value="CREACION DE HOME PASS" },
+                                                                                               new SelectListItem{Text="CREACION DE MATRIZ", Value="CREACION DE MATRIZ" },
+                                                                                               new SelectListItem{Text="MATRIZ SIN ACOMETIDA", Value="MATRIZ SIN ACOMETIDA" },
+                                                                                               new SelectListItem{Text="LIBERACION DE HOME PASS", Value="LIBERACION DE HOME PASS" }},
+                                                                                                       "--SELECCIONE--", new { @class = "form-control input-sm" })
+                                </div>
+                                <div id="DNodo" style="float:left;padding:2px; width:200px;display:none;">
+                                    <small>Nodo</small>
+                                    @Html.TextBoxFor(m => m.TrasladoFallido.Nodo, null, new { id = "Nodo", @class = "form-control input-sm" })
+                                </div>
+                                <div id="DTelefonoFijo" style="float:left;padding:2px; width:200px;display:none;">
+                                    <small>Teléfono Fijo</small>
+                                    @Html.TextBoxFor(m => m.TrasladoFallido.TelefonoFijo, null, new { id = "TelefonoFijo", @class = "form-control input-sm" })
+                                </div>
+                                <div id="DTelefonoCelular" style="float:left;padding:2px; width:200px;display:none;">
+                                    <small>Teléfono Celular</small>
+                                    @Html.TextBoxFor(m => m.TrasladoFallido.TelefonoCelular, null, new { id = "TelefonoCelular", @class = "form-control input-sm" })
+                                </div>
+                                <div id="DCorreo" style="float:left;padding:2px; width:200px;display:none;">
+                                    <small>Correo Electrónico</small>
+                                    @Html.TextBoxFor(m => m.TrasladoFallido.CorreoElectronico, null, new { id = "Correo", @class = "form-control input-sm" })
+                                </div>
+
+                                <br />
+                                <div style="float:left;width:1000px;">
+                                    <table>
+                                        <tr>
+                                            <td width="1000" style="padding:1px;" colspan="5">
+                                                <small>Observaciones:</small>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="1000" colspan="5">
+                                                @Html.TextBoxFor(m => m.TrasladoFallido.Observacion, null, new { id = "Observaciones", @class = "form-control input-sm", @style = "text-transform:uppercase;height:50px;min-height:50px;max-height:50px;" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    </div>
+                                <br />
+                                <div style="float:left;width:1000px;margin-top:5px;">
+                                    <button type="submit" class="btn btn-primary" name="cdgardar" value="true" style="width:15%; height:40px;">Guardar Datos</button><br /></div>
+                                </div>    
+                                
+                        </div>
+                        <br />
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @section Scripts{
+        <script src="~/Scripts/Traslados/RegistrotrasladoFallido.js?1.1.0.1"></script>
+    }
+}
+else
+{
+    <div class="row">
+        <div class="box box-primary">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-page">
+                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                            <div class="error-content">
+                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                <p style="text-align:justify;">
+                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                    Por favor solicite al administrador del sistema el acceso correspondiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
