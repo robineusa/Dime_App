@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Telmexla.Servicios.DIME.Business;
 
 namespace Dime.Controllers
 {
@@ -30,13 +31,19 @@ namespace Dime.Controllers
 
 
         public JsonResult PaloteoConsulta(string fechaInicial, string fechaFinal)
-        {   
+        {
             DateTime inicial = Convert.ToDateTime(fechaInicial);
             DateTime final = Convert.ToDateTime(fechaFinal);
-            return new JsonResult
-            {   Data =  JsonConvert.SerializeObject(casosAdminService.ListaPaloteo(inicial,final)),
-                JsonRequestBehavior = JsonRequestBehavior.DenyGet
-            };
+
+            List<DatoConsultaPaloteo> modelo = new List<DatoConsultaPaloteo>();
+            var jsonResult = Json(JsonConvert.SerializeObject(casosAdminService.ListaPaloteo(inicial, final)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+            //return new JsonResult
+            //{   Data =  JsonConvert.SerializeObject(casosAdminService.ListaPaloteo(inicial,final)),
+            //    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+            //};
         }
 
 
@@ -109,12 +116,18 @@ namespace Dime.Controllers
            
             DateTime inicial = DateTime.ParseExact(fechaInicio, "M/d/yyyy", CultureInfo.InvariantCulture);
             DateTime final = DateTime.ParseExact(fechaFin, "M/d/yyyy", CultureInfo.InvariantCulture);
-            var result = casosAdminService.ListaGestionAdmin(inicial, final, aliado);
-            return new JsonResult
-            {
-                Data = JsonConvert.SerializeObject(result),
-                JsonRequestBehavior = JsonRequestBehavior.AllowGet
-            };
+
+            List<DatoConsultaGestionAdmin> modelo = new List<DatoConsultaGestionAdmin>();
+            var jsonResult = Json(JsonConvert.SerializeObject(casosAdminService.ListaGestionAdmin(inicial, final, aliado)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+            //var result = casosAdminService.ListaGestionAdmin(inicial, final, aliado);
+            //return new JsonResult
+            //{
+            //    Data = JsonConvert.SerializeObject(result),
+            //    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            //};
         }
 
 
