@@ -58,8 +58,13 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <h2 class="page-header" style="margin-top:25px"><i class="fa fa-search"></i> Resultados de Búsqueda:</h2>
+                           
                             <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                                 <div class="box-body">
+                          
+                                    <div class="row" ng-if="dataLoading">
+                                        <div class="col-sm-offset-5"><img src="../../Resources/Images/Loading.gif" height="100" width="100" /></div>
+                                    </div>
                                     <div id="gridViewConsulta"></div>
                                 </div>
                             </div>
