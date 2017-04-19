@@ -51,12 +51,23 @@ function CargarDatosGestion()
             var json = JSON.parse(result);
             console.log(json);
             CambiarAEstado(json);
+            if (json != null) {
+                cambiarfechas(json);
+
+            }
             ShowGridGestiones(json);
         }
 
     });
 }
+function cambiarfechas(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i].Ingreso.HoraApertura = kendo.toString(kendo.parseDate(data[i].Ingreso.HoraApertura, 'yyyy-MM-dd'), 'yyyy-MM-dd');
+        data[i].Ingreso.FechaCierre = kendo.toString(kendo.parseDate(data[i].Ingreso.FechaCierre, 'yyyy-MM-dd'), 'yyyy-MM-dd');
+        //data[i].Ingreso.HoraUltimaActualizacion = kendo.toString(kendo.parseDate(data[i].Ingreso.HoraUltimaActualizacion, 'HH:mm:ss'), 'HH:mm:ss');
+    }
 
+}
 function CambiarAEstado(data)
 {
     for (var i = 0; i < data.length; i++)
@@ -80,7 +91,7 @@ function CambiarAEstado(data)
 
 
 function ShowGridGestiones(data) {
-    $("#gridViewConsultaGestion").empty();
+   
     $("#gridViewConsultaGestion").kendoGrid({
         toolbar: ["excel"],
         excel: {
@@ -116,11 +127,11 @@ function ShowGridGestiones(data) {
            { field: "Ingreso.NombreLineaIngreso", title: "Linea Ingreso", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "Ingreso.NombreLineaEscalado", title: "Linea Escalado", width: 80, headerAttributes: { style: "white-space: normal" } },
              { field: "Ingreso.AliadoApertura", title: "Aliado Apertura", width: 80, headerAttributes: { style: "white-space: normal" } },
-            { field: "Ingreso.HoraApertura", title: "Fecha Apertura", width: 100, template: "#= kendo.toString(kendo.parseDate(Ingreso.HoraApertura, 'yyyy-MM-dd HH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", headerAttributes: { style: "white-space: normal" } },
-             { field: "Ingreso.FechaCierre", title: "Fecha Cierre", width: 100, template: "#= kendo.toString(kendo.parseDate(Ingreso.FechaCierre, 'yyyy-MM-dd HH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", headerAttributes: { style: "white-space: normal" } },
+            { field: "Ingreso.HoraApertura", title: "Fecha Apertura", width: 100, headerAttributes: { style: "white-space: normal" } },
+             { field: "Ingreso.FechaCierre", title: "Fecha Cierre", width: 100,headerAttributes: { style: "white-space: normal" } },
                   { field: "Ingreso.UsuarioApertura", title: "Usuario Apertura", width: 80, headerAttributes: { style: "white-space: normal" } },
                 { field: "Ingreso.UsuarioCierre", title: "Usuario Cierre", width: 80, headerAttributes: { style: "white-space: normal" } },
-                    { field: "Ingreso.HoraUltimaActualizacion", title: "Fecha Ultima Actualización", width: 100, template: "#= kendo.toString(kendo.parseDate(Ingreso.HoraUltimaActualizacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", headerAttributes: { style: "white-space: normal" } },
+                    { field: "Ingreso.HoraUltimaActualizacion", title: "Fecha Ultima Actualización", width: 100, filterable: false },
                   { field: "Ingreso.UsuarioUltimaActualizacion", title: "Usuario Ultima Actualización", width: 80, headerAttributes: { style: "white-space: normal" } },
                    { field: "Ingreso.Macroproceso", title: "Macroproceso", width: 80, headerAttributes: { style: "white-space: normal" } },
                     { field: "Ingreso.Marcacion", title: "Marcación", width: 80, headerAttributes: { style: "white-space: normal" } },

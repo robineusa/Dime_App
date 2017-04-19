@@ -47,12 +47,11 @@ namespace Dime.Controllers
 
         public JsonResult ConsultaCasosAbiertosPorIdIngreso(string idIngreso)
         {
-
-           
+            var result = casosCelulaService.ListaIngresosPorId(idIngreso);
 
             return new JsonResult
             {
-                Data = JsonConvert.SerializeObject(casosCelulaService.ListaIngresosPorId(idIngreso)),
+                Data = JsonConvert.SerializeObject(result),
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
