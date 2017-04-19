@@ -291,36 +291,4 @@ function ReiniciarAvisosCampos() {
     document.getElementById('DTelefonoFijo').style.display = 'none';
     document.getElementById('DTelefonoCelular').style.display = 'none';
     document.getElementById('DCorreo').style.display = 'none';
-    //limpiar valores
-    limpiarcontroles();
-}
-function limpiarcontroles() {
-    var CuentaCliente = document.getElementById('CuentaCliente');
-    CuentaCliente.value = "";
-    var CuentaOcupada = document.getElementById('CuentaOcupada');
-    CuentaOcupada.value = "";
-    var CuentaTraslada = document.getElementById('CuentaTraslada');
-    CuentaTraslada.value = "";
-    var CuentaMatriz = document.getElementById('CuentaMatriz');
-    CuentaMatriz.value = "";
-    var NombreConjunto = document.getElementById('NombreConjunto');
-    NombreConjunto.value = "";
-    var EstratoOrigen = document.getElementById('EstratoOrigen');
-    EstratoOrigen.value = "";
-    var EstratoDestino = document.getElementById('EstratoDestino');
-    EstratoDestino.value = "";
-    var TarifaActual = document.getElementById('TarifaActual');
-    TarifaActual.value = "";
-    var TarifaNueva = document.getElementById('TarifaNueva');
-    TarifaNueva.value = "";
-    var Nodo = document.getElementById('Nodo');
-    Nodo.value = "";
-    var TelefonoFijo = document.getElementById('TelefonoFijo');
-    TelefonoFijo.value = "";
-    var TelefonoCelular = document.getElementById('TelefonoCelular');
-    TelefonoCelular.value = "";
-    var Correo = document.getElementById('Correo');
-    Correo.value = "";
-    $('#DEstadoMatriz option').prop('selected', function () { return this.defaultSelected; });
-    $('#DGestionPorTraslado option').prop('selected', function () { return this.defaultSelected; });
 }

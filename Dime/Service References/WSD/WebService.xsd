@@ -254,6 +254,7 @@
       <xs:element minOccurs="0" name="HoraUltimaActualizacion" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="IdEstado" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="IdIngreso" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdIngresoSiriac" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="IdServicio" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="Macroproceso" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Marcacion" nillable="true" type="xs:string" />
@@ -262,6 +263,7 @@
       <xs:element minOccurs="0" name="NombreComunidad" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreLineaEscalado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreLineaIngreso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotasIngresoes" nillable="true" type="tns:ArrayOfNotasIngreso" />
       <xs:element minOccurs="0" name="Productos" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Red" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Semaforo" nillable="true" type="xs:string" />
@@ -276,6 +278,29 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Ingreso" nillable="true" type="tns:Ingreso" />
+  <xs:complexType name="ArrayOfNotasIngreso">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NotasIngreso" nillable="true" type="tns:NotasIngreso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNotasIngreso" nillable="true" type="tns:ArrayOfNotasIngreso" />
+  <xs:complexType name="NotasIngreso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaNota" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HoraNota" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdEstado" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdIngreso" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdNota" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Ingreso" nillable="true" type="tns:Ingreso" />
+      <xs:element minOccurs="0" name="LlamadaCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreLineaNota" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ticket" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotasIngreso" nillable="true" type="tns:NotasIngreso" />
   <xs:complexType name="IngresosSoporte">
     <xs:sequence>
       <xs:element minOccurs="0" name="Apellido" nillable="true" type="xs:string" />
@@ -300,22 +325,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfIngreso" nillable="true" type="tns:ArrayOfIngreso" />
-  <xs:complexType name="NotasIngreso">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
-      <xs:element minOccurs="0" name="FechaNota" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="HoraNota" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="IdEstado" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="IdIngreso" nillable="true" type="xs:decimal" />
-      <xs:element minOccurs="0" name="IdNota" type="xs:decimal" />
-      <xs:element minOccurs="0" name="LlamadaCliente" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="NombreLineaNota" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Nota" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Ticket" nillable="true" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="NotasIngreso" nillable="true" type="tns:NotasIngreso" />
   <xs:complexType name="ArrayOfMaestroOutboundTipoContacto">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="MaestroOutboundTipoContacto" nillable="true" type="tns:MaestroOutboundTipoContacto" />
@@ -986,6 +995,7 @@
       <xs:element minOccurs="0" name="LiberacionHomePass" nillable="true" type="tns:LiberacionHomePass" />
       <xs:element minOccurs="0" name="MaestroNodo" nillable="true" type="tns:MaestroNodo" />
       <xs:element minOccurs="0" name="NotaTrasladoGetSet" nillable="true" type="tns:NotasTraslado" />
+      <xs:element minOccurs="0" name="TrasladoFallido" nillable="true" type="tns:TrasladoFallido" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DatoConsultaDirecciones" nillable="true" type="tns:DatoConsultaDirecciones" />
@@ -1093,30 +1103,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MaestroNodo" nillable="true" type="tns:MaestroNodo" />
-  <xs:complexType name="ArrayOfNotasTraslado">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="NotasTraslado" nillable="true" type="tns:NotasTraslado" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfNotasTraslado" nillable="true" type="tns:ArrayOfNotasTraslado" />
-  <xs:complexType name="ArrayOfCambioEstrato">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="CambioEstrato" nillable="true" type="tns:CambioEstrato" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfCambioEstrato" nillable="true" type="tns:ArrayOfCambioEstrato" />
-  <xs:complexType name="ArrayOfLiberacionHomePass">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="LiberacionHomePass" nillable="true" type="tns:LiberacionHomePass" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfLiberacionHomePass" nillable="true" type="tns:ArrayOfLiberacionHomePass" />
-  <xs:complexType name="ArrayOfGestionMatriz">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestionMatriz" nillable="true" type="tns:GestionMatriz" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfGestionMatriz" nillable="true" type="tns:ArrayOfGestionMatriz" />
   <xs:complexType name="TrasladoFallido">
     <xs:sequence>
       <xs:element minOccurs="0" name="CanalTransaccion" nillable="true" type="xs:string" />
@@ -1146,6 +1132,30 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TrasladoFallido" nillable="true" type="tns:TrasladoFallido" />
+  <xs:complexType name="ArrayOfNotasTraslado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NotasTraslado" nillable="true" type="tns:NotasTraslado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNotasTraslado" nillable="true" type="tns:ArrayOfNotasTraslado" />
+  <xs:complexType name="ArrayOfCambioEstrato">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CambioEstrato" nillable="true" type="tns:CambioEstrato" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCambioEstrato" nillable="true" type="tns:ArrayOfCambioEstrato" />
+  <xs:complexType name="ArrayOfLiberacionHomePass">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LiberacionHomePass" nillable="true" type="tns:LiberacionHomePass" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLiberacionHomePass" nillable="true" type="tns:ArrayOfLiberacionHomePass" />
+  <xs:complexType name="ArrayOfGestionMatriz">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestionMatriz" nillable="true" type="tns:GestionMatriz" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestionMatriz" nillable="true" type="tns:ArrayOfGestionMatriz" />
   <xs:complexType name="ArrayOfMaestroNodo">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="MaestroNodo" nillable="true" type="tns:MaestroNodo" />

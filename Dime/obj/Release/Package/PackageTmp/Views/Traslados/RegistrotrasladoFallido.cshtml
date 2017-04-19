@@ -312,7 +312,7 @@
                                                                                              new SelectListItem{Text="SIN VISITA TECNICA", Value="SIN VISITA TECNICA" },
                                                                                              new SelectListItem{Text="TRABAJO DE ACOMETIDA", Value="TRABAJO DE ACOMETIDA" },
                                                                                              new SelectListItem{Text="VISITA TECNICA", Value="VISITA TECNICA" }},
-                                                                                                       "--SELECCIONE--", new { @class = "form-control input-sm",@id= "DEstadoMatriz" })
+                                                                                                       "--SELECCIONE--", new { @class = "form-control input-sm" })
                                 </div>
                                 <div id="DEstratoOrigen" style="float:left;padding:2px; width:200px;display:none;">
                                     <small>Estrato Origen</small>
@@ -337,7 +337,7 @@
                                                                                                new SelectListItem{Text="CREACION DE MATRIZ", Value="CREACION DE MATRIZ" },
                                                                                                new SelectListItem{Text="MATRIZ SIN ACOMETIDA", Value="MATRIZ SIN ACOMETIDA" },
                                                                                                new SelectListItem{Text="LIBERACION DE HOME PASS", Value="LIBERACION DE HOME PASS" }},
-                                                                                                       "--SELECCIONE--", new { @class = "form-control input-sm",@id= "DGestionPorTraslado" })
+                                                                                                       "--SELECCIONE--", new { @class = "form-control input-sm" })
                                 </div>
                                 <div id="DNodo" style="float:left;padding:2px; width:200px;display:none;">
                                     <small>Nodo</small>
@@ -386,7 +386,7 @@
         </div>
     }
     @section Scripts{
-        <script src="~/Scripts/Traslados/RegistrotrasladoFallido.js?1.1.3"></script>
+        <script src="~/Scripts/Traslados/RegistrotrasladoFallido.js?1.1.0.1"></script>
 @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
     }
 }

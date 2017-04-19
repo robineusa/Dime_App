@@ -7396,6 +7396,18 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/InsertIngresoTrasladoFallido", ReplyAction="http://tempuri.org/ITrasladosService/InsertIngresoTrasladoFallidoResponse")]
         System.Threading.Tasks.Task InsertIngresoTrasladoFallidoAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoFallido notaTraslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ConsultaTrasladoFallidoCliente", ReplyAction="http://tempuri.org/ITrasladosService/ConsultaTrasladoFallidoClienteResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ConsultaTrasladoFallidoCliente(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ConsultaTrasladoFallidoCliente", ReplyAction="http://tempuri.org/ITrasladosService/ConsultaTrasladoFallidoClienteResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ConsultaTrasladoFallidoClienteAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ConsultaGeneralTrasladosFallidos", ReplyAction="http://tempuri.org/ITrasladosService/ConsultaGeneralTrasladosFallidosResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ConsultaGeneralTrasladosFallidos(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ConsultaGeneralTrasladosFallidos", ReplyAction="http://tempuri.org/ITrasladosService/ConsultaGeneralTrasladosFallidosResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ConsultaGeneralTrasladosFallidosAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -7815,6 +7827,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task InsertIngresoTrasladoFallidoAsync(Telmexla.Servicios.DIME.Entity.IngresoTraslado ingreso, Telmexla.Servicios.DIME.Entity.TrasladoFallido notaTraslado, Telmexla.Servicios.DIME.Entity.TraficoTraslado transaccion) {
             return base.Channel.InsertIngresoTrasladoFallidoAsync(ingreso, notaTraslado, transaccion);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ConsultaTrasladoFallidoCliente(decimal CuentaCliente) {
+            return base.Channel.ConsultaTrasladoFallidoCliente(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ConsultaTrasladoFallidoClienteAsync(decimal CuentaCliente) {
+            return base.Channel.ConsultaTrasladoFallidoClienteAsync(CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ConsultaGeneralTrasladosFallidos(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaGeneralTrasladosFallidos(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ConsultaGeneralTrasladosFallidosAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaGeneralTrasladosFallidosAsync(FechaInicial, FechaFinal);
         }
     }
     
