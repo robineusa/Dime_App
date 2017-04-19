@@ -121,13 +121,6 @@ namespace Dime.Controllers
             var jsonResult = Json(JsonConvert.SerializeObject(casosAdminService.ListaGestionAdmin(inicial, final, aliado)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
-
-            //var result = casosAdminService.ListaGestionAdmin(inicial, final, aliado);
-            //return new JsonResult
-            //{
-            //    Data = JsonConvert.SerializeObject(result),
-            //    JsonRequestBehavior = JsonRequestBehavior.AllowGet
-            //};
         }
 
 
