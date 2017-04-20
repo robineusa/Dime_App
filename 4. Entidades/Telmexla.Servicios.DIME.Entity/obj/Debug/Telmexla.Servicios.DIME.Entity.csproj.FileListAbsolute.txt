@@ -6,6 +6,5 @@ C:\Users\David Gomez\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.D
 C:\Users\robin\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\Telmexla.Servicios.DIME.Entity.dll.config
 C:\Users\robin\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\Telmexla.Servicios.DIME.Entity.dll
 C:\Users\robin\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\Telmexla.Servicios.DIME.Entity.pdb
-C:\Users\robin\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\obj\Debug\Telmexla.Servicios.DIME.Entity.csprojResolveAssemblyReference.cache
 C:\Users\robin\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\obj\Debug\Telmexla.Servicios.DIME.Entity.dll
 C:\Users\robin\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\obj\Debug\Telmexla.Servicios.DIME.Entity.pdb
