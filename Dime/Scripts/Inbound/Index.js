@@ -15,6 +15,9 @@ $(document).ready(function () {
         var code = e.keyCode || e.which;
         if (code == 13) {
             SubmitGetDatos();
+
+            UsabilidadBusquedaCuenta();
+
         }
         
         
@@ -553,6 +556,21 @@ function ResetearDivs() {
     $('#ClaroVideoBody').html(vacio);
     $('#SMOBody').html(vacio);
     $('#SiembraBody').html(vacio);
+}
+
+function UsabilidadBusquedaCuenta() {
+    var Cu = $("#inputCuenta").val();
+    var data = { Cuenta: Cu };
+    $.ajax({
+        type: "GET",
+        url: urlUsabilidadBusquedaCuenta,
+        data: data,
+        contentType: false,
+        success: function (result) {
+
+        }
+    });
+
 }
 
 
