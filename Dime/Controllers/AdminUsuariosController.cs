@@ -137,6 +137,7 @@ namespace Dime.Controllers
                     model.UsuarioHolos = loginService.ConsultarUsuarioHolos(model.UsuarioHolos.Cedula);
                     model.IdPerfil = loginService.IdPerfilDeUsuario(idUsuario);
                     model.NombreLinea = loginService.LineaDeUsuario(idUsuario);
+                    model.IdLinea = loginService.IdLineaDeUsuario(idUsuario);
                 }
                 else
                 {

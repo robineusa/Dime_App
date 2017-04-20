@@ -213,5 +213,20 @@ namespace Dime.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Guardar_Usabilidad_Consulta_Cuenta(string Cuenta)
+        {
+            UsabilidadBusquedaCuentaInbound model = new UsabilidadBusquedaCuentaInbound();
+            //model.Id = 0;
+            //model.FechaRevision = DateTime.Now;
+            model.IdUsuarioRevision = Convert.ToInt32(Session["IdUsuario"].ToString());
+            model.NombreUsuarioRevision = Session["NombreUsuario"].ToString();
+            model.CuentaRevisoTabla = Convert.ToInt32(Cuenta);
+
+            usabilidad.InsertarUsabilidadCuentaInbound(model);
+
+            return View();
+        }
     }
 }
