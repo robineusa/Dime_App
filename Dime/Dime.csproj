@@ -221,9 +221,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Usuario2.cs" />
     <Compile Include="MyHub.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\WSD\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -2215,24 +2212,37 @@
     <Content Include="AdminLTE\plugins\timepicker\js\bootstrap-timepicker.min.js" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\AutoMapper.dll" />
+    <Content Include="bin\Dime.dll" />
     <Content Include="bin\Dime.dll.config" />
+    <Content Include="bin\Dime.pdb" />
     <Content Include="bin\EntityFramework.dll" />
     <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\es\Microsoft.AspNet.SignalR.SystemWeb.resources.dll" />
+    <Content Include="bin\es\Microsoft.Owin.Security.resources.dll" />
     <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
     <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
     <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.xml" />
     <Content Include="bin\Microsoft.AspNet.SignalR.Core.dll" />
     <Content Include="bin\Microsoft.AspNet.SignalR.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.AspNet.SignalR.SystemWeb.xml" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="bin\Microsoft.Owin.dll" />
     <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
     <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.xml" />
     <Content Include="bin\Microsoft.Owin.Security.dll" />
     <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Facebook.xml" />
     <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Google.xml" />
     <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.xml" />
     <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
     <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Twitter.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.xml" />
     <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
     <Content Include="bin\Newtonsoft.Json.dll" />
     <Content Include="bin\Owin.dll" />
@@ -2253,8 +2263,12 @@
     <Content Include="bin\System.Web.Optimization.dll" />
     <Content Include="bin\System.Web.Razor.dll" />
     <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
     <Content Include="bin\System.Web.WebPages.dll" />
     <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\Telmexla.Servicios.DIME.Entity.dll" />
+    <Content Include="bin\Telmexla.Servicios.DIME.Entity.pdb" />
     <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\angular-material.css" />
     <Content Include="Content\angular-material.layout-attributes.css" />
@@ -2275,8 +2289,6 @@
     <Content Include="ImagesClient\fotos-paisajes-naturales-suiza-alpes-suizos-swiss-natural-scenery-hd-photo-wallpapers-10.jpg" />
     <Content Include="ImagesClient\hd.png" />
     <Content Include="ImagesClient\Islas-andaman.jpg" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Debug\TempPE\Service References.WSD.Reference.cs.dll" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Acceso.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BalanceScoreCard.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BasePersonalHolo.datasource" />
@@ -3017,9 +3029,6 @@
     <Content Include="Service References\WSD\Dime.WSD.SmoTarifaActual.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\WSD\Dime.WSD.Departamento.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\WSD\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -3274,7 +3283,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="bin\es\" />
     <Folder Include="Views\CasosAdmin\" />
   </ItemGroup>
   <ItemGroup>

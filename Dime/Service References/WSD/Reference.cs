@@ -5268,115 +5268,6 @@ namespace Dime.WSD {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UsabilidadBusquedaCuentaInbound", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
-    [System.SerializableAttribute()]
-    public partial class UsabilidadBusquedaCuentaInbound : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> CuentaRevisoTablaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> FechaRevisionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> IdUsuarioRevisionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreUsuarioRevisionField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> CuentaRevisoTabla {
-            get {
-                return this.CuentaRevisoTablaField;
-            }
-            set {
-                if ((this.CuentaRevisoTablaField.Equals(value) != true)) {
-                    this.CuentaRevisoTablaField = value;
-                    this.RaisePropertyChanged("CuentaRevisoTabla");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> FechaRevision {
-            get {
-                return this.FechaRevisionField;
-            }
-            set {
-                if ((this.FechaRevisionField.Equals(value) != true)) {
-                    this.FechaRevisionField = value;
-                    this.RaisePropertyChanged("FechaRevision");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> IdUsuarioRevision {
-            get {
-                return this.IdUsuarioRevisionField;
-            }
-            set {
-                if ((this.IdUsuarioRevisionField.Equals(value) != true)) {
-                    this.IdUsuarioRevisionField = value;
-                    this.RaisePropertyChanged("IdUsuarioRevision");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NombreUsuarioRevision {
-            get {
-                return this.NombreUsuarioRevisionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreUsuarioRevisionField, value) != true)) {
-                    this.NombreUsuarioRevisionField = value;
-                    this.RaisePropertyChanged("NombreUsuarioRevision");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IWebService")]
     public interface IWebService {
@@ -5565,6 +5456,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/LineaDeUsuario", ReplyAction="http://tempuri.org/ILoginService/LineaDeUsuarioResponse")]
         System.Threading.Tasks.Task<string> LineaDeUsuarioAsync(int idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/IdLineaDeUsuario", ReplyAction="http://tempuri.org/ILoginService/IdLineaDeUsuarioResponse")]
+        int IdLineaDeUsuario(int idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/IdLineaDeUsuario", ReplyAction="http://tempuri.org/ILoginService/IdLineaDeUsuarioResponse")]
+        System.Threading.Tasks.Task<int> IdLineaDeUsuarioAsync(int idUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/PerfilDeUsuario", ReplyAction="http://tempuri.org/ILoginService/PerfilDeUsuarioResponse")]
         string PerfilDeUsuario(int idUsuario);
@@ -5842,6 +5739,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<string> LineaDeUsuarioAsync(int idUsuario) {
             return base.Channel.LineaDeUsuarioAsync(idUsuario);
+        }
+        
+        public int IdLineaDeUsuario(int idUsuario) {
+            return base.Channel.IdLineaDeUsuario(idUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<int> IdLineaDeUsuarioAsync(int idUsuario) {
+            return base.Channel.IdLineaDeUsuarioAsync(idUsuario);
         }
         
         public string PerfilDeUsuario(int idUsuario) {
@@ -8429,10 +8334,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task InsertarUsabilidadInboundConvenioAsync(Telmexla.Servicios.DIME.Entity.UsabilidadConvenioInbound convenio);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadCuentaInbound", ReplyAction="http://tempuri.org/IUsabilidadService/InsertarUsabilidadCuentaInboundResponse")]
-        void InsertarUsabilidadCuentaInbound(Dime.WSD.UsabilidadBusquedaCuentaInbound CuentaInbound);
+        void InsertarUsabilidadCuentaInbound(Telmexla.Servicios.DIME.Entity.UsabilidadBusquedaCuentaInbound CuentaInbound);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadCuentaInbound", ReplyAction="http://tempuri.org/IUsabilidadService/InsertarUsabilidadCuentaInboundResponse")]
-        System.Threading.Tasks.Task InsertarUsabilidadCuentaInboundAsync(Dime.WSD.UsabilidadBusquedaCuentaInbound CuentaInbound);
+        System.Threading.Tasks.Task InsertarUsabilidadCuentaInboundAsync(Telmexla.Servicios.DIME.Entity.UsabilidadBusquedaCuentaInbound CuentaInbound);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8470,11 +8375,11 @@ namespace Dime.WSD {
             return base.Channel.InsertarUsabilidadInboundConvenioAsync(convenio);
         }
         
-        public void InsertarUsabilidadCuentaInbound(Dime.WSD.UsabilidadBusquedaCuentaInbound CuentaInbound) {
+        public void InsertarUsabilidadCuentaInbound(Telmexla.Servicios.DIME.Entity.UsabilidadBusquedaCuentaInbound CuentaInbound) {
             base.Channel.InsertarUsabilidadCuentaInbound(CuentaInbound);
         }
         
-        public System.Threading.Tasks.Task InsertarUsabilidadCuentaInboundAsync(Dime.WSD.UsabilidadBusquedaCuentaInbound CuentaInbound) {
+        public System.Threading.Tasks.Task InsertarUsabilidadCuentaInboundAsync(Telmexla.Servicios.DIME.Entity.UsabilidadBusquedaCuentaInbound CuentaInbound) {
             return base.Channel.InsertarUsabilidadCuentaInboundAsync(CuentaInbound);
         }
     }

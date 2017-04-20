@@ -46,15 +46,14 @@
     if (perfilUsuario  != null)
     {
         $("#perfilSelectedCreate").val(perfilUsuario);
-       // IdPerfilDeUsuarioActual(cedulaConsultado);
-        $("#lineaSelectCreacion").append('<option value="1">'+lineaUsuario+'</option>')
-        $("#lineaSelectCreacion").val(1);
-        LlenarAccesosDePerfilConsulta();
+        TraerPosiblesLineasYAccesosDePerfil();
     }
-
+    if (perfilUsuario == null)
+        {
     $("#listaPermisosCrearMasivo").val("");
     $("#listaPermisosCrear").val("");
     $("#listaUsuariosMasivo").val("");
+    }
 
 });
 
@@ -74,24 +73,13 @@ function LlenarAccesosDePerfilConsulta() {
             var i = 0;
             if ($("#Aliado_Actu").val() != "") {
                 do {
-                    var row = table.insertRow(0);
-                    for (var j = 0; j < 7 && i < data.accesos.length; j++, i++) {
-                        var newCell = row.insertCell(j);
-                        newCell.style.padding = "4px";
-
-                        newCell.innerHTML = '  <label style="font-weight: 400; padding:5px;  border-color: burlywood; background-color:rgba(222, 184, 135, 0.8); width:100%">' +
-                                                           ' <input type="checkbox" class="minimal" checked disabled /> ' + data.accesos[i] +
-                                                '</label>';
-                    }
-
+                    document.getElementById(data.accesos[i]).checked = true;
+                    SelectCrearAccesoPorValue(document.getElementById(data.accesos[i]).value);
+                    i++;
                 } while (i < data.accesos.length)
             }
         }
-
-
     });
-
-
 }
 
 
@@ -119,6 +107,15 @@ function SelectCrearAcceso(e) {
 
         $("#listaPermisosCrear").val(resultado);
     }
+}
+
+function SelectCrearAccesoPorValue(value) {
+        if ($("#listaPermisosCrear").val() != "") {
+            $("#listaPermisosCrear").val($("#listaPermisosCrear").val() + "-" + value);
+        } else {
+            $("#listaPermisosCrear").val(value);
+        }
+
 }
 
 function SelectCrearAccesoMasivo(e) {
@@ -162,7 +159,7 @@ function LlenarAccesosDePerfilCreacion(data) {
             var newCell = row.insertCell(j);
             newCell.style.padding = "4px";
             newCell.innerHTML = '  <label style="font-weight: 400; padding:5px;  border-color: burlywood; background-color:rgba(222, 184, 135, 0.8); width:100%">' +
-                                               ' <input type="checkbox" class="minimal" value="' + data.accesos[i].Id + '" onchange="SelectCrearAcceso(event);"  /> ' + data.accesos[i].Nombre +
+                                               ' <input type="checkbox" class="minimal" value="' + data.accesos[i].Id + '" onchange="SelectCrearAcceso(event);" id="' + data.accesos[i].Nombre + '"  /> ' + data.accesos[i].Nombre +
                                     '</label>';
         }
 
@@ -243,7 +240,12 @@ function TraerPosiblesLineasYAccesosDePerfil() {
             for (var i = 0; i < json.lineas.length; i++) {
                 $("#lineaSelectCreacion").append("<option value=" + json.lineas[i].Id + ">" + json.lineas[i].Nombre + "</option>");
             }
-            LlenarAccesosDePerfilCreacion(json);
+             if (lineaUsuario != null)
+            {
+                $("#lineaSelectCreacion").val(lineaUsuario);
+            }
+             LlenarAccesosDePerfilCreacion(json);
+             LlenarAccesosDePerfilConsulta();
         }
 
 
