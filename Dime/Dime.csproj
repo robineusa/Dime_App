@@ -2918,10 +2918,12 @@
     <Content Include="Scripts\Traslados\ConsultaAdminIngresosLiberaciones.js" />
     <Content Include="Scripts\Traslados\ConsultaAdminIngresosMatrices.js" />
     <Content Include="Scripts\Traslados\ConsultaAdminIngresosTraslados.js" />
+    <Content Include="Scripts\Traslados\ConsultaAdminTrasladosFallidos.js" />
     <Content Include="Scripts\Traslados\ConsultaClienteCambiodeEstrato.js" />
     <Content Include="Scripts\Traslados\ConsultaClienteCreacionDireccion.js" />
     <Content Include="Scripts\Traslados\ConsultaClienteLiberacionHomePass.js" />
     <Content Include="Scripts\Traslados\ConsultaClienteMatrices.js" />
+    <Content Include="Scripts\Traslados\ConsultaClienteTrasladoFallido.js" />
     <Content Include="Scripts\Traslados\ConsultaGestionCambioDeEstrato.js" />
     <Content Include="Scripts\Traslados\ConsultaGestionCreacionDr.js" />
     <Content Include="Scripts\Traslados\ConsultaGestionLiberaciondeHomePass.js" />
@@ -3014,13 +3016,24 @@
     <Content Include="Service References\WSD\Dime.WSD.SmoTarifaActual.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\WSD\Dime.WSD.Departamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\WSD\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\WSD\WebService.wsdl" />
+    <None Include="Service References\WSD\WebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\WSD\WebService1.disco" />
+    <None Include="Service References\WSD\WebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\WSD\WebService11.disco" />
     <None Include="Service References\WSD\WebService12.disco" />
+    <None Include="Service References\WSD\WebService.disco" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
     <Content Include="Styles\Elements\General.css" />
@@ -3194,6 +3207,15 @@
     <None Include="Service References\WSD\WebService1.wsdl" />
     <None Include="Service References\WSD\WebService11.wsdl" />
     <None Include="Service References\WSD\WebService12.wsdl" />
+    <None Include="Service References\WSD\WebService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -3240,6 +3262,8 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\Traslados\RegistrotrasladoFallido.cshtml" />
+    <Content Include="Views\Traslados\ConsultaClienteTrasladoFallido.cshtml" />
+    <Content Include="Views\Traslados\ConsultaAdminTrasladosFallidos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

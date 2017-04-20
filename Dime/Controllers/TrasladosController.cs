@@ -185,11 +185,16 @@ namespace Dime.Controllers
         {
           
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaDireccionesCreadasOutbound(Session["Usuario"].ToString());
             return View(modelo);
 
         }
-       
+        public JsonResult DireccionesCreadasOutboundJson(){
+            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaDireccionesCreadasOutbound(Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
         [HttpGet]
         public ActionResult GestionarDireccionOutbound(int id)
         {
@@ -1185,8 +1190,15 @@ namespace Dime.Controllers
 
             modelo.IngresoTraslado.NombreLineaIngreso = Session["LineaLogeado"].ToString(); modelo.IngresoTraslado.AliadoApertura = Session["AliadoLogeado"].ToString();
 
-                        if (modelo.TrasladoFallido.Observacion == null || modelo.TrasladoFallido.Observacion == "") { modelo.TrasladoFallido.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.TrasladoFallido.Observacion = modelo.TrasladoFallido.Observacion.ToUpper(); }
-                        modelo.TrasladoFallido.Direccion = modelo.TrasladoFallido.Direccion.ToUpper();
+            if (modelo.TrasladoFallido.Observacion == null || modelo.TrasladoFallido.Observacion == "") { modelo.TrasladoFallido.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.TrasladoFallido.Observacion = modelo.TrasladoFallido.Observacion.ToUpper(); }
+            if (modelo.IngresoTraslado.CuentaCliente == 0) { modelo.IngresoTraslado.CuentaCliente = modelo.TrasladoFallido.CuentaTraslada;}
+            if (modelo.TrasladoFallido.TarifaActual == null || modelo.TrasladoFallido.TarifaActual == "") { }else { modelo.TrasladoFallido.TarifaActual = modelo.TrasladoFallido.TarifaActual.ToUpper(); }
+            if (modelo.TrasladoFallido.TarifaNueva == null || modelo.TrasladoFallido.TarifaNueva == "") { } else { modelo.TrasladoFallido.TarifaNueva = modelo.TrasladoFallido.TarifaNueva.ToUpper(); }
+            if (modelo.TrasladoFallido.Nodo == null || modelo.TrasladoFallido.Nodo == "") { }else { modelo.TrasladoFallido.Nodo = modelo.TrasladoFallido.Nodo.ToUpper(); }
+            if (modelo.TrasladoFallido.Direccion == null || modelo.TrasladoFallido.Direccion == "") { } else { modelo.TrasladoFallido.Direccion = modelo.TrasladoFallido.Direccion.ToUpper(); }
+            modelo.TrasladoFallido.CuentaCliente = modelo.IngresoTraslado.CuentaCliente;
+            
+                
             
 
                         //datos de transaccion
@@ -1202,7 +1214,44 @@ namespace Dime.Controllers
             return RedirectToAction("RegistrotrasladoFallido");
           
         }
+        [HttpGet]
+        public ActionResult ConsultaClienteTrasladoFallido()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ConsultaClienteTrasladoFallido(string CuentaCliente)
+        {
 
+            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
+            if (CuentaCliente != null && CuentaCliente != "")
+            {
+                modelo = trasladowebservice.ConsultaTrasladoFallidoCliente(Convert.ToDecimal(CuentaCliente));
+            }
+            else
+            {
+                return RedirectToAction("ConsultaClienteTrasladoFallido");
+            }
+
+            return View(modelo);
+
+        }
+        [HttpGet]
+        public ActionResult ConsultaAdminTrasladosFallidos()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ConsultaAdminTrasladosFallidos(string fechaInicial, string fechaFinal)
+        {
+
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
+            modelo = trasladowebservice.ConsultaGeneralTrasladosFallidos(FI, FF);
+            return View(modelo);
+        }
 
 
 

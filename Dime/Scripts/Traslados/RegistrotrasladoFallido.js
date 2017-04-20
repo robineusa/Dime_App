@@ -223,31 +223,104 @@ function MostrarCamposRequeridos() {
     if ($('#MotivoTrasladoFallido').val() == "AUMENTO TARIFA TRASLADO") {
         ReiniciarAvisosCampos();
         document.getElementById('Aviso2').style.display = 'inline-block';
+        document.getElementById('DCuentaCliente').style.display = 'inline-block';
+        document.getElementById('DEstratoOrigen').style.display = 'inline-block';
+        document.getElementById('DEstratoDestino').style.display = 'inline-block';
+        document.getElementById('DTelefonoFijo').style.display = 'inline-block';
+        document.getElementById('DTelefonoCelular').style.display = 'inline-block';
+        document.getElementById('DTarifaActual').style.display = 'inline-block';
+        document.getElementById('DTarifaNueva').style.display = 'inline-block';
+        document.getElementById('DCorreo').style.display = 'inline-block';
     }
     else if ($('#MotivoTrasladoFallido').val() == "CIENTE NO ESPERA TIEMPOS DE GESTION PARA EL TRASLADO") {
         ReiniciarAvisosCampos();
         document.getElementById('Aviso5').style.display = 'inline-block';
+        document.getElementById('DCuentaCliente').style.display = 'inline-block';
+        document.getElementById('DGestionPorTraslado').style.display = 'inline-block';
     }
     else if ($('#MotivoTrasladoFallido').val() == "FUERA DE COBERTURA") {
         ReiniciarAvisosCampos();
         document.getElementById('Aviso1').style.display = 'inline-block';
+        document.getElementById('DCuentaCliente').style.display = 'inline-block';
+        document.getElementById('DTelefonoFijo').style.display = 'inline-block';
+        document.getElementById('DTelefonoCelular').style.display = 'inline-block';
     }
     else if ($('#MotivoTrasladoFallido').val() == "HOME PASS OCUPADO") {
         ReiniciarAvisosCampos();
         document.getElementById('Aviso3').style.display = 'inline-block';
+        document.getElementById('DCuentaOcupa').style.display = 'inline-block';
+        document.getElementById('DCuentaTraslada').style.display = 'inline-block';
+        document.getElementById('DTelefonoFijo').style.display = 'inline-block';
+        document.getElementById('DTelefonoCelular').style.display = 'inline-block';
+
     }
     else if ($('#MotivoTrasladoFallido').val() == "MATRIZ SIN ACOMETIDA") {
         ReiniciarAvisosCampos();
         document.getElementById('Aviso4').style.display = 'inline-block';
+        document.getElementById('DCuentaCliente').style.display = 'inline-block';
+        document.getElementById('DCuentaMatriz').style.display = 'inline-block';
+        document.getElementById('DEstadoMatriz').style.display = 'inline-block';
+        document.getElementById('DNodo').style.display = 'inline-block';
+        document.getElementById('DNombreConjunto').style.display = 'inline-block';
+        document.getElementById('DTelefonoCelular').style.display = 'inline-block';
     }
-    else{
+    else {
         ReiniciarAvisosCampos();
     }
 }
 function ReiniciarAvisosCampos() {
+    //avisos
     document.getElementById('Aviso1').style.display = 'none';
     document.getElementById('Aviso2').style.display = 'none';
     document.getElementById('Aviso3').style.display = 'none';
     document.getElementById('Aviso4').style.display = 'none';
     document.getElementById('Aviso5').style.display = 'none';
+    //campos para mostrar
+    document.getElementById('DCuentaCliente').style.display = 'none';
+    document.getElementById('DCuentaOcupa').style.display = 'none';
+    document.getElementById('DCuentaTraslada').style.display = 'none';
+    document.getElementById('DCuentaMatriz').style.display = 'none';
+    document.getElementById('DNombreConjunto').style.display = 'none';
+    document.getElementById('DEstadoMatriz').style.display = 'none';
+    document.getElementById('DEstratoOrigen').style.display = 'none';
+    document.getElementById('DEstratoDestino').style.display = 'none';
+    document.getElementById('DTarifaActual').style.display = 'none';
+    document.getElementById('DTarifaNueva').style.display = 'none';
+    document.getElementById('DGestionPorTraslado').style.display = 'none';
+    document.getElementById('DNodo').style.display = 'none';
+    document.getElementById('DTelefonoFijo').style.display = 'none';
+    document.getElementById('DTelefonoCelular').style.display = 'none';
+    document.getElementById('DCorreo').style.display = 'none';
+    //limpiar valores
+    limpiarcontroles();
+}
+function limpiarcontroles() {
+    var CuentaCliente = document.getElementById('CuentaCliente');
+    CuentaCliente.value = "";
+    var CuentaOcupada = document.getElementById('CuentaOcupada');
+    CuentaOcupada.value = "";
+    var CuentaTraslada = document.getElementById('CuentaTraslada');
+    CuentaTraslada.value = "";
+    var CuentaMatriz = document.getElementById('CuentaMatriz');
+    CuentaMatriz.value = "";
+    var NombreConjunto = document.getElementById('NombreConjunto');
+    NombreConjunto.value = "";
+    var EstratoOrigen = document.getElementById('EstratoOrigen');
+    EstratoOrigen.value = "";
+    var EstratoDestino = document.getElementById('EstratoDestino');
+    EstratoDestino.value = "";
+    var TarifaActual = document.getElementById('TarifaActual');
+    TarifaActual.value = "";
+    var TarifaNueva = document.getElementById('TarifaNueva');
+    TarifaNueva.value = "";
+    var Nodo = document.getElementById('Nodo');
+    Nodo.value = "";
+    var TelefonoFijo = document.getElementById('TelefonoFijo');
+    TelefonoFijo.value = "";
+    var TelefonoCelular = document.getElementById('TelefonoCelular');
+    TelefonoCelular.value = "";
+    var Correo = document.getElementById('Correo');
+    Correo.value = "";
+    $('#DEstadoMatriz option').prop('selected', function () { return this.defaultSelected; });
+    $('#DGestionPorTraslado option').prop('selected', function () { return this.defaultSelected; });
 }
