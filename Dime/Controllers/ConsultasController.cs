@@ -34,8 +34,6 @@ namespace Dime.Controllers
 
         public JsonResult ConsultaCasosAbiertosPorCuenta(string cuenta)
         {
-
-            
             return new JsonResult
             {
                 Data = JsonConvert.SerializeObject(casosCelulaService.ListaIngresosPorCuenta(cuenta)),
@@ -71,9 +69,6 @@ namespace Dime.Controllers
 
         public JsonResult ConsultaCasosAbiertosPorUsuarioCreacion(string ccUsuario)
         {
-
-           
-
             return new JsonResult
             {
                 Data = JsonConvert.SerializeObject(casosAdminService.ListaIngresosPorUsuarioCreacion(ccUsuario)),
