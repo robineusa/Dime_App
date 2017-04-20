@@ -1,7 +1,7 @@
 ﻿angular
     .module('dimeApp')
     .controller('ConsultaGestionController', function ($scope, $http) {
-
+        $scope.dataLoading = false;
         $scope.aliados = null;
         $http.get(appPath + 'ConsultasAdmin/JsonAliadosNames')
                         .then(function (data) {
@@ -9,7 +9,7 @@
                         });
 
         $scope.LoadTable = function () {
-
+            $scope.dataLoading = true;
             $http.get(appPath + 'ConsultasAdmin/JsonListaGestionAdmin', {
                 params: {
                     fechaInicio: $scope.dateIniString,
@@ -21,7 +21,9 @@
                 CargarGridDefault(json);
             }, function (error, status) {
                 alert("error:" + error + " " + "status: " + status);
-            })
+            }).finally(function () {
+                $scope.dataLoading = false;
+            });
         };
 
 

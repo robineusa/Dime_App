@@ -412,6 +412,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MaestroOutboundTipoGestion" nillable="true" type="tns:MaestroOutboundTipoGestion" />
+  <xs:complexType name="ArrayOfDepartamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Departamento" nillable="true" type="tns:Departamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDepartamento" nillable="true" type="tns:ArrayOfDepartamento" />
+  <xs:complexType name="Departamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comunidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreComunidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreDepartamento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Red" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Departamento" nillable="true" type="tns:Departamento" />
   <xs:complexType name="ArrayOfConvenioElectronico">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ConvenioElectronico" nillable="true" type="tns:ConvenioElectronico" />
@@ -1106,6 +1122,7 @@
   <xs:complexType name="TrasladoFallido">
     <xs:sequence>
       <xs:element minOccurs="0" name="CanalTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comunidad" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CorreoElectronico" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
       <xs:element minOccurs="0" name="CuentaMatriz" type="xs:decimal" />
@@ -1121,9 +1138,12 @@
       <xs:element minOccurs="0" name="IdTransaccion" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="MotivoTrasladoFallido" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Nodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreComunidad" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreConjunto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreDepartamento" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreLineaTransaccion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Observacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Red" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TarifaActual" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TarifaNueva" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TelefonoCelular" nillable="true" type="xs:string" />
@@ -1373,4 +1393,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UsabilidadConvenioInbound" nillable="true" type="tns:UsabilidadConvenioInbound" />
+  <xs:complexType name="UsabilidadBusquedaCuentaInbound">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CuentaRevisoTabla" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FechaRevision" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUsuarioRevision" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreUsuarioRevision" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsabilidadBusquedaCuentaInbound" nillable="true" type="tns:UsabilidadBusquedaCuentaInbound" />
 </xs:schema>

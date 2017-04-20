@@ -104,6 +104,8 @@
     <Compile Include="DatoConsultaPaloteo.cs" />
     <Compile Include="DatoConsultaPaloteoCollection.cs" />
     <Compile Include="DatosAdicionalesCliente.cs" />
+    <Compile Include="Departamento.cs" />
+    <Compile Include="DepartamentoCollection.cs" />
     <Compile Include="DocsisOverlap.cs" />
     <Compile Include="DocsisOverlapCollection.cs" />
     <Compile Include="GestionMatriz.cs" />

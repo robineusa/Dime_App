@@ -712,6 +712,7 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
         var urlClaroVideoView = '@Url.Action("Claro_Video", "Alertas")';
         var urlSMOView = '@Url.Action("Siguiente_Mejor_Oferta", "Alertas")';
         var urlSiembraHDView = '@Url.Action("Siembra_HD", "Alertas")';
+        var urlUsabilidadConvenio = '@Url.Action("Guardar_Usabilidad_Convenio", "Inbound")';
         $("#tbMacroproceso").val('');
         $("#tbMarcacion").val('');
         $("#TipiMarca_Observaciones").val('');
@@ -720,7 +721,7 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
             $("#TipiMarca_IngresoTipMarcacion_IdServicio option:first").attr('selected','selected');
 
         }, 1000);
-  
+
         //$('select').val('')
     </script>
 

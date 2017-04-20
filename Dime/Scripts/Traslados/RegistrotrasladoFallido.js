@@ -1,4 +1,8 @@
-﻿$("#Li1").click(function () {
+﻿$(document).ready(function () {
+    TraerListaDepartamentos();
+});
+
+$("#Li1").click(function () {
 
     $("#Li2").css('background-color', '#f6f6f6');
     $("#Li1").css("background-color", "#dcdcdc");
@@ -324,3 +328,128 @@ function limpiarcontroles() {
     $('#DEstadoMatriz option').prop('selected', function () { return this.defaultSelected; });
     $('#DGestionPorTraslado option').prop('selected', function () { return this.defaultSelected; });
 }
+
+
+function TraerListaDepartamentos() {
+        $.ajax({
+        type: "GET",
+        url: urlListaDepartamentos,
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0; index < json.length;  index++) {
+                $('#NombreDepartamentoSelect').append($('<option>', {
+                    value: json[index].NombreDepartamento,
+                    text: json[index].NombreDepartamento
+                }));
+
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+}
+function TraerListaCiudades() {
+    $('#NombreComunidadSelect').empty();
+    $('#NombreComunidadSelect').append($('<option>', {
+        text: '--SELECCIONE--'
+    }));
+    $('#NombreComunidadSelect option').prop('selected', function () { return this.defaultSelected; });
+
+    var departamento = $("#NombreDepartamentoSelect").val();
+    $.ajax({
+        type: "GET",
+        url: urlListaCiudades,
+        contentType: "application/json; charset=utf-8",
+        data: { Departamento: departamento },
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            console.log(json);
+            for (var index = 0; index < json.length; index++) {
+                $('#NombreComunidadSelect').append($('<option>', {
+                    value: json[index].NombreComunidad,
+                    text: json[index].NombreComunidad
+                }));
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+}
+function TraerListaComunidades() {
+    $('#ComunidadSelect').empty();
+    $('#ComunidadSelect').append($('<option>', {
+        text: '--SELECCIONE--'
+    }));
+    $('#ComunidadSelect option').prop('selected', function () { return this.defaultSelected; });
+    var departamento = $("#NombreDepartamentoSelect").val();
+    var ciudad = $("#NombreComunidadSelect").val();
+    $.ajax({
+        type: "GET",
+        url: urlListaComunidades,
+        contentType: "application/json; charset=utf-8",
+        data: { Departamento: departamento, Ciudad :ciudad},
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0; index < json.length; index++) {
+                $('#ComunidadSelect').append($('<option>', {
+                    value: json[index].Comunidad,
+                    text: json[index].Comunidad
+                }));
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+}
+function TraerListaRedes() {
+    $('#RedSelect').empty();
+    $('#RedSelect').append($('<option>', {
+        text: '--SELECCIONE--'
+    }));
+    $('#RedSelect option').prop('selected', function () { return this.defaultSelected; });
+    var departamento = $("#NombreDepartamentoSelect").val();
+    var ciudad = $("#NombreComunidadSelect").val();
+    var comunidad = $("#ComunidadSelect").val();
+    $.ajax({
+        type: "GET",
+        url: urlListaRedes,
+        contentType: "application/json; charset=utf-8",
+        data: { Departamento: departamento, Ciudad: ciudad, Comunidad:comunidad },
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0; index < json.length; index++) {
+                $('#RedSelect').append($('<option>', {
+                    value: json[index].Red,
+                    text: json[index].Red
+                }));
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+}
+
+$('#NombreDepartamentoSelect').change(function () {
+    TraerListaCiudades();
+    TraerListaComunidades();
+    TraerListaRedes();
+})
+$('#NombreComunidadSelect').change(function () {
+    TraerListaComunidades();
+    TraerListaRedes();
+})
+$('#ComunidadSelect').change(function () {
+    TraerListaRedes();
+})

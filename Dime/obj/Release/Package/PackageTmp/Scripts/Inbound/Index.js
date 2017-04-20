@@ -487,7 +487,18 @@ function LlamarConvenioElectronico() {
         success: function (result) {
             $('#ConvenioBody').html(result);
         }
-    })
+    });
+    var data = { Cuenta: choosenCuenta };
+    $.ajax({
+        type: "GET",
+        url: urlUsabilidadConvenio,
+        data: data,
+        contentType: false,
+        success: function (result) {
+            
+        }
+    });
+
 }
 
 function LlamarElegidoFijo() {

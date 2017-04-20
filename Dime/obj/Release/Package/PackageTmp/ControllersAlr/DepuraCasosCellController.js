@@ -49,6 +49,7 @@
                       .then(function (data) {
                           var jsonData = JSON.parse(data.data);
                           SetearEstadoHistoricos(jsonData);
+                          cambiarfechas(jsonData);
                           CargarGridHistorial(jsonData);
                       });
 
@@ -173,7 +174,14 @@
                });
            }
 
+           function cambiarfechas(data) {
+               for (var i = 0; i < data.length; i++) {
+                   data[i].FechaNota = kendo.toString(kendo.parseDate(data[i].FechaNota, 'yyyy-MM-dd'), 'yyyy-MM-dd');
+                   data[i].HoraNota = kendo.toString(kendo.parseDate(data[i].HoraNota, 'yyyy-MM-ddTHH:mm:ss'), 'HH:mm:ss');
+                   //data[i].Ingreso.HoraUltimaActualizacion = kendo.toString(kendo.parseDate(data[i].Ingreso.HoraUltimaActualizacion, 'HH:mm:ss'), 'HH:mm:ss');
+               }
 
+           }
 
            function SetearEstadoHistoricos(dataUp) {
                for (var i = 0; i < dataUp.length; i++) {
@@ -218,7 +226,30 @@
                        refresh: true,
                        pageSizes: true,
                        buttonCount: 5
-                   }
+                   },
+                   columns: [
+
+                    { field: "CuentaCliente", title: "Cuenta", width: 50, headerAttributes: { style: "white-space: normal" } },
+                    { field: "FechaNota", title: "Fecha Nota", width: 70, headerAttributes: { style: "white-space: normal" } },
+                    { field: "HoraNota", title: "Hora Nota", width: 40, headerAttributes: { style: "white-space: normal" }, filterable: false },
+                    { field: "IdEstado", title: "Estado", width: 70, headerAttributes: { style: "white-space: normal" } },
+                    { field: "IdIngreso", title: "Id Ingreso", width: 50, headerAttributes: { style: "white-space: normal" } },
+                    { field: "LlamadaCliente", title: "Llamada Cliente", width: 40, headerAttributes: { style: "white-space: normal" } },
+                    { field: "NombreLineaNota", title: "Nombre Linea Nota", width: 90, headerAttributes: { style: "white-space: normal" } },
+                    { field: "Nota", title: "Nota", width: 310, headerAttributes: { style: "white-space: normal" } },
+                    { field: "PerfilUsuario", title: "Perfil Usuario", width: 60, headerAttributes: { style: "white-space: normal" } },
+                    { field: "Ticket", title: "Ticket", width: 70, filterable: false },
+                    { field: "Usuario", title: "Usuario", width: 60, headerAttributes: { style: "white-space: normal" } },
+                    
+                    //{ field: "HoraApertura", title: "Fecha Apertura", width: 100, template: "#= kendo.toString(kendo.parseDate(HoraApertura, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", filterable: false },
+                  /*  { field: "UsuarioApertura", title: "Usr Apertura", width: 100 },
+                    { field: "HoraUltimaActualizacion", title: "Fe. Ult Actualización", width: 100, template: "#= kendo.toString(kendo.parseDate(HoraUltimaActualizacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", filterable: false },
+                    { field: "UsuarioUltimaActualizacion", title: "Usr. Ult Actualización", width: 120 },
+                    { field: "Macroproceso", title: "Macroproceso", width: 100 },
+                    { field: "Marcacion", title: "Marcación", width: 100 },
+                    { field: "IdEstado", title: "Estado", width: 100 },
+                   { field: "Semaforo", title: "Semaforo", width: 80 }*/
+                   ]
                });
 
 

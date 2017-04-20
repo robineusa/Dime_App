@@ -216,7 +216,30 @@
                                         </td>
                                     </tr>
                                 </table>
-                            
+                            <table>
+                                <tr>
+                                    <td width="200" style="padding:1px;" colspan="5">
+                                        <small>Departamento:</small>
+                                        @Html.DropDownListFor(m => m.TrasladoFallido.NombreDepartamento, new List<SelectListItem> {},"--SELECCIONE--", new {Id="NombreDepartamentoSelect", @class = "form-control input-sm" })
+                                        @Html.ValidationMessageFor(m => m.TrasladoFallido.NombreDepartamento, "", new { @class = "text-danger" })
+                                    </td>
+                                    <td width="200" style="padding:1px;" colspan="5">
+                                        <small>Ciudad:</small>
+                                        @Html.DropDownListFor(m => m.TrasladoFallido.NombreComunidad, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "NombreComunidadSelect", @class = "form-control input-sm" })
+                                        @Html.ValidationMessageFor(m => m.TrasladoFallido.NombreComunidad, "", new { @class = "text-danger" })
+                                    </td>
+                                    <td width="200" style="padding:1px;" colspan="5">
+                                        <small>Código Comunidad:</small>
+                                        @Html.DropDownListFor(m => m.TrasladoFallido.Comunidad, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "ComunidadSelect", @class = "form-control input-sm" })
+                                        @Html.ValidationMessageFor(m => m.TrasladoFallido.Comunidad, "", new { @class = "text-danger" })
+                                    </td>
+                                    <td width="200" style="padding:1px;" colspan="5">
+                                        <small>Red:</small>
+                                        @Html.DropDownListFor(m => m.TrasladoFallido.Red, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "RedSelect", @class = "form-control input-sm" })
+                                        @Html.ValidationMessageFor(m => m.TrasladoFallido.Red, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                            </table>
                                 <table style="text-align:initial;">
                                     <tr>
                                         <td width="370" style="padding:1px;" colspan="5">
@@ -386,7 +409,14 @@
         </div>
     }
     @section Scripts{
-        <script src="~/Scripts/Traslados/RegistrotrasladoFallido.js?1.1.3"></script>
+        <script>
+            var urlListaDepartamentos = '@Url.Action("ListaDepartamentos", "Traslados")';
+            var urlListaCiudades = '@Url.Action("ListaCiudades", "Traslados")';
+            var urlListaComunidades = '@Url.Action("ListaComunidades", "Traslados")';
+            var urlListaRedes = '@Url.Action("ListaRedes", "Traslados")';
+        </script>
+        <script src="~/Scripts/Traslados/RegistrotrasladoFallido.js?1.1.7"></script>
+
 @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
     }
 }

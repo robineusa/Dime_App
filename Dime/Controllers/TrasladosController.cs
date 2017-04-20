@@ -14,12 +14,15 @@ namespace Dime.Controllers
     {
         WSD.TrasladosServiceClient trasladowebservice;
         WSD.MaestroNodoServiceClient maestronodosservice;
+        WSD.MaestrosServiceClient maestrosService;
         public TrasladosController()
         {
             trasladowebservice = new WSD.TrasladosServiceClient();
             trasladowebservice.ClientCredentials.Authenticate();
             maestronodosservice = new WSD.MaestroNodoServiceClient();
             maestronodosservice.ClientCredentials.Authenticate();
+            maestrosService = new WSD.MaestrosServiceClient();
+            maestrosService.ClientCredentials.Authenticate();
         }
 
         // GET: Traslados
@@ -1252,8 +1255,34 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ConsultaGeneralTrasladosFallidos(FI, FF);
             return View(modelo);
         }
+        //maestro departamentos
+        public JsonResult ListaDepartamentos()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(maestrosService.TraeListaDepartamentos()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
 
+        }
+        public JsonResult ListaCiudades(string Departamento)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(maestrosService.TraeListaCiudades(Departamento)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
 
+        }
+        public JsonResult ListaComunidades(string Departamento, string Ciudad)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(maestrosService.TraeListaComunidad(Departamento,Ciudad)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
 
+        }
+        public JsonResult ListaRedes(string Departamento, string Ciudad, string Comunidad)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(maestrosService.TraeListaRed(Departamento,Ciudad,Comunidad)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
     }
 }

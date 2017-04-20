@@ -11,7 +11,7 @@ namespace Telmexla.Servicios.DIME.Entity
         public string CanalTransaccion { get; set; }
         public System.DateTime? FechaTransaccion { get; set; }
         public string NombreLineaTransaccion { get; set; }
-        [Required(ErrorMessage = "Debe seleccionar una opción")]
+        [Required(ErrorMessage = "Debes seleccionar una opción")]
         public string MotivoTrasladoFallido { get; set; }
         public decimal CuentaCliente { get; set; }
         public decimal CuentaOcupa { get; set; } 
@@ -21,6 +21,14 @@ namespace Telmexla.Servicios.DIME.Entity
         public string EstadoMatriz { get; set; }
         [Required(ErrorMessage = "El campo Dirección no puede ser vacio")]
         public string Direccion { get; set; }
+        [Required(ErrorMessage = "Debes seleccionar una opción")]
+        public string NombreDepartamento { get; set; }
+        [Required(ErrorMessage = "Debes seleccionar una opción")]
+        public string NombreComunidad { get; set; }
+        [Required(ErrorMessage = "Debes seleccionar una opción")]
+        public string Comunidad { get; set; }
+        [Required(ErrorMessage = "Debes seleccionar una opción")]
+        public string Red { get; set; }
         public string EstratoOrigen { get; set; }
         public string EstratoDestino { get; set; }
         public string TarifaActual { get; set; }

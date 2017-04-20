@@ -2956,6 +2956,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Business.DatoConsultaGestionAdmin.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Departamento.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\Dime_Capacitacion.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />

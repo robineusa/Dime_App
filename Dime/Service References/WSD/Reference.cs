@@ -5268,6 +5268,115 @@ namespace Dime.WSD {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UsabilidadBusquedaCuentaInbound", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class UsabilidadBusquedaCuentaInbound : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> CuentaRevisoTablaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FechaRevisionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> IdUsuarioRevisionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreUsuarioRevisionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> CuentaRevisoTabla {
+            get {
+                return this.CuentaRevisoTablaField;
+            }
+            set {
+                if ((this.CuentaRevisoTablaField.Equals(value) != true)) {
+                    this.CuentaRevisoTablaField = value;
+                    this.RaisePropertyChanged("CuentaRevisoTabla");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FechaRevision {
+            get {
+                return this.FechaRevisionField;
+            }
+            set {
+                if ((this.FechaRevisionField.Equals(value) != true)) {
+                    this.FechaRevisionField = value;
+                    this.RaisePropertyChanged("FechaRevision");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> IdUsuarioRevision {
+            get {
+                return this.IdUsuarioRevisionField;
+            }
+            set {
+                if ((this.IdUsuarioRevisionField.Equals(value) != true)) {
+                    this.IdUsuarioRevisionField = value;
+                    this.RaisePropertyChanged("IdUsuarioRevision");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NombreUsuarioRevision {
+            get {
+                return this.NombreUsuarioRevisionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreUsuarioRevisionField, value) != true)) {
+                    this.NombreUsuarioRevisionField = value;
+                    this.RaisePropertyChanged("NombreUsuarioRevision");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IWebService")]
     public interface IWebService {
@@ -6060,6 +6169,30 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaestrosService/ObtenerTiposDeMotivoDeCausas", ReplyAction="http://tempuri.org/IMaestrosService/ObtenerTiposDeMotivoDeCausasResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.MaestroOutboundMotivo>> ObtenerTiposDeMotivoDeCausasAsync(decimal causaId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaestrosService/TraeListaDepartamentos", ReplyAction="http://tempuri.org/IMaestrosService/TraeListaDepartamentosResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento> TraeListaDepartamentos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaestrosService/TraeListaDepartamentos", ReplyAction="http://tempuri.org/IMaestrosService/TraeListaDepartamentosResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento>> TraeListaDepartamentosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaestrosService/TraeListaCiudades", ReplyAction="http://tempuri.org/IMaestrosService/TraeListaCiudadesResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento> TraeListaCiudades(string Departamento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaestrosService/TraeListaCiudades", ReplyAction="http://tempuri.org/IMaestrosService/TraeListaCiudadesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento>> TraeListaCiudadesAsync(string Departamento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaestrosService/TraeListaComunidad", ReplyAction="http://tempuri.org/IMaestrosService/TraeListaComunidadResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento> TraeListaComunidad(string Departamento, string NombreComunidad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaestrosService/TraeListaComunidad", ReplyAction="http://tempuri.org/IMaestrosService/TraeListaComunidadResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento>> TraeListaComunidadAsync(string Departamento, string NombreComunidad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaestrosService/TraeListaRed", ReplyAction="http://tempuri.org/IMaestrosService/TraeListaRedResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento> TraeListaRed(string Departamento, string NombreComunidad, string Comunidad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMaestrosService/TraeListaRed", ReplyAction="http://tempuri.org/IMaestrosService/TraeListaRedResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento>> TraeListaRedAsync(string Departamento, string NombreComunidad, string Comunidad);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6127,6 +6260,38 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.MaestroOutboundMotivo>> ObtenerTiposDeMotivoDeCausasAsync(decimal causaId) {
             return base.Channel.ObtenerTiposDeMotivoDeCausasAsync(causaId);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento> TraeListaDepartamentos() {
+            return base.Channel.TraeListaDepartamentos();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento>> TraeListaDepartamentosAsync() {
+            return base.Channel.TraeListaDepartamentosAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento> TraeListaCiudades(string Departamento) {
+            return base.Channel.TraeListaCiudades(Departamento);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento>> TraeListaCiudadesAsync(string Departamento) {
+            return base.Channel.TraeListaCiudadesAsync(Departamento);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento> TraeListaComunidad(string Departamento, string NombreComunidad) {
+            return base.Channel.TraeListaComunidad(Departamento, NombreComunidad);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento>> TraeListaComunidadAsync(string Departamento, string NombreComunidad) {
+            return base.Channel.TraeListaComunidadAsync(Departamento, NombreComunidad);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento> TraeListaRed(string Departamento, string NombreComunidad, string Comunidad) {
+            return base.Channel.TraeListaRed(Departamento, NombreComunidad, Comunidad);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Departamento>> TraeListaRedAsync(string Departamento, string NombreComunidad, string Comunidad) {
+            return base.Channel.TraeListaRedAsync(Departamento, NombreComunidad, Comunidad);
         }
     }
     
@@ -8262,6 +8427,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadInboundConvenio", ReplyAction="http://tempuri.org/IUsabilidadService/InsertarUsabilidadInboundConvenioResponse")]
         System.Threading.Tasks.Task InsertarUsabilidadInboundConvenioAsync(Telmexla.Servicios.DIME.Entity.UsabilidadConvenioInbound convenio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadCuentaInbound", ReplyAction="http://tempuri.org/IUsabilidadService/InsertarUsabilidadCuentaInboundResponse")]
+        void InsertarUsabilidadCuentaInbound(Dime.WSD.UsabilidadBusquedaCuentaInbound CuentaInbound);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadCuentaInbound", ReplyAction="http://tempuri.org/IUsabilidadService/InsertarUsabilidadCuentaInboundResponse")]
+        System.Threading.Tasks.Task InsertarUsabilidadCuentaInboundAsync(Dime.WSD.UsabilidadBusquedaCuentaInbound CuentaInbound);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8297,6 +8468,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task InsertarUsabilidadInboundConvenioAsync(Telmexla.Servicios.DIME.Entity.UsabilidadConvenioInbound convenio) {
             return base.Channel.InsertarUsabilidadInboundConvenioAsync(convenio);
+        }
+        
+        public void InsertarUsabilidadCuentaInbound(Dime.WSD.UsabilidadBusquedaCuentaInbound CuentaInbound) {
+            base.Channel.InsertarUsabilidadCuentaInbound(CuentaInbound);
+        }
+        
+        public System.Threading.Tasks.Task InsertarUsabilidadCuentaInboundAsync(Dime.WSD.UsabilidadBusquedaCuentaInbound CuentaInbound) {
+            return base.Channel.InsertarUsabilidadCuentaInboundAsync(CuentaInbound);
         }
     }
 }
