@@ -17,7 +17,9 @@ namespace Dime.Controllers
         WSD.InboundServiceClient inboundService;
         WSD.MarcacionesServiceClient marcacionService;
         WSD.ActivacionSiembraHDServiceClient acsiembrahdwebservice;
-        
+        WSD.UsabilidadServiceClient usabilidad;
+
+
         public InboundController()
         {
             inboundService = new WSD.InboundServiceClient();
@@ -26,6 +28,8 @@ namespace Dime.Controllers
             acsiembrahdwebservice.ClientCredentials.Authenticate();
            marcacionService = new WSD.MarcacionesServiceClient();
             marcacionService.ClientCredentials.Authenticate();
+            usabilidad = new WSD.UsabilidadServiceClient();
+            usabilidad.ClientCredentials.Authenticate();
         }
 
 
@@ -195,6 +199,19 @@ namespace Dime.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Guardar_Usabilidad_Convenio(string Cuenta)
+        {
+            UsabilidadConvenioInbound model = new UsabilidadConvenioInbound();
+            model.Id = 0;
+            model.FechaRevision = DateTime.Now;
+            model.IdUsuarioRevision = Convert.ToInt32(Session["IdUsuario"].ToString());
+            model.NombreUsuarioRevision = Session["NombreUsuario"].ToString();
+            model.CuentaRevisoTabla = Convert.ToInt32(Cuenta);
 
+            usabilidad.InsertarUsabilidadInboundConvenio(model);
+
+            return View();
+        }
     }
 }

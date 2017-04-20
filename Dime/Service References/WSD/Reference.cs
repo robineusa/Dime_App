@@ -8252,4 +8252,51 @@ namespace Dime.WSD {
             return base.Channel.GraficoAsesorNotasIngresosSacAsync(UsuarioOut);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IUsabilidadService")]
+    public interface IUsabilidadService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadInboundConvenio", ReplyAction="http://tempuri.org/IUsabilidadService/InsertarUsabilidadInboundConvenioResponse")]
+        void InsertarUsabilidadInboundConvenio(Telmexla.Servicios.DIME.Entity.UsabilidadConvenioInbound convenio);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadInboundConvenio", ReplyAction="http://tempuri.org/IUsabilidadService/InsertarUsabilidadInboundConvenioResponse")]
+        System.Threading.Tasks.Task InsertarUsabilidadInboundConvenioAsync(Telmexla.Servicios.DIME.Entity.UsabilidadConvenioInbound convenio);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IUsabilidadServiceChannel : Dime.WSD.IUsabilidadService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class UsabilidadServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IUsabilidadService>, Dime.WSD.IUsabilidadService {
+        
+        public UsabilidadServiceClient() {
+        }
+        
+        public UsabilidadServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public UsabilidadServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public UsabilidadServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public UsabilidadServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public void InsertarUsabilidadInboundConvenio(Telmexla.Servicios.DIME.Entity.UsabilidadConvenioInbound convenio) {
+            base.Channel.InsertarUsabilidadInboundConvenio(convenio);
+        }
+        
+        public System.Threading.Tasks.Task InsertarUsabilidadInboundConvenioAsync(Telmexla.Servicios.DIME.Entity.UsabilidadConvenioInbound convenio) {
+            return base.Channel.InsertarUsabilidadInboundConvenioAsync(convenio);
+        }
+    }
 }

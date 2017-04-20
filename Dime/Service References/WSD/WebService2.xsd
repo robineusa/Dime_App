@@ -2481,4 +2481,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="InsertarUsabilidadInboundConvenio">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q179="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="convenio" nillable="true" type="q179:UsabilidadConvenioInbound" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarUsabilidadInboundConvenioResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

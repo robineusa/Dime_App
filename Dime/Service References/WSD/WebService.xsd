@@ -1363,4 +1363,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfGraficos" nillable="true" type="tns:ArrayOfGraficos" />
+  <xs:complexType name="UsabilidadConvenioInbound">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CuentaRevisoTabla" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FechaRevision" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUsuarioRevision" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreUsuarioRevision" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsabilidadConvenioInbound" nillable="true" type="tns:UsabilidadConvenioInbound" />
 </xs:schema>

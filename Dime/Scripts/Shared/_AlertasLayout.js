@@ -211,7 +211,7 @@ function GuardarUsuarioNotificado() {
         type: "GET",
         data: data,
         contentType: false,
-        url: '/BuenServicio/Guardar_Usuario_Notificado',
+        url: '../BuenServicio/Guardar_Usuario_Notificado',
         success: function (result) {
             //$('#CerrarBS').click();
 
