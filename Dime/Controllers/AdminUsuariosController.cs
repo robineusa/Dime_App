@@ -92,27 +92,7 @@ namespace Dime.Controllers
             } 
             return View(model);
         }
-
-
-       
-        [HttpGet]
-        public JsonResult PosiblesAccesosYLineasDePerfil(int idPerfil)
-        {
-            
-            var result = new
-            {
-                lineas =  loginService.ListaLineasDePerfil(idPerfil),
-                accesos = loginService.ListaAccesosDePerfil(idPerfil)
-            };
-            return new JsonResult
-            {
-                Data = JsonConvert.SerializeObject(result),
-                JsonRequestBehavior = JsonRequestBehavior.AllowGet
-            };
-        }
-
-
-        
+                
         [HttpGet]
         public ActionResult AccesosUsuarios()
         {
@@ -137,7 +117,7 @@ namespace Dime.Controllers
                     model.UsuarioHolos = loginService.ConsultarUsuarioHolos(model.UsuarioHolos.Cedula);
                     model.IdPerfil = loginService.IdPerfilDeUsuario(idUsuario);
                     model.NombreLinea = loginService.LineaDeUsuario(idUsuario);
-                    model.IdLinea = loginService.IdLineaDeUsuario(idUsuario);
+                    model.IdLinea = loginService.IdLineaDeUsuario(idUsuario);                    
                 }
                 else
                 {
@@ -190,8 +170,22 @@ namespace Dime.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public JsonResult PosiblesAccesosYLineasDePerfil(int idPerfil)
+        {
 
-        
+            var result = new
+            {
+                lineas = loginService.ListaLineasDePerfil(idPerfil),
+                accesos = loginService.ListaAccesosDePerfil(idPerfil)
+            };
+            return new JsonResult
+            {
+                Data = JsonConvert.SerializeObject(result),
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
         [HttpGet]
         public JsonResult JsonUsuariosDeAliadoYPerfil(string aliado, int idPerfil)
         {
