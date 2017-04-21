@@ -7515,7 +7515,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/21/2017 10:21:31</publishTime>
     </File>
     <File Include="bin/Dime.dll">
-      <publishTime>04/20/2017 14:55:16</publishTime>
+      <publishTime>04/20/2017 15:49:40</publishTime>
     </File>
     <File Include="bin/Dime.dll.config">
       <publishTime>04/20/2017 14:28:57</publishTime>
@@ -7526,8 +7526,17 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="bin/EntityFramework.SqlServer.dll">
       <publishTime>03/21/2017 10:22:56</publishTime>
     </File>
+    <File Include="bin/es/Microsoft.AspNet.SignalR.Core.resources.dll">
+      <publishTime>03/21/2017 10:22:57</publishTime>
+    </File>
     <File Include="bin/es/Microsoft.AspNet.SignalR.SystemWeb.resources.dll">
       <publishTime>03/21/2017 10:22:57</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Owin.Host.SystemWeb.resources.dll">
+      <publishTime>03/21/2017 10:22:59</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Owin.resources.dll">
+      <publishTime>03/21/2017 10:22:59</publishTime>
     </File>
     <File Include="bin/es/Microsoft.Owin.Security.resources.dll">
       <publishTime>03/21/2017 10:22:59</publishTime>
@@ -8340,7 +8349,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaGestion.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaGestionAdmin.datasource">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -8349,55 +8358,55 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaRechazo.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.GestionDeCelulaUsr.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogCierreCiclo.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogClaroVideo.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogDocsisOverlap.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundCausa.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundCierre.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundMotivo.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundRazon.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundTipoContacto.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.RazonIngresoSoporte.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.SmoRentaActual.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.SmoTarifaActual.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.Subrazon1IngresoSoporte.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.Subrazon2IngresoSoporte.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.TablaActualizarInbound.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.UsuariosMasivoData.datasource">
-      <publishTime>04/20/2017 14:53:07</publishTime>
+      <publishTime>04/20/2017 15:36:18</publishTime>
     </File>
     <File Include="Styles/Elements/Alertas.css">
       <publishTime>03/21/2017 10:21:27</publishTime>
@@ -8805,7 +8814,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/21/2017 10:21:31</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/20/2017 14:55:30</publishTime>
+      <publishTime>04/20/2017 15:49:52</publishTime>
     </File>
   </ItemGroup>
 </Project>
