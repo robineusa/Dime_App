@@ -8636,11 +8636,11 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" />
-      <xsd:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Business" />
+      <xsd:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" />
+      <xsd:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Business" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IWebService_MuestraEntidades_InputMessage">
@@ -12584,9 +12584,9 @@
   </wsdl:binding>
   <wsdl:service name="WebService">
     <wsdl:port name="WSHttpBinding_IWebService" binding="tns:WSHttpBinding_IWebService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
@@ -12597,9 +12597,9 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_ILoginService" binding="tns:WSHttpBinding_ILoginService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
@@ -12610,9 +12610,9 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IInboundService" binding="tns:WSHttpBinding_IInboundService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
@@ -12623,9 +12623,9 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IMaestrosService" binding="tns:WSHttpBinding_IMaestrosService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
@@ -12636,9 +12636,9 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IBlendingService" binding="tns:WSHttpBinding_IBlendingService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
@@ -12649,9 +12649,9 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IMarcacionesService" binding="tns:WSHttpBinding_IMarcacionesService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
@@ -12662,9 +12662,9 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_INotificacionesBuenServicioService" binding="tns:WSHttpBinding_INotificacionesBuenServicioService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
@@ -12675,9 +12675,9 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_ICasosCelulaService" binding="tns:WSHttpBinding_ICasosCelulaService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
@@ -12688,9 +12688,9 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_ICasosAdminService" binding="tns:WSHttpBinding_ICasosAdminService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
@@ -12701,9 +12701,9 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_ITrasladosService" binding="tns:WSHttpBinding_ITrasladosService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
@@ -12714,9 +12714,9 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IMaestroNodoService" binding="tns:WSHttpBinding_IMaestroNodoService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
@@ -12727,9 +12727,9 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IActivacionClaroVideoService" binding="tns:WSHttpBinding_IActivacionClaroVideoService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
@@ -12740,9 +12740,9 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IActivacionSiembraHDService" binding="tns:WSHttpBinding_IActivacionSiembraHDService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
@@ -12753,9 +12753,9 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IBalanceScoreCardService" binding="tns:WSHttpBinding_IBalanceScoreCardService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
@@ -12766,9 +12766,9 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IGraficosService" binding="tns:WSHttpBinding_IGraficosService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
@@ -12779,9 +12779,9 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IUsabilidadService" binding="tns:WSHttpBinding_IUsabilidadService">
-      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
