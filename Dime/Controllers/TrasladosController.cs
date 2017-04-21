@@ -1284,5 +1284,23 @@ namespace Dime.Controllers
             return jsonResult;
 
         }
+        [HttpPost]
+        public ActionResult ConsultaGestionTrasladosFallidos(string fechaInicial, string fechaFinal)
+        {
+
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
+            modelo = trasladowebservice.ConsultaGestionTrasladoFallido(FI, FF, Session["Usuario"].ToString());
+            return View(modelo);
+
+        }
+
+        [HttpGet]
+        public ActionResult ConsultaGestionTrasladosFallidos()
+        {
+            return View();
+        }
+
     }
 }

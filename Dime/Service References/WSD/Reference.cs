@@ -7478,6 +7478,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ConsultaGeneralTrasladosFallidos", ReplyAction="http://tempuri.org/ITrasladosService/ConsultaGeneralTrasladosFallidosResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ConsultaGeneralTrasladosFallidosAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ConsultaGestionTrasladoFallido", ReplyAction="http://tempuri.org/ITrasladosService/ConsultaGestionTrasladoFallidoResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ConsultaGestionTrasladoFallido(System.DateTime FechaInicial, System.DateTime FechaFinal, string Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ITrasladosService/ConsultaGestionTrasladoFallido", ReplyAction="http://tempuri.org/ITrasladosService/ConsultaGestionTrasladoFallidoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ConsultaGestionTrasladoFallidoAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, string Usuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -7913,6 +7919,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ConsultaGeneralTrasladosFallidosAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
             return base.Channel.ConsultaGeneralTrasladosFallidosAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones> ConsultaGestionTrasladoFallido(System.DateTime FechaInicial, System.DateTime FechaFinal, string Usuario) {
+            return base.Channel.ConsultaGestionTrasladoFallido(FechaInicial, FechaFinal, Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>> ConsultaGestionTrasladoFallidoAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, string Usuario) {
+            return base.Channel.ConsultaGestionTrasladoFallidoAsync(FechaInicial, FechaFinal, Usuario);
         }
     }
     

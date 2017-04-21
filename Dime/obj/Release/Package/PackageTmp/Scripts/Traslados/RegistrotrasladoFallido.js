@@ -367,7 +367,6 @@ function TraerListaCiudades() {
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
-            console.log(json);
             for (var index = 0; index < json.length; index++) {
                 $('#NombreComunidadSelect').append($('<option>', {
                     value: json[index].NombreComunidad,

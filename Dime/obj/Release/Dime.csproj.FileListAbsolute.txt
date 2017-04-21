@@ -77,3 +77,4 @@ C:\Users\robin\Documents\GitHub\Dime_App\Dime\bin\es\Microsoft.Owin.Host.SystemW
 C:\Users\robin\Documents\GitHub\Dime_App\Dime\bin\es\Microsoft.Owin.Security.resources.dll
 C:\Users\robin\Documents\GitHub\Dime_App\Dime\obj\Release\Dime.dll
 C:\Users\robin\Documents\GitHub\Dime_App\Dime\obj\Release\Dime.pdb
+C:\Users\robin\Documents\GitHub\Dime_App\Dime\obj\Release\Dime.csprojResolveAssemblyReference.cache
