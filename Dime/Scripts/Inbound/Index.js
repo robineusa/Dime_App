@@ -15,9 +15,7 @@ $(document).ready(function () {
         var code = e.keyCode || e.which;
         if (code == 13) {
             SubmitGetDatos();
-
-            UsabilidadBusquedaCuenta();
-
+            //UsabilidadBusquedaCuenta();
         }
         
         
@@ -558,19 +556,19 @@ function ResetearDivs() {
     $('#SiembraBody').html(vacio);
 }
 
-function UsabilidadBusquedaCuenta() {
-    var Cu = $("#inputCuenta").val();
-    var data = { Cuenta: Cu };
-    $.ajax({
-        type: "GET",
-        url: urlUsabilidadBusquedaCuenta,
-        data: data,
-        contentType: false,
-        success: function (result) {
+//function UsabilidadBusquedaCuenta() {
+//    var Cu = $("#inputCuenta").val();
+//    var data = { Cuenta: Cu };
+//    $.ajax({
+//        type: "GET",
+//        url: urlUsabilidadBusquedaCuenta,
+//        data: data,
+//        contentType: false,
+//        success: function (result) {
 
-        }
-    });
+//        }
+//    });
 
-}
+//}
 
 

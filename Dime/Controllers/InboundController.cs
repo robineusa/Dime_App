@@ -64,6 +64,7 @@ namespace Dime.Controllers
             
             int cuentaCliente = model.ClientesTodos.Cuenta;
             model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(cuentaCliente);
+            Guardar_Usabilidad_Consulta_Cuenta(Convert.ToString(cuentaCliente));
             if ( cambiarDatos!=null && cambiarDatos.Equals("true"))
             {   if(model.ModelTipiMarca.IngresoTipMarcacion.IdServicio!= 0)
                 {
@@ -226,7 +227,7 @@ namespace Dime.Controllers
 
             usabilidad.InsertarUsabilidadCuentaInbound(model);
 
-            return View();
+            return Content("Exitoso" );
         }
     }
 }

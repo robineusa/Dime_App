@@ -60,3 +60,23 @@ C:\Users\robin\Documents\GitHub\Dime_App\Dime\bin\es\Microsoft.Owin.Security.res
 C:\Users\robin\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.csprojResolveAssemblyReference.cache
 C:\Users\robin\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.dll
 C:\Users\robin\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.pdb
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\csc.exe
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\vbc.exe
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\VBCSCompiler.exe
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Dime.dll.config
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Dime.dll
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Dime.pdb
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Telmexla.Servicios.DIME.Entity.dll
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Telmexla.Servicios.DIME.Entity.pdb
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.csprojResolveAssemblyReference.cache
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.dll
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.pdb
