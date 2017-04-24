@@ -118,7 +118,8 @@ namespace Dime.Controllers
             DateTime final = DateTime.ParseExact(fechaFin, "M/d/yyyy", CultureInfo.InvariantCulture);
 
             List<DatoConsultaGestionAdmin> modelo = new List<DatoConsultaGestionAdmin>();
-            var jsonResult = Json(JsonConvert.SerializeObject(casosAdminService.ListaGestionAdmin(inicial, final, aliado)), JsonRequestBehavior.AllowGet);
+            var result = casosAdminService.ListaGestionAdmin(inicial, final, aliado);
+            var jsonResult = Json(JsonConvert.SerializeObject(result), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }

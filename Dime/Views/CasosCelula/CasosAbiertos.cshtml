@@ -28,11 +28,11 @@
 
 
 @section scripts
-{
-    <script>
-        var dataAbiertos = @Html.Raw(Json.Encode(Model));
+{   <script>
+        var urlConsultaCasosAbiertos = '@Url.Action("ConsultaCasosAbiertos", "CasosCelula")';
+        //var dataAbiertos = Html.Raw(Json.Encode(Model));
     </script>
-    <script src="~/Scripts/CasosCelula/CasosAbiertos.js?1.0.9"></script>
+    <script src="~/Scripts/CasosCelula/CasosAbiertos.js?1.0.2"></script>
 }
 }
 else

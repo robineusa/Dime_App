@@ -37,6 +37,13 @@ namespace Dime.Controllers
         }
 
 
+        public JsonResult ConsultaCasosAbiertos()
+        {
+            var jsonResult = Json(casosCellService.ListaCasosAbiertosDeCelulaUser(Session["LineaLogeado"].ToString(), Session["AliadoLogeado"].ToString()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
         public ActionResult ConsultaCasos()
         {
             return View();
