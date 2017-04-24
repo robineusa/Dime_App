@@ -23,7 +23,11 @@ namespace Dime.Controllers
             return View();
         }
 
-  
+        public ActionResult DashboardAltoValor()
+        {
+            return View();
+        }
+
         public ActionResult DefaultAlr()
         {
             return View();

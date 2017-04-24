@@ -3221,6 +3221,9 @@
     <Content Include="Views\Traslados\ConsultaClienteTrasladoFallido.cshtml" />
     <Content Include="Views\Traslados\ConsultaAdminTrasladosFallidos.cshtml" />
     <Content Include="Views\Traslados\ConsultaGestionTrasladosFallidos.cshtml" />
+    <Content Include="Views\Home\DashboardAltoValor.cshtml" />
+    <Content Include="Views\GestionBlending\AsignarBasesAdmin.cshtml" />
+    <Content Include="Views\GestionBlending\SkillsUsuariosAdmin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3230,6 +3233,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AdminBlending\" />
     <Folder Include="Views\CasosAdmin\" />
   </ItemGroup>
   <ItemGroup>

@@ -177,7 +177,13 @@
                                     <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardCelula", "Home")"><i class="fa fa-circle-o text-red"></i> Dashboard Célula</a></li>*@
                                 @if (Session["Dashboard Administrador"] != null)
                                 {
-                                    <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardAdministrador", "Home")"><i class="fa fa-circle-o text-orange"></i> Dashboard Administrador</a></li>}
+                                    <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardAdministrador", "Home")"><i class="fa fa-circle-o text-orange"></i> Dashboard Administrador</a></li>
+                                    
+                                }
+                                @if (Session["Dashboard Alto Valor"] != null)
+                                {
+                                    <li id="left-sidebar-menu-dashboard-dashboardV3"><a href="@Url.Action("DashboardAltoValor", "Home")"><i class="fa fa-circle-o text-blue"></i> Dashboard Alto Valor</a></li>
+                                }
                             </ul>
                         </li>
                     }
@@ -263,6 +269,22 @@
                             </ul>
 
                         </li>
+                    }
+                    @if (Session["Administracion Blending"] != null)
+                    {
+                    <li id="left-sidebar-menu-charts" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-cog text-blue"></i>
+                            <span>Administracion Blending</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("AsignarBasesAdmin", "GestionBlending")"><i class="fa fa-database"></i>Asignar Bases</a></li>
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("SkillsUsuariosAdmin", "GestionBlending")"><i class="fa fa-user"></i>Skills Usuarios</a></li>
+
+                        </ul>
+
+                    </li>
                     }
                     @if (Session["Notificaciones Buen Servicio"] != null)
                     {

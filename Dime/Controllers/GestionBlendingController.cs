@@ -287,6 +287,16 @@ namespace Dime.Controllers
             };
         }
 
+        public ActionResult AsignarBasesAdmin()
+        {
+            return View();
+        }
+
+        public ActionResult SkillsUsuariosAdmin()
+        {
+            return View();
+        }
+        
 
     }
 }
