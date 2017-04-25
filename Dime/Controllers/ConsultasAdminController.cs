@@ -40,10 +40,6 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 
-            //return new JsonResult
-            //{   Data =  JsonConvert.SerializeObject(casosAdminService.ListaPaloteo(inicial,final)),
-            //    JsonRequestBehavior = JsonRequestBehavior.DenyGet
-            //};
         }
 
 
