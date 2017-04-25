@@ -269,7 +269,7 @@ using (Html.BeginForm("AccesosUsuarios", "AdminUsuarios", FormMethod.Post, new {
         var urlPosiblesLineasAccesos = '@Url.Action("PosiblesAccesosYLineasDePerfil", "AdminUsuarios")';
         var cedulaConsultado =  @Html.Raw(Json.Encode(Model.UsuarioHolos.Cedula));
         var perfilUsuario =  @Html.Raw(Json.Encode(Model.IdPerfil ));
-        var lineaUsuario = @Html.Raw(Json.Encode(Model.NombreLinea ));
+        var lineaUsuario = @Html.Raw(Json.Encode(Model.IdLinea ));
         var urlPosiblesAccesosDeUsuario = '@Url.Action("PosiblesAccesosDeUsuario", "AdminUsuarios")';
         //$("#cedulaCreacion").val(0);
         </script>
