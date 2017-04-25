@@ -500,7 +500,14 @@
                                         </li>
                                     </ul>
                                 </li>
-                                
+                                <li>
+                                    <a href="#"><i class="fa fa-building text-yellow" aria-hidden="true"></i>Traslados Fallidos<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="@Url.Action("RegistrotrasladoFallido", "Traslados")"><i class="fa fa-external-link" aria-hidden="true"></i>Generar Solicitud</a>
+                                        </li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     }
@@ -574,6 +581,7 @@
                                                 <li><a href="@Url.Action("ConsultaAdminIngresosCambioEstrato", "Traslados")"><i class="fa fa-circle-o"></i> Cambio de Estrato</a></li>
                                                 <li><a href="@Url.Action("ConsultaAdminIngresosLiberaciones", "Traslados")"><i class="fa fa-circle-o"></i> Liberaciones de HHPP</a></li>
                                                 <li><a href="@Url.Action("ConsultaAdminIngresosMatrices", "Traslados")"><i class="fa fa-circle-o"></i> Gestión Matrices</a></li>
+                                                <li><a href="@Url.Action("ConsultaAdminTrasladosFallidos", "Traslados")"><i class="fa fa-circle-o"></i> Traslados Fallidos</a></li>
                                             </ul>
                                         </li>
 
@@ -625,6 +633,15 @@
                                         <li>
                                             <a href="@Url.Action("ConsultaClienteMatrices", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Cunsultar Cliente</a>
                                             <a href="@Url.Action("ConsultaGestionMatrices", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-building text-yellow" aria-hidden="true"></i>Traslados Fallidos<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="@Url.Action("ConsultaClienteTrasladoFallido", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Cunsultar Cliente</a>
+                                            <a href="@Url.Action("ConsultaGestionTrasladosFallidos", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
                                         </li>
                                     </ul>
                                 </li>
