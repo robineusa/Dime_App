@@ -2977,14 +2977,24 @@
     <Content Include="Service References\WSD\Dime.WSD.SmoTarifaActual.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\WSD\Dime.WSD.MaestroLineasBlending.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\WSD\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\WSD\WebService.wsdl" />
+    <None Include="Service References\WSD\WebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\WSD\WebService1.disco" />
+    <None Include="Service References\WSD\WebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\WSD\WebService11.disco" />
     <None Include="Service References\WSD\WebService12.disco" />
-    <None Include="Service References\WSD\WebService13.disco" />
+    <None Include="Service References\WSD\WebService.disco" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
     <Content Include="Styles\Elements\General.css" />
@@ -3158,7 +3168,15 @@
     <None Include="Service References\WSD\WebService1.wsdl" />
     <None Include="Service References\WSD\WebService11.wsdl" />
     <None Include="Service References\WSD\WebService12.wsdl" />
-    <None Include="Service References\WSD\WebService13.wsdl" />
+    <None Include="Service References\WSD\WebService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -3178,21 +3196,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\WSD\WebService514.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService515.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService516.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService517.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService518.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService519.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\WSD\WebService52.xsd">

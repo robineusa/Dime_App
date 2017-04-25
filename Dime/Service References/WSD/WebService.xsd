@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="Usuario">
     <xs:sequence>
       <xs:element minOccurs="0" name="Capacitado" nillable="true" type="xs:boolean" />
@@ -428,6 +428,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Departamento" nillable="true" type="tns:Departamento" />
+  <xs:complexType name="ArrayOfMaestroLineasBlending">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaestroLineasBlending" nillable="true" type="tns:MaestroLineasBlending" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaestroLineasBlending" nillable="true" type="tns:ArrayOfMaestroLineasBlending" />
+  <xs:complexType name="MaestroLineasBlending">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aliado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreLinea" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaestroLineasBlending" nillable="true" type="tns:MaestroLineasBlending" />
   <xs:complexType name="ArrayOfConvenioElectronico">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ConvenioElectronico" nillable="true" type="tns:ConvenioElectronico" />
