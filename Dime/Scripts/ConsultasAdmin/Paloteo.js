@@ -47,14 +47,19 @@ function CargarDatosGestion() {
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({ fechaInicial: fechaInicial, fechaFinal: fechaFinal }),
         dataType: "json",
+        beforeSend: function () {
+            $("#loaderDiv").show();
+        },
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
             CambiarAEstado(json);
             ShowGridGestiones(json);
+            $("#loaderDiv").hide();
         },
         error: function (data)
         {
+            $("#loaderDiv").hide();
             var errors = data.responseJSON;
             alert(errors);
         }
@@ -96,6 +101,7 @@ function ShowGridGestiones(data) {
         toolbar: ["excel"],
         excel: {
             fileName: "Export.xlsx",
+            allPages: true
         },
         dataSource: {
             data: data,
