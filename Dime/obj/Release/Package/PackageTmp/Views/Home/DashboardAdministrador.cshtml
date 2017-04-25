@@ -6,6 +6,8 @@
 @section Menu {
     @Scripts.Render("~/Scripts/Examples/P500/menu")
 }
+@if (Session["Dashboard Administrador"] != null)
+{
 <div class="row">
     <div class="col-md-12" style="width:100%; ">
         <div class="box box-danger">
@@ -23,3 +25,30 @@
         </div>
     </div>
 </div>
+}
+else
+{
+    <div class="row">
+
+        <div class="box box-primary">
+
+            <div class="box-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-page">
+                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                            <div class="error-content">
+                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                <p style="text-align:justify;">
+                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                    Por favor solicite al administrador del sistema el acceso correspondiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

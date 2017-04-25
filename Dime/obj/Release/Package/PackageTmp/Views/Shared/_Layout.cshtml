@@ -177,7 +177,13 @@
                                     <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardCelula", "Home")"><i class="fa fa-circle-o text-red"></i> Dashboard Célula</a></li>*@
                                 @if (Session["Dashboard Administrador"] != null)
                                 {
-                                    <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardAdministrador", "Home")"><i class="fa fa-circle-o text-orange"></i> Dashboard Administrador</a></li>}
+                                    <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardAdministrador", "Home")"><i class="fa fa-circle-o text-orange"></i> Dashboard Administrador</a></li>
+                                    
+                                }
+                                @if (Session["Dashboard Alto Valor"] != null)
+                                {
+                                    <li id="left-sidebar-menu-dashboard-dashboardV3"><a href="@Url.Action("DashboardAltoValor", "Home")"><i class="fa fa-circle-o text-blue"></i> Dashboard Alto Valor</a></li>
+                                }
                             </ul>
                         </li>
                     }
@@ -263,6 +269,22 @@
                             </ul>
 
                         </li>
+                    }
+                    @if (Session["Administracion Blending"] != null)
+                    {
+                    <li id="left-sidebar-menu-charts" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-cog text-blue"></i>
+                            <span>Administracion Blending</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("AsignarBasesAdmin", "GestionBlending")"><i class="fa fa-database"></i>Asignar Bases</a></li>
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("SkillsUsuariosAdmin", "GestionBlending")"><i class="fa fa-user"></i>Skills Usuarios</a></li>
+
+                        </ul>
+
+                    </li>
                     }
                     @if (Session["Notificaciones Buen Servicio"] != null)
                     {
@@ -478,7 +500,14 @@
                                         </li>
                                     </ul>
                                 </li>
-                                
+                                <li>
+                                    <a href="#"><i class="fa fa-building text-yellow" aria-hidden="true"></i>Traslados Fallidos<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="@Url.Action("RegistrotrasladoFallido", "Traslados")"><i class="fa fa-external-link" aria-hidden="true"></i>Generar Solicitud</a>
+                                        </li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     }
@@ -552,6 +581,7 @@
                                                 <li><a href="@Url.Action("ConsultaAdminIngresosCambioEstrato", "Traslados")"><i class="fa fa-circle-o"></i> Cambio de Estrato</a></li>
                                                 <li><a href="@Url.Action("ConsultaAdminIngresosLiberaciones", "Traslados")"><i class="fa fa-circle-o"></i> Liberaciones de HHPP</a></li>
                                                 <li><a href="@Url.Action("ConsultaAdminIngresosMatrices", "Traslados")"><i class="fa fa-circle-o"></i> Gestión Matrices</a></li>
+                                                <li><a href="@Url.Action("ConsultaAdminTrasladosFallidos", "Traslados")"><i class="fa fa-circle-o"></i> Traslados Fallidos</a></li>
                                             </ul>
                                         </li>
 
@@ -603,6 +633,15 @@
                                         <li>
                                             <a href="@Url.Action("ConsultaClienteMatrices", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Cunsultar Cliente</a>
                                             <a href="@Url.Action("ConsultaGestionMatrices", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-building text-yellow" aria-hidden="true"></i>Traslados Fallidos<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="@Url.Action("ConsultaClienteTrasladoFallido", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Cunsultar Cliente</a>
+                                            <a href="@Url.Action("ConsultaGestionTrasladosFallidos", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -1039,7 +1078,7 @@
 
     <script src="~/ViewsAlr/app.js?1.0.3"></script>
     <script src="~/ControllersAlr/mainAccessController.js?1.0.3"></script>
-    <script src="~/ControllersAlr/ConsultaGestionController.js?1.0.9"></script>
+    <script src="~/ControllersAlr/ConsultaGestionController.js?1.0.3"></script>
     <script src="~/ControllersAlr/DepuraCasosCellController.js?1.1.9"></script>
     <script src="~/ControllersAlr/AdminCasosController.js?1.1.6"></script>
     <link href="~/Styles/Elements/Dime2.css?1.0.8" rel="stylesheet" />

@@ -19,8 +19,6 @@
             }).then(function (data) {
                 var json = JSON.parse(data.data);
                 CargarGridDefault(json);
-            }, function (error, status) {
-                alert("error:" + error + " " + "status: " + status);
             }).finally(function () {
                 $scope.dataLoading = false;
             });
@@ -55,6 +53,7 @@
                 toolbar: ["excel"],
                 excel: {
                     fileName: "Export.xlsx",
+                    allPages: true
                 },
                 dataSource: {
                     data: data,
