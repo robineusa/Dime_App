@@ -299,7 +299,7 @@ namespace Dime.Controllers
           
             return View(model);
         }
-        public ActionResult SkillsUsuariosAdminJson()
+        public JsonResult SkillsUsuariosAdminJson()
         {
             
             var jsonResult = Json(JsonConvert.SerializeObject(mastersServices.TraerListaLineasBlending(Session["AliadoLogeado"].ToString())), JsonRequestBehavior.AllowGet);
@@ -307,7 +307,14 @@ namespace Dime.Controllers
             return jsonResult;
             
         }
+        public JsonResult UsuariosporOperacion( string Operacion)
+        {
 
+            var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.ListaUsuariosAdminBlending(Operacion)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
 
     }
 }

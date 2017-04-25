@@ -40,3 +40,48 @@ function TraerListaLineasBlending() {
         }
     });
 }
+
+function BuscaUsuariosForList()
+{
+   var Operacion =  $('#NombreLineasBlendingSelect').val();
+   $.ajax({
+       type: "POST",
+       url: urlUsuariosporOperacion,
+       contentType: "application/json; charset=utf-8",
+       data: JSON.stringify({ Operacion: Operacion }),
+       dataType: "JSON",
+       success: function (result) {
+           var json = JSON.parse(result);
+           ShowGridGestiones(json);
+       }
+   });
+}
+
+
+function SetearCierresChoices() {
+    var IdContacto = $('#tipoContactosSelect').val();
+    $.ajax({
+        type: "POST",
+        url: urlControlTiposCierresList,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ idContacto: IdContacto }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#tiposCierresSelect').append($('<option>', {
+                    value: json[index].IdCierre,
+                    text: json[index].Cierre
+                }));
+
+            }
+
+        }
+    });
+
+
+    $('#tiposCierresSelect').find('option:not(:first)').remove();
+    $('#tiposRazonSelect').find('option:not(:first)').remove();
+    $('#tiposCausasSelect').find('option:not(:first)').remove();
+    $('#tiposMotivosSelect').find('option:not(:first)').remove();
+}

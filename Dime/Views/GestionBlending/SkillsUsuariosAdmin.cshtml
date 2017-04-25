@@ -25,12 +25,15 @@
                             <tr>
                                 <td style="padding-left:1px; width:200px;">
                                     <label>Seleccione el Nombre de linea</label>
-                                    @Html.DropDownListFor(m => m.Maestrolineasblendingvacio.NombreLinea, new List<SelectListItem> { }, "--Select Option--", new { Id= "NombreLineasBlendingSelect", @class = "form-control" })
+                                    @Html.DropDownListFor(m => m.Maestrolineasblendingvacio.NombreLinea, new List<SelectListItem> { }, "--Select Option--", new { Id= "NombreLineasBlendingSelect", @class = "form-control", onchange="BuscaUsuariosForList();" })
                                     
                                 </td>
                             </tr>
                         </table>
-
+                        <br />
+                        <div>
+                            123
+                        </div>
                     </div>
                 </div>
                 
@@ -38,8 +41,11 @@
         </div>
     </div>
     @section Scripts{
-        <script src="~/Scripts/Gestion_Blending/SkillsUsuariosAdmin.js?1.0.2"></script>
-       <script>  var urlLineas = '@Url.Action("SkillsUsuariosAdminJson", "GestionBlending")';</script>     
+        <script src="~/Scripts/Gestion_Blending/SkillsUsuariosAdmin.js?1.0.3"></script>
+       <script>
+           var urlLineas = '@Url.Action("SkillsUsuariosAdminJson", "GestionBlending")';
+           var urlUsuariosporOperacion = '@Url.Action("UsuariosporOperacion", "GestionBlending")';
+        </script>     
     }
 
 }

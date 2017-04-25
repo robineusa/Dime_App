@@ -1,3 +1,4 @@
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.csprojResolveAssemblyReference.cache
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\csc.exe
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -13,11 +14,6 @@ C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\VBCSCompiler.exe.
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Dime.dll.config
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Dime.dll
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Dime.pdb
-C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Telmexla.Servicios.DIME.Entity.dll
-C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Telmexla.Servicios.DIME.Entity.pdb
-C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.csprojResolveAssemblyReference.cache
-C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.dll
-C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.pdb
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Antlr3.Runtime.dll
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\EntityFramework.dll
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\EntityFramework.SqlServer.dll
@@ -46,7 +42,9 @@ C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\System.Web.Razor.dll
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\System.Web.WebPages.Deployment.dll
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\System.Web.WebPages.dll
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\System.Web.WebPages.Razor.dll
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Telmexla.Servicios.DIME.Entity.dll
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\WebGrease.dll
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Telmexla.Servicios.DIME.Entity.pdb
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Microsoft.AspNet.SignalR.Core.xml
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
@@ -78,3 +76,5 @@ C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\es\Microsoft.AspNet.Sign
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\es\Microsoft.Owin.resources.dll
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.dll
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.pdb

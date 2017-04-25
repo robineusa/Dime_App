@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="Usuario">
     <xs:sequence>
       <xs:element minOccurs="0" name="Capacitado" nillable="true" type="xs:boolean" />
@@ -815,6 +815,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GestionOutbound" nillable="true" type="tns:GestionOutbound" />
+  <xs:complexType name="ArrayOfSkillsUsuariosBlending">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SkillsUsuariosBlending" nillable="true" type="tns:SkillsUsuariosBlending" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSkillsUsuariosBlending" nillable="true" type="tns:ArrayOfSkillsUsuariosBlending" />
+  <xs:complexType name="SkillsUsuariosBlending">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Campaña" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cedula" type="xs:int" />
+      <xs:element minOccurs="0" name="Fecha_Actualizacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Usuario_Actualizacion" type="xs:int" />
+      <xs:element minOccurs="0" name="Operacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SkillsUsuariosBlending" nillable="true" type="tns:SkillsUsuariosBlending" />
   <xs:complexType name="MaestroMarcacione">
     <xs:sequence>
       <xs:element minOccurs="0" name="AreaResponsable" nillable="true" type="xs:string" />
