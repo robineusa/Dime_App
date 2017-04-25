@@ -2331,6 +2331,7 @@
     <Content Include="Scripts\Consultas_Admin\Consulta_Paloteo.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Rechazos.js" />
     <Content Include="Scripts\Dashboard\DashboardAsesor.js" />
+    <Content Include="Scripts\Gestion_Blending\SkillsUsuariosAdmin.js" />
     <Content Include="Scripts\Manage\ChangeSecurityQuestions.js" />
     <Content Include="Scripts\Manuales\ManualAdministrador.js" />
     <Content Include="Scripts\Manuales\ManualAsesor.js" />
