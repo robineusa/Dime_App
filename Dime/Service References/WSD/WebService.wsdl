@@ -2586,6 +2586,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMaestrosService_TraerListaLineasBlending_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMaestrosService_TraerListaLineasBlending_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IBlendingService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -8985,6 +9023,12 @@
   <wsdl:message name="IMaestrosService_TraeListaRed_OutputMessage">
     <wsdl:part name="parameters" element="tns:TraeListaRedResponse" />
   </wsdl:message>
+  <wsdl:message name="IMaestrosService_TraerListaLineasBlending_InputMessage">
+    <wsdl:part name="parameters" element="tns:TraerListaLineasBlending" />
+  </wsdl:message>
+  <wsdl:message name="IMaestrosService_TraerListaLineasBlending_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TraerListaLineasBlendingResponse" />
+  </wsdl:message>
   <wsdl:message name="IBlendingService_TraerMisDatosClienteAutomaticos_InputMessage">
     <wsdl:part name="parameters" element="tns:TraerMisDatosClienteAutomaticos" />
   </wsdl:message>
@@ -9975,6 +10019,10 @@
     <wsdl:operation name="TraeListaRed">
       <wsdl:input wsaw:Action="http://tempuri.org/IMaestrosService/TraeListaRed" message="tns:IMaestrosService_TraeListaRed_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMaestrosService/TraeListaRedResponse" message="tns:IMaestrosService_TraeListaRed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TraerListaLineasBlending">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMaestrosService/TraerListaLineasBlending" message="tns:IMaestrosService_TraerListaLineasBlending_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMaestrosService/TraerListaLineasBlendingResponse" message="tns:IMaestrosService_TraerListaLineasBlending_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IBlendingService">
@@ -11144,6 +11192,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IMaestrosService_TraeListaRed_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraerListaLineasBlending">
+      <soap12:operation soapAction="http://tempuri.org/IMaestrosService/TraerListaLineasBlending" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMaestrosService_TraerListaLineasBlending_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMaestrosService_TraerListaLineasBlending_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

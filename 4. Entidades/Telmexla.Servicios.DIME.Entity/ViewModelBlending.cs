@@ -33,6 +33,11 @@ namespace Telmexla.Servicios.DIME.Entity
         private GestionOutbound gestionOutInfo;
         #endregion
 
+        #region NombreLBlending
+        private List<MaestroLineasBlending> nombreLineasBlending;
+        private MaestroLineasBlending maestrolineasblendingvacio;
+        #endregion
+
 
         public ViewModelBlending()
         {
@@ -46,6 +51,8 @@ namespace Telmexla.Servicios.DIME.Entity
             historicoCierreCiclo = new CierreCicloCollection();
             cierreCicloGestionado = new CierreCiclo();
             gestionOutInfo = new GestionOutbound();
+            nombreLineasBlending = new List<MaestroLineasBlending>();
+            maestrolineasblendingvacio = new MaestroLineasBlending();
         }
 
 
@@ -178,7 +185,30 @@ namespace Telmexla.Servicios.DIME.Entity
                 gestionOutInfo = value;
             }
         }
+        public List<MaestroLineasBlending> NombreLineasBlending
+        {
+            get
+            {
+                return nombreLineasBlending;
+            }
 
+            set
+            {
+                nombreLineasBlending = value;
+            }
+        }
+        public MaestroLineasBlending Maestrolineasblendingvacio
+        {
+            get
+            {
+                return maestrolineasblendingvacio;
+            }
+
+            set
+            {
+                maestrolineasblendingvacio = value;
+            }
+        }
 
 
         public void AgregarNombreClienteAHistoricoCierreCiclo(List<string> nombreClientes)
