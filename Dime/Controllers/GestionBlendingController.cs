@@ -292,11 +292,22 @@ namespace Dime.Controllers
             return View();
         }
 
+
         public ActionResult SkillsUsuariosAdmin()
         {
-            return View();
+            ViewModelBlending model = new ViewModelBlending();
+          
+            return View(model);
         }
-        
+        public ActionResult SkillsUsuariosAdminJson()
+        {
+            
+            var jsonResult = Json(JsonConvert.SerializeObject(mastersServices.TraerListaLineasBlending(Session["AliadoLogeado"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+            
+        }
+
 
     }
 }

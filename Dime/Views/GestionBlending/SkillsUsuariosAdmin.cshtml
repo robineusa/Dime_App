@@ -1,4 +1,4 @@
-﻿
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelBlending
 @{
     ViewBag.Title = "Skills de Usuarios";
     ViewBag.Subtitle = "Administrador Blending";
@@ -21,7 +21,16 @@
                     </div>
                     <div class="tab-pane" id="Actualiza_Usuario" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
                         <br />
-                        
+                        <table>
+                            <tr>
+                                <td style="padding-left:1px; width:200px;">
+                                    <label>Seleccione el Nombre de linea</label>
+                                    @Html.DropDownListFor(m => m.Maestrolineasblendingvacio.NombreLinea, new List<SelectListItem> { }, "--Select Option--", new { Id= "NombreLineasBlendingSelect", @class = "form-control" })
+                                    
+                                </td>
+                            </tr>
+                        </table>
+
                     </div>
                 </div>
                 
@@ -29,8 +38,8 @@
         </div>
     </div>
     @section Scripts{
-        <script src="~/Scripts/Gestion_Blending/SkillsUsuariosAdmin.js?1.0.1"></script>
-            
+        <script src="~/Scripts/Gestion_Blending/SkillsUsuariosAdmin.js?1.0.2"></script>
+       <script>  var urlLineas = '@Url.Action("SkillsUsuariosAdminJson", "GestionBlending")';</script>     
     }
 
 }
