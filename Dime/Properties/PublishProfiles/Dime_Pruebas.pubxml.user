@@ -7515,7 +7515,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/21/2017 10:21:31</publishTime>
     </File>
     <File Include="bin/Dime.dll">
-      <publishTime>04/25/2017 09:27:34</publishTime>
+      <publishTime>04/25/2017 13:21:52</publishTime>
     </File>
     <File Include="bin/Dime.dll.config">
       <publishTime>04/20/2017 14:28:57</publishTime>
@@ -7725,7 +7725,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/21/2017 10:21:17</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>04/21/2017 15:09:58</publishTime>
+      <publishTime>04/25/2017 13:20:21</publishTime>
     </File>
     <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Business.DatoConsultaGestionAdmin.datasource">
       <publishTime>04/18/2017 11:24:51</publishTime>
@@ -8358,7 +8358,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaGestion.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaGestionAdmin.datasource">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -8367,55 +8367,58 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaRechazo.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.GestionDeCelulaUsr.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:34</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogCierreCiclo.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:34</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogClaroVideo.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:34</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogDocsisOverlap.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:34</publishTime>
+    </File>
+    <File Include="Service References/WSD/Dime.WSD.MaestroLineasBlending.datasource">
+      <publishTime>04/25/2017 13:20:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundCausa.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundCierre.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundMotivo.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundRazon.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundTipoContacto.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.RazonIngresoSoporte.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:34</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.SmoRentaActual.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:34</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.SmoTarifaActual.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:34</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.Subrazon1IngresoSoporte.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:34</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.Subrazon2IngresoSoporte.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:34</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.TablaActualizarInbound.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.UsuariosMasivoData.datasource">
-      <publishTime>04/25/2017 09:26:13</publishTime>
+      <publishTime>04/25/2017 13:20:33</publishTime>
     </File>
     <File Include="Styles/Elements/Alertas.css">
       <publishTime>03/21/2017 10:21:27</publishTime>
@@ -8661,7 +8664,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/21/2017 10:21:30</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>04/25/2017 09:22:24</publishTime>
+      <publishTime>04/25/2017 13:16:35</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
       <publishTime>04/05/2017 08:33:39</publishTime>
@@ -8835,7 +8838,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/21/2017 10:21:31</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>04/25/2017 09:30:06</publishTime>
+      <publishTime>04/25/2017 13:22:45</publishTime>
     </File>
   </ItemGroup>
 </Project>

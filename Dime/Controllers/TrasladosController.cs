@@ -989,16 +989,14 @@ namespace Dime.Controllers
             return View();
         }
   
-        [HttpPost]
-        public ActionResult ConsultaAdminIngresosTraslados(string fechaInicial, string fechaFinal)
+        public JsonResult ConsultaAdminIngresosTrasladosJson(string fechaInicial, string fechaFinal)
         {
-            DateTime FI = Convert.ToDateTime(fechaInicial);
-            DateTime FF = Convert.ToDateTime(fechaFinal);
-            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaGeneralIngresosTraslados(FI, FF);
-            return View(modelo);
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaGeneralIngresosTraslados(Convert.ToDateTime(fechaInicial), Convert.ToDateTime(fechaFinal))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
         }
-   
+        
         [HttpGet]
         public ActionResult ConsultaAdminIngresosCrearDireccion()
         {
