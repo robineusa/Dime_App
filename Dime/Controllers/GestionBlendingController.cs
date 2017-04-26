@@ -336,8 +336,7 @@ namespace Dime.Controllers
                 else
                 {
                     ViewBag.UsuarioExiste = "El usuario no se encuentra registrado en DIME. Debe restrirlo primero para Crearlo en Blending";
-                    model.UsuarioHolos = loginService.ConsultarUsuarioHolos(model.UsuarioHolos.Cedula);
-                    if (model.UsuarioHolos == null) ViewBag.UsuarioExiste = "El usuario no se encuentra registrado en HOLOS";
+                    
                 }
 
             }
