@@ -9,6 +9,11 @@ namespace Telmexla.Servicios.DIME.Entity
     public class ViewModelBlending
     {
         private ClientesTodo datosCliente;
+        private int cedula;
+        private string operacion;
+        private string campaña;
+        private System.DateTime? fecha_Actualizacion;
+        private string id_Usuario_Actualizacion;
 
 
         #region convenioElectronico
@@ -20,7 +25,6 @@ namespace Telmexla.Servicios.DIME.Entity
         private DocsisOverlapCollection historicoDocsisOverlap;
         private DocsisOverlap docsisOverlapGestionado;
         #endregion
-
 
         #region claroVideo
         private ClaroVideoCollection historicoClaroVideo;
@@ -222,6 +226,70 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 usuarioHolos = value;
+            }
+        }
+        public int Cedula
+        {
+            get
+            {
+                return cedula;
+            }
+
+            set
+            {
+                cedula = value;
+            }
+        }
+
+        public string Operacion
+        {
+            get
+            {
+                return operacion;
+            }
+
+            set
+            {
+                operacion = value;
+            }
+        }
+
+        public DateTime? Fecha_Actualizacion
+        {
+            get
+            {
+                return fecha_Actualizacion;
+            }
+
+            set
+            {
+                fecha_Actualizacion = value;
+            }
+        }
+
+        public string Id_Usuario_Actualizacion
+        {
+            get
+            {
+                return id_Usuario_Actualizacion;
+            }
+
+            set
+            {
+                id_Usuario_Actualizacion = value;
+            }
+        }
+
+        public string Campaña
+        {
+            get
+            {
+                return campaña;
+            }
+
+            set
+            {
+                campaña = value;
             }
         }
 

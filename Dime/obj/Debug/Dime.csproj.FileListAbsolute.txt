@@ -1,4 +1,3 @@
-C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.csprojResolveAssemblyReference.cache
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\csc.exe
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -76,6 +75,7 @@ C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\es\Microsoft.AspNet.Sign
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\es\Microsoft.Owin.resources.dll
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\es\Microsoft.Owin.Host.SystemWeb.resources.dll
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\bin\es\Microsoft.Owin.Security.resources.dll
+C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.csprojResolveAssemblyReference.cache
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.dll
 C:\Users\David Gomez\Documents\GitHub\Dime_App\Dime\obj\Debug\Dime.pdb
 C:\Users\robin\Documents\GitHub\Dime_App\Dime\bin\roslyn\csc.exe
