@@ -16,7 +16,8 @@ namespace Dime.Controllers
         WSD.MaestrosServiceClient mastersServices;
         WSD.BlendingServiceClient blendingServices;
         WSD.InboundServiceClient inboundServices;
-  
+        WSD.LoginServiceClient loginService;
+
         public GestionBlendingController()
         {
             mastersServices = new WSD.MaestrosServiceClient();
@@ -25,6 +26,8 @@ namespace Dime.Controllers
             blendingServices.ClientCredentials.Authenticate();
             inboundServices = new WSD.InboundServiceClient();
             inboundServices.ClientCredentials.Authenticate();
+            loginService = new WSD.LoginServiceClient();
+            loginService.ClientCredentials.Authenticate();
         }
 
         public ActionResult Index()
@@ -314,6 +317,35 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 
+        }
+
+        [HttpPost]
+        public ActionResult SkillsUsuariosAdmin(ViewModelBlending model, string opcionMando)
+        {
+
+            ViewBag.UsuarioExiste = null;
+
+            if (opcionMando.Equals("ConsultarCreando"))
+            {
+                if (loginService.RecibirIdUsuario(model.UsuarioHolos.Cedula) != 0)
+                {
+                    ViewBag.UsuarioExiste = "El usuario ya se encuentra registrado en DIME";
+                    model.UsuarioHolos = loginService.ConsultarUsuarioHolos(model.UsuarioHolos.Cedula);
+                    ViewBag.Valida2 = "Usuario existente 2";
+                }
+                else
+                {
+                    ViewBag.UsuarioExiste = "El usuario no se encuentra registrado en DIME. Debe restrirlo primero para Crearlo en Blending";
+                    model.UsuarioHolos = loginService.ConsultarUsuarioHolos(model.UsuarioHolos.Cedula);
+                    if (model.UsuarioHolos == null) ViewBag.UsuarioExiste = "El usuario no se encuentra registrado en HOLOS";
+                }
+
+            }
+            if (model.UsuarioHolos == null)
+            {
+                model = new ViewModelBlending();
+            }
+            return View(model);
         }
 
     }

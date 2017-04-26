@@ -36,6 +36,7 @@ namespace Telmexla.Servicios.DIME.Entity
         #region NombreLBlending
         private List<MaestroLineasBlending> nombreLineasBlending;
         private MaestroLineasBlending maestrolineasblendingvacio;
+        private BasePersonalHolo usuarioHolos;
         #endregion
 
 
@@ -53,6 +54,8 @@ namespace Telmexla.Servicios.DIME.Entity
             gestionOutInfo = new GestionOutbound();
             nombreLineasBlending = new List<MaestroLineasBlending>();
             maestrolineasblendingvacio = new MaestroLineasBlending();
+            usuarioHolos = new BasePersonalHolo();
+
         }
 
 
@@ -209,7 +212,18 @@ namespace Telmexla.Servicios.DIME.Entity
                 maestrolineasblendingvacio = value;
             }
         }
+        public BasePersonalHolo UsuarioHolos
+        {
+            get
+            {
+                return usuarioHolos;
+            }
 
+            set
+            {
+                usuarioHolos = value;
+            }
+        }
 
         public void AgregarNombreClienteAHistoricoCierreCiclo(List<string> nombreClientes)
         {

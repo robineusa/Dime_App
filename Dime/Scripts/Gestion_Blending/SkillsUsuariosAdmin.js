@@ -52,7 +52,8 @@ function BuscaUsuariosForList()
        dataType: "JSON",
        success: function (result) {
            var json = JSON.parse(result);
-           ShowGridGestiones(json);
+           ShowGridUsuarios(json);
+           $('#oculto').css("display","block");
        }
    });
 }
@@ -85,3 +86,52 @@ function SetearCierresChoices() {
     $('#tiposCausasSelect').find('option:not(:first)').remove();
     $('#tiposMotivosSelect').find('option:not(:first)').remove();
 }
+
+function ShowGridUsuarios(data)
+{
+    $("#gridViewResult").kendoGrid({
+
+        //toolbar: ["excel"],
+        //excel: {
+        //    fileName: "Export.xlsx",
+        //},
+        dataSource: {
+            data: data,
+            pageSize: 10,
+
+        },
+
+        scrollable: true,
+        filterable: {
+            extra: false,
+            operators: {
+                string: {
+                    eq: "Es igual a"
+                }
+            }
+        },
+        sortable: true,
+        pageable: {
+            refresh: true,
+            pageSizes: true,
+            buttonCount: 5
+        },
+        columns: [
+            { text: "Check", template: '<input type="checkbox" id="ARadio"/>', title: "Check", width: "70px" },
+            { field: "Id", title: "Id", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Cedula", title: "Id Usuario", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Operacion", title: "Operacion", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Campaña", title: "Campaña", width: 80, headerAttributes: { style: "white-space: normal" } },
+
+        ]
+
+    });
+}
+
+$('#cedulaCreacion').on("keyup", function (e) {
+    var code = e.keyCode || e.which;
+    if (code == 13) {
+        $("#consultarUsuario").click();
+
+    }
+})
