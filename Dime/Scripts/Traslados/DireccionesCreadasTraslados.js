@@ -1,8 +1,38 @@
-﻿$("#gridViewDirecciones").kendoGrid({
+﻿$(document).ready(function () {
+    document.getElementById('dataLoading').style.display = 'inline-block';
+    $.ajax({
+        type: "GET",
+        url: direccionesCreadasJson,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            var json = JSON.parse(result);
+           
+            if (json != null) {
+
+
+            }
+
+
+            EjecutarConsultas(json);
+        },
+        error: function (request, status, error) {
+            alert(request.responseText + " " + status + "  " + error);
+        }
+
+    });
+});
+function EjecutarConsultas(data) {
+    ShowGrid(data);
+    finalizaconsulta();
+}
+
+function ShowGrid(data) {
+    $("#gridViewDirecciones").kendoGrid({
         dataSource: {
-            data: jsonDireccionesCrear,
+            data: data,
             pageSize: 10,
-                  },
+        },
         scrollable: true,
         filterable: {
             extra: false,
@@ -20,7 +50,7 @@
             buttonCount: 5
         },
         columns: [
-        { command: { text: " ", click: ActualizarCaso, imageClass: "k-icon k-i-pencil", }, title: " ", width:"40px"},
+        { command: { text: " ", click: ActualizarCaso, imageClass: "k-icon k-i-pencil", }, title: " ", width: "40px" },
         { field: "IngresoTrasladoGetSet.IdTransaccion", title: "Id Transacción", width: 100 },
         { field: "IngresoTrasladoGetSet.CuentaCliente", title: "Cuenta Cliente", width: 100 },
         { field: "IngresoTrasladoGetSet.FechaApertura", title: "Fecha Apertura", width: 100, template: "#= kendo.toString(kendo.parseDate(IngresoTrasladoGetSet.FechaApertura, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", filterable: false },
@@ -31,7 +61,11 @@
         ]
 
     });
+}
+function finalizaconsulta() {
+    document.getElementById('dataLoading').style.display = 'none';
 
+}
 function ActualizarCaso(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
