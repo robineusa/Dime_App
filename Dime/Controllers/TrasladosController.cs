@@ -80,13 +80,18 @@ namespace Dime.Controllers
             }
             return View(modelo);
         }
-
+        [HttpGet]
         public ActionResult DireccionesCreadasTraslados()
         {
             
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaSolicitudesCrearDireccion(Session["Usuario"].ToString());
             return View(modelo);
+        }
+        public JsonResult DireccionesCreadasTrasladosJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaSolicitudesCrearDireccion(Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
 
         [HttpGet]
@@ -179,10 +184,14 @@ namespace Dime.Controllers
         {
             
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaSeguimientosDireccionesCelula(Session["Usuario"].ToString());
             return View(modelo);
         }
-      
+        public JsonResult SeguimientosSolicitudesCreacionDireccionJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaSeguimientosDireccionesCelula(Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
         [HttpGet]
         public ActionResult DireccionesCreadasOutbound()
         {
@@ -192,7 +201,7 @@ namespace Dime.Controllers
 
         }
         public JsonResult DireccionesCreadasOutboundJson(){
-            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
+           
             var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaDireccionesCreadasOutbound(Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
@@ -289,19 +298,22 @@ namespace Dime.Controllers
         {
             
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaSeguimientosDireccionesOutbound(Session["Usuario"].ToString());
             return View(modelo);
         }
-    
-        [HttpPost]
-        public ActionResult ConsultaGestionCreacionDr(string fechaInicial, string fechaFinal)
+        public JsonResult SeguimientosSolicitudesCreacionDireccionOutboundJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaSeguimientosDireccionesOutbound(Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ConsultaGestionCreacionDrJson(string fechaInicial, string fechaFinal)
         {
             
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
-            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListGestionCrearDireccion(FI,FF, Session["Usuario"].ToString());
-            return View(modelo);
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListGestionCrearDireccion(FI, FF, Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
 
         }
     
@@ -370,15 +382,21 @@ namespace Dime.Controllers
             }
             return View(modelo);
         }
-     
+     [HttpGet]
         public ActionResult SolicitudesCambioDeEstrato()
         {
             
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaSolicitudesCambioEstrato(Session["Usuario"].ToString());
             return View(modelo);
         }
- 
+        public JsonResult SolicitudesCambioDeEstratoJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaSolicitudesCambioEstrato(Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+
         [HttpGet]
         public ActionResult GestionarCambioDeEstratoCelula(int id)
         {
@@ -469,19 +487,23 @@ namespace Dime.Controllers
         {
           
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaSeguimientosCambiodeEstratoCelula(Session["Usuario"].ToString());
             return View(modelo);
         }
-      
-        [HttpPost]
-        public ActionResult ConsultaGestionCambioDeEstrato(string fechaInicial, string fechaFinal)
+        public JsonResult SeguimientosCambioDeEstratoJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaSeguimientosCambiodeEstratoCelula(Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
+        public JsonResult ConsultaGestionCambioDeEstratoJson(string fechaInicial, string fechaFinal)
         {
            
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
-            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListGestionCambioDeEstrato(FI, FF, Session["Usuario"].ToString());
-            return View(modelo);
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListGestionCambioDeEstrato(FI, FF, Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
 
         }
       
@@ -550,7 +572,7 @@ namespace Dime.Controllers
             }
             return View(modelo);
         }
-   
+   [HttpGet]
         public ActionResult SolicitudesLiberacionHomePass()
         {
             
@@ -558,7 +580,13 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaSolicitudesLiberacionesHomePass(Session["Usuario"].ToString());
             return View(modelo);
         }
- 
+        public JsonResult SolicitudesLiberacionHomePassJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaSolicitudesLiberacionesHomePass(Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
         [HttpGet]
         public ActionResult GestionarLiberacionHomePassCelula(int id)
         {
@@ -650,20 +678,23 @@ namespace Dime.Controllers
         {
           
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaSeguimientosLiberacionHomePassCelula(Session["Usuario"].ToString());
             return View(modelo);
         }
- 
-        [HttpPost]
-        public ActionResult ConsultaGestionLiberaciondeHomePass(string fechaInicial, string fechaFinal)
+        public JsonResult SeguimientosLiberacionHomePassJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaSeguimientosLiberacionHomePassCelula(Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
+        public JsonResult ConsultaGestionLiberaciondeHomePassJson(string fechaInicial, string fechaFinal)
         {
            
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
-            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListGestionLiberacionHomePass(FI, FF, Session["Usuario"].ToString());
-            return View(modelo);
-
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListGestionLiberacionHomePass(FI, FF, Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
       
         [HttpGet]
@@ -730,7 +761,7 @@ namespace Dime.Controllers
             }
             return View(modelo);
         }
-
+        [HttpGet]
         public ActionResult SolicitudesCreacionMatrices()
         {
          
@@ -738,7 +769,13 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaSolicitudesCreaciondeMatriz(Session["Usuario"].ToString());
             return View(modelo);
         }
-     
+        public JsonResult SolicitudesCreacionMatricesJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaSolicitudesCreaciondeMatriz(Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
         [HttpGet]
         public ActionResult GestionarCreacionDeMatriz(int id)
         {
@@ -845,18 +882,30 @@ namespace Dime.Controllers
             modelo = trasladowebservice.ListaSeguimientosCrearMatrizCelula(Session["Usuario"].ToString());
             return View(modelo);
         }
+        public JsonResult SeguimientosSolicitudesCreacionMatrizJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaSeguimientosCrearMatrizCelula(Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
 
         [HttpGet]
         public ActionResult SolicitudesGestionMatrices()
         {
-            trasladowebservice = new WSD.TrasladosServiceClient();
-            trasladowebservice.ClientCredentials.Authenticate();
+            
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaSolicitudesGestionMatriz(Session["Usuario"].ToString());
-            return View(modelo);
+           
+         return View(modelo);
 
         }
- 
+        public JsonResult SolicitudesGestionMatricesJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaSolicitudesGestionMatriz(Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+
         [HttpGet]
         public ActionResult GestionMatricesCelula(int id)
         {
@@ -961,19 +1010,22 @@ namespace Dime.Controllers
         {
            
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaSeguimientosGestionMatricesCelula(Session["Usuario"].ToString());
             return View(modelo);
         }
-
-        [HttpPost]
-        public ActionResult ConsultaGestionMatrices(string fechaInicial, string fechaFinal)
+        public JsonResult SeguimientosSolicitudesGestionMatricesJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaSeguimientosGestionMatricesCelula(Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ConsultaGestionMatricesJson(string fechaInicial, string fechaFinal)
         {
          
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
-            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListGestionMatrices(FI, FF, Session["Usuario"].ToString());
-            return View(modelo);
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListGestionMatrices(FI, FF, Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
 
         }
 
@@ -1003,67 +1055,60 @@ namespace Dime.Controllers
             return View();
         }
       
-        [HttpPost]
-        public ActionResult ConsultaAdminIngresosCrearDireccion(string fechaInicial, string fechaFinal)
+        public JsonResult ConsultaAdminIngresosCrearDireccionJson(string fechaInicial, string fechaFinal)
         {
-           
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
-            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaGeneralIngresosCrearDireccion(FI, FF);
-            return View(modelo);
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaGeneralIngresosCrearDireccion(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+            
         }
-      
+        
         [HttpGet]
         public ActionResult ConsultaAdminIngresosCambioEstrato()
         {
             return View();
         }
-
-        [HttpPost]
-        public ActionResult ConsultaAdminIngresosCambioEstrato(string fechaInicial, string fechaFinal)
+        public JsonResult ConsultaAdminIngresosCambioEstratoJson(string fechaInicial, string fechaFinal)
         {
-          
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
-            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaGeneralIngresosCambiEstrato(FI, FF);
-            return View(modelo);
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaGeneralIngresosCambiEstrato(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
-   
+
         [HttpGet]
         public ActionResult ConsultaAdminIngresosLiberaciones()
         {
             return View();
         }
-     
-        [HttpPost]
-        public ActionResult ConsultaAdminIngresosLiberaciones(string fechaInicial, string fechaFinal)
+        public JsonResult ConsultaAdminIngresosLiberacionesJson(string fechaInicial, string fechaFinal)
         {
-           
+
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
-            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaGeneralIngresosLiberaciones(FI, FF);
-            return View(modelo);
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaGeneralIngresosLiberaciones(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
-     
+
         [HttpGet]
         public ActionResult ConsultaAdminIngresosMatrices()
         {
             return View();
         }
-   
-        [HttpPost]
-        public ActionResult ConsultaAdminIngresosMatrices(string fechaInicial, string fechaFinal)
+        public JsonResult ConsultaAdminIngresosMatricesJson(string fechaInicial, string fechaFinal)
         {
-            
+
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
-            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ListaGeneralIngresosmatrices(FI, FF);
-            return View(modelo);
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaGeneralIngresosmatrices(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
+
         [HttpGet]
         public ActionResult ConsultaIngresosTraslados()
         {
@@ -1243,16 +1288,16 @@ namespace Dime.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult ConsultaAdminTrasladosFallidos(string fechaInicial, string fechaFinal)
+        public JsonResult ConsultaAdminTrasladosFallidosJson(string fechaInicial, string fechaFinal)
         {
 
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
-            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ConsultaGeneralTrasladosFallidos(FI, FF);
-            return View(modelo);
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ConsultaGeneralTrasladosFallidos(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
+
         //maestro departamentos
         public JsonResult ListaDepartamentos()
         {
@@ -1282,15 +1327,14 @@ namespace Dime.Controllers
             return jsonResult;
 
         }
-        [HttpPost]
-        public ActionResult ConsultaGestionTrasladosFallidos(string fechaInicial, string fechaFinal)
+       public JsonResult ConsultaGestionTrasladosFallidosJson(string fechaInicial, string fechaFinal)
         {
 
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
-            List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            modelo = trasladowebservice.ConsultaGestionTrasladoFallido(FI, FF, Session["Usuario"].ToString());
-            return View(modelo);
+            var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ConsultaGestionTrasladoFallido(FI, FF, Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
 
         }
 
