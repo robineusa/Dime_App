@@ -6474,10 +6474,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<Dime.WSD.SkillsUsuariosBlending> ConsultaUsuarioenAdminBlendingAsync(string cedula);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ObtenerCampaña", ReplyAction="http://tempuri.org/IBlendingService/ObtenerCampañaResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound> ObtenerCampaña();
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound> ObtenerCampaña(string Aliado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ObtenerCampaña", ReplyAction="http://tempuri.org/IBlendingService/ObtenerCampañaResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> ObtenerCampañaAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> ObtenerCampañaAsync(string Aliado);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6675,12 +6675,12 @@ namespace Dime.WSD {
             return base.Channel.ConsultaUsuarioenAdminBlendingAsync(cedula);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound> ObtenerCampaña() {
-            return base.Channel.ObtenerCampaña();
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound> ObtenerCampaña(string Aliado) {
+            return base.Channel.ObtenerCampaña(Aliado);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> ObtenerCampañaAsync() {
-            return base.Channel.ObtenerCampañaAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> ObtenerCampañaAsync(string Aliado) {
+            return base.Channel.ObtenerCampañaAsync(Aliado);
         }
     }
     

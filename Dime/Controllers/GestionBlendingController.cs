@@ -361,7 +361,7 @@ namespace Dime.Controllers
         public JsonResult ObtenerCampaña()
         {
 
-            var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.ObtenerCampaña()), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.ObtenerCampaña(Session["AliadoLogeado"].ToString())), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 
