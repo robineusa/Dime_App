@@ -783,6 +783,7 @@
       <xs:element minOccurs="0" name="AptoClarovideo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="AptoElegidoFijoMovil" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="BlindajeInternet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Campaña" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Clarovideo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ConsumosLdLdn" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ConsumosMoviles" nillable="true" type="xs:string" />
@@ -832,6 +833,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SkillsUsuariosBlending" nillable="true" type="tns:SkillsUsuariosBlending" />
+  <xs:complexType name="ArrayOfGestionOutbound">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestionOutbound" nillable="true" type="tns:GestionOutbound" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGestionOutbound" nillable="true" type="tns:ArrayOfGestionOutbound" />
   <xs:complexType name="MaestroMarcacione">
     <xs:sequence>
       <xs:element minOccurs="0" name="AreaResponsable" nillable="true" type="xs:string" />

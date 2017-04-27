@@ -327,15 +327,22 @@ namespace Dime.Controllers
 
             if (opcionMando.Equals("ConsultarCreando"))
             {
+                var R = loginService.RecibirIdUsuario(model.UsuarioHolos.Cedula);
                 if (loginService.RecibirIdUsuario(model.UsuarioHolos.Cedula) != 0)
                 {
                     if (blendingServices.ConsultaUsuarioenAdminBlending(Convert.ToString(model.UsuarioHolos.Cedula)) == null)
                     {
                         model.UsuarioHolos = loginService.ConsultarUsuarioHolos(model.UsuarioHolos.Cedula);
+                        if (model.UsuarioHolos.Aliado != Session["AliadoLogeado"].ToString())
+                        {
+                            ViewBag.UsuarioExiste = "Este Usuario no pertenece a su Aliado";
+                            model = new ViewModelBlending();
+                        }
                     }
                     else
                     {
                         ViewBag.UsuarioExiste = "El usuario ya esta registrado en Skilles Blending";
+                        model = new ViewModelBlending();
                     }
                 }
                 else
@@ -350,6 +357,14 @@ namespace Dime.Controllers
                 model = new ViewModelBlending();
             }
             return View(model);
+        }
+        public JsonResult ObtenerCampaña()
+        {
+
+            var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.ObtenerCampaña()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
         }
 
     }

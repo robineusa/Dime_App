@@ -6472,6 +6472,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ConsultaUsuarioenAdminBlending", ReplyAction="http://tempuri.org/IBlendingService/ConsultaUsuarioenAdminBlendingResponse")]
         System.Threading.Tasks.Task<Dime.WSD.SkillsUsuariosBlending> ConsultaUsuarioenAdminBlendingAsync(string cedula);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ObtenerCampaña", ReplyAction="http://tempuri.org/IBlendingService/ObtenerCampañaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound> ObtenerCampaña();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ObtenerCampaña", ReplyAction="http://tempuri.org/IBlendingService/ObtenerCampañaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> ObtenerCampañaAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6667,6 +6673,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Dime.WSD.SkillsUsuariosBlending> ConsultaUsuarioenAdminBlendingAsync(string cedula) {
             return base.Channel.ConsultaUsuarioenAdminBlendingAsync(cedula);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound> ObtenerCampaña() {
+            return base.Channel.ObtenerCampaña();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> ObtenerCampañaAsync() {
+            return base.Channel.ObtenerCampañaAsync();
         }
     }
     
