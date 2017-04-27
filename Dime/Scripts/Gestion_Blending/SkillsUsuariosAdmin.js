@@ -21,6 +21,7 @@
 
     });
     TraerListaLineasBlending();
+    TraerCampaña();
 });
 
 function TraerListaLineasBlending() {
@@ -40,6 +41,31 @@ function TraerListaLineasBlending() {
                     text: json[index].NombreLinea
                 }));
 
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+}
+
+function TraerCampaña() {
+    $.ajax({
+        type: "GET",
+        url: urlCampañas,
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0; index < json.length; index++) {
+                $('#CampañasBlendingSelect').append($('<option>', {
+                    value: json[index].Campaña,
+                    text: json[index].Campaña
+                }));
+                $('#CampañasBlendingSelect2').append($('<option>', {
+                    value: json[index].Campaña,
+                    text: json[index].Campaña
+                }));
             }
 
         },

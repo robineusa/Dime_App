@@ -32,6 +32,7 @@ namespace Telmexla.Servicios.DIME.Entity
         {
            
             listaSiembraHD = new List<CuentasSiembraHD>();
+            listaSMO = new List<CuentasSiguienteMejorOferta>();
             DatosAdcionalesCliente = new DatosAdicionalesCliente();
             CuentasConsultadas = new List<ClientesTodo>();
             ClientesTodos = new ClientesTodo();

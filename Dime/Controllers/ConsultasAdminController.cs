@@ -32,11 +32,8 @@ namespace Dime.Controllers
 
         public JsonResult PaloteoConsulta(string fechaInicial, string fechaFinal)
         {
-            DateTime inicial = Convert.ToDateTime(fechaInicial);
-            DateTime final = Convert.ToDateTime(fechaFinal);
-
             List<DatoConsultaPaloteo> modelo = new List<DatoConsultaPaloteo>();
-            var jsonResult = Json(JsonConvert.SerializeObject(casosAdminService.ListaPaloteo(inicial, final)), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(casosAdminService.ListaPaloteo(fechaInicial, fechaFinal)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 

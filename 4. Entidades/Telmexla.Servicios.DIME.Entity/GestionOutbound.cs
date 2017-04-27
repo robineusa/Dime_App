@@ -51,6 +51,7 @@ namespace Telmexla.Servicios.DIME.Entity
         public string RangoGeneracional { get; set; } // RANGO_GENERACIONAL (length: 50)
         public int? UsuarioGestionando { get; set; } // USUARIO_GESTIONANDO
         public string Aliado { get; set; } // ALIADO (length: 50)
+        public string Campaña { get; set; } // CAMPAÑA (length: 50)
     }
 
 }

@@ -3489,6 +3489,82 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBlendingService_ConsultaUsuarioenAdminBlending_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBlendingService_ConsultaUsuarioenAdminBlending_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBlendingService_ObtenerCampaña_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBlendingService_ObtenerCampaña_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IMarcacionesService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -9187,6 +9263,18 @@
   <wsdl:message name="IBlendingService_ListaUsuariosAdminBlending_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListaUsuariosAdminBlendingResponse" />
   </wsdl:message>
+  <wsdl:message name="IBlendingService_ConsultaUsuarioenAdminBlending_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaUsuarioenAdminBlending" />
+  </wsdl:message>
+  <wsdl:message name="IBlendingService_ConsultaUsuarioenAdminBlending_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaUsuarioenAdminBlendingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlendingService_ObtenerCampaña_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCampaña" />
+  </wsdl:message>
+  <wsdl:message name="IBlendingService_ObtenerCampaña_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCampañaResponse" />
+  </wsdl:message>
   <wsdl:message name="IMarcacionesService_RegistrarMarcacion_InputMessage">
     <wsdl:part name="parameters" element="tns:RegistrarMarcacion" />
   </wsdl:message>
@@ -10149,6 +10237,14 @@
     <wsdl:operation name="ListaUsuariosAdminBlending">
       <wsdl:input wsaw:Action="http://tempuri.org/IBlendingService/ListaUsuariosAdminBlending" message="tns:IBlendingService_ListaUsuariosAdminBlending_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBlendingService/ListaUsuariosAdminBlendingResponse" message="tns:IBlendingService_ListaUsuariosAdminBlending_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioenAdminBlending">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlendingService/ConsultaUsuarioenAdminBlending" message="tns:IBlendingService_ConsultaUsuarioenAdminBlending_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlendingService/ConsultaUsuarioenAdminBlendingResponse" message="tns:IBlendingService_ConsultaUsuarioenAdminBlending_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCampaña">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlendingService/ObtenerCampaña" message="tns:IBlendingService_ObtenerCampaña_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlendingService/ObtenerCampañaResponse" message="tns:IBlendingService_ObtenerCampaña_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IMarcacionesService">
@@ -11475,6 +11571,28 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IBlendingService_ListaUsuariosAdminBlending_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaUsuarioenAdminBlending">
+      <soap12:operation soapAction="http://tempuri.org/IBlendingService/ConsultaUsuarioenAdminBlending" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBlendingService_ConsultaUsuarioenAdminBlending_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBlendingService_ConsultaUsuarioenAdminBlending_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCampaña">
+      <soap12:operation soapAction="http://tempuri.org/IBlendingService/ObtenerCampaña" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBlendingService_ObtenerCampaña_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBlendingService_ObtenerCampaña_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
