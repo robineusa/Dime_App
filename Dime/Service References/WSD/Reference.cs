@@ -3368,131 +3368,6 @@ namespace Dime.WSD {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SkillsUsuariosBlending", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
-    [System.SerializableAttribute()]
-    public partial class SkillsUsuariosBlending : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CampañaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CedulaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> Fecha_ActualizacionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int Id_Usuario_ActualizacionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string OperacionField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Campaña {
-            get {
-                return this.CampañaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CampañaField, value) != true)) {
-                    this.CampañaField = value;
-                    this.RaisePropertyChanged("Campaña");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Cedula {
-            get {
-                return this.CedulaField;
-            }
-            set {
-                if ((this.CedulaField.Equals(value) != true)) {
-                    this.CedulaField = value;
-                    this.RaisePropertyChanged("Cedula");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> Fecha_Actualizacion {
-            get {
-                return this.Fecha_ActualizacionField;
-            }
-            set {
-                if ((this.Fecha_ActualizacionField.Equals(value) != true)) {
-                    this.Fecha_ActualizacionField = value;
-                    this.RaisePropertyChanged("Fecha_Actualizacion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id_Usuario_Actualizacion {
-            get {
-                return this.Id_Usuario_ActualizacionField;
-            }
-            set {
-                if ((this.Id_Usuario_ActualizacionField.Equals(value) != true)) {
-                    this.Id_Usuario_ActualizacionField = value;
-                    this.RaisePropertyChanged("Id_Usuario_Actualizacion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Operacion {
-            get {
-                return this.OperacionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OperacionField, value) != true)) {
-                    this.OperacionField = value;
-                    this.RaisePropertyChanged("Operacion");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="GestionDeCelulaUsr", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Business")]
     [System.SerializableAttribute()]
     public partial class GestionDeCelulaUsr : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -6462,22 +6337,28 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<bool> GuardarCierreCicloAsync(int idAsesor, Telmexla.Servicios.DIME.Entity.ClientesTodo datosCliente, Telmexla.Servicios.DIME.Entity.CierreCiclo cierreCicloGestionado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ListaUsuariosAdminBlending", ReplyAction="http://tempuri.org/IBlendingService/ListaUsuariosAdminBlendingResponse")]
-        System.Collections.Generic.List<Dime.WSD.SkillsUsuariosBlending> ListaUsuariosAdminBlending(string Operacion);
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending> ListaUsuariosAdminBlending(string Operacion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ListaUsuariosAdminBlending", ReplyAction="http://tempuri.org/IBlendingService/ListaUsuariosAdminBlendingResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.SkillsUsuariosBlending>> ListaUsuariosAdminBlendingAsync(string Operacion);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending>> ListaUsuariosAdminBlendingAsync(string Operacion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ConsultaUsuarioenAdminBlending", ReplyAction="http://tempuri.org/IBlendingService/ConsultaUsuarioenAdminBlendingResponse")]
-        Dime.WSD.SkillsUsuariosBlending ConsultaUsuarioenAdminBlending(string cedula);
+        Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending ConsultaUsuarioenAdminBlending(string cedula);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ConsultaUsuarioenAdminBlending", ReplyAction="http://tempuri.org/IBlendingService/ConsultaUsuarioenAdminBlendingResponse")]
-        System.Threading.Tasks.Task<Dime.WSD.SkillsUsuariosBlending> ConsultaUsuarioenAdminBlendingAsync(string cedula);
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending> ConsultaUsuarioenAdminBlendingAsync(string cedula);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ObtenerCampaña", ReplyAction="http://tempuri.org/IBlendingService/ObtenerCampañaResponse")]
         System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound> ObtenerCampaña(string Aliado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ObtenerCampaña", ReplyAction="http://tempuri.org/IBlendingService/ObtenerCampañaResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> ObtenerCampañaAsync(string Aliado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/InsertarSkillsUsuarioBlending", ReplyAction="http://tempuri.org/IBlendingService/InsertarSkillsUsuarioBlendingResponse")]
+        void InsertarSkillsUsuarioBlending(Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending skills);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/InsertarSkillsUsuarioBlending", ReplyAction="http://tempuri.org/IBlendingService/InsertarSkillsUsuarioBlendingResponse")]
+        System.Threading.Tasks.Task InsertarSkillsUsuarioBlendingAsync(Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending skills);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6659,19 +6540,19 @@ namespace Dime.WSD {
             return base.Channel.GuardarCierreCicloAsync(idAsesor, datosCliente, cierreCicloGestionado);
         }
         
-        public System.Collections.Generic.List<Dime.WSD.SkillsUsuariosBlending> ListaUsuariosAdminBlending(string Operacion) {
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending> ListaUsuariosAdminBlending(string Operacion) {
             return base.Channel.ListaUsuariosAdminBlending(Operacion);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.SkillsUsuariosBlending>> ListaUsuariosAdminBlendingAsync(string Operacion) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending>> ListaUsuariosAdminBlendingAsync(string Operacion) {
             return base.Channel.ListaUsuariosAdminBlendingAsync(Operacion);
         }
         
-        public Dime.WSD.SkillsUsuariosBlending ConsultaUsuarioenAdminBlending(string cedula) {
+        public Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending ConsultaUsuarioenAdminBlending(string cedula) {
             return base.Channel.ConsultaUsuarioenAdminBlending(cedula);
         }
         
-        public System.Threading.Tasks.Task<Dime.WSD.SkillsUsuariosBlending> ConsultaUsuarioenAdminBlendingAsync(string cedula) {
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending> ConsultaUsuarioenAdminBlendingAsync(string cedula) {
             return base.Channel.ConsultaUsuarioenAdminBlendingAsync(cedula);
         }
         
@@ -6681,6 +6562,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> ObtenerCampañaAsync(string Aliado) {
             return base.Channel.ObtenerCampañaAsync(Aliado);
+        }
+        
+        public void InsertarSkillsUsuarioBlending(Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending skills) {
+            base.Channel.InsertarSkillsUsuarioBlending(skills);
+        }
+        
+        public System.Threading.Tasks.Task InsertarSkillsUsuarioBlendingAsync(Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending skills) {
+            return base.Channel.InsertarSkillsUsuarioBlendingAsync(skills);
         }
     }
     

@@ -2917,6 +2917,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Departamento.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroLineasBlending.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\Dime_Capacitacion.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
@@ -2975,9 +2976,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.SmoTarifaActual.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.SkillsUsuariosBlending.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\WSD\Reference.svcmap">

@@ -136,12 +136,12 @@
                             </tr>
                             <tr>
                                 <td style="padding:1px;">
-                                    @Html.DropDownListFor(m => m.Operacion, new List<SelectListItem>() { }, "-Seleccione-", new { @class = "form-control input-sm", id = "NombreLineasBlendingSelect2" })
-
+                                    @Html.DropDownListFor(m => m.SkillsUsuariosBlending.Operacion, new List<SelectListItem>() { }, "-Seleccione-", new { @class = "form-control input-sm", id = "NombreLineasBlendingSelect2" })
+                                    
                                 </td>
                                 <td style="padding:1px;">
-                                    @Html.DropDownListFor(m => m.Campaña, new List<SelectListItem>() { }, "-Seleccione-", new { @class = "form-control input-sm", id = "CampañasBlendingSelect" })
-
+                                    @Html.DropDownListFor(m => m.SkillsUsuariosBlending.Campaña, new List<SelectListItem>() { }, "-Seleccione-", new { @class = "form-control input-sm", id = "CampañasBlendingSelect" })
+                                    
                                 </td>
                             </tr>
                         </table>
@@ -186,8 +186,8 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:1px;">
-                                        @Html.DropDownListFor(m => m.Campaña, new List<SelectListItem>() { }, "-Seleccione-", new { @class = "form-control input-sm", id = "CampañasBlendingSelect2" })
-
+                                        @Html.DropDownListFor(m => m.SkillsUsuariosBlending.Campaña, new List<SelectListItem>() { }, "-Seleccione-", new { @class = "form-control input-sm", id = "CampañasBlendingSelect2" })
+                                        
                                     </td>
                                 </tr>
                             </table>
@@ -210,6 +210,7 @@
             var urlUsuariosporOperacion = '@Url.Action("UsuariosporOperacion", "GestionBlending")';
             var urlCampañas = '@Url.Action("ObtenerCampaña", "GestionBlending")';
         </script>
+        
     }
 
 }

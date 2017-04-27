@@ -322,36 +322,74 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult SkillsUsuariosAdmin(ViewModelBlending model, string opcionMando)
         {
-
             ViewBag.UsuarioExiste = null;
 
             if (opcionMando.Equals("ConsultarCreando"))
             {
-                var R = loginService.RecibirIdUsuario(model.UsuarioHolos.Cedula);
-                if (loginService.RecibirIdUsuario(model.UsuarioHolos.Cedula) != 0)
+                if (model.UsuarioHolos.Cedula != 0)
                 {
-                    if (blendingServices.ConsultaUsuarioenAdminBlending(Convert.ToString(model.UsuarioHolos.Cedula)) == null)
+                    if (loginService.RecibirIdUsuario(model.UsuarioHolos.Cedula) != 0)
                     {
-                        model.UsuarioHolos = loginService.ConsultarUsuarioHolos(model.UsuarioHolos.Cedula);
-                        if (model.UsuarioHolos.Aliado != Session["AliadoLogeado"].ToString())
+                        if (blendingServices.ConsultaUsuarioenAdminBlending(Convert.ToString(model.UsuarioHolos.Cedula)) == null)
                         {
-                            ViewBag.UsuarioExiste = "Este Usuario no pertenece a su Aliado";
+                            model.UsuarioHolos = loginService.ConsultarUsuarioHolos(model.UsuarioHolos.Cedula);
+                            if (model.UsuarioHolos.Aliado != Session["AliadoLogeado"].ToString())
+                            {
+                                ViewBag.UsuarioExiste = "Este Usuario no pertenece a su Aliado";
+                                model = new ViewModelBlending();
+                            }
+                        }
+                        else
+                        {
+                            ViewBag.UsuarioExiste = "El usuario ya esta registrado en Skilles Blending";
                             model = new ViewModelBlending();
                         }
                     }
                     else
                     {
-                        ViewBag.UsuarioExiste = "El usuario ya esta registrado en Skilles Blending";
-                        model = new ViewModelBlending();
+                        ViewBag.UsuarioExiste = "El usuario no se encuentra registrado en DIME. Debe restrirlo primero para Crearlo en Blending";
+
                     }
                 }
                 else
                 {
-                    ViewBag.UsuarioExiste = "El usuario no se encuentra registrado en DIME. Debe restrirlo primero para Crearlo en Blending";
+                    ViewBag.UsuarioExiste = "Digite un numero de cédula";
+                    model = new ViewModelBlending();
+                }
+            }
+            
+            if (opcionMando.Equals("CrearUsuario"))
+            {
+                if (model.UsuarioHolos.Aliado != null && model.UsuarioHolos.NombreLinea != null)
+                {
+                    if (model.SkillsUsuariosBlending.Campaña != "-Seleccione-" && model.SkillsUsuariosBlending.Operacion != "-Seleccione")
+                    {
+                        model.SkillsUsuariosBlending.Cedula = Convert.ToInt32(model.UsuarioHolos.Cedula);
+                        model.SkillsUsuariosBlending.Id_Usuario_Actualizacion = Convert.ToInt32(Session["IdUsuario"].ToString());
+
+                        blendingServices.InsertarSkillsUsuarioBlending(model.SkillsUsuariosBlending);
+                        ViewBag.UsuarioExiste = "Usuario creado exitosamente";
+                        model = new ViewModelBlending();
+                    }
+                    else
+                    {
+                        ViewBag.UsuarioExiste = "Seleccione una Operacion y/o Skill a asignar";
+                    }
                     
+                }
+                else
+                {
+                    ViewBag.UsuarioExiste = "Consulte un usuario antes de guardar";
+                    model = new ViewModelBlending();
                 }
 
             }
+
+            if (opcionMando.Equals("ActualizarUsuarios"))
+            {
+
+            }
+
             if (model.UsuarioHolos == null)
             {
                 model = new ViewModelBlending();

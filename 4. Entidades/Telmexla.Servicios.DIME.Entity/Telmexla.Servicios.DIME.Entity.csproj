@@ -138,6 +138,7 @@
     <Compile Include="SiembraHD.cs" />
     <Compile Include="SiembraHDCollection.cs" />
     <Compile Include="SiguienteMejorOferta.cs" />
+    <Compile Include="SkillsUsuariosBlending.cs" />
     <Compile Include="TablaActualizarInbound.cs" />
     <Compile Include="TmpMaestroHobbiesCliente.cs" />
     <Compile Include="TraficoTraslado.cs" />
