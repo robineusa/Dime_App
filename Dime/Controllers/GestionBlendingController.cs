@@ -329,9 +329,14 @@ namespace Dime.Controllers
             {
                 if (loginService.RecibirIdUsuario(model.UsuarioHolos.Cedula) != 0)
                 {
-                    ViewBag.UsuarioExiste = "El usuario ya se encuentra registrado en DIME";
-                    model.UsuarioHolos = loginService.ConsultarUsuarioHolos(model.UsuarioHolos.Cedula);
-                    ViewBag.Valida2 = "Usuario existente 2";
+                    if (blendingServices.ConsultaUsuarioenAdminBlending(Convert.ToString(model.UsuarioHolos.Cedula)) == null)
+                    {
+                        model.UsuarioHolos = loginService.ConsultarUsuarioHolos(model.UsuarioHolos.Cedula);
+                    }
+                    else
+                    {
+                        ViewBag.UsuarioExiste = "El usuario ya esta registrado en Skilles Blending";
+                    }
                 }
                 else
                 {

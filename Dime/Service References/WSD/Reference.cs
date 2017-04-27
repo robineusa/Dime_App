@@ -6466,6 +6466,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ListaUsuariosAdminBlending", ReplyAction="http://tempuri.org/IBlendingService/ListaUsuariosAdminBlendingResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.SkillsUsuariosBlending>> ListaUsuariosAdminBlendingAsync(string Operacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ConsultaUsuarioenAdminBlending", ReplyAction="http://tempuri.org/IBlendingService/ConsultaUsuarioenAdminBlendingResponse")]
+        Dime.WSD.SkillsUsuariosBlending ConsultaUsuarioenAdminBlending(string cedula);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ConsultaUsuarioenAdminBlending", ReplyAction="http://tempuri.org/IBlendingService/ConsultaUsuarioenAdminBlendingResponse")]
+        System.Threading.Tasks.Task<Dime.WSD.SkillsUsuariosBlending> ConsultaUsuarioenAdminBlendingAsync(string cedula);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6653,6 +6659,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.SkillsUsuariosBlending>> ListaUsuariosAdminBlendingAsync(string Operacion) {
             return base.Channel.ListaUsuariosAdminBlendingAsync(Operacion);
+        }
+        
+        public Dime.WSD.SkillsUsuariosBlending ConsultaUsuarioenAdminBlending(string cedula) {
+            return base.Channel.ConsultaUsuarioenAdminBlending(cedula);
+        }
+        
+        public System.Threading.Tasks.Task<Dime.WSD.SkillsUsuariosBlending> ConsultaUsuarioenAdminBlendingAsync(string cedula) {
+            return base.Channel.ConsultaUsuarioenAdminBlendingAsync(cedula);
         }
     }
     
@@ -7184,10 +7198,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Ingreso>> ListaIngresosPorUsuarioCreacionAsync(string ccUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosAdminService/ListaPaloteo", ReplyAction="http://tempuri.org/ICasosAdminService/ListaPaloteoResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo> ListaPaloteo(System.DateTime inicial, System.DateTime final);
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo> ListaPaloteo(string inicial, string final);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosAdminService/ListaPaloteo", ReplyAction="http://tempuri.org/ICasosAdminService/ListaPaloteoResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo>> ListaPaloteoAsync(System.DateTime inicial, System.DateTime final);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo>> ListaPaloteoAsync(string inicial, string final);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICasosAdminService/ListaAliadosActualesDeHolos", ReplyAction="http://tempuri.org/ICasosAdminService/ListaAliadosActualesDeHolosResponse")]
         System.Collections.Generic.List<string> ListaAliadosActualesDeHolos();
@@ -7257,11 +7271,11 @@ namespace Dime.WSD {
             return base.Channel.ListaIngresosPorUsuarioCreacionAsync(ccUsuario);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo> ListaPaloteo(System.DateTime inicial, System.DateTime final) {
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo> ListaPaloteo(string inicial, string final) {
             return base.Channel.ListaPaloteo(inicial, final);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo>> ListaPaloteoAsync(System.DateTime inicial, System.DateTime final) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo>> ListaPaloteoAsync(string inicial, string final) {
             return base.Channel.ListaPaloteoAsync(inicial, final);
         }
         
