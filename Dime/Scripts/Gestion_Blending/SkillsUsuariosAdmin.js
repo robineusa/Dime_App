@@ -36,11 +36,6 @@ function TraerListaLineasBlending() {
                     value: json[index].NombreLinea,
                     text: json[index].NombreLinea
                 }));
-                $('#NombreLineasBlendingSelect2').append($('<option>', {
-                    value: json[index].NombreLinea,
-                    text: json[index].NombreLinea
-                }));
-
             }
 
         },
@@ -59,10 +54,6 @@ function TraerCampaña() {
             var json = JSON.parse(result);
             for (var index = 0; index < json.length; index++) {
                 $('#CampañasBlendingSelect').append($('<option>', {
-                    value: json[index].Campaña,
-                    text: json[index].Campaña
-                }));
-                $('#CampañasBlendingSelect2').append($('<option>', {
                     value: json[index].Campaña,
                     text: json[index].Campaña
                 }));

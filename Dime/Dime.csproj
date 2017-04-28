@@ -2222,6 +2222,7 @@
     <Content Include="Content\angular-material.layouts.ie_fixes.css" />
     <Content Include="Content\angular-material.layouts.min.css" />
     <Content Include="Content\angular-material.min.css" />
+    <Content Include="Content\Imagenes\image_preview.png" />
     <Content Include="Content\Imagenes\Logo_Dime.PNG" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="ControllersAlr\AdminCasosController.js" />
@@ -2330,6 +2331,7 @@
     <Content Include="Scripts\Consultas_Admin\Consulta_Paloteo.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Rechazos.js" />
     <Content Include="Scripts\Dashboard\DashboardAsesor.js" />
+    <Content Include="Scripts\Gestion_Blending\AsignarBasesAdmin.js" />
     <Content Include="Scripts\Gestion_Blending\SkillsUsuariosAdmin.js" />
     <Content Include="Scripts\Manage\ChangeSecurityQuestions.js" />
     <Content Include="Scripts\Manuales\ManualAdministrador.js" />

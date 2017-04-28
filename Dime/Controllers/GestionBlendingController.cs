@@ -292,6 +292,7 @@ namespace Dime.Controllers
 
         public ActionResult AsignarBasesAdmin()
         {
+            ViewModelBlending model = new ViewModelBlending();
             return View();
         }
 
@@ -403,6 +404,11 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 
+        }
+        [HttpPost]
+        public ActionResult AsignarBasesAdmin(ViewModelBlending model, string opcionMando)
+        {
+            return View();
         }
 
     }
