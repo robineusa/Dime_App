@@ -397,6 +397,7 @@ namespace Dime.Controllers
             }
             return View(model);
         }
+
         public JsonResult ObtenerCampaña()
         {
 
@@ -405,11 +406,70 @@ namespace Dime.Controllers
             return jsonResult;
 
         }
+
         [HttpPost]
         public ActionResult AsignarBasesAdmin(ViewModelBlending model, string opcionMando)
         {
-            return View();
+            if (opcionMando.Equals("AsignarBases"))
+            {
+                if (model.Maestrolineasblendingvacio.NombreLinea != null)
+                {
+                    if (model.SkillsUsuariosBlending.Campaña != null)
+                    {
+                        if (model.CedulasMasivo != null)
+                        {
+                            List<string> listaUsuariosCambiados = model.CedulasMasivo.Split('-').OfType<string>().ToList();
+                            if (model.CedulasMasivo.Count() > 0)
+                            {
+                                //loginService.ActualizarAccesosUsuarioMasivo(listaUsuariosCambiados, model.IdLineaMasivo, listaPermisos, Session["IdUsuario"].ToString());
+                                model = new ViewModelBlending();
+                                ViewBag.Alerta = " Actualización realizada";
+                            }
+                            else
+                            {
+                                ViewBag.Alerta = "No selecciono minimo un Usuario ";
+                            }
+                        }
+                        else
+                        {
+                            ViewBag.Alerta = " Seleccione minimo un Usuario ";
+                        }
+                    }
+                    else
+                    {
+                        ViewBag.Alerta = " No selecciono una Campaña";
+                    }
+                }
+                else
+                {
+                    ViewBag.Alerta = " Seleccione una Base";
+                }
+            }
+
+            return View(model);
         }
+
+        public JsonResult CountCuentasOperacion( string operacion, string aliado)
+        {
+
+            var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.CountCuentasOperacionGestion(operacion, aliado).Count()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+
+        public JsonResult CountCuentasOperacionCampaña(string operacion, string campaña, string aliado)
+        {
+
+            var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.CountCuentasOperacionCampaña(operacion, campaña, aliado).Count()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+
+
+
+        
 
     }
 }

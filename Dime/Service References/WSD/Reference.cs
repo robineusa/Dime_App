@@ -6359,6 +6359,18 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/InsertarSkillsUsuarioBlending", ReplyAction="http://tempuri.org/IBlendingService/InsertarSkillsUsuarioBlendingResponse")]
         System.Threading.Tasks.Task InsertarSkillsUsuarioBlendingAsync(Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending skills);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/CountCuentasOperacionGestion", ReplyAction="http://tempuri.org/IBlendingService/CountCuentasOperacionGestionResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound> CountCuentasOperacionGestion(string operacion, string aliado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/CountCuentasOperacionGestion", ReplyAction="http://tempuri.org/IBlendingService/CountCuentasOperacionGestionResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> CountCuentasOperacionGestionAsync(string operacion, string aliado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/CountCuentasOperacionCampaña", ReplyAction="http://tempuri.org/IBlendingService/CountCuentasOperacionCampañaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound> CountCuentasOperacionCampaña(string operacion, string campaña, string aliado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/CountCuentasOperacionCampaña", ReplyAction="http://tempuri.org/IBlendingService/CountCuentasOperacionCampañaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> CountCuentasOperacionCampañaAsync(string operacion, string campaña, string aliado);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6570,6 +6582,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task InsertarSkillsUsuarioBlendingAsync(Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending skills) {
             return base.Channel.InsertarSkillsUsuarioBlendingAsync(skills);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound> CountCuentasOperacionGestion(string operacion, string aliado) {
+            return base.Channel.CountCuentasOperacionGestion(operacion, aliado);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> CountCuentasOperacionGestionAsync(string operacion, string aliado) {
+            return base.Channel.CountCuentasOperacionGestionAsync(operacion, aliado);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound> CountCuentasOperacionCampaña(string operacion, string campaña, string aliado) {
+            return base.Channel.CountCuentasOperacionCampaña(operacion, campaña, aliado);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> CountCuentasOperacionCampañaAsync(string operacion, string campaña, string aliado) {
+            return base.Channel.CountCuentasOperacionCampañaAsync(operacion, campaña, aliado);
         }
     }
     

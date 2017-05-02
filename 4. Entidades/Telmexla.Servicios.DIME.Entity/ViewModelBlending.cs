@@ -37,6 +37,7 @@ namespace Telmexla.Servicios.DIME.Entity
         private MaestroLineasBlending maestrolineasblendingvacio;
         private BasePersonalHolo usuarioHolos;
         private SkillsUsuariosBlending skillsUsuariosBlending;
+        private string cedulasMasivo;
         #endregion
 
 
@@ -235,6 +236,19 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 skillsUsuariosBlending = value;
+            }
+        }
+
+        public string CedulasMasivo
+        {
+            get
+            {
+                return cedulasMasivo;
+            }
+
+            set
+            {
+                cedulasMasivo = value;
             }
         }
 
