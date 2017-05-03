@@ -6371,6 +6371,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/CountCuentasOperacionCampaña", ReplyAction="http://tempuri.org/IBlendingService/CountCuentasOperacionCampañaResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> CountCuentasOperacionCampañaAsync(string operacion, string campaña, string aliado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ActualizarUsuariosBasesBlending", ReplyAction="http://tempuri.org/IBlendingService/ActualizarUsuariosBasesBlendingResponse")]
+        void ActualizarUsuariosBasesBlending(System.Collections.Generic.List<string> listaUsuariosCambiados, string Campaña, int Id_Usuario_Actualizacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ActualizarUsuariosBasesBlending", ReplyAction="http://tempuri.org/IBlendingService/ActualizarUsuariosBasesBlendingResponse")]
+        System.Threading.Tasks.Task ActualizarUsuariosBasesBlendingAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, string Campaña, int Id_Usuario_Actualizacion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6598,6 +6604,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> CountCuentasOperacionCampañaAsync(string operacion, string campaña, string aliado) {
             return base.Channel.CountCuentasOperacionCampañaAsync(operacion, campaña, aliado);
+        }
+        
+        public void ActualizarUsuariosBasesBlending(System.Collections.Generic.List<string> listaUsuariosCambiados, string Campaña, int Id_Usuario_Actualizacion) {
+            base.Channel.ActualizarUsuariosBasesBlending(listaUsuariosCambiados, Campaña, Id_Usuario_Actualizacion);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarUsuariosBasesBlendingAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, string Campaña, int Id_Usuario_Actualizacion) {
+            return base.Channel.ActualizarUsuariosBasesBlendingAsync(listaUsuariosCambiados, Campaña, Id_Usuario_Actualizacion);
         }
     }
     

@@ -421,13 +421,14 @@ namespace Dime.Controllers
                             List<string> listaUsuariosCambiados = model.CedulasMasivo.Split('-').OfType<string>().ToList();
                             if (model.CedulasMasivo.Count() > 0)
                             {
-                                //loginService.ActualizarAccesosUsuarioMasivo(listaUsuariosCambiados, model.IdLineaMasivo, listaPermisos, Session["IdUsuario"].ToString());
+                                var Id_User = Session["IdUsuario"].ToString();
+                                blendingServices.ActualizarUsuariosBasesBlending(listaUsuariosCambiados, model.SkillsUsuariosBlending.Campaña, Convert.ToInt32(Id_User));
                                 model = new ViewModelBlending();
                                 ViewBag.Alerta = " Actualización realizada";
                             }
                             else
                             {
-                                ViewBag.Alerta = "No selecciono minimo un Usuario ";
+                                ViewBag.Alerta = "No selecciono ningun Usuario ";
                             }
                         }
                         else

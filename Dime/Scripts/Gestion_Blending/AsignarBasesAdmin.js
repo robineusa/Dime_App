@@ -173,7 +173,7 @@ function GuardarCedulasMasivo() {
     var grid = $("#gridViewResult").data("kendoGrid");
     var gridDataArray = $('#gridViewResult').data('kendoGrid')._data;
     
-    for (var i = 0; i <= (grid.table.children().length + 1 ) ; i++) {
+    for (var i = 0; i <= gridDataArray.length ; i++) {
         var row = grid.table.find("tr:nth-child(" + i + ")");
         var checkbox = $(row).find(".f");
         if (checkbox.is(":checked")) {

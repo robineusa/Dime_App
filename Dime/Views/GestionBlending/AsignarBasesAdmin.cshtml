@@ -103,7 +103,7 @@
         </div>
     }
     @section Scripts{
-        <script src="~/Scripts/Gestion_Blending/AsignarBasesAdmin.js?1.0.2"></script>
+        <script src="~/Scripts/Gestion_Blending/AsignarBasesAdmin.js?1.0.3"></script>
         <script>
             var urlLineas = '@Url.Action("SkillsUsuariosAdminJson", "GestionBlending")';
             var urlUsuariosporOperacion = '@Url.Action("UsuariosporOperacion", "GestionBlending")';
@@ -111,6 +111,7 @@
             var urlCampañas = '@Url.Action("ObtenerCampaña", "GestionBlending")';
             var urlCountCuentasOperacionCampaña = '@Url.Action("CountCuentasOperacionCampaña", "GestionBlending")';
             var Aliado = '@Session["AliadoLogeado"].ToString()';
+            $('#CedulasMasivo').val('');
         </script>
 
     }
