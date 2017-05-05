@@ -77,7 +77,7 @@
 
                         }
                     },
-                    pageSize: 10
+                    pageSize: 10,
 
                 },
 
@@ -94,7 +94,7 @@
                 sortable: true,
                 pageable: {
                     refresh: true,
-                    pageSizes: true,
+                    pageSizes: false,
                     buttonCount: 5
                 },
                 columns: [

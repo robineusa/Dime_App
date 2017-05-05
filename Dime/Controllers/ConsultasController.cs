@@ -91,12 +91,10 @@ namespace Dime.Controllers
             string idUsuario = Session["IdUsuario"].ToString();
             bool perfilAdmin;
             if (Convert.ToInt32(Session["ModoLogin"]) == 1) perfilAdmin = true; else perfilAdmin = false;
-            var resultadoFaca = inboundService.ConsultaRechazos(inicial, final, idUsuario, perfilAdmin);
-            return new JsonResult()
-            {
-                Data = JsonConvert.SerializeObject(resultadoFaca),
-                JsonRequestBehavior = JsonRequestBehavior.DenyGet
-            };
+            var jsonResult = Json(JsonConvert.SerializeObject(inboundService.ConsultaRechazos(inicial, final, idUsuario, perfilAdmin)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
         }
 
     }

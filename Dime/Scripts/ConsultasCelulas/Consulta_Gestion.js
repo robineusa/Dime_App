@@ -46,12 +46,10 @@ function CargarDatosGestion() {
         data: JSON.stringify({ fechaInicial: fechaInicial, fechaFinal: fechaFinal }),
         dataType: "json",
         success: function (result) {
-            var json = JSON.parse(result);
             console.log(json);
             CambiarAEstado(json);
             ShowGridGestiones(json);
         }
-
     });
 }
 
