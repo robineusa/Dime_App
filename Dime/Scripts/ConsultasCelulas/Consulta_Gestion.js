@@ -46,8 +46,10 @@ function CargarDatosGestion() {
         data: JSON.stringify({ fechaInicial: fechaInicial, fechaFinal: fechaFinal }),
         dataType: "json",
         success: function (result) {
+            var json = JSON.parse(result);
             console.log(json);
             CambiarAEstado(json);
+            CambiarFechas(json)
             ShowGridGestiones(json);
         }
     });
@@ -69,6 +71,15 @@ function CambiarAEstado(data) {
 
 }
 
+function CambiarFechas(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i].FechaNota = kendo.toString(kendo.parseDate(data[i].HoraNota, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd');
+        data[i].HoraNota = kendo.toString(kendo.parseDate(data[i].HoraNota, 'yyyy-MM-ddTHH:mm:ss'), 'HH:mm:ss');
+        data[i].FechaApertura = kendo.toString(kendo.parseDate(data[i].FechaApertura, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd');
+
+
+    }
+}
 
 function ShowGridGestiones(data) {
 
@@ -105,11 +116,12 @@ function ShowGridGestiones(data) {
           { command: { text: " ", click: ActualizarCaso, imageClass: "k-icon k-i-pencil", }, title: " ", width: "70px" },
          { field: "IdNota", title: "Id Interacción", width: 80, headerAttributes: { style: "white-space: normal" } },
           { field: "IdIngreso", title: "Id Ingreso", width: 80, headerAttributes: { style: "white-space: normal" } },
-    { field: "HoraNota", title: "Fecha Interacción", width: 100, template: "#= kendo.toString(kendo.parseDate(HoraNota, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", headerAttributes: { style: "white-space: normal" } },
+    { field: "HoraNota", title: "Hora Interacción", width: 100, headerAttributes: { style: "white-space: normal" } },
+        { field: "FechaNota", title: "Fecha Interacción", width: 100, headerAttributes: { style: "white-space: normal" } },
       { field: "Usuario", title: "Usuario Interacción", width: 70, headerAttributes: { style: "white-space: normal" } },
      { field: "Nota", title: "Nota", width: 70, headerAttributes: { style: "white-space: normal" } },
            { field: "CuentaCliente", title: "Cuenta Cliente", width: 80, headerAttributes: { style: "white-space: normal" } },
-              { field: "FechaApertura", title: "Fecha Apertura", width: 100, template: "#= kendo.toString(kendo.parseDate(FechaApertura, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", headerAttributes: { style: "white-space: normal" } },
+              { field: "FechaApertura", title: "Fecha Apertura", width: 100, headerAttributes: { style: "white-space: normal" } },
              { field: "UsuarioApertura", title: "Usuario Apertura", width: 80, headerAttributes: { style: "white-space: normal" } },
            { field: "Macroproceso", title: "Macroproceso", width: 80, headerAttributes: { style: "white-space: normal" } },
                { field: "Marcacion", title: "Marcación", width: 80, headerAttributes: { style: "white-space: normal" } },
