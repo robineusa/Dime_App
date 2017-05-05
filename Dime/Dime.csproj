@@ -199,6 +199,7 @@
     <Compile Include="Controllers\ConsultasCelulaController.cs" />
     <Compile Include="Controllers\ConsultasController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\DistribucionBlendingController.cs" />
     <Compile Include="Controllers\GestionBlendingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InboundController.cs" />
@@ -2331,6 +2332,7 @@
     <Content Include="Scripts\Consultas_Admin\Consulta_Paloteo.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Rechazos.js" />
     <Content Include="Scripts\Dashboard\DashboardAsesor.js" />
+    <Content Include="Scripts\DistribucionBlending\FueraNiveles.js" />
     <Content Include="Scripts\Gestion_Blending\AsignarBasesAdmin.js" />
     <Content Include="Scripts\Gestion_Blending\SkillsUsuariosAdmin.js" />
     <Content Include="Scripts\Manage\ChangeSecurityQuestions.js" />
@@ -2920,6 +2922,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Departamento.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroLineasBlending.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BlendingFueraNivel.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\Dime_Capacitacion.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
@@ -3229,6 +3232,7 @@
     <Content Include="Views\Home\DashboardAltoValor.cshtml" />
     <Content Include="Views\GestionBlending\AsignarBasesAdmin.cshtml" />
     <Content Include="Views\GestionBlending\SkillsUsuariosAdmin.cshtml" />
+    <Content Include="Views\DistribucionBlending\CableModemFueradeNiveles.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

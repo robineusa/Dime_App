@@ -2705,4 +2705,36 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="TraerInformacionCuentaBlending">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idAsesor" type="xs:int" />
+        <xs:element minOccurs="0" name="formulario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="aliado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="operacion" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="campana" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraerInformacionCuentaBlendingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q194="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerInformacionCuentaBlendingResult" nillable="true" type="q194:ClientesTodo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraerInformacionCuentaFueraNiveles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraerInformacionCuentaFueraNivelesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q195="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerInformacionCuentaFueraNivelesResult" nillable="true" type="q195:BlendingFueraNivel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

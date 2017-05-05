@@ -84,6 +84,8 @@
     <Compile Include="BalanceScoreCard.cs" />
     <Compile Include="BalanceScoreCardCollection.cs" />
     <Compile Include="BasePersonalHolo.cs" />
+    <Compile Include="BlendingFueraNivel.cs" />
+    <Compile Include="BlendingFueraNivelCollection.cs" />
     <Compile Include="BuscarCuentasViewModel.cs" />
     <Compile Include="CambioEstrato.cs" />
     <Compile Include="CambioEstratoCollection.cs" />
@@ -106,6 +108,8 @@
     <Compile Include="DatosAdicionalesCliente.cs" />
     <Compile Include="Departamento.cs" />
     <Compile Include="DepartamentoCollection.cs" />
+    <Compile Include="DistribucionBlending.cs" />
+    <Compile Include="DistribucionBlendingCollection.cs" />
     <Compile Include="DocsisOverlap.cs" />
     <Compile Include="DocsisOverlapCollection.cs" />
     <Compile Include="GestionMatriz.cs" />
@@ -155,6 +159,7 @@
     <Compile Include="ViewModelAdminUsuario.cs" />
     <Compile Include="ViewModelCambioEstrato.cs" />
     <Compile Include="ViewModelCuentasSiembraHD.cs" />
+    <Compile Include="ViewModelDistribucionesBlending.cs" />
     <Compile Include="ViewModelGraficos.cs" />
     <Compile Include="ViewModelNodos.cs" />
     <Compile Include="ViewModelNotificacionesBS.cs" />

@@ -1441,4 +1441,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UsabilidadBusquedaCuentaInbound" nillable="true" type="tns:UsabilidadBusquedaCuentaInbound" />
+  <xs:complexType name="BlendingFueraNivel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cmts" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Prioridad" type="xs:int" />
+      <xs:element minOccurs="0" name="TipoModem" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BlendingFueraNivel" nillable="true" type="tns:BlendingFueraNivel" />
 </xs:schema>

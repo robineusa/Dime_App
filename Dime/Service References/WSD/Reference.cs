@@ -8509,4 +8509,71 @@ namespace Dime.WSD {
             return base.Channel.InsertarUsabilidadCuentaInboundAsync(CuentaInbound);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IDistribucionBlendingService")]
+    public interface IDistribucionBlendingService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaBlending", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaBlendingRes" +
+            "ponse")]
+        Telmexla.Servicios.DIME.Entity.ClientesTodo TraerInformacionCuentaBlending(int idAsesor, string formulario, string aliado, string operacion, string campana);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaBlending", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaBlendingRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.ClientesTodo> TraerInformacionCuentaBlendingAsync(int idAsesor, string formulario, string aliado, string operacion, string campana);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaFueraNivele" +
+            "s", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaFueraNivele" +
+            "sResponse")]
+        Telmexla.Servicios.DIME.Entity.BlendingFueraNivel TraerInformacionCuentaFueraNiveles(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaFueraNivele" +
+            "s", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaFueraNivele" +
+            "sResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BlendingFueraNivel> TraerInformacionCuentaFueraNivelesAsync(decimal CuentaCliente);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IDistribucionBlendingServiceChannel : Dime.WSD.IDistribucionBlendingService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class DistribucionBlendingServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IDistribucionBlendingService>, Dime.WSD.IDistribucionBlendingService {
+        
+        public DistribucionBlendingServiceClient() {
+        }
+        
+        public DistribucionBlendingServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public DistribucionBlendingServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public DistribucionBlendingServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public DistribucionBlendingServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.ClientesTodo TraerInformacionCuentaBlending(int idAsesor, string formulario, string aliado, string operacion, string campana) {
+            return base.Channel.TraerInformacionCuentaBlending(idAsesor, formulario, aliado, operacion, campana);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.ClientesTodo> TraerInformacionCuentaBlendingAsync(int idAsesor, string formulario, string aliado, string operacion, string campana) {
+            return base.Channel.TraerInformacionCuentaBlendingAsync(idAsesor, formulario, aliado, operacion, campana);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.BlendingFueraNivel TraerInformacionCuentaFueraNiveles(decimal CuentaCliente) {
+            return base.Channel.TraerInformacionCuentaFueraNiveles(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BlendingFueraNivel> TraerInformacionCuentaFueraNivelesAsync(decimal CuentaCliente) {
+            return base.Channel.TraerInformacionCuentaFueraNivelesAsync(CuentaCliente);
+        }
+    }
 }
