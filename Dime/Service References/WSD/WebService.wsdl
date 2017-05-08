@@ -1578,6 +1578,82 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ILoginService_OperacionPorCedula_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ILoginService_OperacionPorCedula_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ILoginService_CampañaPorCedula_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ILoginService_CampañaPorCedula_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IInboundService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -9119,6 +9195,310 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_EliminaCuentaGestionadaDistribucion_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_EliminaCuentaGestionadaDistribucion_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_InsertarCuentaColaDistribucionBlending_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_InsertarCuentaColaDistribucionBlending_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_InsertarRegistroFueraNiveles_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_InsertarRegistroFueraNiveles_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_ActualizarGestionFueraNiveles_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_ActualizarGestionFueraNiveles_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_ValidarCuentaEnFueraNiveles_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_ValidarCuentaEnFueraNiveles_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_TraeInformacionActualFueraNiveles_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_TraeInformacionActualFueraNiveles_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_TraeListaGestionUsuarioFueraNiveles_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_TraeListaGestionUsuarioFueraNiveles_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_TraeListaSeguimientosUsuarioFueraNiveles_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_TraeListaSeguimientosUsuarioFueraNiveles_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -9343,6 +9723,18 @@
   </wsdl:message>
   <wsdl:message name="ILoginService_ExisteUsuarioHolos_OutputMessage">
     <wsdl:part name="parameters" element="tns:ExisteUsuarioHolosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_OperacionPorCedula_InputMessage">
+    <wsdl:part name="parameters" element="tns:OperacionPorCedula" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_OperacionPorCedula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OperacionPorCedulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_CampañaPorCedula_InputMessage">
+    <wsdl:part name="parameters" element="tns:CampañaPorCedula" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_CampañaPorCedula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CampañaPorCedulaResponse" />
   </wsdl:message>
   <wsdl:message name="IInboundService_RegistrarActualizarDatosAdicionalesCliente_InputMessage">
     <wsdl:part name="parameters" element="tns:RegistrarActualizarDatosAdicionalesCliente" />
@@ -10286,6 +10678,54 @@
   <wsdl:message name="IDistribucionBlendingService_TraerInformacionCuentaFueraNiveles_OutputMessage">
     <wsdl:part name="parameters" element="tns:TraerInformacionCuentaFueraNivelesResponse" />
   </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_EliminaCuentaGestionadaDistribucion_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaCuentaGestionadaDistribucion" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_EliminaCuentaGestionadaDistribucion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaCuentaGestionadaDistribucionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_InsertarCuentaColaDistribucionBlending_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCuentaColaDistribucionBlending" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_InsertarCuentaColaDistribucionBlending_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCuentaColaDistribucionBlendingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_InsertarRegistroFueraNiveles_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarRegistroFueraNiveles" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_InsertarRegistroFueraNiveles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarRegistroFueraNivelesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_ActualizarGestionFueraNiveles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarGestionFueraNiveles" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_ActualizarGestionFueraNiveles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarGestionFueraNivelesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_ValidarCuentaEnFueraNiveles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarCuentaEnFueraNiveles" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_ValidarCuentaEnFueraNiveles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarCuentaEnFueraNivelesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_TraeInformacionActualFueraNiveles_InputMessage">
+    <wsdl:part name="parameters" element="tns:TraeInformacionActualFueraNiveles" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_TraeInformacionActualFueraNiveles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TraeInformacionActualFueraNivelesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_TraeListaGestionUsuarioFueraNiveles_InputMessage">
+    <wsdl:part name="parameters" element="tns:TraeListaGestionUsuarioFueraNiveles" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_TraeListaGestionUsuarioFueraNiveles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TraeListaGestionUsuarioFueraNivelesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_TraeListaSeguimientosUsuarioFueraNiveles_InputMessage">
+    <wsdl:part name="parameters" element="tns:TraeListaSeguimientosUsuarioFueraNiveles" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_TraeListaSeguimientosUsuarioFueraNiveles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TraeListaSeguimientosUsuarioFueraNivelesResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWebService">
     <wsdl:operation name="MuestraEntidades">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MuestraEntidades" message="tns:IWebService_MuestraEntidades_InputMessage" />
@@ -10432,6 +10872,14 @@
     <wsdl:operation name="ExisteUsuarioHolos">
       <wsdl:input wsaw:Action="http://tempuri.org/ILoginService/ExisteUsuarioHolos" message="tns:ILoginService_ExisteUsuarioHolos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILoginService/ExisteUsuarioHolosResponse" message="tns:ILoginService_ExisteUsuarioHolos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OperacionPorCedula">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginService/OperacionPorCedula" message="tns:ILoginService_OperacionPorCedula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginService/OperacionPorCedulaResponse" message="tns:ILoginService_OperacionPorCedula_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CampañaPorCedula">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginService/CampañaPorCedula" message="tns:ILoginService_CampañaPorCedula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginService/CampañaPorCedulaResponse" message="tns:ILoginService_CampañaPorCedula_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IInboundService">
@@ -11091,6 +11539,38 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaFueraNiveles" message="tns:IDistribucionBlendingService_TraerInformacionCuentaFueraNiveles_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaFueraNivelesResponse" message="tns:IDistribucionBlendingService_TraerInformacionCuentaFueraNiveles_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="EliminaCuentaGestionadaDistribucion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDistribucionBlendingService/EliminaCuentaGestionadaDistribucion" message="tns:IDistribucionBlendingService_EliminaCuentaGestionadaDistribucion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDistribucionBlendingService/EliminaCuentaGestionadaDistribucionResponse" message="tns:IDistribucionBlendingService_EliminaCuentaGestionadaDistribucion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCuentaColaDistribucionBlending">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDistribucionBlendingService/InsertarCuentaColaDistribucionBlending" message="tns:IDistribucionBlendingService_InsertarCuentaColaDistribucionBlending_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDistribucionBlendingService/InsertarCuentaColaDistribucionBlendingResponse" message="tns:IDistribucionBlendingService_InsertarCuentaColaDistribucionBlending_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarRegistroFueraNiveles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDistribucionBlendingService/InsertarRegistroFueraNiveles" message="tns:IDistribucionBlendingService_InsertarRegistroFueraNiveles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDistribucionBlendingService/InsertarRegistroFueraNivelesResponse" message="tns:IDistribucionBlendingService_InsertarRegistroFueraNiveles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarGestionFueraNiveles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDistribucionBlendingService/ActualizarGestionFueraNiveles" message="tns:IDistribucionBlendingService_ActualizarGestionFueraNiveles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDistribucionBlendingService/ActualizarGestionFueraNivelesResponse" message="tns:IDistribucionBlendingService_ActualizarGestionFueraNiveles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCuentaEnFueraNiveles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDistribucionBlendingService/ValidarCuentaEnFueraNiveles" message="tns:IDistribucionBlendingService_ValidarCuentaEnFueraNiveles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDistribucionBlendingService/ValidarCuentaEnFueraNivelesResponse" message="tns:IDistribucionBlendingService_ValidarCuentaEnFueraNiveles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TraeInformacionActualFueraNiveles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDistribucionBlendingService/TraeInformacionActualFueraNiveles" message="tns:IDistribucionBlendingService_TraeInformacionActualFueraNiveles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDistribucionBlendingService/TraeInformacionActualFueraNivelesResponse" message="tns:IDistribucionBlendingService_TraeInformacionActualFueraNiveles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TraeListaGestionUsuarioFueraNiveles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDistribucionBlendingService/TraeListaGestionUsuarioFueraNiveles" message="tns:IDistribucionBlendingService_TraeListaGestionUsuarioFueraNiveles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDistribucionBlendingService/TraeListaGestionUsuarioFueraNivelesResponse" message="tns:IDistribucionBlendingService_TraeListaGestionUsuarioFueraNiveles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TraeListaSeguimientosUsuarioFueraNiveles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDistribucionBlendingService/TraeListaSeguimientosUsuarioFueraNiveles" message="tns:IDistribucionBlendingService_TraeListaSeguimientosUsuarioFueraNiveles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDistribucionBlendingService/TraeListaSeguimientosUsuarioFueraNivelesResponse" message="tns:IDistribucionBlendingService_TraeListaSeguimientosUsuarioFueraNiveles_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IWebService" type="tns:IWebService">
     <wsp:PolicyReference URI="#WSHttpBinding_IWebService_policy" />
@@ -11492,6 +11972,28 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_ILoginService_ExisteUsuarioHolos_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionPorCedula">
+      <soap12:operation soapAction="http://tempuri.org/ILoginService/OperacionPorCedula" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ILoginService_OperacionPorCedula_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ILoginService_OperacionPorCedula_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CampañaPorCedula">
+      <soap12:operation soapAction="http://tempuri.org/ILoginService/CampañaPorCedula" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ILoginService_CampañaPorCedula_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ILoginService_CampañaPorCedula_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -13279,6 +13781,94 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_TraerInformacionCuentaFueraNiveles_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaCuentaGestionadaDistribucion">
+      <soap12:operation soapAction="http://tempuri.org/IDistribucionBlendingService/EliminaCuentaGestionadaDistribucion" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_EliminaCuentaGestionadaDistribucion_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_EliminaCuentaGestionadaDistribucion_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCuentaColaDistribucionBlending">
+      <soap12:operation soapAction="http://tempuri.org/IDistribucionBlendingService/InsertarCuentaColaDistribucionBlending" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_InsertarCuentaColaDistribucionBlending_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_InsertarCuentaColaDistribucionBlending_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarRegistroFueraNiveles">
+      <soap12:operation soapAction="http://tempuri.org/IDistribucionBlendingService/InsertarRegistroFueraNiveles" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_InsertarRegistroFueraNiveles_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_InsertarRegistroFueraNiveles_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarGestionFueraNiveles">
+      <soap12:operation soapAction="http://tempuri.org/IDistribucionBlendingService/ActualizarGestionFueraNiveles" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_ActualizarGestionFueraNiveles_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_ActualizarGestionFueraNiveles_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCuentaEnFueraNiveles">
+      <soap12:operation soapAction="http://tempuri.org/IDistribucionBlendingService/ValidarCuentaEnFueraNiveles" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_ValidarCuentaEnFueraNiveles_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_ValidarCuentaEnFueraNiveles_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeInformacionActualFueraNiveles">
+      <soap12:operation soapAction="http://tempuri.org/IDistribucionBlendingService/TraeInformacionActualFueraNiveles" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_TraeInformacionActualFueraNiveles_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_TraeInformacionActualFueraNiveles_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeListaGestionUsuarioFueraNiveles">
+      <soap12:operation soapAction="http://tempuri.org/IDistribucionBlendingService/TraeListaGestionUsuarioFueraNiveles" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_TraeListaGestionUsuarioFueraNiveles_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_TraeListaGestionUsuarioFueraNiveles_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeListaSeguimientosUsuarioFueraNiveles">
+      <soap12:operation soapAction="http://tempuri.org/IDistribucionBlendingService/TraeListaSeguimientosUsuarioFueraNiveles" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_TraeListaSeguimientosUsuarioFueraNiveles_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_TraeListaSeguimientosUsuarioFueraNiveles_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

@@ -209,16 +209,79 @@
                     </div>
                 </div>
             </div>
-            <h2 class="page-header" style="margin-top: 40px;">
+            <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
                 <i class="fa fa-sitemap"></i> Árbol de Tipificación
             </h2>
-            <div id="3_ofre" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+            <div id="3_ofre" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
                 <br />
+                <table>
+                    <tr>
+                        <td style="padding-left:1px; width:200px;">
+                            <label>Tipo contacto</label>
+                            @Html.DropDownListFor(m => m.GBPFueradeNiveles.TipoContacto, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tipoContactosSelect", @class = "form-control", onchange = "SetearCierresChoices();" })
+                            @Html.ValidationMessageFor(m => m.GBPFueradeNiveles.TipoContacto, "", new { @class = "text-danger" })
+                        </td>
+                        <td style="padding-left:1px; width:220px;">
+                            <label>Gestión</label>
+                            @Html.DropDownListFor(m => m.GBPFueradeNiveles.Gestion, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tiposCierresSelect", @class = "form-control", onchange = "SetearRazonesChoices();" })
+                            @Html.ValidationMessageFor(m => m.GBPFueradeNiveles.Gestion, "", new { @class = "text-danger" })
+                        </td>
+                        <td style="padding-left:4px; width:260px;">
+                            <label>Cierre</label>
+                            @Html.DropDownListFor(m => m.GBPFueradeNiveles.Cierre, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tiposRazonSelect", @class = "form-control", onchange = "SetearCausaChoices();" })
+                            @Html.ValidationMessageFor(m => m.GBPFueradeNiveles.Cierre, "", new { @class = "text-danger" })
+                        </td>
+                        <td style="padding-left:4px; width:400px;">
+                            <label>Razón</label>
+                            @Html.DropDownListFor(m => m.GBPFueradeNiveles.Razon, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tiposCausasSelect", @class = "form-control", onchange = "SetearMotivosChoices();" })
+                            @Html.ValidationMessageFor(m => m.GBPFueradeNiveles.Razon, "", new { @class = "text-danger" })
+                        </td>
+                        
+                    </tr>
+                </table>
             </div>
+            <div id="TituloSeguimiento" style="display:none;">
+                <h2 class="page-header" style="margin-top:40px; margin-left:1px;">
+                    <i class="fa fa-calendar-plus-o "></i> Seguimientos
+                </h2>
+            </div>
+            <div  id="CuerpoSeguimineto" style="display:none;">
+                <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+                    <div class="box-body">
+                        <table id="Calendario_Seguimiento" style="display:block; margin-bottom: 0px;">
+                            <tr>
+                                <td style="padding:1px;">
+                                    <small>Seleccione Fecha y Hora del Seguimiento: </small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.GBPFueradeNiveles.FechaSeguimiento, new { @class = "form-control input-sm", id = "CC_Fecha", placeholder = "Seleccione Fecha" })
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <h2 class="page-header" style="margin-top: 40px;">
+                <i class="fa fa-comment"></i> Observaciones
+            </h2>
+            <div id="3_ofre" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+                <br />
+                <table>
+                    <tr>
+                        <td style="padding:1px; width:1200px;">
+                            @Html.TextBoxFor(m => m.GBPFueradeNiveles.Observaciones, new { @class = "form-control input-sm", placeholder = "", style = "width:100%; height:70px;" })
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
         </div>
     </div>
+  
 </div>
-<br />
+
 <div class="box-footer">
     <button type="submit" class="btn btn-block btn-primary" name="cambiarDatos" value="true" style="width:10%;  margin-left:1%;">Guardar</button><br />
     
@@ -228,6 +291,16 @@
 
 
 @section Scripts{
-
-    <script src="~/Scripts/DistribucionBlending/FueraNiveles.js?1.0.0.1"></script>
+    <script>
+    var urlControlTipoContatoList = '@Url.Action("TiposDeContactoList", "DistribucionBlending")';
+    var urlControlTiposCierresList = '@Url.Action("TiposCierresList", "DistribucionBlending")';
+    var urlControlTiposRazonesList = '@Url.Action("TiposRazonesList", "DistribucionBlending")';
+    var urlControlTiposCausasList = '@Url.Action("TiposCausasList", "DistribucionBlending")';
+</script>
+<script src="~/Scripts/DistribucionBlending/FueraNiveles.js?1.0.8"></script>
+<script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
+<link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
+<link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />
+@Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
 }
+

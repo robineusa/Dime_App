@@ -112,6 +112,10 @@
     <Compile Include="DistribucionBlendingCollection.cs" />
     <Compile Include="DocsisOverlap.cs" />
     <Compile Include="DocsisOverlapCollection.cs" />
+    <Compile Include="GBLFueraNiveles.cs" />
+    <Compile Include="GBLFueraNivelesCollection.cs" />
+    <Compile Include="GBPFueraNiveles.cs" />
+    <Compile Include="GBPFueraNivelesCollection.cs" />
     <Compile Include="GestionMatriz.cs" />
     <Compile Include="GestionMatrizColleciton.cs" />
     <Compile Include="GestionOutbound.cs" />
