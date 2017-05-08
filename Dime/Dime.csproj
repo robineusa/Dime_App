@@ -2923,6 +2923,10 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroLineasBlending.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BlendingFueraNivel.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBLFueraNiveles.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPFueraNiveles.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBLFueraNiveles1.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPFueraNiveles1.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\Dime_Capacitacion.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
@@ -2981,12 +2985,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.SmoTarifaActual.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.GBLFueraNiveles.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.GBPFueraNiveles.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\WSD\Reference.svcmap">
