@@ -6,7 +6,9 @@
         $("#Li1").css("background-color", "#dcdcdc");
         $("#Li1").css("border-color", "#c23321");
         $("#Li2").css("border-color", "transparent");
-
+        $("#Crear_Usuario").css("display", "block");
+        $("#Actualizar_Usuarios").css("display", "none");
+        
     });
 
     $("#Li2").click(function () {
@@ -14,9 +16,12 @@
         $("#Li2").css("background-color", "#dcdcdc");
         $("#Li1").css("border-color", "transparent");
         $("#Li2").css("border-color", "#c23321");
+        $("#Actualizar_Usuarios").css("display", "block");
+        $("#Crear_Usuario").css("display", "none");
 
     });
     TraerListaLineasBlending();
+    TraerCampaña();
 });
 
 function TraerListaLineasBlending() {
@@ -31,7 +36,27 @@ function TraerListaLineasBlending() {
                     value: json[index].NombreLinea,
                     text: json[index].NombreLinea
                 }));
+            }
 
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+}
+
+function TraerCampaña() {
+    $.ajax({
+        type: "GET",
+        url: urlCampañas,
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0; index < json.length; index++) {
+                $('#CampañasBlendingSelect').append($('<option>', {
+                    value: json[index].Campaña,
+                    text: json[index].Campaña
+                }));
             }
 
         },

@@ -54,24 +54,23 @@ function CargarDatos() {
 
     });
 }
+function cambiarfechas(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i].FechaCreacionCaso = kendo.toString(kendo.parseDate(data[i].FechaCreacionCaso, 'yyyy-MM-dd'), 'yyyy-MM-dd');
+        data[i].FechaRechazo = kendo.toString(kendo.parseDate(data[i].FechaRechazo, 'yyyy-MM-dd'), 'yyyy-MM-dd');
+        data[i].HoraCreacionCaso = kendo.toString(kendo.parseDate(data[i].HoraCreacionCaso, 'MM/dd/yyyy HH:mm:ss tt'), 'HH:mm:ss');
+        data[i].HoraRechazo = kendo.toString(kendo.parseDate(data[i].HoraRechazo, 'yyyy-MM-ddTHH:mm:ss'), 'HH:mm:ss');
 
+    }
+
+}
 
 
 function ShowGridRechazos(data) {
 
-    function cambiarfechas() {
-        for (var i = 0; i < data.length; i++) {
-            data[i].FechaCreacionCaso = kendo.toString(kendo.parseDate(data[i].FechaCreacionCaso, 'yyyy-MM-dd'), 'yyyy-MM-dd');
-            data[i].FechaRechazo = kendo.toString(kendo.parseDate(data[i].FechaRechazo, 'yyyy-MM-dd'), 'yyyy-MM-dd');
-            //data[i].HoraCreacionCaso = kendo.toString(kendo.parseDate(data[i].HoraCreacionCaso, 'HH:mm:ss'), 'HH:mm:ss');
-            //data[i].HoraUltimaActualizacion = kendo.toString(kendo.parseDate(data[i].HoraUltimaActualizacion, 'HH:mm:ss'), 'HH:mm:ss');
-            //data[i].HoraRechazo = kendo.toString(kendo.parseDate(data[i].HoraRechazo, 'HH:mm:ss'), 'HH:mm:ss');
 
-        }
-
-    }
     if (data != null) {
-        cambiarfechas();
+        cambiarfechas(data);
     }
 
     $("#gridViewConsultaRechazos").kendoGrid({
@@ -87,7 +86,7 @@ function ShowGridRechazos(data) {
 
                 }
             },
-            pageSize: 10
+          
 
         },
 
@@ -102,24 +101,18 @@ function ShowGridRechazos(data) {
             }
         },
         sortable: true,
-        pageable: {
-            refresh: true,
-            pageSizes: true,
-            buttonCount: 5
-        },
         columns: [
             { field: "AliadoUsuarioRechaza", title: "Aliado Usuario Rechaza", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "FechaCreacionCaso", title: "Fecha Creacion Caso", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "FechaRechazo", title: " Fecha Rechazo", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "HoraCreacionCaso", title: "Hora Creacion Caso", width: 80, headerAttributes: { style: "white-space: normal" } },
-            { field: "HoraUltimaActualizacion", title: "Hora Ultima Actualizacion", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "HoraRechazo", title: "Hora Rechazo", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "IdIngreso", title: "Id Ingreso", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "NombreLineaUsuarioRechaza", title: "NombreLineaUsuarioRechaza", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "NombreUsuarioCreacion", title: "Nombre Usuario Creacion", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "NombreUsuarioRechaza", title: "Nombre Usuario Rechaza", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "NotasRechazo", title: "Notas Rechazo", width: 80, headerAttributes: { style: "white-space: normal" } },
-            { field: "Usuario Creacion Caso", title: "Usuario", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "UsuarioCreacionCaso", title: "Usuario", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "UsuarioRechaza", title: "Usuario Rechaza", width: 80, headerAttributes: { style: "white-space: normal" } },
                 ]
 

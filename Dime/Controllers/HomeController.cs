@@ -28,6 +28,11 @@ namespace Dime.Controllers
             return View();
         }
 
+        public ActionResult DashboardPotencial()
+        {
+            return View();
+        }
+
         public ActionResult DefaultAlr()
         {
             return View();

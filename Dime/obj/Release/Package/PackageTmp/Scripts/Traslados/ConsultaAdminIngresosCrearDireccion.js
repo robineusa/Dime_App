@@ -1,65 +1,4 @@
-﻿function cambiarfechas() {
-    for (var i = 0; i < jsonconsultaadminit.length; i++) {
-        jsonconsultaadminit[i].NotaTrasladoGetSet.FechaTransaccion = kendo.toString(kendo.parseDate(jsonconsultaadminit[i].NotaTrasladoGetSet.FechaTransaccion, 'yyyy-MM-dd HH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-        
-    }
-
-}
-if (jsonconsultaadminit != null) {
-    cambiarfechas();
-
-}
-
-
-$("#gridViewConsulta").kendoGrid({
-    autoBind: true,
-    toolbar: ["excel"],
-    excel: {
-        fileName: "Export.xlsx",
-    },
-    dataSource: {
-        data: jsonconsultaadminit,
-        pageSize: 20,
-    },
-    scrollable: true,
-    filterable: {
-        extra: false,
-        operators: {
-            string: {
-
-                eq: "Es igual a"
-            }
-        }
-    },
-    sortable: true,
-    pageable: {
-        refresh: true,
-        pageSizes: true,
-        buttonCount: 5
-    },
-    columns: [
-    { field: "NotaTrasladoGetSet.IdTransaccion", title: "Id Transacción", width: 100 },
-    { field: "NotaTrasladoGetSet.UsuarioTransaccion", title: "Usuario Transaccion", width: 100 },
-    { field: "NotaTrasladoGetSet.CuentaCliente", title: "Cuenta Cliente", width: 100 },
-    { field: "NotaTrasladoGetSet.CanalTransaccion", title: "canal Transaccion", width: 100, filterable: false },
-    { field: "NotaTrasladoGetSet.FechaTransaccion", title: "Hora Apertura", width: 100, filterable: false },
-    { field: "NotaTrasladoGetSet.NombreLineaTransaccion", title: "Linea Transaccion", width: 100 },
-    { field: "NotaTrasladoGetSet.DireccionACrear", title: "Direccion a Crear", width: 100, filterable: false },
-    { field: "NotaTrasladoGetSet.Estrato", title: "Estrato", width: 100, filterable: false },
-    { field: "NotaTrasladoGetSet.Nodo", title: "Nodo", width: 100 },
-    { field: "NotaTrasladoGetSet.TelefonoCelular", title: "Telefono Celular", width: 100, filterable: false },
-    { field: "NotaTrasladoGetSet.TelefonoFijo", title: "Telefono Fijo", width: 100, filterable: false },
-    { field: "NotaTrasladoGetSet.Razon", title: "Razon", width: 100 },
-    { field: "NotaTrasladoGetSet.Subrazon", title: "Subrazon", width: 100 },
-    { field: "NotaTrasladoGetSet.Observacion", title: "Observacion", width: 100 },
-    { field: "NotaTrasladoGetSet.EstadoTransaccion", title: "Estado Transaccion", width: 100 },
-    { field: "NotaTrasladoGetSet.UsuarioBackOffice", title: "Usuario BackOffice", width: 100 },
-    { field: "NotaTrasladoGetSet.UsuarioBackOutbound", title: "Usuario Outbound", width: 100 }
-    ]
-
-});
-
-$.datetimepicker.setLocale('es');
+﻿$.datetimepicker.setLocale('es');
 $('#Fecha_Inicial').datetimepicker({
     format: 'Y-m-d',
     maxDate: '+0d',
@@ -85,16 +24,90 @@ $("#Fecha_Final").blur(function (event) {
         $("#warningLabel").text("Debe primero introducir una fecha inicial");
     } else {
 
-        HacerConsulta();
+      
     }
     console.log("cambio en vacio " + fechaInicial);
 
+    var F1 = $('#Fecha_Inicial').val();
+    var F2 = $('#Fecha_Final').val();
+    TraerDatosConsulta(F1, F2);
 
 });
-function HacerConsulta() {
-
-    var bt1 = document.getElementById("submitDatos");
-    bt1.click();
+function TraerDatosConsulta(F1, F2) {
+    document.getElementById('dataLoading').style.display = 'inline-block';
+    $.ajax({
+        type: "GET",
+        url: urllistacreardireccion,
+        contentType: "application/json; charset=utf-8",
+        data: { fechaInicial: F1, fechaFinal: F2 },
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            cambiarfechas(json);
+            cargargrilla(json);
+            finalizaconsulta();
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+}
+function cambiarfechas(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i].NotaTrasladoGetSet.FechaTransaccion = kendo.toString(kendo.parseDate(data[i].NotaTrasladoGetSet.FechaTransaccion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+        
+    }
 
 }
+function cargargrilla(data) {
+    $("#gridViewConsulta").kendoGrid({
+        autoBind: true,
+        toolbar: ["excel"],
+        excel: {
+            fileName: "ConsultaCreacionDireccion.xlsx",
+        },
+        dataSource: {
+            data: data
+        },
+        scrollable: true,
+        filterable: {
+            extra: false,
+            operators: {
+                string: {
 
+                    eq: "Es igual a"
+                }
+            }
+        },
+        sortable: true,
+        pageable: {
+            refresh: true,
+            pageSizes: false,
+            buttonCount: 5
+        },
+        columns: [
+        { field: "NotaTrasladoGetSet.IdTransaccion", title: "Id Transacción", width: 100 },
+        { field: "NotaTrasladoGetSet.UsuarioTransaccion", title: "Usuario Transaccion", width: 100 },
+        { field: "NotaTrasladoGetSet.CuentaCliente", title: "Cuenta Cliente", width: 100 },
+        { field: "NotaTrasladoGetSet.CanalTransaccion", title: "Canal Transaccion", width: 100, filterable: false },
+        { field: "NotaTrasladoGetSet.FechaTransaccion", title: "Fecha Transaccion", width: 100, filterable: false },
+        { field: "NotaTrasladoGetSet.NombreLineaTransaccion", title: "Linea Transaccion", width: 100 },
+        { field: "NotaTrasladoGetSet.DireccionACrear", title: "Direccion a Crear", width: 100, filterable: false },
+        { field: "NotaTrasladoGetSet.Estrato", title: "Estrato", width: 100, filterable: false },
+        { field: "NotaTrasladoGetSet.Nodo", title: "Nodo", width: 100 },
+        { field: "NotaTrasladoGetSet.TelefonoCelular", title: "Telefono Celular", width: 100, filterable: false },
+        { field: "NotaTrasladoGetSet.TelefonoFijo", title: "Telefono Fijo", width: 100, filterable: false },
+        { field: "NotaTrasladoGetSet.Razon", title: "Razon", width: 100 },
+        { field: "NotaTrasladoGetSet.Subrazon", title: "Subrazon", width: 100 },
+        { field: "NotaTrasladoGetSet.Observacion", title: "Observacion", width: 100 },
+        { field: "NotaTrasladoGetSet.EstadoTransaccion", title: "Estado Transaccion", width: 100 },
+        { field: "NotaTrasladoGetSet.UsuarioBackOffice", title: "Usuario BackOffice", width: 100 },
+        { field: "NotaTrasladoGetSet.UsuarioBackOutbound", title: "Usuario Outbound", width: 100 }
+        ]
+
+    });
+}
+
+function finalizaconsulta() {
+    document.getElementById('dataLoading').style.display = 'none';
+}

@@ -184,6 +184,10 @@
                                 {
                                     <li id="left-sidebar-menu-dashboard-dashboardV3"><a href="@Url.Action("DashboardAltoValor", "Home")"><i class="fa fa-circle-o text-blue"></i> Dashboard Alto Valor</a></li>
                                 }
+                                @if (Session["Dashboard Potencial"] != null)
+                                {
+                                    <li id="left-sidebar-menu-dashboard-dashboardV1"><a href="@Url.Action("DashboardPotencial", "Home")"><i class="fa fa-circle-o text-green"></i> Dashboard Potencial</a></li>
+                                }
                             </ul>
                         </li>
                     }
@@ -500,14 +504,14 @@
                                         </li>
                                     </ul>
                                 </li>
-                                @*<li>
+                                <li>
                                     <a href="#"><i class="fa fa-map-signs text-green" aria-hidden="true"></i>Traslados Fallidos<i class="fa fa-angle-left pull-right"></i></a>
                                     <ul class="treeview-menu">
                                         <li>
                                             <a href="@Url.Action("RegistrotrasladoFallido", "Traslados")"><i class="fa fa-external-link" aria-hidden="true"></i>Generar Solicitud</a>
                                         </li>
                                     </ul>
-                                </li>*@
+                                </li>
                             </ul>
                         </li>
                     }
@@ -581,7 +585,7 @@
                                                 <li><a href="@Url.Action("ConsultaAdminIngresosCambioEstrato", "Traslados")"><i class="fa fa-circle-o"></i> Cambio de Estrato</a></li>
                                                 <li><a href="@Url.Action("ConsultaAdminIngresosLiberaciones", "Traslados")"><i class="fa fa-circle-o"></i> Liberaciones de HHPP</a></li>
                                                 <li><a href="@Url.Action("ConsultaAdminIngresosMatrices", "Traslados")"><i class="fa fa-circle-o"></i> Gestión Matrices</a></li>
-                                                @*<li><a href="@Url.Action("ConsultaAdminTrasladosFallidos", "Traslados")"><i class="fa fa-circle-o"></i> Traslados Fallidos</a></li>*@
+                                                <li><a href="@Url.Action("ConsultaAdminTrasladosFallidos", "Traslados")"><i class="fa fa-circle-o"></i> Traslados Fallidos</a></li>
                                             </ul>
                                         </li>
 
@@ -636,7 +640,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                @*<li>
+                                <li>
                                     <a href="#"><i class="fa fa-map-signs text-green" aria-hidden="true"></i>Traslados Fallidos<i class="fa fa-angle-left pull-right"></i></a>
                                     <ul class="treeview-menu">
                                         <li>
@@ -644,7 +648,7 @@
                                             <a href="@Url.Action("ConsultaGestionTrasladosFallidos", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
                                         </li>
                                     </ul>
-                                </li>*@
+                                </li>
                                 <li>
                                     <a href="#"><i class="fa fa-search text-green" aria-hidden="true"></i>Consulta General<i class="fa fa-angle-left pull-right"></i></a>
                                     <ul class="treeview-menu">
@@ -1078,7 +1082,7 @@
 
     <script src="~/ViewsAlr/app.js?1.0.3"></script>
     <script src="~/ControllersAlr/mainAccessController.js?1.0.3"></script>
-    <script src="~/ControllersAlr/ConsultaGestionController.js?1.0.3"></script>
+    <script src="~/ControllersAlr/ConsultaGestionController.js?1.1.1"></script>
     <script src="~/ControllersAlr/DepuraCasosCellController.js?1.1.9"></script>
     <script src="~/ControllersAlr/AdminCasosController.js?1.1.6"></script>
     <link href="~/Styles/Elements/Dime2.css?1.0.8" rel="stylesheet" />

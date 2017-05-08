@@ -71,7 +71,7 @@ function cargargridview(data) {
         autoBind: true,
         toolbar: ["excel"],
         excel: {
-            fileName: "Export.xlsx",
+            fileName: "ConsultaGenralIngresoTraslados.xlsx",
         },
         dataSource: {
             data: data,

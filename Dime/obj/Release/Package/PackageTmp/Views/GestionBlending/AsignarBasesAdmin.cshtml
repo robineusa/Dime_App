@@ -1,4 +1,4 @@
-﻿
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelBlending
 @{
     ViewBag.Title = "Asignar Bases";
     ViewBag.Subtitle = "Administrador Blending";
@@ -7,6 +7,114 @@
 
 @if (Session["Administracion Blending"] != null)
 {
+    using (Html.BeginForm("AsignarBasesAdmin", "GestionBlending", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
+    {
+        <div class="row">
+            <div class="col-md-9" style="width:100%; ">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321;"><a href="#Inserta_Usuario" style="background-color: transparent;" data-toggle="tab">Asignacion de bases</a></li>
+
+                    </ul>
+                    <div class="tab-content" style="padding-left:0; padding-top: 0">
+                        <div class="active tab-pane" id="Inserta_Usuario" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                            <br />
+                            
+                            <table>
+                                <tr>
+                                    <td style="padding-left:1px; width:200px;" colspan="2">
+                                        <i class="fa fa-chevron-circle-down"></i><strong> Seleccione el Nombre de linea</strong>
+                                        @Html.DropDownListFor(m => m.Maestrolineasblendingvacio.NombreLinea, new List<SelectListItem> { }, "--Select Option--", new { Id = "NombreLineasBlendingSelect", @class = "form-control", onchange = "BuscaUsuariosForList();" })
+                                        
+                                    </td>
+                                    <td>
+                                        <br />
+                                        <br />
+                                        @if (ViewBag.Alerta != null)
+                                        {
+                                            <label class="text-danger" style="font-weight: 600;">@ViewBag.Alerta</label>
+                                        }
+                                    </td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <br />
+                                        <div class="info-box" id="Aviso1" style="display: none;">
+                                            <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="info-box-number">Número de Cuentas Asignadas a Esta Base:</span>
+                                                <span id="CountOperacion" style="text-transform:initial; font-size:20px;" class="info-box-text"></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div id="oculto" style="display:none">
+                                <h2 class="page-header" style="margin-top: 25px;">
+                                    <i class="fa fa-users"></i> Lista de Usuarios
+                                    @* <small class="pull-right">Date: 2/10/2014</small>*@
+                                </h2>
+                                <table>
+                                    <tr>
+                                        <td style="padding-left:1px;" colspan="4">
+                                            <strong> Seleccione Los usuarios a los cuales desea agregar a una nueva campaña: </strong>
+                                            <br />
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div id="gridViewResult">
+                                </div>
+                                <br />
+                                <table>
+                                    <tr>
+                                        <td style="padding-left:1px;" colspan="4">
+                                            <strong> Seleccione La nueva campaña: </strong>
+                                            <br />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.DropDownListFor(m => m.SkillsUsuariosBlending.Campaña, new List<SelectListItem>() { }, "-Seleccione-", new { @class = "form-control input-sm", id = "CampañasBlendingSelect2", onchange="BuscaCuentasOperacion();" })
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <br />
+                                            <div class="info-box" id="Aviso2" style="display: none;">
+                                                <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
+                                                <div class="info-box-content">
+                                                    <span class="info-box-number">Número de Cuentas Asignadas a Esta Campaña:</span>
+                                                    <span id="CountOperacionCampaña" style="text-transform:initial; font-size:20px;" class="info-box-text"></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <br />
+                        <button id="Actualizar_Usuarios" type="submit" onclick="GuardarCedulasMasivo()" class="btn btn-block btn-primary btn-lg" name="opcionMando" value="AsignarBases" style="width: 10%;margin-left: 1%;">Asignar</button>
+                        @Html.TextBoxFor(m => m.CedulasMasivo, new { @style = "display:none", id = "CedulasMasivo" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    @section Scripts{
+        <script src="~/Scripts/Gestion_Blending/AsignarBasesAdmin.js?1.0.3"></script>
+        <script>
+            var urlLineas = '@Url.Action("SkillsUsuariosAdminJson", "GestionBlending")';
+            var urlUsuariosporOperacion = '@Url.Action("UsuariosporOperacion", "GestionBlending")';
+            var urlCountCuentasOperacion = '@Url.Action("CountCuentasOperacion", "GestionBlending")';
+            var urlCampañas = '@Url.Action("ObtenerCampaña", "GestionBlending")';
+            var urlCountCuentasOperacionCampaña = '@Url.Action("CountCuentasOperacionCampaña", "GestionBlending")';
+            var Aliado = '@Session["AliadoLogeado"].ToString()';
+            $('#CedulasMasivo').val('');
+        </script>
+
+    }
 
 }
 else

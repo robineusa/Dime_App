@@ -184,6 +184,10 @@
                                 {
                                     <li id="left-sidebar-menu-dashboard-dashboardV3"><a href="@Url.Action("DashboardAltoValor", "Home")"><i class="fa fa-circle-o text-blue"></i> Dashboard Alto Valor</a></li>
                                 }
+                                @if (Session["Dashboard Potencial"] != null)
+                                {
+                                    <li id="left-sidebar-menu-dashboard-dashboardV1"><a href="@Url.Action("DashboardPotencial", "Home")"><i class="fa fa-circle-o text-green"></i> Dashboard Potencial</a></li>
+                                }
                             </ul>
                         </li>
                     }

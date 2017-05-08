@@ -9,9 +9,10 @@
                 string[] nombreUsuario;
                 nombreUsuario = @Session["NombreUsuario"].ToString().Split(' ');
                 string nombreFinal = nombreUsuario[0];
-                if (nombreUsuario.Count() == 4) nombreFinal = nombreFinal + " " + nombreUsuario[2];
+                if (nombreUsuario.Count() == 4)  nombreFinal = nombreFinal + " " + nombreUsuario[2];
                 else nombreFinal = nombreFinal + " " + nombreUsuario[1];
 
+                nombreFinal = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nombreFinal.ToLower());
                 <span class="hidden-xs">@nombreFinal </span>
             }
         </a>

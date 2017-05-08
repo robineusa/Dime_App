@@ -1,4 +1,5 @@
 ﻿CambiarAEstado(dataSeguimientos);
+CambiarFechas(dataSeguimientos);
 ShowGridAbiertos(dataSeguimientos);
 
 
@@ -16,6 +17,13 @@ function CambiarAEstado(data) {
     }
 }
 
+function CambiarFechas(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i].FechaApertura = kendo.toString(kendo.parseDate(data[i].HoraApertura, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd');
+        data[i].HoraApertura = kendo.toString(kendo.parseDate(data[i].HoraApertura, 'yyyy-MM-ddTHH:mm:ss'), 'HH:mm:ss');
+    }
+
+}
 
 function ShowGridAbiertos(data) {
     $("#gridViewSeguimientos").kendoGrid({
@@ -51,7 +59,8 @@ function ShowGridAbiertos(data) {
          { field: "IdIngreso", title: "Id Ingreso", width: 80, headerAttributes: { style: "white-space: normal" } },
        { field: "Cuenta", title: "Cuenta", width: 80, headerAttributes: { style: "white-space: normal" } },
        { field: "Ticket", title: "Ticket", width: 70, headerAttributes: { style: "white-space: normal" } },
-          { field: "HoraApertura", title: "Fecha Apertura", width: 100, template: "#= kendo.toString(kendo.parseDate(HoraApertura, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", headerAttributes: { style: "white-space: normal" } },
+          { field: "FechaApertura", title: "Fecha Apertura", width: 100, headerAttributes: { style: "white-space: normal" } },
+           { field: "HoraApertura", title: "Hora Apertura", width: 100, headerAttributes: { style: "white-space: normal" } },
           { field: "UsuarioApertura", title: "Usuario Apertura", width: 80, headerAttributes: { style: "white-space: normal" } },
              { field: "Macroproceso", title: "Macroproceso", width: 80, headerAttributes: { style: "white-space: normal" } },
                { field: "Marcacion", title: "Marcación", width: 80, headerAttributes: { style: "white-space: normal" } },

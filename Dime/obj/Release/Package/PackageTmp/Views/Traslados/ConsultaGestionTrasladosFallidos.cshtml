@@ -51,6 +51,9 @@
                                 <h2 class="page-header" style="margin-top:25px"><i class="fa fa-search"></i> Resultados de Búsqueda:</h2>
                                 <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                                     <div class="box-body">
+                                        <div id="dataLoading" style="display:none;text-align:center;width:100%;height:auto;">
+                                            <div><img src="~/Resources/Images/Loading.gif" height="100" width="100" /></div>
+                                        </div>
                                         <div id="gridViewConsulta"></div>
                                     </div>
                                 </div>
@@ -65,12 +68,12 @@
 
     @section scripts{
         <script>
-        var jsonsegcdout = @Html.Raw(Json.Encode(Model));
+        var ConsultaGestionTrasladosFallidos = '@Url.Action("ConsultaGestionTrasladosFallidosJson", "Traslados")';
         </script>
 
         <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.1"></script>
         <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.1" rel="stylesheet" />
-        <script src="~/Scripts/Traslados/ConsultaGestionTrasladosFallidos.js?1.0.3"></script>
+        <script src="~/Scripts/Traslados/ConsultaGestionTrasladosFallidos.js?1.0.4"></script>
 
     }
 }
