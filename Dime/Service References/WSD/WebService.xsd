@@ -1482,15 +1482,9 @@
       <xs:element minOccurs="0" name="FechaSeguimiento" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
-<<<<<<< HEAD
       <xs:element minOccurs="0" name="Movil1" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Movil2" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MovilPostpago" nillable="true" type="xs:string" />
-=======
-      <xs:element minOccurs="0" name="Movil1" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Movil2" type="xs:decimal" />
-      <xs:element minOccurs="0" name="MovilPostpago" type="xs:decimal" />
->>>>>>> origin/master
       <xs:element minOccurs="0" name="Nodo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreCliente" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreComunidad" nillable="true" type="xs:string" />
@@ -1498,15 +1492,9 @@
       <xs:element minOccurs="0" name="Prioridad" type="xs:int" />
       <xs:element minOccurs="0" name="Razon" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ServiciosActuales" nillable="true" type="xs:string" />
-<<<<<<< HEAD
       <xs:element minOccurs="0" name="Telefono1" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Telefono2" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Telefono3" nillable="true" type="xs:string" />
-=======
-      <xs:element minOccurs="0" name="Telefono1" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Telefono2" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Telefono3" type="xs:decimal" />
->>>>>>> origin/master
       <xs:element minOccurs="0" name="TipoCliente" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TipoContacto" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TipoModem" nillable="true" type="xs:string" />
@@ -1537,15 +1525,9 @@
       <xs:element minOccurs="0" name="FechaSeguimiento" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
-<<<<<<< HEAD
       <xs:element minOccurs="0" name="Movil1" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Movil2" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MovilPostpago" nillable="true" type="xs:string" />
-=======
-      <xs:element minOccurs="0" name="Movil1" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Movil2" type="xs:decimal" />
-      <xs:element minOccurs="0" name="MovilPostpago" type="xs:decimal" />
->>>>>>> origin/master
       <xs:element minOccurs="0" name="Nodo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreCliente" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreComunidad" nillable="true" type="xs:string" />
@@ -1553,15 +1535,9 @@
       <xs:element minOccurs="0" name="Prioridad" type="xs:int" />
       <xs:element minOccurs="0" name="Razon" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ServiciosActuales" nillable="true" type="xs:string" />
-<<<<<<< HEAD
       <xs:element minOccurs="0" name="Telefono1" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Telefono2" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Telefono3" nillable="true" type="xs:string" />
-=======
-      <xs:element minOccurs="0" name="Telefono1" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Telefono2" type="xs:decimal" />
-      <xs:element minOccurs="0" name="Telefono3" type="xs:decimal" />
->>>>>>> origin/master
       <xs:element minOccurs="0" name="TipoCliente" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TipoContacto" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TipoModem" nillable="true" type="xs:string" />
