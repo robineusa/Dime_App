@@ -344,6 +344,7 @@ namespace Dime.Controllers
         [AllowAnonymous]
         public void RegistrarVariablesDeSesion(int idUsuario, out bool  usuarioEnHolos)
         {
+            
             Usuario usuarioLogeado = loginService.RecibirUsuarioConId(idUsuario);
             if (loginService.ExisteUsuarioHolos(Convert.ToDecimal(usuarioLogeado.Cedula)))
             {
@@ -362,6 +363,13 @@ namespace Dime.Controllers
             Session["AliadoLogeado"] = loginService.AliadoDeUsuario(usuarioLogeado.Cedula); //"BRM"
             Session["LineaLogeado"] = loginService.LineaDeUsuarioPorId(Convert.ToInt32(usuarioLogeado.IdLinea));   //  "CELULA VISITA SOPORTE";
             Session["ModoLogin"] = loginService.ModoLoginPorId(Convert.ToInt32(usuarioLogeado.IdLinea));  //1
+            var OperacionPorCedula = loginService.OperacionPorCedula(Convert.ToInt32(usuarioLogeado.Cedula));
+            var CampañaPorCedula  = loginService.CampañaPorCedula(Convert.ToInt32(usuarioLogeado.Cedula));
+            if (OperacionPorCedula != "False")
+            {
+                    Session["OperacionBlending"] = OperacionPorCedula;
+                    Session["CampañaBlending"] = CampañaPorCedula;
+            }
                 if (Session["IpPrivada"] != null)
                 {
                     Session["IpPrivada"] = ipPrivada;
