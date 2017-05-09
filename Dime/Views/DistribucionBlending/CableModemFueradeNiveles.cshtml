@@ -2,7 +2,7 @@
 @{ ViewBag.Title = "Camble Modem Fuera de Niveles";
     ViewBag.SubTitle = "Gestión Blending";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    }
+}
  
 @using (Html.BeginForm("CableModemFueradeNiveles", "DistribucionBlending", FormMethod.Post, new { id = "datosCliente", role = "form" })) { 
 
@@ -297,7 +297,7 @@
     var urlControlTiposRazonesList = '@Url.Action("TiposRazonesList", "DistribucionBlending")';
     var urlControlTiposCausasList = '@Url.Action("TiposCausasList", "DistribucionBlending")';
 </script>
-<script src="~/Scripts/DistribucionBlending/FueraNiveles.js?1.0.8"></script>
+<script src="~/Scripts/DistribucionBlending/FueraNiveles.js?1.0.10"></script>
 <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
 <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
 <link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />

@@ -8633,6 +8633,24 @@ namespace Dime.WSD {
             "Niveles", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeListaSeguimientosUsuarioFuera" +
             "NivelesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPFueraNiveles>> TraeListaSeguimientosUsuarioFueraNivelesAsync(string Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/AsignarIdCuentaDistribucionBlendi" +
+            "ng", ReplyAction="http://tempuri.org/IDistribucionBlendingService/AsignarIdCuentaDistribucionBlendi" +
+            "ngResponse")]
+        Telmexla.Servicios.DIME.Entity.ClientesTodo AsignarIdCuentaDistribucionBlending(decimal CuentaCliente, string Formulario, string Aliado, string Operacion, string Campana, int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/AsignarIdCuentaDistribucionBlendi" +
+            "ng", ReplyAction="http://tempuri.org/IDistribucionBlendingService/AsignarIdCuentaDistribucionBlendi" +
+            "ngResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.ClientesTodo> AsignarIdCuentaDistribucionBlendingAsync(decimal CuentaCliente, string Formulario, string Aliado, string Operacion, string Campana, int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraerDatosCuentaSelectFueraNivel", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraerDatosCuentaSelectFueraNivelR" +
+            "esponse")]
+        Telmexla.Servicios.DIME.Entity.GBPFueraNiveles TraerDatosCuentaSelectFueraNivel(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraerDatosCuentaSelectFueraNivel", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraerDatosCuentaSelectFueraNivelR" +
+            "esponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBPFueraNiveles> TraerDatosCuentaSelectFueraNivelAsync(decimal CuentaCliente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8740,6 +8758,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPFueraNiveles>> TraeListaSeguimientosUsuarioFueraNivelesAsync(string Usuario) {
             return base.Channel.TraeListaSeguimientosUsuarioFueraNivelesAsync(Usuario);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.ClientesTodo AsignarIdCuentaDistribucionBlending(decimal CuentaCliente, string Formulario, string Aliado, string Operacion, string Campana, int Id) {
+            return base.Channel.AsignarIdCuentaDistribucionBlending(CuentaCliente, Formulario, Aliado, Operacion, Campana, Id);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.ClientesTodo> AsignarIdCuentaDistribucionBlendingAsync(decimal CuentaCliente, string Formulario, string Aliado, string Operacion, string Campana, int Id) {
+            return base.Channel.AsignarIdCuentaDistribucionBlendingAsync(CuentaCliente, Formulario, Aliado, Operacion, Campana, Id);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GBPFueraNiveles TraerDatosCuentaSelectFueraNivel(decimal CuentaCliente) {
+            return base.Channel.TraerDatosCuentaSelectFueraNivel(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBPFueraNiveles> TraerDatosCuentaSelectFueraNivelAsync(decimal CuentaCliente) {
+            return base.Channel.TraerDatosCuentaSelectFueraNivelAsync(CuentaCliente);
         }
     }
 }
