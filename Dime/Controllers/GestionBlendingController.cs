@@ -398,14 +398,14 @@ namespace Dime.Controllers
             return View(model);
         }
 
-        public JsonResult ObtenerCampaña()
-        {
+        //public JsonResult ObtenerCampaña()
+        //{
 
-            var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.ObtenerCampaña(Session["AliadoLogeado"].ToString())), JsonRequestBehavior.AllowGet);
-            jsonResult.MaxJsonLength = int.MaxValue;
-            return jsonResult;
+        //    var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.ObtenerCampaña(Session["AliadoLogeado"].ToString())), JsonRequestBehavior.AllowGet);
+        //    jsonResult.MaxJsonLength = int.MaxValue;
+        //    return jsonResult;
 
-        }
+        //}
 
         [HttpPost]
         public ActionResult AsignarBasesAdmin(ViewModelBlending model, string opcionMando)

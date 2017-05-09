@@ -36,11 +36,20 @@ namespace Dime.Controllers
                model.DatosDelCliente= distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "FUERANIVELES", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
                 if (model.DatosDelCliente != null)
 
-                    ClienteGestionado = distribucionBlendingService.TraerDatosCuentaSelectFueraNivel(model.DatosDelCliente.Cuenta);
-                model.FueraNiveles.Cmts = ClienteGestionado.Cmts;
-                model.FueraNiveles.TipoModem = ClienteGestionado.TipoModem;
-                model.FueraNiveles.Prioridad = ClienteGestionado.Prioridad;
+                ClienteGestionado = distribucionBlendingService.TraerDatosCuentaSelectFueraNivel(model.DatosDelCliente.Cuenta);
+                if (ClienteGestionado != null)
+                {
+                    model.FueraNiveles.Cmts = ClienteGestionado.Cmts;
+                    model.FueraNiveles.TipoModem = ClienteGestionado.TipoModem;
+                    model.FueraNiveles.Prioridad = ClienteGestionado.Prioridad;
+                }
+                else
+                {
+                    model.FueraNiveles.Cmts = "CUENTA NO CARGADA";
+                    model.FueraNiveles.TipoModem = "CUENTA NO CARGADA";
+                    model.FueraNiveles.Prioridad = 1;
 
+                }
                 
             }
             if (model.DatosDelCliente == null)
@@ -48,8 +57,24 @@ namespace Dime.Controllers
                 model.DatosDelCliente = new ClientesTodo();
                 model.DatosDelCliente.Cuenta = 0;
                 model.DatosDelCliente.Nombre = "NO EXISTEN MAS CUENTAS";
+                ViewBag.ValidacionBase = "NO EXISTEN MAS CUENTAS ASIGNADAS PARA ESTA CAMPAÑA";
+
+                ViewBag.CantidadToques = 0;
+                ViewBag.Cierre = "";
+                ViewBag.Razon = "";
+
             }
-                return View(model);
+            else
+            {
+                int DatoContactos = distribucionBlendingService.CantidadToquesCuentaFueraNiveles(model.DatosDelCliente.Cuenta);
+                model.UltimoGBLFuera_Niveles = distribucionBlendingService.TraeUltimaGestionCuenta(model.DatosDelCliente.Cuenta);
+                ViewBag.ValidacionBase = null;
+                ViewBag.CantidadToques = DatoContactos;
+                ViewBag.Cierre = model.UltimoGBLFuera_Niveles.Cierre;
+                ViewBag.Razon = model.UltimoGBLFuera_Niveles.Razon;
+            }
+            return View(model);
+            
         }
         [HttpPost]
         public ActionResult CableModemFueradeNiveles(ViewModelDistribucionesBlending model)
