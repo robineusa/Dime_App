@@ -2,22 +2,22 @@
     $("#Li1").click(function () {
 
     });
-    TraerListaLineasBlending();
+    TraerListaFormulariosBlending();
     
 
 });
 
-function TraerListaLineasBlending() {
+function TraerListaFormulariosBlending() {
     $.ajax({
         type: "GET",
-        url: urlLineas,
+        url: urlFormularios,
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
             for (var index = 0; index < json.length; index++) {
-                $('#NombreLineasBlendingSelect').append($('<option>', {
-                    value: json[index].NombreLinea,
-                    text: json[index].NombreLinea
+                $('#FormularioBlendingSelect').append($('<option>', {
+                    value: json[index].FormularioDestino,
+                    text: json[index].FormularioDestino
                 }));
             }
 
@@ -28,10 +28,40 @@ function TraerListaLineasBlending() {
     });
 }
 
-function TraerCampaña() {
+function TraerListaLineasBlending() {
+    var Form = $('#FormularioBlendingSelect').val();
     $.ajax({
-        type: "GET",
+        type: "POST",
+        url: urlLineas,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ Form: Form }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0; index < json.length; index++) {
+                $('#NombreLineasBlendingSelect').append($('<option>', {
+                    value: json[index].OperacionDestino,
+                    text: json[index].OperacionDestino
+                }));
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+    $('#NombreLineasBlendingSelect').find('option:not(:first)').remove();
+    $('#CampañasBlendingSelect2').find('option:not(:first)').remove();
+}
+
+function TraerCampaña() {
+    var Form = $('#FormularioBlendingSelect').val();
+    var Operacion = $('#NombreLineasBlendingSelect').val();
+    $.ajax({
+        type: "POST",
         url: urlCampañas,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ Form: Form, Operacion: Operacion }),
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
@@ -41,8 +71,8 @@ function TraerCampaña() {
                     text: json[index].Campaña
                 }));
                 $('#CampañasBlendingSelect2').append($('<option>', {
-                    value: json[index].Campaña,
-                    text: json[index].Campaña
+                    value: json[index].CampanaDestino,
+                    text: json[index].CampanaDestino
                 }));
             }
 
@@ -51,6 +81,7 @@ function TraerCampaña() {
             alert(request.responseText);
         }
     });
+    $('#CampañasBlendingSelect2').find('option:not(:first)').remove();
 }
 
 function BuscaUsuariosForList() {

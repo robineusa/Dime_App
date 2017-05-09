@@ -20,42 +20,74 @@
         $("#Crear_Usuario").css("display", "none");
 
     });
-    TraerListaLineasBlending();
-    TraerCampaña();
+    TraerListaFormulariosBlending();
+    //TraerListaLineasBlending();
+    //TraerCampaña();
 });
 
-function TraerListaLineasBlending() {
-    $.ajax({
-        type: "GET",
-        url: urlLineas,
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            for (var index = 0; index < json.length; index++) {
-                $('#NombreLineasBlendingSelect').append($('<option>', {
-                    value: json[index].NombreLinea,
-                    text: json[index].NombreLinea
-                }));
-            }
+function TraerListaFormulariosBlending() {
+    
+        $.ajax({
+            type: "GET",
+            url: urlFormularios,
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+                for (var index = 0; index < json.length; index++) {
+                    $('#FormularioBlendingSelect').append($('<option>', {
+                        value: json[index].FormularioDestino,
+                        text: json[index].FormularioDestino
+                    }));
+                }
 
-        },
-        error: function (request, status, error) {
-            alert(request.responseText);
-        }
-    });
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
+}
+
+function TraerListaLineasBlending() {
+    var Form = $('#FormularioBlendingSelect').val();
+            $.ajax({
+                type: "POST",
+                url: urlLineas,
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({ Form: Form }),
+                dataType: "JSON",
+                success: function (result) {
+                    var json = JSON.parse(result);
+                    for (var index = 0; index < json.length; index++) {
+                        $('#NombreLineasBlendingSelect').append($('<option>', {
+                            value: json[index].OperacionDestino,
+                            text: json[index].OperacionDestino
+                        }));
+                    }
+
+                },
+                error: function (request, status, error) {
+                    alert(request.responseText);
+                }
+            });
+    $('#NombreLineasBlendingSelect').find('option:not(:first)').remove();
+    $('#CampañasBlendingSelect').find('option:not(:first)').remove();
 }
 
 function TraerCampaña() {
+    var Form = $('#FormularioBlendingSelect').val();
+    var Operacion = $('#NombreLineasBlendingSelect').val();
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: urlCampañas,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ Form: Form , Operacion: Operacion}),
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
             for (var index = 0; index < json.length; index++) {
                 $('#CampañasBlendingSelect').append($('<option>', {
-                    value: json[index].Campaña,
-                    text: json[index].Campaña
+                    value: json[index].CampanaDestino,
+                    text: json[index].CampanaDestino
                 }));
             }
 
@@ -64,6 +96,7 @@ function TraerCampaña() {
             alert(request.responseText);
         }
     });
+    $('#CampañasBlendingSelect').find('option:not(:first)').remove();
 }
 
 function BuscaUsuariosForList()

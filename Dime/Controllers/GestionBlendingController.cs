@@ -303,10 +303,18 @@ namespace Dime.Controllers
           
             return View(model);
         }
-        public JsonResult SkillsUsuariosAdminJson()
+        public JsonResult FormulariosBlendingJson()
+        {
+
+            var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.GetFormulariosBlending(Session["AliadoLogeado"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public JsonResult SkillsUsuariosAdminJson(string Form)
         {
             
-            var jsonResult = Json(JsonConvert.SerializeObject(mastersServices.TraerListaLineasBlending(Session["AliadoLogeado"].ToString())), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.GetOperacionBlending(Session["AliadoLogeado"].ToString(), Form)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
             
@@ -398,10 +406,10 @@ namespace Dime.Controllers
             return View(model);
         }
 
-        public JsonResult ObtenerCampaña()
+        public JsonResult ObtenerCampaña(string Form, string Operacion)
         {
 
-            var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.ObtenerCampaña(Session["AliadoLogeado"].ToString())), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.ObtenerCampaña(Session["AliadoLogeado"].ToString(), Form, Operacion)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 

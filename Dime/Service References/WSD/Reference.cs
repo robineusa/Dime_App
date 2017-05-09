@@ -6377,10 +6377,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending> ConsultaUsuarioenAdminBlendingAsync(string cedula);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ObtenerCampaña", ReplyAction="http://tempuri.org/IBlendingService/ObtenerCampañaResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound> ObtenerCampaña(string Aliado);
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DistribucionBlending> ObtenerCampaña(string Aliado, string Formulario, string Operacion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ObtenerCampaña", ReplyAction="http://tempuri.org/IBlendingService/ObtenerCampañaResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> ObtenerCampañaAsync(string Aliado);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DistribucionBlending>> ObtenerCampañaAsync(string Aliado, string Formulario, string Operacion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/InsertarSkillsUsuarioBlending", ReplyAction="http://tempuri.org/IBlendingService/InsertarSkillsUsuarioBlendingResponse")]
         void InsertarSkillsUsuarioBlending(Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending skills);
@@ -6405,6 +6405,18 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ActualizarUsuariosBasesBlending", ReplyAction="http://tempuri.org/IBlendingService/ActualizarUsuariosBasesBlendingResponse")]
         System.Threading.Tasks.Task ActualizarUsuariosBasesBlendingAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, string Campaña, int Id_Usuario_Actualizacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/GetOperacionBlending", ReplyAction="http://tempuri.org/IBlendingService/GetOperacionBlendingResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DistribucionBlending> GetOperacionBlending(string Aliado, string Formulario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/GetOperacionBlending", ReplyAction="http://tempuri.org/IBlendingService/GetOperacionBlendingResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DistribucionBlending>> GetOperacionBlendingAsync(string Aliado, string Formulario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/GetFormulariosBlending", ReplyAction="http://tempuri.org/IBlendingService/GetFormulariosBlendingResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DistribucionBlending> GetFormulariosBlending(string Aliado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/GetFormulariosBlending", ReplyAction="http://tempuri.org/IBlendingService/GetFormulariosBlendingResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DistribucionBlending>> GetFormulariosBlendingAsync(string Aliado);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6602,12 +6614,12 @@ namespace Dime.WSD {
             return base.Channel.ConsultaUsuarioenAdminBlendingAsync(cedula);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound> ObtenerCampaña(string Aliado) {
-            return base.Channel.ObtenerCampaña(Aliado);
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DistribucionBlending> ObtenerCampaña(string Aliado, string Formulario, string Operacion) {
+            return base.Channel.ObtenerCampaña(Aliado, Formulario, Operacion);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GestionOutbound>> ObtenerCampañaAsync(string Aliado) {
-            return base.Channel.ObtenerCampañaAsync(Aliado);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DistribucionBlending>> ObtenerCampañaAsync(string Aliado, string Formulario, string Operacion) {
+            return base.Channel.ObtenerCampañaAsync(Aliado, Formulario, Operacion);
         }
         
         public void InsertarSkillsUsuarioBlending(Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending skills) {
@@ -6640,6 +6652,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task ActualizarUsuariosBasesBlendingAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, string Campaña, int Id_Usuario_Actualizacion) {
             return base.Channel.ActualizarUsuariosBasesBlendingAsync(listaUsuariosCambiados, Campaña, Id_Usuario_Actualizacion);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DistribucionBlending> GetOperacionBlending(string Aliado, string Formulario) {
+            return base.Channel.GetOperacionBlending(Aliado, Formulario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DistribucionBlending>> GetOperacionBlendingAsync(string Aliado, string Formulario) {
+            return base.Channel.GetOperacionBlendingAsync(Aliado, Formulario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DistribucionBlending> GetFormulariosBlending(string Aliado) {
+            return base.Channel.GetFormulariosBlending(Aliado);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DistribucionBlending>> GetFormulariosBlendingAsync(string Aliado) {
+            return base.Channel.GetFormulariosBlendingAsync(Aliado);
         }
     }
     
@@ -8651,6 +8679,20 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraerDatosCuentaSelectFueraNivel", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraerDatosCuentaSelectFueraNivelR" +
             "esponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBPFueraNiveles> TraerDatosCuentaSelectFueraNivelAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/CantidadToquesCuentaFueraNiveles", ReplyAction="http://tempuri.org/IDistribucionBlendingService/CantidadToquesCuentaFueraNivelesR" +
+            "esponse")]
+        int CantidadToquesCuentaFueraNiveles(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/CantidadToquesCuentaFueraNiveles", ReplyAction="http://tempuri.org/IDistribucionBlendingService/CantidadToquesCuentaFueraNivelesR" +
+            "esponse")]
+        System.Threading.Tasks.Task<int> CantidadToquesCuentaFueraNivelesAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuenta", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuentaResponse")]
+        Telmexla.Servicios.DIME.Entity.GBLFueraNiveles TraeUltimaGestionCuenta(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuenta", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuentaResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBLFueraNiveles> TraeUltimaGestionCuentaAsync(decimal CuentaCliente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8774,6 +8816,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBPFueraNiveles> TraerDatosCuentaSelectFueraNivelAsync(decimal CuentaCliente) {
             return base.Channel.TraerDatosCuentaSelectFueraNivelAsync(CuentaCliente);
+        }
+        
+        public int CantidadToquesCuentaFueraNiveles(decimal CuentaCliente) {
+            return base.Channel.CantidadToquesCuentaFueraNiveles(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<int> CantidadToquesCuentaFueraNivelesAsync(decimal CuentaCliente) {
+            return base.Channel.CantidadToquesCuentaFueraNivelesAsync(CuentaCliente);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GBLFueraNiveles TraeUltimaGestionCuenta(decimal CuentaCliente) {
+            return base.Channel.TraeUltimaGestionCuenta(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBLFueraNiveles> TraeUltimaGestionCuentaAsync(decimal CuentaCliente) {
+            return base.Channel.TraeUltimaGestionCuentaAsync(CuentaCliente);
         }
     }
 }

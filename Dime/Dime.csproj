@@ -2927,6 +2927,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPFueraNiveles.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBLFueraNiveles1.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPFueraNiveles1.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DistribucionBlending.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\Dime_Capacitacion.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />

@@ -833,6 +833,26 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SkillsUsuariosBlending" nillable="true" type="tns:SkillsUsuariosBlending" />
+  <xs:complexType name="ArrayOfDistribucionBlending">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DistribucionBlending" nillable="true" type="tns:DistribucionBlending" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDistribucionBlending" nillable="true" type="tns:ArrayOfDistribucionBlending" />
+  <xs:complexType name="DistribucionBlending">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoDestino" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampanaDestino" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaAsignacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FormularioDestino" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OperacionDestino" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioAsignacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestionando" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DistribucionBlending" nillable="true" type="tns:DistribucionBlending" />
   <xs:complexType name="ArrayOfGestionOutbound">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="GestionOutbound" nillable="true" type="tns:GestionOutbound" />
@@ -1451,20 +1471,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BlendingFueraNivel" nillable="true" type="tns:BlendingFueraNivel" />
-  <xs:complexType name="DistribucionBlending">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AliadoDestino" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CampanaDestino" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
-      <xs:element minOccurs="0" name="FechaAsignacion" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="FormularioDestino" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
-      <xs:element minOccurs="0" name="OperacionDestino" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UsuarioAsignacion" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UsuarioGestionando" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="DistribucionBlending" nillable="true" type="tns:DistribucionBlending" />
   <xs:complexType name="GBPFueraNiveles">
     <xs:sequence>
       <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
