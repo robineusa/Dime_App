@@ -17,6 +17,7 @@ namespace Telmexla.Servicios.DIME.Entity
         BlendingFueraNivel fueraNiveles;
         GBPFueraNiveles gBPFueradeNiveles;
         GBLFueraNiveles gBLFueradeNiveles;
+        GBLFueraNiveles ultimoGBLFuera_Niveles;
        List<GBPFueraNiveles> listaGBPFueradeNiveles;
         List<GBLFueraNiveles> listaGBLFueradeNiveles;
         #endregion
@@ -30,6 +31,7 @@ namespace Telmexla.Servicios.DIME.Entity
             gBPFueradeNiveles = new GBPFueraNiveles();
             listaGBLFueradeNiveles = new List<GBLFueraNiveles>();
             listaGBPFueradeNiveles = new List<GBPFueraNiveles>();
+            ultimoGBLFuera_Niveles = new GBLFueraNiveles();
         }
         #endregion
 
@@ -110,6 +112,19 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 listaGBLFueradeNiveles = value;
+            }
+        }
+
+        public GBLFueraNiveles UltimoGBLFuera_Niveles
+        {
+            get
+            {
+                return ultimoGBLFuera_Niveles;
+            }
+
+            set
+            {
+                ultimoGBLFuera_Niveles = value;
             }
         }
         #endregion
