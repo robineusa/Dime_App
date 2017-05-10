@@ -151,10 +151,12 @@ $('#tipoContactosSelect').change(function () {
     ListaCierre();
     ListaRazones();
     ListaCausas();
+    LimpiarFecha();
 })
 $('#tiposCierresSelect').change(function () {
     ListaRazones();
     ListaCausas();
+    LimpiarFecha();
     
 })
 $('#tiposRazonSelect').change(function () {
@@ -176,6 +178,7 @@ $('#tiposRazonSelect').change(function () {
         timepicker: true,
         step: 30
     });
+    LimpiarFecha();
 })
 function TraerListaGestion() {
     $.ajax({
@@ -280,7 +283,7 @@ function cargargrillaseg(data) {
         { field: "Gestion", title: "Gestion", width: 100 },
         { field: "Cierre", title: "Cierre", width: 100 },
         { field: "Razon", title: "Razon", width: 100 },
-        { field: "FechaSeguimiento", title: "Razon", width: 100 }
+        { field: "FechaSeguimiento", title: "Fecha Seguimineto", width: 100 }
         ]
 
     });
@@ -289,4 +292,8 @@ function ActualizarCasoSeg(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
     window.location.href = 'CableModemFueradeNiveles?CuentaCliente=' + dataItem.CuentaCliente;
+}
+function LimpiarFecha() {
+    var FechaSeguimiento = document.getElementById('CC_Fecha');
+    FechaSeguimiento.value = "";
 }
