@@ -99,11 +99,12 @@ function BuscaUsuariosForList() {
         }
     });
     if (Operacion != "") {
+        var Form = $('#FormularioBlendingSelect').val();
     $.ajax({
         type: "POST",
         url: urlCountCuentasOperacion,
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ Operacion: Operacion, Aliado : Aliado }),
+        data: JSON.stringify({ Form : Form, Operacion: Operacion }),
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
@@ -126,8 +127,9 @@ function BuscaUsuariosForList() {
     TraerCampaña();
 }
 
-function BuscaCuentasOperacion()
+function BuscaCuentasOperacionCampaña()
 {
+    var Form = $('#FormularioBlendingSelect').val();
     var Operacion = $('#NombreLineasBlendingSelect').val();
     var Campaña = $('#CampañasBlendingSelect2').val();
     if (Campaña != "") {
@@ -135,7 +137,7 @@ function BuscaCuentasOperacion()
             type: "POST",
             url: urlCountCuentasOperacionCampaña,
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({ Operacion: Operacion, Campaña: Campaña, Aliado: Aliado }),
+            data: JSON.stringify({Form : Form, Operacion: Operacion, Campaña: Campaña }),
             dataType: "JSON",
             success: function (result) {
                 var json = JSON.parse(result);

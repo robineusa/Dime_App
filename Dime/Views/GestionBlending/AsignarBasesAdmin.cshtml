@@ -80,7 +80,7 @@
                                     </tr>
                                     <tr>
                                         <td style="padding:1px;">
-                                            @Html.DropDownListFor(m => m.SkillsUsuariosBlending.Campaña, new List<SelectListItem>() { }, "-Seleccione-", new { @class = "form-control input-sm", id = "CampañasBlendingSelect2", onchange="BuscaCuentasOperacion();" })
+                                            @Html.DropDownListFor(m => m.SkillsUsuariosBlending.Campaña, new List<SelectListItem>() { }, "-Seleccione-", new { @class = "form-control input-sm", id = "CampañasBlendingSelect2", onchange= "BuscaCuentasOperacionCampaña();" })
 
                                         </td>
                                         <td style="padding:10px">
@@ -117,10 +117,9 @@
             var urlCampañas = '@Url.Action("ObtenerCampaña", "GestionBlending")';
             var urlCountCuentasOperacionCampaña = '@Url.Action("CountCuentasOperacionCampaña", "GestionBlending")';
             var urlFormularios = '@Url.Action("FormulariosBlendingJson", "GestionBlending")';
-            var Aliado = '@Session["AliadoLogeado"].ToString()';
             $('#CedulasMasivo').val('');
         </script>
-        <script src="~/Scripts/Gestion_Blending/AsignarBasesAdmin.js?1.0.5"></script>
+        <script src="~/Scripts/Gestion_Blending/AsignarBasesAdmin.js?1.0.6"></script>
     }
 
 }

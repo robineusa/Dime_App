@@ -853,12 +853,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DistribucionBlending" nillable="true" type="tns:DistribucionBlending" />
-  <xs:complexType name="ArrayOfGestionOutbound">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="GestionOutbound" nillable="true" type="tns:GestionOutbound" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfGestionOutbound" nillable="true" type="tns:ArrayOfGestionOutbound" />
   <xs:complexType name="MaestroMarcacione">
     <xs:sequence>
       <xs:element minOccurs="0" name="AreaResponsable" nillable="true" type="xs:string" />
