@@ -35,7 +35,8 @@
                 } else {
                     if (data[i].IdEstado == "2")
                         data[i].IdEstado = "CERRADO";
-                    else data[i].IdEstado = "SEGUIMIENTO";
+                    else if (data[i].IdEstado == "3")
+                       data[i].IdEstado = "SEGUIMIENTO";
                 }
 
             }
