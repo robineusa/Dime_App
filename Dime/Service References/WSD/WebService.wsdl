@@ -9727,6 +9727,82 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_ConsultaAdminFueraNivelesP_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_ConsultaAdminFueraNivelesP_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_ConsultaAdminFueraNivelesL_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_ConsultaAdminFueraNivelesL_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -10990,6 +11066,18 @@
   <wsdl:message name="IDistribucionBlendingService_TraeUltimaGestionCuenta_OutputMessage">
     <wsdl:part name="parameters" element="tns:TraeUltimaGestionCuentaResponse" />
   </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_ConsultaAdminFueraNivelesP_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaAdminFueraNivelesP" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_ConsultaAdminFueraNivelesP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaAdminFueraNivelesPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_ConsultaAdminFueraNivelesL_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaAdminFueraNivelesL" />
+  </wsdl:message>
+  <wsdl:message name="IDistribucionBlendingService_ConsultaAdminFueraNivelesL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaAdminFueraNivelesLResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWebService">
     <wsdl:operation name="MuestraEntidades">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MuestraEntidades" message="tns:IWebService_MuestraEntidades_InputMessage" />
@@ -11858,6 +11946,14 @@
     <wsdl:operation name="TraeUltimaGestionCuenta">
       <wsdl:input wsaw:Action="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuenta" message="tns:IDistribucionBlendingService_TraeUltimaGestionCuenta_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuentaResponse" message="tns:IDistribucionBlendingService_TraeUltimaGestionCuenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaAdminFueraNivelesP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesP" message="tns:IDistribucionBlendingService_ConsultaAdminFueraNivelesP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesPResponse" message="tns:IDistribucionBlendingService_ConsultaAdminFueraNivelesP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaAdminFueraNivelesL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesL" message="tns:IDistribucionBlendingService_ConsultaAdminFueraNivelesL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesLResponse" message="tns:IDistribucionBlendingService_ConsultaAdminFueraNivelesL_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IWebService" type="tns:IWebService">
@@ -14223,6 +14319,28 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_TraeUltimaGestionCuenta_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaAdminFueraNivelesP">
+      <soap12:operation soapAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesP" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_ConsultaAdminFueraNivelesP_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_ConsultaAdminFueraNivelesP_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaAdminFueraNivelesL">
+      <soap12:operation soapAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesL" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_ConsultaAdminFueraNivelesL_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_ConsultaAdminFueraNivelesL_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

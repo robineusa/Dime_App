@@ -153,7 +153,36 @@ namespace Dime.Controllers
 
                 return RedirectToAction("CableModemFueradeNiveles"); ;
         }
+        [HttpGet]
+        public ActionResult ConsultaAdminFueraNivelesPrincipal()
+        {
+            ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
+            return View(model);
+        }
+        [HttpGet]
+        public ActionResult ConsultaAdminFueraNivelesLog()
+        {
+            ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
+            return View(model);
+        }
+        public JsonResult ConsultaAdminFueraNivelesPrincipalJson(string fechaInicial, string fechaFinal)
+        {
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.ConsultaAdminFueraNivelesP(FI,FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ConsultaAdminFueraNivelesLogJson(string fechaInicial, string fechaFinal)
+        {
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.ConsultaAdminFueraNivelesL(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
 
+        //ESTA PARTE ES GLOBAL PARA TODOS LOS PROCESOS DE BLENDING
         public JsonResult TiposDeContactoList(decimal gestion)
         {
 

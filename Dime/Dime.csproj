@@ -2332,6 +2332,8 @@
     <Content Include="Scripts\Consultas_Admin\Consulta_Paloteo.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Rechazos.js" />
     <Content Include="Scripts\Dashboard\DashboardAsesor.js" />
+    <Content Include="Scripts\DistribucionBlending\ConsultaAdminFueraNivelesLog.js" />
+    <Content Include="Scripts\DistribucionBlending\ConsultaAdminFueraNivelesPrincipal.js" />
     <Content Include="Scripts\DistribucionBlending\FueraNiveles.js" />
     <Content Include="Scripts\Gestion_Blending\AsignarBasesAdmin.js" />
     <Content Include="Scripts\Gestion_Blending\SkillsUsuariosAdmin.js" />
@@ -3239,6 +3241,8 @@
     <Content Include="Views\GestionBlending\SkillsUsuariosAdmin.cshtml" />
     <Content Include="Views\DistribucionBlending\CableModemFueradeNiveles.cshtml" />
     <Content Include="Views\Home\DashboardPotencial.cshtml" />
+    <Content Include="Views\DistribucionBlending\ConsultaAdminFueraNivelesPrincipal.cshtml" />
+    <Content Include="Views\DistribucionBlending\ConsultaAdminFueraNivelesLog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

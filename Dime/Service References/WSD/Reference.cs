@@ -8693,6 +8693,22 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuenta", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuentaResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBLFueraNiveles> TraeUltimaGestionCuentaAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesP", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesPRespons" +
+            "e")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPFueraNiveles> ConsultaAdminFueraNivelesP(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesP", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesPRespons" +
+            "e")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPFueraNiveles>> ConsultaAdminFueraNivelesPAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesL", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesLRespons" +
+            "e")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLFueraNiveles> ConsultaAdminFueraNivelesL(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesL", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesLRespons" +
+            "e")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLFueraNiveles>> ConsultaAdminFueraNivelesLAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8832,6 +8848,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBLFueraNiveles> TraeUltimaGestionCuentaAsync(decimal CuentaCliente) {
             return base.Channel.TraeUltimaGestionCuentaAsync(CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPFueraNiveles> ConsultaAdminFueraNivelesP(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminFueraNivelesP(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPFueraNiveles>> ConsultaAdminFueraNivelesPAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminFueraNivelesPAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLFueraNiveles> ConsultaAdminFueraNivelesL(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminFueraNivelesL(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLFueraNiveles>> ConsultaAdminFueraNivelesLAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminFueraNivelesLAsync(FechaInicial, FechaFinal);
         }
     }
 }
