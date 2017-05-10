@@ -363,10 +363,10 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:5px;">
-                                        <select class="form-control input-sm" style="background-color:#f6f6f6;" data-ng-options="o.name for o in optionsEstados" data-ng-model="ingreso.IdEstado" ng-change="ChangeOnStateCase()"></select>
+                                        <select class="form-control input-sm" style="background-color:#f6f6f6;" data-ng-options="o.id as o.name for o in optionsEstados" data-ng-model="ingreso.IdEstado" ng-change="ChangeOnStateCase()"></select>
                                     </td>
                                     <td style="padding:5px;">
-                                        <select class="form-control input-sm" style="background-color:#f6f6f6;" data-ng-options="o.name for o in optionsAEscalar" data-ng-model="ingreso.NombreLineaEscalado" ng-change="ChangeOnEscalarCase()"></select>
+                                        <select class="form-control input-sm" style="background-color:#f6f6f6;" data-ng-options="o.id as o.name for o in optionsAEscalar" data-ng-model="ingreso.NombreLineaEscalado" ng-change="ChangeOnEscalarCase()"></select>
                                     </td>
                                     <td style="padding:5px;">
                                         <select class="form-control input-sm" style="background-color:#f6f6f6;" data-ng-options="o.name for o in optionsAplicaRechazo" data-ng-model="selectedAplicaRechazo"></select>
@@ -431,11 +431,14 @@
             </div>
             <br />
             <div class="">
-                &nbsp;&nbsp;&nbsp;  <button ng-click="SubmitForm()" class="btn btn-primary" style="width:14%; height:40px;">Guardar Datos</button>
-                <br />
-                <label id="labelMessage" style="color:red"></label>
-                <br />
-            </div>
+                <div ng-show="CASO_ASIGNADO=='FALSE'">
+                    &nbsp;&nbsp;&nbsp;
+                    <button ng-click="SubmitForm()" class="btn btn-primary" style="width:14%; height:40px;">Guardar Datos</button>
+                </div>
+                    <br />
+                    <label id="labelMessage" style="color:red"></label>
+                    <br />
+</div>
 
 </div>
 

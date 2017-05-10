@@ -1,5 +1,7 @@
 ﻿$(document).ready(function () {
     ListaTipoDeContacto();
+    TraerListaGestion();
+    TraerListaSeguimientos();
     $("#cuentaCliente").prop("readonly", true);
     $("#Li1").click(function () {
 
@@ -149,10 +151,12 @@ $('#tipoContactosSelect').change(function () {
     ListaCierre();
     ListaRazones();
     ListaCausas();
+    LimpiarFecha();
 })
 $('#tiposCierresSelect').change(function () {
     ListaRazones();
     ListaCausas();
+    LimpiarFecha();
     
 })
 $('#tiposRazonSelect').change(function () {
@@ -174,4 +178,122 @@ $('#tiposRazonSelect').change(function () {
         timepicker: true,
         step: 30
     });
+    LimpiarFecha();
 })
+function TraerListaGestion() {
+    $.ajax({
+        type: "GET",
+        url: urlListaGestionFN,
+        contentType: "application/json; charset=utf-8",
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+           cargargrilla(json);
+            },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+}
+function cargargrilla(data) {
+    $("#historicoGrid").kendoGrid({
+        dataSource: {
+            data: data,
+            pageSize: 10,
+        },
+        scrollable: true,
+        filterable: {
+            extra: false,
+            operators: {
+                string: {
+
+                    eq: "Es igual a"
+                }
+            }
+        },
+        sortable: true,
+        pageable: {
+            refresh: true,
+            pageSizes: true,
+            buttonCount: 5
+        },
+        columns: [
+        { command: { text: " ", click: ActualizarCaso, imageClass: "k-icon k-i-pencil", }, title: " ", width: "60px" },
+        { field: "Id", title: "Id Transacción", width: 100 },
+        { field: "CuentaCliente", title: "Cuenta Cliente", width: 100 },
+        { field: "FechaGestion", title: "Fecha Gestión", width: 100 },
+        { field: "TipoContacto", title: "Tipo Contacto", width: 100 },
+        { field: "Gestion", title: "Gestion", width: 100 },
+        { field: "Cierre", title: "Cierre", width: 100 },
+        { field: "Razon", title: "Razon", width: 100 }
+       
+        ]
+
+    });
+}
+function ActualizarCaso(e) {
+    e.preventDefault();
+    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    window.location.href = 'CableModemFueradeNiveles?CuentaCliente=' + dataItem.CuentaCliente;
+}
+function TraerListaSeguimientos() {
+    $.ajax({
+        type: "GET",
+        url: urlListaSeguimientosFN,
+        contentType: "application/json; charset=utf-8",
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            console.log(json);
+            cargargrillaseg(json);
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+}
+function cargargrillaseg(data) {
+    $("#seguimientosGrid").kendoGrid({
+        dataSource: {
+            data: data,
+            pageSize: 10,
+        },
+        scrollable: true,
+        filterable: {
+            extra: false,
+            operators: {
+                string: {
+
+                    eq: "Es igual a"
+                }
+            }
+        },
+        sortable: true,
+        pageable: {
+            refresh: true,
+            pageSizes: true,
+            buttonCount: 5
+        },
+        columns: [
+        { command: { text: " ", click: ActualizarCasoSeg, imageClass: "k-icon k-i-pencil", }, title: " ", width: "60px" },
+        { field: "Id", title: "Id Transacción", width: 100 },
+        { field: "CuentaCliente", title: "Cuenta Cliente", width: 100 },
+        { field: "FechaGestion", title: "Fecha Gestión", width: 100 },
+        { field: "TipoContacto", title: "Tipo Contacto", width: 100 },
+        { field: "Gestion", title: "Gestion", width: 100 },
+        { field: "Cierre", title: "Cierre", width: 100 },
+        { field: "Razon", title: "Razon", width: 100 },
+        { field: "FechaSeguimiento", title: "Fecha Seguimineto", width: 100 }
+        ]
+
+    });
+}
+function ActualizarCasoSeg(e) {
+    e.preventDefault();
+    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    window.location.href = 'CableModemFueradeNiveles?CuentaCliente=' + dataItem.CuentaCliente;
+}
+function LimpiarFecha() {
+    var FechaSeguimiento = document.getElementById('CC_Fecha');
+    FechaSeguimiento.value = "";
+}
