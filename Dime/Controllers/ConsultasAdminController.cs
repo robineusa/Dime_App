@@ -125,7 +125,7 @@ namespace Dime.Controllers
             DateTime inicial = DateTime.ParseExact(fechaInicio, "M/d/yyyy", CultureInfo.InvariantCulture);
             DateTime final = DateTime.ParseExact(fechaFin, "M/d/yyyy", CultureInfo.InvariantCulture);
             GridView gv = new GridView();
-             gv.DataSource = casosAdminService.ListaGestionAdmin(inicial, final, aliado);
+            gv.DataSource = casosAdminService.ListaGestionAdmin(inicial, final, aliado);
             gv.DataBind();
             Response.ClearContent();
             Response.Buffer = true;
@@ -138,7 +138,7 @@ namespace Dime.Controllers
             Response.Output.Write(sw.ToString());
             Response.Flush();
             Response.End();
-            return View("ExportExcelView");
+            return View("ExportExcelView", "Consultas");
         }
 
 
