@@ -356,7 +356,7 @@ namespace Dime.Controllers
                     }
                     else
                     {
-                        ViewBag.UsuarioExiste = "El usuario no se encuentra registrado en DIME. Debe restrirlo primero para Crearlo en Blending";
+                        ViewBag.UsuarioExiste = "El usuario no se encuentra registrado en DIME. Debe registrarlo primero para Crearlo en Blending";
 
                     }
                 }
@@ -394,11 +394,71 @@ namespace Dime.Controllers
 
             }
 
-            if (opcionMando.Equals("ActualizarUsuarios"))
+            if (opcionMando.Equals("ActualizarUsuario"))
             {
+                ViewBag.SegundaPestañaAbierta = "True";
+                if (model.CopiaUsuarioHolos.Aliado != null && model.CopiaUsuarioHolos.NombreLinea != null)
+                {
+                    if (model.CopiaSkillsUsuariosBlending.Campaña != null && model.CopiaSkillsUsuariosBlending.Operacion != null )
+                    {
+                        model.CopiaSkillsUsuariosBlending.Cedula = Convert.ToInt32(model.CopiaUsuarioHolos.Cedula);
+                        model.CopiaSkillsUsuariosBlending.Id_Usuario_Actualizacion = Convert.ToInt32(Session["IdUsuario"].ToString());
 
+                        blendingServices.ActualizarUsuarioBlending(model.CopiaSkillsUsuariosBlending);
+                        ViewBag.UsuarioExiste2 = "Usuario Actualizado exitosamente";
+                        model = new ViewModelBlending();
+                    }
+                    else
+                    {
+                        ViewBag.UsuarioExiste2 = "Seleccione una Operacion y/o Skill a asignar";
+                    }
+
+                }
+                else
+                {
+                    ViewBag.UsuarioExiste2 = "Consulte un usuario antes de guardar";
+                    model = new ViewModelBlending();
+                }
             }
 
+            if (opcionMando.Equals("ConsultarActualizando"))
+            {
+                ViewBag.SegundaPestañaAbierta = "True";
+                if (model.CopiaUsuarioHolos.Cedula != 0)
+                {
+                    if (loginService.RecibirIdUsuario(model.CopiaUsuarioHolos.Cedula) != 0)
+                    {
+                        var r = blendingServices.ConsultaUsuarioenAdminBlending(Convert.ToString(model.CopiaUsuarioHolos.Cedula));
+                        if ( r != null)
+                        {
+                            model.CopiaUsuarioHolos = loginService.ConsultarUsuarioHolos(model.CopiaUsuarioHolos.Cedula);
+                            model.Operacion = r.Operacion;
+                            model.Campaña = r.Campaña;
+                            if (model.CopiaUsuarioHolos.Aliado != Session["AliadoLogeado"].ToString())
+                            {
+                                ViewBag.UsuarioExiste2 = "Este Usuario no pertenece a su Aliado";
+                                model = new ViewModelBlending();
+                            }
+                        }
+                        else
+                        {
+                            ViewBag.UsuarioExiste2 = "El usuario NO esta registrado en Skilles Blending";
+                            model = new ViewModelBlending();
+                        }
+                    }
+                    else
+                    {
+                        ViewBag.UsuarioExiste2 = "El usuario no se encuentra registrado en DIME. Debe registrarlo primero para Actualizarlo";
+                        model = new ViewModelBlending();
+
+                    }
+                }
+                else
+                {
+                    ViewBag.UsuarioExiste2 = "Digite un numero de cédula";
+                    model = new ViewModelBlending();
+                }
+            }
             if (model.UsuarioHolos == null)
             {
                 model = new ViewModelBlending();
@@ -458,27 +518,23 @@ namespace Dime.Controllers
             return View(model);
         }
 
-        public JsonResult CountCuentasOperacion( string operacion, string aliado)
+        public JsonResult CountCuentasOperacion(string Form, string operacion)
         {
 
-            var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.CountCuentasOperacionGestion(operacion, aliado).Count()), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.CountCuentasOperacionGestion(Session["AliadoLogeado"].ToString(), Form, operacion).Count()), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 
         }
 
-        public JsonResult CountCuentasOperacionCampaña(string operacion, string campaña, string aliado)
+        public JsonResult CountCuentasOperacionCampaña(string Form, string operacion, string campaña)
         {
 
-            var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.CountCuentasOperacionCampaña(operacion, campaña, aliado).Count()), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.CountCuentasOperacionCampaña(Session["AliadoLogeado"].ToString(), Form, operacion, campaña).Count()), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 
         }
-
-
-
-        
 
     }
 }

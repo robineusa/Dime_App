@@ -56,7 +56,6 @@ namespace Dime.Controllers
             {
                 model.DatosDelCliente = new ClientesTodo();
                 model.DatosDelCliente.Cuenta = 0;
-                model.DatosDelCliente.Nombre = "NO EXISTEN MAS CUENTAS";
                 ViewBag.ValidacionBase = "NO EXISTEN MAS CUENTAS ASIGNADAS PARA ESTA CAMPAÑA";
 
                 ViewBag.CantidadToques = 0;
@@ -67,15 +66,37 @@ namespace Dime.Controllers
             else
             {
                 int DatoContactos = distribucionBlendingService.CantidadToquesCuentaFueraNiveles(model.DatosDelCliente.Cuenta);
-                model.UltimoGBLFuera_Niveles = distribucionBlendingService.TraeUltimaGestionCuenta(model.DatosDelCliente.Cuenta);
                 ViewBag.ValidacionBase = null;
                 ViewBag.CantidadToques = DatoContactos;
-                ViewBag.Cierre = model.UltimoGBLFuera_Niveles.Cierre;
-                ViewBag.Razon = model.UltimoGBLFuera_Niveles.Razon;
+                model.UltimoGBLFuera_Niveles = distribucionBlendingService.TraeUltimaGestionCuenta(model.DatosDelCliente.Cuenta);
+                if (model.UltimoGBLFuera_Niveles != null)
+                {
+                    ViewBag.Cierre = model.UltimoGBLFuera_Niveles.Cierre;
+                    ViewBag.Razon = model.UltimoGBLFuera_Niveles.Razon;
+                }
+                else
+                {
+                    ViewBag.Cierre = "SIN GESTION";
+                    ViewBag.Razon = "SIN GESTION";
+                }
             }
             return View(model);
             
         }
+
+        public JsonResult HistoricoGestionFueraNiveles()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.TraeListaGestionUsuarioFueraNiveles(Session["IdUsuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult SeguimientosFueraNiveles()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.TraeListaSeguimientosUsuarioFueraNiveles(Session["IdUsuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
         [HttpPost]
         public ActionResult CableModemFueradeNiveles(ViewModelDistribucionesBlending model)
         {
@@ -132,7 +153,36 @@ namespace Dime.Controllers
 
                 return RedirectToAction("CableModemFueradeNiveles"); ;
         }
+        [HttpGet]
+        public ActionResult ConsultaAdminFueraNivelesPrincipal()
+        {
+            ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
+            return View(model);
+        }
+        [HttpGet]
+        public ActionResult ConsultaAdminFueraNivelesLog()
+        {
+            ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
+            return View(model);
+        }
+        public JsonResult ConsultaAdminFueraNivelesPrincipalJson(string fechaInicial, string fechaFinal)
+        {
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.ConsultaAdminFueraNivelesP(FI,FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ConsultaAdminFueraNivelesLogJson(string fechaInicial, string fechaFinal)
+        {
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.ConsultaAdminFueraNivelesL(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
 
+        //ESTA PARTE ES GLOBAL PARA TODOS LOS PROCESOS DE BLENDING
         public JsonResult TiposDeContactoList(decimal gestion)
         {
 

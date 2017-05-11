@@ -37,7 +37,11 @@ namespace Telmexla.Servicios.DIME.Entity
         private MaestroLineasBlending maestrolineasblendingvacio;
         private BasePersonalHolo usuarioHolos;
         private SkillsUsuariosBlending skillsUsuariosBlending;
+        private SkillsUsuariosBlending copiaSkillsUsuariosBlending;
         private string cedulasMasivo;
+        private string operacion;
+        private string campaña;
+        private BasePersonalHolo copiaUsuarioHolos;
         #endregion
 
 
@@ -56,6 +60,8 @@ namespace Telmexla.Servicios.DIME.Entity
             nombreLineasBlending = new List<MaestroLineasBlending>();
             maestrolineasblendingvacio = new MaestroLineasBlending();
             usuarioHolos = new BasePersonalHolo();
+            copiaUsuarioHolos = new BasePersonalHolo();
+            copiaSkillsUsuariosBlending = new SkillsUsuariosBlending();
 
         }
 
@@ -249,6 +255,58 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 cedulasMasivo = value;
+            }
+        }
+
+        public BasePersonalHolo CopiaUsuarioHolos
+        {
+            get
+            {
+                return copiaUsuarioHolos;
+            }
+
+            set
+            {
+                copiaUsuarioHolos = value;
+            }
+        }
+
+        public SkillsUsuariosBlending CopiaSkillsUsuariosBlending
+        {
+            get
+            {
+                return copiaSkillsUsuariosBlending;
+            }
+
+            set
+            {
+                copiaSkillsUsuariosBlending = value;
+            }
+        }
+
+        public string Operacion
+        {
+            get
+            {
+                return operacion;
+            }
+
+            set
+            {
+                operacion = value;
+            }
+        }
+
+        public string Campaña
+        {
+            get
+            {
+                return campaña;
+            }
+
+            set
+            {
+                campaña = value;
             }
         }
 
