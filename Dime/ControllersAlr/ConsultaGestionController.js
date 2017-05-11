@@ -13,7 +13,7 @@
         $("#exportarDatos").on("click", function () {
             var a = document.createElement("a");
             a.target = "_blank";
-            a.href = '../ConsultasAdmin/ExportExcelGestionAdmin?fechaInicio=' + $scope.dateIniString + "&fechaFin=" + $scope.dateFinString + "&aliado=" + $scope.selectedAliado;
+            a.href = appPath + 'ConsultasAdmin/ExportExcelGestionAdmin?fechaInicio=' + $scope.dateIniString + "&fechaFin=" + $scope.dateFinString + "&aliado=" + $scope.selectedAliado;
             a.click();
         
         });
