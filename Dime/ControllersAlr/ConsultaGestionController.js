@@ -8,6 +8,29 @@
                             $scope.aliados = JSON.parse(data.data);
                         });
 
+
+
+        $("#exportarDatos").on("click", function () {
+            var a = document.createElement("a");
+            a.target = "_blank";
+            a.href = '../ConsultasAdmin/ExportExcelGestionAdmin?fechaInicio=' + $scope.dateIniString + "&fechaFin=" + $scope.dateFinString + "&aliado=" + $scope.selectedAliado;
+            a.click();
+        
+        });
+
+
+        $scope.ExportarDatos = function()
+        {
+            var a = document.createElement("a");
+            a.target = "_blank";
+            a.href = '../ConsultasAdmin/ExportExcelGestionAdmin?fechaInicio=' + $scope.dateIniString + "&fechaFin=" + $scope.dateFinString + "&aliado=" + $scope.selectedAliado;
+            a.click();
+        }
+
+
+
+
+
         $scope.LoadTable = function () {
             $scope.dataLoading = true;
             $http.get(appPath + 'ConsultasAdmin/JsonListaGestionAdmin', {
@@ -66,12 +89,7 @@
             }
             $("#gridViewConsulta").kendoGrid({
                 autoBind: true,
-                toolbar: ["excel"],
-                excel: {
-                    fileName: "Export.xlsx",
-                    allPages: true
-                },
-                dataSource: {
+                  dataSource: {
                     data: data,
                     schema: {
                         model: {
@@ -80,7 +98,8 @@
                     },
                     pageSize: 10,
 
-                },
+                  },
+                  toolbar: kendo.template($("#template").html()),
 
                 scrollable: true,
                 filterable: {

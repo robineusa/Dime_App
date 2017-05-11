@@ -7,6 +7,8 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 using Telmexla.Servicios.DIME.Business;
 
 namespace Dime.Controllers
@@ -118,7 +120,26 @@ namespace Dime.Controllers
             return jsonResult;
         }
 
-
+        public ActionResult ExportExcelGestionAdmin(string fechaInicio, string fechaFin, string aliado)
+        {
+            DateTime inicial = DateTime.ParseExact(fechaInicio, "M/d/yyyy", CultureInfo.InvariantCulture);
+            DateTime final = DateTime.ParseExact(fechaFin, "M/d/yyyy", CultureInfo.InvariantCulture);
+            GridView gv = new GridView();
+             gv.DataSource = casosAdminService.ListaGestionAdmin(inicial, final, aliado);
+            gv.DataBind();
+            Response.ClearContent();
+            Response.Buffer = true;
+            Response.AddHeader("content-disposition", "attachment; filename=Marklist.xls");
+            Response.ContentType = "application/ms-excel";
+            Response.Charset = "";
+            StringWriter sw = new StringWriter();
+            HtmlTextWriter htw = new HtmlTextWriter(sw);
+            gv.RenderControl(htw);
+            Response.Output.Write(sw.ToString());
+            Response.Flush();
+            Response.End();
+            return View("ExportExcelView");
+        }
 
 
 

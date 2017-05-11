@@ -12,20 +12,24 @@
 <br />
 <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
     <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
-        <div class="row">
-            <div class="col-xs-2">
-                <small>Seleccione Aliado:</small>
-            </div>
-            <div class="col-xs-2">
-                <small>Seleccione Fecha inicial: </small>
-            </div>
-            <div class="col-xs-2">
-                <small>Seleccione Fecha final: </small>
-            </div>
-        </div>
+ 
+   
         <div class="row">
             <div class="col-xs-5">
                 <table style="width:100%;">
+                    
+                    <tr>
+                        <td >
+                            <small>Seleccione Aliado:</small>
+                        </td>
+                        <td >
+                            <small>Seleccione Fecha Inicial: </small>
+                        </td>
+                        <td >
+                            <small>Seleccione Fecha Final: </small>
+                        </td>
+
+                    </tr>
                     <tr>
                         <td style="padding:1px;">
                             <select class="form-control input-sm" style="width: 80%;" ng-model="selectedAliado" ng-options="x for x in aliados"></select>
@@ -41,6 +45,9 @@
                         </td>
                         <td style="padding:1px;">
                             <input kendo-date-picker ng-model="dateFinString" k-ng-model="dateObjectFin" style="width: 100%;" class="form-control input-sm" ng-change="LoadTable()" />
+                        </td>
+                        <td style="padding:5px;">
+                            <button  class="btn btn-block btn-primary" id="exportarDatos" style="width:100%;  margin-left:1%;">Exportar Excel</button>
                         </td>
                     </tr>
                 </table>
@@ -75,6 +82,12 @@
         </div>
     </div>
 </div>
+
+<script type="text/x-kendo-template" id="template">
+    <div class="toolbar" style="display:none;">
+        <button class="k-button "   ng-click="ExportarDatos();"><span class="k-icon k-i-excel"></span>Export to Excel</button>
+    </div>
+</script>
 
 
 
