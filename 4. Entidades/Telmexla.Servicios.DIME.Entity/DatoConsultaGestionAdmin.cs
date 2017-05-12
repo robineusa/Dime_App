@@ -29,5 +29,7 @@ namespace Telmexla.Servicios.DIME.Business
         public string Nota { get; set; } // NOTA (length: 1073741823)
         public int? IdEstado { get; set; } // ID_ESTADO
 
+        public string Estado { get; set; }
+
     }
 }

@@ -125,7 +125,50 @@ namespace Dime.Controllers
             DateTime inicial = DateTime.ParseExact(fechaInicio, "M/d/yyyy", CultureInfo.InvariantCulture);
             DateTime final = DateTime.ParseExact(fechaFin, "M/d/yyyy", CultureInfo.InvariantCulture);
             GridView gv = new GridView();
-            gv.DataSource = casosAdminService.ListaGestionAdmin(inicial, final, aliado);
+            var resultBefore = casosAdminService.ListaGestionAdmin(inicial, final, aliado);
+            List<DatoConsultaGestionAdmin> listaResult = new List<DatoConsultaGestionAdmin>();
+            foreach (var item in resultBefore)
+            {
+                DatoConsultaGestionAdmin nuevoDato = new DatoConsultaGestionAdmin();
+                nuevoDato.AliadoApertura = item.AliadoApertura;
+                nuevoDato.CuentaCliente = item.CuentaCliente;
+                nuevoDato.FechaApertura = item.FechaApertura;
+                nuevoDato.FechaCierre = item.FechaCierre;
+                nuevoDato.FechaNota = item.FechaNota;
+                nuevoDato.FechaUltimaActualizacion = item.FechaUltimaActualizacion;
+                nuevoDato.HoraApertura = item.HoraApertura;
+                nuevoDato.HoraUltimaActualizacion = item.HoraUltimaActualizacion;
+                nuevoDato.IdEstado = item.IdEstado;
+                nuevoDato.IdIngreso = item.IdIngreso;
+                nuevoDato.Macroproceso = item.Macroproceso;
+                nuevoDato.Marcacion = item.Marcacion;
+                nuevoDato.NombreLineaEscalado = item.NombreLineaEscalado;
+                nuevoDato.NombreLineaIngreso = item.NombreLineaIngreso;
+                nuevoDato.Nota = item.Nota;
+                nuevoDato.Ticket = item.Ticket;
+                nuevoDato.Usuario = item.Usuario;
+                nuevoDato.UsuarioApertura = item.UsuarioApertura;
+                nuevoDato.UsuarioCierre = item.UsuarioCierre;
+                nuevoDato.UsuarioUltimaActualizacion = item.UsuarioUltimaActualizacion;
+                    if (item.IdEstado == 1)
+                    {
+                    nuevoDato.Estado = "ABIERTO";
+                    }
+                    else
+                    {
+                        if (item.IdEstado == 2)
+                        nuevoDato.Estado = "CERRADO";
+                        else
+                        if (item.IdEstado == 3)
+                            nuevoDato.Estado = "SEGUIMIENTO";
+                    }
+
+
+
+                listaResult.Add(nuevoDato);
+            }
+
+            gv.DataSource = listaResult;
             gv.DataBind();
             Response.ClearContent();
             Response.Buffer = true;
