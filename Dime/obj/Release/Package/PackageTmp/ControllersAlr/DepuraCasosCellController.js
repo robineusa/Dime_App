@@ -20,6 +20,36 @@
            });
 
            }
+
+
+           $scope.ChangeOnStateCase = function () {
+               if ($scope.ingreso.IdEstado == "1") {
+                   $scope.optionsAEscalar = [
+                 { name: "CÉLULA AJUSTES", id: "CELULA AJUSTES" },
+                 { name: "CÉLULA FACTURACION Y CARTERA", id: "CELULA FACTURACION Y CARTERA" },
+                 { name: "CÉLULA OPERACIONES", id: "CELULA OPERACIONES" },
+                 { name: "CÉLULA PQR", id: "CELULA PQR" },
+                 { name: "CÉLULA ALTO VALOR", id: "CELULA ALTO VALOR" },
+                 { name: "CÉLULA ALTO VALOR VIP", id: "CELULA ALTO VALOR VIP" }
+                   ];
+                   $scope.ingreso.NombreLineaEscalado = "CELULA AJUSTES";
+               } else {
+                   $scope.optionsAEscalar = [
+                        { name: "", id: "" }, ];
+                   $scope.ingreso.NombreLineaEscalado = $scope.optionsAEscalar[0];
+
+
+               }
+
+               if ($scope.ingreso.IdEstado.id == "3") {
+                   $scope.optionsRazonSoporte = [];
+                   $scope.optionsRazonSoporte.push({ name: "Seguimiento", id: 8 });
+               } else {
+                   SetRazonesSoporteDDL();
+               }
+
+
+           };
        
 
            $http.get(appPath + 'CasosCelula/AccesoACaso', {
@@ -28,9 +58,13 @@
                }
            }).then(function (data) {
                var jsonData = JSON.parse(data.data);
-               if(jsonData == false)
-               {
-                   window.location.href = 'CasosCelula/CasosAbiertos';
+               if (jsonData == false) {
+
+                   $scope.CASO_ASIGNADO = "TRUE";
+                   $('#labelMessage').text("Este caso ya ha sido asignado a otra Celula.");
+               }else{
+
+                   $scope.CASO_ASIGNADO = "FALSE";
                }
            });
 
@@ -58,9 +92,9 @@
                    idIngreso: $routeParams.idIngreso
                      }
            }) .then(function (data) {
-                         var jsonData = JSON.parse(data.data);
-                         CargarInformaciónCreacion(jsonData);
-                         CargarDatoServicioAfectado(jsonData);
+               var jsonData = JSON.parse(data.data);
+                CargarInformaciónCreacion(jsonData);
+                CargarDatoServicioAfectado(jsonData);
            });
 
            
@@ -82,41 +116,11 @@
            ];
 
            $scope.optionsAplicaRechazo = [
-               { name: "SI", id: "SI" },
                { name: "NO", id: "NO" },
+               { name: "SI", id: "SI" },
            ];
 
 
-           $scope.ChangeOnStateCase = function () {
-               if ($scope.ingreso.IdEstado.id == "1")
-               {
-                   $scope.optionsAEscalar = [
-                 { name: "CÉLULA AJUSTES", id: "CELULA AJUSTES" },
-                 { name: "CÉLULA FACTURACION Y CARTERA", id: "CELULA FACTURACION Y CARTERA" },
-                 { name: "CÉLULA OPERACIONES", id: "CELULA OPERACIONES" },
-                 { name: "CÉLULA PQR", id: "CELULA PQR" },
-                 { name: "CÉLULA ALTO VALOR", id: "CELULA ALTO VALOR" },
-                 { name: "CÉLULA ALTO VALOR VIP", id: "CELULA ALTO VALOR VIP" }
-                   ];
-                   $scope.ingreso.NombreLineaEscalado = $scope.optionsAEscalar[0];
-               } else {
-                   $scope.optionsAEscalar = [
-                        { name: "", id: "" }, ];
-                   $scope.ingreso.NombreLineaEscalado = $scope.optionsAEscalar[0];
-              
-
-               }
-                      
-                          if($scope.ingreso.IdEstado.id == "3")
-                            {
-                              $scope.optionsRazonSoporte = [];
-                              $scope.optionsRazonSoporte.push({ name: "Seguimiento", id: 8 });
-                            } else {
-                                      SetRazonesSoporteDDL();
-                                    }
-                  
-                   
-           };
 
 
            $scope.SubmitForm = function () {
@@ -126,10 +130,8 @@
                if ($scope.ingresoSoporte.TipoSegumiento == "Seguimiento por CCAA") {
                    $scope.ingresoSoporte.TipoSegumiento = "CELULA SEGUIMIENTO SOPORTE";
                }
-               console.log($scope.ingreso.IdEstado.id + $scope.ingreso.NombreLineaEscalado.id + $scope.razonRechazo);
-               $scope.ingreso.IdEstado = $scope.ingreso.IdEstado.id;
-               $scope.ingreso.NombreLineaEscalado = $scope.ingreso.NombreLineaEscalado.id;
-               $http.post(appPath + 'CasosCelula/SubmitDataDepuraCasos', {
+
+                $http.post(appPath + 'CasosCelula/SubmitDataDepuraCasos', {
                        ingreso: $scope.ingreso,
                        observaciones: $scope.tbObservaciones,
                        aplicaRechazo: $scope.selectedAplicaRechazo.id,
@@ -258,7 +260,6 @@
                var dsSort = [];
                dsSort.push({ field: "HoraNota", dir: "desc" });
                grid.dataSource.sort(dsSort);
-               console.log(grid[0]);
            };
 
 
@@ -319,8 +320,10 @@
                $scope.tbFechaActualizacion = json[0].FechaUltimaActualizacion,
                $scope.tbUsuarioActualizacion = json[0].UsuarioUltimaActualizacion;
                $scope.tbHoraActualizacion = json[0].HoraUltimaActualizacion;
-               $scope.ingreso.NombreLineaEscalado = $scope.optionsAEscalar[0];
-               $scope.ingreso.IdEstado = $scope.optionsEstados[0];
+               $scope.ingreso.IdEstado = String(json[0].IdEstado);
+               if (String(json[0].IdEstado) == "1")
+                   $scope.ingreso.NombreLineaEscalado = json[0].NombreLineaEscalado;
+               else $scope.ChangeOnStateCase();
                $scope.selectedAplicaRechazo = $scope.optionsAplicaRechazo[0];
                CargarInformacionClienteYMarcacion();
                CargarInformacionIngresoSoporte();

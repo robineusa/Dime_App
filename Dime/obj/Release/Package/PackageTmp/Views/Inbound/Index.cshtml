@@ -462,7 +462,7 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
                                                                                              new SelectListItem{Text="CERRADO", Value="2" }, new SelectListItem{Text="SEGUIMIENTO", Value="3" }}, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddState", onchange = "ChangeStateCase();" })
                                     </td>
                                     <td style="padding:5px;">
-                                        @if (Model.LineaDeUsuarioActual.Equals("ALTO VALOR") || Model.LineaDeUsuarioActual.Equals("ALTO VALOR VIP"))
+                                        @if (Model.LineaDeUsuarioActual.Equals("ALTO VALOR"))
                                         {
                                             @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> { new SelectListItem { Text = "CELULA ALTO VALOR", Value = "CELULA ALTO VALOR" }, new SelectListItem { Text = "CELULA ALTO VALOR VIP", Value = "CELULA ALTO VALOR VIP" } }, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalar" })
                                         }
@@ -484,6 +484,10 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
                                             @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {
                                                                                              new SelectListItem {Text="CÉLULA MULTIPLAY", Value="CELULA MULTIPLAY" }}, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalar", @onchange = "AEscalarCambiado()" })
 
+                                        }
+                                        else if (Model.LineaDeUsuarioActual.Equals("ALTO VALOR VIP"))
+                                        {
+                                            @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {  new SelectListItem { Text = "CELULA ALTO VALOR VIP", Value = "CELULA ALTO VALOR VIP" } }, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalar" })
                                         }
                                     </td>
                                     <td style="padding:5px;">@Html.TextBoxFor(m => m.ModelTipiMarca.IngresoTipMarcacion.Ticket, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddLlamada" })</td>

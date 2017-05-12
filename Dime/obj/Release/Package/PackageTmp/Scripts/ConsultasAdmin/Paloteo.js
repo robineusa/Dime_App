@@ -53,7 +53,7 @@ function CargarDatosGestion() {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
-            CambiarAEstado(json);
+          CambiarAEstado(json);
             ShowGridGestiones(json);
             $("#loaderDiv").hide();
         },
@@ -67,15 +67,17 @@ function CargarDatosGestion() {
 }
 
 function CambiarAEstado(data) {
+  
+
     for (var i = 0; i < data.length; i++) {
 
-        if (data[i].IdEstado == "1") {
-            console.log(data[i].IdEstado);
-            data[i].IdEstado = "ABIERTO";
+        if (data[i].Estado == "1") {
+            console.log(data[i].Estado);
+            data[i].Estado = "ABIERTO";
         } else {
-            if (data[i].IdEstado == "2")
-                data[i].IdEstado = "CERRADO";
-            else data[i].IdEstado = "SEGUIMIENTO";
+            if (data[i].Estado == "2")
+                data[i].Estado = "CERRADO";
+            else data[i].Estado = "SEGUIMIENTO";
         }
 
     }
@@ -149,10 +151,9 @@ function ShowGridGestiones(data) {
             { field: "Nota", title: "Nota", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "RolUsuarioNota", title: "Rol Usuario Nota", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "Ticket", title: "Ticket", width: 80, headerAttributes: { style: "white-space: normal" } },
-            { field: "UsuarioNota", title: "Usuario Nota", width: 80, headerAttributes: { style: "white-space: normal" } },
-            { field: "Zona", title: "Zona", width: 80, headerAttributes: { style: "white-space: normal" } },
-            { field: "IdEstado", title: "Estado", width: 80, headerAttributes: { style: "white-space: normal" } },
-        ]
+            { field: "UsuarioNotaCC", title: "Usuario Nota", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Zona", title: "Zona", width: 80, headerAttributes: { style: "white-space: normal" } }
+          ]
     });
 
 

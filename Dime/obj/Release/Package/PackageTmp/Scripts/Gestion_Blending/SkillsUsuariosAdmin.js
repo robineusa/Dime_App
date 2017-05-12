@@ -7,7 +7,7 @@
         $("#Li1").css("border-color", "#c23321");
         $("#Li2").css("border-color", "transparent");
         $("#Crear_Usuario").css("display", "block");
-        $("#Actualizar_Usuarios").css("display", "none");
+        $("#Actualizar_Usuario").css("display", "none");
         
     });
 
@@ -18,23 +18,83 @@
         $("#Li2").css("border-color", "#c23321");
         $("#Actualizar_Usuarios").css("display", "block");
         $("#Crear_Usuario").css("display", "none");
+        $("#Actualizar_Usuario").css("display", "block");
+        
 
     });
-    TraerListaLineasBlending();
-    TraerCampaña();
+    if (segundaPestañaAbierta == "True") {
+        $("#Actualiza_UsuarioTab").click();
+        
+    }
+    TraerListaFormulariosBlending();
 });
 
+function TraerListaFormulariosBlending() {
+    
+        $.ajax({
+            type: "GET",
+            url: urlFormularios,
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+                for (var index = 0; index < json.length; index++) {
+                    $('#FormularioBlendingSelect').append($('<option>', {
+                        value: json[index].FormularioDestino,
+                        text: json[index].FormularioDestino
+                    }));
+                    $('#FormularioBlendingSelect2').append($('<option>', {
+                        value: json[index].FormularioDestino,
+                        text: json[index].FormularioDestino
+                    }));
+                }
+
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
+}
+
 function TraerListaLineasBlending() {
+    var Form = $('#FormularioBlendingSelect').val();
+            $.ajax({
+                type: "POST",
+                url: urlLineas,
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({ Form: Form }),
+                dataType: "JSON",
+                success: function (result) {
+                    var json = JSON.parse(result);
+                    for (var index = 0; index < json.length; index++) {
+                        $('#NombreLineasBlendingSelect').append($('<option>', {
+                            value: json[index].OperacionDestino,
+                            text: json[index].OperacionDestino
+                        }));
+                    }
+
+                },
+                error: function (request, status, error) {
+                    alert(request.responseText);
+                }
+            });
+    $('#NombreLineasBlendingSelect').find('option:not(:first)').remove();
+    $('#CampañasBlendingSelect').find('option:not(:first)').remove();
+}
+
+function TraerListaLineasBlending2() {
+    var Form = $('#FormularioBlendingSelect2').val();
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: urlLineas,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ Form: Form }),
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
             for (var index = 0; index < json.length; index++) {
-                $('#NombreLineasBlendingSelect').append($('<option>', {
-                    value: json[index].NombreLinea,
-                    text: json[index].NombreLinea
+                $('#NombreLineasBlendingSelect2').append($('<option>', {
+                    value: json[index].OperacionDestino,
+                    text: json[index].OperacionDestino
                 }));
             }
 
@@ -43,19 +103,26 @@ function TraerListaLineasBlending() {
             alert(request.responseText);
         }
     });
+    $('#NombreLineasBlendingSelect2').find('option:not(:first)').remove();
+    $('#CampañasBlendingSelect2').find('option:not(:first)').remove();
 }
 
-function TraerCampaña() {
+function TraerCampaña()
+{
+    var Form = $('#FormularioBlendingSelect').val();
+    var Operacion = $('#NombreLineasBlendingSelect').val();
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: urlCampañas,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ Form: Form , Operacion: Operacion}),
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
             for (var index = 0; index < json.length; index++) {
                 $('#CampañasBlendingSelect').append($('<option>', {
-                    value: json[index].Campaña,
-                    text: json[index].Campaña
+                    value: json[index].CampanaDestino,
+                    text: json[index].CampanaDestino
                 }));
             }
 
@@ -64,6 +131,33 @@ function TraerCampaña() {
             alert(request.responseText);
         }
     });
+    $('#CampañasBlendingSelect').find('option:not(:first)').remove();
+}
+
+function TraerCampaña2() {
+    var Form = $('#FormularioBlendingSelect2').val();
+    var Operacion = $('#NombreLineasBlendingSelect2').val();
+    $.ajax({
+        type: "POST",
+        url: urlCampañas,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ Form: Form, Operacion: Operacion }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0; index < json.length; index++) {
+                $('#CampañasBlendingSelect2').append($('<option>', {
+                    value: json[index].CampanaDestino,
+                    text: json[index].CampanaDestino
+                }));
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+    $('#CampañasBlendingSelect2').find('option:not(:first)').remove();
 }
 
 function BuscaUsuariosForList()
@@ -157,6 +251,14 @@ $('#cedulaCreacion').on("keyup", function (e) {
     var code = e.keyCode || e.which;
     if (code == 13) {
         $("#consultarUsuario").click();
+
+    }
+});
+
+$('#cedulaActualizacion').on("keyup", function (e) {
+    var code = e.keyCode || e.which;
+    if (code == 13) {
+        $("#consultarActualizacion").click();
 
     }
 })

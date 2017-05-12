@@ -23,7 +23,12 @@
                             <table>
                                 <tr>
                                     <td style="padding-left:1px; width:200px;" colspan="2">
-                                        <i class="fa fa-chevron-circle-down"></i><strong> Seleccione el Nombre de linea</strong>
+                                        <i class="fa fa-chevron-circle-down"></i><strong> Seleccione el formulario</strong>
+                                        @Html.DropDownListFor(m => m.DatosCliente.Apellido, new List<SelectListItem> { }, "--Select Option--", new { Id = "FormularioBlendingSelect", @class = "form-control", onchange = "TraerListaLineasBlending();" })
+
+                                    </td>
+                                    <td style="padding-left:1px; width:200px;" colspan="2">
+                                        <i class="fa fa-chevron-circle-down"></i><strong> Seleccione la Operación</strong>
                                         @Html.DropDownListFor(m => m.Maestrolineasblendingvacio.NombreLinea, new List<SelectListItem> { }, "--Select Option--", new { Id = "NombreLineasBlendingSelect", @class = "form-control", onchange = "BuscaUsuariosForList();" })
                                         
                                     </td>
@@ -35,19 +40,19 @@
                                             <label class="text-danger" style="font-weight: 600;">@ViewBag.Alerta</label>
                                         }
                                     </td>
-                                    
-                                </tr>
-                                <tr>
-                                    <td>
+                                    <td style="padding:10px;">
                                         <br />
                                         <div class="info-box" id="Aviso1" style="display: none;">
                                             <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
                                             <div class="info-box-content">
-                                                <span class="info-box-number">Número de Cuentas Asignadas a Esta Base:</span>
+                                                <span class="info-box-number">Número de Cuentas Asignadas a Esta Operación:</span>
                                                 <span id="CountOperacion" style="text-transform:initial; font-size:20px;" class="info-box-text"></span>
                                             </div>
                                         </div>
                                     </td>
+                                </tr>
+                                <tr>
+                                    
                                 </tr>
                             </table>
                             <div id="oculto" style="display:none">
@@ -75,12 +80,10 @@
                                     </tr>
                                     <tr>
                                         <td style="padding:1px;">
-                                            @Html.DropDownListFor(m => m.SkillsUsuariosBlending.Campaña, new List<SelectListItem>() { }, "-Seleccione-", new { @class = "form-control input-sm", id = "CampañasBlendingSelect2", onchange="BuscaCuentasOperacion();" })
+                                            @Html.DropDownListFor(m => m.SkillsUsuariosBlending.Campaña, new List<SelectListItem>() { }, "-Seleccione-", new { @class = "form-control input-sm", id = "CampañasBlendingSelect2", onchange= "BuscaCuentasOperacionCampaña();" })
 
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
+                                        <td style="padding:10px">
                                             <br />
                                             <div class="info-box" id="Aviso2" style="display: none;">
                                                 <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
@@ -90,6 +93,9 @@
                                                 </div>
                                             </div>
                                         </td>
+                                    </tr>
+                                    <tr>
+                                        
                                     </tr>
                                 </table>
                             </div>
@@ -103,17 +109,17 @@
         </div>
     }
     @section Scripts{
-        <script src="~/Scripts/Gestion_Blending/AsignarBasesAdmin.js?1.0.3"></script>
+        
         <script>
             var urlLineas = '@Url.Action("SkillsUsuariosAdminJson", "GestionBlending")';
             var urlUsuariosporOperacion = '@Url.Action("UsuariosporOperacion", "GestionBlending")';
             var urlCountCuentasOperacion = '@Url.Action("CountCuentasOperacion", "GestionBlending")';
             var urlCampañas = '@Url.Action("ObtenerCampaña", "GestionBlending")';
             var urlCountCuentasOperacionCampaña = '@Url.Action("CountCuentasOperacionCampaña", "GestionBlending")';
-            var Aliado = '@Session["AliadoLogeado"].ToString()';
+            var urlFormularios = '@Url.Action("FormulariosBlendingJson", "GestionBlending")';
             $('#CedulasMasivo').val('');
         </script>
-
+        <script src="~/Scripts/Gestion_Blending/AsignarBasesAdmin.js?1.0.6"></script>
     }
 
 }
