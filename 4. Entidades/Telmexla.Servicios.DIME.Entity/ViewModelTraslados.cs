@@ -7,6 +7,7 @@ namespace Telmexla.Servicios.DIME.Entity
 {
     public class ViewModelTraslados
     {
+        #region Traslados
         private NotasTraslado notaTraslado;
         private NotasTraslado notaTrasladoInicial;
         private NotasTraslado notaTrasladoVacia;
@@ -28,13 +29,37 @@ namespace Telmexla.Servicios.DIME.Entity
         private List<GestionMatriz> listaGestionMatriz;
         private TrasladoFallido trasladoFallido;
         private List<TrasladoFallido> listaTrasladoFallido;
-       
+        #endregion
 
+        #region Constructores
         public ViewModelTraslados()
         {
+            notaTraslado = new NotasTraslado();
+            notaTrasladoInicial = new NotasTraslado();
+            notaTrasladoVacia = new NotasTraslado();
+            ingresoTraslado = new IngresoTraslado();
+            listaNotasCrearDireccion = new List<NotasTraslado>();
+            listaCambioEstrato = new List<CambioEstrato>();
+            informacionNodo = new MaestroNodo();
+            cambioEstrato = new CambioEstrato();
+            cambioEstratoInicial = new CambioEstrato();
+            cambioEstratoVacia = new CambioEstrato();
             traficoTraslados = new TraficoTraslado();
-        }
+            liberacionHomePass = new LiberacionHomePass();
+            liberacionHomePassInicial = new LiberacionHomePass();
+            liberacionHomePassVacia = new LiberacionHomePass();
+            listaLiberacionHomePass = new List<LiberacionHomePass>();
+            gestionMatriz = new GestionMatriz();
+            gestionMatrizInicial = new GestionMatriz();
+            gestionMatrizVacia = new GestionMatriz();
+            listaGestionMatriz = new List<GestionMatriz>();
+            trasladoFallido = new TrasladoFallido();
+            listaTrasladoFallido = new List<TrasladoFallido>();
 
+        }
+        #endregion
+
+        #region Encapsulamientos
         public IngresoTraslado IngresoTraslado
         {
             get
@@ -307,5 +332,6 @@ namespace Telmexla.Servicios.DIME.Entity
                 listaTrasladoFallido = value;
             }
         }
+        #endregion
     }
 }

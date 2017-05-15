@@ -142,7 +142,6 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult GestionarDireccionCelula(ViewModelTraslados modelo)
         {
-            modelo.IngresoTraslado = new IngresoTraslado();
             
             modelo.NotaTrasladoVacia.IdTransaccion = modelo.NotaTrasladoInicial.IdTransaccion;
             modelo.NotaTrasladoVacia.UsuarioTransaccion = Session["Usuario"].ToString();
@@ -255,9 +254,6 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult GestionarDireccionOutbound(ViewModelTraslados modelo)
         {
-            modelo.IngresoTraslado = new IngresoTraslado();
-
-           
             modelo.NotaTrasladoVacia.IdTransaccion = modelo.NotaTrasladoInicial.IdTransaccion;
             modelo.NotaTrasladoVacia.UsuarioTransaccion = Session["Usuario"].ToString();
             modelo.NotaTrasladoVacia.CanalTransaccion = "OUTBOUND CREACION DIRECCION";
@@ -444,9 +440,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult GestionarCambioDeEstratoCelula(ViewModelTraslados modelo)
         {
-            modelo.IngresoTraslado = new IngresoTraslado();
-
-          
+           
             modelo.CambioEstratoVacia.IdTransaccion = modelo.CambioEstratoInicial.IdTransaccion;
             modelo.CambioEstratoVacia.UsuarioTransaccion = Session["Usuario"].ToString();
             modelo.CambioEstratoVacia.CanalTransaccion = "CELULA CAMBIO DE ESTRATO";
@@ -635,9 +629,6 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult GestionarLiberacionHomePassCelula(ViewModelTraslados modelo)
         {
-            modelo.IngresoTraslado = new IngresoTraslado();
-
-          
             modelo.LiberacionHomePassVacia.IdTransaccion = modelo.LiberacionHomePassInicial.IdTransaccion;
             modelo.LiberacionHomePassVacia.UsuarioTransaccion = Session["Usuario"].ToString();
             modelo.LiberacionHomePassVacia.CanalTransaccion = "CELULA LIBERACION DE HOMEPASS";
@@ -831,9 +822,6 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult GestionarCreacionDeMatriz(ViewModelTraslados modelo)
         {
-            modelo.IngresoTraslado = new IngresoTraslado();
-
-           
             modelo.GestionMatrizVacia.IdTransaccion = modelo.GestionMatrizInicial.IdTransaccion;
             modelo.GestionMatrizVacia.UsuarioTransaccion = Session["Usuario"].ToString();
             modelo.GestionMatrizVacia.CanalTransaccion = "CELULA CREACION MATRICES";
@@ -961,8 +949,6 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult GestionMatricesCelula(ViewModelTraslados modelo)
         {
-            modelo.IngresoTraslado = new IngresoTraslado();
-           
             modelo.GestionMatrizVacia.IdTransaccion = modelo.GestionMatrizInicial.IdTransaccion;
             modelo.GestionMatrizVacia.UsuarioTransaccion = Session["Usuario"].ToString();
             modelo.GestionMatrizVacia.CanalTransaccion = "CELULA GESTION MATRICES";
