@@ -39,7 +39,6 @@ namespace Dime.Controllers
             var jsonResult = Json(JsonConvert.SerializeObject(casosAdminService.ListaPaloteo(fechaInicial, fechaFinal)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
-
         }
 
 
@@ -132,12 +131,12 @@ namespace Dime.Controllers
                 DatoConsultaGestionAdmin nuevoDato = new DatoConsultaGestionAdmin();
                 nuevoDato.AliadoApertura = item.AliadoApertura;
                 nuevoDato.CuentaCliente = item.CuentaCliente;
-                nuevoDato.FechaApertura = item.FechaApertura;
-                nuevoDato.FechaCierre = item.FechaCierre;
-                nuevoDato.FechaNota = item.FechaNota;
-                nuevoDato.FechaUltimaActualizacion = item.FechaUltimaActualizacion;
+                nuevoDato.FechaApertura = Convert.ToDateTime(item.FechaApertura).Date.ToString();
+                nuevoDato.FechaCierre = Convert.ToDateTime(item.FechaCierre).Date.ToString();
+                nuevoDato.FechaNota = Convert.ToDateTime(item.FechaNota).Date.ToString();
+                nuevoDato.FechaUltimaActualizacion = Convert.ToDateTime(item.FechaUltimaActualizacion).Date.ToString();
                 nuevoDato.HoraApertura = item.HoraApertura;
-                nuevoDato.HoraUltimaActualizacion = item.HoraUltimaActualizacion;
+                nuevoDato.HoraUltimaActualizacion =item.HoraUltimaActualizacion;
                 nuevoDato.IdEstado = item.IdEstado;
                 nuevoDato.IdIngreso = item.IdIngreso;
                 nuevoDato.Macroproceso = item.Macroproceso;
