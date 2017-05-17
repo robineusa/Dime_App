@@ -71,7 +71,7 @@ function ActualizarParametros()
                 $("#tbIncluyeCV").val(json.InclyeClarovideo);
                 $("#tbIncluyePVR").val(json.IncluyePvr);
                 $("#tbAutollenado").val(json.RentaTotal);
-
+                $("#tbAdicionales").val(0);
             }
             else {
                 $("#tbTarifaOfrecida").val(0);
@@ -172,29 +172,33 @@ function CargarDatosActuales()
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
+            if (json == "[object Object]") {
+                $("#tbEstrato").val(json.Estrato);
+                $("#tbCampañaVigente").val((json.CampanaAplicada == 0) ? "NO" : "SI");
+                $("#tbFechaVencCampaña").val((json.FechaFinCampa == 0) ? "NO HAY FECHA" : json.FechaFinCampa + " (AñoMesDia)");
+                $("#tbTarifaActual").val(json.Tarifa);
+                $("#tbRentaActual").val(json.RentaTotal);
+                $("#tbVozInfo").val(json.Voz);
+                $("#tbTvInfo").val(json.TipoTv);
+                var internet = (json.VelocidadInternet / 1000);
+                $("#tbInternetInfo").val(internet + " MB");
+                $("#tbHBOInfo").val(json.Hbo);
+                $("#tbFoxInfo").val(json.Fox);
+                $("#tbUFCInfo").val(json.Ufc);
+                $("#tbGoldenInfo").val(json.Gld);
+                $("#tbRevistaInfo").val(json.Revista);
+                $("#tbHotPackInfo").val(json.Adultos);
+                $("#tbTotalDecos").val(json.CantidadDecos);
+                $("#tbDecosHD").val(json.CantidadHd);
+                $("#tbRentaActualDos").val(json.RentaTotal);
+            }
+            if (json == null || json == "null") { alert("La cuenta digitada no existe"); }
 
-            $("#tbEstrato").val(json.Estrato);
-            $("#tbCampañaVigente").val((json.CampanaAplicada == 0) ? "NO" : "SI");
-            $("#tbFechaVencCampaña").val((json.FechaFinCampa == 0) ? "NO HAY FECHA" : json.FechaFinCampa+" (AñoMesDia)");
-            $("#tbTarifaActual").val(json.Tarifa);
-            $("#tbRentaActual").val(json.RentaTotal);
-            $("#tbVozInfo").val(json.Voz);
-            $("#tbTvInfo").val(json.TipoTv);
-            var internet = (json.VelocidadInternet / 1000);
-            $("#tbInternetInfo").val(internet +" MB");
-            $("#tbHBOInfo").val(json.Hbo);
-            $("#tbFoxInfo").val(json.Fox);
-            $("#tbUFCInfo").val(json.Ufc);
-            $("#tbGoldenInfo").val(json.Gld);
-            $("#tbRevistaInfo").val(json.Revista);
-            $("#tbHotPackInfo").val(json.Adultos);
-            $("#tbTotalDecos").val(json.CantidadDecos);
-            $("#tbDecosHD").val(json.CantidadHd);
-            $("#tbRentaActualDos").val(json.RentaTotal);
-         
+        },
+        error: function (request, status, error) {
+            alert("error");
 
         }
-
     });
 
 }
