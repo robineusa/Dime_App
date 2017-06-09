@@ -6,5 +6,5 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="MaestroOutboundRazon" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>Dime.WSD.MaestroOutboundRazon</TypeInfo>
+   <TypeInfo>Dime.WSD.MaestroOutboundRazon, Service References.WSD.Reference.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>
