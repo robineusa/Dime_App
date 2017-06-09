@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Telmexla.Servicios.DIME.Entity</RootNamespace>
     <AssemblyName>Telmexla.Servicios.DIME.Entity</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -172,33 +173,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="bin\Debug\Telmexla.Servicios.DIME.Entity.dll.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
     <Folder Include="obj\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\EntityFramework.dll" />
-    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
-    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
-    <Content Include="bin\Debug\EntityFramework.xml" />
-    <Content Include="bin\Debug\Microsoft.Web.Infrastructure.dll" />
-    <Content Include="bin\Debug\System.Web.Helpers.dll" />
-    <Content Include="bin\Debug\System.Web.Helpers.xml" />
-    <Content Include="bin\Debug\System.Web.Mvc.dll" />
-    <Content Include="bin\Debug\System.Web.Mvc.xml" />
-    <Content Include="bin\Debug\System.Web.Razor.dll" />
-    <Content Include="bin\Debug\System.Web.Razor.xml" />
-    <Content Include="bin\Debug\System.Web.WebPages.Deployment.dll" />
-    <Content Include="bin\Debug\System.Web.WebPages.Deployment.xml" />
-    <Content Include="bin\Debug\System.Web.WebPages.dll" />
-    <Content Include="bin\Debug\System.Web.WebPages.Razor.dll" />
-    <Content Include="bin\Debug\System.Web.WebPages.Razor.xml" />
-    <Content Include="bin\Debug\System.Web.WebPages.xml" />
-    <Content Include="bin\Debug\Telmexla.Servicios.DIME.Entity.dll" />
-    <Content Include="bin\Debug\Telmexla.Servicios.DIME.Entity.pdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

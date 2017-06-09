@@ -39,6 +39,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <FilesToIncludeForPublish>AllFilesInProjectFolder</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -222,10 +223,12 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Usuario2.cs" />
     <Compile Include="MyHub.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Service References\WSD\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2214,8 +2217,6 @@
     <Content Include="AdminLTE\plugins\timepicker\css\bootstrap-timepicker.min.css" />
     <Content Include="AdminLTE\plugins\timepicker\js\bootstrap-timepicker.js" />
     <Content Include="AdminLTE\plugins\timepicker\js\bootstrap-timepicker.min.js" />
-    <Content Include="bin\Dime.dll" />
-    <Content Include="bin\Dime.pdb" />
     <Content Include="Content\angular-material.css" />
     <Content Include="Content\angular-material.layout-attributes.css" />
     <Content Include="Content\angular-material.layout-attributes.min.css" />
@@ -2236,70 +2237,6 @@
     <Content Include="ImagesClient\fotos-paisajes-naturales-suiza-alpes-suizos-swiss-natural-scenery-hd-photo-wallpapers-10.jpg" />
     <Content Include="ImagesClient\hd.png" />
     <Content Include="ImagesClient\Islas-andaman.jpg" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Acceso.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BalanceScoreCard.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BasePersonalHolo.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CambioEstrato1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CambioEstrato2.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CierreCiclo.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CierreCiclo1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CierreCiclo2.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CierreCiclo3.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClaroVideo.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClaroVideo1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClaroVideo2.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClaroVideo3.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClientesTodo.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClientesTodo1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClientesTodo2.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClientesTodo3.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ConvenioElectronico1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ConvenioElectronico2.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ConvenioElectronico3.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ConvenioElectronico4.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CuentasSiembraHD1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CuentasSiguienteMejorOferta1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DatosAdicionalesCliente.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DatosAdicionalesCliente1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DatosAdicionalesCliente2.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DatosAdicionalesCliente3.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DocsisOverlap.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DocsisOverlap1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DocsisOverlap2.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DocsisOverlap3.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GestionMatriz1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GestionOutbound.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GestionOutbound1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GestionOutbound2.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GestionOutbound3.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Graficos.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Ingreso.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Ingreso1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Ingreso2.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Ingreso3.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.IngresosSoporte.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.LiberacionHomePass.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Linea.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroMarcacione.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroMarcacione1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroMarcacione2.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroMarcacione3.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroNodo.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.NotasTraslado.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.NotificacionesBuenServicio.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.PqrMaestroCodCierre.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.PqrMaestroCodCierre1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.PqrMaestroCodCierre2.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.PqrMaestroCodCierre3.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.PreguntasDesbloqueo.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.PreguntasDesbloqueo1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.PreguntasDesbloqueo2.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.PreguntasDesbloqueo3.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Usuario.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Usuario1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Usuario2.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Usuario3.datasource" />
     <Content Include="Resources\Images\Excel-icon.png" />
     <Content Include="Resources\Images\gris01.png" />
     <Content Include="Resources\Images\Inbound\Carrito.png" />
@@ -2346,12 +2283,6 @@
     <Content Include="Scripts\Reportes\ReporteCelula.js" />
     <Content Include="Scripts\Shared\_AlertasLayout.js" />
     <Content Include="Scripts\Shared\Helper.js" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CambioEstrato.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ConvenioElectronico.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CuentasSiembraHD.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CuentasSiguienteMejorOferta.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GestionMatriz.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.NotasTraslado1.datasource" />
     <Content Include="AdminLTE\Kendo2016.3.11\css\fonts\DejaVu\DejaVuSans-Bold.ttf" />
     <Content Include="AdminLTE\Kendo2016.3.11\css\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
     <Content Include="AdminLTE\Kendo2016.3.11\css\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
@@ -2918,22 +2849,48 @@
     <Content Include="Scripts\Traslados\SolicitudLiberacionHomePass.js" />
     <Content Include="Scripts\Traslados\SolicitudMatrices.js" />
     <Content Include="Resources\Documents\Formato_Carga_Masiva_Siriac.xls" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.TrasladoNoCobertura.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Acceso.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BasePersonalHolo.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CierreCiclo.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClaroVideo.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ClientesTodo.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ConvenioElectronico.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DatosAdicionalesCliente.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Departamento.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DistribucionBlending.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DocsisOverlap.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GestionOutbound.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Ingreso.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.IngresosSoporte.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Linea.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroLineasBlending.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroMarcacione.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.NotificacionesBuenServicio.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.PqrMaestroCodCierre.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.PreguntasDesbloqueo.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Usuario.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Business.DatoConsultaGestionAdmin.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Business.DatoConsultaPaloteo.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Departamento.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroLineasBlending.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BalanceScoreCard.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BlendingFueraNivel.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CambioEstrato.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CuentasSiembraHD.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CuentasSiguienteMejorOferta.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBLFueraNiveles.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPFueraNiveles.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBLFueraNiveles1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPFueraNiveles1.datasource" />
-    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DistribucionBlending.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GestionMatriz.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Graficos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.LiberacionHomePass.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroNodo.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.NotasTraslado.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
-    <None Include="Properties\PublishProfiles\Dime_Capacitacion.pubxml" />
-    <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaGestion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -2970,6 +2927,12 @@
     <Content Include="Service References\WSD\Dime.WSD.RazonIngresoSoporte.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\WSD\Dime.WSD.SmoRentaActual.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.SmoTarifaActual.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Service References\WSD\Dime.WSD.Subrazon1IngresoSoporte.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -2982,22 +2945,13 @@
     <Content Include="Service References\WSD\Dime.WSD.UsuariosMasivoData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\WSD\WebService.disco" />
     <None Include="Service References\WSD\configuration91.svcinfo" />
     <None Include="Service References\WSD\configuration.svcinfo" />
-    <Content Include="Service References\WSD\Dime.WSD.SmoRentaActual.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.SmoTarifaActual.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\WSD\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService1.disco" />
-    <None Include="Service References\WSD\WebService11.disco" />
-    <None Include="Service References\WSD\WebService12.disco" />
-    <None Include="Service References\WSD\WebService13.disco" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
     <Content Include="Styles\Elements\General.css" />
@@ -3145,7 +3099,9 @@
     <Content Include="Views\Alertas\Elegido_Fijo_Movil.cshtml" />
     <Content Include="Views\Alertas\Siembra_HD.cshtml" />
     <Content Include="Views\Alertas\Siguiente_Mejor_Oferta.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\AdminNodos\ActualizarNodo.cshtml" />
     <Content Include="Views\AdminNodos\ListaNodosCreados.cshtml" />
     <Content Include="Views\AdminNodos\RegistrarNodo.cshtml" />
@@ -3168,70 +3124,6 @@
     <Content Include="Views\Manage\ChangeSecurityQuestions.cshtml" />
     <Content Include="Views\BuenServicio\Mensajes_BuenServicio.cshtml" />
     <Content Include="Views\Calculadoras\Rentas.cshtml" />
-    <None Include="Service References\WSD\WebService1.wsdl" />
-    <None Include="Service References\WSD\WebService11.wsdl" />
-    <None Include="Service References\WSD\WebService12.wsdl" />
-    <None Include="Service References\WSD\WebService13.wsdl" />
-    <None Include="Service References\WSD\WebService5.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService51.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService510.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService511.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService512.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService513.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService514.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService515.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService516.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService517.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService518.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService519.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService52.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService53.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService54.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService55.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService56.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService57.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService58.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService59.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Views\Traslados\RegistrotrasladoFallido.cshtml" />
     <Content Include="Views\Traslados\ConsultaClienteTrasladoFallido.cshtml" />
     <Content Include="Views\Traslados\ConsultaAdminTrasladosFallidos.cshtml" />
@@ -3244,6 +3136,22 @@
     <Content Include="Views\Consultas\ExportExcelView.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminFueraNivelesLog.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminFueraNivelesPrincipal.cshtml" />
+    <None Include="Service References\WSD\WebService.wsdl" />
+    <None Include="Service References\WSD\WebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3253,6 +3161,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bin\" />
+    <Folder Include="obj\" />
     <Folder Include="Views\AdminBlending\" />
     <Folder Include="Views\CasosAdmin\" />
   </ItemGroup>
@@ -3264,13 +3174,13 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\4. Entidades\Telmexla.Servicios.DIME.Entity\Telmexla.Servicios.DIME.Entity.csproj">
       <Project>{395d1809-be70-4b2a-9413-46708edfb957}</Project>
       <Name>Telmexla.Servicios.DIME.Entity</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\WSD\" />
@@ -3280,7 +3190,8 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
