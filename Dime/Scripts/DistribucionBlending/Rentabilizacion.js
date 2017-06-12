@@ -78,7 +78,7 @@ function ListaCierre() {
     var IdContacto = $('#tipoContactosSelect').val();
     $.ajax({
         type: "POST",
-        url: urlControlTiposCierresList,
+        url: urlControlTipoGestionList,
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({ idContacto: IdContacto }),
         dataType: "JSON",
@@ -99,13 +99,14 @@ function ListaCierre() {
     $('#tiposCierresSelect').find('option:not(:first)').remove();
     $('#tiposRazonSelect').find('option:not(:first)').remove();
     $('#tiposCausasSelect').find('option:not(:first)').remove();
+    $('#tiposMotivoSelect').find('option:not(:first)').remove();
 }
 
 function ListaRazones() {
     var IdCierre = $('#tiposCierresSelect').val();
     $.ajax({
         type: "POST",
-        url: urlControlTiposRazonesList,
+        url: urlControlTipoCierreList,
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({ idCierre: IdCierre }),
         dataType: "JSON",
@@ -123,13 +124,14 @@ function ListaRazones() {
     });
     $('#tiposRazonSelect').find('option:not(:first)').remove();
     $('#tiposCausasSelect').find('option:not(:first)').remove();
+    $('#tiposMotivoSelect').find('option:not(:first)').remove();
 
 }
 function ListaCausas() {
     var IdRazon = $('#tiposRazonSelect').val();
     $.ajax({
         type: "POST",
-        url: urlControlTiposCausasList,
+        url: urlControlTipoCausaList,
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({ idRazon: IdRazon }),
         dataType: "JSON",
@@ -146,23 +148,49 @@ function ListaCausas() {
         }
     });
     $('#tiposCausasSelect').find('option:not(:first)').remove();
+    $('#tiposMotivoSelect').find('option:not(:first)').remove();
+}
+function ListaMotivos() {
+    var idCausa = $('#tiposCausasSelect').val();
+    $.ajax({
+        type: "POST",
+        url: urlControlTipoMotivoList,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ idCausa: idCausa }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#tiposMotivoSelect').append($('<option>', {
+                    value: json[index].IdMotivo,
+                    text: json[index].Motivo
+                }));
+
+            }
+
+        }
+    });
+    $('#tiposMotivoSelect').find('option:not(:first)').remove();
 }
 $('#tipoContactosSelect').change(function () {
     ListaCierre();
     ListaRazones();
     ListaCausas();
+    ListaMotivos();
     LimpiarFecha();
 })
 $('#tiposCierresSelect').change(function () {
     ListaRazones();
     ListaCausas();
+    ListaMotivos();
     LimpiarFecha();
 
 })
 $('#tiposRazonSelect').change(function () {
     ListaCausas();
+    ListaMotivos();
     var IdRazon = $('#tiposRazonSelect').val();
-    if (IdRazon == "132") {
+    if (IdRazon == "91") {
         document.getElementById('TituloSeguimiento').style.display = 'inline-block';
         document.getElementById('TituloSeguimiento').style.width = '100%';
         document.getElementById('CuerpoSeguimineto').style.display = 'inline-block';
@@ -225,7 +253,8 @@ function cargargrilla(data) {
         { field: "TipoContacto", title: "Tipo Contacto", width: 100 },
         { field: "Gestion", title: "Gestion", width: 100 },
         { field: "Cierre", title: "Cierre", width: 100 },
-        { field: "Razon", title: "Razon", width: 100 }
+        { field: "Causa", title: "Causa", width: 100 },
+        { field: "Motivo", title: "Motivo", width: 100 }
 
         ]
 
@@ -282,7 +311,8 @@ function cargargrillaseg(data) {
         { field: "TipoContacto", title: "Tipo Contacto", width: 100 },
         { field: "Gestion", title: "Gestion", width: 100 },
         { field: "Cierre", title: "Cierre", width: 100 },
-        { field: "Razon", title: "Razon", width: 100 },
+        { field: "Causa", title: "Causa", width: 100 },
+        { field: "Motivo", title: "Motivo", width: 100 },
         { field: "FechaSeguimiento", title: "Fecha Seguimineto", width: 100 }
         ]
 
