@@ -2272,6 +2272,7 @@
     <Content Include="Scripts\DistribucionBlending\ConsultaAdminFueraNivelesLog.js" />
     <Content Include="Scripts\DistribucionBlending\ConsultaAdminFueraNivelesPrincipal.js" />
     <Content Include="Scripts\DistribucionBlending\FueraNiveles.js" />
+    <Content Include="Scripts\DistribucionBlending\Rentabilizacion.js" />
     <Content Include="Scripts\Gestion_Blending\AsignarBasesAdmin.js" />
     <Content Include="Scripts\Gestion_Blending\SkillsUsuariosAdmin.js" />
     <Content Include="Scripts\Manage\ChangeSecurityQuestions.js" />
@@ -2885,6 +2886,9 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.LiberacionHomePass.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroNodo.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.NotasTraslado.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBC_Rentabilizacion.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBLRentabilizacion.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPRentabilizacion.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Properties\Settings.settings">
@@ -3152,6 +3156,7 @@
     <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\DistribucionBlending\Rentabilizacion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

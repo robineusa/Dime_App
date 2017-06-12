@@ -18,8 +18,17 @@ namespace Telmexla.Servicios.DIME.Entity
         GBPFueraNiveles gBPFueradeNiveles;
         GBLFueraNiveles gBLFueradeNiveles;
         GBLFueraNiveles ultimoGBLFuera_Niveles;
-       List<GBPFueraNiveles> listaGBPFueradeNiveles;
+        List<GBPFueraNiveles> listaGBPFueradeNiveles;
         List<GBLFueraNiveles> listaGBLFueradeNiveles;
+        #endregion
+
+        #region Rentabilizacion
+        GBC_Rentabilizacion gBCRentabilizacion;
+        GBPRentabilizacion gBPRentabilizacion;
+        GBLRentabilizacion gBLRentabilizacion;
+        GBLRentabilizacion ultimoGBLRentabilizacion;
+        List<GBPRentabilizacion> listaGBPRentabilizacion;
+        List<GBLRentabilizacion> listaGBLRentabilizacion;
         #endregion
 
         #region Constructores
@@ -32,6 +41,13 @@ namespace Telmexla.Servicios.DIME.Entity
             listaGBLFueradeNiveles = new List<GBLFueraNiveles>();
             listaGBPFueradeNiveles = new List<GBPFueraNiveles>();
             ultimoGBLFuera_Niveles = new GBLFueraNiveles();
+            //RENTABILIZACION
+            gBCRentabilizacion = new GBC_Rentabilizacion();
+            gBPRentabilizacion = new GBPRentabilizacion();
+            gBLRentabilizacion = new GBLRentabilizacion();
+            ultimoGBLRentabilizacion = new GBLRentabilizacion();
+            listaGBPRentabilizacion = new List<GBPRentabilizacion>();
+            listaGBLRentabilizacion = new List<GBLRentabilizacion>();
         }
         #endregion
 
@@ -125,6 +141,84 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 ultimoGBLFuera_Niveles = value;
+            }
+        }
+
+        public GBC_Rentabilizacion GBCRentabilizacion
+        {
+            get
+            {
+                return gBCRentabilizacion;
+            }
+
+            set
+            {
+                gBCRentabilizacion = value;
+            }
+        }
+
+        public GBPRentabilizacion GBPRentabilizacion
+        {
+            get
+            {
+                return gBPRentabilizacion;
+            }
+
+            set
+            {
+                gBPRentabilizacion = value;
+            }
+        }
+
+        public GBLRentabilizacion GBLRentabilizacion
+        {
+            get
+            {
+                return gBLRentabilizacion;
+            }
+
+            set
+            {
+                gBLRentabilizacion = value;
+            }
+        }
+
+        public GBLRentabilizacion UltimoGBLRentabilizacion
+        {
+            get
+            {
+                return ultimoGBLRentabilizacion;
+            }
+
+            set
+            {
+                ultimoGBLRentabilizacion = value;
+            }
+        }
+
+        public List<GBPRentabilizacion> ListaGBPRentabilizacion
+        {
+            get
+            {
+                return listaGBPRentabilizacion;
+            }
+
+            set
+            {
+                listaGBPRentabilizacion = value;
+            }
+        }
+
+        public List<GBLRentabilizacion> ListaGBLRentabilizacion
+        {
+            get
+            {
+                return listaGBLRentabilizacion;
+            }
+
+            set
+            {
+                listaGBLRentabilizacion = value;
             }
         }
         #endregion

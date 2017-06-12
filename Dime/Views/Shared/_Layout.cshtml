@@ -20,10 +20,10 @@
     <script>
         var appPath = '@Url.Content("~")';
     </script>
-    
+
     <script src="https://claro-co-cv.inbenta.com/jsonp/inbenta.js?banner=no&nombre=@Session["NombreUsuario"]&Cedula=@Session["Usuario"]&User=@Session["Usuario"]&source=SIRIAC&operacion=@Session["AliadoLogeado"]"></script>
 </head>
-<body id="Body_Layout" class="hold-transition skin-red sidebar-mini" >
+<body id="Body_Layout" class="hold-transition skin-red sidebar-mini">
 
     <div class="wrapper">
         <header class="main-header">
@@ -39,25 +39,23 @@
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <li id="messages_menu" class="dropdown messages-menu">
-                                <a id="number_Mensajes" href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span id="MensajeCount" class="label label-success"></span>
-                                </a>
-                                <ul id="ul_mess_dropdown_menu" class="dropdown-menu">
-                                    <li id="messHeader" style="text-align: center;" class="header"></li>
-                                    <li >
-                                            <ul id="MensajesNoNotificados" class="menu">
-                                                
-                                            </ul>
-                                        </li>
-                                    <li id="SeeAllmsn" class="footer"><a href="@Url.Action("Mensajes_BuenServicio", "BuenServicio")">Ver Todos los Mensajes</a></li>
-                                </ul>
-                            </li>
+                            <a id="number_Mensajes" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-envelope-o"></i>
+                                <span id="MensajeCount" class="label label-success"></span>
+                            </a>
+                            <ul id="ul_mess_dropdown_menu" class="dropdown-menu">
+                                <li id="messHeader" style="text-align: center;" class="header"></li>
+                                <li>
+                                    <ul id="MensajesNoNotificados" class="menu"></ul>
+                                </li>
+                                <li id="SeeAllmsn" class="footer"><a href="@Url.Action("Mensajes_BuenServicio", "BuenServicio")">Ver Todos los Mensajes</a></li>
+                            </ul>
+                        </li>
                         <li class="dropdown notifications-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-bell-o"></i>
-                                    <span class="label label-warning"></span>
-                                </a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="label label-warning"></span>
+                            </a>
                             <ul id="ul_mess_dropdown_menu" class="dropdown-menu">
                                 @*<li id="messHeader" style="text-align: center;" class="header"></li>*@
                                 <li>
@@ -65,77 +63,77 @@
                                 </li>
                                 <li class="footer"><a href="#">Ver Todos las Notificaciones</a></li>
                             </ul>
-                            </li>
+                        </li>
                         <li class="dropdown tasks-menu">
-                                <a href="#/dropdown-menu" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-flag-o"></i>
-                                    <span class="label label-danger"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header"></li>
-                                    @*<li>
-                                            <ul class="menu">
-                                                <li>
-                                                    <a href="#">
-                                                        <h3>
-                                                            Design some buttons
-                                                            <small class="pull-right">20%</small>
-                                                        </h3>
-                                                        <div class="progress xs">
-                                                            <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                                <span class="sr-only">20% Complete</span>
-                                                            </div>
+                            <a href="#/dropdown-menu" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-flag-o"></i>
+                                <span class="label label-danger"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="header"></li>
+                                @*<li>
+                                        <ul class="menu">
+                                            <li>
+                                                <a href="#">
+                                                    <h3>
+                                                        Design some buttons
+                                                        <small class="pull-right">20%</small>
+                                                    </h3>
+                                                    <div class="progress xs">
+                                                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">20% Complete</span>
                                                         </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <h3>
-                                                            Create a nice theme
-                                                            <small class="pull-right">40%</small>
-                                                        </h3>
-                                                        <div class="progress xs">
-                                                            <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                                <span class="sr-only">40% Complete</span>
-                                                            </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <h3>
+                                                        Create a nice theme
+                                                        <small class="pull-right">40%</small>
+                                                    </h3>
+                                                    <div class="progress xs">
+                                                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">40% Complete</span>
                                                         </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <h3>
-                                                            Some task I need to do
-                                                            <small class="pull-right">60%</small>
-                                                        </h3>
-                                                        <div class="progress xs">
-                                                            <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                                <span class="sr-only">60% Complete</span>
-                                                            </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <h3>
+                                                        Some task I need to do
+                                                        <small class="pull-right">60%</small>
+                                                    </h3>
+                                                    <div class="progress xs">
+                                                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">60% Complete</span>
                                                         </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <h3>
-                                                            Make beautiful transitions
-                                                            <small class="pull-right">80%</small>
-                                                        </h3>
-                                                        <div class="progress xs">
-                                                            <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                                <span class="sr-only">80% Complete</span>
-                                                            </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <h3>
+                                                        Make beautiful transitions
+                                                        <small class="pull-right">80%</small>
+                                                    </h3>
+                                                    <div class="progress xs">
+                                                        <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">80% Complete</span>
                                                         </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>*@
-                                    <li class="footer">
-                                        @*<a href="#">View all tasks</a>*@
-                                    </li>
-                                </ul>
-                            </li>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>*@
+                                <li class="footer">
+                                    @*<a href="#">View all tasks</a>*@
+                                </li>
+                            </ul>
+                        </li>
 
-                       @Html.Partial("_LoginPartial")
+                        @Html.Partial("_LoginPartial")
                         <li>
                             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
                         </li>
@@ -178,7 +176,7 @@
                                 @if (Session["Dashboard Administrador"] != null)
                                 {
                                     <li id="left-sidebar-menu-dashboard-dashboardV2"><a href="@Url.Action("DashboardAdministrador", "Home")"><i class="fa fa-circle-o text-orange"></i> Dashboard Administrador</a></li>
-                                    
+
                                 }
                                 @if (Session["Dashboard Alto Valor"] != null)
                                 {
@@ -211,8 +209,8 @@
                         </ul>
 
                     </li>
-                      <li class="header">MENÚ ACCESOS</li>
-                    
+                    <li class="header">MENÚ ACCESOS</li>
+
                     @if (Session["Administracion de Casos Sac"] != null)
                     {
                         <li id="left-sidebar-menu-charts" class="treeview">
@@ -276,19 +274,19 @@
                     }
                     @if (Session["Administracion Blending"] != null)
                     {
-                    <li id="left-sidebar-menu-charts" class="treeview">
-                        <a href="#">
-                            <i class="fa fa-cog text-blue"></i>
-                            <span>Administracion Blending</span>
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("AsignarBasesAdmin", "GestionBlending")"><i class="fa fa-database"></i>Asignar Bases</a></li>
-                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("SkillsUsuariosAdmin", "GestionBlending")"><i class="fa fa-user"></i>Skills Usuarios</a></li>
+                        <li id="left-sidebar-menu-charts" class="treeview">
+                            <a href="#">
+                                <i class="fa fa-cog text-blue"></i>
+                                <span>Administracion Blending</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("AsignarBasesAdmin", "GestionBlending")"><i class="fa fa-database"></i>Asignar Bases</a></li>
+                                <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("SkillsUsuariosAdmin", "GestionBlending")"><i class="fa fa-user"></i>Skills Usuarios</a></li>
 
-                        </ul>
+                            </ul>
 
-                    </li>
+                        </li>
                     }
                     @if (Session["Notificaciones Buen Servicio"] != null)
                     {
@@ -312,7 +310,7 @@
                     else
                     {
                         <script>
-                        var UserConnect2 = '@Session["NombreUsuario"].ToString()';
+                            var UserConnect2 = '@Session["NombreUsuario"].ToString()';
                         </script>
                     }
                     @if (Session["Escalamientos Sac"] != null)
@@ -408,14 +406,14 @@
 
 
                                         </li>
-                                        
+
                                     </ul>
                                 </li>
-                               
+
                             </ul>
                         </li>
                     }
-                   
+
                     @if (Session["Gestion Inbound"] != null)
                     {
                         <li id="left-sidebar-menu-charts" class="treeview">
@@ -435,32 +433,29 @@
                     }
                     @if (Session["Gestion Blending"] != null)
                     {
-                        /*<li id="left-sidebar-menu-multilevel" class="treeview">
+                        <li id="left-sidebar-menu-multilevel" class="treeview">
                             <a href="#">
                                 <i class="fa fa-th-large text-green"></i> <span>Gestiones Blending</span><i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                @*<li><a href="#"><i class="fa fa-circle-o"></i> Activación</a></li>*@
-                                @if (Session["Blending Cierre de Ciclo"] != null)
+                                @if (Session["Blending Rentabilizacion"] != null)
                                 {
-                                    <li><a href="@Url.Action("Cierre_Ciclo", "GestionBlending")"><i class="fa fa-circle-o"></i> Cierre de Ciclo</a></li>}
+                                <li><a href="@Url.Action("Cierre_Ciclo", "GestionBlending")"><i class="fa fa-circle-o"></i>Rentabilización</a></li>}
                                 @if (Session["Blending Claro Video"] != null)
                                 {
-                                    <li><a href="@Url.Action("Claro_Video", "GestionBlending")"><i class="fa fa-circle-o"></i> Claro Video</a></li>}
+                                <li><a href="@Url.Action("Claro_Video", "GestionBlending")"><i class="fa fa-circle-o"></i> Claro Video</a></li>}
                                 @if (Session["Blending Convenio Electronico"] != null)
                                 {
-                                    <li><a href="@Url.Action("Convenio_Electronico", "GestionBlending")"><i class="fa fa-circle-o"></i> Convenio Electrónico</a></li>}
-                                @*<li><a href="#"><i class="fa fa-circle-o"></i> Detractores</a></li>*@
-                                @*<li><a href="#"><i class="fa fa-circle-o"></i> Fraudes</a></li>*@
-                                @*<li><a href="#"><i class="fa fa-circle-o"></i> Logística Inversa</a></li>*@
-                                @*<li><a href="#"><i class="fa fa-circle-o"></i> Reincidencia</a></li>*@
-                                @*<li><a href="#"><i class="fa fa-circle-o"></i> Ventas</a></li>*@
+                                <li><a href="@Url.Action("Convenio_Electronico", "GestionBlending")"><i class="fa fa-circle-o"></i> Convenio Electrónico</a></li>}
                                 @if (Session["Blending Docsis"] != null)
                                 {
-                                    <li><a href="@Url.Action("Docsis", "GestionBlending")"><i class="fa fa-circle-o"></i> Docsis Overlap</a></li>}
+                                <li><a href="@Url.Action("Docsis", "GestionBlending")"><i class="fa fa-circle-o"></i> Docsis Overlap</a></li>}
+                                @if (Session["Blending Fuera de Niveles"] != null)
+                                {
+                                    <li><a href="@Url.Action("CableModemFueradeNiveles", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Fuera de Niveles</a></li>}
                             </ul>
 
-                        </li>*/
+                        </li>
                     }
                     @if (Session["Gestion Traslados"] != null)
                     {
@@ -526,7 +521,7 @@
                                 <li><a href="@Url.Action("ConsultaGestion", "ConsultasAsesor")"><i class="fa  fa-search-plus"></i>Gestión</a></li>
                                 <li><a href="@Url.Action("ConsultaRechazos", "Consultas")"><i class="fa  fa-search-plus"></i>Rechazos</a></li>
                                 <li><a href="@Url.Action("ConsultaSeguimientos", "ConsultasAsesor")"><i class="fa  fa-search-plus"></i>Seguimientos</a></li>
-                                
+
                             </ul>
                         </li>
                     }
@@ -561,12 +556,18 @@
 
                                             </ul>
                                         </li>
-                                        @*<li>
+                                        <li>
                                             <a href="#"><i class="fa fa-circle-o"></i>Gestiones Outbound<i class="fa fa-angle-left pull-right"></i></a>
                                             <ul class="treeview-menu">
-                                                <li><a href="~/#/mainAccessBlending"><i class="fa fa-circle-o"></i>Consulta Blending</a></li>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-circle-o"></i>Fuera de Niveles<i class="fa fa-angle-left pull-right"></i></a>
+                                                    <ul class="treeview-menu">
+                                                        <li><a href="@Url.Action("ConsultaAdminFueraNivelesPrincipal", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Consulta Principal</a></li>
+                                                        <li><a href="@Url.Action("ConsultaAdminFueraNivelesLog", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Consulta del Log</a></li>
+                                                    </ul>
+                                                </li>
                                             </ul>
-                                        </li>*@
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>
@@ -609,7 +610,7 @@
                                         <li>
                                             <a href="@Url.Action("ConsultaClienteCreacionDireccion", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Cunsultar Cliente</a>
                                             <a href="@Url.Action("ConsultaGestionCreacionDr", "Traslados")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
-                                            
+
                                         </li>
                                     </ul>
                                 </li>
@@ -736,16 +737,16 @@
         <div class="content-wrapper">
             @if (ViewBag.Title != null && ViewBag.Title != "")
             {
-            <section class="content-header">
-                <h1>
-                    @ViewBag.Title
-                    <small>@ViewBag.SubTitle</small>
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i>@ViewBag.SubTitle</a></li>
-                    <li class="active">@ViewBag.Title</li>
-                </ol>
-            </section>
+                <section class="content-header">
+                    <h1>
+                        @ViewBag.Title
+                        <small>@ViewBag.SubTitle</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i>@ViewBag.SubTitle</a></li>
+                        <li class="active">@ViewBag.Title</li>
+                    </ol>
+                </section>
             }
             <section class="content" style="min-height:1500px;">
                 <div class="col-md-4" style="z-index:999; float: left; position: absolute; display:block">
@@ -790,9 +791,9 @@
                     <button id="BListNotify" style="display:none">Text</button>
 
                 </div>
-                
+
                 <a id="BuenServicioHREF" href="#Buen_Servicio" data-toggle="modal" data-backdrop="static" data-keyboard="false">
-                    
+
                 </a>
                 @*<p id="status">7</p>*@
                 @RenderBody()
@@ -846,10 +847,10 @@
 
                 </div>
                 <div class="tab-pane" id="control-sidebar-stats-tab">
-                    
+
                 </div>
                 <div class="tab-pane" id="control-sidebar-settings-tab">
-                   
+
                 </div>
             </div>
         </aside>
@@ -1089,16 +1090,16 @@
     <script src="~/Scripts/Shared/_AlertasLayout.js?1.1.9"></script>
 
     <script>
-    var urlCampanasView = '@Url.Action("Campanas","Calculadoras")';
-    var urlCompensacionView = '@Url.Action("Compensacion", "Calculadoras")';
-    var urlDiferenciaTarifasView = '@Url.Action("DiferenciaTarifas", "Calculadoras")';
-    var urlProrrateosView = '@Url.Action("Prorrateos", "Calculadoras")';
-    var urlRentasView = '@Url.Action("Rentas", "Calculadoras")';
-    var urlLockScreen = '@Url.Action("SLockScreen", "Account")';
-    $(function () {
-        $('#ChatGeneral').draggable();
-        $('#Drag').draggable();
-    });
+        var urlCampanasView = '@Url.Action("Campanas","Calculadoras")';
+        var urlCompensacionView = '@Url.Action("Compensacion", "Calculadoras")';
+        var urlDiferenciaTarifasView = '@Url.Action("DiferenciaTarifas", "Calculadoras")';
+        var urlProrrateosView = '@Url.Action("Prorrateos", "Calculadoras")';
+        var urlRentasView = '@Url.Action("Rentas", "Calculadoras")';
+        var urlLockScreen = '@Url.Action("SLockScreen", "Account")';
+        $(function () {
+            $('#ChatGeneral').draggable();
+            $('#Drag').draggable();
+        });
 
     </script>
 
