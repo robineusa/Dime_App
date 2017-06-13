@@ -94,10 +94,15 @@ namespace Dime.Controllers
 
             return RedirectToAction("Index", "Inbound");
         }
-
        
         [HttpGet]
         public ActionResult Siembra_HD()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Mejoras_Tecnicas()
         {
             return View();
         }

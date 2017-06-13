@@ -24,7 +24,6 @@ namespace Dime.Controllers
         //ESTA PARTE ES GLOBAL PARA TODOS LOS PROCESOS DE BLENDING
         public JsonResult TiposDeContactoList(decimal gestion)
         {
-
             return new JsonResult()
             {
                 Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeContactoDeGestion(gestion)),

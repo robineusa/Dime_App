@@ -2244,6 +2244,7 @@
     <Content Include="Resources\Images\Inbound\correo.png" />
     <Content Include="Resources\Images\Inbound\Elegido.png" />
     <Content Include="Resources\Images\Inbound\hd2.png" />
+    <Content Include="Resources\Images\Inbound\Mejoras_Tecnicas.png" />
     <Content Include="Resources\Images\Layout\apc.png" />
     <Content Include="Resources\Images\Layout\apc1.png" />
     <Content Include="Resources\Images\Layout\apc2.png" />
@@ -3151,6 +3152,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\DistribucionBlending\Rentabilizacion.cshtml" />
+    <Content Include="Views\Alertas\Mejoras_Tecnicas.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

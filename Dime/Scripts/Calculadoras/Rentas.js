@@ -51,9 +51,6 @@ function ActualizarParametros()
     var tvSelected = $("input[name=tvCheck]:checked").val();
     var interSelected = $("input[name=interCheck]:checked").val();
     var estrato = $("#tbEstrato").val();
-    console.log(vozSelected + " voz");
-    console.log(tvSelected + " tv");
-    console.log(interSelected + " internet");
 
     $.ajax({
         type: "GET",
