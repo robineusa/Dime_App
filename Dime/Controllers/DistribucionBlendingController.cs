@@ -21,6 +21,55 @@ namespace Dime.Controllers
             mastersServices = new WSD.MaestrosServiceClient();
             mastersServices.ClientCredentials.Authenticate();
         }
+        //ESTA PARTE ES GLOBAL PARA TODOS LOS PROCESOS DE BLENDING
+        public JsonResult TiposDeContactoList(decimal gestion)
+        {
+            return new JsonResult()
+            {
+                Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeContactoDeGestion(gestion)),
+                JsonRequestBehavior = JsonRequestBehavior.DenyGet
+            };
+        }
+
+
+        public JsonResult TiposCierresList(decimal idContacto)
+        {
+
+            return new JsonResult()
+            {
+                Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeCierresDeContacto(idContacto)),
+                JsonRequestBehavior = JsonRequestBehavior.DenyGet
+            };
+        }
+        public JsonResult TiposRazonesList(decimal idCierre)
+        {
+
+            return new JsonResult()
+            {
+                Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeRazonDeCierres(idCierre)),
+                JsonRequestBehavior = JsonRequestBehavior.DenyGet
+            };
+        }
+
+        public JsonResult TiposCausasList(decimal idRazon)
+        {
+
+            return new JsonResult()
+            {
+                Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeCausasDeRazon(idRazon)),
+                JsonRequestBehavior = JsonRequestBehavior.DenyGet
+            };
+        }
+        public JsonResult TiposMotivoList(decimal idCausa)
+        {
+
+            return new JsonResult()
+            {
+                Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeMotivoDeCausas(idCausa)),
+                JsonRequestBehavior = JsonRequestBehavior.DenyGet
+            };
+        }
+        //CABLE MODEM FUERA DE NIVELES
         public ActionResult CableModemFueradeNiveles(string CuentaCliente)
         {
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
@@ -182,46 +231,175 @@ namespace Dime.Controllers
             return jsonResult;
         }
 
-        //ESTA PARTE ES GLOBAL PARA TODOS LOS PROCESOS DE BLENDING
-        public JsonResult TiposDeContactoList(decimal gestion)
-        {
-
-            return new JsonResult()
-            {
-                Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeContactoDeGestion(gestion)),
-                JsonRequestBehavior = JsonRequestBehavior.DenyGet
-            };
-        }
-
-
-        public JsonResult TiposCierresList(decimal idContacto)
-        {
-
-            return new JsonResult()
-            {
-                Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeCierresDeContacto(idContacto)),
-                JsonRequestBehavior = JsonRequestBehavior.DenyGet
-            };
-        }
-        public JsonResult TiposRazonesList(decimal idCierre)
-        {
-
-            return new JsonResult()
-            {
-                Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeRazonDeCierres(idCierre)),
-                JsonRequestBehavior = JsonRequestBehavior.DenyGet
-            };
-        }
-
-        public JsonResult TiposCausasList(decimal idRazon)
-        {
-
-            return new JsonResult()
-            {
-                Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeCausasDeRazon(idRazon)),
-                JsonRequestBehavior = JsonRequestBehavior.DenyGet
-            };
-        }
        
+
+        //RENTABILIZACION
+        [HttpGet]
+        public ActionResult Rentabilizacion(string CuentaCliente)
+        {
+            ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
+            GBPRentabilizacion ClienteGestionado = new GBPRentabilizacion();
+
+            if (CuentaCliente == null || CuentaCliente.Equals(""))
+            {
+                model.DatosDelCliente = distribucionBlendingService.TraerInformacionCuentaBlending(Convert.ToInt32(Session["IdUsuario"].ToString()), "RENTABILIZACION", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString());
+                if (model.DatosDelCliente != null)
+                    model.GBCRentabilizacion = distribucionBlendingService.TraerInformacionCuentaRentabilizacion(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
+            }
+            else
+            {
+                model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "RENTABILIZACION", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
+                if (model.DatosDelCliente != null)
+
+                    ClienteGestionado = distribucionBlendingService.TraerDatosCuentaSelectRentabilizacion(model.DatosDelCliente.Cuenta);
+                if (ClienteGestionado != null)
+                {
+                    model.GBCRentabilizacion.CuentaCiente = ClienteGestionado.CuentaCliente;
+                    model.GBCRentabilizacion.ConsumosPpv = ClienteGestionado.ConsumosPpv;
+                    model.GBCRentabilizacion.UltimaPpv = ClienteGestionado.UltimaPpv;
+                    model.GBCRentabilizacion.SiembraHd = ClienteGestionado.SiembraHd;
+                    model.GBCRentabilizacion.SiembraVoz = ClienteGestionado.SiembraVoz;
+                    model.GBCRentabilizacion.BindajeInternet = ClienteGestionado.BlindajeInternet;
+                    model.GBCRentabilizacion.UltimaMarcacion = ClienteGestionado.UltimaMarcacion;
+                    model.GBCRentabilizacion.Ofrecimiento1 = ClienteGestionado.OfrecimientoAceptado;
+                    
+                }
+                else
+                {
+                    model.GBCRentabilizacion.CuentaCiente = 0;
+                    model.GBCRentabilizacion.ConsumosPpv = "NO EXISTE INFORMACION";
+                    model.GBCRentabilizacion.UltimaPpv = "NO EXISTE INFORMACION";
+                    model.GBCRentabilizacion.SiembraHd = "NO EXISTE INFORMACION";
+                    model.GBCRentabilizacion.SiembraVoz = "NO EXISTE INFORMACION";
+                    model.GBCRentabilizacion.BindajeInternet = "NO EXISTE INFORMACION";
+                    model.GBCRentabilizacion.UltimaMarcacion = "NO EXISTE INFORMACION";
+                    model.GBCRentabilizacion.Ofrecimiento1 = "NO EXISTE INFORMACION";
+                    model.GBCRentabilizacion.Ofrecimiento2 = "NO EXISTE INFORMACION";
+                    model.GBCRentabilizacion.Ofrecimiento3 = "NO EXISTE INFORMACION";
+                    model.GBCRentabilizacion.Campana1 = "NO EXISTE INFORMACION";
+                    model.GBCRentabilizacion.Campana2 = "NO EXISTE INFORMACION";
+                    model.GBCRentabilizacion.Campana2 = "NO EXISTE INFORMACION";
+                }
+
+            }
+            if (model.DatosDelCliente == null)
+            {
+                model.DatosDelCliente = new ClientesTodo();
+                model.DatosDelCliente.Cuenta = 0;
+                ViewBag.ValidacionBase = "NO EXISTEN MAS CUENTAS ASIGNADAS PARA ESTA CAMPAÑA";
+
+                ViewBag.CantidadToques = 0;
+                ViewBag.Cierre = "";
+                ViewBag.Razon = "";
+
+            }
+            else
+            {
+                int DatoContactos = distribucionBlendingService.CantidadToquesCuentaRentabilizacion(model.DatosDelCliente.Cuenta);
+                ViewBag.ValidacionBase = null;
+                ViewBag.CantidadToques = DatoContactos;
+                model.UltimoGBLRentabilizacion = distribucionBlendingService.TraeUltimaGestionCuentaRentabilizacion(model.DatosDelCliente.Cuenta);
+                if (model.UltimoGBLRentabilizacion != null)
+                {
+                    ViewBag.Cierre = model.UltimoGBLRentabilizacion.Cierre;
+                    ViewBag.Razon = model.UltimoGBLRentabilizacion.Causa;
+                }
+                else
+                {
+                    ViewBag.Cierre = "SIN GESTION";
+                    ViewBag.Razon = "SIN GESTION";
+                }
+            }
+            return View(model);
+
+        }
+
+        public JsonResult HistoricoGestionRentabilizacion()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.TraeListaGestionUsuarioRentabilizacion(Session["IdUsuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult SeguimientosRentabilizacion()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.TraeListaSeguimientosUsuarioRentabilizacion(Session["IdUsuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
+        [HttpPost]
+        public ActionResult Rentabilizacion(ViewModelDistribucionesBlending model)
+        {
+            model.GBPRentabilizacion.UsuarioGestion = Session["IdUsuario"].ToString();
+            model.GBPRentabilizacion.AliadoGestion = Session["AliadoLogeado"].ToString();
+            model.GBPRentabilizacion.AliadoGestion = Session["AliadoLogeado"].ToString();
+            model.GBPRentabilizacion.OperacionGestion = Session["OperacionBlending"].ToString();
+            model.GBPRentabilizacion.CuentaCliente = model.DatosDelCliente.Cuenta;
+            model.GBPRentabilizacion.ConsumosPpv = model.GBCRentabilizacion.ConsumosPpv;
+            model.GBPRentabilizacion.UltimaPpv = model.GBCRentabilizacion.UltimaPpv;
+            model.GBPRentabilizacion.SiembraHd = model.GBCRentabilizacion.SiembraHd;
+            model.GBPRentabilizacion.SiembraVoz = model.GBCRentabilizacion.SiembraVoz;
+            model.GBPRentabilizacion.BlindajeInternet = model.GBCRentabilizacion.BindajeInternet;
+            model.GBPRentabilizacion.UltimaMarcacion = model.GBCRentabilizacion.UltimaMarcacion;
+            model.GBPRentabilizacion.FechaSeguimiento = DateTime.Now;
+
+            var validacion = distribucionBlendingService.ValidarCuentaEnRentabilizacion(model.GBPRentabilizacion.CuentaCliente);
+
+            if (validacion == true)
+            {
+                distribucionBlendingService.ActualizarGestionRentabilizacion(model.GBPRentabilizacion);
+            }
+            else
+            {
+                distribucionBlendingService.InsertarRegistroRentabilizacion(model.GBPRentabilizacion);
+            }
+            DistribucionBlending Registro = new DistribucionBlending();
+            Registro.CuentaCliente = model.DatosDelCliente.Cuenta;
+            Registro.FormularioDestino = "RENTABILIZACION";
+            Registro.AliadoDestino = Session["AliadoLogeado"].ToString();
+            Registro.OperacionDestino = Session["OperacionBlending"].ToString();
+            Registro.CampanaDestino = Session["CampañaBlending"].ToString();
+
+            if (model.GBPRentabilizacion.Cierre == "130" || model.GBPRentabilizacion.Cierre == "131" || model.GBPRentabilizacion.Cierre == "135")
+            {
+                distribucionBlendingService.EliminaCuentaGestionadaDistribucion(Registro);
+            }
+            else if (model.GBPRentabilizacion.Cierre == "132" || model.GBPRentabilizacion.Cierre == "133" || model.GBPRentabilizacion.Cierre == "134")
+            {
+                distribucionBlendingService.InsertarCuentaColaDistribucionBlending(Registro);
+            }
+
+            return RedirectToAction("Rentabilizacion"); ;
+        }
+        [HttpGet]
+        public ActionResult ConsultaAdminRentabilizacionPrincipal()
+        {
+            ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
+            return View(model);
+        }
+        [HttpGet]
+        public ActionResult ConsultaAdminRentabilizacionLog()
+        {
+            ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
+            return View(model);
+        }
+        public JsonResult ConsultaAdminRentabilizacionPrincipalJson(string fechaInicial, string fechaFinal)
+        {
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.ConsultaAdminRentabilizacionP(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ConsultaAdminRentabilizacionLogJson(string fechaInicial, string fechaFinal)
+        {
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.ConsultaAdminRentabilizacionL(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
+
     }
 }

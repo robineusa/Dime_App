@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Mejoras Tecnicas</title>
+    @Styles.Render("~/AdminLTEbootstrap/css")
+    @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+</head>
+<body>
+    @*@using (Html.BeginForm("Siembra_HD", "Alertas", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
+    {*@
+        <div>           
+            <hr />
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-gift"></i>
+                <h3 class="box-title">Accionable</h3>
+            </div>
+            <div class="callout" style="margin-bottom: 0 ;border-color:#508f3e !important; background-color:gainsboro !important; color: black !important">
+                <div class="row">
+                    
+                </div>
+                <br />
+            </div>
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-exchange"></i>
+                <h3 class="box-title">Aceptacion</h3>
+            </div>
+            <div class="callout" style="margin-bottom: 0 ;border-color:#508f3e !important; background-color:gainsboro !important; color: black !important">
+                <div class="col-xs-2" style="width:auto;color:black; margin-left: -20px;">
+                    <small>El cliente acepto el ofrecimiento:</small>
+                </div>
+                <br />
+                <div class="form-group" style="margin-left: -5px;">
+                    
+                </div>
+            </div>
+            <br />
+            <button id="btnSubmitActivacionSiembra" type="submit" class="btn btn-primary" name="Guardar" value="true" style="width:10%; height:40px;">Guardar</button>
+        </div>
+    @*}  *@
+    
+</body>
+</html>

@@ -546,6 +546,17 @@ function LlamarSiembraHD() {
     })
 }
 
+function LlamarMejorasTecnicas() {
+    $.ajax({
+        type: "GET",
+        url: urlMejorasTecnicas,
+        dataType: "html",
+        success: function (result) {
+            $('#MejorasTBody').html(result);
+        }
+    })
+}
+
 function ResetearDivs() {
 
     var vacio = $("<div></div>");
@@ -554,6 +565,7 @@ function ResetearDivs() {
     $('#ClaroVideoBody').html(vacio);
     $('#SMOBody').html(vacio);
     $('#SiembraBody').html(vacio);
+    $('#MejorasTBody').html(vacio);
 }
 
 //function UsabilidadBusquedaCuenta() {

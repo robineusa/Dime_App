@@ -1551,4 +1551,85 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfGBPFueraNiveles" nillable="true" type="tns:ArrayOfGBPFueraNiveles" />
+  <xs:complexType name="GBC_Rentabilizacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BindajeInternet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Campana1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Campana2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Campana3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsumosPpv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCiente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Ofrecimiento1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiembraHd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiembraVoz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimaMarcacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimaPpv" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GBC_Rentabilizacion" nillable="true" type="tns:GBC_Rentabilizacion" />
+  <xs:complexType name="GBPRentabilizacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BlindajeInternet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Causa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cierre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsumosPpv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSeguimiento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfrecimientoAceptado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperacionGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiembraHd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiembraVoz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoContacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimaMarcacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimaPpv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GBPRentabilizacion" nillable="true" type="tns:GBPRentabilizacion" />
+  <xs:complexType name="ArrayOfGBLRentabilizacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GBLRentabilizacion" nillable="true" type="tns:GBLRentabilizacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGBLRentabilizacion" nillable="true" type="tns:ArrayOfGBLRentabilizacion" />
+  <xs:complexType name="GBLRentabilizacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BlindajeInternet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Causa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cierre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsumosPpv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSeguimiento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OfrecimientoAceptado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperacionGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiembraHd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiembraVoz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoContacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimaMarcacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimaPpv" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GBLRentabilizacion" nillable="true" type="tns:GBLRentabilizacion" />
+  <xs:complexType name="ArrayOfGBPRentabilizacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GBPRentabilizacion" nillable="true" type="tns:GBPRentabilizacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGBPRentabilizacion" nillable="true" type="tns:ArrayOfGBPRentabilizacion" />
 </xs:schema>

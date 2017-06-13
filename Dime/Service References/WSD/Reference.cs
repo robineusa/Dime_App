@@ -8723,6 +8723,116 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesL", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminFueraNivelesLRespons" +
             "e")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLFueraNiveles>> ConsultaAdminFueraNivelesLAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaRentabiliza" +
+            "cion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaRentabiliza" +
+            "cionResponse")]
+        Telmexla.Servicios.DIME.Entity.GBC_Rentabilizacion TraerInformacionCuentaRentabilizacion(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaRentabiliza" +
+            "cion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaRentabiliza" +
+            "cionResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBC_Rentabilizacion> TraerInformacionCuentaRentabilizacionAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/InsertarRegistroRentabilizacion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/InsertarRegistroRentabilizacionRe" +
+            "sponse")]
+        void InsertarRegistroRentabilizacion(Telmexla.Servicios.DIME.Entity.GBPRentabilizacion PRentabilizacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/InsertarRegistroRentabilizacion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/InsertarRegistroRentabilizacionRe" +
+            "sponse")]
+        System.Threading.Tasks.Task InsertarRegistroRentabilizacionAsync(Telmexla.Servicios.DIME.Entity.GBPRentabilizacion PRentabilizacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ActualizarGestionRentabilizacion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ActualizarGestionRentabilizacionR" +
+            "esponse")]
+        void ActualizarGestionRentabilizacion(Telmexla.Servicios.DIME.Entity.GBPRentabilizacion PRentabilizacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ActualizarGestionRentabilizacion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ActualizarGestionRentabilizacionR" +
+            "esponse")]
+        System.Threading.Tasks.Task ActualizarGestionRentabilizacionAsync(Telmexla.Servicios.DIME.Entity.GBPRentabilizacion PRentabilizacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ValidarCuentaEnRentabilizacion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ValidarCuentaEnRentabilizacionRes" +
+            "ponse")]
+        bool ValidarCuentaEnRentabilizacion(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ValidarCuentaEnRentabilizacion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ValidarCuentaEnRentabilizacionRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<bool> ValidarCuentaEnRentabilizacionAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeInformacionActualRentabilizac" +
+            "ion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeInformacionActualRentabilizac" +
+            "ionResponse")]
+        Telmexla.Servicios.DIME.Entity.GBPRentabilizacion TraeInformacionActualRentabilizacion(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeInformacionActualRentabilizac" +
+            "ion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeInformacionActualRentabilizac" +
+            "ionResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBPRentabilizacion> TraeInformacionActualRentabilizacionAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeListaGestionUsuarioRentabiliz" +
+            "acion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeListaGestionUsuarioRentabiliz" +
+            "acionResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLRentabilizacion> TraeListaGestionUsuarioRentabilizacion(string Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeListaGestionUsuarioRentabiliz" +
+            "acion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeListaGestionUsuarioRentabiliz" +
+            "acionResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLRentabilizacion>> TraeListaGestionUsuarioRentabilizacionAsync(string Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeListaSeguimientosUsuarioRenta" +
+            "bilizacion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeListaSeguimientosUsuarioRenta" +
+            "bilizacionResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPRentabilizacion> TraeListaSeguimientosUsuarioRentabilizacion(string Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeListaSeguimientosUsuarioRenta" +
+            "bilizacion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeListaSeguimientosUsuarioRenta" +
+            "bilizacionResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPRentabilizacion>> TraeListaSeguimientosUsuarioRentabilizacionAsync(string Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraerDatosCuentaSelectRentabiliza" +
+            "cion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraerDatosCuentaSelectRentabiliza" +
+            "cionResponse")]
+        Telmexla.Servicios.DIME.Entity.GBPRentabilizacion TraerDatosCuentaSelectRentabilizacion(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraerDatosCuentaSelectRentabiliza" +
+            "cion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraerDatosCuentaSelectRentabiliza" +
+            "cionResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBPRentabilizacion> TraerDatosCuentaSelectRentabilizacionAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/CantidadToquesCuentaRentabilizaci" +
+            "on", ReplyAction="http://tempuri.org/IDistribucionBlendingService/CantidadToquesCuentaRentabilizaci" +
+            "onResponse")]
+        int CantidadToquesCuentaRentabilizacion(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/CantidadToquesCuentaRentabilizaci" +
+            "on", ReplyAction="http://tempuri.org/IDistribucionBlendingService/CantidadToquesCuentaRentabilizaci" +
+            "onResponse")]
+        System.Threading.Tasks.Task<int> CantidadToquesCuentaRentabilizacionAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuentaRentabiliz" +
+            "acion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuentaRentabiliz" +
+            "acionResponse")]
+        Telmexla.Servicios.DIME.Entity.GBLRentabilizacion TraeUltimaGestionCuentaRentabilizacion(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuentaRentabiliz" +
+            "acion", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuentaRentabiliz" +
+            "acionResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBLRentabilizacion> TraeUltimaGestionCuentaRentabilizacionAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminRentabilizacionP", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminRentabilizacionPResp" +
+            "onse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPRentabilizacion> ConsultaAdminRentabilizacionP(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminRentabilizacionP", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminRentabilizacionPResp" +
+            "onse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPRentabilizacion>> ConsultaAdminRentabilizacionPAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminRentabilizacionL", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminRentabilizacionLResp" +
+            "onse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLRentabilizacion> ConsultaAdminRentabilizacionL(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminRentabilizacionL", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminRentabilizacionLResp" +
+            "onse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLRentabilizacion>> ConsultaAdminRentabilizacionLAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8878,6 +8988,102 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLFueraNiveles>> ConsultaAdminFueraNivelesLAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
             return base.Channel.ConsultaAdminFueraNivelesLAsync(FechaInicial, FechaFinal);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GBC_Rentabilizacion TraerInformacionCuentaRentabilizacion(decimal CuentaCliente) {
+            return base.Channel.TraerInformacionCuentaRentabilizacion(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBC_Rentabilizacion> TraerInformacionCuentaRentabilizacionAsync(decimal CuentaCliente) {
+            return base.Channel.TraerInformacionCuentaRentabilizacionAsync(CuentaCliente);
+        }
+        
+        public void InsertarRegistroRentabilizacion(Telmexla.Servicios.DIME.Entity.GBPRentabilizacion PRentabilizacion) {
+            base.Channel.InsertarRegistroRentabilizacion(PRentabilizacion);
+        }
+        
+        public System.Threading.Tasks.Task InsertarRegistroRentabilizacionAsync(Telmexla.Servicios.DIME.Entity.GBPRentabilizacion PRentabilizacion) {
+            return base.Channel.InsertarRegistroRentabilizacionAsync(PRentabilizacion);
+        }
+        
+        public void ActualizarGestionRentabilizacion(Telmexla.Servicios.DIME.Entity.GBPRentabilizacion PRentabilizacion) {
+            base.Channel.ActualizarGestionRentabilizacion(PRentabilizacion);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarGestionRentabilizacionAsync(Telmexla.Servicios.DIME.Entity.GBPRentabilizacion PRentabilizacion) {
+            return base.Channel.ActualizarGestionRentabilizacionAsync(PRentabilizacion);
+        }
+        
+        public bool ValidarCuentaEnRentabilizacion(decimal CuentaCliente) {
+            return base.Channel.ValidarCuentaEnRentabilizacion(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarCuentaEnRentabilizacionAsync(decimal CuentaCliente) {
+            return base.Channel.ValidarCuentaEnRentabilizacionAsync(CuentaCliente);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GBPRentabilizacion TraeInformacionActualRentabilizacion(decimal CuentaCliente) {
+            return base.Channel.TraeInformacionActualRentabilizacion(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBPRentabilizacion> TraeInformacionActualRentabilizacionAsync(decimal CuentaCliente) {
+            return base.Channel.TraeInformacionActualRentabilizacionAsync(CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLRentabilizacion> TraeListaGestionUsuarioRentabilizacion(string Usuario) {
+            return base.Channel.TraeListaGestionUsuarioRentabilizacion(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLRentabilizacion>> TraeListaGestionUsuarioRentabilizacionAsync(string Usuario) {
+            return base.Channel.TraeListaGestionUsuarioRentabilizacionAsync(Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPRentabilizacion> TraeListaSeguimientosUsuarioRentabilizacion(string Usuario) {
+            return base.Channel.TraeListaSeguimientosUsuarioRentabilizacion(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPRentabilizacion>> TraeListaSeguimientosUsuarioRentabilizacionAsync(string Usuario) {
+            return base.Channel.TraeListaSeguimientosUsuarioRentabilizacionAsync(Usuario);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GBPRentabilizacion TraerDatosCuentaSelectRentabilizacion(decimal CuentaCliente) {
+            return base.Channel.TraerDatosCuentaSelectRentabilizacion(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBPRentabilizacion> TraerDatosCuentaSelectRentabilizacionAsync(decimal CuentaCliente) {
+            return base.Channel.TraerDatosCuentaSelectRentabilizacionAsync(CuentaCliente);
+        }
+        
+        public int CantidadToquesCuentaRentabilizacion(decimal CuentaCliente) {
+            return base.Channel.CantidadToquesCuentaRentabilizacion(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<int> CantidadToquesCuentaRentabilizacionAsync(decimal CuentaCliente) {
+            return base.Channel.CantidadToquesCuentaRentabilizacionAsync(CuentaCliente);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GBLRentabilizacion TraeUltimaGestionCuentaRentabilizacion(decimal CuentaCliente) {
+            return base.Channel.TraeUltimaGestionCuentaRentabilizacion(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBLRentabilizacion> TraeUltimaGestionCuentaRentabilizacionAsync(decimal CuentaCliente) {
+            return base.Channel.TraeUltimaGestionCuentaRentabilizacionAsync(CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPRentabilizacion> ConsultaAdminRentabilizacionP(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminRentabilizacionP(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPRentabilizacion>> ConsultaAdminRentabilizacionPAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminRentabilizacionPAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLRentabilizacion> ConsultaAdminRentabilizacionL(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminRentabilizacionL(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLRentabilizacion>> ConsultaAdminRentabilizacionLAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminRentabilizacionLAsync(FechaInicial, FechaFinal);
         }
     }
 }
