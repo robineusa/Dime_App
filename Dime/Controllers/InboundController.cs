@@ -119,6 +119,14 @@ namespace Dime.Controllers
                 Ofrecimiento3 = x.Ofrecimiento3
             }).ToList();
 
+            ///consulta MejorasTecnicas
+            var MejorasTecnicas = acsiembrahdwebservice.BuscarCuentaMejorasTecnicas(Convert.ToDecimal(cuentaCliente));
+            model.ListaMejorasTecnicas = MejorasTecnicas.Select(x => new CuentasMejorasTecnicas
+            {
+                Id = x.Id,
+                Cuenta = x.Cuenta,
+                Accionable = x.Accionable
+            }).ToList();
 
             model.DatosAdcionalesCliente = inboundService.TraerDatosAdicionalesCliente(cuentaCliente)?? new DatosAdicionalesCliente();
             model.iniciarOptionsVista();

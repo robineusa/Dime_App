@@ -106,5 +106,17 @@ namespace Dime.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Mejoras_Tecnicas(MejorasTecnicas model)
+        {
+            model.UsuarioGestion = Session["Usuario"].ToString();
+            model.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+            model.AliadoGestion = Session["AliadoLogeado"].ToString();
+
+
+
+            return RedirectToAction("Index", "Inbound");
+        }
     }
 }
