@@ -97,6 +97,8 @@
     <Compile Include="ClientesTodo.cs" />
     <Compile Include="ConvenioElectronico.cs" />
     <Compile Include="ConvenioElectronicoCollection.cs" />
+    <Compile Include="CuentasMejorasTecnicas.cs" />
+    <Compile Include="CuentasMejorasTecnicasCollection.cs" />
     <Compile Include="CuentasSiembraHD.cs" />
     <Compile Include="CuentasSiembraHDCollection.cs" />
     <Compile Include="CuentasSiguienteMejorOferta.cs" />
@@ -137,6 +139,7 @@
     <Compile Include="MaestroMarcacioneCollection.cs" />
     <Compile Include="MaestroNodo.cs" />
     <Compile Include="MaestroNodoCollection.cs" />
+    <Compile Include="MejorasTecnicas.cs" />
     <Compile Include="ModosLogin.cs" />
     <Compile Include="NotasIngreso.cs" />
     <Compile Include="NotasTraslado.cs" />
