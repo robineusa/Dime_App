@@ -4,8 +4,8 @@
     ViewBag.SubTitle = "Gestión Blending";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@if (Session["Blending Cierre de Ciclo"] != null)
-{
+@*@if (Session["Blending Cierre de Ciclo"] != null)
+{*@
 using (Html.BeginForm("Guardar_Cierre_Ciclo", "GestionBlending", FormMethod.Post, new { id = "datosCliente", role = "form" }))
 {
 <div class="callout callout-info" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
@@ -828,7 +828,7 @@ using (Html.BeginForm("Guardar_Cierre_Ciclo", "GestionBlending", FormMethod.Post
 <link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />
 @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
 }
-}
+@*}*@
 else
 {
 <div class="row">

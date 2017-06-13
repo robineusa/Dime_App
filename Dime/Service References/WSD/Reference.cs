@@ -5268,6 +5268,83 @@ namespace Dime.WSD {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CuentasMejorasTecnicas", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class CuentasMejorasTecnicas : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AccionableField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal CuentaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Accionable {
+            get {
+                return this.AccionableField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AccionableField, value) != true)) {
+                    this.AccionableField = value;
+                    this.RaisePropertyChanged("Accionable");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Cuenta {
+            get {
+                return this.CuentaField;
+            }
+            set {
+                if ((this.CuentaField.Equals(value) != true)) {
+                    this.CuentaField = value;
+                    this.RaisePropertyChanged("Cuenta");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IWebService")]
     public interface IWebService {
@@ -8319,6 +8396,14 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/TarifaActualDeDatos", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/TarifaActualDeDatosResponse")]
         System.Threading.Tasks.Task<Dime.WSD.SmoTarifaActual> TarifaActualDeDatosAsync(string estrato, string voz, string tv, string internet);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/BuscarCuentaMejorasTecnicas", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/BuscarCuentaMejorasTecnicasRespons" +
+            "e")]
+        System.Collections.Generic.List<Dime.WSD.CuentasMejorasTecnicas> BuscarCuentaMejorasTecnicas(decimal cuentacliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/BuscarCuentaMejorasTecnicas", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/BuscarCuentaMejorasTecnicasRespons" +
+            "e")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.CuentasMejorasTecnicas>> BuscarCuentaMejorasTecnicasAsync(decimal cuentacliente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8394,6 +8479,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Dime.WSD.SmoTarifaActual> TarifaActualDeDatosAsync(string estrato, string voz, string tv, string internet) {
             return base.Channel.TarifaActualDeDatosAsync(estrato, voz, tv, internet);
+        }
+        
+        public System.Collections.Generic.List<Dime.WSD.CuentasMejorasTecnicas> BuscarCuentaMejorasTecnicas(decimal cuentacliente) {
+            return base.Channel.BuscarCuentaMejorasTecnicas(cuentacliente);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.CuentasMejorasTecnicas>> BuscarCuentaMejorasTecnicasAsync(decimal cuentacliente) {
+            return base.Channel.BuscarCuentaMejorasTecnicasAsync(cuentacliente);
         }
     }
     

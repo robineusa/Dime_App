@@ -208,6 +208,11 @@ $('#tiposRazonSelect').change(function () {
     });
     LimpiarFecha();
 })
+$('#tiposCausasSelect').change(function () {
+    ListaMotivos();
+    LimpiarFecha();
+
+})
 function TraerListaGestion() {
     $.ajax({
         type: "GET",
@@ -327,3 +332,55 @@ function LimpiarFecha() {
     var FechaSeguimiento = document.getElementById('CC_Fecha');
     FechaSeguimiento.value = "";
 }
+
+function Ofrecimiento_CC_1_SI() {
+    
+    document.getElementById('2_ofre').style.display = 'none';
+    document.getElementById('3_ofre').style.display = 'none';
+   
+    $("#ofre1No").attr('checked', false);
+    
+    var valor = $("#ofrecimiento1").val();
+    $("#OfrecimientoAceptado").val(valor);
+    
+    
+};
+
+function Ofrecimiento_CC_1_NO() {
+    document.getElementById('2_ofre').style.display = 'block';
+    document.getElementById('3_ofre').style.display = 'none';
+
+    $("#ofre1").attr('checked', false);
+
+    $("#OfrecimientoAceptado").val("CLIENTE NO ACEPTO NINGUN OFRECIMIENTO");
+    
+};
+function Ofrecimiento_CC_2_SI() {
+    document.getElementById('3_ofre').style.display = 'none';
+    $("#ofre2No").attr('checked', false);
+    var valor = $("#ofrecimiento2").val();
+    $("#OfrecimientoAceptado").val(valor);
+    
+};
+
+function Ofrecimiento_CC_2_NO() {
+    document.getElementById('3_ofre').style.display = 'block';
+    $("#ofre1").attr('checked', false);
+    $("#ofre2").attr('checked', false);
+    $("#OfrecimientoAceptado").val("CLIENTE NO ACEPTO NINGUN OFRECIMIENTO");
+   
+};
+function Ofrecimiento_CC_3_SI() {
+    $("#ofre3No").attr('checked', false);
+    var valor = $("#ofrecimiento3").val();
+    $("#OfrecimientoAceptado").val(valor);
+    
+};
+
+function Ofrecimiento_CC_3_NO() {
+    $("#ofre1").attr('checked', false);
+    $("#ofre2").attr('checked', false);
+    $("#ofre3").attr('checked', false);
+    $("#OfrecimientoAceptado").val("CLIENTE NO ACEPTO NINGUN OFRECIMIENTO");
+    
+};

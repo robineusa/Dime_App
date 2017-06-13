@@ -239,6 +239,7 @@ namespace Dime.Controllers
         {
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
             GBPRentabilizacion ClienteGestionado = new GBPRentabilizacion();
+            
 
             if (CuentaCliente == null || CuentaCliente.Equals(""))
             {
@@ -341,7 +342,7 @@ namespace Dime.Controllers
             model.GBPRentabilizacion.SiembraVoz = model.GBCRentabilizacion.SiembraVoz;
             model.GBPRentabilizacion.BlindajeInternet = model.GBCRentabilizacion.BindajeInternet;
             model.GBPRentabilizacion.UltimaMarcacion = model.GBCRentabilizacion.UltimaMarcacion;
-            model.GBPRentabilizacion.FechaSeguimiento = DateTime.Now;
+           
 
             var validacion = distribucionBlendingService.ValidarCuentaEnRentabilizacion(model.GBPRentabilizacion.CuentaCliente);
 
@@ -360,11 +361,11 @@ namespace Dime.Controllers
             Registro.OperacionDestino = Session["OperacionBlending"].ToString();
             Registro.CampanaDestino = Session["CampañaBlending"].ToString();
 
-            if (model.GBPRentabilizacion.Cierre == "130" || model.GBPRentabilizacion.Cierre == "131" || model.GBPRentabilizacion.Cierre == "135")
+            if (model.GBPRentabilizacion.Cierre == "89" || model.GBPRentabilizacion.Cierre == "90" || model.GBPRentabilizacion.Cierre == "94")
             {
                 distribucionBlendingService.EliminaCuentaGestionadaDistribucion(Registro);
             }
-            else if (model.GBPRentabilizacion.Cierre == "132" || model.GBPRentabilizacion.Cierre == "133" || model.GBPRentabilizacion.Cierre == "134")
+            else if (model.GBPRentabilizacion.Cierre == "91" || model.GBPRentabilizacion.Cierre == "92" || model.GBPRentabilizacion.Cierre == "93")
             {
                 distribucionBlendingService.InsertarCuentaColaDistribucionBlending(Registro);
             }

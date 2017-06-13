@@ -156,12 +156,12 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="AliadoApertura" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
-      <xs:element minOccurs="0" name="FechaApertura" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="FechaCierre" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="FechaNota" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="HoraApertura" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="HoraUltimaActualizacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaApertura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCierre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaNota" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HoraApertura" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HoraUltimaActualizacion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdEstado" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="IdIngreso" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="Macroproceso" nillable="true" type="xs:string" />

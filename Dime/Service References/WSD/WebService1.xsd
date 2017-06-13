@@ -1398,6 +1398,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SmoTarifaActual" nillable="true" type="tns:SmoTarifaActual" />
+  <xs:complexType name="ArrayOfCuentasMejorasTecnicas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CuentasMejorasTecnicas" nillable="true" type="tns:CuentasMejorasTecnicas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCuentasMejorasTecnicas" nillable="true" type="tns:ArrayOfCuentasMejorasTecnicas" />
+  <xs:complexType name="CuentasMejorasTecnicas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accionable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuenta" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CuentasMejorasTecnicas" nillable="true" type="tns:CuentasMejorasTecnicas" />
   <xs:complexType name="BalanceScoreCard">
     <xs:sequence>
       <xs:element minOccurs="0" name="Acdcalls" type="xs:decimal" />
