@@ -8327,6 +8327,14 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/BuscarCuentaMejorasTecnicas", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/BuscarCuentaMejorasTecnicasRespons" +
             "e")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CuentasMejorasTecnicas>> BuscarCuentaMejorasTecnicasAsync(decimal cuentacliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/InsertarMejorasTecnicasInbound", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/InsertarMejorasTecnicasInboundResp" +
+            "onse")]
+        void InsertarMejorasTecnicasInbound(Telmexla.Servicios.DIME.Entity.MejorasTecnicas Mejoras);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/InsertarMejorasTecnicasInbound", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/InsertarMejorasTecnicasInboundResp" +
+            "onse")]
+        System.Threading.Tasks.Task InsertarMejorasTecnicasInboundAsync(Telmexla.Servicios.DIME.Entity.MejorasTecnicas Mejoras);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8410,6 +8418,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CuentasMejorasTecnicas>> BuscarCuentaMejorasTecnicasAsync(decimal cuentacliente) {
             return base.Channel.BuscarCuentaMejorasTecnicasAsync(cuentacliente);
+        }
+        
+        public void InsertarMejorasTecnicasInbound(Telmexla.Servicios.DIME.Entity.MejorasTecnicas Mejoras) {
+            base.Channel.InsertarMejorasTecnicasInbound(Mejoras);
+        }
+        
+        public System.Threading.Tasks.Task InsertarMejorasTecnicasInboundAsync(Telmexla.Servicios.DIME.Entity.MejorasTecnicas Mejoras) {
+            return base.Channel.InsertarMejorasTecnicasInboundAsync(Mejoras);
         }
     }
     

@@ -1412,6 +1412,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CuentasMejorasTecnicas" nillable="true" type="tns:CuentasMejorasTecnicas" />
+  <xs:complexType name="MejorasTecnicas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accionable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AceptacionMejorasTecnicas" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MejorasTecnicas" nillable="true" type="tns:MejorasTecnicas" />
   <xs:complexType name="BalanceScoreCard">
     <xs:sequence>
       <xs:element minOccurs="0" name="Acdcalls" type="xs:decimal" />
