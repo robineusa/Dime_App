@@ -2931,12 +2931,6 @@
     <Content Include="Service References\WSD\Dime.WSD.RazonIngresoSoporte.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\WSD\Dime.WSD.SmoRentaActual.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.SmoTarifaActual.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\WSD\Dime.WSD.Subrazon1IngresoSoporte.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
