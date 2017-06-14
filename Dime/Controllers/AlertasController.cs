@@ -114,7 +114,7 @@ namespace Dime.Controllers
             model.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
             model.AliadoGestion = Session["AliadoLogeado"].ToString();
 
-
+            acsiembrahdwebservice.InsertarMejorasTecnicasInbound(model);
 
             return RedirectToAction("Index", "Inbound");
         }

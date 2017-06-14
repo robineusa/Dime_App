@@ -46,12 +46,13 @@
                     @Html.DropDownListFor(m => m.AceptacionMejorasTecnicas, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="SI" },
                             new SelectListItem{Text="NO", Value="NO" } }, "",
                              new { @class = "form-control input-sm", @style = "width:20%" })
+                    @Html.ValidationMessageFor(m => m.AceptacionMejorasTecnicas, "", new { @class = "text-danger" })
                 </div>
             </div>
             <br />
             <button id="btnSubmitActivacionSiembra" type="submit" class="btn btn-primary" name="Guardar" value="true" style="width:10%; height:40px;">Guardar</button>
         </div>
-        @Html.TextBoxFor(m => m.CuentaCliente, null, new {@class= "", @id = "cuenta", @style = "display:block", @name = "cuentaCliente" })
+        @Html.TextBoxFor(m => m.CuentaCliente, null, new {@class= "", @id = "cuenta", @style = "display:none", @name = "cuentaCliente" })
     }  
     <script>
         $("#cuenta").val($("#inputCuenta").val());

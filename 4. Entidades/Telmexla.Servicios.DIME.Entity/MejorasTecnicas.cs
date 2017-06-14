@@ -1,4 +1,6 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace Telmexla.Servicios.DIME.Entity
 {
     public class MejorasTecnicas
@@ -10,6 +12,8 @@ namespace Telmexla.Servicios.DIME.Entity
         public string AliadoGestion { get; set; } //Aliado_Gestion (length: 30)
         public decimal CuentaCliente { get; set; } //Cuenta_Cliente
         public string Accionable { get; set; } //Ofrecimiento (Length: 500)
+
+        [Required(ErrorMessage = "Este campo no puede ser vacio")]
         public string AceptacionMejorasTecnicas { get; set; } //Aceptacion_Mejoras_Tecnicas (Length: 2)
     }
 }
