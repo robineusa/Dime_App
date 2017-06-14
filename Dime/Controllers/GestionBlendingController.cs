@@ -40,31 +40,31 @@ namespace Dime.Controllers
 
             
             ViewModelBlending model = new ViewModelBlending();
-            int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
-            if (cuentaSeleccionada == null || cuentaSeleccionada.Equals(""))
-            {
-                model.DatosCliente = blendingServices.TraerMisDatosClienteAutomaticos(idUsuarioActual, "CIERRE_CICLO", Session["AliadoLogeado"].ToString(), Session["LineaLogeado"].ToString());
-                if(model.DatosCliente!= null)
-                model.GestionOutInfo = blendingServices.TraerGestionOutboundInfoDeCuenta(model.DatosCliente.Cuenta, "CIERRE_CICLO", Session["AliadoLogeado"].ToString(), Session["LineaLogeado"].ToString());
-            }
-            else
-            {
+            //int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
+            //if (cuentaSeleccionada == null || cuentaSeleccionada.Equals(""))
+            //{
+            //    model.DatosCliente = blendingServices.TraerMisDatosClienteAutomaticos(idUsuarioActual, "CIERRE_CICLO", Session["AliadoLogeado"].ToString(), Session["LineaLogeado"].ToString());
+            //    if(model.DatosCliente!= null)
+            //    model.GestionOutInfo = blendingServices.TraerGestionOutboundInfoDeCuenta(model.DatosCliente.Cuenta, "CIERRE_CICLO", Session["AliadoLogeado"].ToString(), Session["LineaLogeado"].ToString());
+            //}
+            //else
+            //{
                 
-                model.DatosCliente = inboundServices.TraerClienteCompletoPorCuenta(Int32.Parse(cuentaSeleccionada));
-                if (model.DatosCliente != null)
-                model.GestionOutInfo = blendingServices.TraerGestionOutboundInfoDeCuenta(model.DatosCliente.Cuenta, "CIERRE_CICLO", Session["AliadoLogeado"].ToString(), Session["LineaLogeado"].ToString());
-                model.CierreCicloGestionado = blendingServices.TraerCierreCicloGestionado(Int32.Parse(idaGestionar));
-            }   
-            //Setea que no existen datos cliente si no encuentra nada en la base de datos para gestionar.
-            if (model.DatosCliente == null || model.GestionOutInfo == null)
-            {
-                model.DatosCliente = new ClientesTodo();
-                model.DatosCliente.Cuenta = 0;
-                model.DatosCliente.Nombre = "No existen datos";
-            }
+            //    model.DatosCliente = inboundServices.TraerClienteCompletoPorCuenta(Int32.Parse(cuentaSeleccionada));
+            //    if (model.DatosCliente != null)
+            //    model.GestionOutInfo = blendingServices.TraerGestionOutboundInfoDeCuenta(model.DatosCliente.Cuenta, "CIERRE_CICLO", Session["AliadoLogeado"].ToString(), Session["LineaLogeado"].ToString());
+            //    model.CierreCicloGestionado = blendingServices.TraerCierreCicloGestionado(Int32.Parse(idaGestionar));
+            //}   
+            ////Setea que no existen datos cliente si no encuentra nada en la base de datos para gestionar.
+            //if (model.DatosCliente == null || model.GestionOutInfo == null)
+            //{
+            //    model.DatosCliente = new ClientesTodo();
+            //    model.DatosCliente.Cuenta = 0;
+            //    model.DatosCliente.Nombre = "No existen datos";
+            //}
 
-            model.HistoricoCierreCiclo.AddRange(blendingServices.TraerHistorialCierreCicloDeAsesor(idUsuarioActual));
-            model.AgregarNombreClienteAHistoricoCierreCiclo(blendingServices.TraerNombresDeClientesCierreCiclo(model.HistoricoCierreCiclo));
+            //model.HistoricoCierreCiclo.AddRange(blendingServices.TraerHistorialCierreCicloDeAsesor(idUsuarioActual));
+            //model.AgregarNombreClienteAHistoricoCierreCiclo(blendingServices.TraerNombresDeClientesCierreCiclo(model.HistoricoCierreCiclo));
             return View(model);
         }
 

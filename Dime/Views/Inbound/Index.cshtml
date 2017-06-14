@@ -35,7 +35,7 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
 
             <div class="row">
 
-                @if (Model.ClientesTodos.Convenio == "SI" || Model.ClientesTodos.Clarovideo == "SI" || Model.ListaSiembraHD.Count >0 || Model.ListaSMO.Count >0)
+                @if (Model.ClientesTodos.Convenio == "SI" || Model.ClientesTodos.Clarovideo == "SI" || Model.ListaSiembraHD.Count >0 || Model.ListaSMO.Count >0 || Model.ListaMejorasTecnicas.Count > 0)
                 {
                     <div class="col-xs-2" style="right:30px; float: right;">
                         <div id="Menu_Opciones" style="display:block;">
@@ -67,9 +67,12 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
                                         <div id="Icono_5" style="display: block"></div>
                                     </a>
                                 }
-                                <a href="#MejorasTecnicas" onclick="return LlamarMejorasTecnicas()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
-                                    <div id="Icono_6" style="display: block"></div>
-                                </a>
+                                @if (Model.ListaMejorasTecnicas.Count > 0)
+                                {
+                                    <a href="#MejorasTecnicas" onclick="return LlamarMejorasTecnicas()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                                        <div id="Icono_6" style="display: block"></div>
+                                    </a>
+                                }
                             </div>
                         </div>
                     </div>
@@ -473,7 +476,7 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
                                         {
                                             @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {new SelectListItem{Text="CELULA AJUSTES", Value="CELULA AJUSTES" },
                                                                                              new SelectListItem{Text="CELULA FACTURACION Y CARTERA", Value="CELULA FACTURACION Y CARTERA"}, new SelectListItem{Text="CELULA OPERACIONES", Value="CELULA OPERACIONES" },
-                                                                                               new SelectListItem{Text="CELULA PQR", Value="CELULA PQR" }
+                                                                                               new SelectListItem{Text="CELULA PQR", Value="CELULA PQR" }, new SelectListItem{Text="CELULA VENTAS", Value="CELULA VENTAS" }
                                                                                            }, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalar", @onchange = "AEscalarCambiado()" })
                                         }
                                         else if (Model.LineaDeUsuarioActual.Equals("SOPORTE"))
@@ -723,7 +726,7 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
     <script>
         var jsonOfrecimientosSiembra = @Html.Raw(Json.Encode(Model.ListaSiembraHD));
         var jsonOfrecimientosSMO = @Html.Raw(Json.Encode(Model.ListaSMO));
-        console.log(jsonOfrecimientosSiembra);
+        var jsonMejorasTecnicas = @Html.Raw(Json.Encode(Model.ListaMejorasTecnicas));
         var consultCuentaDivUrl = "@Url.Action("BuscarCuentasPorCedulaInbound", "Clientes")";
         var tipificadorUrl = "@Url.Action("TipificacionMarcaciones", "Marcaciones")";
         var choosenCuenta = @Model.ClientesTodos.Cuenta;

@@ -1,4 +1,4 @@
-﻿
+﻿@model Telmexla.Servicios.DIME.Entity.MejorasTecnicas
 @{
     Layout = null;
 }
@@ -13,8 +13,8 @@
     @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
 </head>
 <body>
-    @*@using (Html.BeginForm("Siembra_HD", "Alertas", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
-    {*@
+    @using (Html.BeginForm("Mejoras_Tecnicas", "Alertas", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
+    {
         <div>           
             <hr />
             <div class="box-header ui-sortable-handle" style="cursor: inherit;">
@@ -22,10 +22,16 @@
                 <h3 class="box-title">Accionable</h3>
             </div>
             <div class="callout" style="margin-bottom: 0 ;border-color:#508f3e !important; background-color:gainsboro !important; color: black !important">
-                <div class="row">
-                    
-                </div>
-                <br />
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="3" style="padding:1px; width:1200px;">
+                                @Html.TextBoxFor(m => m.Accionable , null, new { @class = "form-control input-sm", @id = "Accionable", @name = "Accionable", @style = "margin-left:5px; width:100%; height:70px;" })
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="box-header ui-sortable-handle" style="cursor: inherit;">
                 <i class="fa fa-exchange"></i>
@@ -37,13 +43,20 @@
                 </div>
                 <br />
                 <div class="form-group" style="margin-left: -5px;">
-                    
+                    @Html.DropDownListFor(m => m.AceptacionMejorasTecnicas, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="SI" },
+                            new SelectListItem{Text="NO", Value="NO" } }, "",
+                             new { @class = "form-control input-sm", @style = "width:20%" })
+                    @Html.ValidationMessageFor(m => m.AceptacionMejorasTecnicas, "", new { @class = "text-danger" })
                 </div>
             </div>
             <br />
             <button id="btnSubmitActivacionSiembra" type="submit" class="btn btn-primary" name="Guardar" value="true" style="width:10%; height:40px;">Guardar</button>
         </div>
-    @*}  *@
-    
+        @Html.TextBoxFor(m => m.CuentaCliente, null, new {@class= "", @id = "cuenta", @style = "display:none", @name = "cuentaCliente" })
+    }  
+    <script>
+        $("#cuenta").val($("#inputCuenta").val());
+        $("#Accionable").val(jsonMejorasTecnicas[0].Accionable);
+    </script>
 </body>
 </html>

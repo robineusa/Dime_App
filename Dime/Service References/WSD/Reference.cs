@@ -8319,6 +8319,22 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/TarifaActualDeDatos", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/TarifaActualDeDatosResponse")]
         System.Threading.Tasks.Task<Dime.WSD.SmoTarifaActual> TarifaActualDeDatosAsync(string estrato, string voz, string tv, string internet);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/BuscarCuentaMejorasTecnicas", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/BuscarCuentaMejorasTecnicasRespons" +
+            "e")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CuentasMejorasTecnicas> BuscarCuentaMejorasTecnicas(decimal cuentacliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/BuscarCuentaMejorasTecnicas", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/BuscarCuentaMejorasTecnicasRespons" +
+            "e")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CuentasMejorasTecnicas>> BuscarCuentaMejorasTecnicasAsync(decimal cuentacliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/InsertarMejorasTecnicasInbound", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/InsertarMejorasTecnicasInboundResp" +
+            "onse")]
+        void InsertarMejorasTecnicasInbound(Telmexla.Servicios.DIME.Entity.MejorasTecnicas Mejoras);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/InsertarMejorasTecnicasInbound", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/InsertarMejorasTecnicasInboundResp" +
+            "onse")]
+        System.Threading.Tasks.Task InsertarMejorasTecnicasInboundAsync(Telmexla.Servicios.DIME.Entity.MejorasTecnicas Mejoras);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -8394,6 +8410,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Dime.WSD.SmoTarifaActual> TarifaActualDeDatosAsync(string estrato, string voz, string tv, string internet) {
             return base.Channel.TarifaActualDeDatosAsync(estrato, voz, tv, internet);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CuentasMejorasTecnicas> BuscarCuentaMejorasTecnicas(decimal cuentacliente) {
+            return base.Channel.BuscarCuentaMejorasTecnicas(cuentacliente);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CuentasMejorasTecnicas>> BuscarCuentaMejorasTecnicasAsync(decimal cuentacliente) {
+            return base.Channel.BuscarCuentaMejorasTecnicasAsync(cuentacliente);
+        }
+        
+        public void InsertarMejorasTecnicasInbound(Telmexla.Servicios.DIME.Entity.MejorasTecnicas Mejoras) {
+            base.Channel.InsertarMejorasTecnicasInbound(Mejoras);
+        }
+        
+        public System.Threading.Tasks.Task InsertarMejorasTecnicasInboundAsync(Telmexla.Servicios.DIME.Entity.MejorasTecnicas Mejoras) {
+            return base.Channel.InsertarMejorasTecnicasInboundAsync(Mejoras);
         }
     }
     
@@ -8833,6 +8865,96 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminRentabilizacionL", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminRentabilizacionLResp" +
             "onse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLRentabilizacion>> ConsultaAdminRentabilizacionLAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaProductoRes" +
+            "ponse")]
+        Telmexla.Servicios.DIME.Entity.GBCProducto TraerInformacionCuentaProducto(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraerInformacionCuentaProductoRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBCProducto> TraerInformacionCuentaProductoAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/InsertarRegistroProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/InsertarRegistroProductoResponse")]
+        void InsertarRegistroProducto(Telmexla.Servicios.DIME.Entity.GBPProducto GBPProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/InsertarRegistroProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/InsertarRegistroProductoResponse")]
+        System.Threading.Tasks.Task InsertarRegistroProductoAsync(Telmexla.Servicios.DIME.Entity.GBPProducto GBPProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ActualizarGestionProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ActualizarGestionProductoResponse" +
+            "")]
+        void ActualizarGestionProducto(Telmexla.Servicios.DIME.Entity.GBPProducto GBPProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ActualizarGestionProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ActualizarGestionProductoResponse" +
+            "")]
+        System.Threading.Tasks.Task ActualizarGestionProductoAsync(Telmexla.Servicios.DIME.Entity.GBPProducto GBPProducto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ValidarCuentaEnProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ValidarCuentaEnProductoResponse")]
+        bool ValidarCuentaEnProducto(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ValidarCuentaEnProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ValidarCuentaEnProductoResponse")]
+        System.Threading.Tasks.Task<bool> ValidarCuentaEnProductoAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeInformacionActualProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeInformacionActualProductoResp" +
+            "onse")]
+        Telmexla.Servicios.DIME.Entity.GBPProducto TraeInformacionActualProducto(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeInformacionActualProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeInformacionActualProductoResp" +
+            "onse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBPProducto> TraeInformacionActualProductoAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeListaGestionUsuarioProucto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeListaGestionUsuarioProuctoRes" +
+            "ponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLProducto> TraeListaGestionUsuarioProucto(string Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeListaGestionUsuarioProucto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeListaGestionUsuarioProuctoRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLProducto>> TraeListaGestionUsuarioProuctoAsync(string Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeListaSeguimientosUsuarioProdu" +
+            "cto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeListaSeguimientosUsuarioProdu" +
+            "ctoResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPProducto> TraeListaSeguimientosUsuarioProducto(string Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeListaSeguimientosUsuarioProdu" +
+            "cto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeListaSeguimientosUsuarioProdu" +
+            "ctoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPProducto>> TraeListaSeguimientosUsuarioProductoAsync(string Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraerDatosCuentaSelectProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraerDatosCuentaSelectProductoRes" +
+            "ponse")]
+        Telmexla.Servicios.DIME.Entity.GBPProducto TraerDatosCuentaSelectProducto(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraerDatosCuentaSelectProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraerDatosCuentaSelectProductoRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBPProducto> TraerDatosCuentaSelectProductoAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/CantidadToquesCuentaProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/CantidadToquesCuentaProductoRespo" +
+            "nse")]
+        int CantidadToquesCuentaProducto(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/CantidadToquesCuentaProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/CantidadToquesCuentaProductoRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<int> CantidadToquesCuentaProductoAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuentaProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuentaProductoRe" +
+            "sponse")]
+        Telmexla.Servicios.DIME.Entity.GBLProducto TraeUltimaGestionCuentaProducto(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuentaProducto", ReplyAction="http://tempuri.org/IDistribucionBlendingService/TraeUltimaGestionCuentaProductoRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBLProducto> TraeUltimaGestionCuentaProductoAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminProductoP", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminProductoPResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPProducto> ConsultaAdminProductoP(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminProductoP", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminProductoPResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPProducto>> ConsultaAdminProductoPAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminProductoL", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminProductoLResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLProducto> ConsultaAdminProductoL(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminProductoL", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminProductoLResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLProducto>> ConsultaAdminProductoLAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -9084,6 +9206,102 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLRentabilizacion>> ConsultaAdminRentabilizacionLAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
             return base.Channel.ConsultaAdminRentabilizacionLAsync(FechaInicial, FechaFinal);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GBCProducto TraerInformacionCuentaProducto(decimal CuentaCliente) {
+            return base.Channel.TraerInformacionCuentaProducto(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBCProducto> TraerInformacionCuentaProductoAsync(decimal CuentaCliente) {
+            return base.Channel.TraerInformacionCuentaProductoAsync(CuentaCliente);
+        }
+        
+        public void InsertarRegistroProducto(Telmexla.Servicios.DIME.Entity.GBPProducto GBPProducto) {
+            base.Channel.InsertarRegistroProducto(GBPProducto);
+        }
+        
+        public System.Threading.Tasks.Task InsertarRegistroProductoAsync(Telmexla.Servicios.DIME.Entity.GBPProducto GBPProducto) {
+            return base.Channel.InsertarRegistroProductoAsync(GBPProducto);
+        }
+        
+        public void ActualizarGestionProducto(Telmexla.Servicios.DIME.Entity.GBPProducto GBPProducto) {
+            base.Channel.ActualizarGestionProducto(GBPProducto);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarGestionProductoAsync(Telmexla.Servicios.DIME.Entity.GBPProducto GBPProducto) {
+            return base.Channel.ActualizarGestionProductoAsync(GBPProducto);
+        }
+        
+        public bool ValidarCuentaEnProducto(decimal CuentaCliente) {
+            return base.Channel.ValidarCuentaEnProducto(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarCuentaEnProductoAsync(decimal CuentaCliente) {
+            return base.Channel.ValidarCuentaEnProductoAsync(CuentaCliente);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GBPProducto TraeInformacionActualProducto(decimal CuentaCliente) {
+            return base.Channel.TraeInformacionActualProducto(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBPProducto> TraeInformacionActualProductoAsync(decimal CuentaCliente) {
+            return base.Channel.TraeInformacionActualProductoAsync(CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLProducto> TraeListaGestionUsuarioProucto(string Usuario) {
+            return base.Channel.TraeListaGestionUsuarioProucto(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLProducto>> TraeListaGestionUsuarioProuctoAsync(string Usuario) {
+            return base.Channel.TraeListaGestionUsuarioProuctoAsync(Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPProducto> TraeListaSeguimientosUsuarioProducto(string Usuario) {
+            return base.Channel.TraeListaSeguimientosUsuarioProducto(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPProducto>> TraeListaSeguimientosUsuarioProductoAsync(string Usuario) {
+            return base.Channel.TraeListaSeguimientosUsuarioProductoAsync(Usuario);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GBPProducto TraerDatosCuentaSelectProducto(decimal CuentaCliente) {
+            return base.Channel.TraerDatosCuentaSelectProducto(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBPProducto> TraerDatosCuentaSelectProductoAsync(decimal CuentaCliente) {
+            return base.Channel.TraerDatosCuentaSelectProductoAsync(CuentaCliente);
+        }
+        
+        public int CantidadToquesCuentaProducto(decimal CuentaCliente) {
+            return base.Channel.CantidadToquesCuentaProducto(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<int> CantidadToquesCuentaProductoAsync(decimal CuentaCliente) {
+            return base.Channel.CantidadToquesCuentaProductoAsync(CuentaCliente);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GBLProducto TraeUltimaGestionCuentaProducto(decimal CuentaCliente) {
+            return base.Channel.TraeUltimaGestionCuentaProducto(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GBLProducto> TraeUltimaGestionCuentaProductoAsync(decimal CuentaCliente) {
+            return base.Channel.TraeUltimaGestionCuentaProductoAsync(CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPProducto> ConsultaAdminProductoP(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminProductoP(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBPProducto>> ConsultaAdminProductoPAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminProductoPAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLProducto> ConsultaAdminProductoL(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminProductoL(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GBLProducto>> ConsultaAdminProductoLAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminProductoLAsync(FechaInicial, FechaFinal);
         }
     }
 }

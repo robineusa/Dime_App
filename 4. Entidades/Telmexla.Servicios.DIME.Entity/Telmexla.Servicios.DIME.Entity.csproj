@@ -97,6 +97,8 @@
     <Compile Include="ClientesTodo.cs" />
     <Compile Include="ConvenioElectronico.cs" />
     <Compile Include="ConvenioElectronicoCollection.cs" />
+    <Compile Include="CuentasMejorasTecnicas.cs" />
+    <Compile Include="CuentasMejorasTecnicasCollection.cs" />
     <Compile Include="CuentasSiembraHD.cs" />
     <Compile Include="CuentasSiembraHDCollection.cs" />
     <Compile Include="CuentasSiguienteMejorOferta.cs" />
@@ -113,12 +115,15 @@
     <Compile Include="DistribucionBlendingCollection.cs" />
     <Compile Include="DocsisOverlap.cs" />
     <Compile Include="DocsisOverlapCollection.cs" />
+    <Compile Include="GBCProducto.cs" />
     <Compile Include="GBC_Rentabilizacion.cs" />
     <Compile Include="GBLFueraNiveles.cs" />
     <Compile Include="GBLFueraNivelesCollection.cs" />
+    <Compile Include="GBLProducto.cs" />
     <Compile Include="GBLRentabilizacion.cs" />
     <Compile Include="GBPFueraNiveles.cs" />
     <Compile Include="GBPFueraNivelesCollection.cs" />
+    <Compile Include="GBPProducto.cs" />
     <Compile Include="GBPRentabilizacion.cs" />
     <Compile Include="GestionMatriz.cs" />
     <Compile Include="GestionMatrizColleciton.cs" />
@@ -137,6 +142,7 @@
     <Compile Include="MaestroMarcacioneCollection.cs" />
     <Compile Include="MaestroNodo.cs" />
     <Compile Include="MaestroNodoCollection.cs" />
+    <Compile Include="MejorasTecnicas.cs" />
     <Compile Include="ModosLogin.cs" />
     <Compile Include="NotasIngreso.cs" />
     <Compile Include="NotasTraslado.cs" />

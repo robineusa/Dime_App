@@ -19,6 +19,7 @@ namespace Telmexla.Servicios.DIME.Entity
         private List<SelectListItem> rangoEdadOptionsHijos;
         private List<CuentasSiembraHD> listaSiembraHD;
         private List<CuentasSiguienteMejorOferta> listaSMO;
+        private List<CuentasMejorasTecnicas> listaMejorasTecnicas;
         #endregion index
 
         #region actualizar
@@ -33,6 +34,7 @@ namespace Telmexla.Servicios.DIME.Entity
            
             listaSiembraHD = new List<CuentasSiembraHD>();
             listaSMO = new List<CuentasSiguienteMejorOferta>();
+            listaMejorasTecnicas = new List<CuentasMejorasTecnicas>();
             DatosAdcionalesCliente = new DatosAdicionalesCliente();
             CuentasConsultadas = new List<ClientesTodo>();
             ClientesTodos = new ClientesTodo();
@@ -285,6 +287,19 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 listaSMO = value;
+            }
+        }
+
+        public List<CuentasMejorasTecnicas> ListaMejorasTecnicas
+        {
+            get
+            {
+                return listaMejorasTecnicas;
+            }
+
+            set
+            {
+                listaMejorasTecnicas = value;
             }
         }
 

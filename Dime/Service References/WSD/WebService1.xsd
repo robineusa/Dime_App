@@ -1398,6 +1398,33 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SmoTarifaActual" nillable="true" type="tns:SmoTarifaActual" />
+  <xs:complexType name="ArrayOfCuentasMejorasTecnicas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CuentasMejorasTecnicas" nillable="true" type="tns:CuentasMejorasTecnicas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCuentasMejorasTecnicas" nillable="true" type="tns:ArrayOfCuentasMejorasTecnicas" />
+  <xs:complexType name="CuentasMejorasTecnicas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accionable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuenta" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CuentasMejorasTecnicas" nillable="true" type="tns:CuentasMejorasTecnicas" />
+  <xs:complexType name="MejorasTecnicas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accionable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AceptacionMejorasTecnicas" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MejorasTecnicas" nillable="true" type="tns:MejorasTecnicas" />
   <xs:complexType name="BalanceScoreCard">
     <xs:sequence>
       <xs:element minOccurs="0" name="Acdcalls" type="xs:decimal" />
@@ -1632,4 +1659,61 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfGBPRentabilizacion" nillable="true" type="tns:ArrayOfGBPRentabilizacion" />
+  <xs:complexType name="GBCProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GBCProducto" nillable="true" type="tns:GBCProducto" />
+  <xs:complexType name="GBPProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampanaGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Causa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cierre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSeguimiento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperacionGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoContacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GBPProducto" nillable="true" type="tns:GBPProducto" />
+  <xs:complexType name="ArrayOfGBLProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GBLProducto" nillable="true" type="tns:GBLProducto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGBLProducto" nillable="true" type="tns:ArrayOfGBLProducto" />
+  <xs:complexType name="GBLProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampanaGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Causa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cierre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSeguimiento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperacionGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoContacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GBLProducto" nillable="true" type="tns:GBLProducto" />
+  <xs:complexType name="ArrayOfGBPProducto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GBPProducto" nillable="true" type="tns:GBPProducto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGBPProducto" nillable="true" type="tns:ArrayOfGBPProducto" />
 </xs:schema>
