@@ -2893,6 +2893,9 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBLRentabilizacion.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPRentabilizacion.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CuentasMejorasTecnicas.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBCProducto.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBLProducto.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPProducto.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Properties\Settings.settings">

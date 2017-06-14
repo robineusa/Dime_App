@@ -402,5 +402,149 @@ namespace Dime.Controllers
         }
 
 
+
+        //PRODUCTO
+        [HttpGet]
+        public ActionResult Producto(string CuentaCliente)
+        {
+            ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
+            GBPProducto ClienteGestionado = new GBPProducto();
+
+
+            if (CuentaCliente == null || CuentaCliente.Equals(""))
+            {
+                model.DatosDelCliente = distribucionBlendingService.TraerInformacionCuentaBlending(Convert.ToInt32(Session["IdUsuario"].ToString()), "PRODUCTO", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString());
+                if (model.DatosDelCliente != null)
+                    model.GBCProducto = distribucionBlendingService.TraerInformacionCuentaProducto(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
+            }
+            else
+            {
+                model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "PRODUCTO", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
+                if (model.DatosDelCliente != null)
+
+                    ClienteGestionado = distribucionBlendingService.TraerDatosCuentaSelectProducto(model.DatosDelCliente.Cuenta);
+                if (ClienteGestionado != null)
+                {
+                    model.GBCProducto.CuentaCliente = ClienteGestionado.CuentaCliente;
+                    
+                }
+                else
+                {
+                    model.GBCRentabilizacion.CuentaCiente = 0;
+                   
+                }
+
+            }
+            if (model.DatosDelCliente == null)
+            {
+                model.DatosDelCliente = new ClientesTodo();
+                model.DatosDelCliente.Cuenta = 0;
+                ViewBag.ValidacionBase = "NO EXISTEN MAS CUENTAS ASIGNADAS PARA ESTA CAMPAÑA";
+
+                ViewBag.CantidadToques = 0;
+                ViewBag.Cierre = "";
+                ViewBag.Razon = "";
+
+            }
+            else
+            {
+                int DatoContactos = distribucionBlendingService.CantidadToquesCuentaProducto(model.DatosDelCliente.Cuenta);
+                ViewBag.ValidacionBase = null;
+                ViewBag.CantidadToques = DatoContactos;
+                model.UltimoGBLProducto = distribucionBlendingService.TraeUltimaGestionCuentaProducto(model.DatosDelCliente.Cuenta);
+                if (model.UltimoGBLProducto != null)
+                {
+                    ViewBag.Cierre = model.UltimoGBLProducto.Cierre;
+                    ViewBag.Razon = model.UltimoGBLProducto.Causa;
+                }
+                else
+                {
+                    ViewBag.Cierre = "SIN GESTION";
+                    ViewBag.Razon = "SIN GESTION";
+                }
+            }
+            return View(model);
+
+        }
+
+        public JsonResult HistoricoGestionProducto()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.TraeListaGestionUsuarioProucto(Session["IdUsuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult SeguimientosProducto()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.TraeListaSeguimientosUsuarioProducto(Session["IdUsuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
+        [HttpPost]
+        public ActionResult Producto(ViewModelDistribucionesBlending model)
+        {
+            model.GBPProducto.UsuarioGestion = Session["IdUsuario"].ToString();
+            model.GBPProducto.AliadoGestion = Session["AliadoLogeado"].ToString();
+            model.GBPProducto.OperacionGestion = Session["OperacionBlending"].ToString();
+            model.GBPProducto.CampanaGestion = Session["CampañaBlending"].ToString();
+            model.GBPProducto.CuentaCliente = model.DatosDelCliente.Cuenta;
+            
+            var validacion = distribucionBlendingService.ValidarCuentaEnProducto(model.GBPProducto.CuentaCliente);
+
+            if (validacion == true)
+            {
+                distribucionBlendingService.ActualizarGestionProducto(model.GBPProducto);
+            }
+            else
+            {
+                distribucionBlendingService.InsertarRegistroProducto(model.GBPProducto);
+            }
+            DistribucionBlending Registro = new DistribucionBlending();
+            Registro.CuentaCliente = model.DatosDelCliente.Cuenta;
+            Registro.FormularioDestino = "PRODUCTO";
+            Registro.AliadoDestino = Session["AliadoLogeado"].ToString();
+            Registro.OperacionDestino = Session["OperacionBlending"].ToString();
+            Registro.CampanaDestino = Session["CampañaBlending"].ToString();
+
+            if (model.GBPProducto.Cierre == "89" || model.GBPProducto.Cierre == "90" || model.GBPProducto.Cierre == "94")
+            {
+                distribucionBlendingService.EliminaCuentaGestionadaDistribucion(Registro);
+            }
+            else if (model.GBPProducto.Cierre == "91" || model.GBPProducto.Cierre == "92" || model.GBPProducto.Cierre == "93")
+            {
+                distribucionBlendingService.InsertarCuentaColaDistribucionBlending(Registro);
+            }
+
+            return RedirectToAction("Producto"); ;
+        }
+        [HttpGet]
+        public ActionResult ConsultaAdminProductoPrincipal()
+        {
+            ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
+            return View(model);
+        }
+        [HttpGet]
+        public ActionResult ConsultaAdminProductoLog()
+        {
+            ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
+            return View(model);
+        }
+        public JsonResult ConsultaAdminProductoPrincipalJson(string fechaInicial, string fechaFinal)
+        {
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.ConsultaAdminProductoP(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ConsultaAdminProductoLogJson(string fechaInicial, string fechaFinal)
+        {
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.ConsultaAdminProductoL(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
     }
 }
