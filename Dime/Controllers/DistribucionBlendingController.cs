@@ -506,11 +506,11 @@ namespace Dime.Controllers
             Registro.OperacionDestino = Session["OperacionBlending"].ToString();
             Registro.CampanaDestino = Session["CampañaBlending"].ToString();
 
-            if (model.GBPProducto.Cierre == "89" || model.GBPProducto.Cierre == "90" || model.GBPProducto.Cierre == "94")
+            if (model.GBPProducto.Cierre == "136" || model.GBPProducto.Cierre == "137" || model.GBPProducto.Cierre == "141")
             {
                 distribucionBlendingService.EliminaCuentaGestionadaDistribucion(Registro);
             }
-            else if (model.GBPProducto.Cierre == "91" || model.GBPProducto.Cierre == "92" || model.GBPProducto.Cierre == "93")
+            else if (model.GBPProducto.Cierre == "138" || model.GBPProducto.Cierre == "139" || model.GBPProducto.Cierre == "140")
             {
                 distribucionBlendingService.InsertarCuentaColaDistribucionBlending(Registro);
             }
