@@ -31,6 +31,15 @@ namespace Telmexla.Servicios.DIME.Entity
         List<GBLRentabilizacion> listaGBLRentabilizacion;
         #endregion
 
+        #region Producto
+        GBCProducto gBCProducto;
+        GBPProducto gBPProducto;
+        GBLProducto gBLProducto;
+        GBLProducto ultimoGBLProducto;
+        List<GBPProducto> listaGBPProducto;
+        List<GBLProducto> listaGBLProducto;
+        #endregion
+
         #region Constructores
         public ViewModelDistribucionesBlending()
         {
@@ -48,6 +57,14 @@ namespace Telmexla.Servicios.DIME.Entity
             ultimoGBLRentabilizacion = new GBLRentabilizacion();
             listaGBPRentabilizacion = new List<GBPRentabilizacion>();
             listaGBLRentabilizacion = new List<GBLRentabilizacion>();
+            //PRODUCTO
+            gBCProducto = new GBCProducto();
+            gBLProducto = new GBLProducto();
+            gBPProducto = new GBPProducto();
+            ultimoGBLProducto = new GBLProducto();
+            listaGBLProducto = new List<GBLProducto>();
+            listaGBPProducto = new List<GBPProducto>();
+
         }
         #endregion
 
@@ -219,6 +236,84 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 listaGBLRentabilizacion = value;
+            }
+        }
+
+        public GBCProducto GBCProducto
+        {
+            get
+            {
+                return gBCProducto;
+            }
+
+            set
+            {
+                gBCProducto = value;
+            }
+        }
+
+        public GBPProducto GBPProducto
+        {
+            get
+            {
+                return gBPProducto;
+            }
+
+            set
+            {
+                gBPProducto = value;
+            }
+        }
+
+        public GBLProducto GBLProducto
+        {
+            get
+            {
+                return gBLProducto;
+            }
+
+            set
+            {
+                gBLProducto = value;
+            }
+        }
+
+        public GBLProducto UltimoGBLProducto
+        {
+            get
+            {
+                return ultimoGBLProducto;
+            }
+
+            set
+            {
+                ultimoGBLProducto = value;
+            }
+        }
+
+        public List<GBPProducto> ListaGBPProducto
+        {
+            get
+            {
+                return listaGBPProducto;
+            }
+
+            set
+            {
+                listaGBPProducto = value;
+            }
+        }
+
+        public List<GBLProducto> ListaGBLProducto
+        {
+            get
+            {
+                return listaGBLProducto;
+            }
+
+            set
+            {
+                listaGBLProducto = value;
             }
         }
         #endregion

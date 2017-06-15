@@ -156,10 +156,40 @@ function ConfigRadioButtonInternet() {
     }
 }
 
+function SetDataComposicionProductoInicial(voz, tv, internet)
+{
+    console.log(internet);
+     if (voz == "SI")
+        {
+        document.getElementById("cbVoz").click();
+     }
+ 
+
+     if (tv != "NO") {
+             $("[value='" + tv + "']").click();
+        }
+  
+     if (internet != "NO") {
+            $("[value='" + internet + "']").click();
+     }
+
+     setTimeout(function () {
+         ActualizarParametros();
+     }, (2000));
+
+   
+}
+
+
+
+
 function CargarDatosActuales()
 {
     var cuentaCliente = $("#tbCuenta").val();
-
+    document.getElementById('cbVozNo').click();
+    document.getElementById('cbTvNO').click();
+    document.getElementById('cbInterNO').click();
+    Rentas();
     $.ajax({
         type: "GET",
         url: urlConsultaDatosActuales,
@@ -167,6 +197,7 @@ function CargarDatosActuales()
         data: { cuenta: cuentaCliente },
         dataType: "json",
         success: function (result) {
+         
             var json = JSON.parse(result);
             console.log(json);
             if (json == "[object Object]") {
@@ -187,7 +218,10 @@ function CargarDatosActuales()
                 $("#tbHotPackInfo").val(json.Adultos);
                 $("#tbTotalDecos").val(json.CantidadDecos);
                 $("#tbDecosHD").val(json.CantidadHd);
+                $("#tbDecosNagra").val(json.DecosNagra);
                 $("#tbRentaActualDos").val(json.RentaTotal);
+                SetDataComposicionProductoInicial(json.Voz, json.TipoTv, internet + " MB");
+
             }
             if (json == null || json == "null") { alert("La cuenta digitada no existe"); }
 
