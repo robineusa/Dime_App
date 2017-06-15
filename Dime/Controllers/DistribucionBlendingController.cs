@@ -333,7 +333,6 @@ namespace Dime.Controllers
         {
             model.GBPRentabilizacion.UsuarioGestion = Session["IdUsuario"].ToString();
             model.GBPRentabilizacion.AliadoGestion = Session["AliadoLogeado"].ToString();
-            model.GBPRentabilizacion.AliadoGestion = Session["AliadoLogeado"].ToString();
             model.GBPRentabilizacion.OperacionGestion = Session["OperacionBlending"].ToString();
             model.GBPRentabilizacion.CuentaCliente = model.DatosDelCliente.Cuenta;
             model.GBPRentabilizacion.ConsumosPpv = model.GBCRentabilizacion.ConsumosPpv;
@@ -488,7 +487,7 @@ namespace Dime.Controllers
             model.GBPProducto.OperacionGestion = Session["OperacionBlending"].ToString();
             model.GBPProducto.CampanaGestion = Session["CampañaBlending"].ToString();
             model.GBPProducto.CuentaCliente = model.DatosDelCliente.Cuenta;
-            
+            model.GBPProducto.NombreUsuarioGestion= Session["NombreUsuario"].ToString();
             var validacion = distribucionBlendingService.ValidarCuentaEnProducto(model.GBPProducto.CuentaCliente);
 
             if (validacion == true)

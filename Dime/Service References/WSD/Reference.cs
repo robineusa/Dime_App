@@ -3954,6 +3954,9 @@ namespace Dime.WSD {
         private double CuentaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> DecosNagraField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<double> DiferenciaRentasField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4251,6 +4254,19 @@ namespace Dime.WSD {
                 if ((this.CuentaField.Equals(value) != true)) {
                     this.CuentaField = value;
                     this.RaisePropertyChanged("Cuenta");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> DecosNagra {
+            get {
+                return this.DecosNagraField;
+            }
+            set {
+                if ((this.DecosNagraField.Equals(value) != true)) {
+                    this.DecosNagraField = value;
+                    this.RaisePropertyChanged("DecosNagra");
                 }
             }
         }
