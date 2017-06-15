@@ -44,5 +44,9 @@ namespace Dime.Controllers
         {
             return View();
         }
+        public ActionResult ReporteBlending()
+        {
+            return View();
+        }
     }
 }
