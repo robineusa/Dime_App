@@ -443,7 +443,7 @@
                                 <li><a href="@Url.Action("Rentabilizacion", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Rentabilización</a></li>}
                                 @if (Session["Blending Claro Video"] != null)
                                 {
-                                <li><a href="@Url.Action("Claro_Video", "GestionBlending")"><i class="fa fa-circle-o"></i> Claro Video</a></li>}
+                                <li><a href="@Url.Action("Producto", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Producto</a></li>}
                                 @if (Session["Blending Convenio Electronico"] != null)
                                 {
                                 <li><a href="@Url.Action("Convenio_Electronico", "GestionBlending")"><i class="fa fa-circle-o"></i> Convenio Electrónico</a></li>}
@@ -571,6 +571,13 @@
                                                     <ul class="treeview-menu">
                                                         <li><a href="@Url.Action("ConsultaAdminRentabilizacionPrincipal", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Consulta Principal</a></li>
                                                         <li><a href="@Url.Action("ConsultaAdminRentabilizacionLog", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Consulta del Log</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-circle-o"></i>Producto<i class="fa fa-angle-left pull-right"></i></a>
+                                                    <ul class="treeview-menu">
+                                                        <li><a href="@Url.Action("ConsultaAdminProductoPrincipal", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Consulta Principal</a></li>
+                                                        <li><a href="@Url.Action("ConsultaAdminProductoLog", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Consulta del Log</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
