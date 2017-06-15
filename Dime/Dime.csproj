@@ -1469,6 +1469,11 @@
     <Content Include="AdminLTE\plugins\Amcharts\gauge.js" />
     <Content Include="AdminLTE\plugins\Amcharts\none.js" />
     <Content Include="AdminLTE\plugins\Amcharts\serial.js" />
+    <Content Include="AdminLTE\plugins\Amcharts\themes\black.js" />
+    <Content Include="AdminLTE\plugins\Amcharts\themes\chalk.js" />
+    <Content Include="AdminLTE\plugins\Amcharts\themes\dark.js" />
+    <Content Include="AdminLTE\plugins\Amcharts\themes\light.js" />
+    <Content Include="AdminLTE\plugins\Amcharts\themes\patterns.js" />
     <Content Include="AdminLTE\plugins\angular\angular.min.js" />
     <Content Include="AdminLTE\plugins\bootstrap-slider\css\slider.css" />
     <Content Include="AdminLTE\plugins\bootstrap-slider\js\bootstrap-slider.js" />
@@ -2284,6 +2289,7 @@
     <Content Include="Scripts\Manuales\ManualCelula.js" />
     <Content Include="Scripts\Reportes\ReporteAdministrador.js" />
     <Content Include="Scripts\Reportes\ReporteAsesor.js" />
+    <Content Include="Scripts\Reportes\ReporteBlending.js" />
     <Content Include="Scripts\Reportes\ReporteCelula.js" />
     <Content Include="Scripts\Shared\_AlertasLayout.js" />
     <Content Include="Scripts\Shared\Helper.js" />
@@ -3167,6 +3173,7 @@
     </None>
     <Content Include="Views\DistribucionBlending\ConsultaAdminRentabilizacionPrincipal.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminRentabilizacionLog.cshtml" />
+    <Content Include="Views\Reportes\ReporteBlending.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

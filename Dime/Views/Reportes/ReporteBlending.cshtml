@@ -5,5 +5,35 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ReporteBlending</h2>
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <style>
+                            #chartdiv {
+                                width: 100%;
+                                height: 500px;
+                            }
+                        </style>
+                        <div id="chartdiv"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/AdminLTE/plugins/Amcharts/amcharts.js"></script>
+    <script src="~/AdminLTE/plugins/Amcharts/serial.js"></script>
+    <script src="~/AdminLTE/plugins/Amcharts/export.min.js"></script>
+    <link href="~/AdminLTE/plugins/Amcharts/export.css" rel="stylesheet" />
+    <script src="~/AdminLTE/plugins/Amcharts/themes/light.js"></script>
+    <script src="~/Scripts/Reportes/ReporteBlending.js?1.0.2"></script>
+}
+
+
 
