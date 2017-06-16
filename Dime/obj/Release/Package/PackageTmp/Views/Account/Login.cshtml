@@ -1,0 +1,114 @@
+﻿@model Telmexla.Servicios.DIME.Entity.Usuario
+@{
+    Layout = null;
+    ViewBag.Title = "Log in";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    @Styles.Render("~/AdminLTEbootstrap/css")
+    
+    <link href="~/AdminLTE/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="~/AdminLTE/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="~/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="~/favicon.ico">
+    @Styles.Render("~/AdminLTEdist/css")
+    @Styles.Render("~/AdminLTEplugins/ichecwk/css/sqare/blue")
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition login-page">
+
+    <script >
+        var ajaxRegistrarIps = "@Url.Action("_ErrorView","Shared","No se pudo registrar la ip")";
+
+
+    </script>
+
+    <div id="Login_Box"class="login-box" style="display:none">
+        <div class="login-logo">
+                <img src="~/Resources/Images/Logo.png"  width="200" height="200" /><br />
+            <a href="@Url.Action("DashboardAsesor", "Home")">Bienvenido a <br /><b>DIME Aplicación</b></a>
+        </div>
+        <div class="login-box-body">
+            <p class="login-box-msg">Inicie sesión con su número de cédula</p>
+           @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(m => m.Cedula, new { @class = "form-control", placeholder = "Cedula", onkeypress = "return justNumbers(event);",@autocomplete = "off" })
+                @Html.ValidationMessageFor(m => m.Cedula, "", new { @class = "text-danger" })
+                <span class="ion-person form-control-feedback"></span>
+            </div>
+                <div class="form-group has-feedback">
+                    @Html.PasswordFor(m => m.Contrasena, new { @class = "form-control", type = "password", placeholder = "Contraseña"})
+                    @Html.ValidationMessageFor(m => m.Contrasena, "", new { @class = "text-danger" })
+                    <span class="ion-locked form-control-feedback"></span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4" style="width:100%;">
+                        <button type="submit" class="btn btn-block btn-danger btn-lg" style="float:right">Iniciar</button>
+                    </div>
+                </div>
+                
+            }
+            <br />
+            @*<button  class="btn btn-primary btn-block btn-flat" style="float:right" id="btnPrueba">Iniciar</button>*@
+            <a href="@Url.Action("RecordarContrasena", "Account")">Recuperar Contraseña</a><br>
+             @{
+                if (ViewBag.Error != null)
+                {
+                    <div class="text-danger" style="font-size:15px;padding:7px;text-align:left; color:darkslategray; background-color:rgba(196, 196, 196, 0.87);border-radius:5px;">
+                        <i class="icon fa fa-warning text-black" style="font-size:30px; float:left;margin-top:-2px;"></i>
+                        @ViewBag.Error
+                    </div>
+                }
+                else { }
+            }
+            </div>
+    </div>
+    
+
+
+
+  
+    @Scripts.Render("~/AdminLTEplugins/jquery/js")
+    @Scripts.Render("~/AdminLTEbootstrap/js")
+    @*@Scripts.Render("~/AdminLTEplugins/icheck/js")*@
+    @*@Scripts.Render("~/AdminLTEplugins/jquery- /js")*@
+    <script>
+        var urlRegistroIp = '@Url.Action("AsignarIpsUsuario", "Account")';
+    </script>
+
+    <script type="text/javascript" src="https://l2.io/ip.js?var=userip">        //Para traer ip publica del servidor
+        var userip;
+    </script>
+    <script src="~/Scripts/Account/Login.js?1.0.5"></script>
+    
+
+    @*<script src="~/Scripts/Account/Login.js?1.0.1"></script>*@
+
+    <script type="text/javascript">
+        function justNumbers(e) {
+            var keynum = window.event ? window.event.keyCode : e.which;
+            if ((keynum == 8) || (keynum == 46))
+                return true;
+            return /\d/.test(String.fromCharCode(keynum));
+        }
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿@using Dime.Extensions
+@model Telmexla.Servicios.DIME.Entity.Usuario
+@{
+    ViewBag.Title = "Administración";
+    ViewBag.SubTitle = "Configuración de perfíl";
+}
+
+@if (ViewBag.StatusMessage != string.Empty)
+{
+    <div class="callout callout-info" style="margin-bottom: 0 !important;">
+        <h4><i class="fa fa-info"></i> Note:</h4>
+        @ViewBag.StatusMessage
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="box box-danger">
+            <div class="box-body box-profile">
+                <img class="profile-user-img img-responsive img-circle" src="~/AdminLTE/dist/img/user.svg" alt="User profile picture">
+                @{
+                    string[] nombreUsuario;
+                    nombreUsuario = @Session["NombreUsuario"].ToString().Split(' ');
+                    string nombreFinal = nombreUsuario[0];
+                    if (nombreUsuario.Count() == 4) nombreFinal = nombreFinal + " " + nombreUsuario[2];
+                    else nombreFinal = nombreFinal + " " + nombreUsuario[1];
+                <h3 class="profile-username text-center">@nombreFinal </h3>
+                }
+            
+                <ul class="list-group list-group-unbordered">
+                    <li class="list-group-item">
+                        @*
+            Phone Numbers can used as a second factor of verification in a two-factor authentication system.
+
+             See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+                for details on setting up this ASP.NET application to support two-factor authentication using SMS.
+
+             Uncomment the following block after you have set up two-factor authentication
+                        *@
+
+                        <b>Genero: </b>
+                        @Model.Genero
+                        <br />
+                        <br />
+                        <b>Número Telefónico: </b>
+                        @Model.Telefono
+                        <br />
+                        <br />
+                        <b>Correo Electrónico: </b>
+                        @Model.Correo
+                        <br />
+                        <br />
+                        <b>Fecha Nacimiento: </b>
+                        @Model.FechaNacimiento
+                        <div class="pull-right">
+
+                            @Html.ActionLink("Actualizar Datos Básicos", "ChangeDataUser")
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <b>Contraseña</b>
+                        <div class="pull-right">
+                             @Html.ActionLink(" Cambiar ", "ChangePassword") 
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <b>Preguntas de Seguridad</b>
+                        <div class="pull-right">
+                            @Html.ActionLink(" Cambiar", "ChangeSecurityQuestions")
+                        </div>
+                    </li>
+                  
+             
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8"></div>
+</div>

@@ -1,0 +1,60 @@
+﻿@model List<Telmexla.Servicios.DIME.Entity.DatoConsultaDirecciones>
+@{
+    ViewBag.Title = "Solicitudes Creación de Matrices";
+    ViewBag.Subtitle = "Traslados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Session["Gestion Traslados Celula"] != null)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <div class="box-body">
+                                    <div id="dataLoading" style="display:none;text-align:center;width:100%;height:auto;">
+                                        <div><img src="~/Resources/Images/Loading.gif" height="100" width="100" /></div>
+                                    </div>
+                                    <div id="gridViewSolicitudescreaciondeMatrices"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @section Scripts{
+        <script>
+          var SolicitudesCreacionMatrices = '@Url.Action("SolicitudesCreacionMatricesJson", "Traslados")';
+        </script>
+
+        <script src="~/Scripts/Traslados/SolicitudesCreacionMatrices.js?1.0.2"></script>
+    }
+}
+else
+{
+    <div class="row">
+        <div class="box box-primary">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-page">
+                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                            <div class="error-content">
+                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                <p style="text-align:justify;">
+                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                    Por favor solicite al administrador del sistema el acceso correspondiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,222 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelTraslados
+@{
+    ViewBag.Title = "Gestión de Matrices";
+    ViewBag.Subtitle = "Traslados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("GestionMatricesCelula", "Traslados", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top: 40px;">
+                                <i class="fa fa-history"></i>&nbsp;&nbsp; Historico de Interacciones
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <div class="box-body">
+                                    <div id="interaccionesSolicitudSeleccionada"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top: 40px;">
+                                <i class="fa fa-info"></i>&nbsp;&nbsp; Información de la Solicitud
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <div class="box-body" id="inforacioningreso">
+                                    <table>
+                                        <tr>
+                                            <td width="200">
+                                                <small>Id de Solicitud:</small>
+                                                @Html.TextBoxFor(m => m.GestionMatrizInicial.IdTransaccion, new { @class = "form-control input-sm", id = "idTransaccion", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Fecha de la Solicitud:</small>
+                                                @Html.TextBoxFor(m => m.GestionMatrizInicial.FechaTransaccion, new { @class = "form-control input-sm", id = "fechaTransaccion", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Usuario Solicitud:</small>
+                                                @Html.TextBoxFor(m => m.GestionMatrizInicial.UsuarioTransaccion, new { @class = "form-control input-sm", id = "usuarioSolicitud", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Linea de Ingreso:</small>
+                                                @Html.TextBoxFor(m => m.GestionMatrizInicial.NombreLineaTransaccion, new { @class = "form-control input-sm", id = "lineaIngreso", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Tipo Gestión Matriz:</small>
+                                                @Html.TextBoxFor(m => m.GestionMatrizInicial.TipoGestionMatriz, new { @class = "form-control input-sm", id = "tipogestionmatriz", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Tipo Cliente:</small>
+                                                @Html.TextBoxFor(m => m.GestionMatrizInicial.TipoCliente, new { @class = "form-control input-sm", id = "lineaIngreso", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Cuenta Cliente:</small>
+                                                @Html.TextBoxFor(m => m.GestionMatrizInicial.CuentaCliente, new { @class = "form-control input-sm", id = "cuentacliente", @readonly = "true" })
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="200">
+                                                <small>Cuenta Matriz:</small>
+                                                @Html.TextBoxFor(m => m.GestionMatriz.CuentaMatriz, new { @class = "form-control input-sm", id = "cuentamatriz", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Orden de Trabajo:</small>
+                                                @Html.TextBoxFor(m => m.GestionMatriz.OrdenTrabajo, new { @class = "form-control input-sm", id = "ordendetrabajo", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Nombre Conjunto - Edificio:</small>
+                                                @Html.TextBoxFor(m => m.GestionMatrizInicial.NombreConjuntoEdificio, new { @class = "form-control input-sm", id = "nombreconjunto", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Teléfono Cliente:</small>
+                                                @Html.TextBoxFor(m => m.GestionMatrizInicial.TelefonoCLiente, new { @class = "form-control input-sm", id = "telefonocliente", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Teléfono Administrador:</small>
+                                                @Html.TextBoxFor(m => m.GestionMatrizInicial.TelefonoAdministrador, new { @class = "form-control input-sm", id = "telefonoadministrador", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Nombre Administrador:</small>
+                                                @Html.TextBoxFor(m => m.GestionMatrizInicial.NombreAdministrador, new { @class = "form-control input-sm", id = "nombreadministrador", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Nodo:</small>
+                                                @Html.TextBoxFor(m => m.GestionMatrizInicial.Nodo, new { @class = "form-control input-sm", id = "nodo", @readonly = "true" })
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="200">
+                                                <small>Nombre Nodo:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.NombreNodo, new { @class = "form-control input-sm", id = "nombrenodo", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Código División:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Div, new { @class = "form-control input-sm", id = "coddivision", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Código Comunidad:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Com, new { @class = "form-control input-sm", id = "codcomunidad", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Área:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Area, new { @class = "form-control input-sm", id = "area", @readonly = "true" })
+                                            </td>
+
+                                            <td width="200">
+                                                <small>Distrito:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Distrito, new { @class = "form-control input-sm", id = "distrito", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Unidad de Gestión:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Ugestion, new { @class = "form-control input-sm", id = "ugestion", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Estado del Nodo:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Estado, new { @class = "form-control input-sm", id = "estadoNodo", @readonly = "true" })
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="200">
+                                                <small>Red:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Red, new { @class = "form-control input-sm", id = "red", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Ciudad:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.NombreComunidad, new { @class = "form-control input-sm", id = "ciudad", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Departamento:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Departamento, new { @class = "form-control input-sm", id = "departamento", @readonly = "true" })
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="1200" colspan="7">
+                                                <small>Dirección a Crear:</small>
+                                                @Html.TextBoxFor(m => m.GestionMatrizInicial.Direccion, new { @class = "form-control input-sm", id = "telefonoFijo", @readonly = "true" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top: 40px;">
+                                <i class="fa fa-clock-o"></i>&nbsp;&nbsp; Gestión Celula Matrices
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <div class="box-body" id="gestioncelulacrdireccion">
+                                    <table>
+                                        <tr>
+                                            <td width="300">
+                                                <small>Gestión Realizada:</small>
+                                                @Html.DropDownListFor(m => m.GestionMatrizVacia.Subrazon, new List<SelectListItem> {new SelectListItem{Text="AGENDADO", Value="AGENDADO" },
+                                                                                             new SelectListItem{Text="CANCELADO/DESISTE TRASLADO", Value="CANCELADO/DESISTE TRASLADO" },
+                                                                                             new SelectListItem{Text="CLIENTE NO ATIENDE", Value="CLIENTE NO ATIENDE" },
+                                                                                             new SelectListItem{Text="CONSTRUCCION DE NODO", Value="CONSTRUCCION DE NODO" },
+                                                                                             new SelectListItem{Text="DIRECCION Y/O DATOS ERRADOS", Value="DIRECCION Y/O DATOS ERRADOS" },
+                                                                                             new SelectListItem{Text="EDIFICIO SIN ACOMETIDA", Value="EDIFICIO SIN ACOMETIDA" },
+                                                                                             new SelectListItem{Text="ESCALADO", Value="ESCALADO" },
+                                                                                             new SelectListItem{Text="FALTA DE MATERIALES", Value="FALTA DE MATERIALES" },
+                                                                                             new SelectListItem{Text="FUERA ZONA (UNIDIRECCIONAL)", Value="FUERA ZONA (UNIDIRECCIONAL)" },
+                                                                                             new SelectListItem{Text="GESTION CIERRE COMERCIAL", Value="GESTION CIERRE COMERCIAL" },
+                                                                                             new SelectListItem{Text="INPOSIBILIDAD TECNICA", Value="INPOSIBILIDAD TECNICA" },
+                                                                                             new SelectListItem{Text="NO CONTACTO", Value="NO CONTACTO" },
+                                                                                             new SelectListItem{Text="NO DESEA AUN EL SERVICIO", Value="NO DESEA AUN EL SERVICIO" },
+                                                                                             new SelectListItem{Text="PERMISOS DE ADMINISTRACION", Value="PERMISOS DE ADMINISTRACION" },
+                                                                                             new SelectListItem{Text="PROBLEMA INTERNO SUSCRIPTOR", Value="PROBLEMA INTERNO SUSCRIPTOR" },
+                                                                                             new SelectListItem{Text="PROBLEMA REPORTADO NOC", Value="PROBLEMA REPORTADO NOC" },
+                                                                                             new SelectListItem{Text="REPLANTEAMIENTO VT", Value="REPLANTEAMIENTO VT" },
+                                                                                             new SelectListItem{Text="TRABAJOS DE DISENO", Value="TRABAJOS DE DISENO" },
+                                                                                             new SelectListItem{Text="TRABAJOS DE RED EXTERNA O ACOMETIDAS", Value="TRABAJOS DE RED EXTERNA O ACOMETIDAS" },
+                                                                                             new SelectListItem{Text="TRABAJOS REPLANT ACOMETIDA", Value="TRABAJOS REPLANT ACOMETIDA" },
+                                                                                             new SelectListItem{Text="TRASLADO OK", Value="TRASLADO OK" }},
+                                                               "--SELECCIONE--", new { @class = "form-control input-sm", @id = "Subrazon" })
+                                            </td>
+                                            <td width="300">
+                                                <small>Estado del Caso:</small>
+                                                @Html.DropDownListFor(m => m.GestionMatrizVacia.EstadoTransaccion, new List<SelectListItem> {new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" },
+                                                                                             new SelectListItem{Text="FINALIZADA", Value="FINALIZADA" },},
+                                                               "--SELECCIONE--", new { @class = "form-control input-sm", @id = "estado" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <td width="1200">
+                                                <small>Observaciones:</small>
+                                                @Html.TextAreaFor(m => m.GestionMatrizVacia.Observacion, new { @style = "width: 100%; height: 100px;max-height: 100px;max-width:1200px;" })
+                                            </td>
+                                        </tr>
+                                    </table>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="">
+                        <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;">Guardar Datos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+        @section Scripts{
+            <script>
+                var jsonInteraccionesCreacionMatriz = @Html.Raw(Json.Encode(Model.ListaGestionMatriz));
+            </script>
+
+            <script src="~/Scripts/Traslados/GestionMatricesCelula.js?1.0.1"></script>
+        }
+
+

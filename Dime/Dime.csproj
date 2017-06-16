@@ -2903,6 +2903,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBLProducto.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPProducto.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
+    <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

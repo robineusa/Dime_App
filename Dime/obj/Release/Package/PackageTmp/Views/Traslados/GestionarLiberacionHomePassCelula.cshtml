@@ -1,0 +1,222 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelTraslados
+@{
+    ViewBag.Title = "Gestión Solicitudes Liberación de HomePass";
+    ViewBag.Subtitle = "Traslados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("GestionarLiberacionHomePassCelula", "Traslados", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top: 40px;">
+                                <i class="fa fa-history"></i>&nbsp;&nbsp; Historico de Interacciones
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <div class="box-body">
+                                    <div id="interaccioneslhhpp"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top: 40px;">
+                                <i class="fa fa-info"></i>&nbsp;&nbsp; Información de la Solicitud
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <div class="box-body" id="inforacioningreso">
+                                    <table>
+                                        <tr>
+                                            <td width="200">
+                                                <small>Id de Solicitud:</small>
+                                                @Html.TextBoxFor(m => m.LiberacionHomePassInicial.IdTransaccion, new { @class = "form-control input-sm", id = "idTransaccion", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Fecha de la Solicitud:</small>
+                                                @Html.TextBoxFor(m => m.LiberacionHomePassInicial.FechaTransaccion, new { @class = "form-control input-sm", id = "fechaTransaccion", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Usuario Solicitud:</small>
+                                                @Html.TextBoxFor(m => m.LiberacionHomePassInicial.UsuarioTransaccion, new { @class = "form-control input-sm", id = "usuarioSolicitud", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Linea de Ingreso:</small>
+                                                @Html.TextBoxFor(m => m.LiberacionHomePassInicial.NombreLineaTransaccion, new { @class = "form-control input-sm", id = "lineaIngreso", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Cuenta Que Ocupa:</small>
+                                                @Html.TextBoxFor(m => m.LiberacionHomePassInicial.CuentaOcupa, new { @class = "form-control input-sm", id = "cuentaocupa", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Cuenta Que Traslada:</small>
+                                                @Html.TextBoxFor(m => m.LiberacionHomePassInicial.CuentaTraslada, new { @class = "form-control input-sm", id = "cuentatraslada", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Motivo Liberación:</small>
+                                                @Html.TextBoxFor(m => m.LiberacionHomePassInicial.MotivoLiberacion, new { @class = "form-control input-sm", id = "motivoliberacion", @readonly = "true" })
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td width="200">
+                                                <small>Teléfono Fijo:</small>
+                                                @Html.TextBoxFor(m => m.LiberacionHomePassInicial.TelefonoFijo, new { @class = "form-control input-sm", id = "telefonoFijo", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Teléfono Celular:</small>
+                                                @Html.TextBoxFor(m => m.LiberacionHomePassInicial.TelefonoCelular, new { @class = "form-control input-sm", id = "telefonoCelular", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Fecha Actualización:</small>
+                                                @Html.TextBoxFor(m => m.LiberacionHomePass.FechaTransaccion, new { @class = "form-control input-sm", id = "fechaultimaactua", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Usuario Actualización:</small>
+                                                @Html.TextBoxFor(m => m.LiberacionHomePass.UsuarioTransaccion, new { @class = "form-control input-sm", id = "usuarioultimaactualizacion", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Nodo:</small>
+                                                @Html.TextBoxFor(m => m.LiberacionHomePassInicial.Nodo, new { @class = "form-control input-sm", id = "nodo", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Nombre Nodo:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.NombreNodo, new { @class = "form-control input-sm", id = "nombrenodo", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Código División:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Div, new { @class = "form-control input-sm", id = "coddivision", @readonly = "true" })
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                            <td width="200">
+                                                <small>Código Comunidad:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Com, new { @class = "form-control input-sm", id = "codcomunidad", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Área:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Area, new { @class = "form-control input-sm", id = "area", @readonly = "true" })
+                                            </td>
+
+                                            <td width="200">
+                                                <small>Distrito:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Distrito, new { @class = "form-control input-sm", id = "distrito", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Unidad de Gestión:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Ugestion, new { @class = "form-control input-sm", id = "ugestion", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Estado del Nodo:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Estado, new { @class = "form-control input-sm", id = "estadoNodo", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Red:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Red, new { @class = "form-control input-sm", id = "red", @readonly = "true" })
+                                            </td>
+                                            <td width="200">
+                                                <small>Ciudad:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.NombreComunidad, new { @class = "form-control input-sm", id = "ciudad", @readonly = "true" })
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td width="200">
+                                                <small>Departamento:</small>
+                                                @Html.TextBoxFor(m => m.InformacionNodo.Departamento, new { @class = "form-control input-sm", id = "departamento", @readonly = "true" })
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="1200" colspan="7">
+                                                <small>Dirección:</small>
+                                                @Html.TextBoxFor(m => m.LiberacionHomePassInicial.Direccion, new { @class = "form-control input-sm", id = "telefonoFijo", @readonly = "true" })
+                                            </td>
+                                        </tr>
+                                    </table>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top: 40px;">
+                                <i class="fa fa-clock-o"></i>&nbsp;&nbsp; Gestión Celula Liberación de HomePass
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <div class="box-body" id="gestioncelulacrdireccion">
+                                    <table>
+                                        <tr>
+                                            <td width="400">
+                                                <small>Gestión Realizada:</small>
+                                                @Html.DropDownListFor(m => m.LiberacionHomePassVacia.Subrazon, new List<SelectListItem> {new SelectListItem{Text="CLIENTE EN MORA", Value="CLIENTE EN MORA" },
+                                                                                             new SelectListItem{Text="CLIENTE QUE OCUPA AUN NO TOMA DECISION", Value="CLIENTE QUE OCUPA AUN NO TOMA DECISION" },
+                                                                                             new SelectListItem{Text="CLIENTE QUE OCUPA NO BRINDA INFORMACION", Value="CLIENTE QUE OCUPA NO BRINDA INFORMACION" },
+                                                                                             new SelectListItem{Text="CLIENTE QUE OCUPA SE TRASLADA  AUN NO TIENE DIRECCION", Value="CLIENTE QUE OCUPA SE TRASLADA  AUN NO TIENE DIRECCION" },
+                                                                                             new SelectListItem{Text="CLIENTE QUE OCUPA SOLICITA CANCELACION  NO  ES TITULAR", Value="CLIENTE QUE OCUPA SOLICITA CANCELACION  NO  ES TITULAR" },
+                                                                                             new SelectListItem{Text="CLIENTE QUE TRASLADA  CEDIO EL CONTRATO", Value="CLIENTE QUE TRASLADA  CEDIO EL CONTRATO" },
+                                                                                             new SelectListItem{Text="CLIENTE QUE TRASLADA DESISTE DE PROCESO", Value="CLIENTE QUE TRASLADA DESISTE DE PROCESO" },
+                                                                                             new SelectListItem{Text="CLIENTE QUE TRASLADA DESISTE DE PROCESO HH PP LIBRE", Value="CLIENTE QUE TRASLADA DESISTE DE PROCESO HH PP LIBRE" },
+                                                                                             new SelectListItem{Text="CLIENTE QUE TRASLADA DESISTE DE PROCESO HH PP OCUPADO", Value="CLIENTE QUE TRASLADA DESISTE DE PROCESO HH PP OCUPADO" },
+                                                                                             new SelectListItem{Text="CLIENTE QUE TRASLADA SOLICITO CANCELACION", Value="CLIENTE QUE TRASLADA SOLICITO CANCELACION" },
+                                                                                             new SelectListItem{Text="CUENTA ESCALADA A OTRO PROCESO", Value="CUENTA ESCALADA A OTRO PROCESO" },
+                                                                                             new SelectListItem{Text="CUENTA QUE OCUPA  SUSPENDIDA TEMPORALMENTE", Value="CUENTA QUE OCUPA  SUSPENDIDA TEMPORALMENTE" },
+                                                                                             new SelectListItem{Text="CUENTA QUE OCUPA ESCALADA A CANCELACIONES", Value="CUENTA QUE OCUPA ESCALADA A CANCELACIONES" },
+                                                                                             new SelectListItem{Text="CUENTA QUE OCUPA SE TRASLADA A  MATRIZ SIN CABLEADO", Value="CUENTA QUE OCUPA SE TRASLADA A  MATRIZ SIN CABLEADO" },
+                                                                                             new SelectListItem{Text="ESCALAMIENTO ERRADO", Value="ESCALAMIENTO ERRADO" },
+                                                                                             new SelectListItem{Text="HH PP LIBRE NO CONTACTO CLIENTE QUE TRASLADA", Value="HH PP LIBRE NO CONTACTO CLIENTE QUE TRASLADA" },
+                                                                                             new SelectListItem{Text="MORA CUENTA QUE TRASLADA", Value="MORA CUENTA QUE TRASLADA" },
+                                                                                             new SelectListItem{Text="NO CONTACTO CLIENTE QUE  TRASLADA", Value="NO CONTACTO CLIENTE QUE  TRASLADA" },
+                                                                                             new SelectListItem{Text="NO CONTACTO CLIENTE QUE OCUPA", Value="NO CONTACTO CLIENTE QUE OCUPA" },
+                                                                                             new SelectListItem{Text="OT CREADA CUENTA QUE OCUPA", Value="OT CREADA CUENTA QUE OCUPA" },
+                                                                                             new SelectListItem{Text="OT CREADA CUENTA QUE TRASLADA", Value="OT CREADA CUENTA QUE TRASLADA" },
+                                                                                             new SelectListItem{Text="TRASLADO A OTRA DIRECCION", Value="TRASLADO A OTRA DIRECCION" },
+                                                                                             new SelectListItem{Text="TRASLADO OK", Value="TRASLADO OK" }},
+                                                               "--SELECCIONE--", new { @class = "form-control input-sm", @id = "Subrazon" })
+                                            </td>
+                                            <td width="300">
+                                                <small>Estado del Caso:</small>
+                                                @Html.DropDownListFor(m => m.LiberacionHomePassVacia.EstadoTransaccion, new List<SelectListItem> {new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" },
+                                                                                             new SelectListItem{Text="FINALIZADO", Value="FINALIZADO" }},
+                                                               "--SELECCIONE--", new { @class = "form-control input-sm", @id = "estado" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <td width="1200">
+                                                <small>Observaciones:</small>
+                                                @Html.TextAreaFor(m => m.LiberacionHomePassVacia.Observacion, new { @style = "width: 100%; height: 100px;max-height: 100px;max-width:1200px;" })
+                                            </td>
+                                        </tr>
+                                    </table>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="">
+                        <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;">Guardar Datos</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts{
+    <script>
+        var jsonInteraccionesHHPP = @Html.Raw(Json.Encode(Model.ListaLiberacionHomePass));
+    </script>
+
+    <script src="~/Scripts/Traslados/GestionarLiberacionHomePassCelula.js?1.0.3"></script>
+}
+
+

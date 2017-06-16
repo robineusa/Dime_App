@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Registro Preguntas De Seguridad";
+    Layout = "~/Views/Shared/_RecordarContrasena.cshtml";
+}
+
+<div class="box box-danger">
+    <div class="box-header with-border bg-gray-light">
+        <h4 class="box-title">
+            Este formulario te va a permitir realizar el ingreso de preguntas de seguridad para su cuenta registrada. No podrás iniciar mientras no se encuentren estas preguntas registradas en el sistema. 
+        </h4>
+    </div>
+    <br />
+    <div id="shareRegistrarPreguntas"> </div>
+</div>
+
+
+
+
+@section scripts{
+@Styles.Render("~/AdminLTEplugins/daterangepicker/css")
+@Styles.Render("~/AdminLTEplugins/icheck/css")
+@Styles.Render("~/AdminLTEplugins/colorpicker/css")
+@Styles.Render("~/AdminLTEplugins/timepicker/css")
+@Styles.Render("~/AdminLTEplugins/select2/css")
+@Styles.Render("~/AdminLTEdist/css")
+@Styles.Render("~/AdminLTEdist/css/skins")
+
+
+@Scripts.Render("~/AdminLTEplugins/select2/js")
+@Scripts.Render("~/AdminLTEplugins/input-mask/js")
+@Scripts.Render("~/AdminLTEplugins/momentjs/js")
+@Scripts.Render("~/AdminLTEplugins/daterangepicker/js")
+@Scripts.Render("~/AdminLTEplugins/colorpicker/js")
+@Scripts.Render("~/AdminLTEplugins/timepicker/js")
+@Scripts.Render("~/AdminLTEplugins/icheck/js")
+@Scripts.Render("~/Scripts/Forms/Advanced")
+    <script>
+        var urlSRegistropPreguntasDesbloqueo = '@Url.Action("SRegistroPreguntasDesbloqueo","Account")';
+
+        $(document).ready(function() {
+            var scopeId = @ViewBag.IdUsuario;
+            var datosFullUsuario  = "@ViewBag.DatosFullUsuario";
+            var sesionUsuario = @ViewBag.SesionUsuario;
+            $.ajax({
+                type: "GET",
+                url: urlSRegistropPreguntasDesbloqueo,
+                contentType: "application/json; charset=utf-8",
+                data: { idUsuario:scopeId, datosFullUsuario:datosFullUsuario, sesionUsuario:sesionUsuario } ,
+                dataType: "html",
+                success: function (result) {
+                    $('#shareRegistrarPreguntas').html(result);
+                }
+            });
+        })
+
+    </script>
+
+}

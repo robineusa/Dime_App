@@ -1,0 +1,57 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Presentacion</title>
+    @Styles.Render("~/AdminLTEbootstrap/css")
+    @Styles.Render("~/AdminLTEdist/css")
+    @Styles.Render("~/AdminLTEdist/css/skins")
+    <link href="~/AdminLTE/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="~/AdminLTE/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/favicon.ico">
+</head>
+<body>
+        <div class="col-md-10">
+            <div class="content-wrapper">
+                <section class="content-header">
+                    <div class="info-box bg-red">
+                        <span class="info-box-icon"><i class="ion ion-happy"></i></span>
+                        <div class="info-box-content">
+                            <h2>Bienvenido a nuestra plataforma Dime</h2>
+                        </div>
+                    </div>
+                    </section>
+                <section class="content">
+                    <div class="box box-danger">
+                        <div class="box-header with-border">
+                            <h4>Queremos mantenerte informado, es por eso que a continuación te mostraremos un tutorial de las ultimas novedades realizadas dentro de nuestra plataforma.</h4>
+                        </div>
+                        <br />
+                        <div class="box-header with-border">
+                          @using (Html.BeginForm("PresentacionPost", "Account", new { sesionPassed = ViewBag.Sesion, id = ViewBag.Id }, FormMethod.Post, new { role = "form" }))
+                          {
+                            <input type="submit" class="btn btn-danger" value="Continuar" />
+                          }
+                            </div>
+                           
+                        </div>
+                    
+                                </section>
+            </div>
+        </div>
+    
+
+        @Scripts.Render("~/AdminLTEplugins/jquery/js")
+        @Scripts.Render("~/AdminLTEbootstrap/js")
+        @Scripts.Render("~/AdminLTEplugins/chartjs/js")
+        @Scripts.Render("~/AdminLTEplugins/jvectormap/js")
+        @Scripts.Render("~/AdminLTEplugins/sparkline/js")
+        
+</body>
+</html>
