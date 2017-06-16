@@ -131,10 +131,10 @@ namespace Dime.Controllers
                 DatoConsultaGestionAdmin nuevoDato = new DatoConsultaGestionAdmin();
                 nuevoDato.AliadoApertura = item.AliadoApertura;
                 nuevoDato.CuentaCliente = item.CuentaCliente;
-                //nuevoDato.FechaApertura = Convert.ToDateTime(item.FechaApertura).Date.ToString();
-                //nuevoDato.FechaCierre = Convert.ToDateTime(item.FechaCierre).Date.ToString();
-                //nuevoDato.FechaNota = Convert.ToDateTime(item.FechaNota).Date.ToString();
-                //nuevoDato.FechaUltimaActualizacion = Convert.ToDateTime(item.FechaUltimaActualizacion).Date.ToString();
+                nuevoDato.FechaApertura = item.FechaApertura;
+                nuevoDato.FechaCierre = item.FechaCierre;
+                nuevoDato.FechaNota = item.FechaNota;
+                nuevoDato.FechaUltimaActualizacion = item.FechaUltimaActualizacion;
                 nuevoDato.HoraApertura = item.HoraApertura;
                 nuevoDato.HoraUltimaActualizacion =item.HoraUltimaActualizacion;
                 nuevoDato.IdEstado = item.IdEstado;
@@ -149,18 +149,18 @@ namespace Dime.Controllers
                 nuevoDato.UsuarioApertura = item.UsuarioApertura;
                 nuevoDato.UsuarioCierre = item.UsuarioCierre;
                 nuevoDato.UsuarioUltimaActualizacion = item.UsuarioUltimaActualizacion;
-                    //if (item.IdEstado == 1)
-                    //{
-                    //nuevoDato.Estado = "ABIERTO";
-                    //}
-                    //else
-                    //{
-                    //    if (item.IdEstado == 2)
-                    //    nuevoDato.Estado = "CERRADO";
-                    //    else
-                    //    if (item.IdEstado == 3)
-                    //        nuevoDato.Estado = "SEGUIMIENTO";
-                    //}
+                if (item.IdEstado == 1)
+                {
+                    nuevoDato.Estado = "ABIERTO";
+                }
+                else
+                {
+                    if (item.IdEstado == 2)
+                        nuevoDato.Estado = "CERRADO";
+                    else
+                    if (item.IdEstado == 3)
+                        nuevoDato.Estado = "SEGUIMIENTO";
+                }
 
 
 

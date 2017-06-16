@@ -541,3 +541,15 @@ transform:scale(1.5);
     width: 100px;
 
 }
+
+#chuloRentasVerifi{
+  font-size: 210%;
+}
+
+#chuloRentasVerifi .rojo {
+  color: red;
+}
+
+#chuloRentasVerifi .verde {
+  color: green;
+}

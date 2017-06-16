@@ -72,15 +72,11 @@
             $("#gridViewConsulta").empty();
             function cambiarfechas() {
                 for (var i = 0; i < data.length; i++) {
-                    data[i].fechaInicio = kendo.toString(kendo.parseDate(data[i].fechaInicio, 'yyyy-MM-dd'), 'yyyy-MM-dd');
                     data[i].FechaApertura = kendo.toString(kendo.parseDate(data[i].FechaApertura, 'yyyy-MM-dd'), 'yyyy-MM-dd');
                     data[i].FechaCierre = kendo.toString(kendo.parseDate(data[i].FechaCierre, 'yyyy-MM-dd'), 'yyyy-MM-dd');
                     data[i].FechaNota = kendo.toString(kendo.parseDate(data[i].FechaNota, 'yyyy-MM-dd'), 'yyyy-MM-dd');
                     data[i].FechaUltimaActualizacion = kendo.toString(kendo.parseDate(data[i].FechaUltimaActualizacion, 'yyyy-MM-dd'), 'yyyy-MM-dd');
-                    data[i].HoraApertura = kendo.toString(kendo.parseDate(data[i].HoraApertura, 'yyyy-MM-ddTHH:mm:ss'), 'HH:mm:ss');
-                    data[i].HoraUltimaActualizacion = kendo.toString(kendo.parseDate(data[i].HoraUltimaActualizacion, 'yyyy-MM-ddTHH:mm:ss'), 'HH:mm:ss');
-                    data[i].FechaInicio = kendo.toString(kendo.parseDate(data[i].FechaInicio, 'yyyy-MM-dd'), 'yyyy-MM-dd');
-
+               
                 }
 
             }
@@ -138,7 +134,7 @@
             { field: "UsuarioApertura", title: "Usuario Apertura", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "UsuarioCierre", title: "Usuario Cierre", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "UsuarioUltimaActualizacion", title: "Usuario Ultima Actualizacion", width: 80, headerAttributes: { style: "white-space: normal" } },
-            { field: "FechaInicio", title: "Fecha Inicio", width: 80, headerAttributes: { style: "white-space: normal" } },
+
                 ]
 
             });
