@@ -1319,6 +1319,7 @@
       <xs:element minOccurs="0" name="ClaroVideo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Clasificacion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Cuenta" type="xs:double" />
+      <xs:element minOccurs="0" name="DecosNagra" nillable="true" type="xs:double" />
       <xs:element minOccurs="0" name="DiferenciaRentas" nillable="true" type="xs:double" />
       <xs:element minOccurs="0" name="Estrato" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Excluidos" nillable="true" type="xs:double" />
