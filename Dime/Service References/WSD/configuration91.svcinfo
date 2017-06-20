@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="CjYh+5giKmwVW1ljL8xMM3yUFvY=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="pq9whWKGi9qIz+rkzlLtY40A2kI=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IWebService">
       <properties>
@@ -2111,10 +2111,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="WSHttpBinding_IWebService" contract="WSD.IWebService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IWebService">
+    <endpoint name="WSHttpBinding_IWebService" contract="WSD.IWebService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IWebService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2196,10 +2196,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_ILoginService" contract="WSD.ILoginService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ILoginService">
+    <endpoint name="WSHttpBinding_ILoginService" contract="WSD.ILoginService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ILoginService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2281,10 +2281,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IInboundService" contract="WSD.IInboundService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IInboundService">
+    <endpoint name="WSHttpBinding_IInboundService" contract="WSD.IInboundService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IInboundService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2366,10 +2366,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IMaestrosService" contract="WSD.IMaestrosService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMaestrosService">
+    <endpoint name="WSHttpBinding_IMaestrosService" contract="WSD.IMaestrosService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMaestrosService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2451,10 +2451,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IBlendingService" contract="WSD.IBlendingService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IBlendingService">
+    <endpoint name="WSHttpBinding_IBlendingService" contract="WSD.IBlendingService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IBlendingService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2536,10 +2536,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IMarcacionesService" contract="WSD.IMarcacionesService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMarcacionesService">
+    <endpoint name="WSHttpBinding_IMarcacionesService" contract="WSD.IMarcacionesService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMarcacionesService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2621,10 +2621,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_INotificacionesBuenServicioService" contract="WSD.INotificacionesBuenServicioService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_INotificacionesBuenServicioService">
+    <endpoint name="WSHttpBinding_INotificacionesBuenServicioService" contract="WSD.INotificacionesBuenServicioService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_INotificacionesBuenServicioService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2706,10 +2706,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_ICasosCelulaService" contract="WSD.ICasosCelulaService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ICasosCelulaService">
+    <endpoint name="WSHttpBinding_ICasosCelulaService" contract="WSD.ICasosCelulaService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ICasosCelulaService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2791,10 +2791,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_ICasosAdminService" contract="WSD.ICasosAdminService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ICasosAdminService">
+    <endpoint name="WSHttpBinding_ICasosAdminService" contract="WSD.ICasosAdminService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ICasosAdminService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2876,10 +2876,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_ITrasladosService" contract="WSD.ITrasladosService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ITrasladosService">
+    <endpoint name="WSHttpBinding_ITrasladosService" contract="WSD.ITrasladosService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ITrasladosService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2961,10 +2961,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IMaestroNodoService" contract="WSD.IMaestroNodoService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMaestroNodoService">
+    <endpoint name="WSHttpBinding_IMaestroNodoService" contract="WSD.IMaestroNodoService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMaestroNodoService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3046,10 +3046,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IActivacionClaroVideoService" contract="WSD.IActivacionClaroVideoService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IActivacionClaroVideoService">
+    <endpoint name="WSHttpBinding_IActivacionClaroVideoService" contract="WSD.IActivacionClaroVideoService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IActivacionClaroVideoService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3131,10 +3131,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IActivacionSiembraHDService" contract="WSD.IActivacionSiembraHDService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IActivacionSiembraHDService">
+    <endpoint name="WSHttpBinding_IActivacionSiembraHDService" contract="WSD.IActivacionSiembraHDService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IActivacionSiembraHDService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3216,10 +3216,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IBalanceScoreCardService" contract="WSD.IBalanceScoreCardService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IBalanceScoreCardService">
+    <endpoint name="WSHttpBinding_IBalanceScoreCardService" contract="WSD.IBalanceScoreCardService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IBalanceScoreCardService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3301,10 +3301,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IGraficosService" contract="WSD.IGraficosService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IGraficosService">
+    <endpoint name="WSHttpBinding_IGraficosService" contract="WSD.IGraficosService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IGraficosService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3386,10 +3386,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IUsabilidadService" contract="WSD.IUsabilidadService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IUsabilidadService">
+    <endpoint name="WSHttpBinding_IUsabilidadService" contract="WSD.IUsabilidadService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IUsabilidadService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3471,10 +3471,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IDistribucionBlendingService" contract="WSD.IDistribucionBlendingService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IDistribucionBlendingService">
+    <endpoint name="WSHttpBinding_IDistribucionBlendingService" contract="WSD.IDistribucionBlendingService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IDistribucionBlendingService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -1,4 +1,6 @@
-﻿namespace Telmexla.Servicios.DIME.Entity
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Telmexla.Servicios.DIME.Entity
 {
     public class GBPDocsis
     {
@@ -10,9 +12,13 @@
         public string OperacionGestion { get; set; }
         public string CampanaGestion { get; set; }
         public decimal CuentaCliente { get; set; }
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string TipoContacto { get; set; }
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string Gestion { get; set; }
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string Cierre { get; set; }
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string Razon { get; set; }
         public string Observaciones { get; set; }
         public string Aliado { get; set; }

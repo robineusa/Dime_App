@@ -2275,11 +2275,17 @@
     <Content Include="Scripts\Consultas_Admin\Consulta_Paloteo.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Rechazos.js" />
     <Content Include="Scripts\Dashboard\DashboardAsesor.js" />
+    <Content Include="Scripts\DistribucionBlending\ConsultaAdminDocsisLog.js" />
+    <Content Include="Scripts\DistribucionBlending\ConsultaAdminDocsisPrincipal.js" />
     <Content Include="Scripts\DistribucionBlending\ConsultaAdminFueraNivelesLog.js" />
     <Content Include="Scripts\DistribucionBlending\ConsultaAdminFueraNivelesPrincipal.js" />
+    <Content Include="Scripts\DistribucionBlending\ConsultaAdminProductoLog.js" />
+    <Content Include="Scripts\DistribucionBlending\ConsultaAdminProductoPrincipal.js" />
     <Content Include="Scripts\DistribucionBlending\ConsultaAdminRentabilizacionLog.js" />
     <Content Include="Scripts\DistribucionBlending\ConsultaAdminRentabilizacionPrincipal.js" />
+    <Content Include="Scripts\DistribucionBlending\Docsis.js" />
     <Content Include="Scripts\DistribucionBlending\FueraNiveles.js" />
+    <Content Include="Scripts\DistribucionBlending\Producto.js" />
     <Content Include="Scripts\DistribucionBlending\Rentabilizacion.js" />
     <Content Include="Scripts\Gestion_Blending\AsignarBasesAdmin.js" />
     <Content Include="Scripts\Gestion_Blending\SkillsUsuariosAdmin.js" />
@@ -2972,7 +2978,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService1.disco" />
+    <None Include="Service References\WSD\WebService.disco" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
     <Content Include="Styles\Elements\General.css" />
@@ -3162,22 +3168,28 @@
     <Content Include="Views\DistribucionBlending\ConsultaAdminRentabilizacionPrincipal.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminRentabilizacionLog.cshtml" />
     <Content Include="Views\Reportes\ReporteBlending.cshtml" />
-    <None Include="Service References\WSD\WebService1.wsdl" />
-    <None Include="Service References\WSD\WebService5.xsd">
+    <None Include="Service References\WSD\WebService.wsdl" />
+    <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService51.xsd">
+    <None Include="Service References\WSD\WebService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService52.xsd">
+    <None Include="Service References\WSD\WebService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService53.xsd">
+    <None Include="Service References\WSD\WebService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService54.xsd">
+    <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\DistribucionBlending\Docsis.cshtml" />
+    <Content Include="Views\DistribucionBlending\ConsultaAdminProductoLog.cshtml" />
+    <Content Include="Views\DistribucionBlending\ConsultaAdminProductoPrincipal.cshtml" />
+    <Content Include="Views\DistribucionBlending\Producto.cshtml" />
+    <Content Include="Views\DistribucionBlending\ConsultaAdminDocsisPrincipal.cshtml" />
+    <Content Include="Views\DistribucionBlending\ConsultaAdminDocsisLog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
