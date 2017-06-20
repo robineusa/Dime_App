@@ -2902,6 +2902,9 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBCProducto.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBLProducto.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPProducto.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBCDocsis.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBLDocsis.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPDocsis.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -2963,13 +2966,13 @@
     <Content Include="Service References\WSD\Dime.WSD.UsuariosMasivoData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\WSD\WebService.disco" />
     <None Include="Service References\WSD\configuration91.svcinfo" />
     <None Include="Service References\WSD\configuration.svcinfo" />
     <None Include="Service References\WSD\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\WSD\WebService1.disco" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
     <Content Include="Styles\Elements\General.css" />
@@ -3156,25 +3159,25 @@
     <Content Include="Views\DistribucionBlending\ConsultaAdminFueraNivelesPrincipal.cshtml" />
     <Content Include="Views\DistribucionBlending\Rentabilizacion.cshtml" />
     <Content Include="Views\Alertas\Mejoras_Tecnicas.cshtml" />
-    <None Include="Service References\WSD\WebService.wsdl" />
-    <None Include="Service References\WSD\WebService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService4.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Views\DistribucionBlending\ConsultaAdminRentabilizacionPrincipal.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminRentabilizacionLog.cshtml" />
     <Content Include="Views\Reportes\ReporteBlending.cshtml" />
+    <None Include="Service References\WSD\WebService1.wsdl" />
+    <None Include="Service References\WSD\WebService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService54.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
