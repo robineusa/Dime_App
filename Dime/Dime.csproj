@@ -3185,19 +3185,19 @@
     <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
-<<<<<<< HEAD
+
     <Content Include="Views\DistribucionBlending\ConsultaAdminRentabilizacionPrincipal.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminRentabilizacionLog.cshtml" />
     <Content Include="Views\Reportes\ReporteBlending.cshtml" />
     <Content Include="Views\Inbound\Retencion.cshtml" />
-=======
+
     <Content Include="Views\DistribucionBlending\Docsis.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminProductoLog.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminProductoPrincipal.cshtml" />
     <Content Include="Views\DistribucionBlending\Producto.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminDocsisPrincipal.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminDocsisLog.cshtml" />
->>>>>>> 9147e36a1aa70a6aafba7c2c6e1e7b0d89a98acc
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
