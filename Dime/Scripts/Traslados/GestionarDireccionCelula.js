@@ -34,3 +34,25 @@
     ]
 
 });
+$('#selectsubrazon').change(function () {
+    ValidarCampos();
+})
+$('#selectestado').change(function () {
+    ValidarCampos();
+})
+
+function ValidarCampos() {
+    var subrazon = $('#selectsubrazon').val();
+    var estado = $('#selectestado').val();
+
+    if (subrazon != "") {
+        document.getElementById('submitDatos').style.display = 'inline-block';
+    } else {
+        document.getElementById('submitDatos').style.display = 'none';
+    }
+    if (estado != "") {
+        document.getElementById('submitDatos').style.display = 'inline-block';
+    } else {
+        document.getElementById('submitDatos').style.display = 'none';
+    }
+}

@@ -35,11 +35,11 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult SolicitudCrearDireccion(ViewModelTraslados modelo)
         {
-            
+
 
             DateTime fechainiciotransaccion = Convert.ToDateTime(Session["FechaInicial"].ToString());
-            DateTime fechafintransaccion = DateTime.Now; 
-            
+            DateTime fechafintransaccion = DateTime.Now;
+
             modelo.IngresoTraslado.UsuarioApertura = Session["Usuario"].ToString(); modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
 
             modelo.IngresoTraslado.NombreLineaIngreso = Session["LineaLogeado"].ToString(); modelo.IngresoTraslado.AliadoApertura = Session["AliadoLogeado"].ToString();
@@ -49,26 +49,22 @@ namespace Dime.Controllers
             {
                 if (maestronodosservice.ExisteNodo(modelo.NotaTraslado.Nodo) == true)
                 {
+                    if (modelo.NotaTraslado.Observacion == null || modelo.NotaTraslado.Observacion == "") { modelo.NotaTraslado.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.NotaTraslado.Observacion = modelo.NotaTraslado.Observacion.ToUpper(); }
+                    modelo.NotaTraslado.DireccionACrear = modelo.NotaTraslado.DireccionACrear.ToUpper();
+                    modelo.NotaTraslado.Nodo = modelo.NotaTraslado.Nodo.ToUpper();
 
+                    //datos de transaccion
+                    modelo.TraficoTraslados.InicioTransaccion = fechainiciotransaccion;
+                    modelo.TraficoTraslados.FinTransaccion = fechafintransaccion;
+                    modelo.TraficoTraslados.TipoTransaccion = "CREACION DE DIRECCION";
+                    modelo.TraficoTraslados.CanalTransaccion = "SOLICITUD INBOUND";
+                    //fin de transaccion
 
-                    if (ModelState.IsValid == true)
-                    {
-                        if (modelo.NotaTraslado.Observacion == null || modelo.NotaTraslado.Observacion == "") { modelo.NotaTraslado.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else {  modelo.NotaTraslado.Observacion = modelo.NotaTraslado.Observacion.ToUpper(); }
-                        modelo.NotaTraslado.DireccionACrear = modelo.NotaTraslado.DireccionACrear.ToUpper();
-                        modelo.NotaTraslado.Nodo = modelo.NotaTraslado.Nodo.ToUpper();
+                    trasladowebservice.RegistrarIngresoTraslado(modelo.IngresoTraslado, modelo.NotaTraslado, modelo.TraficoTraslados);
+                    Session.Remove("FechaInicial");
+                    return RedirectToAction("SolicitudCrearDireccion");
 
-                        //datos de transaccion
-                        modelo.TraficoTraslados.InicioTransaccion = fechainiciotransaccion;
-                        modelo.TraficoTraslados.FinTransaccion = fechafintransaccion;
-                        modelo.TraficoTraslados.TipoTransaccion = "CREACION DE DIRECCION";
-                        modelo.TraficoTraslados.CanalTransaccion = "SOLICITUD INBOUND";
-                        //fin de transaccion
-
-                        trasladowebservice.RegistrarIngresoTraslado(modelo.IngresoTraslado, modelo.NotaTraslado, modelo.TraficoTraslados);
-                        Session.Remove("FechaInicial");
-                        return RedirectToAction("SolicitudCrearDireccion");
-                    }
-                    }
+                }
                 else
                 {
                     ViewBag.NodoRepetidoError = "El nodo que ingreso no existe, por favor verifíquelo, o solicite su creación";
@@ -83,7 +79,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult DireccionesCreadasTraslados()
         {
-            
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             return View(modelo);
         }
@@ -98,7 +94,7 @@ namespace Dime.Controllers
         public ActionResult GestionarDireccionCelula(int id)
         {
             ViewModelTraslados model = new ViewModelTraslados();
-           
+
             if (trasladowebservice.TransaccionEnGestion(id, Session["Usuario"].ToString()) == true)
             {
                 return RedirectToAction("DireccionesCreadasTraslados");
@@ -142,7 +138,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult GestionarDireccionCelula(ViewModelTraslados modelo)
         {
-            
+
             modelo.NotaTrasladoVacia.IdTransaccion = modelo.NotaTrasladoInicial.IdTransaccion;
             modelo.NotaTrasladoVacia.UsuarioTransaccion = Session["Usuario"].ToString();
             modelo.NotaTrasladoVacia.CanalTransaccion = "CELULA CREACION DIRECCION";
@@ -160,7 +156,7 @@ namespace Dime.Controllers
             modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
             modelo.IngresoTraslado.EstadoTransaccion = modelo.NotaTrasladoVacia.EstadoTransaccion;
 
-            if (modelo.NotaTrasladoVacia.Observacion==null || modelo.NotaTrasladoVacia.Observacion == ""){ modelo.NotaTrasladoVacia.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.NotaTrasladoVacia.Observacion = modelo.NotaTrasladoVacia.Observacion.ToUpper(); }
+            if (modelo.NotaTrasladoVacia.Observacion == null || modelo.NotaTrasladoVacia.Observacion == "") { modelo.NotaTrasladoVacia.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.NotaTrasladoVacia.Observacion = modelo.NotaTrasladoVacia.Observacion.ToUpper(); }
 
 
             DateTime fechainiciotransaccion = Convert.ToDateTime(Session["FechaInicial"].ToString());
@@ -173,15 +169,15 @@ namespace Dime.Controllers
             modelo.TraficoTraslados.CanalTransaccion = "CELULA CREACION DIRECCION";
             //fin de transaccion
 
-            trasladowebservice.ActualizarSolicitudCrearDireccion(modelo.IngresoTraslado, modelo.NotaTrasladoVacia,modelo.TraficoTraslados);
+            trasladowebservice.ActualizarSolicitudCrearDireccion(modelo.IngresoTraslado, modelo.NotaTrasladoVacia, modelo.TraficoTraslados);
             Session.Remove("FechaInicial");
             return RedirectToAction("DireccionesCreadasTraslados");
 
         }
-    
+
         public ActionResult SeguimientosSolicitudesCreacionDireccion()
         {
-            
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             return View(modelo);
         }
@@ -194,13 +190,14 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult DireccionesCreadasOutbound()
         {
-          
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             return View(modelo);
 
         }
-        public JsonResult DireccionesCreadasOutboundJson(){
-           
+        public JsonResult DireccionesCreadasOutboundJson()
+        {
+
             var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaDireccionesCreadasOutbound(Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
@@ -210,7 +207,7 @@ namespace Dime.Controllers
         public ActionResult GestionarDireccionOutbound(int id)
         {
             ViewModelTraslados model = new ViewModelTraslados();
-           
+
 
             if (trasladowebservice.TransaccionEnGestionOut(id, Session["Usuario"].ToString()) == true)
             {
@@ -250,7 +247,7 @@ namespace Dime.Controllers
             model.InformacionNodo = maestronodosservice.GetInformacionNodo(nodo);
             return View(model);
         }
-       
+
         [HttpPost]
         public ActionResult GestionarDireccionOutbound(ViewModelTraslados modelo)
         {
@@ -283,16 +280,16 @@ namespace Dime.Controllers
             modelo.TraficoTraslados.CanalTransaccion = "OUTBOUND CREACION DIRECCION";
             //fin de transaccion
 
-            trasladowebservice.ActualizarSolicitudCrearDireccion(modelo.IngresoTraslado, modelo.NotaTrasladoVacia,modelo.TraficoTraslados);
+            trasladowebservice.ActualizarSolicitudCrearDireccion(modelo.IngresoTraslado, modelo.NotaTrasladoVacia, modelo.TraficoTraslados);
             Session.Remove("FechaInicial");
             return RedirectToAction("DireccionesCreadasOutbound");
 
         }
-   
+
         [HttpGet]
         public ActionResult SeguimientosSolicitudesCreacionDireccionOutbound()
         {
-            
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             return View(modelo);
         }
@@ -304,7 +301,7 @@ namespace Dime.Controllers
         }
         public JsonResult ConsultaGestionCreacionDrJson(string fechaInicial, string fechaFinal)
         {
-            
+
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
             var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListGestionCrearDireccion(FI, FF, Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
@@ -312,7 +309,7 @@ namespace Dime.Controllers
             return jsonResult;
 
         }
-    
+
         [HttpGet]
         public ActionResult ConsultaGestionCreacionDr()
         {
@@ -320,18 +317,18 @@ namespace Dime.Controllers
         }
         //proceso cambio de estrato
 
-     
+
         [HttpGet]
         public ActionResult SolicitudCambioDeEstrato()
         {
             Session["FechaInicial"] = DateTime.Now;
             return View();
         }
-     
+
         [HttpPost]
         public ActionResult SolicitudCambioDeEstrato(ViewModelTraslados modelo)
         {
-           
+
 
             modelo.IngresoTraslado.UsuarioApertura = Session["Usuario"].ToString(); modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
             modelo.IngresoTraslado.NombreLineaIngreso = Session["LineaLogeado"].ToString(); modelo.IngresoTraslado.AliadoApertura = Session["AliadoLogeado"].ToString();
@@ -355,11 +352,11 @@ namespace Dime.Controllers
                         modelo.TraficoTraslados.CanalTransaccion = "SOLICITUD INBOUND";
                         //fin de transaccion
 
-                        if (modelo.CambioEstrato.Observacion==null || modelo.CambioEstrato.Observacion == "") { modelo.CambioEstrato.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.CambioEstrato.Observacion = modelo.CambioEstrato.Observacion.ToUpper(); }
+                        if (modelo.CambioEstrato.Observacion == null || modelo.CambioEstrato.Observacion == "") { modelo.CambioEstrato.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.CambioEstrato.Observacion = modelo.CambioEstrato.Observacion.ToUpper(); }
                         modelo.CambioEstrato.Direccion = modelo.CambioEstrato.Direccion.ToUpper();
                         modelo.CambioEstrato.Nodo = modelo.CambioEstrato.Nodo.ToUpper();
 
-                        trasladowebservice.InsertIngresoCambioEstrato(modelo.IngresoTraslado, modelo.CambioEstrato,modelo.TraficoTraslados);
+                        trasladowebservice.InsertIngresoCambioEstrato(modelo.IngresoTraslado, modelo.CambioEstrato, modelo.TraficoTraslados);
                         Session.Remove("FechaInicial");
 
                         return RedirectToAction("SolicitudCambioDeEstrato");
@@ -378,10 +375,10 @@ namespace Dime.Controllers
             }
             return View(modelo);
         }
-     [HttpGet]
+        [HttpGet]
         public ActionResult SolicitudesCambioDeEstrato()
         {
-            
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             return View(modelo);
         }
@@ -423,7 +420,7 @@ namespace Dime.Controllers
                 Subrazon = x.Subrazon,
                 Observacion = x.Observacion,
                 EstadoTransaccion = x.EstadoTransaccion,
-                CorreoElectronico=x.CorreoElectronico
+                CorreoElectronico = x.CorreoElectronico
             }).ToList();
 
             decimal maxId = model.ListaCambioEstrato.Max(c => c.Id);
@@ -436,11 +433,11 @@ namespace Dime.Controllers
             model.InformacionNodo = maestronodosservice.GetInformacionNodo(nodo);
             return View(model);
         }
-   
+
         [HttpPost]
         public ActionResult GestionarCambioDeEstratoCelula(ViewModelTraslados modelo)
         {
-           
+
             modelo.CambioEstratoVacia.IdTransaccion = modelo.CambioEstratoInicial.IdTransaccion;
             modelo.CambioEstratoVacia.UsuarioTransaccion = Session["Usuario"].ToString();
             modelo.CambioEstratoVacia.CanalTransaccion = "CELULA CAMBIO DE ESTRATO";
@@ -471,15 +468,15 @@ namespace Dime.Controllers
             modelo.TraficoTraslados.CanalTransaccion = "CELULA CAMBIO DE ESTRATO";
             //fin de transaccion
 
-            trasladowebservice.ActualizarSolicitudCambioEstrato(modelo.IngresoTraslado, modelo.CambioEstratoVacia,modelo.TraficoTraslados);
+            trasladowebservice.ActualizarSolicitudCambioEstrato(modelo.IngresoTraslado, modelo.CambioEstratoVacia, modelo.TraficoTraslados);
             Session.Remove("FechaInicial");
             return RedirectToAction("SolicitudesCambioDeEstrato");
 
         }
-      
+
         public ActionResult SeguimientosCambioDeEstrato()
         {
-          
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             return View(modelo);
         }
@@ -492,7 +489,7 @@ namespace Dime.Controllers
 
         public JsonResult ConsultaGestionCambioDeEstratoJson(string fechaInicial, string fechaFinal)
         {
-           
+
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
             var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListGestionCambioDeEstrato(FI, FF, Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
@@ -500,25 +497,25 @@ namespace Dime.Controllers
             return jsonResult;
 
         }
-      
+
         [HttpGet]
         public ActionResult ConsultaGestionCambioDeEstrato()
         {
             return View();
         }
         ///PROCESO LIBERACION DE HOME PASS
-        
+
         [HttpGet]
         public ActionResult SolicitudLiberacionHomePass()
         {
             Session["FechaInicial"] = DateTime.Now;
             return View();
         }
-  
+
         [HttpPost]
         public ActionResult SolicitudLiberacionHomePass(ViewModelTraslados modelo)
         {
-            
+
             modelo.IngresoTraslado.UsuarioApertura = Session["Usuario"].ToString(); modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
 
             modelo.IngresoTraslado.NombreLineaIngreso = Session["LineaLogeado"].ToString(); modelo.IngresoTraslado.AliadoApertura = Session["AliadoLogeado"].ToString();
@@ -542,7 +539,7 @@ namespace Dime.Controllers
                         modelo.TraficoTraslados.CanalTransaccion = "SOLICITUD INBOUND";
                         //fin de transaccion
 
-                        if (modelo.LiberacionHomePass.Observacion==null || modelo.LiberacionHomePass.Observacion == "") { modelo.LiberacionHomePass.Observacion = "SIN OBSERVACIONES -AUTOMATICO SISTEMAS"; } else { modelo.LiberacionHomePass.Observacion = modelo.LiberacionHomePass.Observacion.ToUpper();}
+                        if (modelo.LiberacionHomePass.Observacion == null || modelo.LiberacionHomePass.Observacion == "") { modelo.LiberacionHomePass.Observacion = "SIN OBSERVACIONES -AUTOMATICO SISTEMAS"; } else { modelo.LiberacionHomePass.Observacion = modelo.LiberacionHomePass.Observacion.ToUpper(); }
                         modelo.LiberacionHomePass.CuentaOcupa = modelo.IngresoTraslado.CuentaCliente;
                         modelo.LiberacionHomePass.Direccion = modelo.LiberacionHomePass.Direccion.ToUpper();
                         modelo.LiberacionHomePass.Nodo = modelo.LiberacionHomePass.Nodo.ToUpper();
@@ -566,10 +563,10 @@ namespace Dime.Controllers
             }
             return View(modelo);
         }
-   [HttpGet]
+        [HttpGet]
         public ActionResult SolicitudesLiberacionHomePass()
         {
-            
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             modelo = trasladowebservice.ListaSolicitudesLiberacionesHomePass(Session["Usuario"].ToString());
             return View(modelo);
@@ -585,7 +582,7 @@ namespace Dime.Controllers
         public ActionResult GestionarLiberacionHomePassCelula(int id)
         {
             ViewModelTraslados model = new ViewModelTraslados();
-           
+
             if (trasladowebservice.TransaccionEnGestionLiberacionHomePass(id, Session["Usuario"].ToString()) == true)
             {
                 return RedirectToAction("SolicitudesLiberacionHomePass");
@@ -647,7 +644,7 @@ namespace Dime.Controllers
             modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
             modelo.IngresoTraslado.EstadoTransaccion = modelo.LiberacionHomePassVacia.EstadoTransaccion;
 
-            if (modelo.LiberacionHomePassVacia.Observacion==null || modelo.LiberacionHomePassVacia.Observacion == "") { modelo.LiberacionHomePassVacia.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.LiberacionHomePassVacia.Observacion = modelo.LiberacionHomePassVacia.Observacion.ToUpper(); }
+            if (modelo.LiberacionHomePassVacia.Observacion == null || modelo.LiberacionHomePassVacia.Observacion == "") { modelo.LiberacionHomePassVacia.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.LiberacionHomePassVacia.Observacion = modelo.LiberacionHomePassVacia.Observacion.ToUpper(); }
 
             DateTime fechainiciotransaccion = Convert.ToDateTime(Session["FechaInicial"].ToString());
             DateTime fechafintransaccion = DateTime.Now;
@@ -664,10 +661,10 @@ namespace Dime.Controllers
             return RedirectToAction("SolicitudesLiberacionHomePass");
 
         }
-    
+
         public ActionResult SeguimientosLiberacionHomePass()
         {
-          
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             return View(modelo);
         }
@@ -680,14 +677,14 @@ namespace Dime.Controllers
 
         public JsonResult ConsultaGestionLiberaciondeHomePassJson(string fechaInicial, string fechaFinal)
         {
-           
+
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
             var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListGestionLiberacionHomePass(FI, FF, Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
-      
+
         [HttpGet]
         public ActionResult ConsultaGestionLiberaciondeHomePass()
         {
@@ -696,18 +693,18 @@ namespace Dime.Controllers
 
         ///PROCESO GESTION DE MATRICES
         ///
-  
+
         [HttpGet]
         public ActionResult SolicitudMatrices()
         {
             Session["FechaInicial"] = DateTime.Now;
             return View();
         }
-  
+
         [HttpPost]
         public ActionResult SolicitudMatrices(ViewModelTraslados modelo)
         {
-            
+
             DateTime fechainiciotransaccion = Convert.ToDateTime(Session["FechaInicial"].ToString());
             DateTime fechafintransaccion = DateTime.Now;
 
@@ -715,17 +712,13 @@ namespace Dime.Controllers
 
             modelo.IngresoTraslado.NombreLineaIngreso = Session["LineaLogeado"].ToString(); modelo.IngresoTraslado.AliadoApertura = Session["AliadoLogeado"].ToString();
 
-            
+
             if (trasladowebservice.ExisteCuentaEscaladaMatriz(modelo.IngresoTraslado.CuentaCliente) == false)
             {
                 if (maestronodosservice.ExisteNodo(modelo.GestionMatriz.Nodo) == true)
                 {
-
-
-                    if (ModelState.IsValid == true)
-                    {
-                        //ingreso traslado
-                        if(modelo.GestionMatriz.Observacion==null || modelo.GestionMatriz.Observacion == "") { modelo.GestionMatriz.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.GestionMatriz.Observacion = modelo.GestionMatriz.Observacion.ToUpper(); }
+                       //ingreso traslado
+                        if (modelo.GestionMatriz.Observacion == null || modelo.GestionMatriz.Observacion == "") { modelo.GestionMatriz.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.GestionMatriz.Observacion = modelo.GestionMatriz.Observacion.ToUpper(); }
                         modelo.GestionMatriz.Direccion = modelo.GestionMatriz.Direccion.ToUpper();
                         modelo.GestionMatriz.Nodo = modelo.GestionMatriz.Nodo.ToUpper();
 
@@ -739,7 +732,7 @@ namespace Dime.Controllers
                         trasladowebservice.InsertIngresoGestionMatriz(modelo.IngresoTraslado, modelo.GestionMatriz, modelo.TraficoTraslados);
                         Session.Remove("FechaInicial");
                         return RedirectToAction("SolicitudMatrices");
-                    }
+                    
                 }
                 else
                 {
@@ -755,7 +748,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult SolicitudesCreacionMatrices()
         {
-         
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             modelo = trasladowebservice.ListaSolicitudesCreaciondeMatriz(Session["Usuario"].ToString());
             return View(modelo);
@@ -771,7 +764,7 @@ namespace Dime.Controllers
         public ActionResult GestionarCreacionDeMatriz(int id)
         {
             ViewModelTraslados model = new ViewModelTraslados();
-           
+
             if (trasladowebservice.TransaccionCrearMatrizEnGestion(id, Session["Usuario"].ToString()) == true)
             {
                 return RedirectToAction("SolicitudesCreacionMatrices");
@@ -841,7 +834,7 @@ namespace Dime.Controllers
             modelo.GestionMatrizVacia.Razon = "GESTION BACKOFFICE CREACION";
             modelo.GestionMatrizVacia.UsuarioBackOfficeCreacion = Session["Usuario"].ToString();
 
-            if(modelo.GestionMatrizVacia.Observacion==null || modelo.GestionMatrizVacia.Observacion == "") { modelo.GestionMatrizVacia.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.GestionMatrizVacia.Observacion = modelo.GestionMatrizVacia.Observacion.ToUpper(); }
+            if (modelo.GestionMatrizVacia.Observacion == null || modelo.GestionMatrizVacia.Observacion == "") { modelo.GestionMatrizVacia.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.GestionMatrizVacia.Observacion = modelo.GestionMatrizVacia.Observacion.ToUpper(); }
             modelo.IngresoTraslado.IdTransaccion = Convert.ToDecimal(modelo.GestionMatrizInicial.IdTransaccion);
             modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
             modelo.IngresoTraslado.EstadoTransaccion = modelo.GestionMatrizVacia.EstadoTransaccion;
@@ -865,7 +858,7 @@ namespace Dime.Controllers
         public ActionResult SeguimientosSolicitudesCreacionMatriz()
         {
 
-           
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             modelo = trasladowebservice.ListaSeguimientosCrearMatrizCelula(Session["Usuario"].ToString());
             return View(modelo);
@@ -880,10 +873,10 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult SolicitudesGestionMatrices()
         {
-            
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-           
-         return View(modelo);
+
+            return View(modelo);
 
         }
         public JsonResult SolicitudesGestionMatricesJson()
@@ -898,7 +891,7 @@ namespace Dime.Controllers
         public ActionResult GestionMatricesCelula(int id)
         {
             ViewModelTraslados model = new ViewModelTraslados();
-           
+
             if (trasladowebservice.TransaccionGestionMatrizEnGestion(id, Session["Usuario"].ToString()) == true)
             {
                 return RedirectToAction("SolicitudesGestionMatrices");
@@ -974,6 +967,7 @@ namespace Dime.Controllers
             modelo.IngresoTraslado.IdTransaccion = Convert.ToDecimal(modelo.GestionMatrizInicial.IdTransaccion);
             modelo.IngresoTraslado.UsuarioUltimaActualizacion = Session["Usuario"].ToString();
             modelo.IngresoTraslado.EstadoTransaccion = modelo.GestionMatrizVacia.EstadoTransaccion;
+            modelo.IngresoTraslado.NombreLineaEscalado = modelo.GestionMatrizVacia.CanalTransaccion;
 
             DateTime fechainiciotransaccion = Convert.ToDateTime(Session["FechaInicial"].ToString());
             DateTime fechafintransaccion = DateTime.Now;
@@ -994,7 +988,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult SeguimientosSolicitudesGestionMatrices()
         {
-           
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             return View(modelo);
         }
@@ -1006,7 +1000,7 @@ namespace Dime.Controllers
         }
         public JsonResult ConsultaGestionMatricesJson(string fechaInicial, string fechaFinal)
         {
-         
+
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
             var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListGestionMatrices(FI, FF, Session["Usuario"].ToString())), JsonRequestBehavior.AllowGet);
@@ -1020,13 +1014,13 @@ namespace Dime.Controllers
         {
             return View();
         }
-  
+
         [HttpGet]
         public ActionResult ConsultaAdminIngresosTraslados()
         {
             return View();
         }
-  
+
         public JsonResult ConsultaAdminIngresosTrasladosJson(string fechaInicial, string fechaFinal)
         {
             var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaGeneralIngresosTraslados(Convert.ToDateTime(fechaInicial), Convert.ToDateTime(fechaFinal))), JsonRequestBehavior.AllowGet);
@@ -1034,13 +1028,13 @@ namespace Dime.Controllers
             return jsonResult;
 
         }
-        
+
         [HttpGet]
         public ActionResult ConsultaAdminIngresosCrearDireccion()
         {
             return View();
         }
-      
+
         public JsonResult ConsultaAdminIngresosCrearDireccionJson(string fechaInicial, string fechaFinal)
         {
             DateTime FI = Convert.ToDateTime(fechaInicial);
@@ -1048,9 +1042,9 @@ namespace Dime.Controllers
             var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ListaGeneralIngresosCrearDireccion(FI, FF)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
-            
+
         }
-        
+
         [HttpGet]
         public ActionResult ConsultaAdminIngresosCambioEstrato()
         {
@@ -1103,16 +1097,17 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaIngresosTraslados(string CuentaCliente)
         {
-            
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
-            if(CuentaCliente!=null && CuentaCliente!="")
+            if (CuentaCliente != null && CuentaCliente != "")
             {
                 modelo = trasladowebservice.ConsultaIngresosTrasladosAsesor(Convert.ToDecimal(CuentaCliente));
             }
-            else {
+            else
+            {
                 return RedirectToAction("ConsultaIngresosTraslados");
             }
-            
+
             return View(modelo);
         }
         [HttpGet]
@@ -1123,7 +1118,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaClienteCreacionDireccion(string CuentaCliente)
         {
-           
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             if (CuentaCliente != null && CuentaCliente != "")
             {
@@ -1145,7 +1140,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaClienteCambiodeEstrato(string CuentaCliente)
         {
-            
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             if (CuentaCliente != null && CuentaCliente != "")
             {
@@ -1167,7 +1162,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaClienteLiberacionHomePass(string CuentaCliente)
         {
-           
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             if (CuentaCliente != null && CuentaCliente != "")
             {
@@ -1189,7 +1184,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ConsultaClienteMatrices(string CuentaCliente)
         {
-            
+
             List<DatoConsultaDirecciones> modelo = new List<DatoConsultaDirecciones>();
             if (CuentaCliente != null && CuentaCliente != "")
             {
@@ -1223,28 +1218,28 @@ namespace Dime.Controllers
             modelo.IngresoTraslado.NombreLineaIngreso = Session["LineaLogeado"].ToString(); modelo.IngresoTraslado.AliadoApertura = Session["AliadoLogeado"].ToString();
 
             if (modelo.TrasladoFallido.Observacion == null || modelo.TrasladoFallido.Observacion == "") { modelo.TrasladoFallido.Observacion = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { modelo.TrasladoFallido.Observacion = modelo.TrasladoFallido.Observacion.ToUpper(); }
-            if (modelo.IngresoTraslado.CuentaCliente == 0) { modelo.IngresoTraslado.CuentaCliente = modelo.TrasladoFallido.CuentaTraslada;}
-            if (modelo.TrasladoFallido.TarifaActual == null || modelo.TrasladoFallido.TarifaActual == "") { }else { modelo.TrasladoFallido.TarifaActual = modelo.TrasladoFallido.TarifaActual.ToUpper(); }
+            if (modelo.IngresoTraslado.CuentaCliente == 0) { modelo.IngresoTraslado.CuentaCliente = modelo.TrasladoFallido.CuentaTraslada; }
+            if (modelo.TrasladoFallido.TarifaActual == null || modelo.TrasladoFallido.TarifaActual == "") { } else { modelo.TrasladoFallido.TarifaActual = modelo.TrasladoFallido.TarifaActual.ToUpper(); }
             if (modelo.TrasladoFallido.TarifaNueva == null || modelo.TrasladoFallido.TarifaNueva == "") { } else { modelo.TrasladoFallido.TarifaNueva = modelo.TrasladoFallido.TarifaNueva.ToUpper(); }
-            if (modelo.TrasladoFallido.Nodo == null || modelo.TrasladoFallido.Nodo == "") { }else { modelo.TrasladoFallido.Nodo = modelo.TrasladoFallido.Nodo.ToUpper(); }
+            if (modelo.TrasladoFallido.Nodo == null || modelo.TrasladoFallido.Nodo == "") { } else { modelo.TrasladoFallido.Nodo = modelo.TrasladoFallido.Nodo.ToUpper(); }
             if (modelo.TrasladoFallido.Direccion == null || modelo.TrasladoFallido.Direccion == "") { } else { modelo.TrasladoFallido.Direccion = modelo.TrasladoFallido.Direccion.ToUpper(); }
             modelo.TrasladoFallido.CuentaCliente = modelo.IngresoTraslado.CuentaCliente;
-            
-                
-            
 
-                        //datos de transaccion
-                        modelo.TraficoTraslados.InicioTransaccion = fechainiciotransaccion;
-                        modelo.TraficoTraslados.FinTransaccion = fechafintransaccion;
-                        modelo.TraficoTraslados.TipoTransaccion = "TRASLADO FALLIDO";
-                        modelo.TraficoTraslados.CanalTransaccion = "SOLICITUD INBOUND";
-                        //fin de transaccion
 
-                        trasladowebservice.InsertIngresoTrasladoFallido(modelo.IngresoTraslado, modelo.TrasladoFallido, modelo.TraficoTraslados);
-                        Session.Remove("FechaInicial");
+
+
+            //datos de transaccion
+            modelo.TraficoTraslados.InicioTransaccion = fechainiciotransaccion;
+            modelo.TraficoTraslados.FinTransaccion = fechafintransaccion;
+            modelo.TraficoTraslados.TipoTransaccion = "TRASLADO FALLIDO";
+            modelo.TraficoTraslados.CanalTransaccion = "SOLICITUD INBOUND";
+            //fin de transaccion
+
+            trasladowebservice.InsertIngresoTrasladoFallido(modelo.IngresoTraslado, modelo.TrasladoFallido, modelo.TraficoTraslados);
+            Session.Remove("FechaInicial");
 
             return RedirectToAction("RegistrotrasladoFallido");
-          
+
         }
         [HttpGet]
         public ActionResult ConsultaClienteTrasladoFallido()
@@ -1301,19 +1296,19 @@ namespace Dime.Controllers
         }
         public JsonResult ListaComunidades(string Departamento, string Ciudad)
         {
-            var jsonResult = Json(JsonConvert.SerializeObject(maestrosService.TraeListaComunidad(Departamento,Ciudad)), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(maestrosService.TraeListaComunidad(Departamento, Ciudad)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 
         }
         public JsonResult ListaRedes(string Departamento, string Ciudad, string Comunidad)
         {
-            var jsonResult = Json(JsonConvert.SerializeObject(maestrosService.TraeListaRed(Departamento,Ciudad,Comunidad)), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(maestrosService.TraeListaRed(Departamento, Ciudad, Comunidad)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 
         }
-       public JsonResult ConsultaGestionTrasladosFallidosJson(string fechaInicial, string fechaFinal)
+        public JsonResult ConsultaGestionTrasladosFallidosJson(string fechaInicial, string fechaFinal)
         {
 
             DateTime FI = Convert.ToDateTime(fechaInicial);

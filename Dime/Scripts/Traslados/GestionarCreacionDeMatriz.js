@@ -64,5 +64,25 @@ function CambiarEstado() {
                 $("#cuentamatriz").prop('readonly', true); document.getElementById('cuentamatriz').style.background = "#EEE";
                 $("#ordendetrabajo").prop('readonly', true); document.getElementById('ordendetrabajo').style.background = "#EEE";
             }
+    ValidarCampos();
+}
 
+$('#estado').change(function () {
+    ValidarCampos();
+})
+
+function ValidarCampos() {
+    var subrazon = $('#selectsubrazon').val();
+    var estado = $('#selectestado').val();
+
+    if (subrazon != "") {
+        document.getElementById('submitDatos').style.display = 'inline-block';
+    } else {
+        document.getElementById('submitDatos').style.display = 'none';
+    }
+    if (estado != "") {
+        document.getElementById('submitDatos').style.display = 'inline-block';
+    } else {
+        document.getElementById('submitDatos').style.display = 'none';
+    }
 }

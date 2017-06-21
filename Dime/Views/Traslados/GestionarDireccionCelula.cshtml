@@ -160,16 +160,15 @@
                                                                                              new SelectListItem{Text="NO INFORMA SI EL HHPP ES CASA O PISO", Value="NO INFORMA SI EL HHPP ES CASA O PISO" },
                                                                                              new SelectListItem{Text="SE CREA DIRECCION CORRECTAMENTE", Value="SE CREA DIRECCION CORRECTAMENTE" },
                                                                                              new SelectListItem{Text="VENTA NUEVA", Value="VENTA NUEVA" },},
-                                                               "--SELECCIONE--", new { @class = "form-control input-sm" })
-                                            @Html.ValidationMessageFor(m => m.NotaTrasladoVacia.Subrazon, "", new { @class = "text-danger" })
+                                                               "--SELECCIONE--", new {Id="selectsubrazon", @class = "form-control input-sm" })
                                             </td>
                                             <td width="300">
                                                 <small>Estado del Caso:</small>
                                                 @Html.DropDownListFor(m => m.NotaTrasladoVacia.EstadoTransaccion, new List<SelectListItem> {new SelectListItem{Text="EN GESTION", Value="EN GESTION" },
                                                                                              new SelectListItem{Text="NO INGRESADA", Value="NO INGRESADA" },
                                                                                              new SelectListItem{Text="INGRESADA", Value="INGRESADA" },},
-                                                               "--SELECCIONE--", new { @class = "form-control input-sm" })
-                                                @Html.ValidationMessageFor(m => m.NotaTrasladoVacia.EstadoTransaccion, "", new { @class = "text-danger" })
+                                                               "--SELECCIONE--", new {Id="selectestado", @class = "form-control input-sm" })
+                                              
                                             </td>
                                         </tr>
                                     </table>
@@ -188,8 +187,8 @@
                         </div>
                     </div>
                     <br />
-                    <div class="">
-                        <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;">Guardar Datos</button>
+                    <div>
+                        <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;display:none">Guardar Datos</button>
                     </div>
                     
                 </div>
@@ -198,11 +197,8 @@
     </div>
 }
 @section Scripts{
-    <script>
-        var jsonInteraccionesDireccion = @Html.Raw(Json.Encode(Model.ListaNotasCrearDireccion));
-    </script>
-@Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
-    <script src="~/Scripts/Traslados/GestionarDireccionCelula.js?1.0.3"></script>
+    <script>var jsonInteraccionesDireccion = @Html.Raw(Json.Encode(Model.ListaNotasCrearDireccion));</script>
+    <script src="~/Scripts/Traslados/GestionarDireccionCelula.js?1.0.6"></script>
 }
 
 

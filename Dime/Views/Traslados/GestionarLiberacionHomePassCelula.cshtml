@@ -179,14 +179,14 @@
                                                                                              new SelectListItem{Text="TRASLADO A OTRA DIRECCION", Value="TRASLADO A OTRA DIRECCION" },
                                                                                              new SelectListItem{Text="TRASLADO OK", Value="TRASLADO OK" }},
                                                                "--SELECCIONE--", new { @class = "form-control input-sm", @id = "Subrazon" })
-                                            @Html.ValidationMessageFor(m => m.LiberacionHomePassVacia.Subrazon, "", new { @class = "text-danger" })
+                                            
                                             </td>
                                             <td width="300">
                                                 <small>Estado del Caso:</small>
                                                 @Html.DropDownListFor(m => m.LiberacionHomePassVacia.EstadoTransaccion, new List<SelectListItem> {new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" },
                                                                                              new SelectListItem{Text="FINALIZADO", Value="FINALIZADO" }},
                                                                "--SELECCIONE--", new { @class = "form-control input-sm", @id = "estado" })
-                                                @Html.ValidationMessageFor(m => m.LiberacionHomePassVacia.EstadoTransaccion, "", new { @class = "text-danger" })
+                                            
                                              </td>
                                         </tr>
                                     </table>
@@ -206,7 +206,7 @@
                     </div>
                     <br />
                     <div class="">
-                        <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;">Guardar Datos</button>
+                        <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;display:none;">Guardar Datos</button>
                     </div>
                 </div>
             </div>
@@ -214,11 +214,8 @@
     </div>
 }
 @section Scripts{
-    <script>
-        var jsonInteraccionesHHPP = @Html.Raw(Json.Encode(Model.ListaLiberacionHomePass));
-    </script>
-@Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
-    <script src="~/Scripts/Traslados/GestionarLiberacionHomePassCelula.js?1.0.3"></script>
+    <script>var jsonInteraccionesHHPP = @Html.Raw(Json.Encode(Model.ListaLiberacionHomePass));</script>
+    <script src="~/Scripts/Traslados/GestionarLiberacionHomePassCelula.js?1.0.4"></script>
 }
 
 
