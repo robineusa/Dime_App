@@ -1,0 +1,265 @@
+﻿@model Telmexla.Servicios.DIME.Entity.InboundModel
+@{
+    ViewBag.Title = "Retención";
+    ViewBag.SubTitle = "Gestión Inbound";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Retencion", "Inbound", FormMethod.Post, new { id = "datosCliente", role = "form" }))
+{
+    <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
+        <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
+            <div class="row">
+                <div class="col-xs-2">
+                    <small>Número de Cuenta:</small>
+                </div>
+                <div class="col-xs-2" style="width:200px; padding:1px;">
+                    <small>Documento de Identidad:  </small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <table>
+                        <tr>
+                            <td style="padding:5px;">
+                                @Html.TextBoxFor(m => m.ClientesTodos.Cuenta, new { @class = "form-control input-sm", Id = "cuentaCliente" })
+                            </td>
+                            <td style="min-width:200px;padding:1px;">
+                                @Html.TextBoxFor(m => m.ClientesTodos.Cedula, new { @class = "form-control input-sm", id = "inputCedula", ReadOnly = "true", value = Model.ClientesTodos.Cedula })
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-9" style="width:100%; ">
+
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li id="Li1" class="active" style="background-color: #dcdcdc;  border-color: #da0e08 ;"><a href="#Datos_Basicos" style="background-color: transparent;" data-toggle="tab">Datos Básicos</a></li>
+                    @*<li id="Li2"><a style="background-color: transparent;" href="#InformacionNiveles" data-toggle="tab">Pestaña 2</a></li>*@
+                </ul>
+                <div class="tab-content" style="padding-left:0; padding-top: 0">
+                    <div class="active tab-pane" id="Datos_Basicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                        <br />
+                        <table>
+                            <tr>
+                                <td width="200" style="padding:1px;">
+                                    <small>Nombre del Cliente:  </small>
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    <small>Apellido del Cliente:  </small>
+                                </td>
+
+                                <td width="200" style="padding:1px;">
+                                    <small>Teléfono Telmex:  </small>
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    <small>Teléfono 1:  </small>
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    <small>Teléfono 2: </small>
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    <small>Teléfono 3:</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:1px;">
+                                    <input id="Nombre_Cliente" class="form-control input-sm" type="text" placeholder="Nombre del cliente" value="@Model.ClientesTodos.Nombre" readonly>
+                                </td>
+                                <td style="padding:1px;">
+                                    <input id="Apellido_Cliente" class="form-control input-sm" type="text" placeholder="Apellido del cliente" value="@Model.ClientesTodos.Apellido" readonly>
+                                </td>
+
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="Teléfono telmex" value="@Model.ClientesTodos.TelefonoTelmex" readonly>
+                                </td>
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="Teléfono 1" value="@Model.ClientesTodos.Telefono1" readonly>
+                                </td>
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="Teléfono 2" value="@Model.ClientesTodos.Telefono2" readonly>
+                                </td>
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="Teléfono 3" value="@Model.ClientesTodos.Telefono3" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td style="padding:1px;">
+                                    <small>Dirección de Instalación: </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Correspondencia:  </small>
+                                </td>
+
+                                <td style="padding:1px;">
+                                    <small>Nodo: </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Red:  </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>División:  </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Área:  </small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.ClientesTodos.DirInstalacion" readonly>
+                                </td>
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="Correspondencia" value="@Model.ClientesTodos.DirCorrespondencia" readonly>
+                                </td>
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="Nodo" value="@Model.ClientesTodos.Nodo" readonly>
+                                </td>
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="Red" value="@Model.ClientesTodos.Red" readonly>
+                                </td>
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="División" value="@Model.ClientesTodos.Division" readonly>
+                                </td>
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="Área" value="@Model.ClientesTodos.Area" readonly>
+                                </td>
+                            </tr>
+
+                            <tr>
+
+                                <td style="padding:1px;">
+                                    <small>Zona:</small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Distrito:  </small>
+                                </td>
+
+                                <td style="padding:1px;">
+                                    <small>Nombre Comunidad: </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Estrato:  </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Tipo de Cliente:  </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Descripción:  </small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="Zona" value="@Model.ClientesTodos.Zona" readonly>
+                                </td>
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="Distrito" value="@Model.ClientesTodos.Distrito" readonly>
+                                </td>
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="Nombre comunidad" value="@Model.ClientesTodos.NombreComunidad" readonly>
+                                </td>
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="Estrato" value="@Model.ClientesTodos.Estrato" readonly>
+                                </td>
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="Tipo de cliente" value="@Model.ClientesTodos.TipoCliente" readonly>
+                                </td>
+                                <td style="padding:1px;">
+                                    <input class="form-control input-sm" type="text" placeholder="Descripción" value="@Model.ClientesTodos.Descripcion" readonly>
+                                </td>
+                            </tr>
+                        </table>
+                        <button type="submit" style="display:none;" id="BuscaCliente" name="BotonEnvia" value="Buscar">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top: 25px;">
+                                <i class="fa fa-retweet"></i> Opción a escalar
+                                @* <small class="pull-right">Date: 2/10/2014</small>*@
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <br />
+                                <table>
+                                    <tr>
+                                        <td width="200" style="padding:1px;" colspan="2">
+                                            <small>Tipo de Escalamiento:  </small>
+                                        </td>
+                                        <td width="300" style="padding:1px;" colspan="2">
+                                            <small>Detalle del Escalamiento:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {
+                                            new SelectListItem { Text = "AJUSTE", Value = "AJUSTE" },
+                                            new SelectListItem { Text = "APLICACION DE CAMPAÑA A CORTE", Value = "APLICACION DE CAMPAÑA A CORTE" },
+                                            new SelectListItem { Text = "CASO CGO", Value = "CASO CGO" },
+                                            new SelectListItem { Text = "CESIONES DE CONTRATO", Value = "CESIONES DE CONTRATO" },
+                                            new SelectListItem { Text = "CLIENTE ESTA PENSANDO SI ACEPTAR O NO LA OFERTA", Value = "CLIENTE ESTA PENSANDO SI ACEPTAR O NO LA OFERTA" },
+                                            new SelectListItem { Text = "CLIENTES EN MORA CON AVISO FINAL", Value = "CLIENTES EN MORA CON AVISO FINAL" },
+                                            new SelectListItem { Text = "CLIENTES EN MORA DESCONECTADO", Value = "CLIENTES EN MORA DESCONECTADO" },
+                                            new SelectListItem { Text = "FALLA MODULO DE GESTION", Value = "FALLA MODULO DE GESTION" },
+                                            new SelectListItem { Text = "INCUMPLIMIENTO", Value = "INCUMPLIMIENTO" },
+                                            new SelectListItem { Text = "RECOMENDACION CASOS ESPECIALES", Value = "RECOMENDACION CASOS ESPECIALES" },
+                                            new SelectListItem { Text = "RETENCION CRUZADAS", Value = "RETENCION CRUZADAS" },
+                                            new SelectListItem { Text = "SIN CAPACIDAD", Value = "SIN CAPACIDAD" },
+                                            new SelectListItem { Text = "VENTAS", Value = "VENTAS" }}, "--Seleccione--",
+                                            new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "Escalamiento", onchange = "TraeDetalle()" })
+                                        </td>
+                                        <td colspan="2">
+                                            @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {
+                                            new SelectListItem { Text = "NO APLICA", Value = "NO APLICA" } }, "--Seleccione--",
+                                            new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "Detalle" })
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top: 25px;">
+                                <i class="fa fa-comment-o"></i> Observaciones
+                                @* <small class="pull-right">Date: 2/10/2014</small>*@
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <br />
+                                <table>
+                                    <tr>
+                                        <td style="padding:1px; width:1200px;">
+                                            @Html.TextAreaFor(m => m.ModelTipiMarca.Observaciones, new { @id = "TipiMarca_Observaciones", @style = "width: 100%; height: 100px; resize: none; border:none;" })
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-block btn-primary" name="BotonEnvia" value="GuardaDatos" style="width:10%;  margin-left:1%;">Guardar</button>
+
+    </div>
+}
+@section Scripts{
+    <script src="~/Scripts/Inbound/Retencion.js?1.0.1"></script>
+}

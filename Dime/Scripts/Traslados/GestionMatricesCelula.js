@@ -53,5 +53,26 @@ function CambiarEstado() {
             $("#estado").empty();
             $("#estado").append("<option>--SELECCIONE--</option>")
         }
+    ValidarCampos();
+}
 
+$('#estado').change(function () {
+    ValidarCampos();
+})
+
+function ValidarCampos() {
+    var subrazon = $('#Subrazon').val();
+    var estado = $('#estado').val();
+
+    if (subrazon != "") {
+        if (estado != "") {
+            document.getElementById('submitDatos').style.display = 'inline-block';
+        } else {
+            document.getElementById('submitDatos').style.display = 'none';
+        }
+       
+    } else {
+        document.getElementById('submitDatos').style.display = 'none';
+    }
+    
 }

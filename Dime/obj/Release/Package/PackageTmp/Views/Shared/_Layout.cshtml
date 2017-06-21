@@ -430,6 +430,11 @@
 
                                 </ul>
                             }
+                            
+                                <ul class="treeview-menu">
+                                    <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("Retencion", "Inbound")"><i class="fa fa-hand-stop-o" aria-hidden="true"></i>Retención</a></li>
+                                </ul>
+                            
                         </li>
                     }
                     @if (Session["Gestion Blending"] != null)
@@ -447,10 +452,10 @@
                                 <li><a href="@Url.Action("Producto", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Producto</a></li>}
                                 @if (Session["Blending Convenio Electronico"] != null)
                                 {
-                                <li><a href="@Url.Action("Convenio_Electronico", "GestionBlending")"><i class="fa fa-circle-o"></i> Convenio Electrónico</a></li>}
-                                @if (Session["Blending Docsis"] != null)
+                                <li><a href="@Url.Action("Convenio_Electronico", "GestionBlending")"><i class="fa fa-circle-o"></i>Convenio Electrónico</a></li>}
+                                @if (Session["Blending Docsis y Overlap"] != null)
                                 {
-                                <li><a href="@Url.Action("Docsis", "GestionBlending")"><i class="fa fa-circle-o"></i> Docsis Overlap</a></li>}
+                                <li><a href="@Url.Action("Docsis", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Docsis Overlap</a></li>}
                                 @if (Session["Blending Fuera de Niveles"] != null)
                                 {
                                     <li><a href="@Url.Action("CableModemFueradeNiveles", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Fuera de Niveles</a></li>}
@@ -579,6 +584,13 @@
                                                     <ul class="treeview-menu">
                                                         <li><a href="@Url.Action("ConsultaAdminProductoPrincipal", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Consulta Principal</a></li>
                                                         <li><a href="@Url.Action("ConsultaAdminProductoLog", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Consulta del Log</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><i class="fa fa-circle-o"></i>Docsis<i class="fa fa-angle-left pull-right"></i></a>
+                                                    <ul class="treeview-menu">
+                                                        <li><a href="@Url.Action("ConsultaAdminDocsisPrincipal", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Consulta Principal</a></li>
+                                                        <li><a href="@Url.Action("ConsultaAdminDocsisLog", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Consulta del Log</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>

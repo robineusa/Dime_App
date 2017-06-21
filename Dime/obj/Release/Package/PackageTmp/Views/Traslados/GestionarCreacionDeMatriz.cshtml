@@ -167,12 +167,14 @@
                                                                                              new SelectListItem{Text="SE CREO MATRIZ CORRECTAMENTE", Value="SE CREO MATRIZ CORRECTAMENTE" },
                                                                                              new SelectListItem{Text="SE ENVIA CREACION DE MATRIZ", Value="SE ENVIA CREACION DE MATRIZ" }},
                                                                "--SELECCIONE--", new { @class = "form-control input-sm", @id = "Subrazon" })
+                                           
                                             </td>
                                             <td width="300">
                                                 <small>Estado del Caso:</small>
                                                 @Html.DropDownListFor(m => m.GestionMatrizVacia.EstadoTransaccion, new List<SelectListItem> {new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" },
                                                                                              new SelectListItem{Text="FINALIZADA", Value="FINALIZADA" },},
                                                                "--SELECCIONE--", new { @class = "form-control input-sm", @id = "estado" })
+                                           
                                             </td>
                                         </tr>
                                     </table>
@@ -192,7 +194,7 @@
                     </div>
                     <br />
                     <div class="">
-                        <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;">Guardar Datos</button>
+                        <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;display:none;">Guardar Datos</button>
                     </div>
                 </div>
             </div>
@@ -200,11 +202,8 @@
         </div>
 }
 @section Scripts{
-    <script>
-        var jsonInteraccionesCreacionMatriz = @Html.Raw(Json.Encode(Model.ListaGestionMatriz));
-    </script>
-
-    <script src="~/Scripts/Traslados/GestionarCreacionDeMatriz.js?1.0.1"></script>
+    <script>var jsonInteraccionesCreacionMatriz = @Html.Raw(Json.Encode(Model.ListaGestionMatriz));</script>
+    <script src="~/Scripts/Traslados/GestionarCreacionDeMatriz.js?2.0.0"></script>
 }
 
 
