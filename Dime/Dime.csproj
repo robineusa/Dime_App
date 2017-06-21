@@ -2275,11 +2275,17 @@
     <Content Include="Scripts\Consultas_Admin\Consulta_Paloteo.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Rechazos.js" />
     <Content Include="Scripts\Dashboard\DashboardAsesor.js" />
+    <Content Include="Scripts\DistribucionBlending\ConsultaAdminDocsisLog.js" />
+    <Content Include="Scripts\DistribucionBlending\ConsultaAdminDocsisPrincipal.js" />
     <Content Include="Scripts\DistribucionBlending\ConsultaAdminFueraNivelesLog.js" />
     <Content Include="Scripts\DistribucionBlending\ConsultaAdminFueraNivelesPrincipal.js" />
+    <Content Include="Scripts\DistribucionBlending\ConsultaAdminProductoLog.js" />
+    <Content Include="Scripts\DistribucionBlending\ConsultaAdminProductoPrincipal.js" />
     <Content Include="Scripts\DistribucionBlending\ConsultaAdminRentabilizacionLog.js" />
     <Content Include="Scripts\DistribucionBlending\ConsultaAdminRentabilizacionPrincipal.js" />
+    <Content Include="Scripts\DistribucionBlending\Docsis.js" />
     <Content Include="Scripts\DistribucionBlending\FueraNiveles.js" />
+    <Content Include="Scripts\DistribucionBlending\Producto.js" />
     <Content Include="Scripts\DistribucionBlending\Rentabilizacion.js" />
     <Content Include="Scripts\Gestion_Blending\AsignarBasesAdmin.js" />
     <Content Include="Scripts\Gestion_Blending\SkillsUsuariosAdmin.js" />
@@ -2903,6 +2909,9 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBCProducto.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBLProducto.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPProducto.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBCDocsis.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBLDocsis.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPDocsis.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -2964,13 +2973,13 @@
     <Content Include="Service References\WSD\Dime.WSD.UsuariosMasivoData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\WSD\WebService.disco" />
     <None Include="Service References\WSD\configuration91.svcinfo" />
     <None Include="Service References\WSD\configuration.svcinfo" />
     <None Include="Service References\WSD\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\WSD\WebService.disco" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
     <Content Include="Styles\Elements\General.css" />
@@ -3157,6 +3166,9 @@
     <Content Include="Views\DistribucionBlending\ConsultaAdminFueraNivelesPrincipal.cshtml" />
     <Content Include="Views\DistribucionBlending\Rentabilizacion.cshtml" />
     <Content Include="Views\Alertas\Mejoras_Tecnicas.cshtml" />
+    <Content Include="Views\DistribucionBlending\ConsultaAdminRentabilizacionPrincipal.cshtml" />
+    <Content Include="Views\DistribucionBlending\ConsultaAdminRentabilizacionLog.cshtml" />
+    <Content Include="Views\Reportes\ReporteBlending.cshtml" />
     <None Include="Service References\WSD\WebService.wsdl" />
     <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
@@ -3173,10 +3185,19 @@
     <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
+<<<<<<< HEAD
     <Content Include="Views\DistribucionBlending\ConsultaAdminRentabilizacionPrincipal.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminRentabilizacionLog.cshtml" />
     <Content Include="Views\Reportes\ReporteBlending.cshtml" />
     <Content Include="Views\Inbound\Retencion.cshtml" />
+=======
+    <Content Include="Views\DistribucionBlending\Docsis.cshtml" />
+    <Content Include="Views\DistribucionBlending\ConsultaAdminProductoLog.cshtml" />
+    <Content Include="Views\DistribucionBlending\ConsultaAdminProductoPrincipal.cshtml" />
+    <Content Include="Views\DistribucionBlending\Producto.cshtml" />
+    <Content Include="Views\DistribucionBlending\ConsultaAdminDocsisPrincipal.cshtml" />
+    <Content Include="Views\DistribucionBlending\ConsultaAdminDocsisLog.cshtml" />
+>>>>>>> 9147e36a1aa70a6aafba7c2c6e1e7b0d89a98acc
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

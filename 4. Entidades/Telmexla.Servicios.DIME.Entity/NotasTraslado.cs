@@ -25,8 +25,10 @@ namespace Telmexla.Servicios.DIME.Entity
         [Required(ErrorMessage = "El campo Telefono Fijo no puede ser vacio")]
         public string TelefonoFijo { get; set; }// TELEFONO FIJO DEL CLIENTE
         public string Razon { get; set; }// RAZON
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string Subrazon { get; set; }//SUBRAZON
         public string Observacion { get; set; }// OBSERVACION REALIZADA
+        [Required(ErrorMessage = "Debes seleccionar un estado")]
         public string EstadoTransaccion { get; set; } // ESTADO DE LA TRANSACCION
         public string UsuarioBackOffice { get; set; }//USUARIO DEL BACK
         public string UsuarioBackOutbound { get; set; }//USUARIO OUTBOUND
