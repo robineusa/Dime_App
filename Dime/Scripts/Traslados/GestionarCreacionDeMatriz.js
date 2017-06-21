@@ -72,17 +72,18 @@ $('#estado').change(function () {
 })
 
 function ValidarCampos() {
-    var subrazon = $('#selectsubrazon').val();
-    var estado = $('#selectestado').val();
+    var subrazon = $('#Subrazon').val();
+    var estado = $('#estado').val();
 
     if (subrazon != "") {
-        document.getElementById('submitDatos').style.display = 'inline-block';
+        if (estado != "") {
+            document.getElementById('submitDatos').style.display = 'inline-block';
+        } else {
+            document.getElementById('submitDatos').style.display = 'none';
+        }
+        
     } else {
         document.getElementById('submitDatos').style.display = 'none';
     }
-    if (estado != "") {
-        document.getElementById('submitDatos').style.display = 'inline-block';
-    } else {
-        document.getElementById('submitDatos').style.display = 'none';
-    }
+    
 }
