@@ -248,13 +248,19 @@ namespace Dime.Controllers
         {
             if (BotonEnvia.Equals("Buscar"))
             {
-                int cuentaCliente = model.ClientesTodos.Cuenta;
+                int cuentaCliente = model.Retencion.Cuenta;
                 model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(cuentaCliente);
                 
             }
             if (BotonEnvia.Equals("GuardaDatos"))
             {
-                
+                model.Retencion.UsuarioGestion = Session["IdUsuario"].ToString();
+                model.Retencion.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+                model.Retencion.AliadoGestion = Session["AliadoLogeado"].ToString();
+
+
+
+                model = new InboundModel();
             }
             return View(model);
         }
