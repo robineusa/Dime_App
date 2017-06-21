@@ -258,7 +258,7 @@ namespace Dime.Controllers
                 model.Retencion.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
                 model.Retencion.AliadoGestion = Session["AliadoLogeado"].ToString();
 
-
+                
 
                 model = new InboundModel();
             }

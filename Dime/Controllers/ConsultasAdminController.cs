@@ -196,5 +196,25 @@ namespace Dime.Controllers
             };
 
         }
+
+        [HttpGet]
+        public ActionResult ConsultasRetencion()
+        {
+            return View();
+        }
+
+        public JsonResult JsonConsultaRetencion(string fechaInicial, string fechaFinal)
+        {
+            //DateTime inicial = DateTime.ParseExact(fechaInicio, "M/d/yyyy", CultureInfo.InvariantCulture);
+            //DateTime final = DateTime.ParseExact(fechaFin, "M/d/yyyy", CultureInfo.InvariantCulture);
+            //var aliadosList = casosAdminService.ListaAliadosActualesDeHolos();
+            //-----var result = casosAdminService.ListaGestionAdmin(inicial, final, aliado);
+            var result = "";
+            var jsonResult = Json(JsonConvert.SerializeObject(result), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+
     }
 }

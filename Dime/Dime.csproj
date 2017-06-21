@@ -2274,6 +2274,7 @@
     <Content Include="Scripts\Consultas_Admin\Consulta_Gestion.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Paloteo.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Rechazos.js" />
+    <Content Include="Scripts\Consultas_Admin\Consulta_Retencion.js" />
     <Content Include="Scripts\Dashboard\DashboardAsesor.js" />
     <Content Include="Scripts\DistribucionBlending\ConsultaAdminDocsisLog.js" />
     <Content Include="Scripts\DistribucionBlending\ConsultaAdminDocsisPrincipal.js" />
@@ -3195,6 +3196,7 @@
     <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\ConsultasAdmin\ConsultasRetencion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
