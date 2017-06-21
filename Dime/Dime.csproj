@@ -2980,7 +2980,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService1.disco" />
+    <None Include="Service References\WSD\WebService.disco" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
     <Content Include="Styles\Elements\General.css" />
@@ -3180,20 +3180,20 @@
     <Content Include="Views\DistribucionBlending\Producto.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminDocsisPrincipal.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminDocsisLog.cshtml" />
-    <None Include="Service References\WSD\WebService1.wsdl" />
-    <None Include="Service References\WSD\WebService5.xsd">
+    <None Include="Service References\WSD\WebService.wsdl" />
+    <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService51.xsd">
+    <None Include="Service References\WSD\WebService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService52.xsd">
+    <None Include="Service References\WSD\WebService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService53.xsd">
+    <None Include="Service References\WSD\WebService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService54.xsd">
+    <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\ConsultasAdmin\ConsultasRetencion.cshtml" />

@@ -7528,7 +7528,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/21/2017 10:21:31</publishTime>
     </File>
     <File Include="bin/Dime.dll">
-      <publishTime>06/21/2017 14:40:38</publishTime>
+      <publishTime>06/21/2017 15:13:06</publishTime>
     </File>
     <File Include="bin/Dime.dll.config">
       <publishTime>04/20/2017 15:36:18</publishTime>
@@ -7666,7 +7666,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/09/2017 11:16:59</publishTime>
     </File>
     <File Include="bin/Telmexla.Servicios.DIME.Entity.dll">
-      <publishTime>06/21/2017 12:12:08</publishTime>
+      <publishTime>06/21/2017 15:12:59</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>06/09/2017 11:17:03</publishTime>
@@ -7741,7 +7741,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/09/2017 11:16:40</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>06/21/2017 14:37:44</publishTime>
+      <publishTime>06/21/2017 15:11:39</publishTime>
     </File>
     <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Business.DatoConsultaGestionAdmin.datasource">
       <publishTime>06/09/2017 11:16:40</publishTime>
@@ -8452,7 +8452,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/09/2017 11:16:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaGestion.datasource">
-      <publishTime>06/21/2017 14:38:12</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaGestionAdmin.datasource">
       <publishTime>03/09/2017 14:05:40</publishTime>
@@ -8461,55 +8461,55 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>03/09/2017 14:05:40</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaRechazo.datasource">
-      <publishTime>06/21/2017 14:38:14</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.GestionDeCelulaUsr.datasource">
-      <publishTime>06/21/2017 14:38:24</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogCierreCiclo.datasource">
-      <publishTime>06/21/2017 14:38:23</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogClaroVideo.datasource">
-      <publishTime>06/21/2017 14:38:21</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogDocsisOverlap.datasource">
-      <publishTime>06/21/2017 14:38:20</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundCausa.datasource">
-      <publishTime>06/21/2017 14:38:19</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundCierre.datasource">
-      <publishTime>06/21/2017 14:38:16</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundMotivo.datasource">
-      <publishTime>06/21/2017 14:38:20</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundRazon.datasource">
-      <publishTime>06/21/2017 14:38:17</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundTipoContacto.datasource">
-      <publishTime>06/21/2017 14:38:15</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.RazonIngresoSoporte.datasource">
-      <publishTime>06/21/2017 14:38:25</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.SmoRentaActual.datasource">
-      <publishTime>06/21/2017 14:38:25</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.SmoTarifaActual.datasource">
-      <publishTime>06/21/2017 14:38:25</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.Subrazon1IngresoSoporte.datasource">
-      <publishTime>06/21/2017 14:38:25</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.Subrazon2IngresoSoporte.datasource">
-      <publishTime>06/21/2017 14:38:25</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.TablaActualizarInbound.datasource">
-      <publishTime>06/21/2017 14:38:12</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.UsuariosMasivoData.datasource">
-      <publishTime>06/21/2017 14:38:12</publishTime>
+      <publishTime>06/21/2017 15:11:53</publishTime>
     </File>
     <File Include="Styles/Elements/Alertas.css">
       <publishTime>06/13/2017 10:45:05</publishTime>
@@ -8728,7 +8728,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/14/2017 14:19:27</publishTime>
     </File>
     <File Include="Views/Inbound/Retencion.cshtml">
-      <publishTime>06/21/2017 09:38:03</publishTime>
+      <publishTime>06/21/2017 15:01:28</publishTime>
     </File>
     <File Include="Views/Manage/AddPhoneNumber.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -8965,7 +8965,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/09/2017 11:16:56</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/21/2017 14:40:45</publishTime>
+      <publishTime>06/21/2017 15:13:08</publishTime>
     </File>
   </ItemGroup>
 </Project>
