@@ -22,10 +22,10 @@
                     <table>
                         <tr>
                             <td style="padding:5px;">
-                                @Html.TextBoxFor(m => m.ClientesTodos.Cuenta, new { @class = "form-control input-sm", Id = "cuentaCliente" })
+                                @Html.TextBoxFor(m => m.Retencion.Cuenta, new { @class = "form-control input-sm", Id = "cuentaCliente", value = Model.Retencion.Cuenta })
                             </td>
                             <td style="min-width:200px;padding:1px;">
-                                @Html.TextBoxFor(m => m.ClientesTodos.Cedula, new { @class = "form-control input-sm", id = "inputCedula", ReadOnly = "true", value = Model.ClientesTodos.Cedula })
+                                <input class="form-control input-sm" type="text" placeholder="Cedula" value="@Model.ClientesTodos.Cedula" readonly>
                             </td>
                         </tr>
                     </table>
@@ -202,7 +202,7 @@
                                     </tr>
                                     <tr>
                                         <td colspan="2">
-                                            @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {
+                                            @Html.DropDownListFor(m => m.Retencion.Razon, new List<SelectListItem> {
                                             new SelectListItem { Text = "AJUSTE", Value = "AJUSTE" },
                                             new SelectListItem { Text = "APLICACION DE CAMPAÑA A CORTE", Value = "APLICACION DE CAMPAÑA A CORTE" },
                                             new SelectListItem { Text = "CASO CGO", Value = "CASO CGO" },
@@ -217,11 +217,13 @@
                                             new SelectListItem { Text = "SIN CAPACIDAD", Value = "SIN CAPACIDAD" },
                                             new SelectListItem { Text = "VENTAS", Value = "VENTAS" }}, "--Seleccione--",
                                             new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "Escalamiento", onchange = "TraeDetalle()" })
+                                            @Html.ValidationMessageFor(m => m.Retencion.Razon, "", new { @class = "text-danger", value = Model.Retencion.Razon })
                                         </td>
                                         <td colspan="2">
-                                            @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {
+                                            @Html.DropDownListFor(m => m.Retencion.SubRazon, new List<SelectListItem> {
                                             new SelectListItem { Text = "NO APLICA", Value = "NO APLICA" } }, "--Seleccione--",
-                                            new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "Detalle" })
+                                            new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "Detalle", value = Model.Retencion.SubRazon })
+                                            @Html.ValidationMessageFor(m => m.Retencion.SubRazon, "", new { @class = "text-danger", Model.Retencion.SubRazon })
                                         </td>
                                     </tr>
                                 </table>
@@ -245,7 +247,7 @@
                                 <table>
                                     <tr>
                                         <td style="padding:1px; width:1200px;">
-                                            @Html.TextAreaFor(m => m.ModelTipiMarca.Observaciones, new { @id = "TipiMarca_Observaciones", @style = "width: 100%; height: 100px; resize: none; border:none;" })
+                                            @Html.TextAreaFor(m => m.Retencion.Observaciones, new { @id = "TipiMarca_Observaciones", @style = "width: 100%; height: 100px; resize: none; border:none;", value= Model.Retencion.Observaciones })
                                         </td>
                                     </tr>
                                 </table>

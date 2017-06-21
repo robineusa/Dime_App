@@ -5959,6 +5959,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInboundService/ConsultaSegumiento", ReplyAction="http://tempuri.org/IInboundService/ConsultaSegumientoResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Ingreso>> ConsultaSegumientoAsync(string idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInboundService/InsertarRetencionInbound", ReplyAction="http://tempuri.org/IInboundService/InsertarRetencionInboundResponse")]
+        void InsertarRetencionInbound(Telmexla.Servicios.DIME.Entity.Retencion retencion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IInboundService/InsertarRetencionInbound", ReplyAction="http://tempuri.org/IInboundService/InsertarRetencionInboundResponse")]
+        System.Threading.Tasks.Task InsertarRetencionInboundAsync(Telmexla.Servicios.DIME.Entity.Retencion retencion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6082,6 +6088,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Ingreso>> ConsultaSegumientoAsync(string idUsuario) {
             return base.Channel.ConsultaSegumientoAsync(idUsuario);
+        }
+        
+        public void InsertarRetencionInbound(Telmexla.Servicios.DIME.Entity.Retencion retencion) {
+            base.Channel.InsertarRetencionInbound(retencion);
+        }
+        
+        public System.Threading.Tasks.Task InsertarRetencionInboundAsync(Telmexla.Servicios.DIME.Entity.Retencion retencion) {
+            return base.Channel.InsertarRetencionInboundAsync(retencion);
         }
     }
     
