@@ -2283,6 +2283,7 @@
     <Content Include="Scripts\DistribucionBlending\Rentabilizacion.js" />
     <Content Include="Scripts\Gestion_Blending\AsignarBasesAdmin.js" />
     <Content Include="Scripts\Gestion_Blending\SkillsUsuariosAdmin.js" />
+    <Content Include="Scripts\Inbound\Retencion.js" />
     <Content Include="Scripts\Manage\ChangeSecurityQuestions.js" />
     <Content Include="Scripts\Manuales\ManualAdministrador.js" />
     <Content Include="Scripts\Manuales\ManualAsesor.js" />
@@ -3175,6 +3176,7 @@
     <Content Include="Views\DistribucionBlending\ConsultaAdminRentabilizacionPrincipal.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminRentabilizacionLog.cshtml" />
     <Content Include="Views\Reportes\ReporteBlending.cshtml" />
+    <Content Include="Views\Inbound\Retencion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
