@@ -169,6 +169,7 @@
                                                                                                new SelectListItem{Text="SUPERA FECHA DE EXPEDICION", Value="SUPERA FECHA DE EXPEDICION" },
                                                                                                new SelectListItem{Text="TRASLADO OK", Value="TRASLADO OK" },},
                                 "--SELECCIONE--", new { @class = "form-control input-sm", @id = "Subrazon" })
+                                       
                                         </td>
                                         <td width="300">
                                             <small>Estado del Caso:</small>
@@ -176,6 +177,7 @@
                                                                                              new SelectListItem{Text="FINALIZADO", Value="FINALIZADO" },
                                                                                              new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" },},
                                 "--SELECCIONE--", new { @class = "form-control input-sm", @id = "estado" })
+                                            
                                         </td>
                                     </tr>
                                 </table>
@@ -195,18 +197,15 @@
                 </div>
                 <br />
                 <div class="">
-                    <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;">Guardar Datos</button>
+                    <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;display:none;">Guardar Datos</button>
                 </div>
             </div>
         </div>
     </div>
     }
 @section Scripts{
-    <script>
-        var jsonInteraccionesCambioEstrato = @Html.Raw(Json.Encode(Model.ListaCambioEstrato));
-    </script>
-
-    <script src="~/Scripts/Traslados/GestionarCambioDeEstratoCelula.js?1.0.1"></script>
+    <script>var jsonInteraccionesCambioEstrato = @Html.Raw(Json.Encode(Model.ListaCambioEstrato));</script>
+    <script src="~/Scripts/Traslados/GestionarCambioDeEstratoCelula.js?2.0.0"></script>
 }
 }
 else

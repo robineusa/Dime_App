@@ -20,6 +20,7 @@ namespace Telmexla.Servicios.DIME.Entity
         private List<CuentasSiembraHD> listaSiembraHD;
         private List<CuentasSiguienteMejorOferta> listaSMO;
         private List<CuentasMejorasTecnicas> listaMejorasTecnicas;
+        private Retencion retencion;
         #endregion index
 
         #region actualizar
@@ -38,6 +39,7 @@ namespace Telmexla.Servicios.DIME.Entity
             DatosAdcionalesCliente = new DatosAdicionalesCliente();
             CuentasConsultadas = new List<ClientesTodo>();
             ClientesTodos = new ClientesTodo();
+            retencion = new Retencion();
             ModelTipiMarca = new ViewModelTipificacionMarcaciones();
             string defaultRangoEdad = "Datos adicionales no cargados";
             rangoEdadOptions = new List<SelectListItem>();
@@ -300,6 +302,19 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 listaMejorasTecnicas = value;
+            }
+        }
+
+        public Retencion Retencion
+        {
+            get
+            {
+                return retencion;
+            }
+
+            set
+            {
+                retencion = value;
             }
         }
 

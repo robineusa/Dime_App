@@ -325,6 +325,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfIngreso" nillable="true" type="tns:ArrayOfIngreso" />
+  <xs:complexType name="Retencion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuenta" type="xs:int" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Razon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubRazon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Retencion" nillable="true" type="tns:Retencion" />
   <xs:complexType name="ArrayOfMaestroOutboundTipoContacto">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="MaestroOutboundTipoContacto" nillable="true" type="tns:MaestroOutboundTipoContacto" />
@@ -1717,4 +1731,64 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfGBPProducto" nillable="true" type="tns:ArrayOfGBPProducto" />
+  <xs:complexType name="GBCDocsis">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aliado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GBCDocsis" nillable="true" type="tns:GBCDocsis" />
+  <xs:complexType name="GBPDocsis">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aliado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampanaGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cierre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSeguimiento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperacionGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Razon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoContacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GBPDocsis" nillable="true" type="tns:GBPDocsis" />
+  <xs:complexType name="ArrayOfGBLDocsis">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GBLDocsis" nillable="true" type="tns:GBLDocsis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGBLDocsis" nillable="true" type="tns:ArrayOfGBLDocsis" />
+  <xs:complexType name="GBLDocsis">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aliado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampanaGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cierre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSeguimiento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperacionGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Razon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoContacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GBLDocsis" nillable="true" type="tns:GBLDocsis" />
+  <xs:complexType name="ArrayOfGBPDocsis">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GBPDocsis" nillable="true" type="tns:GBPDocsis" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGBPDocsis" nillable="true" type="tns:ArrayOfGBPDocsis" />
 </xs:schema>

@@ -1,4 +1,6 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace Telmexla.Servicios.DIME.Entity
 {
     public class GestionMatriz
@@ -21,8 +23,10 @@ namespace Telmexla.Servicios.DIME.Entity
         public string TelefonoAdministrador { get; set; }// TELEFONO DEL ADMINMISTRADOR
         public string NombreAdministrador { get; set; }// TELEFONO FIJO DEL CLIENTE
         public string Razon { get; set; }// RAZON
+       
         public string Subrazon { get; set; }//SUBRAZON
         public string Observacion { get; set; }// OBSERVACION REALIZADA
+       
         public string EstadoTransaccion { get; set; } // ESTADO DE LA TRANSACCION
         public string UsuarioBackOfficeCreacion { get; set; }//USUARIO DEL BACK DE CREACION
         public string UsuarioBackOfficeGestion { get; set; }//USUARIO DEL BACK DE GESTION

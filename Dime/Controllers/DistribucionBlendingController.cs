@@ -429,7 +429,7 @@ namespace Dime.Controllers
                 }
                 else
                 {
-                    model.GBCRentabilizacion.CuentaCiente = 0;
+                    model.GBCProducto.CuentaCliente = 0;
                    
                 }
 
@@ -541,6 +541,154 @@ namespace Dime.Controllers
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
             var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.ConsultaAdminProductoL(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
+
+        //DOCSIS Y OVERLAP
+        [HttpGet]
+        public ActionResult Docsis(string CuentaCliente)
+        {
+            ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
+            GBPDocsis ClienteGestionado = new GBPDocsis();
+
+
+            if (CuentaCliente == null || CuentaCliente.Equals(""))
+            {
+                model.DatosDelCliente = distribucionBlendingService.TraerInformacionCuentaBlending(Convert.ToInt32(Session["IdUsuario"].ToString()), "DOCSIS", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString());
+                if (model.DatosDelCliente != null)
+                    model.GBCDocsis = distribucionBlendingService.TraerInformacionCuentaDocsis(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
+            }
+            else
+            {
+                model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "DOCSIS", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
+                if (model.DatosDelCliente != null)
+
+                    ClienteGestionado = distribucionBlendingService.TraerDatosCuentaSelectDocsis(model.DatosDelCliente.Cuenta);
+                if (ClienteGestionado != null)
+                {
+                    model.GBCDocsis.CuentaCliente = ClienteGestionado.CuentaCliente;
+                    model.GBCDocsis.Aliado = ClienteGestionado.Aliado;
+
+                }
+                else
+                {
+                    model.GBCDocsis.CuentaCliente = 0;
+                    model.GBCDocsis.Aliado = "SIN INFORMACION";
+
+                }
+
+            }
+            if (model.DatosDelCliente == null)
+            {
+                model.DatosDelCliente = new ClientesTodo();
+                model.DatosDelCliente.Cuenta = 0;
+                ViewBag.ValidacionBase = "NO EXISTEN MAS CUENTAS ASIGNADAS PARA ESTA CAMPAÑA";
+
+                ViewBag.CantidadToques = 0;
+                ViewBag.Cierre = "";
+                ViewBag.Razon = "";
+
+            }
+            else
+            {
+                int DatoContactos = distribucionBlendingService.CantidadToquesCuentaDocsis(model.DatosDelCliente.Cuenta);
+                ViewBag.ValidacionBase = null;
+                ViewBag.CantidadToques = DatoContactos;
+                model.UltimoGBLDocsis = distribucionBlendingService.TraeUltimaGestionCuentaDocsis(model.DatosDelCliente.Cuenta);
+                if (model.UltimoGBLDocsis != null)
+                {
+                    ViewBag.Cierre = model.UltimoGBLDocsis.Cierre;
+                    ViewBag.Razon = model.UltimoGBLDocsis.Razon;
+                }
+                else
+                {
+                    ViewBag.Cierre = "SIN GESTION";
+                    ViewBag.Razon = "SIN GESTION";
+                }
+            }
+            return View(model);
+
+        }
+
+        public JsonResult HistoricoGestionDocsis()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.TraeListaGestionUsuarioDocsis(Session["IdUsuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult SeguimientosDocsis()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.TraeListaSeguimientosUsuarioDocsis(Session["IdUsuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
+        [HttpPost]
+        public ActionResult Docsis(ViewModelDistribucionesBlending model)
+        {
+            model.GBPDocsis.UsuarioGestion = Session["IdUsuario"].ToString();
+            model.GBPDocsis.AliadoGestion = Session["AliadoLogeado"].ToString();
+            model.GBPDocsis.OperacionGestion = Session["OperacionBlending"].ToString();
+            model.GBPDocsis.CampanaGestion = Session["CampañaBlending"].ToString();
+            model.GBPDocsis.CuentaCliente = model.DatosDelCliente.Cuenta;
+            model.GBPDocsis.Aliado = model.GBCDocsis.Aliado;
+            model.GBPDocsis.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+
+            var validacion = distribucionBlendingService.ValidarCuentaEnDocsis(model.GBPDocsis.CuentaCliente);
+
+            if (validacion == true)
+            {
+                distribucionBlendingService.ActualizarGestionDocsis(model.GBPDocsis);
+            }
+            else
+            {
+                distribucionBlendingService.InsertarRegistroDocsis(model.GBPDocsis);
+            }
+            DistribucionBlending Registro = new DistribucionBlending();
+            Registro.CuentaCliente = model.DatosDelCliente.Cuenta;
+            Registro.FormularioDestino = "DOCSIS";
+            Registro.AliadoDestino = Session["AliadoLogeado"].ToString();
+            Registro.OperacionDestino = Session["OperacionBlending"].ToString();
+            Registro.CampanaDestino = Session["CampañaBlending"].ToString();
+
+            if (model.GBPDocsis.Cierre == "95" || model.GBPDocsis.Cierre == "96" || model.GBPDocsis.Cierre == "100")
+            {
+                distribucionBlendingService.EliminaCuentaGestionadaDistribucion(Registro);
+            }
+            else if (model.GBPDocsis.Cierre == "97" || model.GBPDocsis.Cierre == "98" || model.GBPDocsis.Cierre == "99")
+            {
+                distribucionBlendingService.InsertarCuentaColaDistribucionBlending(Registro);
+            }
+
+            return RedirectToAction("Docsis"); ;
+        }
+        [HttpGet]
+        public ActionResult ConsultaAdminDocsisPrincipal()
+        {
+            ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
+            return View(model);
+        }
+        [HttpGet]
+        public ActionResult ConsultaAdminDocsisLog()
+        {
+            ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
+            return View(model);
+        }
+        public JsonResult ConsultaAdminDocsisPrincipalJson(string fechaInicial, string fechaFinal)
+        {
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.ConsultaAdminDocsisP(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ConsultaAdminDocsisLogJson(string fechaInicial, string fechaFinal)
+        {
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.ConsultaAdminDocsisL(FI, FF)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }

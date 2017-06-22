@@ -145,13 +145,15 @@
                                                                                              new SelectListItem{Text="SOLICITA A OTRA DIRECCION", Value="SOLICITA A OTRA DIRECCION" },
                                                                                              new SelectListItem{Text="SOLICITA CANCELACION", Value="SOLICITA CANCELACION" },
                                                                                              new SelectListItem{Text="SOLICITUD MAL ESCALADA", Value="SOLICITUD MAL ESCALADA" },},
-                                                               "--SELECCIONE--", new { @class = "form-control input-sm" })
+                                                               "--SELECCIONE--", new { Id = "selectsubrazon", @class = "form-control input-sm" })
+                                              
                                             </td>
                                             <td width="300">
                                                 <small>Estado del Caso:</small>
                                                 @Html.DropDownListFor(m => m.NotaTrasladoVacia.EstadoTransaccion, new List<SelectListItem> {new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" },
                                                                                              new SelectListItem{Text="FINALIZADO", Value="FINALIZADO" },},
-                                                               "--SELECCIONE--", new { @class = "form-control input-sm" })
+                                                               "--SELECCIONE--", new { Id = "selectestado", @class = "form-control input-sm" })
+                                            
                                             </td>
                                         </tr>
                                     </table>
@@ -170,8 +172,8 @@
                         </div>
                     </div>
                     <br />
-                    <div class="">
-                        <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;">Guardar Datos</button>
+                    <div>
+                        <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;display:none;">Guardar Datos</button>
                     </div>
                 </div>
             </div>
@@ -179,11 +181,8 @@
     </div>
 }
 @section Scripts{
-    <script>
-        var jsonInteraccionesDireccionOutbound = @Html.Raw(Json.Encode(Model.ListaNotasCrearDireccion));
-    </script>
-
-    <script src="~/Scripts/Traslados/GestionarDireccionOutbound.js?1.0.2"></script>
+    <script>var jsonInteraccionesDireccionOutbound = @Html.Raw(Json.Encode(Model.ListaNotasCrearDireccion));</script>
+    <script src="~/Scripts/Traslados/GestionarDireccionOutbound.js?2.0.0"></script>
 }
 
 

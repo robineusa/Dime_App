@@ -40,6 +40,15 @@ namespace Telmexla.Servicios.DIME.Entity
         List<GBLProducto> listaGBLProducto;
         #endregion
 
+        #region Docsis
+        GBCDocsis gBCDocsis;
+        GBPDocsis gBPDocsis;
+        GBLDocsis gBLDocsis;
+        GBLDocsis ultimoGBLDocsis;
+        List<GBPDocsis> listaGBPDocsis;
+        List<GBLDocsis> listaGBLDocsis;
+        #endregion
+
         #region Constructores
         public ViewModelDistribucionesBlending()
         {
@@ -64,7 +73,13 @@ namespace Telmexla.Servicios.DIME.Entity
             ultimoGBLProducto = new GBLProducto();
             listaGBLProducto = new List<GBLProducto>();
             listaGBPProducto = new List<GBPProducto>();
-
+            //DOCSIS
+            gBCDocsis = new GBCDocsis();
+            gBLDocsis = new GBLDocsis();
+            gBPDocsis = new GBPDocsis();
+            ultimoGBLDocsis = new GBLDocsis();
+            listaGBLDocsis = new List<GBLDocsis>();
+            listaGBPDocsis = new List<GBPDocsis>();
         }
         #endregion
 
@@ -314,6 +329,84 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 listaGBLProducto = value;
+            }
+        }
+
+        public GBCDocsis GBCDocsis
+        {
+            get
+            {
+                return gBCDocsis;
+            }
+
+            set
+            {
+                gBCDocsis = value;
+            }
+        }
+
+        public GBPDocsis GBPDocsis
+        {
+            get
+            {
+                return gBPDocsis;
+            }
+
+            set
+            {
+                gBPDocsis = value;
+            }
+        }
+
+        public GBLDocsis GBLDocsis
+        {
+            get
+            {
+                return gBLDocsis;
+            }
+
+            set
+            {
+                gBLDocsis = value;
+            }
+        }
+
+        public GBLDocsis UltimoGBLDocsis
+        {
+            get
+            {
+                return ultimoGBLDocsis;
+            }
+
+            set
+            {
+                ultimoGBLDocsis = value;
+            }
+        }
+
+        public List<GBPDocsis> ListaGBPDocsis
+        {
+            get
+            {
+                return listaGBPDocsis;
+            }
+
+            set
+            {
+                listaGBPDocsis = value;
+            }
+        }
+
+        public List<GBLDocsis> ListaGBLDocsis
+        {
+            get
+            {
+                return listaGBLDocsis;
+            }
+
+            set
+            {
+                listaGBLDocsis = value;
             }
         }
         #endregion
