@@ -310,9 +310,17 @@ namespace Dime.Controllers
                     ViewBag.Cierre = "SIN GESTION";
                     ViewBag.Razon = "SIN GESTION";
                 }
+                
             }
-            return View(model);
+            if (model.GBCRentabilizacion.Campana1 != null){ ViewBag.Campana1 = model.GBCRentabilizacion.Campana1; }
+            else{ViewBag.Campana1 = "SIN INFORMACION";}
+            if (model.GBCRentabilizacion.Campana2 != null) { ViewBag.Campana2 = model.GBCRentabilizacion.Campana2; }
+            else { ViewBag.Campana2 = "SIN INFORMACION"; }
+            if (model.GBCRentabilizacion.Campana3 != null) { ViewBag.Campana3 = model.GBCRentabilizacion.Campana3; }
+            else { ViewBag.Campana3 = "SIN INFORMACION"; }
 
+            return View(model);
+            
         }
 
         public JsonResult HistoricoGestionRentabilizacion()
