@@ -339,6 +339,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Retencion" nillable="true" type="tns:Retencion" />
+  <xs:complexType name="ArrayOfRetencion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Retencion" nillable="true" type="tns:Retencion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRetencion" nillable="true" type="tns:ArrayOfRetencion" />
   <xs:complexType name="ArrayOfMaestroOutboundTipoContacto">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="MaestroOutboundTipoContacto" nillable="true" type="tns:MaestroOutboundTipoContacto" />
@@ -830,12 +836,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GestionOutbound" nillable="true" type="tns:GestionOutbound" />
-  <xs:complexType name="ArrayOfSkillsUsuariosBlending">
+  <xs:complexType name="ArrayOfViewModelSkillsUsuariosBlending">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="SkillsUsuariosBlending" nillable="true" type="tns:SkillsUsuariosBlending" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewModelSkillsUsuariosBlending" nillable="true" type="tns:ViewModelSkillsUsuariosBlending" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfSkillsUsuariosBlending" nillable="true" type="tns:ArrayOfSkillsUsuariosBlending" />
+  <xs:element name="ArrayOfViewModelSkillsUsuariosBlending" nillable="true" type="tns:ArrayOfViewModelSkillsUsuariosBlending" />
+  <xs:complexType name="ViewModelSkillsUsuariosBlending">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Campaña" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cedula" type="xs:int" />
+      <xs:element minOccurs="0" name="Fecha_Actualizacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id_Usuario_Actualizacion" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewModelSkillsUsuariosBlending" nillable="true" type="tns:ViewModelSkillsUsuariosBlending" />
   <xs:complexType name="SkillsUsuariosBlending">
     <xs:sequence>
       <xs:element minOccurs="0" name="Campaña" nillable="true" type="xs:string" />

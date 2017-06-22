@@ -19,6 +19,7 @@ namespace Dime.Controllers
 
         WSD.CasosAdminServiceClient casosAdminService;
         WSD.BlendingServiceClient blendingService;
+        WSD.InboundServiceClient inboundService;
 
         public ConsultasAdminController()
         {
@@ -26,6 +27,8 @@ namespace Dime.Controllers
             casosAdminService.ClientCredentials.Authenticate();
             blendingService = new WSD.BlendingServiceClient();
             blendingService.ClientCredentials.Authenticate();
+            inboundService = new WSD.InboundServiceClient();
+            inboundService.ClientCredentials.Authenticate();
         }
         public ActionResult Paloteo()
         {
@@ -40,8 +43,6 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
-
-
 
         public ActionResult ConsultasBlending()
         {
@@ -205,11 +206,12 @@ namespace Dime.Controllers
 
         public JsonResult JsonConsultaRetencion(string fechaInicial, string fechaFinal)
         {
-            //DateTime inicial = DateTime.ParseExact(fechaInicio, "M/d/yyyy", CultureInfo.InvariantCulture);
-            //DateTime final = DateTime.ParseExact(fechaFin, "M/d/yyyy", CultureInfo.InvariantCulture);
-            //var aliadosList = casosAdminService.ListaAliadosActualesDeHolos();
-            //-----var result = casosAdminService.ListaGestionAdmin(inicial, final, aliado);
-            var result = "";
+            //DateTime inicial = DateTime.ParseExact(fechaInicial, "M/d/yyyy", CultureInfo.InvariantCulture);
+            //DateTime final = DateTime.ParseExact(fechaFinal, "M/d/yyyy", CultureInfo.InvariantCulture);
+            
+            DateTime inicial = Convert.ToDateTime(fechaInicial, CultureInfo.InvariantCulture);
+            DateTime final = Convert.ToDateTime(fechaFinal, CultureInfo.InvariantCulture);
+            var result = inboundService.ListaRetencionInbound(inicial, final);
             var jsonResult = Json(JsonConvert.SerializeObject(result), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
