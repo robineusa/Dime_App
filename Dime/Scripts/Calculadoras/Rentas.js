@@ -165,9 +165,14 @@ function CalcularAdicionalesClickeado() {
             }
         }
         var arriendoNagra = 0;
+        if (parseInt($("#tbDecosNagra").val()) == 2)
+        {
+            arriendoNagra = 15000;
+        }else{
         if (parseInt($("#tbDecosNagra").val()) >= 3) {
             arriendoNagra = ((20000 * (parseInt($("#tbDecosNagra").val()) - 2)) + 15000);
         } else { arriendoNagra = 0; }
+        }
 
         var resultadoFinal = adicionalesTv + homIp + arriendoDecos + homPvrHd + arriendoNagra;
         $('#tbAdicionales').val(resultadoFinal);
