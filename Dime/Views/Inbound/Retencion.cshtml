@@ -74,7 +74,8 @@
                             </tr>
                             <tr>
                                 <td style="padding:1px;">
-                                    <input id="Nombre_Cliente" class="form-control input-sm" type="text" placeholder="Nombre del cliente" value="@Model.ClientesTodos.Nombre" readonly>
+                                    @Html.TextBoxFor(m => Model.ClientesTodos.Nombre, new { @class = "form-control input-sm", name="Nombre_Cliente", Id = "Nombre_Cliente", value = Model.ClientesTodos.Nombre, placeholder = "Nombre del cliente", ReadOnly=true })
+                                    @*<input id="Nombre_Cliente" class="form-control input-sm" type="text" placeholder="Nombre del cliente" value="@Model.ClientesTodos.Nombre" readonly>*@
                                 </td>
                                 <td style="padding:1px;">
                                     <input id="Apellido_Cliente" class="form-control input-sm" type="text" placeholder="Apellido del cliente" value="@Model.ClientesTodos.Apellido" readonly>
@@ -206,20 +207,7 @@
                                     </tr>
                                     <tr>
                                         <td colspan="2">
-                                            @Html.DropDownListFor(m => m.Retencion.Razon, new List<SelectListItem> {
-                                            new SelectListItem { Text = "AJUSTE", Value = "AJUSTE" },
-                                            new SelectListItem { Text = "APLICACION DE CAMPAÑA A CORTE", Value = "APLICACION DE CAMPAÑA A CORTE" },
-                                            new SelectListItem { Text = "CASO CGO", Value = "CASO CGO" },
-                                            new SelectListItem { Text = "CESIONES DE CONTRATO", Value = "CESIONES DE CONTRATO" },
-                                            new SelectListItem { Text = "CLIENTE ESTA PENSANDO SI ACEPTAR O NO LA OFERTA", Value = "CLIENTE ESTA PENSANDO SI ACEPTAR O NO LA OFERTA" },
-                                            new SelectListItem { Text = "CLIENTES EN MORA CON AVISO FINAL", Value = "CLIENTES EN MORA CON AVISO FINAL" },
-                                            new SelectListItem { Text = "CLIENTES EN MORA DESCONECTADO", Value = "CLIENTES EN MORA DESCONECTADO" },
-                                            new SelectListItem { Text = "FALLA MODULO DE GESTION", Value = "FALLA MODULO DE GESTION" },
-                                            new SelectListItem { Text = "INCUMPLIMIENTO", Value = "INCUMPLIMIENTO" },
-                                            new SelectListItem { Text = "RECOMENDACION CASOS ESPECIALES", Value = "RECOMENDACION CASOS ESPECIALES" },
-                                            new SelectListItem { Text = "RETENCION CRUZADAS", Value = "RETENCION CRUZADAS" },
-                                            new SelectListItem { Text = "SIN CAPACIDAD", Value = "SIN CAPACIDAD" },
-                                            new SelectListItem { Text = "VENTAS", Value = "VENTAS" }}, "--Seleccione--",
+                                            @Html.DropDownListFor(m => m.Retencion.Razon, new List<SelectListItem> {}, "--Seleccione--",
                                             new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "Escalamiento", onchange = "TraeDetalle()", value = Model.Retencion.Razon })
                                             
                                         </td>
@@ -251,7 +239,7 @@
                                 <table>
                                     <tr>
                                         <td style="padding:1px; width:1200px;">
-                                            @Html.TextAreaFor(m => m.Retencion.Observaciones, new { @id = "TipiMarca_Observaciones", @style = "width: 100%; height: 100px; resize: none; border:none;", value= Model.Retencion.Observaciones })
+                                            @Html.TextAreaFor(m => m.Retencion.Observaciones, new { @id = "RetencionObservaciones", @style = "width: 100%; height: 100px; resize: none; border:none;", value= Model.Retencion.Observaciones })
                                         </td>
                                     </tr>
                                 </table>
@@ -262,10 +250,10 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-block btn-primary" name="BotonEnvia" value="GuardaDatos" style="width:10%;  margin-left:1%;">Guardar</button>
+        <button type="submit" class="btn btn-block btn-primary" id="BotonEnvia" name="BotonEnvia" value="GuardaDatos" style="width:10%;  margin-left:1%; display: none;">Guardar</button>
 
     </div>
 }
 @section Scripts{
-    <script src="~/Scripts/Inbound/Retencion.js?1.0.1"></script>
+    <script src="~/Scripts/Inbound/Retencion.js?1.0.2"></script>
 }
