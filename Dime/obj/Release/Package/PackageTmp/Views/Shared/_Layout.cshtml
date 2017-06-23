@@ -430,11 +430,12 @@
 
                                 </ul>
                             }
-                            
+                            @if (Session["Retencion"] != null)
+                            {
                                 <ul class="treeview-menu">
                                     <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("Retencion", "Inbound")"><i class="fa fa-hand-stop-o" aria-hidden="true"></i>Retención</a></li>
                                 </ul>
-                            
+                            }
                         </li>
                     }
                     @if (Session["Gestion Blending"] != null)
@@ -559,7 +560,7 @@
                                                 <li><a href="@Url.Action("Paloteo", "ConsultasAdmin")"><i class="fa fa-circle-o"></i> Consulta de Paloteo</a></li>
                                                 <li><a href="~/#/ConsultaGestionAdmin"><i class="fa fa-circle-o"></i> Consulta de Gestión</a></li>
                                                 <li><a href="@Url.Action("ConsultaRechazos", "Consultas")"><i class="fa fa-circle-o"></i> Consulta de Rechazos</a></li>
-
+                                                <li><a href="@Url.Action("ConsultasRetencion", "ConsultasAdmin")"><i class="fa fa-circle-o"></i> Consulta de Retencion</a></li>
                                             </ul>
                                         </li>
                                         <li>
@@ -767,7 +768,7 @@
                 <section class="content-header">
                     <h1>
                         @ViewBag.Title
-                        <small>@ViewBag.SubTitle</small>
+                        @*<small>@ViewBag.SubTitle</small>*@
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i>@ViewBag.SubTitle</a></li>
