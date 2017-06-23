@@ -246,20 +246,44 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult Retencion(InboundModel model, string BotonEnvia)
         {
-            if (BotonEnvia.Equals("Buscar"))
+            if (model.Retencion.Cuenta != 0 || model.Retencion.Cuenta.Equals(true))
             {
-                int cuentaCliente = model.Retencion.Cuenta;
-                model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(cuentaCliente);
-                
+                if (BotonEnvia.Equals("Buscar"))
+                {
+                    int cuentaCliente = model.Retencion.Cuenta;
+                    model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(cuentaCliente);
+
+                }
             }
-            if (BotonEnvia.Equals("GuardaDatos"))
+            else
             {
-                model.Retencion.UsuarioGestion = Session["IdUsuario"].ToString();
-                model.Retencion.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
-                model.Retencion.AliadoGestion = Session["AliadoLogeado"].ToString();
+                ViewBag.Error = "Busque una cuenta primero para despues Guardar Datos";
+                model = new InboundModel();
+            }
+            if (model.Retencion.Razon != null && model.Retencion.SubRazon != null)
+            {
+                if (model.ClientesTodos.Nombre != null)
+                {
+                    if (BotonEnvia.Equals("GuardaDatos"))
+                    {
+                        model.Retencion.UsuarioGestion = Session["IdUsuario"].ToString();
+                        model.Retencion.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+                        model.Retencion.AliadoGestion = Session["AliadoLogeado"].ToString();
 
-                
+                        inboundService.InsertarRetencionInbound(model.Retencion);
 
+                        model = new InboundModel();
+                    }
+                }
+                else
+                {
+                    ViewBag.Error = "Busque una cuenta primero para despues Guardar";
+                    model = new InboundModel();
+                }
+            }
+            else
+            {
+                ViewBag.Error = "Debe Seleccionar una Razon y/o Subrazon";
                 model = new InboundModel();
             }
             return View(model);

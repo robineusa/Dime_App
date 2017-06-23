@@ -189,8 +189,11 @@ function ShowGridUsuarios(data) {
             },
             { field: "Id", title: "Id", width: 40, headerAttributes: { style: "white-space: normal" } },
             { field: "Cedula", title: "Cedula Usuario", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Nombre", title: "Nombre", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "Operacion", title: "Operacion", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "Campaña", title: "Campaña", width: 80, headerAttributes: { style: "white-space: normal" } },
+            
+            
 
         ]
 

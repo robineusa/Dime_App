@@ -2913,6 +2913,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBCDocsis.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBLDocsis.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPDocsis.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Retencion.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -2976,6 +2977,9 @@
     </Content>
     <None Include="Service References\WSD\configuration91.svcinfo" />
     <None Include="Service References\WSD\configuration.svcinfo" />
+    <Content Include="Service References\WSD\Dime.WSD.ViewModelSkillsUsuariosBlending.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\WSD\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
