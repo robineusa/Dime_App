@@ -16,6 +16,10 @@
                 <div class="col-xs-2" style="width:200px; padding:1px;">
                     <small>Documento de Identidad:  </small>
                 </div>
+                <div class="col-xs-2" style="width:400px; padding:1px;">
+                    <label class="text-danger" style="font-weight: 600;">@ViewBag.Error</label>
+                </div>
+                
             </div>
             <div class="row">
                 <div class="col-xs-4">
@@ -216,14 +220,14 @@
                                             new SelectListItem { Text = "RETENCION CRUZADAS", Value = "RETENCION CRUZADAS" },
                                             new SelectListItem { Text = "SIN CAPACIDAD", Value = "SIN CAPACIDAD" },
                                             new SelectListItem { Text = "VENTAS", Value = "VENTAS" }}, "--Seleccione--",
-                                            new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "Escalamiento", onchange = "TraeDetalle()" })
-                                            @Html.ValidationMessageFor(m => m.Retencion.Razon, "", new { @class = "text-danger", value = Model.Retencion.Razon })
+                                            new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "Escalamiento", onchange = "TraeDetalle()", value = Model.Retencion.Razon })
+                                            
                                         </td>
                                         <td colspan="2">
                                             @Html.DropDownListFor(m => m.Retencion.SubRazon, new List<SelectListItem> {
                                             new SelectListItem { Text = "NO APLICA", Value = "NO APLICA" } }, "--Seleccione--",
                                             new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "Detalle", value = Model.Retencion.SubRazon })
-                                            @Html.ValidationMessageFor(m => m.Retencion.SubRazon, "", new { @class = "text-danger", Model.Retencion.SubRazon })
+                                            
                                         </td>
                                     </tr>
                                 </table>

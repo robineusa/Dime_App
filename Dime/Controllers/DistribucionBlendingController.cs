@@ -174,7 +174,7 @@ namespace Dime.Controllers
             model.GBPFueradeNiveles.Cmts = model.FueraNiveles.Cmts;
             model.GBPFueradeNiveles.TipoModem = model.FueraNiveles.TipoModem;
             model.GBPFueradeNiveles.Prioridad = model.FueraNiveles.Prioridad;
-            model.GBPFueradeNiveles.FechaSeguimiento = DateTime.Now;
+            
 
             var validacion = distribucionBlendingService.ValidarCuentaEnFueraNiveles(model.GBPFueradeNiveles.CuentaCliente);
 
