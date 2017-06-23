@@ -448,12 +448,9 @@
                                 @if (Session["Blending Rentabilizacion"] != null)
                                 {
                                 <li><a href="@Url.Action("Rentabilizacion", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Rentabilización</a></li>}
-                                @if (Session["Blending Claro Video"] != null)
+                                @if (Session["Blending Producto"] != null)
                                 {
                                 <li><a href="@Url.Action("Producto", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Producto</a></li>}
-                                @if (Session["Blending Convenio Electronico"] != null)
-                                {
-                                <li><a href="@Url.Action("Convenio_Electronico", "GestionBlending")"><i class="fa fa-circle-o"></i>Convenio Electrónico</a></li>}
                                 @if (Session["Blending Docsis y Overlap"] != null)
                                 {
                                 <li><a href="@Url.Action("Docsis", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Docsis Overlap</a></li>}
