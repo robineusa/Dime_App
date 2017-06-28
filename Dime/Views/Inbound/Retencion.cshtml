@@ -74,8 +74,8 @@
                             </tr>
                             <tr>
                                 <td style="padding:1px;">
-                                    @Html.TextBoxFor(m => Model.ClientesTodos.Nombre, new { @class = "form-control input-sm", name="Nombre_Cliente", Id = "Nombre_Cliente", value = Model.ClientesTodos.Nombre, placeholder = "Nombre del cliente", ReadOnly=true })
-                                    @*<input id="Nombre_Cliente" class="form-control input-sm" type="text" placeholder="Nombre del cliente" value="@Model.ClientesTodos.Nombre" readonly>*@
+                                    @*@Html.TextBoxFor(m => Model.ClientesTodos.Nombre, new { @class = "form-control input-sm", name="Nombre_Cliente", Id = "Nombre_Cliente", value = Model.ClientesTodos.Nombre, placeholder = "Nombre del cliente", ReadOnly=true })*@
+                                    <input id="Nombre_Cliente" class="form-control input-sm" type="text" placeholder="Nombre del cliente" value="@Model.ClientesTodos.Nombre" readonly>
                                 </td>
                                 <td style="padding:1px;">
                                     <input id="Apellido_Cliente" class="form-control input-sm" type="text" placeholder="Apellido del cliente" value="@Model.ClientesTodos.Apellido" readonly>
@@ -255,5 +255,5 @@
     </div>
 }
 @section Scripts{
-    <script src="~/Scripts/Inbound/Retencion.js?1.0.2"></script>
+    <script src="~/Scripts/Inbound/Retencion.js?1.0.3"></script>
 }

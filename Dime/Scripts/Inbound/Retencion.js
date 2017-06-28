@@ -6,9 +6,15 @@ $(document).ready(function () {
             $("#BuscaCliente").click();
         }
     });
-
+    if ($("#cuentaCliente").val() != 0 && $("#Escalamiento").val() != "") {
+        $("#BotonEnvia").css('display', 'block');
+    }
+    else {
+        $("#BotonEnvia").css('display', 'none');
+    }
+    
     $("#Escalamiento").empty();
-    $("#Escalamiento").append("<option>--Seleccione--</option>");
+    $("#Escalamiento").append("<option value=''>--Seleccione--</option>");
     $("#Escalamiento").append("<option Value='AJUSTE'>AJUSTE</option>");
     $("#Escalamiento").append("<option Value='APLICACION DE CAMPAÑA A CORTE'>APLICACION DE CAMPAÑA A CORTE</option>");
     $("#Escalamiento").append("<option Value='CASO CGO'>CASO CGO</option>");
@@ -24,7 +30,7 @@ $(document).ready(function () {
     $("#Escalamiento").append("<option Value='VENTAS'>VENTAS</option>");
 
     $("#Detalle").empty();
-    $("#Detalle").append("<option>--Seleccione--</option>");
+    $("#Detalle").append("<option value=''>--Seleccione--</option>");
     $("#RetencionObservaciones").val('');
 });
 function TraeDetalle()
@@ -36,7 +42,12 @@ function TraeDetalle()
     {
         $("#Detalle").empty();
         $("#Detalle").append("<option Value='NO APLICA'>NO APLICA</option>");
-        $("#BotonEnvia").css('display', 'block');
+        if ($("#cuentaCliente").val() != 0) {
+            $("#BotonEnvia").css('display', 'block');
+        }
+        else {
+            $("#BotonEnvia").css('display', 'none');
+        }
     }
 
     if ($("#Escalamiento").val() == "CASO CGO")
@@ -44,7 +55,12 @@ function TraeDetalle()
         $("#Detalle").empty();
         $("#Detalle").append("<option Value='ORDEN SIN COMPLETAR'>ORDEN SIN COMPLETAR</option>");
         $("#Detalle").append("<option Value='CUENTA RELACIONADA CON CGO'>CUENTA RELACIONADA CON CGO</option>");
-        $("#BotonEnvia").css('display', 'block');
+        if ($("#cuentaCliente").val() != 0) {
+            $("#BotonEnvia").css('display', 'block');
+        }
+        else {
+            $("#BotonEnvia").css('display', 'none');
+        }
     }
 
     if ($("#Escalamiento").val() == "FALLA MODULO DE GESTION") {
@@ -52,13 +68,23 @@ function TraeDetalle()
         $("#Detalle").append("<option Value='ORDEN SIN COMPLETAR'>ACTUALIZACION RR</option>");
         $("#Detalle").append("<option Value='AGENDAR WFM'>AGENDAR WFM</option>");
         $("#Detalle").append("<option Value='TODO EL MODULO (MG/WFM)'>TODO EL MODULO (MG/WFM)</option>");
-        $("#BotonEnvia").css('display', 'block');
+        if ($("#cuentaCliente").val() != 0) {
+            $("#BotonEnvia").css('display', 'block');
+        }
+        else {
+            $("#BotonEnvia").css('display', 'none');
+        }
     }
     
     if ($("#Escalamiento").val() == "INCUMPLIMIENTO") {
         $("#Detalle").empty();
         $("#Detalle").append("<option Value='ANTES DE 1 HORA'>ANTES DE 1 HORA</option>");
-        $("#BotonEnvia").css('display', 'block');
+        if ($("#cuentaCliente").val() != 0) {
+            $("#BotonEnvia").css('display', 'block');
+        }
+        else {
+            $("#BotonEnvia").css('display', 'none');
+        }
     }
 
     if ($("#Escalamiento").val() == "RECOMENDACION CASOS ESPECIALES") {
@@ -68,7 +94,12 @@ function TraeDetalle()
         $("#Detalle").append("<option Value='REPLANTEAMIENTO DE VISITA'>REPLANTEAMIENTO DE VISITA</option>");
         $("#Detalle").append("<option Value='AMPLIACION DE TAPS'>AMPLIACION DE TAPS</option>");
         $("#Detalle").append("<option Value='CLIENTE REINCIDENTE'>CLIENTE REINCIDENTE</option>");
-        $("#BotonEnvia").css('display', 'block');
+        if ($("#cuentaCliente").val() != 0) {
+            $("#BotonEnvia").css('display', 'block');
+        }
+        else {
+            $("#BotonEnvia").css('display', 'none');
+        }
     }
 
     if ($("#Escalamiento").val() == "SIN CAPACIDAD") {
@@ -76,7 +107,12 @@ function TraeDetalle()
         $("#Detalle").append("<option Value='VISITA DTH'>VISITA DTH</option>");
         $("#Detalle").append("<option Value='NO HAY ALIADOS DISPONIBLES'>NO HAY ALIADOS DISPONIBLES</option>");
         $("#Detalle").append("<option Value='NO HAY CAPACIDAD PROGRAMADA'>NO HAY CAPACIDAD PROGRAMADA</option>");
-        $("#BotonEnvia").css('display', 'block');
+        if ($("#cuentaCliente").val() != 0) {
+            $("#BotonEnvia").css('display', 'block');
+        }
+        else {
+            $("#BotonEnvia").css('display', 'none');
+        }
     }
 
     if ($("#Escalamiento").val() == "") {
