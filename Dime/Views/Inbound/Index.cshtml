@@ -488,7 +488,11 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
                                         else if (Model.LineaDeUsuarioActual.Equals("MULTIPLAY"))
                                         {
                                             @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {
-                                                                                             new SelectListItem {Text="CÉLULA MULTIPLAY", Value="CELULA MULTIPLAY" }}, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalar", @onchange = "AEscalarCambiado()" })
+                                                                                             new SelectListItem{Text="CELULA AJUSTES", Value="CELULA AJUSTES" },
+                                                                                             new SelectListItem{Text="CELULA FACTURACION Y CARTERA", Value="CELULA FACTURACION Y CARTERA"}, new SelectListItem{Text="CELULA OPERACIONES", Value="CELULA OPERACIONES" },
+                                                                                             new SelectListItem {Text="CELULA MULTIPLAY", Value="CELULA MULTIPLAY" },
+                                                                                             new SelectListItem{Text="CELULA PQR", Value="CELULA PQR" }, new SelectListItem{Text="CELULA VENTAS", Value="CELULA VENTAS" }
+                                                                                             }, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalar", @onchange = "AEscalarCambiado()" })
 
                                         }
                                         else if (Model.LineaDeUsuarioActual.Equals("ALTO VALOR VIP"))
