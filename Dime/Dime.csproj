@@ -2254,6 +2254,7 @@
     <Content Include="Resources\Images\Layout\apc1.png" />
     <Content Include="Resources\Images\Layout\apc2.png" />
     <Content Include="Resources\Images\Layout\apc3.png" />
+    <Content Include="Resources\Images\Layout\apc4.png" />
     <Content Include="Resources\Images\Layout\Dam_Modificado1.png" />
     <Content Include="Resources\Images\Layout\Logo_BS.png" />
     <Content Include="Resources\Images\Loading.gif" />
@@ -3184,6 +3185,7 @@
     <Content Include="Views\DistribucionBlending\Producto.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminDocsisPrincipal.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminDocsisLog.cshtml" />
+    <Content Include="Views\ConsultasAdmin\ConsultasRetencion.cshtml" />
     <None Include="Service References\WSD\WebService.wsdl" />
     <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
@@ -3200,7 +3202,6 @@
     <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\ConsultasAdmin\ConsultasRetencion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

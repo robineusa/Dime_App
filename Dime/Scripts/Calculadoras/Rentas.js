@@ -1,4 +1,6 @@
 ﻿var ip = 0;
+var decosInicial = 0;
+var decosNagraInicial = 0;
 
 
 $(document).ready(function () {
@@ -8,6 +10,8 @@ $(document).ready(function () {
         var code = e.keyCode || e.which;
         if (code == 13) {
             CargarDatosActuales();
+            decosInicial = 0;
+            decosNagraInicial = 0;
         }
     });
 
@@ -210,13 +214,21 @@ function ConfigRadioButtonTV()
                 document.getElementById('cbTvNO').checked = true;
                 $(".adicionales").prop("disabled", true);
                 $(".adicionales").attr('checked', false);
+                $('#tbTotalDecos').val(0);
+                $('#tbDecosNagra').val(0);
                 booRadio = null;
             } else {
                 booRadio = this;
-                if ($(this).val() == "NO") { $(".adicionales").prop("disabled", true); $(".adicionales").attr('checked', false); }
+                if ($(this).val() == "NO") {
+                    $(".adicionales").prop("disabled", true); $(".adicionales").attr('checked', false);
+                    $('#tbTotalDecos').val(0);
+                    $('#tbDecosNagra').val(0);
+                }
                 else{
                     $(".adicionales").prop("disabled", false);
-                }
+                    $('#tbTotalDecos').val(decosInicial);
+                    $('#tbDecosNagra').val(decosNagraInicial);
+                   }
             }
             ActualizarParametros();
         };
@@ -380,8 +392,10 @@ function CargarDatosActuales()
                 $("#tbSrvHdInfo").val(json.SrvHd);
                 $("#tbHotPackInfo").val(json.Adultos);
                 $("#tbTotalDecos").val(json.CantidadDecos);
+                decosInicial = json.CantidadDecos;
                 $("#tbDecosHD").val(json.CantidadHd);
                 $("#tbDecosNagra").val(json.DecosNagra);
+                decosNagraInicial = json.DecosNagra;
                 $("#tbRentaActualDos").val(json.RentaTotal);
                 if (json.ClaroVideo == "SI") { $("#cbClaroVideoSi").click(); } else { $("#cbClaroVideoNo").click(); }
                 ip = json.Ip;
