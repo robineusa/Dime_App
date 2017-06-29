@@ -219,8 +219,8 @@
                                         </td>
                                         <td width="200" style="padding:1px;">
                                             <small>Tipo Cliente:</small>
-                                            @Html.TextBoxFor(m => m.GestionMatriz.TipoCliente, null, new { id = "tipocliente", @class = "form-control input-sm" })
-                                        </td>
+                                            @Html.TextBoxFor(m => m.GestionMatriz.TipoCliente, null, new { id = "tipocliente", @class = "form-control input-sm"})
+                                         </td>
                                         <td width="200" style="padding:1px;">
                                             <small>Cuenta Cliente:</small>
                                             @Html.TextBoxFor(m => m.IngresoTraslado.CuentaCliente, null, new { id = "cuentacliente", @class = "form-control input-sm" })
@@ -237,6 +237,13 @@
 
                                     </tr>
                                     <tr>
+                                        <td></td>
+                                        <td>@Html.ValidationMessageFor(m => m.GestionMatriz.TipoCliente, "", new { @class = "text-danger" })<br /></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
                                         <td width="200" style="padding:1px;">
                                             <small>Nodo:</small>
                                             @Html.TextBoxFor(m => m.GestionMatriz.Nodo, null, new { id = "nodo", @class = "form-control input-sm" })
@@ -244,19 +251,30 @@
                                         <td width="200" style="padding:1px;">
                                             <small>Nombre Conjunto - Edificio:</small>
                                             @Html.TextBoxFor(m => m.GestionMatriz.NombreConjuntoEdificio, null, new { id = "nombreconjuntoedificio", @class = "form-control input-sm" })
+                                            
                                         </td>
                                         <td width="200" style="padding:1px;">
                                             <small>Teléfono Cliente:</small>
                                             @Html.TextBoxFor(m => m.GestionMatriz.TelefonoCLiente, null, new { id = "telefonocliente", @class = "form-control input-sm" })
+                                            
                                         </td>
                                         <td width="200" style="padding:1px;">
                                             <small>Teléfono Administrador:</small>
                                             @Html.TextBoxFor(m => m.GestionMatriz.TelefonoAdministrador, null, new { id = "telefonoadministrador", @class = "form-control input-sm" })
+                                            
                                         </td>
                                         <td width="200" style="padding:1px;">
                                             <small>Nombre Administrador:</small>
                                             @Html.TextBoxFor(m => m.GestionMatriz.NombreAdministrador, null, new { id = "nombreadministrador", @class = "form-control input-sm" })
+                                            
                                         </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>@Html.ValidationMessageFor(m => m.GestionMatriz.NombreConjuntoEdificio, "", new { @class = "text-danger" })<br /></td>
+                                        <td>@Html.ValidationMessageFor(m => m.GestionMatriz.TelefonoCLiente, "", new { @class = "text-danger" })<br /></td>
+                                        <td>@Html.ValidationMessageFor(m => m.GestionMatriz.TelefonoAdministrador, "", new { @class = "text-danger" })<br /></td>
+                                        <td>@Html.ValidationMessageFor(m => m.GestionMatriz.NombreAdministrador, "", new { @class = "text-danger" })<br /></td>
                                     </tr>
                                     <tr>
                                         <td width="1000" style="padding:1px;" colspan="5">
@@ -280,15 +298,6 @@
                                 <label style="font-size:16px; color:red;font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight: 400;">@ViewBag.CuentayaescaladaError.ToString() </label>
                             }
                             
-
-                            @*@Html.ValidationMessageFor(m => m.NotaTraslado.DireccionACrear, "", new { @class = "text-danger" })<br />
-                                @Html.ValidationMessageFor(m => m.NotaTraslado.Estrato, "", new { @class = "text-danger" })<br />
-                                @Html.ValidationMessageFor(m => m.NotaTraslado.Nodo, "", new { @class = "text-danger" })<br />
-                                @Html.ValidationMessageFor(m => m.NotaTraslado.TelefonoCelular, "", new { @class = "text-danger" }) <br />
-                                @Html.ValidationMessageFor(m => m.NotaTraslado.TelefonoFijo, "", new { @class = "text-danger" })<br />
-                                @Html.ValidationMessageFor(m => m.NotaTraslado.CuentaCliente, "", new { @class = "text-danger" })*@
-
-
                         </div>
                         <br />
                         <button type="submit" class="btn btn-primary" name="cdgardar" value="true" style="width:10%; height:40px; margin-left:1.5%;">Guardar Datos</button><br />
@@ -303,6 +312,7 @@
     }
     @section Scripts{
         <script src="~/Scripts/Traslados/SolicitudMatrices.js?1.0.1"></script>
+@Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
     }
 }
 else
