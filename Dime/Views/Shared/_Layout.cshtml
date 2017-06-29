@@ -414,6 +414,16 @@
                             </ul>
                         </li>
                     }
+                    <li id="left-sidebar-menu-charts" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-bars text-green"></i>
+                            <span>Multi-Play</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                            <ul class="treeview-menu">
+                                <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("MultiPlayCelula", "MultiPlay")"><i class="fa fa-database" aria-hidden="true"></i>Gestion Base</a></li>
+                            </ul>
+                    </li>
 
                     @if (Session["Gestion Inbound"] != null)
                     {
