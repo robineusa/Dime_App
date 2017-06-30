@@ -1,4 +1,6 @@
 ﻿var ip = 0;
+var decosInicial = 0;
+var decosNagraInicial = 0;
 
 
 $(document).ready(function () {
@@ -8,9 +10,17 @@ $(document).ready(function () {
         var code = e.keyCode || e.which;
         if (code == 13) {
             CargarDatosActuales();
+            decosInicial = 0;
+            decosNagraInicial = 0;
         }
     });
 
+
+
+    $(".claroAdicional").on("click", function (e) {
+
+        CalcularAdicionalesClickeado();
+    });
 
     $("#tbTotalDecos").on("change", function (e) {
 
@@ -174,7 +184,13 @@ function CalcularAdicionalesClickeado() {
         } else { arriendoNagra = 0; }
         }
 
-        var resultadoFinal = adicionalesTv + homIp + arriendoDecos + homPvrHd + arriendoNagra;
+        var adicionalClaro = 0;
+        if (document.getElementById('cbClaroVideoSi').checked &&  $("#tbIncluyeCV").val() == "NO"  )
+        {
+            adicionalClaro = 13900;
+        }
+
+        var resultadoFinal = adicionalesTv + homIp + arriendoDecos + homPvrHd + arriendoNagra + adicionalClaro;
         $('#tbAdicionales').val(resultadoFinal);
 
     }
@@ -191,7 +207,6 @@ function ConfigRadioButtonTV()
     var booRadio;
     var x = 0;
     for (x = 0; x < allRadios.length; x++) {
-
         allRadios[x].onclick = function () {
           
             if (booRadio == this) {
@@ -199,12 +214,22 @@ function ConfigRadioButtonTV()
                 document.getElementById('cbTvNO').checked = true;
                 $(".adicionales").prop("disabled", true);
                 $(".adicionales").attr('checked', false);
+                $('#tbTotalDecos').val(0);
+                $('#tbDecosNagra').val(0);
                 booRadio = null;
             } else {
                 booRadio = this;
-                $(".adicionales").prop("disabled", false);
+                if ($(this).val() == "NO") {
+                    $(".adicionales").prop("disabled", true); $(".adicionales").attr('checked', false);
+                    $('#tbTotalDecos').val(0);
+                    $('#tbDecosNagra').val(0);
+                }
+                else{
+                    $(".adicionales").prop("disabled", false);
+                    $('#tbTotalDecos').val(decosInicial);
+                    $('#tbDecosNagra').val(decosNagraInicial);
+                   }
             }
-
             ActualizarParametros();
         };
     }
@@ -256,7 +281,6 @@ function SetDataComposicionProductoInicial(voz, tv, internet)
      if (tv != "NO") {
          
          var tvDividida = tv.split(" ");
-         console.log(tvDividida);
          if (tvDividida[0] == "BASICA" || tvDividida[0] == "AVANZADA" || tvDividida[0] == "SUPERIOR")
          {
              $("[value='" + tv + "']").click();
@@ -265,7 +289,13 @@ function SetDataComposicionProductoInicial(voz, tv, internet)
              if (tvDividida[2] == "(B)") { $("#cbTvSatelitalBasica").click(); }
              if (tvDividida[2] == "(A)") { $("#cbTvSatelitalAvanzada").click(); }
              if (tvDividida[2] == "(S)") { $("#cbTvSatelitalSuperior").click(); }
-            }
+         }
+
+         if(tvDividida[0] == "BASICA"  && $("#tbSrvHdInfo").val() == "SI")
+         {
+             var tv = "AVANZADA";
+             $("[value='" + tv + "']").click();
+         }
 
         }
   
@@ -358,11 +388,16 @@ function CargarDatosActuales()
                 $("#tbUFCInfo").val(json.Ufc);
                 $("#tbGoldenInfo").val(json.Gld);
                 $("#tbRevistaInfo").val(json.Revista);
+                $("#tbClaroVideoInfo").val(json.ClaroVideo);
+                $("#tbSrvHdInfo").val(json.SrvHd);
                 $("#tbHotPackInfo").val(json.Adultos);
                 $("#tbTotalDecos").val(json.CantidadDecos);
+                decosInicial = json.CantidadDecos;
                 $("#tbDecosHD").val(json.CantidadHd);
                 $("#tbDecosNagra").val(json.DecosNagra);
+                decosNagraInicial = json.DecosNagra;
                 $("#tbRentaActualDos").val(json.RentaTotal);
+                if (json.ClaroVideo == "SI") { $("#cbClaroVideoSi").click(); } else { $("#cbClaroVideoNo").click(); }
                 ip = json.Ip;
                 SetDataComposicionProductoInicial(json.Voz, json.TipoTv, internet + " MB");
                 SetDataComposicionProductoInicialAdicionales(json.Hbo, json.Fox, json.Ufc, json.Gld, json.Revista, json.Adultos);

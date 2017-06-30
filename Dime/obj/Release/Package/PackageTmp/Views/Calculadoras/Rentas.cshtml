@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -14,7 +13,7 @@
         <div class="callout" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
             <div class="row">
                 <div class="col-xs-2" style="width:auto;color:black">
-                    <b>Composiciòn actual de servicios:</b>
+                    <b>Composición actual de servicios:</b>
                 </div>
             </div>
         </div>
@@ -58,24 +57,30 @@
                 <td style="padding:2px; width:20%"><input type="text" class="form-control input-sm" id="tbInternetInfo" readonly /> </td>
             </tr>
             <tr>
-                <td style="padding:2px; width:16.6%">HBO:</td>
-                <td style="padding:2px; width:16.6%">FOX:</td>
-                <td style="padding:2px; width:16.6%">UFC:</td>
-                <td style="padding:2px; width:16.6%">Golden:</td>
-                <td style="padding:2px; width:16.6%">Revista:</td>
+                <td style="padding:2px; width:13.8%">HBO:</td>
+                <td style="padding:2px; width:13.8%">FOX:</td>
+                <td style="padding:2px; width:13.8%">UFC:</td>
+                <td style="padding:2px; width:13.8%">Golden:</td>
+                <td style="padding:2px; width:13.8%">Revista:</td>
+             
             </tr>
             <tr>
-                <td style="padding:2px; width:16.6%"><input type="text" class="form-control input-sm" id="tbHBOInfo" readonly /> </td>
-                <td style="padding:2px; width:16.6%"><input type="text" class="form-control input-sm" id="tbFoxInfo" readonly /> </td>
-                <td style="padding:2px; width:16.6%"><input type="text" class="form-control input-sm" id="tbUFCInfo" readonly /> </td>
-                <td style="padding:2px; width:16.6%"><input type="text" class="form-control input-sm" id="tbGoldenInfo" readonly /> </td>
-                <td style="padding:2px; width:16.6%"><input type="text" class="form-control input-sm" id="tbRevistaInfo" readonly /> </td>
+                <td style="padding:2px; width:13.8%"><input type="text" class="form-control input-sm" id="tbHBOInfo" readonly /> </td>
+                <td style="padding:2px; width:13.8%"><input type="text" class="form-control input-sm" id="tbFoxInfo" readonly /> </td>
+                <td style="padding:2px; width:13.8%"><input type="text" class="form-control input-sm" id="tbUFCInfo" readonly /> </td>
+                <td style="padding:2px; width:13.8%"><input type="text" class="form-control input-sm" id="tbGoldenInfo" readonly /> </td>
+                <td style="padding:2px; width:13.8%"><input type="text" class="form-control input-sm" id="tbRevistaInfo" readonly /> </td>
+               
             </tr>
             <tr>
                 <td style="padding:2px; width:16.6%">HotPack:</td>
+                <td style="padding:2px; width:13.8%">HD:</td>
+                <td style="padding:2px; width:16.6%">Claro Video:</td>
             </tr>
             <tr>
                 <td style="padding:2px; width:16.6%"><input type="text" class="form-control input-sm" id="tbHotPackInfo" readonly /> </td>
+                <td style="padding:2px; width:13.8%"><input type="text" class="form-control input-sm" id="tbSrvHdInfo" readonly /> </td>
+                <td style="padding:2px; width:16.6%"><input type="text" class="form-control input-sm" id="tbClaroVideoInfo" readonly /> </td>
             </tr>
         </table>
     </div>
@@ -216,12 +221,23 @@
                 <br />
                 <table>
                     <tr>
+                        <td style="padding:2px; width:100px"> Claro Video:</td>
+                        <td style="padding:2px;"> Si</td>
+                        <td style="padding:2px;"><input type="radio" id="cbClaroVideoSi" value="SI" class="claroAdicional" name="cbClaroAdicional"/></td>
+                        <td style="padding:2px;"> No</td>
+                        <td style="padding:2px;"><input type="radio" id="cbClaroVideoNo" value="NO" class="claroAdicional" name="cbClaroAdicional"/></td>
+                   </tr>
+                </table>
+               
+                <br />
+                <table>
+                    <tr>
                         <td style="padding:2px; width:100px">Numero Decos</td>
                         <td width="80"><input  type="text" class="adicionales form-control input-sm" id="tbTotalDecos"/></td>
                     </tr>
                     <tr  id="rowDecosNagra">
                         <td style="padding:2px; width:100px">Numero Decos NAGRA</td>
-                        <td width="80"><input type="text" class="adicionles form-control input-sm" id="tbDecosNagra" /></td>
+                        <td width="80"><input type="text" class="adicionales form-control input-sm" id="tbDecosNagra" /></td>
                     </tr>
                     <tr style="display:none">
                         <td style="padding:2px; width:100px">Numero Decos HD</td>
@@ -302,7 +318,7 @@
                         <td style="padding:2px; width:40px"> &nbsp;</td>
                         <td width="50"><input type="text" class="form-control input-sm" id="tbAdicionales" readonly /></td>
                         <td style="padding:2px; width:40px"> &nbsp;</td>
-                        <td width="50"><input type="text" class="form-control input-sm" id="tbRentaOfrecida" readonly /></td>
+                        <td width="50"><input type="text" class="form-control input-lg" id="tbRentaOfrecida" readonly /></td>
                     </tr>
 
                 </table>
@@ -342,7 +358,7 @@
     </script>
     <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
     <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
-    <script src="~/Scripts/Calculadoras/Rentas.js?1.1.1"></script>
+    <script src="~/Scripts/Calculadoras/Rentas.js?1.2.2"></script>
 
 </body>
 </html>
