@@ -8,5 +8,7 @@ namespace Telmexla.Servicios.DIME.Entity
 {
     public class BalanceScoreCardCollection: List<BalanceScoreCard>
     {
+
+        //Comentario para arreglar github 
     }
 }
