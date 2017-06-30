@@ -1809,4 +1809,143 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfGBPDocsis" nillable="true" type="tns:ArrayOfGBPDocsis" />
+  <xs:complexType name="DatosMultiplay">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgenteGestiona" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AjusteAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnularPago" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AplicAjusteRR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArrPropClieRR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CamAplACDiVenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CamOfComApliCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampañaCaida" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cedula" type="xs:int" />
+      <xs:element minOccurs="0" name="CfmDatosAntesIva" type="xs:int" />
+      <xs:element minOccurs="0" name="CfmDatosAntesIva4Ipoc" type="xs:int" />
+      <xs:element minOccurs="0" name="CfmVozAntesIva4Ipoc" type="xs:int" />
+      <xs:element minOccurs="0" name="Cuenta" type="xs:int" />
+      <xs:element minOccurs="0" name="Custcode" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="EscVentaCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Escenario1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoRR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstratoCliente" type="xs:int" />
+      <xs:element minOccurs="0" name="Fecha1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaACTMultAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaIngresoPago" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaPago1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaPago2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GrupoActual" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GrupoDebeQuedar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Min" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotasAdicionales" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservacionesAjustes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PagAnuACNoApliACy_0RR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PagoCambiarGrupo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PagosACNoRefleRR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PagosRRNoRefleAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PerCamNoApliRR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plataforma" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlataformaRepPagoAnulado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegBaGen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SaldoActualAC" type="xs:int" />
+      <xs:element minOccurs="0" name="SaldoEquipoAC" type="xs:int" />
+      <xs:element minOccurs="0" name="SaldoEquipoAscard" type="xs:int" />
+      <xs:element minOccurs="0" name="SaldoGrupo1" type="xs:int" />
+      <xs:element minOccurs="0" name="SaldoGrupo2" type="xs:int" />
+      <xs:element minOccurs="0" name="SaldoGrupo3" type="xs:int" />
+      <xs:element minOccurs="0" name="SaldoTotalRR" type="xs:int" />
+      <xs:element minOccurs="0" name="SubRegistro" type="xs:int" />
+      <xs:element minOccurs="0" name="TiempoCampañaCFMAAjustar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoCuscode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValAjuOtrosConcep" type="xs:int" />
+      <xs:element minOccurs="0" name="ValTotAjuFijo" type="xs:int" />
+      <xs:element minOccurs="0" name="Valor1" type="xs:int" />
+      <xs:element minOccurs="0" name="Valor2" type="xs:int" />
+      <xs:element minOccurs="0" name="Valor3" type="xs:int" />
+      <xs:element minOccurs="0" name="ValorPago1" type="xs:int" />
+      <xs:element minOccurs="0" name="ValorPago2" type="xs:int" />
+      <xs:element minOccurs="0" name="ValoraAjustarInternet" type="xs:int" />
+      <xs:element minOccurs="0" name="ValoraAjustarTel" type="xs:int" />
+      <xs:element minOccurs="0" name="ValoraAjustarTv" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatosMultiplay" nillable="true" type="tns:DatosMultiplay" />
+  <xs:complexType name="MultiPlay">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgenteGestiona" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AjusteAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnularPago" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AplicAjusteRR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArrPropClieRR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CamAplACDiVenta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CamOfComApliCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampañaCaida" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cedula" type="xs:int" />
+      <xs:element minOccurs="0" name="CfmDatosAntesIva" type="xs:int" />
+      <xs:element minOccurs="0" name="CfmDatosAntesIva4Ipoc" type="xs:int" />
+      <xs:element minOccurs="0" name="CfmVozAntesIva4Ipoc" type="xs:int" />
+      <xs:element minOccurs="0" name="Cuenta" type="xs:int" />
+      <xs:element minOccurs="0" name="Custcode" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="EscVentaCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Escenario1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoRR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstratoCliente" type="xs:int" />
+      <xs:element minOccurs="0" name="Fecha1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaACTMultAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaGestionUsuario" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaIngresoPago" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaPago1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaPago2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GrupoActual" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GrupoDebeQuedar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Min" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotasAdicionales" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservacionesAjustes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PagAnuACNoApliACy_0RR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PagoCambiarGrupo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PagosACNoRefleRR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PagosRRNoRefleAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PerCamNoApliRR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Plataforma" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlataformaRepPagoAnulado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegBaGen" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SaldoActualAC" type="xs:int" />
+      <xs:element minOccurs="0" name="SaldoEquipoAC" type="xs:int" />
+      <xs:element minOccurs="0" name="SaldoEquipoAscard" type="xs:int" />
+      <xs:element minOccurs="0" name="SaldoGrupo1" type="xs:int" />
+      <xs:element minOccurs="0" name="SaldoGrupo2" type="xs:int" />
+      <xs:element minOccurs="0" name="SaldoGrupo3" type="xs:int" />
+      <xs:element minOccurs="0" name="SaldoTotalRR" type="xs:int" />
+      <xs:element minOccurs="0" name="SubRegistro" type="xs:int" />
+      <xs:element minOccurs="0" name="TiempoCampañaCFMAAjustar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoCuscode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValAjuOtrosConcep" type="xs:int" />
+      <xs:element minOccurs="0" name="ValTotAjuFijo" type="xs:int" />
+      <xs:element minOccurs="0" name="Valor1" type="xs:int" />
+      <xs:element minOccurs="0" name="Valor2" type="xs:int" />
+      <xs:element minOccurs="0" name="Valor3" type="xs:int" />
+      <xs:element minOccurs="0" name="ValorPago1" type="xs:int" />
+      <xs:element minOccurs="0" name="ValorPago2" type="xs:int" />
+      <xs:element minOccurs="0" name="ValoraAjustarInternet" type="xs:int" />
+      <xs:element minOccurs="0" name="ValoraAjustarTel" type="xs:int" />
+      <xs:element minOccurs="0" name="ValoraAjustarTv" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MultiPlay" nillable="true" type="tns:MultiPlay" />
 </xs:schema>

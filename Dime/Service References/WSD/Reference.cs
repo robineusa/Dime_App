@@ -9673,4 +9673,65 @@ namespace Dime.WSD {
             return base.Channel.ConsultaAdminDocsisLAsync(FechaInicial, FechaFinal);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IMultiPlayService")]
+    public interface IMultiPlayService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/BuscarDatosMultiplay", ReplyAction="http://tempuri.org/IMultiPlayService/BuscarDatosMultiplayResponse")]
+        Telmexla.Servicios.DIME.Entity.DatosMultiplay BuscarDatosMultiplay(int cuentacliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/BuscarDatosMultiplay", ReplyAction="http://tempuri.org/IMultiPlayService/BuscarDatosMultiplayResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.DatosMultiplay> BuscarDatosMultiplayAsync(int cuentacliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/InsertarMultiPlay", ReplyAction="http://tempuri.org/IMultiPlayService/InsertarMultiPlayResponse")]
+        void InsertarMultiPlay(Telmexla.Servicios.DIME.Entity.MultiPlay multiplay);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/InsertarMultiPlay", ReplyAction="http://tempuri.org/IMultiPlayService/InsertarMultiPlayResponse")]
+        System.Threading.Tasks.Task InsertarMultiPlayAsync(Telmexla.Servicios.DIME.Entity.MultiPlay multiplay);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IMultiPlayServiceChannel : Dime.WSD.IMultiPlayService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class MultiPlayServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IMultiPlayService>, Dime.WSD.IMultiPlayService {
+        
+        public MultiPlayServiceClient() {
+        }
+        
+        public MultiPlayServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public MultiPlayServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MultiPlayServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MultiPlayServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.DatosMultiplay BuscarDatosMultiplay(int cuentacliente) {
+            return base.Channel.BuscarDatosMultiplay(cuentacliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.DatosMultiplay> BuscarDatosMultiplayAsync(int cuentacliente) {
+            return base.Channel.BuscarDatosMultiplayAsync(cuentacliente);
+        }
+        
+        public void InsertarMultiPlay(Telmexla.Servicios.DIME.Entity.MultiPlay multiplay) {
+            base.Channel.InsertarMultiPlay(multiplay);
+        }
+        
+        public System.Threading.Tasks.Task InsertarMultiPlayAsync(Telmexla.Servicios.DIME.Entity.MultiPlay multiplay) {
+            return base.Channel.InsertarMultiPlayAsync(multiplay);
+        }
+    }
 }

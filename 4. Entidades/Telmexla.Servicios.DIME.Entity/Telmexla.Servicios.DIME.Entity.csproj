@@ -109,6 +109,8 @@
     <Compile Include="DatoConsultaPaloteo.cs" />
     <Compile Include="DatoConsultaPaloteoCollection.cs" />
     <Compile Include="DatosAdicionalesCliente.cs" />
+    <Compile Include="DatosMultiplay.cs" />
+    <Compile Include="DatosMultiplayCollection.cs" />
     <Compile Include="Departamento.cs" />
     <Compile Include="DepartamentoCollection.cs" />
     <Compile Include="DistribucionBlending.cs" />
@@ -147,6 +149,8 @@
     <Compile Include="MaestroNodoCollection.cs" />
     <Compile Include="MejorasTecnicas.cs" />
     <Compile Include="ModosLogin.cs" />
+    <Compile Include="MultiPlay.cs" />
+    <Compile Include="MultiPlayCollection.cs" />
     <Compile Include="NotasIngreso.cs" />
     <Compile Include="NotasTraslado.cs" />
     <Compile Include="NotificacionesBuenServicio.cs" />
@@ -179,6 +183,7 @@
     <Compile Include="ViewModelCuentasSiembraHD.cs" />
     <Compile Include="ViewModelDistribucionesBlending.cs" />
     <Compile Include="ViewModelGraficos.cs" />
+    <Compile Include="ViewModelMultiPlay.cs" />
     <Compile Include="ViewModelNodos.cs" />
     <Compile Include="ViewModelNotificacionesBS.cs" />
     <Compile Include="ViewModelTipificacionMarcaciones.cs" />

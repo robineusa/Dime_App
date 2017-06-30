@@ -2296,6 +2296,7 @@
     <Content Include="Scripts\Manuales\ManualAdministrador.js" />
     <Content Include="Scripts\Manuales\ManualAsesor.js" />
     <Content Include="Scripts\Manuales\ManualCelula.js" />
+    <Content Include="Scripts\MultiPlay\MultiPlay.js" />
     <Content Include="Scripts\Reportes\ReporteAdministrador.js" />
     <Content Include="Scripts\Reportes\ReporteAsesor.js" />
     <Content Include="Scripts\Reportes\ReporteBlending.js" />
@@ -2915,6 +2916,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBLDocsis.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPDocsis.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Retencion.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DatosMultiplay.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
