@@ -26,7 +26,7 @@ $("#Fecha_Final").blur(function (event) {
         alert('Debe seleccionar una fecha Inicial');
     } else {
 
-        CargarDatosGestion();
+        CargarDatosRetencion();
     }
 
 
@@ -34,7 +34,7 @@ $("#Fecha_Final").blur(function (event) {
 })
 
 
-function CargarDatosGestion() {
+function CargarDatosRetencion() {
 
     var fechaInicial = $("#Fecha_Inicial").val();
     var fechaFinal = $("#Fecha_Final").val();
@@ -50,8 +50,7 @@ function CargarDatosGestion() {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
-            CambiarAEstado(json);
-            ShowGridGestiones(json);
+            ShowGridRetencion(json);
             $("#loaderDiv").hide();
         },
         error: function (data) {
@@ -60,4 +59,61 @@ function CargarDatosGestion() {
             alert(errors);
         }
     });
+}
+function cambiarfechas(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i].FechaGestion = kendo.toString(kendo.parseDate(data[i].FechaGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd');
+    }
+
+}
+
+function ShowGridRetencion(data) {
+    if (data != null) {
+        cambiarfechas(data);
+    }
+
+    $("#gridViewConsulta").kendoGrid({
+        autoBind: true,
+        toolbar: ["excel"],
+        excel: {
+            fileName: "Retencion.xlsx",
+        },
+        dataSource: {
+            data: data,
+            schema: {
+                model: {
+
+                }
+            },
+
+
+        },
+        scrollable: true,
+        filterable: {
+            extra: false,
+            operators: {
+                string: {
+
+                    eq: "Es igual a"
+                }
+            }
+        },
+        sortable: true,
+        columns: [
+            { field: "Id", title: "Id", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "FechaGestion", title: "Fecha de Gestión", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "UsuarioGestion", title: " Usuaior de Gestión", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "NombreUsuarioGestion", title: "Nombre Usuario Gestión", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "AliadoGestion", title: "Aliado", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Cuenta", title: "Cuenta", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Razon", title: "Razón", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "SubRazon", title: "Subrazón", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "Observaciones", title: "Observaciones", width: 80, headerAttributes: { style: "white-space: normal" } }
+            
+        ]
+
+
+    });
+
+
 }
