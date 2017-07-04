@@ -28,6 +28,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult MultiPlayCelula(ViewModelMultiPlay model, string BotonEnvia)
         {
+            
             if (BotonEnvia.Equals("Buscar"))
             {
                 int cuentaCliente = model.DatosMultiplay.Cuenta;

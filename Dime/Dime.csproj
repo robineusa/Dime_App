@@ -207,6 +207,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManualesController.cs" />
     <Compile Include="Controllers\MarcacionesController.cs" />
+    <Compile Include="Controllers\MultiPlayController.cs" />
     <Compile Include="Controllers\PruebasController.cs" />
     <Compile Include="Controllers\ReportesController.cs" />
     <Compile Include="Controllers\TrasladosController.cs" />
@@ -3204,6 +3205,7 @@
     <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\MultiPlay\MultiPlayCelula.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

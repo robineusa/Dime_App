@@ -4,7 +4,7 @@
     ViewBag.SubTitle = "Gestión Célula";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("MultiPlayCelula", "MultiPlay", FormMethod.Post, new { id = "datosCliente", role = "form" }))
+@using (Html.BeginForm("MultiPlayCelula", "MultiPlay", FormMethod.Post, new { id = "datosMultiPlay", role = "form" }))
 {
     <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
         <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
@@ -50,7 +50,7 @@
                                 <table>
                                     <tr>
                                         <td width="200" style="padding:1px;">
-                                            <small>Subregistro:  </small>
+                                            <small>Sub-Registro:  </small>
                                         </td>
                                         <td width="200" style="padding:1px;">
                                             <small>Registro Base General:  </small>
@@ -72,23 +72,23 @@
                                     <tr>
                                         <td style="padding:1px;">
                                             @*@Html.TextBoxFor(m => Model.ClientesTodos.Nombre, new { @class = "form-control input-sm", name="Nombre_Cliente", Id = "Nombre_Cliente", value = Model.ClientesTodos.Nombre, placeholder = "Nombre del cliente", ReadOnly=true })*@
-                                            <input id="Nombre_Cliente" class="form-control input-sm" type="text" placeholder="Nombre del cliente" value="@Model.DatosMultiplay.SubRegistro" readonly>
+                                            <input id="Nombre_Cliente" class="form-control input-sm" type="text" placeholder="Sub-Registro" value="@Model.DatosMultiplay.SubRegistro" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input id="Apellido_Cliente" class="form-control input-sm" type="text" placeholder="Apellido del cliente" value="@Model.DatosMultiplay.RegBaGen" readonly>
+                                            <input id="Apellido_Cliente" class="form-control input-sm" type="text" placeholder="Registro Base General" value="@Model.DatosMultiplay.RegBaGen" readonly>
                                         </td>
 
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Teléfono telmex" value="@Model.DatosMultiplay.Cuenta" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Cuenta" value="@Model.DatosMultiplay.Cuenta" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Teléfono 1" value="@Model.DatosMultiplay.Custcode" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="CustCode" value="@Model.DatosMultiplay.Custcode" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Teléfono 2" value="@Model.DatosMultiplay.TipoCuscode" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Tipo CustCode" value="@Model.DatosMultiplay.TipoCuscode" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Teléfono 3" value="@Model.DatosMultiplay.Min" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Min" value="@Model.DatosMultiplay.Min" readonly>
                                         </td>
                                     </tr>
                                     <tr>
@@ -115,22 +115,22 @@
                                     </tr>
                                     <tr>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.DatosMultiplay.CustomerId" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Customer ID" value="@Model.DatosMultiplay.CustomerId" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Correspondencia" value="@Model.DatosMultiplay.NombreCliente" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Nombre Cliente" value="@Model.DatosMultiplay.NombreCliente" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Nodo" value="@Model.DatosMultiplay.Cedula" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Cédula" value="@Model.DatosMultiplay.Cedula" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Red" value="@Model.DatosMultiplay.EstratoCliente" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Estrato Cliente" value="@Model.DatosMultiplay.EstratoCliente" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="División" value="@Model.DatosMultiplay.EstadoAC" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Estado AC" value="@Model.DatosMultiplay.EstadoAC" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Área" value="@Model.DatosMultiplay.EstadoRR" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Estado RR" value="@Model.DatosMultiplay.EstadoRR" readonly>
                                         </td>
                                     </tr>
 
@@ -158,22 +158,22 @@
                                     </tr>
                                     <tr>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Zona" value="@Model.DatosMultiplay.SaldoActualAC" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Saldo Actual AC" value="@Model.DatosMultiplay.SaldoActualAC" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Distrito" value="@Model.DatosMultiplay.SaldoEquipoAC" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Saldo Equipo AC" value="@Model.DatosMultiplay.SaldoEquipoAC" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Nombre comunidad" value="@Model.DatosMultiplay.SaldoEquipoAscard" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Saldo Equipo ASCARD" value="@Model.DatosMultiplay.SaldoEquipoAscard" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Estrato" value="@Model.DatosMultiplay.SaldoGrupo1" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Saldo Grupo 1" value="@Model.DatosMultiplay.SaldoGrupo1" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Tipo de cliente" value="@Model.DatosMultiplay.SaldoGrupo2" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Saldo Grupo 2" value="@Model.DatosMultiplay.SaldoGrupo2" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Descripción" value="@Model.DatosMultiplay.SaldoGrupo3" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Saldo Grupo 3" value="@Model.DatosMultiplay.SaldoGrupo3" readonly>
                                         </td>
                                     </tr>
                                     <tr>
@@ -200,22 +200,22 @@
                                     </tr>
                                     <tr>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Zona" value="@Model.DatosMultiplay.SaldoTotalRR" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Saldo Total RR" value="@Model.DatosMultiplay.SaldoTotalRR" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Distrito" value="@Model.DatosMultiplay.EscVentaCliente" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Escenario Venta Cliente" value="@Model.DatosMultiplay.EscVentaCliente" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Nombre comunidad" value="@Model.DatosMultiplay.AplicAjusteRR" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Aplica Ajuste RR" value="@Model.DatosMultiplay.AplicAjusteRR" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Estrato" value="@Model.DatosMultiplay.CampañaCaida" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Campaña Caída" value="@Model.DatosMultiplay.CampañaCaida" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Tipo de cliente" value="@Model.DatosMultiplay.ValoraAjustarInternet" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Valor a Ajustar Internet" value="@Model.DatosMultiplay.ValoraAjustarInternet" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Descripción" value="@Model.DatosMultiplay.ValoraAjustarTv" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Valor a Ajustar TV" value="@Model.DatosMultiplay.ValoraAjustarTv" readonly>
                                         </td>
                                     </tr>
                                     <tr>
@@ -242,22 +242,246 @@
                                     </tr>
                                     <tr>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Zona" value="@Model.DatosMultiplay.ValAjuOtrosConcep" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Valor a Ajustar Tel" value="@Model.DatosMultiplay.ValAjuOtrosConcep" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Distrito" value="@Model.DatosMultiplay.ValTotAjuFijo" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Valor Ajustar Otros Conceptos" value="@Model.DatosMultiplay.ValTotAjuFijo" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Nombre comunidad" value="@Model.DatosMultiplay.PerCamNoApliRR" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Valor Total Ajuste Fijo" value="@Model.DatosMultiplay.PerCamNoApliRR" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Estrato" value="@Model.DatosMultiplay.ObservacionesAjustes" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Periodo Campaña No Aplicada RR" value="@Model.DatosMultiplay.ObservacionesAjustes" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Tipo de cliente" value="@Model.DatosMultiplay.AjusteAC" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Observaciones Ajustes RR" value="@Model.DatosMultiplay.AjusteAC" readonly>
                                         </td>
                                         <td style="padding:1px;">
-                                            <input class="form-control input-sm" type="text" placeholder="Descripción" value="@Model.DatosMultiplay.CamOfComApliCliente" readonly>
+                                            <input class="form-control input-sm" type="text" placeholder="Ajuste AC" value="@Model.DatosMultiplay.CamOfComApliCliente" readonly>
+                                        </td>
+                                    </tr>
+
+
+
+
+                                    <tr>
+
+                                        <td style="padding:1px;">
+                                            <small>Campaña por Oferta Comercial Que Aplicaba al Cliente:</small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Campaña Aplicada en AC en Digitación de la Venta:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>CFM Datos Antes IVA DEL 19%: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>CFM Datos Antes IVA del 19% +4% Ipoconsumo:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>CFM Voz Antes IVA del 19% +4% Ipoconsumo:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Fecha Activacion Multiplay en AC:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Campaña por Oferta Comercial Que Aplicaba al Cliente" value="@Model.DatosMultiplay.CamOfComApliCliente" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Campaña Aplicada en AC en Digitación de la Venta" value="@Model.DatosMultiplay.CamAplACDiVenta" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="CFM Datos Antes IVA DEL 19%" value="@Model.DatosMultiplay.CfmDatosAntesIva" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="CFM Datos Antes IVA del 19% +4% Ipoconsumo" value="@Model.DatosMultiplay.CfmDatosAntesIva4Ipoc" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="CFM Voz Antes IVA del 19% +4% Ipoconsumo" value="@Model.DatosMultiplay.CfmVozAntesIva4Ipoc" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Fecha Activacion Multiplay en AC" value="@Model.DatosMultiplay.FechaACTMultAC" readonly>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <small>Tiempo Campaña CFM a Ajustar (Desde - Hasta):</small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Pagos en AC No Reflejados en RR:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>Fecha Pago: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Valor Pago:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Pagos en RR No Reflejados en AC:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Fecha Pago:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Tiempo Campaña CFM a Ajustar (Desde - Hasta)" value="@Model.DatosMultiplay.TiempoCampañaCFMAAjustar" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Pagos en AC No Reflejados en RR" value="@Model.DatosMultiplay.PagosACNoRefleRR" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Fecha Pago" value="@Model.DatosMultiplay.FechaPago1" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Valor Pago" value="@Model.DatosMultiplay.ValorPago1" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Pagos en RR No Reflejados en AC" value="@Model.DatosMultiplay.PagosRRNoRefleAC" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Fecha Pago" value="@Model.DatosMultiplay.FechaPago2" readonly>
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td style="padding:1px;">
+                                            <small>Valor Pago:</small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Pago se Debe Cambiar de Grupo:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>Fecha: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Valor:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Grupo Actual:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Grupo en que Debe Quedar:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Valor Pago" value="@Model.DatosMultiplay.ValorPago2" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Pago se Debe Cambiar de Grupo" value="@Model.DatosMultiplay.PagoCambiarGrupo" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Fecha" value="@Model.DatosMultiplay.Fecha1" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Valor" value="@Model.DatosMultiplay.Valor1" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Grupo Actual" value="@Model.DatosMultiplay.GrupoActual" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Grupo en que Debe Quedar" value="@Model.DatosMultiplay.GrupoDebeQuedar" readonly>
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td style="padding:1px;">
+                                            <small>Pagos Anulados en AC y no aplicados en AC y/o RR: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Valor:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>Fecha Ingreso Pago: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Plataforma a Replicar Pago Anulado (AC/AC y RR): </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Se Debe Anular Pago:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Fecha:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Pagos Anulados en AC y no aplicados en AC y/o RR" value="@Model.DatosMultiplay.PagAnuACNoApliACy_0RR" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Valor" value="@Model.DatosMultiplay.Valor2" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Fecha Ingreso Pago" value="@Model.DatosMultiplay.FechaIngresoPago" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Plataforma a Replicar Pago Anulado (AC/AC y RR)" value="@Model.DatosMultiplay.PlataformaRepPagoAnulado" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Se Debe Anular Pago" value="@Model.DatosMultiplay.AnularPago" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Fecha" value="@Model.DatosMultiplay.Fecha2" readonly>
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td style="padding:1px;">
+                                            <small>Valor:</small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Plataforma:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>Arreglo Propiedadades Cliente RR (BUR-FMO-Tipo 13): </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Notas Adicionales:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Escenario 1:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Agente que Gestiona:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Valor" value="@Model.DatosMultiplay.Valor3" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Plataforma" value="@Model.DatosMultiplay.Plataforma" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Arreglo Propiedadades Cliente RR (BUR-FMO-Tipo 13)" value="@Model.DatosMultiplay.ArrPropClieRR" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Notas Adicionales" value="@Model.DatosMultiplay.NotasAdicionales" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Escenario 1" value="@Model.DatosMultiplay.Escenario1" readonly>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Agente que Gestiona" value="@Model.DatosMultiplay.AgenteGestiona" readonly>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <small>Fecha Gestión:</small>
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <input class="form-control input-sm" type="text" placeholder="Fecha Gestión" value="@Model.DatosMultiplay.FechaGestion" readonly>
                                         </td>
                                     </tr>
                                 </table>
