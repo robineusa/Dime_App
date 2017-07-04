@@ -79,6 +79,7 @@ namespace Telmexla.Servicios.DIME.Entity
         public string Escenario1 { get; set; }
         public string AgenteGestiona { get; set; }
         public System.DateTime? FechaGestion { get; set; }
+        public string FechaGestionRemplazo { get; set; }
         public string Observaciones { get; set; }
     }
 }
