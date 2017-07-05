@@ -484,8 +484,10 @@
                                     <ul class="treeview-menu">
                                         <li>
                                             <a href="@Url.Action("SolicitudCrearDireccion", "Traslados")"><i class="fa fa-external-link" aria-hidden="true"></i>Generar Solicitud</a>
-                                            <a href="@Url.Action("DireccionesCreadasOutbound", "Traslados")"><i class="fa fa-phone-square" aria-hidden="true"></i>Gestión Outbound</a>
-                                            <a href="@Url.Action("SeguimientosSolicitudesCreacionDireccionOutbound", "Traslados")"><i class="fa fa-phone-square" aria-hidden="true"></i>Seguimientos Outbound</a>
+                                           @if (Session["Outbound Crear Direccion Traslados"] != null)
+                                           {
+                                             <a href="@Url.Action("DireccionesCreadasOutbound", "Traslados")"><i class="fa fa-phone-square" aria-hidden="true"></i>Gestión Outbound</a>
+                                            <a href="@Url.Action("SeguimientosSolicitudesCreacionDireccionOutbound", "Traslados")"><i class="fa fa-phone-square" aria-hidden="true"></i>Seguimientos Outbound</a>}
                                         </li>
                                     </ul>
                                 </li>
