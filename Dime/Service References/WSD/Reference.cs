@@ -9689,6 +9689,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/InsertarMultiPlay", ReplyAction="http://tempuri.org/IMultiPlayService/InsertarMultiPlayResponse")]
         System.Threading.Tasks.Task InsertarMultiPlayAsync(Telmexla.Servicios.DIME.Entity.MultiPlay multiplay);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/EliminaCuentaDatosMultiplay", ReplyAction="http://tempuri.org/IMultiPlayService/EliminaCuentaDatosMultiplayResponse")]
+        void EliminaCuentaDatosMultiplay(int Id_Cuenta, int Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/EliminaCuentaDatosMultiplay", ReplyAction="http://tempuri.org/IMultiPlayService/EliminaCuentaDatosMultiplayResponse")]
+        System.Threading.Tasks.Task EliminaCuentaDatosMultiplayAsync(int Id_Cuenta, int Cuenta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -9732,6 +9738,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task InsertarMultiPlayAsync(Telmexla.Servicios.DIME.Entity.MultiPlay multiplay) {
             return base.Channel.InsertarMultiPlayAsync(multiplay);
+        }
+        
+        public void EliminaCuentaDatosMultiplay(int Id_Cuenta, int Cuenta) {
+            base.Channel.EliminaCuentaDatosMultiplay(Id_Cuenta, Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task EliminaCuentaDatosMultiplayAsync(int Id_Cuenta, int Cuenta) {
+            return base.Channel.EliminaCuentaDatosMultiplayAsync(Id_Cuenta, Cuenta);
         }
     }
 }

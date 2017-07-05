@@ -461,7 +461,7 @@
                                 @if (Session["Blending Producto"] != null)
                                 {
                                 <li><a href="@Url.Action("Producto", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Producto</a></li>}
-                                @if (Session["Blending Docsis y Overlap"] != null)
+                                @if (Session["Blending Docsis"] != null)
                                 {
                                 <li><a href="@Url.Action("Docsis", "DistribucionBlending")"><i class="fa fa-circle-o"></i>Docsis Overlap</a></li>}
                                 @if (Session["Blending Fuera de Niveles"] != null)
@@ -484,8 +484,10 @@
                                     <ul class="treeview-menu">
                                         <li>
                                             <a href="@Url.Action("SolicitudCrearDireccion", "Traslados")"><i class="fa fa-external-link" aria-hidden="true"></i>Generar Solicitud</a>
-                                            <a href="@Url.Action("DireccionesCreadasOutbound", "Traslados")"><i class="fa fa-phone-square" aria-hidden="true"></i>Gestión Outbound</a>
-                                            <a href="@Url.Action("SeguimientosSolicitudesCreacionDireccionOutbound", "Traslados")"><i class="fa fa-phone-square" aria-hidden="true"></i>Seguimientos Outbound</a>
+                                           @if (Session["Outbound Crear Direccion Traslados"] != null)
+                                           {
+                                             <a href="@Url.Action("DireccionesCreadasOutbound", "Traslados")"><i class="fa fa-phone-square" aria-hidden="true"></i>Gestión Outbound</a>
+                                            <a href="@Url.Action("SeguimientosSolicitudesCreacionDireccionOutbound", "Traslados")"><i class="fa fa-phone-square" aria-hidden="true"></i>Seguimientos Outbound</a>}
                                         </li>
                                     </ul>
                                 </li>

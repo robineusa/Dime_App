@@ -3582,4 +3582,17 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="EliminaCuentaDatosMultiplay">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Id_Cuenta" type="xs:int" />
+        <xs:element minOccurs="0" name="Cuenta" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminaCuentaDatosMultiplayResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
