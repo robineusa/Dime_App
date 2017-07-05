@@ -32,12 +32,16 @@ namespace Dime.Controllers
             
             if (BotonEnvia.Equals("Buscar"))
             {
-                if (model.DatosMultiplay.Cuenta != 0 || model.DatosMultiplay.Cuenta.Equals(true))
+                int cuentaCliente = model.DatosMultiplay.Cuenta;
+                var result = multiplay.BuscarDatosMultiplay(cuentaCliente);
+                if ((model.DatosMultiplay.Cuenta != 0 || model.DatosMultiplay.Cuenta.Equals(true)) && result != null)
                 {
-                    int cuentaCliente = model.DatosMultiplay.Cuenta;
-                    model.DatosMultiplay = multiplay.BuscarDatosMultiplay(cuentaCliente);
+                    model.DatosMultiplay = result;
                 }
-                else { ViewBag.Error = "Cuenta No Existe"; /*new ViewModelMultiPlay();*/ }
+                else
+                {
+                    ViewBag.Error = "Cuenta Digitada No Existe"; model = new ViewModelMultiPlay();
+                }
             }
             if (BotonEnvia.Equals("GuardaDatos"))
             {
@@ -49,7 +53,7 @@ namespace Dime.Controllers
                 model.Multiplay.FechaGestion = fecha;
                 multiplay.EliminaCuentaDatosMultiplay(model.Multiplay.Id, model.Multiplay.Cuenta);
                 multiplay.InsertarMultiPlay(model.Multiplay);
-                new ViewModelMultiPlay();
+                model = new ViewModelMultiPlay();
             }
             
             return View(model);

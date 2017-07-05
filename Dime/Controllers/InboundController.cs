@@ -249,8 +249,7 @@ namespace Dime.Controllers
         public ActionResult Guardar_Usabilidad_Consulta_Cuenta(string Cuenta)
         {
             UsabilidadBusquedaCuentaInbound model = new UsabilidadBusquedaCuentaInbound();
-            //model.Id = 0;
-            //model.FechaRevision = DateTime.Now;
+            
             model.IdUsuarioRevision = Convert.ToInt32(Session["IdUsuario"].ToString());
             model.NombreUsuarioRevision = Session["NombreUsuario"].ToString();
             model.CuentaRevisoTabla = Convert.ToInt32(Cuenta);
@@ -270,35 +269,33 @@ namespace Dime.Controllers
         {
             if (model.Retencion.Cuenta != 0 || model.Retencion.Cuenta.Equals(true))
             {
-                if (BotonEnvia.Equals("Buscar"))
+                int cuentaCliente = model.Retencion.Cuenta;
+                var result = inboundService.TraerClienteCompletoPorCuenta(cuentaCliente);
+                if (BotonEnvia.Equals("Buscar") && result != null)
                 {
-                    int cuentaCliente = model.Retencion.Cuenta;
-                    model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(cuentaCliente);
-
+                    model.ClientesTodos = result;
+                }
+                else
+                {
+                    ViewBag.Error = "Cuenta Digitada No Existe";
+                    model = new InboundModel();
                 }
 
                 if (BotonEnvia.Equals("GuardaDatos"))
                 {
-
                     model.Retencion.UsuarioGestion = Session["IdUsuario"].ToString();
                     model.Retencion.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
                     model.Retencion.AliadoGestion = Session["AliadoLogeado"].ToString();
-
                     inboundService.InsertarRetencionInbound(model.Retencion);
-
                     model = new InboundModel();
-
                 }
-
             }
             else
             {
                 ViewBag.Error = "Busque una cuenta primero para despues Guardar Datos";
                 model = new InboundModel();
             }
-
             return View(model);
         }
-
     }
 }

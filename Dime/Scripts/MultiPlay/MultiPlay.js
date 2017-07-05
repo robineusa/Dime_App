@@ -5,7 +5,7 @@
             $("#BuscaCliente").click();
         }
     });
-    if ($("#Cedula").val() == "") {
+    if ($("#Cedula").val() == 0 || $("#Cedula").val() == "") {
         $("#BotonEnvia").css('display', 'none');
     } else { $("#BotonEnvia").css('display', 'block'); }
 
@@ -13,4 +13,7 @@
         $("#Error").css('display', 'none');
     }, 8000);
 
+    //$("#cuentaCliente").val('');
+    $("#Observaciones").val('');
+    
 });
