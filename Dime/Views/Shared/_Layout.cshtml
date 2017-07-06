@@ -423,7 +423,7 @@
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                             <ul class="treeview-menu">
-                                <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("MultiPlayCelula", "MultiPlay")"><i class="fa fa-database" aria-hidden="true"></i>Gestion Base</a></li>
+                                <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("MultiPlayCelula", "MultiPlay")"><i class="fa fa-database" aria-hidden="true"></i>Gestion Base Presidencia</a></li>
                             </ul>
                     </li>
                     }
@@ -442,13 +442,21 @@
 
                                 </ul>
                             }
-                            @if (Session["Retencion"] != null)
-                            {
-                                <ul class="treeview-menu">
-                                    <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("Retencion", "Inbound")"><i class="fa fa-hand-stop-o" aria-hidden="true"></i>Retención</a></li>
-                                </ul>
-                            }
+                            
                         </li>
+                    }
+                    @if (Session["Retencion"] != null)
+                    {
+                    <li id="left-sidebar-menu-charts" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-exclamation-circle text-blue"></i>
+                            <span>Retención</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("Retencion", "Inbound")"><i class="fa fa-hand-stop-o" aria-hidden="true"></i>Formulario Retención</a></li>
+                        </ul>
+                    </li>
                     }
                     @if (Session["Gestion Blending"] != null)
                     {
@@ -571,7 +579,6 @@
                                                 <li><a href="@Url.Action("Paloteo", "ConsultasAdmin")"><i class="fa fa-circle-o"></i> Consulta de Paloteo</a></li>
                                                 <li><a href="~/#/ConsultaGestionAdmin"><i class="fa fa-circle-o"></i> Consulta de Gestión</a></li>
                                                 <li><a href="@Url.Action("ConsultaRechazos", "Consultas")"><i class="fa fa-circle-o"></i> Consulta de Rechazos</a></li>
-                                                <li><a href="@Url.Action("ConsultasRetencion", "ConsultasAdmin")"><i class="fa fa-circle-o"></i> Consulta de Retencion</a></li>
                                             </ul>
                                         </li>
                                         <li>
@@ -629,6 +636,17 @@
                                             </ul>
                                         </li>
 
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-search text-orange" aria-hidden="true"></i>Consultas Retención<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li>
+                                            <a href="#"><i class="fa fa-circle-o"></i>Consultas<i class="fa fa-angle-left pull-right"></i></a>
+                                            <ul class="treeview-menu">
+                                                <li><a href="@Url.Action("ConsultasRetencion", "ConsultasAdmin")"><i class="fa fa-circle-o"></i> Consulta de Retencion</a></li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>

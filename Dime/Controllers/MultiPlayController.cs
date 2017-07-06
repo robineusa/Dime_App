@@ -1,4 +1,5 @@
 ﻿using Dime.Helpers;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -62,6 +63,15 @@ namespace Dime.Controllers
         public ActionResult ConsultasAdminMultiPlay()
         {
             return View();
+        }
+        public JsonResult JsonConsultaBasePresidencial(string fechaInicial, string fechaFinal)
+        {
+            DateTime inicial = Convert.ToDateTime(fechaInicial, CultureInfo.InvariantCulture);
+            DateTime final = Convert.ToDateTime(fechaFinal, CultureInfo.InvariantCulture);
+            var result = multiplay.ConsultaAdminBasePresidencial(inicial, final);
+            var jsonResult = Json(JsonConvert.SerializeObject(result), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
     }
 }

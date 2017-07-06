@@ -2297,6 +2297,7 @@
     <Content Include="Scripts\Manuales\ManualAdministrador.js" />
     <Content Include="Scripts\Manuales\ManualAsesor.js" />
     <Content Include="Scripts\Manuales\ManualCelula.js" />
+    <Content Include="Scripts\MultiPlay\ConsultasAdminMultiPlay.js" />
     <Content Include="Scripts\MultiPlay\MultiPlay.js" />
     <Content Include="Scripts\Reportes\ReporteAdministrador.js" />
     <Content Include="Scripts\Reportes\ReporteAsesor.js" />
