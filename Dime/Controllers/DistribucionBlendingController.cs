@@ -184,23 +184,36 @@ namespace Dime.Controllers
             else {
                 distribucionBlendingService.InsertarRegistroFueraNiveles(model.GBPFueradeNiveles);
             }
+            //genera el registro para insertar o actualizar
             DistribucionBlending Registro = new DistribucionBlending();
             Registro.CuentaCliente = model.DatosDelCliente.Cuenta;
             Registro.FormularioDestino = "FUERANIVELES";
             Registro.AliadoDestino = Session["AliadoLogeado"].ToString();
             Registro.OperacionDestino = Session["OperacionBlending"].ToString();
             Registro.CampanaDestino = Session["CampañaBlending"].ToString();
-            
-            if (model.GBPFueradeNiveles.Cierre=="130"|| model.GBPFueradeNiveles.Cierre == "131" || model.GBPFueradeNiveles.Cierre == "135")
+
+            int DatoContactos = distribucionBlendingService.CantidadToquesCuentaFueraNiveles(model.DatosDelCliente.Cuenta);
+
+            //elimina la cuenta luego de 3 toques
+            if (DatoContactos >= 3)
             {
                 distribucionBlendingService.EliminaCuentaGestionadaDistribucion(Registro);
             }
-            else if (model.GBPFueradeNiveles.Cierre == "132" || model.GBPFueradeNiveles.Cierre == "133" || model.GBPFueradeNiveles.Cierre == "134")
+            else
             {
-                distribucionBlendingService.InsertarCuentaColaDistribucionBlending(Registro);
+
+                if (model.GBPFueradeNiveles.Cierre == "130" || model.GBPFueradeNiveles.Cierre == "131" || model.GBPFueradeNiveles.Cierre == "132" || model.GBPFueradeNiveles.Cierre == "135")
+                {
+                    distribucionBlendingService.EliminaCuentaGestionadaDistribucion(Registro);
+                }
+                else if (model.GBPFueradeNiveles.Cierre == "133" || model.GBPFueradeNiveles.Cierre == "134")
+                {
+                    distribucionBlendingService.InsertarCuentaColaDistribucionBlending(Registro);
+                }
             }
 
-                return RedirectToAction("CableModemFueradeNiveles"); ;
+
+            return RedirectToAction("CableModemFueradeNiveles");
         }
         [HttpGet]
         public ActionResult ConsultaAdminFueraNivelesPrincipal()
@@ -361,23 +374,34 @@ namespace Dime.Controllers
             {
                 distribucionBlendingService.InsertarRegistroRentabilizacion(model.GBPRentabilizacion);
             }
+
+            //inserta o elimina el registro de las pilas y colas
+
             DistribucionBlending Registro = new DistribucionBlending();
             Registro.CuentaCliente = model.DatosDelCliente.Cuenta;
             Registro.FormularioDestino = "RENTABILIZACION";
             Registro.AliadoDestino = Session["AliadoLogeado"].ToString();
             Registro.OperacionDestino = Session["OperacionBlending"].ToString();
             Registro.CampanaDestino = Session["CampañaBlending"].ToString();
+            
+            int DatoContactos = distribucionBlendingService.CantidadToquesCuentaRentabilizacion(model.DatosDelCliente.Cuenta);
 
-            if (model.GBPRentabilizacion.Cierre == "89" || model.GBPRentabilizacion.Cierre == "90" || model.GBPRentabilizacion.Cierre == "94")
-            {
+            if (DatoContactos >= 3) {
                 distribucionBlendingService.EliminaCuentaGestionadaDistribucion(Registro);
             }
-            else if (model.GBPRentabilizacion.Cierre == "91" || model.GBPRentabilizacion.Cierre == "92" || model.GBPRentabilizacion.Cierre == "93")
+            else
             {
-                distribucionBlendingService.InsertarCuentaColaDistribucionBlending(Registro);
-            }
 
-            return RedirectToAction("Rentabilizacion"); ;
+                if (model.GBPRentabilizacion.Cierre == "89" || model.GBPRentabilizacion.Cierre == "90" || model.GBPRentabilizacion.Cierre == "91"  || model.GBPRentabilizacion.Cierre == "94")
+                {
+                    distribucionBlendingService.EliminaCuentaGestionadaDistribucion(Registro);
+                }
+                else if (model.GBPRentabilizacion.Cierre == "92" || model.GBPRentabilizacion.Cierre == "93")
+                {
+                    distribucionBlendingService.InsertarCuentaColaDistribucionBlending(Registro);
+                }
+            }
+            return RedirectToAction("Rentabilizacion");
         }
         [HttpGet]
         public ActionResult ConsultaAdminRentabilizacionPrincipal()
@@ -506,6 +530,8 @@ namespace Dime.Controllers
             {
                 distribucionBlendingService.InsertarRegistroProducto(model.GBPProducto);
             }
+
+            //inserta o elimina registro de las pilas y colas
             DistribucionBlending Registro = new DistribucionBlending();
             Registro.CuentaCliente = model.DatosDelCliente.Cuenta;
             Registro.FormularioDestino = "PRODUCTO";
@@ -513,16 +539,25 @@ namespace Dime.Controllers
             Registro.OperacionDestino = Session["OperacionBlending"].ToString();
             Registro.CampanaDestino = Session["CampañaBlending"].ToString();
 
-            if (model.GBPProducto.Cierre == "136" || model.GBPProducto.Cierre == "137" || model.GBPProducto.Cierre == "141")
+            int DatoContactos = distribucionBlendingService.CantidadToquesCuentaProducto(model.DatosDelCliente.Cuenta);
+
+            if (DatoContactos >= 3)
             {
                 distribucionBlendingService.EliminaCuentaGestionadaDistribucion(Registro);
             }
-            else if (model.GBPProducto.Cierre == "138" || model.GBPProducto.Cierre == "139" || model.GBPProducto.Cierre == "140")
+            else
             {
-                distribucionBlendingService.InsertarCuentaColaDistribucionBlending(Registro);
-            }
 
-            return RedirectToAction("Producto"); ;
+                if (model.GBPProducto.Cierre == "136" || model.GBPProducto.Cierre == "137" || model.GBPProducto.Cierre == "138" || model.GBPProducto.Cierre == "141")
+                {
+                    distribucionBlendingService.EliminaCuentaGestionadaDistribucion(Registro);
+                }
+                else if (model.GBPProducto.Cierre == "139" || model.GBPProducto.Cierre == "140")
+                {
+                    distribucionBlendingService.InsertarCuentaColaDistribucionBlending(Registro);
+                }
+            }
+            return RedirectToAction("Producto");
         }
         [HttpGet]
         public ActionResult ConsultaAdminProductoPrincipal()
@@ -654,6 +689,8 @@ namespace Dime.Controllers
             {
                 distribucionBlendingService.InsertarRegistroDocsis(model.GBPDocsis);
             }
+
+            //inserta o elimina registro de las pilas y colas
             DistribucionBlending Registro = new DistribucionBlending();
             Registro.CuentaCliente = model.DatosDelCliente.Cuenta;
             Registro.FormularioDestino = "DOCSIS";
@@ -661,16 +698,26 @@ namespace Dime.Controllers
             Registro.OperacionDestino = Session["OperacionBlending"].ToString();
             Registro.CampanaDestino = Session["CampañaBlending"].ToString();
 
-            if (model.GBPDocsis.Cierre == "95" || model.GBPDocsis.Cierre == "96" || model.GBPDocsis.Cierre == "100")
+            int DatoContactos = distribucionBlendingService.CantidadToquesCuentaDocsis(model.DatosDelCliente.Cuenta);
+
+            if (DatoContactos >= 3)
             {
                 distribucionBlendingService.EliminaCuentaGestionadaDistribucion(Registro);
             }
-            else if (model.GBPDocsis.Cierre == "97" || model.GBPDocsis.Cierre == "98" || model.GBPDocsis.Cierre == "99")
+            else
             {
-                distribucionBlendingService.InsertarCuentaColaDistribucionBlending(Registro);
-            }
 
-            return RedirectToAction("Docsis"); ;
+                if (model.GBPDocsis.Cierre == "95" || model.GBPDocsis.Cierre == "96" || model.GBPDocsis.Cierre == "97" || model.GBPDocsis.Cierre == "100")
+                {
+                    distribucionBlendingService.EliminaCuentaGestionadaDistribucion(Registro);
+                }
+                else if (model.GBPDocsis.Cierre == "98" || model.GBPDocsis.Cierre == "99")
+                {
+                    distribucionBlendingService.InsertarCuentaColaDistribucionBlending(Registro);
+                }
+            }
+            return RedirectToAction("Docsis");
+
         }
         [HttpGet]
         public ActionResult ConsultaAdminDocsisPrincipal()
