@@ -530,11 +530,24 @@
                                         <td style="padding:1px;">
                                             <small>Fecha Gestión:</small>
                                         </td>
-                                        
+                                        <td style="padding:1px;">
+                                            <small>Fecha Cargue Base:</small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Nombre Base:</small>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.FechaGestionRemplazo, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaGestion, placeholder = "Fecha Gestión", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Fecha Gestión" value="@Model.DatosMultiplay.FechaGestion" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.FechaCargueBaseRemplazo, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaCargueBase, placeholder = "Fecha Gestión", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Fecha Gestión" value="@Model.DatosMultiplay.FechaGestion" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.NombreBase, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.NombreBase, placeholder = "Fecha Gestión", ReadOnly = "true" })
                                             @*<input class="form-control input-sm" type="text" placeholder="Fecha Gestión" value="@Model.DatosMultiplay.FechaGestion" readonly>*@
                                         </td>
                                     </tr>

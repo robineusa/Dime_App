@@ -422,9 +422,12 @@
                             <span>Multi-Play</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
+                        @if (Session["Base Precidencia"] != null)
+                        {
                             <ul class="treeview-menu">
                                 <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("MultiPlayCelula", "MultiPlay")"><i class="fa fa-database" aria-hidden="true"></i>Gestion Base Presidencia</a></li>
                             </ul>
+                        }
                     </li>
                     }
                     @if (Session["Gestion Inbound"] != null)

@@ -1840,6 +1840,7 @@
       <xs:element minOccurs="0" name="Fecha1" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Fecha2" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaACTMultAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCargueBase" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaIngresoPago" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaPago1" nillable="true" type="xs:string" />
@@ -1848,6 +1849,7 @@
       <xs:element minOccurs="0" name="GrupoDebeQuedar" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Min" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreBase" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreCliente" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NotasAdicionales" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ObservacionesAjustes" nillable="true" type="xs:string" />
@@ -1908,6 +1910,7 @@
       <xs:element minOccurs="0" name="Fecha1" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Fecha2" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaACTMultAC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCargueBase" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaGestionUsuario" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaIngresoPago" nillable="true" type="xs:string" />
@@ -1917,6 +1920,7 @@
       <xs:element minOccurs="0" name="GrupoDebeQuedar" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Min" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreBase" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreCliente" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NotasAdicionales" nillable="true" type="xs:string" />

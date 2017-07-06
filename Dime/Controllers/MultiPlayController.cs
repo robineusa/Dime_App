@@ -50,8 +50,11 @@ namespace Dime.Controllers
                 model.Multiplay.UsuarioGestion = Session["IdUsuario"].ToString();
                 model.Multiplay.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
                 model.Multiplay.FechaGestion = Convert.ToDateTime(model.Multiplay.FechaGestion);
+                model.Multiplay.FechaCargueBase = Convert.ToDateTime(model.Multiplay.FechaCargueBase);
                 DateTime fecha = Convert.ToDateTime(model.Multiplay.FechaGestionRemplazo, CultureInfo.InvariantCulture);
+                DateTime fechaCarge = Convert.ToDateTime(model.Multiplay.FechaCargueBaseRemplazo, CultureInfo.InvariantCulture);
                 model.Multiplay.FechaGestion = fecha;
+                model.Multiplay.FechaCargueBase = fechaCarge;
                 multiplay.EliminaCuentaDatosMultiplay(model.Multiplay.Id, model.Multiplay.Cuenta);
                 multiplay.InsertarMultiPlay(model.Multiplay);
                 model = new ViewModelMultiPlay();
