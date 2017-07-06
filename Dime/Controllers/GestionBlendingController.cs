@@ -38,7 +38,7 @@ namespace Dime.Controllers
         public ActionResult Cierre_Ciclo(string cuentaSeleccionada, string idaGestionar)
         {
 
-            
+
             ViewModelBlending model = new ViewModelBlending();
             //int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
             //if (cuentaSeleccionada == null || cuentaSeleccionada.Equals(""))
@@ -49,7 +49,7 @@ namespace Dime.Controllers
             //}
             //else
             //{
-                
+
             //    model.DatosCliente = inboundServices.TraerClienteCompletoPorCuenta(Int32.Parse(cuentaSeleccionada));
             //    if (model.DatosCliente != null)
             //    model.GestionOutInfo = blendingServices.TraerGestionOutboundInfoDeCuenta(model.DatosCliente.Cuenta, "CIERRE_CICLO", Session["AliadoLogeado"].ToString(), Session["LineaLogeado"].ToString());
@@ -83,34 +83,35 @@ namespace Dime.Controllers
             {
                 ViewBag.NoDatos = "ERROR: No se puede guardar por que no hay cuentas para gestionar";
             }
-            else {
+            else
+            {
                 int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
                 model.CierreCicloGestionado.AliadoGestion = Session["AliadoLogeado"].ToString();
-              
+
                 blendingServices.GuardarCierreCiclo(idUsuarioActual, model.DatosCliente, model.CierreCicloGestionado);
-                
+
             }
             return RedirectToAction("Cierre_Ciclo", "GestionBlending");
         }
-  
-        public ActionResult Convenio_Electronico(string  cuentaSeleccionada, string idConvenioGestionado)
+
+        public ActionResult Convenio_Electronico(string cuentaSeleccionada, string idConvenioGestionado)
         {
-            
+
             ViewModelBlending model = new ViewModelBlending();
             int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
             if (cuentaSeleccionada == null || cuentaSeleccionada.Equals(""))
-            { 
-            model.DatosCliente= blendingServices.TraerMisDatosClienteAutomaticos(idUsuarioActual, "CONVENIO_ELECTRONICO", Session["AliadoLogeado"].ToString(), Session["LineaLogeado"].ToString());
+            {
+                model.DatosCliente = blendingServices.TraerMisDatosClienteAutomaticos(idUsuarioActual, "CONVENIO_ELECTRONICO", Session["AliadoLogeado"].ToString(), Session["LineaLogeado"].ToString());
             }
             else
             {
-               
-                model.DatosCliente = inboundServices.TraerClienteCompletoPorCuenta(Int32.Parse( cuentaSeleccionada));
+
+                model.DatosCliente = inboundServices.TraerClienteCompletoPorCuenta(Int32.Parse(cuentaSeleccionada));
                 model.ConvenioElecGestionado = blendingServices.TraerConvenioElectronicoGestionado(Int32.Parse(idConvenioGestionado));
             }
             //Setea que no existen datos cliente si no encuentra nada en la base de datos para gestionar.
             if (model.DatosCliente == null)
-            { 
+            {
                 model.DatosCliente = new ClientesTodo();
                 model.DatosCliente.Cuenta = 0;
                 model.DatosCliente.Nombre = "No existen datos";
@@ -135,7 +136,7 @@ namespace Dime.Controllers
                 int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
                 model.ConvenioElecGestionado.AliadoGestion = Session["AliadoLogeado"].ToString();
                 model.ConvenioElecGestionado.LineaGestion = Session["LineaLogeado"].ToString();
-               
+
                 blendingServices.GuardarGestionConvenioElectronico(idUsuarioActual, model.DatosCliente, model.ConvenioElecGestionado);
             }
             return RedirectToAction("Convenio_Electronico", "GestionBlending");
@@ -145,7 +146,7 @@ namespace Dime.Controllers
 
         public ActionResult Docsis(string cuentaSeleccionada, string idaGestionar)
         {
-            
+
             ViewModelBlending model = new ViewModelBlending();
             int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
             if (cuentaSeleccionada == null || cuentaSeleccionada.Equals(""))
@@ -154,7 +155,7 @@ namespace Dime.Controllers
             }
             else
             {
-               
+
                 model.DatosCliente = inboundServices.TraerClienteCompletoPorCuenta(Int32.Parse(cuentaSeleccionada));
                 model.DocsisOverlapGestionado = blendingServices.TraerDocsisGestionado(Int32.Parse(idaGestionar));
             }
@@ -185,7 +186,7 @@ namespace Dime.Controllers
                 int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
                 model.DocsisOverlapGestionado.AliadoGestion = Session["AliadoLogeado"].ToString();
                 //Session de prueba remover cuando se hagan sesiones //////////
-               
+
                 blendingServices.GuardarGestionDocsis(idUsuarioActual, model.DatosCliente, model.DocsisOverlapGestionado);
             }
             return RedirectToAction("Docsis", "GestionBlending");
@@ -193,8 +194,8 @@ namespace Dime.Controllers
 
 
         public ActionResult Claro_Video(string cuentaSeleccionada, string idaGestionar)
-        {  
-           
+        {
+
             ViewModelBlending model = new ViewModelBlending();
             int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
             if (cuentaSeleccionada == null || cuentaSeleccionada.Equals(""))
@@ -203,7 +204,7 @@ namespace Dime.Controllers
             }
             else
             {
-                
+
                 model.DatosCliente = inboundServices.TraerClienteCompletoPorCuenta(Int32.Parse(cuentaSeleccionada));
                 model.ClaroVideoGestionado = blendingServices.TraerClaroVideoGestionado(Int32.Parse(idaGestionar));
             }
@@ -231,26 +232,27 @@ namespace Dime.Controllers
             {
                 int idUsuarioActual = Int32.Parse(Session["IdUsuario"].ToString());
                 model.ClaroVideoGestionado.AliadoGestion = Session["AliadoLogeado"].ToString();
-                
+
                 blendingServices.GuardarGestionClaroVideo(idUsuarioActual, model.DatosCliente, model.ClaroVideoGestionado);
             }
             return RedirectToAction("Claro_Video", "GestionBlending");
         }
 
 
-         public JsonResult TiposDeContactoList(decimal gestion)
+        public JsonResult TiposDeContactoList(decimal gestion)
         {
-            
+
             return new JsonResult()
-            {   Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeContactoDeGestion(gestion)),
+            {
+                Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeContactoDeGestion(gestion)),
                 JsonRequestBehavior = JsonRequestBehavior.DenyGet
             };
         }
 
 
-         public JsonResult TiposCierresList(decimal idContacto)
+        public JsonResult TiposCierresList(decimal idContacto)
         {
-          
+
             return new JsonResult()
             {
                 Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeCierresDeContacto(idContacto)),
@@ -261,7 +263,7 @@ namespace Dime.Controllers
 
         public JsonResult TiposRazonesList(decimal idCierre)
         {
-           
+
             return new JsonResult()
             {
                 Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeRazonDeCierres(idCierre)),
@@ -271,7 +273,7 @@ namespace Dime.Controllers
 
         public JsonResult TiposCausasList(decimal idRazon)
         {
-           
+
             return new JsonResult()
             {
                 Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeCausasDeRazon(idRazon)),
@@ -282,7 +284,7 @@ namespace Dime.Controllers
 
         public JsonResult TiposMotivosList(decimal idCausa)
         {
-          
+
             return new JsonResult()
             {
                 Data = JsonConvert.SerializeObject(mastersServices.ObtenerTiposDeMotivoDeCausas(idCausa)),
@@ -300,7 +302,7 @@ namespace Dime.Controllers
         public ActionResult SkillsUsuariosAdmin()
         {
             ViewModelBlending model = new ViewModelBlending();
-          
+
             return View(model);
         }
         public JsonResult FormulariosBlendingJson()
@@ -313,13 +315,13 @@ namespace Dime.Controllers
         }
         public JsonResult SkillsUsuariosAdminJson(string Form)
         {
-            
+
             var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.GetOperacionBlending(Session["AliadoLogeado"].ToString(), Form)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
-            
+
         }
-        public JsonResult UsuariosporOperacion( string Operacion)
+        public JsonResult UsuariosporOperacion(string Operacion)
         {
 
             var jsonResult = Json(JsonConvert.SerializeObject(blendingServices.ListaUsuariosAdminBlending(Operacion)), JsonRequestBehavior.AllowGet);
@@ -366,10 +368,10 @@ namespace Dime.Controllers
                     model = new ViewModelBlending();
                 }
             }
-            
+
             if (opcionMando.Equals("CrearUsuario"))
             {
-                if (model.UsuarioHolos.Aliado != null && model.UsuarioHolos.NombreLinea != null)
+                if (model.UsuarioHolos.Aliado != null)
                 {
                     if (model.SkillsUsuariosBlending.Campaña != "-Seleccione-" && model.SkillsUsuariosBlending.Operacion != "-Seleccione")
                     {
@@ -384,7 +386,7 @@ namespace Dime.Controllers
                     {
                         ViewBag.UsuarioExiste = "Seleccione una Operacion y/o Skill a asignar";
                     }
-                    
+
                 }
                 else
                 {
@@ -399,7 +401,7 @@ namespace Dime.Controllers
                 ViewBag.SegundaPestañaAbierta = "True";
                 if (model.CopiaUsuarioHolos.Aliado != null && model.CopiaUsuarioHolos.NombreLinea != null)
                 {
-                    if (model.CopiaSkillsUsuariosBlending.Campaña != null && model.CopiaSkillsUsuariosBlending.Operacion != null )
+                    if (model.CopiaSkillsUsuariosBlending.Campaña != null && model.CopiaSkillsUsuariosBlending.Operacion != null)
                     {
                         model.CopiaSkillsUsuariosBlending.Cedula = Convert.ToInt32(model.CopiaUsuarioHolos.Cedula);
                         model.CopiaSkillsUsuariosBlending.Id_Usuario_Actualizacion = Convert.ToInt32(Session["IdUsuario"].ToString());
@@ -421,6 +423,23 @@ namespace Dime.Controllers
                 }
             }
 
+            if (opcionMando.Equals("EliminarUsuario"))
+            {
+                ViewBag.TerceraPestañaAbierta = "True";
+                if (model.CopiaUsuarioHolos.Aliado != null)
+                {
+                    blendingServices.EliminaUsuarioSkilles(Convert.ToInt32(model.CopiaUsuarioHolos2.Cedula));
+                    ViewBag.UsuarioExiste2 = "Usuario Eliminado Exitosamente";
+                    model = new ViewModelBlending();
+
+                }
+                else
+                {
+                    ViewBag.UsuarioExiste2 = "Consulte un usuario antes de guardar";
+                    model = new ViewModelBlending();
+                }
+            }
+
             if (opcionMando.Equals("ConsultarActualizando"))
             {
                 ViewBag.SegundaPestañaAbierta = "True";
@@ -429,7 +448,7 @@ namespace Dime.Controllers
                     if (loginService.RecibirIdUsuario(model.CopiaUsuarioHolos.Cedula) != 0)
                     {
                         var r = blendingServices.ConsultaUsuarioenAdminBlending(Convert.ToString(model.CopiaUsuarioHolos.Cedula));
-                        if ( r != null)
+                        if (r != null)
                         {
                             model.CopiaUsuarioHolos = loginService.ConsultarUsuarioHolos(model.CopiaUsuarioHolos.Cedula);
                             model.Operacion = r.Operacion;
@@ -459,6 +478,46 @@ namespace Dime.Controllers
                     model = new ViewModelBlending();
                 }
             }
+
+            if (opcionMando.Equals("ConsultarEliminando"))
+            {
+                ViewBag.TerceraPestañaAbierta = "True";
+                if (model.CopiaUsuarioHolos2.Cedula != 0)
+                {
+                    if (loginService.RecibirIdUsuario(model.CopiaUsuarioHolos2.Cedula) != 0)
+                    {
+                        var r = blendingServices.ConsultaUsuarioenAdminBlending(Convert.ToString(model.CopiaUsuarioHolos2.Cedula));
+                        if (r != null)
+                        {
+                            model.CopiaUsuarioHolos2 = loginService.ConsultarUsuarioHolos(model.CopiaUsuarioHolos2.Cedula);
+                            model.Operacion = r.Operacion;
+                            model.Campaña = r.Campaña;
+                            if (model.CopiaUsuarioHolos.Aliado != Session["AliadoLogeado"].ToString())
+                            {
+                                ViewBag.UsuarioExiste2 = "Este Usuario no pertenece a su Aliado. No puede Eliminarlo";
+                                model = new ViewModelBlending();
+                            }
+                        }
+                        else
+                        {
+                            ViewBag.UsuarioExiste2 = "El usuario NO esta registrado en Skilles Blending. No puede Eliminarlo";
+                            model = new ViewModelBlending();
+                        }
+                    }
+                    else
+                    {
+                        ViewBag.UsuarioExiste2 = "El usuario no se encuentra registrado en DIME. No puede Eliminarlo";
+                        model = new ViewModelBlending();
+
+                    }
+                }
+                else
+                {
+                    ViewBag.UsuarioExiste2 = "Digite un numero de cédula";
+                    model = new ViewModelBlending();
+                }
+            }
+
             if (model.UsuarioHolos == null)
             {
                 model = new ViewModelBlending();

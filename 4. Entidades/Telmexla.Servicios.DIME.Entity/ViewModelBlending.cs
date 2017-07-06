@@ -42,6 +42,7 @@ namespace Telmexla.Servicios.DIME.Entity
         private string operacion;
         private string campaña;
         private BasePersonalHolo copiaUsuarioHolos;
+        private BasePersonalHolo copiaUsuarioHolos2;
         #endregion
 
 
@@ -62,6 +63,7 @@ namespace Telmexla.Servicios.DIME.Entity
             usuarioHolos = new BasePersonalHolo();
             copiaUsuarioHolos = new BasePersonalHolo();
             copiaSkillsUsuariosBlending = new SkillsUsuariosBlending();
+            copiaUsuarioHolos2 = new BasePersonalHolo();
 
         }
 
@@ -307,6 +309,19 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 campaña = value;
+            }
+        }
+
+        public BasePersonalHolo CopiaUsuarioHolos2
+        {
+            get
+            {
+                return copiaUsuarioHolos2;
+            }
+
+            set
+            {
+                copiaUsuarioHolos2 = value;
             }
         }
 

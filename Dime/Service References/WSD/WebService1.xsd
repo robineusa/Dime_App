@@ -1948,4 +1948,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MultiPlay" nillable="true" type="tns:MultiPlay" />
+  <xs:complexType name="ArrayOfMultiPlay">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MultiPlay" nillable="true" type="tns:MultiPlay" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMultiPlay" nillable="true" type="tns:ArrayOfMultiPlay" />
 </xs:schema>

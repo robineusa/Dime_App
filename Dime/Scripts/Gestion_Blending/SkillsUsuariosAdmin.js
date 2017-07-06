@@ -3,29 +3,54 @@
     $("#Li1").click(function () {
 
         $("#Li2").css('background-color', 'transparent');
+        $("#Li3").css('background-color', 'transparent');
         $("#Li1").css("background-color", "#dcdcdc");
         $("#Li1").css("border-color", "#c23321");
         $("#Li2").css("border-color", "transparent");
+        $("#Li3").css("border-color", "transparent");
         $("#Crear_Usuario").css("display", "block");
         $("#Actualizar_Usuario").css("display", "none");
+        $("#Eliminar_Usuario").css("display", "none");
+        
         
     });
 
     $("#Li2").click(function () {
         $("#Li1").css("background-color", "transparent");
+        $("#Li3").css("background-color", "transparent");
         $("#Li2").css("background-color", "#dcdcdc");
         $("#Li1").css("border-color", "transparent");
+        $("#Li3").css("border-color", "transparent");
         $("#Li2").css("border-color", "#c23321");
-        $("#Actualizar_Usuarios").css("display", "block");
         $("#Crear_Usuario").css("display", "none");
         $("#Actualizar_Usuario").css("display", "block");
-        
+        $("#Eliminar_Usuario").css("display", "none");
+
+    });
+
+    $("#Li3").click(function () {
+        $("#Li3").css("border-color", "#c23321");
+        $("#Li1").css("background-color", "transparent");
+        $("#Li2").css("background-color", "transparent");
+        $("#Li3").css("background-color", "#dcdcdc");
+        $("#Li1").css("border-color", "transparent");
+        $("#Li2").css("border-color", "transparent");
+        $("#Crear_Usuario").css("display", "none");
+        $("#Actualizar_Usuario").css("display", "none");
+        $("#Eliminar_Usuario").css("display", "block");
 
     });
     if (segundaPestañaAbierta == "True") {
         $("#Actualiza_UsuarioTab").click();
+        tercerPestañaAbierta = "False";
         
     }
+    if (tercerPestañaAbierta == "True") {
+        $("#Elimina_UsuarioTab").click();
+        segundaPestañaAbierta = "False";
+
+    }
+    
     TraerListaFormulariosBlending();
 });
 
@@ -261,4 +286,12 @@ $('#cedulaActualizacion').on("keyup", function (e) {
         $("#consultarActualizacion").click();
 
     }
-})
+});
+
+$('#cedulaEliminar').on("keyup", function (e) {
+    var code = e.keyCode || e.which;
+    if (code == 13) {
+        $("#consultarEliminar").click();
+
+    }
+});

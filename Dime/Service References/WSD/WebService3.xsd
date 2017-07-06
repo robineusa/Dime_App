@@ -1317,6 +1317,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="EliminaUsuarioSkilles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Cedula" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminaUsuarioSkillesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RegistrarMarcacion">
     <xs:complexType>
       <xs:sequence>
@@ -3593,6 +3605,21 @@
   <xs:element name="EliminaCuentaDatosMultiplayResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaAdminBasePresidencial">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="final" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaAdminBasePresidencialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q247="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminBasePresidencialResult" nillable="true" type="q247:ArrayOfMultiPlay" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>
