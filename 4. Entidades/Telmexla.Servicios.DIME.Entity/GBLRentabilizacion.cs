@@ -13,6 +13,7 @@ namespace Telmexla.Servicios.DIME.Entity
         public string UsuarioGestion { get; set; }
         public string AliadoGestion { get; set; }
         public string OperacionGestion {get;set;}
+        public string CampanaDestino { get; set; }
         public decimal CuentaCliente { get; set; }
         public string ConsumosPpv { get; set; }
         public string UltimaPpv { get; set; }

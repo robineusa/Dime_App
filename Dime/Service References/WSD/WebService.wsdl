@@ -3983,6 +3983,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBlendingService_EliminaUsuarioSkilles_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBlendingService_EliminaUsuarioSkilles_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IMarcacionesService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -11580,6 +11618,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMultiPlayService_ConsultaAdminBasePresidencial_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMultiPlayService_ConsultaAdminBasePresidencial_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -12134,6 +12210,12 @@
   </wsdl:message>
   <wsdl:message name="IBlendingService_ActualizarUsuarioBlending_OutputMessage">
     <wsdl:part name="parameters" element="tns:ActualizarUsuarioBlendingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBlendingService_EliminaUsuarioSkilles_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaUsuarioSkilles" />
+  </wsdl:message>
+  <wsdl:message name="IBlendingService_EliminaUsuarioSkilles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaUsuarioSkillesResponse" />
   </wsdl:message>
   <wsdl:message name="IMarcacionesService_RegistrarMarcacion_InputMessage">
     <wsdl:part name="parameters" element="tns:RegistrarMarcacion" />
@@ -13119,6 +13201,12 @@
   <wsdl:message name="IMultiPlayService_EliminaCuentaDatosMultiplay_OutputMessage">
     <wsdl:part name="parameters" element="tns:EliminaCuentaDatosMultiplayResponse" />
   </wsdl:message>
+  <wsdl:message name="IMultiPlayService_ConsultaAdminBasePresidencial_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaAdminBasePresidencial" />
+  </wsdl:message>
+  <wsdl:message name="IMultiPlayService_ConsultaAdminBasePresidencial_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaAdminBasePresidencialResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWebService">
     <wsdl:operation name="MuestraEntidades">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MuestraEntidades" message="tns:IWebService_MuestraEntidades_InputMessage" />
@@ -13491,6 +13579,10 @@
     <wsdl:operation name="ActualizarUsuarioBlending">
       <wsdl:input wsaw:Action="http://tempuri.org/IBlendingService/ActualizarUsuarioBlending" message="tns:IBlendingService_ActualizarUsuarioBlending_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBlendingService/ActualizarUsuarioBlendingResponse" message="tns:IBlendingService_ActualizarUsuarioBlending_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaUsuarioSkilles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBlendingService/EliminaUsuarioSkilles" message="tns:IBlendingService_EliminaUsuarioSkilles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBlendingService/EliminaUsuarioSkillesResponse" message="tns:IBlendingService_EliminaUsuarioSkilles_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IMarcacionesService">
@@ -14173,6 +14265,10 @@
     <wsdl:operation name="EliminaCuentaDatosMultiplay">
       <wsdl:input wsaw:Action="http://tempuri.org/IMultiPlayService/EliminaCuentaDatosMultiplay" message="tns:IMultiPlayService_EliminaCuentaDatosMultiplay_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMultiPlayService/EliminaCuentaDatosMultiplayResponse" message="tns:IMultiPlayService_EliminaCuentaDatosMultiplay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaAdminBasePresidencial">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMultiPlayService/ConsultaAdminBasePresidencial" message="tns:IMultiPlayService_ConsultaAdminBasePresidencial_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMultiPlayService/ConsultaAdminBasePresidencialResponse" message="tns:IMultiPlayService_ConsultaAdminBasePresidencial_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IWebService" type="tns:IWebService">
@@ -15192,6 +15288,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IBlendingService_ActualizarUsuarioBlending_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaUsuarioSkilles">
+      <soap12:operation soapAction="http://tempuri.org/IBlendingService/EliminaUsuarioSkilles" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBlendingService_EliminaUsuarioSkilles_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBlendingService_EliminaUsuarioSkilles_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -17048,6 +17155,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IMultiPlayService_EliminaCuentaDatosMultiplay_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaAdminBasePresidencial">
+      <soap12:operation soapAction="http://tempuri.org/IMultiPlayService/ConsultaAdminBasePresidencial" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMultiPlayService_ConsultaAdminBasePresidencial_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMultiPlayService_ConsultaAdminBasePresidencial_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

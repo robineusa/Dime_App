@@ -9,6 +9,8 @@ namespace Telmexla.Servicios.DIME.Entity
         public System.DateTime? FechaGestion { get; set; }
         public string UsuarioGestion { get; set; }
         public string AliadoGestion { get; set; }
+        public string OperacionGestion { get; set; }
+        public string CampanaGestion { get; set; }
         public decimal CuentaCliente { get; set; }
         public string NombreCliente { get; set; }
         public string ApellidoCliente { get; set; }

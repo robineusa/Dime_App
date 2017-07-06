@@ -6608,6 +6608,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/ActualizarUsuarioBlending", ReplyAction="http://tempuri.org/IBlendingService/ActualizarUsuarioBlendingResponse")]
         System.Threading.Tasks.Task ActualizarUsuarioBlendingAsync(Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending m);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/EliminaUsuarioSkilles", ReplyAction="http://tempuri.org/IBlendingService/EliminaUsuarioSkillesResponse")]
+        void EliminaUsuarioSkilles(int Cedula);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBlendingService/EliminaUsuarioSkilles", ReplyAction="http://tempuri.org/IBlendingService/EliminaUsuarioSkillesResponse")]
+        System.Threading.Tasks.Task EliminaUsuarioSkillesAsync(int Cedula);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -6867,6 +6873,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task ActualizarUsuarioBlendingAsync(Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending m) {
             return base.Channel.ActualizarUsuarioBlendingAsync(m);
+        }
+        
+        public void EliminaUsuarioSkilles(int Cedula) {
+            base.Channel.EliminaUsuarioSkilles(Cedula);
+        }
+        
+        public System.Threading.Tasks.Task EliminaUsuarioSkillesAsync(int Cedula) {
+            return base.Channel.EliminaUsuarioSkillesAsync(Cedula);
         }
     }
     
@@ -9695,6 +9709,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/EliminaCuentaDatosMultiplay", ReplyAction="http://tempuri.org/IMultiPlayService/EliminaCuentaDatosMultiplayResponse")]
         System.Threading.Tasks.Task EliminaCuentaDatosMultiplayAsync(int Id_Cuenta, int Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/ConsultaAdminBasePresidencial", ReplyAction="http://tempuri.org/IMultiPlayService/ConsultaAdminBasePresidencialResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MultiPlay> ConsultaAdminBasePresidencial(System.DateTime inicial, System.DateTime final);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/ConsultaAdminBasePresidencial", ReplyAction="http://tempuri.org/IMultiPlayService/ConsultaAdminBasePresidencialResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MultiPlay>> ConsultaAdminBasePresidencialAsync(System.DateTime inicial, System.DateTime final);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -9746,6 +9766,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task EliminaCuentaDatosMultiplayAsync(int Id_Cuenta, int Cuenta) {
             return base.Channel.EliminaCuentaDatosMultiplayAsync(Id_Cuenta, Cuenta);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MultiPlay> ConsultaAdminBasePresidencial(System.DateTime inicial, System.DateTime final) {
+            return base.Channel.ConsultaAdminBasePresidencial(inicial, final);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MultiPlay>> ConsultaAdminBasePresidencialAsync(System.DateTime inicial, System.DateTime final) {
+            return base.Channel.ConsultaAdminBasePresidencialAsync(inicial, final);
         }
     }
 }

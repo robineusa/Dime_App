@@ -151,7 +151,8 @@ namespace Dime.Controllers
         {
             model.GBPFueradeNiveles.UsuarioGestion = Session["IdUsuario"].ToString();
             model.GBPFueradeNiveles.AliadoGestion = Session["AliadoLogeado"].ToString();
-            model.GBPFueradeNiveles.AliadoGestion = Session["AliadoLogeado"].ToString();
+            model.GBPFueradeNiveles.OperacionGestion = Session["OperacionBlending"].ToString();
+            model.GBPFueradeNiveles.CampanaGestion = Session["CampañaBlending"].ToString();
             model.GBPFueradeNiveles.CuentaCliente = model.DatosDelCliente.Cuenta;
             model.GBPFueradeNiveles.NombreCliente = model.DatosDelCliente.Nombre;
             model.GBPFueradeNiveles.ApellidoCliente = model.DatosDelCliente.Apellido;
@@ -355,6 +356,7 @@ namespace Dime.Controllers
             model.GBPRentabilizacion.UsuarioGestion = Session["IdUsuario"].ToString();
             model.GBPRentabilizacion.AliadoGestion = Session["AliadoLogeado"].ToString();
             model.GBPRentabilizacion.OperacionGestion = Session["OperacionBlending"].ToString();
+            model.GBPRentabilizacion.CampanaDestino = Session["CampañaBlending"].ToString();
             model.GBPRentabilizacion.CuentaCliente = model.DatosDelCliente.Cuenta;
             model.GBPRentabilizacion.ConsumosPpv = model.GBCRentabilizacion.ConsumosPpv;
             model.GBPRentabilizacion.UltimaPpv = model.GBCRentabilizacion.UltimaPpv;

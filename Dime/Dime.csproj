@@ -2918,6 +2918,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GBPDocsis.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Retencion.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DatosMultiplay.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MultiPlay.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
