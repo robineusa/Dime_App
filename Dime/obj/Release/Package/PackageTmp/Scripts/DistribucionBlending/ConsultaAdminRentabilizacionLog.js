@@ -94,6 +94,7 @@ function cargargrilla(data) {
         { field: "UsuarioGestion", title: "Usuario de Gestion", width: 100 },
         { field: "AliadoGestion", title: "Aliado de Gestion", width: 100, filterable: false },
         { field: "OperacionGestion", title: "Opercion Gestion", width: 100, filterable: false },
+        { field: "CampanaDestino", title: "Campaña Destino", width: 100, filterable: false },
         { field: "CuentaCliente", title: "Cuenta Cliente", width: 100 },
         { field: "ConsumosPpv", title: "Consumos Ppv", width: 100, filterable: false },
         { field: "UltimaPpv", title: "Ultima Ppv", width: 100, filterable: false },

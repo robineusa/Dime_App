@@ -93,6 +93,8 @@ function cargargrilla(data) {
         { field: "FechaGestion", title: "Fecha de Gestion", width: 100 },
         { field: "UsuarioGestion", title: "Usuario de Gestion", width: 100 },
         { field: "AliadoGestion", title: "Aliado de Gestion", width: 100, filterable: false },
+        { field: "OperacionGestion", title: "Operacion Gestion", width: 100, filterable: false },
+        { field: "CampanaGestion", title: "Campaña Gestion", width: 100, filterable: false },
         { field: "CuentaCliente", title: "Cuenta Cliente", width: 100, filterable: false },
         { field: "NombreCliente", title: "Nombre Cliente", width: 100 },
         { field: "ApellidoCliente", title: "Apellido Cliente", width: 100, filterable: false },

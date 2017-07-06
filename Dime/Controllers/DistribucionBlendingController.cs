@@ -75,17 +75,18 @@ namespace Dime.Controllers
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
             GBPFueraNiveles ClienteGestionado = new GBPFueraNiveles();
 
-            if (CuentaCliente == null || CuentaCliente.Equals("")) {
+            if (CuentaCliente == null || CuentaCliente.Equals(""))
+            {
                 model.DatosDelCliente = distribucionBlendingService.TraerInformacionCuentaBlending(Convert.ToInt32(Session["IdUsuario"].ToString()), "FUERANIVELES", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString());
                 if (model.DatosDelCliente != null)
                     model.FueraNiveles = distribucionBlendingService.TraerInformacionCuentaFueraNiveles(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
             }
             else
             {
-               model.DatosDelCliente= distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "FUERANIVELES", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
+                model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "FUERANIVELES", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
                 if (model.DatosDelCliente != null)
 
-                ClienteGestionado = distribucionBlendingService.TraerDatosCuentaSelectFueraNivel(model.DatosDelCliente.Cuenta);
+                    ClienteGestionado = distribucionBlendingService.TraerDatosCuentaSelectFueraNivel(model.DatosDelCliente.Cuenta);
                 if (ClienteGestionado != null)
                 {
                     model.FueraNiveles.Cmts = ClienteGestionado.Cmts;
@@ -99,7 +100,7 @@ namespace Dime.Controllers
                     model.FueraNiveles.Prioridad = 1;
 
                 }
-                
+
             }
             if (model.DatosDelCliente == null)
             {
@@ -130,7 +131,7 @@ namespace Dime.Controllers
                 }
             }
             return View(model);
-            
+
         }
 
         public JsonResult HistoricoGestionFueraNiveles()
@@ -175,14 +176,16 @@ namespace Dime.Controllers
             model.GBPFueradeNiveles.Cmts = model.FueraNiveles.Cmts;
             model.GBPFueradeNiveles.TipoModem = model.FueraNiveles.TipoModem;
             model.GBPFueradeNiveles.Prioridad = model.FueraNiveles.Prioridad;
-            
+
 
             var validacion = distribucionBlendingService.ValidarCuentaEnFueraNiveles(model.GBPFueradeNiveles.CuentaCliente);
 
-            if (validacion== true) {
+            if (validacion == true)
+            {
                 distribucionBlendingService.ActualizarGestionFueraNiveles(model.GBPFueradeNiveles);
             }
-            else {
+            else
+            {
                 distribucionBlendingService.InsertarRegistroFueraNiveles(model.GBPFueradeNiveles);
             }
             //genera el registro para insertar o actualizar
@@ -232,7 +235,7 @@ namespace Dime.Controllers
         {
             DateTime FI = Convert.ToDateTime(fechaInicial);
             DateTime FF = Convert.ToDateTime(fechaFinal);
-            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.ConsultaAdminFueraNivelesP(FI,FF)), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(distribucionBlendingService.ConsultaAdminFueraNivelesP(FI, FF)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
@@ -245,7 +248,7 @@ namespace Dime.Controllers
             return jsonResult;
         }
 
-       
+
 
         //RENTABILIZACION
         [HttpGet]
@@ -253,7 +256,7 @@ namespace Dime.Controllers
         {
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
             GBPRentabilizacion ClienteGestionado = new GBPRentabilizacion();
-            
+
 
             if (CuentaCliente == null || CuentaCliente.Equals(""))
             {
@@ -269,15 +272,19 @@ namespace Dime.Controllers
                     ClienteGestionado = distribucionBlendingService.TraerDatosCuentaSelectRentabilizacion(model.DatosDelCliente.Cuenta);
                 if (ClienteGestionado != null)
                 {
-                    model.GBCRentabilizacion.CuentaCiente = ClienteGestionado.CuentaCliente;
-                    model.GBCRentabilizacion.ConsumosPpv = ClienteGestionado.ConsumosPpv;
-                    model.GBCRentabilizacion.UltimaPpv = ClienteGestionado.UltimaPpv;
-                    model.GBCRentabilizacion.SiembraHd = ClienteGestionado.SiembraHd;
-                    model.GBCRentabilizacion.SiembraVoz = ClienteGestionado.SiembraVoz;
-                    model.GBCRentabilizacion.BindajeInternet = ClienteGestionado.BlindajeInternet;
-                    model.GBCRentabilizacion.UltimaMarcacion = ClienteGestionado.UltimaMarcacion;
-                    model.GBCRentabilizacion.Ofrecimiento1 = ClienteGestionado.OfrecimientoAceptado;
-                    
+                    model.GBCRentabilizacion = distribucionBlendingService.TraerInformacionCuentaRentabilizacion(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
+                    if (model.GBCRentabilizacion != null) { }
+                    else
+                    {
+                        model.GBCRentabilizacion.CuentaCiente = ClienteGestionado.CuentaCliente;
+                        model.GBCRentabilizacion.ConsumosPpv = ClienteGestionado.ConsumosPpv;
+                        model.GBCRentabilizacion.UltimaPpv = ClienteGestionado.UltimaPpv;
+                        model.GBCRentabilizacion.SiembraHd = ClienteGestionado.SiembraHd;
+                        model.GBCRentabilizacion.SiembraVoz = ClienteGestionado.SiembraVoz;
+                        model.GBCRentabilizacion.BindajeInternet = ClienteGestionado.BlindajeInternet;
+                        model.GBCRentabilizacion.UltimaMarcacion = ClienteGestionado.UltimaMarcacion;
+                        model.GBCRentabilizacion.Ofrecimiento1 = ClienteGestionado.OfrecimientoAceptado;
+                    }
                 }
                 else
                 {
@@ -324,17 +331,17 @@ namespace Dime.Controllers
                     ViewBag.Cierre = "SIN GESTION";
                     ViewBag.Razon = "SIN GESTION";
                 }
-                
+
             }
-            if (model.GBCRentabilizacion.Campana1 != null){ ViewBag.Campana1 = model.GBCRentabilizacion.Campana1; }
-            else{ViewBag.Campana1 = "SIN INFORMACION";}
+            if (model.GBCRentabilizacion.Campana1 != null) { ViewBag.Campana1 = model.GBCRentabilizacion.Campana1; }
+            else { ViewBag.Campana1 = "SIN INFORMACION"; }
             if (model.GBCRentabilizacion.Campana2 != null) { ViewBag.Campana2 = model.GBCRentabilizacion.Campana2; }
             else { ViewBag.Campana2 = "SIN INFORMACION"; }
             if (model.GBCRentabilizacion.Campana3 != null) { ViewBag.Campana3 = model.GBCRentabilizacion.Campana3; }
             else { ViewBag.Campana3 = "SIN INFORMACION"; }
 
             return View(model);
-            
+
         }
 
         public JsonResult HistoricoGestionRentabilizacion()
@@ -364,7 +371,7 @@ namespace Dime.Controllers
             model.GBPRentabilizacion.SiembraVoz = model.GBCRentabilizacion.SiembraVoz;
             model.GBPRentabilizacion.BlindajeInternet = model.GBCRentabilizacion.BindajeInternet;
             model.GBPRentabilizacion.UltimaMarcacion = model.GBCRentabilizacion.UltimaMarcacion;
-           
+
 
             var validacion = distribucionBlendingService.ValidarCuentaEnRentabilizacion(model.GBPRentabilizacion.CuentaCliente);
 
@@ -385,16 +392,17 @@ namespace Dime.Controllers
             Registro.AliadoDestino = Session["AliadoLogeado"].ToString();
             Registro.OperacionDestino = Session["OperacionBlending"].ToString();
             Registro.CampanaDestino = Session["CampañaBlending"].ToString();
-            
+
             int DatoContactos = distribucionBlendingService.CantidadToquesCuentaRentabilizacion(model.DatosDelCliente.Cuenta);
 
-            if (DatoContactos >= 3) {
+            if (DatoContactos >= 3)
+            {
                 distribucionBlendingService.EliminaCuentaGestionadaDistribucion(Registro);
             }
             else
             {
 
-                if (model.GBPRentabilizacion.Cierre == "89" || model.GBPRentabilizacion.Cierre == "90" || model.GBPRentabilizacion.Cierre == "91"  || model.GBPRentabilizacion.Cierre == "94")
+                if (model.GBPRentabilizacion.Cierre == "89" || model.GBPRentabilizacion.Cierre == "90" || model.GBPRentabilizacion.Cierre == "91" || model.GBPRentabilizacion.Cierre == "94")
                 {
                     distribucionBlendingService.EliminaCuentaGestionadaDistribucion(Registro);
                 }
@@ -459,12 +467,12 @@ namespace Dime.Controllers
                 if (ClienteGestionado != null)
                 {
                     model.GBCProducto.CuentaCliente = ClienteGestionado.CuentaCliente;
-                    
+
                 }
                 else
                 {
                     model.GBCProducto.CuentaCliente = 0;
-                   
+
                 }
 
             }
@@ -521,7 +529,7 @@ namespace Dime.Controllers
             model.GBPProducto.OperacionGestion = Session["OperacionBlending"].ToString();
             model.GBPProducto.CampanaGestion = Session["CampañaBlending"].ToString();
             model.GBPProducto.CuentaCliente = model.DatosDelCliente.Cuenta;
-            model.GBPProducto.NombreUsuarioGestion= Session["NombreUsuario"].ToString();
+            model.GBPProducto.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
             var validacion = distribucionBlendingService.ValidarCuentaEnProducto(model.GBPProducto.CuentaCliente);
 
             if (validacion == true)

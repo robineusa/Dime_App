@@ -1,0 +1,573 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelMultiPlay
+@{
+    ViewBag.Title = "MultiPlay";
+    ViewBag.SubTitle = "Gestión Célula";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("MultiPlayCelula", "MultiPlay", FormMethod.Post, new { id = "datosMultiPlay", role = "form" }))
+{
+    <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
+        <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
+            <div class="row">
+                <div class="col-xs-2">
+                    <small>Número de Cuenta:</small>
+                </div>
+                <div class="col-xs-2" style="width:200px; padding:1px;">
+                    <small>Documento de Identidad:  </small>
+                </div>
+                <div class="col-xs-2" style="width:400px; padding:1px;">
+                    <label id="Error" class="text-danger" style="font-weight: 600;">@ViewBag.Error</label>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <table>
+                        <tr>
+                            <td style="padding:5px;">
+                                @Html.TextBoxFor(m => m.DatosMultiplay.Cuenta, new { @class = "form-control input-sm", Id = "cuentaCliente", Value = @Model.DatosMultiplay.Cuenta})
+                            </td>
+                            <td style="min-width:200px;padding:1px;">
+                                <input id="Cedula" class="form-control input-sm" type="text" placeholder="Cedula" value="@Model.DatosMultiplay.Cedula" readonly>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top: 25px;"><i class="fa fa-info-circle"></i> Datos MultiPlay</h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <br />
+                                @Html.TextBoxFor(m => Model.Multiplay.Id, new { @class = "form-control input-sm", Value = @Model.DatosMultiplay.Id, style = "display:none;"})
+                                <table>
+                                    <tr>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Sub-Registro:  </small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Registro Base General:  </small>
+                                        </td>
+
+                                        <td width="200" style="padding:1px;">
+                                            <small>Cuenta:  </small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>CustCode:  </small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Tipo CustCode: </small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Min:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.SubRegistro, new { @class = "form-control input-sm", name="", Id = "", Value = @Model.DatosMultiplay.SubRegistro, placeholder = "Sub-Registro", ReadOnly="true"})
+                                            @*<input id="Nombre_Cliente" class="form-control input-sm" type="text" placeholder="Sub-Registro" alue="@Model.DatosMultiplay.SubRegistro" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.RegBaGen, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.RegBaGen, placeholder = "Registro Base General", ReadOnly = "true" })
+                                            @*<input id="Apellido_Cliente" class="form-control input-sm" type="text" placeholder="Registro Base General" value="@Model.DatosMultiplay.RegBaGen" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.Cuenta, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Cuenta, placeholder = "Cuenta", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Cuenta" value="@Model.DatosMultiplay.Cuenta" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.Custcode, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Custcode, placeholder = "CustCode", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="CustCode" value="@Model.DatosMultiplay.Custcode" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.TipoCuscode, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.TipoCuscode, placeholder = "Tipo CustCode", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Tipo CustCode" value="@Model.DatosMultiplay.TipoCuscode" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.Min, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Min , placeholder = "Min", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Min" value="@Model.DatosMultiplay.Min" readonly>*@
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <small>Customer ID: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Nombre Cliente:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>Cédula: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Estrato Cliente:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Estado AC:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Estado RR:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.CustomerId, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.CustomerId, placeholder = "Customer ID", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Customer ID" value="@Model.DatosMultiplay.CustomerId" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.NombreCliente, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.NombreCliente, placeholder = "Nombre Cliente", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Nombre Cliente" value="@Model.DatosMultiplay.NombreCliente" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.Cedula, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Cedula, placeholder = "Cédula", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Cédula" value="@Model.DatosMultiplay.Cedula" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.EstratoCliente, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.EstratoCliente, placeholder = "Estrato Cliente", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Estrato Cliente" value="@Model.DatosMultiplay.EstratoCliente" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.EstadoAC, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.EstadoAC, placeholder = "Estado AC", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Estado AC" value="@Model.DatosMultiplay.EstadoAC" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.EstadoRR, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.EstadoRR, placeholder = "Estado RR", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Estado RR" value="@Model.DatosMultiplay.EstadoRR" readonly>*@
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+
+                                        <td style="padding:1px;">
+                                            <small>Saldo Actual AC:</small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Saldo Equipo AC:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>Saldo Equipo ASCARD: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Saldo Grupo 1:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Saldo Grupo 2:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Saldo Grupo 3:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.SaldoActualAC, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoActualAC, placeholder = "Saldo Actual AC", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Saldo Actual AC" value="@Model.DatosMultiplay.SaldoActualAC" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.SaldoEquipoAC, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoEquipoAC, placeholder = "Saldo Equipo AC", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Saldo Equipo AC" value="@Model.DatosMultiplay.SaldoEquipoAC" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.SaldoEquipoAscard, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoEquipoAscard, placeholder = "Saldo Equipo ASCARD", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Saldo Equipo ASCARD" value="@Model.DatosMultiplay.SaldoEquipoAscard" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.SaldoGrupo1, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoGrupo1, placeholder = "Saldo Grupo 1", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Saldo Grupo 1" value="@Model.DatosMultiplay.SaldoGrupo1" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.SaldoGrupo2, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoGrupo2, placeholder = "Saldo Grupo 2", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Saldo Grupo 2" value="@Model.DatosMultiplay.SaldoGrupo2" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.SaldoGrupo3, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoGrupo3, placeholder = "Saldo Grupo 3", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Saldo Grupo 3" value="@Model.DatosMultiplay.SaldoGrupo3" readonly>*@
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td style="padding:1px;">
+                                            <small>Saldo Total RR:</small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Escenario Venta Cliente:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>Aplica Ajuste RR: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Campaña Caída:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Valor a Ajustar Internet:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Valor a Ajustar TV:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.SaldoTotalRR, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoTotalRR, placeholder = "Saldo Total RR", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Saldo Total RR" value="@Model.DatosMultiplay.SaldoTotalRR" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.EscVentaCliente, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.EscVentaCliente, placeholder = "Escenario Venta Cliente", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Escenario Venta Cliente" value="@Model.DatosMultiplay.EscVentaCliente" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.AplicAjusteRR, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.AplicAjusteRR, placeholder = "Aplica Ajuste RR", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Aplica Ajuste RR" value="@Model.DatosMultiplay.AplicAjusteRR" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.CampañaCaida, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.CampañaCaida, placeholder = "Campaña Caída", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Campaña Caída" value="@Model.DatosMultiplay.CampañaCaida" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.ValoraAjustarInternet, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ValoraAjustarInternet, placeholder = "Valor a Ajustar Internet", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Valor a Ajustar Internet" value="@Model.DatosMultiplay.ValoraAjustarInternet" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.ValoraAjustarTv, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ValoraAjustarTv, placeholder = "Valor a Ajustar TV", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Valor a Ajustar TV" value="@Model.DatosMultiplay.ValoraAjustarTv" readonly>*@
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td style="padding:1px;">
+                                            <small>Valor a Ajustar Tel:</small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Valor Ajustar Otros Conceptos:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>Valor Total Ajuste Fijo: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Periodo Campaña No Aplicada RR:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Observaciones Ajustes RR:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Ajuste AC:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.ValoraAjustarTel, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ValoraAjustarTel, placeholder = "Valor a Ajustar Tel", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Valor a Ajustar Tel" value="@Model.DatosMultiplay.ValAjuOtrosConcep" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.ValAjuOtrosConcep, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ValAjuOtrosConcep, placeholder = "Valor Ajustar Otros Conceptos", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Valor Ajustar Otros Conceptos" value="@Model.DatosMultiplay.ValTotAjuFijo" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.ValTotAjuFijo, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ValTotAjuFijo, placeholder = "Valor Total Ajuste Fijo", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Valor Total Ajuste Fijo" value="@Model.DatosMultiplay.PerCamNoApliRR" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.PerCamNoApliRR, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.PerCamNoApliRR, placeholder = "Periodo Campaña No Aplicada RR", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Periodo Campaña No Aplicada RR" value="@Model.DatosMultiplay." readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.ObservacionesAjustes, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ObservacionesAjustes, placeholder = "Observaciones Ajustes RR", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Observaciones Ajustes RR" value="@Model.DatosMultiplay.AjusteAC" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.AjusteAC, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.AjusteAC, placeholder = "Observaciones Ajustes RR", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Ajuste AC" value="@Model.DatosMultiplay.CamOfComApliCliente" readonly>*@
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <small>Campaña por Oferta Comercial Que Aplicaba al Cliente:</small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Campaña Aplicada en AC en Digitación de la Venta:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>CFM Datos Antes IVA DEL 19%: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>CFM Datos Antes IVA del 19% +4% Ipoconsumo:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>CFM Voz Antes IVA del 19% +4% Ipoconsumo:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Fecha Activacion Multiplay en AC:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.CamOfComApliCliente, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.CamOfComApliCliente, placeholder = "Campaña por Oferta Comercial Que Aplicaba al Cliente", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Campaña por Oferta Comercial Que Aplicaba al Cliente" value="@Model.DatosMultiplay.CamOfComApliCliente" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.CamAplACDiVenta, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.CamAplACDiVenta, placeholder = "Campaña Aplicada en AC en Digitación de la Venta", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Campaña Aplicada en AC en Digitación de la Venta" value="@Model.DatosMultiplay.CamAplACDiVenta" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.CfmDatosAntesIva, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.CfmDatosAntesIva, placeholder = "CFM Datos Antes IVA DEL 19%", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="CFM Datos Antes IVA DEL 19%" value="@Model.DatosMultiplay.CfmDatosAntesIva" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.CfmDatosAntesIva4Ipoc, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.CfmDatosAntesIva4Ipoc, placeholder = "CFM Datos Antes IVA del 19% +4% Ipoconsumo", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="CFM Datos Antes IVA del 19% +4% Ipoconsumo" value="@Model.DatosMultiplay.CfmDatosAntesIva4Ipoc" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.CfmVozAntesIva4Ipoc, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.CfmVozAntesIva4Ipoc, placeholder = "CFM Voz Antes IVA del 19% +4% Ipoconsumo", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="CFM Voz Antes IVA del 19% +4% Ipoconsumo" value="@Model.DatosMultiplay.CfmVozAntesIva4Ipoc" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.FechaACTMultAC, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaACTMultAC, placeholder = "Fecha Activacion Multiplay en AC", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Fecha Activacion Multiplay en AC" value="@Model.DatosMultiplay.FechaACTMultAC" readonly>*@
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <small>Tiempo Campaña CFM a Ajustar (Desde - Hasta):</small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Pagos en AC No Reflejados en RR:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>Fecha Pago: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Valor Pago:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Pagos en RR No Reflejados en AC:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Fecha Pago:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.TiempoCampañaCFMAAjustar, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.TiempoCampañaCFMAAjustar, placeholder = "Tiempo Campaña CFM a Ajustar (Desde - Hasta)", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Tiempo Campaña CFM a Ajustar (Desde - Hasta)" value="@Model.DatosMultiplay.TiempoCampañaCFMAAjustar" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.PagosACNoRefleRR, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.PagosACNoRefleRR, placeholder = "Pagos en AC No Reflejados en RR", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Pagos en AC No Reflejados en RR" value="@Model.DatosMultiplay.PagosACNoRefleRR" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.FechaPago1, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaPago1, placeholder = "Fecha Pago", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Fecha Pago" value="@Model.DatosMultiplay.FechaPago1" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.ValorPago1, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ValorPago1, placeholder = "Valor Pago", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Valor Pago" value="@Model.DatosMultiplay.ValorPago1" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.PagosRRNoRefleAC, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.PagosRRNoRefleAC, placeholder = "Pagos en RR No Reflejados en AC", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Pagos en RR No Reflejados en AC" value="@Model.DatosMultiplay.PagosRRNoRefleAC" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.FechaPago2, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaPago2, placeholder = "Fecha Pago", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Fecha Pago" value="@Model.DatosMultiplay.FechaPago2" readonly>*@
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td style="padding:1px;">
+                                            <small>Valor Pago:</small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Pago se Debe Cambiar de Grupo:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>Fecha: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Valor:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Grupo Actual:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Grupo en que Debe Quedar:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.ValorPago2, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ValorPago2, placeholder = "Valor Pago", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Valor Pago" value="@Model.DatosMultiplay.ValorPago2" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.PagoCambiarGrupo, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.PagoCambiarGrupo, placeholder = "Pago se Debe Cambiar de Grupo", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Pago se Debe Cambiar de Grupo" value="@Model.DatosMultiplay.PagoCambiarGrupo" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.Fecha1, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Fecha1, placeholder = "Fecha", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Fecha" value="@Model.DatosMultiplay.Fecha1" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.Valor1, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Valor1, placeholder = "Valor", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Valor" value="@Model.DatosMultiplay.Valor1" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.GrupoActual, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.GrupoActual, placeholder = "Grupo Actual", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Grupo Actual" value="@Model.DatosMultiplay.GrupoActual" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.GrupoDebeQuedar, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.GrupoDebeQuedar, placeholder = "Grupo Actual", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Grupo en que Debe Quedar" value="@Model.DatosMultiplay.GrupoDebeQuedar" readonly>*@
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td style="padding:1px;">
+                                            <small>Pagos Anulados en AC y no aplicados en AC y/o RR: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Valor:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>Fecha Ingreso Pago: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Plataforma a Replicar Pago Anulado (AC/AC y RR): </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Se Debe Anular Pago:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Fecha:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.PagAnuACNoApliACy_0RR, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.PagAnuACNoApliACy_0RR, placeholder = "Pagos Anulados en AC y no aplicados en AC y/o RR", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Pagos Anulados en AC y no aplicados en AC y/o RR" value="@Model.DatosMultiplay.PagAnuACNoApliACy_0RR" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.Valor2, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Valor2, placeholder = "Valor", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Valor" value="@Model.DatosMultiplay.Valor2" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.FechaIngresoPago, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaIngresoPago, placeholder = "Fecha Ingreso Pago", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Fecha Ingreso Pago" value="@Model.DatosMultiplay.FechaIngresoPago" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.PlataformaRepPagoAnulado, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.PlataformaRepPagoAnulado, placeholder = "Plataforma a Replicar Pago Anulado (AC/AC y RR)", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Plataforma a Replicar Pago Anulado (AC/AC y RR)" value="@Model.DatosMultiplay.PlataformaRepPagoAnulado" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.AnularPago, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.AnularPago, placeholder = "Se Debe Anular Pago", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Se Debe Anular Pago" value="@Model.DatosMultiplay.AnularPago" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.Fecha2, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Fecha2, placeholder = "Fecha", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Fecha" value="@Model.DatosMultiplay.Fecha2" readonly>*@
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td style="padding:1px;">
+                                            <small>Valor:</small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Plataforma:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>Arreglo Propiedadades Cliente RR (BUR-FMO-Tipo 13): </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Notas Adicionales:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Escenario 1:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Agente que Gestiona:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.Valor3, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Valor3, placeholder = "Valor", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Valor" value="@Model.DatosMultiplay.Valor3" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.Plataforma, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Plataforma, placeholder = "Plataforma", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Plataforma" value="@Model.DatosMultiplay.Plataforma" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.ArrPropClieRR, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ArrPropClieRR, placeholder = "Arreglo Propiedadades Cliente RR (BUR-FMO-Tipo 13)", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Arreglo Propiedadades Cliente RR (BUR-FMO-Tipo 13)" value="@Model.DatosMultiplay.ArrPropClieRR" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.NotasAdicionales, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.NotasAdicionales, placeholder = "Notas Adicionales", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Notas Adicionales" value="@Model.DatosMultiplay.NotasAdicionales" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.Escenario1, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Escenario1, placeholder = "Escenario 1", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Escenario 1" value="@Model.DatosMultiplay.Escenario1" readonly>*@
+                                        </td>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.AgenteGestiona, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.AgenteGestiona, placeholder = "Agente que Gestiona", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Agente que Gestiona" value="@Model.DatosMultiplay.AgenteGestiona" readonly>*@
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <small>Fecha Gestión:</small>
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m => Model.Multiplay.FechaGestionRemplazo, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaGestion, placeholder = "Fecha Gestión", ReadOnly = "true" })
+                                            @*<input class="form-control input-sm" type="text" placeholder="Fecha Gestión" value="@Model.DatosMultiplay.FechaGestion" readonly>*@
+                                        </td>
+                                    </tr>
+                                </table>
+                                <button type="submit" style="display:none;" id="BuscaCliente" name="BotonEnvia" value="Buscar">Buscar</button>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top: 25px;">
+                                <i class="fa fa-comment-o"></i> Observaciones
+                                @* <small class="pull-right">Date: 2/10/2014</small>*@
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <br />
+                                <table>
+                                    <tr>
+                                        <td style="padding:1px; width:1200px;">
+                                            @Html.TextAreaFor(m => m.Multiplay.Observaciones, new { @id = "Observaciones", @style = "width: 100%; height: 100px; resize: none; border:none;", Value = Model.Multiplay.Observaciones })
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-block btn-primary" id="BotonEnvia" name="BotonEnvia" value="GuardaDatos" style="width:10%;  margin-left:1%; display: none;">Guardar</button>
+
+    </div>
+}
+@section Scripts{
+    <script src="~/Scripts/MultiPlay/MultiPlay.js?1.0.3"></script>
+}
+

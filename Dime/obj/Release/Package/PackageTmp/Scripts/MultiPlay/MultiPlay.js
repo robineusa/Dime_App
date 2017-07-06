@@ -5,6 +5,15 @@
             $("#BuscaCliente").click();
         }
     });
-    
+    if ($("#Cedula").val() == 0 || $("#Cedula").val() == "") {
+        $("#BotonEnvia").css('display', 'none');
+    } else { $("#BotonEnvia").css('display', 'block'); }
 
+    setTimeout(function () {
+        $("#Error").css('display', 'none');
+    }, 8000);
+
+    //$("#cuentaCliente").val('');
+    $("#Observaciones").val('');
+    
 });

@@ -1,13 +1,18 @@
-﻿
+﻿var consultar;
 var jsonHistorialCasosCuenta = [];
 
 $(document).ready(function () {
 
 checkMarcacion(idMarcacionEntrada);
 $("#keyMarcacion").on("keyup", function (e) {
-    var code = e.keyCode || e.which;
-          var keyWord = $("#keyMarcacion").val();
-        ConsultarMarcacionesPorPalabra(keyWord);
+  
+    clearTimeout(consultar);
+    consultar = setTimeout(function () {
+        if ($("#keyMarcacion").val() != "") {
+            var keyWord = $("#keyMarcacion").val();
+            ConsultarMarcacionesPorPalabra(keyWord);
+        }
+    }, 400);
 
 })
 CambioEscalaSoporte();

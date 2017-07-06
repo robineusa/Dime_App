@@ -251,7 +251,7 @@ function cargargrilla(data) {
             buttonCount: 5
         },
         columns: [
-        { command: { text: " ", click: ActualizarCaso, imageClass: "k-icon k-i-pencil", }, title: " ", width: "60px" },
+        //{ command: { text: " ", click: ActualizarCaso, imageClass: "k-icon k-i-pencil", }, title: " ", width: "60px" },
         { field: "Id", title: "Id Transacción", width: 100 },
         { field: "CuentaCliente", title: "Cuenta Cliente", width: 100 },
         { field: "FechaGestion", title: "Fecha Gestión", width: 100 },

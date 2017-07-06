@@ -355,7 +355,7 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
                             <table>
                                 <tr>
                                     <td width="300" style="padding:1px;">
-                                        <small>Servicio:  </small>
+                                        <small>Servicio Relacionado:  </small>
                                     </td>
                                 </tr>
                                 <tr>
@@ -364,7 +364,7 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
 
                                         @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.IdServicio, new List<SelectListItem> {new SelectListItem{Text="--Seleccione--", Value="0"  },new SelectListItem{Text="TV", Value="1" },
                                                                                              new SelectListItem{Text="@", Value="2" }, new SelectListItem{Text="VOZ", Value="3" } , new SelectListItem { Text = "TV - VOZ", Value = "4" },
-                                                                                         new SelectListItem { Text = "TV - @", Value = "5" }, new SelectListItem { Text = "VOZ - @", Value = "6" },new SelectListItem { Text = "TV - @ - VOZ", Value = "7" }}, 
+                                                                                         new SelectListItem { Text = "TV - @", Value = "5" }, new SelectListItem { Text = "VOZ - @", Value = "6" },new SelectListItem { Text = "TV - @ - VOZ", Value = "7" },new SelectListItem { Text = "ADICIONALES", Value = "8" },new SelectListItem { Text = "MULTIPLAY", Value = "9" }}, 
                                                                                          new {@id= "TipiMarca_IngresoTipMarcacion_IdServicio", @class = "form-control input-sm", style = "display:inline" })
                                         @if (ViewBag.ErrorTextBoxServicio != null)
                                         {
@@ -423,7 +423,7 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
                                         <small>Producto Asociado:  </small>
                                     </td>
                                     <td width="300" style="padding:1px;">
-                                        <small>SPC:  </small>
+                                        <small>Solución en Primer Contacto:</small>
                                     </td>
                                 </tr>
                                 <tr>
@@ -761,7 +761,7 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
     </script>
 
 
-    <script src="~/Scripts/Inbound/Index.js?1.0.8"></script>
+    <script src="~/Scripts/Inbound/Index.js?1.1.2"></script>
 
 }
 

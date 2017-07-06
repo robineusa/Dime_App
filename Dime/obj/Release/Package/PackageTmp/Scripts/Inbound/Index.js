@@ -1,4 +1,4 @@
-﻿
+﻿var consultar;
 
 $(document).ready(function () {
 
@@ -25,12 +25,16 @@ $(document).ready(function () {
 
     
     $("#keyMarcacion").on("keyup", function (e) {
+     
+      clearTimeout(consultar);
+      consultar =    setTimeout(function () {
+         if ($("#keyMarcacion").val() != "") {
+             var keyWord = $("#keyMarcacion").val();
+             ConsultarMarcacionesPorPalabra(keyWord);
+         }
+       }, 400);
 
-         if ($("#keyMarcacion").val()!=""  ) {
-           var keyWord=  $("#keyMarcacion").val();
-           ConsultarMarcacionesPorPalabra(keyWord);
-        }
-    })
+    });
 
 
     $("#inputCedula").focus(function () {
@@ -162,44 +166,44 @@ function checkMarcacion(eve)
 {
     VaciarCamposDeMarcacionSeleccionada();
     var idMarcacion = $(eve.target).val();
-    $.ajax({
-        type: "POST",
-        url: datosDeMarcacionUrl,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ marcacion: idMarcacion }),
-        dataType: "json",
-        success: function (result)
-        {
-            var json = JSON.parse(result);
-            console.log(json);
-            if (MarcacionYaCasoAbierto(json.Submarcacion) === false)
-            {
-                $("#avisoYaMarcacionEnCaso").text("");
-            $("#btnSubmitCaso").prop("disabled", false);
-            $("#tbMacroproceso").val(json.Macroproceso);
-            $("#tbMarcacion").val(json.Submarcacion);
-            $("#tbTipoAtencion").val(json.Clase);
-            $("#tbProductoAsociado").val(json.Servicios);
-            $("#tbSpc").val(json.Spc);
-            $("#lbQueHacer").empty();
-            $("#lbQueHacer").append(json.QueHacerHtml);
-            $("#lbPosibleCausa").empty();
-            $("#lbPosibleCausa").append(json.PosibleCausa);
-            $("#lbUsuarioAEscalar").empty();
-            $("#lbUsuarioAEscalar").append(json.AreayUsuarioEscala);
-            $("#marcaTiempo").val(json.CantidadDias);
-            SetTextCodigosCierre(json.Subrazon);
-            }
-            else{
-                $("#avisoYaMarcacionEnCaso").text("Ya existe un caso abierto con esta marcación");
-            }
-        },
-        error: function (request, status, error) {
-            alert(request.responseText+" "+status+"  "+error);
-        } 
 
-    });
-
+    setTimeout(function () {
+        $.ajax({
+            type: "POST",
+            url: datosDeMarcacionUrl,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ marcacion: idMarcacion }),
+            dataType: "json",
+            success: function (result) {
+                var json = JSON.parse(result);
+                console.log(json);
+                if (MarcacionYaCasoAbierto(json.Submarcacion) === false) {
+                    $("#avisoYaMarcacionEnCaso").text("");
+                    $("#btnSubmitCaso").prop("disabled", false);
+                    $("#tbMacroproceso").val(json.Macroproceso);
+                    $("#tbMarcacion").val(json.Submarcacion);
+                    $("#tbTipoAtencion").val(json.Clase);
+                    $("#tbProductoAsociado").val(json.Servicios);
+                    $("#tbSpc").val(json.Spc);
+                    $("#lbQueHacer").empty();
+                    $("#lbQueHacer").append(json.QueHacerHtml);
+                    $("#lbPosibleCausa").empty();
+                    $("#lbPosibleCausa").append(json.PosibleCausa);
+                    $("#lbUsuarioAEscalar").empty();
+                    $("#lbUsuarioAEscalar").append(json.AreayUsuarioEscala);
+                    $("#marcaTiempo").val(json.CantidadDias);
+                    SetTextCodigosCierre(json.Subrazon);
+                }
+                else {
+                    $("#avisoYaMarcacionEnCaso").text("Ya existe un caso abierto con esta marcación");
+                }
+            },
+            error: function (request, status, error) {
+                alert(request.responseText + " " + status + "  " + error);
+            }
+        });
+    }, 500);
+ 
 
 }
 
