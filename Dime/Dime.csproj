@@ -3206,6 +3206,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\MultiPlay\MultiPlayCelula.cshtml" />
+    <Content Include="Views\MultiPlay\ConsultasAdminMultiPlay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

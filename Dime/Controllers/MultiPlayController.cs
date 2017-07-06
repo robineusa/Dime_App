@@ -58,5 +58,10 @@ namespace Dime.Controllers
             
             return View(model);
         }
+        [HttpGet]
+        public ActionResult ConsultasAdminMultiPlay()
+        {
+            return View();
+        }
     }
 }
