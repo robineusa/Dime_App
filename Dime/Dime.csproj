@@ -3191,6 +3191,8 @@
     <Content Include="Views\DistribucionBlending\ConsultaAdminDocsisPrincipal.cshtml" />
     <Content Include="Views\DistribucionBlending\ConsultaAdminDocsisLog.cshtml" />
     <Content Include="Views\ConsultasAdmin\ConsultasRetencion.cshtml" />
+    <Content Include="Views\MultiPlay\MultiPlayCelula.cshtml" />
+    <Content Include="Views\MultiPlay\ConsultasAdminMultiPlay.cshtml" />
     <None Include="Service References\WSD\WebService.wsdl" />
     <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
@@ -3207,8 +3209,6 @@
     <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\MultiPlay\MultiPlayCelula.cshtml" />
-    <Content Include="Views\MultiPlay\ConsultasAdminMultiPlay.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
