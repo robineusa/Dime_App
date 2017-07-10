@@ -92,6 +92,7 @@ function cargargrilla(data) {
         { field: "Id", title: "Id Transacción", width: 100 },
         { field: "FechaGestion", title: "Fecha de Gestion", width: 100 },
         { field: "UsuarioGestion", title: "Usuario de Gestion", width: 100 },
+        { field: "CedulaUsuario", title: "Cedula Usuario", width: 100 },
         { field: "NombreUsuarioGestion", title: "Nombre Usuario", width: 100 },
         { field: "AliadoGestion", title: "Aliado de Gestion", width: 100, filterable: false },
         { field: "OperacionGestion", title: "Opercion Gestion", width: 100, filterable: false },
