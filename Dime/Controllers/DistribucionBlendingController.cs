@@ -85,13 +85,11 @@ namespace Dime.Controllers
             {
                 model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "FUERANIVELES", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
                 if (model.DatosDelCliente != null)
+                    model.FueraNiveles = distribucionBlendingService.TraerInformacionCuentaFueraNiveles(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
 
-                    ClienteGestionado = distribucionBlendingService.TraerDatosCuentaSelectFueraNivel(model.DatosDelCliente.Cuenta);
-                if (ClienteGestionado != null)
+                if (model.FueraNiveles != null)
                 {
-                    model.FueraNiveles.Cmts = ClienteGestionado.Cmts;
-                    model.FueraNiveles.TipoModem = ClienteGestionado.TipoModem;
-                    model.FueraNiveles.Prioridad = ClienteGestionado.Prioridad;
+                   
                 }
                 else
                 {
@@ -255,8 +253,6 @@ namespace Dime.Controllers
         public ActionResult Rentabilizacion(string CuentaCliente)
         {
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
-            GBPRentabilizacion ClienteGestionado = new GBPRentabilizacion();
-
 
             if (CuentaCliente == null || CuentaCliente.Equals(""))
             {
@@ -268,24 +264,8 @@ namespace Dime.Controllers
             {
                 model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "RENTABILIZACION", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
                 if (model.DatosDelCliente != null)
-
-                    ClienteGestionado = distribucionBlendingService.TraerDatosCuentaSelectRentabilizacion(model.DatosDelCliente.Cuenta);
-                if (ClienteGestionado != null)
-                {
                     model.GBCRentabilizacion = distribucionBlendingService.TraerInformacionCuentaRentabilizacion(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
-                    if (model.GBCRentabilizacion != null) { }
-                    else
-                    {
-                        model.GBCRentabilizacion.CuentaCiente = ClienteGestionado.CuentaCliente;
-                        model.GBCRentabilizacion.ConsumosPpv = ClienteGestionado.ConsumosPpv;
-                        model.GBCRentabilizacion.UltimaPpv = ClienteGestionado.UltimaPpv;
-                        model.GBCRentabilizacion.SiembraHd = ClienteGestionado.SiembraHd;
-                        model.GBCRentabilizacion.SiembraVoz = ClienteGestionado.SiembraVoz;
-                        model.GBCRentabilizacion.BindajeInternet = ClienteGestionado.BlindajeInternet;
-                        model.GBCRentabilizacion.UltimaMarcacion = ClienteGestionado.UltimaMarcacion;
-                        model.GBCRentabilizacion.Ofrecimiento1 = ClienteGestionado.OfrecimientoAceptado;
-                    }
-                }
+                if (model.GBCRentabilizacion != null) { }
                 else
                 {
                     model.GBCRentabilizacion.CuentaCiente = 0;
@@ -449,8 +429,6 @@ namespace Dime.Controllers
         public ActionResult Producto(string CuentaCliente)
         {
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
-            GBPProducto ClienteGestionado = new GBPProducto();
-
 
             if (CuentaCliente == null || CuentaCliente.Equals(""))
             {
@@ -462,18 +440,11 @@ namespace Dime.Controllers
             {
                 model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "PRODUCTO", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
                 if (model.DatosDelCliente != null)
+                    model.GBCProducto = distribucionBlendingService.TraerInformacionCuentaProducto(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
 
-                    ClienteGestionado = distribucionBlendingService.TraerDatosCuentaSelectProducto(model.DatosDelCliente.Cuenta);
-                if (ClienteGestionado != null)
-                {
-                    model.GBCProducto.CuentaCliente = ClienteGestionado.CuentaCliente;
-
-                }
-                else
-                {
-                    model.GBCProducto.CuentaCliente = 0;
-
-                }
+                if (model.GBCProducto != null)
+                { }
+                else { model.GBCProducto.CuentaCliente = 0; }
 
             }
             if (model.DatosDelCliente == null)
@@ -617,19 +588,14 @@ namespace Dime.Controllers
             {
                 model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "DOCSIS", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
                 if (model.DatosDelCliente != null)
+                    model.GBCDocsis = distribucionBlendingService.TraerInformacionCuentaDocsis(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
 
-                    ClienteGestionado = distribucionBlendingService.TraerDatosCuentaSelectDocsis(model.DatosDelCliente.Cuenta);
-                if (ClienteGestionado != null)
-                {
-                    model.GBCDocsis.CuentaCliente = ClienteGestionado.CuentaCliente;
-                    model.GBCDocsis.Aliado = ClienteGestionado.Aliado;
-
-                }
+                if (model.GBCDocsis != null)
+                { }
                 else
                 {
                     model.GBCDocsis.CuentaCliente = 0;
                     model.GBCDocsis.Aliado = "SIN INFORMACION";
-
                 }
 
             }
