@@ -74,44 +74,33 @@ namespace Dime.Controllers
         {
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
             GBPFueraNiveles ClienteGestionado = new GBPFueraNiveles();
+            if (Session["CampañaBlending"] != null) { }
+            else
+            {
+                ViewBag.ValidacionBase = "NO TIENES UN SKILL BLENDING ASIGNADO PARA ESTA GESTION";
+                return View();
+            }
 
             if (CuentaCliente == null || CuentaCliente.Equals(""))
             {
                 model.DatosDelCliente = distribucionBlendingService.TraerInformacionCuentaBlending(Convert.ToInt32(Session["IdUsuario"].ToString()), "FUERANIVELES", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString());
                 if (model.DatosDelCliente != null)
+                {
                     model.FueraNiveles = distribucionBlendingService.TraerInformacionCuentaFueraNiveles(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
+                }
+                else { model.FueraNiveles = null; }
             }
             else
             {
                 model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "FUERANIVELES", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
                 if (model.DatosDelCliente != null)
+                {
                     model.FueraNiveles = distribucionBlendingService.TraerInformacionCuentaFueraNiveles(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
-
-                if (model.FueraNiveles != null)
-                {
-                   
                 }
-                else
-                {
-                    model.FueraNiveles.Cmts = "CUENTA NO CARGADA";
-                    model.FueraNiveles.TipoModem = "CUENTA NO CARGADA";
-                    model.FueraNiveles.Prioridad = 1;
-
-                }
-
+                else { model.FueraNiveles = null; }
             }
-            if (model.DatosDelCliente == null)
-            {
-                model.DatosDelCliente = new ClientesTodo();
-                model.DatosDelCliente.Cuenta = 0;
-                ViewBag.ValidacionBase = "NO EXISTEN MAS CUENTAS ASIGNADAS PARA ESTA CAMPAÑA";
 
-                ViewBag.CantidadToques = 0;
-                ViewBag.Cierre = "";
-                ViewBag.Razon = "";
-
-            }
-            else
+            if (model.FueraNiveles != null)
             {
                 int DatoContactos = distribucionBlendingService.CantidadToquesCuentaFueraNiveles(model.DatosDelCliente.Cuenta);
                 ViewBag.ValidacionBase = null;
@@ -124,9 +113,20 @@ namespace Dime.Controllers
                 }
                 else
                 {
+                    ViewBag.CantidadToques = 0;
                     ViewBag.Cierre = "SIN GESTION";
                     ViewBag.Razon = "SIN GESTION";
                 }
+            }
+            else
+            {
+                model.DatosDelCliente = new ClientesTodo();
+                model.FueraNiveles = new BlendingFueraNivel();
+                ViewBag.ValidacionBase = "NO EXISTEN MAS CUENTAS ASIGNADAS PARA ESTA CAMPAÑA";
+                ViewBag.CantidadToques = null;
+                ViewBag.Cierre = null;
+                ViewBag.Razon = null;
+
             }
             return View(model);
 
@@ -253,49 +253,33 @@ namespace Dime.Controllers
         public ActionResult Rentabilizacion(string CuentaCliente)
         {
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
+            if (Session["CampañaBlending"] != null) { }
+            else
+            {
+                ViewBag.ValidacionBase = "NO TIENES UN SKILL BLENDING ASIGNADO PARA ESTA GESTION";
+                return View();
+            }
 
             if (CuentaCliente == null || CuentaCliente.Equals(""))
             {
                 model.DatosDelCliente = distribucionBlendingService.TraerInformacionCuentaBlending(Convert.ToInt32(Session["IdUsuario"].ToString()), "RENTABILIZACION", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString());
                 if (model.DatosDelCliente != null)
+                {
                     model.GBCRentabilizacion = distribucionBlendingService.TraerInformacionCuentaRentabilizacion(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
+                }
+                else { model.GBCRentabilizacion = null; }
             }
             else
             {
                 model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "RENTABILIZACION", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
                 if (model.DatosDelCliente != null)
-                    model.GBCRentabilizacion = distribucionBlendingService.TraerInformacionCuentaRentabilizacion(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
-                if (model.GBCRentabilizacion != null) { }
-                else
                 {
-                    model.GBCRentabilizacion.CuentaCiente = 0;
-                    model.GBCRentabilizacion.ConsumosPpv = "NO EXISTE INFORMACION";
-                    model.GBCRentabilizacion.UltimaPpv = "NO EXISTE INFORMACION";
-                    model.GBCRentabilizacion.SiembraHd = "NO EXISTE INFORMACION";
-                    model.GBCRentabilizacion.SiembraVoz = "NO EXISTE INFORMACION";
-                    model.GBCRentabilizacion.BindajeInternet = "NO EXISTE INFORMACION";
-                    model.GBCRentabilizacion.UltimaMarcacion = "NO EXISTE INFORMACION";
-                    model.GBCRentabilizacion.Ofrecimiento1 = "NO EXISTE INFORMACION";
-                    model.GBCRentabilizacion.Ofrecimiento2 = "NO EXISTE INFORMACION";
-                    model.GBCRentabilizacion.Ofrecimiento3 = "NO EXISTE INFORMACION";
-                    model.GBCRentabilizacion.Campana1 = "NO EXISTE INFORMACION";
-                    model.GBCRentabilizacion.Campana2 = "NO EXISTE INFORMACION";
-                    model.GBCRentabilizacion.Campana2 = "NO EXISTE INFORMACION";
+                    model.GBCRentabilizacion = distribucionBlendingService.TraerInformacionCuentaRentabilizacion(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
                 }
-
+                else { model.GBCRentabilizacion = null; }
             }
-            if (model.DatosDelCliente == null)
-            {
-                model.DatosDelCliente = new ClientesTodo();
-                model.DatosDelCliente.Cuenta = 0;
-                ViewBag.ValidacionBase = "NO EXISTEN MAS CUENTAS ASIGNADAS PARA ESTA CAMPAÑA";
 
-                ViewBag.CantidadToques = 0;
-                ViewBag.Cierre = "";
-                ViewBag.Razon = "";
-
-            }
-            else
+            if (model.GBCRentabilizacion != null)
             {
                 int DatoContactos = distribucionBlendingService.CantidadToquesCuentaRentabilizacion(model.DatosDelCliente.Cuenta);
                 ViewBag.ValidacionBase = null;
@@ -308,18 +292,26 @@ namespace Dime.Controllers
                 }
                 else
                 {
+
                     ViewBag.Cierre = "SIN GESTION";
                     ViewBag.Razon = "SIN GESTION";
                 }
-
+                if (model.GBCRentabilizacion.Campana1 != null) { ViewBag.Campana1 = model.GBCRentabilizacion.Campana1; }
+                else { ViewBag.Campana1 = "SIN INFORMACION"; }
+                if (model.GBCRentabilizacion.Campana2 != null) { ViewBag.Campana2 = model.GBCRentabilizacion.Campana2; }
+                else { ViewBag.Campana2 = "SIN INFORMACION"; }
+                if (model.GBCRentabilizacion.Campana3 != null) { ViewBag.Campana3 = model.GBCRentabilizacion.Campana3; }
+                else { ViewBag.Campana3 = "SIN INFORMACION"; }
             }
-            if (model.GBCRentabilizacion.Campana1 != null) { ViewBag.Campana1 = model.GBCRentabilizacion.Campana1; }
-            else { ViewBag.Campana1 = "SIN INFORMACION"; }
-            if (model.GBCRentabilizacion.Campana2 != null) { ViewBag.Campana2 = model.GBCRentabilizacion.Campana2; }
-            else { ViewBag.Campana2 = "SIN INFORMACION"; }
-            if (model.GBCRentabilizacion.Campana3 != null) { ViewBag.Campana3 = model.GBCRentabilizacion.Campana3; }
-            else { ViewBag.Campana3 = "SIN INFORMACION"; }
-
+            else
+            {
+                model.DatosDelCliente = new ClientesTodo();
+                model.GBCRentabilizacion = new GBC_Rentabilizacion();
+                ViewBag.ValidacionBase = "NO EXISTEN MAS CUENTAS ASIGNADAS PARA ESTA CAMPAÑA";
+                ViewBag.CantidadToques = null;
+                ViewBag.Cierre = null;
+                ViewBag.Razon = null;
+            }
             return View(model);
 
         }
@@ -429,36 +421,34 @@ namespace Dime.Controllers
         public ActionResult Producto(string CuentaCliente)
         {
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
+            if (Session["CampañaBlending"] != null) { }
+            else
+            {
+                ViewBag.ValidacionBase = "NO TIENES UN SKILL BLENDING ASIGNADO PARA ESTA GESTION";
+                return View();
+            }
 
             if (CuentaCliente == null || CuentaCliente.Equals(""))
             {
                 model.DatosDelCliente = distribucionBlendingService.TraerInformacionCuentaBlending(Convert.ToInt32(Session["IdUsuario"].ToString()), "PRODUCTO", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString());
                 if (model.DatosDelCliente != null)
+                {
                     model.GBCProducto = distribucionBlendingService.TraerInformacionCuentaProducto(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
+                }
+                else { model.GBCProducto = null; }
             }
             else
             {
                 model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "PRODUCTO", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
+
                 if (model.DatosDelCliente != null)
+                {
                     model.GBCProducto = distribucionBlendingService.TraerInformacionCuentaProducto(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
-
-                if (model.GBCProducto != null)
-                { }
-                else { model.GBCProducto.CuentaCliente = 0; }
-
+                }
+                else { model.GBCProducto = null; }
             }
-            if (model.DatosDelCliente == null)
-            {
-                model.DatosDelCliente = new ClientesTodo();
-                model.DatosDelCliente.Cuenta = 0;
-                ViewBag.ValidacionBase = "NO EXISTEN MAS CUENTAS ASIGNADAS PARA ESTA CAMPAÑA";
 
-                ViewBag.CantidadToques = 0;
-                ViewBag.Cierre = "";
-                ViewBag.Razon = "";
-
-            }
-            else
+            if (model.GBCProducto != null)
             {
                 int DatoContactos = distribucionBlendingService.CantidadToquesCuentaProducto(model.DatosDelCliente.Cuenta);
                 ViewBag.ValidacionBase = null;
@@ -474,6 +464,15 @@ namespace Dime.Controllers
                     ViewBag.Cierre = "SIN GESTION";
                     ViewBag.Razon = "SIN GESTION";
                 }
+            }
+            else
+            {
+                model.DatosDelCliente = new ClientesTodo();
+                model.GBCProducto = new GBCProducto();
+                ViewBag.ValidacionBase = "NO EXISTEN MAS CUENTAS ASIGNADAS PARA ESTA CAMPAÑA";
+                ViewBag.CantidadToques = null;
+                ViewBag.Cierre = null;
+                ViewBag.Razon = null;
             }
             return View(model);
 
@@ -576,41 +575,33 @@ namespace Dime.Controllers
         {
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
             GBPDocsis ClienteGestionado = new GBPDocsis();
-
+            if (Session["CampañaBlending"] != null) { }
+            else
+            {
+                ViewBag.ValidacionBase = "NO TIENES UN SKILL BLENDING ASIGNADO PARA ESTA GESTION";
+                return View();
+            }
 
             if (CuentaCliente == null || CuentaCliente.Equals(""))
             {
                 model.DatosDelCliente = distribucionBlendingService.TraerInformacionCuentaBlending(Convert.ToInt32(Session["IdUsuario"].ToString()), "DOCSIS", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString());
                 if (model.DatosDelCliente != null)
+                {
                     model.GBCDocsis = distribucionBlendingService.TraerInformacionCuentaDocsis(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
+                }
+                else { model.GBCDocsis = null; }
             }
             else
             {
                 model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "DOCSIS", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
                 if (model.DatosDelCliente != null)
-                    model.GBCDocsis = distribucionBlendingService.TraerInformacionCuentaDocsis(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
-
-                if (model.GBCDocsis != null)
-                { }
-                else
                 {
-                    model.GBCDocsis.CuentaCliente = 0;
-                    model.GBCDocsis.Aliado = "SIN INFORMACION";
+                    model.GBCDocsis = distribucionBlendingService.TraerInformacionCuentaDocsis(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
                 }
-
+                else { model.GBCDocsis = null; }
             }
-            if (model.DatosDelCliente == null)
-            {
-                model.DatosDelCliente = new ClientesTodo();
-                model.DatosDelCliente.Cuenta = 0;
-                ViewBag.ValidacionBase = "NO EXISTEN MAS CUENTAS ASIGNADAS PARA ESTA CAMPAÑA";
 
-                ViewBag.CantidadToques = 0;
-                ViewBag.Cierre = "";
-                ViewBag.Razon = "";
-
-            }
-            else
+            if (model.GBCDocsis != null)
             {
                 int DatoContactos = distribucionBlendingService.CantidadToquesCuentaDocsis(model.DatosDelCliente.Cuenta);
                 ViewBag.ValidacionBase = null;
@@ -626,6 +617,16 @@ namespace Dime.Controllers
                     ViewBag.Cierre = "SIN GESTION";
                     ViewBag.Razon = "SIN GESTION";
                 }
+            }
+            else
+            {
+                model.DatosDelCliente = new ClientesTodo();
+                model.GBCDocsis = new GBCDocsis();
+                ViewBag.ValidacionBase = "NO EXISTEN MAS CUENTAS ASIGNADAS PARA ESTA CAMPAÑA";
+                ViewBag.CantidadToques = null;
+                ViewBag.Cierre = null;
+                ViewBag.Razon = null;
+
             }
             return View(model);
 
