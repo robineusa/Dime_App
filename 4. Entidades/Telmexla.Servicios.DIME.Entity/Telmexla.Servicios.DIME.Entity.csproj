@@ -95,6 +95,7 @@
     <Compile Include="ClaroVideo.cs" />
     <Compile Include="ClaroVideoCollection.cs" />
     <Compile Include="ClientesTodo.cs" />
+    <Compile Include="ConsultaBlendingFormularioDestinoReturnViewModel.cs" />
     <Compile Include="ConvenioElectronico.cs" />
     <Compile Include="ConvenioElectronicoCollection.cs" />
     <Compile Include="CuentasMejorasTecnicas.cs" />

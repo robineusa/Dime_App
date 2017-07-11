@@ -1,4 +1,27 @@
-﻿
+﻿$(document).ready(function () {
+    var Datos = "";
+    $.ajax({
+        type: "POST",
+        url: UrlReporteFormularioDestino,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            var json = JSON.parse(result);
+            alert(json)
+        },
+        error: function (data) {
+            //$("#loaderDiv").hide();
+            var errors = data.responseJSON;
+            alert(errors);
+        }
+    });
+    
+});
+
+
+
+
+
 var chart = AmCharts.makeChart("chartdiv", {
     "theme": "light",
     "type": "serial",
@@ -78,7 +101,7 @@ var chart = AmCharts.makeChart("chartdiv", {
     }],
     "graphs": [{
         "balloonText": "[[category]]: <b>[[value]]</b>",
-        
+
         "fillAlphas": 1,
         "lineAlpha": 0.1,
         "type": "column",

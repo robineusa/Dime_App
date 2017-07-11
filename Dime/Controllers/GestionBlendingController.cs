@@ -426,7 +426,7 @@ namespace Dime.Controllers
             if (opcionMando.Equals("EliminarUsuario"))
             {
                 ViewBag.TerceraPestañaAbierta = "True";
-                if (model.CopiaUsuarioHolos.Aliado != null)
+                if (model.CopiaUsuarioHolos2.Aliado != null)
                 {
                     blendingServices.EliminaUsuarioSkilles(Convert.ToInt32(model.CopiaUsuarioHolos2.Cedula));
                     ViewBag.UsuarioExiste2 = "Usuario Eliminado Exitosamente";
@@ -484,19 +484,42 @@ namespace Dime.Controllers
                 ViewBag.TerceraPestañaAbierta = "True";
                 if (model.CopiaUsuarioHolos2.Cedula != 0)
                 {
-                    if (loginService.RecibirIdUsuario(model.CopiaUsuarioHolos2.Cedula) != 0)
+                    var r = loginService.RecibirIdUsuario(model.CopiaUsuarioHolos2.Cedula);
+                    if ( r != 0)
                     {
-                        var r = blendingServices.ConsultaUsuarioenAdminBlending(Convert.ToString(model.CopiaUsuarioHolos2.Cedula));
-                        if (r != null)
+                        var r1 = blendingServices.ConsultaUsuarioenAdminBlending(Convert.ToString(model.CopiaUsuarioHolos2.Cedula));
+                        if (r1 != null)
                         {
-                            model.CopiaUsuarioHolos2 = loginService.ConsultarUsuarioHolos(model.CopiaUsuarioHolos2.Cedula);
-                            model.Operacion = r.Operacion;
-                            model.Campaña = r.Campaña;
-                            if (model.CopiaUsuarioHolos.Aliado != Session["AliadoLogeado"].ToString())
+                            var r2 = loginService.ConsultarUsuarioHolos(model.CopiaUsuarioHolos2.Cedula);
+                            if (r2 != null)
                             {
-                                ViewBag.UsuarioExiste2 = "Este Usuario no pertenece a su Aliado. No puede Eliminarlo";
-                                model = new ViewModelBlending();
+                                if (model.CopiaUsuarioHolos.Aliado != Session["AliadoLogeado"].ToString())
+                                {
+                                    ViewBag.UsuarioExiste2 = "Este Usuario no pertenece a su Aliado. No puede Eliminarlo";
+                                    model = new ViewModelBlending();
+                                }
+                                else
+                                {
+                                    model.CopiaUsuarioHolos2 = r2;
+                                }
                             }
+                            else
+                            {
+                                model.CopiaUsuarioHolos2.Nombre = "NO REGISTRADO EN HOLOS";
+                                model.CopiaUsuarioHolos2.Aliado = "NO REGISTRADO EN HOLOS";
+                                model.CopiaUsuarioHolos2.NombreLinea = "NO REGISTRADO EN HOLOS";
+                                model.CopiaUsuarioHolos2.UsuarioRr = "NO REGISTRADO EN HOLOS";
+                                model.CopiaUsuarioHolos2.UsuarioAgendamiento = "NO REGISTRADO EN HOLOS";
+                                model.CopiaUsuarioHolos2.UsuarioGerencia = "NO REGISTRADO EN HOLOS";
+                                model.CopiaUsuarioHolos2.Estado = "NO REGISTRADO EN HOLOS";
+                                model.CopiaUsuarioHolos2.Canal = "NO REGISTRADO EN HOLOS";
+                                model.CopiaUsuarioHolos2.Operacion = "NO REGISTRADO EN HOLOS";
+                                model.CopiaUsuarioHolos2.Grupo = "NO REGISTRADO EN HOLOS";
+                                model.CopiaUsuarioHolos2.Cargo = "NO REGISTRADO EN HOLOS";
+                                model.CopiaUsuarioHolos2.Segmento = "NO REGISTRADO EN HOLOS";
+                            }
+                            model.Operacion = r1.Operacion;
+                            model.Campaña = r1.Campaña;
                         }
                         else
                         {

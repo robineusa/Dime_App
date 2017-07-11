@@ -8537,67 +8537,6 @@ namespace Dime.WSD {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ConsultaBlendingFormularioDestinoReturnViewModel", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
-    [System.SerializableAttribute()]
-    public partial class ConsultaBlendingFormularioDestinoReturnViewModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> CANTIDADField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FORMULARIO_DESTINOField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> CANTIDAD {
-            get {
-                return this.CANTIDADField;
-            }
-            set {
-                if ((this.CANTIDADField.Equals(value) != true)) {
-                    this.CANTIDADField = value;
-                    this.RaisePropertyChanged("CANTIDAD");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FORMULARIO_DESTINO {
-            get {
-                return this.FORMULARIO_DESTINOField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FORMULARIO_DESTINOField, value) != true)) {
-                    this.FORMULARIO_DESTINOField = value;
-                    this.RaisePropertyChanged("FORMULARIO_DESTINO");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IWebService")]
     public interface IWebService {
@@ -12419,12 +12358,12 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaBlendingFormularioDestino" +
             "", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaBlendingFormularioDestino" +
             "Response")]
-        System.Collections.Generic.List<Dime.WSD.ConsultaBlendingFormularioDestinoReturnViewModel> ConsultaBlendingFormularioDestino(string aliado);
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ConsultaBlendingFormularioDestinoReturnViewModel> ConsultaBlendingFormularioDestino(string aliado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDistribucionBlendingService/ConsultaBlendingFormularioDestino" +
             "", ReplyAction="http://tempuri.org/IDistribucionBlendingService/ConsultaBlendingFormularioDestino" +
             "Response")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.ConsultaBlendingFormularioDestinoReturnViewModel>> ConsultaBlendingFormularioDestinoAsync(string aliado);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ConsultaBlendingFormularioDestinoReturnViewModel>> ConsultaBlendingFormularioDestinoAsync(string aliado);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -12870,11 +12809,11 @@ namespace Dime.WSD {
             return base.Channel.ConsultaAdminDocsisLAsync(FechaInicial, FechaFinal);
         }
         
-        public System.Collections.Generic.List<Dime.WSD.ConsultaBlendingFormularioDestinoReturnViewModel> ConsultaBlendingFormularioDestino(string aliado) {
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ConsultaBlendingFormularioDestinoReturnViewModel> ConsultaBlendingFormularioDestino(string aliado) {
             return base.Channel.ConsultaBlendingFormularioDestino(aliado);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.ConsultaBlendingFormularioDestinoReturnViewModel>> ConsultaBlendingFormularioDestinoAsync(string aliado) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ConsultaBlendingFormularioDestinoReturnViewModel>> ConsultaBlendingFormularioDestinoAsync(string aliado) {
             return base.Channel.ConsultaBlendingFormularioDestinoAsync(aliado);
         }
     }
