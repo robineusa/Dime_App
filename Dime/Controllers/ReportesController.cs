@@ -67,19 +67,19 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult ReporteFormulario()
         {
-            var result = DisBlending.ConsultaBlendingFormularioDestino(Session["AliadoLogeado"].ToString());
+            //var result = DisBlending.ConsultaBlendingFormularioDestino(Session["AliadoLogeado"].ToString());
             StringBuilder JSON = new StringBuilder();
             string Prefijo = "";
             JSON.Append("[");
-            for (int i = 0; i < result.Count; i++)
-            {
-                JSON.Append(Prefijo + "{");
-                JSON.Append("\"FORMULARIO_DESTINO\":" + "\"" + result[0] + "\",");
-                JSON.Append("\"CANTIDAD\":" + result[1]);
-                JSON.Append("}");
-                Prefijo = ",";
+            //for (int i = 0; i < result.Count; i++)
+            //{
+            //    JSON.Append(Prefijo + "{");
+            //    JSON.Append("\"FORMULARIO_DESTINO\":" + "\"" + result[0] + "\",");
+            //    JSON.Append("\"CANTIDAD\":" + result[1]);
+            //    JSON.Append("}");
+            //    Prefijo = ",";
 
-            }
+            //}
             JSON.Append("];");
             return Content(""+ JSON);
         }
