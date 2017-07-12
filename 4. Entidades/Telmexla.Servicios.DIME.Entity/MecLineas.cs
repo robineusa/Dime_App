@@ -5,5 +5,6 @@
         public decimal IdLinea { get; set; }
         public decimal IdProceso { get; set; }
         public string NombreLinea { get; set; }
+        public string Estado { get; set; }
     }
 }
