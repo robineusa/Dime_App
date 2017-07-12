@@ -12906,4 +12906,191 @@ namespace Dime.WSD {
             return base.Channel.ConsultaAdminBasePresidencialAsync(inicial, final);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IMecService")]
+    public interface IMecService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/IsertarMonitoreo", ReplyAction="http://tempuri.org/IMecService/IsertarMonitoreoResponse")]
+        void IsertarMonitoreo(Telmexla.Servicios.DIME.Entity.MecMonitoreosP Monitoreo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/IsertarMonitoreo", ReplyAction="http://tempuri.org/IMecService/IsertarMonitoreoResponse")]
+        System.Threading.Tasks.Task IsertarMonitoreoAsync(Telmexla.Servicios.DIME.Entity.MecMonitoreosP Monitoreo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaProcesosMec", ReplyAction="http://tempuri.org/IMecService/ListaProcesosMecResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecProcesos> ListaProcesosMec();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaProcesosMec", ReplyAction="http://tempuri.org/IMecService/ListaProcesosMecResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecProcesos>> ListaProcesosMecAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaLineasMec", ReplyAction="http://tempuri.org/IMecService/ListaLineasMecResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecLineas> ListaLineasMec(int IdProceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaLineasMec", ReplyAction="http://tempuri.org/IMecService/ListaLineasMecResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecLineas>> ListaLineasMecAsync(int IdProceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListasCorreosMec", ReplyAction="http://tempuri.org/IMecService/ListasCorreosMecResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecListasDistribucion> ListasCorreosMec(int IdLinea);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListasCorreosMec", ReplyAction="http://tempuri.org/IMecService/ListasCorreosMecResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecListasDistribucion>> ListasCorreosMecAsync(int IdLinea);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaTipoAlarmasMec", ReplyAction="http://tempuri.org/IMecService/ListaTipoAlarmasMecResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas> ListaTipoAlarmasMec();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaTipoAlarmasMec", ReplyAction="http://tempuri.org/IMecService/ListaTipoAlarmasMecResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas>> ListaTipoAlarmasMecAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/DestinatariosMec", ReplyAction="http://tempuri.org/IMecService/DestinatariosMecResponse")]
+        Telmexla.Servicios.DIME.Entity.MecListasDistribucion DestinatariosMec(int IdLista);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/DestinatariosMec", ReplyAction="http://tempuri.org/IMecService/DestinatariosMecResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MecListasDistribucion> DestinatariosMecAsync(int IdLista);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ActualizarMonitoreo", ReplyAction="http://tempuri.org/IMecService/ActualizarMonitoreoResponse")]
+        void ActualizarMonitoreo(Telmexla.Servicios.DIME.Entity.MecMonitoreosP Monitoreo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ActualizarMonitoreo", ReplyAction="http://tempuri.org/IMecService/ActualizarMonitoreoResponse")]
+        System.Threading.Tasks.Task ActualizarMonitoreoAsync(Telmexla.Servicios.DIME.Entity.MecMonitoreosP Monitoreo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ConsultaAdminMonitoreosPrincipal", ReplyAction="http://tempuri.org/IMecService/ConsultaAdminMonitoreosPrincipalResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecMonitoreosP> ConsultaAdminMonitoreosPrincipal(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ConsultaAdminMonitoreosPrincipal", ReplyAction="http://tempuri.org/IMecService/ConsultaAdminMonitoreosPrincipalResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecMonitoreosP>> ConsultaAdminMonitoreosPrincipalAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ConsultaAdminMonitoreosLog", ReplyAction="http://tempuri.org/IMecService/ConsultaAdminMonitoreosLogResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecMonitoreosL> ConsultaAdminMonitoreosLog(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ConsultaAdminMonitoreosLog", ReplyAction="http://tempuri.org/IMecService/ConsultaAdminMonitoreosLogResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecMonitoreosL>> ConsultaAdminMonitoreosLogAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ConsultarMonitoreoPorId", ReplyAction="http://tempuri.org/IMecService/ConsultarMonitoreoPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.MecMonitoreosP ConsultarMonitoreoPorId(int IdMonitoreo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ConsultarMonitoreoPorId", ReplyAction="http://tempuri.org/IMecService/ConsultarMonitoreoPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MecMonitoreosP> ConsultarMonitoreoPorIdAsync(int IdMonitoreo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ConsultaAgenteMonitoreosPrincipal", ReplyAction="http://tempuri.org/IMecService/ConsultaAgenteMonitoreosPrincipalResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecMonitoreosP> ConsultaAgenteMonitoreosPrincipal(System.DateTime FechaInicial, System.DateTime FechaFinal, string UsuarioGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ConsultaAgenteMonitoreosPrincipal", ReplyAction="http://tempuri.org/IMecService/ConsultaAgenteMonitoreosPrincipalResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecMonitoreosP>> ConsultaAgenteMonitoreosPrincipalAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, string UsuarioGestion);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IMecServiceChannel : Dime.WSD.IMecService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class MecServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IMecService>, Dime.WSD.IMecService {
+        
+        public MecServiceClient() {
+        }
+        
+        public MecServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public MecServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MecServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MecServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public void IsertarMonitoreo(Telmexla.Servicios.DIME.Entity.MecMonitoreosP Monitoreo) {
+            base.Channel.IsertarMonitoreo(Monitoreo);
+        }
+        
+        public System.Threading.Tasks.Task IsertarMonitoreoAsync(Telmexla.Servicios.DIME.Entity.MecMonitoreosP Monitoreo) {
+            return base.Channel.IsertarMonitoreoAsync(Monitoreo);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecProcesos> ListaProcesosMec() {
+            return base.Channel.ListaProcesosMec();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecProcesos>> ListaProcesosMecAsync() {
+            return base.Channel.ListaProcesosMecAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecLineas> ListaLineasMec(int IdProceso) {
+            return base.Channel.ListaLineasMec(IdProceso);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecLineas>> ListaLineasMecAsync(int IdProceso) {
+            return base.Channel.ListaLineasMecAsync(IdProceso);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecListasDistribucion> ListasCorreosMec(int IdLinea) {
+            return base.Channel.ListasCorreosMec(IdLinea);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecListasDistribucion>> ListasCorreosMecAsync(int IdLinea) {
+            return base.Channel.ListasCorreosMecAsync(IdLinea);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas> ListaTipoAlarmasMec() {
+            return base.Channel.ListaTipoAlarmasMec();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas>> ListaTipoAlarmasMecAsync() {
+            return base.Channel.ListaTipoAlarmasMecAsync();
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.MecListasDistribucion DestinatariosMec(int IdLista) {
+            return base.Channel.DestinatariosMec(IdLista);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MecListasDistribucion> DestinatariosMecAsync(int IdLista) {
+            return base.Channel.DestinatariosMecAsync(IdLista);
+        }
+        
+        public void ActualizarMonitoreo(Telmexla.Servicios.DIME.Entity.MecMonitoreosP Monitoreo) {
+            base.Channel.ActualizarMonitoreo(Monitoreo);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarMonitoreoAsync(Telmexla.Servicios.DIME.Entity.MecMonitoreosP Monitoreo) {
+            return base.Channel.ActualizarMonitoreoAsync(Monitoreo);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecMonitoreosP> ConsultaAdminMonitoreosPrincipal(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminMonitoreosPrincipal(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecMonitoreosP>> ConsultaAdminMonitoreosPrincipalAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminMonitoreosPrincipalAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecMonitoreosL> ConsultaAdminMonitoreosLog(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminMonitoreosLog(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecMonitoreosL>> ConsultaAdminMonitoreosLogAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminMonitoreosLogAsync(FechaInicial, FechaFinal);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.MecMonitoreosP ConsultarMonitoreoPorId(int IdMonitoreo) {
+            return base.Channel.ConsultarMonitoreoPorId(IdMonitoreo);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MecMonitoreosP> ConsultarMonitoreoPorIdAsync(int IdMonitoreo) {
+            return base.Channel.ConsultarMonitoreoPorIdAsync(IdMonitoreo);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecMonitoreosP> ConsultaAgenteMonitoreosPrincipal(System.DateTime FechaInicial, System.DateTime FechaFinal, string UsuarioGestion) {
+            return base.Channel.ConsultaAgenteMonitoreosPrincipal(FechaInicial, FechaFinal, UsuarioGestion);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecMonitoreosP>> ConsultaAgenteMonitoreosPrincipalAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, string UsuarioGestion) {
+            return base.Channel.ConsultaAgenteMonitoreosPrincipalAsync(FechaInicial, FechaFinal, UsuarioGestion);
+        }
+    }
 }

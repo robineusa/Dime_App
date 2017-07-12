@@ -148,6 +148,12 @@
     <Compile Include="MaestroMarcacioneCollection.cs" />
     <Compile Include="MaestroNodo.cs" />
     <Compile Include="MaestroNodoCollection.cs" />
+    <Compile Include="MecLineas.cs" />
+    <Compile Include="MecListasDistribucion.cs" />
+    <Compile Include="MecMonitoreosL.cs" />
+    <Compile Include="MecMonitoreosP.cs" />
+    <Compile Include="MecProcesos.cs" />
+    <Compile Include="MecTipoAlarmas.cs" />
     <Compile Include="MejorasTecnicas.cs" />
     <Compile Include="ModosLogin.cs" />
     <Compile Include="MultiPlay.cs" />
