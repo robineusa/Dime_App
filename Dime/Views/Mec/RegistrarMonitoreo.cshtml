@@ -1,0 +1,117 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelMec
+@{ ViewBag.Title = "Registro de Monitoreos";
+       ViewBag.SubTitle = "Procesos Mec";
+    
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Session["Registrar Monitoreos Mec"] != null)
+{
+    using (Html.BeginForm("RegistrarMonitoreo", "Mec", FormMethod.Post, new { id = "datosCliente", role = "form" }))
+    {
+        <div class="row">
+            <div class="col-md-9" style="width:100%; ">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li id="Li1" style="background-color: #dcdcdc; border-color: #c23321" class="active"><a href="#solicitudcreaciondireccion" aria-controls="solicitudcreaciondireccion" data-toggle="tab" role="tab" style="background-color:#dcdcdc;">Macroprocesos</a></li>
+                        @*<li role="presentation"><a id="Li2" href="#gestionrealizada" aria-controls="gestionRealizada" data-toggle="tab" role="tab" style="background-color:#f6f6f6;">Gestión Realizada</a></li>*@
+                    </ul>
+
+                    <div class="tab-content" style="padding-left:0; padding-top: 0">
+                        <div role="tabpanel" class="tab-pane tab-dime-first active" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;" id="solicitudcreaciondireccion">
+                            <br />
+                            <table>
+                                <tr>
+                                   
+                                    <td style="padding-left:4px; width:300px;">
+                                        <small>Seleccione el Proceso</small>
+                                        @Html.DropDownListFor(m => m.MecMonitoreosP.IdProceso, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Procesos", @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.MecMonitoreosP.IdProceso, "", new { @class = "text-danger" })
+                                    </td>
+                                    <td style="padding-left:4px; width:300px;">
+                                        <small>Seleccione la Linea</small>
+                                        @Html.DropDownListFor(m => m.MecMonitoreosP.IdLinea, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Lineas", @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.MecMonitoreosP.IdLinea, "", new { @class = "text-danger" })
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                    </div>
+                </div>
+            </div>
+            <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
+                <i class="fa fa-user"></i> Datos del usuario monitoreado
+            </h2>
+            <div id="ARBOL" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+                <br />
+                <table>
+                    <tr>
+                        <td style="padding-left:1px; width:200px;">
+                            <small>Cédula Usuario</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.CedulaUsuarioGestion, new { @class = "form-control input-sm"})
+                        </td>
+                        <td style="padding-left:1px; width:220px;">
+                            <small>Nombre Usuario</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.NombreUsuarioMonitoreado, new { @class = "form-control input-sm", @readonly = "true" })
+                        </td>
+                        <td style="padding-left:4px; width:220px;">
+                            <small>Operación</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.OperacionUsuarioMonitoreado, new { @class = "form-control input-sm", @readonly = "true" })
+                        </td>
+                        <td style="padding-left:4px; width:220px;">
+                            <small>Aliado</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.AliadoUsuarioMonitoreado, new { @class = "form-control input-sm", @readonly = "true" })
+                        </td>
+                        
+                    </tr>
+                </table>
+            </div>
+            <br />
+        </div>
+    }
+
+@section Scripts{
+        <script>
+            var urlProcesos = '@Url.Action("TraerListaProcesos", "Mec")';
+            var urlLineas = '@Url.Action("TraerListaLineas", "Mec")';
+        </script>
+    <script src="~/Scripts/Mec/RegistrarMonitoreo.js?1.0.0"></script>    
+        }
+    @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+}
+else
+{
+<div class="row">
+
+    <div class="box box-primary">
+
+        <div class="box-body">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="error-page">
+                        <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                        <div class="error-content">
+                            <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                            <p style="text-align:justify;">
+                                La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                Por favor solicite al administrador del sistema el acceso correspondiente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+}
+

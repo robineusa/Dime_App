@@ -484,6 +484,21 @@
 
                         </li>
                     }
+                    @if (Session["Procesos Mec"] != null)
+                    {
+                        <li id="left-sidebar-menu-multilevel" class="treeview">
+                            <a href="#">
+                                <i class="fa fa-headphones text-aqua"></i> <span>Procesos Mec</span><i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                @if (Session["Registrar Monitoreos Mec"] != null)
+                                {
+                                    <li><a href="@Url.Action("RegistrarMonitoreo", "Mec")"><i class="fa fa-hand-o-right"></i>Registrar Monitoreo</a></li>}
+                            </ul>
+
+                        </li>
+                    }
+
                     @if (Session["Gestion Traslados"] != null)
                     {
                         <li id="left-sidebar-menu-multilevel" class="treeview">

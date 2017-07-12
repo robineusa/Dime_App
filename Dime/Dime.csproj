@@ -207,6 +207,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManualesController.cs" />
     <Compile Include="Controllers\MarcacionesController.cs" />
+    <Compile Include="Controllers\MecController.cs" />
     <Compile Include="Controllers\MultiPlayController.cs" />
     <Compile Include="Controllers\PruebasController.cs" />
     <Compile Include="Controllers\ReportesController.cs" />
@@ -2297,6 +2298,7 @@
     <Content Include="Scripts\Manuales\ManualAdministrador.js" />
     <Content Include="Scripts\Manuales\ManualAsesor.js" />
     <Content Include="Scripts\Manuales\ManualCelula.js" />
+    <Content Include="Scripts\Mec\RegistrarMonitoreo.js" />
     <Content Include="Scripts\MultiPlay\ConsultasAdminMultiPlay.js" />
     <Content Include="Scripts\MultiPlay\MultiPlay.js" />
     <Content Include="Scripts\Reportes\ReporteAdministrador.js" />
@@ -3020,7 +3022,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService.disco" />
+    <None Include="Service References\WSD\WebService1.disco" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
     <Content Include="Styles\Elements\General.css" />
@@ -3223,20 +3225,21 @@
     <Content Include="Views\ConsultasAdmin\ConsultasRetencion.cshtml" />
     <Content Include="Views\MultiPlay\MultiPlayCelula.cshtml" />
     <Content Include="Views\MultiPlay\ConsultasAdminMultiPlay.cshtml" />
-    <None Include="Service References\WSD\WebService.wsdl" />
-    <None Include="Service References\WSD\WebService.xsd">
+    <Content Include="Views\Mec\RegistrarMonitoreo.cshtml" />
+    <None Include="Service References\WSD\WebService1.wsdl" />
+    <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService1.xsd">
+    <None Include="Service References\WSD\WebService51.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService2.xsd">
+    <None Include="Service References\WSD\WebService52.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService3.xsd">
+    <None Include="Service References\WSD\WebService53.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService4.xsd">
+    <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">

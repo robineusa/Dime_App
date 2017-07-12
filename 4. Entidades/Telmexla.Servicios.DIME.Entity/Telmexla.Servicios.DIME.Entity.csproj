@@ -190,6 +190,7 @@
     <Compile Include="ViewModelCuentasSiembraHD.cs" />
     <Compile Include="ViewModelDistribucionesBlending.cs" />
     <Compile Include="ViewModelGraficos.cs" />
+    <Compile Include="ViewModelMec.cs" />
     <Compile Include="ViewModelMultiPlay.cs" />
     <Compile Include="ViewModelNodos.cs" />
     <Compile Include="ViewModelNotificacionesBS.cs" />
