@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WebService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WebService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsp:Policy wsu:Id="WSHttpBinding_IWebService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -11399,44 +11399,6 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_ConsultaBlendingFormularioDestino_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IDistribucionBlendingService_ConsultaBlendingFormularioDestino_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IMultiPlayService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -11694,536 +11656,13 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:ProtectionToken>
-              <wsp:Policy>
-                <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
-                  <wsp:Policy>
-                    <sp:RequireDerivedKeys />
-                    <sp:BootstrapPolicy>
-                      <wsp:Policy>
-                        <sp:SignedParts>
-                          <sp:Body />
-                          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-                          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-                          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-                          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-                          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-                          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-                          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-                        </sp:SignedParts>
-                        <sp:EncryptedParts>
-                          <sp:Body />
-                        </sp:EncryptedParts>
-                        <sp:SymmetricBinding>
-                          <wsp:Policy>
-                            <sp:ProtectionToken>
-                              <wsp:Policy>
-                                <mssp:SslContextToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient" xmlns:mssp="http://schemas.microsoft.com/ws/2005/07/securitypolicy">
-                                  <wsp:Policy>
-                                    <sp:RequireDerivedKeys />
-                                  </wsp:Policy>
-                                </mssp:SslContextToken>
-                              </wsp:Policy>
-                            </sp:ProtectionToken>
-                            <sp:AlgorithmSuite>
-                              <wsp:Policy>
-                                <sp:Basic256 />
-                              </wsp:Policy>
-                            </sp:AlgorithmSuite>
-                            <sp:Layout>
-                              <wsp:Policy>
-                                <sp:Strict />
-                              </wsp:Policy>
-                            </sp:Layout>
-                            <sp:IncludeTimestamp />
-                            <sp:EncryptSignature />
-                            <sp:OnlySignEntireHeadersAndBody />
-                          </wsp:Policy>
-                        </sp:SymmetricBinding>
-                        <sp:SignedSupportingTokens>
-                          <wsp:Policy>
-                            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
-                              <wsp:Policy>
-                                <sp:WssUsernameToken10 />
-                              </wsp:Policy>
-                            </sp:UsernameToken>
-                          </wsp:Policy>
-                        </sp:SignedSupportingTokens>
-                        <sp:Wss11>
-                          <wsp:Policy />
-                        </sp:Wss11>
-                        <sp:Trust10>
-                          <wsp:Policy>
-                            <sp:MustSupportIssuedTokens />
-                            <sp:RequireClientEntropy />
-                            <sp:RequireServerEntropy />
-                          </wsp:Policy>
-                        </sp:Trust10>
-                      </wsp:Policy>
-                    </sp:BootstrapPolicy>
-                  </wsp:Policy>
-                </sp:SecureConversationToken>
-              </wsp:Policy>
-            </sp:ProtectionToken>
-            <sp:AlgorithmSuite>
-              <wsp:Policy>
-                <sp:Basic256 />
-              </wsp:Policy>
-            </sp:AlgorithmSuite>
-            <sp:Layout>
-              <wsp:Policy>
-                <sp:Strict />
-              </wsp:Policy>
-            </sp:Layout>
-            <sp:IncludeTimestamp />
-            <sp:EncryptSignature />
-            <sp:OnlySignEntireHeadersAndBody />
-          </wsp:Policy>
-        </sp:SymmetricBinding>
-        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy />
-        </sp:Wss11>
-        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:MustSupportIssuedTokens />
-            <sp:RequireClientEntropy />
-            <sp:RequireServerEntropy />
-          </wsp:Policy>
-        </sp:Trust10>
-        <wsaw:UsingAddressing />
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_IsertarMonitoreo_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_IsertarMonitoreo_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ListaProcesosMec_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ListaProcesosMec_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ListaLineasMec_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ListaLineasMec_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ListasCorreosMec_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ListasCorreosMec_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ListaTipoAlarmasMec_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ListaTipoAlarmasMec_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_DestinatariosMec_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_DestinatariosMec_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ActualizarMonitoreo_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ActualizarMonitoreo_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ConsultaAdminMonitoreosPrincipal_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ConsultaAdminMonitoreosPrincipal_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ConsultaAdminMonitoreosLog_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ConsultaAdminMonitoreosLog_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ConsultarMonitoreoPorId_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ConsultarMonitoreoPorId_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ConsultaAgenteMonitoreosPrincipal_Input_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ConsultaAgenteMonitoreosPrincipal_output_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-        </sp:SignedParts>
-        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <sp:Body />
-        </sp:EncryptedParts>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" />
-      <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Business" />
+      <xsd:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" />
+      <xsd:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Business" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IWebService_MuestraEntidades_InputMessage">
@@ -13744,12 +13183,6 @@
   <wsdl:message name="IDistribucionBlendingService_ConsultaAdminDocsisL_OutputMessage">
     <wsdl:part name="parameters" element="tns:ConsultaAdminDocsisLResponse" />
   </wsdl:message>
-  <wsdl:message name="IDistribucionBlendingService_ConsultaBlendingFormularioDestino_InputMessage">
-    <wsdl:part name="parameters" element="tns:ConsultaBlendingFormularioDestino" />
-  </wsdl:message>
-  <wsdl:message name="IDistribucionBlendingService_ConsultaBlendingFormularioDestino_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ConsultaBlendingFormularioDestinoResponse" />
-  </wsdl:message>
   <wsdl:message name="IMultiPlayService_BuscarDatosMultiplay_InputMessage">
     <wsdl:part name="parameters" element="tns:BuscarDatosMultiplay" />
   </wsdl:message>
@@ -13773,72 +13206,6 @@
   </wsdl:message>
   <wsdl:message name="IMultiPlayService_ConsultaAdminBasePresidencial_OutputMessage">
     <wsdl:part name="parameters" element="tns:ConsultaAdminBasePresidencialResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_IsertarMonitoreo_InputMessage">
-    <wsdl:part name="parameters" element="tns:IsertarMonitoreo" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_IsertarMonitoreo_OutputMessage">
-    <wsdl:part name="parameters" element="tns:IsertarMonitoreoResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ListaProcesosMec_InputMessage">
-    <wsdl:part name="parameters" element="tns:ListaProcesosMec" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ListaProcesosMec_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ListaProcesosMecResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ListaLineasMec_InputMessage">
-    <wsdl:part name="parameters" element="tns:ListaLineasMec" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ListaLineasMec_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ListaLineasMecResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ListasCorreosMec_InputMessage">
-    <wsdl:part name="parameters" element="tns:ListasCorreosMec" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ListasCorreosMec_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ListasCorreosMecResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ListaTipoAlarmasMec_InputMessage">
-    <wsdl:part name="parameters" element="tns:ListaTipoAlarmasMec" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ListaTipoAlarmasMec_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ListaTipoAlarmasMecResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_DestinatariosMec_InputMessage">
-    <wsdl:part name="parameters" element="tns:DestinatariosMec" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_DestinatariosMec_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DestinatariosMecResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ActualizarMonitoreo_InputMessage">
-    <wsdl:part name="parameters" element="tns:ActualizarMonitoreo" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ActualizarMonitoreo_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ActualizarMonitoreoResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ConsultaAdminMonitoreosPrincipal_InputMessage">
-    <wsdl:part name="parameters" element="tns:ConsultaAdminMonitoreosPrincipal" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ConsultaAdminMonitoreosPrincipal_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ConsultaAdminMonitoreosPrincipalResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ConsultaAdminMonitoreosLog_InputMessage">
-    <wsdl:part name="parameters" element="tns:ConsultaAdminMonitoreosLog" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ConsultaAdminMonitoreosLog_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ConsultaAdminMonitoreosLogResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ConsultarMonitoreoPorId_InputMessage">
-    <wsdl:part name="parameters" element="tns:ConsultarMonitoreoPorId" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ConsultarMonitoreoPorId_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ConsultarMonitoreoPorIdResponse" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ConsultaAgenteMonitoreosPrincipal_InputMessage">
-    <wsdl:part name="parameters" element="tns:ConsultaAgenteMonitoreosPrincipal" />
-  </wsdl:message>
-  <wsdl:message name="IMecService_ConsultaAgenteMonitoreosPrincipal_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ConsultaAgenteMonitoreosPrincipalResponse" />
   </wsdl:message>
   <wsdl:portType name="IWebService">
     <wsdl:operation name="MuestraEntidades">
@@ -14885,10 +14252,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminDocsisL" message="tns:IDistribucionBlendingService_ConsultaAdminDocsisL_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDistribucionBlendingService/ConsultaAdminDocsisLResponse" message="tns:IDistribucionBlendingService_ConsultaAdminDocsisL_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ConsultaBlendingFormularioDestino">
-      <wsdl:input wsaw:Action="http://tempuri.org/IDistribucionBlendingService/ConsultaBlendingFormularioDestino" message="tns:IDistribucionBlendingService_ConsultaBlendingFormularioDestino_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IDistribucionBlendingService/ConsultaBlendingFormularioDestinoResponse" message="tns:IDistribucionBlendingService_ConsultaBlendingFormularioDestino_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IMultiPlayService">
     <wsdl:operation name="BuscarDatosMultiplay">
@@ -14906,52 +14269,6 @@
     <wsdl:operation name="ConsultaAdminBasePresidencial">
       <wsdl:input wsaw:Action="http://tempuri.org/IMultiPlayService/ConsultaAdminBasePresidencial" message="tns:IMultiPlayService_ConsultaAdminBasePresidencial_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMultiPlayService/ConsultaAdminBasePresidencialResponse" message="tns:IMultiPlayService_ConsultaAdminBasePresidencial_OutputMessage" />
-    </wsdl:operation>
-  </wsdl:portType>
-  <wsdl:portType name="IMecService">
-    <wsdl:operation name="IsertarMonitoreo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMecService/IsertarMonitoreo" message="tns:IMecService_IsertarMonitoreo_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMecService/IsertarMonitoreoResponse" message="tns:IMecService_IsertarMonitoreo_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ListaProcesosMec">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMecService/ListaProcesosMec" message="tns:IMecService_ListaProcesosMec_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMecService/ListaProcesosMecResponse" message="tns:IMecService_ListaProcesosMec_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ListaLineasMec">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMecService/ListaLineasMec" message="tns:IMecService_ListaLineasMec_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMecService/ListaLineasMecResponse" message="tns:IMecService_ListaLineasMec_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ListasCorreosMec">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMecService/ListasCorreosMec" message="tns:IMecService_ListasCorreosMec_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMecService/ListasCorreosMecResponse" message="tns:IMecService_ListasCorreosMec_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ListaTipoAlarmasMec">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMecService/ListaTipoAlarmasMec" message="tns:IMecService_ListaTipoAlarmasMec_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMecService/ListaTipoAlarmasMecResponse" message="tns:IMecService_ListaTipoAlarmasMec_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="DestinatariosMec">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMecService/DestinatariosMec" message="tns:IMecService_DestinatariosMec_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMecService/DestinatariosMecResponse" message="tns:IMecService_DestinatariosMec_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ActualizarMonitoreo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMecService/ActualizarMonitoreo" message="tns:IMecService_ActualizarMonitoreo_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMecService/ActualizarMonitoreoResponse" message="tns:IMecService_ActualizarMonitoreo_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ConsultaAdminMonitoreosPrincipal">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMecService/ConsultaAdminMonitoreosPrincipal" message="tns:IMecService_ConsultaAdminMonitoreosPrincipal_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMecService/ConsultaAdminMonitoreosPrincipalResponse" message="tns:IMecService_ConsultaAdminMonitoreosPrincipal_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ConsultaAdminMonitoreosLog">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMecService/ConsultaAdminMonitoreosLog" message="tns:IMecService_ConsultaAdminMonitoreosLog_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMecService/ConsultaAdminMonitoreosLogResponse" message="tns:IMecService_ConsultaAdminMonitoreosLog_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ConsultarMonitoreoPorId">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMecService/ConsultarMonitoreoPorId" message="tns:IMecService_ConsultarMonitoreoPorId_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMecService/ConsultarMonitoreoPorIdResponse" message="tns:IMecService_ConsultarMonitoreoPorId_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ConsultaAgenteMonitoreosPrincipal">
-      <wsdl:input wsaw:Action="http://tempuri.org/IMecService/ConsultaAgenteMonitoreosPrincipal" message="tns:IMecService_ConsultaAgenteMonitoreosPrincipal_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IMecService/ConsultaAgenteMonitoreosPrincipalResponse" message="tns:IMecService_ConsultaAgenteMonitoreosPrincipal_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IWebService" type="tns:IWebService">
@@ -17804,17 +17121,6 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ConsultaBlendingFormularioDestino">
-      <soap12:operation soapAction="http://tempuri.org/IDistribucionBlendingService/ConsultaBlendingFormularioDestino" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_ConsultaBlendingFormularioDestino_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IDistribucionBlendingService_ConsultaBlendingFormularioDestino_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WSHttpBinding_IMultiPlayService" type="tns:IMultiPlayService">
     <wsp:PolicyReference URI="#WSHttpBinding_IMultiPlayService_policy" />
@@ -17864,374 +17170,236 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="WSHttpBinding_IMecService" type="tns:IMecService">
-    <wsp:PolicyReference URI="#WSHttpBinding_IMecService_policy" />
-    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="IsertarMonitoreo">
-      <soap12:operation soapAction="http://tempuri.org/IMecService/IsertarMonitoreo" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_IsertarMonitoreo_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_IsertarMonitoreo_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListaProcesosMec">
-      <soap12:operation soapAction="http://tempuri.org/IMecService/ListaProcesosMec" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ListaProcesosMec_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ListaProcesosMec_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListaLineasMec">
-      <soap12:operation soapAction="http://tempuri.org/IMecService/ListaLineasMec" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ListaLineasMec_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ListaLineasMec_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListasCorreosMec">
-      <soap12:operation soapAction="http://tempuri.org/IMecService/ListasCorreosMec" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ListasCorreosMec_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ListasCorreosMec_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ListaTipoAlarmasMec">
-      <soap12:operation soapAction="http://tempuri.org/IMecService/ListaTipoAlarmasMec" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ListaTipoAlarmasMec_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ListaTipoAlarmasMec_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="DestinatariosMec">
-      <soap12:operation soapAction="http://tempuri.org/IMecService/DestinatariosMec" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_DestinatariosMec_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_DestinatariosMec_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ActualizarMonitoreo">
-      <soap12:operation soapAction="http://tempuri.org/IMecService/ActualizarMonitoreo" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ActualizarMonitoreo_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ActualizarMonitoreo_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ConsultaAdminMonitoreosPrincipal">
-      <soap12:operation soapAction="http://tempuri.org/IMecService/ConsultaAdminMonitoreosPrincipal" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ConsultaAdminMonitoreosPrincipal_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ConsultaAdminMonitoreosPrincipal_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ConsultaAdminMonitoreosLog">
-      <soap12:operation soapAction="http://tempuri.org/IMecService/ConsultaAdminMonitoreosLog" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ConsultaAdminMonitoreosLog_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ConsultaAdminMonitoreosLog_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ConsultarMonitoreoPorId">
-      <soap12:operation soapAction="http://tempuri.org/IMecService/ConsultarMonitoreoPorId" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ConsultarMonitoreoPorId_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ConsultarMonitoreoPorId_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ConsultaAgenteMonitoreosPrincipal">
-      <soap12:operation soapAction="http://tempuri.org/IMecService/ConsultaAgenteMonitoreosPrincipal" style="document" />
-      <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ConsultaAgenteMonitoreosPrincipal_Input_policy" />
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ConsultaAgenteMonitoreosPrincipal_output_policy" />
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
   <wsdl:service name="WebService">
     <wsdl:port name="WSHttpBinding_IWebService" binding="tns:WSHttpBinding_IWebService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_ILoginService" binding="tns:WSHttpBinding_ILoginService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IInboundService" binding="tns:WSHttpBinding_IInboundService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IMaestrosService" binding="tns:WSHttpBinding_IMaestrosService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IBlendingService" binding="tns:WSHttpBinding_IBlendingService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IMarcacionesService" binding="tns:WSHttpBinding_IMarcacionesService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_INotificacionesBuenServicioService" binding="tns:WSHttpBinding_INotificacionesBuenServicioService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_ICasosCelulaService" binding="tns:WSHttpBinding_ICasosCelulaService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_ICasosAdminService" binding="tns:WSHttpBinding_ICasosAdminService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_ITrasladosService" binding="tns:WSHttpBinding_ITrasladosService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IMaestroNodoService" binding="tns:WSHttpBinding_IMaestroNodoService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IActivacionClaroVideoService" binding="tns:WSHttpBinding_IActivacionClaroVideoService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IActivacionSiembraHDService" binding="tns:WSHttpBinding_IActivacionSiembraHDService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IBalanceScoreCardService" binding="tns:WSHttpBinding_IBalanceScoreCardService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IGraficosService" binding="tns:WSHttpBinding_IGraficosService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IUsabilidadService" binding="tns:WSHttpBinding_IUsabilidadService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IDistribucionBlendingService" binding="tns:WSHttpBinding_IDistribucionBlendingService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IMultiPlayService" binding="tns:WSHttpBinding_IMultiPlayService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD_PRU/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD_PRU/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
-            </X509Data>
-          </KeyInfo>
-        </Identity>
-      </wsa10:EndpointReference>
-    </wsdl:port>
-    <wsdl:port name="WSHttpBinding_IMecService" binding="tns:WSHttpBinding_IMecService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
-      <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
-            <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
