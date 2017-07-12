@@ -1964,4 +1964,155 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfMultiPlay" nillable="true" type="tns:ArrayOfMultiPlay" />
+  <xs:complexType name="MecMonitoreosP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccionEmprender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoUsuarioMonitoreado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnalisisDeGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Area" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampoOpcional1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampoOpcional2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampoOpcional3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampoOpcional4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampoOpcional5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CedulaUsuarioGestion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Comunidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DescripcionTipoCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Division" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoMonitoreo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EtiquetaDeLlamada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdLinea" type="xs:int" />
+      <xs:element minOccurs="0" name="IdListaDistribucion" type="xs:int" />
+      <xs:element minOccurs="0" name="IdMonitoreo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdProceso" type="xs:int" />
+      <xs:element minOccurs="0" name="MarcacionCorrectaRR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarcacionRegistradaRR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotivoAlarma" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreLinea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreProceso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioMonitoreado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotaObtenida" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OperacionUsuarioMonitoreado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistroMonitoreo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDeAlarma" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioMonitoreado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Zona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MecMonitoreosP" nillable="true" type="tns:MecMonitoreosP" />
+  <xs:complexType name="ArrayOfMecProcesos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MecProcesos" nillable="true" type="tns:MecProcesos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMecProcesos" nillable="true" type="tns:ArrayOfMecProcesos" />
+  <xs:complexType name="MecProcesos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdProceso" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Proceso" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MecProcesos" nillable="true" type="tns:MecProcesos" />
+  <xs:complexType name="ArrayOfMecLineas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MecLineas" nillable="true" type="tns:MecLineas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMecLineas" nillable="true" type="tns:ArrayOfMecLineas" />
+  <xs:complexType name="MecLineas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdLinea" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdProceso" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreLinea" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MecLineas" nillable="true" type="tns:MecLineas" />
+  <xs:complexType name="ArrayOfMecListasDistribucion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MecListasDistribucion" nillable="true" type="tns:MecListasDistribucion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMecListasDistribucion" nillable="true" type="tns:ArrayOfMecListasDistribucion" />
+  <xs:complexType name="MecListasDistribucion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Destinatarios" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdLinea" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdLista" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MecListasDistribucion" nillable="true" type="tns:MecListasDistribucion" />
+  <xs:complexType name="ArrayOfMecTipoAlarmas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MecTipoAlarmas" nillable="true" type="tns:MecTipoAlarmas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMecTipoAlarmas" nillable="true" type="tns:ArrayOfMecTipoAlarmas" />
+  <xs:complexType name="MecTipoAlarmas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdAlarma" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreAlarma" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MecTipoAlarmas" nillable="true" type="tns:MecTipoAlarmas" />
+  <xs:complexType name="ArrayOfMecMonitoreosP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MecMonitoreosP" nillable="true" type="tns:MecMonitoreosP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMecMonitoreosP" nillable="true" type="tns:ArrayOfMecMonitoreosP" />
+  <xs:complexType name="ArrayOfMecMonitoreosL">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MecMonitoreosL" nillable="true" type="tns:MecMonitoreosL" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMecMonitoreosL" nillable="true" type="tns:ArrayOfMecMonitoreosL" />
+  <xs:complexType name="MecMonitoreosL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccionEmprender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoUsuarioMonitoreado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AnalisisDeGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Area" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampoOpcional1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampoOpcional2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampoOpcional3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampoOpcional4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CampoOpcional5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CedulaUsuarioGestion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Comunidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DescripcionTipoCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Division" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoMonitoreo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EtiquetaDeLlamada" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdLinea" type="xs:int" />
+      <xs:element minOccurs="0" name="IdListaDistribucion" type="xs:int" />
+      <xs:element minOccurs="0" name="IdMonitoreo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdProceso" type="xs:int" />
+      <xs:element minOccurs="0" name="MarcacionCorrectaRR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarcacionRegistradaRR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotivoAlarma" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreLinea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreProceso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioMonitoreado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotaObtenida" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OperacionUsuarioMonitoreado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistroMonitoreo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDeAlarma" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioMonitoreado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Zona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MecMonitoreosL" nillable="true" type="tns:MecMonitoreosL" />
 </xs:schema>
