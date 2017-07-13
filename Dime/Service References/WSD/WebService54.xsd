@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" />
-  <xs:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Business" />
+  <xs:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" />
+  <xs:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Business" />
   <xs:element name="MuestraEntidades">
     <xs:complexType>
       <xs:sequence />
@@ -3735,21 +3735,21 @@
   <xs:element name="BuscarDatosMultiplay">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="cuentacliente" type="xs:int" />
+        <xs:element minOccurs="0" name="cuentacliente" type="xs:decimal" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="BuscarDatosMultiplayResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q257="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="BuscarDatosMultiplayResult" nillable="true" type="q257:DatosMultiplay" />
+        <xs:element xmlns:q257="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="BuscarDatosMultiplayResult" nillable="true" type="q257:MultiplayCargue" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InsertarMultiPlay">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q258="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="multiplay" nillable="true" type="q258:MultiPlay" />
+        <xs:element xmlns:q258="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="multiplay" nillable="true" type="q258:MultiPlayRegistro" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3761,8 +3761,8 @@
   <xs:element name="EliminaCuentaDatosMultiplay">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="Id_Cuenta" type="xs:int" />
-        <xs:element minOccurs="0" name="Cuenta" type="xs:int" />
+        <xs:element minOccurs="0" name="Id_Cuenta" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Cuenta" type="xs:decimal" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3782,7 +3782,7 @@
   <xs:element name="ConsultaAdminBasePresidencialResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q259="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminBasePresidencialResult" nillable="true" type="q259:ArrayOfMultiPlay" />
+        <xs:element xmlns:q259="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminBasePresidencialResult" nillable="true" type="q259:ArrayOfMultiPlayRegistro" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

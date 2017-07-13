@@ -9,18 +9,18 @@ namespace Telmexla.Servicios.DIME.Entity
     {
         #region MultiPlayCelula
 
-        private DatosMultiplay datosmultiplay;
-        private MultiPlay multiplay;
+        private MultiplayCargue datosmultiplay;
+        private MultiPlayRegistro multiplay;
 
         #endregion index
 
         public ViewModelMultiPlay()
         {
-            datosmultiplay = new DatosMultiplay();
-            multiplay = new MultiPlay();
+            datosmultiplay = new MultiplayCargue();
+            multiplay = new MultiPlayRegistro();
         }
 
-        public DatosMultiplay DatosMultiplay
+        public MultiplayCargue DatosMultiplay
         {
             get
             {
@@ -33,7 +33,7 @@ namespace Telmexla.Servicios.DIME.Entity
             }
         }
 
-        public MultiPlay Multiplay
+        public MultiPlayRegistro Multiplay
         {
             get
             {
