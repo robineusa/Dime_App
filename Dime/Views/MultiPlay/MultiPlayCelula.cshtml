@@ -25,7 +25,7 @@
                     <table>
                         <tr>
                             <td style="padding:5px;">
-                                @Html.TextBoxFor(m => m.DatosMultiplay.Cuenta, new { @class = "form-control input-sm", Id = "cuentaCliente", Value = @Model.DatosMultiplay.Cuenta})
+                                @Html.TextBoxFor(m => m.Multiplay.Cuenta, new { @class = "form-control input-sm", Id = "cuentaCliente", Value = @Model.DatosMultiplay.Cuenta})
                             </td>
                         </tr>
                     </table>
@@ -44,10 +44,10 @@
                             <h2 class="page-header" style="margin-top: 25px;"><i class="fa fa-info-circle"></i> Datos MultiPlay</h2>
                             <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                                 <br />
-                                @Html.TextBoxFor(m => Model.Multiplay.Id, new { @class = "form-control input-sm", Value = @Model.DatosMultiplay.Id, style = "display:none;"})
+                                @Html.TextBoxFor(m => Model.Multiplay.IdSubReg, new { @class = "form-control input-sm", Value = @Model.DatosMultiplay.IdSubReg, style = "display:none;"})
                                 <table>
                                     <tr>
-                                        <td width="200" style="padding:1px;">
+                                        <td width="200" style="padding:1px;">   
                                             <small>Registro Base General:  </small>
                                         </td>
                                         <td width="200" style="padding:1px;">
@@ -71,16 +71,16 @@
                                             @Html.TextBoxFor(m => Model.Multiplay.RegBaGen, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.RegBaGen, placeholder = "Registro Base General" })
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.Custcode, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Custcode, placeholder = "CustCode", ReadOnly = "true" })
+                                            @Html.TextBoxFor(m => Model.Multiplay.Custcode, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Custcode, placeholder = "CustCode" })
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.TipoCuscode, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.TipoCuscode, placeholder = "Tipo CustCode", ReadOnly = "true" })
+                                            @Html.TextBoxFor(m => Model.Multiplay.TipoCuscode, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.TipoCuscode, placeholder = "Tipo CustCode" })
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.Min, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Min , placeholder = "Min", ReadOnly = "true" })
+                                            @Html.TextBoxFor(m => Model.Multiplay.Min, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Min , placeholder = "Min"})
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.CustomerId, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.CustomerId, placeholder = "Customer ID", ReadOnly = "true" }) 
+                                            @Html.TextBoxFor(m => Model.Multiplay.CustomerId, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.CustomerId, placeholder = "Customer ID" }) 
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.NombreCliente, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.NombreCliente, placeholder = "Nombre Cliente", ReadOnly = "true" })
@@ -116,7 +116,7 @@
                                             
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.EstadoAC, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.EstadoAC, placeholder = "Estado AC", ReadOnly = "true" })
+                                            @Html.TextBoxFor(m => Model.Multiplay.EstadoAC, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.EstadoAC, placeholder = "Estado AC"})
                                             
                                         </td>
                                         <td style="padding:1px;">
@@ -124,11 +124,11 @@
                                             
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.SaldoActualAC, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoActualAC, placeholder = "Saldo Actual AC", ReadOnly = "true" })
+                                            @Html.TextBoxFor(m => Model.Multiplay.SaldoActualAC, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoActualAC, placeholder = "Saldo Actual AC"})
                                             
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.SaldoEquipoAC, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoEquipoAC, placeholder = "Saldo Equipo AC", ReadOnly = "true" })
+                                            @Html.TextBoxFor(m => Model.Multiplay.SaldoEquipoAC, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoEquipoAC, placeholder = "Saldo Equipo AC"})
                                             
                                         </td>
                                     </tr>
@@ -155,7 +155,7 @@
                                     </tr>
                                     <tr>                                        
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.SaldoEquipoAscard, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoEquipoAscard, placeholder = "Saldo Equipo ASCARD", ReadOnly = "true" })
+                                            @Html.TextBoxFor(m => Model.Multiplay.SaldoEquipoAscard, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoEquipoAscard, placeholder = "Saldo Equipo ASCARD" })
                                             
                                         </td>
                                         <td style="padding:1px;">
@@ -175,7 +175,7 @@
                                             
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.CampañaCaida, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.CampañaCaida, placeholder = "Campaña Caída", ReadOnly = "true" })
+                                            @Html.TextBoxFor(m => Model.Multiplay.CampañaCaida, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.CampañaCaida, placeholder = "Campaña Caída" })
                                             
                                         </td>
                                     </tr>
@@ -317,7 +317,7 @@
                                             
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.FechaACTMultAC, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaACTMultAC, placeholder = "Fecha Activacion Multiplay en AC", ReadOnly = "true" })
+                                            @Html.TextBoxFor(m => Model.Multiplay.FechaACTMultAC, new { @class = "form-control input-sm", name = "", Id = "FechaACTMultAC", Value = @Model.DatosMultiplay.FechaACTMultAC, placeholder = "YYYY-MM-DD" })
                                             
                                         </td>
                                         <td style="padding:1px;">
@@ -329,7 +329,7 @@
                                             
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.FechaPago1, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaPago1, placeholder = "Fecha Pago" })
+                                            @Html.TextBoxFor(m => Model.Multiplay.FechaPago1, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaPago1, placeholder = "YYYY-MM-DD" })
                                             
                                         </td>
                                         <td style="padding:1px;">
@@ -364,7 +364,7 @@
                                             
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.FechaPago2, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaPago2, placeholder = "Fecha Pago" })
+                                            @Html.TextBoxFor(m => Model.Multiplay.FechaPago2, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaPago2, placeholder = "YYYY-MM-DD" })
                                             
                                         </td>
                                         <td style="padding:1px;">
@@ -376,7 +376,7 @@
                                             
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.Fecha1, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Fecha1, placeholder = "Fecha" })
+                                            @Html.TextBoxFor(m => Model.Multiplay.Fecha1, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Fecha1, placeholder = "YYYY-MM-DD" })
                                             
                                         </td>
                                         <td style="padding:1px;">
@@ -424,7 +424,7 @@
                                             
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.FechaIngresoPago, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaIngresoPago, placeholder = "Fecha Ingreso Pago" })
+                                            @Html.TextBoxFor(m => Model.Multiplay.FechaIngresoPago, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaIngresoPago, placeholder = "YYYY-MM-DD" })
                                             
                                         </td>
                                         <td style="padding:1px;">
@@ -457,7 +457,7 @@
                                             
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.Fecha2, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Fecha2, placeholder = "Fecha" })
+                                            @Html.TextBoxFor(m => Model.Multiplay.Fecha2, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Fecha2, placeholder = "YYYY-MM-DD" })
                                             
                                         </td>
                                         <td style="padding:1px;">
@@ -491,11 +491,11 @@
                                             
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.FechaCargueBaseRemplazo, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaCargueBase, placeholder = "Fecha Gestión"})
+                                            @Html.TextBoxFor(m => Model.Multiplay.FechaCargueBase, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaCargueBase, placeholder = "", ReadOnly = "true" })
                                             
                                         </td>
                                         <td style="padding:1px;">
-                                            @Html.TextBoxFor(m => Model.Multiplay.NombreBase, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.NombreBase, placeholder = "Fecha Gestión" })
+                                            @Html.TextBoxFor(m => Model.Multiplay.NombreBase, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.NombreBase, ReadOnly = "true" })
                                             
                                         </td>
                                     </tr>
@@ -512,7 +512,7 @@
                                 <table>
                                     <tr>
                                         <td style="padding:1px; width:1200px;">
-                                            @Html.TextAreaFor(m => Model.Multiplay.NotasAdicionales, new {name = "", Id = "Observaciones", @style = "width: 100%; height: 100px; resize: none; border:none;", Value = @Model.DatosMultiplay.NotasAdicionales, placeholder = "Notas Adicionales" })
+                                            @Html.TextAreaFor(m => Model.Multiplay.NotasAdicionales, new {name = "", Id = "Observaciones", @style = "width: 100%; height: 100px; resize: none; border:none;", placeholder = "Notas Adicionales" })
                                             @*@Html.TextAreaFor(m => m.Multiplay.Observaciones, new {  @id = "Observaciones", @style = "width: 100%; height: 100px; resize: none; border:none;", Value = Model.Multiplay.Observaciones })*@
                                         </td>
                                     </tr>
@@ -529,6 +529,8 @@
     </div>
 }
 @section Scripts{
-    <script src="~/Scripts/MultiPlay/MultiPlay.js?1.0.3"></script>
+    <script src="~/Scripts/MultiPlay/MultiPlay.js?1.0.4"></script>
+<script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.2"></script>
+<link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.2" rel="stylesheet" />
 }
 

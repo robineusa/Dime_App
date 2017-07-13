@@ -35,7 +35,7 @@ namespace Dime.Controllers
             {
                 decimal cuentaCliente = model.Multiplay.Cuenta;
                 var result = multiplay.BuscarDatosMultiplay(cuentaCliente);
-                if ((model.DatosMultiplay.Cuenta != 0 || model.DatosMultiplay.Cuenta.Equals(true)) && result != null)
+                if ((model.Multiplay.Cuenta != 0 || model.Multiplay.Cuenta.Equals(true)) && result != null)
                 {
                     model.DatosMultiplay = result;
                 }
