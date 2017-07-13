@@ -1,6 +1,12 @@
 ﻿@model Telmexla.Servicios.DIME.Entity.ViewModelDistribucionesBlending
 @{ ViewBag.Title = "Camble Modem Fuera de Niveles";
-    ViewBag.SubTitle = "Gestión Blending" + " - Usted esta trabajando en la campaña: " + Session["CampañaBlending"].ToString();
+    if (Session["CampañaBlending"] != null)
+    {
+        ViewBag.SubTitle = "Gestión Blending" + " - Usted esta trabajando en la campaña: " + Session["CampañaBlending"].ToString();
+    }
+    else {
+        ViewBag.SubTitle = "Gestión Blending" + " - Usted no tiene una campaña Blending asignada: ";
+    }
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -336,25 +342,29 @@
         </div>
 
     </div>
-
+    if (Session["CampañaBlending"] != null)
+    {
     <div class="box-footer">
         <button type="submit" class="btn btn-block btn-primary" name="cambiarDatos" value="true" style="width:10%;  margin-left:1%;">Guardar</button><br />
 
-    </div>
+    </div>}else { }
     <br />
-}
+    }
 
 
 @section Scripts{
-    <script>
+   @if (Session["CampañaBlending"] != null)
+    {
+     <script>
         var urlControlTipoContatoList = '@Url.Action("TiposDeContactoList", "DistribucionBlending")';
         var urlControlTiposCierresList = '@Url.Action("TiposCierresList", "DistribucionBlending")';
         var urlControlTiposRazonesList = '@Url.Action("TiposRazonesList", "DistribucionBlending")';
         var urlControlTiposCausasList = '@Url.Action("TiposCausasList", "DistribucionBlending")';
         var urlListaGestionFN = '@Url.Action("HistoricoGestionFueraNiveles", "DistribucionBlending")';
         var urlListaSeguimientosFN = '@Url.Action("SeguimientosFueraNiveles", "DistribucionBlending")';
-    </script>
-    <script src="~/Scripts/DistribucionBlending/FueraNiveles.js?1.0.17"></script>
+    </script>}else
+    {}
+    <script src="~/Scripts/DistribucionBlending/FueraNiveles.js?1.0.18"></script>
     <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
     <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />

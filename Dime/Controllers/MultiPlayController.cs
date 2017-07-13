@@ -13,68 +13,68 @@ namespace Dime.Controllers
     
     public class MultiPlayController : Controller
     {
-        WSD.MultiPlayServiceClient multiplay;
+        ////WSD.MultiPlayServiceClient multiplay;
 
-        public MultiPlayController()
-        {
-            multiplay = new WSD.MultiPlayServiceClient();
-            multiplay.ClientCredentials.Authenticate();
-        }
+        //public MultiPlayController()
+        //{
+        //    multiplay = new WSD.MultiPlayServiceClient();
+        //    multiplay.ClientCredentials.Authenticate();
+        //}
 
-        [HttpGet]
-        public ActionResult MultiPlayCelula()
-        {
-            ViewModelMultiPlay model = new ViewModelMultiPlay();
-            return View(model);
-        }
-        [HttpPost]
-        public ActionResult MultiPlayCelula(ViewModelMultiPlay model, string BotonEnvia)
-        {
+        //[HttpGet]
+        //public ActionResult MultiPlayCelula()
+        //{
+        //    ViewModelMultiPlay model = new ViewModelMultiPlay();
+        //    return View(model);
+        //}
+        //[HttpPost]
+        //public ActionResult MultiPlayCelula(ViewModelMultiPlay model, string BotonEnvia)
+        //{
             
-            if (BotonEnvia.Equals("Buscar"))
-            {
-                int cuentaCliente = model.DatosMultiplay.Cuenta;
-                var result = multiplay.BuscarDatosMultiplay(cuentaCliente);
-                if ((model.DatosMultiplay.Cuenta != 0 || model.DatosMultiplay.Cuenta.Equals(true)) && result != null)
-                {
-                    model.DatosMultiplay = result;
-                }
-                else
-                {
-                    ViewBag.Error = "Cuenta Digitada No Existe"; model = new ViewModelMultiPlay();
-                }
-            }
-            if (BotonEnvia.Equals("GuardaDatos"))
-            {
-                model.Multiplay.AliadoGestion = Session["AliadoLogeado"].ToString();
-                model.Multiplay.UsuarioGestion = Session["IdUsuario"].ToString();
-                model.Multiplay.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
-                model.Multiplay.FechaGestion = Convert.ToDateTime(model.Multiplay.FechaGestion);
-                model.Multiplay.FechaCargueBase = Convert.ToDateTime(model.Multiplay.FechaCargueBase);
-                DateTime fecha = Convert.ToDateTime(model.Multiplay.FechaGestionRemplazo, CultureInfo.InvariantCulture);
-                DateTime fechaCarge = Convert.ToDateTime(model.Multiplay.FechaCargueBaseRemplazo, CultureInfo.InvariantCulture);
-                model.Multiplay.FechaGestion = fecha;
-                model.Multiplay.FechaCargueBase = fechaCarge;
-                multiplay.EliminaCuentaDatosMultiplay(model.Multiplay.Id, model.Multiplay.Cuenta);
-                multiplay.InsertarMultiPlay(model.Multiplay);
-                model = new ViewModelMultiPlay();
-            }
+        //    if (BotonEnvia.Equals("Buscar"))
+        //    {
+        //        int cuentaCliente = model.DatosMultiplay.Cuenta;
+        //        var result = multiplay.BuscarDatosMultiplay(cuentaCliente);
+        //        if ((model.DatosMultiplay.Cuenta != 0 || model.DatosMultiplay.Cuenta.Equals(true)) && result != null)
+        //        {
+        //            model.DatosMultiplay = result;
+        //        }
+        //        else
+        //        {
+        //            ViewBag.Error = "Cuenta Digitada No Existe"; model = new ViewModelMultiPlay();
+        //        }
+        //    }
+        //    if (BotonEnvia.Equals("GuardaDatos"))
+        //    {
+        //        model.Multiplay.AliadoGestion = Session["AliadoLogeado"].ToString();
+        //        model.Multiplay.UsuarioGestion = Session["IdUsuario"].ToString();
+        //        model.Multiplay.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+        //        model.Multiplay.FechaGestion = Convert.ToDateTime(model.Multiplay.FechaGestion);
+        //        model.Multiplay.FechaCargueBase = Convert.ToDateTime(model.Multiplay.FechaCargueBase);
+        //        DateTime fecha = Convert.ToDateTime(model.Multiplay.FechaGestionRemplazo, CultureInfo.InvariantCulture);
+        //        DateTime fechaCarge = Convert.ToDateTime(model.Multiplay.FechaCargueBaseRemplazo, CultureInfo.InvariantCulture);
+        //        model.Multiplay.FechaGestion = fecha;
+        //        model.Multiplay.FechaCargueBase = fechaCarge;
+        //        multiplay.EliminaCuentaDatosMultiplay(model.Multiplay.Id, model.Multiplay.Cuenta);
+        //        multiplay.InsertarMultiPlay(model.Multiplay);
+        //        model = new ViewModelMultiPlay();
+        //    }
             
-            return View(model);
-        }
-        [HttpGet]
-        public ActionResult ConsultasAdminMultiPlay()
-        {
-            return View();
-        }
-        public JsonResult JsonConsultaBasePresidencial(string fechaInicial, string fechaFinal)
-        {
-            DateTime inicial = Convert.ToDateTime(fechaInicial, CultureInfo.InvariantCulture);
-            DateTime final = Convert.ToDateTime(fechaFinal, CultureInfo.InvariantCulture);
-            var result = multiplay.ConsultaAdminBasePresidencial(inicial, final);
-            var jsonResult = Json(JsonConvert.SerializeObject(result), JsonRequestBehavior.AllowGet);
-            jsonResult.MaxJsonLength = int.MaxValue;
-            return jsonResult;
-        }
+        //    return View(model);
+        //}
+        //[HttpGet]
+        //public ActionResult ConsultasAdminMultiPlay()
+        //{
+        //    return View();
+        //}
+        //public JsonResult JsonConsultaBasePresidencial(string fechaInicial, string fechaFinal)
+        //{
+        //    DateTime inicial = Convert.ToDateTime(fechaInicial, CultureInfo.InvariantCulture);
+        //    DateTime final = Convert.ToDateTime(fechaFinal, CultureInfo.InvariantCulture);
+        //    var result = multiplay.ConsultaAdminBasePresidencial(inicial, final);
+        //    var jsonResult = Json(JsonConvert.SerializeObject(result), JsonRequestBehavior.AllowGet);
+        //    jsonResult.MaxJsonLength = int.MaxValue;
+        //    return jsonResult;
+        //}
     }
 }

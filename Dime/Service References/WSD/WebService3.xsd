@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" />
-  <xs:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Business" />
+  <xs:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" />
+  <xs:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Business" />
   <xs:element name="MuestraEntidades">
     <xs:complexType>
       <xs:sequence />
@@ -3582,6 +3582,156 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="IsertarMonitoreo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q246="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Monitoreo" nillable="true" type="q246:MecMonitoreosP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsertarMonitoreoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaProcesosMec">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaProcesosMecResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q247="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaProcesosMecResult" nillable="true" type="q247:ArrayOfMecProcesos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaLineasMec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdProceso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaLineasMecResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q248="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaLineasMecResult" nillable="true" type="q248:ArrayOfMecLineas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListasCorreosMec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdLinea" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListasCorreosMecResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q249="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListasCorreosMecResult" nillable="true" type="q249:ArrayOfMecListasDistribucion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaTipoAlarmasMec">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaTipoAlarmasMecResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q250="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaTipoAlarmasMecResult" nillable="true" type="q250:ArrayOfMecTipoAlarmas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DestinatariosMec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdLista" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DestinatariosMecResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q251="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="DestinatariosMecResult" nillable="true" type="q251:MecListasDistribucion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarMonitoreo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q252="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Monitoreo" nillable="true" type="q252:MecMonitoreosP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarMonitoreoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaAdminMonitoreosPrincipal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaAdminMonitoreosPrincipalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q253="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminMonitoreosPrincipalResult" nillable="true" type="q253:ArrayOfMecMonitoreosP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaAdminMonitoreosLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaAdminMonitoreosLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q254="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminMonitoreosLogResult" nillable="true" type="q254:ArrayOfMecMonitoreosL" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarMonitoreoPorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdMonitoreo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarMonitoreoPorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q255="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarMonitoreoPorIdResult" nillable="true" type="q255:MecMonitoreosP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaAgenteMonitoreosPrincipal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaAgenteMonitoreosPrincipalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q256="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAgenteMonitoreosPrincipalResult" nillable="true" type="q256:ArrayOfMecMonitoreosP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="BuscarDatosMultiplay">
     <xs:complexType>
       <xs:sequence>
@@ -3592,14 +3742,14 @@
   <xs:element name="BuscarDatosMultiplayResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q246="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="BuscarDatosMultiplayResult" nillable="true" type="q246:DatosMultiplay" />
+        <xs:element xmlns:q257="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="BuscarDatosMultiplayResult" nillable="true" type="q257:DatosMultiplay" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InsertarMultiPlay">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q247="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="multiplay" nillable="true" type="q247:MultiPlay" />
+        <xs:element xmlns:q258="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="multiplay" nillable="true" type="q258:MultiPlay" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3632,157 +3782,7 @@
   <xs:element name="ConsultaAdminBasePresidencialResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q248="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminBasePresidencialResult" nillable="true" type="q248:ArrayOfMultiPlay" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="IsertarMonitoreo">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q249="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Monitoreo" nillable="true" type="q249:MecMonitoreosP" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="IsertarMonitoreoResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ListaProcesosMec">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ListaProcesosMecResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q250="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaProcesosMecResult" nillable="true" type="q250:ArrayOfMecProcesos" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ListaLineasMec">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="IdProceso" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ListaLineasMecResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q251="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaLineasMecResult" nillable="true" type="q251:ArrayOfMecLineas" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ListasCorreosMec">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="IdLinea" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ListasCorreosMecResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q252="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListasCorreosMecResult" nillable="true" type="q252:ArrayOfMecListasDistribucion" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ListaTipoAlarmasMec">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ListaTipoAlarmasMecResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q253="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaTipoAlarmasMecResult" nillable="true" type="q253:ArrayOfMecTipoAlarmas" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="DestinatariosMec">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="IdLista" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="DestinatariosMecResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q254="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="DestinatariosMecResult" nillable="true" type="q254:MecListasDistribucion" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ActualizarMonitoreo">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q255="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Monitoreo" nillable="true" type="q255:MecMonitoreosP" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ActualizarMonitoreoResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ConsultaAdminMonitoreosPrincipal">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ConsultaAdminMonitoreosPrincipalResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q256="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminMonitoreosPrincipalResult" nillable="true" type="q256:ArrayOfMecMonitoreosP" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ConsultaAdminMonitoreosLog">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ConsultaAdminMonitoreosLogResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q257="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminMonitoreosLogResult" nillable="true" type="q257:ArrayOfMecMonitoreosL" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ConsultarMonitoreoPorId">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="IdMonitoreo" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ConsultarMonitoreoPorIdResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q258="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarMonitoreoPorIdResult" nillable="true" type="q258:MecMonitoreosP" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ConsultaAgenteMonitoreosPrincipal">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
-        <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ConsultaAgenteMonitoreosPrincipalResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q259="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAgenteMonitoreosPrincipalResult" nillable="true" type="q259:ArrayOfMecMonitoreosP" />
+        <xs:element xmlns:q259="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminBasePresidencialResult" nillable="true" type="q259:ArrayOfMultiPlay" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

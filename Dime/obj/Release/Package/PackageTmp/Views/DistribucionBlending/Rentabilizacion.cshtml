@@ -1,6 +1,10 @@
 ﻿@model Telmexla.Servicios.DIME.Entity.ViewModelDistribucionesBlending
 @{ ViewBag.Title = "Rentabilización";
-    ViewBag.SubTitle = "Gestión Blending" + " - Usted esta trabajando en la campaña: " + Session["CampañaBlending"].ToString();
+    if (Session["CampañaBlending"] != null)
+    {
+        ViewBag.SubTitle = "Gestión Blending" + " - Usted esta trabajando en la campaña: " + Session["CampañaBlending"].ToString();
+    }
+    else { ViewBag.SubTitle = "Gestión Blending" + " - Usted no tiene una campaña Blending asignada: "; }
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -31,53 +35,53 @@
             </div>
             @if (ViewBag.ValidacionBase == null)
             {
-            <div style="float:left;z-index:4;position:absolute;margin-top:-70px;height:80px;width:100%;margin-left:120px;">
-                <div style="width:50px;height:80px;float:left;"></div>
-                <div class="" style="float:left;width:280px;height:80px;max-height:80px;background-color:white;">
-                    <span class="info-box-icon bg-red" style="width:80px;height:80px;max-height:80px;"><i class="ion-ios-information" style="width:80px;height:80px;max-height:80px;"></i></span>
-                    <div class="info-box-content" style="width:200px;height:60px;max-height:60px;">
-                        <span class="info-box-number">NUMERO DE TOQUES</span>
-                        <span class="info-box-number">@ViewBag.CantidadToques</span>
-                    </div>
-                </div>
-                @if (ViewBag.Cierre != null)
-                    {
-                    <div class="" style="float:left;width:280px;height:80px;max-height:80px;background-color:white;margin-left:5px;">
-                        <span class="info-box-icon bg-orange" style="width:80px;height:80px;max-height:80px;"><i class="ion-ios-help" style="width:80px;height:80px;max-height:80px;"></i></span>
+                <div style="float:left;z-index:4;position:absolute;margin-top:-70px;height:80px;width:100%;margin-left:120px;">
+                    <div style="width:50px;height:80px;float:left;"></div>
+                    <div class="" style="float:left;width:280px;height:80px;max-height:80px;background-color:white;">
+                        <span class="info-box-icon bg-red" style="width:80px;height:80px;max-height:80px;"><i class="ion-ios-information" style="width:80px;height:80px;max-height:80px;"></i></span>
                         <div class="info-box-content" style="width:200px;height:60px;max-height:60px;">
-                            <span class="info-box-number">ULTIMO CIERRE</span>
-                            <span class="info-box-text" style="font-size:10px;">@ViewBag.Cierre</span>
+                            <span class="info-box-number">NUMERO DE TOQUES</span>
+                            <span class="info-box-number">@ViewBag.CantidadToques</span>
                         </div>
-                    </div>}
+                    </div>
+                    @if (ViewBag.Cierre != null)
+                    {
+                        <div class="" style="float:left;width:280px;height:80px;max-height:80px;background-color:white;margin-left:5px;">
+                            <span class="info-box-icon bg-orange" style="width:80px;height:80px;max-height:80px;"><i class="ion-ios-help" style="width:80px;height:80px;max-height:80px;"></i></span>
+                            <div class="info-box-content" style="width:200px;height:60px;max-height:60px;">
+                                <span class="info-box-number">ULTIMO CIERRE</span>
+                                <span class="info-box-text" style="font-size:10px;">@ViewBag.Cierre</span>
+                            </div>
+                        </div>}
                     else { }
 
 
-                @if (ViewBag.Razon != null)
+                    @if (ViewBag.Razon != null)
                     {
-                    <div class="" style="float:left;width:480px;height:80px;max-height:80px;background-color:white;margin-left:5px;max-width:320px;">
-                        <span class="info-box-icon bg-black" style="width:80px;height:80px;max-height:80px;"><i class="ion-checkmark-circled" style="width:80px;height:80px;max-height:80px;"></i></span>
-                        <div class="info-box-content" style="width:400px;height:60px;max-height:60px;">
-                            <span class="info-box-number">ULTIMA GESTION</span>
-                            <span class="info-box-text" style="font-size:10px;">@ViewBag.Razon</span>
+                        <div class="" style="float:left;width:480px;height:80px;max-height:80px;background-color:white;margin-left:5px;max-width:320px;">
+                            <span class="info-box-icon bg-black" style="width:80px;height:80px;max-height:80px;"><i class="ion-checkmark-circled" style="width:80px;height:80px;max-height:80px;"></i></span>
+                            <div class="info-box-content" style="width:400px;height:60px;max-height:60px;">
+                                <span class="info-box-number">ULTIMA GESTION</span>
+                                <span class="info-box-text" style="font-size:10px;">@ViewBag.Razon</span>
+                            </div>
                         </div>
-                    </div>
                     }
                     else
                     { }
-            </div>
+                </div>
             }
             else
             {
-            <div style="float:left;z-index:4;position:absolute;margin-top:-70px;height:80px;width:100%;margin-left:150px;">
-                <div style="width:50px;height:80px;float:left;"></div>
-                <div class="" style="float:left;height:80px;max-height:80px;background-color:white;">
-                    <span class="info-box-icon bg-red" style="width:80px;height:80px;max-height:80px;"><i class="ion-sad" style="width:80px;height:80px;max-height:80px;"></i></span>
-                    <div class="info-box-content" style="height:60px;max-height:60px;">
-                        <span class="info-box-number">INFORMACIÓN IMPORTANTE</span>
-                        <span class="info-box-text">@ViewBag.ValidacionBase</span>
+                <div style="float:left;z-index:4;position:absolute;margin-top:-70px;height:80px;width:100%;margin-left:150px;">
+                    <div style="width:50px;height:80px;float:left;"></div>
+                    <div class="" style="float:left;height:80px;max-height:80px;background-color:white;">
+                        <span class="info-box-icon bg-red" style="width:80px;height:80px;max-height:80px;"><i class="ion-sad" style="width:80px;height:80px;max-height:80px;"></i></span>
+                        <div class="info-box-content" style="height:60px;max-height:60px;">
+                            <span class="info-box-number">INFORMACIÓN IMPORTANTE</span>
+                            <span class="info-box-text">@ViewBag.ValidacionBase</span>
+                        </div>
                     </div>
                 </div>
-            </div>
             }
         </div>
     </div>
@@ -266,7 +270,7 @@
                                 </div>
                             </div>
                         </td>
-                    
+
                         <td>
                             <div class="" style="float:left;height:80px;max-height:80px;background-color:white;">
                                 <span class="info-box-icon bg-orange" style="width:80px;height:80px;max-height:80px;"><i class="ion-bookmark" style="width:80px;height:80px;max-height:80px;"></i></span>
@@ -276,7 +280,7 @@
                                 </div>
                             </div>
                         </td>
-                   
+
                         <td>
                             <div class="" style="float:left;height:80px;max-height:80px;background-color:white;">
                                 <span class="info-box-icon bg-black" style="width:80px;height:80px;max-height:80px;"><i class="ion-bookmark" style="width:80px;height:80px;max-height:80px;"></i></span>
@@ -298,7 +302,171 @@
             </div>
         </div>
     </div>
-        <div class="box box-primary">
+    <div class="box box-primary">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-xs-12">
+
+                </div>
+            </div>
+        </div>
+        <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
+            <i class="fa fa-gift"></i> Ofrecimientos
+
+        </h2>
+        <div id="1_ofre" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+            <table>
+                <tr>
+                    <td width="200" style="padding:1px;">
+                        <small>Primer Ofrecimiento:  </small>
+                </tr>
+                <tr>
+                    <td colspan="3" style="padding:1px; width:1200px;">
+                        @Html.TextBoxFor(m => m.GBCRentabilizacion.Ofrecimiento1, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text", id = "ofrecimiento1" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <small>El cliente acepto este ofrecimiento?</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" onclick="return Ofrecimiento_CC_1_SI()" name="Ofrecimiento" class="minimal" id="ofre1Si">
+                                Si
+                            </label>
+                            <label>
+                                <input type="checkbox" onclick="return Ofrecimiento_CC_1_NO()" name="Ofrecimiento" class="minimal" id="ofre1No">
+                                No
+                            </label>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="2_ofre" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;display:none">
+            <table>
+                <tr>
+                    <td width="1200px" style="padding:1px;">
+                        <small>Segundo Ofrecimiento:  </small>
+                </tr>
+                <tr>
+                    <td colspan="3" style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GBCRentabilizacion.Ofrecimiento2, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text", id = "ofrecimiento2" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <small>El cliente acepto este ofrecimiento?</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" onclick="return Ofrecimiento_CC_2_SI()" name="Ofrecimiento" class="minimal" id="ofre2Si">
+                                Si
+                            </label>
+                            <label>
+                                <input type="checkbox" onclick="return Ofrecimiento_CC_2_NO()" name="Ofrecimiento" class="minimal" id="ofre2No">
+                                No
+                            </label>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="3_ofre" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;display:none">
+            <table>
+                <tr>
+                    <td width="200" style="padding:1px;">
+                        <small>Tercer Ofrecimiento:  </small>
+                </tr>
+                <tr>
+                    <td colspan="3" style="padding:1px; width:1200px;">
+                        @Html.TextBoxFor(m => m.GBCRentabilizacion.Ofrecimiento3, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text", id = "ofrecimiento3" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <small>El cliente acepto este ofrecimiento?</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" onclick="return Ofrecimiento_CC_3_SI()" name="Ofrecimiento" class="minimal" id="ofre3Si">
+                                Si
+                            </label>
+                            <label>
+                                <input type="checkbox" onclick="return Ofrecimiento_CC_3_NO()" name="Ofrecimiento" class="minimal" id="ofre3No">
+                                No
+                            </label>
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+            @Html.TextBoxFor(m => m.GBPRentabilizacion.OfrecimientoAceptado, new { @class = "form-control input-sm", style = "display:none", type = "text", id = "OfrecimientoAceptado" })
+        </div>
+        <br />
+    </div>
+    <div class="box box-primary">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-xs-12">
+
+                </div>
+            </div>
+        </div>
+        <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
+            <i class="fa fa-sitemap"></i> Árbol de Tipificación
+        </h2>
+        <div id="ARBOL" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+            <br />
+            <table>
+                <tr>
+                    <td style="padding-left:1px; width:200px;">
+                        <label>Tipo contacto</label>
+                        @Html.DropDownListFor(m => m.GBPRentabilizacion.TipoContacto, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tipoContactosSelect", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.GBPRentabilizacion.TipoContacto, "", new { @class = "text-danger" })
+                    </td>
+                    <td style="padding-left:1px; width:220px;">
+                        <label>Gestión</label>
+                        @Html.DropDownListFor(m => m.GBPRentabilizacion.Gestion, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tiposCierresSelect", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.GBPRentabilizacion.Gestion, "", new { @class = "text-danger" })
+                    </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <label>Cierre</label>
+                        @Html.DropDownListFor(m => m.GBPRentabilizacion.Cierre, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tiposRazonSelect", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.GBPRentabilizacion.Cierre, "", new { @class = "text-danger" })
+                    </td>
+                    <td style="padding-left:4px; width:400px;">
+                        <label>Razón</label>
+                        @Html.DropDownListFor(m => m.GBPRentabilizacion.Causa, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tiposCausasSelect", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.GBPRentabilizacion.Causa, "", new { @class = "text-danger" })
+                    </td>
+                    <td style="padding-left:4px; width:300px;">
+                        <label>Motivo</label>
+                        @Html.DropDownListFor(m => m.GBPRentabilizacion.Motivo, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tiposMotivoSelect", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.GBPRentabilizacion.Motivo, "", new { @class = "text-danger" })
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br />
+    </div>
+        <div class="box box-primary" id="TituloSeguimiento" style="display:none;">
             <div class="box-body">
                 <div class="row">
                     <div class="col-xs-12">
@@ -307,113 +475,22 @@
                 </div>
             </div>
             <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
-                <i class="fa fa-gift"></i> Ofrecimientos
-               
+                <i class="fa fa-gift"></i> Seguimientos
+
             </h2>
-            <div id="1_ofre" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
-                <table>
+            <div id="CuerpoSeguimineto" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+                <table id="Calendario_Seguimiento" style="display:block; margin-bottom: 0px;">
                     <tr>
-                        <td width="200" style="padding:1px;">
-                            <small>Primer Ofrecimiento:  </small>
-                    </tr>
-                    <tr>
-                        <td colspan="3" style="padding:1px; width:1200px;">
-                            @Html.TextBoxFor(m => m.GBCRentabilizacion.Ofrecimiento1, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text",id="ofrecimiento1" })
+                        <td style="padding:1px;">
+                            <small>Seleccione Fecha y Hora del Seguimiento: </small>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            <small>El cliente acepto este ofrecimiento?</small>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-
-                            <div class="form-group">
-                                <label>
-                                    <input type="checkbox" onclick="return Ofrecimiento_CC_1_SI()" name="Ofrecimiento" class="minimal" id="ofre1Si">
-                                    Si
-                                </label>
-                                <label>
-                                    <input type="checkbox" onclick="return Ofrecimiento_CC_1_NO()" name="Ofrecimiento" class="minimal" id="ofre1No">
-                                    No
-                                </label>
-                            </div>
-
+                        <td style="padding:1px;">
+                            @Html.TextBoxFor(m => m.GBPRentabilizacion.FechaSeguimiento, new { @class = "form-control input-sm", id = "CC_Fecha", placeholder = "Seleccione Fecha" })
                         </td>
                     </tr>
                 </table>
-            </div>
-
-            <div id="2_ofre" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;display:none">
-                <table>
-                    <tr>
-                        <td width="1200px" style="padding:1px;">
-                            <small>Segundo Ofrecimiento:  </small>
-                    </tr>
-                    <tr>
-                        <td colspan="3" style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GBCRentabilizacion.Ofrecimiento2, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text", id = "ofrecimiento2" })
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <small>El cliente acepto este ofrecimiento?</small>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-
-                            <div class="form-group">
-                                <label>
-                                    <input type="checkbox" onclick="return Ofrecimiento_CC_2_SI()" name="Ofrecimiento" class="minimal" id="ofre2Si">
-                                    Si
-                                </label>
-                                <label>
-                                    <input type="checkbox" onclick="return Ofrecimiento_CC_2_NO()" name="Ofrecimiento" class="minimal" id="ofre2No">
-                                    No
-                                </label>
-                            </div>
-
-                        </td>
-                    </tr>
-                </table>
-            </div>
-
-            <div id="3_ofre" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;display:none">
-                <table>
-                    <tr>
-                        <td width="200" style="padding:1px;">
-                            <small>Tercer Ofrecimiento:  </small>
-                    </tr>
-                    <tr>
-                        <td colspan="3" style="padding:1px; width:1200px;">
-                            @Html.TextBoxFor(m => m.GBCRentabilizacion.Ofrecimiento3, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text",id = "ofrecimiento3" })
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <small>El cliente acepto este ofrecimiento?</small>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-
-                            <div class="form-group">
-                                <label>
-                                    <input type="checkbox" onclick="return Ofrecimiento_CC_3_SI()" name="Ofrecimiento" class="minimal" id="ofre3Si">
-                                    Si
-                                </label>
-                                <label>
-                                    <input type="checkbox" onclick="return Ofrecimiento_CC_3_NO()" name="Ofrecimiento" class="minimal" id="ofre3No">
-                                    No
-                                </label>
-                            </div>
-
-                        </td>
-                    </tr>
-                </table>
-                @Html.TextBoxFor(m => m.GBPRentabilizacion.OfrecimientoAceptado, new { @class = "form-control input-sm", style="display:none", type = "text", id = "OfrecimientoAceptado"})
             </div>
             <br />
         </div>
@@ -426,121 +503,52 @@
                 </div>
             </div>
             <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
-                <i class="fa fa-sitemap"></i> Árbol de Tipificación
+                <i class="fa fa-comment"></i> Observaciones
+
             </h2>
-            <div id="ARBOL" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+            <div id="CuerpoSeguimineto" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
                 <br />
                 <table>
                     <tr>
-                        <td style="padding-left:1px; width:200px;">
-                            <label>Tipo contacto</label>
-                            @Html.DropDownListFor(m => m.GBPRentabilizacion.TipoContacto, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tipoContactosSelect", @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.GBPRentabilizacion.TipoContacto, "", new { @class = "text-danger" })
-                        </td>
-                        <td style="padding-left:1px; width:220px;">
-                            <label>Gestión</label>
-                            @Html.DropDownListFor(m => m.GBPRentabilizacion.Gestion, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tiposCierresSelect", @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.GBPRentabilizacion.Gestion, "", new { @class = "text-danger" })
-                        </td>
-                        <td style="padding-left:4px; width:280px;">
-                            <label>Cierre</label>
-                            @Html.DropDownListFor(m => m.GBPRentabilizacion.Cierre, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tiposRazonSelect", @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.GBPRentabilizacion.Cierre, "", new { @class = "text-danger" })
-                        </td>
-                        <td style="padding-left:4px; width:400px;">
-                            <label>Razón</label>
-                            @Html.DropDownListFor(m => m.GBPRentabilizacion.Causa, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tiposCausasSelect", @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.GBPRentabilizacion.Causa, "", new { @class = "text-danger" })
-                        </td>
-                        <td style="padding-left:4px; width:300px;">
-                            <label>Motivo</label>
-                            @Html.DropDownListFor(m => m.GBPRentabilizacion.Motivo, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tiposMotivoSelect", @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.GBPRentabilizacion.Motivo, "", new { @class = "text-danger" })
+                        <td style="padding:1px; width:1200px;">
+                            @Html.TextBoxFor(m => m.GBPRentabilizacion.Observaciones, new { @class = "form-control input-sm", placeholder = "", style = "width:100%; height:70px;" })
                         </td>
                     </tr>
                 </table>
             </div>
             <br />
         </div>
-            <div class="box box-primary" id="TituloSeguimiento" style="display:none;">
-                <div class="box-body">
-                    <div class="row">
-                        <div class="col-xs-12">
+    if (Session["CampañaBlending"] != null)
+    {
+        <div class="box box-primary">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
 
-                        </div>
                     </div>
                 </div>
-                <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
-                    <i class="fa fa-gift"></i> Seguimientos
-
-                </h2>
-                <div id="CuerpoSeguimineto" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
-                    <table id="Calendario_Seguimiento" style="display:block; margin-bottom: 0px;">
-                        <tr>
-                            <td style="padding:1px;">
-                                <small>Seleccione Fecha y Hora del Seguimiento: </small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:1px;">
-                                @Html.TextBoxFor(m => m.GBPRentabilizacion.FechaSeguimiento, new { @class = "form-control input-sm", id = "CC_Fecha", placeholder = "Seleccione Fecha" })
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <br />
             </div>
-            <div class="box box-primary">
-                <div class="box-body">
-                    <div class="row">
-                        <div class="col-xs-12">
 
-                        </div>
-                    </div>
-                </div>
-                <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
-                    <i class="fa fa-comment"></i> Observaciones
-
-                </h2>
-                <div id="CuerpoSeguimineto" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
-                    <br />
-                    <table>
-                        <tr>
-                            <td style="padding:1px; width:1200px;">
-                                @Html.TextBoxFor(m => m.GBPRentabilizacion.Observaciones, new { @class = "form-control input-sm", placeholder = "", style = "width:100%; height:70px;" })
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <br />
-            </div>
-            <div class="box box-primary">
-                <div class="box-body">
-                    <div class="row">
-                        <div class="col-xs-12">
-
-                        </div>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn btn-block btn-primary" name="cambiarDatos" value="true" style="width:10%;  margin-left:1%;">Guardar</button><br />
-
-
-            </div>
+            <button type="submit" class="btn btn-block btn-primary" name="cambiarDatos" value="true" style="width:10%;  margin-left:1%;">Guardar</button><br />
+        </div>}
+    else { }
 
 }
 
 
 @section Scripts{
-    <script>
-        var urlControlTipoContatoList = '@Url.Action("TiposDeContactoList", "DistribucionBlending")';
-        var urlControlTipoGestionList = '@Url.Action("TiposCierresList", "DistribucionBlending")';
-        var urlControlTipoCierreList = '@Url.Action("TiposRazonesList", "DistribucionBlending")';
-        var urlControlTipoCausaList = '@Url.Action("TiposCausasList", "DistribucionBlending")';
-        var urlControlTipoMotivoList = '@Url.Action("TiposMotivoList", "DistribucionBlending")';
-        var urlListaGestion = '@Url.Action("HistoricoGestionRentabilizacion", "DistribucionBlending")';
-        var urlListaSeguimientos = '@Url.Action("SeguimientosRentabilizacion", "DistribucionBlending")';
-    </script>
+    @if (Session["CampañaBlending"] != null)
+    {
+        <script>
+            var urlControlTipoContatoList = '@Url.Action("TiposDeContactoList", "DistribucionBlending")';
+            var urlControlTipoGestionList = '@Url.Action("TiposCierresList", "DistribucionBlending")';
+            var urlControlTipoCierreList = '@Url.Action("TiposRazonesList", "DistribucionBlending")';
+            var urlControlTipoCausaList = '@Url.Action("TiposCausasList", "DistribucionBlending")';
+            var urlControlTipoMotivoList = '@Url.Action("TiposMotivoList", "DistribucionBlending")';
+            var urlListaGestion = '@Url.Action("HistoricoGestionRentabilizacion", "DistribucionBlending")';
+            var urlListaSeguimientos = '@Url.Action("SeguimientosRentabilizacion", "DistribucionBlending")';
+        </script>}
+    else { }
     <script src="~/Scripts/DistribucionBlending/Rentabilizacion.js?1.0.5"></script>
     <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
     <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
