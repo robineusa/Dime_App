@@ -34,7 +34,7 @@
         public decimal NotaObtenida { get; set; }
         public string TipoDeAlarma { get; set; }
         public string RegistroMonitoreo { get; set; }
-        public string MotivoAlarma { get; set; }
+        public string MotivoLlamada { get; set; }
         public string AnalisisDeGestion { get; set; }
         public string AccionEmprender { get; set; }
         public string EtiquetaDeLlamada { get; set; }
