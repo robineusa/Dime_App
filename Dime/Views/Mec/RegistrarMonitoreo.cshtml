@@ -25,13 +25,19 @@
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Seleccione el Proceso</small>
                                         @Html.DropDownListFor(m => m.MecMonitoreosP.IdProceso, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Procesos", @class = "form-control" })
-                                        @Html.ValidationMessageFor(m => m.MecMonitoreosP.IdProceso, "", new { @class = "text-danger" })
+                                        
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Seleccione la Linea</small>
                                         @Html.DropDownListFor(m => m.MecMonitoreosP.IdLinea, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Lineas", @class = "form-control" })
-                                        @Html.ValidationMessageFor(m => m.MecMonitoreosP.IdLinea, "", new { @class = "text-danger" })
+                                        @Html.HiddenFor(m => m.MecMonitoreosP.IdListaDistribucion, new { @class = "form-control input-sm", @Id = "IdListaDistri" })
                                     </td>
+                                </tr>
+                                <tr>
+                                    <td>
+@Html.ValidationMessageFor(m => m.MecMonitoreosP.IdProceso, "", new { @class = "text-danger" })
+                                    </td>
+                                    <td>@Html.ValidationMessageFor(m => m.MecMonitoreosP.IdLinea, "", new { @class = "text-danger" })</td>
                                 </tr>
                             </table>
                             
@@ -57,25 +63,183 @@
                     <tr>
                         <td style="padding-left:1px; width:200px;">
                             <small>Cédula Usuario</small>
-                            @Html.TextBoxFor(m => m.MecMonitoreosP.CedulaUsuarioGestion, new { @class = "form-control input-sm"})
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.UsuarioMonitoreado, new { @class = "form-control input-sm", @Id = "CedulaUsuarioMonitoreado" })
                         </td>
-                        <td style="padding-left:1px; width:220px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Nombre Usuario</small>
-                            @Html.TextBoxFor(m => m.MecMonitoreosP.NombreUsuarioMonitoreado, new { @class = "form-control input-sm", @readonly = "true" })
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.NombreUsuarioMonitoreado, new { @class = "form-control input-sm", @readonly = "true", @Id="NombreUsuarioMonitoreado" })
                         </td>
-                        <td style="padding-left:4px; width:220px;">
+                        <td style="padding-left:4px; width:280px;">
                             <small>Operación</small>
-                            @Html.TextBoxFor(m => m.MecMonitoreosP.OperacionUsuarioMonitoreado, new { @class = "form-control input-sm", @readonly = "true" })
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.OperacionUsuarioMonitoreado, new { @class = "form-control input-sm", @readonly = "true", @Id = "OperacionUsuarioMonitoreado" })
                         </td>
-                        <td style="padding-left:4px; width:220px;">
+                        <td style="padding-left:4px; width:280px;">
                             <small>Aliado</small>
-                            @Html.TextBoxFor(m => m.MecMonitoreosP.AliadoUsuarioMonitoreado, new { @class = "form-control input-sm", @readonly = "true" })
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.AliadoUsuarioMonitoreado, new { @class = "form-control input-sm", @readonly = "true", @Id = "AliadoUsuarioMonitoreado" })
                         </td>
                         
+                    </tr>
+                    <tr>
+                        <td>@Html.ValidationMessageFor(m => m.MecMonitoreosP.UsuarioMonitoreado, "", new { @class = "text-danger" })</td>
                     </tr>
                 </table>
             </div>
             <br />
+        </div>
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                    </div>
+                </div>
+            </div>
+            <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
+                <i class="fa fa-user"></i> Información del Cliente
+            </h2>
+            <div id="ARBOL" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+                <br />
+                <table>
+                    <tr>
+                        <td style="padding-left:1px; width:200px;">
+                            <small>Cuenta del Cliente</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.CuentaCliente, new { @class = "form-control input-sm", @Id = "CuentaCliente" })
+                        </td>
+                        <td style="padding-left:1px; width:200px;">
+                            <small>División</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.Division, new { @class = "form-control input-sm", @readonly = "true", @Id = "Division" })
+                        </td>
+                        <td style="padding-left:4px; width:200px;">
+                            <small>Área</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.Area, new { @class = "form-control input-sm", @readonly = "true", @Id = "Area" })
+                        </td>
+                        <td style="padding-left:4px; width:200px;">
+                            <small>Zona</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.Zona, new { @class = "form-control input-sm", @readonly = "true", @Id = "Zona" })
+                        </td>
+                        <td style="padding-left:4px; width:200px;">
+                            <small>Comunidad</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.Comunidad, new { @class = "form-control input-sm", @readonly = "true", @Id = "Comunidad" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.ValidationMessageFor(m => m.MecMonitoreosP.CuentaCliente, "", new { @class = "text-danger" })</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left:4px; width:200px;">
+                            <small>Tipo de Cliente</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.TipoCliente, new { @class = "form-control input-sm", @readonly = "true", @Id = "TipoCliente" })
+                        </td>
+                        <td style="padding-left:4px; width:200px;">
+                            <small>Descripción Tipo Cliente</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.DescripcionTipoCliente, new { @class = "form-control input-sm", @readonly = "true", @Id = "DescripcionTipoCliente" })
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br />
+        </div>
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                    </div>
+                </div>
+            </div>
+            <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
+                <i class="fa fa-headphones"></i> Detalle del Monitoreo
+            </h2>
+            <div id="ARBOL" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+                <br />
+                <table>
+                    <tr>
+                        <td style="padding-left:1px; width:200px;">
+                            <small>Nota Obtenida</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.NotaObtenida, new { @class = "form-control input-sm" })
+                        </td>
+                        <td style="padding-left:1px; width:300px;">
+                            <small>Tipo de Alarma</small>
+                            @Html.DropDownListFor(m => m.MecMonitoreosP.TipoDeAlarma, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "TipoAlarmas", @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.MecMonitoreosP.TipoDeAlarma, "", new { @class = "text-danger" })
+                        </td>
+                        <td style="padding-left:4px; width:220px;">
+                            <small>Registro Monitoreo</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.RegistroMonitoreo, new { @class = "form-control input-sm"})
+                        </td>
+                        <td style="padding-left:4px; width:220px;">
+                            <small>Marcación Registrada AS400</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.MarcacionRegistradaRR, new { @class = "form-control input-sm" })
+                        </td>
+                        <td style="padding-left:4px; width:220px;">
+                            <small>Marcación Correcta AS400</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.MarcacionCorrectaRR, new { @class = "form-control input-sm" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.ValidationMessageFor(m => m.MecMonitoreosP.TipoDeAlarma, "", new { @class = "text-danger" })</td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left:4px; width:200px;">
+                            <small>Campo Opcional 1</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.CampoOpcional1, new { @class = "form-control input-sm" })
+                        </td>
+                        <td style="padding-left:4px; width:220px;">
+                            <small>Campo Opcional 2</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.CampoOpcional2, new { @class = "form-control input-sm" })
+                        </td>
+                        <td style="padding-left:4px; width:220px;">
+                            <small>Campo Opcional 3</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.CampoOpcional3, new { @class = "form-control input-sm" })
+                        </td>
+                        <td style="padding-left:4px; width:220px;">
+                            <small>Campo Opcional 4</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.CampoOpcional4, new { @class = "form-control input-sm" })
+                        </td>
+                        <td style="padding-left:4px; width:220px;">
+                            <small>Campo Opcional 5</small>
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.CampoOpcional5, new { @class = "form-control input-sm" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" style="padding:1px; width:1200px;">
+                            <small>Motivo de Llamada</small>
+                            @Html.TextAreaFor(m => m.MecMonitoreosP.MotivoLlamada, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text"})
+                        </td>
+                        </tr>
+                    <tr>
+                        <td colspan="6" style="padding:1px; width:1200px;">
+                            <small>Análisis de la Gestión</small>
+                            @Html.TextAreaFor(m => m.MecMonitoreosP.AnalisisDeGestion, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" style="padding:1px; width:1200px;">
+                            <small>Acción a Emprender</small>
+                            @Html.TextAreaFor(m => m.MecMonitoreosP.AccionEmprender, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" style="padding:1px; width:1200px;">
+                            <small>Etiqueta de la Llamada</small>
+                            @Html.TextAreaFor(m => m.MecMonitoreosP.EtiquetaDeLlamada, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text" })
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br />
+        </div>
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                    </div>
+                </div>
+            </div>
+            
+                <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;  margin-left:1%;">Guardar</button><br />
+            
         </div>
     }
 
@@ -83,10 +247,15 @@
         <script>
             var urlProcesos = '@Url.Action("TraerListaProcesos", "Mec")';
             var urlLineas = '@Url.Action("TraerListaLineas", "Mec")';
+            var UrlUsuarios = '@Url.Action("TraerInformacionUsuarioHolos", "Mec")';
+            var UrlClientes = '@Url.Action("TraerInformacionCliente", "Mec")';
+            var UrlAlarmas = '@Url.Action("TraerListaTiposAlarmas", "Mec")';
+            var UrlListaDistribucion = '@Url.Action("TraerListasDistribucion", "Mec")';
         </script>
-    <script src="~/Scripts/Mec/RegistrarMonitoreo.js?1.0.0"></script>    
+    <script src="~/Scripts/Mec/RegistrarMonitoreo.js?1.0.3"></script>    
         }
-    @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+    <link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />
+    @*@Scripts.Render("~/AdminLTEplugins/jquery-validate/js")*@
 }
 else
 {

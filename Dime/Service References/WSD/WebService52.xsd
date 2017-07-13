@@ -2122,7 +2122,7 @@
       <xs:element minOccurs="0" name="IdProceso" type="xs:int" />
       <xs:element minOccurs="0" name="MarcacionCorrectaRR" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MarcacionRegistradaRR" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MotivoAlarma" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotivoLlamada" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreLinea" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreProceso" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
@@ -2233,7 +2233,7 @@
       <xs:element minOccurs="0" name="IdProceso" type="xs:int" />
       <xs:element minOccurs="0" name="MarcacionCorrectaRR" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MarcacionRegistradaRR" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="MotivoAlarma" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotivoLlamada" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreLinea" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreProceso" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />

@@ -14,12 +14,15 @@ namespace Dime.Controllers
     {
         WSD.MecServiceClient MecService;
         WSD.InboundServiceClient inboundService;
+        WSD.LoginServiceClient Usuarios;
         public MecController()
         {
             MecService = new WSD.MecServiceClient();
             MecService.ClientCredentials.Authenticate();
             inboundService = new WSD.InboundServiceClient();
             inboundService.ClientCredentials.Authenticate();
+            Usuarios = new WSD.LoginServiceClient();
+            Usuarios.ClientCredentials.Authenticate();
         }
 
         public JsonResult TraerInformacionCliente(int CuentaCliente)
@@ -62,6 +65,15 @@ namespace Dime.Controllers
                 JsonRequestBehavior = JsonRequestBehavior.DenyGet
             };
         }
+        public JsonResult TraerInformacionUsuarioHolos(decimal Cedula)
+        {
+            return new JsonResult()
+            {
+                Data = JsonConvert.SerializeObject(Usuarios.ConsultarUsuarioHolos(Cedula)),
+                JsonRequestBehavior = JsonRequestBehavior.DenyGet
+            };
+        }
+       
         [HttpGet]
         public ActionResult RegistrarMonitoreo()
         {
@@ -72,7 +84,13 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult RegistrarMonitoreo(ViewModelMec model)
         {
-            return View();
+            model.MecMonitoreosP.UsuarioGestion = Session["IdUsuario"].ToString();
+            model.MecMonitoreosP.CedulaUsuarioGestion =Convert.ToDecimal(Session["Usuario"].ToString());
+            model.MecMonitoreosP.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+            model.MecMonitoreosP.AliadoGestion = Session["AliadoLogeado"].ToString();
+
+            MecService.IsertarMonitoreo(model.MecMonitoreosP);
+            return RedirectToAction("RegistrarMonitoreo");
         }
 
         }
