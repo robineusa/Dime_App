@@ -37,6 +37,10 @@ namespace Telmexla.Servicios.DIME.Entity
         public string CampoOpcional3 { get; set; }
         public string CampoOpcional4 { get; set; }
         public string CampoOpcional5 { get; set; }
+        [Required(ErrorMessage = "ingrese la nota")]
+        [Display(Name = "Nota Obtenida")]
+        [DisplayFormat(DataFormatString = "{0:C0}")]
+        [RegularExpression(@"^(((\d{1,3})(,\d{3})*)|(\d+))(.\d+)?$", ErrorMessage = "Error")]
         public decimal NotaObtenida { get; set; }
         [Required(ErrorMessage = "Seleccione una opción")]
         public string TipoDeAlarma { get; set; }

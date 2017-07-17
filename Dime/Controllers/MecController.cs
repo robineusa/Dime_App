@@ -88,9 +88,49 @@ namespace Dime.Controllers
             model.MecMonitoreosP.CedulaUsuarioGestion =Convert.ToDecimal(Session["Usuario"].ToString());
             model.MecMonitoreosP.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
             model.MecMonitoreosP.AliadoGestion = Session["AliadoLogeado"].ToString();
-
+            decimal nota = model.MecMonitoreosP.NotaObtenida;
+            model.MecMonitoreosP.NotaObtenida = nota;
             MecService.IsertarMonitoreo(model.MecMonitoreosP);
             return RedirectToAction("RegistrarMonitoreo");
+        }
+        [HttpGet]
+        public ActionResult ConsultaMonitoreosAgente()
+        {
+            return View();
+        }
+        public JsonResult ConsultaMonitoreosAgenteJson(string fechaInicial, string fechaFinal)
+        {
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            var jsonResult = Json(JsonConvert.SerializeObject(MecService.ConsultaAgenteMonitoreosPrincipal(FI, FF, Session["IdUsuario"].ToString())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult ActualizarMonitoreo(int IdMonitoreo)
+        {
+            ViewModelMec modelo = new ViewModelMec();
+            modelo.MecMonitoreosP = MecService.ConsultarMonitoreoPorId(IdMonitoreo);
+           
+            return View(modelo);
+        }
+        
+        [HttpPost]
+        public ActionResult ActualizarMonitoreo(ViewModelMec model)
+        {
+            MecMonitoreosP monitoreo = model.MecMonitoreosP;
+            monitoreo.IdMonitoreo = model.MecMonitoreosP.IdMonitoreo;
+            monitoreo.UsuarioGestion = Session["IdUsuario"].ToString();
+            monitoreo.CedulaUsuarioGestion = Convert.ToDecimal(Session["Usuario"].ToString());
+            monitoreo.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+            monitoreo.AliadoGestion = Session["AliadoLogeado"].ToString();
+
+            decimal nota = monitoreo.NotaObtenida;
+            monitoreo.NotaObtenida = nota;
+
+            MecService.ActualizarMonitoreo(monitoreo);
+            return RedirectToAction("ConsultaMonitoreosAgente");
+            
         }
 
         }

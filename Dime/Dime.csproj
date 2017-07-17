@@ -2298,6 +2298,8 @@
     <Content Include="Scripts\Manuales\ManualAdministrador.js" />
     <Content Include="Scripts\Manuales\ManualAsesor.js" />
     <Content Include="Scripts\Manuales\ManualCelula.js" />
+    <Content Include="Scripts\Mec\ActualizarMonitoreo.js" />
+    <Content Include="Scripts\Mec\ConsultaMonitoreosAgente.js" />
     <Content Include="Scripts\Mec\RegistrarMonitoreo.js" />
     <Content Include="Scripts\MultiPlay\ConsultasAdminMultiPlay.js" />
     <Content Include="Scripts\MultiPlay\MultiPlay.js" />
@@ -3242,6 +3244,8 @@
     <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Mec\ConsultaMonitoreosAgente.cshtml" />
+    <Content Include="Views\Mec\ActualizarMonitoreo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
