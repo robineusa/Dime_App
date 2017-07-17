@@ -9,7 +9,7 @@
         $("#Li2").css("border-color", "transparent");
         $("#Li3").css("border-color", "transparent");
         $("#Crear_Usuario").css("display", "block");
-        $("#Actualizar_Usuario").css("display", "none");
+        $("#Actualizar_Usuario").css("display", "block");
         $("#Eliminar_Usuario").css("display", "none");
         
         

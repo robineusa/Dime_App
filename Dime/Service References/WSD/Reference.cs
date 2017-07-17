@@ -13004,4 +13004,93 @@ namespace Dime.WSD {
             return base.Channel.ConsultaAgenteMonitoreosPrincipalAsync(FechaInicial, FechaFinal, UsuarioGestion);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IMultiPlayService")]
+    public interface IMultiPlayService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/BuscarDatosMultiplay", ReplyAction="http://tempuri.org/IMultiPlayService/BuscarDatosMultiplayResponse")]
+        Telmexla.Servicios.DIME.Entity.MultiplayCargue BuscarDatosMultiplay(decimal cuentacliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/BuscarDatosMultiplay", ReplyAction="http://tempuri.org/IMultiPlayService/BuscarDatosMultiplayResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MultiplayCargue> BuscarDatosMultiplayAsync(decimal cuentacliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/InsertarMultiPlay", ReplyAction="http://tempuri.org/IMultiPlayService/InsertarMultiPlayResponse")]
+        void InsertarMultiPlay(Telmexla.Servicios.DIME.Entity.MultiPlayRegistro multiplay);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/InsertarMultiPlay", ReplyAction="http://tempuri.org/IMultiPlayService/InsertarMultiPlayResponse")]
+        System.Threading.Tasks.Task InsertarMultiPlayAsync(Telmexla.Servicios.DIME.Entity.MultiPlayRegistro multiplay);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/EliminaCuentaDatosMultiplay", ReplyAction="http://tempuri.org/IMultiPlayService/EliminaCuentaDatosMultiplayResponse")]
+        void EliminaCuentaDatosMultiplay(decimal Id_Cuenta, decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/EliminaCuentaDatosMultiplay", ReplyAction="http://tempuri.org/IMultiPlayService/EliminaCuentaDatosMultiplayResponse")]
+        System.Threading.Tasks.Task EliminaCuentaDatosMultiplayAsync(decimal Id_Cuenta, decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/ConsultaAdminBasePresidencial", ReplyAction="http://tempuri.org/IMultiPlayService/ConsultaAdminBasePresidencialResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MultiPlayRegistro> ConsultaAdminBasePresidencial(System.DateTime inicial, System.DateTime final);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMultiPlayService/ConsultaAdminBasePresidencial", ReplyAction="http://tempuri.org/IMultiPlayService/ConsultaAdminBasePresidencialResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MultiPlayRegistro>> ConsultaAdminBasePresidencialAsync(System.DateTime inicial, System.DateTime final);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IMultiPlayServiceChannel : Dime.WSD.IMultiPlayService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class MultiPlayServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IMultiPlayService>, Dime.WSD.IMultiPlayService {
+        
+        public MultiPlayServiceClient() {
+        }
+        
+        public MultiPlayServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public MultiPlayServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MultiPlayServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MultiPlayServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.MultiplayCargue BuscarDatosMultiplay(decimal cuentacliente) {
+            return base.Channel.BuscarDatosMultiplay(cuentacliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MultiplayCargue> BuscarDatosMultiplayAsync(decimal cuentacliente) {
+            return base.Channel.BuscarDatosMultiplayAsync(cuentacliente);
+        }
+        
+        public void InsertarMultiPlay(Telmexla.Servicios.DIME.Entity.MultiPlayRegistro multiplay) {
+            base.Channel.InsertarMultiPlay(multiplay);
+        }
+        
+        public System.Threading.Tasks.Task InsertarMultiPlayAsync(Telmexla.Servicios.DIME.Entity.MultiPlayRegistro multiplay) {
+            return base.Channel.InsertarMultiPlayAsync(multiplay);
+        }
+        
+        public void EliminaCuentaDatosMultiplay(decimal Id_Cuenta, decimal Cuenta) {
+            base.Channel.EliminaCuentaDatosMultiplay(Id_Cuenta, Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task EliminaCuentaDatosMultiplayAsync(decimal Id_Cuenta, decimal Cuenta) {
+            return base.Channel.EliminaCuentaDatosMultiplayAsync(Id_Cuenta, Cuenta);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MultiPlayRegistro> ConsultaAdminBasePresidencial(System.DateTime inicial, System.DateTime final) {
+            return base.Channel.ConsultaAdminBasePresidencial(inicial, final);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MultiPlayRegistro>> ConsultaAdminBasePresidencialAsync(System.DateTime inicial, System.DateTime final) {
+            return base.Channel.ConsultaAdminBasePresidencialAsync(inicial, final);
+        }
+    }
 }
