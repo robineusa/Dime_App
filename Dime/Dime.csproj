@@ -194,6 +194,7 @@
     <Compile Include="Controllers\CalculadorasController.cs" />
     <Compile Include="Controllers\CasosAdminController.cs" />
     <Compile Include="Controllers\CasosCelulaController.cs" />
+    <Compile Include="Controllers\CierreDeCicloController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\ConsultasAdminController.cs" />
     <Compile Include="Controllers\ConsultasAsesorController.cs" />
@@ -2274,6 +2275,7 @@
     <Content Include="Scripts\BuenServicio\Visualizador_Imagenes.js" />
     <Content Include="Scripts\Calculadoras\Advanced.js" />
     <Content Include="Scripts\Calculadoras\Rentas.js" />
+    <Content Include="Scripts\CierreDeCiclo\ConsultaGestiones.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Gestion.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Paloteo.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Rechazos.js" />
@@ -3242,6 +3244,7 @@
     <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\CierreDeCiclo\ConsultaGestiones.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
