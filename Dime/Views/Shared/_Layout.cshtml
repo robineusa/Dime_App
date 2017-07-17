@@ -554,6 +554,29 @@
                             </ul>
                         </li>
                     }
+
+                    @if (Session["Cierre Ciclo Residencial Predictivo"] != null || Session["Cierre Ciclo Residencial Potencial"] != null || Session["Cierre Ciclo Instalacion"] != null || Session["Cierre Ciclo Pymes"] != null)
+                    {
+                        <li id="left-sidebar-menu-multilevel" class="treeview">
+                            <a href="#">
+                                <i class="fa fa-times text-blue"></i> <span>Cierre de Ciclo</span><i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                @if (Session["Cierre Ciclo Residencial Predictivo"] != null)
+                                {
+                                    <li><a href="@Url.Action("ResidencialPredictivo", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Residencial Predictivo</a></li>}
+                                @if (Session["Cierre Ciclo Residencial Potencial"] != null)
+                                {
+                                    <li><a href="@Url.Action("ResidencialPotencial", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Residencial Potencial</a></li>}
+                                @if (Session["Cierre Ciclo Instalacion"] != null)
+                                {
+                                    <li><a href="@Url.Action("Instalacion", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Instalaciones</a></li>}
+                                @if (Session["Cierre Ciclo Pymes"] != null)
+                                {
+                                    <li><a href="@Url.Action("Pymes", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Pymes</a></li>}
+                            </ul>
+                        </li>
+                    }
                     <li class="header">CONSULTAS</li>
                     @if (Session["Consultas Asesor"] != null)
                     {
