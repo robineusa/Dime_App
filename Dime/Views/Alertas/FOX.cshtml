@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Telmexla.Servicios.DIME.Entity.GestionFoxInbound
+@{
     Layout = null;
 }
 
@@ -25,8 +26,7 @@
                     <tbody>
                         <tr>
                             <td colspan="3" style="padding:1px; width:1200px;">
-                                @*@Html.TextBoxFor(m => m.Accionable, null, new { @class = "form-control input-sm", @id = "Accionable", @name = "Accionable", @style = "margin-left:5px; width:100%; height:70px;" })*@
-
+                                @Html.TextBoxFor(m => m.Ofrecimiento, null, new { @class = "form-control input-sm", @id = "Ofrecimiento", @name = "Ofrecimiento", @style = "margin-left:5px; width:100%; height:70px;" })
                             </td>
                         </tr>
                     </tbody>
@@ -49,22 +49,35 @@
                 <div class="col-xs-2" style="width:auto;color:black; margin-left: -20px;">
                     <small>El cliente acepto el ofrecimiento:</small>
                 </div>
-                <br />
-                <div class="form-group" style="margin-left: -5px;">
-                    @*@Html.DropDownListFor(m => m.AceptacionMejorasTecnicas, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="SI" },*@
-                            @*new SelectListItem{Text="NO", Value="NO" } }, "",*@
-                             @*new { @class = "form-control input-sm", @style = "width:20%" })*@
-                    @*@Html.ValidationMessageFor(m => m.AceptacionMejorasTecnicas, "", new { @class = "text-danger" })*@
+                <div class="col-xs-2" style="width:auto;color:black; margin-left: 20px;">
+                    <small>Fecha de Vencimiento:</small>
                 </div>
+                <br />
+                <div class="col-xs-2" style="margin-left: -15px;">
+                    <small>
+                        @Html.DropDownListFor(m => m.AceptacionFoxInbound, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="SI" },
+                            new SelectListItem{Text="NO", Value="NO" } }, "",
+                             new { @class = "form-control input-sm", @style = "width: 150%" })
+                        @Html.ValidationMessageFor(m => m.AceptacionFoxInbound, "", new { @class = "text-danger" })
+                    </small>
+                    
+                </div>
+                <div class="col-xs-2" style="margin-left: 50px;">
+                    <small>
+                        @Html.TextBoxFor(m => m.FechaVencimiento, null, new { @class = "form-control input-sm", @id = "FechaVencimiento", @style="width:150%; " })
+                    </small>
+                </div>
+                <br /><br /><br />
             </div>
             <br />
             <button id="btnSubmitActivacionSiembra" type="submit" class="btn btn-primary" name="Guardar" value="true" style="width:10%; height:40px;">Guardar</button>
         </div>
-        @*@Html.TextBoxFor(m => m.CuentaCliente, null, new { @class = "", @id = "cuenta", @style = "display:none", @name = "cuentaCliente" })*@
+        @Html.TextBoxFor(m => m.CuentaCliente, null, new { @class = "", @id = "cuenta", @style = "display:none", @name = "cuenta" })
     }
     <script>
         $("#cuenta").val($("#inputCuenta").val());
-        $("#Accionable").val(jsonMejorasTecnicas[0].Accionable);
+        $("#Ofrecimiento").val(jsonOfrecimientoFOX.Ofrecimiento);
+        $("#FechaVencimiento").val(jsonOfrecimientoFOX.FechaVencimiento2);
     </script>
 </body>
 </html>

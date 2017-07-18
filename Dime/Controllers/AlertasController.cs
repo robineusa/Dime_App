@@ -125,10 +125,16 @@ namespace Dime.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult FOX()
-        //{
-        //    return View();
-        //}
+        [HttpPost]
+        public ActionResult FOX(GestionFoxInbound model)
+        {
+            model.UsuarioGestion = Session["Usuario"].ToString();
+            model.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+            model.AliadoGestion = Session["AliadoLogeado"].ToString();
+
+            acsiembrahdwebservice.InsertarFoxInbound(model);
+
+            return RedirectToAction("Index", "Inbound");
+        }
     }
 }
