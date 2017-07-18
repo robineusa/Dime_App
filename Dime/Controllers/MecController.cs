@@ -73,7 +73,7 @@ namespace Dime.Controllers
                 JsonRequestBehavior = JsonRequestBehavior.DenyGet
             };
         }
-       
+
         [HttpGet]
         public ActionResult RegistrarMonitoreo()
         {
@@ -85,7 +85,7 @@ namespace Dime.Controllers
         public ActionResult RegistrarMonitoreo(ViewModelMec model)
         {
             model.MecMonitoreosP.UsuarioGestion = Session["IdUsuario"].ToString();
-            model.MecMonitoreosP.CedulaUsuarioGestion =Convert.ToDecimal(Session["Usuario"].ToString());
+            model.MecMonitoreosP.CedulaUsuarioGestion = Convert.ToDecimal(Session["Usuario"].ToString());
             model.MecMonitoreosP.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
             model.MecMonitoreosP.AliadoGestion = Session["AliadoLogeado"].ToString();
             decimal nota = model.MecMonitoreosP.NotaObtenida;
@@ -111,10 +111,10 @@ namespace Dime.Controllers
         {
             ViewModelMec modelo = new ViewModelMec();
             modelo.MecMonitoreosP = MecService.ConsultarMonitoreoPorId(IdMonitoreo);
-           
+
             return View(modelo);
         }
-        
+
         [HttpPost]
         public ActionResult ActualizarMonitoreo(ViewModelMec model)
         {
@@ -130,7 +130,7 @@ namespace Dime.Controllers
 
             MecService.ActualizarMonitoreo(monitoreo);
             return RedirectToAction("ConsultaMonitoreosAgente");
-            
+
         }
         [HttpGet]
         public ActionResult AdministrarProcesosMec()
@@ -145,11 +145,107 @@ namespace Dime.Controllers
             return jsonResult;
         }
         [HttpGet]
-        public ActionResult AgregarNuevoProceso(decimal IdProceso)
+        public ActionResult AgregarNuevoProceso(string IdProceso)
         {
             ViewModelMec modelo = new ViewModelMec();
-            //MecProcesos proceso = MecService.a
-            return View();
+
+
+            if (IdProceso == null || IdProceso.Equals(""))
+            {
+                modelo.MecProcesos = new MecProcesos();
+            }
+            else
+            {
+                decimal Id = Convert.ToDecimal(IdProceso);
+                modelo.MecProcesos = MecService.ProcesoPorId(Id);
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        public ActionResult AgregarNuevoProceso(ViewModelMec modelo)
+        {
+            if (modelo.MecProcesos.IdProceso > 0)
+            {
+                MecService.ActualizarMacroproceso(modelo.MecProcesos);
+            }
+            else { MecService.RegistrarMacroproceso(modelo.MecProcesos); }
+            return RedirectToAction("AdministrarProcesosMec");
+        }
+        [HttpGet]
+        public ActionResult AdministrarLineasMec(string IdProceso)
+        {
+            ViewModelMec modelo = new ViewModelMec();
+            modelo.MecProcesos.IdProceso = Convert.ToDecimal(IdProceso);
+            return View(modelo);
+        }
+        public JsonResult ListaLineasPorProcesoJson(string IdProceso)
+        {
+            int Id = Convert.ToInt32(IdProceso);
+            var jsonResult = Json(JsonConvert.SerializeObject(MecService.ListaLineasMecAdmin(Id)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult ActualizarLineasMec(string IdProceso, string IdLinea)
+        {
+            ViewModelMec modelo = new ViewModelMec();
+            if (IdLinea == null || IdLinea.Equals(""))
+            {
+                modelo.MecProcesos.IdProceso = Convert.ToDecimal(IdProceso);
+                modelo.MecLineas = new MecLineas();
+            }
+            else
+            {
+                modelo.MecProcesos.IdProceso = Convert.ToDecimal(IdProceso);
+                modelo.MecLineas = MecService.LineaPorId(Convert.ToDecimal(IdLinea));
+            }
+
+            return View(modelo);
+
+        }
+        [HttpPost]
+        public ActionResult ActualizarLineasMec(ViewModelMec modelo)
+        {
+            modelo.MecLineas.IdProceso = modelo.MecProcesos.IdProceso;
+
+            if (modelo.MecLineas.IdLinea > 0)
+            {
+                MecService.ActualizarLinea(modelo.MecLineas);
+            }
+            else { MecService.RegistrarLinea(modelo.MecLineas); }
+            return RedirectToAction("AdministrarLineasMec", "Mec",  new { IdProceso=modelo.MecProcesos.IdProceso } );
+        }
+        [HttpGet]
+        public ActionResult ListasdeDistribucion(string IdLinea, string IdProceso)
+        {
+            ViewModelMec modelo = new ViewModelMec();
+            if (IdLinea == null || IdLinea.Equals(""))
+            {
+                modelo.MecLineas.IdLinea = Convert.ToDecimal(IdLinea);
+                modelo.MecProcesos.IdProceso = Convert.ToDecimal(IdProceso);
+                modelo.MecListasDistribucion = new MecListasDistribucion();
+            }
+            else
+            {
+                modelo.MecLineas.IdLinea = Convert.ToDecimal(IdLinea);
+                modelo.MecProcesos.IdProceso = Convert.ToDecimal(IdProceso);
+                modelo.MecListasDistribucion = MecService.ListaCorreosPorId(Convert.ToDecimal(IdLinea));
+            }
+
+            return View(modelo);
+        }
+       [HttpPost]
+        public ActionResult ListasdeDistribucion(ViewModelMec modelo)
+        {
+            modelo.MecListasDistribucion.IdLinea = modelo.MecLineas.IdLinea;
+
+            if (modelo.MecListasDistribucion.IdLista > 0)
+            {
+                MecService.ActualizarListaDistribucion(modelo.MecListasDistribucion);
+            }
+            else { MecService.RegistrarListaDistribucion(modelo.MecListasDistribucion); }
+            return RedirectToAction("ActualizarLineasMec", "Mec", new { IdProceso = modelo.MecProcesos.IdProceso });
+
         }
     }
 }
