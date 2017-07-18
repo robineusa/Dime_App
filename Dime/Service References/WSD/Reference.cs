@@ -12959,6 +12959,24 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaTipoAlarmasMecAdmin", ReplyAction="http://tempuri.org/IMecService/ListaTipoAlarmasMecAdminResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas>> ListaTipoAlarmasMecAdminAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ProcesoPorId", ReplyAction="http://tempuri.org/IMecService/ProcesoPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.MecProcesos ProcesoPorId(decimal IdProceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ProcesoPorId", ReplyAction="http://tempuri.org/IMecService/ProcesoPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MecProcesos> ProcesoPorIdAsync(decimal IdProceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/LineaPorId", ReplyAction="http://tempuri.org/IMecService/LineaPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.MecLineas LineaPorId(decimal IdLinea);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/LineaPorId", ReplyAction="http://tempuri.org/IMecService/LineaPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MecLineas> LineaPorIdAsync(decimal IdLinea);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaCorreosPorId", ReplyAction="http://tempuri.org/IMecService/ListaCorreosPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.MecListasDistribucion ListaCorreosPorId(decimal IdLista);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaCorreosPorId", ReplyAction="http://tempuri.org/IMecService/ListaCorreosPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MecListasDistribucion> ListaCorreosPorIdAsync(decimal IdLista);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -13170,6 +13188,30 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas>> ListaTipoAlarmasMecAdminAsync() {
             return base.Channel.ListaTipoAlarmasMecAdminAsync();
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.MecProcesos ProcesoPorId(decimal IdProceso) {
+            return base.Channel.ProcesoPorId(IdProceso);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MecProcesos> ProcesoPorIdAsync(decimal IdProceso) {
+            return base.Channel.ProcesoPorIdAsync(IdProceso);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.MecLineas LineaPorId(decimal IdLinea) {
+            return base.Channel.LineaPorId(IdLinea);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MecLineas> LineaPorIdAsync(decimal IdLinea) {
+            return base.Channel.LineaPorIdAsync(IdLinea);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.MecListasDistribucion ListaCorreosPorId(decimal IdLista) {
+            return base.Channel.ListaCorreosPorId(IdLista);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MecListasDistribucion> ListaCorreosPorIdAsync(decimal IdLista) {
+            return base.Channel.ListaCorreosPorIdAsync(IdLista);
         }
     }
     

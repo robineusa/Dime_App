@@ -289,6 +289,20 @@
 
                         </li>
                     }
+                    @if (Session["Administrar Procesos Mec"] != null)
+                    {
+                        <li id="left-sidebar-menu-charts" class="treeview">
+                            <a href="#">
+                                <i class="fa fa-bookmark text-aqua"></i>
+                                <span>Procesos Mec</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("AdministrarProcesosMec", "Mec")"><i class="fa fa-plus-square"></i>Macroprocesos</a></li>
+                            </ul>
+
+                        </li>
+                    }
                     @if (Session["Notificaciones Buen Servicio"] != null)
                     {
                         <script>

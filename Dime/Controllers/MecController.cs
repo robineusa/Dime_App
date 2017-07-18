@@ -132,6 +132,24 @@ namespace Dime.Controllers
             return RedirectToAction("ConsultaMonitoreosAgente");
             
         }
-
+        [HttpGet]
+        public ActionResult AdministrarProcesosMec()
+        {
+            ViewModelMec modelo = new ViewModelMec();
+            return View();
         }
+        public JsonResult ListaProcesosMecJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(MecService.ListaProcesosMecAdmin()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult AgregarNuevoProceso(decimal IdProceso)
+        {
+            ViewModelMec modelo = new ViewModelMec();
+            //MecProcesos proceso = MecService.a
+            return View();
+        }
+    }
 }
