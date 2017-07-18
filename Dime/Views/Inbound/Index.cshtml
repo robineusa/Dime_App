@@ -73,9 +73,12 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
                                         <div id="Icono_6" style="display: block"></div>
                                     </a>
                                 }
-                                <a href="#FOX" onclick="return LlamarFOX()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
-                                    <div id="Icono_7" style="display: block"></div>
-                                </a>
+                                @if (Model.CuentaFox != null)
+                                {
+                                    <a href="#FOX" onclick="return LlamarFOX()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                                        <div id="Icono_7" style="display: block"></div>
+                                    </a>
+                                }
                             </div>
                         </div>
                     </div>
@@ -753,6 +756,7 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
         var jsonOfrecimientosSiembra = @Html.Raw(Json.Encode(Model.ListaSiembraHD));
         var jsonOfrecimientosSMO = @Html.Raw(Json.Encode(Model.ListaSMO));
         var jsonMejorasTecnicas = @Html.Raw(Json.Encode(Model.ListaMejorasTecnicas));
+        var jsonOfrecimientoFOX = @Html.Raw(Json.Encode(Model.CuentaFox));
         var consultCuentaDivUrl = "@Url.Action("BuscarCuentasPorCedulaInbound", "Clientes")";
         var tipificadorUrl = "@Url.Action("TipificacionMarcaciones", "Marcaciones")";
         var choosenCuenta = @Model.ClientesTodos.Cuenta;

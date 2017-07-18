@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Telmexla.Servicios.DIME.Entity.GestionFoxInbound
+@{
     Layout = null;
 }
 
@@ -25,8 +26,7 @@
                     <tbody>
                         <tr>
                             <td colspan="3" style="padding:1px; width:1200px;">
-                                @*@Html.TextBoxFor(m => m.Accionable, null, new { @class = "form-control input-sm", @id = "Accionable", @name = "Accionable", @style = "margin-left:5px; width:100%; height:70px;" })*@
-
+                                @Html.TextBoxFor(m => m.Ofrecimiento, null, new { @class = "form-control input-sm", @id = "Ofrecimiento", @name = "Ofrecimiento", @style = "margin-left:5px; width:100%; height:70px;" })
                             </td>
                         </tr>
                     </tbody>
@@ -51,20 +51,20 @@
                 </div>
                 <br />
                 <div class="form-group" style="margin-left: -5px;">
-                    @*@Html.DropDownListFor(m => m.AceptacionMejorasTecnicas, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="SI" },*@
-                            @*new SelectListItem{Text="NO", Value="NO" } }, "",*@
-                             @*new { @class = "form-control input-sm", @style = "width:20%" })*@
-                    @*@Html.ValidationMessageFor(m => m.AceptacionMejorasTecnicas, "", new { @class = "text-danger" })*@
+                    @Html.DropDownListFor(m => m.AceptacionFoxInbound, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="SI" },
+                            new SelectListItem{Text="NO", Value="NO" } }, "",
+                             new { @class = "form-control input-sm", @style = "width:20%" })
+                    @Html.ValidationMessageFor(m => m.AceptacionFoxInbound, "", new { @class = "text-danger" })
                 </div>
             </div>
             <br />
             <button id="btnSubmitActivacionSiembra" type="submit" class="btn btn-primary" name="Guardar" value="true" style="width:10%; height:40px;">Guardar</button>
         </div>
-        @*@Html.TextBoxFor(m => m.CuentaCliente, null, new { @class = "", @id = "cuenta", @style = "display:none", @name = "cuentaCliente" })*@
+        @Html.TextBoxFor(m => m.CuentaCliente, null, new { @class = "", @id = "cuenta", @style = "display:none", @name = "cuenta" })
     }
     <script>
         $("#cuenta").val($("#inputCuenta").val());
-        $("#Accionable").val(jsonMejorasTecnicas[0].Accionable);
+        $("#Ofrecimiento").val(jsonOfrecimientoFOX.Ofrecimiento);
     </script>
 </body>
 </html>

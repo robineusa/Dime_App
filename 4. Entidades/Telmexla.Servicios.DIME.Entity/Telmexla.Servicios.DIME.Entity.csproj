@@ -90,6 +90,7 @@
     <Compile Include="BuscarCuentasViewModel.cs" />
     <Compile Include="CambioEstrato.cs" />
     <Compile Include="CambioEstratoCollection.cs" />
+    <Compile Include="CargaBaseFoxInbound.cs" />
     <Compile Include="CierreCiclo.cs" />
     <Compile Include="CierreCicloCollection.cs" />
     <Compile Include="ClaroVideo.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="GBPFueraNivelesCollection.cs" />
     <Compile Include="GBPProducto.cs" />
     <Compile Include="GBPRentabilizacion.cs" />
+    <Compile Include="GestionFoxInbound.cs" />
     <Compile Include="GestionMatriz.cs" />
     <Compile Include="GestionMatrizColleciton.cs" />
     <Compile Include="GestionOutbound.cs" />

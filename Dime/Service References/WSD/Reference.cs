@@ -11646,6 +11646,18 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/InsertarMejorasTecnicasInbound", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/InsertarMejorasTecnicasInboundResp" +
             "onse")]
         System.Threading.Tasks.Task InsertarMejorasTecnicasInboundAsync(Telmexla.Servicios.DIME.Entity.MejorasTecnicas Mejoras);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/BuscarCuentaFoxInbound", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/BuscarCuentaFoxInboundResponse")]
+        Telmexla.Servicios.DIME.Entity.CargaBaseFoxInbound BuscarCuentaFoxInbound(decimal cuentacliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/BuscarCuentaFoxInbound", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/BuscarCuentaFoxInboundResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CargaBaseFoxInbound> BuscarCuentaFoxInboundAsync(decimal cuentacliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/InsertarFoxInbound", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/InsertarFoxInboundResponse")]
+        void InsertarFoxInbound(Telmexla.Servicios.DIME.Entity.GestionFoxInbound FoxInbound);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActivacionSiembraHDService/InsertarFoxInbound", ReplyAction="http://tempuri.org/IActivacionSiembraHDService/InsertarFoxInboundResponse")]
+        System.Threading.Tasks.Task InsertarFoxInboundAsync(Telmexla.Servicios.DIME.Entity.GestionFoxInbound FoxInbound);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -11737,6 +11749,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task InsertarMejorasTecnicasInboundAsync(Telmexla.Servicios.DIME.Entity.MejorasTecnicas Mejoras) {
             return base.Channel.InsertarMejorasTecnicasInboundAsync(Mejoras);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CargaBaseFoxInbound BuscarCuentaFoxInbound(decimal cuentacliente) {
+            return base.Channel.BuscarCuentaFoxInbound(cuentacliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CargaBaseFoxInbound> BuscarCuentaFoxInboundAsync(decimal cuentacliente) {
+            return base.Channel.BuscarCuentaFoxInboundAsync(cuentacliente);
+        }
+        
+        public void InsertarFoxInbound(Telmexla.Servicios.DIME.Entity.GestionFoxInbound FoxInbound) {
+            base.Channel.InsertarFoxInbound(FoxInbound);
+        }
+        
+        public System.Threading.Tasks.Task InsertarFoxInboundAsync(Telmexla.Servicios.DIME.Entity.GestionFoxInbound FoxInbound) {
+            return base.Channel.InsertarFoxInboundAsync(FoxInbound);
         }
     }
     

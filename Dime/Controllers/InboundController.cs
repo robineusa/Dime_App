@@ -129,6 +129,18 @@ namespace Dime.Controllers
                 Accionable = x.Accionable
             }).ToList();
 
+            //consultaFOX
+            var CuentaFoxx = acsiembrahdwebservice.BuscarCuentaFoxInbound(Convert.ToDecimal(cuentaCliente));
+            if (CuentaFoxx != null)
+            {
+                model.CuentaFox = CuentaFoxx;
+            }
+            else
+            {
+                model.CuentaFox = new CargaBaseFoxInbound();
+            }
+
+
             model.DatosAdcionalesCliente = inboundService.TraerDatosAdicionalesCliente(cuentaCliente) ?? new DatosAdicionalesCliente();
             model.iniciarOptionsVista();
             model.LineaDeUsuarioActual = Session["LineaLogeado"].ToString();

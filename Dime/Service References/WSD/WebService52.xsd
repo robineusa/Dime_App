@@ -1458,6 +1458,28 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="MejorasTecnicas" nillable="true" type="tns:MejorasTecnicas" />
+  <xs:complexType name="CargaBaseFoxInbound">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cuenta" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaVencimiento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Ofrecimiento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CargaBaseFoxInbound" nillable="true" type="tns:CargaBaseFoxInbound" />
+  <xs:complexType name="GestionFoxInbound">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AceptacionFoxInbound" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GestionFoxInbound" nillable="true" type="tns:GestionFoxInbound" />
   <xs:complexType name="BalanceScoreCard">
     <xs:sequence>
       <xs:element minOccurs="0" name="Acdcalls" type="xs:decimal" />

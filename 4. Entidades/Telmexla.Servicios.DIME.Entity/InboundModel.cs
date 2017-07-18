@@ -21,6 +21,8 @@ namespace Telmexla.Servicios.DIME.Entity
         private List<CuentasSiguienteMejorOferta> listaSMO;
         private List<CuentasMejorasTecnicas> listaMejorasTecnicas;
         private Retencion retencion;
+        private CargaBaseFoxInbound cuentaFox;
+        //private GestionFoxInbound gestionFOX;
         #endregion index
 
         #region actualizar
@@ -41,6 +43,7 @@ namespace Telmexla.Servicios.DIME.Entity
             ClientesTodos = new ClientesTodo();
             retencion = new Retencion();
             ModelTipiMarca = new ViewModelTipificacionMarcaciones();
+            cuentaFox = new CargaBaseFoxInbound();
             string defaultRangoEdad = "Datos adicionales no cargados";
             rangoEdadOptions = new List<SelectListItem>();
             rangoEdadOptions.Add(new SelectListItem { Text = defaultRangoEdad, Value = defaultRangoEdad });
@@ -315,6 +318,19 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 retencion = value;
+            }
+        }
+
+        public CargaBaseFoxInbound CuentaFox
+        {
+            get
+            {
+                return cuentaFox;
+            }
+
+            set
+            {
+                cuentaFox = value;
             }
         }
 
