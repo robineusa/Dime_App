@@ -244,7 +244,7 @@ namespace Dime.Controllers
                 MecService.ActualizarListaDistribucion(modelo.MecListasDistribucion);
             }
             else { MecService.RegistrarListaDistribucion(modelo.MecListasDistribucion); }
-            return RedirectToAction("ActualizarLineasMec", "Mec", new { IdProceso = modelo.MecProcesos.IdProceso });
+            return RedirectToAction("AdministrarLineasMec", "Mec", new { IdProceso = modelo.MecProcesos.IdProceso });
 
         }
     }
