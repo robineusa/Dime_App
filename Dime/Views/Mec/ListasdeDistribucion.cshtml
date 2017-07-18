@@ -28,6 +28,7 @@
                         <td style="padding-left:1px; width:200px;">
                             <small>Id de la Línea</small>
                             @Html.TextBoxFor(m => m.MecListasDistribucion.IdLista, new { @class = "form-control input-sm", @readonly = "true", @Id = "idproceso" })
+                            @Html.HiddenFor(m => m.MecProcesos.IdProceso, new { @class = "form-control input-sm", @readonly = "true", @Id = "idproceso" })
                         </td>
                         <td style="padding-left:1px; width:280px;">
                             <small>Id del Proceso</small>
@@ -35,7 +36,7 @@
                         </td>
                         </tr>
                     <tr>
-                        <td style="padding-left:1px; width:280px;">
+                        <td style="padding-left:1px;" colspan="6">
                             <small>Destinatarios</small>
                            @Html.TextAreaFor(m => m.MecListasDistribucion.Destinatarios, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text" })
                         </td>
