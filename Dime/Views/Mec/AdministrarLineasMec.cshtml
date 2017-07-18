@@ -1,0 +1,77 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelMec
+@{ ViewBag.Title = "Registro y Actualización de Lineas Mec";
+    ViewBag.SubTitle = "Procesos Mec";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Session["Administrar Procesos Mec"] != null)
+{
+    using (Html.BeginForm("AdministrarLineasMec", "Mec", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-danger">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                @Html.HiddenFor(m => m.MecProcesos.IdProceso, new { @class = "form-control input-sm",@Id="idproceso" })
+                                <a href="@Url.Action("ActualizarLineasMec", "Mec",new {IdProceso=Model.MecProcesos.IdProceso})" style="margin-right:15px; float:right;">
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <span class="glyphicon-class" style="font-size:medium;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Agregar Nueva Línea</span>
+                                </a>
+                                <h2 class="page-header" style="margin-top:25px"><i class="fa fa-list-alt"></i> Lista de Líneas Actuales:</h2>
+                                <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                    <div class="box-body">
+                                        <div id="dataLoading" style="display:none;text-align:center;width:100%;height:auto;">
+                                            <div><img src="~/Resources/Images/Loading.gif" height="100" width="100" /></div>
+                                        </div>
+                                        <div id="gridViewConsulta"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="submitDatos" type="submit" class="btn btn-primary" value="true" style="width:10%; height:40px; display:none;">Guardar Datos</button>
+
+    }
+    @section scripts{
+        <script>
+            var ListaLineasPorProceso = '@Url.Action("ListaLineasPorProcesoJson", "Mec")';
+        </script>
+        <script src="~/Scripts/Mec/AdministrarLineasMec.js?1.0.3"></script>
+
+    }
+}
+
+else
+{
+    <div class="row">
+
+        <div class="box box-primary">
+
+            <div class="box-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-page">
+                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                            <div class="error-content">
+                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                <p style="text-align:justify;">
+                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                    Por favor solicite al administrador del sistema el acceso correspondiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+

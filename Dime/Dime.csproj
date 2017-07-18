@@ -2303,6 +2303,7 @@
     <Content Include="Scripts\Manuales\ManualAsesor.js" />
     <Content Include="Scripts\Manuales\ManualCelula.js" />
     <Content Include="Scripts\Mec\ActualizarMonitoreo.js" />
+    <Content Include="Scripts\Mec\AdministrarLineasMec.js" />
     <Content Include="Scripts\Mec\AdministrarProcesosMec.js" />
     <Content Include="Scripts\Mec\ConsultaMonitoreosAgente.js" />
     <Content Include="Scripts\Mec\RegistrarMonitoreo.js" />
@@ -3255,6 +3256,9 @@
     <Content Include="Views\Alertas\FOX.cshtml" />
     <Content Include="Views\Mec\AdministrarProcesosMec.cshtml" />
     <Content Include="Views\Mec\AgregarNuevoProceso.cshtml" />
+    <Content Include="Views\Mec\AdministrarLineasMec.cshtml" />
+    <Content Include="Views\Mec\ActualizarLineasMec.cshtml" />
+    <Content Include="Views\Mec\ListasdeDistribucion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,14 +1,15 @@
 ﻿@model Telmexla.Servicios.DIME.Entity.ViewModelMec
-@{ ViewBag.Title = "Registro y Actualización de Procesos";
+@{ ViewBag.Title = "Registro y Actualización de Listas de Correo";
     ViewBag.SubTitle = "Procesos Mec";
 
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @if (Session["Administrar Procesos Mec"] != null)
 {
-    using (Html.BeginForm("AgregarNuevoProceso", "Mec", FormMethod.Post, new { id = "procesosmec", role = "form" }))
+    using (Html.BeginForm("ListasdeDistribucion", "Mec", FormMethod.Post, new { id = "procesosmec", role = "form" }))
     {
-        
+
         <div class="box box-danger">
             <div class="box-body">
                 <div class="row">
@@ -17,38 +18,35 @@
                     </div>
                 </div>
             </div>
-            <a href="@Url.Action("AdministrarLineasMec", "Mec",new {IdProceso=Model.MecProcesos.IdProceso})" style="margin-right:15px; float:right;">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <span class="glyphicon-class" style="font-size:medium;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Administrar Líneas</span>
-            </a>
             <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
-                <i class="fa fa-headphones"></i> Información del Proceso
+                <i class="fa fa-headphones"></i> Información de la Lista
             </h2>
             <div id="ARBOL" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
                 <br />
                 <table>
                     <tr>
                         <td style="padding-left:1px; width:200px;">
-                            <small>Id del Proceso</small>
-                            @Html.TextBoxFor(m => m.MecProcesos.IdProceso, new { @class = "form-control input-sm", @readonly = "true", @Id = "idproceso" })
+                            <small>Id de la Línea</small>
+                            @Html.TextBoxFor(m => m.MecListasDistribucion.IdLista, new { @class = "form-control input-sm", @readonly = "true", @Id = "idproceso" })
                         </td>
                         <td style="padding-left:1px; width:280px;">
-                            <small>Nombre del Proceso</small>
-                            @Html.TextBoxFor(m => m.MecProcesos.Proceso, new { @class = "form-control input-sm", @Id = "proceso" })
+                            <small>Id del Proceso</small>
+                            @Html.TextBoxFor(m => m.MecLineas.IdLinea, new { @class = "form-control input-sm", @readonly = "true", @Id = "proceso" })
                         </td>
-                        <td style="padding-left:4px; width:280px;">
-                            <small>Estado</small>
-                            @Html.DropDownListFor(m => m.MecProcesos.Estado, new List<SelectListItem> {new SelectListItem{Text="ACTIVO", Value="ACTIVO" },
-                                                                                             new SelectListItem{Text="INACTIVO", Value="INACTIVO" }},
-                                                                                                              "--SELECCIONE--", new { @class = "form-control input-sm" })
+                        </tr>
+                    <tr>
+                        <td style="padding-left:1px; width:280px;">
+                            <small>Destinatarios</small>
+                           @Html.TextAreaFor(m => m.MecListasDistribucion.Destinatarios, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text" })
                         </td>
                         
                     </tr>
-                    
+
                 </table>
             </div>
             <br />
         </div>
-        
+
         <div class="box box-danger">
             <div class="box-body">
                 <div class="row">
@@ -90,5 +88,6 @@ else
         </div>
     </div>
 }
+
 
 
