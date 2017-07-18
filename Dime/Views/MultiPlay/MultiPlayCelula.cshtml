@@ -4,6 +4,7 @@
     ViewBag.SubTitle = "Gestión Célula";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @using (Html.BeginForm("MultiPlayCelula", "MultiPlay", FormMethod.Post, new { id = "datosMultiPlay", role = "form" }))
 {
     <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
@@ -69,18 +70,22 @@
                                     <tr>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.RegBaGen, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.RegBaGen, placeholder = "Registro Base General" })
+                                            
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.Custcode, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Custcode, placeholder = "CustCode" })
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.Custcode, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.TipoCuscode, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.TipoCuscode, placeholder = "Tipo CustCode" })
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.Min, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Min , placeholder = "Min"})
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.Min, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.CustomerId, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.CustomerId, placeholder = "Customer ID" }) 
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.CustomerId, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.NombreCliente, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.NombreCliente, placeholder = "Nombre Cliente", ReadOnly = "true" })
@@ -125,11 +130,11 @@
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.SaldoActualAC, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoActualAC, placeholder = "Saldo Actual AC"})
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.SaldoActualAC, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.SaldoEquipoAC, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoEquipoAC, placeholder = "Saldo Equipo AC"})
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.SaldoEquipoAC, "", new { @class = "text-danger" })
                                         </td>
                                     </tr>
 
@@ -156,7 +161,7 @@
                                     <tr>                                        
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.SaldoEquipoAscard, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoEquipoAscard, placeholder = "Saldo Equipo ASCARD" })
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.SaldoEquipoAscard, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.SaldoGrupo1, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.SaldoGrupo1, placeholder = "Saldo Grupo 1", ReadOnly = "true" })
@@ -207,15 +212,15 @@
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.ValoraAjustarInternet, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ValoraAjustarInternet, placeholder = "Valor a Ajustar Internet"})
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.ValoraAjustarInternet, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.ValoraAjustarTv, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ValoraAjustarTv, placeholder = "Valor a Ajustar TV"})
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.ValoraAjustarTv, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.ValoraAjustarTel, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ValoraAjustarTel, placeholder = "Valor a Ajustar Tel" })
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.ValoraAjustarTel, "", new { @class = "text-danger" })
                                         </td>
                                     </tr>
                                     <tr>
@@ -238,11 +243,11 @@
                                     <tr>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.ValAjuOtrosConcep, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ValAjuOtrosConcep, placeholder = "Valor Ajustar Otros Conceptos" })
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.ValAjuOtrosConcep, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.ValTotAjuFijo, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ValTotAjuFijo, placeholder = "Valor Total Ajuste Fijo" })
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.ValTotAjuFijo, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.PerCamNoApliRR, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.PerCamNoApliRR, placeholder = "Periodo Campaña No Aplicada RR" })
@@ -282,11 +287,11 @@
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.CfmDatosAntesIva, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.CfmDatosAntesIva, placeholder = "CFM Datos Antes IVA DEL 19%" })
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.CfmDatosAntesIva, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.CfmDatosAntesIva4Ipoc, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.CfmDatosAntesIva4Ipoc, placeholder = "CFM Datos Antes IVA del 19% +4% Ipoconsumo"})
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.CfmDatosAntesIva4Ipoc, "", new { @class = "text-danger" })
                                         </td>
                                     </tr>
                                     <tr>
@@ -314,7 +319,7 @@
                                     <tr>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.CfmVozAntesIva4Ipoc, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.CfmVozAntesIva4Ipoc, placeholder = "CFM Voz Antes IVA del 19% +4% Ipoconsumo" })
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.CfmVozAntesIva4Ipoc, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.FechaACTMultAC, new { @class = "form-control input-sm", name = "", Id = "FechaACTMultAC", Value = @Model.DatosMultiplay.FechaACTMultAC, placeholder = "YYYY-MM-DD" })
@@ -334,7 +339,7 @@
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.ValorPago1, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ValorPago1, placeholder = "Valor Pago" })
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.ValorPago1, "", new { @class = "text-danger" })
                                         </td>
                                     </tr>
                                     <tr>
@@ -369,7 +374,7 @@
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.ValorPago2, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.ValorPago2, placeholder = "Valor Pago" })
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.ValorPago2, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.PagoCambiarGrupo, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.PagoCambiarGrupo, placeholder = "Pago se Debe Cambiar de Grupo" })
@@ -381,7 +386,7 @@
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.Valor1, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Valor1, placeholder = "Valor"})
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.Valor1, "", new { @class = "text-danger" })
                                         </td>
                                     </tr>
                                     <tr>
@@ -421,7 +426,7 @@
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.Valor2, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Valor2, placeholder = "Valor" })
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.Valor2, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.FechaIngresoPago, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.FechaIngresoPago, placeholder = "YYYY-MM-DD" })
@@ -462,7 +467,7 @@
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.Valor3, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Valor3, placeholder = "Valor"})
-                                            
+                                            @Html.ValidationMessageFor(m => Model.Multiplay.Valor3, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding:1px;">
                                             @Html.TextBoxFor(m => Model.Multiplay.Plataforma, new { @class = "form-control input-sm", name = "", Id = "", Value = @Model.DatosMultiplay.Plataforma, placeholder = "Plataforma" })
@@ -524,13 +529,15 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-block btn-primary" id="BotonEnvia" name="BotonEnvia" value="GuardaDatos" style="width:10%;  margin-left:1%; display: none;">Guardar</button>
+        <button type="submit" class="btn btn-block btn-primary" id="BotonEnvia" name="BotonEnvia" value="GuardaDatos" style="width:10%;  margin-left:1%; display: block;">Guardar</button>
 
     </div>
 }
 @section Scripts{
-    <script src="~/Scripts/MultiPlay/MultiPlay.js?1.0.4"></script>
+@Styles.Render("~/AdminLTEbootstrap/css")
+@Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+    <script src="~/Scripts/MultiPlay/MultiPlay.js?1.0.5"></script>
 <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.2"></script>
-<link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.2" rel="stylesheet" />
+<link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.4" rel="stylesheet" />
 }
 

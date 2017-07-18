@@ -18,9 +18,9 @@
         }
     });
     
-    if ($("#cuentaCliente").val() == 0 || $("#cuentaCliente").val() == "") {
-        $("#BotonEnvia").css('display', 'none');
-    } else { $("#BotonEnvia").css('display', 'block'); }
+    //if ($("#cuentaCliente").val() == 0 || $("#cuentaCliente").val() == "") {
+    //    $("#BotonEnvia").css('display', 'none');
+    //} else { $("#BotonEnvia").css('display', 'block'); }
 
     setTimeout(function () {
         $("#Error").css('display', 'none');
