@@ -73,6 +73,9 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
                                         <div id="Icono_6" style="display: block"></div>
                                     </a>
                                 }
+                                <a href="#FOX" onclick="return LlamarFOX()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                                    <div id="Icono_7" style="display: block"></div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -712,12 +715,31 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
             </div>
         </div>
     </div>
+
+    <div id="FOX" class="modal">
+        <div class="modal-dialog" style="width:1000px;">
+            <div class="modal-content" style="width:1000px;">
+                <div class="modal-header" style="width:1000px;">
+                    <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                    <h2 class="modal-title"><i class="fa fa-calendar-plus-o" aria-hidden="true" style="color:#d66b2a;"></i>&nbsp;&nbsp;Formulario FOX Premium</h2>
+                </div>
+                <div class="modal-body" style="width:1000px;">
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                            <div id="FOXTBody"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 @section Scripts{
     <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
     <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
-    <link href="~/Styles/Elements/Alertas.css?1.0.2" rel="stylesheet" />
+    <link href="~/Styles/Elements/Alertas.css?1.0.3" rel="stylesheet" />
     <script>
         $.datetimepicker.setLocale('es');
         $('#FechaNacimiento').datetimepicker({
@@ -748,6 +770,7 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
         var urlUsabilidadConvenio = '@Url.Action("Guardar_Usabilidad_Convenio", "Inbound")';
         var urlUsabilidadBusquedaCuenta = '@Url.Action("Guardar_Usabilidad_Consulta_Cuenta", "Inbound")';
         var urlMejorasTecnicas = '@Url.Action("Mejoras_Tecnicas", "Alertas")';
+        var urlFOX = '@Url.Action("FOX", "Alertas")';
         $("#tbMacroproceso").val('');
         $("#tbMarcacion").val('');
         $("#TipiMarca_Observaciones").val('');
@@ -761,7 +784,7 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
     </script>
 
 
-    <script src="~/Scripts/Inbound/Index.js?1.1.2"></script>
+    <script src="~/Scripts/Inbound/Index.js?1.1.3"></script>
 
 }
 

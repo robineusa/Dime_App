@@ -118,5 +118,17 @@ namespace Dime.Controllers
 
             return RedirectToAction("Index", "Inbound");
         }
+
+        [HttpGet]
+        public ActionResult FOX()
+        {
+            return View();
+        }
+
+        //[HttpPost]
+        //public ActionResult FOX()
+        //{
+        //    return View();
+        //}
     }
 }

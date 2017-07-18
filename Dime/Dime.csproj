@@ -2251,8 +2251,10 @@
     <Content Include="Resources\Images\Inbound\Claro_Video.png" />
     <Content Include="Resources\Images\Inbound\correo.png" />
     <Content Include="Resources\Images\Inbound\Elegido.png" />
+    <Content Include="Resources\Images\Inbound\Fox.png" />
     <Content Include="Resources\Images\Inbound\hd2.png" />
     <Content Include="Resources\Images\Inbound\Mejoras_Tecnicas.png" />
+    <Content Include="Resources\Images\Inbound\Pieza_Comunicacion_FOX.jpg" />
     <Content Include="Resources\Images\Layout\apc.png" />
     <Content Include="Resources\Images\Layout\apc1.png" />
     <Content Include="Resources\Images\Layout\apc2.png" />
@@ -3246,12 +3248,10 @@
     <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
-<<<<<<< HEAD
     <Content Include="Views\Mec\ConsultaMonitoreosAgente.cshtml" />
     <Content Include="Views\Mec\ActualizarMonitoreo.cshtml" />
-=======
     <Content Include="Views\CierreDeCiclo\ConsultaGestiones.cshtml" />
->>>>>>> 2f025a0c481a2746fd62f5a0e27d8f69df01046f
+    <Content Include="Views\Alertas\FOX.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

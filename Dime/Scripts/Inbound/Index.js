@@ -561,6 +561,17 @@ function LlamarMejorasTecnicas() {
     })
 }
 
+function LlamarFOX() {
+    $.ajax({
+        type: "GET",
+        url: urlFOX,
+        dataType: "html",
+        success: function (result) {
+            $('#FOXTBody').html(result);
+        }
+    });
+}
+
 function ResetearDivs() {
 
     var vacio = $("<div></div>");
@@ -570,6 +581,7 @@ function ResetearDivs() {
     $('#SMOBody').html(vacio);
     $('#SiembraBody').html(vacio);
     $('#MejorasTBody').html(vacio);
+    $('#FOXTBody').html(vacio);
 }
 
 //function UsabilidadBusquedaCuenta() {

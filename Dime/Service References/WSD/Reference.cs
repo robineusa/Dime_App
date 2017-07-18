@@ -12887,6 +12887,78 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ConsultaAgenteMonitoreosPrincipal", ReplyAction="http://tempuri.org/IMecService/ConsultaAgenteMonitoreosPrincipalResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecMonitoreosP>> ConsultaAgenteMonitoreosPrincipalAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, string UsuarioGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/RegistrarMacroproceso", ReplyAction="http://tempuri.org/IMecService/RegistrarMacroprocesoResponse")]
+        void RegistrarMacroproceso(Telmexla.Servicios.DIME.Entity.MecProcesos proceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/RegistrarMacroproceso", ReplyAction="http://tempuri.org/IMecService/RegistrarMacroprocesoResponse")]
+        System.Threading.Tasks.Task RegistrarMacroprocesoAsync(Telmexla.Servicios.DIME.Entity.MecProcesos proceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ActualizarMacroproceso", ReplyAction="http://tempuri.org/IMecService/ActualizarMacroprocesoResponse")]
+        void ActualizarMacroproceso(Telmexla.Servicios.DIME.Entity.MecProcesos proceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ActualizarMacroproceso", ReplyAction="http://tempuri.org/IMecService/ActualizarMacroprocesoResponse")]
+        System.Threading.Tasks.Task ActualizarMacroprocesoAsync(Telmexla.Servicios.DIME.Entity.MecProcesos proceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/RegistrarLinea", ReplyAction="http://tempuri.org/IMecService/RegistrarLineaResponse")]
+        void RegistrarLinea(Telmexla.Servicios.DIME.Entity.MecLineas Linea);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/RegistrarLinea", ReplyAction="http://tempuri.org/IMecService/RegistrarLineaResponse")]
+        System.Threading.Tasks.Task RegistrarLineaAsync(Telmexla.Servicios.DIME.Entity.MecLineas Linea);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ActualizarLinea", ReplyAction="http://tempuri.org/IMecService/ActualizarLineaResponse")]
+        void ActualizarLinea(Telmexla.Servicios.DIME.Entity.MecLineas Linea);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ActualizarLinea", ReplyAction="http://tempuri.org/IMecService/ActualizarLineaResponse")]
+        System.Threading.Tasks.Task ActualizarLineaAsync(Telmexla.Servicios.DIME.Entity.MecLineas Linea);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/RegistrarListaDistribucion", ReplyAction="http://tempuri.org/IMecService/RegistrarListaDistribucionResponse")]
+        void RegistrarListaDistribucion(Telmexla.Servicios.DIME.Entity.MecListasDistribucion ListaD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/RegistrarListaDistribucion", ReplyAction="http://tempuri.org/IMecService/RegistrarListaDistribucionResponse")]
+        System.Threading.Tasks.Task RegistrarListaDistribucionAsync(Telmexla.Servicios.DIME.Entity.MecListasDistribucion ListaD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ActualizarListaDistribucion", ReplyAction="http://tempuri.org/IMecService/ActualizarListaDistribucionResponse")]
+        void ActualizarListaDistribucion(Telmexla.Servicios.DIME.Entity.MecListasDistribucion ListaD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ActualizarListaDistribucion", ReplyAction="http://tempuri.org/IMecService/ActualizarListaDistribucionResponse")]
+        System.Threading.Tasks.Task ActualizarListaDistribucionAsync(Telmexla.Servicios.DIME.Entity.MecListasDistribucion ListaD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/RegistrarTipoAlarma", ReplyAction="http://tempuri.org/IMecService/RegistrarTipoAlarmaResponse")]
+        void RegistrarTipoAlarma(Telmexla.Servicios.DIME.Entity.MecTipoAlarmas Alarma);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/RegistrarTipoAlarma", ReplyAction="http://tempuri.org/IMecService/RegistrarTipoAlarmaResponse")]
+        System.Threading.Tasks.Task RegistrarTipoAlarmaAsync(Telmexla.Servicios.DIME.Entity.MecTipoAlarmas Alarma);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ActualizarTipoAlarmas", ReplyAction="http://tempuri.org/IMecService/ActualizarTipoAlarmasResponse")]
+        void ActualizarTipoAlarmas(Telmexla.Servicios.DIME.Entity.MecTipoAlarmas Alarma);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ActualizarTipoAlarmas", ReplyAction="http://tempuri.org/IMecService/ActualizarTipoAlarmasResponse")]
+        System.Threading.Tasks.Task ActualizarTipoAlarmasAsync(Telmexla.Servicios.DIME.Entity.MecTipoAlarmas Alarma);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaProcesosMecAdmin", ReplyAction="http://tempuri.org/IMecService/ListaProcesosMecAdminResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecProcesos> ListaProcesosMecAdmin();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaProcesosMecAdmin", ReplyAction="http://tempuri.org/IMecService/ListaProcesosMecAdminResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecProcesos>> ListaProcesosMecAdminAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaLineasMecAdmin", ReplyAction="http://tempuri.org/IMecService/ListaLineasMecAdminResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecLineas> ListaLineasMecAdmin(int IdProceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaLineasMecAdmin", ReplyAction="http://tempuri.org/IMecService/ListaLineasMecAdminResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecLineas>> ListaLineasMecAdminAsync(int IdProceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListasCorreosMecAdmin", ReplyAction="http://tempuri.org/IMecService/ListasCorreosMecAdminResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecListasDistribucion> ListasCorreosMecAdmin(int IdLinea);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListasCorreosMecAdmin", ReplyAction="http://tempuri.org/IMecService/ListasCorreosMecAdminResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecListasDistribucion>> ListasCorreosMecAdminAsync(int IdLinea);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaTipoAlarmasMecAdmin", ReplyAction="http://tempuri.org/IMecService/ListaTipoAlarmasMecAdminResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas> ListaTipoAlarmasMecAdmin();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaTipoAlarmasMecAdmin", ReplyAction="http://tempuri.org/IMecService/ListaTipoAlarmasMecAdminResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas>> ListaTipoAlarmasMecAdminAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -13002,6 +13074,102 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecMonitoreosP>> ConsultaAgenteMonitoreosPrincipalAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, string UsuarioGestion) {
             return base.Channel.ConsultaAgenteMonitoreosPrincipalAsync(FechaInicial, FechaFinal, UsuarioGestion);
+        }
+        
+        public void RegistrarMacroproceso(Telmexla.Servicios.DIME.Entity.MecProcesos proceso) {
+            base.Channel.RegistrarMacroproceso(proceso);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarMacroprocesoAsync(Telmexla.Servicios.DIME.Entity.MecProcesos proceso) {
+            return base.Channel.RegistrarMacroprocesoAsync(proceso);
+        }
+        
+        public void ActualizarMacroproceso(Telmexla.Servicios.DIME.Entity.MecProcesos proceso) {
+            base.Channel.ActualizarMacroproceso(proceso);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarMacroprocesoAsync(Telmexla.Servicios.DIME.Entity.MecProcesos proceso) {
+            return base.Channel.ActualizarMacroprocesoAsync(proceso);
+        }
+        
+        public void RegistrarLinea(Telmexla.Servicios.DIME.Entity.MecLineas Linea) {
+            base.Channel.RegistrarLinea(Linea);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarLineaAsync(Telmexla.Servicios.DIME.Entity.MecLineas Linea) {
+            return base.Channel.RegistrarLineaAsync(Linea);
+        }
+        
+        public void ActualizarLinea(Telmexla.Servicios.DIME.Entity.MecLineas Linea) {
+            base.Channel.ActualizarLinea(Linea);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarLineaAsync(Telmexla.Servicios.DIME.Entity.MecLineas Linea) {
+            return base.Channel.ActualizarLineaAsync(Linea);
+        }
+        
+        public void RegistrarListaDistribucion(Telmexla.Servicios.DIME.Entity.MecListasDistribucion ListaD) {
+            base.Channel.RegistrarListaDistribucion(ListaD);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarListaDistribucionAsync(Telmexla.Servicios.DIME.Entity.MecListasDistribucion ListaD) {
+            return base.Channel.RegistrarListaDistribucionAsync(ListaD);
+        }
+        
+        public void ActualizarListaDistribucion(Telmexla.Servicios.DIME.Entity.MecListasDistribucion ListaD) {
+            base.Channel.ActualizarListaDistribucion(ListaD);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarListaDistribucionAsync(Telmexla.Servicios.DIME.Entity.MecListasDistribucion ListaD) {
+            return base.Channel.ActualizarListaDistribucionAsync(ListaD);
+        }
+        
+        public void RegistrarTipoAlarma(Telmexla.Servicios.DIME.Entity.MecTipoAlarmas Alarma) {
+            base.Channel.RegistrarTipoAlarma(Alarma);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarTipoAlarmaAsync(Telmexla.Servicios.DIME.Entity.MecTipoAlarmas Alarma) {
+            return base.Channel.RegistrarTipoAlarmaAsync(Alarma);
+        }
+        
+        public void ActualizarTipoAlarmas(Telmexla.Servicios.DIME.Entity.MecTipoAlarmas Alarma) {
+            base.Channel.ActualizarTipoAlarmas(Alarma);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarTipoAlarmasAsync(Telmexla.Servicios.DIME.Entity.MecTipoAlarmas Alarma) {
+            return base.Channel.ActualizarTipoAlarmasAsync(Alarma);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecProcesos> ListaProcesosMecAdmin() {
+            return base.Channel.ListaProcesosMecAdmin();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecProcesos>> ListaProcesosMecAdminAsync() {
+            return base.Channel.ListaProcesosMecAdminAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecLineas> ListaLineasMecAdmin(int IdProceso) {
+            return base.Channel.ListaLineasMecAdmin(IdProceso);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecLineas>> ListaLineasMecAdminAsync(int IdProceso) {
+            return base.Channel.ListaLineasMecAdminAsync(IdProceso);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecListasDistribucion> ListasCorreosMecAdmin(int IdLinea) {
+            return base.Channel.ListasCorreosMecAdmin(IdLinea);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecListasDistribucion>> ListasCorreosMecAdminAsync(int IdLinea) {
+            return base.Channel.ListasCorreosMecAdminAsync(IdLinea);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas> ListaTipoAlarmasMecAdmin() {
+            return base.Channel.ListaTipoAlarmasMecAdmin();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas>> ListaTipoAlarmasMecAdminAsync() {
+            return base.Channel.ListaTipoAlarmasMecAdminAsync();
         }
     }
     
