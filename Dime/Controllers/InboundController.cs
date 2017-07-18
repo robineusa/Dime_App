@@ -134,6 +134,7 @@ namespace Dime.Controllers
             if (CuentaFoxx != null)
             {
                 model.CuentaFox = CuentaFoxx;
+                model.CuentaFox.FechaVencimiento2 = Convert.ToString(CuentaFoxx.FechaVencimiento);
             }
             else
             {
