@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
@@ -11,15 +12,25 @@ namespace Dime.Controllers
     public class CierreDeCicloController : MyController
     {
 
+        WSD.CierreCicloServiceClient cierreCicloService;
+
         public CierreDeCicloController()
         {
-
+            cierreCicloService = new WSD.CierreCicloServiceClient();
+            cierreCicloService.ClientCredentials.Authenticate();
         }
 
         // GET: CierreDeCiclo
         public ActionResult ResidencialPredictivoConsulta()
         {
+            ViewBag.ConsultaPost = "ResidencialPredictivoConsultaPost";
             return View("ConsultaGestiones");
+        }
+
+        [HttpPost]
+        public ActionResult ResidencialPredictivoConsultaPost(CCConsultaGestionesViewModel model)
+        {
+            return RedirectToAction("ResidencialPredictivoHistorial", "CierreDeCiclo", new {cuenta = model.cuenta });
         }
 
         public ActionResult ResidencialPotencialConsulta()
@@ -41,7 +52,10 @@ namespace Dime.Controllers
 
         public ActionResult ResidencialPredictivoHistorial(string cuenta)
         {
-            return View("HistorialGestiones");
+            ViewModelHistorialGestiones model  = new ViewModelHistorialGestiones();
+            float cuentaFloat = float.Parse(cuenta);
+            model.predictivoModel = cierreCicloService.ListaResidencialPredictivoDeCuenta(cuentaFloat);
+            return View("HistorialGestiones", model);
         }
 
         public ActionResult ResidencialPotencialHistorial(string cuenta)
@@ -53,7 +67,7 @@ namespace Dime.Controllers
         {
             return View("HistorialGestiones");
         }
-        public ActionResult PymesHistorial()
+        public ActionResult PymesHistorial(string cuenta)
         {
             return View("HistorialGestiones");
         }

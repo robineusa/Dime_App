@@ -91,6 +91,7 @@
     <Compile Include="CambioEstrato.cs" />
     <Compile Include="CambioEstratoCollection.cs" />
     <Compile Include="CargaBaseFoxInbound.cs" />
+    <Compile Include="CCConsultaGestionesViewModel.cs" />
     <Compile Include="CierreCiclo.cs" />
     <Compile Include="CierreCicloCollection.cs" />
     <Compile Include="ClaroVideo.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="CuentasSiembraHD.cs" />
     <Compile Include="CuentasSiembraHDCollection.cs" />
     <Compile Include="CuentasSiguienteMejorOferta.cs" />
+    <Compile Include="DatoConsultaCCResidencialPredictivo.cs" />
     <Compile Include="DatoConsultaDirecciones.cs" />
     <Compile Include="DatoConsultaGestion.cs" />
     <Compile Include="DatoConsultaGestionAdmin.cs" />
@@ -190,6 +192,7 @@
     <Compile Include="ViewModelCuentasSiembraHD.cs" />
     <Compile Include="ViewModelDistribucionesBlending.cs" />
     <Compile Include="ViewModelGraficos.cs" />
+    <Compile Include="ViewModelHistorialGestiones.cs" />
     <Compile Include="ViewModelMec.cs" />
     <Compile Include="ViewModelMultiPlay.cs" />
     <Compile Include="ViewModelNodos.cs" />
