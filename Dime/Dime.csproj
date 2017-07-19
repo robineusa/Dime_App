@@ -2305,7 +2305,10 @@
     <Content Include="Scripts\Mec\ActualizarMonitoreo.js" />
     <Content Include="Scripts\Mec\AdministrarLineasMec.js" />
     <Content Include="Scripts\Mec\AdministrarProcesosMec.js" />
+    <Content Include="Scripts\Mec\ConsultaMonitoreosAdminLog.js" />
+    <Content Include="Scripts\Mec\ConsultaMonitoreosAdminPrincipal.js" />
     <Content Include="Scripts\Mec\ConsultaMonitoreosAgente.js" />
+    <Content Include="Scripts\Mec\ListaMonitoreosAdmin.js" />
     <Content Include="Scripts\Mec\RegistrarMonitoreo.js" />
     <Content Include="Scripts\MultiPlay\ConsultasAdminMultiPlay.js" />
     <Content Include="Scripts\MultiPlay\MultiPlay.js" />
@@ -3031,6 +3034,10 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Service References\WSD\WebService.disco" />
+    <None Include="Service References\WSD\WebService10.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService2.disco" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
     <Content Include="Styles\Elements\General.css" />
@@ -3250,6 +3257,7 @@
     <None Include="Service References\WSD\WebService1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\WSD\WebService2.wsdl" />
     <None Include="Service References\WSD\WebService2.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -3260,6 +3268,21 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\CierreDeCiclo\HistorialGestiones.cshtml" />
+    <None Include="Service References\WSD\WebService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService8.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService9.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Mec\ConsultaMonitoreosAdminPrincipal.cshtml" />
+    <Content Include="Views\Mec\ConsultaMonitoreosAdminLog.cshtml" />
+    <Content Include="Views\Mec\ListaMonitoreosAdmin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

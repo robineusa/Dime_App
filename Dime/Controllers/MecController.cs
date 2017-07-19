@@ -247,5 +247,44 @@ namespace Dime.Controllers
             return RedirectToAction("AdministrarLineasMec", "Mec", new { IdProceso = modelo.MecProcesos.IdProceso });
 
         }
+        [HttpGet]
+        public ActionResult ConsultaMonitoreosAdminPrincipal()
+        {
+            return View();
+        }
+        public JsonResult ConsultaMonitoreosAdminPrincipalJson(string fechaInicial, string fechaFinal)
+        {
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            var jsonResult = Json(JsonConvert.SerializeObject(MecService.ConsultaAdminMonitoreosPrincipal(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult ConsultaMonitoreosAdminLog()
+        {
+            return View();
+        }
+        public JsonResult ConsultaMonitoreosAdminLogJson(string fechaInicial, string fechaFinal)
+        {
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            var jsonResult = Json(JsonConvert.SerializeObject(MecService.ConsultaAdminMonitoreosLog(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult ListaMonitoreosAdmin()
+        {
+            return View();
+        }
+        public JsonResult ListaMonitoreosAdminJson(string fechaInicial, string fechaFinal)
+        {
+            DateTime FI = Convert.ToDateTime(fechaInicial);
+            DateTime FF = Convert.ToDateTime(fechaFinal);
+            var jsonResult = Json(JsonConvert.SerializeObject(MecService.ConsultaAdminMonitoreosPrincipal(FI, FF)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }
