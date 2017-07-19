@@ -1,5 +1,5 @@
 ﻿@model Telmexla.Servicios.DIME.Entity.ViewModelMec
-@{ ViewBag.Title = "Registro de Monitoreos";
+@{ ViewBag.Title = "Actualizar Monitoreos";
     ViewBag.SubTitle = "Procesos Mec";
 
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,7 +7,7 @@
 
 @if (Session["Registrar Monitoreos Mec"] != null)
 {
-    using (Html.BeginForm("RegistrarMonitoreo", "Mec", FormMethod.Post, new { id = "datosCliente", role = "form" }))
+    using (Html.BeginForm("ActualizarMonitoreo", "Mec", FormMethod.Post, new { id = "datosCliente", role = "form" }))
     {
         <div class="row">
             <div class="col-md-9" style="width:100%; ">
@@ -26,7 +26,7 @@
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Seleccione el Proceso</small>
                                         @Html.DropDownListFor(m => m.MecMonitoreosP.IdProceso, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Procesos", @class = "form-control" })
-
+                                        @Html.HiddenFor(m => m.MecMonitoreosP.IdMonitoreo, new { @class = "form-control input-sm", @Id = "IdMonitoreo" })
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Seleccione la Linea</small>
@@ -157,12 +157,12 @@
                     <tr>
                         <td style="padding-left:1px; width:200px;">
                             <small>Nota Obtenida</small>
-                            @Html.TextBoxFor(m => m.MecMonitoreosP.NotaObtenida, new { @class = "form-control input-sm"})
+                            @Html.TextBoxFor(m => m.MecMonitoreosP.NotaObtenida, new { @class = "form-control input-sm" })
                         </td>
                         <td style="padding-left:1px; width:300px;">
                             <small>Tipo de Alarma</small>
                             @Html.DropDownListFor(m => m.MecMonitoreosP.TipoDeAlarma, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "TipoAlarmas", @class = "form-control" })
-                           
+
                         </td>
                         <td style="padding-left:4px; width:220px;">
                             <small>Registro Monitoreo</small>
@@ -178,7 +178,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>@Html.ValidationMessageFor(m => m.MecMonitoreosP.NotaObtenida, "", new { @class = "text-danger" })</td>
+                        <td>@Html.ValidationMessageFor(m => m.MecMonitoreosP.TipoDeAlarma, "", new { @class = "text-danger" })</td>
                         <td>@Html.ValidationMessageFor(m => m.MecMonitoreosP.TipoDeAlarma, "", new { @class = "text-danger" })</td>
                     </tr>
                     <tr>
@@ -244,10 +244,9 @@
 
         </div>
     }
-    
-    @section Scripts{
 
-    @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+    @section Scripts{
+        @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
 <script type="text/javascript">
     $.validator.methods.number = function (value, element) {
         value = floatValue(value);
@@ -262,7 +261,7 @@
         return parseFloat(value.replace(",", "."));
     }
 </script>
-            <script>
+        <script>
             var urlProcesos = '@Url.Action("TraerListaProcesos", "Mec")';
             var urlLineas = '@Url.Action("TraerListaLineas", "Mec")';
             var UrlUsuarios = '@Url.Action("TraerInformacionUsuarioHolos", "Mec")';
@@ -270,10 +269,10 @@
             var UrlAlarmas = '@Url.Action("TraerListaTiposAlarmas", "Mec")';
             var UrlListaDistribucion = '@Url.Action("TraerListasDistribucion", "Mec")';
         </script>
-        <script src="~/Scripts/Mec/RegistrarMonitoreo.js?1.0.3"></script>
+        <script src="~/Scripts/Mec/ActualizarMonitoreo.js?1.0.0"></script>
     }
-  
-    
+
+
 }
 else
 {

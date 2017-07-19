@@ -62,7 +62,7 @@ function CargarDatosMultiPlay() {
 }
 function cambiarfechas(data) {
     for (var i = 0; i < data.length; i++) {
-        data[i].FechaGestionUsuario = kendo.toString(kendo.parseDate(data[i].FechaGestionUsuario, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd');
+        data[i].FechaGestion = kendo.toString(kendo.parseDate(data[i].FechaGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
     }
 
 }
@@ -98,12 +98,12 @@ function ShowGridMultiplay(data) {
         },
         sortable: true,
         columns: [
-            { field: "Id", title: "Id", width: 80, headerAttributes: { style: "white-space: normal" } },
-            { field: "FechaGestionUsuario", title: "Fecha de Gestión", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "IdSubReg", title: "Id", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "FechaGestion", title: "Fecha de Gestión", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "UsuarioGestion", title: " Usuario de Gestión", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "NombreUsuarioGestion", title: "Nombre Usuario Gestión", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "AliadoGestion", title: "Aliado", width: 80, headerAttributes: { style: "white-space: normal" } },
-            { field: "SubRegistro", title: "Sub Registro", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "RegBaGen", title: "Sub Registro", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "Cuenta", title: "Cuenta", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "Cedula", title: "Cedula", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "NombreCliente", title: "Nombre Cliente", width: 80, headerAttributes: { style: "white-space: normal" } },
