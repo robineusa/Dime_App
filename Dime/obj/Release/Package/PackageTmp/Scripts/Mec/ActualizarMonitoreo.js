@@ -84,7 +84,7 @@ function DatosCliente() {
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({ CuentaCliente: Cuenta }),
         dataType: "JSON",
-        success: function (result) {           
+        success: function (result) {
             var json = JSON.parse(result);
             $('#Division').val(json.Division);
             $('#Area').val(json.Area);
@@ -139,9 +139,9 @@ function ListaDistribucion() {
         success: function (result) {
             var json = JSON.parse(result);
             $('#IdListaDistri').val(json[0].IdLista);
-            }
+        }
     });
-   
+
 }
 $('#Lineas').change(function () {
     var dato = "";
