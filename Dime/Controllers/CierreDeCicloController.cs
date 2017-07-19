@@ -17,25 +17,47 @@ namespace Dime.Controllers
         }
 
         // GET: CierreDeCiclo
-        public ActionResult ResidencialPredictivo()
+        public ActionResult ResidencialPredictivoConsulta()
         {
             return View("ConsultaGestiones");
         }
 
-        public ActionResult ResidencialPotencial()
+        public ActionResult ResidencialPotencialConsulta()
         {
             return View("ConsultaGestiones");
         }
 
-        public ActionResult Instalacion()
+        public ActionResult InstalacionConsulta()
         {
             return View("ConsultaGestiones");
         }
 
-        public ActionResult Pymes()
+        public ActionResult PymesConsulta()
         {
-            return View();
+            return View("ConsultaGestiones");
         }
+
+
+
+        public ActionResult ResidencialPredictivoHistorial(string cuenta)
+        {
+            return View("HistorialGestiones");
+        }
+
+        public ActionResult ResidencialPotencialHistorial(string cuenta)
+        {
+            return View("HistorialGestiones");
+        }
+
+        public ActionResult InstalacionHistorial(string cuenta)
+        {
+            return View("HistorialGestiones");
+        }
+        public ActionResult PymesHistorial()
+        {
+            return View("HistorialGestiones");
+        }
+
 
 
 

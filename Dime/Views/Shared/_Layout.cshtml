@@ -578,16 +578,16 @@
                             <ul class="treeview-menu">
                                 @if (Session["Cierre Ciclo Residencial Predictivo"] != null)
                                 {
-                                    <li><a href="@Url.Action("ResidencialPredictivo", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Residencial Predictivo</a></li>}
+                                    <li><a href="@Url.Action("ResidencialPredictivoConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Residencial Predictivo</a></li>}
                                 @if (Session["Cierre Ciclo Residencial Potencial"] != null)
                                 {
-                                    <li><a href="@Url.Action("ResidencialPotencial", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Residencial Potencial</a></li>}
+                                    <li><a href="@Url.Action("ResidencialPotencialConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Residencial Potencial</a></li>}
                                 @if (Session["Cierre Ciclo Instalacion"] != null)
                                 {
-                                    <li><a href="@Url.Action("Instalacion", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Instalaciones</a></li>}
+                                    <li><a href="@Url.Action("InstalacionConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Instalaciones</a></li>}
                                 @if (Session["Cierre Ciclo Pymes"] != null)
                                 {
-                                    <li><a href="@Url.Action("Pymes", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Pymes</a></li>}
+                                    <li><a href="@Url.Action("PymesConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Pymes</a></li>}
                             </ul>
                         </li>
                     }
