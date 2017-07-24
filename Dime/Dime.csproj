@@ -3287,6 +3287,7 @@
     <Content Include="Views\Mec\ListaMonitoreosAdmin.cshtml" />
     <Content Include="Views\Mec\ListaTipoAlarmas.cshtml" />
     <Content Include="Views\Mec\ActualizarTipodeAlarmas.cshtml" />
+    <Content Include="Views\CierreDeCiclo\ResidencialPredictivoTipificador.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
