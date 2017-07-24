@@ -12606,6 +12606,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ListaALarmasPorId_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMecService_ListaALarmasPorId_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IMultiPlayService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -14707,6 +14745,12 @@
   <wsdl:message name="IMecService_ListaCorreosPorId_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListaCorreosPorIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IMecService_ListaALarmasPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaALarmasPorId" />
+  </wsdl:message>
+  <wsdl:message name="IMecService_ListaALarmasPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaALarmasPorIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IMultiPlayService_BuscarDatosMultiplay_InputMessage">
     <wsdl:part name="parameters" element="tns:BuscarDatosMultiplay" />
   </wsdl:message>
@@ -15899,6 +15943,10 @@
     <wsdl:operation name="ListaCorreosPorId">
       <wsdl:input wsaw:Action="http://tempuri.org/IMecService/ListaCorreosPorId" message="tns:IMecService_ListaCorreosPorId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMecService/ListaCorreosPorIdResponse" message="tns:IMecService_ListaCorreosPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaALarmasPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMecService/ListaALarmasPorId" message="tns:IMecService_ListaALarmasPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMecService/ListaALarmasPorIdResponse" message="tns:IMecService_ListaALarmasPorId_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IMultiPlayService">
@@ -19095,6 +19143,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ListaCorreosPorId_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaALarmasPorId">
+      <soap12:operation soapAction="http://tempuri.org/IMecService/ListaALarmasPorId" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ListaALarmasPorId_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMecService_ListaALarmasPorId_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

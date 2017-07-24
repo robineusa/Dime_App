@@ -5,12 +5,12 @@
 
 function ListaProcesos() {
     document.getElementById('dataLoading').style.display = 'inline-block';
-    var Id = $('#IdProceso').val();
+    var IdProceso = $('#Proceso').val();
     $.ajax({
         type: "GET",
-        url: ListaProcesosMecAdmin,
+        url: ListaTipodeAlarmasAdmin,
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ IdProceso: Id }),
+        data: { IdProceso: IdProceso },
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
@@ -61,6 +61,6 @@ function finalizaconsulta() {
 function ActualizarProceso(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = 'AgregarNuevoProceso?IdProceso=' + dataItem.IdProceso;
-
+    window.location.href = 'ActualizarTipodeAlarmas?IdProceso=' + dataItem.IdProceso + '&IdAlarma=' + dataItem.IdAlarma;
+    
 };

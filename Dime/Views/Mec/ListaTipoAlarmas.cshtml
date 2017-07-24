@@ -14,11 +14,11 @@
                     <div class="box-body">
                         <div class="row">
                             <div class="col-xs-12">
-                                <a href="/Mec/AgregarNuevoProceso" style="margin-right:15px; float:right;">
-                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <span class="glyphicon-class" style="font-size:medium;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Agregar Nuevo Proceso</span>
+                                <a href="@Url.Action("ActualizarTipodeAlarmas", "Mec",new {IdProceso=Model.MecTipoAlarmas.IdProceso})" style="margin-right:15px; float:right;">
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <span class="glyphicon-class" style="font-size:medium;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Agregar Nuevo Tipo de Alarma</span>
                                 </a>
                                 <h2 class="page-header" style="margin-top:25px"><i class="fa fa-list-alt"></i> Tipo de Alarmas Actuales:</h2>
-                                @Html.HiddenFor(m => m.MecTipoAlarmas.IdProceso, new { @class = "form-control input-sm", @Id = "IdProceso" })
+                                @Html.HiddenFor(m => m.MecTipoAlarmas.IdProceso, new { @class = "form-control input-sm", @Id = "Proceso" })
                                 <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                                     <div class="box-body">
                                         <div id="dataLoading" style="display:none;text-align:center;width:100%;height:auto;">
@@ -38,9 +38,9 @@
     }
     @section scripts{
         <script>
-            var ListaTipodeAlarmas = '@Url.Action("ListaTipoAlarmasJson", "Mec")';
+            var ListaTipodeAlarmasAdmin = '@Url.Action("ListaTipoAlarmasJson", "Mec")';
         </script>
-        <script src="~/Scripts/Mec/ListaTipoAlarmas.js?1.0.0"></script>
+        <script src="~/Scripts/Mec/ListaTipoAlarmas.js?1.0.9"></script>
 
     }
 }
