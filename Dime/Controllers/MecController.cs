@@ -57,11 +57,11 @@ namespace Dime.Controllers
                 JsonRequestBehavior = JsonRequestBehavior.DenyGet
             };
         }
-        public JsonResult TraerListaTiposAlarmas()
+        public JsonResult TraerListaTiposAlarmas(string IdProceso)
         {
             return new JsonResult()
             {
-                Data = JsonConvert.SerializeObject(MecService.ListaTipoAlarmasMec()),
+                Data = JsonConvert.SerializeObject(MecService.ListaTipoAlarmasMec(Convert.ToDecimal(IdProceso))),
                 JsonRequestBehavior = JsonRequestBehavior.DenyGet
             };
         }
@@ -285,6 +285,45 @@ namespace Dime.Controllers
             var jsonResult = Json(JsonConvert.SerializeObject(MecService.ConsultaAdminMonitoreosPrincipal(FI, FF)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult ListaTipoAlarmas(string IdProceso)
+        {
+            ViewModelMec modelo = new ViewModelMec();
+            modelo.MecTipoAlarmas.IdProceso = Convert.ToDecimal(IdProceso);
+            return View(modelo);
+        }
+        public JsonResult ListaTipoAlarmasJson(string IdProceso)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(MecService.ListaTipoAlarmasMec(Convert.ToDecimal(IdProceso))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+             }
+        [HttpGet]
+        public ActionResult ActualizarTipodeAlarmas(string IdProceso, string IdAlarma)
+        {
+            ViewModelMec modelo = new ViewModelMec();
+            if (IdAlarma == null || IdAlarma.Equals(""))
+            {
+                modelo.MecTipoAlarmas = new MecTipoAlarmas();
+                modelo.MecTipoAlarmas.IdProceso = Convert.ToDecimal(IdProceso);
+            }
+            else {
+                modelo.MecTipoAlarmas = MecService.ListaALarmasPorId(Convert.ToDecimal(IdAlarma));
+            }
+    
+            return View(modelo);
+        }
+        public ActionResult ActualizarTipodeAlarmas(ViewModelMec modelo)
+        {
+            if (modelo.MecTipoAlarmas.IdAlarma > 0)
+            {
+                MecService.ActualizarTipoAlarmas(modelo.MecTipoAlarmas);
+            }
+            else { MecService.RegistrarTipoAlarma(modelo.MecTipoAlarmas); }
+
+            return RedirectToAction("ListaTipoAlarmas", "Mec", new { IdProceso = modelo.MecTipoAlarmas.IdProceso });
+            
         }
     }
 }

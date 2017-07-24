@@ -2306,7 +2306,11 @@
     <Content Include="Scripts\Mec\ActualizarMonitoreo.js" />
     <Content Include="Scripts\Mec\AdministrarLineasMec.js" />
     <Content Include="Scripts\Mec\AdministrarProcesosMec.js" />
+    <Content Include="Scripts\Mec\ConsultaMonitoreosAdminLog.js" />
+    <Content Include="Scripts\Mec\ConsultaMonitoreosAdminPrincipal.js" />
     <Content Include="Scripts\Mec\ConsultaMonitoreosAgente.js" />
+    <Content Include="Scripts\Mec\ListaMonitoreosAdmin.js" />
+    <Content Include="Scripts\Mec\ListaTipoAlarmas.js" />
     <Content Include="Scripts\Mec\RegistrarMonitoreo.js" />
     <Content Include="Scripts\MultiPlay\ConsultasAdminMultiPlay.js" />
     <Content Include="Scripts\MultiPlay\MultiPlay.js" />
@@ -3278,6 +3282,11 @@
     <None Include="Service References\WSD\WebService9.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Mec\ConsultaMonitoreosAdminLog.cshtml" />
+    <Content Include="Views\Mec\ConsultaMonitoreosAdminPrincipal.cshtml" />
+    <Content Include="Views\Mec\ListaMonitoreosAdmin.cshtml" />
+    <Content Include="Views\Mec\ListaTipoAlarmas.cshtml" />
+    <Content Include="Views\Mec\ActualizarTipodeAlarmas.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

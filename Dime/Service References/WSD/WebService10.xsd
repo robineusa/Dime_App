@@ -3662,7 +3662,9 @@
   </xs:element>
   <xs:element name="ListaTipoAlarmasMec">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdProceso" type="xs:decimal" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ListaTipoAlarmasMecResponse">
@@ -3948,6 +3950,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListaALarmasPorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdAlarma" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaALarmasPorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q274="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaALarmasPorIdResult" nillable="true" type="q274:MecTipoAlarmas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="BuscarDatosMultiplay">
     <xs:complexType>
       <xs:sequence>
@@ -3958,14 +3974,14 @@
   <xs:element name="BuscarDatosMultiplayResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q274="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="BuscarDatosMultiplayResult" nillable="true" type="q274:MultiplayCargue" />
+        <xs:element xmlns:q275="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="BuscarDatosMultiplayResult" nillable="true" type="q275:MultiplayCargue" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InsertarMultiPlay">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q275="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="multiplay" nillable="true" type="q275:MultiPlayRegistro" />
+        <xs:element xmlns:q276="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="multiplay" nillable="true" type="q276:MultiPlayRegistro" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3998,7 +4014,21 @@
   <xs:element name="ConsultaAdminBasePresidencialResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q276="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminBasePresidencialResult" nillable="true" type="q276:ArrayOfMultiPlayRegistro" />
+        <xs:element xmlns:q277="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminBasePresidencialResult" nillable="true" type="q277:ArrayOfMultiPlayRegistro" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaResidencialPredictivoDeCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cuenta" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaResidencialPredictivoDeCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q278="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaResidencialPredictivoDeCuentaResult" nillable="true" type="q278:ArrayOfDatoConsultaCCResidencialPredictivo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -12875,10 +12875,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecListasDistribucion>> ListasCorreosMecAsync(int IdLinea);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaTipoAlarmasMec", ReplyAction="http://tempuri.org/IMecService/ListaTipoAlarmasMecResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas> ListaTipoAlarmasMec();
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas> ListaTipoAlarmasMec(decimal IdProceso);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaTipoAlarmasMec", ReplyAction="http://tempuri.org/IMecService/ListaTipoAlarmasMecResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas>> ListaTipoAlarmasMecAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas>> ListaTipoAlarmasMecAsync(decimal IdProceso);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/DestinatariosMec", ReplyAction="http://tempuri.org/IMecService/DestinatariosMecResponse")]
         Telmexla.Servicios.DIME.Entity.MecListasDistribucion DestinatariosMec(int IdLista);
@@ -13005,6 +13005,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaCorreosPorId", ReplyAction="http://tempuri.org/IMecService/ListaCorreosPorIdResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MecListasDistribucion> ListaCorreosPorIdAsync(decimal IdLista);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaALarmasPorId", ReplyAction="http://tempuri.org/IMecService/ListaALarmasPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.MecTipoAlarmas ListaALarmasPorId(decimal IdAlarma);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMecService/ListaALarmasPorId", ReplyAction="http://tempuri.org/IMecService/ListaALarmasPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas> ListaALarmasPorIdAsync(decimal IdAlarma);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -13066,12 +13072,12 @@ namespace Dime.WSD {
             return base.Channel.ListasCorreosMecAsync(IdLinea);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas> ListaTipoAlarmasMec() {
-            return base.Channel.ListaTipoAlarmasMec();
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas> ListaTipoAlarmasMec(decimal IdProceso) {
+            return base.Channel.ListaTipoAlarmasMec(IdProceso);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas>> ListaTipoAlarmasMecAsync() {
-            return base.Channel.ListaTipoAlarmasMecAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas>> ListaTipoAlarmasMecAsync(decimal IdProceso) {
+            return base.Channel.ListaTipoAlarmasMecAsync(IdProceso);
         }
         
         public Telmexla.Servicios.DIME.Entity.MecListasDistribucion DestinatariosMec(int IdLista) {
@@ -13241,6 +13247,14 @@ namespace Dime.WSD {
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MecListasDistribucion> ListaCorreosPorIdAsync(decimal IdLista) {
             return base.Channel.ListaCorreosPorIdAsync(IdLista);
         }
+        
+        public Telmexla.Servicios.DIME.Entity.MecTipoAlarmas ListaALarmasPorId(decimal IdAlarma) {
+            return base.Channel.ListaALarmasPorId(IdAlarma);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.MecTipoAlarmas> ListaALarmasPorIdAsync(decimal IdAlarma) {
+            return base.Channel.ListaALarmasPorIdAsync(IdAlarma);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -13329,6 +13343,55 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MultiPlayRegistro>> ConsultaAdminBasePresidencialAsync(System.DateTime inicial, System.DateTime final) {
             return base.Channel.ConsultaAdminBasePresidencialAsync(inicial, final);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.ICierreCicloService")]
+    public interface ICierreCicloService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreCicloService/ListaResidencialPredictivoDeCuenta", ReplyAction="http://tempuri.org/ICierreCicloService/ListaResidencialPredictivoDeCuentaResponse" +
+            "")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaCCResidencialPredictivo> ListaResidencialPredictivoDeCuenta(float cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreCicloService/ListaResidencialPredictivoDeCuenta", ReplyAction="http://tempuri.org/ICierreCicloService/ListaResidencialPredictivoDeCuentaResponse" +
+            "")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaCCResidencialPredictivo>> ListaResidencialPredictivoDeCuentaAsync(float cuenta);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ICierreCicloServiceChannel : Dime.WSD.ICierreCicloService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CierreCicloServiceClient : System.ServiceModel.ClientBase<Dime.WSD.ICierreCicloService>, Dime.WSD.ICierreCicloService {
+        
+        public CierreCicloServiceClient() {
+        }
+        
+        public CierreCicloServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public CierreCicloServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CierreCicloServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CierreCicloServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaCCResidencialPredictivo> ListaResidencialPredictivoDeCuenta(float cuenta) {
+            return base.Channel.ListaResidencialPredictivoDeCuenta(cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.DatoConsultaCCResidencialPredictivo>> ListaResidencialPredictivoDeCuentaAsync(float cuenta) {
+            return base.Channel.ListaResidencialPredictivoDeCuentaAsync(cuenta);
         }
     }
 }
