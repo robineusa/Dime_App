@@ -114,10 +114,24 @@ namespace Dime.Controllers
                 int idUsuario = loginService.RecibirIdUsuario(model.UsuarioHolos.Cedula);
                 if (idUsuario != 0)
                 {
-                    model.UsuarioHolos = loginService.ConsultarUsuarioHolos(model.UsuarioHolos.Cedula);
-                    model.IdPerfil = loginService.IdPerfilDeUsuario(idUsuario);
-                    model.NombreLinea = loginService.LineaDeUsuario(idUsuario);
-                    model.IdLinea = loginService.IdLineaDeUsuario(idUsuario);                    
+
+                    if (loginService.ConsultarUsuarioHolos(model.UsuarioHolos.Cedula)!= null )
+                    {
+
+                        model.UsuarioHolos = loginService.ConsultarUsuarioHolos(model.UsuarioHolos.Cedula);
+                        model.IdPerfil = loginService.IdPerfilDeUsuario(idUsuario);
+                        model.NombreLinea = loginService.LineaDeUsuario(idUsuario);
+                        model.IdLinea = loginService.IdLineaDeUsuario(idUsuario);
+                    }
+                    else
+                    {
+                        model.UsuarioHolos = new BasePersonalHolo();
+                        model.IdPerfil = 0;
+                        model.NombreLinea = "Vacio";
+                        model.IdLinea = 0;
+                        ViewBag.UsuarioNoHolos = "El usuario no se encuentra registrado en Holos";
+                    }
+                   
                 }
                 else
                 {

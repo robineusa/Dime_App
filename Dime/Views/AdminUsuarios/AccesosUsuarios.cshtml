@@ -26,6 +26,10 @@ using (Html.BeginForm("AccesosUsuarios", "AdminUsuarios", FormMethod.Post, new {
                         {
                             <label style="color:red">@ViewBag.UsuarioExiste</label>
                         }
+                        @if (ViewBag.UsuarioNoHolos != null)
+                        {
+                            <label style="color:red">@ViewBag.UsuarioNoHolos</label>
+                        }
 
                         <table>
                             <tr>

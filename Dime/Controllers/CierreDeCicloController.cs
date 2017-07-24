@@ -73,7 +73,11 @@ namespace Dime.Controllers
         }
 
 
+        public ActionResult ResidencialPredictivoTipificador(string idTip, string macro)
+        {
 
+            return View();
+        }
 
 
     }
