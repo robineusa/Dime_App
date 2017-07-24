@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
     ListaProcesos();
-    ListaTipoAlarmas();
+    
 });
 function ListaProcesos() {
     $.ajax({
@@ -49,6 +49,7 @@ function ListaLineas() {
 }
 $('#Procesos').change(function () {
     ListaLineas();
+    ListaTipoAlarmas();
 })
 function DatosUsuario() {
     var Cedula = $('#CedulaUsuarioMonitoreado').val();
@@ -109,10 +110,12 @@ $('#CuentaCliente').change(function () {
 })
 
 function ListaTipoAlarmas() {
+    var Id = $('#Procesos').val();
     $.ajax({
         type: "POST",
         url: UrlAlarmas,
         contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdProceso: Id }),
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);

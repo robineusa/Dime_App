@@ -3662,7 +3662,9 @@
   </xs:element>
   <xs:element name="ListaTipoAlarmasMec">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdProceso" type="xs:decimal" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ListaTipoAlarmasMecResponse">
@@ -3999,6 +4001,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q276="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminBasePresidencialResult" nillable="true" type="q276:ArrayOfMultiPlayRegistro" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaResidencialPredictivoDeCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cuenta" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaResidencialPredictivoDeCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q277="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaResidencialPredictivoDeCuentaResult" nillable="true" type="q277:ArrayOfDatoConsultaCCResidencialPredictivo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
