@@ -1,19 +1,169 @@
-﻿
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelResidPredictTipificador
 @{
     ViewBag.Title = "Tipificador Residencial Predictivo ";
 }
 
 @if (Session["Cierre Ciclo Residencial Predictivo"] != null)
 {
-using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
-{
+    using (Html.BeginForm("ResidencialPredictivoTipificadorPost", "CierreDeCiclo", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
+    {
+
+
+        <div role="tabpanel" class="tab-pane tab-dime-first" id="datosAdicionales" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+            <table>
+                <tr>
+                    <td style="padding:1px;"><br /></td>
+                </tr>
+                <tr>
+
+                    <td width="200" style="padding:1px;">
+                        <small>Cuenta:  </small>
+                    </td>
+                    <td width="200" style="padding:1px;">
+                        <small>Nombre:  </small>
+                    </td>
+                    <td width="200" style="padding:1px;">
+                        <small>Ciudad:  </small>
+                    </td>
+                    <td width="200" style="padding:1px;">
+                        <small>Teléfono 1:  </small>
+                    </td>
+                    <td width="200" style="padding:1px;">
+                        <small>Teléfono 2:  </small>
+                    </td>
+                    <td width="200" style="padding:1px;">
+                        <small>Tel. Adicional 1:</small>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m=>m.GestionResdPredict.Cuenta, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Cuenta, @readonly = "true" })
+                    </td>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m=> m.GestionResdPredict.Nombre, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Nombre, @readonly = "true" })
+                    </td>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.Ciudad, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.NombreComunidad, @readonly = "true" })
+                    </td>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.Telefono1, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Telefono1, @readonly = "true" })
+                    </td>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.Telefono2, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Telefono2, @readonly = "true" })
+
+                    </td>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.TelfAdicional1, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Telefono3, @readonly = "true" })
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td style="padding:1px;">
+                        <small>Nombre Contacto:  </small>
+                    </td>
+                    <td style="padding:1px;">
+                        <small>Servicio:  </small>
+                    </td>
+                    <td style="padding:1px;">
+                        <small>Tipo Cliente:  </small>
+                    </td>
+                    <td style="padding:1px;">
+                        <small>División:  </small>
+                    </td>
+                    <td style="padding:1px;">
+                        <small>Comunidad:  </small>
+                    </td>
+                    <td style="padding:1px;">
+                        <small>Úsuario:</small>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.NombreContacto, new { @class = "form-control input-sm", @Value = Model.GestionResdPredict.NombreContacto, @readonly = "true" })
+                    </td>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.Servicio, new { @class = "form-control input-sm", @Value = Model.GestionResdPredict.NombreContacto, @readonly = "true" })
+                    </td>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.TipoCliente, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.TipoCliente, @readonly = "true" })
+                    </td>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.Division, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.CodDivision, @readonly = "true" })
+                    </td>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.Comunidad, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Comunidad, @readonly = "true" })
+                    </td>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.Usuario, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.Usuario, @readonly = "true" })
+                    </td>
+                </tr>
+                <tr>
+
+                    <td style="padding:1px;">
+                        <small>Nodo:  </small>
+                    </td>
+                    <td style="padding:1px;">
+                        <small>Aliado:  </small>
+                    </td>
+                    <td style="padding:1px;">
+                        <small>Canal:  </small>
+                    </td>
+                    <td style="padding:1px;">
+                        <small>Operación:  </small>
+                    </td>
+                    <td style="padding:1px;">
+                        <small>Detalle Informe:  </small>
+                    </td>
+                    <td style="padding:1px;">
+                        <small>Base:</small>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.Nodo, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.Nodo, @readonly = "true" })
+                    </td>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.Aliado, new { @class = "form-control input-sm", @Value = Model.GestionResdPredict.Aliado, @readonly = "true" })
+                    </td>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.Canal, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.Canal, @readonly = "true" })
+                    </td>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.Operacion, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.Operacion, @readonly = "true" })
+                    </td>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.DetalleInforme, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.MarcacionBd, @readonly = "true" })
+                    </td>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.Base, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.MarcacionBdIi, @readonly = "true" })
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:1px;">
+                        <small>Detalle Marcación:  </small>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.GestionResdPredict.DetalleMarcacion, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.ProblemaDelEdificio, @readonly = "true" })
+                    </td>
+                </tr>
+
+            </table>
+        </div>
 
 
 
+        <div class="box-footer" style="display:block">
+            <button type="submit" style="display:block; width:15%; height: 45px" class="btn btn-primary"  id="submitGetDatos" >Guardar</button>
+        </div>
 
 
-
-}
+    }
 }
 else
 {
