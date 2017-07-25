@@ -91,7 +91,10 @@
     <Compile Include="CambioEstrato.cs" />
     <Compile Include="CambioEstratoCollection.cs" />
     <Compile Include="CargaBaseFoxInbound.cs" />
+    <Compile Include="CcBaseMejoramiento.cs" />
     <Compile Include="CCConsultaGestionesViewModel.cs" />
+    <Compile Include="CcGestionResidencialPredictivo.cs" />
+    <Compile Include="CcResidencialPredictivoInfo.cs" />
     <Compile Include="CierreCiclo.cs" />
     <Compile Include="CierreCicloCollection.cs" />
     <Compile Include="ClaroVideo.cs" />
@@ -197,6 +200,7 @@
     <Compile Include="ViewModelMultiPlay.cs" />
     <Compile Include="ViewModelNodos.cs" />
     <Compile Include="ViewModelNotificacionesBS.cs" />
+    <Compile Include="ViewModelResidPredictTipificador.cs" />
     <Compile Include="ViewModelTipificacionMarcaciones.cs" />
     <Compile Include="ViewModelTraslados.cs" />
   </ItemGroup>
