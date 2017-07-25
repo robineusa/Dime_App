@@ -211,6 +211,7 @@
     <Compile Include="Controllers\MecController.cs" />
     <Compile Include="Controllers\MultiPlayController.cs" />
     <Compile Include="Controllers\PruebasController.cs" />
+    <Compile Include="Controllers\RecurrenciaController.cs" />
     <Compile Include="Controllers\ReportesController.cs" />
     <Compile Include="Controllers\TrasladosController.cs" />
     <Compile Include="Extensions\ClaimsExtensions.cs" />
@@ -3288,6 +3289,7 @@
     <Content Include="Views\Mec\ListaTipoAlarmas.cshtml" />
     <Content Include="Views\Mec\ActualizarTipodeAlarmas.cshtml" />
     <Content Include="Views\CierreDeCiclo\ResidencialPredictivoTipificador.cshtml" />
+    <Content Include="Views\Recurrencia\Recurrencia.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
