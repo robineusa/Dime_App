@@ -73,7 +73,16 @@ namespace Dime.Controllers
         }
 
 
+        [HttpGet]
         public ActionResult ResidencialPredictivoTipificador(string idTip, string macro)
+        {
+            ViewModelResidPredictTipificador model = new ViewModelResidPredictTipificador();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult ResidencialPredictivoTipificadorPost()
         {
 
             return View();
