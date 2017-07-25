@@ -1,4 +1,4 @@
-﻿
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelRecurrencia
 @{
     ViewBag.Title = "Recurrencia";
     ViewBag.Suttitle = "Cierre de Ciclo";
@@ -17,7 +17,7 @@
                 <table>
                     <tr>
                         <td style="min-width:200px; padding:1px;">
-                            @*@Html.TextBoxFor(m => m.ClientesTodos.Cuenta, new { @class = "form-control input-sm", placeholder = "Ingrese la cuenta", id = "inputCuenta" })*@
+                            @Html.TextBoxFor(m => m.ClientesTodos.Cuenta, new { @class = "form-control input-sm", placeholder = "Ingrese la cuenta", id = "inputCuenta" })
                         </td>
                     </tr>
                 </table>
@@ -61,23 +61,23 @@
                         </tr>
                         <tr>
                             <td style="padding:1px;">
-                                @*<input id="Nombre_Cliente" class="form-control input-sm" type="text" placeholder="Nombre del cliente" value="@Model.ClientesTodos.Nombre" readonly>*@
+                                <input id="Nombre_Cliente" class="form-control input-sm" type="text" placeholder="Nombre del cliente" value="@Model.ClientesTodos.Nombre" readonly>
                             </td>
                             <td style="padding:1px;">
-                                @*<input id="Apellido_Cliente" class="form-control input-sm" type="text" placeholder="Apellido del cliente" value="@Model.ClientesTodos.Apellido" readonly>*@
+                                <input id="Apellido_Cliente" class="form-control input-sm" type="text" placeholder="Apellido del cliente" value="@Model.ClientesTodos.Apellido" readonly>
                             </td>
 
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="Teléfono telmex" value="@Model.ClientesTodos.TelefonoTelmex" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="Teléfono telmex" value="@Model.ClientesTodos.TelefonoTelmex" readonly>
                             </td>
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="Teléfono 1" value="@Model.ClientesTodos.Telefono1" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="Teléfono 1" value="@Model.ClientesTodos.Telefono1" readonly>
                             </td>
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="Teléfono 2" value="@Model.ClientesTodos.Telefono2" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="Teléfono 2" value="@Model.ClientesTodos.Telefono2" readonly>
                             </td>
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="Teléfono 3" value="@Model.ClientesTodos.Telefono3" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="Teléfono 3" value="@Model.ClientesTodos.Telefono3" readonly>
                             </td>
                         </tr>
                         <tr>
@@ -104,22 +104,22 @@
                         </tr>
                         <tr>
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.ClientesTodos.DirInstalacion" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.ClientesTodos.DirInstalacion" readonly>
                             </td>
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="Correspondencia" value="@Model.ClientesTodos.DirCorrespondencia" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="Correspondencia" value="@Model.ClientesTodos.DirCorrespondencia" readonly>
                             </td>
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="Nodo" value="@Model.ClientesTodos.Nodo" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="Nodo" value="@Model.ClientesTodos.Nodo" readonly>
                             </td>
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="Red" value="@Model.ClientesTodos.Red" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="Red" value="@Model.ClientesTodos.Red" readonly>
                             </td>
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="División" value="@Model.ClientesTodos.Division" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="División" value="@Model.ClientesTodos.Division" readonly>
                             </td>
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="Área" value="@Model.ClientesTodos.Area" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="Área" value="@Model.ClientesTodos.Area" readonly>
                             </td>
                         </tr>
 
@@ -147,22 +147,22 @@
                         </tr>
                         <tr>
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="Zona" value="@Model.ClientesTodos.Zona" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="Zona" value="@Model.ClientesTodos.Zona" readonly>
                             </td>
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="Distrito" value="@Model.ClientesTodos.Distrito" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="Distrito" value="@Model.ClientesTodos.Distrito" readonly>
                             </td>
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="Nombre comunidad" value="@Model.ClientesTodos.NombreComunidad" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="Nombre comunidad" value="@Model.ClientesTodos.NombreComunidad" readonly>
                             </td>
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="Estrato" value="@Model.ClientesTodos.Estrato" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="Estrato" value="@Model.ClientesTodos.Estrato" readonly>
                             </td>
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="Tipo de cliente" value="@Model.ClientesTodos.TipoCliente" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="Tipo de cliente" value="@Model.ClientesTodos.TipoCliente" readonly>
                             </td>
                             <td style="padding:1px;">
-                                @*<input class="form-control input-sm" type="text" placeholder="Descripción" value="@Model.ClientesTodos.Descripcion" readonly>*@
+                                <input class="form-control input-sm" type="text" placeholder="Descripción" value="@Model.ClientesTodos.Descripcion" readonly>
                             </td>
                         </tr>
 
