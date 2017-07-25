@@ -200,6 +200,7 @@
     <Compile Include="ViewModelMultiPlay.cs" />
     <Compile Include="ViewModelNodos.cs" />
     <Compile Include="ViewModelNotificacionesBS.cs" />
+    <Compile Include="ViewModelRecurrencia.cs" />
     <Compile Include="ViewModelResidPredictTipificador.cs" />
     <Compile Include="ViewModelTipificacionMarcaciones.cs" />
     <Compile Include="ViewModelTraslados.cs" />
