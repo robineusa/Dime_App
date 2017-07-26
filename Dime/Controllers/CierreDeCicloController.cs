@@ -77,13 +77,15 @@ namespace Dime.Controllers
         public ActionResult ResidencialPredictivoTipificador(string idTip, string macro)
         {
             ViewModelResidPredictTipificador model = new ViewModelResidPredictTipificador();
-
+            int idInt = Convert.ToInt32(idTip);
+            model.ResdPredictInfo = cierreCicloService.GetResidencialPredictivoInfoPorId(idInt);
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult ResidencialPredictivoTipificadorPost()
+        public ActionResult ResidencialPredictivoTipificadorPost(ViewModelResidPredictTipificador model)
         {
+            
 
             return View();
         }
