@@ -362,6 +362,7 @@ namespace Dime.Controllers
             Session["NombreUsuario"] = usuarioLogeado.Nombre.ToString();
             Session["AliadoLogeado"] = loginService.AliadoDeUsuario(usuarioLogeado.Cedula); //"BRM"
             Session["LineaLogeado"] = loginService.LineaDeUsuarioPorId(Convert.ToInt32(usuarioLogeado.IdLinea));   //  "CELULA VISITA SOPORTE";
+            Session["OperacionUsuarioHolos"] = loginService.ConsultarUsuarioHolos(Convert.ToDecimal(usuarioLogeado.Cedula)).Operacion;
             Session["ModoLogin"] = loginService.ModoLoginPorId(Convert.ToInt32(usuarioLogeado.IdLinea));  //1
             var OperacionPorCedula = loginService.OperacionPorCedula(Convert.ToInt32(usuarioLogeado.Cedula));
             var CampañaPorCedula  = loginService.CampañaPorCedula(Convert.ToInt32(usuarioLogeado.Cedula));

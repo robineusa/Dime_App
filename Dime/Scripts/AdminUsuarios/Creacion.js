@@ -48,6 +48,20 @@
             LlenarAccesosDePerfilConsulta();
         }
     }
+
+    perfilSelectedCreate
+
+    $("#perfilSelectedCreate").empty();
+    $("#perfilSelectedCreate").append("<option value=''>-Seleccione-</option>");
+    $("#perfilSelectedCreate").append("<option Value='1'>ADMINISTRADOR</option>");
+    $("#perfilSelectedCreate").append("<option Value='2'>ASESOR</option>");
+    $("#perfilSelectedCreate").append("<option Value='3'>CÉLULA</option>");
+
+    $("#lineaSelectCreacion").empty();
+    $("#lineaSelectCreacion").append("<option value=''>-Seleccione-</option>");
+    $("#listaPermisosCrear").val('');
+    $("#Contrase").val('');
+    
   
 });
 

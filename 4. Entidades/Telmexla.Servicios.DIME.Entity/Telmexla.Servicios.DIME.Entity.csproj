@@ -85,6 +85,13 @@
     <Compile Include="BalanceScoreCard.cs" />
     <Compile Include="BalanceScoreCardCollection.cs" />
     <Compile Include="BasePersonalHolo.cs" />
+    <Compile Include="BELSolicitudes.cs" />
+    <Compile Include="BEMDetalleDeGestion.cs" />
+    <Compile Include="BEMDetalleEscalamientos.cs" />
+    <Compile Include="BEMDistribuciones.cs" />
+    <Compile Include="BEMRazonMalEscalamiento.cs" />
+    <Compile Include="BEMTipoDeEscalamientos.cs" />
+    <Compile Include="BEPSolicitudes.cs" />
     <Compile Include="BlendingFueraNivel.cs" />
     <Compile Include="BlendingFueraNivelCollection.cs" />
     <Compile Include="BuscarCuentasViewModel.cs" />
@@ -189,6 +196,7 @@
     <Compile Include="UsuariosNotificados.cs" />
     <Compile Include="UsuariosXAcceso.cs" />
     <Compile Include="UsuariosXPreguntasDesb.cs" />
+    <Compile Include="ViewModelBackElite.cs" />
     <Compile Include="ViewModelBlending.cs" />
     <Compile Include="ViewModelAdminUsuario.cs" />
     <Compile Include="ViewModelCambioEstrato.cs" />

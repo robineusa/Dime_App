@@ -572,28 +572,51 @@
                         </li>
                     }
 
-                    @if (Session["Cierre Ciclo Residencial Predictivo"] != null || Session["Cierre Ciclo Residencial Potencial"] != null || Session["Cierre Ciclo Instalacion"] != null || Session["Cierre Ciclo Pymes"] != null)
+                    @if (Session["Procesos Cierre de Ciclo"] != null)
                     {
                         <li id="left-sidebar-menu-multilevel" class="treeview">
                             <a href="#">
-                                <i class="fa fa-times text-blue"></i> <span>Cierre de Ciclo</span><i class="fa fa-angle-left pull-right"></i>
+                                <i class="fa fa-dot-circle-o text-orange"></i> <span>Procesos Cierre de Ciclo</span><i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                @if (Session["Cierre Ciclo Residencial Predictivo"] != null)
-                                {
-                                    <li><a href="@Url.Action("ResidencialPredictivoConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Residencial Predictivo</a></li>}
-                                @if (Session["Cierre Ciclo Residencial Potencial"] != null)
-                                {
-                                    <li><a href="@Url.Action("ResidencialPotencialConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Residencial Potencial</a></li>}
-                                @if (Session["Cierre Ciclo Instalacion"] != null)
-                                {
-                                    <li><a href="@Url.Action("InstalacionConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Instalaciones</a></li>}
-                                @if (Session["Cierre Ciclo Pymes"] != null)
-                                {
-                                    <li><a href="@Url.Action("PymesConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Pymes</a></li>}
-                                @if (Session["Cierre Ciclo Recurrencia"] != null)
-                                {
-                                    <li><a href="@Url.Action("Recurrencia", "Recurrencia")"><i class="fa fa-retweet"></i>Recurrencia</a></li>}
+
+                                <li>
+                                    <a href="#"><i class="fa fa-dot-circle-o text-blue" aria-hidden="true"></i>Gestión Cierre de Ciclo<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        @if (Session["Cierre Ciclo Residencial Predictivo"] != null)
+                                        {
+                                        <li><a href="@Url.Action("ResidencialPredictivoConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Residencial Predictivo</a></li>}
+                                        @if (Session["Cierre Ciclo Residencial Potencial"] != null)
+                                        {
+                                        <li><a href="@Url.Action("ResidencialPotencialConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Residencial Potencial</a></li>}
+                                        @if (Session["Cierre Ciclo Instalacion"] != null)
+                                        {
+                                        <li><a href="@Url.Action("InstalacionConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Instalaciones</a></li>}
+                                        @if (Session["Cierre Ciclo Pymes"] != null)
+                                        {
+                                        <li><a href="@Url.Action("PymesConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Pymes</a></li>}
+                                       
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-behance-square text-red" aria-hidden="true"></i>Gestión Back Elite<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        @if (Session["Registrar Solicitud Back Elite"] != null)
+                                        {
+                                            <li><a href="@Url.Action("SolicitudBackElite", "BackElite")"><i class="fa fa-circle-o"></i>Solicitud Back Elite</a></li>}
+                                        
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-retweet text-aqua" aria-hidden="true"></i>Gestión Recurrencia<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        @if (Session["Cierre Ciclo Recurrencia"] != null)
+                                        {
+                                            <li><a href="@Url.Action("Recurrencia", "Recurrencia")"><i class="fa fa-circle-o"></i>Recurrencia</a></li>}
+
+                                    </ul>
+                                </li>
+
                             </ul>
                         </li>
                     }
