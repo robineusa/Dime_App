@@ -14186,6 +14186,7 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/RegistrarSolicitud", ReplyAction="http://tempuri.org/IBackEliteService/RegistrarSolicitudResponse")]
 <<<<<<< HEAD
+<<<<<<< HEAD
         void RegistrarSolicitud(Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/RegistrarSolicitud", ReplyAction="http://tempuri.org/IBackEliteService/RegistrarSolicitudResponse")]
@@ -14227,6 +14228,8 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/DetalleGestionPorId", ReplyAction="http://tempuri.org/IBackEliteService/DetalleGestionPorIdResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEMDetalleDeGestion> DetalleGestionPorIdAsync(decimal IdGestion);
 =======
+=======
+>>>>>>> b16db17e688e568fc3673165cd59ae77ca9445de
         void RegistrarSolicitud(Dime.WSD.BEPSolicitudes Solicitud);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/RegistrarSolicitud", ReplyAction="http://tempuri.org/IBackEliteService/RegistrarSolicitudResponse")]
@@ -14267,6 +14270,9 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/DetalleGestionPorId", ReplyAction="http://tempuri.org/IBackEliteService/DetalleGestionPorIdResponse")]
         System.Threading.Tasks.Task<Dime.WSD.BEMDetalleDeGestion> DetalleGestionPorIdAsync(decimal IdGestion);
+<<<<<<< HEAD
+>>>>>>> b16db17e688e568fc3673165cd59ae77ca9445de
+=======
 >>>>>>> b16db17e688e568fc3673165cd59ae77ca9445de
     }
     
@@ -14297,6 +14303,7 @@ namespace Dime.WSD {
                 base(binding, remoteAddress) {
         }
         
+<<<<<<< HEAD
 <<<<<<< HEAD
         public void RegistrarSolicitud(Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud) {
             base.Channel.RegistrarSolicitud(Solicitud);
@@ -14352,6 +14359,8 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEMDetalleDeGestion> DetalleGestionPorIdAsync(decimal IdGestion) {
 =======
+=======
+>>>>>>> b16db17e688e568fc3673165cd59ae77ca9445de
         public void RegistrarSolicitud(Dime.WSD.BEPSolicitudes Solicitud) {
             base.Channel.RegistrarSolicitud(Solicitud);
         }
@@ -14405,6 +14414,9 @@ namespace Dime.WSD {
         }
         
         public System.Threading.Tasks.Task<Dime.WSD.BEMDetalleDeGestion> DetalleGestionPorIdAsync(decimal IdGestion) {
+<<<<<<< HEAD
+>>>>>>> b16db17e688e568fc3673165cd59ae77ca9445de
+=======
 >>>>>>> b16db17e688e568fc3673165cd59ae77ca9445de
             return base.Channel.DetalleGestionPorIdAsync(IdGestion);
         }
