@@ -13394,4 +13394,135 @@ namespace Dime.WSD {
             return base.Channel.ListaResidencialPredictivoDeCuentaAsync(cuenta);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IBackEliteService")]
+    public interface IBackEliteService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/RegistrarSolicitud", ReplyAction="http://tempuri.org/IBackEliteService/RegistrarSolicitudResponse")]
+        void RegistrarSolicitud(Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/RegistrarSolicitud", ReplyAction="http://tempuri.org/IBackEliteService/RegistrarSolicitudResponse")]
+        System.Threading.Tasks.Task RegistrarSolicitudAsync(Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ActualizaSolicitud", ReplyAction="http://tempuri.org/IBackEliteService/ActualizaSolicitudResponse")]
+        void ActualizaSolicitud(Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ActualizaSolicitud", ReplyAction="http://tempuri.org/IBackEliteService/ActualizaSolicitudResponse")]
+        System.Threading.Tasks.Task ActualizaSolicitudAsync(Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaTipoDeEscalamientos", ReplyAction="http://tempuri.org/IBackEliteService/ListaTipoDeEscalamientosResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMTipoDeEscalamientos> ListaTipoDeEscalamientos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaTipoDeEscalamientos", ReplyAction="http://tempuri.org/IBackEliteService/ListaTipoDeEscalamientosResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMTipoDeEscalamientos>> ListaTipoDeEscalamientosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaDetalleDeEscalamientos", ReplyAction="http://tempuri.org/IBackEliteService/ListaDetalleDeEscalamientosResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMDetalleEscalamientos> ListaDetalleDeEscalamientos(decimal IdTipo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaDetalleDeEscalamientos", ReplyAction="http://tempuri.org/IBackEliteService/ListaDetalleDeEscalamientosResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMDetalleEscalamientos>> ListaDetalleDeEscalamientosAsync(decimal IdTipo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaRazonesMalEscalamiento", ReplyAction="http://tempuri.org/IBackEliteService/ListaRazonesMalEscalamientoResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMRazonMalEscalamiento> ListaRazonesMalEscalamiento(decimal IdTipo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaRazonesMalEscalamiento", ReplyAction="http://tempuri.org/IBackEliteService/ListaRazonesMalEscalamientoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMRazonMalEscalamiento>> ListaRazonesMalEscalamientoAsync(decimal IdTipo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaDetallesDeGestion", ReplyAction="http://tempuri.org/IBackEliteService/ListaDetallesDeGestionResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMDetalleDeGestion> ListaDetallesDeGestion(decimal IdTipo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaDetallesDeGestion", ReplyAction="http://tempuri.org/IBackEliteService/ListaDetallesDeGestionResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMDetalleDeGestion>> ListaDetallesDeGestionAsync(decimal IdTipo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/DetalleGestionPorId", ReplyAction="http://tempuri.org/IBackEliteService/DetalleGestionPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.BEMDetalleDeGestion DetalleGestionPorId(decimal IdGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/DetalleGestionPorId", ReplyAction="http://tempuri.org/IBackEliteService/DetalleGestionPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEMDetalleDeGestion> DetalleGestionPorIdAsync(decimal IdGestion);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IBackEliteServiceChannel : Dime.WSD.IBackEliteService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class BackEliteServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IBackEliteService>, Dime.WSD.IBackEliteService {
+        
+        public BackEliteServiceClient() {
+        }
+        
+        public BackEliteServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public BackEliteServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public BackEliteServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public BackEliteServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public void RegistrarSolicitud(Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud) {
+            base.Channel.RegistrarSolicitud(Solicitud);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarSolicitudAsync(Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud) {
+            return base.Channel.RegistrarSolicitudAsync(Solicitud);
+        }
+        
+        public void ActualizaSolicitud(Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud) {
+            base.Channel.ActualizaSolicitud(Solicitud);
+        }
+        
+        public System.Threading.Tasks.Task ActualizaSolicitudAsync(Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud) {
+            return base.Channel.ActualizaSolicitudAsync(Solicitud);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMTipoDeEscalamientos> ListaTipoDeEscalamientos() {
+            return base.Channel.ListaTipoDeEscalamientos();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMTipoDeEscalamientos>> ListaTipoDeEscalamientosAsync() {
+            return base.Channel.ListaTipoDeEscalamientosAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMDetalleEscalamientos> ListaDetalleDeEscalamientos(decimal IdTipo) {
+            return base.Channel.ListaDetalleDeEscalamientos(IdTipo);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMDetalleEscalamientos>> ListaDetalleDeEscalamientosAsync(decimal IdTipo) {
+            return base.Channel.ListaDetalleDeEscalamientosAsync(IdTipo);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMRazonMalEscalamiento> ListaRazonesMalEscalamiento(decimal IdTipo) {
+            return base.Channel.ListaRazonesMalEscalamiento(IdTipo);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMRazonMalEscalamiento>> ListaRazonesMalEscalamientoAsync(decimal IdTipo) {
+            return base.Channel.ListaRazonesMalEscalamientoAsync(IdTipo);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMDetalleDeGestion> ListaDetallesDeGestion(decimal IdTipo) {
+            return base.Channel.ListaDetallesDeGestion(IdTipo);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMDetalleDeGestion>> ListaDetallesDeGestionAsync(decimal IdTipo) {
+            return base.Channel.ListaDetallesDeGestionAsync(IdTipo);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.BEMDetalleDeGestion DetalleGestionPorId(decimal IdGestion) {
+            return base.Channel.DetalleGestionPorId(IdGestion);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEMDetalleDeGestion> DetalleGestionPorIdAsync(decimal IdGestion) {
+            return base.Channel.DetalleGestionPorIdAsync(IdGestion);
+        }
+    }
 }

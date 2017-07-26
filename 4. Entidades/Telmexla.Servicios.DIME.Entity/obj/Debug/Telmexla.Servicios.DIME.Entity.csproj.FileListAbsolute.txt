@@ -30,6 +30,6 @@ C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME
 C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\System.Web.WebPages.xml
 C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\obj\Debug\Telmexla.Servicios.DIME.Entity.csprojResolveAssemblyReference.cache
 C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\obj\Debug\Telmexla.Servicios.DIME.Entity.dll
 C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\obj\Debug\Telmexla.Servicios.DIME.Entity.pdb
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\obj\Debug\Telmexla.Servicios.DIME.Entity.csprojResolveAssemblyReference.cache

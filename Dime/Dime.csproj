@@ -190,6 +190,7 @@
     <Compile Include="Controllers\AdminNodosController.cs" />
     <Compile Include="Controllers\AdminUsuariosController.cs" />
     <Compile Include="Controllers\AlertasController.cs" />
+    <Compile Include="Controllers\BackEliteController.cs" />
     <Compile Include="Controllers\BuenServicioController.cs" />
     <Compile Include="Controllers\CalculadorasController.cs" />
     <Compile Include="Controllers\CasosAdminController.cs" />
@@ -2275,6 +2276,7 @@
     <Content Include="Scripts\AdminUsuarios\CrearUsuariosMasivos.js" />
     <Content Include="Scripts\AdminUsuarios\xls.js" />
     <Content Include="Scripts\Alertas\SiguienteMejorOferta.js" />
+    <Content Include="Scripts\BackElite\SolicitudBackElite.js" />
     <Content Include="Scripts\BuenServicio\Visualizador_Imagenes.js" />
     <Content Include="Scripts\Calculadoras\Advanced.js" />
     <Content Include="Scripts\Calculadoras\Rentas.js" />
@@ -3291,6 +3293,7 @@
     <Content Include="Views\Mec\ActualizarTipodeAlarmas.cshtml" />
     <Content Include="Views\CierreDeCiclo\ResidencialPredictivoTipificador.cshtml" />
     <Content Include="Views\Recurrencia\Recurrencia.cshtml" />
+    <Content Include="Views\BackElite\SolicitudBackElite.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

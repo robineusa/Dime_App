@@ -2432,4 +2432,93 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DatoConsultaCCResidencialPredictivo" nillable="true" type="tns:DatoConsultaCCResidencialPredictivo" />
+  <xs:complexType name="BEPSolicitudes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoQueSolicita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DetalleDeSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetalleMalEscalado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoEscalamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaDeAgenda" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeFinalizacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeSolicitud" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdSolicitud" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LlsOt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Malescalado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioQueFinaliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioQueSolicita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioUltimaActualizacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperacionQueSolicita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDeSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestionando" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsuarioQueFinaliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioQueSolicita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioUltimaActualizacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BEPSolicitudes" nillable="true" type="tns:BEPSolicitudes" />
+  <xs:complexType name="ArrayOfBEMTipoDeEscalamientos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BEMTipoDeEscalamientos" nillable="true" type="tns:BEMTipoDeEscalamientos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBEMTipoDeEscalamientos" nillable="true" type="tns:ArrayOfBEMTipoDeEscalamientos" />
+  <xs:complexType name="BEMTipoDeEscalamientos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdTipo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoEscalamiento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BEMTipoDeEscalamientos" nillable="true" type="tns:BEMTipoDeEscalamientos" />
+  <xs:complexType name="ArrayOfBEMDetalleEscalamientos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BEMDetalleEscalamientos" nillable="true" type="tns:BEMDetalleEscalamientos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBEMDetalleEscalamientos" nillable="true" type="tns:ArrayOfBEMDetalleEscalamientos" />
+  <xs:complexType name="BEMDetalleEscalamientos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DetalleEscalamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdDetalle" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdTipo" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BEMDetalleEscalamientos" nillable="true" type="tns:BEMDetalleEscalamientos" />
+  <xs:complexType name="ArrayOfBEMRazonMalEscalamiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BEMRazonMalEscalamiento" nillable="true" type="tns:BEMRazonMalEscalamiento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBEMRazonMalEscalamiento" nillable="true" type="tns:ArrayOfBEMRazonMalEscalamiento" />
+  <xs:complexType name="BEMRazonMalEscalamiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdTipo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreRazonEscalamiento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BEMRazonMalEscalamiento" nillable="true" type="tns:BEMRazonMalEscalamiento" />
+  <xs:complexType name="ArrayOfBEMDetalleDeGestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BEMDetalleDeGestion" nillable="true" type="tns:BEMDetalleDeGestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBEMDetalleDeGestion" nillable="true" type="tns:ArrayOfBEMDetalleDeGestion" />
+  <xs:complexType name="BEMDetalleDeGestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdGestion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdTipo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreGestion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BEMDetalleDeGestion" nillable="true" type="tns:BEMDetalleDeGestion" />
 </xs:schema>
