@@ -2939,6 +2939,23 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Retencion.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DatosMultiplay.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MultiPlay.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BEMDetalleDeGestion.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BEMDetalleEscalamientos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BEMRazonMalEscalamiento.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BEMTipoDeEscalamientos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CargaBaseFoxInbound.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CcBaseMejoramiento.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CcResidencialPredictivoInfo.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ConsultaBlendingFormularioDestinoReturnViewModel.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.DatoConsultaCCResidencialPredictivo.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MecLineas.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MecListasDistribucion.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MecMonitoreosL.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MecMonitoreosP.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MecProcesos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MecTipoAlarmas.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MultiplayCargue.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MultiPlayRegistro.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -2950,6 +2967,30 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaRechazo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.GBLDocsisCA.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.GBLFueraNivelesCA.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.GBLProductoCA.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.GBLRentabilizacionCA.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.GBPDocsisCA.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.GBPFueraNivelesCA.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.GBPProductoCA.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.GBPRentabilizacionCA.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.GestionDeCelulaUsr.datasource">
@@ -3000,50 +3041,16 @@
     <Content Include="Service References\WSD\Dime.WSD.UsuariosMasivoData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\WSD\configuration91.svcinfo" />
-    <None Include="Service References\WSD\configuration.svcinfo" />
     <Content Include="Service References\WSD\Dime.WSD.ViewModelSkillsUsuariosBlending.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\WSD\Dime.WSD.ConsultaBlendingFormularioDestinoReturnViewModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.GBLDocsisCA.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.GBLFueraNivelesCA.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.GBLProductoCA.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.GBLRentabilizacionCA.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.GBPDocsisCA.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.GBPFueraNivelesCA.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.GBPProductoCA.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.GBPRentabilizacionCA.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.Usuario.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
+    <None Include="Service References\WSD\WebService.disco" />
+    <None Include="Service References\WSD\configuration91.svcinfo" />
+    <None Include="Service References\WSD\configuration.svcinfo" />
     <None Include="Service References\WSD\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService.disco" />
-    <None Include="Service References\WSD\WebService10.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService2.disco" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
     <Content Include="Styles\Elements\General.css" />
@@ -3256,6 +3263,15 @@
     <Content Include="Views\Mec\AdministrarLineasMec.cshtml" />
     <Content Include="Views\Mec\ActualizarLineasMec.cshtml" />
     <Content Include="Views\Mec\ListasdeDistribucion.cshtml" />
+    <Content Include="Views\CierreDeCiclo\HistorialGestiones.cshtml" />
+    <Content Include="Views\Mec\ConsultaMonitoreosAdminLog.cshtml" />
+    <Content Include="Views\Mec\ConsultaMonitoreosAdminPrincipal.cshtml" />
+    <Content Include="Views\Mec\ListaMonitoreosAdmin.cshtml" />
+    <Content Include="Views\Mec\ListaTipoAlarmas.cshtml" />
+    <Content Include="Views\Mec\ActualizarTipodeAlarmas.cshtml" />
+    <Content Include="Views\CierreDeCiclo\ResidencialPredictivoTipificador.cshtml" />
+    <Content Include="Views\Recurrencia\Recurrencia.cshtml" />
+    <Content Include="Views\BackElite\SolicitudBackElite.cshtml" />
     <None Include="Service References\WSD\WebService.wsdl" />
     <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
@@ -3263,7 +3279,6 @@
     <None Include="Service References\WSD\WebService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService2.wsdl" />
     <None Include="Service References\WSD\WebService2.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -3273,27 +3288,6 @@
     <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\CierreDeCiclo\HistorialGestiones.cshtml" />
-    <None Include="Service References\WSD\WebService6.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService7.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService8.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService9.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Views\Mec\ConsultaMonitoreosAdminLog.cshtml" />
-    <Content Include="Views\Mec\ConsultaMonitoreosAdminPrincipal.cshtml" />
-    <Content Include="Views\Mec\ListaMonitoreosAdmin.cshtml" />
-    <Content Include="Views\Mec\ListaTipoAlarmas.cshtml" />
-    <Content Include="Views\Mec\ActualizarTipodeAlarmas.cshtml" />
-    <Content Include="Views\CierreDeCiclo\ResidencialPredictivoTipificador.cshtml" />
-    <Content Include="Views\Recurrencia\Recurrencia.cshtml" />
-    <Content Include="Views\BackElite\SolicitudBackElite.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

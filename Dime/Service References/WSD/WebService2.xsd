@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="Usuario">
     <xs:sequence>
       <xs:element minOccurs="0" name="Capacitado" nillable="true" type="xs:boolean" />
@@ -2212,6 +2212,7 @@
   <xs:complexType name="MecTipoAlarmas">
     <xs:sequence>
       <xs:element minOccurs="0" name="IdAlarma" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdProceso" type="xs:decimal" />
       <xs:element minOccurs="0" name="NombreAlarma" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -2412,4 +2413,172 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfMultiPlayRegistro" nillable="true" type="tns:ArrayOfMultiPlayRegistro" />
+  <xs:complexType name="ArrayOfDatoConsultaCCResidencialPredictivo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DatoConsultaCCResidencialPredictivo" nillable="true" type="tns:DatoConsultaCCResidencialPredictivo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDatoConsultaCCResidencialPredictivo" nillable="true" type="tns:ArrayOfDatoConsultaCCResidencialPredictivo" />
+  <xs:complexType name="DatoConsultaCCResidencialPredictivo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cuenta" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="EstadoInicial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="MarcacionBd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarcacionBdIi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProblemaDelEdificio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Verificado" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatoConsultaCCResidencialPredictivo" nillable="true" type="tns:DatoConsultaCCResidencialPredictivo" />
+  <xs:complexType name="CcResidencialPredictivoInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Celular" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Celular2" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Comunidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuenta" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="CuentaMatriz" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoInicial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LoginId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarcacionBd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarcacionBdIi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotasDeExperto" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="ProblemaDelEdificio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServicioAfectado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono1" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Telefono2" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Telefono3" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CcResidencialPredictivoInfo" nillable="true" type="tns:CcResidencialPredictivoInfo" />
+  <xs:complexType name="CcBaseMejoramiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aliado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Area" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClienteNagra" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CodDivision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comunidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuenta" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Cun" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Division" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Hora" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IncluyeClaroVideo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreComunidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pqr" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Razon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Submarcacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subrazon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoServicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsoClaroVideo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CcBaseMejoramiento" nillable="true" type="tns:CcBaseMejoramiento" />
+  <xs:complexType name="BEPSolicitudes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoQueSolicita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DetalleDeSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetalleMalEscalado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoEscalamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaDeAgenda" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeFinalizacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeSolicitud" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdSolicitud" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LlsOt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Malescalado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioQueFinaliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioQueSolicita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioUltimaActualizacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperacionQueSolicita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDeSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestionando" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsuarioQueFinaliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioQueSolicita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioUltimaActualizacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BEPSolicitudes" nillable="true" type="tns:BEPSolicitudes" />
+  <xs:complexType name="ArrayOfBEMTipoDeEscalamientos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BEMTipoDeEscalamientos" nillable="true" type="tns:BEMTipoDeEscalamientos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBEMTipoDeEscalamientos" nillable="true" type="tns:ArrayOfBEMTipoDeEscalamientos" />
+  <xs:complexType name="BEMTipoDeEscalamientos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdTipo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoEscalamiento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BEMTipoDeEscalamientos" nillable="true" type="tns:BEMTipoDeEscalamientos" />
+  <xs:complexType name="ArrayOfBEMDetalleEscalamientos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BEMDetalleEscalamientos" nillable="true" type="tns:BEMDetalleEscalamientos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBEMDetalleEscalamientos" nillable="true" type="tns:ArrayOfBEMDetalleEscalamientos" />
+  <xs:complexType name="BEMDetalleEscalamientos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DetalleEscalamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdDetalle" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdTipo" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BEMDetalleEscalamientos" nillable="true" type="tns:BEMDetalleEscalamientos" />
+  <xs:complexType name="ArrayOfBEMRazonMalEscalamiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BEMRazonMalEscalamiento" nillable="true" type="tns:BEMRazonMalEscalamiento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBEMRazonMalEscalamiento" nillable="true" type="tns:ArrayOfBEMRazonMalEscalamiento" />
+  <xs:complexType name="BEMRazonMalEscalamiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdTipo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreRazonEscalamiento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BEMRazonMalEscalamiento" nillable="true" type="tns:BEMRazonMalEscalamiento" />
+  <xs:complexType name="ArrayOfBEMDetalleDeGestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BEMDetalleDeGestion" nillable="true" type="tns:BEMDetalleDeGestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBEMDetalleDeGestion" nillable="true" type="tns:ArrayOfBEMDetalleDeGestion" />
+  <xs:complexType name="BEMDetalleDeGestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdGestion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdTipo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreGestion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BEMDetalleDeGestion" nillable="true" type="tns:BEMDetalleDeGestion" />
 </xs:schema>
