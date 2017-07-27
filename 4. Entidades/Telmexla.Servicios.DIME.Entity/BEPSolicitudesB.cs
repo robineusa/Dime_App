@@ -3,16 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Telmexla.Servicios.DIME.Entity
 {
-    public class BEPSolicitudes
+    public class BEPSolicitudesB
     {
         public decimal IdSolicitud { get; set; }
-        [Required(ErrorMessage = "Ingrese Información")]
         public decimal? CuentaCliente { get; set; }
-        [Required(ErrorMessage = "Ingrese Información")]
         public decimal? LlsOt { get; set; }
-        [Required(ErrorMessage = "Seleccione una opción")]
         public string TipoDeSolicitud { get; set; }
-        [Required(ErrorMessage = "Seleccione una opción")]
         public string DetalleDeSolicitud { get; set; }
         public System.DateTime? FechaDeSolicitud { get; set; }
         public string UsuarioQueSolicita { get; set; }
@@ -25,7 +21,6 @@ namespace Telmexla.Servicios.DIME.Entity
         public System.DateTime? FechaDeFinalizacion { get; set; }
         public string UsuarioQueFinaliza { get; set; }
         public string NombreUsuarioQueFinaliza { get; set; }
-        [Required(ErrorMessage = "Ingrese Información")]
         public string Nodo { get; set; }
         [Required(ErrorMessage = "Seleccione una opción")]
         public string Malescalado { get; set; }

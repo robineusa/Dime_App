@@ -52,6 +52,46 @@ namespace Dime.Controllers
             backeliteservice.RegistrarSolicitud(modelo.BEPSolicitudes);
             return RedirectToAction("SolicitudBackElite");
         }
+        public JsonResult ListaGestionPorIdJson(string IdTipo)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(backeliteservice.ListaDetallesDeGestion(Convert.ToDecimal(IdTipo))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ListaMalEscaladodJson(string IdTipo)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(backeliteservice.ListaRazonesMalEscalamiento(Convert.ToDecimal(IdTipo))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult EstadoGestionId(string idGestion)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(backeliteservice.DetalleGestionPorId(Convert.ToDecimal(idGestion))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+       
+
+        [HttpGet]
+        public ActionResult GestionarSolicitud(ViewModelBackElite modelo)
+        {
+            var TipoTrabajo = "FALLA MODULO DE GESTION";
+            int norecu = 0;
+            
+            modelo.BEPSolicitudes = backeliteservice.ApartarCuentadeSolcitudBackElita(Convert.ToDecimal(Session["Usuario"].ToString()),TipoTrabajo,norecu);
+            if (modelo.BEPSolicitudes != null) 
+            {
+                modelo.NodosZonificados = backeliteservice.TraerNodoPorId(modelo.BEPSolicitudes.Nodo);
+                modelo.BEMTipoDeEscalamientos = backeliteservice.TipoEscalamientoPorNombre(modelo.BEPSolicitudes.TipoDeSolicitud);
+                ViewBag.NohayBase = null;
+            }
+            else
+            {
+                modelo.BEPSolicitudes = new BEPSolicitudes();
+                ViewBag.NohayBase = "NO HAY REGISTROS DISPONIBLES";
+            }
+            return View(modelo);
+        }
 
     }
 }

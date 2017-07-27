@@ -92,6 +92,7 @@
     <Compile Include="BEMRazonMalEscalamiento.cs" />
     <Compile Include="BEMTipoDeEscalamientos.cs" />
     <Compile Include="BEPSolicitudes.cs" />
+    <Compile Include="BEPSolicitudesB.cs" />
     <Compile Include="BlendingFueraNivel.cs" />
     <Compile Include="BlendingFueraNivelCollection.cs" />
     <Compile Include="BuscarCuentasViewModel.cs" />
@@ -170,6 +171,7 @@
     <Compile Include="ModosLogin.cs" />
     <Compile Include="MultiplayCargue.cs" />
     <Compile Include="MultiPlayRegistro.cs" />
+    <Compile Include="NodosZonificados.cs" />
     <Compile Include="NotasIngreso.cs" />
     <Compile Include="NotasTraslado.cs" />
     <Compile Include="NotificacionesBuenServicio.cs" />

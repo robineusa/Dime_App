@@ -2492,10 +2492,59 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CcBaseMejoramiento" nillable="true" type="tns:CcBaseMejoramiento" />
+  <xs:complexType name="CcGestionResidencialPredictivo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aliado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoUsrGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Atributo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Base" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CedulaUsrGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ciudad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClasificacionPorServicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaveWifi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comunidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuenta" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="DetalleInforme" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetalleMarcacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Division" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquiposInternet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EquiposTelevision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FallaDelCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaInstalacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IdBaseMejora" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdResdPredInfo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUsuarioGestion" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LineaUsrGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotivosNoSolucion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreContacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PersisteFalla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProblemaDelCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenciaEquiInternet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferenciaEquiTelevision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SerialEquiFalla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Servicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServicioAfectado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SolucionFalla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono1" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Telefono2" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TelfAdicional1" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TelfAdicional2" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TipoCliente" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CcGestionResidencialPredictivo" nillable="true" type="tns:CcGestionResidencialPredictivo" />
   <xs:complexType name="BEPSolicitudes">
     <xs:sequence>
       <xs:element minOccurs="0" name="AliadoQueSolicita" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CuentaCliente" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="DetalleDeSolicitud" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="DetalleMalEscalado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="EstadoEscalamiento" nillable="true" type="xs:string" />
@@ -2505,7 +2554,7 @@
       <xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdSolicitud" type="xs:decimal" />
-      <xs:element minOccurs="0" name="LlsOt" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LlsOt" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="Malescalado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Nodo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreUsuarioQueFinaliza" nillable="true" type="xs:string" />
@@ -2581,4 +2630,41 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BEMDetalleDeGestion" nillable="true" type="tns:BEMDetalleDeGestion" />
+  <xs:complexType name="NodosZonificados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoLls" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoRe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoZonificado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Area" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Distrito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Divisional" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DscComunidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DscDivision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estrato" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaActivacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdArea" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdComunidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdDistrito" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdDivision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdDivisional" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdEmpresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdNodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdUd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdUnidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdZona" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreNodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUnidadGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservacionesAdicionales" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Red" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Regional" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Regional2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RentaUnidadGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UnidadGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NodosZonificados" nillable="true" type="tns:NodosZonificados" />
 </xs:schema>

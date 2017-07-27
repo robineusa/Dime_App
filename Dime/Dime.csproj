@@ -2276,6 +2276,7 @@
     <Content Include="Scripts\AdminUsuarios\CrearUsuariosMasivos.js" />
     <Content Include="Scripts\AdminUsuarios\xls.js" />
     <Content Include="Scripts\Alertas\SiguienteMejorOferta.js" />
+    <Content Include="Scripts\BackElite\GestionarSolicitud.js" />
     <Content Include="Scripts\BackElite\SolicitudBackElite.js" />
     <Content Include="Scripts\BuenServicio\Visualizador_Imagenes.js" />
     <Content Include="Scripts\Calculadoras\Advanced.js" />
@@ -2956,6 +2957,8 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MecTipoAlarmas.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MultiplayCargue.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MultiPlayRegistro.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BEPSolicitudes.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.NodosZonificados.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3288,6 +3291,7 @@
     <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\BackElite\GestionarSolicitud.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
