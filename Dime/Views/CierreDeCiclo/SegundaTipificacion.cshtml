@@ -1,4 +1,4 @@
-﻿
+﻿@model Telmexla.Servicios.DIME.Entity.CcSegundaTipificacion
 @{
     ViewBag.Title = "Segunda Tipificación";
 }
@@ -6,6 +6,14 @@
 
 @if (Session["Cierre Ciclo Residencial Predictivo"] != null || Session["Cierre Ciclo Pymes"] != null)
 {
+    if (Model.TipoCierre.Equals("Residencial Predictivo"))
+    {
+    <form method="get" action="@Url.Action("ResidencialPredictivoConsulta","CierreDeCiclo")">
+        <button type="submit" class="btn btn-success">Seguir con Residencial Predictivo</button>
+    </form>
+    <br />
+
+    }
     using (Html.BeginForm("SegundaTipificacionPost", "CierreDeCiclo", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
     {
         <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
@@ -39,23 +47,23 @@
                     <tr>
 
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Cuenta, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Cuenta, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.Cuenta, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Nombre, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Nombre, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Ciudad, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.NombreComunidad, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.Ciudad, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Telefono1, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Telefono1, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.Telefono1, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Telefono2, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Telefono2, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.Telefono2, new { @class = "form-control input-sm", @readonly = "true" })
 
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.TelfAdicional1, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Telefono3, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.TelfAdicional1, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                     </tr>
 
@@ -83,22 +91,22 @@
                     <tr>
 
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.NombreContacto, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Nombre, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.NombreContacto, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Servicio, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Nombre, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.Servicio, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.TipoCliente, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.TipoCliente, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.TipoCliente, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Division, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.CodDivision, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.Division, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Comunidad, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Comunidad, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.Comunidad, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Usuario, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.Usuario, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.Usuario, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                     </tr>
                     <tr>
@@ -118,197 +126,127 @@
                         <td style="padding:1px;">
                             <small>Detalle Informe:  </small>
                         </td>
-                        <td style="padding:1px;">
-                            <small>Base:</small>
-                        </td>
+                        <td style="padding:1px;"></td>
                     </tr>
                     <tr>
 
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Nodo, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.Nodo, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.Nodo, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Aliado, new { @class = "form-control input-sm", @Value = Model.GestionResdPredict.Aliado, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.Aliado, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Canal, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.Canal, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.Canal, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Operacion, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.Operacion, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.Operacion, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.DetalleInforme, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.MarcacionBd, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.DetalleInforme, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
-                        <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Base, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.MarcacionBdIi, @readonly = "true" })
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:1px;">
-                            <small>Detalle Marcación:  </small>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.DetalleMarcacion, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.ProblemaDelEdificio, @readonly = "true" })
-                        </td>
+                        <td style="padding:1px;"></td>
                     </tr>
 
                 </table>
             </div>
         </div>
         <br />
-            <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
+        <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
 
-                <div role="tabpanel" class="tab-pane tab-dime-first" id="datosAdicionales" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
-                    <br />
-                    <div class="row">
-                        <div class="col-sm-2">
-                            <small>Persiste Falla:</small>
-                            @Html.DropDownListFor(m => m.GestionResdPredict.PersisteFalla,
-                      new List<SelectListItem> { new SelectListItem { Text = "No", Value = "No" }, new SelectListItem { Text = "Si", Value = "Si" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlPersisteFalla", required = "required" })
-                        </div>
+            <div role="tabpanel" class="tab-pane tab-dime-first" id="datosAdicionales" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                <br />
+                <div class="row">
+                    <div class="col-sm-2">
+                        <small>Macro Proceso:</small>
+                        @Html.DropDownListFor(m => m.Macroproceso,
+                      new List<SelectListItem> { new SelectListItem { Text = "No", Value = "No" }, new SelectListItem { Text = "Si", Value = "Si" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlMacroproceso", required = "required" })
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <small>Servicio Afectado:</small>
-                            @Html.DropDownListFor(m => m.GestionResdPredict.ServicioAfectado,
-                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlServAfectado" })
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <small>Clasificación:</small>
+                        @Html.DropDownListFor(m => m.Clasificacion,
+                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlClasificacion" })
                     </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <small>Clasificación por Servicio:</small>
-                            @Html.DropDownListFor(m => m.GestionResdPredict.ClasificacionPorServicio,
-                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlClasifPorServicio", @disabled = "true" })
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <small>Problema del Cliente:</small>
+                        @Html.DropDownListFor(m => m.ProblemaDelCliente,
+                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlProblemaCliente" })
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <small>Soporte Dado:</small>
+                        @Html.DropDownListFor(m => m.SoporteDado,
+                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlSoporteDado" })
+                    </div>
+                    <div class="col-sm-6">
+                        <small>Estado Cliente:</small>
+                        @Html.DropDownListFor(m => m.EstadoCliente,
+                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlEstadoCliente" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <small>Seguimiento:</small>
+                        @Html.DropDownListFor(m => m.Seguimiento,
+                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlSeguimiento", @disabled = "true" })
                     </div>
 
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <small>Falla del Cliente:</small>
-                            @Html.DropDownListFor(m => m.GestionResdPredict.FallaDelCliente,
-                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlFallaCliente", @disabled = "true" })
-                        </div>
-                        <div class="col-sm-6">
-                            <small>Solución de la Falla:</small>
-                            @Html.DropDownListFor(m => m.GestionResdPredict.SolucionFalla,
-                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlSolFalla", @disabled = "true" })
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <small>Motivos de No Solución:</small>
-                            @Html.DropDownListFor(m => m.GestionResdPredict.MotivosNoSolucion,
-                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlMotivosNoSolucion", @disabled = "true" })
-                        </div>
-                        <div class="col-sm-3">
-                            <small>Problema del Cliente:</small>
-                            @Html.DropDownListFor(m => m.GestionResdPredict.ProblemaDelCliente,
-                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlProblemaCliente", @disabled = "true" })
-                        </div>
-                        <div class="col-sm-3">
-                            <small>Atributo:</small>
-                            @Html.DropDownListFor(m => m.GestionResdPredict.Atributo,
-                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlAtributo", @disabled = "true" })
-                        </div>
+                </div>
+            </div>
+        </div>
+        <br />
+
+        <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
+
+            <div role="tabpanel" class="tab-pane tab-dime-first" id="datosAdicionales" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                <br />
+                <div class="row">
+                    <div class="col-sm-12">
+                        <small>Observación:</small>
+                        @Html.TextAreaFor(m => m.Observacion, new { @style = "width: 74%; height: 80px; resize: none; display:block ;" })
                     </div>
                 </div>
             </div>
-            <br />
+        </div>
+        <br />
+        @Html.HiddenFor(m => m.IdGestionado)
+        @Html.HiddenFor(m => m.TipoCierre)
+        <button type="submit" style="display:block; width:15%; height: 40px" class="btn btn-primary" id="submitGetDatos">Guardar</button>
 
-                <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
+        }
+        }
+        else
+        {
+        <div class="row">
 
-                    <div role="tabpanel" class="tab-pane tab-dime-first" id="datosAdicionales" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
-                        <br />
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <small>Fecha Instalación:</small>
-                                @Html.TextBoxFor(m => m.GestionResdPredict.FechaInstalacion, new { @class = "form-control input-sm", placeholder = "dd/mm/aaaa" })
-                            </div>
-                            <div class="col-sm-9">
-                                <small>Clave WI-FI:</small>
-                                @Html.DropDownListFor(m => m.GestionResdPredict.ClaveWifi,
-                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlClaveWifi" })
-                            </div>
-                        </div>
+            <div class="box box-primary">
 
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <small>Equipos Internet:</small>
-                                @Html.DropDownListFor(m => m.GestionResdPredict.EquiposInternet,
-                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlEquipoInternet" })
-                            </div>
-                            <div class="col-sm-3">
-                                <small>Referencia Internet:</small>
-                                @Html.DropDownListFor(m => m.GestionResdPredict.ReferenciaEquiInternet,
-                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlRefEquiInternet" })
-                            </div>
-                            <div class="col-sm-3">
-                                <small>Equipos Televisión:</small>
-                                @Html.DropDownListFor(m => m.GestionResdPredict.EquiposTelevision,
-                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlEquipoTelevision" })
-                            </div>
-                            <div class="col-sm-3">
-                                <small>Referencia Televisión:</small>
-                                @Html.DropDownListFor(m => m.GestionResdPredict.ReferenciaEquiTelevision,
-                   new List<SelectListItem> { new SelectListItem { Text = "", Value = "" } }, "Seleccione", new { @class = "form-control input-sm select2", id = "ddlRefEquiTelevision" })
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <small>Serial Equipo con Falla:</small>
-                                @Html.TextBoxFor(m => m.GestionResdPredict.SerialEquiFalla, new { @class = "form-control input-sm" })
-                            </div>
-                        </div>
-                        <br />
+                <div class="box-body">
 
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <small>Observación:</small>
-                                @Html.TextAreaFor(m => m.GestionResdPredict.Observacion, new { @style = "width: 74%; height: 80px; resize: none; display:block ;" })
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-
-                </div>
-                    <br />
-                    @Html.HiddenFor(m => m.GestionResdPredict.IdBaseMejora, new { @Value = Model.BaseMejoramiento.Id })
-                    @Html.HiddenFor(m => m.GestionResdPredict.IdResdPredInfo, new { @Value = Model.ResdPredictInfo.Id })
-                    <button type="submit" style="display:block; width:15%; height: 40px" class="btn btn-primary" id="submitGetDatos">Guardar</button>
-
-    }
-}
-else
-{
-    <div class="row">
-
-        <div class="box box-primary">
-
-            <div class="box-body">
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="error-page">
-                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
-                            <div class="error-content">
-                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
-                                <p style="text-align:justify;">
-                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
-                                    Por favor solicite al administrador del sistema el acceso correspondiente.
-                                </p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="error-page">
+                                <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                                <div class="error-content">
+                                    <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                    <p style="text-align:justify;">
+                                        La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                        Por favor solicite al administrador del sistema el acceso correspondiente.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-}
+        }
 
 
 

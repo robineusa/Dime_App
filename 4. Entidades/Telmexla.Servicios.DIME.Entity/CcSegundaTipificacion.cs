@@ -1,4 +1,6 @@
 
+using System;
+
 namespace Telmexla.Servicios.DIME.Entity
 {
     public class CcSegundaTipificacion
@@ -36,6 +38,34 @@ namespace Telmexla.Servicios.DIME.Entity
         public string EstadoCliente { get; set; } // ESTADO_CLIENTE (length: 50)
         public string Seguimiento { get; set; } // SEGUIMIENTO (length: 50)
         public string Observacion { get; set; } // OBSERVACION (length: 1073741823)
+
+
+
+        public void SetVariablesClienteDeResidPred(CcResidencialPredictivoInfo resdPredInf, CcBaseMejoramiento baseMejora, int idGestion, string tipoCierre)
+        {
+            IdGestionado = idGestion;
+            TipoCierre = tipoCierre;
+            Cuenta = resdPredInf.Cuenta;
+            Ciudad = baseMejora.NombreComunidad;
+            Nombre = resdPredInf.Nombre;
+            Telefono1 = Convert.ToInt64(resdPredInf.Telefono1);
+            Telefono2 =Convert.ToInt64(resdPredInf.Telefono2);
+            TelfAdicional1 = Convert.ToInt64(resdPredInf.Telefono3);
+            TipoCliente = Convert.ToInt32(baseMejora.TipoCliente);
+            Division = baseMejora.CodDivision;
+            Comunidad = resdPredInf.Comunidad;
+            Usuario = baseMejora.Usuario;
+            Nodo = baseMejora.Nodo;
+            Aliado = baseMejora.Aliado;
+            Canal = baseMejora.Canal;
+            Operacion = baseMejora.Operacion;
+            DetalleInforme = resdPredInf.MarcacionBd;
+
+    }
+
+
+
+
     }
 
 }

@@ -91,23 +91,33 @@ namespace Dime.Controllers
             model.GestionResdPredict.IdUsuarioGestion =Convert.ToInt32(Session["IdUsuario"]); model.GestionResdPredict.AliadoUsrGestion = Session["AliadoLogeado"].ToString();
             model.GestionResdPredict.LineaUsrGestion = Session["LineaLogeado"].ToString(); model.GestionResdPredict.CedulaUsrGestion = Session["Usuario"].ToString();
             long idGestion  = cierreCicloService.IngresarGestionResidencialPredictivo(model.GestionResdPredict);
-            return RedirectToAction("SegundaTipificacion", "CierreDeCiclo", new {id= idGestion ,tipoCierre = "Residencial Predictivo"});
+            return RedirectToAction("SegundaTipificacion", "CierreDeCiclo", new { idGestion = idGestion ,tipoCierre = "Residencial Predictivo", idResdPredInfo = model.GestionResdPredict.IdResdPredInfo });
         }
 
         [HttpGet]
-        public ActionResult SegundaTipificacion(string id, string tipoCierre)
+        public ActionResult SegundaTipificacion(string idGestion, string tipoCierre, string idResdPredInfo)
         {
-
-
-            return View();
+            CcSegundaTipificacion model = new CcSegundaTipificacion();
+            CcResidencialPredictivoInfo dataResdPredInfo = new CcResidencialPredictivoInfo();
+            CcBaseMejoramiento dataBaseMejora = new CcBaseMejoramiento();
+            int idResd = Convert.ToInt32(idResdPredInfo);
+            dataResdPredInfo = cierreCicloService.GetResidencialPredictivoInfoPorId(idResd);
+            dataBaseMejora = cierreCicloService.RecibirBaseMejoramientoDeResdPredInfo(Convert.ToDouble(dataResdPredInfo.Cuenta), dataResdPredInfo.ProblemaDelEdificio);
+            model.SetVariablesClienteDeResidPred(dataResdPredInfo, dataBaseMejora,Convert.ToInt32(idGestion),tipoCierre);
+            return View(model);
         }
 
 
         [HttpPost]
-        public ActionResult SegundaTipificacionPost(string id, string tipoCierre)
+        public ActionResult SegundaTipificacionPost(CcSegundaTipificacion model)
         {
-
-            return View();
+            model.FechaGestion = DateTime.Now;
+            model.IdUsuarioGestion = Convert.ToInt32(Session["IdUsuario"]); model.AliadoUsrGestion = Session["AliadoLogeado"].ToString();
+            model.LineaUsrGestion = Session["LineaLogeado"].ToString(); model.CedulaUsrGestion = Session["Usuario"].ToString();
+            cierreCicloService.IngresarSegundaTipificacion(model);
+            if (model.TipoCierre.Equals("Residencial Predictivo"))
+                  return RedirectToAction("ResidencialPredictivoConsulta", "CierreDeCiclo");
+            return RedirectToAction("ReporteAsesor", "Reportes");
         }
 
 
