@@ -2667,4 +2667,45 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="NodosZonificados" nillable="true" type="tns:NodosZonificados" />
+  <xs:complexType name="ArrayOfBELSolicitudes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BELSolicitudes" nillable="true" type="tns:BELSolicitudes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBELSolicitudes" nillable="true" type="tns:ArrayOfBELSolicitudes" />
+  <xs:complexType name="BELSolicitudes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoQueSolicita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DetalleDeSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DetalleMalEscalado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoEscalamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaDeAgenda" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeFinalizacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeSolicitud" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdSolicitud" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LlsOt" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Malescalado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioQueFinaliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioQueSolicita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioUltimaActualizacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperacionQueSolicita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDeSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioQueFinaliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioQueSolicita" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioUltimaActualizacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BELSolicitudes" nillable="true" type="tns:BELSolicitudes" />
+  <xs:complexType name="ArrayOfBEPSolicitudes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BEPSolicitudes" nillable="true" type="tns:BEPSolicitudes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBEPSolicitudes" nillable="true" type="tns:ArrayOfBEPSolicitudes" />
 </xs:schema>

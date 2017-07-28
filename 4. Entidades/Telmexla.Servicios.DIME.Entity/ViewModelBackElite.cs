@@ -16,7 +16,6 @@ namespace Telmexla.Servicios.DIME.Entity
         BEMRazonMalEscalamiento bEMRazonMalEscalamiento;
         BEMTipoDeEscalamientos bEMTipoDeEscalamientos;
         BEPSolicitudes bEPSolicitudes;
-        BEPSolicitudesB bEPSolicitudesB;
         NodosZonificados nodosZonificados;
         #endregion
 
@@ -30,7 +29,6 @@ namespace Telmexla.Servicios.DIME.Entity
             bEMRazonMalEscalamiento = new BEMRazonMalEscalamiento();
             bEMTipoDeEscalamientos = new BEMTipoDeEscalamientos();
             bEPSolicitudes = new BEPSolicitudes();
-            bEPSolicitudesB = new BEPSolicitudesB();
             nodosZonificados = new NodosZonificados();
         }
         
@@ -128,18 +126,6 @@ namespace Telmexla.Servicios.DIME.Entity
             }
         }
 
-        public BEPSolicitudesB BEPSolicitudesB
-        {
-            get
-            {
-                return bEPSolicitudesB;
-            }
-
-            set
-            {
-                bEPSolicitudesB = value;
-            }
-        }
 
         public NodosZonificados NodosZonificados
         {

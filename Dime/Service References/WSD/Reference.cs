@@ -13374,11 +13374,11 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreCicloService/IngresarGestionResidencialPredictivo", ReplyAction="http://tempuri.org/ICierreCicloService/IngresarGestionResidencialPredictivoRespon" +
             "se")]
-        void IngresarGestionResidencialPredictivo(Telmexla.Servicios.DIME.Entity.CcGestionResidencialPredictivo gestionResdPred);
+        long IngresarGestionResidencialPredictivo(Telmexla.Servicios.DIME.Entity.CcGestionResidencialPredictivo gestionResdPred);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreCicloService/IngresarGestionResidencialPredictivo", ReplyAction="http://tempuri.org/ICierreCicloService/IngresarGestionResidencialPredictivoRespon" +
             "se")]
-        System.Threading.Tasks.Task IngresarGestionResidencialPredictivoAsync(Telmexla.Servicios.DIME.Entity.CcGestionResidencialPredictivo gestionResdPred);
+        System.Threading.Tasks.Task<long> IngresarGestionResidencialPredictivoAsync(Telmexla.Servicios.DIME.Entity.CcGestionResidencialPredictivo gestionResdPred);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -13432,11 +13432,11 @@ namespace Dime.WSD {
             return base.Channel.RecibirBaseMejoramientoDeResdPredInfoAsync(cuenta, problemaEdAMotivo);
         }
         
-        public void IngresarGestionResidencialPredictivo(Telmexla.Servicios.DIME.Entity.CcGestionResidencialPredictivo gestionResdPred) {
-            base.Channel.IngresarGestionResidencialPredictivo(gestionResdPred);
+        public long IngresarGestionResidencialPredictivo(Telmexla.Servicios.DIME.Entity.CcGestionResidencialPredictivo gestionResdPred) {
+            return base.Channel.IngresarGestionResidencialPredictivo(gestionResdPred);
         }
         
-        public System.Threading.Tasks.Task IngresarGestionResidencialPredictivoAsync(Telmexla.Servicios.DIME.Entity.CcGestionResidencialPredictivo gestionResdPred) {
+        public System.Threading.Tasks.Task<long> IngresarGestionResidencialPredictivoAsync(Telmexla.Servicios.DIME.Entity.CcGestionResidencialPredictivo gestionResdPred) {
             return base.Channel.IngresarGestionResidencialPredictivoAsync(gestionResdPred);
         }
     }
@@ -13500,10 +13500,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEPSolicitudes> ConsultarSolicitudPorIdAsync(decimal IdSolicitud);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ApartarCuentadeSolcitudBackElita", ReplyAction="http://tempuri.org/IBackEliteService/ApartarCuentadeSolcitudBackElitaResponse")]
-        Telmexla.Servicios.DIME.Entity.BEPSolicitudes ApartarCuentadeSolcitudBackElita(decimal Cedula, string TipoTrabajo, int noRecursividad);
+        Telmexla.Servicios.DIME.Entity.BEPSolicitudes ApartarCuentadeSolcitudBackElita(decimal Cedula, int noRecursividad);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ApartarCuentadeSolcitudBackElita", ReplyAction="http://tempuri.org/IBackEliteService/ApartarCuentadeSolcitudBackElitaResponse")]
-        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEPSolicitudes> ApartarCuentadeSolcitudBackElitaAsync(decimal Cedula, string TipoTrabajo, int noRecursividad);
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEPSolicitudes> ApartarCuentadeSolcitudBackElitaAsync(decimal Cedula, int noRecursividad);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/TraerNodoPorId", ReplyAction="http://tempuri.org/IBackEliteService/TraerNodoPorIdResponse")]
         Telmexla.Servicios.DIME.Entity.NodosZonificados TraerNodoPorId(string idNodo);
@@ -13516,6 +13516,18 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/TipoEscalamientoPorNombre", ReplyAction="http://tempuri.org/IBackEliteService/TipoEscalamientoPorNombreResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEMTipoDeEscalamientos> TipoEscalamientoPorNombreAsync(string NombreTipoEs);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaInteraccionesSolicitud", ReplyAction="http://tempuri.org/IBackEliteService/ListaInteraccionesSolicitudResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes> ListaInteraccionesSolicitud(decimal IdSolicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaInteraccionesSolicitud", ReplyAction="http://tempuri.org/IBackEliteService/ListaInteraccionesSolicitudResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes>> ListaInteraccionesSolicitudAsync(decimal IdSolicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaSeguimientosAgente", ReplyAction="http://tempuri.org/IBackEliteService/ListaSeguimientosAgenteResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes> ListaSeguimientosAgente(decimal Cedula);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaSeguimientosAgente", ReplyAction="http://tempuri.org/IBackEliteService/ListaSeguimientosAgenteResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ListaSeguimientosAgenteAsync(decimal Cedula);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -13617,12 +13629,12 @@ namespace Dime.WSD {
             return base.Channel.ConsultarSolicitudPorIdAsync(IdSolicitud);
         }
         
-        public Telmexla.Servicios.DIME.Entity.BEPSolicitudes ApartarCuentadeSolcitudBackElita(decimal Cedula, string TipoTrabajo, int noRecursividad) {
-            return base.Channel.ApartarCuentadeSolcitudBackElita(Cedula, TipoTrabajo, noRecursividad);
+        public Telmexla.Servicios.DIME.Entity.BEPSolicitudes ApartarCuentadeSolcitudBackElita(decimal Cedula, int noRecursividad) {
+            return base.Channel.ApartarCuentadeSolcitudBackElita(Cedula, noRecursividad);
         }
         
-        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEPSolicitudes> ApartarCuentadeSolcitudBackElitaAsync(decimal Cedula, string TipoTrabajo, int noRecursividad) {
-            return base.Channel.ApartarCuentadeSolcitudBackElitaAsync(Cedula, TipoTrabajo, noRecursividad);
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEPSolicitudes> ApartarCuentadeSolcitudBackElitaAsync(decimal Cedula, int noRecursividad) {
+            return base.Channel.ApartarCuentadeSolcitudBackElitaAsync(Cedula, noRecursividad);
         }
         
         public Telmexla.Servicios.DIME.Entity.NodosZonificados TraerNodoPorId(string idNodo) {
@@ -13639,6 +13651,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEMTipoDeEscalamientos> TipoEscalamientoPorNombreAsync(string NombreTipoEs) {
             return base.Channel.TipoEscalamientoPorNombreAsync(NombreTipoEs);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes> ListaInteraccionesSolicitud(decimal IdSolicitud) {
+            return base.Channel.ListaInteraccionesSolicitud(IdSolicitud);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes>> ListaInteraccionesSolicitudAsync(decimal IdSolicitud) {
+            return base.Channel.ListaInteraccionesSolicitudAsync(IdSolicitud);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes> ListaSeguimientosAgente(decimal Cedula) {
+            return base.Channel.ListaSeguimientosAgente(Cedula);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ListaSeguimientosAgenteAsync(decimal Cedula) {
+            return base.Channel.ListaSeguimientosAgenteAsync(Cedula);
         }
     }
 }
