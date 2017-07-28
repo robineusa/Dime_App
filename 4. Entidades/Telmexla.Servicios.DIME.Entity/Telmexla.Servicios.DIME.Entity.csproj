@@ -92,7 +92,6 @@
     <Compile Include="BEMRazonMalEscalamiento.cs" />
     <Compile Include="BEMTipoDeEscalamientos.cs" />
     <Compile Include="BEPSolicitudes.cs" />
-    <Compile Include="BEPSolicitudesB.cs" />
     <Compile Include="BlendingFueraNivel.cs" />
     <Compile Include="BlendingFueraNivelCollection.cs" />
     <Compile Include="BuscarCuentasViewModel.cs" />

@@ -70,17 +70,34 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
-       
+
+        public JsonResult ListaInteraccionesSolicitudJson(string IdSolicitud)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(backeliteservice.ListaInteraccionesSolicitud(Convert.ToDecimal(IdSolicitud))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
 
         [HttpGet]
-        public ActionResult GestionarSolicitud(ViewModelBackElite modelo)
-        {
-            var TipoTrabajo = "FALLA MODULO DE GESTION";
+        public ActionResult GestionarSolicitud(string IdSolicitud)
+        {  
+            ViewModelBackElite modelo = new ViewModelBackElite();
             int norecu = 0;
-            
-            modelo.BEPSolicitudes = backeliteservice.ApartarCuentadeSolcitudBackElita(Convert.ToDecimal(Session["Usuario"].ToString()),TipoTrabajo,norecu);
+
+            if (IdSolicitud == null || IdSolicitud.Equals("")) { 
+
+                modelo.BEPSolicitudes = backeliteservice.ApartarCuentadeSolcitudBackElita(Convert.ToDecimal(Session["Usuario"].ToString()),norecu);
+                Session["TipoDireccionamiento"] = 0;
+            }
+            else {
+                modelo.BEPSolicitudes = backeliteservice.ConsultarSolicitudPorId(Convert.ToDecimal(IdSolicitud));
+                Session["TipoDireccionamiento"] = IdSolicitud;
+            }
+
             if (modelo.BEPSolicitudes != null) 
             {
+                modelo.BEPSolicitudes.Observaciones = "";
+                modelo.BEPSolicitudes.Malescalado = "";
                 modelo.NodosZonificados = backeliteservice.TraerNodoPorId(modelo.BEPSolicitudes.Nodo);
                 modelo.BEMTipoDeEscalamientos = backeliteservice.TipoEscalamientoPorNombre(modelo.BEPSolicitudes.TipoDeSolicitud);
                 ViewBag.NohayBase = null;
@@ -90,7 +107,38 @@ namespace Dime.Controllers
                 modelo.BEPSolicitudes = new BEPSolicitudes();
                 ViewBag.NohayBase = "NO HAY REGISTROS DISPONIBLES";
             }
+            
             return View(modelo);
+        }
+        [HttpPost]
+        public ActionResult GestionarSolicitud(ViewModelBackElite modelo)
+        {
+            modelo.BEPSolicitudes.UsuarioQueSolicita = Convert.ToString(Session["Usuario"].ToString());
+            modelo.BEPSolicitudes.NombreUsuarioQueSolicita = Session["NombreUsuario"].ToString();
+            modelo.BEPSolicitudes.AliadoQueSolicita = Session["AliadoLogeado"].ToString();
+            modelo.BEPSolicitudes.OperacionQueSolicita = Session["OperacionUsuarioHolos"].ToString();
+           
+            backeliteservice.ActualizaSolicitud(modelo.BEPSolicitudes);
+            decimal direccionPagina = Convert.ToDecimal(Session["TipoDireccionamiento"]);
+            Session.Remove("TipoDireccionamiento");
+            if (direccionPagina > 0) {
+                return RedirectToAction("SeguimientoSolicitudes");
+            } else {
+                return RedirectToAction("GestionarSolicitud");
+            }
+            
+        }
+        [HttpGet]
+        public ActionResult SeguimientoSolicitudes()
+        {
+            return View();
+        }
+        public JsonResult ListaSeguimientosBackEliteJson()
+        {
+            decimal Cedula = Convert.ToDecimal(Session["Usuario"].ToString());
+            var jsonResult = Json(JsonConvert.SerializeObject(backeliteservice.ListaSeguimientosAgente(Cedula)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
 
     }

@@ -4070,7 +4070,9 @@
   </xs:element>
   <xs:element name="IngresarGestionResidencialPredictivoResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IngresarGestionResidencialPredictivoResult" type="xs:long" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="RegistrarSolicitud">
@@ -4198,7 +4200,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="Cedula" type="xs:decimal" />
-        <xs:element minOccurs="0" name="TipoTrabajo" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="noRecursividad" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -4235,6 +4236,34 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q292="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TipoEscalamientoPorNombreResult" nillable="true" type="q292:BEMTipoDeEscalamientos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaInteraccionesSolicitud">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdSolicitud" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaInteraccionesSolicitudResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q293="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaInteraccionesSolicitudResult" nillable="true" type="q293:ArrayOfBELSolicitudes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaSeguimientosAgente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Cedula" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaSeguimientosAgenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q294="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSeguimientosAgenteResult" nillable="true" type="q294:ArrayOfBEPSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

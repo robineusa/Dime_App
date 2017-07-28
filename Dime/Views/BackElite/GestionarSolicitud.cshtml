@@ -18,9 +18,9 @@
                         <div class="col-md-12">
                             <h4>Historico de interacciones</h4>
                             <hr style="border-color:gray;border-width:2px;margin-top:-3px;" />
-                            
+
                             <h2 class="text-red"> @ViewBag.NohayBase</h2>
-                            <div id="InteraccionesCambiodeEstrato"></div>
+                            <div id="InteraccionesSolicitud"></div>
                         </div>
                     </div>
                     <h4>Información de la Solicitud</h4>
@@ -30,7 +30,7 @@
                             <div class="tab-content">
                                 <div class="tab-pane tab-dime-first active" role="tabpanel" id="inforacioningreso">
                                     <table>
-                                        
+
                                         <tr>
                                             <td width="200">
                                                 <small>Id de Solicitud:</small>
@@ -214,8 +214,14 @@
                                             </td>
                                             <td width="200">
                                                 <small>Fecha de Agenda:</small>
-                                                @Html.TextBoxFor(m => m.BEPSolicitudes.FechaDeAgenda, new { @class = "form-control input-sm", id = "fechaagenda"})
+                                                @Html.TextBoxFor(m => m.BEPSolicitudes.FechaDeAgenda, new { @class = "form-control input-sm", id = "fechaagenda" })
                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.ValidationMessageFor(m => m.BEPSolicitudes.Malescalado, "", new { @class = "text-danger" })</td>
+                                            <td>@Html.ValidationMessageFor(m => m.BEPSolicitudes.DetalleMalEscalado, "", new { @class = "text-danger" })</td>
+                                            <td>@Html.ValidationMessageFor(m => m.BEPSolicitudes.Gestion, "", new { @class = "text-danger" })</td>
+                                            <td>@Html.ValidationMessageFor(m => m.BEPSolicitudes.EstadoEscalamiento, "", new { @class = "text-danger" })</td>
                                         </tr>
                                     </table>
                                     <table>
@@ -234,22 +240,26 @@
                     </div>
                     <br />
                     <div class="">
-                        <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;display:none;">Guardar Datos</button>
+                        <button id="submitDatos" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;">Guardar Datos</button>
                     </div>
                 </div>
             </div>
         </div>
     }
     @section Scripts{
+
         <script>
+
             var urllistagestion = '@Url.Action("ListaGestionPorIdJson", "BackElite")';
             var urlRazonMalEscalado = '@Url.Action("ListaMalEscaladodJson", "BackElite")';
             var urlestadogestion = '@Url.Action("EstadoGestionId", "BackElite")';
-</script>
-        
-<script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.1"></script>
-<link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.1" rel="stylesheet" />
-        <script src="~/Scripts/BackElite/GestionarSolicitud.js?1.0.1"></script>
+            var urllistainteracciones = '@Url.Action("ListaInteraccionesSolicitudJson", "BackElite")';
+        </script>
+
+        <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.1"></script>
+        <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.1" rel="stylesheet" />
+        <script src="~/Scripts/BackElite/GestionarSolicitud.js?1.0.3"></script>
+        @*@Scripts.Render("~/AdminLTEplugins/jquery-validate/js")*@
     }
 }
 else
