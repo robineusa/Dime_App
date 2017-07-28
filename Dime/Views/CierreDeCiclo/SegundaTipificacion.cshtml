@@ -1,11 +1,12 @@
-﻿@model Telmexla.Servicios.DIME.Entity.ViewModelResidPredictTipificador
+﻿
 @{
-    ViewBag.Title = "Tipificador Residencial Predictivo ";
+    ViewBag.Title = "Segunda Tipificación";
 }
 
-@if (Session["Cierre Ciclo Residencial Predictivo"] != null)
+
+@if (Session["Cierre Ciclo Residencial Predictivo"] != null || Session["Cierre Ciclo Pymes"] != null)
 {
-    using (Html.BeginForm("ResidencialPredictivoTipificadorPost", "CierreDeCiclo", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
+    using (Html.BeginForm("SegundaTipificacionPost", "CierreDeCiclo", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
     {
         <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
 
@@ -156,7 +157,7 @@
                 </table>
             </div>
         </div>
-            <br />
+        <br />
             <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
 
                 <div role="tabpanel" class="tab-pane tab-dime-first" id="datosAdicionales" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
@@ -213,10 +214,10 @@
                         </div>
                     </div>
                 </div>
-</div>
-                <br />
+            </div>
+            <br />
 
-<div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
+                <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
 
                     <div role="tabpanel" class="tab-pane tab-dime-first" id="datosAdicionales" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
                         <br />
@@ -273,39 +274,41 @@
                     </div>
 
 
-                    
-                    </div>
+
+                </div>
                     <br />
-                    @Html.HiddenFor(m=>m.GestionResdPredict.IdBaseMejora, new { @Value =Model.BaseMejoramiento.Id  })
-        @Html.HiddenFor(m => m.GestionResdPredict.IdResdPredInfo, new { @Value = Model.ResdPredictInfo.Id })
+                    @Html.HiddenFor(m => m.GestionResdPredict.IdBaseMejora, new { @Value = Model.BaseMejoramiento.Id })
+                    @Html.HiddenFor(m => m.GestionResdPredict.IdResdPredInfo, new { @Value = Model.ResdPredictInfo.Id })
                     <button type="submit" style="display:block; width:15%; height: 40px" class="btn btn-primary" id="submitGetDatos">Guardar</button>
 
     }
 }
 else
 {
-                    <div class="row">
+    <div class="row">
 
-                        <div class="box box-primary">
+        <div class="box box-primary">
 
-                            <div class="box-body">
+            <div class="box-body">
 
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="error-page">
-                                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
-                                            <div class="error-content">
-                                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
-                                                <p style="text-align:justify;">
-                                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
-                                                    Por favor solicite al administrador del sistema el acceso correspondiente.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-page">
+                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                            <div class="error-content">
+                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                <p style="text-align:justify;">
+                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                    Por favor solicite al administrador del sistema el acceso correspondiente.
+                                </p>
                             </div>
                         </div>
                     </div>
-                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
 
