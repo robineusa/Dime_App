@@ -3294,11 +3294,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\BackElite\GestionarSolicitud.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\BackElite\SeguimientoSolicitudes.cshtml" />
-=======
-    <Content Include="Views\CierreDeCiclo\SegundaTipificacion.cshtml" />
->>>>>>> 27f91e51e2b74a2a7eaad11f08d3eb3b50630b41
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
