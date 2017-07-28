@@ -103,6 +103,7 @@
     <Compile Include="CCConsultaGestionesViewModel.cs" />
     <Compile Include="CcGestionResidencialPredictivo.cs" />
     <Compile Include="CcResidencialPredictivoInfo.cs" />
+    <Compile Include="CcSegundaTipificacion.cs" />
     <Compile Include="CierreCiclo.cs" />
     <Compile Include="CierreCicloCollection.cs" />
     <Compile Include="ClaroVideo.cs" />
