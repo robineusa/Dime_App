@@ -79,13 +79,33 @@ namespace Dime.Controllers
             ViewModelResidPredictTipificador model = new ViewModelResidPredictTipificador();
             int idInt = Convert.ToInt32(idTip);
             model.ResdPredictInfo = cierreCicloService.GetResidencialPredictivoInfoPorId(idInt);
+            double cuenta = Convert.ToDouble(model.ResdPredictInfo.Cuenta);
+            model.BaseMejoramiento = cierreCicloService.RecibirBaseMejoramientoDeResdPredInfo(cuenta, model.ResdPredictInfo.ProblemaDelEdificio);
             return View(model);
         }
 
         [HttpPost]
         public ActionResult ResidencialPredictivoTipificadorPost(ViewModelResidPredictTipificador model)
         {
-            
+            model.GestionResdPredict.FechaGestion = DateTime.Now;
+            model.GestionResdPredict.IdUsuarioGestion =Convert.ToInt32(Session["IdUsuario"]); model.GestionResdPredict.AliadoUsrGestion = Session["AliadoLogeado"].ToString();
+            model.GestionResdPredict.LineaUsrGestion = Session["LineaLogeado"].ToString(); model.GestionResdPredict.CedulaUsrGestion = Session["Usuario"].ToString();
+            long idGestion  = cierreCicloService.IngresarGestionResidencialPredictivo(model.GestionResdPredict);
+            return RedirectToAction("SegundaTipificacion", "CierreDeCiclo", new {id= idGestion ,tipoCierre = "Residencial Predictivo"});
+        }
+
+        [HttpGet]
+        public ActionResult SegundaTipificacion(string id, string tipoCierre)
+        {
+
+
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult SegundaTipificacionPost(string id, string tipoCierre)
+        {
 
             return View();
         }
