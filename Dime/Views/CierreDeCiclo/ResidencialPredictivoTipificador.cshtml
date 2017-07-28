@@ -10,7 +10,10 @@
         <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
 
             <div role="tabpanel" class="tab-pane tab-dime-first" id="datosAdicionales" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
-                <table>
+               
+                
+                
+                 <table>
                     <tr>
                         <td style="padding:1px;"><br /></td>
                     </tr>
@@ -82,10 +85,10 @@
                     <tr>
 
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.NombreContacto, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Nombre, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.GestionResdPredict.NombreContacto, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Servicio, new { @class = "form-control input-sm", @Value = Model.ResdPredictInfo.Nombre, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.GestionResdPredict.Servicio, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
                             @Html.TextBoxFor(m => m.GestionResdPredict.TipoCliente, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.TipoCliente, @readonly = "true" })
@@ -127,7 +130,7 @@
                             @Html.TextBoxFor(m => m.GestionResdPredict.Nodo, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.Nodo, @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.TextBoxFor(m => m.GestionResdPredict.Aliado, new { @class = "form-control input-sm", @Value = Model.GestionResdPredict.Aliado, @readonly = "true" })
+                            @Html.TextBoxFor(m => m.GestionResdPredict.Aliado, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.Aliado, @readonly = "true" })
                         </td>
                         <td style="padding:1px;">
                             @Html.TextBoxFor(m => m.GestionResdPredict.Canal, new { @class = "form-control input-sm", @Value = Model.BaseMejoramiento.Canal, @readonly = "true" })
