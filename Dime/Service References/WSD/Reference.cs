@@ -13683,4 +13683,65 @@ namespace Dime.WSD {
             return base.Channel.ListaSeguimientosAgenteAsync(Cedula);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IRecurrenciaService")]
+    public interface IRecurrenciaService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/TraerInformacionCuentaRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/TraerInformacionCuentaRecurrenciaResponse")]
+        Telmexla.Servicios.DIME.Entity.ClientesTodo TraerInformacionCuentaRecurrencia(int idAsesor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/TraerInformacionCuentaRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/TraerInformacionCuentaRecurrenciaResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.ClientesTodo> TraerInformacionCuentaRecurrenciaAsync(int idAsesor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/TraerDatosRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/TraerDatosRecurrenciaResponse")]
+        Telmexla.Servicios.DIME.Entity.RecurrenciaCargaBase TraerDatosRecurrencia(int idAsesor, int CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/TraerDatosRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/TraerDatosRecurrenciaResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.RecurrenciaCargaBase> TraerDatosRecurrenciaAsync(int idAsesor, int CuentaCliente);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IRecurrenciaServiceChannel : Dime.WSD.IRecurrenciaService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class RecurrenciaServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IRecurrenciaService>, Dime.WSD.IRecurrenciaService {
+        
+        public RecurrenciaServiceClient() {
+        }
+        
+        public RecurrenciaServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public RecurrenciaServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RecurrenciaServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RecurrenciaServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.ClientesTodo TraerInformacionCuentaRecurrencia(int idAsesor) {
+            return base.Channel.TraerInformacionCuentaRecurrencia(idAsesor);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.ClientesTodo> TraerInformacionCuentaRecurrenciaAsync(int idAsesor) {
+            return base.Channel.TraerInformacionCuentaRecurrenciaAsync(idAsesor);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.RecurrenciaCargaBase TraerDatosRecurrencia(int idAsesor, int CuentaCliente) {
+            return base.Channel.TraerDatosRecurrencia(idAsesor, CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.RecurrenciaCargaBase> TraerDatosRecurrenciaAsync(int idAsesor, int CuentaCliente) {
+            return base.Channel.TraerDatosRecurrenciaAsync(idAsesor, CuentaCliente);
+        }
+    }
 }

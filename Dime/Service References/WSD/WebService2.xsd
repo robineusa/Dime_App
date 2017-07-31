@@ -2746,4 +2746,25 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfBEPSolicitudes" nillable="true" type="tns:ArrayOfBEPSolicitudes" />
+  <xs:complexType name="RecurrenciaCargaBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClienteNagra" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuenta" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Diferenciador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCargueBase" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaUltimaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaUltimaMarcacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IncluyeClaroVideo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Marcaciones" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Ofrecimiento1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prioridad" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsoClaroVideo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Usuario_gestionando" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Veces_Gestionado" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecurrenciaCargaBase" nillable="true" type="tns:RecurrenciaCargaBase" />
 </xs:schema>

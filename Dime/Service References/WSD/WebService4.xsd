@@ -4279,4 +4279,33 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="TraerInformacionCuentaRecurrencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idAsesor" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraerInformacionCuentaRecurrenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q296="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerInformacionCuentaRecurrenciaResult" nillable="true" type="q296:ClientesTodo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraerDatosRecurrencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idAsesor" type="xs:int" />
+        <xs:element minOccurs="0" name="CuentaCliente" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraerDatosRecurrenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q297="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerDatosRecurrenciaResult" nillable="true" type="q297:RecurrenciaCargaBase" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
