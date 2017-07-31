@@ -13542,6 +13542,54 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaSeguimientosAgente", ReplyAction="http://tempuri.org/IBackEliteService/ListaSeguimientosAgenteResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ListaSeguimientosAgenteAsync(decimal Cedula);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ConsultadeGestionAgente", ReplyAction="http://tempuri.org/IBackEliteService/ConsultadeGestionAgenteResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes> ConsultadeGestionAgente(string Usuario, System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ConsultadeGestionAgente", ReplyAction="http://tempuri.org/IBackEliteService/ConsultadeGestionAgenteResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes>> ConsultadeGestionAgenteAsync(string Usuario, System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ConsultaSolicitudesAdminLog", ReplyAction="http://tempuri.org/IBackEliteService/ConsultaSolicitudesAdminLogResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes> ConsultaSolicitudesAdminLog(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ConsultaSolicitudesAdminLog", ReplyAction="http://tempuri.org/IBackEliteService/ConsultaSolicitudesAdminLogResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes>> ConsultaSolicitudesAdminLogAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ConsultaSolicitudesAdminPricipal", ReplyAction="http://tempuri.org/IBackEliteService/ConsultaSolicitudesAdminPricipalResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes> ConsultaSolicitudesAdminPricipal(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ConsultaSolicitudesAdminPricipal", ReplyAction="http://tempuri.org/IBackEliteService/ConsultaSolicitudesAdminPricipalResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ConsultaSolicitudesAdminPricipalAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ValidarUsuarioDistribucion", ReplyAction="http://tempuri.org/IBackEliteService/ValidarUsuarioDistribucionResponse")]
+        bool ValidarUsuarioDistribucion(decimal Cedula, string Proceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ValidarUsuarioDistribucion", ReplyAction="http://tempuri.org/IBackEliteService/ValidarUsuarioDistribucionResponse")]
+        System.Threading.Tasks.Task<bool> ValidarUsuarioDistribucionAsync(decimal Cedula, string Proceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/RegistrarUsuarioDistribucion", ReplyAction="http://tempuri.org/IBackEliteService/RegistrarUsuarioDistribucionResponse")]
+        void RegistrarUsuarioDistribucion(Telmexla.Servicios.DIME.Entity.BEMDistribuciones Distribucion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/RegistrarUsuarioDistribucion", ReplyAction="http://tempuri.org/IBackEliteService/RegistrarUsuarioDistribucionResponse")]
+        System.Threading.Tasks.Task RegistrarUsuarioDistribucionAsync(Telmexla.Servicios.DIME.Entity.BEMDistribuciones Distribucion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/EliminarUsuarioDistribucion", ReplyAction="http://tempuri.org/IBackEliteService/EliminarUsuarioDistribucionResponse")]
+        void EliminarUsuarioDistribucion(decimal Cedula, string Proceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/EliminarUsuarioDistribucion", ReplyAction="http://tempuri.org/IBackEliteService/EliminarUsuarioDistribucionResponse")]
+        System.Threading.Tasks.Task EliminarUsuarioDistribucionAsync(decimal Cedula, string Proceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaDistribucionPorIdCedula", ReplyAction="http://tempuri.org/IBackEliteService/ListaDistribucionPorIdCedulaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMDistribuciones> ListaDistribucionPorIdCedula(decimal Cedula);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaDistribucionPorIdCedula", ReplyAction="http://tempuri.org/IBackEliteService/ListaDistribucionPorIdCedulaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMDistribuciones>> ListaDistribucionPorIdCedulaAsync(decimal Cedula);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/DistribucionPorId", ReplyAction="http://tempuri.org/IBackEliteService/DistribucionPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.BEMDistribuciones DistribucionPorId(decimal Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/DistribucionPorId", ReplyAction="http://tempuri.org/IBackEliteService/DistribucionPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEMDistribuciones> DistribucionPorIdAsync(decimal Id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -13681,6 +13729,70 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ListaSeguimientosAgenteAsync(decimal Cedula) {
             return base.Channel.ListaSeguimientosAgenteAsync(Cedula);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes> ConsultadeGestionAgente(string Usuario, System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultadeGestionAgente(Usuario, FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes>> ConsultadeGestionAgenteAsync(string Usuario, System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultadeGestionAgenteAsync(Usuario, FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes> ConsultaSolicitudesAdminLog(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaSolicitudesAdminLog(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes>> ConsultaSolicitudesAdminLogAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaSolicitudesAdminLogAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes> ConsultaSolicitudesAdminPricipal(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaSolicitudesAdminPricipal(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ConsultaSolicitudesAdminPricipalAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaSolicitudesAdminPricipalAsync(FechaInicial, FechaFinal);
+        }
+        
+        public bool ValidarUsuarioDistribucion(decimal Cedula, string Proceso) {
+            return base.Channel.ValidarUsuarioDistribucion(Cedula, Proceso);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarUsuarioDistribucionAsync(decimal Cedula, string Proceso) {
+            return base.Channel.ValidarUsuarioDistribucionAsync(Cedula, Proceso);
+        }
+        
+        public void RegistrarUsuarioDistribucion(Telmexla.Servicios.DIME.Entity.BEMDistribuciones Distribucion) {
+            base.Channel.RegistrarUsuarioDistribucion(Distribucion);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarUsuarioDistribucionAsync(Telmexla.Servicios.DIME.Entity.BEMDistribuciones Distribucion) {
+            return base.Channel.RegistrarUsuarioDistribucionAsync(Distribucion);
+        }
+        
+        public void EliminarUsuarioDistribucion(decimal Cedula, string Proceso) {
+            base.Channel.EliminarUsuarioDistribucion(Cedula, Proceso);
+        }
+        
+        public System.Threading.Tasks.Task EliminarUsuarioDistribucionAsync(decimal Cedula, string Proceso) {
+            return base.Channel.EliminarUsuarioDistribucionAsync(Cedula, Proceso);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMDistribuciones> ListaDistribucionPorIdCedula(decimal Cedula) {
+            return base.Channel.ListaDistribucionPorIdCedula(Cedula);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEMDistribuciones>> ListaDistribucionPorIdCedulaAsync(decimal Cedula) {
+            return base.Channel.ListaDistribucionPorIdCedulaAsync(Cedula);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.BEMDistribuciones DistribucionPorId(decimal Id) {
+            return base.Channel.DistribucionPorId(Id);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEMDistribuciones> DistribucionPorIdAsync(decimal Id) {
+            return base.Channel.DistribucionPorIdAsync(Id);
         }
     }
     

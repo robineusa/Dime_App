@@ -611,10 +611,16 @@
                                             {
                                                 <li><a href="@Url.Action("GestionarSolicitud", "BackElite")"><i class="fa fa-circle-o"></i>Gestión Back Elite</a></li>
                                                 <li><a href="@Url.Action("SeguimientoSolicitudes", "BackElite")"><i class="fa fa-circle-o"></i>Seguimientos Back Elite</a></li>
+                                                <li><a href="@Url.Action("ConsultaDeGestion", "BackElite")"><i class="fa fa-circle-o"></i>Consulta de Gestión</a></li>
                                             }
                                         </ul>
                                     </li>}
+<<<<<<< HEAD
                                 @if (Session["Cierre Ciclo Recurrencia"] != null)
+=======
+
+                                @if (Session["Registrar Solicitud Back Elite"] != null)
+>>>>>>> 1ba692f29c35780b6f16fab8408aebbdbab926fb
                                 {
                                     <li>
                                         <a href="#"><i class="fa fa-retweet text-aqua" aria-hidden="true"></i>Gestión Recurrencia<i class="fa fa-angle-left pull-right"></i></a>
@@ -626,6 +632,30 @@
                                         </ul>
                                     </li>
                                 }
+<<<<<<< HEAD
+=======
+                                @if (Session["Consultas Administrador Back Elite"] != null)
+                                {
+                                    <li>
+                                        <a href="#"><i class="fa  fa-search text-orange" aria-hidden="true"></i>Consultas Admin Back Elite<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="@Url.Action("ConsultaAdministradorLog", "BackElite")"><i class="fa fa-circle-o"></i>Consulta Log</a></li>
+                                            <li><a href="@Url.Action("ConsultaAdminstradorPrincipal", "BackElite")"><i class="fa fa-circle-o"></i>Consulta Pricipal</a></li>
+
+                                        </ul>
+                                    </li>
+                                }
+                                @if (Session["Distribucion Back Elite"] != null)
+                                {
+                                    <li>
+                                        <a href="#"><i class="fa fa-cog text-orange" aria-hidden="true"></i> Distribuciones Back Elite<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="@Url.Action("ListaDistribucionUsuario", "BackElite")"><i class="fa fa-cog text-orange"></i> Administrar Distribución</a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                }
+>>>>>>> 1ba692f29c35780b6f16fab8408aebbdbab926fb
                                 
                             </ul>
                         </li>
