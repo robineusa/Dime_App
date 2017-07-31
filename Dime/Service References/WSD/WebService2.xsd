@@ -2541,6 +2541,44 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CcGestionResidencialPredictivo" nillable="true" type="tns:CcGestionResidencialPredictivo" />
+  <xs:complexType name="CcSegundaTipificacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Aliado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoUsrGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Canal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CedulaUsrGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ciudad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Clasificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comunidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuenta" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="DetalleInforme" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Division" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="IdGestionado" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUsuarioGestion" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LineaUsrGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Macroproceso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreContacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Operacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProblemaDelCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Seguimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Servicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SoporteDado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono1" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="Telefono2" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TelfAdicional1" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TelfAdicional2" nillable="true" type="xs:long" />
+      <xs:element minOccurs="0" name="TipoCierre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoCliente" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CcSegundaTipificacion" nillable="true" type="tns:CcSegundaTipificacion" />
   <xs:complexType name="BEPSolicitudes">
     <xs:sequence>
       <xs:element minOccurs="0" name="AliadoQueSolicita" nillable="true" type="xs:string" />

@@ -43,14 +43,33 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult SolicitudBackElite(ViewModelBackElite modelo)
         {
-            
+
             modelo.BEPSolicitudes.UsuarioQueSolicita = Convert.ToString(Session["Usuario"].ToString());
             modelo.BEPSolicitudes.NombreUsuarioQueSolicita = Session["NombreUsuario"].ToString();
             modelo.BEPSolicitudes.AliadoQueSolicita = Session["AliadoLogeado"].ToString();
             modelo.BEPSolicitudes.OperacionQueSolicita = Session["OperacionUsuarioHolos"].ToString();
 
-            backeliteservice.RegistrarSolicitud(modelo.BEPSolicitudes);
-            return RedirectToAction("SolicitudBackElite");
+            var CuentaEscalada = backeliteservice.ValidarCuentaEnBackElite(Convert.ToDecimal(modelo.BEPSolicitudes.CuentaCliente), Convert.ToDecimal(modelo.BEPSolicitudes.LlsOt));
+            if (CuentaEscalada == true)
+            {
+                ViewBag.ExisteCuentaEscalada = "Ya existe una solicitud escalada con esta Cuenta, Orden de Trabajo o Llamada de Servicio";
+                return View(modelo);
+            }
+            else
+            {
+                if (modelo.BEPSolicitudes.CuentaCliente == 0 || modelo.BEPSolicitudes.LlsOt == 0)
+                {
+                    ViewBag.ExisteCuentaEscalada = "La Cuenta del Cliente, la Ordern de Trabajo o Llamada de Servicio no pueden ser Cero (0)";
+                    return View(modelo);
+                }
+                else
+                {
+                    ViewBag.ExisteCuentaEscalada = null;
+                    backeliteservice.RegistrarSolicitud(modelo.BEPSolicitudes);
+                    return RedirectToAction("SolicitudBackElite");
+                }
+
+            }
         }
         public JsonResult ListaGestionPorIdJson(string IdTipo)
         {
@@ -80,21 +99,23 @@ namespace Dime.Controllers
 
         [HttpGet]
         public ActionResult GestionarSolicitud(string IdSolicitud)
-        {  
+        {
             ViewModelBackElite modelo = new ViewModelBackElite();
             int norecu = 0;
 
-            if (IdSolicitud == null || IdSolicitud.Equals("")) { 
+            if (IdSolicitud == null || IdSolicitud.Equals(""))
+            {
 
-                modelo.BEPSolicitudes = backeliteservice.ApartarCuentadeSolcitudBackElita(Convert.ToDecimal(Session["Usuario"].ToString()),norecu);
+                modelo.BEPSolicitudes = backeliteservice.ApartarCuentadeSolcitudBackElita(Convert.ToDecimal(Session["Usuario"].ToString()), norecu);
                 Session["TipoDireccionamiento"] = 0;
             }
-            else {
+            else
+            {
                 modelo.BEPSolicitudes = backeliteservice.ConsultarSolicitudPorId(Convert.ToDecimal(IdSolicitud));
                 Session["TipoDireccionamiento"] = IdSolicitud;
             }
 
-            if (modelo.BEPSolicitudes != null) 
+            if (modelo.BEPSolicitudes != null)
             {
                 modelo.BEPSolicitudes.Observaciones = "";
                 modelo.BEPSolicitudes.Malescalado = "";
@@ -107,7 +128,7 @@ namespace Dime.Controllers
                 modelo.BEPSolicitudes = new BEPSolicitudes();
                 ViewBag.NohayBase = "NO HAY REGISTROS DISPONIBLES";
             }
-            
+
             return View(modelo);
         }
         [HttpPost]
@@ -117,16 +138,19 @@ namespace Dime.Controllers
             modelo.BEPSolicitudes.NombreUsuarioQueSolicita = Session["NombreUsuario"].ToString();
             modelo.BEPSolicitudes.AliadoQueSolicita = Session["AliadoLogeado"].ToString();
             modelo.BEPSolicitudes.OperacionQueSolicita = Session["OperacionUsuarioHolos"].ToString();
-           
+
             backeliteservice.ActualizaSolicitud(modelo.BEPSolicitudes);
             decimal direccionPagina = Convert.ToDecimal(Session["TipoDireccionamiento"]);
             Session.Remove("TipoDireccionamiento");
-            if (direccionPagina > 0) {
+            if (direccionPagina > 0)
+            {
                 return RedirectToAction("SeguimientoSolicitudes");
-            } else {
+            }
+            else
+            {
                 return RedirectToAction("GestionarSolicitud");
             }
-            
+
         }
         [HttpGet]
         public ActionResult SeguimientoSolicitudes()

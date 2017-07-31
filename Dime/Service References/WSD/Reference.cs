@@ -13379,6 +13379,12 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreCicloService/IngresarGestionResidencialPredictivo", ReplyAction="http://tempuri.org/ICierreCicloService/IngresarGestionResidencialPredictivoRespon" +
             "se")]
         System.Threading.Tasks.Task<long> IngresarGestionResidencialPredictivoAsync(Telmexla.Servicios.DIME.Entity.CcGestionResidencialPredictivo gestionResdPred);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreCicloService/IngresarSegundaTipificacion", ReplyAction="http://tempuri.org/ICierreCicloService/IngresarSegundaTipificacionResponse")]
+        void IngresarSegundaTipificacion(Telmexla.Servicios.DIME.Entity.CcSegundaTipificacion segundaTipifi);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreCicloService/IngresarSegundaTipificacion", ReplyAction="http://tempuri.org/ICierreCicloService/IngresarSegundaTipificacionResponse")]
+        System.Threading.Tasks.Task IngresarSegundaTipificacionAsync(Telmexla.Servicios.DIME.Entity.CcSegundaTipificacion segundaTipifi);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -13438,6 +13444,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<long> IngresarGestionResidencialPredictivoAsync(Telmexla.Servicios.DIME.Entity.CcGestionResidencialPredictivo gestionResdPred) {
             return base.Channel.IngresarGestionResidencialPredictivoAsync(gestionResdPred);
+        }
+        
+        public void IngresarSegundaTipificacion(Telmexla.Servicios.DIME.Entity.CcSegundaTipificacion segundaTipifi) {
+            base.Channel.IngresarSegundaTipificacion(segundaTipifi);
+        }
+        
+        public System.Threading.Tasks.Task IngresarSegundaTipificacionAsync(Telmexla.Servicios.DIME.Entity.CcSegundaTipificacion segundaTipifi) {
+            return base.Channel.IngresarSegundaTipificacionAsync(segundaTipifi);
         }
     }
     
