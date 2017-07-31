@@ -2746,6 +2746,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfBEPSolicitudes" nillable="true" type="tns:ArrayOfBEPSolicitudes" />
+  <xs:complexType name="BEMDistribuciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CedulaUsuario" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoEscalamientoAsignado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BEMDistribuciones" nillable="true" type="tns:BEMDistribuciones" />
+  <xs:complexType name="ArrayOfBEMDistribuciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BEMDistribuciones" nillable="true" type="tns:BEMDistribuciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBEMDistribuciones" nillable="true" type="tns:ArrayOfBEMDistribuciones" />
   <xs:complexType name="RecurrenciaCargaBase">
     <xs:sequence>
       <xs:element minOccurs="0" name="ClienteNagra" nillable="true" type="xs:string" />

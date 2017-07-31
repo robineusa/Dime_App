@@ -13833,6 +13833,310 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_ConsultadeGestionAgente_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_ConsultadeGestionAgente_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_ConsultaSolicitudesAdminLog_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_ConsultaSolicitudesAdminLog_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_ConsultaSolicitudesAdminPricipal_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_ConsultaSolicitudesAdminPricipal_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_ValidarUsuarioDistribucion_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_ValidarUsuarioDistribucion_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_RegistrarUsuarioDistribucion_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_RegistrarUsuarioDistribucion_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_EliminarUsuarioDistribucion_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_EliminarUsuarioDistribucion_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_ListaDistribucionPorIdCedula_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_ListaDistribucionPorIdCedula_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_DistribucionPorId_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBackEliteService_DistribucionPorId_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -15859,6 +16163,54 @@
   <wsdl:message name="IBackEliteService_ListaSeguimientosAgente_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListaSeguimientosAgenteResponse" />
   </wsdl:message>
+  <wsdl:message name="IBackEliteService_ConsultadeGestionAgente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultadeGestionAgente" />
+  </wsdl:message>
+  <wsdl:message name="IBackEliteService_ConsultadeGestionAgente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultadeGestionAgenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackEliteService_ConsultaSolicitudesAdminLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaSolicitudesAdminLog" />
+  </wsdl:message>
+  <wsdl:message name="IBackEliteService_ConsultaSolicitudesAdminLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaSolicitudesAdminLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackEliteService_ConsultaSolicitudesAdminPricipal_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaSolicitudesAdminPricipal" />
+  </wsdl:message>
+  <wsdl:message name="IBackEliteService_ConsultaSolicitudesAdminPricipal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaSolicitudesAdminPricipalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackEliteService_ValidarUsuarioDistribucion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarUsuarioDistribucion" />
+  </wsdl:message>
+  <wsdl:message name="IBackEliteService_ValidarUsuarioDistribucion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarUsuarioDistribucionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackEliteService_RegistrarUsuarioDistribucion_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarUsuarioDistribucion" />
+  </wsdl:message>
+  <wsdl:message name="IBackEliteService_RegistrarUsuarioDistribucion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarUsuarioDistribucionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackEliteService_EliminarUsuarioDistribucion_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUsuarioDistribucion" />
+  </wsdl:message>
+  <wsdl:message name="IBackEliteService_EliminarUsuarioDistribucion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarUsuarioDistribucionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackEliteService_ListaDistribucionPorIdCedula_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDistribucionPorIdCedula" />
+  </wsdl:message>
+  <wsdl:message name="IBackEliteService_ListaDistribucionPorIdCedula_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDistribucionPorIdCedulaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackEliteService_DistribucionPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DistribucionPorId" />
+  </wsdl:message>
+  <wsdl:message name="IBackEliteService_DistribucionPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DistribucionPorIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IRecurrenciaService_TraerInformacionCuentaRecurrencia_InputMessage">
     <wsdl:part name="parameters" element="tns:TraerInformacionCuentaRecurrencia" />
   </wsdl:message>
@@ -17135,6 +17487,38 @@
     <wsdl:operation name="ListaSeguimientosAgente">
       <wsdl:input wsaw:Action="http://tempuri.org/IBackEliteService/ListaSeguimientosAgente" message="tns:IBackEliteService_ListaSeguimientosAgente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBackEliteService/ListaSeguimientosAgenteResponse" message="tns:IBackEliteService_ListaSeguimientosAgente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultadeGestionAgente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackEliteService/ConsultadeGestionAgente" message="tns:IBackEliteService_ConsultadeGestionAgente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackEliteService/ConsultadeGestionAgenteResponse" message="tns:IBackEliteService_ConsultadeGestionAgente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSolicitudesAdminLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackEliteService/ConsultaSolicitudesAdminLog" message="tns:IBackEliteService_ConsultaSolicitudesAdminLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackEliteService/ConsultaSolicitudesAdminLogResponse" message="tns:IBackEliteService_ConsultaSolicitudesAdminLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSolicitudesAdminPricipal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackEliteService/ConsultaSolicitudesAdminPricipal" message="tns:IBackEliteService_ConsultaSolicitudesAdminPricipal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackEliteService/ConsultaSolicitudesAdminPricipalResponse" message="tns:IBackEliteService_ConsultaSolicitudesAdminPricipal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuarioDistribucion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackEliteService/ValidarUsuarioDistribucion" message="tns:IBackEliteService_ValidarUsuarioDistribucion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackEliteService/ValidarUsuarioDistribucionResponse" message="tns:IBackEliteService_ValidarUsuarioDistribucion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarUsuarioDistribucion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackEliteService/RegistrarUsuarioDistribucion" message="tns:IBackEliteService_RegistrarUsuarioDistribucion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackEliteService/RegistrarUsuarioDistribucionResponse" message="tns:IBackEliteService_RegistrarUsuarioDistribucion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuarioDistribucion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackEliteService/EliminarUsuarioDistribucion" message="tns:IBackEliteService_EliminarUsuarioDistribucion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackEliteService/EliminarUsuarioDistribucionResponse" message="tns:IBackEliteService_EliminarUsuarioDistribucion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaDistribucionPorIdCedula">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackEliteService/ListaDistribucionPorIdCedula" message="tns:IBackEliteService_ListaDistribucionPorIdCedula_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackEliteService/ListaDistribucionPorIdCedulaResponse" message="tns:IBackEliteService_ListaDistribucionPorIdCedula_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DistribucionPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBackEliteService/DistribucionPorId" message="tns:IBackEliteService_DistribucionPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBackEliteService/DistribucionPorIdResponse" message="tns:IBackEliteService_DistribucionPorId_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRecurrenciaService">
@@ -20593,6 +20977,94 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_ListaSeguimientosAgente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultadeGestionAgente">
+      <soap12:operation soapAction="http://tempuri.org/IBackEliteService/ConsultadeGestionAgente" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_ConsultadeGestionAgente_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_ConsultadeGestionAgente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSolicitudesAdminLog">
+      <soap12:operation soapAction="http://tempuri.org/IBackEliteService/ConsultaSolicitudesAdminLog" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_ConsultaSolicitudesAdminLog_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_ConsultaSolicitudesAdminLog_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSolicitudesAdminPricipal">
+      <soap12:operation soapAction="http://tempuri.org/IBackEliteService/ConsultaSolicitudesAdminPricipal" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_ConsultaSolicitudesAdminPricipal_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_ConsultaSolicitudesAdminPricipal_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarUsuarioDistribucion">
+      <soap12:operation soapAction="http://tempuri.org/IBackEliteService/ValidarUsuarioDistribucion" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_ValidarUsuarioDistribucion_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_ValidarUsuarioDistribucion_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarUsuarioDistribucion">
+      <soap12:operation soapAction="http://tempuri.org/IBackEliteService/RegistrarUsuarioDistribucion" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_RegistrarUsuarioDistribucion_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_RegistrarUsuarioDistribucion_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarUsuarioDistribucion">
+      <soap12:operation soapAction="http://tempuri.org/IBackEliteService/EliminarUsuarioDistribucion" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_EliminarUsuarioDistribucion_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_EliminarUsuarioDistribucion_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaDistribucionPorIdCedula">
+      <soap12:operation soapAction="http://tempuri.org/IBackEliteService/ListaDistribucionPorIdCedula" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_ListaDistribucionPorIdCedula_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_ListaDistribucionPorIdCedula_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DistribucionPorId">
+      <soap12:operation soapAction="http://tempuri.org/IBackEliteService/DistribucionPorId" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_DistribucionPorId_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBackEliteService_DistribucionPorId_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
