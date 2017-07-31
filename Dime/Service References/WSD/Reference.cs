@@ -13542,6 +13542,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaSeguimientosAgente", ReplyAction="http://tempuri.org/IBackEliteService/ListaSeguimientosAgenteResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ListaSeguimientosAgenteAsync(decimal Cedula);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ConsultadeGestionAgente", ReplyAction="http://tempuri.org/IBackEliteService/ConsultadeGestionAgenteResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes> ConsultadeGestionAgente(string Usuario, System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ConsultadeGestionAgente", ReplyAction="http://tempuri.org/IBackEliteService/ConsultadeGestionAgenteResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes>> ConsultadeGestionAgenteAsync(string Usuario, System.DateTime FechaInicial, System.DateTime FechaFinal);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -13681,6 +13687,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ListaSeguimientosAgenteAsync(decimal Cedula) {
             return base.Channel.ListaSeguimientosAgenteAsync(Cedula);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes> ConsultadeGestionAgente(string Usuario, System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultadeGestionAgente(Usuario, FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BELSolicitudes>> ConsultadeGestionAgenteAsync(string Usuario, System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultadeGestionAgenteAsync(Usuario, FechaInicial, FechaFinal);
         }
     }
 }

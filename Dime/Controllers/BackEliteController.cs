@@ -164,6 +164,19 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        [HttpGet]
+        public ActionResult ConsultaDeGestion()
+        {
+            return View();
+        }
+        public JsonResult ConsultaDeGestionBackEliteJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(backeliteservice.ConsultadeGestionAgente(Session["Usuario"].ToString(), FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
 
     }
 }

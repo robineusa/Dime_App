@@ -2276,6 +2276,7 @@
     <Content Include="Scripts\AdminUsuarios\CrearUsuariosMasivos.js" />
     <Content Include="Scripts\AdminUsuarios\xls.js" />
     <Content Include="Scripts\Alertas\SiguienteMejorOferta.js" />
+    <Content Include="Scripts\BackElite\ConsultaDeGestion.js" />
     <Content Include="Scripts\BackElite\GestionarSolicitud.js" />
     <Content Include="Scripts\BackElite\SeguimientoSolicitudes.js" />
     <Content Include="Scripts\BackElite\SolicitudBackElite.js" />
@@ -3296,6 +3297,7 @@
     <Content Include="Views\BackElite\GestionarSolicitud.cshtml" />
     <Content Include="Views\BackElite\SeguimientoSolicitudes.cshtml" />
     <Content Include="Views\CierreDeCiclo\SegundaTipificacion.cshtml" />
+    <Content Include="Views\BackElite\ConsultaDeGestion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -4279,4 +4279,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ConsultadeGestionAgente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultadeGestionAgenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q296="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultadeGestionAgenteResult" nillable="true" type="q296:ArrayOfBELSolicitudes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
