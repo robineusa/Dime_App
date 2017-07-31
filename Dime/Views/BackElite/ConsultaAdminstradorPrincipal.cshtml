@@ -1,11 +1,11 @@
 ﻿@{
-    ViewBag.Title = "Consulta de Gestión - Solicitudes Back Elite";
+    ViewBag.Title = "Consulta de Gestión - Principal Back Elite";
     ViewBag.Subtitle = "Procesos Back Elite";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@if (Session["Gestionar Solcitud Back Elite"] != null)
+@if (Session["Consultas Administrador Back Elite"] != null)
 {
-    using (Html.BeginForm("ConsultaDeGestion", "BackElite", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+    using (Html.BeginForm("ConsultaAdminstradorPrincipal", "BackElite", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
     {
         <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
             <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
@@ -66,11 +66,11 @@
     }
 
     @section scripts{
-        <script>var UrlCondultaGestionBackElite = '@Url.Action("ConsultaDeGestionBackEliteJson", "BackElite")';</script>
+        <script>var UrlConsultaAdminstradorPrincipalJson = '@Url.Action("ConsultaAdminstradorPrincipalJson", "BackElite")';</script>
 
         <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.1"></script>
         <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.1" rel="stylesheet" />
-        <script src="~/Scripts/BackElite/ConsultaDeGestion.js?1.0.1"></script>
+        <script src="~/Scripts/BackElite/ConsultaAdminstradorPrincipal.js?1.0.1"></script>
 
     }
 }

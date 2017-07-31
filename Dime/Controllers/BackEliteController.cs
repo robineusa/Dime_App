@@ -177,6 +177,84 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        [HttpGet]
+        public ActionResult ConsultaAdministradorLog ()
+        {
+            return View();
+
+        }
+        public JsonResult ConsultaAdministradorLogJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(backeliteservice.ConsultaSolicitudesAdminLog(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult ConsultaAdminstradorPrincipal ()
+        {
+            return View();
+        }
+        public JsonResult ConsultaAdminstradorPrincipalJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(backeliteservice.ConsultaSolicitudesAdminPricipal(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult ListaDistribucionUsuario()
+        {
+            return View();
+        }
+        public JsonResult ListaProcesosAsignadosUsuarioJson(string Cedula)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(backeliteservice.ListaDistribucionPorIdCedula(Convert.ToDecimal(Cedula))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult AdministrarDistrubucionBackElite(string Id)
+        {
+            ViewModelBackElite modelo = new ViewModelBackElite();
+            if (Id == null || Id.Equals("")) {
+                modelo.BEMDistribuciones = new BEMDistribuciones();
+                ViewBag.Eliminar = null;
+            } else
+            {
+                modelo.BEMDistribuciones = backeliteservice.DistribucionPorId(Convert.ToDecimal(Id));
+                ViewBag.Eliminar = "si";
+            }
+            return View(modelo);
+
+        }
+        [HttpPost]
+        public ActionResult AdministrarDistrubucionBackElite(ViewModelBackElite modelo)
+        {
+            if (modelo.BEMDistribuciones.Id >0)
+            {
+                backeliteservice.EliminarUsuarioDistribucion(modelo.BEMDistribuciones.CedulaUsuario, modelo.BEMDistribuciones.TipoEscalamientoAsignado);
+                return RedirectToAction("ListaDistribucionUsuario");
+            }
+            else
+            {
+                var Result = backeliteservice.ValidarUsuarioDistribucion(modelo.BEMDistribuciones.CedulaUsuario, modelo.BEMDistribuciones.TipoEscalamientoAsignado);
+
+                if (Result == true) {
+                    ViewBag.Validacion = "El usuario ya tiene este tipo de trabajo asignado, por favor asigne uno diferente";
+                    return View(modelo);
+                }
+                else
+                {
+                    backeliteservice.RegistrarUsuarioDistribucion(modelo.BEMDistribuciones);
+                    ViewBag.Validacion = null;
+                    return RedirectToAction("ListaDistribucionUsuario");
+                }
+            }
+
+        }
 
     }
 }
