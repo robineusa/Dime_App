@@ -3295,6 +3295,7 @@
     </None>
     <Content Include="Views\BackElite\GestionarSolicitud.cshtml" />
     <Content Include="Views\BackElite\SeguimientoSolicitudes.cshtml" />
+    <Content Include="Views\CierreDeCiclo\SegundaTipificacion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
