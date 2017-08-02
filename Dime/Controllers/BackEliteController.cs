@@ -118,7 +118,7 @@ namespace Dime.Controllers
             if (modelo.BEPSolicitudes != null)
             {
                 modelo.BEPSolicitudes.Observaciones = "";
-                modelo.BEPSolicitudes.Malescalado = "";
+               
                 modelo.NodosZonificados = backeliteservice.TraerNodoPorId(modelo.BEPSolicitudes.Nodo);
                 modelo.BEMTipoDeEscalamientos = backeliteservice.TipoEscalamientoPorNombre(modelo.BEPSolicitudes.TipoDeSolicitud);
                 ViewBag.NohayBase = null;
