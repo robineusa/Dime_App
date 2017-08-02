@@ -4422,4 +4422,46 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetOpcionesRecurrencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idProceso" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOpcionesRecurrenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q304="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="GetOpcionesRecurrenciaResult" nillable="true" type="q304:ArrayOfMaestroOpcionesRecurrencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFallaEspecifica">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idOpcionesRecurrencia" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFallaEspecificaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q305="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="GetFallaEspecificaResult" nillable="true" type="q305:ArrayOfMaestroFallaEspecifica" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFallaCausaRaiz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idFallaEspecifica" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFallaCausaRaizResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q306="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="GetFallaCausaRaizResult" nillable="true" type="q306:ArrayOfMaestroFallaCausaRaiz" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

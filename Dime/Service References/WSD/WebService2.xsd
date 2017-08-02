@@ -2781,4 +2781,46 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RecurrenciaCargaBase" nillable="true" type="tns:RecurrenciaCargaBase" />
+  <xs:complexType name="ArrayOfMaestroOpcionesRecurrencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaestroOpcionesRecurrencia" nillable="true" type="tns:MaestroOpcionesRecurrencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaestroOpcionesRecurrencia" nillable="true" type="tns:ArrayOfMaestroOpcionesRecurrencia" />
+  <xs:complexType name="MaestroOpcionesRecurrencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdProceso" type="xs:int" />
+      <xs:element minOccurs="0" name="OpcionesRecurrencia" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaestroOpcionesRecurrencia" nillable="true" type="tns:MaestroOpcionesRecurrencia" />
+  <xs:complexType name="ArrayOfMaestroFallaEspecifica">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaestroFallaEspecifica" nillable="true" type="tns:MaestroFallaEspecifica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaestroFallaEspecifica" nillable="true" type="tns:ArrayOfMaestroFallaEspecifica" />
+  <xs:complexType name="MaestroFallaEspecifica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FallaEspecificaCCAA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdOpcionesRecurrencia" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaestroFallaEspecifica" nillable="true" type="tns:MaestroFallaEspecifica" />
+  <xs:complexType name="ArrayOfMaestroFallaCausaRaiz">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaestroFallaCausaRaiz" nillable="true" type="tns:MaestroFallaCausaRaiz" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaestroFallaCausaRaiz" nillable="true" type="tns:ArrayOfMaestroFallaCausaRaiz" />
+  <xs:complexType name="MaestroFallaCausaRaiz">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FallaCausaRaiz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdFallaEspecifica" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaestroFallaCausaRaiz" nillable="true" type="tns:MaestroFallaCausaRaiz" />
 </xs:schema>

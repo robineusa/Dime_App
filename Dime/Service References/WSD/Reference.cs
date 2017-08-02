@@ -8537,6 +8537,237 @@ namespace Dime.WSD {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MaestroOpcionesRecurrencia", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class MaestroOpcionesRecurrencia : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdProcesoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OpcionesRecurrenciaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdProceso {
+            get {
+                return this.IdProcesoField;
+            }
+            set {
+                if ((this.IdProcesoField.Equals(value) != true)) {
+                    this.IdProcesoField = value;
+                    this.RaisePropertyChanged("IdProceso");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OpcionesRecurrencia {
+            get {
+                return this.OpcionesRecurrenciaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OpcionesRecurrenciaField, value) != true)) {
+                    this.OpcionesRecurrenciaField = value;
+                    this.RaisePropertyChanged("OpcionesRecurrencia");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MaestroFallaEspecifica", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class MaestroFallaEspecifica : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FallaEspecificaCCAAField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdOpcionesRecurrenciaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FallaEspecificaCCAA {
+            get {
+                return this.FallaEspecificaCCAAField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FallaEspecificaCCAAField, value) != true)) {
+                    this.FallaEspecificaCCAAField = value;
+                    this.RaisePropertyChanged("FallaEspecificaCCAA");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdOpcionesRecurrencia {
+            get {
+                return this.IdOpcionesRecurrenciaField;
+            }
+            set {
+                if ((this.IdOpcionesRecurrenciaField.Equals(value) != true)) {
+                    this.IdOpcionesRecurrenciaField = value;
+                    this.RaisePropertyChanged("IdOpcionesRecurrencia");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MaestroFallaCausaRaiz", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class MaestroFallaCausaRaiz : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FallaCausaRaizField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdFallaEspecificaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FallaCausaRaiz {
+            get {
+                return this.FallaCausaRaizField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FallaCausaRaizField, value) != true)) {
+                    this.FallaCausaRaizField = value;
+                    this.RaisePropertyChanged("FallaCausaRaiz");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdFallaEspecifica {
+            get {
+                return this.IdFallaEspecificaField;
+            }
+            set {
+                if ((this.IdFallaEspecificaField.Equals(value) != true)) {
+                    this.IdFallaEspecificaField = value;
+                    this.RaisePropertyChanged("IdFallaEspecifica");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IWebService")]
     public interface IWebService {
@@ -13811,6 +14042,24 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/TraerDatosRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/TraerDatosRecurrenciaResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.RecurrenciaCargaBase> TraerDatosRecurrenciaAsync(int idAsesor, int CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/GetOpcionesRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/GetOpcionesRecurrenciaResponse")]
+        System.Collections.Generic.List<Dime.WSD.MaestroOpcionesRecurrencia> GetOpcionesRecurrencia(int idProceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/GetOpcionesRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/GetOpcionesRecurrenciaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.MaestroOpcionesRecurrencia>> GetOpcionesRecurrenciaAsync(int idProceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/GetFallaEspecifica", ReplyAction="http://tempuri.org/IRecurrenciaService/GetFallaEspecificaResponse")]
+        System.Collections.Generic.List<Dime.WSD.MaestroFallaEspecifica> GetFallaEspecifica(int idOpcionesRecurrencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/GetFallaEspecifica", ReplyAction="http://tempuri.org/IRecurrenciaService/GetFallaEspecificaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.MaestroFallaEspecifica>> GetFallaEspecificaAsync(int idOpcionesRecurrencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/GetFallaCausaRaiz", ReplyAction="http://tempuri.org/IRecurrenciaService/GetFallaCausaRaizResponse")]
+        System.Collections.Generic.List<Dime.WSD.MaestroFallaCausaRaiz> GetFallaCausaRaiz(int idFallaEspecifica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/GetFallaCausaRaiz", ReplyAction="http://tempuri.org/IRecurrenciaService/GetFallaCausaRaizResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.MaestroFallaCausaRaiz>> GetFallaCausaRaizAsync(int idFallaEspecifica);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -13854,6 +14103,30 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.RecurrenciaCargaBase> TraerDatosRecurrenciaAsync(int idAsesor, int CuentaCliente) {
             return base.Channel.TraerDatosRecurrenciaAsync(idAsesor, CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Dime.WSD.MaestroOpcionesRecurrencia> GetOpcionesRecurrencia(int idProceso) {
+            return base.Channel.GetOpcionesRecurrencia(idProceso);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.MaestroOpcionesRecurrencia>> GetOpcionesRecurrenciaAsync(int idProceso) {
+            return base.Channel.GetOpcionesRecurrenciaAsync(idProceso);
+        }
+        
+        public System.Collections.Generic.List<Dime.WSD.MaestroFallaEspecifica> GetFallaEspecifica(int idOpcionesRecurrencia) {
+            return base.Channel.GetFallaEspecifica(idOpcionesRecurrencia);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.MaestroFallaEspecifica>> GetFallaEspecificaAsync(int idOpcionesRecurrencia) {
+            return base.Channel.GetFallaEspecificaAsync(idOpcionesRecurrencia);
+        }
+        
+        public System.Collections.Generic.List<Dime.WSD.MaestroFallaCausaRaiz> GetFallaCausaRaiz(int idFallaEspecifica) {
+            return base.Channel.GetFallaCausaRaiz(idFallaEspecifica);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.MaestroFallaCausaRaiz>> GetFallaCausaRaizAsync(int idFallaEspecifica) {
+            return base.Channel.GetFallaCausaRaizAsync(idFallaEspecifica);
         }
     }
 }
