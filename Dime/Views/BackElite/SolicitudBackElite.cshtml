@@ -61,6 +61,14 @@
                             </table>
                             <table>
                                 <tr>
+                                    <td style="padding-left:4px; width:700px;">
+                                        <small>Observaciones</small>
+                                        @Html.TextAreaFor(m => m.BEPSolicitudes.Observaciones, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text" })
+                                    </td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
                                     <td colspan="6">
                                         <h5 class="text-danger">  <b>  @ViewBag.ExisteCuentaEscalada</b></h5>
                                     </td>
