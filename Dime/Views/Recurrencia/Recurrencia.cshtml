@@ -178,6 +178,122 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <h2 class="page-header" style="margin-top:25px">
+                            <i class="fa fa-fax"></i> Datos Adicionales
+                        </h2>
+                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                            <br />
+                            <table>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Numero de Marcaciones:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Fecha Ultima Marcación:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Fecha Ultima Gestión:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Incluye Claro Video:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Uso Claro Video:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Cliente Nagra:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.Marcaciones" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.FechaUltimaMarcacion" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.FechaUltimaGestion" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.IncluyeClaroVideo" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.UsoClaroVideo" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.ClienteNagra" readonly>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Ofrecimiento 1:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" style="padding:1px; width:1200px;">
+                                        @Html.TextBoxFor(m => m.CargueBase.Ofrecimiento1, null, new { @class = "form-control input-sm", @id = "Ofrecimiento", @Value = Model.CargueBase.Ofrecimiento1, @name = "Ofrecimiento", @style = "margin-left:0px; width:100%; height:70px;", @Readonly="true"})
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Ofrecimiento 2:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" style="padding:1px; width:1200px;">
+                                        @Html.TextBoxFor(m => m.CargueBase.Ofrecimiento2, null, new { @class = "form-control input-sm", @id = "Ofrecimiento", @Value = Model.CargueBase.Ofrecimiento2, @name = "Ofrecimiento", @style = "margin-left:0px; width:100%; height:70px;", @Readonly = "true" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Ofrecimiento 3:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" style="padding:1px; width:1200px;">
+                                        @Html.TextBoxFor(m => m.CargueBase.Ofrecimiento3, null, new { @class = "form-control input-sm", @id = "Ofrecimiento", @Value =Model.CargueBase.Ofrecimiento3, @name = "Ofrecimiento", @style = "margin-left:0px; width:100%; height:70px;", @Readonly = "true" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Diferenciador:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Prioridad:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Veces Gestionado:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Fecha Cargo Base:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.Diferenciador" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.Prioridad" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.Veces_Gestionado" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.FechaCargueBase" readonly>
+                                    </td>
+                                    
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="page-header" style="margin-top:25px">
                             <i class="fa fa-cubes"></i> MacroProceso
                         </h2>
                         <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
