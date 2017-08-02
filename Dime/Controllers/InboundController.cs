@@ -280,7 +280,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult Retencion(InboundModel model, string BotonEnvia)
         {
-            if (model.Retencion.Cuenta != 0 || model.Retencion.Cuenta.Equals(true))
+            if (model.Retencion.Cuenta != 0)
             {
                 int cuentaCliente = model.Retencion.Cuenta;
                 var result = inboundService.TraerClienteCompletoPorCuenta(cuentaCliente);
@@ -291,7 +291,7 @@ namespace Dime.Controllers
                 else
                 {
                     ViewBag.Error = "Cuenta Digitada No Existe";
-                    model = new InboundModel();
+                    model.ClientesTodos = new ClientesTodo();
                 }
 
                 if (BotonEnvia.Equals("GuardaDatos"))
@@ -300,6 +300,7 @@ namespace Dime.Controllers
                     model.Retencion.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
                     model.Retencion.AliadoGestion = Session["AliadoLogeado"].ToString();
                     inboundService.InsertarRetencionInbound(model.Retencion);
+                    ViewBag.Error = "Registro Almacenado Exitosamente";
                     model = new InboundModel();
                 }
             }
