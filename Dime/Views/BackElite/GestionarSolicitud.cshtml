@@ -198,11 +198,13 @@
                                             <td style="padding-left:4px; width:300px;">
 
                                                 <small>Aplica Mal Escalado:</small>
-                                                @if (Model.BEPSolicitudes.Malescalado == "SI")
+                                                @if (Model.BEPSolicitudes.Malescalado != "SI")
                                                 {
-                                                    @Html.DropDownListFor(m => m.BEPSolicitudes.Malescalado, new List<SelectListItem> {new SelectListItem{Text="SI", Value="SI" },
+                                                   @Html.DropDownListFor(m => m.BEPSolicitudes.Malescalado, new List<SelectListItem> {new SelectListItem{Text="SI", Value="SI" },
                                                                                              new SelectListItem{Text="NO", Value="NO" }},
-                                                          "--SELECCIONE--", new { @class = "form-control input-sm", @id = "malescalado" })}
+                                                              "--SELECCIONE--", new { @class = "form-control input-sm", @id = "malescalado" })
+                                                     
+                                                }
                                                 else
                                                 {
                                                     @Html.TextBoxFor(m => m.BEPSolicitudes.Malescalado, new { @class = "form-control input-sm", id = "malescaladofijo", @readonly = "true" })
@@ -210,11 +212,14 @@
                                             </td>
                                             <td style="padding-left:4px; width:400px;">
                                                 <small>Detalle Mal Escalado:</small>
-                                                @if (Model.BEPSolicitudes.Malescalado == "SI")
+                                                @if (Model.BEPSolicitudes.Malescalado != "SI")
                                                 {
-                                                    @Html.DropDownListFor(m => m.BEPSolicitudes.DetalleMalEscalado, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "detallemalescalado", @class = "form-control" })}else
+                                                    @Html.DropDownListFor(m => m.BEPSolicitudes.DetalleMalEscalado, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "detallemalescalado", @class = "form-control" })
+                                                }
+                                                else
                                                 {
-                                                @Html.TextBoxFor(m => m.BEPSolicitudes.DetalleMalEscalado, new { @class = "form-control input-sm", id = "detallemalescaladofijo", @readonly = "true" })
+                                                    @Html.TextBoxFor(m => m.BEPSolicitudes.DetalleMalEscalado, new { @class = "form-control input-sm", id = "detallemalescaladofijo", @readonly = "true" })
+                                                    
                                                 }
                                             </td>
                                             <td style="padding-left:4px; width:300px;">

@@ -2276,7 +2276,12 @@
     <Content Include="Scripts\AdminUsuarios\CrearUsuariosMasivos.js" />
     <Content Include="Scripts\AdminUsuarios\xls.js" />
     <Content Include="Scripts\Alertas\SiguienteMejorOferta.js" />
+    <Content Include="Scripts\BackElite\AdministrarDistrubucionBackElite.js" />
+    <Content Include="Scripts\BackElite\ConsultaAdministradorLog.js" />
+    <Content Include="Scripts\BackElite\ConsultaAdminstradorPrincipal.js" />
+    <Content Include="Scripts\BackElite\ConsultaDeGestion.js" />
     <Content Include="Scripts\BackElite\GestionarSolicitud.js" />
+    <Content Include="Scripts\BackElite\ListaDistribucionUsuario.js" />
     <Content Include="Scripts\BackElite\SeguimientoSolicitudes.js" />
     <Content Include="Scripts\BackElite\SolicitudBackElite.js" />
     <Content Include="Scripts\BuenServicio\Visualizador_Imagenes.js" />
@@ -3298,6 +3303,11 @@
     <Content Include="Views\BackElite\GestionarSolicitud.cshtml" />
     <Content Include="Views\BackElite\SeguimientoSolicitudes.cshtml" />
     <Content Include="Views\CierreDeCiclo\SegundaTipificacion.cshtml" />
+    <Content Include="Views\BackElite\AdministrarDistrubucionBackElite.cshtml" />
+    <Content Include="Views\BackElite\ConsultaAdministradorLog.cshtml" />
+    <Content Include="Views\BackElite\ConsultaAdminstradorPrincipal.cshtml" />
+    <Content Include="Views\BackElite\ConsultaDeGestion.cshtml" />
+    <Content Include="Views\BackElite\ListaDistribucionUsuario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
