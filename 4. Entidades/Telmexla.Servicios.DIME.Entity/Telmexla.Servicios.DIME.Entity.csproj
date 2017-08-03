@@ -147,6 +147,8 @@
     <Compile Include="GestionMatriz.cs" />
     <Compile Include="GestionMatrizColleciton.cs" />
     <Compile Include="GestionOutbound.cs" />
+    <Compile Include="GLogRecurrencia.cs" />
+    <Compile Include="GPrincipalRecurrencia.cs" />
     <Compile Include="Graficos.cs" />
     <Compile Include="InboundModel.cs" />
     <Compile Include="Ingreso.cs" />

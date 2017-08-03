@@ -1,4 +1,5 @@
 ﻿using Dime.Helpers;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace Dime.Controllers
     {
         WSD.InboundServiceClient inboundService;
         WSD.RecurrenciaServiceClient recurrencia;
+        
+
 
         public RecurrenciaController()
         {
@@ -37,6 +40,12 @@ namespace Dime.Controllers
 
             return View(model);
             
+        }
+        public JsonResult MacroProcesoRecurrenciaList(int idProceso)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(recurrencia.GetOpcionesRecurrencia(idProceso)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
     }
 }

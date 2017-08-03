@@ -14060,6 +14060,36 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/GetFallaCausaRaiz", ReplyAction="http://tempuri.org/IRecurrenciaService/GetFallaCausaRaizResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.MaestroFallaCausaRaiz>> GetFallaCausaRaizAsync(int idFallaEspecifica);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/EliminaCuentaRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/EliminaCuentaRecurrenciaResponse")]
+        void EliminaCuentaRecurrencia(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/EliminaCuentaRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/EliminaCuentaRecurrenciaResponse")]
+        System.Threading.Tasks.Task EliminaCuentaRecurrenciaAsync(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/InsertarGRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/InsertarGRecurrenciaResponse")]
+        void InsertarGRecurrencia(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia recurrencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/InsertarGRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/InsertarGRecurrenciaResponse")]
+        System.Threading.Tasks.Task InsertarGRecurrenciaAsync(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia recurrencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ActualizarGRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ActualizarGRecurrenciaResponse")]
+        void ActualizarGRecurrencia(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia recurrencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ActualizarGRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ActualizarGRecurrenciaResponse")]
+        System.Threading.Tasks.Task ActualizarGRecurrenciaAsync(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia recurrencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/TraerGPrinRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/TraerGPrinRecurrenciaResponse")]
+        Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia TraerGPrinRecurrencia(int CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/TraerGPrinRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/TraerGPrinRecurrenciaResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia> TraerGPrinRecurrenciaAsync(int CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ListaSeguimientosRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ListaSeguimientosRecurrenciaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia> ListaSeguimientosRecurrencia(int CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ListaSeguimientosRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ListaSeguimientosRecurrenciaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia>> ListaSeguimientosRecurrenciaAsync(int CuentaCliente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -14127,6 +14157,46 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.MaestroFallaCausaRaiz>> GetFallaCausaRaizAsync(int idFallaEspecifica) {
             return base.Channel.GetFallaCausaRaizAsync(idFallaEspecifica);
+        }
+        
+        public void EliminaCuentaRecurrencia(decimal Cuenta) {
+            base.Channel.EliminaCuentaRecurrencia(Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task EliminaCuentaRecurrenciaAsync(decimal Cuenta) {
+            return base.Channel.EliminaCuentaRecurrenciaAsync(Cuenta);
+        }
+        
+        public void InsertarGRecurrencia(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia recurrencia) {
+            base.Channel.InsertarGRecurrencia(recurrencia);
+        }
+        
+        public System.Threading.Tasks.Task InsertarGRecurrenciaAsync(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia recurrencia) {
+            return base.Channel.InsertarGRecurrenciaAsync(recurrencia);
+        }
+        
+        public void ActualizarGRecurrencia(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia recurrencia) {
+            base.Channel.ActualizarGRecurrencia(recurrencia);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarGRecurrenciaAsync(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia recurrencia) {
+            return base.Channel.ActualizarGRecurrenciaAsync(recurrencia);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia TraerGPrinRecurrencia(int CuentaCliente) {
+            return base.Channel.TraerGPrinRecurrencia(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia> TraerGPrinRecurrenciaAsync(int CuentaCliente) {
+            return base.Channel.TraerGPrinRecurrenciaAsync(CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia> ListaSeguimientosRecurrencia(int CuentaCliente) {
+            return base.Channel.ListaSeguimientosRecurrencia(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia>> ListaSeguimientosRecurrenciaAsync(int CuentaCliente) {
+            return base.Channel.ListaSeguimientosRecurrenciaAsync(CuentaCliente);
         }
     }
 }
