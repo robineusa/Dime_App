@@ -49,24 +49,33 @@ namespace Dime.Controllers
             modelo.BEPSolicitudes.AliadoQueSolicita = Session["AliadoLogeado"].ToString();
             modelo.BEPSolicitudes.OperacionQueSolicita = Session["OperacionUsuarioHolos"].ToString();
 
-            var CuentaEscalada = backeliteservice.ValidarCuentaEnBackElite(Convert.ToDecimal(modelo.BEPSolicitudes.CuentaCliente), Convert.ToDecimal(modelo.BEPSolicitudes.LlsOt));
+            var CuentaEscalada = backeliteservice.ValidarCuentaEnBackElite(Convert.ToDecimal(modelo.BEPSolicitudes.CuentaCliente), Convert.ToDecimal(modelo.BEPSolicitudes.LlsOt), modelo.BEPSolicitudes.TipoDeSolicitud);
             if (CuentaEscalada == true)
             {
-                ViewBag.ExisteCuentaEscalada = "Ya existe una solicitud escalada con esta Cuenta, Orden de Trabajo o Llamada de Servicio";
+                ViewBag.ExisteCuentaEscalada = "Ya existe una solicitud escalada con esta Cuenta, Orden de Trabajo o Llamada de Servicio por la misma tipología.";
                 return View(modelo);
             }
             else
             {
-                if (modelo.BEPSolicitudes.CuentaCliente == 0 || modelo.BEPSolicitudes.LlsOt == 0)
+                modelo.NodosZonificados = backeliteservice.TraerNodoPorId(modelo.BEPSolicitudes.Nodo);
+                if (modelo.NodosZonificados != null)
                 {
-                    ViewBag.ExisteCuentaEscalada = "La Cuenta del Cliente, la Ordern de Trabajo o Llamada de Servicio no pueden ser Cero (0)";
-                    return View(modelo);
+                    if (modelo.BEPSolicitudes.CuentaCliente == 0 || modelo.BEPSolicitudes.LlsOt == 0)
+                    {
+                        ViewBag.ExisteCuentaEscalada = "La Cuenta del Cliente, la Ordern de Trabajo o Llamada de Servicio no pueden ser Cero (0).";
+                        return View(modelo);
+                    }
+                    else
+                    {
+                        ViewBag.ExisteCuentaEscalada = null;
+                        backeliteservice.RegistrarSolicitud(modelo.BEPSolicitudes);
+                        return RedirectToAction("SolicitudBackElite");
+                    }
                 }
                 else
                 {
-                    ViewBag.ExisteCuentaEscalada = null;
-                    backeliteservice.RegistrarSolicitud(modelo.BEPSolicitudes);
-                    return RedirectToAction("SolicitudBackElite");
+                    ViewBag.ExisteCuentaEscalada = "El nodo ingresado no existe en la base de nodos zonificados, por favor verifíquelo nuevamente.";
+                    return View(modelo);
                 }
 
             }
@@ -254,6 +263,11 @@ namespace Dime.Controllers
                 }
             }
 
+        }
+        [HttpGet]
+        public ActionResult CierreMasivo()
+        {
+            return View();
         }
 
     }

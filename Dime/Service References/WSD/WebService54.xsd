@@ -4184,6 +4184,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
         <xs:element minOccurs="0" name="Ot" type="xs:decimal" />
+        <xs:element minOccurs="0" name="Proceso" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
