@@ -4464,4 +4464,68 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="EliminaCuentaRecurrencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Cuenta" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminaCuentaRecurrenciaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarGRecurrencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q307="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="recurrencia" nillable="true" type="q307:GPrincipalRecurrencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertarGRecurrenciaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarGRecurrencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q308="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="recurrencia" nillable="true" type="q308:GPrincipalRecurrencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarGRecurrenciaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraerGPrinRecurrencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CuentaCliente" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraerGPrinRecurrenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q309="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerGPrinRecurrenciaResult" nillable="true" type="q309:GPrincipalRecurrencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaSeguimientosRecurrencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CuentaCliente" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaSeguimientosRecurrenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q310="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSeguimientosRecurrenciaResult" nillable="true" type="q310:ArrayOfGPrincipalRecurrencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

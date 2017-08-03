@@ -14432,6 +14432,196 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_EliminaCuentaRecurrencia_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_EliminaCuentaRecurrencia_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_InsertarGRecurrencia_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_InsertarGRecurrencia_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_ActualizarGRecurrencia_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_ActualizarGRecurrencia_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_TraerGPrinRecurrencia_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_TraerGPrinRecurrencia_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_ListaSeguimientosRecurrencia_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_ListaSeguimientosRecurrencia_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -16355,6 +16545,36 @@
   <wsdl:message name="IRecurrenciaService_GetFallaCausaRaiz_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFallaCausaRaizResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_EliminaCuentaRecurrencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaCuentaRecurrencia" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_EliminaCuentaRecurrencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminaCuentaRecurrenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_InsertarGRecurrencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarGRecurrencia" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_InsertarGRecurrencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarGRecurrenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_ActualizarGRecurrencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarGRecurrencia" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_ActualizarGRecurrencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarGRecurrenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_TraerGPrinRecurrencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:TraerGPrinRecurrencia" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_TraerGPrinRecurrencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TraerGPrinRecurrenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_ListaSeguimientosRecurrencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaSeguimientosRecurrencia" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_ListaSeguimientosRecurrencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaSeguimientosRecurrenciaResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWebService">
     <wsdl:operation name="MuestraEntidades">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MuestraEntidades" message="tns:IWebService_MuestraEntidades_InputMessage" />
@@ -17673,6 +17893,26 @@
     <wsdl:operation name="GetFallaCausaRaiz">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecurrenciaService/GetFallaCausaRaiz" message="tns:IRecurrenciaService_GetFallaCausaRaiz_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecurrenciaService/GetFallaCausaRaizResponse" message="tns:IRecurrenciaService_GetFallaCausaRaiz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminaCuentaRecurrencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecurrenciaService/EliminaCuentaRecurrencia" message="tns:IRecurrenciaService_EliminaCuentaRecurrencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecurrenciaService/EliminaCuentaRecurrenciaResponse" message="tns:IRecurrenciaService_EliminaCuentaRecurrencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarGRecurrencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecurrenciaService/InsertarGRecurrencia" message="tns:IRecurrenciaService_InsertarGRecurrencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecurrenciaService/InsertarGRecurrenciaResponse" message="tns:IRecurrenciaService_InsertarGRecurrencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarGRecurrencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecurrenciaService/ActualizarGRecurrencia" message="tns:IRecurrenciaService_ActualizarGRecurrencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecurrenciaService/ActualizarGRecurrenciaResponse" message="tns:IRecurrenciaService_ActualizarGRecurrencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TraerGPrinRecurrencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecurrenciaService/TraerGPrinRecurrencia" message="tns:IRecurrenciaService_TraerGPrinRecurrencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecurrenciaService/TraerGPrinRecurrenciaResponse" message="tns:IRecurrenciaService_TraerGPrinRecurrencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaSeguimientosRecurrencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecurrenciaService/ListaSeguimientosRecurrencia" message="tns:IRecurrenciaService_ListaSeguimientosRecurrencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecurrenciaService/ListaSeguimientosRecurrenciaResponse" message="tns:IRecurrenciaService_ListaSeguimientosRecurrencia_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IWebService" type="tns:IWebService">
@@ -21268,6 +21508,61 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_GetFallaCausaRaiz_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminaCuentaRecurrencia">
+      <soap12:operation soapAction="http://tempuri.org/IRecurrenciaService/EliminaCuentaRecurrencia" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_EliminaCuentaRecurrencia_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_EliminaCuentaRecurrencia_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarGRecurrencia">
+      <soap12:operation soapAction="http://tempuri.org/IRecurrenciaService/InsertarGRecurrencia" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_InsertarGRecurrencia_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_InsertarGRecurrencia_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarGRecurrencia">
+      <soap12:operation soapAction="http://tempuri.org/IRecurrenciaService/ActualizarGRecurrencia" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_ActualizarGRecurrencia_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_ActualizarGRecurrencia_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraerGPrinRecurrencia">
+      <soap12:operation soapAction="http://tempuri.org/IRecurrenciaService/TraerGPrinRecurrencia" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_TraerGPrinRecurrencia_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_TraerGPrinRecurrencia_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaSeguimientosRecurrencia">
+      <soap12:operation soapAction="http://tempuri.org/IRecurrenciaService/ListaSeguimientosRecurrencia" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_ListaSeguimientosRecurrencia_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_ListaSeguimientosRecurrencia_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

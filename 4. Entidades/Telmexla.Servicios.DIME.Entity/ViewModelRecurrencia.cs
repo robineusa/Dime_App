@@ -10,11 +10,15 @@ namespace Telmexla.Servicios.DIME.Entity
     {
         private ClientesTodo clientesTodos;
         private RecurrenciaCargaBase cargueBase;
+        private GPrincipalRecurrencia gPrincipalRecurrencia;
+        private GLogRecurrencia gLogRecurrencia;
 
         public ViewModelRecurrencia()
         {
             ClientesTodos = new ClientesTodo();
             CargueBase = new RecurrenciaCargaBase();
+            GPrincipalRecurrencia = new GPrincipalRecurrencia();
+            GLogRecurrencia = new GLogRecurrencia();
         }
 
         public ClientesTodo ClientesTodos
@@ -40,6 +44,32 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 cargueBase = value;
+            }
+        }
+
+        public GPrincipalRecurrencia GPrincipalRecurrencia
+        {
+            get
+            {
+                return gPrincipalRecurrencia;
+            }
+
+            set
+            {
+                gPrincipalRecurrencia = value;
+            }
+        }
+
+        public GLogRecurrencia GLogRecurrencia
+        {
+            get
+            {
+                return gLogRecurrencia;
+            }
+
+            set
+            {
+                gLogRecurrencia = value;
             }
         }
     }

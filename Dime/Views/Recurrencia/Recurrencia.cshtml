@@ -299,18 +299,23 @@
                         <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                             <br />
                             <div class="form-group">
-                                <table>
+                                <table style="width:100%;">
                                     <tr>
-                                        <td style="padding-left:1px; width:200px;" colspan="2">
+                                        <td style="padding-left:1px; width:200px;" colspan="3">
                                             MacroProceso Recurrencia 1:
-
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.MacroProcesoRecurrencia1, new List<SelectListItem> { }, "--Select Option--", 
+                                                new { Id = "MacroProcesoRecurrencia1", @class = "form-control" })
+                                            @*@Html.ValidationMessageFor(m => m.CierreCicloGestionado.TipoContacto, "", new { @class = "text-danger" })*@
                                         </td>
                                         <td style="padding-left:1px; width:200px;" colspan="2">
                                             MacroProceso Recurrencia 2:
-
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.MacroProcesoRecurrencia2, new List<SelectListItem> { }, "--Select Option--",
+                                                new { Id = "MacroProcesoRecurrencia2", @class = "form-control" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;" colspan="2">
                                             MacroProceso Recurrencia 3:
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.MacroProcesoRecurrencia3, new List<SelectListItem> { }, "--Select Option--",
+                                                new { Id = "MacroProcesoRecurrencia3", @class = "form-control" })
 
                                         </td>
                                     </tr>
@@ -429,7 +434,10 @@
 </div>
 <button type="submit" style="display:none;" class="btn btn-primary" name="BotonEnvia" value="Buscar" id="BotonEnvia">Submit</button>
 @section Scripts{
-    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.0.1"></script>
+    <script>
+        var urlMacroProcesoRecurrenciaList = '@Url.Action("MacroProcesoRecurrenciaList", "Recurrencia")';
+    </script>
+    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.0.2"></script>
 }
 }
 

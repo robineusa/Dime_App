@@ -2968,6 +2968,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BELSolicitudes.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RecurrenciaCargaBase.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BEMDistribuciones1.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
