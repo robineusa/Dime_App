@@ -35,11 +35,17 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult Recurrencia(ViewModelRecurrencia model, string BotonEnvia)
         {
-            //model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(model.ClientesTodos.Cuenta);
-            
+            if (model.GPrincipalRecurrencia.AceptacionPrimerOfrecimiento == "True")
+            { model.GPrincipalRecurrencia.AceptacionPrimerOfrecimiento = "SI"; } else { model.GPrincipalRecurrencia.AceptacionPrimerOfrecimiento = "NO"; }
+            if (model.GPrincipalRecurrencia.AceptacionSegundoOfrecimiento == "True")
+            { model.GPrincipalRecurrencia.AceptacionSegundoOfrecimiento = "SI"; }
+            else { model.GPrincipalRecurrencia.AceptacionSegundoOfrecimiento = "NO"; }
+            if (model.GPrincipalRecurrencia.AceptacionTercerOfrecimiento == "True")
+            { model.GPrincipalRecurrencia.AceptacionTercerOfrecimiento = "SI"; }
+            else { model.GPrincipalRecurrencia.AceptacionTercerOfrecimiento = "NO"; }
+            model.GPrincipalRecurrencia.CuentaCliente = model.ClientesTodos.Cuenta;
 
-            return View(model);
-            
+            return RedirectToAction("Recurrencia");
         }
         public JsonResult MacroProcesoRecurrenciaList(int idProceso)
         {
