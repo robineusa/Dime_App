@@ -13821,6 +13821,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/DistribucionPorId", ReplyAction="http://tempuri.org/IBackEliteService/DistribucionPorIdResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEMDistribuciones> DistribucionPorIdAsync(decimal Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ConsultarSolicitudesMasivo", ReplyAction="http://tempuri.org/IBackEliteService/ConsultarSolicitudesMasivoResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes> ConsultarSolicitudesMasivo(System.Collections.Generic.List<string> Solicitudes);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ConsultarSolicitudesMasivo", ReplyAction="http://tempuri.org/IBackEliteService/ConsultarSolicitudesMasivoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ConsultarSolicitudesMasivoAsync(System.Collections.Generic.List<string> Solicitudes);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -14024,6 +14030,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEMDistribuciones> DistribucionPorIdAsync(decimal Id) {
             return base.Channel.DistribucionPorIdAsync(Id);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes> ConsultarSolicitudesMasivo(System.Collections.Generic.List<string> Solicitudes) {
+            return base.Channel.ConsultarSolicitudesMasivo(Solicitudes);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ConsultarSolicitudesMasivoAsync(System.Collections.Generic.List<string> Solicitudes) {
+            return base.Channel.ConsultarSolicitudesMasivoAsync(Solicitudes);
         }
     }
     

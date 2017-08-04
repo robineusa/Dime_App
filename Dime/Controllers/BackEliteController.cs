@@ -269,6 +269,18 @@ namespace Dime.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public JsonResult ConsultarSolicitudesMasivo(IList<string> Solicitudes)
+        {
+            var result0 = backeliteservice.ConsultarSolicitudesMasivo(Solicitudes.ToList());
+           
+            return new JsonResult
+            {
+                Data = JsonConvert.SerializeObject(result0),
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
 
     }
 }
