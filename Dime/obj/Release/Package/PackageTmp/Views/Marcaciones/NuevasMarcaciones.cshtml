@@ -54,9 +54,11 @@
                                                                               "-SELECCIONE-", new { id = "Spc", @class = "form-control input-sm" })
                                                 </td>
                                                 <td width="200" style="padding-left:2px;">
-                                                    <small>Clase</small>
-                                                    @Html.DropDownListFor(m => m.Clase, new List<SelectListItem> {new SelectListItem{Text="GESTION INTERNA", Value="GESTION INTERNA" },
-                                                                                new SelectListItem{Text="PETICION", Value="PET" },
+                                                    <small>Tipo de Marcación</small>
+                                                    @Html.DropDownListFor(m => m.Clase, new List<SelectListItem> {
+                                                                                             new SelectListItem{Text="GENERICA", Value="GENERICA" },
+                                                                                             new SelectListItem{Text="GESTION INTERNA", Value="GESTION INTERNA" },
+                                                                                             new SelectListItem{Text="PETICION", Value="PET" },
                                                                                              new SelectListItem{Text="QUEJA", Value="QUE" },
                                                                                                   new SelectListItem{Text="TICKET", Value="TICKET" },                                              },
                                                                               "-SELECCIONE-", new { id = "Clase", @class = "form-control input-sm" })
@@ -104,7 +106,7 @@
                                                 </td>
                                                 <td width="200" style="padding-left:2px;">
                                                     <small>Canal Habilitado</small>
-                                                    @Html.TextBoxFor(m => m.CanalHabilitado, null, new { id = "canalHabilitado", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
+                                                    @Html.TextBoxFor(m => m.CanalHabilitado, null, new { id = "canalHabilitado", @class = "form-control input-sm", @style = "text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();", @Value = "TELEFONICO"})
                                                 </td>
 
 
@@ -129,14 +131,16 @@
                                                                                              new SelectListItem{Text="PRESENCIAL", Value="PRESENCIAL" },
                                                                                                   new SelectListItem{Text="PYME", Value="PYME" },
                                                                                                        new SelectListItem{Text="SOPORTE", Value="SOPORTE" },
+                                                                                                       new SelectListItem{Text="TELEFONICO", Value="TELEFONICO" },
                                                                                                             new SelectListItem{Text="WEB", Value="WEB" },},
                                                                               "-SELECCIONE-", new { id = "Canal", @class = "form-control input-sm" })
                                                 </td>
                                                 <td width="200" style="padding-left:2px;">
-                                                    <small>Tipo Marcación</small>
-                                                    @Html.DropDownListFor(m => m.TipoMarcacion, new List<SelectListItem> {new SelectListItem{Text="GENERICA", Value="GENERICA" },
-                                                                                             new SelectListItem{Text="GESTION INTERNA", Value="GESTION INTERNA" },
-                                                                                                  new SelectListItem{Text="SERVICIO", Value="SERVICIO" },},
+                                                    <small>Clase SIC</small>
+                                                    @Html.DropDownListFor(m => m.TipoMarcacion, new List<SelectListItem> {new SelectListItem{Text="NO APLICA", Value="NO APLICA" },
+                                                   new SelectListItem{Text="GESTION INTERNA", Value="GESTION INTERNA" },
+                                                   new SelectListItem{Text="PETICION", Value="PETICION" },
+                                                                                                  new SelectListItem{Text="QUEJA", Value="QUEJA" },},
                                                                               "-SELECCIONE-", new { id = "tipoMarcacion", @class = "form-control input-sm" })
                                                 </td>
                                                 <td width="200" style="padding-left:2px;">

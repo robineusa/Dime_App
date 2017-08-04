@@ -55,6 +55,11 @@ function CargarGridMarcaciones()
 
 function ShowGridMarcaciones(dataUp) {
     $("#marcacionesGridView").kendoGrid({
+        autoBind: true,
+        toolbar: ["excel"],
+        excel: {
+            fileName: "Marcaciones.xlsx",
+        },
         dataSource: {
             data: dataUp,
             pageSize: 10,

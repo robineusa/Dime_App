@@ -1,12 +1,16 @@
-﻿
+﻿@model Telmexla.Servicios.DIME.Entity.CCConsultaGestionesViewModel
 @{
-    ViewBag.Title = "Consulta Gestiones de Ùsuario";
+    ViewBag.Title = "Consulta Gestiones de Úsuario";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
+    string actionName = ViewBag.ConsultaPost;
 }
 
 @if (Session["Cierre Ciclo Residencial Predictivo"] != null || Session["Cierre Ciclo Instalacion"] != null || Session["Cierre Ciclo Pymes"] != null)
 {
+
+    using (Html.BeginForm(actionName, "CierreDeCiclo", FormMethod.Post ) )
+    {
+
 
 <div class="row">
     <div class="col-md-12">
@@ -14,12 +18,24 @@
             <div class="box-body">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h2 class="page-header" style="margin-top:25px"><i class="fa fa-search"></i> Resultados de Búsqueda:</h2>
-                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
-                            <div class="box-body">
-                                <div id="gridViewResult"></div>
+                        <div class="row">
+                            <div class="col-xs-2" style="width: 150px;">
+                                <label>Cuenta Cliente:</label>
+                            </div>
+                    
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <table>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            @Html.TextBoxFor(m =>m.cuenta , new {@class = "form-group-lg", style= "width:150px;" })
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -27,7 +43,7 @@
     </div>
 
 </div>
-
+    }
 
 }
 else

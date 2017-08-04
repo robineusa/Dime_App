@@ -2277,6 +2277,7 @@
     <Content Include="Scripts\AdminUsuarios\xls.js" />
     <Content Include="Scripts\Alertas\SiguienteMejorOferta.js" />
     <Content Include="Scripts\BackElite\AdministrarDistrubucionBackElite.js" />
+    <Content Include="Scripts\BackElite\CierreMasivo.js" />
     <Content Include="Scripts\BackElite\ConsultaAdministradorLog.js" />
     <Content Include="Scripts\BackElite\ConsultaAdminstradorPrincipal.js" />
     <Content Include="Scripts\BackElite\ConsultaDeGestion.js" />
@@ -3066,13 +3067,13 @@
     <Content Include="Service References\WSD\Dime.WSD.MaestroOpcionesRecurrencia.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\WSD\WebService.disco" />
     <None Include="Service References\WSD\configuration91.svcinfo" />
     <None Include="Service References\WSD\configuration.svcinfo" />
     <None Include="Service References\WSD\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\WSD\WebService1.disco" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
     <Content Include="Styles\Elements\General.css" />
@@ -3294,22 +3295,6 @@
     <Content Include="Views\CierreDeCiclo\ResidencialPredictivoTipificador.cshtml" />
     <Content Include="Views\Recurrencia\Recurrencia.cshtml" />
     <Content Include="Views\BackElite\SolicitudBackElite.cshtml" />
-    <None Include="Service References\WSD\WebService.wsdl" />
-    <None Include="Service References\WSD\WebService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService4.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Views\BackElite\GestionarSolicitud.cshtml" />
     <Content Include="Views\BackElite\SeguimientoSolicitudes.cshtml" />
     <Content Include="Views\CierreDeCiclo\SegundaTipificacion.cshtml" />
@@ -3318,6 +3303,23 @@
     <Content Include="Views\BackElite\ConsultaAdminstradorPrincipal.cshtml" />
     <Content Include="Views\BackElite\ConsultaDeGestion.cshtml" />
     <Content Include="Views\BackElite\ListaDistribucionUsuario.cshtml" />
+    <None Include="Service References\WSD\WebService1.wsdl" />
+    <None Include="Service References\WSD\WebService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\BackElite\CierreMasivo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

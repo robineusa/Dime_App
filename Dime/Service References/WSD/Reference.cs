@@ -13733,10 +13733,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BEMDetalleDeGestion> DetalleGestionPorIdAsync(decimal IdGestion);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ValidarCuentaEnBackElite", ReplyAction="http://tempuri.org/IBackEliteService/ValidarCuentaEnBackEliteResponse")]
-        bool ValidarCuentaEnBackElite(decimal CuentaCliente, decimal Ot);
+        bool ValidarCuentaEnBackElite(decimal CuentaCliente, decimal Ot, string Proceso);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ValidarCuentaEnBackElite", ReplyAction="http://tempuri.org/IBackEliteService/ValidarCuentaEnBackEliteResponse")]
-        System.Threading.Tasks.Task<bool> ValidarCuentaEnBackEliteAsync(decimal CuentaCliente, decimal Ot);
+        System.Threading.Tasks.Task<bool> ValidarCuentaEnBackEliteAsync(decimal CuentaCliente, decimal Ot, string Proceso);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ConsultarSolicitudPorId", ReplyAction="http://tempuri.org/IBackEliteService/ConsultarSolicitudPorIdResponse")]
         Telmexla.Servicios.DIME.Entity.BEPSolicitudes ConsultarSolicitudPorId(decimal IdSolicitud);
@@ -13906,12 +13906,12 @@ namespace Dime.WSD {
             return base.Channel.DetalleGestionPorIdAsync(IdGestion);
         }
         
-        public bool ValidarCuentaEnBackElite(decimal CuentaCliente, decimal Ot) {
-            return base.Channel.ValidarCuentaEnBackElite(CuentaCliente, Ot);
+        public bool ValidarCuentaEnBackElite(decimal CuentaCliente, decimal Ot, string Proceso) {
+            return base.Channel.ValidarCuentaEnBackElite(CuentaCliente, Ot, Proceso);
         }
         
-        public System.Threading.Tasks.Task<bool> ValidarCuentaEnBackEliteAsync(decimal CuentaCliente, decimal Ot) {
-            return base.Channel.ValidarCuentaEnBackEliteAsync(CuentaCliente, Ot);
+        public System.Threading.Tasks.Task<bool> ValidarCuentaEnBackEliteAsync(decimal CuentaCliente, decimal Ot, string Proceso) {
+            return base.Channel.ValidarCuentaEnBackEliteAsync(CuentaCliente, Ot, Proceso);
         }
         
         public Telmexla.Servicios.DIME.Entity.BEPSolicitudes ConsultarSolicitudPorId(decimal IdSolicitud) {

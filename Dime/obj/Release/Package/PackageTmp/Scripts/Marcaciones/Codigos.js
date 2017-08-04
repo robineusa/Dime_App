@@ -3,6 +3,11 @@
 function CodigosGrid(){
     console.log(listaCodigos);
     $("#codigosGridView").kendoGrid({
+        autoBind: true,
+        toolbar: ["excel"],
+        excel: {
+            fileName: "CodigosdeCierre.xlsx",
+        },
         dataSource: {
             data: listaCodigos,
             pageSize: 10,

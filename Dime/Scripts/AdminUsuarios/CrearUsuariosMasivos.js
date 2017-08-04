@@ -29,6 +29,7 @@ function filePicked(oEvent) {
             var sCSV = XLS.utils.make_csv(wb.Sheets[sheetName]);   
             var oJS = XLS.utils.sheet_to_row_object_array(wb.Sheets[sheetName]);   
             $("#my_file_output").html(sCSV);
+           
             CotejarInformacionGrid(oJS);
          
         });
