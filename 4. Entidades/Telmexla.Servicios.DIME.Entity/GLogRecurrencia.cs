@@ -44,6 +44,7 @@ namespace Telmexla.Servicios.DIME.Entity
         public string VolvioLlamar { get; set; }
         public string PorQue { get; set; }
         public string Contacto { get; set; }
+        public string VozCliente { get; set; }
         public string ClientePresentaNovedades { get; set; }
         public string Proceso { get; set; }
         public string Macroproceso { get; set; }
@@ -53,7 +54,7 @@ namespace Telmexla.Servicios.DIME.Entity
         public string SolucionEspecifica { get; set; }
         public string Solucionado { get; set; }
         public string Estado { get; set; }
-        public string ActivacionClaroVideo { get; set; }
+        public string ActivacionClaroVideoNagra { get; set; }
         public string AceptacionPrimerOfrecimiento { get; set; }
         public string AceptacionSegundoOfrecimiento { get; set; }
         public string AceptacionTercerOfrecimiento { get; set; }

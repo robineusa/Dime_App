@@ -328,19 +328,19 @@
                         <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                             <br />
                             <div class="form-group">
-                                <table>
+                                <table style="width:100%;">
                                     <tr>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Marcación Recurrente 1:</label>
-
+                                            Marcación Recurrente 1:
+                                            @Html.TextBoxFor(m=>m.GPrincipalRecurrencia.MarcacionRecurrente1, new { @class = "form-control input-sm", placeholder = "Marcacion Recurrente 1" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Marcación Recurrente 2:</label>
-
+                                            Marcación Recurrente 2:
+                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.MarcacionRecurrente2, new { @class = "form-control input-sm", placeholder = "Marcacion Recurrente 2" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Marcación Recurrente 3:</label>
-
+                                            Marcación Recurrente 3:
+                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.MarcacionRecurrente3, new { @class = "form-control input-sm", placeholder = "Marcacion Recurrente 3" })
                                         </td>
                                     </tr>
                                 </table>
@@ -352,60 +352,88 @@
                         <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                             <br />
                             <div class="form-group">
-                                <table>
+                                <table style="width:100%;">
                                     <tr>
-                                        <td style="padding-left:1px; width:200px;">
-                                            <label>Volver a Llamar G.E.:</label>
-
+                                        <td style="padding-left:1px; width:200px;" colspan="2">
+                                            Volvio a Llamar G.E.:
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.VolvioLlamar, new List<SelectListItem> {
+                                            new SelectListItem { Text = "SI", Value = "SI" },
+                                            new SelectListItem { Text = "NO", Value = "NO" } },
+                                           "--Select Option--",
+                                                new { Id = "MacroProcesoRecurrencia1", @class = "form-control" })
                                         </td>
-                                        <td style="padding-left:1px; width:200px;">
-                                            <label>PorQue:</label>
-
-                                        </td>
-                                        <td style="padding-left:1px; width:200px;">
-                                            <label>Contacto:</label>
-
+                                        <td style="padding-left:1px; width:200px;" colspan="4">
+                                            PorQue:
+                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.PorQue, new { @class = "form-control input-sm", placeholder = "Digite el Porque" })
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Voz del Cliente:</label>
+                                            Contacto:
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.Contacto, new List<SelectListItem> { }, 
+                                           "--Select Option--",
+                                                new { Id = "Contacto", @class = "form-control", onchange="SetOpciones();" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Cliente Presenta Novedades:</label>
+                                            Voz del Cliente:
+                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.VozCliente, 
+                                           new { id="VozCliente", @class = "form-control input-sm", placeholder = "Voz del Cliente", disabled="true"})
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Proceso:</label>
+                                            Cliente Presenta Novedades:
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.ClientePresentaNovedades, new List<SelectListItem> { },
+                                           "--Select Option--", new { Id = "ClientePresentaNovedades", @class = "form-control", disabled = "true", onchange="SetProceso();" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>MacroProceso:</label>
+                                            Proceso:
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.Proceso, new List<SelectListItem> { },
+                                           "--Select Option--", new { Id = "Proceso", @class = "form-control", disabled = "true", onchange = "SetMacroProceso();" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Servicio Afectado:</label>
+                                            MacroProceso:
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.Macroproceso, new List<SelectListItem> { },
+                                           "--Select Option--", new { Id = "Macroproceso", @class = "form-control", disabled = "true", onchange = "SetServicioAfectado();" })
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:1px; width:200px;">
+                                            Servicio Afectado:
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.ServicioAfectado, new List<SelectListItem> { },
+                                           "--Select Option--", new { Id = "ServicioAfectado", @class = "form-control", disabled = "true", onchange = "SetFallaEspecificaArbol();" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Falla Específica Árbol CCAA:</label>
+                                            Falla Específica Árbol CCAA:
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.FallaEspecificaArbolCCAA, new List<SelectListItem> { },
+                                           "--Select Option--", new { Id = "FallaEspecificaArbolCCAA", @class = "form-control", disabled = "true", onchange = "SetFallaCausaRaiz();" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Falla Causa Raíz:</label>
+                                            Falla Causa Raíz:
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.FallaCausaRaiz, new List<SelectListItem> { },
+                                           "--Select Option--", new { Id = "FallaCausaRaiz", @class = "form-control", disabled = "true" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Solucuion Específica:</label>
+                                            Solucuion Específica:
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.SolucionEspecifica, new List<SelectListItem> { },
+                                           "", new { Id = "SolucionEspecifica", @class = "form-control" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Solucionado:</label>
+                                            Solucionado:
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.Solucionado, new List<SelectListItem> { },
+                                           "", new { Id = "Solucionado", @class = "form-control" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Estado:</label>
+                                            Estado:
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.Estado, new List<SelectListItem> { },
+                                           "", new { Id = "Estado", @class = "form-control" })
                                         </td>
+                                        
+                                    </tr>
+                                    <tr>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Claro Video/Nagra:</label>
-                                        </td>
-                                        <td style="padding-left:1px; width:200px;">
-                                            <label>Primer Ofrecimiento:</label>
-                                        </td>
-                                        <td style="padding-left:1px; width:200px;">
-                                            <label>Observación Ofrecimiento:</label>
+                                            Claro Video/Nagra:
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.ActivacionClaroVideoNagra, new List<SelectListItem> { },
+                                           "", new { Id = "Estado", @class = "form-control" })
                                         </td>
                                     </tr>
                                 </table>
@@ -420,7 +448,7 @@
                                 <table>
                                     <tr>
                                         <td style="padding-left:1px; width:200px;">
-
+                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Observaciones, new { @class = "form-control input-sm", placeholder = "" })
                                         </td>
                                     </tr>
                                 </table>
@@ -436,6 +464,12 @@
 @section Scripts{
     <script>
         var urlMacroProcesoRecurrenciaList = '@Url.Action("MacroProcesoRecurrenciaList", "Recurrencia")';
+        var urlContactoList = '@Url.Action("ContactoList", "Recurrencia")';
+        var urlMacroProcesoList = '@Url.Action("MacroProcesoList", "Recurrencia")';
+        var urlServicioAfectadoList = '@Url.Action("ServicioAfectadoList", "Recurrencia")';
+        var urlFallaEspecificaList = '@Url.Action("FallaEspecificaList", "Recurrencia")';
+        
+        ServicioAfectadoList
     </script>
     <script src="~/Scripts/Recurrencia/Recurrencia.js?1.0.2"></script>
 }
