@@ -1,0 +1,145 @@
+﻿
+@{
+    ViewBag.Title = "Cierre Masivo - Back Elite";
+    ViewBag.SubTitle = "Procesos Back Elite";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Session["Distribucion Back Elite"] != null)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div>
+                                <ul class="timeline">
+                                    <li>
+                                        <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#ff0000;color:white;">1</i>
+                                    </li>
+                                </ul>
+                                <hr />
+                                <div class="callout" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
+                                    <div class="row">
+                                        <div class="col-xs-2" style="width:auto;font-size:16px;color:black">
+                                            <small>Inicialmente debes descargar el formato y llenar la información de acuerdo a las columnas que en el reposan, ingresar allí únicamente el ID_SOLICITUD de las cuentas y ordenes de trabajo o llamadas de servicio que se van a cerrar.</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="text-align:center;">
+                                    <a href="~/Resources/Documents/Formato_Back_Elite.xls">
+                                        <img src="~/Resources/Images/Excel-icon.png" width="100" height="100" />
+                                    </a>
+                                </div>
+                            </div>
+                            <hr />
+                            <ul class="timeline">
+                                <li>
+                                    <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#ff0000;color:white;">2</i>
+                                </li>
+                            </ul>
+                            <hr />
+                            <div>
+                                <div class="callout callout-danger" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
+                                    <div class="row">
+                                        <div class="col-xs-2" style="width:auto;font-size:16px;color:black">
+                                            <small>Agregue el Excel en formato "97-2003 .XLS" ya diligenciado de la manera correcta y carguelo:</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <br />
+                                    <table>
+                                        <tr>
+                                            <td width="800" style="padding:8px;">  <input type="file" class="btn-file" id="my_file_input" width="450" /></td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                            <hr />
+                            <ul class="timeline">
+                                <li>
+                                    <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#ff0000;color:white;">3</i>
+                                </li>
+                            </ul>
+                            <hr />
+                            <div>
+                                <div class="callout callout-danger" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
+                                    <div class="row">
+                                        <div class="col-xs-2" style="width:auto;font-size:16px;color:black">
+                                            <small>Visualice la información cargada desde Excel, la cual va a ser actualizada en la base de datos:</small>
+                                        </div>
+                                    </div>
+                                </div><br />
+                                <div id="infoCotejeadaGrid">
+
+                                </div>
+                            </div>
+                            <hr />
+                            <ul class="timeline">
+                                <li>
+                                    <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#ff0000;color:white;">4</i>
+                                </li>
+                            </ul>
+                            <hr />
+                            <div class="callout callout-danger" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
+                                <div class="row">
+                                    <div class="col-xs-2" style="width:auto;font-size:16px;color:black">
+                                        <small>Asegúrese que la información que cargo en la grilla sea la que desea actualizar, de ser así pulsa en el botón de actualizar, de lo contrario revise el archivo y vuelva a cargarlo:</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <button id="Crear_Usuarios" class="btn btn-block btn-primary btn-lg" style="width:15%;" onclick="ActualizarCuentas()">Actualizar</button>
+                            <label style="color:red" id="mensajeFinal"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts{
+        <script>
+            var UrlConsultarSolicitudes = "@Url.Action("ConsultarSolicitudesMasivo", "BackElite")";
+            var UrlActualizarSolicitudes = "@Url.Action("ActualizarSolicitudesMasivoJson", "BackElite")";
+        </script>
+        <script src="~/Scripts/AdminUsuarios/xls.js"></script>
+        <script src="~/Scripts/BackElite/CierreMasivo.js?1.1.5"></script>
+    }
+
+}
+
+else
+{
+    <div class="row">
+
+        <div class="box box-primary">
+
+            <div class="box-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-page">
+                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                            <div class="error-content">
+                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                <p style="text-align:justify;">
+                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                    Por favor solicite al administrador del sistema el acceso correspondiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+

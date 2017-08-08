@@ -32,6 +32,7 @@
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
                 <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321"><a href="#datosBasicos" aria-controls="datosBasicos" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Básicos</a></li>
+                <li id="Li2" class="" style=""><a href="#Seguimientos" aria-controls="Seguimientos" data-toggle="tab" role="tab" style="background-color:transparent;">Seguimientos</a></li>
             </ul>
             <div class="tab-content" style="padding-left:0; padding-top: 0">
                 <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosBasicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
@@ -62,23 +63,29 @@
                         </tr>
                         <tr>
                             <td style="padding:1px;">
-                                <input id="Nombre_Cliente" class="form-control input-sm" type="text" placeholder="Nombre del cliente" value="@Model.ClientesTodos.Nombre" readonly>
+                                @Html.TextBoxFor(m => m.GPrincipalRecurrencia.NombreCliente, new { @class = "form-control input-sm", placeholder = "Nombre del cliente", Value = Model.ClientesTodos.Nombre, ReadOnly = "true" })
+                                @*<input id="Nombre_Cliente" class="form-control input-sm" type="text" placeholder="" value="@Model.ClientesTodos.Nombre" readonly>*@
                             </td>
                             <td style="padding:1px;">
-                                <input id="Apellido_Cliente" class="form-control input-sm" type="text" placeholder="Apellido del cliente" value="@Model.ClientesTodos.Apellido" readonly>
+                                @Html.TextBoxFor(m => m.GPrincipalRecurrencia.ApellidoCliente, new { @class = "form-control input-sm", Value = Model.ClientesTodos.TelefonoTelmex, placeholder = "Apellido del cliente", ReadOnly = "true" })
+                                @*<input id="Apellido_Cliente" class="form-control input-sm" type="text" placeholder="Apellido del cliente" value="@Model.ClientesTodos.Apellido" readonly>*@
                             </td>
 
                             <td style="padding:1px;">
-                                <input class="form-control input-sm" type="text" placeholder="Teléfono telmex" value="@Model.ClientesTodos.TelefonoTelmex" readonly>
+                                @Html.TextBoxFor(m => m.GPrincipalRecurrencia.TelefonoTelmex, new { @class = "form-control input-sm", placeholder = "Teléfono telmex", Value = Model.ClientesTodos.TelefonoTelmex, ReadOnly = "true" })
+                                @*<input class="form-control input-sm" type="text" placeholder="Teléfono telmex" value="@Model.ClientesTodos.TelefonoTelmex" readonly>*@
                             </td>
                             <td style="padding:1px;">
-                                <input class="form-control input-sm" type="text" placeholder="Teléfono 1" value="@Model.ClientesTodos.Telefono1" readonly>
+                                @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Telefono1, new { @class = "form-control input-sm", placeholder = "Teléfono 1", Value = Model.ClientesTodos.Telefono1, ReadOnly = "true" })
+                                @*<input class="form-control input-sm" type="text" placeholder="Teléfono 1" value="@Model.ClientesTodos.Telefono1" readonly>*@
                             </td>
                             <td style="padding:1px;">
-                                <input class="form-control input-sm" type="text" placeholder="Teléfono 2" value="@Model.ClientesTodos.Telefono2" readonly>
+                                @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Telefono2, new { @class = "form-control input-sm", placeholder = "Teléfono 2", Value = Model.ClientesTodos.Telefono2, ReadOnly = "true" })
+                                @*<input class="form-control input-sm" type="text" placeholder="Teléfono 2" value="@Model.ClientesTodos.Telefono2" readonly>*@
                             </td>
                             <td style="padding:1px;">
-                                <input class="form-control input-sm" type="text" placeholder="Teléfono 3" value="@Model.ClientesTodos.Telefono3" readonly>
+                                @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Telefono3, new { @class = "form-control input-sm", placeholder = "Teléfono 3", Value = Model.ClientesTodos.Telefono3, ReadOnly = "true" })
+                                @*<input class="form-control input-sm" type="text" placeholder="Teléfono 3" value="@Model.ClientesTodos.Telefono3" readonly>*@
                             </td>
                         </tr>
                         <tr>
@@ -117,13 +124,14 @@
                                 <input class="form-control input-sm" type="text" placeholder="Red" value="@Model.ClientesTodos.Red" readonly>
                             </td>
                             <td style="padding:1px;">
-                                <input class="form-control input-sm" type="text" placeholder="División" value="@Model.ClientesTodos.Division" readonly>
+                                @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Division, new { @class = "form-control input-sm", placeholder = "División", Value = Model.ClientesTodos.Division, ReadOnly = "true" })
+                                @*<input class="form-control input-sm" type="text" placeholder="División" value="@Model.ClientesTodos.Division" readonly>*@
                             </td>
                             <td style="padding:1px;">
-                                <input class="form-control input-sm" type="text" placeholder="Área" value="@Model.ClientesTodos.Area" readonly>
+                                @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Area, new { @class = "form-control input-sm", placeholder = "Área", Value = Model.ClientesTodos.Area, ReadOnly = "true" })
+                                @*<input class="form-control input-sm" type="text" placeholder="Área" value="@Model.ClientesTodos.Area" readonly>*@
                             </td>
                         </tr>
-
                         <tr>
 
                             <td style="padding:1px;">
@@ -148,7 +156,8 @@
                         </tr>
                         <tr>
                             <td style="padding:1px;">
-                                <input class="form-control input-sm" type="text" placeholder="Zona" value="@Model.ClientesTodos.Zona" readonly>
+                                @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Zona, new { @class = "form-control input-sm", placeholder = "Zona", Value = Model.ClientesTodos.Zona, ReadOnly = "true" })
+                                @*<input class="form-control input-sm" type="text" placeholder="Zona" value="@Model.ClientesTodos.Zona" readonly>*@
                             </td>
                             <td style="padding:1px;">
                                 <input class="form-control input-sm" type="text" placeholder="Distrito" value="@Model.ClientesTodos.Distrito" readonly>
@@ -168,6 +177,9 @@
                         </tr>
 
                     </table>
+                </div>
+                <div id="Seguimientos" class="tab-pane" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                    <div id="seguimientosGrid"></div>
                 </div>
             </div>
         </div>
@@ -205,22 +217,28 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:1px;">
-                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.Marcaciones" readonly>
+                                        @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Marcaciones, new { @class = "form-control input-sm", placeholder = "Marcaciones", Value = Model.CargueBase.Marcaciones, ReadOnly = "true" })
+                                        @*<input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.Marcaciones" readonly>*@
                                     </td>
                                     <td style="padding:1px;">
-                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.FechaUltimaMarcacion" readonly>
+                                        @Html.TextBoxFor(m => m.GPrincipalRecurrencia.FechaUltimaMarcacion, new { @class = "form-control input-sm", placeholder = "Fecha Ultima Marcacion", Value = Model.CargueBase.FechaUltimaMarcacion, ReadOnly = "true" })
+                                        @*<input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.FechaUltimaMarcacion" readonly>*@
                                     </td>
                                     <td style="padding:1px;">
-                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.FechaUltimaGestion" readonly>
+                                        @Html.TextBoxFor(m => m.GPrincipalRecurrencia.FechaUltimaGestion, new { @class = "form-control input-sm", placeholder = "Fecha Ultima Gestión", Value = Model.CargueBase.FechaUltimaGestion, ReadOnly = "true" })
+                                        @*<input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.FechaUltimaGestion" readonly>*@
                                     </td>
                                     <td style="padding:1px;">
-                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.IncluyeClaroVideo" readonly>
+                                        @Html.TextBoxFor(m => m.GPrincipalRecurrencia.IncluyeClaroVideo, new { @class = "form-control input-sm", placeholder = "Incluye Claro Video", Value = Model.CargueBase.IncluyeClaroVideo, ReadOnly = "true" })
+                                        @*<input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.IncluyeClaroVideo" readonly>*@
                                     </td>
                                     <td style="padding:1px;">
-                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.UsoClaroVideo" readonly>
+                                        @Html.TextBoxFor(m => m.GPrincipalRecurrencia.UsoClaroVideo, new { @class = "form-control input-sm", placeholder = "Uso Claro Video", Value = Model.CargueBase.UsoClaroVideo, ReadOnly = "true" })
+                                        @*<input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.UsoClaroVideo" readonly>*@
                                     </td>
                                     <td style="padding:1px;">
-                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.ClienteNagra" readonly>
+                                        @Html.TextBoxFor(m => m.GPrincipalRecurrencia.ClienteNagra, new { @class = "form-control input-sm", placeholder = "Apellido del cliente", Value = Model.CargueBase.ClienteNagra, ReadOnly = "true" })
+                                        @*<input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.ClienteNagra" readonly>*@
                                     </td>
                                 </tr>
                                 <tr>
@@ -230,7 +248,20 @@
                                 </tr>
                                 <tr>
                                     <td colspan="6" style="padding:1px; width:1200px;">
-                                        @Html.TextBoxFor(m => m.CargueBase.Ofrecimiento1, null, new { @class = "form-control input-sm", @id = "Ofrecimiento", @Value = Model.CargueBase.Ofrecimiento1, @name = "Ofrecimiento", @style = "margin-left:0px; width:100%; height:70px;", @Readonly="true"})
+                                        @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Ofrecimiento1, null, new { @class = "form-control input-sm", @id = "Ofrecimiento", @Value = Model.CargueBase.Ofrecimiento1, @name = "Ofrecimiento", @style = "margin-left:0px; width:100%; height:70px;", @Readonly="true"})
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <small>El cliente acepto este ofrecimiento? </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                            @*@Html.CheckBoxFor(m => m.GPrincipalRecurrencia.checkOfrecimiento1, new { @checked = "checked", onclick = "return Ofrecimiento_1_SI();", @class = "minimal", Id = "ofre1Si" })*@
+                                            Si
+                                            <input type="checkbox" onclick="return Ofrecimiento_1_NO()" name="Ofrecimiento" class="minimal" id="ofre1No">
+                                            No
                                     </td>
                                 </tr>
                                 <tr>
@@ -240,7 +271,21 @@
                                 </tr>
                                 <tr>
                                     <td colspan="6" style="padding:1px; width:1200px;">
-                                        @Html.TextBoxFor(m => m.CargueBase.Ofrecimiento2, null, new { @class = "form-control input-sm", @id = "Ofrecimiento", @Value = Model.CargueBase.Ofrecimiento2, @name = "Ofrecimiento", @style = "margin-left:0px; width:100%; height:70px;", @Readonly = "true" })
+                                        @*@Html.TextBoxFor(m => m.GPrincipalRecurrencia.Ofrecimiento2, null, new { @class = "form-control input-sm", @id = "Ofrecimiento", @Value = Model.CargueBase.Ofrecimiento2, @name = "Ofrecimiento", @style = "margin-left:0px; width:100%; height:70px;", @Readonly = "true" })*@
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                    <td >
+                                        <small>El cliente acepto este ofrecimiento? </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" >
+                                            @*@Html.CheckBoxFor(m => m.GPrincipalRecurrencia.checkOfrecimiento2, new { @checked = "checked", onclick = "return Ofrecimiento_2_SI();", @class = "minimal", Id = "ofre2Si" })*@
+                                            Si
+                                            <input type="checkbox" onclick="return Ofrecimiento_2_NO()" name="Ofrecimiento" class="minimal" id="ofre2No">
+                                            No
                                     </td>
                                 </tr>
                                 <tr>
@@ -250,7 +295,20 @@
                                 </tr>
                                 <tr>
                                     <td colspan="6" style="padding:1px; width:1200px;">
-                                        @Html.TextBoxFor(m => m.CargueBase.Ofrecimiento3, null, new { @class = "form-control input-sm", @id = "Ofrecimiento", @Value =Model.CargueBase.Ofrecimiento3, @name = "Ofrecimiento", @style = "margin-left:0px; width:100%; height:70px;", @Readonly = "true" })
+                                        @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Ofrecimiento3, null, new { @class = "form-control input-sm", @id = "Ofrecimiento", @Value =Model.CargueBase.Ofrecimiento3, @name = "Ofrecimiento", @style = "margin-left:0px; width:100%; height:70px;", @Readonly = "true" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <small>El cliente acepto este ofrecimiento? </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                            @*@Html.CheckBoxFor(m => m.GPrincipalRecurrencia.checkOfrecimiento3, new { @checked = "checked", onclick = "return Ofrecimiento_3_SI();", @class = "minimal", Id = "ofre3Si" })*@
+                                            Si
+                                            <input type="checkbox" onclick="return Ofrecimiento_3_NO()" name="Ofrecimiento" class="minimal" id="ofre3No">
+                                            No
                                     </td>
                                 </tr>
                                 <tr>
@@ -269,15 +327,19 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:1px;">
-                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.Diferenciador" readonly>
+                                        @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Diferenciador, new { @class = "form-control input-sm", Value = Model.CargueBase.Diferenciador, ReadOnly = "true" })
+                                        @*<input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.Diferenciador" readonly>*@
                                     </td>
                                     <td style="padding:1px;">
-                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.Prioridad" readonly>
+                                        @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Prioridad, new { @class = "form-control input-sm", placeholder = "", Value = Model.CargueBase.Prioridad, ReadOnly = "true" })
+                                        @*<input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.Prioridad" readonly>*@
                                     </td>
                                     <td style="padding:1px;">
-                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.Veces_Gestionado" readonly>
+                                        @Html.TextBoxFor(m => m.GPrincipalRecurrencia.VecesGestionado, new { @class = "form-control input-sm", placeholder = "", Value = Model.CargueBase.Veces_Gestionado, ReadOnly = "true" })
+                                        @*<input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.Veces_Gestionado" readonly>*@
                                     </td>
                                     <td style="padding:1px;">
+                                        @*@Html.TextBoxFor(m => m.GPrincipalRecurrencia, new { @class = "form-control input-sm", placeholder = "Apellido del cliente", ReadOnly = "true" })*@
                                         <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.FechaCargueBase" readonly>
                                     </td>
                                     
@@ -298,138 +360,184 @@
                         </h2>
                         <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                             <br />
-                            <div class="form-group">
-                                <table>
+                                <table style="width:100%;">
                                     <tr>
-                                        <td style="padding-left:1px; width:200px;" colspan="2">
-                                            MacroProceso Recurrencia 1:
-
+                                        <td style="padding-left:1px; width:200px;" colspan="3">
+                                            <small>MacroProceso Recurrencia 1: </small>
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.MacroProcesoRecurrencia1, new List<SelectListItem> { }, "--Select Option--", 
+                                                new { Id = "MacroProcesoRecurrencia1", @class = "form-control input-sm" })
+                                            @*@Html.ValidationMessageFor(m => m.CierreCicloGestionado.TipoContacto, "", new { @class = "text-danger" })*@
                                         </td>
                                         <td style="padding-left:1px; width:200px;" colspan="2">
-                                            MacroProceso Recurrencia 2:
-
+                                            <small>MacroProceso Recurrencia 2: </small>
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.MacroProcesoRecurrencia2, new List<SelectListItem> { }, "--Select Option--",
+                                                new { Id = "MacroProcesoRecurrencia2", @class = "form-control input-sm" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;" colspan="2">
-                                            MacroProceso Recurrencia 3:
+                                            <small>MacroProceso Recurrencia 3: </small>
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.MacroProcesoRecurrencia3, new List<SelectListItem> { }, "--Select Option--",
+                                                new { Id = "MacroProcesoRecurrencia3", @class = "form-control input-sm" })
 
                                         </td>
                                     </tr>
                                 </table>
-                            </div>
                         </div>
                         <h2 class="page-header" style="margin-top:40px">
                             <i class="fa fa-tty"></i> Marcación
                         </h2>
                         <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                             <br />
-                            <div class="form-group">
-                                <table>
+                                <table style="width:100%;">
                                     <tr>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Marcación Recurrente 1:</label>
-
+                                            <small>Marcación Recurrente 1: </small>
+                                            @Html.TextBoxFor(m=>m.GPrincipalRecurrencia.MarcacionRecurrente1, new { @class = "form-control input-sm", placeholder = "Marcacion Recurrente 1" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Marcación Recurrente 2:</label>
-
+                                            <small>Marcación Recurrente 2: </small>
+                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.MarcacionRecurrente2, new { @class = "form-control input-sm", placeholder = "Marcacion Recurrente 2" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Marcación Recurrente 3:</label>
-
+                                            <small>Marcación Recurrente 3: </small>
+                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.MarcacionRecurrente3, new { @class = "form-control input-sm", placeholder = "Marcacion Recurrente 3" })
                                         </td>
                                     </tr>
                                 </table>
-                            </div>
                         </div>
                         <h2 class="page-header" style="margin-top:40px">
                             <i class="fa fa-tty"></i> Interacción con el cliente
                         </h2>
                         <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                             <br />
-                            <div class="form-group">
-                                <table>
+                                <table style="width:100%;">
                                     <tr>
-                                        <td style="padding-left:1px; width:200px;">
-                                            <label>Volver a Llamar G.E.:</label>
-
+                                        <td style="padding-left:1px; width:200px;" colspan="2">
+                                            <small>Volvio a Llamar G.E.: </small>
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.VolvioLlamar, new List<SelectListItem> {
+                                            new SelectListItem { Text = "SI", Value = "SI" },
+                                            new SelectListItem { Text = "NO", Value = "NO" } },
+                                           "--Select Option--",
+                                                new { Id = "MacroProcesoRecurrencia1", @class = "form-control input-sm" })
                                         </td>
-                                        <td style="padding-left:1px; width:200px;">
-                                            <label>PorQue:</label>
-
-                                        </td>
-                                        <td style="padding-left:1px; width:200px;">
-                                            <label>Contacto:</label>
-
+                                        <td style="padding-left:1px; width:200px;" colspan="4">
+                                            <small>PorQue: </small>
+                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.PorQue, new { @class = "form-control input-sm", placeholder = "Digite el Porque" })
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Voz del Cliente:</label>
+                                            <small>Contacto: </small>
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.Contacto, new List<SelectListItem> { }, 
+                                           "--Select Option--",
+                                                new { Id = "Contacto", @class = "form-control input-sm", onchange="SetOpciones();" })
+                                        </td>
+                                        <td style="padding-left:1px; width:200px;" colspan="2">
+                                            <small>Voz del Cliente: </small>
+                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.VozCliente, 
+                                           new { id="VozCliente", @class = "form-control input-sm", placeholder = "Voz del Cliente", disabled="true"})
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Cliente Presenta Novedades:</label>
+                                            <small>Cliente Presenta Novedades: </small>
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.ClientePresentaNovedades, new List<SelectListItem> { },
+                                           "--Select Option--", new { Id = "ClientePresentaNovedades", @class = "form-control input-sm", disabled = "true", onchange="SetProceso();" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Proceso:</label>
+                                            <small>Proceso: </small>
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.Proceso, new List<SelectListItem> { },
+                                           "--Select Option--", new { Id = "Proceso", @class = "form-control input-sm", disabled = "true", onchange = "SetMacroProceso();" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>MacroProceso:</label>
+                                            <small>MacroProceso: </small>
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.Macroproceso, new List<SelectListItem> { },
+                                           "--Select Option--", new { Id = "Macroproceso", @class = "form-control input-sm", disabled = "true", onchange = "SetServicioAfectado();" })
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:1px; width:200px;">
+                                            <small>Servicio Afectado: </small>
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.ServicioAfectado, new List<SelectListItem> { },
+                                           "--Select Option--", new { Id = "ServicioAfectado", @class = "form-control input-sm", disabled = "true", onchange = "SetFallaEspecificaArbol();" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Servicio Afectado:</label>
+                                            <small>Falla Específica Árbol CCAA: </small>
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.FallaEspecificaArbolCCAA, new List<SelectListItem> { },
+                                           "--Select Option--", new { Id = "FallaEspecificaArbolCCAA", @class = "form-control input-sm", disabled = "true", onchange = "SetFallaCausaRaiz();" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Falla Específica Árbol CCAA:</label>
+                                            <small>Falla Causa Raíz: </small>
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.FallaCausaRaiz, new List<SelectListItem> { },
+                                           "--Select Option--", new { Id = "FallaCausaRaiz", @class = "form-control input-sm", disabled = "true" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Falla Causa Raíz:</label>
+                                            <small>Solucuion Específica: </small>
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.SolucionEspecifica, new List<SelectListItem> { },
+                                           "--Select Option--", new { Id = "SolucionEspecifica", @class = "form-control input-sm", onchange="SetEstado();" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Solucuion Específica:</label>
+                                            <small>Solucionado: </small>
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.Solucionado, new List<SelectListItem> {
+                                            new SelectListItem { Text = "SI", Value = "SI" },
+                                            new SelectListItem { Text = "NO", Value = "NO" }},
+                                           "--Select Option--", new { Id = "Solucionado", @class = "form-control input-sm" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Solucionado:</label>
+                                            <small>Estado: </small>
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.Estado, new List<SelectListItem> { },
+                                           "--Select Option--", new { Id = "Estado", @class = "form-control input-sm", disabled = "true" })
                                         </td>
+                                        
+                                    </tr>
+                                    <tr>
                                         <td style="padding-left:1px; width:200px;">
-                                            <label>Estado:</label>
-                                        </td>
-                                        <td style="padding-left:1px; width:200px;">
-                                            <label>Claro Video/Nagra:</label>
-                                        </td>
-                                        <td style="padding-left:1px; width:200px;">
-                                            <label>Primer Ofrecimiento:</label>
-                                        </td>
-                                        <td style="padding-left:1px; width:200px;">
-                                            <label>Observación Ofrecimiento:</label>
+                                            <small>Claro Video/Nagra: </small>
+                                            <small>
+                                                @Html.DropDownListFor(m => m.GPrincipalRecurrencia.ActivacionClaroVideoNagra, new List<SelectListItem> {
+                                            new SelectListItem { Text = "TARIFA NO DEFINIDA", Value = "TARIFA NO DEFINIDA" },
+                                            new SelectListItem { Text = "YA SE ENCUENTRA ACTIVO", Value = "YA SE ENCUENTRA ACTIVO" },
+                                            new SelectListItem { Text = "ACTIVA CLARO VIDEO", Value = "ACTIVA CLARO VIDEO" },
+                                            new SelectListItem { Text = "CLIENTE NO ACEPTA ACTIVACION", Value = "CLIENTE NO ACEPTA ACTIVACION" }},
+                                            "--Select Option--", new { Id = "Estado", @class = "form-control input-sm" })
+                                        </small>
                                         </td>
                                     </tr>
                                 </table>
-                            </div>
                         </div>
                         <h2 class="page-header" style="margin-top:40px">
                             <i class="fa fa-tty"></i> Observaciones
                         </h2>
                         <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                             <br />
-                            <div class="form-group">
-                                <table>
+                                <table style="width:100%;">
                                     <tr>
                                         <td style="padding-left:1px; width:200px;">
-
+                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Observaciones, new { id="Observaciones", @class = "form-control input-sm", @style = "margin-left:0px; width:100%; height:70px;" })
                                         </td>
                                     </tr>
                                 </table>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <button type="submit" style="display:block;" class="btn btn-primary" name="BotonEnvia" value="GuardaDatos" id="BotonEnvia">Guardar</button>
     </div>
 </div>
 <button type="submit" style="display:none;" class="btn btn-primary" name="BotonEnvia" value="Buscar" id="BotonEnvia">Submit</button>
 @section Scripts{
-    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.0.1"></script>
+    <script>
+        var urlMacroProcesoRecurrenciaList = '@Url.Action("MacroProcesoRecurrenciaList", "Recurrencia")';
+        var urlContactoList = '@Url.Action("ContactoList", "Recurrencia")';
+        var urlMacroProcesoList = '@Url.Action("MacroProcesoList", "Recurrencia")';
+        var urlServicioAfectadoList = '@Url.Action("ServicioAfectadoList", "Recurrencia")';
+        var urlFallaEspecificaList = '@Url.Action("FallaEspecificaList", "Recurrencia")';
+        var urlFallaCausaRaizList = '@Url.Action("FallaCausaRaiz", "Recurrencia")';
+        var urlSolucionEspecificaList = '@Url.Action("SolucionEspecifica", "Recurrencia")';
+        
+
+        ServicioAfectadoList
+    </script>
+    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.0.4"></script>
 }
 }
 

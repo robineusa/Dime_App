@@ -127,7 +127,7 @@ namespace Dime.Controllers
             if (modelo.BEPSolicitudes != null)
             {
                 modelo.BEPSolicitudes.Observaciones = "";
-               
+
                 modelo.NodosZonificados = backeliteservice.TraerNodoPorId(modelo.BEPSolicitudes.Nodo);
                 modelo.BEMTipoDeEscalamientos = backeliteservice.TipoEscalamientoPorNombre(modelo.BEPSolicitudes.TipoDeSolicitud);
                 ViewBag.NohayBase = null;
@@ -187,7 +187,7 @@ namespace Dime.Controllers
             return jsonResult;
         }
         [HttpGet]
-        public ActionResult ConsultaAdministradorLog ()
+        public ActionResult ConsultaAdministradorLog()
         {
             return View();
 
@@ -201,7 +201,7 @@ namespace Dime.Controllers
             return jsonResult;
         }
         [HttpGet]
-        public ActionResult ConsultaAdminstradorPrincipal ()
+        public ActionResult ConsultaAdminstradorPrincipal()
         {
             return View();
         }
@@ -228,10 +228,12 @@ namespace Dime.Controllers
         public ActionResult AdministrarDistrubucionBackElite(string Id)
         {
             ViewModelBackElite modelo = new ViewModelBackElite();
-            if (Id == null || Id.Equals("")) {
+            if (Id == null || Id.Equals(""))
+            {
                 modelo.BEMDistribuciones = new BEMDistribuciones();
                 ViewBag.Eliminar = null;
-            } else
+            }
+            else
             {
                 modelo.BEMDistribuciones = backeliteservice.DistribucionPorId(Convert.ToDecimal(Id));
                 ViewBag.Eliminar = "si";
@@ -242,7 +244,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult AdministrarDistrubucionBackElite(ViewModelBackElite modelo)
         {
-            if (modelo.BEMDistribuciones.Id >0)
+            if (modelo.BEMDistribuciones.Id > 0)
             {
                 backeliteservice.EliminarUsuarioDistribucion(modelo.BEMDistribuciones.CedulaUsuario, modelo.BEMDistribuciones.TipoEscalamientoAsignado);
                 return RedirectToAction("ListaDistribucionUsuario");
@@ -251,7 +253,8 @@ namespace Dime.Controllers
             {
                 var Result = backeliteservice.ValidarUsuarioDistribucion(modelo.BEMDistribuciones.CedulaUsuario, modelo.BEMDistribuciones.TipoEscalamientoAsignado);
 
-                if (Result == true) {
+                if (Result == true)
+                {
                     ViewBag.Validacion = "El usuario ya tiene este tipo de trabajo asignado, por favor asigne uno diferente";
                     return View(modelo);
                 }
@@ -267,20 +270,55 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult CierreMasivo()
         {
-            return View();
+            ViewModelBackElite modelo = new ViewModelBackElite();
+            return View(modelo);
         }
         [HttpGet]
         public JsonResult ConsultarSolicitudesMasivo(IList<string> Solicitudes)
         {
             var result0 = backeliteservice.ConsultarSolicitudesMasivo(Solicitudes.ToList());
-           
+
             return new JsonResult
             {
                 Data = JsonConvert.SerializeObject(result0),
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
+        [HttpPost]
+        public JsonResult ActualizarSolicitudesMasivoJson(IList<string> Solicitudes, string AplicaMalEscalado, string DetalleMalEscalado, string Gestion, string Estado, string FechaAgenda, string Observaciones)
+        {
+            try
+            {
+                BEPSolicitudes Solicitud = new BEPSolicitudes();
+                Solicitud.UsuarioQueSolicita = Convert.ToString(Session["Usuario"].ToString());
+                Solicitud.NombreUsuarioQueSolicita = Session["NombreUsuario"].ToString();
+                Solicitud.Malescalado = AplicaMalEscalado;
+                Solicitud.DetalleMalEscalado = DetalleMalEscalado;
+                Solicitud.Gestion = Gestion;
+                Solicitud.EstadoEscalamiento = Estado;
+                if (FechaAgenda != "")
+                {
+                    Solicitud.FechaDeAgenda = Convert.ToDateTime(FechaAgenda);
+                }
+                Solicitud.Observaciones = Observaciones;
 
+
+                backeliteservice.ActualizarSolicitudesMasivo(Solicitudes.ToList(), Solicitud);
+                return new JsonResult
+                {
+                    Data = JsonConvert.SerializeObject("Datos Actualizados Correctamente"),
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                };
+            }
+            catch (Exception e)
+            {
+                return new JsonResult
+                {
+                    Data = JsonConvert.SerializeObject(e.Message),
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                };
+            }
+        }
 
     }
 }

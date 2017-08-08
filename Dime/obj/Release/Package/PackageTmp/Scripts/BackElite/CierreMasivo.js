@@ -1,19 +1,7 @@
-﻿var oFileIn;
+﻿
+var oFileIn;
 var IdSolicitudsArray;
 var ArrayTotal;
-
-$(document).ready(function () {
-    ListaTiposDeEscalamientos();
-    
-});
-$.datetimepicker.setLocale('es');
-$('#fechaagenda').datetimepicker({
-    dateFormat: 'd-m-Y 00:00',
-    timepicker: true,
-    step: 1
-});
-
-
 $(function () {
     oFileIn = document.getElementById('my_file_input');
     if (oFileIn.addEventListener) {
@@ -138,22 +126,13 @@ function FillGridViewResult(data) {
 }
 
 function ActualizarCuentas() {
-    var AplicaMalEscalado = $('#malescalado').val();
-    var IdDetalleMalEscalado = document.getElementById("detallemalescalado");
-    var DetalleMalEscalado = IdDetalleMalEscalado.options[IdDetalleMalEscalado.selectedIndex].text;
-    var IdGestion = document.getElementById("gestion");
-    var Gestion = IdGestion.options[IdGestion.selectedIndex].text;
-    var Estado = $('#estado').val();
-    var FechaAgenda = $('#fechaagenda').val();
-    var Observaciones = $('#Observacion').val();
-    
     ArrayTotal;
     $.ajax({
         type: "POST",
         traditional: true,
         url: UrlActualizarSolicitudes,
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ Solicitudes: ArrayTotal, AplicaMalEscalado: AplicaMalEscalado, DetalleMalEscalado: DetalleMalEscalado, Gestion: Gestion, Estado: Estado, FechaAgenda: FechaAgenda, Observaciones: Observaciones }),
+        data: JSON.stringify({ Solicitudes: ArrayTotal }),
         dataType: "json",
         success: function (result) {
             $("#mensajeFinal").text(result);
@@ -163,136 +142,4 @@ function ActualizarCuentas() {
         }
 
     });
-}
-function ListaTiposDeEscalamientos() {
-    $.ajax({
-        type: "POST",
-        url: urltipoescalamientos,
-        contentType: "application/json; charset=utf-8",
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            var object = json[0];
-            for (var index = 0, len = json.length; index < len; index++) {
-                $('#TipodeSolicitud').append($('<option>', {
-                    value: json[index].IdTipo,
-                    text: json[index].TipoEscalamiento
-                }));
-
-            }
-
-        },
-        error: function (request, status, error) {
-            alert(request.responseText);
-        }
-    });
-}
-
-$('#TipodeSolicitud').change(function () {
-   ListaGestion();
-    ListaMalEscalado();
-
-})
-
-function ListaGestion() {
-    var IdTipo = $('#TipodeSolicitud').val();
-    $.ajax({
-        type: "POST",
-        url: urllistagestion,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ IdTipo: IdTipo }),
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            var object = json[0];
-            for (var index = 0, len = json.length; index < len; index++) {
-                $('#gestion').append($('<option>', {
-                    value: json[index].IdGestion,
-                    text: json[index].NombreGestion
-                }));
-
-            }
-
-        },
-        error: function (request, status, error) {
-            alert(request.responseText);
-        }
-    });
-}
-function ListaMalEscalado() {
-    var IdTipo = $('#TipodeSolicitud').val();
-    $.ajax({
-        type: "POST",
-        url: urlRazonMalEscalado,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ IdTipo: IdTipo }),
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            var object = json[0];
-            for (var index = 0, len = json.length; index < len; index++) {
-                $('#detallemalescalado').append($('<option>', {
-                    value: json[index].Id,
-                    text: json[index].NombreRazonEscalamiento
-                }));
-
-            }
-
-        },
-        error: function (request, status, error) {
-            alert(request.responseText);
-        }
-    });
-}
-
-$('#gestion').change(function () {
-    TraerEstadoCaso();
-})
-
-
-
-
-$('#malescalado').change(function () {
-
-    if ($('#malescalado').val() == 'NO') {
-        $('#detallemalescalado option').prop('selected', function () { return this.defaultSelected; });
-        $('#detallemalescalado option').remove();
-        $('#detallemalescalado').append($('<option>', {
-            value: "NO APLICA",
-            text: "NO APLICA"
-        }));
-    } else if ($('#malescalado').val() == 'SI') {
-        $('#detallemalescalado option').remove();
-        $('#detallemalescalado').append($('<option>', {
-            value: "NO APLICA",
-            text: "--SELECCIONE--"
-        }));
-        ListaMalEscalado();
-    } else {
-        $('#detallemalescalado option').remove();
-        $('#detallemalescalado').append($('<option>', {
-            value: "NO APLICA",
-            text: "--SELECCIONE--"
-        }));
-    }
-
-})
-
-
-
-function TraerEstadoCaso() {
-    var idGestion = $('#gestion').val();
-    $.ajax({
-        type: "POST",
-        url: urlestadogestion,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ idGestion: idGestion }),
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            $('#estado').val(json.EstadoGestion);
-
-        }
-    });
-
 }

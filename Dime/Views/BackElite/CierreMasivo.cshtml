@@ -1,6 +1,6 @@
-﻿
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelBackElite
 @{
-    ViewBag.Title = "Cierre Masivo - Back elite";
+    ViewBag.Title = "Cierre Masivo - Back Elite";
     ViewBag.SubTitle = "Procesos Back Elite";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -22,7 +22,7 @@
                                 <div class="callout" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
                                     <div class="row">
                                         <div class="col-xs-2" style="width:auto;font-size:16px;color:black">
-                                            <small>Inicialmente debes descargar el formato y llenar la información de acuerdo a las columnas que en el reposan, ingresar allí únicamente las cuentas y ordenes de trabajo o llamadas de servicio que se van a cerrar.</small>
+                                            <small>Inicialmente debes descargar el formato y llenar la información de acuerdo a las columnas que en el reposan, ingresar allí únicamente el ID_SOLICITUD de las cuentas y ordenes de trabajo o llamadas de servicio que se van a cerrar.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@
                                     <br />
                                     <table>
                                         <tr>
-                                            <td width="800" style="padding:8px;">  <input type="file" class="btn-file" id="my_file_input"  width="450"/></td>
+                                            <td width="800" style="padding:8px;">  <input type="file" class="btn-file" id="my_file_input" width="450" /></td>
                                         </tr>
 
                                     </table>
@@ -84,7 +84,89 @@
                                 </li>
                             </ul>
                             <hr />
-                            <button id="Crear_Usuarios" class="btn btn-block btn-primary btn-lg" style="width:15%;  margin-left:42.5%;" onclick="ActualizarCuentas()">Crear Usuarios</button>
+
+                            <div class="callout callout-danger" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
+                                <div class="row">
+                                    <div class="col-xs-2" style="width:auto;font-size:16px;color:black">
+                                        <small>A continuación seleccione y suministre la información con la que va a efectuar el cierre masivo de las solicitudes:</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="tab-content">
+                                        <div class="tab-pane tab-dime-first active" role="tabpanel" id="gestioncelulacrdireccion">
+                                            <table>
+                                                <tr>
+                                                    <td style="padding-left:4px; width:300px;">
+                                                        <small>Tipo de Solicitud:</small>
+                                                        @Html.DropDownListFor(m => m.BEPSolicitudes.TipoDeSolicitud, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "TipodeSolicitud", @class = "form-control" })
+                                                    </td>
+                                                    <td style="padding-left:4px; width:300px;">
+
+                                                        <small>Aplica Mal Escalado:</small>
+                                                        @Html.DropDownListFor(m => m.BEPSolicitudes.Malescalado, new List<SelectListItem> {new SelectListItem{Text="SI", Value="SI" },
+                                                                                             new SelectListItem{Text="NO", Value="NO" }},
+                                                              "--SELECCIONE--", new { @class = "form-control input-sm", @id = "malescalado" })
+                                                    </td>
+                                                    <td style="padding-left:4px; width:400px;">
+                                                        <small>Detalle Mal Escalado:</small>
+                                                        @Html.DropDownListFor(m => m.BEPSolicitudes.DetalleMalEscalado, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "detallemalescalado", @class = "form-control" })
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-left:4px; width:300px;">
+                                                        <small>Gestión:</small>
+                                                        @Html.DropDownListFor(m => m.BEPSolicitudes.Gestion, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "gestion", @class = "form-control" })
+                                                    </td>
+                                                    <td width="200">
+                                                        <small>Estado:</small>
+                                                        @Html.TextBoxFor(m => m.BEPSolicitudes.EstadoEscalamiento, new { @class = "form-control input-sm", id = "estado", @readonly = "true" })
+                                                    </td>
+                                                    <td width="200">
+                                                        <small>Fecha de Agenda:</small>
+                                                        @Html.TextBoxFor(m => m.BEPSolicitudes.FechaDeAgenda, new { @class = "form-control input-sm", id = "fechaagenda" })
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>@Html.ValidationMessageFor(m => m.BEPSolicitudes.Malescalado, "", new { @class = "text-danger" })</td>
+                                                    <td>@Html.ValidationMessageFor(m => m.BEPSolicitudes.DetalleMalEscalado, "", new { @class = "text-danger" })</td>
+                                                    <td>@Html.ValidationMessageFor(m => m.BEPSolicitudes.Gestion, "", new { @class = "text-danger" })</td>
+                                                    <td>@Html.ValidationMessageFor(m => m.BEPSolicitudes.EstadoEscalamiento, "", new { @class = "text-danger" })</td>
+                                                </tr>
+                                            </table>
+                                            <table>
+                                                <tr>
+                                                    <td width="1200">
+                                                        <small>Observaciones:</small>
+                                                        @Html.TextAreaFor(m => m.BEPSolicitudes.Observaciones, new { @style = "width: 100%; height: 100px;max-height: 100px;max-width:1200px;",Id="Observacion" })
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <ul class="timeline">
+                                <li>
+                                    <i class="fa" style="margin-left:-20px;font-size:20px;font-weight:800;background-color:#ff0000;color:white;">5</i>
+                                </li>
+                            </ul>
+                            <hr />
+
+                            <div class="callout callout-danger" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
+                                <div class="row">
+                                    <div class="col-xs-2" style="width:auto;font-size:16px;color:black">
+                                        <small>Asegúrese que la información que selecciono sea la que desea actualizar, de ser así pulsa en el botón de actualizar, de lo contrario modifíquela:</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <button id="Crear_Usuarios" class="btn btn-block btn-primary btn-lg" style="width:15%;" onclick="ActualizarCuentas()">Actualizar</button>
                             <label style="color:red" id="mensajeFinal"></label>
                         </div>
                     </div>
@@ -92,14 +174,22 @@
             </div>
         </div>
     </div>
+       
+        @section Scripts{
+            <script>
+                var urltipoescalamientos = '@Url.Action("ListaTipoDeEscalamientosJson", "BackElite")';
+                var urllistagestion = '@Url.Action("ListaGestionPorIdJson", "BackElite")';
+                var urlRazonMalEscalado = '@Url.Action("ListaMalEscaladodJson", "BackElite")';
+                var urlestadogestion = '@Url.Action("EstadoGestionId", "BackElite")';
+                var UrlConsultarSolicitudes = "@Url.Action("ConsultarSolicitudesMasivo", "BackElite")";
+                var UrlActualizarSolicitudes = "@Url.Action("ActualizarSolicitudesMasivoJson", "BackElite")";
+            </script>
+            <script src="~/Scripts/AdminUsuarios/xls.js"></script>
+            <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.1"></script>
+            <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.1" rel="stylesheet" />
 
-    @section Scripts{
-     <script>
-         var UrlConsultarSolicitudes = "@Url.Action("ConsultarSolicitudesMasivo", "BackElite")";
-      </script>
-        <script src="~/Scripts/AdminUsuarios/xls.js"></script>
-        <script src="~/Scripts/BackElite/CierreMasivo.js?1.1.3"></script>
-    }
+            <script src="~/Scripts/BackElite/CierreMasivo.js?1.2.2"></script>
+        }
 
 }
 
@@ -129,8 +219,6 @@ else
         </div>
     </div>
 }
-
-
 
 
 
