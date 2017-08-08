@@ -648,6 +648,15 @@
                                         </ul>
                                     </li>
                                 }
+                                @if (Session["Cierre Masivo Back Elite"] != null)
+                                {
+                                    <li>
+                                        <a href="#"><i class="fa fa-eraser text-green" aria-hidden="true"></i> Cierre Masivo Back Elite<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="@Url.Action("CierreMasivo", "BackElite")"><i class="fa fa-circle-o text-green"></i> Finalizar Solicitudes</a></li>
+                                        </ul>
+                                    </li>
+                                }
                             </ul>
                         </li>
                     }
