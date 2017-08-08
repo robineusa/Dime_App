@@ -13827,6 +13827,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ConsultarSolicitudesMasivo", ReplyAction="http://tempuri.org/IBackEliteService/ConsultarSolicitudesMasivoResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ConsultarSolicitudesMasivoAsync(System.Collections.Generic.List<string> Solicitudes);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ActualizarSolicitudesMasivo", ReplyAction="http://tempuri.org/IBackEliteService/ActualizarSolicitudesMasivoResponse")]
+        void ActualizarSolicitudesMasivo(System.Collections.Generic.List<string> Solicitudes, Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ActualizarSolicitudesMasivo", ReplyAction="http://tempuri.org/IBackEliteService/ActualizarSolicitudesMasivoResponse")]
+        System.Threading.Tasks.Task ActualizarSolicitudesMasivoAsync(System.Collections.Generic.List<string> Solicitudes, Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -14038,6 +14044,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ConsultarSolicitudesMasivoAsync(System.Collections.Generic.List<string> Solicitudes) {
             return base.Channel.ConsultarSolicitudesMasivoAsync(Solicitudes);
+        }
+        
+        public void ActualizarSolicitudesMasivo(System.Collections.Generic.List<string> Solicitudes, Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud) {
+            base.Channel.ActualizarSolicitudesMasivo(Solicitudes, Solicitud);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarSolicitudesMasivoAsync(System.Collections.Generic.List<string> Solicitudes, Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud) {
+            return base.Channel.ActualizarSolicitudesMasivoAsync(Solicitudes, Solicitud);
         }
     }
     

@@ -44,7 +44,7 @@ function CargarInformacion(Cuentas) {
     IdSolicitudsArray = [];
     for (var i = 0; i < Cuentas.length; i++) {
         IdSolicitudsArray.push(Cuentas[i].ID_SOLICITUD);
-        
+
     }
     $.ajax({
         type: "GET",
@@ -55,7 +55,6 @@ function CargarInformacion(Cuentas) {
         dataType: 'json',
         success: function (result) {
             var json = JSON.parse(result);
-            console.log(json);
             FillGridViewResult(json);
             NuevoArray(json);
         }
@@ -68,28 +67,7 @@ function NuevoArray(data) {
         ArrayTotal.push(data[i].IdSolicitud);
 
     }
-    console.log(ArrayTotal);
 }
-
-//function ConsultarInformacionSolicitudes(IdSolicitudes) {
-//    console.log(IdSolicitudes);
-//    alert('si');
-//    $.ajax({
-//        type: "GET",
-//        url: UrlConsultarSolicitudes,
-//        contentType: "application/json; charset=utf-8",
-//        data: { Solicitudes: IdSolicitudes },
-//        dataType: "JSON",
-//        success: function (result) {
-//            var json = JSON.parse(result);
-//            FillGridViewResult(json);
-//        },
-//        error: function (request, status, error) {
-//            alert(request.responseText);
-//        }
-//    });
-//}
-
 
 function FillGridViewResult(data) {
     $("#infoCotejeadaGrid").kendoGrid({
@@ -148,13 +126,13 @@ function FillGridViewResult(data) {
 }
 
 function ActualizarCuentas() {
-    console.log(cuentasArray);
+    ArrayTotal;
     $.ajax({
         type: "POST",
         traditional: true,
-        url: UrlActualizarUsuarios,
+        url: UrlActualizarSolicitudes,
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ Cuentas: cuentasArray }),
+        data: JSON.stringify({ Solicitudes: ArrayTotal }),
         dataType: "json",
         success: function (result) {
             $("#mensajeFinal").text(result);

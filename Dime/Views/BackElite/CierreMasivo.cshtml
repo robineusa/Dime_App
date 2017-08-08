@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "Cierre Masivo - Back elite";
+    ViewBag.Title = "Cierre Masivo - Back Elite";
     ViewBag.SubTitle = "Procesos Back Elite";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -22,7 +22,7 @@
                                 <div class="callout" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
                                     <div class="row">
                                         <div class="col-xs-2" style="width:auto;font-size:16px;color:black">
-                                            <small>Inicialmente debes descargar el formato y llenar la información de acuerdo a las columnas que en el reposan, ingresar allí únicamente las cuentas y ordenes de trabajo o llamadas de servicio que se van a cerrar.</small>
+                                            <small>Inicialmente debes descargar el formato y llenar la información de acuerdo a las columnas que en el reposan, ingresar allí únicamente el ID_SOLICITUD de las cuentas y ordenes de trabajo o llamadas de servicio que se van a cerrar.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@
                                     <br />
                                     <table>
                                         <tr>
-                                            <td width="800" style="padding:8px;">  <input type="file" class="btn-file" id="my_file_input"  width="450"/></td>
+                                            <td width="800" style="padding:8px;">  <input type="file" class="btn-file" id="my_file_input" width="450" /></td>
                                         </tr>
 
                                     </table>
@@ -84,7 +84,15 @@
                                 </li>
                             </ul>
                             <hr />
-                            <button id="Crear_Usuarios" class="btn btn-block btn-primary btn-lg" style="width:15%;  margin-left:42.5%;" onclick="ActualizarCuentas()">Crear Usuarios</button>
+                            <div class="callout callout-danger" style="margin-bottom: 0 ;border-color:#ff0000 !important; background-color:gainsboro !important; color: black !important">
+                                <div class="row">
+                                    <div class="col-xs-2" style="width:auto;font-size:16px;color:black">
+                                        <small>Asegúrese que la información que cargo en la grilla sea la que desea actualizar, de ser así pulsa en el botón de actualizar, de lo contrario revise el archivo y vuelva a cargarlo:</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <button id="Crear_Usuarios" class="btn btn-block btn-primary btn-lg" style="width:15%;" onclick="ActualizarCuentas()">Actualizar</button>
                             <label style="color:red" id="mensajeFinal"></label>
                         </div>
                     </div>
@@ -94,11 +102,12 @@
     </div>
 
     @section Scripts{
-     <script>
-         var UrlConsultarSolicitudes = "@Url.Action("ConsultarSolicitudesMasivo", "BackElite")";
-      </script>
+        <script>
+            var UrlConsultarSolicitudes = "@Url.Action("ConsultarSolicitudesMasivo", "BackElite")";
+            var UrlActualizarSolicitudes = "@Url.Action("ActualizarSolicitudesMasivoJson", "BackElite")";
+        </script>
         <script src="~/Scripts/AdminUsuarios/xls.js"></script>
-        <script src="~/Scripts/BackElite/CierreMasivo.js?1.1.3"></script>
+        <script src="~/Scripts/BackElite/CierreMasivo.js?1.1.5"></script>
     }
 
 }
