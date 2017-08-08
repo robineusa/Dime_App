@@ -270,7 +270,8 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult CierreMasivo()
         {
-            return View();
+            ViewModelBackElite modelo = new ViewModelBackElite();
+            return View(modelo);
         }
         [HttpGet]
         public JsonResult ConsultarSolicitudesMasivo(IList<string> Solicitudes)
@@ -284,13 +285,23 @@ namespace Dime.Controllers
             };
         }
         [HttpPost]
-        public JsonResult ActualizarSolicitudesMasivoJson(IList<string> Solicitudes)
+        public JsonResult ActualizarSolicitudesMasivoJson(IList<string> Solicitudes, string AplicaMalEscalado, string DetalleMalEscalado, string Gestion, string Estado, string FechaAgenda, string Observaciones)
         {
             try
             {
                 BEPSolicitudes Solicitud = new BEPSolicitudes();
                 Solicitud.UsuarioQueSolicita = Convert.ToString(Session["Usuario"].ToString());
                 Solicitud.NombreUsuarioQueSolicita = Session["NombreUsuario"].ToString();
+                Solicitud.Malescalado = AplicaMalEscalado;
+                Solicitud.DetalleMalEscalado = DetalleMalEscalado;
+                Solicitud.Gestion = Gestion;
+                Solicitud.EstadoEscalamiento = Estado;
+                if (FechaAgenda != "")
+                {
+                    Solicitud.FechaDeAgenda = Convert.ToDateTime(FechaAgenda);
+                }
+                Solicitud.Observaciones = Observaciones;
+
 
                 backeliteservice.ActualizarSolicitudesMasivo(Solicitudes.ToList(), Solicitud);
                 return new JsonResult
