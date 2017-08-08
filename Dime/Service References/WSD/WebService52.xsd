@@ -2872,6 +2872,7 @@
       <xs:element minOccurs="0" name="TelefonoTelmex" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UsoClaroVideo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestionando" type="xs:decimal" />
       <xs:element minOccurs="0" name="VecesGestionado" type="xs:decimal" />
       <xs:element minOccurs="0" name="VolvioLlamar" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="VozCliente" nillable="true" type="xs:string" />

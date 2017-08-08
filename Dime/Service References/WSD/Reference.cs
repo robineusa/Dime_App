@@ -13827,6 +13827,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ConsultarSolicitudesMasivo", ReplyAction="http://tempuri.org/IBackEliteService/ConsultarSolicitudesMasivoResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ConsultarSolicitudesMasivoAsync(System.Collections.Generic.List<string> Solicitudes);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ActualizarSolicitudesMasivo", ReplyAction="http://tempuri.org/IBackEliteService/ActualizarSolicitudesMasivoResponse")]
+        void ActualizarSolicitudesMasivo(System.Collections.Generic.List<string> Solicitudes, Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ActualizarSolicitudesMasivo", ReplyAction="http://tempuri.org/IBackEliteService/ActualizarSolicitudesMasivoResponse")]
+        System.Threading.Tasks.Task ActualizarSolicitudesMasivoAsync(System.Collections.Generic.List<string> Solicitudes, Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -14039,6 +14045,14 @@ namespace Dime.WSD {
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ConsultarSolicitudesMasivoAsync(System.Collections.Generic.List<string> Solicitudes) {
             return base.Channel.ConsultarSolicitudesMasivoAsync(Solicitudes);
         }
+        
+        public void ActualizarSolicitudesMasivo(System.Collections.Generic.List<string> Solicitudes, Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud) {
+            base.Channel.ActualizarSolicitudesMasivo(Solicitudes, Solicitud);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarSolicitudesMasivoAsync(System.Collections.Generic.List<string> Solicitudes, Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud) {
+            return base.Channel.ActualizarSolicitudesMasivoAsync(Solicitudes, Solicitud);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -14100,10 +14114,16 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia> TraerGPrinRecurrenciaAsync(int CuentaCliente);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ListaSeguimientosRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ListaSeguimientosRecurrenciaResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia> ListaSeguimientosRecurrencia(int CuentaCliente);
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia> ListaSeguimientosRecurrencia();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ListaSeguimientosRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ListaSeguimientosRecurrenciaResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia>> ListaSeguimientosRecurrenciaAsync(int CuentaCliente);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia>> ListaSeguimientosRecurrenciaAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/UsuarioGestionandoGRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/UsuarioGestionandoGRecurrenciaResponse")]
+        void UsuarioGestionandoGRecurrencia(int idUsuario, int idCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/UsuarioGestionandoGRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/UsuarioGestionandoGRecurrenciaResponse")]
+        System.Threading.Tasks.Task UsuarioGestionandoGRecurrenciaAsync(int idUsuario, int idCaso);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -14205,12 +14225,20 @@ namespace Dime.WSD {
             return base.Channel.TraerGPrinRecurrenciaAsync(CuentaCliente);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia> ListaSeguimientosRecurrencia(int CuentaCliente) {
-            return base.Channel.ListaSeguimientosRecurrencia(CuentaCliente);
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia> ListaSeguimientosRecurrencia() {
+            return base.Channel.ListaSeguimientosRecurrencia();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia>> ListaSeguimientosRecurrenciaAsync(int CuentaCliente) {
-            return base.Channel.ListaSeguimientosRecurrenciaAsync(CuentaCliente);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia>> ListaSeguimientosRecurrenciaAsync() {
+            return base.Channel.ListaSeguimientosRecurrenciaAsync();
+        }
+        
+        public void UsuarioGestionandoGRecurrencia(int idUsuario, int idCaso) {
+            base.Channel.UsuarioGestionandoGRecurrencia(idUsuario, idCaso);
+        }
+        
+        public System.Threading.Tasks.Task UsuarioGestionandoGRecurrenciaAsync(int idUsuario, int idCaso) {
+            return base.Channel.UsuarioGestionandoGRecurrenciaAsync(idUsuario, idCaso);
         }
     }
 }

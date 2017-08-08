@@ -59,21 +59,7 @@ namespace Telmexla.Servicios.DIME.Entity
         public string AceptacionSegundoOfrecimiento { get; set; }
         public string AceptacionTercerOfrecimiento { get; set; }
         public string Observaciones { get; set; }
-        public bool checkOfrecimiento1
-        {
-            get { return Convert.ToBoolean(AceptacionPrimerOfrecimiento); }
-            set { AceptacionPrimerOfrecimiento = Convert.ToString(value); }
-        }
-        public bool checkOfrecimiento2
-        {
-            get { return Convert.ToBoolean(AceptacionSegundoOfrecimiento); }
-            set { AceptacionSegundoOfrecimiento = Convert.ToString(value); }
-        }
+        public decimal UsuarioGestionando { get; set; }
 
-        public bool checkOfrecimiento3
-        {
-            get { return Convert.ToBoolean(AceptacionTercerOfrecimiento); }
-            set { AceptacionTercerOfrecimiento = Convert.ToString(value); }
-        }
     }
 }
