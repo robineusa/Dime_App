@@ -2325,6 +2325,7 @@
     <Content Include="Scripts\Mec\RegistrarMonitoreo.js" />
     <Content Include="Scripts\MultiPlay\ConsultasAdminMultiPlay.js" />
     <Content Include="Scripts\MultiPlay\MultiPlay.js" />
+    <Content Include="Scripts\Recurrencia\ConsultaAdministradorLog.js" />
     <Content Include="Scripts\Recurrencia\Recurrencia.js" />
     <Content Include="Scripts\Reportes\ReporteAdministrador.js" />
     <Content Include="Scripts\Reportes\ReporteAsesor.js" />
@@ -2970,6 +2971,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RecurrenciaCargaBase.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BEMDistribuciones1.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GLogRecurrencia.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3320,6 +3322,8 @@
     <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Recurrencia\ConsultaAdministradorLog.cshtml" />
+    <Content Include="Views\Recurrencia\ConsultaAdminstradorPrincipal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

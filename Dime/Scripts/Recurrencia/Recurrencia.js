@@ -180,7 +180,7 @@ function SetMacroProceso() {
             type: "POST",
             url: urlMacroProcesoRecurrenciaList,
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({ idProceso: 1 }),
+            data: JSON.stringify({ idProceso: 6 }),
             dataType: "JSON",
             success: function (result) {
                 var json = JSON.parse(result);
@@ -211,7 +211,27 @@ function SetMacroProceso() {
 
         $("#Macroproceso").empty();
         $("#Macroproceso").append("<option value=''>--Select Option--</option>");
-        $("#Macroproceso").append("<option Value='1'>SOPORTE (SOP)</option>");
+        $.ajax({
+            type: "POST",
+            url: urlMacroProcesoRecurrenciaList,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ idProceso: 7 }),
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+                var object = json[0];
+                for (var index = 0, len = json.length; index < len; index++) {
+                    $('#Macroproceso').append($('<option>', {
+                        value: json[index].Id,
+                        text: json[index].OpcionesRecurrencia
+                    }));
+                }
+
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
 
         $("#ServicioAfectado").attr("disabled", "disabled");
         $("#FallaEspecificaArbolCCAA").attr("disabled", "disabled");

@@ -14124,6 +14124,20 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/UsuarioGestionandoGRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/UsuarioGestionandoGRecurrenciaResponse")]
         System.Threading.Tasks.Task UsuarioGestionandoGRecurrenciaAsync(int idUsuario, int idCaso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminGPrincipalRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ConsultaAdminGPrincipalRecurrenciaResponse" +
+            "")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia> ConsultaAdminGPrincipalRecurrencia(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminGPrincipalRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ConsultaAdminGPrincipalRecurrenciaResponse" +
+            "")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia>> ConsultaAdminGPrincipalRecurrenciaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminGLogRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ConsultaAdminGLogRecurrenciaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia> ConsultaAdminGLogRecurrencia(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminGLogRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ConsultaAdminGLogRecurrenciaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia>> ConsultaAdminGLogRecurrenciaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -14239,6 +14253,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task UsuarioGestionandoGRecurrenciaAsync(int idUsuario, int idCaso) {
             return base.Channel.UsuarioGestionandoGRecurrenciaAsync(idUsuario, idCaso);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia> ConsultaAdminGPrincipalRecurrencia(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminGPrincipalRecurrencia(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia>> ConsultaAdminGPrincipalRecurrenciaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminGPrincipalRecurrenciaAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia> ConsultaAdminGLogRecurrencia(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminGLogRecurrencia(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia>> ConsultaAdminGLogRecurrenciaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminGLogRecurrenciaAsync(FechaInicial, FechaFinal);
         }
     }
 }

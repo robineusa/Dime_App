@@ -269,8 +269,12 @@
                                 <tr>
                                     <td>
                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.AceptacionPrimerOfrecimiento, new List<SelectListItem> {
-                                            new SelectListItem { Text = "SI", Value = "SI" },
-                                            new SelectListItem { Text = "NO", Value = "NO" } },
+                                            new SelectListItem { Text = "ACEPTA OFRECIMIENTO", Value = "ACEPTA OFRECIMIENTO" },
+                                            new SelectListItem { Text = "NO ESTA DISPONIBLE", Value = "NO ESTA DISPONIBLE" },
+                                            new SelectListItem { Text = "NO LE INTERESA", Value = "NO LE INTERESA" },
+                                            new SelectListItem { Text = "NO LE INTERESA POR COSTOS", Value = "NO LE INTERESA POR COSTOS" },
+                                            new SelectListItem { Text = "TERCERA PERSONA", Value = "TERCERA PERSONA" }
+                                      },
                                            "--Select Option--",
                                                 new { Id = "AceptacionPrimerOfrecimiento", @class = "form-control input-sm" }) 
                                     </td>
@@ -293,8 +297,11 @@
                                 <tr>
                                     <td>
                                             @Html.DropDownListFor(m => m.GPrincipalRecurrencia.AceptacionSegundoOfrecimiento, new List<SelectListItem> {
-                                            new SelectListItem { Text = "SI", Value = "SI" },
-                                            new SelectListItem { Text = "NO", Value = "NO" } },
+                                            new SelectListItem { Text = "ACEPTA OFRECIMIENTO", Value = "ACEPTA OFRECIMIENTO" },
+                                            new SelectListItem { Text = "NO ESTA DISPONIBLE", Value = "NO ESTA DISPONIBLE" },
+                                            new SelectListItem { Text = "NO LE INTERESA", Value = "NO LE INTERESA" },
+                                            new SelectListItem { Text = "NO LE INTERESA POR COSTOS", Value = "NO LE INTERESA POR COSTOS" },
+                                            new SelectListItem { Text = "TERCERA PERSONA", Value = "TERCERA PERSONA" } },
                                            "--Select Option--",
                                                 new { Id = "AceptacionSegundoOfrecimiento", @class = "form-control input-sm" }) 
                                     </td>
@@ -317,8 +324,11 @@
                                 <tr>
                                     <td >
                                             @Html.DropDownListFor(m => m.GPrincipalRecurrencia.AceptacionTercerOfrecimiento, new List<SelectListItem> {
-                                            new SelectListItem { Text = "SI", Value = "SI" },
-                                            new SelectListItem { Text = "NO", Value = "NO" } },
+                                            new SelectListItem { Text = "ACEPTA OFRECIMIENTO", Value = "ACEPTA OFRECIMIENTO" },
+                                            new SelectListItem { Text = "NO ESTA DISPONIBLE", Value = "NO ESTA DISPONIBLE" },
+                                            new SelectListItem { Text = "NO LE INTERESA", Value = "NO LE INTERESA" },
+                                            new SelectListItem { Text = "NO LE INTERESA POR COSTOS", Value = "NO LE INTERESA POR COSTOS" },
+                                            new SelectListItem { Text = "TERCERA PERSONA", Value = "TERCERA PERSONA" } },
                                            "--Select Option--",
                                                 new { Id = "AceptacionTercerOfrecimiento", @class = "form-control input-sm" }) 
                                     </td>
@@ -550,7 +560,7 @@
 
         ServicioAfectadoList
     </script>
-    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.0.5"></script>
+    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.0.6"></script>
 }
 }
 

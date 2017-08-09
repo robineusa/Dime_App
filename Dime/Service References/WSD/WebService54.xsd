@@ -4567,4 +4567,34 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="ConsultaAdminGPrincipalRecurrencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaAdminGPrincipalRecurrenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q315="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminGPrincipalRecurrenciaResult" nillable="true" type="q315:ArrayOfGPrincipalRecurrencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaAdminGLogRecurrencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaAdminGLogRecurrenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q316="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminGLogRecurrenciaResult" nillable="true" type="q316:ArrayOfGLogRecurrencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

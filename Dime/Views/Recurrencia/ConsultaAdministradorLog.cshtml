@@ -1,12 +1,11 @@
-﻿@{
-    ViewBag.Title = "Consulta de Gestión - Log Back Elite";
-    ViewBag.Subtitle = "Procesos Back Elite";
+﻿
+@{
+    ViewBag.Title = "Consulta Recurrencia Log";
+    ViewBag.SubTitle = "Administrador";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@if (Session["Consultas Administrador Back Elite"] != null)
+@if (Session["Consultas Administrador Recurrencia"] != null)
 {
-    using (Html.BeginForm("ConsultaAdministradorLog", "BackElite", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
-    {
         <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
             <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
                 <div class="row">
@@ -61,15 +60,14 @@
                     </div>
                 </div>
             </div>
-            <button id="submitDatos" type="submit" class="btn btn-primary" value="true" style="width:10%; height:40px; display:none;"></button>
+            
         </div>
-    }
 
     @section scripts{
-        <script>var UrlConsultaAdministradorLogJson = '@Url.Action("ConsultaAdministradorLogJson", "BackElite")';</script>
+        <script>var UrlConsultaAdministradorLogJson = '@Url.Action("ConsultaAdministradorLogJson", "Recurrencia")';</script>
 
-        <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.1"></script>
-        <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.1" rel="stylesheet" />
+        <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.2"></script>
+        <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.2" rel="stylesheet" />
         <script src="~/Scripts/Recurrencia/ConsultaAdministradorLog.js?1.0.1"></script>
 
     }

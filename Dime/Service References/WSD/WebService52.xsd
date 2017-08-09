@@ -2886,4 +2886,66 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfGPrincipalRecurrencia" nillable="true" type="tns:ArrayOfGPrincipalRecurrencia" />
+  <xs:complexType name="ArrayOfGLogRecurrencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GLogRecurrencia" nillable="true" type="tns:GLogRecurrencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGLogRecurrencia" nillable="true" type="tns:ArrayOfGLogRecurrencia" />
+  <xs:complexType name="GLogRecurrencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AceptacionPrimerOfrecimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AceptacionSegundoOfrecimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AceptacionTercerOfrecimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ActivacionClaroVideoNagra" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApellidoCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Area" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClienteNagra" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClientePresentaNovedades" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contacto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Diferenciador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Division" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FallaCausaRaiz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FallaEspecificaArbolCCAA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaUltimaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaUltimaMarcacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IncluyeClaroVideo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MacroProcesoRecurrencia1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MacroProcesoRecurrencia2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MacroProcesoRecurrencia3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Macroproceso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarcacionRecurrente1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarcacionRecurrente2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarcacionRecurrente3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Marcaciones" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PorQue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prioridad" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Proceso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServicioAfectado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SolucionEspecifica" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Solucionado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoTelmex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsoClaroVideo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VecesGestionado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VolvioLlamar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VozCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Zona" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GLogRecurrencia" nillable="true" type="tns:GLogRecurrencia" />
 </xs:schema>
