@@ -44,6 +44,7 @@ function TraerDatosConsulta(F1, F2) {
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
+            console.log(json);
             cambiarfechas(json);
             cargargrilla(json);
             finalizaconsulta();
@@ -54,15 +55,15 @@ function TraerDatosConsulta(F1, F2) {
     });
 }
 
-
 function cambiarfechas(data) {
     for (var i = 0; i < data.length; i++) {
-        data[i].TrasladoFallido.FechaTransaccion = kendo.toString(kendo.parseDate(data[i].TrasladoFallido.FechaTransaccion, 'yyyy-MM-dd HH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+        data[i].TrasladoFallido.FechaTransaccion = kendo.toString(kendo.parseDate(data[i].TrasladoFallido.FechaTransaccion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
 
     }
 
 }
 function cargargrilla(data) {
+  
     $("#gridViewConsulta").kendoGrid({
         autoBind: true,
         toolbar: ["excel"],

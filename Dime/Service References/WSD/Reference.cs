@@ -14271,4 +14271,51 @@ namespace Dime.WSD {
             return base.Channel.ConsultaAdminGLogRecurrenciaAsync(FechaInicial, FechaFinal);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IBitacoraIncidentesService")]
+    public interface IBitacoraIncidentesService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/RegistrarIncidente", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/RegistrarIncidenteResponse")]
+        void RegistrarIncidente(Telmexla.Servicios.DIME.Entity.BitacoraIncidentes Bitacora);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/RegistrarIncidente", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/RegistrarIncidenteResponse")]
+        System.Threading.Tasks.Task RegistrarIncidenteAsync(Telmexla.Servicios.DIME.Entity.BitacoraIncidentes Bitacora);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IBitacoraIncidentesServiceChannel : Dime.WSD.IBitacoraIncidentesService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class BitacoraIncidentesServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IBitacoraIncidentesService>, Dime.WSD.IBitacoraIncidentesService {
+        
+        public BitacoraIncidentesServiceClient() {
+        }
+        
+        public BitacoraIncidentesServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public BitacoraIncidentesServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public BitacoraIncidentesServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public BitacoraIncidentesServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public void RegistrarIncidente(Telmexla.Servicios.DIME.Entity.BitacoraIncidentes Bitacora) {
+            base.Channel.RegistrarIncidente(Bitacora);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarIncidenteAsync(Telmexla.Servicios.DIME.Entity.BitacoraIncidentes Bitacora) {
+            return base.Channel.RegistrarIncidenteAsync(Bitacora);
+        }
+    }
 }
