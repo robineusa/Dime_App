@@ -210,6 +210,7 @@
                         </ul>
 
                     </li>
+
                     <li class="header">MENÚ ACCESOS</li>
 
                     @if (Session["Administracion de Casos Sac"] != null)
@@ -510,6 +511,22 @@
                                 {
                                     <li><a href="@Url.Action("RegistrarMonitoreo", "Mec")"><i class="fa fa-hand-o-right"></i>Registrar Monitoreos</a></li>
                                     <li><a href="@Url.Action("ConsultaMonitoreosAgente", "Mec")"><i class="fa fa-hand-o-right"></i>Actualizar Monitoreos</a></li>
+                                }
+                            </ul>
+
+                        </li>
+                    }
+                    @if (Session["Bitácora Incidentes"] != null)
+                    {
+                        <li id="left-sidebar-menu-multilevel" class="treeview">
+                            <a href="#">
+                                <i class="fa fa-bullhorn text-yellow"></i> <span>Bitácora de Incidentes</span><i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                @if (Session["Registrar Incidente - COS"] != null)
+                                {
+                                    <li><a href="@Url.Action("RegistrodeIncidentes", "BitacoraIncidentes")"><i class="fa fa-circle-o"></i>Registrar Incidente</a></li>
+                                    
                                 }
                             </ul>
 

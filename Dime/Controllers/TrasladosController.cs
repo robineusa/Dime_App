@@ -1268,7 +1268,7 @@ namespace Dime.Controllers
         {
             return View();
         }
-
+        [HttpGet]
         public JsonResult ConsultaAdminTrasladosFallidosJson(string fechaInicial, string fechaFinal)
         {
 
@@ -1277,6 +1277,7 @@ namespace Dime.Controllers
             var jsonResult = Json(JsonConvert.SerializeObject(trasladowebservice.ConsultaGeneralTrasladosFallidos(FI, FF)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
+            
         }
 
         //maestro departamentos

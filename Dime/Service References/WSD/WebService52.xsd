@@ -2886,4 +2886,35 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfGPrincipalRecurrencia" nillable="true" type="tns:ArrayOfGPrincipalRecurrencia" />
+  <xs:complexType name="BitacoraIncidentes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoQueReporta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CantidadUsuariosAfectados" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CasoSD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComentariosDeCierre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescripcionAfectacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiasDeAfectacion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EscaladoA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoDelCaso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaDeCierreAfectacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeCierreTicket" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeCreacionTicket" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeRegistro" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gerencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Herramienta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HorasDeAfectacion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdRegistro" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ModuloAfectado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioCreacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioUltimaActualizacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperacionQueReporta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prioridad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDeFalla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioUltimaActualizacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BitacoraIncidentes" nillable="true" type="tns:BitacoraIncidentes" />
 </xs:schema>

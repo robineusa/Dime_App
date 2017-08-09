@@ -82,6 +82,7 @@
     <Compile Include="Acceso.cs" />
     <Compile Include="ActivacionClaroVideo.cs" />
     <Compile Include="ActivacionClaroVideoCollection.cs" />
+    <Compile Include="ActualizarUsuarioGestionBackIngresoReturnModel.cs" />
     <Compile Include="BalanceScoreCard.cs" />
     <Compile Include="BalanceScoreCardCollection.cs" />
     <Compile Include="BasePersonalHolo.cs" />
@@ -92,6 +93,8 @@
     <Compile Include="BEMRazonMalEscalamiento.cs" />
     <Compile Include="BEMTipoDeEscalamientos.cs" />
     <Compile Include="BEPSolicitudes.cs" />
+    <Compile Include="BitacoraIncidentes.cs" />
+    <Compile Include="BitacoraIncidentesLog.cs" />
     <Compile Include="BlendingFueraNivel.cs" />
     <Compile Include="BlendingFueraNivelCollection.cs" />
     <Compile Include="BuscarCuentasViewModel.cs" />
@@ -202,6 +205,7 @@
     <Compile Include="UsuariosXAcceso.cs" />
     <Compile Include="UsuariosXPreguntasDesb.cs" />
     <Compile Include="ViewModelBackElite.cs" />
+    <Compile Include="ViewModelBitacoraIncidentes.cs" />
     <Compile Include="ViewModelBlending.cs" />
     <Compile Include="ViewModelAdminUsuario.cs" />
     <Compile Include="ViewModelCambioEstrato.cs" />

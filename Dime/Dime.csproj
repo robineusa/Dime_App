@@ -191,6 +191,7 @@
     <Compile Include="Controllers\AdminUsuariosController.cs" />
     <Compile Include="Controllers\AlertasController.cs" />
     <Compile Include="Controllers\BackEliteController.cs" />
+    <Compile Include="Controllers\BitacoraIncidentesController.cs" />
     <Compile Include="Controllers\BuenServicioController.cs" />
     <Compile Include="Controllers\CalculadorasController.cs" />
     <Compile Include="Controllers\CasosAdminController.cs" />
@@ -2285,6 +2286,7 @@
     <Content Include="Scripts\BackElite\ListaDistribucionUsuario.js" />
     <Content Include="Scripts\BackElite\SeguimientoSolicitudes.js" />
     <Content Include="Scripts\BackElite\SolicitudBackElite.js" />
+    <Content Include="Scripts\BitacoraIncidentes\RegistrodeIncidentes.js" />
     <Content Include="Scripts\BuenServicio\Visualizador_Imagenes.js" />
     <Content Include="Scripts\Calculadoras\Advanced.js" />
     <Content Include="Scripts\Calculadoras\Rentas.js" />
@@ -3320,6 +3322,7 @@
     <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\BitacoraIncidentes\RegistrodeIncidentes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
