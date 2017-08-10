@@ -1,11 +1,10 @@
 ﻿
 @{
-    ViewBag.Title = "Consultas Base Presidencial MultiPlay";
+    ViewBag.Title = "Consulta Recurrencia Principal";
     ViewBag.Subtitle = "Administrador";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-@if (Session["Consultas Administracion"] != null)
+@if (Session["Consultas Administrador Recurrencia"] != null)
 {
     <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
         <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
@@ -27,53 +26,51 @@
                 <div class="col-xs-4">
                     <table>
                         <tr>
-                            <td style="padding:1px;">
-                                <input type="text" class="form-control input-sm" id="Fecha_Inicial" placeholder="Fecha Inicial" />
+                            <td style="width:200px; padding:1px;">
+                                <input type="text" class="form-control input-sm" id="Fecha_Inicial" placeholder="Fecha Inicial" name="fechaInicial" />
                             </td>
-                            <td style="padding:1px;">
-                                <input type="text" class="form-control input-sm" id="Fecha_Final" placeholder="Fecha Final" />
+                            <td style="width:200px; padding:1px;">
+                                <input type="text" class="form-control input-sm" id="Fecha_Final" placeholder="Fecha Final" name="fechaFinal" />
                             </td>
                         </tr>
                     </table>
+                    <span><label id="warningLabel" style="color:red"></label></span>
                 </div>
             </div>
         </div>
     </div>
-    <br />
-    <div class="row">
-        <div class="col-md-12">
-            <div class="box box-danger">
-                <div class="box-body">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h2 class="page-header" style="margin-top:25px"><i class="fa fa-search"></i> Resultados de Búsqueda:</h2>
-                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
-                                <div class="box-body">
-                                    <div class="row" id="loaderDiv" style="display:none">
-                                        <div class="col-sm-offset-5"><img src="~/Resources/Images/Loading.gif" height="100" width="100" /></div>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-danger">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h2 class="page-header" style="margin-top:25px"><i class="fa fa-search"></i> Resultados de Búsqueda:</h2>
+                                <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                    <div class="box-body">
+                                        <div id="dataLoading" style="display:none;text-align:center;width:100%;height:auto;">
+                                            <div><img src="~/Resources/Images/Loading.gif" height="100" width="100" /></div>
+                                        </div>
+                                        <div id="gridViewConsulta"></div>
                                     </div>
-                                    <div id="gridViewConsultaBasePresidencial"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-    </div>
+        @section scripts{
+            <script>var UrlConsultaAdministradorPincipalJson = '@Url.Action("ConsultaAdministradorPrincipalJson", "Recurrencia")';</script>
 
+            <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.2"></script>
+            <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.2" rel="stylesheet" />
+            <script src="~/Scripts/Recurrencia/ConsultaAdministradorPrincipal.js?1.0.1"></script>
 
-    @section scripts{
-        <script>
-        var urlMultiPlayConsulta = '@Url.Action("JsonConsultaBasePresidencial", "MultiPlay")';
-        </script>
-        <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.2"></script>
-        <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.2" rel="stylesheet" />
-        <script src="~/Scripts/MultiPlay/ConsultasAdminMultiPlay.js?1.0.3"></script>
-
-    }
-
+        }
 }
 else
 {
@@ -101,5 +98,4 @@ else
         </div>
     </div>
 }
-
 

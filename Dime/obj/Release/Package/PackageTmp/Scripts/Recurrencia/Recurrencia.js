@@ -28,6 +28,7 @@
     SetContactoList();
     SetSolucionEspecifica();
     CargaSeguimientos();
+    $("#Observaciones").val('');
 });
 
 function SetMacroProcesoRecurrencia() {
@@ -179,7 +180,7 @@ function SetMacroProceso() {
             type: "POST",
             url: urlMacroProcesoRecurrenciaList,
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({ idProceso: 1 }),
+            data: JSON.stringify({ idProceso: 6 }),
             dataType: "JSON",
             success: function (result) {
                 var json = JSON.parse(result);
@@ -210,7 +211,27 @@ function SetMacroProceso() {
 
         $("#Macroproceso").empty();
         $("#Macroproceso").append("<option value=''>--Select Option--</option>");
-        $("#Macroproceso").append("<option Value='1'>SOPORTE (SOP)</option>");
+        $.ajax({
+            type: "POST",
+            url: urlMacroProcesoRecurrenciaList,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ idProceso: 7 }),
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+                var object = json[0];
+                for (var index = 0, len = json.length; index < len; index++) {
+                    $('#Macroproceso').append($('<option>', {
+                        value: json[index].Id,
+                        text: json[index].OpcionesRecurrencia
+                    }));
+                }
+
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
 
         $("#ServicioAfectado").attr("disabled", "disabled");
         $("#FallaEspecificaArbolCCAA").attr("disabled", "disabled");
@@ -461,20 +482,11 @@ function Ofrecimiento_3_NO() {
 
 
 function ShowGridSeguimientos(data) {
-
-    var dataChanged = [];
-    for (i = 0; i < data.length; i++) {
-
-        if (data[i].Seguimiento == "SI") {
-            dataChanged.push(dataUp[i]);
-        }
-    }
-
+    
     $("#seguimientosGrid").kendoGrid({
         dataSource: {
-            data: dataChanged,
+            data: data,
             pageSize: 10,
-
         },
         scrollable: true,
         filterable: {
@@ -492,32 +504,38 @@ function ShowGridSeguimientos(data) {
             buttonCount: 5
         },
         columns: [
-       { field: "Cuenta", title: "Cuenta Cliente", width: 130 },
-       { field: "NombreCliente", title: "Nombre Cliente", width: 140, filterable: false },
-       { field: "FechaGestion", title: "Fecha Gestión", width: 130, template: "#= kendo.toString(kendo.parseDate(FechaGestion, 'yyyy-MM-dd HH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", filterable: false },
-        { field: "TipoContacto", title: "Tipo Contacto", width: 130 },
-            { field: "Gestion", title: "Gestion", width: 130 },
-           { field: "Cierre", title: "Cierre", width: 120 },
-             { field: "Razon", title: "Razón", width: 150 },
-       { field: "FechaSeguimiento", title: "Fecha Seguimiento", width: 130, template: "#= kendo.toString(kendo.parseDate(FechaSeguimiento, 'yyyy-MM-dd HH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #", filterable: false },
-       { command: { text: "Gestionar", click: showGestion }, title: " ", width: "100px" }
+            { command: { text: " ", click:CargaSeguimiento, imageClass: "k-icon k-i-pencil", }, title: "Editar", width: "60px" },
+       { field: "FechaGestion", title: "Fecha de Gestión",headerAttributes: { style: "white-space: normal" }, width: 100, template: "#= kendo.toString(kendo.parseDate(FechaGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #" },
+       { field: "CuentaCliente", title: "Cuenta Cliente",headerAttributes: { style: "white-space: normal" }, width: 90 },
+            { field: "Division", title: "Division",headerAttributes: { style: "white-space: normal" }, width: 130 },
+           { field: "Area", title: "Area",headerAttributes: { style: "white-space: normal" }, width: 130 },
+             { field: "Zona", title: "Zona",headerAttributes: { style: "white-space: normal" }, width: 130 },
+       { field: "Marcaciones", title: "Marcaciones",headerAttributes: { style: "white-space: normal" }, width: 80},
         ]
 
     });
+    
+}
+
+function CargaSeguimiento(e) {
+    e.preventDefault();
+    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    window.location.href = '../Recurrencia/Recurrencia?cuentaSeleccionada=' + dataItem.CuentaCliente;
 
 }
+
 function CargaSeguimientos()
 {
     
     $.ajax({
         type: "POST",
-        url: urlSolucionEspecificaList,
+        url: urlListSeguimientos,
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ idProceso: 5 }),
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
-            ShowGridSeguimientos(json);
+                
+                ShowGridSeguimientos(json);
             
         },
         error: function (request, status, error) {

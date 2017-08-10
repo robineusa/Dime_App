@@ -285,30 +285,42 @@ namespace Dime.Controllers
             };
         }
         [HttpPost]
-        public JsonResult ActualizarSolicitudesMasivoJson(IList<string> Solicitudes, string AplicaMalEscalado, string DetalleMalEscalado, string Gestion, string Estado, string FechaAgenda, string Observaciones)
+        public JsonResult ActualizarSolicitudesMasivoJson(IList<string> Solicitudes, string TipoDeSolicitud, string AplicaMalEscalado, string DetalleMalEscalado, string Gestion, string Estado, string FechaAgenda, string Observaciones)
         {
             try
             {
-                BEPSolicitudes Solicitud = new BEPSolicitudes();
-                Solicitud.UsuarioQueSolicita = Convert.ToString(Session["Usuario"].ToString());
-                Solicitud.NombreUsuarioQueSolicita = Session["NombreUsuario"].ToString();
-                Solicitud.Malescalado = AplicaMalEscalado;
-                Solicitud.DetalleMalEscalado = DetalleMalEscalado;
-                Solicitud.Gestion = Gestion;
-                Solicitud.EstadoEscalamiento = Estado;
-                if (FechaAgenda != "")
-                {
-                    Solicitud.FechaDeAgenda = Convert.ToDateTime(FechaAgenda);
+                if (TipoDeSolicitud == "--SELECCIONE--" || AplicaMalEscalado == "--SELECCIONE--" || DetalleMalEscalado == "--SELECCIONE--" || Gestion== "--SELECCIONE--") {
+                    return new JsonResult
+                    {
+                        Data = JsonConvert.SerializeObject("Debes seleccionar algun valor"),
+                        JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                    };
                 }
-                Solicitud.Observaciones = Observaciones;
-
-
-                backeliteservice.ActualizarSolicitudesMasivo(Solicitudes.ToList(), Solicitud);
-                return new JsonResult
+                else
                 {
-                    Data = JsonConvert.SerializeObject("Datos Actualizados Correctamente"),
-                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
-                };
+                    BEPSolicitudes Solicitud = new BEPSolicitudes();
+                    Solicitud.UsuarioQueSolicita = Convert.ToString(Session["Usuario"].ToString());
+                    Solicitud.NombreUsuarioQueSolicita = Session["NombreUsuario"].ToString();
+                    Solicitud.TipoDeSolicitud = TipoDeSolicitud;
+                    Solicitud.Malescalado = AplicaMalEscalado;
+                    Solicitud.DetalleMalEscalado = DetalleMalEscalado;
+                    Solicitud.Gestion = Gestion;
+                    Solicitud.EstadoEscalamiento = Estado;
+                    if (FechaAgenda != "")
+                    {
+                        Solicitud.FechaDeAgenda = Convert.ToDateTime(FechaAgenda);
+                    }
+                    Solicitud.Observaciones = Observaciones;
+
+
+                    backeliteservice.ActualizarSolicitudesMasivo(Solicitudes.ToList(), Solicitud);
+
+                    return new JsonResult
+                    {
+                        Data = JsonConvert.SerializeObject("Datos Actualizados Correctamente"),
+                        JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                    };
+                } 
             }
             catch (Exception e)
             {
@@ -318,6 +330,11 @@ namespace Dime.Controllers
                     JsonRequestBehavior = JsonRequestBehavior.AllowGet
                 };
             }
+        }
+        [HttpPost]
+        public ActionResult ActualizarZolicitudesMasivo(ViewModelBackElite modelo)
+        {
+            return RedirectToAction("CierreMasivo", "BackElite");
         }
 
     }

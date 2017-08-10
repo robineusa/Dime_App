@@ -191,6 +191,7 @@
     <Compile Include="Controllers\AdminUsuariosController.cs" />
     <Compile Include="Controllers\AlertasController.cs" />
     <Compile Include="Controllers\BackEliteController.cs" />
+    <Compile Include="Controllers\BitacoraIncidentesController.cs" />
     <Compile Include="Controllers\BuenServicioController.cs" />
     <Compile Include="Controllers\CalculadorasController.cs" />
     <Compile Include="Controllers\CasosAdminController.cs" />
@@ -2285,6 +2286,7 @@
     <Content Include="Scripts\BackElite\ListaDistribucionUsuario.js" />
     <Content Include="Scripts\BackElite\SeguimientoSolicitudes.js" />
     <Content Include="Scripts\BackElite\SolicitudBackElite.js" />
+    <Content Include="Scripts\BitacoraIncidentes\RegistrodeIncidentes.js" />
     <Content Include="Scripts\BuenServicio\Visualizador_Imagenes.js" />
     <Content Include="Scripts\Calculadoras\Advanced.js" />
     <Content Include="Scripts\Calculadoras\Rentas.js" />
@@ -3070,6 +3072,7 @@
     <Content Include="Service References\WSD\Dime.WSD.MaestroOpcionesRecurrencia.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Resources\Documents\Formato_Back_Elite.xls" />
     <None Include="Service References\WSD\configuration91.svcinfo" />
     <None Include="Service References\WSD\configuration.svcinfo" />
     <None Include="Service References\WSD\Reference.svcmap">
@@ -3307,6 +3310,8 @@
     <Content Include="Views\BackElite\ConsultaDeGestion.cshtml" />
     <Content Include="Views\BackElite\ListaDistribucionUsuario.cshtml" />
     <Content Include="Views\BackElite\CierreMasivo.cshtml" />
+    <Content Include="Views\Recurrencia\ConsultaAdministradorLog.cshtml" />
+    <Content Include="Views\Recurrencia\ConsultaAdminstradorPrincipal.cshtml" />
     <None Include="Service References\WSD\WebService1.wsdl" />
     <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
@@ -3323,8 +3328,6 @@
     <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\Recurrencia\ConsultaAdministradorLog.cshtml" />
-    <Content Include="Views\Recurrencia\ConsultaAdminstradorPrincipal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
