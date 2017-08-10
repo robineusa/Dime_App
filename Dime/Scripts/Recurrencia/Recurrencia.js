@@ -44,15 +44,15 @@ function SetMacroProcesoRecurrencia() {
 
             for (var index = 0, len = json.length; index < len; index++) {
                 $('#MacroProcesoRecurrencia1').append($('<option>', {
-                    value: json[index].Id,
+                    value: json[index].OpcionesRecurrencia,
                     text: json[index].OpcionesRecurrencia
                 }));
                 $('#MacroProcesoRecurrencia2').append($('<option>', {
-                    value: json[index].Id,
+                    value: json[index].OpcionesRecurrencia,
                     text: json[index].OpcionesRecurrencia
                 }));
                 $('#MacroProcesoRecurrencia3').append($('<option>', {
-                    value: json[index].Id,
+                    value: json[index].OpcionesRecurrencia,
                     text: json[index].OpcionesRecurrencia
                 }));
             }
@@ -76,7 +76,7 @@ function SetContactoList() {
             var object = json[0];
             for (var index = 0, len = json.length; index < len; index++) {
                 $('#Contacto').append($('<option>', {
-                    value: json[index].Id,
+                    value: json[index].OpcionesRecurrencia,
                     text: json[index].OpcionesRecurrencia
                 }));
             }
@@ -89,7 +89,7 @@ function SetContactoList() {
 }
 function SetOpciones() {
 
-    if ($("#Contacto").val() == "17" || $("#Contacto").val() == "18") {
+    if ($("#Contacto").val() == "CONTACTO CON TERCERO" || $("#Contacto").val() == "CONTACTO EFECTIVO") {
         $("#VozCliente").removeAttr("disabled");
         $("#ClientePresentaNovedades").removeAttr("disabled");
         $("#ClientePresentaNovedades").empty();
@@ -187,7 +187,7 @@ function SetMacroProceso() {
                 var object = json[0];
                 for (var index = 0, len = json.length; index < len; index++) {
                     $('#Macroproceso').append($('<option>', {
-                        value: json[index].Id,
+                        value: json[index].OpcionesRecurrencia,
                         text: json[index].OpcionesRecurrencia
                     }));
                 }
@@ -222,7 +222,7 @@ function SetMacroProceso() {
                 var object = json[0];
                 for (var index = 0, len = json.length; index < len; index++) {
                     $('#Macroproceso').append($('<option>', {
-                        value: json[index].Id,
+                        value: json[index].OpcionesRecurrencia,
                         text: json[index].OpcionesRecurrencia
                     }));
                 }
@@ -301,6 +301,18 @@ function SetServicioAfectado() {
 function SetFallaEspecificaArbol() {
     $("#FallaEspecificaArbolCCAA").removeAttr("disabled");
     if ($("#ServicioAfectado").val() != "") {
+        var IdServicioAfectado = document.getElementById("ServicioAfectado");
+        var ServicioAfectado = IdServicioAfectado.options[IdServicioAfectado.selectedIndex].text;
+        $('#ServicioAfectadoO').val(ServicioAfectado);
+        //alert($('#ServicioAfectadoO').val() + '1');
+    }
+    else {
+        $('#ServicioAfectadoO').val('');
+        $('#FallaEspecificaArbolCCAAO').val('');
+        $('#FallaCausaRaizO').val('');
+    }
+    
+    if ($("#ServicioAfectado").val() != "") {
         $("#FallaEspecificaArbolCCAA").empty();
         $("#FallaEspecificaArbolCCAA").append("<option value=''>--Select Option--</option>");
         var idOpcionesRecu = $("#ServicioAfectado").val();
@@ -343,9 +355,21 @@ function SetFallaEspecificaArbol() {
 function SetFallaCausaRaiz() {
     $("#FallaCausaRaiz").removeAttr("disabled");
     if ($("#FallaEspecificaArbolCCAA").val() != "") {
+        var IdFallaEspecificaArbolCCAA = document.getElementById("FallaEspecificaArbolCCAA");
+        var FallaEspecificaArbolCCAA = IdFallaEspecificaArbolCCAA.options[IdFallaEspecificaArbolCCAA.selectedIndex].text;
+        $('#FallaEspecificaArbolCCAAO').val(FallaEspecificaArbolCCAA);
+        //alert($('#FallaEspecificaArbolCCAAO').val() + '2');
+    }
+    else
+    {
+        $('#FallaEspecificaArbolCCAAO').val('');
+        $('#FallaCausaRaizO').val('');
+    }
+    if ($("#FallaEspecificaArbolCCAA").val() != "") {
         $("#FallaCausaRaiz").empty();
         $("#FallaCausaRaiz").append("<option value=''>--Select Option--</option>");
         var idFallaEspecifica = $("#FallaEspecificaArbolCCAA").val();
+
         $.ajax({
             type: "POST",
             url: urlFallaCausaRaizList,
@@ -373,6 +397,19 @@ function SetFallaCausaRaiz() {
 
         $("#FallaCausaRaiz").empty();
         $("#FallaCausaRaiz").append("<option value=''>--Select Option--</option>");
+    }
+}
+function SetCampoFallaCausaRaiz()
+{
+    if ($("#FallaCausaRaiz").val() != "") {
+        var IdFallaCausaRaiz = document.getElementById("FallaCausaRaiz");
+        var FallaCausaRaiz = IdFallaCausaRaiz.options[IdFallaCausaRaiz.selectedIndex].text;
+        $('#FallaCausaRaizO').val(FallaCausaRaiz);
+        //alert($('#FallaCausaRaizO').val() + '3');
+    }
+    else
+    {
+        $('#FallaCausaRaizO').val('');
     }
 }
 function SetSolucionEspecifica() {

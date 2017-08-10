@@ -38,6 +38,7 @@ namespace Dime.Controllers
                 }
                 else
                 {
+                    model.ClientesTodos = new ClientesTodo();
                     model.ClientesTodos.Cuenta = 0;
                 }
             }
@@ -94,10 +95,12 @@ namespace Dime.Controllers
                 model.GPrincipalRecurrencia.UsuarioGestion = Session["IdUsuario"].ToString();
                 model.GPrincipalRecurrencia.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
                 model.GPrincipalRecurrencia.AliadoGestion = Session["AliadoLogeado"].ToString();
+                //model.GPrincipalRecurrencia.FallaEspecificaArbolCCAA = model.GPrincipalRecurrencia.FallaEspecificaArbolCCAA.
                 model.GPrincipalRecurrencia.UsuarioGestionando = 0;
                 if (result != null)
                 {
                     recurrencia.ActualizarGRecurrencia(model.GPrincipalRecurrencia);
+
                 }
                 else
                 {
