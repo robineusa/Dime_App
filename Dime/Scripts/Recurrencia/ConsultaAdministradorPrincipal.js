@@ -37,13 +37,12 @@ function TraerDatosConsulta(F1, F2) {
     document.getElementById('dataLoading').style.display = 'inline-block';
     $.ajax({
         type: "GET",
-        url: UrlConsultaAdministradorLogJson,
+        url: UrlConsultaAdministradorPincipalJson,
         contentType: "application/json; charset=utf-8",
         data: { F1: F1, F2: F2 },
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
-            //cambiarfechas(json);
             cargargrilla(json);
             finalizaconsulta();
         },
@@ -70,7 +69,8 @@ function cargargrilla(data) {
         autoBind: true,
         toolbar: ["excel"],
         excel: {
-            fileName: "ConsultaLogRecurrencia.xlsx",
+            fileName: "ConsultaPrincipalRecurrencia.xlsx",
+
         },
         dataSource: {
             data: data,
@@ -119,7 +119,7 @@ function cargargrilla(data) {
         { field: "AceptacionPrimerOfrecimiento", title: "Aceptacionv Primer Ofrecimiento", width: 100 },
         { field: "AceptacionSegundoOfrecimiento", title: "Aceptacion Segundo Ofrecimiento", width: 100 },
         { field: "AceptacionTercerOfrecimiento", title: "Aceptacion Tercer Ofrecimiento", width: 100 },
-        { field: "Observaciones", title: "Observaciones", width: 100 }
+        { field: "Observaciones", title: "Observaciones", width: 100}
         ]
     });
 }

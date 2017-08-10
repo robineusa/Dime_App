@@ -2326,6 +2326,7 @@
     <Content Include="Scripts\MultiPlay\ConsultasAdminMultiPlay.js" />
     <Content Include="Scripts\MultiPlay\MultiPlay.js" />
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorLog.js" />
+    <Content Include="Scripts\Recurrencia\ConsultaAdministradorPrincipal.js" />
     <Content Include="Scripts\Recurrencia\Recurrencia.js" />
     <Content Include="Scripts\Reportes\ReporteAdministrador.js" />
     <Content Include="Scripts\Reportes\ReporteAsesor.js" />
