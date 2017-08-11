@@ -22332,31 +22332,5 @@
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
-    <wsdl:port name="WSHttpBinding_IBitacoraIncidentesService" binding="tns:WSHttpBinding_IBitacoraIncidentesService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
-      <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
-            <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQTwgVyQ88B61OYULoMrLkrzAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNDIwMzRaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANjfHOv1hWuFYd7fQQGIwtu9XlxW4+IArmwXGmwdOOaYkyZdsd9hoUZ5ioO0CMZVs3AFzbWAMBGLzqjmps/wfLVXgZkCeNQIKCCwUR+YGMefBAPxB2Fk0dXgdAsgL/I9AiU51idZKBIKn5gduhwYujRsx6XY54bbkXBKEPBydEZgkm1qKWdX7dg87Ro1HWLqvgZwrlwBs/PzZzwNVP8zDtlWiyNOv+87Uijbacje8fF+yYle1sYVaPYtL8pGgvXcZvAkP9hMKKDX6lMrt424OkvQDYOIYh9k4LKIVvFcSrBBsn70yaGQjNenZIchg/m6O6m0f63q86SdjZ1fYlMGCFUCAwEAAaNYMFYwVAYDVR0BBE0wS4AQQD+5O2EzXI1/QI8Ti+1ny6ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQTwgVyQ88B61OYULoMrLkrzAJBgUrDgMCHQUAA4IBAQBy1YE9DgDx1VDWH5BYtEh6cYO+8W8QFFMwYnsMC9mIPdn3LVJO177LGm57Lcbzjs4Xb81lo9RxBwob25ayFVCCH60FtUaptt0H1zoA9DduuJIZIfls7p+iKrqUa2J7dmUmDtZc8gw18m1CP9xjT1bqtkbrPPyx6FLIcGL+zgzqjEeLJMlJ3IEU4OCYHNtiNvmiQP2NXty0v/4ssbGf3nQqYE9wh4zfJMuFIGKaHYEImfAqRv2Dq8oVeNpHjeLQZKyQE5gHqvsfDPSrCaI7l25X0Om5HYFtFYv0v+sk1xaXoV204VOgwBZNNbGshsZSCwVjwVlzhIDS9DDzLbeAdRKD</X509Certificate>
-            </X509Data>
-          </KeyInfo>
-        </Identity>
-      </wsa10:EndpointReference>
-    </wsdl:port>
-    <wsdl:port name="WSHttpBinding_IBitacoraIncidentesService" binding="tns:WSHttpBinding_IBitacoraIncidentesService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
-      <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
-            <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQTwgVyQ88B61OYULoMrLkrzAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNDIwMzRaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANjfHOv1hWuFYd7fQQGIwtu9XlxW4+IArmwXGmwdOOaYkyZdsd9hoUZ5ioO0CMZVs3AFzbWAMBGLzqjmps/wfLVXgZkCeNQIKCCwUR+YGMefBAPxB2Fk0dXgdAsgL/I9AiU51idZKBIKn5gduhwYujRsx6XY54bbkXBKEPBydEZgkm1qKWdX7dg87Ro1HWLqvgZwrlwBs/PzZzwNVP8zDtlWiyNOv+87Uijbacje8fF+yYle1sYVaPYtL8pGgvXcZvAkP9hMKKDX6lMrt424OkvQDYOIYh9k4LKIVvFcSrBBsn70yaGQjNenZIchg/m6O6m0f63q86SdjZ1fYlMGCFUCAwEAAaNYMFYwVAYDVR0BBE0wS4AQQD+5O2EzXI1/QI8Ti+1ny6ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQTwgVyQ88B61OYULoMrLkrzAJBgUrDgMCHQUAA4IBAQBy1YE9DgDx1VDWH5BYtEh6cYO+8W8QFFMwYnsMC9mIPdn3LVJO177LGm57Lcbzjs4Xb81lo9RxBwob25ayFVCCH60FtUaptt0H1zoA9DduuJIZIfls7p+iKrqUa2J7dmUmDtZc8gw18m1CP9xjT1bqtkbrPPyx6FLIcGL+zgzqjEeLJMlJ3IEU4OCYHNtiNvmiQP2NXty0v/4ssbGf3nQqYE9wh4zfJMuFIGKaHYEImfAqRv2Dq8oVeNpHjeLQZKyQE5gHqvsfDPSrCaI7l25X0Om5HYFtFYv0v+sk1xaXoV204VOgwBZNNbGshsZSCwVjwVlzhIDS9DDzLbeAdRKD</X509Certificate>
-            </X509Data>
-          </KeyInfo>
-        </Identity>
-      </wsa10:EndpointReference>
-    </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
