@@ -332,7 +332,7 @@
                                         <small>Veces Gestionado:  </small>
                                     </td>
                                     @*<td width="200" style="padding:1px;">
-                                        <small>Fecha Cargo Base:  </small>
+                                        <small>Fecha Carga de Base:  </small>
                                     </td>*@
                                 </tr>
                                 <tr>
@@ -347,7 +347,7 @@
                                     </td>
                                     @*<td style="padding:1px;">
                                         @Html.TextBoxFor(m => m.GPrincipalRecurrencia, new { @class = "form-control input-sm", placeholder = "Apellido del cliente", ReadOnly = "true" })
-                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.CargueBase.FechaCargueBase" readonly>
+                                        <input class="form-control input-sm" type="text" placeholder="" value="@Model.CargueBase.FechaCargueBase" readonly>
                                     </td>*@
                                     
                                 </tr>
@@ -371,7 +371,7 @@
                                     <tr>
                                         <td style="padding-left:1px; width:200px;" colspan="3">
                                             <small>MacroProceso Recurrencia 1: </small>
-                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.MacroProcesoRecurrencia1, new List<SelectListItem> { }, "--Select Option--", 
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.MacroProcesoRecurrencia1, new List<SelectListItem> { }, "--Select Option--",
                                                 new { Id = "MacroProcesoRecurrencia1", @class = "form-control input-sm" })
                                             @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.MacroProcesoRecurrencia1, "", new { @class = "text-danger" })
                                         </td>
@@ -400,15 +400,15 @@
                                     <tr>
                                         <td style="padding-left:1px; width:200px;">
                                             <small>Marcación Recurrente 1: </small>
-                                            @Html.TextBoxFor(m=>m.GPrincipalRecurrencia.MarcacionRecurrente1, new { @class = "form-control input-sm", placeholder = "Marcacion Recurrente 1" })
+                                            @Html.TextBoxFor(m=>m.GPrincipalRecurrencia.MarcacionRecurrente1, new { Id= "MarcaRecu1", @class = "form-control input-sm"})
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
                                             <small>Marcación Recurrente 2: </small>
-                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.MarcacionRecurrente2, new { @class = "form-control input-sm", placeholder = "Marcacion Recurrente 2" })
+                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.MarcacionRecurrente2, new { id = "MarcacionRecurrente2", @class = "form-control input-sm", placeholder = "Marcacion Recurrente 2" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
                                             <small>Marcación Recurrente 3: </small>
-                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.MarcacionRecurrente3, new { @class = "form-control input-sm", placeholder = "Marcacion Recurrente 3" })
+                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.MarcacionRecurrente3, new { id = "MarcacionRecurrente3", @class = "form-control input-sm", placeholder = "Marcacion Recurrente 3" })
                                         </td>
                                     </tr>
                                 </table>
@@ -427,11 +427,11 @@
                                             new SelectListItem { Text = "NO", Value = "NO" } },
                                            "--Select Option--",
                                                 new { Id = "VolvioLlamar", @class = "form-control input-sm" })
-                                            @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.VolvioLlamar, "", new { @class = "text-danger" })
+                                            @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.VolvioLlamar, "", new { @class = "text-danger"})
                                         </td>
                                         <td style="padding-left:1px; width:200px;" colspan="4">
                                             <small>PorQue: </small>
-                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.PorQue, new { @class = "form-control input-sm", placeholder = "Digite el Porque" })
+                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.PorQue, new { id="PorQue", @class = "form-control input-sm", placeholder = "Digite el Porque" })
                                         </td>
                                     </tr>
                                     <tr>
@@ -493,15 +493,13 @@
                                         <td style="padding-left:1px; width:200px;">
                                             <small>Solucuion Específica: </small>
                                             @Html.DropDownListFor(m => m.GPrincipalRecurrencia.SolucionEspecifica, new List<SelectListItem> { },
-                                           "--Select Option--", new { Id = "SolucionEspecifica", @class = "form-control input-sm", onchange="SetEstado();" })
+                                           "--Select Option--", new { Id = "SolucionEspecifica", @class = "form-control input-sm", disabled = "true", onchange ="SetEstado();" })
                                             @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.SolucionEspecifica, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
                                             <small>Solucionado: </small>
-                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.Solucionado, new List<SelectListItem> {
-                                            new SelectListItem { Text = "SI", Value = "SI" },
-                                            new SelectListItem { Text = "NO", Value = "NO" }},
-                                           "--Select Option--", new { Id = "Solucionado", @class = "form-control input-sm" })
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.Solucionado, new List<SelectListItem> {},
+                                           "--Select Option--", new { Id = "Solucionado", @class = "form-control input-sm", disabled = "true" })
                                             @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.Solucionado, "", new { @class = "text-danger" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
@@ -516,12 +514,8 @@
                                         <td style="padding-left:1px; width:200px;">
                                             <small>Claro Video/Nagra: </small>
                                             <small>
-                                                @Html.DropDownListFor(m => m.GPrincipalRecurrencia.ActivacionClaroVideoNagra, new List<SelectListItem> {
-                                            new SelectListItem { Text = "TARIFA NO DEFINIDA", Value = "TARIFA NO DEFINIDA" },
-                                            new SelectListItem { Text = "YA SE ENCUENTRA ACTIVO", Value = "YA SE ENCUENTRA ACTIVO" },
-                                            new SelectListItem { Text = "ACTIVA CLARO VIDEO", Value = "ACTIVA CLARO VIDEO" },
-                                            new SelectListItem { Text = "CLIENTE NO ACEPTA ACTIVACION", Value = "CLIENTE NO ACEPTA ACTIVACION" }},
-                                            "--Select Option--", new { Id = "Estado", @class = "form-control input-sm" })
+                                                @Html.DropDownListFor(m => m.GPrincipalRecurrencia.ActivacionClaroVideoNagra, new List<SelectListItem> {},
+                                            "--Select Option--", new { Id = "ActivacionClaroVideoNagra", @class = "form-control input-sm", disabled = "true" })
                                             @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.ActivacionClaroVideoNagra, "", new { @class = "text-danger" })
                                         </small>
                                         </td>
@@ -541,6 +535,13 @@
                                         </td>
                                     </tr>
                                 </table>
+                        </div>
+                        <h2 class="page-header" style="margin-top:40px">
+                            <i class="fa fa-tty"></i> Historial del seguimiento
+                        </h2>
+                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                            <br />
+                            
                         </div>
                     </div>
                 </div>
@@ -565,7 +566,7 @@
         
     </script>
 @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
-    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.0.7"></script>
+    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.1.5"></script>
 }
 }
 
