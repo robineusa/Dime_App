@@ -2975,6 +2975,12 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BEMDistribuciones1.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GLogRecurrencia.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMAliados.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMGerencias.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMOperaciones.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMHerramientas.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMPrioridades.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMTipoFalla.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3328,6 +3334,7 @@
     <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\BitacoraIncidentes\RegistrodeIncidentes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
