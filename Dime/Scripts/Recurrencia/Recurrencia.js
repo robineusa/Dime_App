@@ -6,6 +6,8 @@
         $("#Li1").css("background-color", "#dcdcdc");
         $("#Li1").css("border-color", "#c23321");
         $("#Li2").css("border-color", "transparent");
+        $("#Li3").css("border-color", "transparent");
+        $("#Li3").css('background-color', 'transparent');
 
     });
 
@@ -14,7 +16,17 @@
         $("#Li2").css("background-color", "#dcdcdc");
         $("#Li2").css("border-color", "#c23321");
         $("#Li1").css("border-color", "transparent");
+        $("#Li3").css("border-color", "transparent");
+        $("#Li3").css('background-color', 'transparent');
+    });
 
+    $("#Li3").click(function () {
+        $("#Li1").css("background-color", "transparent");
+        $("#Li3").css("background-color", "#dcdcdc");
+        $("#Li3").css("border-color", "#c23321");
+        $("#Li1").css("border-color", "transparent");
+        $("#Li2").css("border-color", "transparent");
+        $("#Li2").css('background-color', 'transparent');
     });
 
     $("#inputCuenta").on("keyup", function (e) {
@@ -29,7 +41,39 @@
     //SetSolucionEspecifica();
     CargaSeguimientos();
     $("#Observaciones").val('');
+    if (DecisionHistorialSeguimientos == "block")
+    {
+        CargaHistorialSeguimientos();
+    }
 
+    $("#AceptacionPrimerOfrecimiento").empty();
+    $("#AceptacionPrimerOfrecimiento").append("<option value=''>--Select Option--</option>");
+    $("#AceptacionPrimerOfrecimiento").append("<option value='ACEPTA OFRECIMIENTO'>ACEPTA OFRECIMIENTO</option>");
+    $("#AceptacionPrimerOfrecimiento").append("<option value='NO ESTA DISPONIBLE'>NO ESTA DISPONIBLE</option>");
+    $("#AceptacionPrimerOfrecimiento").append("<option value='NO LE INTERESA'>NO LE INTERESA</option>");
+    $("#AceptacionPrimerOfrecimiento").append("<option value='NO LE INTERESA POR COSTOS'>NO LE INTERESA POR COSTOS</option>");
+
+    $("#AceptacionSegundoOfrecimiento").empty();
+    $("#AceptacionSegundoOfrecimiento").append("<option value=''>--Select Option--</option>");
+    $("#AceptacionSegundoOfrecimiento").append("<option value='ACEPTA OFRECIMIENTO'>ACEPTA OFRECIMIENTO</option>");
+    $("#AceptacionSegundoOfrecimiento").append("<option value='NO ESTA DISPONIBLE'>NO ESTA DISPONIBLE</option>");
+    $("#AceptacionSegundoOfrecimiento").append("<option value='NO LE INTERESA'>NO LE INTERESA</option>");
+    $("#AceptacionSegundoOfrecimiento").append("<option value='NO LE INTERESA POR COSTOS'>NO LE INTERESA POR COSTOS</option>");
+
+    $("#AceptacionTercerOfrecimiento").empty();
+    $("#AceptacionTercerOfrecimiento").append("<option value=''>--Select Option--</option>");
+    $("#AceptacionTercerOfrecimiento").append("<option value='ACEPTA OFRECIMIENTO'>ACEPTA OFRECIMIENTO</option>");
+    $("#AceptacionTercerOfrecimiento").append("<option value='NO ESTA DISPONIBLE'>NO ESTA DISPONIBLE</option>");
+    $("#AceptacionTercerOfrecimiento").append("<option value='NO LE INTERESA'>NO LE INTERESA</option>");
+    $("#AceptacionTercerOfrecimiento").append("<option value='NO LE INTERESA POR COSTOS'>NO LE INTERESA POR COSTOS</option>");
+    $("#MarcaRecu1").val('');
+    $("#MarcacionRecurrente2").val('');
+    $("#MarcacionRecurrente3").val('');
+    $("#PorQue").val('');
+    $("#VolvioLlamar").empty();
+    $("#VolvioLlamar").append("<option value=''>--Select Option--</option>");
+    $("#VolvioLlamar").append("<option value='SI'>SI</option>");
+    $("#VolvioLlamar").append("<option value='NO'>NO</option>");
     
 });
 
@@ -103,6 +147,8 @@ function SetMacroProcesoRecurrencias() {
 }
 
 function SetContactoList() {
+    $("#Contacto").empty();
+    $("#Contacto").append("<option value=''>--Select Option--</option>");
     $.ajax({
         type: "POST",
         url: urlContactoList,
@@ -596,13 +642,11 @@ $('#MacroProcesoRecurrencia3').change(function () {
 
 function MacroProcesoRecurrencia1()
 {
-    //alert('ff');
     MacroProcesoRecurrencia3();
 }
 
 function MacroProcesoRecurrencia2()
 {
-    //alert('ee');
     MacroProcesoRecurrencia3();
 }
 
@@ -611,9 +655,10 @@ function MacroProcesoRecurrencia3()
     var MarcRec1 = $("#MacroProcesoRecurrencia1").val();
     var MarcRec2 = $("#MacroProcesoRecurrencia2").val();
     var MarcRec3 = $("#MacroProcesoRecurrencia3").val();
-    //alert('45');
+    //alert('45 ' + MarcRec1 + ''+ MarcRec2 + MarcRec3);
 
-    if ((MarcRec1 == "CUENTA NO ESTA EN RR") && (MarcRec2 == "CUENTA NO ESTA EN RR") && (MarcRec3 == "CUENTA NO ESTA EN RR")) {
+    if ((MarcRec1 == "CUENTA NO ESTA EN RR") && (MarcRec2 == "CUENTA NO ESTA EN RR ") && (MarcRec3 == "CUENTA NO ESTA EN RR ")) {
+        //alert('SI');
         $("#VolvioLlamar").attr("disabled", "disabled");
         $("#PorQue").attr("disabled", "disabled");
         $("#Contacto").attr("disabled", "disabled");
@@ -666,6 +711,7 @@ function MacroProcesoRecurrencia3()
         $("#PorQue").removeAttr("disabled");
         $("#Contacto").removeAttr("disabled");
 
+        SetContactoList();
         SetProceso();
     }
 
@@ -711,7 +757,7 @@ function CargaSeguimiento(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
     window.location.href = '../Recurrencia/Recurrencia?cuentaSeleccionada=' + dataItem.CuentaCliente;
-
+    
 }
 
 function CargaSeguimientos()
@@ -733,3 +779,99 @@ function CargaSeguimientos()
         }
     });
 }
+
+function CargaHistorialSeguimientos() {
+    
+    var CuentaCli = $('#inputCuenta').val();
+    $.ajax({
+        type: "GET",
+        url: urlListHistorialSeguimientos,
+        contentType: "application/json; charset=utf-8",
+        data: { CuentaCliente: CuentaCli },
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            ShowGridHistorial(json);
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+}
+
+function ShowGridHistorial(data) {
+    var CuentaCli = $('#inputCuenta').val();
+
+    if (data != null) {
+        cambiarfechas(data);
+    }
+
+    $("#HistSeguimGrid").kendoGrid({
+        autoBind: true,
+        toolbar: ["excel"],
+        excel: {
+            fileName: "HistoricoSeguimientosCuenta_" + CuentaCli + ".xlsx",
+        },
+        dataSource: {
+            data: data,
+            pageSize: 10,
+        },
+        scrollable: true,
+        filterable: {
+            extra: false,
+            operators: {
+                string: {
+                    eq: "Es igual a"
+                }
+            }
+        },
+        sortable: true,
+        pageable: {
+            refresh: true,
+            pageSizes: true,
+            buttonCount: 5
+        },
+        columns: [
+       { field: "FechaGestion", title: "Fecha de Gestión", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "CuentaCliente", title: "Cuenta Cliente", headerAttributes: { style: "white-space: normal" }, width: 90 },
+       { field: "UsuarioGestion", title: "Usuario Gestion", headerAttributes: { style: "white-space: normal" }, width: 130 },
+       { field: "NombreUsuarioGestion", title: "Nombre Usuario Gestion", headerAttributes: { style: "white-space: normal" }, width: 130 },
+       { field: "AliadoGestion", title: "Aliado Gestion", headerAttributes: { style: "white-space: normal" }, width: 130 },
+       { field: "MacroProcesoRecurrencia1", title: "MacroProceso Recurrencia 1", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "MacroProcesoRecurrencia2", title: "MacroProceso Recurrencia 2", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "MacroProcesoRecurrencia3", title: "MacroProceso Recurrencia 3", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "MarcacionRecurrente1", title: "Marcacion Recurrente 1", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "MarcacionRecurrente2", title: "Marcacion Recurrente 2", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "MarcacionRecurrente3", title: "Marcacion Recurrente 3", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "VolvioLlamar", title: "Volvio A Llamar", headerAttributes: { style: "white-space: normal" }, width: 80 },
+       { field: "PorQue", title: "Por Que", headerAttributes: { style: "white-space: normal" }, width: 120 },
+       { field: "Contacto", title: "Contacto", headerAttributes: { style: "white-space: normal" }, width: 120 },
+       { field: "VozCliente", title: "Voz Cliente", headerAttributes: { style: "white-space: normal" }, width: 120 },
+       { field: "ClientePresentaNovedades", title: "Cliente Presenta Novedades", headerAttributes: { style: "white-space: normal" }, width: 80 },
+       { field: "Proceso", title: "Proceso", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Macroproceso", title: "Macroproceso", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "ServicioAfectado", title: "Servicio Afectado", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "FallaEspecificaArbolCCAA", title: "Falla Especifica Arbol CCAA", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "FallaCausaRaiz", title: "Falla Causa Raiz", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "SolucionEspecifica", title: "Solucion Especifica", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Solucionado", title: "Solucionado", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Estado", title: "Estado", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "ActivacionClaroVideoNagra", title: "Activacion Claro Video Nagra", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "AceptacionPrimerOfrecimiento", title: "Aceptacion Primer Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "AceptacionSegundoOfrecimiento", title: "Aceptacion Segundo Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "AceptacionTercerOfrecimiento", title: "Aceptacion Tercer Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Observaciones", title: "Observaciones", headerAttributes: { style: "white-space: normal" }, width: 130 }
+        ]
+
+    });
+    
+    function cambiarfechas(data) {
+        for (var i = 0; i < data.length; i++) {
+            data[i].FechaGestion = kendo.toString(kendo.parseDate(data[i].FechaGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+        }
+
+    }
+
+}
+

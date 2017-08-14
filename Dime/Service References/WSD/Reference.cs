@@ -14138,6 +14138,14 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminGLogRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ConsultaAdminGLogRecurrenciaResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia>> ConsultaAdminGLogRecurrenciaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ListaHistorialSeguimientosRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ListaHistorialSeguimientosRecurrenciaRespo" +
+            "nse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia> ListaHistorialSeguimientosRecurrencia(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ListaHistorialSeguimientosRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ListaHistorialSeguimientosRecurrenciaRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia>> ListaHistorialSeguimientosRecurrenciaAsync(decimal CuentaCliente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -14269,6 +14277,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia>> ConsultaAdminGLogRecurrenciaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
             return base.Channel.ConsultaAdminGLogRecurrenciaAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia> ListaHistorialSeguimientosRecurrencia(decimal CuentaCliente) {
+            return base.Channel.ListaHistorialSeguimientosRecurrencia(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia>> ListaHistorialSeguimientosRecurrenciaAsync(decimal CuentaCliente) {
+            return base.Channel.ListaHistorialSeguimientosRecurrenciaAsync(CuentaCliente);
         }
     }
     

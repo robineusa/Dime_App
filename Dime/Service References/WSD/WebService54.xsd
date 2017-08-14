@@ -4597,10 +4597,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListaHistorialSeguimientosRecurrencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaHistorialSeguimientosRecurrenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q317="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaHistorialSeguimientosRecurrenciaResult" nillable="true" type="q317:ArrayOfGLogRecurrencia" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RegistrarIncidente">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q317="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Bitacora" nillable="true" type="q317:BitacoraIncidentes" />
+        <xs:element xmlns:q318="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Bitacora" nillable="true" type="q318:BitacoraIncidentes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

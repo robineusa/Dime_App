@@ -43,6 +43,7 @@
             <ul class="nav nav-tabs">
                 <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321"><a href="#datosBasicos" aria-controls="datosBasicos" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Básicos</a></li>
                 <li id="Li2" class="" style=""><a href="#Seguimientos" aria-controls="Seguimientos" data-toggle="tab" role="tab" style="background-color:transparent;">Seguimientos</a></li>
+                <li id="Li3" class="" style="display:@ViewBag.Display;"><a href="#Historial_Seguimientos" aria-controls="Historial_Seguimientos" data-toggle="tab" role="tab" style="background-color:transparent;">Historial</a></li>
             </ul>
             <div class="tab-content" style="padding-left:0; padding-top: 0">
                 <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosBasicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
@@ -180,7 +181,10 @@
                     </table>
                 </div>
                 <div id="Seguimientos" class="tab-pane" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
-                    <div id="seguimientosGrid"></div>
+                    <br /><div id="seguimientosGrid"></div>
+                </div>
+                <div class="tab-pane" id="Historial_Seguimientos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                    <br /><div id="HistSeguimGrid"></div>
                 </div>
             </div>
         </div>
@@ -253,13 +257,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                           @Html.DropDownListFor(m => m.GPrincipalRecurrencia.AceptacionPrimerOfrecimiento, new List<SelectListItem> {
-                                            new SelectListItem { Text = "ACEPTA OFRECIMIENTO", Value = "ACEPTA OFRECIMIENTO" },
-                                            new SelectListItem { Text = "NO ESTA DISPONIBLE", Value = "NO ESTA DISPONIBLE" },
-                                            new SelectListItem { Text = "NO LE INTERESA", Value = "NO LE INTERESA" },
-                                            new SelectListItem { Text = "NO LE INTERESA POR COSTOS", Value = "NO LE INTERESA POR COSTOS" },
-                                            new SelectListItem { Text = "TERCERA PERSONA", Value = "TERCERA PERSONA" }
-                                      },
+                                           @Html.DropDownListFor(m => m.GPrincipalRecurrencia.AceptacionPrimerOfrecimiento, new List<SelectListItem> { },
                                            "--Select Option--",
                                                 new { Id = "AceptacionPrimerOfrecimiento", @class = "form-control input-sm" }) 
                                         @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.AceptacionPrimerOfrecimiento, "", new { @class = "text-danger" })
@@ -282,12 +280,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.AceptacionSegundoOfrecimiento, new List<SelectListItem> {
-                                            new SelectListItem { Text = "ACEPTA OFRECIMIENTO", Value = "ACEPTA OFRECIMIENTO" },
-                                            new SelectListItem { Text = "NO ESTA DISPONIBLE", Value = "NO ESTA DISPONIBLE" },
-                                            new SelectListItem { Text = "NO LE INTERESA", Value = "NO LE INTERESA" },
-                                            new SelectListItem { Text = "NO LE INTERESA POR COSTOS", Value = "NO LE INTERESA POR COSTOS" },
-                                            new SelectListItem { Text = "TERCERA PERSONA", Value = "TERCERA PERSONA" } },
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.AceptacionSegundoOfrecimiento, new List<SelectListItem> { },
                                            "--Select Option--",
                                                 new { Id = "AceptacionSegundoOfrecimiento", @class = "form-control input-sm" })
                                         @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.AceptacionSegundoOfrecimiento, "", new { @class = "text-danger" })
@@ -310,12 +303,7 @@
                                 </tr>
                                 <tr>
                                     <td >
-                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.AceptacionTercerOfrecimiento, new List<SelectListItem> {
-                                            new SelectListItem { Text = "ACEPTA OFRECIMIENTO", Value = "ACEPTA OFRECIMIENTO" },
-                                            new SelectListItem { Text = "NO ESTA DISPONIBLE", Value = "NO ESTA DISPONIBLE" },
-                                            new SelectListItem { Text = "NO LE INTERESA", Value = "NO LE INTERESA" },
-                                            new SelectListItem { Text = "NO LE INTERESA POR COSTOS", Value = "NO LE INTERESA POR COSTOS" },
-                                            new SelectListItem { Text = "TERCERA PERSONA", Value = "TERCERA PERSONA" } },
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.AceptacionTercerOfrecimiento, new List<SelectListItem> { },
                                            "--Select Option--",
                                                 new { Id = "AceptacionTercerOfrecimiento", @class = "form-control input-sm" }) 
                                         @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.AceptacionTercerOfrecimiento, "", new { @class = "text-danger" })
@@ -400,7 +388,7 @@
                                     <tr>
                                         <td style="padding-left:1px; width:200px;">
                                             <small>Marcación Recurrente 1: </small>
-                                            @Html.TextBoxFor(m=>m.GPrincipalRecurrencia.MarcacionRecurrente1, new { Id= "MarcaRecu1", @class = "form-control input-sm"})
+                                            @Html.TextBoxFor(m=>m.GPrincipalRecurrencia.MarcacionRecurrente1, new { Id= "MarcaRecu1", @class = "form-control input-sm", placeholder = "Marcacion Recurrente 2" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
                                             <small>Marcación Recurrente 2: </small>
@@ -536,13 +524,6 @@
                                     </tr>
                                 </table>
                         </div>
-                        <h2 class="page-header" style="margin-top:40px">
-                            <i class="fa fa-tty"></i> Historial del seguimiento
-                        </h2>
-                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
-                            <br />
-                            
-                        </div>
                     </div>
                 </div>
             </div>
@@ -561,12 +542,16 @@
         var urlFallaCausaRaizList = '@Url.Action("FallaCausaRaiz", "Recurrencia")';
         var urlSolucionEspecificaList = '@Url.Action("SolucionEspecifica", "Recurrencia")';
         var urlListSeguimientos = '@Url.Action("ListSeguimientos", "Recurrencia")';
+        var urlListHistorialSeguimientos = '@Url.Action("ConsultaHistorialSeguimientoJson", "Recurrencia")';
         
+        var DecisionHistorialSeguimientos = '@ViewBag.Display';
 
-        
+
+
+
     </script>
 @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
-    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.1.5"></script>
+    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.1.6"></script>
 }
 }
 

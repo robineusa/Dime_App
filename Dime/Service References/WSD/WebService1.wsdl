@@ -14812,6 +14812,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_ListaHistorialSeguimientosRecurrencia_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_ListaHistorialSeguimientosRecurrencia_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -16938,6 +16976,12 @@
   <wsdl:message name="IRecurrenciaService_ConsultaAdminGLogRecurrencia_OutputMessage">
     <wsdl:part name="parameters" element="tns:ConsultaAdminGLogRecurrenciaResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_ListaHistorialSeguimientosRecurrencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaHistorialSeguimientosRecurrencia" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_ListaHistorialSeguimientosRecurrencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaHistorialSeguimientosRecurrenciaResponse" />
+  </wsdl:message>
   <wsdl:message name="IBitacoraIncidentesService_RegistrarIncidente_InputMessage">
     <wsdl:part name="parameters" element="tns:RegistrarIncidente" />
   </wsdl:message>
@@ -18302,6 +18346,10 @@
     <wsdl:operation name="ConsultaAdminGLogRecurrencia">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminGLogRecurrencia" message="tns:IRecurrenciaService_ConsultaAdminGLogRecurrencia_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminGLogRecurrenciaResponse" message="tns:IRecurrenciaService_ConsultaAdminGLogRecurrencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaHistorialSeguimientosRecurrencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecurrenciaService/ListaHistorialSeguimientosRecurrencia" message="tns:IRecurrenciaService_ListaHistorialSeguimientosRecurrencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecurrenciaService/ListaHistorialSeguimientosRecurrenciaResponse" message="tns:IRecurrenciaService_ListaHistorialSeguimientosRecurrencia_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IBitacoraIncidentesService">
@@ -22013,6 +22061,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_ConsultaAdminGLogRecurrencia_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaHistorialSeguimientosRecurrencia">
+      <soap12:operation soapAction="http://tempuri.org/IRecurrenciaService/ListaHistorialSeguimientosRecurrencia" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_ListaHistorialSeguimientosRecurrencia_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_ListaHistorialSeguimientosRecurrencia_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

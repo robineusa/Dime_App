@@ -35,11 +35,13 @@ namespace Dime.Controllers
                 {
                     var Cuenta = model.ClientesTodos.Cuenta;
                     model.CargueBase = recurrencia.TraerDatosRecurrencia(Convert.ToInt32(Session["IdUsuario"].ToString()), Cuenta);
+                    ViewBag.Display = "none";
                 }
                 else
                 {
                     model.ClientesTodos = new ClientesTodo();
                     model.ClientesTodos.Cuenta = 0;
+                    ViewBag.Display = "none";
                 }
             }
             else
@@ -63,10 +65,12 @@ namespace Dime.Controllers
                     model.CargueBase.Diferenciador = model.GPrincipalRecurrencia.Diferenciador;
                     model.CargueBase.Prioridad = model.GPrincipalRecurrencia.Prioridad;
                     model.CargueBase.Veces_Gestionado = model.GPrincipalRecurrencia.VecesGestionado;
+                    ViewBag.Display = "block";
                 }
                 else
                 {
                     ViewBag.NoDatos = "Otro Usuario esta gestionando esta cuenta";
+                    ViewBag.Display = "none";
                     model.ClientesTodos.Cuenta = Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente);
                     model.CargueBase = new RecurrenciaCargaBase();
                     model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
@@ -183,6 +187,11 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
-
+        public JsonResult ConsultaHistorialSeguimientoJson(string CuentaCliente)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(recurrencia.ListaHistorialSeguimientosRecurrencia(Convert.ToDecimal(CuentaCliente))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }
