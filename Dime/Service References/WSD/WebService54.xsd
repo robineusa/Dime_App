@@ -4600,7 +4600,7 @@
   <xs:element name="RegistrarIncidente">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q317="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Bitacora" nillable="true" type="q317:BitacoraIncidentes" />
+        <xs:element xmlns:q317="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Bitacora" nillable="true" type="q317:BIPBitacoraIncidentes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

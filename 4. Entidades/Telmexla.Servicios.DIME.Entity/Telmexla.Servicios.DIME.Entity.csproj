@@ -93,8 +93,15 @@
     <Compile Include="BEMRazonMalEscalamiento.cs" />
     <Compile Include="BEMTipoDeEscalamientos.cs" />
     <Compile Include="BEPSolicitudes.cs" />
-    <Compile Include="BitacoraIncidentes.cs" />
-    <Compile Include="BitacoraIncidentesLog.cs" />
+    <Compile Include="BILBitacoraIncidentes.cs" />
+    <Compile Include="BIMAliados.cs" />
+    <Compile Include="BIMGerencias.cs" />
+    <Compile Include="BIMHerramientas.cs" />
+    <Compile Include="BIMOperaciones.cs" />
+    <Compile Include="BIMPrioridades.cs" />
+    <Compile Include="BIMTipoFalla.cs" />
+    <Compile Include="BIPBitacoraIncidentes.cs" />
+    <Compile Include="BIPIncidentesPorOperacion.cs" />
     <Compile Include="BlendingFueraNivel.cs" />
     <Compile Include="BlendingFueraNivelCollection.cs" />
     <Compile Include="BuscarCuentasViewModel.cs" />
