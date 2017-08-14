@@ -27,7 +27,21 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult RegistrodeIncidentes(ViewModelBitacoraIncidentes modelo)
         {
-            return View();
+            modelo.BIPBitacoraIncidentes.UsuarioCreacion = Convert.ToString(Session["Usuario"].ToString());
+            modelo.BIPBitacoraIncidentes.NombreUsuarioCreacion = Session["NombreUsuario"].ToString();
+            modelo.BIPBitacoraIncidentes.UsuarioUltimaActualizacion = Convert.ToString(Session["Usuario"].ToString());
+            modelo.BIPBitacoraIncidentes.NombreUsuarioUltimaActualizacion = Session["NombreUsuario"].ToString();
+            decimal IdRegistrado = bitacoraservice.RegistrarIncidente(modelo.BIPBitacoraIncidentes);
+            
+            return RedirectToAction("RegistrarOperacionesIncidente", "BitacoraIncidentes", new { IdRegistro = IdRegistrado });
+        }
+        [HttpGet]
+        public ActionResult RegistrarOperacionesIncidente(string IdRegistro)
+        {
+            decimal IdRegistroAGestionar = Convert.ToDecimal(IdRegistro);
+            ViewModelBitacoraIncidentes modelo = new ViewModelBitacoraIncidentes();
+            modelo.BIPIncidentesPorOperacion.IdRegistro = IdRegistroAGestionar;
+            return View(modelo);
         }
         [HttpGet]
         public JsonResult ListaHerramientasJson()

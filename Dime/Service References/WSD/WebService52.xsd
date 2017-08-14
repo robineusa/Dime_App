@@ -23,6 +23,7 @@
   <xs:element name="Usuario" nillable="true" type="tns:Usuario" />
   <xs:complexType name="Linea">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccesosXLineas" nillable="true" type="tns:ArrayOfAccesosXLinea" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdModoLogin" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="ModosLogin" nillable="true" type="tns:ModosLogin" />
@@ -31,6 +32,33 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Linea" nillable="true" type="tns:Linea" />
+  <xs:complexType name="ArrayOfAccesosXLinea">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccesosXLinea" nillable="true" type="tns:AccesosXLinea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccesosXLinea" nillable="true" type="tns:ArrayOfAccesosXLinea" />
+  <xs:complexType name="AccesosXLinea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Acceso" nillable="true" type="tns:Acceso" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdAcceso" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdLinea" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Linea" nillable="true" type="tns:Linea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccesosXLinea" nillable="true" type="tns:AccesosXLinea" />
+  <xs:complexType name="Acceso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccesosXLineas" nillable="true" type="tns:ArrayOfAccesosXLinea" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdModoLogin" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ModosLogin" nillable="true" type="tns:ModosLogin" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuariosXAccesoes" nillable="true" type="tns:ArrayOfUsuariosXAcceso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Acceso" nillable="true" type="tns:Acceso" />
   <xs:complexType name="ModosLogin">
     <xs:sequence>
       <xs:element minOccurs="0" name="Accesoes" nillable="true" type="tns:ArrayOfAcceso" />
@@ -46,16 +74,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfAcceso" nillable="true" type="tns:ArrayOfAcceso" />
-  <xs:complexType name="Acceso">
+  <xs:complexType name="ArrayOfLinea">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="IdModoLogin" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="ModosLogin" nillable="true" type="tns:ModosLogin" />
-      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UsuariosXAccesoes" nillable="true" type="tns:ArrayOfUsuariosXAcceso" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Linea" nillable="true" type="tns:Linea" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Acceso" nillable="true" type="tns:Acceso" />
+  <xs:element name="ArrayOfLinea" nillable="true" type="tns:ArrayOfLinea" />
   <xs:complexType name="ArrayOfUsuariosXAcceso">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="UsuariosXAcceso" nillable="true" type="tns:UsuariosXAcceso" />
@@ -77,12 +101,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UsuariosXAcceso" nillable="true" type="tns:UsuariosXAcceso" />
-  <xs:complexType name="ArrayOfLinea">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Linea" nillable="true" type="tns:Linea" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfLinea" nillable="true" type="tns:ArrayOfLinea" />
   <xs:complexType name="ArrayOfUsuario">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Usuario" nillable="true" type="tns:Usuario" />

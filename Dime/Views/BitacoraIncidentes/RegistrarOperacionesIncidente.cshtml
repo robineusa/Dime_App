@@ -1,0 +1,8 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelBitacoraIncidentes
+@{
+    ViewBag.Title = "Registrar Operaciones Incidente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.TextBoxFor(m => m.BIPIncidentesPorOperacion.IdRegistro, new { @class = "form-control input-sm", @Id = "CasoSD" })
+

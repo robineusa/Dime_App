@@ -4620,7 +4620,9 @@
   </xs:element>
   <xs:element name="RegistrarIncidenteResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegistrarIncidenteResult" type="xs:decimal" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ActualizarRegistroIncidente">

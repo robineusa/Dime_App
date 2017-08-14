@@ -15,6 +15,115 @@ namespace Dime.WSD {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="AccesosXLinea", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class AccesosXLinea : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Telmexla.Servicios.DIME.Entity.Acceso AccesoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> IdAccesoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> IdLineaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Telmexla.Servicios.DIME.Entity.Linea LineaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Telmexla.Servicios.DIME.Entity.Acceso Acceso {
+            get {
+                return this.AccesoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AccesoField, value) != true)) {
+                    this.AccesoField = value;
+                    this.RaisePropertyChanged("Acceso");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> IdAcceso {
+            get {
+                return this.IdAccesoField;
+            }
+            set {
+                if ((this.IdAccesoField.Equals(value) != true)) {
+                    this.IdAccesoField = value;
+                    this.RaisePropertyChanged("IdAcceso");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> IdLinea {
+            get {
+                return this.IdLineaField;
+            }
+            set {
+                if ((this.IdLineaField.Equals(value) != true)) {
+                    this.IdLineaField = value;
+                    this.RaisePropertyChanged("IdLinea");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Telmexla.Servicios.DIME.Entity.Linea Linea {
+            get {
+                return this.LineaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LineaField, value) != true)) {
+                    this.LineaField = value;
+                    this.RaisePropertyChanged("Linea");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="UsuariosMasivoData", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Business")]
     [System.SerializableAttribute()]
     public partial class UsuariosMasivoData : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -14293,10 +14402,10 @@ namespace Dime.WSD {
     public interface IBitacoraIncidentesService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/RegistrarIncidente", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/RegistrarIncidenteResponse")]
-        void RegistrarIncidente(Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes Bitacora);
+        decimal RegistrarIncidente(Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes Bitacora);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/RegistrarIncidente", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/RegistrarIncidenteResponse")]
-        System.Threading.Tasks.Task RegistrarIncidenteAsync(Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes Bitacora);
+        System.Threading.Tasks.Task<decimal> RegistrarIncidenteAsync(Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes Bitacora);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ActualizarRegistroIncidente", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ActualizarRegistroIncidenteResponse" +
             "")]
@@ -14384,11 +14493,11 @@ namespace Dime.WSD {
                 base(binding, remoteAddress) {
         }
         
-        public void RegistrarIncidente(Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes Bitacora) {
-            base.Channel.RegistrarIncidente(Bitacora);
+        public decimal RegistrarIncidente(Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes Bitacora) {
+            return base.Channel.RegistrarIncidente(Bitacora);
         }
         
-        public System.Threading.Tasks.Task RegistrarIncidenteAsync(Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes Bitacora) {
+        public System.Threading.Tasks.Task<decimal> RegistrarIncidenteAsync(Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes Bitacora) {
             return base.Channel.RegistrarIncidenteAsync(Bitacora);
         }
         

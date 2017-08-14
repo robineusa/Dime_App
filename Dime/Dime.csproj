@@ -3335,6 +3335,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\BitacoraIncidentes\RegistrodeIncidentes.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\RegistrarOperacionesIncidente.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
