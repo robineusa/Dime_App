@@ -27,8 +27,8 @@ namespace Dime.Controllers
     public class AccountController : Controller
     {
         private WSD.LoginServiceClient loginService;
-        private ApplicationSignInManager _signInManager;
-        private ApplicationUserManager _userManager;
+        //private ApplicationSignInManager _signInManager;
+        //private ApplicationUserManager _userManager;
 
         public AccountController()
         {
@@ -436,20 +436,20 @@ namespace Dime.Controllers
 
 
 
-        [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SendCode(SendCodeViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View();
-            }
+        //[HttpPost]
+        //[AllowAnonymous]
+        //[ValidateAntiForgeryToken]
+        //public async Task<ActionResult> SendCode(SendCodeViewModel model)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return View();
+        //    }
 
-            // Generate the token and send it
+        //    // Generate the token and send it
            
-            return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
-        }
+        //    return RedirectToAction("VerifyCode", new { Provider = model.SelectedProvider, ReturnUrl = model.ReturnUrl, RememberMe = model.RememberMe });
+        //}
 
 
 

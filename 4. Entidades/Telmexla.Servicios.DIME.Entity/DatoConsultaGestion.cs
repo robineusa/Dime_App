@@ -8,7 +8,7 @@ namespace Telmexla.Servicios.DIME.Entity
 {
     public class DatoConsultaGestion
     {
-        private Ingreso ingreso;
-        private NotasIngreso notaIngreso;
+        //private Ingreso ingreso;
+        //private NotasIngreso notaIngreso;
     }
 }

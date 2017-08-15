@@ -44,12 +44,39 @@ namespace Dime.Controllers
             return View(modelo);
         }
         [HttpGet]
+        public JsonResult ListaDeGerenciasJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaDeGerencias()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public JsonResult ListaDeAliadosPorgerenciaJson(IList<string> Gerencias)
+        {
+            var result0 = bitacoraservice.ListaDeAliadosPorGerencia(Gerencias.ToList());
+
+            return new JsonResult
+            {
+                Data = JsonConvert.SerializeObject(result0),
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+        [HttpGet]
+        public JsonResult ListaOperacionesJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaDeOperaciones()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
+        [HttpGet]
         public JsonResult ListaHerramientasJson()
         {
             var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaDeHerramientas()), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+
         [HttpGet]
         public JsonResult ListaTipoDeFallaJson()
         {
