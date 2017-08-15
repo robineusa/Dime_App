@@ -2975,6 +2975,12 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BEMDistribuciones1.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GLogRecurrencia.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMAliados.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMGerencias.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMOperaciones.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMHerramientas.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMPrioridades.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMTipoFalla.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3075,6 +3081,12 @@
     <Content Include="Resources\Documents\Formato_Back_Elite.xls" />
     <None Include="Service References\WSD\configuration91.svcinfo" />
     <None Include="Service References\WSD\configuration.svcinfo" />
+    <Content Include="Service References\WSD\Dime.WSD.ConsultaBlendingCampañaDestinoReturnViewModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.ConsultaBlendingOperacionDestinoReturnViewModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\WSD\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

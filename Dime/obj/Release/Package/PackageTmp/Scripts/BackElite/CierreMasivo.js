@@ -139,6 +139,8 @@ function FillGridViewResult(data) {
 
 function ActualizarCuentas() {
     var AplicaMalEscalado = $('#malescalado').val();
+    var IdTipoDeSolicitud = document.getElementById("TipodeSolicitud");
+    var TipoDeSolicitud = IdTipoDeSolicitud.options[IdTipoDeSolicitud.selectedIndex].text;
     var IdDetalleMalEscalado = document.getElementById("detallemalescalado");
     var DetalleMalEscalado = IdDetalleMalEscalado.options[IdDetalleMalEscalado.selectedIndex].text;
     var IdGestion = document.getElementById("gestion");
@@ -153,7 +155,7 @@ function ActualizarCuentas() {
         traditional: true,
         url: UrlActualizarSolicitudes,
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ Solicitudes: ArrayTotal, AplicaMalEscalado: AplicaMalEscalado, DetalleMalEscalado: DetalleMalEscalado, Gestion: Gestion, Estado: Estado, FechaAgenda: FechaAgenda, Observaciones: Observaciones }),
+        data: JSON.stringify({ Solicitudes: ArrayTotal,TipoDeSolicitud: TipoDeSolicitud, AplicaMalEscalado: AplicaMalEscalado, DetalleMalEscalado: DetalleMalEscalado, Gestion: Gestion, Estado: Estado, FechaAgenda: FechaAgenda, Observaciones: Observaciones }),
         dataType: "json",
         success: function (result) {
             $("#mensajeFinal").text(result);
@@ -245,9 +247,9 @@ function ListaMalEscalado() {
     });
 }
 
-$('#gestion').change(function () {
-    TraerEstadoCaso();
-})
+//$('#gestion').change(function () {
+//    TraerEstadoCaso();
+//})
 
 
 

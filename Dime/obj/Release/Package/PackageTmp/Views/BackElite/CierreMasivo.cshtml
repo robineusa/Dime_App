@@ -6,7 +6,7 @@
 }
 @if (Session["Distribucion Back Elite"] != null)
 {
-    using (Html.BeginForm("", "", FormMethod.Post, new { id = "datosCliente", role = "form" }))
+    using (Html.BeginForm("ActualizarZolicitudesMasivo", "BackElite", FormMethod.Post, new { id = "datosCliente", role = "form" }))
     {
         <div class="row">
             <div class="col-md-12">
@@ -129,7 +129,7 @@
                                                         </td>
                                                         <td width="200">
                                                             <small>Estado:</small>
-                                                            @Html.TextBoxFor(m => m.BEPSolicitudes.EstadoEscalamiento, new { @class = "form-control input-sm", id = "estado", @readonly = "true" })
+                                                            @Html.TextBoxFor(m => m.BEPSolicitudes.EstadoEscalamiento, new { @class = "form-control input-sm", id = "estado", @readonly = "true", @Value="FINALIZADO" })
                                                         </td>
                                                         <td width="200">
                                                             <small>Fecha de Agenda:</small>
@@ -182,7 +182,7 @@
         </div>
     }
     @section Scripts{
-        @Scripts.Render("~/AdminLTEplugins/jquery-validate/js");
+        @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
         <script>
             var urltipoescalamientos = '@Url.Action("ListaTipoDeEscalamientosJson", "BackElite")';
             var urllistagestion = '@Url.Action("ListaGestionPorIdJson", "BackElite")';
@@ -195,7 +195,7 @@
         <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.1"></script>
         <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.1" rel="stylesheet" />
 
-        <script src="~/Scripts/BackElite/CierreMasivo.js?1.2.2"></script>
+        <script src="~/Scripts/BackElite/CierreMasivo.js?1.2.7"></script>
     }
 }
 

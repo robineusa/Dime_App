@@ -1,4 +1,4 @@
-﻿var Datos = "";
+﻿//var Datos = "";
 $(document).ready(function () {
     $.ajax({
         type: "POST",
@@ -7,8 +7,8 @@ $(document).ready(function () {
         processData: false,
         cache: false,
         success: function (result) {
-            alert(result);
-            Datos = result;
+            //alert(result);
+            //Datos = result;
             ShowAmcharts(result);
         },
         error: function (result) {
@@ -22,43 +22,41 @@ $(document).ready(function () {
 
 
 function ShowAmcharts(Data) {
-    var Datos = Data;
-    alert(Datos);
+    var Datos = $.parseJSON(Data);
+    
     var chart = AmCharts.makeChart("chartdiv", {
         "theme": "light",
         "type": "serial",
         "startDuration": 1,
-        "dataProvider": //Datos,
-        [{
-            "COUNTRY": "Poland",
-            "VISITS": 328,
-            "color": "#000000"
-        }],
+        "dataProvider": Datos,
         "valueAxes": [{
             "position": "left",
-            "title": "visits"
+            "title": "Cantidad"
         }],
         "graphs": [{
             "balloonText": "[[category]]: <b>[[value]]</b>",
             "fillAlphas": 1,
             "lineAlpha": 0.1,
             "type": "column",
-            "valueField": "VISITS"
+            "valueField": "CANTIDAD",
+            "fillAlphas": 0.76,
+            "fillColors": "#F23636",
+            "fillAlphas": 0.7,
         }],
         "depth3D": 20,
-        "angle": 30,
+        "angle": 40,
         "chartCursor": {
             "categoryBalloonEnabled": false,
             "cursorAlpha": 0,
             "zoomable": false
         },
-        "categoryField": "COUNTRY",
+        "categoryField": "FORMULARIO_DESTINO",
         "categoryAxis": {
             "gridPosition": "start",
             "labelRotation": 90
         },
         "export": {
-            "enabled": true
+            "enabled": false
         }
 
     });

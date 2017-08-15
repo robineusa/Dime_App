@@ -143,6 +143,7 @@ function Llama_Metodos(connect, UserConnect) {
             $('#Id_Notificado').val(Id_Notificado);
             $('#Descripcion_Imagen').val(Descripcion_Imagen);
             $('#Buen_Servicio').css('display', 'inline-block');
+            alert('si');
         }
         //play_single_sound();
     }

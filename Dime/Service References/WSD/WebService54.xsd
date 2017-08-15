@@ -3608,10 +3608,41 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ConsultaBlendingOperacionDestino">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aliado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="formulario" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaBlendingOperacionDestinoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q248="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaBlendingOperacionDestinoResult" nillable="true" type="q248:ArrayOfConsultaBlendingOperacionDestinoReturnViewModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaBlendingCampanaDestino">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aliado" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="formulario" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="operacion" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaBlendingCampanaDestinoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q249="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaBlendingCampanaDestinoResult" nillable="true" type="q249:ArrayOfConsultaBlendingCampañaDestinoReturnViewModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="IsertarMonitoreo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q248="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Monitoreo" nillable="true" type="q248:MecMonitoreosP" />
+        <xs:element xmlns:q250="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Monitoreo" nillable="true" type="q250:MecMonitoreosP" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3628,7 +3659,7 @@
   <xs:element name="ListaProcesosMecResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q249="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaProcesosMecResult" nillable="true" type="q249:ArrayOfMecProcesos" />
+        <xs:element xmlns:q251="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaProcesosMecResult" nillable="true" type="q251:ArrayOfMecProcesos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3642,7 +3673,7 @@
   <xs:element name="ListaLineasMecResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q250="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaLineasMecResult" nillable="true" type="q250:ArrayOfMecLineas" />
+        <xs:element xmlns:q252="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaLineasMecResult" nillable="true" type="q252:ArrayOfMecLineas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3656,7 +3687,7 @@
   <xs:element name="ListasCorreosMecResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q251="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListasCorreosMecResult" nillable="true" type="q251:ArrayOfMecListasDistribucion" />
+        <xs:element xmlns:q253="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListasCorreosMecResult" nillable="true" type="q253:ArrayOfMecListasDistribucion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3670,7 +3701,7 @@
   <xs:element name="ListaTipoAlarmasMecResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q252="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaTipoAlarmasMecResult" nillable="true" type="q252:ArrayOfMecTipoAlarmas" />
+        <xs:element xmlns:q254="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaTipoAlarmasMecResult" nillable="true" type="q254:ArrayOfMecTipoAlarmas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3684,14 +3715,14 @@
   <xs:element name="DestinatariosMecResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q253="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="DestinatariosMecResult" nillable="true" type="q253:MecListasDistribucion" />
+        <xs:element xmlns:q255="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="DestinatariosMecResult" nillable="true" type="q255:MecListasDistribucion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ActualizarMonitoreo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q254="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Monitoreo" nillable="true" type="q254:MecMonitoreosP" />
+        <xs:element xmlns:q256="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Monitoreo" nillable="true" type="q256:MecMonitoreosP" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3711,7 +3742,7 @@
   <xs:element name="ConsultaAdminMonitoreosPrincipalResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q255="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminMonitoreosPrincipalResult" nillable="true" type="q255:ArrayOfMecMonitoreosP" />
+        <xs:element xmlns:q257="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminMonitoreosPrincipalResult" nillable="true" type="q257:ArrayOfMecMonitoreosP" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3726,7 +3757,7 @@
   <xs:element name="ConsultaAdminMonitoreosLogResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q256="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminMonitoreosLogResult" nillable="true" type="q256:ArrayOfMecMonitoreosL" />
+        <xs:element xmlns:q258="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminMonitoreosLogResult" nillable="true" type="q258:ArrayOfMecMonitoreosL" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3740,7 +3771,7 @@
   <xs:element name="ConsultarMonitoreoPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q257="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarMonitoreoPorIdResult" nillable="true" type="q257:MecMonitoreosP" />
+        <xs:element xmlns:q259="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarMonitoreoPorIdResult" nillable="true" type="q259:MecMonitoreosP" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3756,14 +3787,14 @@
   <xs:element name="ConsultaAgenteMonitoreosPrincipalResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q258="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAgenteMonitoreosPrincipalResult" nillable="true" type="q258:ArrayOfMecMonitoreosP" />
+        <xs:element xmlns:q260="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAgenteMonitoreosPrincipalResult" nillable="true" type="q260:ArrayOfMecMonitoreosP" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="RegistrarMacroproceso">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q259="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="proceso" nillable="true" type="q259:MecProcesos" />
+        <xs:element xmlns:q261="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="proceso" nillable="true" type="q261:MecProcesos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3775,7 +3806,7 @@
   <xs:element name="ActualizarMacroproceso">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q260="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="proceso" nillable="true" type="q260:MecProcesos" />
+        <xs:element xmlns:q262="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="proceso" nillable="true" type="q262:MecProcesos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3787,7 +3818,7 @@
   <xs:element name="RegistrarLinea">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q261="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Linea" nillable="true" type="q261:MecLineas" />
+        <xs:element xmlns:q263="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Linea" nillable="true" type="q263:MecLineas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3799,7 +3830,7 @@
   <xs:element name="ActualizarLinea">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q262="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Linea" nillable="true" type="q262:MecLineas" />
+        <xs:element xmlns:q264="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Linea" nillable="true" type="q264:MecLineas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3811,7 +3842,7 @@
   <xs:element name="RegistrarListaDistribucion">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q263="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaD" nillable="true" type="q263:MecListasDistribucion" />
+        <xs:element xmlns:q265="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaD" nillable="true" type="q265:MecListasDistribucion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3823,7 +3854,7 @@
   <xs:element name="ActualizarListaDistribucion">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q264="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaD" nillable="true" type="q264:MecListasDistribucion" />
+        <xs:element xmlns:q266="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaD" nillable="true" type="q266:MecListasDistribucion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3835,7 +3866,7 @@
   <xs:element name="RegistrarTipoAlarma">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q265="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Alarma" nillable="true" type="q265:MecTipoAlarmas" />
+        <xs:element xmlns:q267="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Alarma" nillable="true" type="q267:MecTipoAlarmas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3847,7 +3878,7 @@
   <xs:element name="ActualizarTipoAlarmas">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q266="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Alarma" nillable="true" type="q266:MecTipoAlarmas" />
+        <xs:element xmlns:q268="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Alarma" nillable="true" type="q268:MecTipoAlarmas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3864,7 +3895,7 @@
   <xs:element name="ListaProcesosMecAdminResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q267="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaProcesosMecAdminResult" nillable="true" type="q267:ArrayOfMecProcesos" />
+        <xs:element xmlns:q269="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaProcesosMecAdminResult" nillable="true" type="q269:ArrayOfMecProcesos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3878,7 +3909,7 @@
   <xs:element name="ListaLineasMecAdminResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q268="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaLineasMecAdminResult" nillable="true" type="q268:ArrayOfMecLineas" />
+        <xs:element xmlns:q270="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaLineasMecAdminResult" nillable="true" type="q270:ArrayOfMecLineas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3892,7 +3923,7 @@
   <xs:element name="ListasCorreosMecAdminResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q269="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListasCorreosMecAdminResult" nillable="true" type="q269:ArrayOfMecListasDistribucion" />
+        <xs:element xmlns:q271="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListasCorreosMecAdminResult" nillable="true" type="q271:ArrayOfMecListasDistribucion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3904,7 +3935,7 @@
   <xs:element name="ListaTipoAlarmasMecAdminResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q270="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaTipoAlarmasMecAdminResult" nillable="true" type="q270:ArrayOfMecTipoAlarmas" />
+        <xs:element xmlns:q272="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaTipoAlarmasMecAdminResult" nillable="true" type="q272:ArrayOfMecTipoAlarmas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3918,7 +3949,7 @@
   <xs:element name="ProcesoPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q271="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ProcesoPorIdResult" nillable="true" type="q271:MecProcesos" />
+        <xs:element xmlns:q273="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ProcesoPorIdResult" nillable="true" type="q273:MecProcesos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3932,7 +3963,7 @@
   <xs:element name="LineaPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q272="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="LineaPorIdResult" nillable="true" type="q272:MecLineas" />
+        <xs:element xmlns:q274="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="LineaPorIdResult" nillable="true" type="q274:MecLineas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3946,7 +3977,7 @@
   <xs:element name="ListaCorreosPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q273="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaCorreosPorIdResult" nillable="true" type="q273:MecListasDistribucion" />
+        <xs:element xmlns:q275="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaCorreosPorIdResult" nillable="true" type="q275:MecListasDistribucion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3960,7 +3991,7 @@
   <xs:element name="ListaALarmasPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q274="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaALarmasPorIdResult" nillable="true" type="q274:MecTipoAlarmas" />
+        <xs:element xmlns:q276="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaALarmasPorIdResult" nillable="true" type="q276:MecTipoAlarmas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -3974,14 +4005,14 @@
   <xs:element name="BuscarDatosMultiplayResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q275="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="BuscarDatosMultiplayResult" nillable="true" type="q275:MultiplayCargue" />
+        <xs:element xmlns:q277="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="BuscarDatosMultiplayResult" nillable="true" type="q277:MultiplayCargue" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InsertarMultiPlay">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q276="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="multiplay" nillable="true" type="q276:MultiPlayRegistro" />
+        <xs:element xmlns:q278="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="multiplay" nillable="true" type="q278:MultiPlayRegistro" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4014,7 +4045,7 @@
   <xs:element name="ConsultaAdminBasePresidencialResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q277="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminBasePresidencialResult" nillable="true" type="q277:ArrayOfMultiPlayRegistro" />
+        <xs:element xmlns:q279="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminBasePresidencialResult" nillable="true" type="q279:ArrayOfMultiPlayRegistro" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4028,7 +4059,7 @@
   <xs:element name="ListaResidencialPredictivoDeCuentaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q278="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaResidencialPredictivoDeCuentaResult" nillable="true" type="q278:ArrayOfDatoConsultaCCResidencialPredictivo" />
+        <xs:element xmlns:q280="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaResidencialPredictivoDeCuentaResult" nillable="true" type="q280:ArrayOfDatoConsultaCCResidencialPredictivo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4042,7 +4073,7 @@
   <xs:element name="GetResidencialPredictivoInfoPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q279="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="GetResidencialPredictivoInfoPorIdResult" nillable="true" type="q279:CcResidencialPredictivoInfo" />
+        <xs:element xmlns:q281="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="GetResidencialPredictivoInfoPorIdResult" nillable="true" type="q281:CcResidencialPredictivoInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4057,14 +4088,14 @@
   <xs:element name="RecibirBaseMejoramientoDeResdPredInfoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q280="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="RecibirBaseMejoramientoDeResdPredInfoResult" nillable="true" type="q280:CcBaseMejoramiento" />
+        <xs:element xmlns:q282="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="RecibirBaseMejoramientoDeResdPredInfoResult" nillable="true" type="q282:CcBaseMejoramiento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="IngresarGestionResidencialPredictivo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q281="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="gestionResdPred" nillable="true" type="q281:CcGestionResidencialPredictivo" />
+        <xs:element xmlns:q283="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="gestionResdPred" nillable="true" type="q283:CcGestionResidencialPredictivo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4078,7 +4109,7 @@
   <xs:element name="IngresarSegundaTipificacion">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q282="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="segundaTipifi" nillable="true" type="q282:CcSegundaTipificacion" />
+        <xs:element xmlns:q284="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="segundaTipifi" nillable="true" type="q284:CcSegundaTipificacion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4090,7 +4121,7 @@
   <xs:element name="RegistrarSolicitud">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q283="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Solicitud" nillable="true" type="q283:BEPSolicitudes" />
+        <xs:element xmlns:q285="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Solicitud" nillable="true" type="q285:BEPSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4102,7 +4133,7 @@
   <xs:element name="ActualizaSolicitud">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q284="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Solicitud" nillable="true" type="q284:BEPSolicitudes" />
+        <xs:element xmlns:q286="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Solicitud" nillable="true" type="q286:BEPSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4119,7 +4150,7 @@
   <xs:element name="ListaTipoDeEscalamientosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q285="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaTipoDeEscalamientosResult" nillable="true" type="q285:ArrayOfBEMTipoDeEscalamientos" />
+        <xs:element xmlns:q287="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaTipoDeEscalamientosResult" nillable="true" type="q287:ArrayOfBEMTipoDeEscalamientos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4133,7 +4164,7 @@
   <xs:element name="ListaDetalleDeEscalamientosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q286="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDetalleDeEscalamientosResult" nillable="true" type="q286:ArrayOfBEMDetalleEscalamientos" />
+        <xs:element xmlns:q288="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDetalleDeEscalamientosResult" nillable="true" type="q288:ArrayOfBEMDetalleEscalamientos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4147,7 +4178,7 @@
   <xs:element name="ListaRazonesMalEscalamientoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q287="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaRazonesMalEscalamientoResult" nillable="true" type="q287:ArrayOfBEMRazonMalEscalamiento" />
+        <xs:element xmlns:q289="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaRazonesMalEscalamientoResult" nillable="true" type="q289:ArrayOfBEMRazonMalEscalamiento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4161,7 +4192,7 @@
   <xs:element name="ListaDetallesDeGestionResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q288="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDetallesDeGestionResult" nillable="true" type="q288:ArrayOfBEMDetalleDeGestion" />
+        <xs:element xmlns:q290="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDetallesDeGestionResult" nillable="true" type="q290:ArrayOfBEMDetalleDeGestion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4175,7 +4206,7 @@
   <xs:element name="DetalleGestionPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q289="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="DetalleGestionPorIdResult" nillable="true" type="q289:BEMDetalleDeGestion" />
+        <xs:element xmlns:q291="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="DetalleGestionPorIdResult" nillable="true" type="q291:BEMDetalleDeGestion" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4205,7 +4236,7 @@
   <xs:element name="ConsultarSolicitudPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q290="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarSolicitudPorIdResult" nillable="true" type="q290:BEPSolicitudes" />
+        <xs:element xmlns:q292="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarSolicitudPorIdResult" nillable="true" type="q292:BEPSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4220,7 +4251,7 @@
   <xs:element name="ApartarCuentadeSolcitudBackElitaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q291="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ApartarCuentadeSolcitudBackElitaResult" nillable="true" type="q291:BEPSolicitudes" />
+        <xs:element xmlns:q293="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ApartarCuentadeSolcitudBackElitaResult" nillable="true" type="q293:BEPSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4234,7 +4265,7 @@
   <xs:element name="TraerNodoPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q292="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerNodoPorIdResult" nillable="true" type="q292:NodosZonificados" />
+        <xs:element xmlns:q294="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerNodoPorIdResult" nillable="true" type="q294:NodosZonificados" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4248,7 +4279,7 @@
   <xs:element name="TipoEscalamientoPorNombreResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q293="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TipoEscalamientoPorNombreResult" nillable="true" type="q293:BEMTipoDeEscalamientos" />
+        <xs:element xmlns:q295="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TipoEscalamientoPorNombreResult" nillable="true" type="q295:BEMTipoDeEscalamientos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4262,7 +4293,7 @@
   <xs:element name="ListaInteraccionesSolicitudResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q294="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaInteraccionesSolicitudResult" nillable="true" type="q294:ArrayOfBELSolicitudes" />
+        <xs:element xmlns:q296="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaInteraccionesSolicitudResult" nillable="true" type="q296:ArrayOfBELSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4276,7 +4307,7 @@
   <xs:element name="ListaSeguimientosAgenteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q295="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSeguimientosAgenteResult" nillable="true" type="q295:ArrayOfBEPSolicitudes" />
+        <xs:element xmlns:q297="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSeguimientosAgenteResult" nillable="true" type="q297:ArrayOfBEPSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4292,7 +4323,7 @@
   <xs:element name="ConsultadeGestionAgenteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q296="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultadeGestionAgenteResult" nillable="true" type="q296:ArrayOfBELSolicitudes" />
+        <xs:element xmlns:q298="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultadeGestionAgenteResult" nillable="true" type="q298:ArrayOfBELSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4307,7 +4338,7 @@
   <xs:element name="ConsultaSolicitudesAdminLogResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q297="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaSolicitudesAdminLogResult" nillable="true" type="q297:ArrayOfBELSolicitudes" />
+        <xs:element xmlns:q299="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaSolicitudesAdminLogResult" nillable="true" type="q299:ArrayOfBELSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4322,7 +4353,7 @@
   <xs:element name="ConsultaSolicitudesAdminPricipalResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q298="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaSolicitudesAdminPricipalResult" nillable="true" type="q298:ArrayOfBEPSolicitudes" />
+        <xs:element xmlns:q300="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaSolicitudesAdminPricipalResult" nillable="true" type="q300:ArrayOfBEPSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4344,7 +4375,7 @@
   <xs:element name="RegistrarUsuarioDistribucion">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q299="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Distribucion" nillable="true" type="q299:BEMDistribuciones" />
+        <xs:element xmlns:q301="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Distribucion" nillable="true" type="q301:BEMDistribuciones" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4376,7 +4407,7 @@
   <xs:element name="ListaDistribucionPorIdCedulaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q300="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDistribucionPorIdCedulaResult" nillable="true" type="q300:ArrayOfBEMDistribuciones" />
+        <xs:element xmlns:q302="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDistribucionPorIdCedulaResult" nillable="true" type="q302:ArrayOfBEMDistribuciones" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4390,29 +4421,29 @@
   <xs:element name="DistribucionPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q301="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="DistribucionPorIdResult" nillable="true" type="q301:BEMDistribuciones" />
+        <xs:element xmlns:q303="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="DistribucionPorIdResult" nillable="true" type="q303:BEMDistribuciones" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ConsultarSolicitudesMasivo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q302="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Solicitudes" nillable="true" type="q302:ArrayOfstring" />
+        <xs:element xmlns:q304="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Solicitudes" nillable="true" type="q304:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ConsultarSolicitudesMasivoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q303="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarSolicitudesMasivoResult" nillable="true" type="q303:ArrayOfBEPSolicitudes" />
+        <xs:element xmlns:q305="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarSolicitudesMasivoResult" nillable="true" type="q305:ArrayOfBEPSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ActualizarSolicitudesMasivo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q304="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Solicitudes" nillable="true" type="q304:ArrayOfstring" />
-        <xs:element xmlns:q305="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Solicitud" nillable="true" type="q305:BEPSolicitudes" />
+        <xs:element xmlns:q306="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Solicitudes" nillable="true" type="q306:ArrayOfstring" />
+        <xs:element xmlns:q307="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Solicitud" nillable="true" type="q307:BEPSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4431,7 +4462,7 @@
   <xs:element name="TraerInformacionCuentaRecurrenciaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q306="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerInformacionCuentaRecurrenciaResult" nillable="true" type="q306:ClientesTodo" />
+        <xs:element xmlns:q308="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerInformacionCuentaRecurrenciaResult" nillable="true" type="q308:ClientesTodo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4446,7 +4477,7 @@
   <xs:element name="TraerDatosRecurrenciaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q307="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerDatosRecurrenciaResult" nillable="true" type="q307:RecurrenciaCargaBase" />
+        <xs:element xmlns:q309="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerDatosRecurrenciaResult" nillable="true" type="q309:RecurrenciaCargaBase" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4460,7 +4491,7 @@
   <xs:element name="GetOpcionesRecurrenciaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q308="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="GetOpcionesRecurrenciaResult" nillable="true" type="q308:ArrayOfMaestroOpcionesRecurrencia" />
+        <xs:element xmlns:q310="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="GetOpcionesRecurrenciaResult" nillable="true" type="q310:ArrayOfMaestroOpcionesRecurrencia" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4474,7 +4505,7 @@
   <xs:element name="GetFallaEspecificaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q309="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="GetFallaEspecificaResult" nillable="true" type="q309:ArrayOfMaestroFallaEspecifica" />
+        <xs:element xmlns:q311="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="GetFallaEspecificaResult" nillable="true" type="q311:ArrayOfMaestroFallaEspecifica" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4488,7 +4519,7 @@
   <xs:element name="GetFallaCausaRaizResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q310="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="GetFallaCausaRaizResult" nillable="true" type="q310:ArrayOfMaestroFallaCausaRaiz" />
+        <xs:element xmlns:q312="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="GetFallaCausaRaizResult" nillable="true" type="q312:ArrayOfMaestroFallaCausaRaiz" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4507,7 +4538,7 @@
   <xs:element name="InsertarGRecurrencia">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q311="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="recurrencia" nillable="true" type="q311:GPrincipalRecurrencia" />
+        <xs:element xmlns:q313="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="recurrencia" nillable="true" type="q313:GPrincipalRecurrencia" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4519,7 +4550,7 @@
   <xs:element name="ActualizarGRecurrencia">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q312="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="recurrencia" nillable="true" type="q312:GPrincipalRecurrencia" />
+        <xs:element xmlns:q314="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="recurrencia" nillable="true" type="q314:GPrincipalRecurrencia" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4538,7 +4569,7 @@
   <xs:element name="TraerGPrinRecurrenciaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q313="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerGPrinRecurrenciaResult" nillable="true" type="q313:GPrincipalRecurrencia" />
+        <xs:element xmlns:q315="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerGPrinRecurrenciaResult" nillable="true" type="q315:GPrincipalRecurrencia" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4550,7 +4581,7 @@
   <xs:element name="ListaSeguimientosRecurrenciaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q314="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSeguimientosRecurrenciaResult" nillable="true" type="q314:ArrayOfGPrincipalRecurrencia" />
+        <xs:element xmlns:q316="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSeguimientosRecurrenciaResult" nillable="true" type="q316:ArrayOfGPrincipalRecurrencia" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4578,7 +4609,7 @@
   <xs:element name="ConsultaAdminGPrincipalRecurrenciaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q315="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminGPrincipalRecurrenciaResult" nillable="true" type="q315:ArrayOfGPrincipalRecurrencia" />
+        <xs:element xmlns:q317="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminGPrincipalRecurrenciaResult" nillable="true" type="q317:ArrayOfGPrincipalRecurrencia" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4593,7 +4624,7 @@
   <xs:element name="ConsultaAdminGLogRecurrenciaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q316="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminGLogRecurrenciaResult" nillable="true" type="q316:ArrayOfGLogRecurrencia" />
+        <xs:element xmlns:q318="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdminGLogRecurrenciaResult" nillable="true" type="q318:ArrayOfGLogRecurrencia" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -4607,20 +4638,131 @@
   <xs:element name="ListaHistorialSeguimientosRecurrenciaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q317="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaHistorialSeguimientosRecurrenciaResult" nillable="true" type="q317:ArrayOfGLogRecurrencia" />
+        <xs:element xmlns:q319="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaHistorialSeguimientosRecurrenciaResult" nillable="true" type="q319:ArrayOfGLogRecurrencia" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="RegistrarIncidente">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q318="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Bitacora" nillable="true" type="q318:BitacoraIncidentes" />
+        <xs:element xmlns:q320="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Bitacora" nillable="true" type="q320:BIPBitacoraIncidentes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="RegistrarIncidenteResponse">
     <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegistrarIncidenteResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarRegistroIncidente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q321="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Bitacora" nillable="true" type="q321:BIPBitacoraIncidentes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarRegistroIncidenteResponse">
+    <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarOperacionesPorIncidente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q322="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Operaciones" nillable="true" type="q322:ArrayOfstring" />
+        <xs:element minOccurs="0" name="IdRegistro" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarOperacionesPorIncidenteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarIncidenteOperacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarIncidenteOperacionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeGerencias">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeGerenciasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q323="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDeGerenciasResult" nillable="true" type="q323:ArrayOfBIMGerencias" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeAliados">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeAliadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q324="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDeAliadosResult" nillable="true" type="q324:ArrayOfBIMAliados" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaOperaciones">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaOperacionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q325="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaOperacionesResult" nillable="true" type="q325:ArrayOfBIMOperaciones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeHerramientas">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeHerramientasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q326="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDeHerramientasResult" nillable="true" type="q326:ArrayOfBIMHerramientas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaTiposDeFallas">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaTiposDeFallasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q327="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaTiposDeFallasResult" nillable="true" type="q327:ArrayOfBIMTipoFalla" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDePrioridades">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDePrioridadesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q328="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDePrioridadesResult" nillable="true" type="q328:ArrayOfBIMPrioridades" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>
