@@ -24,93 +24,67 @@
 
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Caso SD</small>
-                                        @Html.TextBoxFor(m => m.BitacoraIncidentes.CasoSD, new { @class = "form-control input-sm", @Id = "CasoSD" })
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.CasoSD, new { @class = "form-control input-sm", @Id = "CasoSD" })
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>IM</small>
-                                        @Html.TextBoxFor(m => m.BitacoraIncidentes.IM, new { @class = "form-control input-sm", @Id = "IM" })
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.IM, new { @class = "form-control input-sm", @Id = "IM" })
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Fecha de Creación Ticket</small>
-                                        @Html.TextBoxFor(m => m.BitacoraIncidentes.FechaDeCreacionTicket, new { @class = "form-control input-sm", @Id = "FechaCreacionTicket" })
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.FechaDeCreacionTicket, new { @class = "form-control input-sm", @Id = "FechaCreacionTicket" })
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Fecha de Cierre Ticket</small>
-                                        @Html.TextBoxFor(m => m.BitacoraIncidentes.FechaDeCierreTicket, new { @class = "form-control input-sm", @Id = "FechaCierreTicket" })
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.FechaDeCierreTicket, new { @class = "form-control input-sm", @Id = "FechaCierreTicket" })
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Fecha de Cierre Afectación</small>
-                                        @Html.TextBoxFor(m => m.BitacoraIncidentes.FechaDeCierreAfectacion, new { @class = "form-control input-sm", @Id = "FechaCierreAfectacion" })
-                                    </td>
-                                    <td style="padding-left:4px; width:300px;">
-                                        <small>Horas de Afectación</small>
-                                        @Html.TextBoxFor(m => m.BitacoraIncidentes.HorasDeAfectacion, new { @class = "form-control input-sm", @Id = "HorasAfectacion", @readonly = "true" })
-                                    </td>
-                                   
-                                </tr>
-                                <tr>
-                                    <td style="padding-left:4px; width:300px;">
-                                        <small>Días de Afectación</small>
-                                        @Html.TextBoxFor(m => m.BitacoraIncidentes.DiasDeAfectacion, new { @class = "form-control input-sm", @Id = "DiasAfectacion", @readonly = "true" })
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.FechaDeCierreAfectacion, new { @class = "form-control input-sm", @Id = "FechaCierreAfectacion" })
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Herramienta</small>
-                                        @Html.DropDownListFor(m => m.BitacoraIncidentes.Herramienta, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Herramienta", @class = "form-control" })
+                                        @Html.DropDownListFor(m => m.BIPBitacoraIncidentes.Herramienta, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Herramienta", @class = "form-control" })
                                     </td>
+
+                                </tr>
+                                <tr>
+
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Tipo de Falla</small>
-                                        @Html.DropDownListFor(m => m.BitacoraIncidentes.TipoDeFalla, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "TipoDeFalla", @class = "form-control" })
+                                        @Html.DropDownListFor(m => m.BIPBitacoraIncidentes.TipoDeFalla, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "TipoDeFalla", @class = "form-control" })
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Módulo Afectado</small>
-                                        @Html.DropDownListFor(m => m.BitacoraIncidentes.ModuloAfectado, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "ModuloAfectado", @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.ModuloAfectado, new { @class = "form-control input-sm", @Id = "ModuloAfectado" })
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Prioridad</small>
-                                        @Html.DropDownListFor(m => m.BitacoraIncidentes.Prioridad, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Prioridad", @class = "form-control" })
+                                        @Html.DropDownListFor(m => m.BIPBitacoraIncidentes.Prioridad, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Prioridad", @class = "form-control" })
                                     </td>
-                                    <td style="padding-left:4px; width:300px;">
-                                        <small>Gerencia</small>
-                                        @Html.DropDownListFor(m => m.BitacoraIncidentes.Gerencia, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Gerencia", @class = "form-control" })
-                                    </td>
-                                   
-                                   
-                                </tr>
-                                <tr>
-                                    <td style="padding-left:4px; width:300px;">
-                                        <small>Aliado Que Reporta</small>
-                                        @Html.DropDownListFor(m => m.BitacoraIncidentes.AliadoQueReporta, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "AliadoQueReporta", @class = "form-control" })
-                                    </td>
-                                    <td style="padding-left:4px; width:300px;">
-                                        <small>Operación Que Reporta</small>
-                                        @Html.DropDownListFor(m => m.BitacoraIncidentes.OperacionQueReporta, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "OperacionQueReporta", @class = "form-control" })
-                                    </td>
-                                    <td style="padding-left:4px; width:300px;">
+                                    <td style="padding-left:4px; width:600px;" colspan="2">
                                         <small>Escalado A</small>
-                                        @Html.DropDownListFor(m => m.BitacoraIncidentes.EscaladoA, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "EscaladoA", @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.EscaladoA, new { @class = "form-control input-sm", @Id = "EscaladoA" })
                                     </td>
 
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Usuarios Afectados</small>
-                                        @Html.DropDownListFor(m => m.BitacoraIncidentes.CantidadUsuariosAfectados, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "UsuariosAfectados", @class = "form-control" })
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.CantidadUsuariosAfectados, new { @class = "form-control input-sm", @Id = "CantidadUserAfectados" })
                                     </td>
-                                    <td style="padding-left:4px; width:300px;">
-                                        <small>Estado Del Caso</small>
-                                        @Html.DropDownListFor(m => m.BitacoraIncidentes.EstadoDelCaso, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "EstadoCaso", @class = "form-control" })
-                                    </td>
+
                                 </tr>
                             </table>
                             <table>
                                 <tr>
                                     <td colspan="7" style="padding:1px; width:1200px;">
-                                        <small>Descripcion de la Afectación</small>
-                                        @Html.TextAreaFor(m => m.BitacoraIncidentes.DescripcionAfectacion, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text" })
+                                        <small>Descripción de la Afectación</small>
+                                        @Html.TextAreaFor(m => m.BIPBitacoraIncidentes.DescripcionAfectacion, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text" })
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="7" style="padding:1px; width:1200px;">
                                         <small>Comentarios de Cierre</small>
-                                        @Html.TextAreaFor(m => m.BitacoraIncidentes.ComentariosDeCierre, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text" })
+                                        @Html.TextAreaFor(m => m.BIPBitacoraIncidentes.ComentariosDeCierre, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text" })
                                     </td>
                                 </tr>
                             </table>
@@ -127,7 +101,15 @@
     }
 
     @section Scripts{
-        <script src="~/Scripts/BitacoraIncidentes/RegistrodeIncidentes.js?1.0.0"></script>
+        <script>
+            var UrlHerramientas = '@Url.Action("ListaHerramientasJson", "BitacoraIncidentes")';
+            var UrlListaTipoDeFalla = '@Url.Action("ListaTipoDeFallaJson", "BitacoraIncidentes")';
+            var UrlListaPrioridades = '@Url.Action("ListaPrioridadesJson", "BitacoraIncidentes")';
+        </script>
+
+        <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.1"></script>
+        <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.1" rel="stylesheet" />
+        <script src="~/Scripts/BitacoraIncidentes/RegistrodeIncidentes.js?1.0.2"></script>
     }
 
 

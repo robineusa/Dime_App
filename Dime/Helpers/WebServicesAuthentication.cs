@@ -17,7 +17,7 @@ namespace Dime.Helpers
                 credencials.UserName.UserName = "acc1";
                 credencials.UserName.Password = "123";
                 return true;
-            }catch(Exception e)
+            }catch(Exception)
             {
                 return false;
             }
