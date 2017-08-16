@@ -14618,6 +14618,28 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDePrioridades", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDePrioridadesResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMPrioridades>> ListaDePrioridadesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeOperaciones", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeOperacionesResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMOperaciones> ListaDeOperaciones();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeOperaciones", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeOperacionesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMOperaciones>> ListaDeOperacionesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeAliadosPorGerencia", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeAliadosPorGerenciaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMAliados> ListaDeAliadosPorGerencia(System.Collections.Generic.List<string> Gerencias);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeAliadosPorGerencia", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeAliadosPorGerenciaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMAliados>> ListaDeAliadosPorGerenciaAsync(System.Collections.Generic.List<string> Gerencias);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeOperacionesPorgerenciaYAliad" +
+            "o", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeOperacionesPorgerenciaYAliad" +
+            "oResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMOperaciones> ListaDeOperacionesPorgerenciaYAliado(System.Collections.Generic.List<string> Gerencias, System.Collections.Generic.List<string> Aliados);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeOperacionesPorgerenciaYAliad" +
+            "o", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeOperacionesPorgerenciaYAliad" +
+            "oResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMOperaciones>> ListaDeOperacionesPorgerenciaYAliadoAsync(System.Collections.Generic.List<string> Gerencias, System.Collections.Generic.List<string> Aliados);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -14725,6 +14747,30 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMPrioridades>> ListaDePrioridadesAsync() {
             return base.Channel.ListaDePrioridadesAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMOperaciones> ListaDeOperaciones() {
+            return base.Channel.ListaDeOperaciones();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMOperaciones>> ListaDeOperacionesAsync() {
+            return base.Channel.ListaDeOperacionesAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMAliados> ListaDeAliadosPorGerencia(System.Collections.Generic.List<string> Gerencias) {
+            return base.Channel.ListaDeAliadosPorGerencia(Gerencias);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMAliados>> ListaDeAliadosPorGerenciaAsync(System.Collections.Generic.List<string> Gerencias) {
+            return base.Channel.ListaDeAliadosPorGerenciaAsync(Gerencias);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMOperaciones> ListaDeOperacionesPorgerenciaYAliado(System.Collections.Generic.List<string> Gerencias, System.Collections.Generic.List<string> Aliados) {
+            return base.Channel.ListaDeOperacionesPorgerenciaYAliado(Gerencias, Aliados);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMOperaciones>> ListaDeOperacionesPorgerenciaYAliadoAsync(System.Collections.Generic.List<string> Gerencias, System.Collections.Generic.List<string> Aliados) {
+            return base.Channel.ListaDeOperacionesPorgerenciaYAliadoAsync(Gerencias, Aliados);
         }
     }
 }
