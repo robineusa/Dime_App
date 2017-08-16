@@ -207,6 +207,9 @@
                             @if (Session["Reporte Asdministrador"] != null)
                             {
                                 <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("ReporteAdministrador", "Reportes")"><i class="fa fa-circle-o text-orange"></i> Reporte Administrador</a></li>}
+                            @if (Session["Reporte Blending"] != null)
+                            {
+                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("ReporteBlending", "Reportes")"><i class="fa fa-circle-o text-red"></i> Reporte Blending</a></li>}
                         </ul>
 
                     </li>

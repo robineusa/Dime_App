@@ -4806,6 +4806,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+<<<<<<< HEAD
   <xs:element name="RegistrarOperacionesEnIncidente">
     <xs:complexType>
       <xs:sequence>
@@ -4871,4 +4872,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+=======
+>>>>>>> 535b71614b5ef31bf909365723bda6f6f1ecad2c
 </xs:schema>

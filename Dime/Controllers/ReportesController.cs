@@ -62,9 +62,25 @@ namespace Dime.Controllers
             var jsonResult = Json(JsonConvert.SerializeObject(result), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
-            var result2 = DisBlending.ConsultaBlendingOperacionDestino(Session["AliadoLogeado"].ToString(), "RENTABILIZACION");
 
         }
+        public JsonResult ReporteOperacion(string Formulario)
+        {
+            var result = DisBlending.ConsultaBlendingOperacionDestino(Session["AliadoLogeado"].ToString(), Formulario);
+            var jsonResult = Json(JsonConvert.SerializeObject(result), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public JsonResult ReporteCampaña(string Formulario, string Operacion)
+        {
+            var result = DisBlending.ConsultaBlendingCampanaDestino(Session["AliadoLogeado"].ToString(), Formulario, Operacion);
+            var jsonResult = Json(JsonConvert.SerializeObject(result), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+
         //[HttpPost]
         //public ActionResult ReporteFormulario()
         //{

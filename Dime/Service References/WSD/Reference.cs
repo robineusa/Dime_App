@@ -14797,6 +14797,7 @@ namespace Dime.WSD {
             "o", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeOperacionesPorgerenciaYAliad" +
             "oResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMOperaciones>> ListaDeOperacionesPorgerenciaYAliadoAsync(System.Collections.Generic.List<string> Gerencias, System.Collections.Generic.List<string> Aliados);
+<<<<<<< HEAD
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/RegistrarOperacionesEnIncidente", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/RegistrarOperacionesEnIncidenteResp" +
             "onse")]
@@ -14835,6 +14836,8 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeIncidentesEnGestion", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeIncidentesEnGestionResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes>> ListaDeIncidentesEnGestionAsync();
+=======
+>>>>>>> 535b71614b5ef31bf909365723bda6f6f1ecad2c
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -14967,6 +14970,7 @@ namespace Dime.WSD {
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMOperaciones>> ListaDeOperacionesPorgerenciaYAliadoAsync(System.Collections.Generic.List<string> Gerencias, System.Collections.Generic.List<string> Aliados) {
             return base.Channel.ListaDeOperacionesPorgerenciaYAliadoAsync(Gerencias, Aliados);
         }
+<<<<<<< HEAD
         
         public void RegistrarOperacionesEnIncidente(System.Collections.Generic.List<string> Operaciones, decimal IdRegistro) {
             base.Channel.RegistrarOperacionesEnIncidente(Operaciones, IdRegistro);
@@ -15007,5 +15011,7 @@ namespace Dime.WSD {
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes>> ListaDeIncidentesEnGestionAsync() {
             return base.Channel.ListaDeIncidentesEnGestionAsync();
         }
+=======
+>>>>>>> 535b71614b5ef31bf909365723bda6f6f1ecad2c
     }
 }
