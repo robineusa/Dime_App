@@ -129,5 +129,23 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        [HttpGet]
+        public ActionResult ListaIncidentesEnGestion()
+        {
+            return View();
+        }
+        [HttpGet]
+        public JsonResult ListaIncidentesEnGestionJson() {
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaDeIncidentesEnGestion()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public ActionResult ActualizacionDeIncidentes(string IdRegistro)
+        {
+            ViewModelBitacoraIncidentes modelo = new ViewModelBitacoraIncidentes();
+            int Id = Convert.ToInt32(IdRegistro);
+            modelo.BIPBitacoraIncidentes = bitacoraservice.TraeIncidentePorId(Id);
+            return View(modelo);
+        }
     }
 }

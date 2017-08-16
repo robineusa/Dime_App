@@ -3104,4 +3104,29 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BIMPrioridades" nillable="true" type="tns:BIMPrioridades" />
+  <xs:complexType name="ArrayOfViewModelIncidentesOperaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewModelIncidentesOperaciones" nillable="true" type="tns:ViewModelIncidentesOperaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViewModelIncidentesOperaciones" nillable="true" type="tns:ArrayOfViewModelIncidentesOperaciones" />
+  <xs:complexType name="ViewModelIncidentesOperaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdAliado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdGerencia" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdOperacion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdRegistro" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreAliado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreGerencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreOperacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewModelIncidentesOperaciones" nillable="true" type="tns:ViewModelIncidentesOperaciones" />
+  <xs:complexType name="ArrayOfBIPBitacoraIncidentes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BIPBitacoraIncidentes" nillable="true" type="tns:BIPBitacoraIncidentes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBIPBitacoraIncidentes" nillable="true" type="tns:ArrayOfBIPBitacoraIncidentes" />
 </xs:schema>

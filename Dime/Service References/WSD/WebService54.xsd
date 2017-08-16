@@ -4819,4 +4819,56 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="TraeIncidentePorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdRegistro" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraeIncidentePorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q336="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraeIncidentePorIdResult" nillable="true" type="q336:BIPBitacoraIncidentes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeIncidentesOperacionPorRegistro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdRegistro" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeIncidentesOperacionPorRegistroResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q337="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDeIncidentesOperacionPorRegistroResult" nillable="true" type="q337:ArrayOfViewModelIncidentesOperaciones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarOpoeracionDeIncidente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarOpoeracionDeIncidenteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeIncidentesEnGestion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeIncidentesEnGestionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q338="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDeIncidentesEnGestionResult" nillable="true" type="q338:ArrayOfBIPBitacoraIncidentes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

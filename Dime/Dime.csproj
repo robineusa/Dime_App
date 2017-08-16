@@ -2286,6 +2286,8 @@
     <Content Include="Scripts\BackElite\ListaDistribucionUsuario.js" />
     <Content Include="Scripts\BackElite\SeguimientoSolicitudes.js" />
     <Content Include="Scripts\BackElite\SolicitudBackElite.js" />
+    <Content Include="Scripts\BitacoraIncidentes\ActualizacionDeIncidentes.js" />
+    <Content Include="Scripts\BitacoraIncidentes\ListaIncidentesEnGestion.js" />
     <Content Include="Scripts\BitacoraIncidentes\RegistrarOperacionesIncidente.js" />
     <Content Include="Scripts\BitacoraIncidentes\RegistrodeIncidentes.js" />
     <Content Include="Scripts\BuenServicio\Visualizador_Imagenes.js" />
@@ -2982,6 +2984,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMHerramientas.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMPrioridades.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMTipoFalla.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3086,6 +3089,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.ConsultaBlendingOperacionDestinoReturnViewModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.ViewModelIncidentesOperaciones.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\WSD\Reference.svcmap">
@@ -3343,6 +3349,8 @@
     </None>
     <Content Include="Views\BitacoraIncidentes\RegistrodeIncidentes.cshtml" />
     <Content Include="Views\BitacoraIncidentes\RegistrarOperacionesIncidente.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\ListaIncidentesEnGestion.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\ActualizacionDeIncidentes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
