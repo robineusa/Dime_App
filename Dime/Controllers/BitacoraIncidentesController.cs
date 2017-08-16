@@ -50,25 +50,63 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
-        [HttpGet]
+        [HttpPost]
         public JsonResult ListaDeAliadosPorgerenciaJson(IList<string> Gerencias)
         {
-            var result0 = bitacoraservice.ListaDeAliadosPorGerencia(Gerencias.ToList());
-
-            return new JsonResult
+            if (Gerencias != null)
             {
-                Data = JsonConvert.SerializeObject(result0),
-                JsonRequestBehavior = JsonRequestBehavior.AllowGet
-            };
-        }
-        [HttpGet]
-        public JsonResult ListaOperacionesJson()
-        {
-            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaDeOperaciones()), JsonRequestBehavior.AllowGet);
-            jsonResult.MaxJsonLength = int.MaxValue;
-            return jsonResult;
-        }
+                var result0 = bitacoraservice.ListaDeAliadosPorGerencia(Gerencias.ToList());
 
+                return new JsonResult
+                {
+                    Data = JsonConvert.SerializeObject(result0),
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                };
+            }
+            else
+            {
+                return null;
+            }
+        }
+        [HttpPost]
+        public JsonResult ListaDeOperacionesPorAliadoYGerenciaJson(IList<string> Gerencias, IList<string> Aliados)
+        {
+            if (Gerencias != null && Aliados != null)
+            {
+                var result0 = bitacoraservice.ListaDeOperacionesPorgerenciaYAliado(Gerencias.ToList(),Aliados.ToList());
+
+                return new JsonResult
+                {
+                    Data = JsonConvert.SerializeObject(result0),
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                };
+            }
+            else
+            {
+                return null;
+            }
+        }
+        [HttpPost]
+        public JsonResult RegistrarOperacionesIncidenteJson(IList<string> Operaciones, string IdRegistro)
+        {
+            if (Operaciones != null && IdRegistro != "")
+            {
+                decimal Id = Convert.ToDecimal(IdRegistro);
+               bitacoraservice.RegistrarOperacionesEnIncidente(Operaciones.ToList(),Id);
+
+                return new JsonResult
+                {
+                    Data = JsonConvert.SerializeObject("Datos Registrados Correctamente"),
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                    
+                };
+            }
+            else
+            {
+                return null;
+            }
+        }
+        
         [HttpGet]
         public JsonResult ListaHerramientasJson()
         {

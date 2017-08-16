@@ -4765,4 +4765,58 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListaDeOperaciones">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeOperacionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q329="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDeOperacionesResult" nillable="true" type="q329:ArrayOfBIMOperaciones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeAliadosPorGerencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q330="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Gerencias" nillable="true" type="q330:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeAliadosPorGerenciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q331="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDeAliadosPorGerenciaResult" nillable="true" type="q331:ArrayOfBIMAliados" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeOperacionesPorgerenciaYAliado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q332="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Gerencias" nillable="true" type="q332:ArrayOfstring" />
+        <xs:element xmlns:q333="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Aliados" nillable="true" type="q333:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeOperacionesPorgerenciaYAliadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q334="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDeOperacionesPorgerenciaYAliadoResult" nillable="true" type="q334:ArrayOfBIMOperaciones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarOperacionesEnIncidente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q335="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Operaciones" nillable="true" type="q335:ArrayOfstring" />
+        <xs:element minOccurs="0" name="IdRegistro" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarOperacionesEnIncidenteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
