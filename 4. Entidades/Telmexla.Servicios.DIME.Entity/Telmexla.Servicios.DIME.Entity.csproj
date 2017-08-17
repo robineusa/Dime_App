@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acceso.cs" />
+    <Compile Include="AccesosXLinea.cs" />
     <Compile Include="ActivacionClaroVideo.cs" />
     <Compile Include="ActivacionClaroVideoCollection.cs" />
     <Compile Include="ActualizarUsuarioGestionBackIngresoReturnModel.cs" />

@@ -72,7 +72,7 @@ function CotejarInformacionGrid(cedulas)
 
 
 function TraerPosiblesLineasYAccesosDePerfil() {
-
+    $("#accesosCreacion").empty();
 
     $.ajax({
         type: "GET",
@@ -84,12 +84,29 @@ function TraerPosiblesLineasYAccesosDePerfil() {
             var json = JSON.parse(result);
             console.log(json);
             LlenarLineasDePerfil(json);
-            LlenarAccesosDePerfilCreacion(json);
         }
 
 
     });
 };
+
+function TraerPosiblesAccesosDeLinea() {
+
+    $.ajax({
+        type: "GET",
+        url: urlPosiblesAccesosMasivo,
+        contentType: "application/json; charset=utf-8",
+        data: { idLinea: $("#lineaCreacion").val() },
+        dataType: 'json',
+        success: function (result) {
+            var json = JSON.parse(result);
+            console.log(json);
+            LlenarAccesosDeLineaCreacion(json);
+        }
+    });
+
+};
+
 
 function LlenarLineasDePerfil(data) {
     $("#lineaCreacion").empty();
@@ -101,7 +118,7 @@ function LlenarLineasDePerfil(data) {
 }
 
 
-function LlenarAccesosDePerfilCreacion(data) {
+function LlenarAccesosDeLineaCreacion(data) {
     $("#accesosCreacion").empty();
     var table = document.getElementById("accesosCreacion");
     var i = 0;

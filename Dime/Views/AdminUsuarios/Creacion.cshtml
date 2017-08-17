@@ -145,11 +145,11 @@
                                        new SelectListItem { Text="ADMINISTRADOR", Value="1"},
                                        new SelectListItem { Text = "ASESOR", Value = "2" } ,
                                        new SelectListItem { Text = "CÉLULA", Value = "3" } },
-                                       new { @class = "form-control input-sm", id = "perfilSelectedCreate", onchange = "TraerPosiblesLineasYAccesosDePerfil()" })
+                                       new { @class = "form-control input-sm", id = "perfilSelectedCreate", onchange = "TraerPosiblesLineasDePerfil()" })
                                         
                                     </td>
                                     <td style="padding:1px;">
-                                        @Html.DropDownListFor(m => m.IdLinea, new List<SelectListItem>() { }, "-Seleccione-", new { @class = "form-control input-sm", id = "lineaSelectCreacion" })
+                                        @Html.DropDownListFor(m => m.IdLinea, new List<SelectListItem>() { }, "-Seleccione-", new { @class = "form-control input-sm", id = "lineaSelectCreacion", onchange = "TraerPosiblesAccesosDeLinea()" })
                                         
                                     </td>
                                     <td style="padding:1px;">
@@ -369,17 +369,17 @@
     @section Scripts{
         <script>
             var segundaPestañaAbierta = @Html.Raw(Json.Encode(@ViewBag.SegundaPestañaAbierta));
-            var urlPosiblesLineasAccesos = '@Url.Action("PosiblesAccesosYLineasDePerfil", "AdminUsuarios")';
+            var urlPosiblesLineas = '@Url.Action("PosiblesAccesosYLineasDePerfil", "AdminUsuarios")';
             var urlPosiblesAccesosDeUsuario = '@Url.Action("PosiblesAccesosDeUsuario", "AdminUsuarios")';
             var urlAccesosUsuariosMasivoHtml  =  '@Url.Action("UsuariosMasivos", "AdminUsuarios")';
             var cedulaUsuario = @Html.Raw(Json.Encode(Model.UsuarioHolos.Cedula));
-            
+            var urlPosiblesAccesos =  '@Url.Action("PosiblesAccesosDeLineas", "AdminUsuarios")';
             //$('#perfilSelectedCreate option[1]').removeattr('selected', 'selected');
             //$('#perfilSelectedCreate option[2]').removeattr('selected', 'selected');
             //$('#perfilSelectedCreate option[3]').removeattr('selected', 'selected');
 
         </script>
-        <script src="~/Scripts/AdminUsuarios/Creacion.js?1.3.2"></script>
+        <script src="~/Scripts/AdminUsuarios/Creacion.js?1.3.4"></script>
         
 }
 }

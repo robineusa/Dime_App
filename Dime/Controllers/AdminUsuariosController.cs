@@ -201,6 +201,21 @@ namespace Dime.Controllers
         }
 
         [HttpGet]
+        public JsonResult PosiblesAccesosDeLineas(int idLinea)
+        {
+            var result = new
+            {
+                lineas = "",
+                accesos = loginService.ListaAccesosDeLinea(idLinea)
+            };
+            return new JsonResult
+            {
+                Data = JsonConvert.SerializeObject(result),
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+
+        [HttpGet]
         public JsonResult JsonUsuariosDeAliadoYPerfil(string aliado, int idPerfil)
         {
            
@@ -262,6 +277,10 @@ namespace Dime.Controllers
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
+
+
+
+
 
         
         [HttpPost]
