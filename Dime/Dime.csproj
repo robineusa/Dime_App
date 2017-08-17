@@ -2287,6 +2287,7 @@
     <Content Include="Scripts\BackElite\SeguimientoSolicitudes.js" />
     <Content Include="Scripts\BackElite\SolicitudBackElite.js" />
     <Content Include="Scripts\BitacoraIncidentes\ActualizacionDeIncidentes.js" />
+    <Content Include="Scripts\BitacoraIncidentes\ActualizarOperacionesIncidente.js" />
     <Content Include="Scripts\BitacoraIncidentes\ListaIncidentesEnGestion.js" />
     <Content Include="Scripts\BitacoraIncidentes\RegistrarOperacionesIncidente.js" />
     <Content Include="Scripts\BitacoraIncidentes\RegistrodeIncidentes.js" />
@@ -3351,6 +3352,7 @@
     <Content Include="Views\BitacoraIncidentes\RegistrarOperacionesIncidente.cshtml" />
     <Content Include="Views\BitacoraIncidentes\ListaIncidentesEnGestion.cshtml" />
     <Content Include="Views\BitacoraIncidentes\ActualizacionDeIncidentes.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\ActualizarOperacionesIncidente.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

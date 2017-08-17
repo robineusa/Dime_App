@@ -140,12 +140,51 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        [HttpGet]
         public ActionResult ActualizacionDeIncidentes(string IdRegistro)
         {
             ViewModelBitacoraIncidentes modelo = new ViewModelBitacoraIncidentes();
             int Id = Convert.ToInt32(IdRegistro);
             modelo.BIPBitacoraIncidentes = bitacoraservice.TraeIncidentePorId(Id);
             return View(modelo);
+        }
+        [HttpPost]
+        public ActionResult ActualizacionDeIncidentes(ViewModelBitacoraIncidentes modelo)
+        {
+           
+            modelo.BIPBitacoraIncidentes.UsuarioUltimaActualizacion = Convert.ToString(Session["Usuario"].ToString());
+            modelo.BIPBitacoraIncidentes.NombreUsuarioUltimaActualizacion = Session["NombreUsuario"].ToString();
+            bitacoraservice.ActualizarRegistroIncidente(modelo.BIPBitacoraIncidentes);
+
+            return RedirectToAction("ActualizarOperacionesIncidente", "BitacoraIncidentes", new { IdRegistro = modelo.BIPBitacoraIncidentes.IdRegistro });
+        }
+        [HttpGet]
+        public ActionResult ActualizarOperacionesIncidente(string IdRegistro)
+        {
+            decimal Id = Convert.ToDecimal(IdRegistro);
+            ViewModelBitacoraIncidentes modelo = new ViewModelBitacoraIncidentes();
+            modelo.BILBitacoraIncidentes.IdRegistro = Id;
+            return View(modelo);
+        }
+        [HttpGet]
+        public JsonResult ActualizarOperacionesIncidenteJson(string IdRegistro)
+        {
+            decimal Id = Convert.ToDecimal(IdRegistro);
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaDeIncidentesOperacionPorRegistro(Id)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpPost]
+        public JsonResult EliminarOperacionIncidente(string IdOperacion)
+        {
+            decimal Id = Convert.ToDecimal(IdOperacion);
+            bitacoraservice.EliminarIncidenteOperacion(Id);
+
+            return new JsonResult
+            {
+                Data = JsonConvert.SerializeObject("Registro Eliminado"),
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
         }
     }
 }

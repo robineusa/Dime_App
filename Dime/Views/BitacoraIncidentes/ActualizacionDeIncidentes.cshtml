@@ -77,6 +77,14 @@
                                     </td>
 
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <small>Estado del Incidente</small>
+                                        @Html.DropDownListFor(m => m.BIPBitacoraIncidentes.EstadoDelCaso, new List<SelectListItem> {new SelectListItem{Text="EN GESTION", Value="EN GESTION" },
+                                                                                             new SelectListItem{Text="FINALIZADO", Value="FINALIZADO" }},
+                                                                                                              "--SELECCIONE--", new { @class = "form-control input-sm" })
+                                    </td>
+                                </tr>
                             </table>
                             <table>
                                 <tr>

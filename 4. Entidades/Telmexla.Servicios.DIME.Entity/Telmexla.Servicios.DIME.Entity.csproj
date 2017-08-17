@@ -220,6 +220,7 @@
     <Compile Include="ViewModelDistribucionesBlending.cs" />
     <Compile Include="ViewModelGraficos.cs" />
     <Compile Include="ViewModelHistorialGestiones.cs" />
+    <Compile Include="ViewModelIncidentesOperaciones.cs" />
     <Compile Include="ViewModelMec.cs" />
     <Compile Include="ViewModelMultiPlay.cs" />
     <Compile Include="ViewModelNodos.cs" />

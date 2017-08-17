@@ -20,6 +20,21 @@ $('#FechaCierreAfectacion').datetimepicker({
     timepicker: true,
     step: 1
 });
+$('#Herramienta').change(function () {
+    var NuevaIdHerramienta = document.getElementById("Herramienta");
+    var NuevaHerramienta = NuevaIdHerramienta.options[NuevaIdHerramienta.selectedIndex].text;
+    $('#Herramienta1').val(NuevaHerramienta);
+})
+$('#TipoDeFalla').change(function () {
+    var NuevaIdTipoFalla = document.getElementById("TipoDeFalla");
+    var NuevaTipoFalla = NuevaIdTipoFalla.options[NuevaIdTipoFalla.selectedIndex].text;
+    $('#TipoDeFalla1').val(NuevaTipoFalla);
+})
+$('#Prioridad').change(function () {
+    var NuevaIdPrioridad = document.getElementById("Prioridad");
+    var NuevaPrioridad = NuevaIdPrioridad.options[NuevaIdPrioridad.selectedIndex].text;
+    $('#Prioridad1').val(NuevaPrioridad);
+})
 function TraerListaDeHerramientas() {
     $.ajax({
         type: "GET",

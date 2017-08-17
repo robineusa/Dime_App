@@ -10,16 +10,6 @@ $('#FechaCreacionTicket').datetimepicker({
     timepicker: true,
     step: 1
 });
-$('#FechaCierreTicket').datetimepicker({
-    dateFormat: 'd-m-Y 00:00',
-    timepicker: true,
-    step: 1
-});
-$('#FechaCierreAfectacion').datetimepicker({
-    dateFormat: 'd-m-Y 00:00',
-    timepicker: true,
-    step: 1
-});
 function TraerListaDeHerramientas() {
     $.ajax({
         type: "GET",
