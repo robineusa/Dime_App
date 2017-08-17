@@ -67,12 +67,11 @@
 
 
 
-function TraerPosiblesLineasYAccesosDePerfil() {
-
-
+function TraerPosiblesLineasDePerfil() {
+    $("#accesosPrivilegiosCreacion").empty();
     $.ajax({
         type: "GET",
-        url: urlPosiblesLineasAccesos,
+        url: urlPosiblesLineas,
         contentType: "application/json; charset=utf-8",
         data: { idPerfil: $("#perfilSelectedCreate").val() },
         dataType: 'json',
@@ -81,12 +80,24 @@ function TraerPosiblesLineasYAccesosDePerfil() {
             var json = JSON.parse(result);
             console.log(json);
             LlenarLineasDePerfil(json);
-            LlenarAccesosDePerfilCreacion(json);
         }
-     
-
     });
 
+};
+function TraerPosiblesAccesosDeLinea() {
+
+    $.ajax({
+        type: "GET",
+        url: urlPosiblesAccesos,
+        contentType: "application/json; charset=utf-8",
+        data: { idLinea: $("#lineaSelectCreacion").val() },
+        dataType: 'json',
+        success: function (result) {
+            var json = JSON.parse(result);
+            console.log(json);
+            LlenarAccesosDeLineaCreacion(json)
+        }
+    });
 
 };
 
@@ -100,7 +111,7 @@ function LlenarLineasDePerfil(data)
 
 }
 
-function LlenarAccesosDePerfilCreacion(data)
+function LlenarAccesosDeLineaCreacion(data)
 {
     $("#accesosPrivilegiosCreacion").empty();
     var table = document.getElementById("accesosPrivilegiosCreacion");

@@ -115,7 +115,7 @@
                                                                                                     new SelectListItem { Text = "CÉLULA", Value = "3" } }, "-Seleccione-", new { @class = "form-control input-sm", onchange = "TraerPosiblesLineasYAccesosDePerfil()" })
                         </td>
                         <td style="padding:1px;">
-                            @Html.DropDownList("lineaCreacion", new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm" })
+                            @Html.DropDownList("lineaCreacion", new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm", onchange = "TraerPosiblesAccesosDeLinea()" })
                         </td>
                         <td style="padding:1px;">
                             @Html.TextBox("contraAssigned", "", new { @class = "form-control input-sm" })
@@ -163,8 +163,9 @@
             var consultaCotejadaUrl = "@Url.Action("CotejarInformacionMasivo", "AdminUsuarios")";
             var urlLineasAccesos = '@Url.Action("PosiblesAccesosYLineasDePerfil", "AdminUsuarios")';
             var urlCrearUsuariosMasivo = '@Url.Action("GuardarUsuariosMasivos", "AdminUsuarios")';
+            var urlPosiblesAccesosMasivo = '@Url.Action("PosiblesAccesosDeLineas", "AdminUsuarios")';
         </script>
-        <script src="~/Scripts/AdminUsuarios/CrearUsuariosMasivos.js?1.1.2"></script>
+        <script src="~/Scripts/AdminUsuarios/CrearUsuariosMasivos.js?1.1.4"></script>
         <script src="~/Scripts/AdminUsuarios/xls.js"></script>
 
 
