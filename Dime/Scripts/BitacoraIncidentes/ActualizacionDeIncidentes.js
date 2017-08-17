@@ -1,15 +1,15 @@
-﻿$(document).ready(function () {
+﻿var Herramienta = $('#Herramienta1').val();
+var TipoFalla = $('#TipoDeFalla1').val();
+var Prioridad = $('#Prioridad1').val();
+
+$(document).ready(function () {
     TraerListaDeHerramientas();
     TraerListaDeTiposDeFalla();
     TraerListaDePrioridades();
+
 });
 $.datetimepicker.setLocale('es');
 
-$('#FechaCreacionTicket').datetimepicker({
-    dateFormat: 'd-m-Y 00:00',
-    timepicker: true,
-    step: 1
-});
 $('#FechaCierreTicket').datetimepicker({
     dateFormat: 'd-m-Y 00:00',
     timepicker: true,
@@ -34,9 +34,20 @@ function TraerListaDeHerramientas() {
                     value: json[index].NombreHerramienta,
                     text: json[index].NombreHerramienta
                 }));
-
+               
+                
             }
-
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("Herramienta");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("Herramienta1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                }
+            }
         },
         error: function (request, status, error) {
             alert(request.responseText);
@@ -59,7 +70,17 @@ function TraerListaDeTiposDeFalla() {
                 }));
 
             }
-
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("TipoDeFalla");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("TipoDeFalla1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                }
+            }
         },
         error: function (request, status, error) {
             alert(request.responseText);
@@ -80,9 +101,19 @@ function TraerListaDePrioridades() {
                     value: json[index].Prioridad,
                     text: json[index].Prioridad
                 }));
-
+                
             }
-
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("Prioridad");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("Prioridad1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                }
+            }
         },
         error: function (request, status, error) {
             alert(request.responseText);

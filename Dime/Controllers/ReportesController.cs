@@ -56,32 +56,50 @@ namespace Dime.Controllers
             //model.ConsultaBlendingFormulario = DisBlending.ConsultaBlendingFormularioDestino(Session["AliadoLogeado"].ToString());
             return View();
         }
-        //public JsonResult ReporteFormulario()
-        //{
-        //    var result = DisBlending.ConsultaBlendingFormularioDestino(Session["AliadoLogeado"].ToString());
-        //    var jsonResult = Json(JsonConvert.SerializeObject(result), JsonRequestBehavior.AllowGet);
-        //    jsonResult.MaxJsonLength = int.MaxValue;
-        //    return jsonResult;
-
-        //}
-        [HttpPost]
-        public ActionResult ReporteFormulario()
+        public JsonResult ReporteFormulario()
         {
             var result = DisBlending.ConsultaBlendingFormularioDestino(Session["AliadoLogeado"].ToString());
-            StringBuilder JSON = new StringBuilder();
-            string Prefijo = "";
-            JSON.Append("[");
-            for (int i = 0; i < result.Count; i++)
-            {
-                JSON.Append(Prefijo + "{");
-                JSON.Append("\"FORMULARIO_DESTINO\":" + "\"" + result[i].FORMULARIO_DESTINO + "\",");
-                JSON.Append("\"CANTIDAD\":" + result[i].CANTIDAD);
-                JSON.Append("}");
-                Prefijo = ",";
+            var jsonResult = Json(JsonConvert.SerializeObject(result), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
 
-            }
-            JSON.Append("];");
-            return Content("" + JSON); ;
         }
+        public JsonResult ReporteOperacion(string Formulario)
+        {
+            var result = DisBlending.ConsultaBlendingOperacionDestino(Session["AliadoLogeado"].ToString(), Formulario);
+            var jsonResult = Json(JsonConvert.SerializeObject(result), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public JsonResult ReporteCampaña(string Formulario, string Operacion)
+        {
+            var result = DisBlending.ConsultaBlendingCampanaDestino(Session["AliadoLogeado"].ToString(), Formulario, Operacion);
+            var jsonResult = Json(JsonConvert.SerializeObject(result), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+
+        //[HttpPost]
+        //public ActionResult ReporteFormulario()
+        //{
+        //    var result = DisBlending.ConsultaBlendingFormularioDestino(Session["AliadoLogeado"].ToString());
+        //    StringBuilder JSON = new StringBuilder();
+        //    string Prefijo = "";
+        //    JSON.Append("[");
+        //    for (int i = 0; i < result.Count; i++)
+        //    {
+        //        JSON.Append(Prefijo + "{");
+        //        JSON.Append("'FORMULARIO_DESTINO':'" + result[i].FORMULARIO_DESTINO + "',");
+        //        JSON.Append("'CANTIDAD':" + result[i].CANTIDAD);
+        //        JSON.Append("}");
+        //        Prefijo = ",";
+
+        //    }
+        //    JSON.Append("]");
+        //    Session["Datos_ReporteFormulario"] = JSON.ToString();
+        //    return Content("" + JSON); ;
+        //}
     }
 }

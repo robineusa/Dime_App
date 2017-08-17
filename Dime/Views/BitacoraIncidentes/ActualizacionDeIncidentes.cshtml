@@ -1,12 +1,12 @@
 ﻿@model Telmexla.Servicios.DIME.Entity.ViewModelBitacoraIncidentes
 @{
-    ViewBag.Title = "Registro de Incidentes";
+    ViewBag.Title = "Actualización de Incidentes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @if (Session["Registrar Incidente - COS"] != null)
 {
-    using (Html.BeginForm("RegistrodeIncidentes", "BitacoraIncidentes", FormMethod.Post, new { id = "Registro", role = "form" }))
+    using (Html.BeginForm("ActualizacionDeIncidentes", "BitacoraIncidentes", FormMethod.Post, new { id = "Registro", role = "form" }))
     {
         <div class="row">
             <div class="col-md-9" style="width:100%; ">
@@ -25,6 +25,7 @@
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Caso SD</small>
                                         @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.CasoSD, new { @class = "form-control input-sm", @Id = "CasoSD" })
+                                        @Html.HiddenFor(m => m.BIPBitacoraIncidentes.IdRegistro, new { @class = "form-control input-sm", @Id = "idRegistro" })
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>IM</small>
@@ -32,19 +33,20 @@
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Fecha de Creación Ticket</small>
-                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.FechaDeCreacionTicket, new { @class = "form-control input-sm", @Id = "FechaCreacionTicket" })
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.FechaDeCreacionTicket, new { @class = "form-control input-sm", @Id = "FechaCreacionTicket", @readonly = "true" })
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Fecha de Cierre Ticket</small>
-                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.FechaDeCierreTicket, new { @class = "form-control input-sm", @Id = "FechaCierreTicket", @readonly = "true" })
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.FechaDeCierreTicket, new { @class = "form-control input-sm", @Id = "FechaCierreTicket" })
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Fecha de Cierre Afectación</small>
-                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.FechaDeCierreAfectacion, new { @class = "form-control input-sm", @Id = "FechaCierreAfectacion", @readonly = "true" })
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.FechaDeCierreAfectacion, new { @class = "form-control input-sm", @Id = "FechaCierreAfectacion" })
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Herramienta</small>
-                                        @Html.DropDownListFor(m => m.BIPBitacoraIncidentes.Herramienta, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Herramienta", @class = "form-control" })
+                                        @Html.HiddenFor(m => m.BIPBitacoraIncidentes.Herramienta, new { @class = "form-control input-sm", @Id = "Herramienta1" })
+                                        @Html.DropDownListFor(m => m.BIPBitacoraIncidentes.Herramienta, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Herramienta", @class = "form-control"})
                                     </td>
 
                                 </tr>
@@ -52,6 +54,7 @@
 
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Tipo de Falla</small>
+                                        @Html.HiddenFor(m => m.BIPBitacoraIncidentes.TipoDeFalla, new { @class = "form-control input-sm", @Id = "TipoDeFalla1" })
                                         @Html.DropDownListFor(m => m.BIPBitacoraIncidentes.TipoDeFalla, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "TipoDeFalla", @class = "form-control" })
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
@@ -60,6 +63,7 @@
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Prioridad</small>
+                                        @Html.HiddenFor(m => m.BIPBitacoraIncidentes.Prioridad, new { @class = "form-control input-sm", @Id = "Prioridad1" })
                                         @Html.DropDownListFor(m => m.BIPBitacoraIncidentes.Prioridad, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Prioridad", @class = "form-control" })
                                     </td>
                                     <td style="padding-left:4px; width:600px;" colspan="2">
@@ -109,7 +113,7 @@
 
         <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.1"></script>
         <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.1" rel="stylesheet" />
-        <script src="~/Scripts/BitacoraIncidentes/RegistrodeIncidentes.js?1.0.2"></script>
+        <script src="~/Scripts/BitacoraIncidentes/ActualizacionDeIncidentes.js?1.0.0"></script>
     }
 
 

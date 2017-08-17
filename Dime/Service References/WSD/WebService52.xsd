@@ -23,6 +23,7 @@
   <xs:element name="Usuario" nillable="true" type="tns:Usuario" />
   <xs:complexType name="Linea">
     <xs:sequence>
+      <xs:element minOccurs="0" name="AccesosXLineas" nillable="true" type="tns:ArrayOfAccesosXLinea" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdModoLogin" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="ModosLogin" nillable="true" type="tns:ModosLogin" />
@@ -31,6 +32,33 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Linea" nillable="true" type="tns:Linea" />
+  <xs:complexType name="ArrayOfAccesosXLinea">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AccesosXLinea" nillable="true" type="tns:AccesosXLinea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAccesosXLinea" nillable="true" type="tns:ArrayOfAccesosXLinea" />
+  <xs:complexType name="AccesosXLinea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Acceso" nillable="true" type="tns:Acceso" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdAcceso" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IdLinea" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Linea" nillable="true" type="tns:Linea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AccesosXLinea" nillable="true" type="tns:AccesosXLinea" />
+  <xs:complexType name="Acceso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccesosXLineas" nillable="true" type="tns:ArrayOfAccesosXLinea" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdModoLogin" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ModosLogin" nillable="true" type="tns:ModosLogin" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuariosXAccesoes" nillable="true" type="tns:ArrayOfUsuariosXAcceso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Acceso" nillable="true" type="tns:Acceso" />
   <xs:complexType name="ModosLogin">
     <xs:sequence>
       <xs:element minOccurs="0" name="Accesoes" nillable="true" type="tns:ArrayOfAcceso" />
@@ -46,16 +74,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfAcceso" nillable="true" type="tns:ArrayOfAcceso" />
-  <xs:complexType name="Acceso">
+  <xs:complexType name="ArrayOfLinea">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="IdModoLogin" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="ModosLogin" nillable="true" type="tns:ModosLogin" />
-      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UsuariosXAccesoes" nillable="true" type="tns:ArrayOfUsuariosXAcceso" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Linea" nillable="true" type="tns:Linea" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="Acceso" nillable="true" type="tns:Acceso" />
+  <xs:element name="ArrayOfLinea" nillable="true" type="tns:ArrayOfLinea" />
   <xs:complexType name="ArrayOfUsuariosXAcceso">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="UsuariosXAcceso" nillable="true" type="tns:UsuariosXAcceso" />
@@ -77,12 +101,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UsuariosXAcceso" nillable="true" type="tns:UsuariosXAcceso" />
-  <xs:complexType name="ArrayOfLinea">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Linea" nillable="true" type="tns:Linea" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfLinea" nillable="true" type="tns:ArrayOfLinea" />
   <xs:complexType name="ArrayOfUsuario">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Usuario" nillable="true" type="tns:Usuario" />
@@ -2118,6 +2136,32 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ConsultaBlendingFormularioDestinoReturnViewModel" nillable="true" type="tns:ConsultaBlendingFormularioDestinoReturnViewModel" />
+  <xs:complexType name="ArrayOfConsultaBlendingOperacionDestinoReturnViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConsultaBlendingOperacionDestinoReturnViewModel" nillable="true" type="tns:ConsultaBlendingOperacionDestinoReturnViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsultaBlendingOperacionDestinoReturnViewModel" nillable="true" type="tns:ArrayOfConsultaBlendingOperacionDestinoReturnViewModel" />
+  <xs:complexType name="ConsultaBlendingOperacionDestinoReturnViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="OperacionDestino" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultaBlendingOperacionDestinoReturnViewModel" nillable="true" type="tns:ConsultaBlendingOperacionDestinoReturnViewModel" />
+  <xs:complexType name="ArrayOfConsultaBlendingCampañaDestinoReturnViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConsultaBlendingCampañaDestinoReturnViewModel" nillable="true" type="tns:ConsultaBlendingCampañaDestinoReturnViewModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConsultaBlendingCampañaDestinoReturnViewModel" nillable="true" type="tns:ArrayOfConsultaBlendingCampañaDestinoReturnViewModel" />
+  <xs:complexType name="ConsultaBlendingCampañaDestinoReturnViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CampanaDestino" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultaBlendingCampañaDestinoReturnViewModel" nillable="true" type="tns:ConsultaBlendingCampañaDestinoReturnViewModel" />
   <xs:complexType name="MecMonitoreosP">
     <xs:sequence>
       <xs:element minOccurs="0" name="AccionEmprender" nillable="true" type="xs:string" />
@@ -2974,4 +3018,115 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BIPBitacoraIncidentes" nillable="true" type="tns:BIPBitacoraIncidentes" />
+  <xs:complexType name="ArrayOfBIMGerencias">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BIMGerencias" nillable="true" type="tns:BIMGerencias" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBIMGerencias" nillable="true" type="tns:ArrayOfBIMGerencias" />
+  <xs:complexType name="BIMGerencias">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdGerencia" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreGerencia" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BIMGerencias" nillable="true" type="tns:BIMGerencias" />
+  <xs:complexType name="ArrayOfBIMAliados">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BIMAliados" nillable="true" type="tns:BIMAliados" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBIMAliados" nillable="true" type="tns:ArrayOfBIMAliados" />
+  <xs:complexType name="BIMAliados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdAliado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreAliado" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BIMAliados" nillable="true" type="tns:BIMAliados" />
+  <xs:complexType name="ArrayOfBIMOperaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BIMOperaciones" nillable="true" type="tns:BIMOperaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBIMOperaciones" nillable="true" type="tns:ArrayOfBIMOperaciones" />
+  <xs:complexType name="BIMOperaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdAliado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdGerencia" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdOperacion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreOperacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BIMOperaciones" nillable="true" type="tns:BIMOperaciones" />
+  <xs:complexType name="ArrayOfBIMHerramientas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BIMHerramientas" nillable="true" type="tns:BIMHerramientas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBIMHerramientas" nillable="true" type="tns:ArrayOfBIMHerramientas" />
+  <xs:complexType name="BIMHerramientas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdHerramienta" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreHerramienta" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BIMHerramientas" nillable="true" type="tns:BIMHerramientas" />
+  <xs:complexType name="ArrayOfBIMTipoFalla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BIMTipoFalla" nillable="true" type="tns:BIMTipoFalla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBIMTipoFalla" nillable="true" type="tns:ArrayOfBIMTipoFalla" />
+  <xs:complexType name="BIMTipoFalla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdTipoFalla" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoFalla" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BIMTipoFalla" nillable="true" type="tns:BIMTipoFalla" />
+  <xs:complexType name="ArrayOfBIMPrioridades">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BIMPrioridades" nillable="true" type="tns:BIMPrioridades" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBIMPrioridades" nillable="true" type="tns:ArrayOfBIMPrioridades" />
+  <xs:complexType name="BIMPrioridades">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdPrioridad" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Prioridad" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BIMPrioridades" nillable="true" type="tns:BIMPrioridades" />
+  <xs:complexType name="ArrayOfViewModelIncidentesOperaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ViewModelIncidentesOperaciones" nillable="true" type="tns:ViewModelIncidentesOperaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfViewModelIncidentesOperaciones" nillable="true" type="tns:ArrayOfViewModelIncidentesOperaciones" />
+  <xs:complexType name="ViewModelIncidentesOperaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdAliado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdGerencia" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdOperacion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdRegistro" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreAliado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreGerencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreOperacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ViewModelIncidentesOperaciones" nillable="true" type="tns:ViewModelIncidentesOperaciones" />
+  <xs:complexType name="ArrayOfBIPBitacoraIncidentes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BIPBitacoraIncidentes" nillable="true" type="tns:BIPBitacoraIncidentes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBIPBitacoraIncidentes" nillable="true" type="tns:ArrayOfBIPBitacoraIncidentes" />
 </xs:schema>
