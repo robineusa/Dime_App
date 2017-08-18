@@ -932,6 +932,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ILoginService_ListaAccesosDeLinea_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ILoginService_ListaAccesosDeLinea_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_ILoginService_ListaLineasDePerfil_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -15715,6 +15753,462 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_AgregarAliado_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_AgregarAliado_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_ActualizarAliado_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_ActualizarAliado_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_AgregarGerencia_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_AgregarGerencia_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_ActualizarGerencia_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_ActualizarGerencia_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_AgregarOperaciones_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_AgregarOperaciones_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_ActualizarOperacion_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_ActualizarOperacion_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_ListaDeGerenciasAdmin_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_ListaDeGerenciasAdmin_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_ListaDeAliadosAdmin_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_ListaDeAliadosAdmin_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_ListaDeOperacionesAdmin_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_ListaDeOperacionesAdmin_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_GerenciaPorId_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_GerenciaPorId_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_AliadoPorId_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_AliadoPorId_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_OperacionPorId_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_OperacionPorId_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -15837,6 +16331,12 @@
   </wsdl:message>
   <wsdl:message name="ILoginService_ListaAccesosDePerfil_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListaAccesosDePerfilResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_ListaAccesosDeLinea_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaAccesosDeLinea" />
+  </wsdl:message>
+  <wsdl:message name="ILoginService_ListaAccesosDeLinea_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaAccesosDeLineaResponse" />
   </wsdl:message>
   <wsdl:message name="ILoginService_ListaLineasDePerfil_InputMessage">
     <wsdl:part name="parameters" element="tns:ListaLineasDePerfil" />
@@ -17824,6 +18324,78 @@
   <wsdl:message name="IBitacoraIncidentesService_ListaDeIncidentesEnGestion_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListaDeIncidentesEnGestionResponse" />
   </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_AgregarAliado_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarAliado" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_AgregarAliado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarAliadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_ActualizarAliado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarAliado" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_ActualizarAliado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarAliadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_AgregarGerencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarGerencia" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_AgregarGerencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarGerenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_ActualizarGerencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarGerencia" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_ActualizarGerencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarGerenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_AgregarOperaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarOperaciones" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_AgregarOperaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarOperacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_ActualizarOperacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarOperacion" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_ActualizarOperacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarOperacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_ListaDeGerenciasAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDeGerenciasAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_ListaDeGerenciasAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDeGerenciasAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_ListaDeAliadosAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDeAliadosAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_ListaDeAliadosAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDeAliadosAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_ListaDeOperacionesAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDeOperacionesAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_ListaDeOperacionesAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDeOperacionesAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_GerenciaPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GerenciaPorId" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_GerenciaPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GerenciaPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_AliadoPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:AliadoPorId" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_AliadoPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AliadoPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_OperacionPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:OperacionPorId" />
+  </wsdl:message>
+  <wsdl:message name="IBitacoraIncidentesService_OperacionPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OperacionPorIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWebService">
     <wsdl:operation name="MuestraEntidades">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MuestraEntidades" message="tns:IWebService_MuestraEntidades_InputMessage" />
@@ -17902,6 +18474,10 @@
     <wsdl:operation name="ListaAccesosDePerfil">
       <wsdl:input wsaw:Action="http://tempuri.org/ILoginService/ListaAccesosDePerfil" message="tns:ILoginService_ListaAccesosDePerfil_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILoginService/ListaAccesosDePerfilResponse" message="tns:ILoginService_ListaAccesosDePerfil_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaAccesosDeLinea">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoginService/ListaAccesosDeLinea" message="tns:ILoginService_ListaAccesosDeLinea_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoginService/ListaAccesosDeLineaResponse" message="tns:ILoginService_ListaAccesosDeLinea_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListaLineasDePerfil">
       <wsdl:input wsaw:Action="http://tempuri.org/ILoginService/ListaLineasDePerfil" message="tns:ILoginService_ListaLineasDePerfil_InputMessage" />
@@ -19269,6 +19845,54 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeIncidentesEnGestion" message="tns:IBitacoraIncidentesService_ListaDeIncidentesEnGestion_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeIncidentesEnGestionResponse" message="tns:IBitacoraIncidentesService_ListaDeIncidentesEnGestion_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AgregarAliado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/AgregarAliado" message="tns:IBitacoraIncidentesService_AgregarAliado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/AgregarAliadoResponse" message="tns:IBitacoraIncidentesService_AgregarAliado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAliado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/ActualizarAliado" message="tns:IBitacoraIncidentesService_ActualizarAliado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/ActualizarAliadoResponse" message="tns:IBitacoraIncidentesService_ActualizarAliado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarGerencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/AgregarGerencia" message="tns:IBitacoraIncidentesService_AgregarGerencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/AgregarGerenciaResponse" message="tns:IBitacoraIncidentesService_AgregarGerencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarGerencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/ActualizarGerencia" message="tns:IBitacoraIncidentesService_ActualizarGerencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/ActualizarGerenciaResponse" message="tns:IBitacoraIncidentesService_ActualizarGerencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarOperaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/AgregarOperaciones" message="tns:IBitacoraIncidentesService_AgregarOperaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/AgregarOperacionesResponse" message="tns:IBitacoraIncidentesService_AgregarOperaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarOperacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/ActualizarOperacion" message="tns:IBitacoraIncidentesService_ActualizarOperacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/ActualizarOperacionResponse" message="tns:IBitacoraIncidentesService_ActualizarOperacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaDeGerenciasAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeGerenciasAdmin" message="tns:IBitacoraIncidentesService_ListaDeGerenciasAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeGerenciasAdminResponse" message="tns:IBitacoraIncidentesService_ListaDeGerenciasAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaDeAliadosAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeAliadosAdmin" message="tns:IBitacoraIncidentesService_ListaDeAliadosAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeAliadosAdminResponse" message="tns:IBitacoraIncidentesService_ListaDeAliadosAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaDeOperacionesAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeOperacionesAdmin" message="tns:IBitacoraIncidentesService_ListaDeOperacionesAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeOperacionesAdminResponse" message="tns:IBitacoraIncidentesService_ListaDeOperacionesAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GerenciaPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/GerenciaPorId" message="tns:IBitacoraIncidentesService_GerenciaPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/GerenciaPorIdResponse" message="tns:IBitacoraIncidentesService_GerenciaPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AliadoPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/AliadoPorId" message="tns:IBitacoraIncidentesService_AliadoPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/AliadoPorIdResponse" message="tns:IBitacoraIncidentesService_AliadoPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OperacionPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/OperacionPorId" message="tns:IBitacoraIncidentesService_OperacionPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBitacoraIncidentesService/OperacionPorIdResponse" message="tns:IBitacoraIncidentesService_OperacionPorId_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IWebService" type="tns:IWebService">
     <wsp:PolicyReference URI="#WSHttpBinding_IWebService_policy" />
@@ -19483,6 +20107,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_ILoginService_ListaAccesosDePerfil_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaAccesosDeLinea">
+      <soap12:operation soapAction="http://tempuri.org/ILoginService/ListaAccesosDeLinea" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ILoginService_ListaAccesosDeLinea_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ILoginService_ListaAccesosDeLinea_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -23208,6 +23843,138 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_ListaDeIncidentesEnGestion_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarAliado">
+      <soap12:operation soapAction="http://tempuri.org/IBitacoraIncidentesService/AgregarAliado" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_AgregarAliado_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_AgregarAliado_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarAliado">
+      <soap12:operation soapAction="http://tempuri.org/IBitacoraIncidentesService/ActualizarAliado" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_ActualizarAliado_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_ActualizarAliado_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarGerencia">
+      <soap12:operation soapAction="http://tempuri.org/IBitacoraIncidentesService/AgregarGerencia" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_AgregarGerencia_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_AgregarGerencia_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarGerencia">
+      <soap12:operation soapAction="http://tempuri.org/IBitacoraIncidentesService/ActualizarGerencia" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_ActualizarGerencia_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_ActualizarGerencia_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarOperaciones">
+      <soap12:operation soapAction="http://tempuri.org/IBitacoraIncidentesService/AgregarOperaciones" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_AgregarOperaciones_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_AgregarOperaciones_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarOperacion">
+      <soap12:operation soapAction="http://tempuri.org/IBitacoraIncidentesService/ActualizarOperacion" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_ActualizarOperacion_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_ActualizarOperacion_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaDeGerenciasAdmin">
+      <soap12:operation soapAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeGerenciasAdmin" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_ListaDeGerenciasAdmin_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_ListaDeGerenciasAdmin_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaDeAliadosAdmin">
+      <soap12:operation soapAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeAliadosAdmin" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_ListaDeAliadosAdmin_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_ListaDeAliadosAdmin_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaDeOperacionesAdmin">
+      <soap12:operation soapAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeOperacionesAdmin" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_ListaDeOperacionesAdmin_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_ListaDeOperacionesAdmin_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GerenciaPorId">
+      <soap12:operation soapAction="http://tempuri.org/IBitacoraIncidentesService/GerenciaPorId" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_GerenciaPorId_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_GerenciaPorId_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AliadoPorId">
+      <soap12:operation soapAction="http://tempuri.org/IBitacoraIncidentesService/AliadoPorId" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_AliadoPorId_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_AliadoPorId_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OperacionPorId">
+      <soap12:operation soapAction="http://tempuri.org/IBitacoraIncidentesService/OperacionPorId" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_OperacionPorId_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_OperacionPorId_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

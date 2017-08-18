@@ -16,5 +16,6 @@ namespace Telmexla.Servicios.DIME.Entity
         public string NombreAliado { get; set; }
         public decimal IdOperacion { get; set; }
         public string NombreOperacion { get; set; }
+        public string Estado { get; set; }
     }
 }

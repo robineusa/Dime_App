@@ -2288,6 +2288,10 @@
     <Content Include="Scripts\BackElite\SolicitudBackElite.js" />
     <Content Include="Scripts\BitacoraIncidentes\ActualizacionDeIncidentes.js" />
     <Content Include="Scripts\BitacoraIncidentes\ActualizarOperacionesIncidente.js" />
+    <Content Include="Scripts\BitacoraIncidentes\AdministrarOperaciones.js" />
+    <Content Include="Scripts\BitacoraIncidentes\ListaDeAliadosActuales.js" />
+    <Content Include="Scripts\BitacoraIncidentes\ListaDeGerenciasActuales.js" />
+    <Content Include="Scripts\BitacoraIncidentes\ListaDeOperacionesActuales.js" />
     <Content Include="Scripts\BitacoraIncidentes\ListaIncidentesEnGestion.js" />
     <Content Include="Scripts\BitacoraIncidentes\RegistrarOperacionesIncidente.js" />
     <Content Include="Scripts\BitacoraIncidentes\RegistrodeIncidentes.js" />
@@ -2986,6 +2990,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMPrioridades.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMTipoFalla.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ViewModelIncidentesOperaciones.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3090,9 +3095,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.ConsultaBlendingOperacionDestinoReturnViewModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.ViewModelIncidentesOperaciones.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\WSD\Reference.svcmap">
@@ -3353,6 +3355,12 @@
     <Content Include="Views\BitacoraIncidentes\ListaIncidentesEnGestion.cshtml" />
     <Content Include="Views\BitacoraIncidentes\ActualizacionDeIncidentes.cshtml" />
     <Content Include="Views\BitacoraIncidentes\ActualizarOperacionesIncidente.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\ListaDeGerenciasActuales.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\AgregarNuevaGerencia.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\AdministrarAliados.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\ListaDeAliadosActuales.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\ListaDeOperacionesActuales.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\AdministrarOperaciones.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
