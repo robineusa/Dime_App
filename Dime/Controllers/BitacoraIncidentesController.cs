@@ -186,5 +186,121 @@ namespace Dime.Controllers
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
+        [HttpGet]
+        public ActionResult ListaDeGerenciasActuales()
+        {
+            return View();
+        }
+        [HttpGet]
+        public JsonResult ListaDeGerenciasAdminJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaDeGerenciasAdmin()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult AgregarNuevaGerencia(string IdGerencia)
+        {
+            BIMGerencias modelo = new BIMGerencias();
+            int Id = Convert.ToInt32(IdGerencia);
+            if(Id > 0)
+            {
+                modelo = bitacoraservice.GerenciaPorId(Id);
+                
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        public ActionResult AgregarNuevaGerencia(BIMGerencias modelo) {
+            if (modelo.IdGerencia > 0)
+            {
+                bitacoraservice.ActualizarGerencia(modelo);
+            }
+            else {
+                bitacoraservice.AgregarGerencia(modelo);
+            }
+            return RedirectToAction("ListaDeGerenciasActuales");
+        }
+        [HttpGet]
+        public ActionResult ListaDeAliadosActuales()
+        {
+            return View();
+        }
+        [HttpGet]
+        public JsonResult ListaDeAliadosAdminJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaDeAliadosAdmin()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult AdministrarAliados(string IdAliado)
+        {
+            BIMAliados modelo = new BIMAliados();
+            int Id = Convert.ToInt32(IdAliado);
+            if (Id > 0)
+            {
+                modelo = bitacoraservice.AliadoPorId(Id);
+
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        public ActionResult AdministrarAliados(BIMAliados modelo)
+        {
+            if (modelo.IdAliado > 0)
+            {
+                bitacoraservice.ActualizarAliado(modelo);
+            }
+            else
+            {
+                bitacoraservice.AgregarAliado(modelo);
+            }
+            return RedirectToAction("ListaDeAliadosActuales");
+        }
+        public ActionResult ListaDeOperacionesActuales()
+        {
+            return View();
+        }
+        [HttpGet]
+        public JsonResult ListaDeOperacionesAdminJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaDeOperacionesAdmin()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult AdministrarOperaciones(string IdOperacion)
+        {
+            BIMOperaciones modelo = new BIMOperaciones();
+            int Id = Convert.ToInt32(IdOperacion);
+            if (Id > 0)
+            {
+                modelo = bitacoraservice.OperacionPorId(Id);
+
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        public ActionResult AdministrarOperaciones(BIMOperaciones modelo)
+        {
+            if (modelo.IdOperacion > 0)
+            {
+                bitacoraservice.ActualizarOperacion(modelo);
+            }
+            else
+            {
+                bitacoraservice.AgregarOperaciones(modelo);
+            }
+            return RedirectToAction("ListaDeOperacionesActuales");
+        }
+        [HttpGet]
+        public JsonResult ListaDeAliadosJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaDeAliados()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
     }
 }

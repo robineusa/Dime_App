@@ -3112,6 +3112,7 @@
   <xs:element name="ArrayOfViewModelIncidentesOperaciones" nillable="true" type="tns:ArrayOfViewModelIncidentesOperaciones" />
   <xs:complexType name="ViewModelIncidentesOperaciones">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
       <xs:element minOccurs="0" name="IdAliado" type="xs:decimal" />
       <xs:element minOccurs="0" name="IdGerencia" type="xs:decimal" />
