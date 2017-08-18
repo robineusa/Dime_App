@@ -43,17 +43,16 @@ function filePicked(oEvent) {
 
 function CotejarInformacionGrid(cedulas)
 {
-     cedulasArray = [];
+    cedulasArray = new Array();
     for (var i = 0; i < cedulas.length; i++)
     {
         cedulasArray.push(cedulas[i].CEDULA);
     }
     console.log(cedulasArray);
         $.ajax({
-            type: "GET",
+            type: "POST",
             traditional: true,
             url: consultaCotejadaUrl,
-            contentType: "application/json; charset=utf-8",
             data: { cedulas: cedulasArray },
             dataType: 'json',
             success: function (result) {
@@ -188,7 +187,6 @@ function GuardarUsuarios()
         }
 
     });
-
 
 }
 

@@ -258,7 +258,7 @@ namespace Dime.Controllers
         }
 
         
-        [HttpGet]
+        [HttpPost]
         public JsonResult CotejarInformacionMasivo(IList<string> cedulas)
         {
             
