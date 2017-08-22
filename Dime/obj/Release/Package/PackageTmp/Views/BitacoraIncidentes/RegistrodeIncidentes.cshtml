@@ -1,0 +1,143 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelBitacoraIncidentes
+@{
+    ViewBag.Title = "Registro de Incidentes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Session["Registrar Incidente - COS"] != null)
+{
+    using (Html.BeginForm("RegistrodeIncidentes", "BitacoraIncidentes", FormMethod.Post, new { id = "Registro", role = "form" }))
+    {
+        <div class="row">
+            <div class="col-md-9" style="width:100%; ">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li id="Li1" style="background-color: #dcdcdc; border-color: #c23321" class="active"><a href="#solicitudcreaciondireccion" aria-controls="solicitudcreaciondireccion" data-toggle="tab" role="tab" style="background-color:#dcdcdc;">Incidente</a></li>
+
+                    </ul>
+
+                    <div class="tab-content" style="padding-left:0; padding-top: 0">
+                        <div role="tabpanel" class="tab-pane tab-dime-first active" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;" id="solicitudcreaciondireccion">
+                            <br />
+                            <table>
+                                <tr>
+
+                                    <td style="padding-left:4px; width:300px;">
+                                        <small>Caso SD</small>
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.CasoSD, new { @class = "form-control input-sm", @Id = "CasoSD" })
+                                    </td>
+                                    <td style="padding-left:4px; width:300px;">
+                                        <small>IM</small>
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.IM, new { @class = "form-control input-sm", @Id = "IM" })
+                                    </td>
+                                    <td style="padding-left:4px; width:300px;">
+                                        <small>Fecha de Creación Ticket</small>
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.FechaDeCreacionTicket, new { @class = "form-control input-sm", @Id = "FechaCreacionTicket" })
+                                    </td>
+                                    <td style="padding-left:4px; width:300px;">
+                                        <small>Fecha de Cierre Ticket</small>
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.FechaDeCierreTicket, new { @class = "form-control input-sm", @Id = "FechaCierreTicket", @readonly = "true" })
+                                    </td>
+                                    <td style="padding-left:4px; width:300px;">
+                                        <small>Fecha de Cierre Afectación</small>
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.FechaDeCierreAfectacion, new { @class = "form-control input-sm", @Id = "FechaCierreAfectacion", @readonly = "true" })
+                                    </td>
+                                    <td style="padding-left:4px; width:300px;">
+                                        <small>Herramienta</small>
+                                        @Html.DropDownListFor(m => m.BIPBitacoraIncidentes.Herramienta, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Herramienta", @class = "form-control" })
+                                    </td>
+
+                                </tr>
+                                <tr>
+
+                                    <td style="padding-left:4px; width:300px;">
+                                        <small>Tipo de Falla</small>
+                                        @Html.DropDownListFor(m => m.BIPBitacoraIncidentes.TipoDeFalla, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "TipoDeFalla", @class = "form-control" })
+                                    </td>
+                                    <td style="padding-left:4px; width:300px;">
+                                        <small>Módulo Afectado</small>
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.ModuloAfectado, new { @class = "form-control input-sm", @Id = "ModuloAfectado" })
+                                    </td>
+                                    <td style="padding-left:4px; width:300px;">
+                                        <small>Prioridad</small>
+                                        @Html.DropDownListFor(m => m.BIPBitacoraIncidentes.Prioridad, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Prioridad", @class = "form-control" })
+                                    </td>
+                                    <td style="padding-left:4px; width:600px;" colspan="2">
+                                        <small>Escalado A</small>
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.EscaladoA, new { @class = "form-control input-sm", @Id = "EscaladoA" })
+                                    </td>
+
+                                    <td style="padding-left:4px; width:300px;">
+                                        <small>Usuarios Afectados</small>
+                                        @Html.TextBoxFor(m => m.BIPBitacoraIncidentes.CantidadUsuariosAfectados, new { @class = "form-control input-sm", @Id = "CantidadUserAfectados" })
+                                    </td>
+
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td colspan="7" style="padding:1px; width:1200px;">
+                                        <small>Descripción de la Afectación</small>
+                                        @Html.TextAreaFor(m => m.BIPBitacoraIncidentes.DescripcionAfectacion, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="7" style="padding:1px; width:1200px;">
+                                        <small>Comentarios de Cierre</small>
+                                        @Html.TextAreaFor(m => m.BIPBitacoraIncidentes.ComentariosDeCierre, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text" })
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                        <br />
+                        <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;  margin-left:1%;">Guardar</button><br />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    }
+
+    @section Scripts{
+        <script>
+            var UrlHerramientas = '@Url.Action("ListaHerramientasJson", "BitacoraIncidentes")';
+            var UrlListaTipoDeFalla = '@Url.Action("ListaTipoDeFallaJson", "BitacoraIncidentes")';
+            var UrlListaPrioridades = '@Url.Action("ListaPrioridadesJson", "BitacoraIncidentes")';
+        </script>
+
+        <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.1"></script>
+        <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.1" rel="stylesheet" />
+        <script src="~/Scripts/BitacoraIncidentes/RegistrodeIncidentes.js?1.0.2"></script>
+    }
+
+
+}
+else
+{
+    <div class="row">
+
+        <div class="box box-primary">
+
+            <div class="box-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-page">
+                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                            <div class="error-content">
+                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                <p style="text-align:justify;">
+                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                    Por favor solicite al administrador del sistema el acceso correspondiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

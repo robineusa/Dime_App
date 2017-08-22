@@ -43,17 +43,16 @@ function filePicked(oEvent) {
 
 function CotejarInformacionGrid(cedulas)
 {
-     cedulasArray = [];
+    cedulasArray = new Array();
     for (var i = 0; i < cedulas.length; i++)
     {
         cedulasArray.push(cedulas[i].CEDULA);
     }
     console.log(cedulasArray);
         $.ajax({
-            type: "GET",
+            type: "POST",
             traditional: true,
             url: consultaCotejadaUrl,
-            contentType: "application/json; charset=utf-8",
             data: { cedulas: cedulasArray },
             dataType: 'json',
             success: function (result) {
@@ -72,7 +71,7 @@ function CotejarInformacionGrid(cedulas)
 
 
 function TraerPosiblesLineasYAccesosDePerfil() {
-
+    $("#accesosCreacion").empty();
 
     $.ajax({
         type: "GET",
@@ -84,12 +83,29 @@ function TraerPosiblesLineasYAccesosDePerfil() {
             var json = JSON.parse(result);
             console.log(json);
             LlenarLineasDePerfil(json);
-            LlenarAccesosDePerfilCreacion(json);
         }
 
 
     });
 };
+
+function TraerPosiblesAccesosDeLinea() {
+
+    $.ajax({
+        type: "GET",
+        url: urlPosiblesAccesosMasivo,
+        contentType: "application/json; charset=utf-8",
+        data: { idLinea: $("#lineaCreacion").val() },
+        dataType: 'json',
+        success: function (result) {
+            var json = JSON.parse(result);
+            console.log(json);
+            LlenarAccesosDeLineaCreacion(json);
+        }
+    });
+
+};
+
 
 function LlenarLineasDePerfil(data) {
     $("#lineaCreacion").empty();
@@ -101,7 +117,7 @@ function LlenarLineasDePerfil(data) {
 }
 
 
-function LlenarAccesosDePerfilCreacion(data) {
+function LlenarAccesosDeLineaCreacion(data) {
     $("#accesosCreacion").empty();
     var table = document.getElementById("accesosCreacion");
     var i = 0;
@@ -171,7 +187,6 @@ function GuardarUsuarios()
         }
 
     });
-
 
 }
 

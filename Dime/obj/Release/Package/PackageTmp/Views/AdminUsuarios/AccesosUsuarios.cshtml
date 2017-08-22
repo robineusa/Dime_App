@@ -152,10 +152,10 @@ using (Html.BeginForm("AccesosUsuarios", "AdminUsuarios", FormMethod.Post, new {
                             <tr>
                                 <td style="padding:1px;">
                                     @Html.DropDownListFor(m => m.IdPerfil, new List<SelectListItem>() { new SelectListItem { Text="ADMINISTRADOR", Value="1"}, new SelectListItem { Text = "ASESOR", Value = "2" } ,
-                                                                                                    new SelectListItem { Text = "CÉLULA", Value = "3" } }, "-Seleccione-", new { @class = "form-control input-sm", id = "perfilSelectedCreate", onchange = "TraerPosiblesLineasYAccesosDePerfil()" })
+                                                                                                    new SelectListItem { Text = "CÉLULA", Value = "3" } }, "-Seleccione-", new { @class = "form-control input-sm", id = "perfilSelectedCreate", onchange = "TraerPosiblesLineasDePerfil()" })
                                 </td>
                                 <td style="padding:1px;">
-                                    @Html.DropDownListFor(m => m.IdLinea, new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm", id = "lineaSelectCreacion" })
+                                    @Html.DropDownListFor(m => m.IdLinea, new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm", id = "lineaSelectCreacion", onchange = "TraerPosiblesAccesosDeLinea()" })
                                 </td>
                                 <td style="padding:1px;">
                                     @Html.TextBoxFor(m => m.Contraseña, new { @class = "form-control input-sm", disabled = true, id = "tbContra" })
@@ -232,11 +232,11 @@ using (Html.BeginForm("AccesosUsuarios", "AdminUsuarios", FormMethod.Post, new {
                         <strong><i class="fa fa-chevron-circle-down"></i> Perfil a otorgar:</strong>
 
                         @Html.DropDownListFor(m => m.IdPerfilMasivo, new List<SelectListItem>() { new SelectListItem { Text="ADMINISTRADOR", Value="1"}, new SelectListItem { Text = "ASESOR", Value = "2" } ,
-                                                                                                    new SelectListItem { Text = "CÉLULA", Value = "3" } }, "-Seleccione-", new { @class = "form-control input-sm", onchange = "TraerPosiblesAccesosDePerfilMasivo()", @style = "width:200px", id = "perfilSelectedCreateMasivo" })
+                                                                                                    new SelectListItem { Text = "CÉLULA", Value = "3" } }, "-Seleccione-", new { @class = "form-control input-sm", onchange = "TraerPosiblesLineasDePerfilMasivo()", @style = "width:200px", id = "perfilSelectedCreateMasivo" })
 
                         <br />
                         <strong><i class="fa fa-chevron-circle-down"></i> Linea a otorgar:</strong>
-                        @Html.DropDownListFor(m => m.IdLineaMasivo, new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm", @style = "width:200px", id = "lineaSelectCreacionMasivo" })
+                        @Html.DropDownListFor(m => m.IdLineaMasivo, new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm", @style = "width:200px", id = "lineaSelectCreacionMasivo", onchange = "TraerPosiblesAccesosDeLineaMasivo()" })
 
                         <strong><i class="fa fa-chevron-circle-down"></i> Accesos y privilegios:</strong>
                         <br />
@@ -275,9 +275,11 @@ using (Html.BeginForm("AccesosUsuarios", "AdminUsuarios", FormMethod.Post, new {
         var perfilUsuario =  @Html.Raw(Json.Encode(Model.IdPerfil ));
         var lineaUsuario = @Html.Raw(Json.Encode(Model.IdLinea ));
         var urlPosiblesAccesosDeUsuario = '@Url.Action("PosiblesAccesosDeUsuario", "AdminUsuarios")';
+        var urlPosiblesAccesosDeLinea = '@Url.Action("PosiblesAccesosDeLineas", "AdminUsuarios")';
+
         //$("#cedulaCreacion").val(0);
         </script>
-        <script src="~/Scripts/AdminUsuarios/Accesos.js?1.1.1"></script>
+        <script src="~/Scripts/AdminUsuarios/Accesos.js?1.2.0"></script>
     }
 }
 else

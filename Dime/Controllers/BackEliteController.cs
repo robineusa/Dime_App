@@ -273,7 +273,7 @@ namespace Dime.Controllers
             ViewModelBackElite modelo = new ViewModelBackElite();
             return View(modelo);
         }
-        [HttpGet]
+        [HttpPost]
         public JsonResult ConsultarSolicitudesMasivo(IList<string> Solicitudes)
         {
             var result0 = backeliteservice.ConsultarSolicitudesMasivo(Solicitudes.ToList());

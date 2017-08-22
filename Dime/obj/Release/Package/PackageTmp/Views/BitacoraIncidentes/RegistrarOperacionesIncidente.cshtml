@@ -1,0 +1,139 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelBitacoraIncidentes
+@{
+    ViewBag.Title = "Registrar Operaciones Por Incidente";
+    ViewBag.SubTitle = "Procesos - COS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="box box-danger">
+    <div class="box-body">
+        <div class="row">
+            <div class="col-xs-12">
+
+            </div>
+        </div>
+    </div>
+    <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
+        <i class="fa fa-ticket text-danger"></i> Id del Registro Generado
+    </h2>
+    <div id="ARBOL" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+        <br />
+        <form>
+            <table>
+                <tr>
+                    <td style="padding-left:1px; width:200px;">
+                        <small>Id de Registro</small>
+                        @Html.TextBoxFor(m => m.BIPIncidentesPorOperacion.IdRegistro, new { @class = "form-control input-sm", @Id = "IdRegistro", @readonly = "true" })
+                    </td>
+
+                </tr>
+            </table>
+        </form>
+    </div>
+    <br />
+</div>
+
+
+<div class="box box-danger">
+    <div class="box-body">
+        <div class="row">
+            <div class="col-xs-12">
+
+            </div>
+        </div>
+    </div>
+    <h2 class="page-header" style="margin-top: 0px; margin-left:1px;"> 
+        <i class="fa fa-check-square-o text-red"></i> Seleccione las Gerencias Afectadas
+    </h2>
+    <div id="Operaciones" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+        <br />
+        <table id="ListaDeGerenciasActivas">
+
+            <tr>
+                <td width="200" style="padding:1px;"></td>
+                <td width="200" style="padding:1px;"></td>
+                <td width="200" style="padding:1px;"></td>
+                <td width="200" style="padding:1px;"></td>
+                <td width="200" style="padding:1px;"></td>
+            </tr>
+        </table>
+    </div>
+    <br />
+</div>
+
+<div class="box box-danger">
+    <div class="box-body">
+        <div class="row">
+            <div class="col-xs-12">
+
+            </div>
+        </div>
+    </div>
+    <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
+        <i class="fa fa-check-square-o text-orange"></i> Seleccione los Aliados Afectados
+    </h2>
+    <div id="Operaciones" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+        <br />
+        <table id="ListaDeAliadosActivos">
+
+            <tr>
+                <td width="200" style="padding:1px;"></td>
+                <td width="200" style="padding:1px;"></td>
+                <td width="200" style="padding:1px;"></td>
+                <td width="200" style="padding:1px;"></td>
+                <td width="200" style="padding:1px;"></td>
+            </tr>
+        </table>
+    </div>
+    <br />
+</div>
+
+<div class="box box-danger">
+    <div class="box-body">
+        <div class="row">
+            <div class="col-xs-12">
+
+            </div>
+        </div>
+    </div>
+    <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
+        <i class="fa fa-check-square-o text-yellow"></i> Seleccione las Operaciones Afectadas
+    </h2>
+    <div id="Operaciones" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+        <br />
+        <table id="ListaDeOperacionesActivas">
+
+            <tr>
+                <td width="300" style="padding:1px;"></td>
+                <td width="300" style="padding:1px;"></td>
+                <td width="300" style="padding:1px;"></td>
+                <td width="300" style="padding:1px;"></td>
+                <td width="300" style="padding:1px;"></td>
+            </tr>
+        </table>
+    </div>
+    <br />
+</div>
+
+<div id="Guardado" class="box box-danger" style="display:none;">
+    <div class="box-body">
+        <div class="row">
+            <div class="col-xs-12">
+
+            </div>
+        </div>
+    </div>
+    <button id="RegistrarOperaciones" class="btn btn-block btn-primary btn-lg" style="width:15%;" onclick="RegistrarOperaciones()">Registrar</button>
+    <br />
+</div>
+
+@section Scripts{
+    <script>
+        var UrlGerenciasActivas = '@Url.Action("ListaDeGerenciasJson", "BitacoraIncidentes")';
+        var UrlAliadosActivos = '@Url.Action("ListaDeAliadosPorgerenciaJson", "BitacoraIncidentes")';
+        var UrlOperacionesActivas = '@Url.Action("ListaDeOperacionesPorAliadoYGerenciaJson", "BitacoraIncidentes")';
+        var UrlRegistrarOperaciones = '@Url.Action("RegistrarOperacionesIncidenteJson", "BitacoraIncidentes")';
+    </script>
+<script src="~/Scripts/BitacoraIncidentes/RegistrarOperacionesIncidente.js?1.1.1"></script>
+    }
+

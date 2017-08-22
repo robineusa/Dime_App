@@ -1,0 +1,79 @@
+﻿@model Telmexla.Servicios.DIME.Entity.BIMOperaciones
+@{ ViewBag.Title = "Registro y Actualización de Operaciones";
+    ViewBag.SubTitle = "Procesos - COS";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("AdministrarOperaciones", "BitacoraIncidentes", FormMethod.Post, new { id = "procesoscos", role = "form" }))
+{
+
+    <div class="box box-danger">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-xs-12">
+
+                </div>
+            </div>
+        </div>
+        <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
+            <i class="fa fa-headphones"></i> Información de la Operación
+        </h2>
+        <div id="ARBOL" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+            <br />
+            <table>
+                <tr>
+                    <td style="padding-left:1px; width:200px;">
+                        <small>Id Operacion</small>
+                        @Html.TextBoxFor(m => m.IdOperacion, new { @class = "form-control input-sm", @readonly = "true", @Id = "IdOperacion" })
+                    </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Gerencia</small>
+                        @Html.DropDownListFor(m => m.IdGerencia, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Gerencia", @class = "form-control" })
+                        @Html.HiddenFor(m => m.IdGerencia, new { @class = "form-control input-sm", @Id = "Gerencia1" })
+                    </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Aliado</small>
+                        @Html.DropDownListFor(m => m.IdAliado, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Aliado", @class = "form-control" })
+                        @Html.HiddenFor(m => m.IdAliado, new { @class = "form-control input-sm", @Id = "Aliado1" })
+                    </td>
+                    <td style="padding-left:1px; width:280px;">
+                        <small>Nombre Operación</small>
+                        <input type="text" id="NombreOperacion1" class="form-control input-sm" placeholder="Ingrese el Nombre" />
+                        @Html.HiddenFor(m => m.NombreOperacion, new { @class = "form-control input-sm", @Id = "NombreOperacion" })
+                    </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Estado</small>
+                        @Html.DropDownListFor(m => m.Estado, new List<SelectListItem> {new SelectListItem{Text="ACTIVO", Value="ACTIVO" },
+                                                                                             new SelectListItem{Text="INACTIVO", Value="INACTIVO" }},
+                                                                                                              "--SELECCIONE--", new { @class = "form-control input-sm" })
+                    </td>
+
+                </tr>
+
+            </table>
+        </div>
+        <br />
+    </div>
+
+    <div class="box box-danger">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-xs-12">
+
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;  margin-left:1%;">Guardar</button><br />
+
+    </div>
+}
+@section Scripts{
+
+    <script>
+            var UrlListaDeGerencias = '@Url.Action("ListaDeGerenciasJson", "BitacoraIncidentes")';
+            var UrlListadeAliados = '@Url.Action("ListaDeAliadosJson", "BitacoraIncidentes")';
+    </script>
+    <script src="~/Scripts/BitacoraIncidentes/AdministrarOperaciones.js?1.0.0"></script>
+}
+

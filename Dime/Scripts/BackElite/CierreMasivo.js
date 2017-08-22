@@ -59,10 +59,9 @@ function CargarInformacion(Cuentas) {
 
     }
     $.ajax({
-        type: "GET",
+        type: "POST",
         traditional: true,
         url: UrlConsultarSolicitudes,
-        contentType: "application/json; charset=utf-8",
         data: { Solicitudes: IdSolicitudsArray },
         dataType: 'json',
         success: function (result) {
