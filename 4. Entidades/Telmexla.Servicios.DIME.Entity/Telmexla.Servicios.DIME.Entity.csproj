@@ -189,6 +189,7 @@
     <Compile Include="NotasTraslado.cs" />
     <Compile Include="NotificacionesBuenServicio.cs" />
     <Compile Include="NotificacionesBuenServicioCollection.cs" />
+    <Compile Include="POMSolicitudes.cs" />
     <Compile Include="PqrMaestroCodCierre.cs" />
     <Compile Include="PqrMaestroCodCierreCollection.cs" />
     <Compile Include="PreguntasDesbloqueo.cs" />

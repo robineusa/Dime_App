@@ -14924,4 +14924,81 @@ namespace Dime.WSD {
             return base.Channel.OperacionPorIdAsync(Id);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IPOMSolicitudesService")]
+    public interface IPOMSolicitudesService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPOMSolicitudesService/RegistrarSolicitudPom", ReplyAction="http://tempuri.org/IPOMSolicitudesService/RegistrarSolicitudPomResponse")]
+        void RegistrarSolicitudPom(Telmexla.Servicios.DIME.Entity.POMSolicitudes Solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPOMSolicitudesService/RegistrarSolicitudPom", ReplyAction="http://tempuri.org/IPOMSolicitudesService/RegistrarSolicitudPomResponse")]
+        System.Threading.Tasks.Task RegistrarSolicitudPomAsync(Telmexla.Servicios.DIME.Entity.POMSolicitudes Solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPOMSolicitudesService/ValidarCuentaEnBaseSolicitudesPom", ReplyAction="http://tempuri.org/IPOMSolicitudesService/ValidarCuentaEnBaseSolicitudesPomRespon" +
+            "se")]
+        bool ValidarCuentaEnBaseSolicitudesPom(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPOMSolicitudesService/ValidarCuentaEnBaseSolicitudesPom", ReplyAction="http://tempuri.org/IPOMSolicitudesService/ValidarCuentaEnBaseSolicitudesPomRespon" +
+            "se")]
+        System.Threading.Tasks.Task<bool> ValidarCuentaEnBaseSolicitudesPomAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPOMSolicitudesService/ListaSolicitudesPom", ReplyAction="http://tempuri.org/IPOMSolicitudesService/ListaSolicitudesPomResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.POMSolicitudes> ListaSolicitudesPom(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPOMSolicitudesService/ListaSolicitudesPom", ReplyAction="http://tempuri.org/IPOMSolicitudesService/ListaSolicitudesPomResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.POMSolicitudes>> ListaSolicitudesPomAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IPOMSolicitudesServiceChannel : Dime.WSD.IPOMSolicitudesService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class POMSolicitudesServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IPOMSolicitudesService>, Dime.WSD.IPOMSolicitudesService {
+        
+        public POMSolicitudesServiceClient() {
+        }
+        
+        public POMSolicitudesServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public POMSolicitudesServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public POMSolicitudesServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public POMSolicitudesServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public void RegistrarSolicitudPom(Telmexla.Servicios.DIME.Entity.POMSolicitudes Solicitud) {
+            base.Channel.RegistrarSolicitudPom(Solicitud);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarSolicitudPomAsync(Telmexla.Servicios.DIME.Entity.POMSolicitudes Solicitud) {
+            return base.Channel.RegistrarSolicitudPomAsync(Solicitud);
+        }
+        
+        public bool ValidarCuentaEnBaseSolicitudesPom(decimal CuentaCliente) {
+            return base.Channel.ValidarCuentaEnBaseSolicitudesPom(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarCuentaEnBaseSolicitudesPomAsync(decimal CuentaCliente) {
+            return base.Channel.ValidarCuentaEnBaseSolicitudesPomAsync(CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.POMSolicitudes> ListaSolicitudesPom(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ListaSolicitudesPom(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.POMSolicitudes>> ListaSolicitudesPomAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ListaSolicitudesPomAsync(FechaInicial, FechaFinal);
+        }
+    }
 }

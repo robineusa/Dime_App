@@ -2991,6 +2991,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIMTipoFalla.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ViewModelIncidentesOperaciones.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.POMSolicitudes.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3361,6 +3362,7 @@
     <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Alertas\Pom.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

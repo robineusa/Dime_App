@@ -15,13 +15,15 @@ namespace Dime.Controllers
     {
         WSD.ActivacionClaroVideoServiceClient clarovideowebservice;
         WSD.ActivacionSiembraHDServiceClient acsiembrahdwebservice;
-
+        WSD.POMSolicitudesServiceClient PomService;
         public AlertasController()
         {
             clarovideowebservice = new WSD.ActivacionClaroVideoServiceClient();
             clarovideowebservice.ClientCredentials.Authenticate();
             acsiembrahdwebservice = new WSD.ActivacionSiembraHDServiceClient();
             acsiembrahdwebservice.ClientCredentials.Authenticate();
+            PomService = new WSD.POMSolicitudesServiceClient();
+            PomService.ClientCredentials.Authenticate();
         }
 
         // GET: Alertas
@@ -134,6 +136,30 @@ namespace Dime.Controllers
 
             acsiembrahdwebservice.InsertarFoxInbound(model);
 
+            return RedirectToAction("Index", "Inbound");
+        }
+        [HttpGet]
+        public ActionResult Pom()
+        {
+            POMSolicitudes modelo = new POMSolicitudes();
+            return View(modelo);
+        }
+        [HttpPost]
+        public ActionResult Pom(POMSolicitudes modelo)
+        {
+            modelo.UsuarioSolicitud = Session["Usuario"].ToString();
+
+            //var validacion = PomService.ValidarCuentaEnBaseSolicitudesPom(modelo.CuentaCliente);
+            //if (validacion == true)
+            //{
+                
+            //}
+            //else
+            //{
+            //    PomService.RegistrarSolicitudPom(modelo);
+            //    return RedirectToAction("Index", "Inbound");
+            //}
+            PomService.RegistrarSolicitudPom(modelo);
             return RedirectToAction("Index", "Inbound");
         }
     }

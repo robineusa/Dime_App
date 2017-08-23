@@ -3130,4 +3130,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfBIPBitacoraIncidentes" nillable="true" type="tns:ArrayOfBIPBitacoraIncidentes" />
+  <xs:complexType name="POMSolicitudes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CorreoElectronico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaSolicitud" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdRegistro" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MovilClaro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TelefonoCeluar" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsuarioSolicitud" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="POMSolicitudes" nillable="true" type="tns:POMSolicitudes" />
+  <xs:complexType name="ArrayOfPOMSolicitudes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="POMSolicitudes" nillable="true" type="tns:POMSolicitudes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPOMSolicitudes" nillable="true" type="tns:ArrayOfPOMSolicitudes" />
 </xs:schema>
