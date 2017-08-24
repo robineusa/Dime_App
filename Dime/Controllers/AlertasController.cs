@@ -148,18 +148,8 @@ namespace Dime.Controllers
         public ActionResult Pom(POMSolicitudes modelo)
         {
             modelo.UsuarioSolicitud = Session["Usuario"].ToString();
-
-            //var validacion = PomService.ValidarCuentaEnBaseSolicitudesPom(modelo.CuentaCliente);
-            //if (validacion == true)
-            //{
-                
-            //}
-            //else
-            //{
-            //    PomService.RegistrarSolicitudPom(modelo);
-            //    return RedirectToAction("Index", "Inbound");
-            //}
             PomService.RegistrarSolicitudPom(modelo);
+            PomService.Close();
             return RedirectToAction("Index", "Inbound");
         }
     }

@@ -12,7 +12,6 @@ namespace Telmexla.Servicios.DIME.Entity
         public decimal CuentaCliente { get; set; }
         [Required(ErrorMessage = "Ingrese el número móvil")]
         public decimal TelefonoCeluar { get; set; }
-        [Required(ErrorMessage = "Ingrese un correo")]
         public string CorreoElectronico { get; set; }
         [Required(ErrorMessage = "Seleccione una opción")]
         public string MovilClaro { get; set; }

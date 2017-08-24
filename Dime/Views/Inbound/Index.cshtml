@@ -6,639 +6,756 @@
 }
 @if (Session["Tipificacor Sac"] != null)
 {
-using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
-{
-    <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
-        <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
-            <div class="row" style="margin-left: 10px;">
-                <div class="col-xs-2" style="width:200px; padding:1px;">
-                    <small>Número de Cuenta:</small>
+    using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
+    {
+        <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
+            <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
+                <div class="row" style="margin-left: 10px;">
+                    <div class="col-xs-2" style="width:200px; padding:1px;">
+                        <small>Número de Cuenta:</small>
+                    </div>
+                    <div class="col-xs-2" style="width:200px; padding:1px;">
+                        <small>Documento de Identidad:  </small>
+                    </div>
                 </div>
-                <div class="col-xs-2" style="width:200px; padding:1px;">
-                    <small>Documento de Identidad:  </small>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <table>
+                            <tr>
+                                <td style="min-width:200px; padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodos.Cuenta, new { @class = "form-control input-sm", placeholder = "Ingrese la cuenta", id = "inputCuenta" })
+                                </td>
+                                <td style="min-width:200px;padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodos.Cedula, new { @class = "form-control input-sm", placeholder = "Ingrese la cc", id = "inputCedula", @Value = Model.ClientesTodos.Cedula })
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-4">
-                    <table>
-                        <tr>
-                            <td style="min-width:200px; padding:1px;">
-                                @Html.TextBoxFor(m => m.ClientesTodos.Cuenta, new { @class = "form-control input-sm", placeholder = "Ingrese la cuenta", id = "inputCuenta" })
-                            </td>
-                            <td style="min-width:200px;padding:1px;">
-                                @Html.TextBoxFor(m => m.ClientesTodos.Cedula, new { @class = "form-control input-sm", placeholder = "Ingrese la cc", id = "inputCedula", @Value = Model.ClientesTodos.Cedula })
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
 
-            <div class="row">
+                <div class="row">
 
-                @if (Model.ClientesTodos.Convenio == "SI" || Model.ClientesTodos.Clarovideo == "SI" || Model.ListaSiembraHD.Count >0 || Model.ListaSMO.Count >0 || Model.ListaMejorasTecnicas.Count > 0)
-                {
-                    <div class="col-xs-2" style="right:30px; float: right;">
-                        <div id="Menu_Opciones" style="display:block;">
-                            <div id="Latido" class="latir">
-                                @if (Model.ClientesTodos.Convenio == "SI")
-                                {
-                                    <a href="#ActivarConvenio" onclick="LlamarConvenioElectronico()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
-                                        <div id="Icono_1" style="display: block;"></div>
+                    @if (Model.ClientesTodos.Convenio == "SI" || Model.ClientesTodos.Clarovideo == "SI" || Model.ListaSiembraHD.Count > 0 || Model.ListaSMO.Count > 0 || Model.ListaMejorasTecnicas.Count > 0)
+                    {
+                        <div class="col-xs-2" style="right:30px; float: right;">
+                            <div id="Menu_Opciones" style="display:block;">
+                                <div id="Latido" class="latir">
+                                    @if (Model.ClientesTodos.Convenio == "SI")
+                                    {
+                                        <a href="#ActivarConvenio" onclick="LlamarConvenioElectronico()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                                            <div id="Icono_1" style="display: block;"></div>
+                                        </a>
+                                    }
+                                    <a href="#ActivarElegidoFijo" onclick="LlamarElegidoFijo()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                                        <div id="Icono_2" style="display: none"></div>
                                     </a>
-                                }
-                                <a href="#ActivarElegidoFijo" onclick="LlamarElegidoFijo()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
-                                    <div id="Icono_2" style="display: none"></div>
-                                </a>
-                                @if (Model.ClientesTodos.Clarovideo == "SI")
-                                {
-                                    <a href="#ClaroVideo" onclick="return LlamarClaroVideo();" data-toggle="modal" data-backdrop="static" data-keyboard="false">
-                                        <div id="Icono_3" style="display: block"></div>
-                                    </a>
-                                }
-                                @if (Model.ListaSMO.Count >0)
-                                {
-                                    <a href="#MejorOferta" onclick="return LlamarSMO()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
-                                        <div id="Icono_4" style="display: block"></div>
-                                    </a>
-                                }
-                                @if (Model.ListaSiembraHD.Count >0)
-                                {
-                                    <a href="#SiembraHD" onclick="return LlamarSiembraHD()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
-                                        <div id="Icono_5" style="display: block"></div>
-                                    </a>
-                                }
-                                @if (Model.ListaMejorasTecnicas.Count > 0)
-                                {
-                                    <a href="#MejorasTecnicas" onclick="return LlamarMejorasTecnicas()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
-                                        <div id="Icono_6" style="display: block"></div>
-                                    </a>
-                                }
-                                @if (Model.CuentaFox != null)
-                                {
-                                    <a href="#FOX" onclick="return LlamarFOX()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
-                                        <div id="Icono_7" style="display: block"></div>
-                                    </a>
-                                }
-                                <a href="#Pom" onclick="return LlamarPom()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
-                                    <div id="Icono_7" style="display: block"></div>
-                                </a>
+                                    @if (Model.ClientesTodos.Clarovideo == "SI")
+                                    {
+                                        <a href="#ClaroVideo" onclick="return LlamarClaroVideo();" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                                            <div id="Icono_3" style="display: block"></div>
+                                        </a>
+                                    }
+                                    @if (Model.ListaSMO.Count > 0)
+                                    {
+                                        <a href="#MejorOferta" onclick="return LlamarSMO()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                                            <div id="Icono_4" style="display: block"></div>
+                                        </a>
+                                    }
+                                    @if (Model.ListaSiembraHD.Count > 0)
+                                    {
+                                        <a href="#SiembraHD" onclick="return LlamarSiembraHD()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                                            <div id="Icono_5" style="display: block"></div>
+                                        </a>
+                                    }
+                                    @if (Model.ListaMejorasTecnicas.Count > 0)
+                                    {
+                                        <a href="#MejorasTecnicas" onclick="return LlamarMejorasTecnicas()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                                            <div id="Icono_6" style="display: block"></div>
+                                        </a>
+                                    }
+                                    @if (Model.CuentaFox != null)
+                                    {
+                                        <a href="#FOX" onclick="return LlamarFOX()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                                            <div id="Icono_7" style="display: block"></div>
+                                        </a>
+                                    }
+                                    @if (Session["Encuesta Pom"] != null)
+                                    {
+                                        <a href="#Pom" onclick="return LlamarPom()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                                            <div id="Icono_8" style="display: block"></div>
+                                        </a>}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                }
-                else
-                {
+                    }
+                    else
+                    {
 
-                }
+                    }
+
+                </div>
 
             </div>
-
         </div>
-    </div>
-    <br />
-    <div class="row">
-        <div class="col-md-9" style="width:100%; ">
-            <div class="nav-tabs-custom">
-                <ul class="nav nav-tabs">
-                    <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321"><a href="#datosBasicos" aria-controls="datosBasicos" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Básicos</a></li>
-                    <li id="Li2"><a href="#datosAdicionales" aria-controls="datosAdicionales" data-toggle="tab" role="tab" style="background-color: transparent;">Datos Adicionales</a></li>
-                </ul>
-                <div class="tab-content" style="padding-left:0; padding-top: 0">
-                    <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosBasicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
-                        <table>
-                            <tr>
-                                <td><br /></td>
-                            </tr>
-                            <tr>
-                                <td width="200" style="padding:1px;">
-                                    <small>Nombre del Cliente:  </small>
-                                </td>
-                                <td width="200" style="padding:1px;">
-                                    <small>Apellido del Cliente:  </small>
-                                </td>
-
-                                <td width="200" style="padding:1px;">
-                                    <small>Teléfono Telmex:  </small>
-                                </td>
-                                <td width="200" style="padding:1px;">
-                                    <small>Teléfono 1:  </small>
-                                </td>
-                                <td width="200" style="padding:1px;">
-                                    <small>Teléfono 2: </small>
-                                </td>
-                                <td width="200" style="padding:1px;">
-                                    <small>Teléfono 3:</small>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:1px;">
-                                    <input id="Nombre_Cliente" class="form-control input-sm" type="text" placeholder="Nombre del cliente" value="@Model.ClientesTodos.Nombre" readonly>
-                                </td>
-                                <td style="padding:1px;">
-                                    <input id="Apellido_Cliente" class="form-control input-sm" type="text" placeholder="Apellido del cliente" value="@Model.ClientesTodos.Apellido" readonly>
-                                </td>
-
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="Teléfono telmex" value="@Model.ClientesTodos.TelefonoTelmex" readonly>
-                                </td>
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="Teléfono 1" value="@Model.ClientesTodos.Telefono1" readonly>
-                                </td>
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="Teléfono 2" value="@Model.ClientesTodos.Telefono2" readonly>
-                                </td>
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="Teléfono 3" value="@Model.ClientesTodos.Telefono3" readonly>
-                                </td>
-                            </tr>
-                            <tr>
-
-                                <td style="padding:1px;">
-                                    <small>Dirección de Instalación: </small>
-                                </td>
-                                <td style="padding:1px;">
-                                    <small>Correspondencia:  </small>
-                                </td>
-
-                                <td style="padding:1px;">
-                                    <small>Nodo: </small>
-                                </td>
-                                <td style="padding:1px;">
-                                    <small>Red:  </small>
-                                </td>
-                                <td style="padding:1px;">
-                                    <small>División:  </small>
-                                </td>
-                                <td style="padding:1px;">
-                                    <small>Área:  </small>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.ClientesTodos.DirInstalacion" readonly>
-                                </td>
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="Correspondencia" value="@Model.ClientesTodos.DirCorrespondencia" readonly>
-                                </td>
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="Nodo" value="@Model.ClientesTodos.Nodo" readonly>
-                                </td>
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="Red" value="@Model.ClientesTodos.Red" readonly>
-                                </td>
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="División" value="@Model.ClientesTodos.Division" readonly>
-                                </td>
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="Área" value="@Model.ClientesTodos.Area" readonly>
-                                </td>
-                            </tr>
-
-                            <tr>
-
-                                <td style="padding:1px;">
-                                    <small>Zona:</small>
-                                </td>
-                                <td style="padding:1px;">
-                                    <small>Distrito:  </small>
-                                </td>
-
-                                <td style="padding:1px;">
-                                    <small>Nombre Comunidad: </small>
-                                </td>
-                                <td style="padding:1px;">
-                                    <small>Estrato:  </small>
-                                </td>
-                                <td style="padding:1px;">
-                                    <small>Tipo de Cliente:  </small>
-                                </td>
-                                <td style="padding:1px;">
-                                    <small>Descripción:  </small>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="Zona" value="@Model.ClientesTodos.Zona" readonly>
-                                </td>
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="Distrito" value="@Model.ClientesTodos.Distrito" readonly>
-                                </td>
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="Nombre comunidad" value="@Model.ClientesTodos.NombreComunidad" readonly>
-                                </td>
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="Estrato" value="@Model.ClientesTodos.Estrato" readonly>
-                                </td>
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="Tipo de cliente" value="@Model.ClientesTodos.TipoCliente" readonly>
-                                </td>
-                                <td style="padding:1px;">
-                                    <input class="form-control input-sm" type="text" placeholder="Descripción" value="@Model.ClientesTodos.Descripcion" readonly>
-                                </td>
-                            </tr>
-
-                        </table>
-                    </div>
-
-                    <div role="tabpanel" class="tab-pane tab-dime-first" id="datosAdicionales" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
-                        <table>
-                            <tr>
-                                <td style="padding:1px;"><br /></td>
-                            </tr>
-                            <tr>
-
-                                <td width="200" style="padding:1px;">
-                                    <small>Teléfono Personal:  </small>
-                                </td>
-                                <td width="200" style="padding:1px;">
-                                    <small>Correo Electrónico:  </small>
-                                </td>
-                                <td width="200" style="padding:1px;">
-                                    <small>Fecha de Cumpleaños:  </small>
-                                </td>
-                                <td width="200" style="padding:1px;">
-                                    <small>Rango de Edad:  </small>
-                                </td>
-                                <td width="200" style="padding:1px;">
-                                    <small>Hobby:  </small>
-                                </td>
-                                <td width="200" style="padding:1px;">
-                                    <small>Twitter:</small>
-                                </td>
-                            </tr>
-                            <tr>
-
-                                <td style="padding:1px;">
-                                    @Html.TextBoxFor(m => m.DatosAdcionalesCliente.TelefonoPersonal, new { @class = "form-control input-sm", @Value = Model.DatosAdcionalesCliente.TelefonoPersonal, @placeholder = "Teléfono personal" })
-                                </td>
-                                <td style="padding:1px;">
-                                    @Html.TextBoxFor(m => m.DatosAdcionalesCliente.CorreoElectronico, new { @class = "form-control input-sm", @Value = Model.DatosAdcionalesCliente.CorreoElectronico, @placeholder = "Correo electrónico" })
-                                </td>
-                                <td style="padding:1px;">
-                                    @Html.TextBoxFor(m => m.DatosAdcionalesCliente.FechaCumpleanos, new { @class = "form-control input-sm", @Value = Model.DatosAdcionalesCliente.FechaCumpleanos, @placeholder = "Fecha de cumpleaños", Id = "FechaNacimiento", onfocus = "this.blur()" })
-                                </td>
-                                <td style="padding:1px;">
-                                    @Html.DropDownListFor(m => m.DatosAdcionalesCliente.RangoDeEdad, Model.RangoEdadOptions, new { @class = "form-control input-sm select2", id = "rangoEdadOption" })
-                                </td>
-                                <td style="padding:1px;">
-                                    @Html.DropDownListFor(m => m.DatosAdcionalesCliente.Hobbie, Model.HobbyOptions, new { @class = "form-control input-sm select2", id = "hobbieOption" })
-
-                                </td>
-                                <td style="padding:1px;">
-                                    @Html.TextBoxFor(m => m.DatosAdcionalesCliente.Twitter, new { @class = "form-control input-sm", @Value = Model.DatosAdcionalesCliente.Twitter, @placeholder = "Twitter" })
-                                </td>
-                            </tr>
-
-                            <tr>
-
-                                <td style="padding:1px;">
-                                    <small>Facebook:  </small>
-                                </td>
-                                <td style="padding:1px;">
-                                    <small>Instagram:  </small>
-                                </td>
-                                <td style="padding:1px;">
-                                    <small>Otro:  </small>
-                                </td>
-                                <td style="padding:1px;">
-                                    <small>Número de Hijos:  </small>
-                                </td>
-                                <td style="padding:1px;">
-                                    <small>Rango Edad Hijos:  </small>
-                                </td>
-                                <td style="padding:1px;">
-                                    <small>Nivel de Estudios:</small>
-                                </td>
-                            </tr>
-                            <tr>
-
-                                <td style="padding:1px;">
-                                    @Html.TextBoxFor(m => m.DatosAdcionalesCliente.Facebook, new { @class = "form-control input-sm", @Value = Model.DatosAdcionalesCliente.Facebook, @placeholder = "Facebook" })
-                                </td>
-                                <td style="padding:1px;">
-                                    @Html.TextBoxFor(m => m.DatosAdcionalesCliente.Instagram, new { @class = "form-control input-sm", @Value = Model.DatosAdcionalesCliente.Instagram, @placeholder = "Instagram" })
-                                </td>
-                                <td style="padding:1px;">
-                                    @Html.TextBoxFor(m => m.DatosAdcionalesCliente.Otro, new { @class = "form-control input-sm", @Value = Model.DatosAdcionalesCliente.Otro, @placeholder = "Otro" })
-                                </td>
-                                <td style="padding:1px;">
-                                    @Html.DropDownListFor(m => m.DatosAdcionalesCliente.NumeroHijos, Model.NumHijosOptions, new { @class = "form-control input-sm select2", id = "noHijosOption" })
-                                </td>
-                                <td style="padding:1px;">
-                                    @Html.DropDownListFor(m => m.DatosAdcionalesCliente.EdadHijos, Model.RangoEdadOptionsHijos, new { @class = "form-control input-sm select2", id = "edadHijosOption" })
-                                </td>
-                                <td style="padding:1px;">
-                                    @Html.DropDownListFor(m => m.DatosAdcionalesCliente.NivelEstudios, Model.NivelEstudiosOptions, new { @class = "form-control input-sm select2", id = "nivelEstudiosOption" })
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="box-footer" style="display:none">
-                    <button type="submit" style="display:none;" class="btn btn-primary" name="cambiarDatos" value="sacarDatos" id="submitGetDatos">Submit</button>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-9" style="width:100%;">
-            <div class="nav-tabs-custom">
-                <ul class="nav nav-tabs">
-                    <li id="Li3" class="active"style="background-color:#dcdcdc; border-color: #c23321"><a href="#tipificacion" aria-controls="tipificacion" role="tab" data-toggle="tab" style="background-color:transparent; ">Tipificación</a></li>
-                    <li id="Li4"><a href="#historicoDeCasos" aria-controls="historicoDeCasos" role="tab" data-toggle="tab" style="background-color:transparent;">Histórico de Casos</a></li>
-                </ul>
-                <div class="tab-content" style="padding-left:0; padding-top: 0">
-                    <div class="active tab-pane" role="tabpanel" id="tipificacion" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
-                        <div class="form-group" style="padding-left:5px;">
-
-                            <small>Ingrese datos para consultar:</small> <br />
-                            <input type="text" class="form-control input-sm" id="keyMarcacion" style="width:200px; display:inline" autocomplete="off" />
-                            <label id="avisoNoResultado" style="color:red; display:inline "> </label>
-                            <br />
-                            <br />
-                            <div style="background-color:#f6f6f6;  width: 74%; height:auto;  border-radius:5px; padding-top:12px;">
-                                <ul style="list-style-type:none" id="listaMarcaciones"></ul><br />
-                                <label id="avisoYaMarcacionEnCaso" style="color:red"> </label>
-                                @Html.HiddenFor(m => m.ModelTipiMarca.IngresoTipMarcacion.TiempoRespuesta, new { id = "marcaTiempo" })
-                            </div>
-
-                            <br />
+        <br />
+        <div class="row">
+            <div class="col-md-9" style="width:100%; ">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321"><a href="#datosBasicos" aria-controls="datosBasicos" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Básicos</a></li>
+                        <li id="Li2"><a href="#datosAdicionales" aria-controls="datosAdicionales" data-toggle="tab" role="tab" style="background-color: transparent;">Datos Adicionales</a></li>
+                    </ul>
+                    <div class="tab-content" style="padding-left:0; padding-top: 0">
+                        <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosBasicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
                             <table>
                                 <tr>
-                                    <td width="300" style="padding:1px;">
-                                        <small>Servicio Relacionado:  </small>
+                                    <td><br /></td>
+                                </tr>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Nombre del Cliente:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Apellido del Cliente:  </small>
+                                    </td>
+
+                                    <td width="200" style="padding:1px;">
+                                        <small>Teléfono Telmex:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Teléfono 1:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Teléfono 2: </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Teléfono 3:</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <input id="Nombre_Cliente" class="form-control input-sm" type="text" placeholder="Nombre del cliente" value="@Model.ClientesTodos.Nombre" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input id="Apellido_Cliente" class="form-control input-sm" type="text" placeholder="Apellido del cliente" value="@Model.ClientesTodos.Apellido" readonly>
+                                    </td>
+
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Teléfono telmex" value="@Model.ClientesTodos.TelefonoTelmex" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Teléfono 1" value="@Model.ClientesTodos.Telefono1" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Teléfono 2" value="@Model.ClientesTodos.Telefono2" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Teléfono 3" value="@Model.ClientesTodos.Telefono3" readonly>
                                     </td>
                                 </tr>
                                 <tr>
 
                                     <td style="padding:1px;">
-
-                                        @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.IdServicio, new List<SelectListItem> {new SelectListItem{Text="--Seleccione--", Value="0"  },new SelectListItem{Text="TV", Value="1" },
-                                                                                             new SelectListItem{Text="@", Value="2" }, new SelectListItem{Text="VOZ", Value="3" } , new SelectListItem { Text = "TV - VOZ", Value = "4" },
-                                                                                         new SelectListItem { Text = "TV - @", Value = "5" }, new SelectListItem { Text = "VOZ - @", Value = "6" },new SelectListItem { Text = "TV - @ - VOZ", Value = "7" },new SelectListItem { Text = "ADICIONALES", Value = "8" },new SelectListItem { Text = "MULTIPLAY", Value = "9" }}, 
-                                                                                         new {@id= "TipiMarca_IngresoTipMarcacion_IdServicio", @class = "form-control input-sm", style = "display:inline" })
-                                        @if (ViewBag.ErrorTextBoxServicio != null)
-                                        {
-                                            <label id="avisoNoResultado" style="color:red; display:inline "> @ViewBag.ErrorTextBoxServicio.ToString()</label>
-                                        }
+                                        <small>Dirección de Instalación: </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Correspondencia:  </small>
                                     </td>
 
-                                </tr>
-                                <tr>
-
-                                    <td width="300" style="padding:1px;">
-                                        <small>Macroproceso:  </small>
+                                    <td style="padding:1px;">
+                                        <small>Nodo: </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Red:  </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>División:  </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Área:  </small>
                                     </td>
                                 </tr>
                                 <tr>
-
-                                    <td style="padding:1px;">@Html.TextBoxFor(m => m.ModelTipiMarca.IngresoTipMarcacion.Macroproceso, new { @class = "form-control input-sm", id = "tbMacroproceso", @readonly = "true" })</td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Dirección de instalación" value="@Model.ClientesTodos.DirInstalacion" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Correspondencia" value="@Model.ClientesTodos.DirCorrespondencia" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Nodo" value="@Model.ClientesTodos.Nodo" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Red" value="@Model.ClientesTodos.Red" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="División" value="@Model.ClientesTodos.Division" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Área" value="@Model.ClientesTodos.Area" readonly>
+                                    </td>
                                 </tr>
+
+                                <tr>
+
+                                    <td style="padding:1px;">
+                                        <small>Zona:</small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Distrito:  </small>
+                                    </td>
+
+                                    <td style="padding:1px;">
+                                        <small>Nombre Comunidad: </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Estrato:  </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Tipo de Cliente:  </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Descripción:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Zona" value="@Model.ClientesTodos.Zona" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Distrito" value="@Model.ClientesTodos.Distrito" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Nombre comunidad" value="@Model.ClientesTodos.NombreComunidad" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Estrato" value="@Model.ClientesTodos.Estrato" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Tipo de cliente" value="@Model.ClientesTodos.TipoCliente" readonly>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <input class="form-control input-sm" type="text" placeholder="Descripción" value="@Model.ClientesTodos.Descripcion" readonly>
+                                    </td>
+                                </tr>
+
                             </table>
-
-                            <br />
-                            <label>
-                                Posible Causa
-                            </label>
-                            <div id="lbPosibleCausa" style="background-color:#f6f6f6; width: 74%; height:auto;  border-radius:5px;  padding:12px;">
-                            </div>
-                            <br />
-                            <label>
-                                Que Hacer
-                            </label>
-                            <div id="lbQueHacer" style="background-color:#f6f6f6;  width: 74%; height:auto;  border-radius:5px; padding:12px;">
-                            </div>
-                            <br />
-                            <label>
-                                Códigos de Cierre
-                            </label>
-                            <div id="lbCodigosCierre" style="background-color:#f6f6f6; width: 74%; height:auto;  border-radius:5px; padding:12px; ">
-                            </div>
-                            <br />
-                            <label>
-                                Área Usuario a Escalar:
-                            </label>
-                            <div id="lbUsuarioAEscalar" style="background-color:#f6f6f6; width: 74%; height:auto;  border-radius:5px; padding:12px; ">
-                            </div>
-
-                            <table>
-                                <tr>
-                                    <td width="300" style="padding:1px;">
-                                        <small>Marcación:  </small>
-
-                                    <td width="300" style="padding:1px;">
-                                        <small>Tipo de Atención:  </small>
-                                    </td>
-
-                                    <td width="300" style="padding:1px;">
-                                        <small>Producto Asociado:  </small>
-                                    </td>
-                                    <td width="300" style="padding:1px;">
-                                        <small>Solución en Primer Contacto:</small>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:1px;">@Html.TextBoxFor(m => m.ModelTipiMarca.IngresoTipMarcacion.Marcacion, new { @class = "form-control input-sm", id = "tbMarcacion", @readonly = "true" })</td>
-                                    <td style="padding:1px;">@Html.TextBox("tbTipoAtencion", null, new { @class = "form-control input-sm", @readonly = "true" })</td>
-                                    <td style="padding:1px;">@Html.TextBox("tbProductoAsociado", null, new { @class = "form-control input-sm", @readonly = "true" })</td>
-                                    <td style="padding:1px;">@Html.TextBox("tbSpc", null, new { @class = "form-control input-sm", @readonly = "true" })</td>
-                                </tr>
-                            </table>
-                            <br />
-                            <div>
-                                <label>
-                                    Notas:
-                                </label><br />
-
-                                @Html.TextAreaFor(m => m.ModelTipiMarca.Observaciones, new {@id= "TipiMarca_Observaciones", @style = "width: 74%; height: 80px; resize: none;" })
-                            </div>
-
-
                         </div>
-                        <br />
 
-                        <div style="background-color: dimgray ; color:white; border-radius:5px;text-align:left; width:74%;">
-
+                        <div role="tabpanel" class="tab-pane tab-dime-first" id="datosAdicionales" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
                             <table>
                                 <tr>
-                                    <td width="300" style="padding:5px;">
-                                        <small>Estado Caso:  </small>
-
-                                    <td width="300" style="padding:5px;">
-                                        <small>Area a Escalar:  </small>
-                                    </td>
-
-                                    <td width="300" style="padding:5px;">
-                                        <small>Número de PQRÑ RR::  </small>
-                                    </td>
-
+                                    <td style="padding:1px;"><br /></td>
                                 </tr>
                                 <tr>
-                                    <td style="padding:5px;">
-                                        @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.IdEstado, new List<SelectListItem> {new SelectListItem{Text="ABIERTO", Value="1" },
-                                                                                             new SelectListItem{Text="CERRADO", Value="2" }, new SelectListItem{Text="SEGUIMIENTO", Value="3" }}, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddState", onchange = "ChangeStateCase();" })
+
+                                    <td width="200" style="padding:1px;">
+                                        <small>Teléfono Personal:  </small>
                                     </td>
-                                    <td style="padding:5px;">
-                                        @if (Model.LineaDeUsuarioActual.Equals("ALTO VALOR"))
-                                        {
-                                            @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> { new SelectListItem { Text = "CELULA ALTO VALOR", Value = "CELULA ALTO VALOR" }, new SelectListItem { Text = "CELULA ALTO VALOR VIP", Value = "CELULA ALTO VALOR VIP" } }, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalar" })
-                                        }
-                                        else if (Model.LineaDeUsuarioActual.Equals("ESTANDAR") || Model.LineaDeUsuarioActual.Equals("POTENCIAL"))
-                                        {
-                                            @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {new SelectListItem{Text="CELULA AJUSTES", Value="CELULA AJUSTES" },
+                                    <td width="200" style="padding:1px;">
+                                        <small>Correo Electrónico:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Fecha de Cumpleaños:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Rango de Edad:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Hobby:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Twitter:</small>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.DatosAdcionalesCliente.TelefonoPersonal, new { @class = "form-control input-sm", @Value = Model.DatosAdcionalesCliente.TelefonoPersonal, @placeholder = "Teléfono personal" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.DatosAdcionalesCliente.CorreoElectronico, new { @class = "form-control input-sm", @Value = Model.DatosAdcionalesCliente.CorreoElectronico, @placeholder = "Correo electrónico" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.DatosAdcionalesCliente.FechaCumpleanos, new { @class = "form-control input-sm", @Value = Model.DatosAdcionalesCliente.FechaCumpleanos, @placeholder = "Fecha de cumpleaños", Id = "FechaNacimiento", onfocus = "this.blur()" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.DropDownListFor(m => m.DatosAdcionalesCliente.RangoDeEdad, Model.RangoEdadOptions, new { @class = "form-control input-sm select2", id = "rangoEdadOption" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.DropDownListFor(m => m.DatosAdcionalesCliente.Hobbie, Model.HobbyOptions, new { @class = "form-control input-sm select2", id = "hobbieOption" })
+
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.DatosAdcionalesCliente.Twitter, new { @class = "form-control input-sm", @Value = Model.DatosAdcionalesCliente.Twitter, @placeholder = "Twitter" })
+                                    </td>
+                                </tr>
+
+                                <tr>
+
+                                    <td style="padding:1px;">
+                                        <small>Facebook:  </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Instagram:  </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Otro:  </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Número de Hijos:  </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Rango Edad Hijos:  </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Nivel de Estudios:</small>
+                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.DatosAdcionalesCliente.Facebook, new { @class = "form-control input-sm", @Value = Model.DatosAdcionalesCliente.Facebook, @placeholder = "Facebook" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.DatosAdcionalesCliente.Instagram, new { @class = "form-control input-sm", @Value = Model.DatosAdcionalesCliente.Instagram, @placeholder = "Instagram" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.TextBoxFor(m => m.DatosAdcionalesCliente.Otro, new { @class = "form-control input-sm", @Value = Model.DatosAdcionalesCliente.Otro, @placeholder = "Otro" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.DropDownListFor(m => m.DatosAdcionalesCliente.NumeroHijos, Model.NumHijosOptions, new { @class = "form-control input-sm select2", id = "noHijosOption" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.DropDownListFor(m => m.DatosAdcionalesCliente.EdadHijos, Model.RangoEdadOptionsHijos, new { @class = "form-control input-sm select2", id = "edadHijosOption" })
+                                    </td>
+                                    <td style="padding:1px;">
+                                        @Html.DropDownListFor(m => m.DatosAdcionalesCliente.NivelEstudios, Model.NivelEstudiosOptions, new { @class = "form-control input-sm select2", id = "nivelEstudiosOption" })
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box-footer" style="display:none">
+                        <button type="submit" style="display:none;" class="btn btn-primary" name="cambiarDatos" value="sacarDatos" id="submitGetDatos">Submit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9" style="width:100%;">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li id="Li3" class="active" style="background-color:#dcdcdc; border-color: #c23321"><a href="#tipificacion" aria-controls="tipificacion" role="tab" data-toggle="tab" style="background-color:transparent; ">Tipificación</a></li>
+                        <li id="Li4"><a href="#historicoDeCasos" aria-controls="historicoDeCasos" role="tab" data-toggle="tab" style="background-color:transparent;">Histórico de Casos</a></li>
+                    </ul>
+                    <div class="tab-content" style="padding-left:0; padding-top: 0">
+                        <div class="active tab-pane" role="tabpanel" id="tipificacion" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                            <div class="form-group" style="padding-left:5px;">
+
+                                <small>Ingrese datos para consultar:</small> <br />
+                                <input type="text" class="form-control input-sm" id="keyMarcacion" style="width:200px; display:inline" autocomplete="off" />
+                                <label id="avisoNoResultado" style="color:red; display:inline "> </label>
+                                <br />
+                                <br />
+                                <div style="background-color:#f6f6f6;  width: 74%; height:auto;  border-radius:5px; padding-top:12px;">
+                                    <ul style="list-style-type:none" id="listaMarcaciones"></ul><br />
+                                    <label id="avisoYaMarcacionEnCaso" style="color:red"> </label>
+                                    @Html.HiddenFor(m => m.ModelTipiMarca.IngresoTipMarcacion.TiempoRespuesta, new { id = "marcaTiempo" })
+                                </div>
+
+                                <br />
+                                <table>
+                                    <tr>
+                                        <td width="300" style="padding:1px;">
+                                            <small>Servicio Relacionado:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td style="padding:1px;">
+
+                                            @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.IdServicio, new List<SelectListItem> {new SelectListItem{Text="--Seleccione--", Value="0"  },new SelectListItem{Text="TV", Value="1" },
+                                                                                             new SelectListItem{Text="@", Value="2" }, new SelectListItem{Text="VOZ", Value="3" } , new SelectListItem { Text = "TV - VOZ", Value = "4" },
+                                                                                         new SelectListItem { Text = "TV - @", Value = "5" }, new SelectListItem { Text = "VOZ - @", Value = "6" },new SelectListItem { Text = "TV - @ - VOZ", Value = "7" },new SelectListItem { Text = "ADICIONALES", Value = "8" },new SelectListItem { Text = "MULTIPLAY", Value = "9" }},
+                                                                                         new { @id = "TipiMarca_IngresoTipMarcacion_IdServicio", @class = "form-control input-sm", style = "display:inline" })
+                                            @if (ViewBag.ErrorTextBoxServicio != null)
+                                            {
+                                                <label id="avisoNoResultado" style="color:red; display:inline "> @ViewBag.ErrorTextBoxServicio.ToString()</label>
+                                            }
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+
+                                        <td width="300" style="padding:1px;">
+                                            <small>Macroproceso:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td style="padding:1px;">@Html.TextBoxFor(m => m.ModelTipiMarca.IngresoTipMarcacion.Macroproceso, new { @class = "form-control input-sm", id = "tbMacroproceso", @readonly = "true" })</td>
+                                    </tr>
+                                </table>
+
+                                <br />
+                                <label>
+                                    Posible Causa
+                                </label>
+                                <div id="lbPosibleCausa" style="background-color:#f6f6f6; width: 74%; height:auto;  border-radius:5px;  padding:12px;">
+                                </div>
+                                <br />
+                                <label>
+                                    Que Hacer
+                                </label>
+                                <div id="lbQueHacer" style="background-color:#f6f6f6;  width: 74%; height:auto;  border-radius:5px; padding:12px;">
+                                </div>
+                                <br />
+                                <label>
+                                    Códigos de Cierre
+                                </label>
+                                <div id="lbCodigosCierre" style="background-color:#f6f6f6; width: 74%; height:auto;  border-radius:5px; padding:12px; ">
+                                </div>
+                                <br />
+                                <label>
+                                    Área Usuario a Escalar:
+                                </label>
+                                <div id="lbUsuarioAEscalar" style="background-color:#f6f6f6; width: 74%; height:auto;  border-radius:5px; padding:12px; ">
+                                </div>
+
+                                <table>
+                                    <tr>
+                                        <td width="300" style="padding:1px;">
+                                            <small>Marcación:  </small>
+
+                                        <td width="300" style="padding:1px;">
+                                            <small>Tipo de Atención:  </small>
+                                        </td>
+
+                                        <td width="300" style="padding:1px;">
+                                            <small>Producto Asociado:  </small>
+                                        </td>
+                                        <td width="300" style="padding:1px;">
+                                            <small>Solución en Primer Contacto:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">@Html.TextBoxFor(m => m.ModelTipiMarca.IngresoTipMarcacion.Marcacion, new { @class = "form-control input-sm", id = "tbMarcacion", @readonly = "true" })</td>
+                                        <td style="padding:1px;">@Html.TextBox("tbTipoAtencion", null, new { @class = "form-control input-sm", @readonly = "true" })</td>
+                                        <td style="padding:1px;">@Html.TextBox("tbProductoAsociado", null, new { @class = "form-control input-sm", @readonly = "true" })</td>
+                                        <td style="padding:1px;">@Html.TextBox("tbSpc", null, new { @class = "form-control input-sm", @readonly = "true" })</td>
+                                    </tr>
+                                </table>
+                                <br />
+                                <div>
+                                    <label>
+                                        Notas:
+                                    </label><br />
+
+                                    @Html.TextAreaFor(m => m.ModelTipiMarca.Observaciones, new { @id = "TipiMarca_Observaciones", @style = "width: 74%; height: 80px; resize: none;" })
+                                </div>
+
+
+                            </div>
+                            <br />
+
+                            <div style="background-color: dimgray ; color:white; border-radius:5px;text-align:left; width:74%;">
+
+                                <table>
+                                    <tr>
+                                        <td width="300" style="padding:5px;">
+                                            <small>Estado Caso:  </small>
+
+                                        <td width="300" style="padding:5px;">
+                                            <small>Area a Escalar:  </small>
+                                        </td>
+
+                                        <td width="300" style="padding:5px;">
+                                            <small>Número de PQRÑ RR::  </small>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:5px;">
+                                            @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.IdEstado, new List<SelectListItem> {new SelectListItem{Text="ABIERTO", Value="1" },
+                                                                                             new SelectListItem{Text="CERRADO", Value="2" }, new SelectListItem{Text="SEGUIMIENTO", Value="3" }}, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddState", onchange = "ChangeStateCase();" })
+                                        </td>
+                                        <td style="padding:5px;">
+                                            @if (Model.LineaDeUsuarioActual.Equals("ALTO VALOR"))
+                                            {
+                                                @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> { new SelectListItem { Text = "CELULA ALTO VALOR", Value = "CELULA ALTO VALOR" }, new SelectListItem { Text = "CELULA ALTO VALOR VIP", Value = "CELULA ALTO VALOR VIP" } }, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalar" })
+                                            }
+                                            else if (Model.LineaDeUsuarioActual.Equals("ESTANDAR") || Model.LineaDeUsuarioActual.Equals("POTENCIAL"))
+                                            {
+                                                @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {new SelectListItem{Text="CELULA AJUSTES", Value="CELULA AJUSTES" },
                                                                                              new SelectListItem{Text="CELULA FACTURACION Y CARTERA", Value="CELULA FACTURACION Y CARTERA"}, new SelectListItem{Text="CELULA OPERACIONES", Value="CELULA OPERACIONES" },
                                                                                                new SelectListItem{Text="CELULA PQR", Value="CELULA PQR" }, new SelectListItem{Text="CELULA VENTAS", Value="CELULA VENTAS" }
                                                                                            }, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalar", @onchange = "AEscalarCambiado()" })
-                                        }
-                                        else if (Model.LineaDeUsuarioActual.Equals("SOPORTE"))
-                                        {
-                                            @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {  new SelectListItem {Text="--Seleccione--", Value="--Seleccione--" },
+                                            }
+                                            else if (Model.LineaDeUsuarioActual.Equals("SOPORTE"))
+                                            {
+                                                @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {  new SelectListItem {Text="--Seleccione--", Value="--Seleccione--" },
                                                                                              new SelectListItem {Text="CÉLULA SOPORTE", Value="CELULA SOPORTE" }}, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalar", @onchange = "AEscalarCambiado()" })
 
-                                        }
-                                        else if (Model.LineaDeUsuarioActual.Equals("MULTIPLAY"))
-                                        {
-                                            @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {
+                                            }
+                                            else if (Model.LineaDeUsuarioActual.Equals("MULTIPLAY"))
+                                            {
+                                                @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {
                                                                                              new SelectListItem{Text="CELULA AJUSTES", Value="CELULA AJUSTES" },
                                                                                              new SelectListItem{Text="CELULA FACTURACION Y CARTERA", Value="CELULA FACTURACION Y CARTERA"}, new SelectListItem{Text="CELULA OPERACIONES", Value="CELULA OPERACIONES" },
                                                                                              new SelectListItem {Text="CELULA MULTIPLAY", Value="CELULA MULTIPLAY" },
                                                                                              new SelectListItem{Text="CELULA PQR", Value="CELULA PQR" }, new SelectListItem{Text="CELULA VENTAS", Value="CELULA VENTAS" }
                                                                                              }, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalar", @onchange = "AEscalarCambiado()" })
 
-                                        }
-                                        else if (Model.LineaDeUsuarioActual.Equals("ALTO VALOR VIP"))
-                                        {
-                                            @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> {  new SelectListItem { Text = "CELULA ALTO VALOR VIP", Value = "CELULA ALTO VALOR VIP" } }, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalar" })
-                                        }
-                                    </td>
-                                    <td style="padding:5px;">@Html.TextBoxFor(m => m.ModelTipiMarca.IngresoTipMarcacion.Ticket, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddLlamada" })</td>
+                                            }
+                                            else if (Model.LineaDeUsuarioActual.Equals("ALTO VALOR VIP"))
+                                            {
+                                                @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoTipMarcacion.NombreLineaEscalado, new List<SelectListItem> { new SelectListItem { Text = "CELULA ALTO VALOR VIP", Value = "CELULA ALTO VALOR VIP" } }, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalar" })
+                                            }
+                                        </td>
+                                        <td style="padding:5px;">@Html.TextBoxFor(m => m.ModelTipiMarca.IngresoTipMarcacion.Ticket, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddLlamada" })</td>
 
-                                </tr>
-                            </table>
+                                    </tr>
+                                </table>
 
-                            <table id="cellSoporteTable" style="display:none">
-                                <tr>
-                                    <td width="300" style="padding:5px;">
-                                        <small>Incidencia CCAA:  </small>
-                                    </td>
-                                    <td width="300" style="padding:5px;">
-                                        <small>Quien Autoriza:  </small>
-                                    </td>
-                                    <td width="300" style="padding:5px;">
-                                        <small>Tipo de Segumiento:  </small>
-                                    </td>
-                                    <td width="300" style="padding:5px;">
-                                        <small>CCAA Indica Visita Tecnica: </small>
-                                    </td>
+                                <table id="cellSoporteTable" style="display:none">
+                                    <tr>
+                                        <td width="300" style="padding:5px;">
+                                            <small>Incidencia CCAA:  </small>
+                                        </td>
+                                        <td width="300" style="padding:5px;">
+                                            <small>Quien Autoriza:  </small>
+                                        </td>
+                                        <td width="300" style="padding:5px;">
+                                            <small>Tipo de Segumiento:  </small>
+                                        </td>
+                                        <td width="300" style="padding:5px;">
+                                            <small>CCAA Indica Visita Tecnica: </small>
+                                        </td>
 
-                                </tr>
-                                <tr>
-                                    <td style="padding:5px;">
-                                        @Html.TextBoxFor(m => m.ModelTipiMarca.IngresoSoporte.IncidenciaCcaa, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;" })
-                                    </td>
-                                    <td style="padding:5px;">
-                                        @Html.TextBoxFor(m => m.ModelTipiMarca.IngresoSoporte.NombreAutoriza, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;" })
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:5px;">
+                                            @Html.TextBoxFor(m => m.ModelTipiMarca.IngresoSoporte.IncidenciaCcaa, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;" })
+                                        </td>
+                                        <td style="padding:5px;">
+                                            @Html.TextBoxFor(m => m.ModelTipiMarca.IngresoSoporte.NombreAutoriza, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;" })
 
-                                    </td>
-                                    <td style="padding:5px;">
-                                        @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoSoporte.TipoSegumiento, new List<SelectListItem> {new SelectListItem{Text="--Seleccione--", Value="0" },new SelectListItem{Text="Programación de visita tecnica", Value="CELULA VISITA SOPORTE" },
+                                        </td>
+                                        <td style="padding:5px;">
+                                            @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoSoporte.TipoSegumiento, new List<SelectListItem> {new SelectListItem{Text="--Seleccione--", Value="0" },new SelectListItem{Text="Programación de visita tecnica", Value="CELULA VISITA SOPORTE" },
                                                                                              new SelectListItem{Text="Seguimiento por CCAA", Value="CELULA SEGUIMIENTO SOPORTE" }}, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;", id = "ddEscalarSoporte", onchange = "CambioEscalaSoporte()" })
-                                    </td>
-                                    <td style="padding:5px;">
-                                        @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoSoporte.CcaaIndicaVisitaTecnica, new List<SelectListItem> { new SelectListItem { Text = "--Seleccione--", Value = "0" },
+                                        </td>
+                                        <td style="padding:5px;">
+                                            @Html.DropDownListFor(m => m.ModelTipiMarca.IngresoSoporte.CcaaIndicaVisitaTecnica, new List<SelectListItem> { new SelectListItem { Text = "--Seleccione--", Value = "0" },
                                                     new SelectListItem{Text="SI", Value="SI" },
                                                                                              new SelectListItem{Text="NO", Value="NO" }}, new { @class = "form-control input-sm", style = "background-color:#f6f6f6;" })
-                                    </td>
-                                </tr>
-                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br />
+                            </div>
+
                             <br />
-                        </div>
+                            <button id="btnSubmitCaso" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;" disabled>Guardar Datos</button>
 
+
+                        </div>
+                        <div class="tab-pane tab-dime-first" role="tabpanel" id="historicoDeCasos">
+                            <br />
+
+                            <label style="background-color: green; color: aliceblue; font-weight:400; padding:5px; border-radius:5px; border-color:black; ">
+                                CASOS ABIERTOS:
+                            </label>
+                            <br />
+
+                            <div id="viewHistoricoCasosAbiertos"></div>
+                            <br />
+                            <br />
+
+
+                            <label style="background-color:red; color: aliceblue; font-weight:400; padding:5px; border-radius:5px; border-color:black;">
+                                CASOS CERRADOS:
+
+                            </label>
+                            <br />
+
+
+
+                            <div id="viewHistoricoCasosCerrados"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+
+    <a href="#buscarCuenta" class="btn btn-primary btn-lg" data-toggle="modal" id="modalActivarCuenta" style="visibility:hidden">Ver Modal</a>
+
+    <div class="modal" id="buscarCuenta">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h2 class="modal-title"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Clientes</h2>
+                </div>
+                <div class="modal-body">
+
+                    <br />
+                    <div id="consultaCuentas"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div>
+        <div id="ActivarConvenio" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px;">
+                    <div class="modal-header" style="width:1000px;">
+                        <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                        <h2 class="modal-title"><i class="fa fa-envelope" style="color:#D92028;" aria-hidden="true"></i>&nbsp;&nbsp;Formulario Activación Convenio Electrónico</h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
                         <br />
-                        <button id="btnSubmitCaso" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;" disabled>Guardar Datos</button>
-
-
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="margin-left:25px;">
+                                <div id="ConvenioBody"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tab-pane tab-dime-first" role="tabpanel" id="historicoDeCasos">
+                </div>
+
+            </div>
+        </div>
+
+        <div id="ActivarElegidoFijo" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px;">
+                    <div class="modal-header" style="width:1000px;">
+                        <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                        <h2 class="modal-title"><i class="fa fa-phone-square" style="color:#4baca9;" aria-hidden="true"></i>&nbsp;&nbsp;Formulario Activación Elegido Fijo Móvil</h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
                         <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <div id="ElegidoBody"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                        <label style="background-color: green; color: aliceblue; font-weight:400; padding:5px; border-radius:5px; border-color:black; ">
-                            CASOS ABIERTOS:
-                        </label>
+        <div id="ClaroVideo" class="modal">
+            <div class="modal-dialog" style="width:1330px;">
+                <div class="modal-content" style="width:1330px;">
+                    <div class="modal-header" style="width:1330px;">
+                        <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                        <h2 class="modal-title"><i class="fa fa-tv" style="color:#d4a057;" aria-hidden="true"></i>&nbsp;&nbsp;Formulario Activación Claro Video</h2>
+                    </div>
+                    <div class="modal-body" style="width:1330px;">
                         <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:1300px; margin-left:25px;">
+                                <div id="ClaroVideoBody"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                        <div id="viewHistoricoCasosAbiertos"></div>
+        <div id="MejorOferta" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px;">
+                    <div class="modal-header" style="width:1000px;">
+                        <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                        <h2 class="modal-title"><i class="fa fa-shopping-cart" aria-hidden="true" style="color:#1e89ef;"></i>&nbsp;&nbsp;Formulario Activación Siguiente Mejor Oferta</h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
                         <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <div id="SMOBody"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="SiembraHD" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px;">
+                    <div class="modal-header" style="width:1000px;">
+                        <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                        <h2 class="modal-title"><i class="fa fa-tty" aria-hidden="true" style="color:#918de9;"></i>&nbsp;&nbsp;Formulario Activación Siembra HD</h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
                         <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <div id="SiembraBody"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-
-                        <label style="background-color:red; color: aliceblue; font-weight:400; padding:5px; border-radius:5px; border-color:black;">
-                            CASOS CERRADOS:
-
-                        </label>
+        <div id="MejorasTecnicas" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px;">
+                    <div class="modal-header" style="width:1000px;">
+                        <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                        <h2 class="modal-title"><i class="fa fa-cog fa-2x" aria-hidden="true" style="color:#508f3e;"></i>&nbsp;&nbsp;Formulario Mejoras Técnicas</h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
                         <br />
-
-
-
-                        <div id="viewHistoricoCasosCerrados"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-}
-
-<a href="#buscarCuenta" class="btn btn-primary btn-lg" data-toggle="modal" id="modalActivarCuenta" style="visibility:hidden">Ver Modal</a>
-
-<div class="modal" id="buscarCuenta">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-
-                <h2 class="modal-title"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Clientes</h2>
-            </div>
-            <div class="modal-body">
-
-                <br />
-                <div id="consultaCuentas"></div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div>
-    <div id="ActivarConvenio" class="modal">
-        <div class="modal-dialog" style="width:1000px;">
-            <div class="modal-content" style="width:1000px;">
-                <div class="modal-header" style="width:1000px;">
-                    <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
-                    <h2 class="modal-title"><i class="fa fa-envelope" style="color:#D92028;" aria-hidden="true"></i>&nbsp;&nbsp;Formulario Activación Convenio Electrónico</h2>
-                </div>
-                <div class="modal-body" style="width:1000px;">
-                    <br />
-                    <div class="row">
-                        <div class="col-lg-offset-1" style="margin-left:25px;">
-                            <div id="ConvenioBody"></div>
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <div id="MejorasTBody"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
 
-    <div id="ActivarElegidoFijo" class="modal">
-        <div class="modal-dialog" style="width:1000px;">
-            <div class="modal-content" style="width:1000px;">
-                <div class="modal-header" style="width:1000px;">
-                    <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
-                    <h2 class="modal-title"><i class="fa fa-phone-square" style="color:#4baca9;" aria-hidden="true"></i>&nbsp;&nbsp;Formulario Activación Elegido Fijo Móvil</h2>
+        <div id="FOX" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px;">
+                    <div class="modal-header" style="width:1000px;">
+                        <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                        <h2 class="modal-title"><i class="fa fa-calendar-plus-o" aria-hidden="true" style="color:#d66b2a;"></i>&nbsp;&nbsp;Formulario FOX Premium</h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <div id="FOXTBody"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body" style="width:1000px;">
-                    <br />
-                    <div class="row">
-                        <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
-                            <div id="ElegidoBody"></div>
+            </div>
+        </div>
+
+        <div id="Pom" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px;">
+                    <div class="modal-header" style="width:1000px;">
+                        <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                        <h2 class="modal-title"><i class="fa fa-question-circle text-aqua" aria-hidden="true"></i>&nbsp;&nbsp;Formulario de Solicitudes Encuesta CAVS</h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <div id="PomTBody"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -646,174 +763,59 @@ using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosClie
         </div>
     </div>
 
-    <div id="ClaroVideo" class="modal">
-        <div class="modal-dialog" style="width:1330px;">
-            <div class="modal-content" style="width:1330px;">
-                <div class="modal-header" style="width:1330px;">
-                    <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
-                    <h2 class="modal-title"><i class="fa fa-tv" style="color:#d4a057;" aria-hidden="true"></i>&nbsp;&nbsp;Formulario Activación Claro Video</h2>
-                </div>
-                <div class="modal-body" style="width:1330px;">
-                    <br />
-                    <div class="row">
-                        <div class="col-lg-offset-1" style="width:1300px; margin-left:25px;">
-                            <div id="ClaroVideoBody"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @section Scripts{
+        <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
+        <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
+        <link href="~/Styles/Elements/Alertas.css?1.0.4" rel="stylesheet" />
+        <script>
+            $.datetimepicker.setLocale('es');
+            $('#FechaNacimiento').datetimepicker({
+                format: 'Y-m-d',
+                timepicker: false,
+                maxDate: '0',
 
-    <div id="MejorOferta" class="modal">
-        <div class="modal-dialog" style="width:1000px;">
-            <div class="modal-content" style="width:1000px;">
-                <div class="modal-header" style="width:1000px;">
-                    <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
-                    <h2 class="modal-title"><i class="fa fa-shopping-cart" aria-hidden="true" style="color:#1e89ef;"></i>&nbsp;&nbsp;Formulario Activación Siguiente Mejor Oferta</h2>
-                </div>
-                <div class="modal-body" style="width:1000px;">
-                    <br />
-                    <div class="row">
-                        <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
-                            <div id="SMOBody"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            });
+        </script>
+        <script>
+            var jsonOfrecimientosSiembra = @Html.Raw(Json.Encode(Model.ListaSiembraHD));
+            var jsonOfrecimientosSMO = @Html.Raw(Json.Encode(Model.ListaSMO));
+            var jsonMejorasTecnicas = @Html.Raw(Json.Encode(Model.ListaMejorasTecnicas));
+            var jsonOfrecimientoFOX = @Html.Raw(Json.Encode(Model.CuentaFox));
+            var consultCuentaDivUrl = "@Url.Action("BuscarCuentasPorCedulaInbound", "Clientes")";
+            var tipificadorUrl = "@Url.Action("TipificacionMarcaciones", "Marcaciones")";
+            var choosenCuenta = @Model.ClientesTodos.Cuenta;
+            var cedulaLlena = $("#inputCedula").val();
+            var posiblesMarcacionesUrl = "@Url.Action("PosiblesMarcaciones", "Marcaciones")";
+            var datosDeMarcacionUrl = "@Url.Action("DatosDeMarcacion", "Marcaciones")";
+            var hitorialUrl =  "@Url.Action("IngresosListDeCuenta", "Inbound")";
+            var urlCodigosDeCierre = "@Url.Action("CodigosDeCierre", "Marcaciones")";
 
-    <div id="SiembraHD" class="modal">
-        <div class="modal-dialog" style="width:1000px;">
-            <div class="modal-content" style="width:1000px;">
-                <div class="modal-header" style="width:1000px;">
-                    <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
-                    <h2 class="modal-title"><i class="fa fa-tty" aria-hidden="true" style="color:#918de9;"></i>&nbsp;&nbsp;Formulario Activación Siembra HD</h2>
-                </div>
-                <div class="modal-body" style="width:1000px;">
-                    <br />
-                    <div class="row">
-                        <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
-                            <div id="SiembraBody"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            var urlConvenioElectronicoView = '@Url.Action("Convenio_Electronico", "Alertas")';
+            var urlElegidoView = '@Url.Action("Elegido_Fijo_Movil", "Alertas")';
+            var urlClaroVideoView = '@Url.Action("Claro_Video", "Alertas")';
+            var urlSMOView = '@Url.Action("Siguiente_Mejor_Oferta", "Alertas")';
+            var urlSiembraHDView = '@Url.Action("Siembra_HD", "Alertas")';
+            var urlUsabilidadConvenio = '@Url.Action("Guardar_Usabilidad_Convenio", "Inbound")';
+            var urlUsabilidadBusquedaCuenta = '@Url.Action("Guardar_Usabilidad_Consulta_Cuenta", "Inbound")';
+            var urlMejorasTecnicas = '@Url.Action("Mejoras_Tecnicas", "Alertas")';
+            var urlFOX = '@Url.Action("FOX", "Alertas")';
+            var urlPom = '@Url.Action("Pom", "Alertas")';
+            $("#tbMacroproceso").val('');
+            $("#tbMarcacion").val('');
+            $("#TipiMarca_Observaciones").val('');
 
-    <div id="MejorasTecnicas" class="modal">
-        <div class="modal-dialog" style="width:1000px;">
-            <div class="modal-content" style="width:1000px;">
-                <div class="modal-header" style="width:1000px;">
-                    <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
-                    <h2 class="modal-title"><i class="fa fa-cog fa-2x" aria-hidden="true" style="color:#508f3e;"></i>&nbsp;&nbsp;Formulario Mejoras Técnicas</h2>
-                </div>
-                <div class="modal-body" style="width:1000px;">
-                    <br />
-                    <div class="row">
-                        <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
-                            <div id="MejorasTBody"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            setTimeout(function () {
+                $("#TipiMarca_IngresoTipMarcacion_IdServicio option:first").attr('selected','selected');
 
-    <div id="FOX" class="modal">
-        <div class="modal-dialog" style="width:1000px;">
-            <div class="modal-content" style="width:1000px;">
-                <div class="modal-header" style="width:1000px;">
-                    <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
-                    <h2 class="modal-title"><i class="fa fa-calendar-plus-o" aria-hidden="true" style="color:#d66b2a;"></i>&nbsp;&nbsp;Formulario FOX Premium</h2>
-                </div>
-                <div class="modal-body" style="width:1000px;">
-                    <br />
-                    <div class="row">
-                        <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
-                            <div id="FOXTBody"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            }, 1000);
 
-<div id="Pom" class="modal">
-    <div class="modal-dialog" style="width:1000px;">
-        <div class="modal-content" style="width:1000px;">
-            <div class="modal-header" style="width:1000px;">
-                <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
-                <h2 class="modal-title"><i class="fa fa-question-circle text-aqua" aria-hidden="true"></i>&nbsp;&nbsp;Formulario de Solicitudes POM</h2>
-            </div>
-            <div class="modal-body" style="width:1000px;">
-                <br />
-                <div class="row">
-                    <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
-                        <div id="PomTBody"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    </div>
-
-@section Scripts{
-    <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
-    <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
-    <link href="~/Styles/Elements/Alertas.css?1.0.3" rel="stylesheet" />
-    <script>
-        $.datetimepicker.setLocale('es');
-        $('#FechaNacimiento').datetimepicker({
-            format: 'Y-m-d',
-            timepicker: false,
-            maxDate: '0',
-
-        });
-    </script>
-    <script>
-        var jsonOfrecimientosSiembra = @Html.Raw(Json.Encode(Model.ListaSiembraHD));
-        var jsonOfrecimientosSMO = @Html.Raw(Json.Encode(Model.ListaSMO));
-        var jsonMejorasTecnicas = @Html.Raw(Json.Encode(Model.ListaMejorasTecnicas));
-        var jsonOfrecimientoFOX = @Html.Raw(Json.Encode(Model.CuentaFox));
-        var consultCuentaDivUrl = "@Url.Action("BuscarCuentasPorCedulaInbound", "Clientes")";
-        var tipificadorUrl = "@Url.Action("TipificacionMarcaciones", "Marcaciones")";
-        var choosenCuenta = @Model.ClientesTodos.Cuenta;
-        var cedulaLlena = $("#inputCedula").val();
-        var posiblesMarcacionesUrl = "@Url.Action("PosiblesMarcaciones", "Marcaciones")";
-        var datosDeMarcacionUrl = "@Url.Action("DatosDeMarcacion", "Marcaciones")";
-        var hitorialUrl =  "@Url.Action("IngresosListDeCuenta", "Inbound")";
-        var urlCodigosDeCierre = "@Url.Action("CodigosDeCierre", "Marcaciones")";
-
-        var urlConvenioElectronicoView = '@Url.Action("Convenio_Electronico", "Alertas")';
-        var urlElegidoView = '@Url.Action("Elegido_Fijo_Movil", "Alertas")';
-        var urlClaroVideoView = '@Url.Action("Claro_Video", "Alertas")';
-        var urlSMOView = '@Url.Action("Siguiente_Mejor_Oferta", "Alertas")';
-        var urlSiembraHDView = '@Url.Action("Siembra_HD", "Alertas")';
-        var urlUsabilidadConvenio = '@Url.Action("Guardar_Usabilidad_Convenio", "Inbound")';
-        var urlUsabilidadBusquedaCuenta = '@Url.Action("Guardar_Usabilidad_Consulta_Cuenta", "Inbound")';
-        var urlMejorasTecnicas = '@Url.Action("Mejoras_Tecnicas", "Alertas")';
-        var urlFOX = '@Url.Action("FOX", "Alertas")';
-        var urlPom = '@Url.Action("Pom", "Alertas")';
-        $("#tbMacroproceso").val('');
-        $("#tbMarcacion").val('');
-        $("#TipiMarca_Observaciones").val('');
-
-        setTimeout(function () {
-            $("#TipiMarca_IngresoTipMarcacion_IdServicio option:first").attr('selected','selected');
-
-        }, 1000);
-
-        //$('select').val('')
-    </script>
+            //$('select').val('')
+        </script>
 
 
-    <script src="~/Scripts/Inbound/Index.js?1.1.5"></script>
+        <script src="~/Scripts/Inbound/Index.js?1.1.5"></script>
 
-}
+    }
 
 }
 else

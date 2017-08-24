@@ -572,6 +572,17 @@ function LlamarFOX() {
     });
 }
 
+function LlamarPom() {
+    $.ajax({
+        type: "GET",
+        url: urlPom,
+        dataType: "html",
+        success: function (result) {
+            $('#PomTBody').html(result);
+        }
+    });
+}
+
 function ResetearDivs() {
 
     var vacio = $("<div></div>");
@@ -582,6 +593,7 @@ function ResetearDivs() {
     $('#SiembraBody').html(vacio);
     $('#MejorasTBody').html(vacio);
     $('#FOXTBody').html(vacio);
+    $('#PomTBody').html(vacio);
 }
 
 //function UsabilidadBusquedaCuenta() {

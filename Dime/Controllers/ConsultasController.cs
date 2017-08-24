@@ -14,6 +14,7 @@ namespace Dime.Controllers
         private  WSD.CasosCelulaServiceClient casosCelulaService;
         private WSD.CasosAdminServiceClient casosAdminService;
         private WSD.InboundServiceClient inboundService;
+        WSD.POMSolicitudesServiceClient PomService;
 
         public ConsultasController()
         {
@@ -23,6 +24,8 @@ namespace Dime.Controllers
             casosAdminService.ClientCredentials.Authenticate();
             inboundService = new WSD.InboundServiceClient();
             inboundService.ClientCredentials.Authenticate();
+            PomService = new WSD.POMSolicitudesServiceClient();
+            PomService.ClientCredentials.Authenticate();
         }
         public ActionResult ConsultaCasosAbiertos()
         {
@@ -95,6 +98,19 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 
+        }
+        [HttpGet]
+        public ActionResult ConsultaEncuestaCavs()
+        {
+            return View();
+        }
+        public JsonResult ConsultaEncuestaCavsJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(PomService.ListaSolicitudesPom(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
 
     }

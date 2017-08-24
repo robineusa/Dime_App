@@ -88,7 +88,7 @@ z-index: 999;
 #Icono_1:hover:after{
  content: 'Activar Convenio Electrónico'; 
     position: absolute;
-    z-index: 98;
+    z-index: 999;
    margin-left: -45px;
     margin-top: 47px;
     background: rgba(0, 0, 0, 0.8);
@@ -125,7 +125,7 @@ z-index: 999;
 #Icono_2:hover:after{
  content: 'Activar Elegido Fijo Móvil'; 
     position: absolute;
-    z-index: 98;
+    z-index: 999;
    margin-left: -45px;
     margin-top: 47px;
     background: rgba(0, 0, 0, 0.8);
@@ -162,7 +162,7 @@ z-index: 999;
 #Icono_3:hover:after{
  content: 'Activar Claro Video'; 
     position: absolute;
-    z-index: 98;
+    z-index: 999;
    margin-left: -45px;
     margin-top: 47px;
     background: rgba(0, 0, 0, 0.8);
@@ -199,7 +199,7 @@ z-index: 999;
 #Icono_4:hover:after{
  content: 'Activar Siguiente Mejor Oferta'; 
     position: absolute;
-    z-index: 98;
+    z-index: 999;
    margin-left: -45px;
     margin-top: 47px;
     background: rgba(0, 0, 0, 0.8);
@@ -236,7 +236,7 @@ z-index: 999;
 #Icono_5:hover:after{
  content: 'Activar Siembra HD'; 
     position: absolute;
-    z-index: 98;
+    z-index: 999;
    margin-left: -45px;
     margin-top: 47px;
     background: rgba(0, 0, 0, 0.8);
@@ -273,7 +273,7 @@ z-index: 999;
 #Icono_6:hover:after{
  content: 'Activar Mejoras Técnicas'; 
     position: absolute;
-    z-index: 98;
+    z-index: 999;
    margin-left: -45px;
     margin-top: 47px;
     background: rgba(0, 0, 0, 0.8);
@@ -310,7 +310,45 @@ z-index: 999;
 #Icono_7:hover:after{
  content: 'Activar FOX Premium'; 
     position: absolute;
-    z-index: 98;
+    z-index: 999;
+   margin-left: -45px;
+    margin-top: 47px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 150px;
+    animation: 1s infinite ;
+}
+
+#Icono_8 {
+    float: left;
+    width: 45px;
+    height: 45px;
+    background: url('../../Resources/Images/Inbound/Pom.png') center no-repeat;
+    background-size: 42px 42px;
+    margin-top: -6px;
+    margin-left: 0px;
+    position: relative;
+}
+#Icono_8:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 1s infinite ;
+}
+#Icono_8:hover:after{
+ content: 'Encuesta CAVS'; 
+    position: absolute;
+    z-index: 999;
    margin-left: -45px;
     margin-top: 47px;
     background: rgba(0, 0, 0, 0.8);
