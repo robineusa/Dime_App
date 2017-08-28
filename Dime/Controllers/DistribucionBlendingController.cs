@@ -14,12 +14,16 @@ namespace Dime.Controllers
     {
         WSD.DistribucionBlendingServiceClient distribucionBlendingService;
         WSD.MaestrosServiceClient mastersServices;
+        WSD.InboundServiceClient inboundService;
+
         public DistribucionBlendingController()
         {
             distribucionBlendingService = new WSD.DistribucionBlendingServiceClient();
             distribucionBlendingService.ClientCredentials.Authenticate();
             mastersServices = new WSD.MaestrosServiceClient();
             mastersServices.ClientCredentials.Authenticate();
+            inboundService = new WSD.InboundServiceClient();
+            inboundService.ClientCredentials.Authenticate();
         }
         //ESTA PARTE ES GLOBAL PARA TODOS LOS PROCESOS DE BLENDING
         public JsonResult TiposDeContactoList(decimal gestion)
@@ -70,7 +74,7 @@ namespace Dime.Controllers
             };
         }
         //CABLE MODEM FUERA DE NIVELES
-        public ActionResult CableModemFueradeNiveles(string CuentaCliente)
+        public ActionResult CableModemFueradeNiveles(string CuentaCliente, string Seg)
         {
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
             GBPFueraNiveles ClienteGestionado = new GBPFueraNiveles();
@@ -92,7 +96,15 @@ namespace Dime.Controllers
             }
             else
             {
-                model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "FUERANIVELES", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
+                if (Seg == null || Seg.Equals(""))
+                {
+                    model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "FUERANIVELES", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
+                }
+                else
+                {
+                    model.DatosDelCliente = inboundService.TraerClienteCompletoPorCuenta(Convert.ToInt32(CuentaCliente));
+                }
+    
                 if (model.DatosDelCliente != null)
                 {
                     model.FueraNiveles = distribucionBlendingService.TraerInformacionCuentaFueraNiveles(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
@@ -250,7 +262,7 @@ namespace Dime.Controllers
 
         //RENTABILIZACION
         [HttpGet]
-        public ActionResult Rentabilizacion(string CuentaCliente)
+        public ActionResult Rentabilizacion(string CuentaCliente, string Seg)
         {
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
             if (Session["CampañaBlending"] != null) { }
@@ -271,7 +283,15 @@ namespace Dime.Controllers
             }
             else
             {
-                model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "RENTABILIZACION", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
+                if (Seg == null || Seg.Equals(""))
+                {
+                    model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "RENTABILIZACION", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
+                }
+                else
+                {
+                    model.DatosDelCliente = inboundService.TraerClienteCompletoPorCuenta(Convert.ToInt32(CuentaCliente));
+                }
+                
                 if (model.DatosDelCliente != null)
                 {
                     model.GBCRentabilizacion = distribucionBlendingService.TraerInformacionCuentaRentabilizacion(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
@@ -418,7 +438,7 @@ namespace Dime.Controllers
 
         //PRODUCTO
         [HttpGet]
-        public ActionResult Producto(string CuentaCliente)
+        public ActionResult Producto(string CuentaCliente, string Seg)
         {
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
             if (Session["CampañaBlending"] != null) { }
@@ -439,8 +459,15 @@ namespace Dime.Controllers
             }
             else
             {
-                model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "PRODUCTO", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
-
+                if (Seg == null || Seg.Equals(""))
+                {
+                    model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "PRODUCTO", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
+                }
+                else
+                {
+                    model.DatosDelCliente = inboundService.TraerClienteCompletoPorCuenta(Convert.ToInt32(CuentaCliente));
+                }
+                
                 if (model.DatosDelCliente != null)
                 {
                     model.GBCProducto = distribucionBlendingService.TraerInformacionCuentaProducto(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
@@ -571,7 +598,7 @@ namespace Dime.Controllers
 
         //DOCSIS Y OVERLAP
         [HttpGet]
-        public ActionResult Docsis(string CuentaCliente)
+        public ActionResult Docsis(string CuentaCliente, string Seg)
         {
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
             GBPDocsis ClienteGestionado = new GBPDocsis();
@@ -593,7 +620,15 @@ namespace Dime.Controllers
             }
             else
             {
-                model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "DOCSIS", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
+                if (Seg == null || Seg.Equals(""))
+                {
+                    model.DatosDelCliente = distribucionBlendingService.AsignarIdCuentaDistribucionBlending(Convert.ToDecimal(CuentaCliente), "DOCSIS", Session["AliadoLogeado"].ToString(), Session["OperacionBlending"].ToString(), Session["CampañaBlending"].ToString(), Convert.ToInt32(Session["IdUsuario"].ToString()));
+                }
+                else
+                {
+                    model.DatosDelCliente = inboundService.TraerClienteCompletoPorCuenta(Convert.ToInt32(CuentaCliente));
+                }
+                
                 if (model.DatosDelCliente != null)
                 {
                     model.GBCDocsis = distribucionBlendingService.TraerInformacionCuentaDocsis(Convert.ToDecimal(model.DatosDelCliente.Cuenta));
