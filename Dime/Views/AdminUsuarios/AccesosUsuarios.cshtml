@@ -240,6 +240,7 @@
                             @Html.DropDownListFor(m => m.IdPerfilMasivo, new List<SelectListItem>() { new SelectListItem { Text="ADMINISTRADOR", Value="1"}, new SelectListItem { Text = "ASESOR", Value = "2" } ,
                                                                                 new SelectListItem { Text = "CÉLULA", Value = "3" } }, "-Seleccione-", new { @class = "form-control input-sm", onchange = "TraerPosiblesLineasDePerfilMasivo()", @style = "width:200px", id = "perfilSelectedCreateMasivo" })
 
+<<<<<<< HEAD
                             <br />
                             <strong><i class="fa fa-chevron-circle-down"></i> Linea a otorgar:</strong>
                             @Html.DropDownListFor(m => m.IdLineaMasivo, new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm", @style = "width:200px", id = "lineaSelectCreacionMasivo", onchange = "TraerPosiblesAccesosDeLineaMasivo()" })
@@ -281,6 +282,24 @@
             </td>
         </tr>
     </table>
+=======
+
+
+                    <div class="tab-pane" id="Consulta_Usuario" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                        <br />
+
+    
+                        <br />
+                        <strong><i class="fa fa-chevron-circle-down"></i>Grupo de Usuarios:</strong>
+                        <table>
+                            <tr>
+                                <td width="200" style="padding:1px;">
+                                    <small>Aliado:  </small>
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    <small>Perfil:  </small>
+                                </td>
+>>>>>>> de78c7aa458bc53095af07cb0c4cd40c02cb14b3
 
     <br />
 
@@ -296,6 +315,7 @@
     <strong><i class="fa fa-chevron-circle-down"></i> Linea a otorgar:</strong>
     @Html.DropDownListFor(m => m.IdLineaMasivo, new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm", @style = "width:200px", id = "lineaSelectCreacionMasivo", onchange = "TraerPosiblesAccesosDeLineaMasivo()" })
 
+<<<<<<< HEAD
     <strong><i class="fa fa-chevron-circle-down"></i> Accesos y privilegios:</strong>
     <br />
     <table id="accesosPrivilegiosMasivos">
@@ -310,6 +330,21 @@
                             @Html.TextBoxFor(m => m.PermisosOtorgadosMasivos, new { @style = "display:none", id = "listaPermisosCrearMasivo" })
                             @Html.TextBoxFor(m => m.UsuariosACambiarMasivo, new { @style = "display:none", id = "listaUsuariosMasivo" })
                         </div>
+=======
+                        <strong><i class="fa fa-chevron-circle-down"></i> Accesos y privilegios:</strong>
+                        <br />
+                        <table id="accesosPrivilegiosMasivos">
+                            <tr>
+                                <td width="200" style="padding:1px;"></td>
+                                <td width="200" style="padding:1px;"></td>
+                                <td width="200" style="padding:1px;"></td>
+                                <td width="200" style="padding:1px;"></td>
+                                <td width="200" style="padding:1px;"></td>
+                            </tr>
+                        </table>
+                        @Html.TextBoxFor(m => m.PermisosOtorgadosMasivos, new { @style = "display:none", id = "listaPermisosCrearMasivo" })
+                        @Html.TextBoxFor(m => m.UsuariosACambiarMasivo, new { @style = "display:none", id = "listaUsuariosMasivo" })
+>>>>>>> de78c7aa458bc53095af07cb0c4cd40c02cb14b3
                     </div>
                     <br />
                     <div class="box-footer">
