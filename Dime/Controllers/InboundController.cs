@@ -44,6 +44,7 @@ namespace Dime.Controllers
         public ActionResult Index(string choosenCuenta)
         {
 
+
             InboundModel model = new InboundModel();
             List<string> hobbieOptions = inboundService.ConsultarHobbiesOptions();
             model.HobbyOptions = new List<SelectListItem>();
