@@ -2303,7 +2303,6 @@
     <Content Include="Scripts\Calculadoras\Rentas.js" />
     <Content Include="Scripts\CierreDeCiclo\ConsultaGestiones.js" />
     <Content Include="Scripts\CierreDeCiclo\HistorialGestiones.js" />
-    <Content Include="Scripts\Consultas\ConsultaEncuestaCavs.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Gestion.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Paloteo.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Rechazos.js" />
@@ -2321,6 +2320,7 @@
     <Content Include="Scripts\DistribucionBlending\FueraNiveles.js" />
     <Content Include="Scripts\DistribucionBlending\Producto.js" />
     <Content Include="Scripts\DistribucionBlending\Rentabilizacion.js" />
+    <Content Include="Scripts\EncuestaCav\ConsultaEncuestaCavs.js" />
     <Content Include="Scripts\Gestion_Blending\AsignarBasesAdmin.js" />
     <Content Include="Scripts\Gestion_Blending\SkillsUsuariosAdmin.js" />
     <Content Include="Scripts\Inbound\Retencion.js" />
@@ -3351,7 +3351,6 @@
     <Content Include="Views\BitacoraIncidentes\ListaDeAliadosActuales.cshtml" />
     <Content Include="Views\BitacoraIncidentes\ListaDeOperacionesActuales.cshtml" />
     <Content Include="Views\BitacoraIncidentes\AdministrarOperaciones.cshtml" />
-    <Content Include="Views\Consultas\ConsultaEncuestaCavs.cshtml" />
     <None Include="Service References\WSD\WebService.wsdl" />
     <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
@@ -3370,6 +3369,7 @@
     </None>
     <Content Include="Views\BitacoraIncidentes\VisualizadordeIncidentes.cshtml" />
     <Content Include="Views\EncuestaCav\EncuestadeSatisfaccion.cshtml" />
+    <Content Include="Views\EncuestaCav\ConsultaEncuestaCavs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
