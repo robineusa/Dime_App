@@ -53,8 +53,8 @@ function TraerDatosConsulta(F1, F2) {
 
 function cambiarfechas(data) {
     for (var i = 0; i < data.length; i++) {
-        data[i].FechaTransaccion = kendo.toString(kendo.parseDate(data[i].FechaTransaccion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-
+        data[i].FechaSolicitud = kendo.toString(kendo.parseDate(data[i].FechaSolicitud, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+        
     }
 
 }
@@ -67,7 +67,7 @@ function cargargrilla(data) {
         },
         dataSource: {
             data: data,
-
+            
         },
         scrollable: true,
         filterable: {
@@ -86,17 +86,13 @@ function cargargrilla(data) {
             buttonCount: 5
         },
         columns: [
-        { field: "IdTansaccion", title: "Id Tansaccion", width: 100 },
-        { field: "FechaTransaccion", title: "Fecha de Transaccion", width: 100 },
-        { field: "UsuarioTransaccion", title: "Usuario Transaccion", width: 100 },
-        { field: "CanalTransaccion", title: "Canal Transaccion", width: 100 },
-        { field: "ZonaTransaccion", title: "Zona Transaccion", width: 100 },
-        { field: "TelefonoCeluar", title: "Telefono Celuar", width: 100 },
-        { field: "TelefonoDeContacto", title: "Telefono De Contacto", width: 100 },
-        { field: "CorreoElectronico", title: "Correo Electronico", width: 100 },
+        { field: "IdRegistro", title: "Id Registro", width: 100 },
+        { field: "FechaSolicitud", title: "Fecha de Solicitud", width: 100 },
+        { field: "UsuarioSolicitud", title: "Usuario de Solicitud", width: 100 },
         { field: "CuentaCliente", title: "Cuenta Cliente", width: 100 },
-        { field: "Operacion", title: "Operacion", width: 100 },
-        { field: "TokenId", title: "TokenId", width: 100 }
+        { field: "TelefonoCeluar", title: "Telefono Celuar", width: 100 },
+        { field: "CorreoElectronico", title: "Correo Electronico", width: 100 },
+        { field: "MovilClaro", title: "Movil Claro", width: 100 }
         ]
 
     });

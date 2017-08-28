@@ -79,7 +79,11 @@
                                             <div id="Icono_7" style="display: block"></div>
                                         </a>
                                     }
-                                    
+                                    @if (Session["Encuesta Pom"] != null)
+                                    {
+                                        <a href="#Pom" onclick="return LlamarPom()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                                            <div id="Icono_8" style="display: block"></div>
+                                        </a>}
                                 </div>
                             </div>
                         </div>
@@ -739,6 +743,24 @@
             </div>
         </div>
 
+        <div id="Pom" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px;">
+                    <div class="modal-header" style="width:1000px;">
+                        <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                        <h2 class="modal-title"><i class="fa fa-question-circle text-aqua" aria-hidden="true"></i>&nbsp;&nbsp;Formulario de Solicitudes Encuesta CAVS</h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                <div id="PomTBody"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     @section Scripts{
@@ -777,6 +799,7 @@
             var urlUsabilidadBusquedaCuenta = '@Url.Action("Guardar_Usabilidad_Consulta_Cuenta", "Inbound")';
             var urlMejorasTecnicas = '@Url.Action("Mejoras_Tecnicas", "Alertas")';
             var urlFOX = '@Url.Action("FOX", "Alertas")';
+            var urlPom = '@Url.Action("Pom", "Alertas")';
             $("#tbMacroproceso").val('');
             $("#tbMarcacion").val('');
             $("#TipiMarca_Observaciones").val('');
@@ -789,7 +812,8 @@
             //$('select').val('')
         </script>
 
-        <script src="~/Scripts/Inbound/Index.js?1.1.6"></script>
+
+        <script src="~/Scripts/Inbound/Index.js?1.1.5"></script>
 
     }
 
