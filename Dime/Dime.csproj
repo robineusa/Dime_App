@@ -204,6 +204,7 @@
     <Compile Include="Controllers\ConsultasController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DistribucionBlendingController.cs" />
+    <Compile Include="Controllers\EncuestaCavController.cs" />
     <Compile Include="Controllers\GestionBlendingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InboundController.cs" />
@@ -2248,6 +2249,7 @@
     <Content Include="ImagesClient\fotos-paisajes-naturales-suiza-alpes-suizos-swiss-natural-scenery-hd-photo-wallpapers-10.jpg" />
     <Content Include="ImagesClient\hd.png" />
     <Content Include="ImagesClient\Islas-andaman.jpg" />
+    <Content Include="Resources\Images\Claro.png" />
     <Content Include="Resources\Images\Excel-icon.png" />
     <Content Include="Resources\Images\gris01.png" />
     <Content Include="Resources\Images\Inbound\Carrito.png" />
@@ -2994,6 +2996,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ViewModelIncidentesOperaciones.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.POMSolicitudes.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3104,7 +3107,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService1.disco" />
+    <None Include="Service References\WSD\WebService.disco" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
     <Content Include="Styles\Elements\General.css" />
@@ -3348,24 +3351,25 @@
     <Content Include="Views\BitacoraIncidentes\ListaDeAliadosActuales.cshtml" />
     <Content Include="Views\BitacoraIncidentes\ListaDeOperacionesActuales.cshtml" />
     <Content Include="Views\BitacoraIncidentes\AdministrarOperaciones.cshtml" />
-    <Content Include="Views\Alertas\Pom.cshtml" />
     <Content Include="Views\Consultas\ConsultaEncuestaCavs.cshtml" />
-    <None Include="Service References\WSD\WebService1.wsdl" />
-    <None Include="Service References\WSD\WebService5.xsd">
+    <None Include="Service References\WSD\WebService.wsdl" />
+    <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService51.xsd">
+    <None Include="Service References\WSD\WebService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService52.xsd">
+    <None Include="Service References\WSD\WebService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService53.xsd">
+    <None Include="Service References\WSD\WebService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService54.xsd">
+    <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\BitacoraIncidentes\VisualizadordeIncidentes.cshtml" />
+    <Content Include="Views\EncuestaCav\EncuestadeSatisfaccion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

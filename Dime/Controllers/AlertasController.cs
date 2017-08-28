@@ -15,15 +15,14 @@ namespace Dime.Controllers
     {
         WSD.ActivacionClaroVideoServiceClient clarovideowebservice;
         WSD.ActivacionSiembraHDServiceClient acsiembrahdwebservice;
-        WSD.POMSolicitudesServiceClient PomService;
+       
         public AlertasController()
         {
             clarovideowebservice = new WSD.ActivacionClaroVideoServiceClient();
             clarovideowebservice.ClientCredentials.Authenticate();
             acsiembrahdwebservice = new WSD.ActivacionSiembraHDServiceClient();
             acsiembrahdwebservice.ClientCredentials.Authenticate();
-            PomService = new WSD.POMSolicitudesServiceClient();
-            PomService.ClientCredentials.Authenticate();
+           
         }
 
         // GET: Alertas
@@ -138,19 +137,6 @@ namespace Dime.Controllers
 
             return RedirectToAction("Index", "Inbound");
         }
-        [HttpGet]
-        public ActionResult Pom()
-        {
-            POMSolicitudes modelo = new POMSolicitudes();
-            return View(modelo);
-        }
-        [HttpPost]
-        public ActionResult Pom(POMSolicitudes modelo)
-        {
-            modelo.UsuarioSolicitud = Session["Usuario"].ToString();
-            PomService.RegistrarSolicitudPom(modelo);
-            PomService.Close();
-            return RedirectToAction("Index", "Inbound");
-        }
+       
     }
 }

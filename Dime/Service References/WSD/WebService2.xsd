@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="Usuario">
     <xs:sequence>
       <xs:element minOccurs="0" name="Capacitado" nillable="true" type="xs:boolean" />
@@ -3130,6 +3130,33 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfBIPBitacoraIncidentes" nillable="true" type="tns:ArrayOfBIPBitacoraIncidentes" />
+  <xs:complexType name="BILBitacoraIncidentes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CantidadUsuariosAfectados" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CasoSD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComentariosDeCierre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DescripcionAfectacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EscaladoA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoDelCaso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaDeCierreAfectacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeCierreTicket" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeCreacionTicket" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeRegistro" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaUltimaActualizacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Herramienta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdRegistro" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ModuloAfectado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioCreacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioUltimaActualizacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prioridad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDeFalla" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioUltimaActualizacion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BILBitacoraIncidentes" nillable="true" type="tns:BILBitacoraIncidentes" />
   <xs:complexType name="POMSolicitudes">
     <xs:sequence>
       <xs:element minOccurs="0" name="CorreoElectronico" nillable="true" type="xs:string" />

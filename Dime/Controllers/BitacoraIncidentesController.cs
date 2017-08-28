@@ -301,6 +301,13 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        [HttpGet]
+        public ActionResult VisualizadordeIncidentes(string IdRegistro)
+        {
+            ViewModelBitacoraIncidentes modelo = new ViewModelBitacoraIncidentes();
+            modelo.BIPBitacoraIncidentes = bitacoraservice.TraeIncidentePorId(Convert.ToInt32(IdRegistro));
+            return View(modelo);
+        }
 
     }
 }

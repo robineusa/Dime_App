@@ -27,19 +27,29 @@ namespace Dime.Controllers
         // GET: Reportes
         public ActionResult ReporteAsesor()
         {
-            
-            BalanceScoreCard modelo = new BalanceScoreCard();
-            var usuario = Session["Usuario"].ToString();
-            modelo = balancescorecardservice.IndicadoresUsuario(Convert.ToDecimal(usuario));
-            if (modelo == null) {
-                return View();
+            if (Session["Encuesta Pom"] != null)
+            {
+
+                return RedirectToAction("EncuestadeSatisfaccion", "EncuestaCav");
             }
-            return View(modelo);
+            else
+            {
+                BalanceScoreCard modelo = new BalanceScoreCard();
+                var usuario = Session["Usuario"].ToString();
+                modelo = balancescorecardservice.IndicadoresUsuario(Convert.ToDecimal(usuario));
+                if (modelo == null)
+                {
+                    return View();
+                }
+                return View(modelo);
+            }
+
+
         }
         [HttpGet]
         public ActionResult ReporteCelula()
         {
-            
+
             BalanceScoreCard modelo = new BalanceScoreCard();
             modelo = balancescorecardservice.IndicadoresUsuario(Convert.ToDecimal(Session["Usuario"].ToString()));
             return View(modelo);

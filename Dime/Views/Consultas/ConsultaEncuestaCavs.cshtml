@@ -3,7 +3,7 @@
     ViewBag.Subtitle = "Procesos - COS";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("ConsultaEncuestaCavs", "Consultas", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+@using (Html.BeginForm("ConsultaEncuestaCavs", "EncuestaCav", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
     {
         <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
             <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
@@ -64,7 +64,7 @@
     }
 
     @section scripts{
-        <script>var UrlConsultaEncuestaCavs = '@Url.Action("ConsultaEncuestaCavsJson", "Consultas")';</script>
+        <script>var UrlConsultaEncuestaCavs = '@Url.Action("ConsultaEncuestaCavsJson", "EncuestaCav")';</script>
 
         <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.1"></script>
         <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.1" rel="stylesheet" />
