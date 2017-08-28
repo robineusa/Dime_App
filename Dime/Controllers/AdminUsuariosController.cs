@@ -256,8 +256,7 @@ namespace Dime.Controllers
         {
             return View("AdminUsuariosMasivo");
         }
-
-        
+                
         [HttpPost]
         public JsonResult CotejarInformacionMasivo(IList<string> cedulas)
         {
@@ -277,11 +276,6 @@ namespace Dime.Controllers
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
-
-
-
-
-
         
         [HttpPost]
         public JsonResult GuardarUsuariosMasivos(IList<string> cedulas, string accesosCrear, int perfilCrear, int lineaCrear, string contraMasiva  )
@@ -307,6 +301,25 @@ namespace Dime.Controllers
                     JsonRequestBehavior = JsonRequestBehavior.AllowGet
                 };
             }
+        }
+
+        [HttpPost]
+        public JsonResult ConsultaUsuariosAccesosMasivos(IList<string> cedulas)
+        {
+            var result0 = loginService.ListaDatosUsuariosDimePorCedulas(cedulas.ToList());
+            //var cedulasSinError = result0.Where(c => c.InfoRegistro == null);
+            bool datosValidos = result0.ToList().Count == result0.ToList().Count;
+            var result = new
+            {
+                DataUsuario = result0,
+                DataValid = datosValidos
+            };
+
+            return new JsonResult
+            {
+                Data = JsonConvert.SerializeObject(result),
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
         }
 
 

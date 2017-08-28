@@ -41,18 +41,16 @@
 
     if (segundaPestañaAbierta == "True") {
         $("#consultaUsuarioTab").click();
-    }                                                                                                                     
+    }
     DropDownListAliados();
-    if (perfilUsuario  != null)
-    {
+    if (perfilUsuario != null) {
         $("#perfilSelectedCreate").val(perfilUsuario);
         TraerPosiblesLineasDePerfil();
     }
-    if (perfilUsuario == null)
-        {
-    $("#listaPermisosCrearMasivo").val("");
-    $("#listaPermisosCrear").val("");
-    $("#listaUsuariosMasivo").val("");
+    if (perfilUsuario == null) {
+        $("#listaPermisosCrearMasivo").val("");
+        $("#listaPermisosCrear").val("");
+        $("#listaUsuariosMasivo").val("");
     }
 
 });
@@ -74,12 +72,11 @@ function LlenarAccesosDePerfilConsulta() {
             if ($("#Aliado_Actu").val() != "") {
                 do {
                     var acceso = document.getElementById(data.accesos[i]);
-                    if (acceso != null)
-                    {
+                    if (acceso != null) {
                         acceso.checked = true;
                         SelectCrearAccesoPorValue(document.getElementById(data.accesos[i]).value);
                     }
-                
+
                     i++;
                 } while (i < data.accesos.length)
             }
@@ -115,11 +112,11 @@ function SelectCrearAcceso(e) {
 }
 
 function SelectCrearAccesoPorValue(value) {
-        if ($("#listaPermisosCrear").val() != "") {
-            $("#listaPermisosCrear").val($("#listaPermisosCrear").val() + "-" + value);
-        } else {
-            $("#listaPermisosCrear").val(value);
-        }
+    if ($("#listaPermisosCrear").val() != "") {
+        $("#listaPermisosCrear").val($("#listaPermisosCrear").val() + "-" + value);
+    } else {
+        $("#listaPermisosCrear").val(value);
+    }
 }
 
 function SelectCrearAccesoMasivo(e) {
@@ -158,7 +155,7 @@ function TraerPosiblesAccesosDeLinea() {
         dataType: 'json',
         success: function (result) {
             var json = JSON.parse(result);
-             LlenarAccesosDeLineaCreacion(json)
+            LlenarAccesosDeLineaCreacion(json)
         }
     });
 };
@@ -183,8 +180,7 @@ function LlenarAccesosDeLineaCreacion(data) {
     } while (i < data.accesos.length)
 }
 
-function IdPerfilDeUsuarioActual(cedulaUsuario)
-{
+function IdPerfilDeUsuarioActual(cedulaUsuario) {
     $.ajax({
         type: "GET",
         url: urlPerfilYLineaDeUsuario,
@@ -201,14 +197,12 @@ function IdPerfilDeUsuarioActual(cedulaUsuario)
 }
 
 
-function DropDownListAliados()
-{
+function DropDownListAliados() {
     $.ajax({
         type: "GET",
         url: urlPosiblesAliados,
         contentType: "application/json; charset=utf-8",
-        success: function(result)
-        {
+        success: function (result) {
             var json = JSON.parse(result);
             $("#aliadoSelected").empty();
             $("#aliadoSelected").append('<option value="0">-Seleccione-</option>');
@@ -217,13 +211,12 @@ function DropDownListAliados()
             }
         }
 
-      })
+    })
 
 }
 
 
-function ConsultarUsuariosDeAliadoYPerfil()
-{
+function ConsultarUsuariosDeAliadoYPerfil() {
     $.ajax({
         type: "GET",
         url: urlUsuariosConsulta,
@@ -258,13 +251,12 @@ function TraerPosiblesLineasDePerfil() {
             for (var i = 0; i < json.lineas.length; i++) {
                 $("#lineaSelectCreacion").append("<option value=" + json.lineas[i].Id + ">" + json.lineas[i].Nombre + "</option>");
             }
-             if (lineaUsuario != null)
-            {
-                 $("#lineaSelectCreacion").val(lineaUsuario);
-                 TraerPosiblesAccesosDeLinea();
-              
+            if (lineaUsuario != null) {
+                $("#lineaSelectCreacion").val(lineaUsuario);
+                TraerPosiblesAccesosDeLinea();
+
             }
-             LlenarAccesosDePerfilConsulta();
+            LlenarAccesosDePerfilConsulta();
         }
 
     });
@@ -289,7 +281,7 @@ function TraerPosiblesLineasDePerfilMasivo() {
             for (var i = 0; i < json.lineas.length; i++) {
                 $("#lineaSelectCreacionMasivo").append("<option value=" + json.lineas[i].Id + ">" + json.lineas[i].Nombre + "</option>");
             }
-           
+
         }
     });
 };
@@ -304,7 +296,7 @@ function TraerPosiblesAccesosDeLineaMasivo() {
         dataType: 'json',
         success: function (result) {
             var json = JSON.parse(result);
-           LlenarAccesosDeLineaMasivos(json);
+            LlenarAccesosDeLineaMasivos(json);
         }
     });
 };
@@ -324,30 +316,27 @@ function LlenarAccesosDeLineaMasivos(data) {
                                                ' <input type="checkbox" class="minimal" value="' + data.accesos[i].Id + '" onchange="SelectCrearAccesoMasivo(event);"  /> ' + data.accesos[i].Nombre +
                                     '</label>';
         }
-    } while ( i < data.accesos.length )
+    } while (i < data.accesos.length)
 }
 
 
 function GuardarTotalAccesosNuevos() {
-             var grid = $("#gridViewConsulta").data("kendoGrid");
-             var gridDataArray = $('#gridViewConsulta').data('kendoGrid')._data;
-            for (var i =1; i <= (grid.table.children().length+1); i++)
-            {
+    var grid = $("#gridViewConsulta").data("kendoGrid");
+    var gridDataArray = $('#gridViewConsulta').data('kendoGrid')._data;
+    for (var i = 1; i <= (grid.table.children().length + 1) ; i++) {
 
-                var row = grid.table.find("tr:nth-child("+i+")");
-                var checkbox = $(row).find(".checkControl");
-                if (checkbox.is(":checked")) {
- 
-                    if ($("#listaUsuariosMasivo").val() == "")
-                    {
-                        $("#listaUsuariosMasivo").val(gridDataArray[i - 1].Cedula);
-                    } else
-                         {
-                        $("#listaUsuariosMasivo").val($("#listaUsuariosMasivo").val() + "-" + gridDataArray[i-1].Cedula);
-                         }
-                }
+        var row = grid.table.find("tr:nth-child(" + i + ")");
+        var checkbox = $(row).find(".checkControl");
+        if (checkbox.is(":checked")) {
+
+            if ($("#listaUsuariosMasivo").val() == "") {
+                $("#listaUsuariosMasivo").val(gridDataArray[i - 1].Cedula);
+            } else {
+                $("#listaUsuariosMasivo").val($("#listaUsuariosMasivo").val() + "-" + gridDataArray[i - 1].Cedula);
             }
- 
+        }
+    }
+
 };
 
 
@@ -415,3 +404,126 @@ function CargarGridDefault(data) {
     });
 
 }
+
+var oFileIn;
+var cedulasArray;
+$(function () {
+    oFileIn = document.getElementById('input_accesos_masivo');
+    if (oFileIn.addEventListener) {
+        oFileIn.addEventListener('change', filePicked, false);
+    }
+});
+
+function filePicked(oEvent) {
+    // Get The File From The Input
+    var oFile = oEvent.target.files[0];
+    var sFilename = oFile.name;
+    // Create A File Reader HTML5
+    var reader = new FileReader();
+    // Ready The Event For When A File Gets Selected
+    reader.onload = function (e) {
+        var data = e.target.result;
+        var cfb = XLS.CFB.read(data, { type: 'binary' });
+        var wb = XLS.parse_xlscfb(cfb);
+        // Loop Over Each Sheet
+        wb.SheetNames.forEach(function (sheetName) {
+            // Obtain The Current Row As CSV
+            var sCSV = XLS.utils.make_csv(wb.Sheets[sheetName]);
+            var oJS = XLS.utils.sheet_to_row_object_array(wb.Sheets[sheetName]);
+            //$("#my_file_output").html(sCSV);
+
+            CargaInformacionGrid(oJS);
+
+        });
+    };
+
+    // Tell JS To Start Reading The File.. You could delay this if desired
+    reader.readAsBinaryString(oFile);
+}
+
+function CargaInformacionGrid(cedulas) {
+    cedulasArray = new Array();
+    for (var i = 0; i < cedulas.length; i++) {
+        cedulasArray.push(cedulas[i].CEDULA);
+    }
+    console.log(cedulasArray);
+    $.ajax({
+        type: "POST",
+        traditional: true,
+        url: urlConsultaUsuariosAccesosMasivos,
+        data: { cedulas: cedulasArray },
+        dataType: 'json',
+        success: function (result) {
+            var json = JSON.parse(result);
+            console.log(json);
+            FillGridViewResult(json.DataUsuario);
+            var grid = $("#infoCotejeadaGrid").data("kendoGrid");
+            var gridDataArray = $('#infoCotejeadaGrid').data('kendoGrid')._data;
+            for (var i = 1; i <= (grid.table.children().length + 1) ; i++) {
+                if ($("#listaUsuariosMasivo").val() == "") {
+                    $("#listaUsuariosMasivo").val(gridDataArray[i - 1].Cedula);
+                } else {
+                    $("#listaUsuariosMasivo").val($("#listaUsuariosMasivo").val() + "-" + gridDataArray[i - 1].Cedula);
+                }
+            }
+            //if (json.DataValid == true) {
+            //    $("#perfilUsuarios").show();
+            //} else {
+            //    $("#perfilUsuarios").hide();
+            //}
+        }
+    });
+}
+
+function FillGridViewResult(data) {
+
+
+    $("#infoCotejeadaGrid").kendoGrid({
+        autoBind: true,
+        toolbar: ["excel"],
+        excel: {
+            fileName: "Export.xlsx",
+        },
+        dataSource: {
+            data: data,
+            schema: {
+                model: {
+
+                }
+            },
+            pageSize: 10
+
+        },
+
+        scrollable: true,
+        filterable: {
+            extra: false,
+            operators: {
+                string: {
+
+                    eq: "Es igual a"
+                }
+            }
+        },
+        sortable: true,
+        pageable: {
+            refresh: true,
+            pageSizes: true,
+            buttonCount: 5
+        },
+        columns: [
+       { field: "Cedula", title: "Cedula", width: 80, headerAttributes: { style: "white-space: normal" } },
+     { field: "Nombre", title: "Nombre", width: 80, headerAttributes: { style: "white-space: normal" } },
+     { field: "Operacion", title: "Operacion", width: 70, headerAttributes: { style: "white-space: normal" } },
+         { field: "Cargo", title: "Cargo", width: 80, headerAttributes: { style: "white-space: normal" } },
+          { field: "Grupo", title: "Grupo", width: 80, headerAttributes: { style: "white-space: normal" } },
+           { field: "Canal", title: "Canal", width: 80, headerAttributes: { style: "white-space: normal" } },
+           { field: "NombreLinea", title: "Nombre Linea", width: 80, headerAttributes: { style: "white-space: normal" } },
+                  { field: "InfoRegistro", title: "Info Registro", width: 80, headerAttributes: { style: "white-space: normal" } }
+        ]
+
+
+    });
+
+}
+

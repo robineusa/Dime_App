@@ -9168,6 +9168,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/CampañaPorCedula", ReplyAction="http://tempuri.org/ILoginService/CampañaPorCedulaResponse")]
         System.Threading.Tasks.Task<string> CampañaPorCedulaAsync(int Cedula);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ListaDatosUsuariosDimePorCedulas", ReplyAction="http://tempuri.org/ILoginService/ListaDatosUsuariosDimePorCedulasResponse")]
+        System.Collections.Generic.List<Dime.WSD.UsuariosMasivoData> ListaDatosUsuariosDimePorCedulas(System.Collections.Generic.List<string> cedulas);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ListaDatosUsuariosDimePorCedulas", ReplyAction="http://tempuri.org/ILoginService/ListaDatosUsuariosDimePorCedulasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.UsuariosMasivoData>> ListaDatosUsuariosDimePorCedulasAsync(System.Collections.Generic.List<string> cedulas);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -9499,6 +9505,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<string> CampañaPorCedulaAsync(int Cedula) {
             return base.Channel.CampañaPorCedulaAsync(Cedula);
+        }
+        
+        public System.Collections.Generic.List<Dime.WSD.UsuariosMasivoData> ListaDatosUsuariosDimePorCedulas(System.Collections.Generic.List<string> cedulas) {
+            return base.Channel.ListaDatosUsuariosDimePorCedulas(cedulas);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.UsuariosMasivoData>> ListaDatosUsuariosDimePorCedulasAsync(System.Collections.Generic.List<string> cedulas) {
+            return base.Channel.ListaDatosUsuariosDimePorCedulasAsync(cedulas);
         }
     }
     
