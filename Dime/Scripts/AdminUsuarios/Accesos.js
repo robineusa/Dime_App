@@ -52,7 +52,8 @@
         $("#listaPermisosCrear").val("");
         $("#listaUsuariosMasivo").val("");
     }
-
+    $("#listaPermisosCrearMasivo").val("");
+    $("#listaUsuariosMasivo").val("");
 });
 
 function LlenarAccesosDePerfilConsulta() {
@@ -518,8 +519,8 @@ function FillGridViewResult(data) {
          { field: "Cargo", title: "Cargo", width: 80, headerAttributes: { style: "white-space: normal" } },
           { field: "Grupo", title: "Grupo", width: 80, headerAttributes: { style: "white-space: normal" } },
            { field: "Canal", title: "Canal", width: 80, headerAttributes: { style: "white-space: normal" } },
-           { field: "NombreLinea", title: "Nombre Linea", width: 80, headerAttributes: { style: "white-space: normal" } },
-                  { field: "InfoRegistro", title: "Info Registro", width: 80, headerAttributes: { style: "white-space: normal" } }
+           { field: "NombreLinea", title: "Nombre Linea", width: 80, headerAttributes: { style: "white-space: normal" } }
+                  /*{ field: "InfoRegistro", title: "Info Registro", width: 80, headerAttributes: { style: "white-space: normal" } }*/
         ]
 
 
