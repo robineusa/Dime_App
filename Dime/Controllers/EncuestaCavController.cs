@@ -27,7 +27,7 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult EncuestadeSatisfaccion(POMSolicitudes modelo)
         {
-            modelo.UsuarioSolicitud = Session["Usuario"].ToString();
+            modelo.UsuarioTransaccion = Session["Usuario"].ToString();
             PomService.RegistrarSolicitudPom(modelo);
             PomService.Close();
             return RedirectToAction("EncuestadeSatisfaccion", "EncuestaCav");
