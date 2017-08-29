@@ -3095,6 +3095,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Resources\Documents\Formato_Back_Elite.xls" />
+    <Content Include="Resources\Documents\Formato_Usuarios_Masivo.xls" />
     <None Include="Service References\WSD\configuration91.svcinfo" />
     <None Include="Service References\WSD\configuration.svcinfo" />
     <Content Include="Service References\WSD\Dime.WSD.ConsultaBlendingCampañaDestinoReturnViewModel.datasource">
