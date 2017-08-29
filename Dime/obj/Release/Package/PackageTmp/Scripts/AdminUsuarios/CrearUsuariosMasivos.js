@@ -35,7 +35,6 @@ function filePicked(oEvent) {
         });
     };
 
-    // Tell JS To Start Reading The File.. You could delay this if desired
     reader.readAsBinaryString(oFile);
 }
 

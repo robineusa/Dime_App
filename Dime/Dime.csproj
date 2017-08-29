@@ -3351,6 +3351,9 @@
     <Content Include="Views\BitacoraIncidentes\ListaDeAliadosActuales.cshtml" />
     <Content Include="Views\BitacoraIncidentes\ListaDeOperacionesActuales.cshtml" />
     <Content Include="Views\BitacoraIncidentes\AdministrarOperaciones.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\VisualizadordeIncidentes.cshtml" />
+    <Content Include="Views\EncuestaCav\EncuestadeSatisfaccion.cshtml" />
+    <Content Include="Views\EncuestaCav\ConsultaEncuestaCavs.cshtml" />
     <None Include="Service References\WSD\WebService.wsdl" />
     <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
@@ -3367,9 +3370,6 @@
     <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\BitacoraIncidentes\VisualizadordeIncidentes.cshtml" />
-    <Content Include="Views\EncuestaCav\EncuestadeSatisfaccion.cshtml" />
-    <Content Include="Views\EncuestaCav\ConsultaEncuestaCavs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

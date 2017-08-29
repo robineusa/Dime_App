@@ -326,7 +326,8 @@ function cargargrillaseg(data) {
 function ActualizarCasoSeg(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = 'Rentabilizacion?CuentaCliente=' + dataItem.CuentaCliente;
+    var seg = "Ture";
+    window.location.href = 'Rentabilizacion?CuentaCliente=' + dataItem.CuentaCliente + '&Seg=' + seg;
 }
 function LimpiarFecha() {
     var FechaSeguimiento = document.getElementById('CC_Fecha');
