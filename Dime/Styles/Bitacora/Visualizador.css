@@ -1,0 +1,169 @@
+﻿body {
+}
+.Rojo{
+	border-width:1px;
+	border-style:solid;
+	border-color:black;
+	padding:10px;width:70%; 
+	max-width:70%;
+	min-width:70%; 
+	float:left;border-radius:5px;
+}
+.Title{
+height:50px;
+padding-top:10px;
+background-color: #da0e08;
+width:90%; 
+color: white;
+max-width:90%;
+float:left;
+border-radius:5px;
+}
+.Inicio{
+	width:100%;
+	background-color:#CDCDCD;
+	text-align:center;
+	font-weight:800;
+	font-size:19px;
+	color:black;
+	font-family: sans-serif; 
+	font-weight: 600;
+	border-style:solid;
+	border-bottom-width:1px;
+	border-color:black;
+	border-top-width:0px;
+	border-left-width:0px;
+	border-right-width:0px;
+}
+.content1{
+	border-style:solid;
+	border-width:1px;
+	border-color:black; 
+	width:49%;
+	float:left;
+	margin-top:10px;
+	padding: -1px;
+	
+}
+.content1 table{
+	width: 100%;
+	border-style:solid;
+	border-color: transparent;
+	border-width: 1px;
+	border-left-width: 0px;
+	border-bottom-width: 0px;
+}
+.content1 table td {
+background-color: #da0e08;
+color: white;
+font-size: 18px;
+font-family: sans-serif;
+font-weight: 300;
+}
+
+.content1 table .dos{
+	font-size: 16px;
+	font-weight: 300;
+	text-transform: bold;
+	color: black;
+	background-color: blue;
+	padding-left: 5px; 
+
+}
+.SD{
+	width:100%;
+	background-color:#da0e08;
+	text-align:center;
+	font-weight:800;
+	font-size:19px;
+	color:white;
+	font-family: sans-serif; 
+	font-weight: 500;
+	border-style:solid;
+	border-bottom-width:1px;
+	border-color:black;
+	border-top-width:0px;
+	border-left-width:0px;
+	border-right-width:0px;
+}
+.DATOSD{
+	width:100%;
+	background-color:white;
+	text-align:center;
+	font-weight:800;
+	font-size:19px;
+	color:black;
+	font-family: sans-serif; 
+	font-weight: 500;
+	border-style:solid;
+	border-bottom-width:1px;
+	border-color:black;
+	border-top-width:0px;
+	border-left-width:0px;
+	border-right-width:0px;
+	text-align: center;
+}
+.content2{
+	border-style:solid;
+	border-width:1px;
+	border-color:black; 
+	width:49%;
+	float:left;
+	margin-top:10px;
+	padding: -1px;
+	margin-left: 2%;
+}
+.content2 table{
+	width: 100%;
+	border-style:solid;
+	border-color: transparent;
+	border-width: 1px;
+	border-left-width: 0px;
+	border-bottom-width: 0px;
+}
+.content2 table td {
+background-color: #da0e08;
+color: white;
+font-size: 18px;
+font-family: sans-serif;
+font-weight: 300;
+}
+
+.content2 table .dos{
+	font-size: 16px;
+	font-weight: 300;
+	text-transform: bold;
+	color: black;
+	background-color: blue;
+	padding-left: 5px; 
+
+}
+.TipoRed{
+	width:100%;
+	float:left;
+	margin-top:2px;
+	padding: -1px;
+	text-align: center;
+	font-style: bold;
+	font-size: 19px;
+	font-weight: 500;
+	color: #da0e08;
+}
+.Content3{
+	border-style:solid;
+	border-width:1px;
+	border-color:black; 
+	width:100%;
+	height: auto;
+	float:left;
+	margin-top:5px;
+	padding: -1px;
+	border-radius: 5px;
+	background-color: #EAEAEA;
+	padding: 10px;
+	text-align: justify-all;
+	color: black;
+	font-weight: 500;
+	font-family: sans-serif;
+	font-size: 11px;
+}

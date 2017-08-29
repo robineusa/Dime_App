@@ -3108,6 +3108,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Service References\WSD\WebService.disco" />
+    <Content Include="Styles\Bitacora\Visualizador.css" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
     <Content Include="Styles\Elements\General.css" />

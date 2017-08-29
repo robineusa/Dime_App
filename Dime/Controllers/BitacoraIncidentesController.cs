@@ -306,6 +306,16 @@ namespace Dime.Controllers
         {
             ViewModelBitacoraIncidentes modelo = new ViewModelBitacoraIncidentes();
             modelo.BIPBitacoraIncidentes = bitacoraservice.TraeIncidentePorId(Convert.ToInt32(IdRegistro));
+            
+            DateTime fecha = Convert.ToDateTime(modelo.BIPBitacoraIncidentes.FechaDeCierreTicket);
+            var horaa = fecha.TimeOfDay;
+            ViewBag.Fecha = fecha.ToShortDateString();
+            ViewBag.Hora = horaa;
+            ViewBag.Prioridad = modelo.BIPBitacoraIncidentes.Prioridad;
+            ViewBag.SD = modelo.BIPBitacoraIncidentes.CasoSD;
+            var Modulo = modelo.BIPBitacoraIncidentes.ModuloAfectado;
+            ViewBag.Plataforma = modelo.BIPBitacoraIncidentes.Herramienta + " " + Modulo;
+            @ViewBag.Afectacion = modelo.BIPBitacoraIncidentes.DescripcionAfectacion;
             return View(modelo);
         }
 
