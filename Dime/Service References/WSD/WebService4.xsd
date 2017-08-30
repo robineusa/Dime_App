@@ -5063,10 +5063,38 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListaDeAliadosAfectados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdRegistro" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeAliadosAfectadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q355="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDeAliadosAfectadosResult" nillable="true" type="q355:ArrayOfViewModelIncidentesOperaciones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogDeIncidentesPorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdRegistro" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LogDeIncidentesPorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q356="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="LogDeIncidentesPorIdResult" nillable="true" type="q356:ArrayOfBILBitacoraIncidentes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RegistrarSolicitudPom">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q355="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Solicitud" nillable="true" type="q355:POMSolicitudes" />
+        <xs:element xmlns:q357="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Solicitud" nillable="true" type="q357:POMSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -5100,7 +5128,7 @@
   <xs:element name="ListaSolicitudesPomResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q356="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSolicitudesPomResult" nillable="true" type="q356:ArrayOfPOMSolicitudes" />
+        <xs:element xmlns:q358="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSolicitudesPomResult" nillable="true" type="q358:ArrayOfPOMSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -10,7 +10,10 @@ namespace Telmexla.Servicios.DIME.Entity
     {
         #region Entidades
         BIPBitacoraIncidentes bIPBitacoraIncidentes;
+        BILBitacoraIncidentes bIPBitacoraIncidentesInicial;
+        BILBitacoraIncidentes bIPBitacoraIncidentesFinal;
         BILBitacoraIncidentes bILBitacoraIncidentes;
+       List<BILBitacoraIncidentes> listaBILBitacoraIncidentes;
         BIMGerencias bIMGerencias;
         BIMAliados bIMAliados;
         BIMOperaciones bIMOperaciones;
@@ -27,6 +30,9 @@ namespace Telmexla.Servicios.DIME.Entity
         {
             bILBitacoraIncidentes = new BILBitacoraIncidentes();
             bIPBitacoraIncidentes = new BIPBitacoraIncidentes();
+            bIPBitacoraIncidentesFinal = new BILBitacoraIncidentes();
+            bIPBitacoraIncidentesInicial = new BILBitacoraIncidentes();
+            listaBILBitacoraIncidentes = new List<BILBitacoraIncidentes>();
             bIMGerencias = new BIMGerencias();
             bIMAliados = new BIMAliados();
             bIMOperaciones = new BIMOperaciones();
@@ -154,6 +160,45 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 bIMHerramientas = value;
+            }
+        }
+
+        public List<BILBitacoraIncidentes> ListaBILBitacoraIncidentes
+        {
+            get
+            {
+                return listaBILBitacoraIncidentes;
+            }
+
+            set
+            {
+                listaBILBitacoraIncidentes = value;
+            }
+        }
+
+        public BILBitacoraIncidentes BIPBitacoraIncidentesInicial
+        {
+            get
+            {
+                return bIPBitacoraIncidentesInicial;
+            }
+
+            set
+            {
+                bIPBitacoraIncidentesInicial = value;
+            }
+        }
+
+        public BILBitacoraIncidentes BIPBitacoraIncidentesFinal
+        {
+            get
+            {
+                return bIPBitacoraIncidentesFinal;
+            }
+
+            set
+            {
+                bIPBitacoraIncidentesFinal = value;
             }
         }
 

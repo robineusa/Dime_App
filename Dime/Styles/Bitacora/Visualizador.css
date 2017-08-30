@@ -1,5 +1,4 @@
-﻿body {
-}
+﻿
 .Rojo{
 	border-width:1px;
 	border-style:solid;
@@ -129,12 +128,12 @@ font-family: sans-serif;
 font-weight: 300;
 }
 
-.content2 table .dos{
+.tres{
 	font-size: 16px;
 	font-weight: 300;
 	text-transform: bold;
 	color: black;
-	background-color: blue;
+	background-color: orange;
 	padding-left: 5px; 
 
 }
@@ -166,4 +165,218 @@ font-weight: 300;
 	font-weight: 500;
 	font-family: sans-serif;
 	font-size: 11px;
+}
+.Aliados{
+	padding:1px;  
+	background-color: none;
+	font-family: sans-serif;
+	font-size: 12px;
+	color: black;
+	margin-left: 0px;
+}
+/*informacion del cuadro naranja*/
+
+.Naranja{
+	border-width:1px;
+	border-style:solid;
+	border-color:black;
+	padding:10px;width:70%; 
+	max-width:70%;
+	min-width:70%; 
+	float:left;border-radius:5px;
+}
+.TitleNaranja{
+height:50px;
+padding-top:10px;
+background-color: #f39c12;
+width:90%; 
+color: white;
+max-width:90%;
+float:left;
+border-radius:5px;
+}
+.InicioNaranja{
+	width:100%;
+	background-color:#CDCDCD;
+	text-align:center;
+	font-weight:800;
+	font-size:19px;
+	color:black;
+	font-family: sans-serif; 
+	font-weight: 600;
+	border-style:solid;
+	border-bottom-width:1px;
+	border-color:black;
+	border-top-width:0px;
+	border-left-width:0px;
+	border-right-width:0px;
+}
+.content1Naranja{
+	border-style:solid;
+	border-width:1px;
+	border-color:black; 
+	width:49%;
+	float:left;
+	margin-top:10px;
+	padding: -1px;
+	
+}
+.content1Naranja table{
+	width: 100%;
+	border-style:solid;
+	border-color: transparent;
+	border-width: 1px;
+	border-left-width: 0px;
+	border-bottom-width: 0px;
+}
+.content1Naranja table td {
+background-color:#f39c12;
+color: white;
+font-size: 18px;
+font-family: sans-serif;
+font-weight: 300;
+}
+
+.content1Naranja table .dos{
+	font-size: 16px;
+	font-weight: 300;
+	text-transform: bold;
+	color: black;
+	background-color: blue;
+	padding-left: 5px; 
+
+}
+.SDNaranja{
+	width:100%;
+	background-color:#f39c12;
+	text-align:center;
+	font-weight:800;
+	font-size:19px;
+	color:white;
+	font-family: sans-serif; 
+	font-weight: 500;
+	border-style:solid;
+	border-bottom-width:1px;
+	border-color:black;
+	border-top-width:0px;
+	border-left-width:0px;
+	border-right-width:0px;
+}
+.DATOSDNaranja{
+	width:100%;
+	background-color:white;
+	text-align:center;
+	font-weight:800;
+	font-size:19px;
+	color:black;
+	font-family: sans-serif; 
+	font-weight: 500;
+	border-style:solid;
+	border-bottom-width:1px;
+	border-color:black;
+	border-top-width:0px;
+	border-left-width:0px;
+	border-right-width:0px;
+	text-align: center;
+}
+
+.contentnaranja{
+	border-style:solid;
+	border-width:1px;
+	border-color:black; 
+	width:49%;
+	float:left;
+	margin-top:10px;
+	padding: -1px;
+	margin-left: 2%;
+}
+.contentnaranja table{
+	width: 100%;
+	border-style:solid;
+	border-color: transparent;
+	border-width: 1px;
+	border-left-width: 0px;
+	border-bottom-width: 0px;
+}
+.contentnaranja table td {
+background-color: #f39c12;
+color: white;
+font-size: 18px;
+font-family: sans-serif;
+font-weight: 300;
+}
+.TipoRednaranja{
+	width:100%;
+	float:left;
+	margin-top:2px;
+	padding: -1px;
+	text-align: center;
+	font-style: bold;
+	font-size: 19px;
+	font-weight: 500;
+	color: #f39c12;
+}
+
+.Content3naranja{
+	border-style:solid;
+	border-width:1px;
+	border-color:black; 
+	width:100%;
+	height: auto;
+	float:left;
+	margin-top:5px;
+	padding: -1px;
+	border-radius: 5px;
+	padding: 10px;
+	text-align: justify-all;
+	color: black;
+	font-weight: 500;
+	font-family: sans-serif;
+	font-size: 11px;
+}
+.User{
+	width: 55%;
+	height: 20px;
+	color: black;
+	background-color: white;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #f39c12;
+	background-color: rgba(255, 140, 0, 0.4);
+	padding-left: 5PX;
+	color: gray;
+	border-radius: 2px;
+	padding-top: 2px;
+}
+.Comentarios{
+	background-color: #EAEAEA;
+	padding: 5px;
+	border-radius: 2px;
+	font-style: bold;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	padding-left: 50px;
+	font-family: sans-serif;
+	margin-top: 2px;
+	width: 100%;
+	height: 40px;
+}
+
+.Comentarios:before {
+ 	content: ''; 
+ 	background: url(../../Resources/Images/Layout/User_Orange.png) center no-repeat;
+    background-size: 32px 32px;
+ 	position: absolute;
+    width: 40px;
+	height: 40px;
+	font-size: 28px;
+	color: gray;
+	background-color: white;
+	border-style: solid;
+	border-color: white;
+	border-width: 2px;
+	border-radius: 50%;
+	margin-left: -60px;
+	margin-top: -5px;
+	
 }

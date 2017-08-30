@@ -305,19 +305,73 @@ namespace Dime.Controllers
         public ActionResult VisualizadordeIncidentes(string IdRegistro)
         {
             ViewModelBitacoraIncidentes modelo = new ViewModelBitacoraIncidentes();
-            modelo.BIPBitacoraIncidentes = bitacoraservice.TraeIncidentePorId(Convert.ToInt32(IdRegistro));
+            //modelo.BIPBitacoraIncidentes = bitacoraservice.TraeIncidentePorId(Convert.ToInt32(IdRegistro));
+            decimal Id = Convert.ToDecimal(IdRegistro);
+
+            var logBitacora = bitacoraservice.LogDeIncidentesPorId(Convert.ToInt32(Id));
+            modelo.ListaBILBitacoraIncidentes = logBitacora.Select(x => new BILBitacoraIncidentes
+            {
+                Id= x.Id,
+                IdRegistro= x.IdRegistro,
+                UsuarioCreacion= x.UsuarioCreacion,
+                NombreUsuarioCreacion=x.NombreUsuarioCreacion,
+                FechaDeRegistro=x.FechaDeRegistro,
+                FechaUltimaActualizacion = x.FechaUltimaActualizacion,
+                UsuarioUltimaActualizacion= x.UsuarioUltimaActualizacion,
+                NombreUsuarioUltimaActualizacion=x.NombreUsuarioUltimaActualizacion,
+                CasoSD=x.CasoSD,
+                IM = x.IM,
+                FechaDeCreacionTicket =x.FechaDeCreacionTicket,
+                FechaDeCierreTicket=x.FechaDeCierreTicket,
+                FechaDeCierreAfectacion = x.FechaDeCierreAfectacion,
+                Herramienta=x.Herramienta,
+                TipoDeFalla= x.TipoDeFalla,
+                ModuloAfectado = x.ModuloAfectado,
+                DescripcionAfectacion = x.DescripcionAfectacion,
+                Prioridad=x.Prioridad,
+                EscaladoA = x.EscaladoA,
+                CantidadUsuariosAfectados = x.CantidadUsuariosAfectados,
+                ComentariosDeCierre = x.ComentariosDeCierre,
+                EstadoDelCaso = x.EstadoDelCaso
+            }).ToList();
+
+            decimal maxId = modelo.ListaBILBitacoraIncidentes.Max(c => c.Id);
+            decimal minId = modelo.ListaBILBitacoraIncidentes.Min(c => c.Id);
             
-            DateTime fecha = Convert.ToDateTime(modelo.BIPBitacoraIncidentes.FechaDeCierreTicket);
+            modelo.BIPBitacoraIncidentesFinal = modelo.ListaBILBitacoraIncidentes.Find(c => c.Id == maxId);
+            modelo.BIPBitacoraIncidentesInicial = modelo.ListaBILBitacoraIncidentes.Find(c => c.Id == minId);
+            //datos para inicio y avance
+            DateTime fecha = Convert.ToDateTime(modelo.BIPBitacoraIncidentesFinal.FechaDeCreacionTicket);
             var horaa = fecha.TimeOfDay;
             ViewBag.Fecha = fecha.ToShortDateString();
             ViewBag.Hora = horaa;
-            ViewBag.Prioridad = modelo.BIPBitacoraIncidentes.Prioridad;
-            ViewBag.SD = modelo.BIPBitacoraIncidentes.CasoSD;
-            var Modulo = modelo.BIPBitacoraIncidentes.ModuloAfectado;
-            ViewBag.Plataforma = modelo.BIPBitacoraIncidentes.Herramienta + " " + Modulo;
-            @ViewBag.Afectacion = modelo.BIPBitacoraIncidentes.DescripcionAfectacion;
+            ViewBag.Prioridad = modelo.BIPBitacoraIncidentesFinal.Prioridad;
+            ViewBag.SD = modelo.BIPBitacoraIncidentesFinal.CasoSD;
+            var Modulo = modelo.BIPBitacoraIncidentesFinal.ModuloAfectado;
+            ViewBag.Plataforma = modelo.BIPBitacoraIncidentesFinal.Herramienta + " - " + Modulo;
+            ViewBag.Afectacion = modelo.BIPBitacoraIncidentesFinal.DescripcionAfectacion;
+            //datos para la parte de cierre
+            DateTime FechaCierretotal = Convert.ToDateTime(modelo.BIPBitacoraIncidentesFinal.FechaDeCreacionTicket);
+            var HoraCierre = FechaCierretotal.TimeOfDay;
+            ViewBag.FechaCierre = FechaCierretotal.ToShortDateString();
+            ViewBag.HoraCierre = HoraCierre;
+            ViewBag.ComentariosCierre = modelo.BIPBitacoraIncidentesFinal.ComentariosDeCierre;
+            
             return View(modelo);
         }
-
+        public JsonResult ListaAliadosAfectadosJson(string IdRegistro)
+        {
+            decimal Id = Convert.ToDecimal(IdRegistro);
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaDeAliadosAfectados(Id)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult LogDeIncidentesJson(string IdRegistro)
+        {
+            decimal Id = Convert.ToDecimal(IdRegistro);
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.LogDeIncidentesPorId(Id)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }

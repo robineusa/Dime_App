@@ -14675,6 +14675,18 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/TraeLogIncidentePorId", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/TraeLogIncidentePorIdResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes> TraeLogIncidentePorIdAsync(int IdRegistro);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeAliadosAfectados", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeAliadosAfectadosResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ViewModelIncidentesOperaciones> ListaDeAliadosAfectados(decimal IdRegistro);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeAliadosAfectados", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeAliadosAfectadosResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ViewModelIncidentesOperaciones>> ListaDeAliadosAfectadosAsync(decimal IdRegistro);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/LogDeIncidentesPorId", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/LogDeIncidentesPorIdResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes> LogDeIncidentesPorId(decimal IdRegistro);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/LogDeIncidentesPorId", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/LogDeIncidentesPorIdResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes>> LogDeIncidentesPorIdAsync(decimal IdRegistro);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -14950,6 +14962,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes> TraeLogIncidentePorIdAsync(int IdRegistro) {
             return base.Channel.TraeLogIncidentePorIdAsync(IdRegistro);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ViewModelIncidentesOperaciones> ListaDeAliadosAfectados(decimal IdRegistro) {
+            return base.Channel.ListaDeAliadosAfectados(IdRegistro);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ViewModelIncidentesOperaciones>> ListaDeAliadosAfectadosAsync(decimal IdRegistro) {
+            return base.Channel.ListaDeAliadosAfectadosAsync(IdRegistro);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes> LogDeIncidentesPorId(decimal IdRegistro) {
+            return base.Channel.LogDeIncidentesPorId(IdRegistro);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes>> LogDeIncidentesPorIdAsync(decimal IdRegistro) {
+            return base.Channel.LogDeIncidentesPorIdAsync(IdRegistro);
         }
     }
     

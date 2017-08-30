@@ -2298,6 +2298,7 @@
     <Content Include="Scripts\BitacoraIncidentes\ListaIncidentesEnGestion.js" />
     <Content Include="Scripts\BitacoraIncidentes\RegistrarOperacionesIncidente.js" />
     <Content Include="Scripts\BitacoraIncidentes\RegistrodeIncidentes.js" />
+    <Content Include="Scripts\BitacoraIncidentes\VisualizadordeIncidentes.js" />
     <Content Include="Scripts\BuenServicio\Visualizador_Imagenes.js" />
     <Content Include="Scripts\Calculadoras\Advanced.js" />
     <Content Include="Scripts\Calculadoras\Rentas.js" />

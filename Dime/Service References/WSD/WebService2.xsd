@@ -3157,6 +3157,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BILBitacoraIncidentes" nillable="true" type="tns:BILBitacoraIncidentes" />
+  <xs:complexType name="ArrayOfBILBitacoraIncidentes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BILBitacoraIncidentes" nillable="true" type="tns:BILBitacoraIncidentes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBILBitacoraIncidentes" nillable="true" type="tns:ArrayOfBILBitacoraIncidentes" />
   <xs:complexType name="POMSolicitudes">
     <xs:sequence>
       <xs:element minOccurs="0" name="CanalTransaccion" nillable="true" type="xs:string" />
