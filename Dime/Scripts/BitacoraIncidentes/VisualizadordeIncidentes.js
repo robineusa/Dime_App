@@ -26,11 +26,14 @@ function TraerListaDeAliadosAfectados() {
 };
 
 function LlenarAliadosAfectados(data) {
-    $("#ListaDeAliadosAfectadosTable").empty();
-    var table = document.getElementById("ListaDeAliadosAfectadosTable");
+    $("#ListaDeAliadosAfectadosTableRojo").empty();
+    var table = document.getElementById("ListaDeAliadosAfectadosTableRojo");
+    $("#ListaDeAliadosAfectadosTableNaranja").empty();
+    var table2 = document.getElementById("ListaDeAliadosAfectadosTableNaranja");
+    $("#ListaDeAliadosAfectadosTableVerde").empty();
+    var table3 = document.getElementById("ListaDeAliadosAfectadosTableVerde");
     var i = 0;
     do {
-
         var row = table.insertRow(0);
         for (var j = 0; j < 1 && i < data.length; j++, i++) {
             var newCell = row.insertCell(j);
@@ -40,6 +43,27 @@ function LlenarAliadosAfectados(data) {
 
     } while (i < data.length)
 
+    var p = 0;
+    do {
+        var row = table2.insertRow(0);
+        for (var j = 0; j < 1 && p < data.length; j++, p++) {
+            var newCell = row.insertCell(j);
+            newCell.style = "border-style:solid;border-color:black;background:none;border-width:1px;padding-left:5px;";
+            newCell.innerHTML = '  <label class="Aliados">' + data[p].NombreAliado + '</label>';
+        }
+
+    } while (p < data.length)
+
+    var s = 0;
+    do {
+        var row = table3.insertRow(0);
+        for (var j = 0; j < 1 && s < data.length; j++, s++) {
+            var newCell = row.insertCell(j);
+            newCell.style = "border-style:solid;border-color:black;background:none;border-width:1px;padding-left:5px;";
+            newCell.innerHTML = '  <label class="Aliados">' + data[s].NombreAliado + '</label>';
+        }
+
+    } while (s < data.length)
 }
 
 

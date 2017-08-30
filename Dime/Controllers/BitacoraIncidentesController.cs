@@ -351,7 +351,7 @@ namespace Dime.Controllers
             ViewBag.Plataforma = modelo.BIPBitacoraIncidentesFinal.Herramienta + " - " + Modulo;
             ViewBag.Afectacion = modelo.BIPBitacoraIncidentesFinal.DescripcionAfectacion;
             //datos para la parte de cierre
-            DateTime FechaCierretotal = Convert.ToDateTime(modelo.BIPBitacoraIncidentesFinal.FechaDeCreacionTicket);
+            DateTime FechaCierretotal = Convert.ToDateTime(modelo.BIPBitacoraIncidentesFinal.FechaDeCierreAfectacion);
             var HoraCierre = FechaCierretotal.TimeOfDay;
             ViewBag.FechaCierre = FechaCierretotal.ToShortDateString();
             ViewBag.HoraCierre = HoraCierre;
