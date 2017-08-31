@@ -146,6 +146,7 @@ namespace Dime.Controllers
             ViewModelBitacoraIncidentes modelo = new ViewModelBitacoraIncidentes();
             int Id = Convert.ToInt32(IdRegistro);
             modelo.BIPBitacoraIncidentes = bitacoraservice.TraeIncidentePorId(Id);
+            modelo.BIPBitacoraIncidentes.DescripcionAfectacion = "";
             return View(modelo);
         }
         [HttpPost]
@@ -357,6 +358,23 @@ namespace Dime.Controllers
             ViewBag.HoraCierre = HoraCierre;
             ViewBag.ComentariosCierre = modelo.BIPBitacoraIncidentesFinal.ComentariosDeCierre;
             
+            if (modelo.ListaBILBitacoraIncidentes.Count > 1)
+            {
+                if (modelo.BIPBitacoraIncidentesFinal.EstadoDelCaso == "FINALIZADO")
+                {
+                    ViewBag.TipoVisu = "VERDE";
+                }
+                else
+                {
+                    ViewBag.TipoVisu = "NARANJA";
+                }
+                
+            }
+            else
+            {
+                ViewBag.TipoVisu = "ROJO";
+            }
+
             return View(modelo);
         }
         public JsonResult ListaAliadosAfectadosJson(string IdRegistro)

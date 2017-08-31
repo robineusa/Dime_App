@@ -2,8 +2,27 @@
 $(document).ready(function () {
     TraerListaDeAliadosAfectados();
     TraerListaDelLogDeIncidentes();
+    ValidarTipoVisual();
 });
+function ValidarTipoVisual() {
+    document.getElementById('Rojo').style.display = 'none';
+    document.getElementById('Naranja').style.display = 'none';
+    document.getElementById('VerdeS').style.display = 'none';
+    var Tipo = $('#TipoV').val();
+    if (Tipo == "ROJO")
+    {
+        document.getElementById('Rojo').style.display = 'block';
+    }
+    else if (Tipo == "NARANJA")
+    {
+        document.getElementById('Naranja').style.display = 'block';
+    }
+    else if (Tipo == "VERDE")
+    {
+        document.getElementById('VerdeS').style.display = 'block';
+    }
 
+}
 
 function TraerListaDeAliadosAfectados() {
     var IdRegistro = $('#idRegistro').val()

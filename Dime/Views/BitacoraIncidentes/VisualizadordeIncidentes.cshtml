@@ -7,7 +7,10 @@
 @using (Html.BeginForm("VisualizadordeIncidentes", "BitacoraIncidentes", FormMethod.Post, new { id = "Registro", role = "form" }))
 {
     @Html.HiddenFor(m => m.BIPBitacoraIncidentesFinal.IdRegistro, new { @class = "form-control input-sm", @Id = "idRegistro" })
-    <div id="Rojo" style="display:none;" >
+
+    <input type="tel" name="@ViewBag.TipoVisu" value="@ViewBag.TipoVisu" id="TipoV" style="display:none;" />
+     
+    <div id="Rojo">
         <div class="row">
             <div class="col-md-9" style="width:100%; ">
                 <div class="alert" style="width:100%;height:auto; background-color:white;position:absolute;">
@@ -27,7 +30,7 @@
                             </div>
                             <table>
                                 <tr>
-                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px; padding-left:2px;">
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px; padding-left:2px;text-align:left;">
                                         <small>Fecha:</small>
                                     </td>
                                     <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;">
@@ -35,7 +38,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;">
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;text-align:left;">
                                         <small>Hora:</small>
                                     </td>
                                     <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;">
@@ -43,7 +46,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;">
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;text-align:left;">
                                         <small>Prioridad:</small>
                                     </td>
                                     <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;">
@@ -99,7 +102,8 @@
         </div>
     </div>
 
-    <div id="Naranja" style="display:none;" >
+    
+    <div id="Naranja">
         <div class="row">
             <div class="col-md-9" style="width:100%; ">
                 <div class="alert" style="width:100%;height:auto; background-color:white;position:absolute;">
@@ -119,7 +123,7 @@
                             </div>
                             <table>
                                 <tr>
-                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px; padding-left:2px;">
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px; padding-left:2px;text-align:left;">
                                         <small>Fecha:</small>
                                     </td>
                                     <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;">
@@ -127,7 +131,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;">
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;text-align:left;">
                                         <small>Hora:</small>
                                     </td>
                                     <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;">
@@ -135,7 +139,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;">
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;text-align:left;">
                                         <small>Prioridad:</small>
                                     </td>
                                     <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;">
@@ -198,6 +202,7 @@
         </div>
     </div>
 
+   
     <div id="VerdeS">
         <div class="row">
             <div class="col-md-9" style="width:100%; ">
@@ -213,31 +218,47 @@
                         </div>
                         <div style="border-style:solid;border-color:black;border-top-width:1px;border-bottom-width:0px; float:left;width:100%;margin-top:5px;"></div>
                         <div class="content1Verde">
-                            <div class="InicioVerde">
-                                <small>INICIO</small>
-                            </div>
                             <table>
                                 <tr>
-                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px; padding-left:2px;">
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:0px;background-color:white"></td>
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:1px;border-left-width:1px;border-right-width:1px; background-color:white;">
+                                        <div class="InicioVerde">
+                                            <small>INICIO</small>
+                                        </div>
+                                    </td>
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:1px;border-left-width:1px;border-right-width:1px; background-color:white;">
+                                        <div class="InicioVerde">
+                                            <small>FIN</small>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:1px;border-left-width:1px;border-right-width:1px; padding-left:2px;text-align:left;">
                                         <small>Fecha:</small>
                                     </td>
-                                    <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;">
+                                    <td style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;color:black;padding-left:2px;">
+                                        @ViewBag.Fecha
+                                    </td>
+                                    <td style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;color:black;padding-left:2px;">
                                         @ViewBag.FechaCierre
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;">
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:1px;border-right-width:1px;padding-left:2px;text-align:left;">
                                         <small>Hora:</small>
                                     </td>
-                                    <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;">
+                                    <td style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;color:black;padding-left:2px;">
+                                        @ViewBag.Hora
+                                    </td>
+                                    <td style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;color:black;padding-left:2px;">
                                         @ViewBag.HoraCierre
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;">
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:1px;border-right-width:1px;padding-left:2px;text-align:left;">
                                         <small>Prioridad:</small>
                                     </td>
-                                    <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;">
+                                    <td colspan="2" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;color:black;padding-left:2px;">
                                         <b>   @ViewBag.Prioridad</b>
                                     </td>
                                 </tr>
@@ -285,15 +306,19 @@
                             @ViewBag.ComentariosCierre
                         </div>
                     </div>
+                    
                 </div>
+               
             </div>
         </div>
+       
     </div>
+    
 }
         @section Scripts{
             <script>
                 var UrlAliadosAfectados = '@Url.Action("ListaAliadosAfectadosJson", "BitacoraIncidentes")';
                 var UrlLogDeIncident = '@Url.Action("LogDeIncidentesJson", "BitacoraIncidentes")';
             </script>
-            <script src="~/Scripts/BitacoraIncidentes/VisualizadordeIncidentes.js?1.0.3"></script>
+            <script src="~/Scripts/BitacoraIncidentes/VisualizadordeIncidentes.js?1.0.5"></script>
         }
