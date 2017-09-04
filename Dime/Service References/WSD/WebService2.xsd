@@ -3014,6 +3014,7 @@
       <xs:element minOccurs="0" name="Prioridad" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TipoDeFalla" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UsuarioCreacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestionando" type="xs:decimal" />
       <xs:element minOccurs="0" name="UsuarioUltimaActualizacion" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

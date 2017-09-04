@@ -27,13 +27,22 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult RegistrodeIncidentes(ViewModelBitacoraIncidentes modelo)
         {
-            modelo.BIPBitacoraIncidentes.UsuarioCreacion = Convert.ToString(Session["Usuario"].ToString());
-            modelo.BIPBitacoraIncidentes.NombreUsuarioCreacion = Session["NombreUsuario"].ToString();
-            modelo.BIPBitacoraIncidentes.UsuarioUltimaActualizacion = Convert.ToString(Session["Usuario"].ToString());
-            modelo.BIPBitacoraIncidentes.NombreUsuarioUltimaActualizacion = Session["NombreUsuario"].ToString();
-            decimal IdRegistrado = bitacoraservice.RegistrarIncidente(modelo.BIPBitacoraIncidentes);
-            
-            return RedirectToAction("RegistrarOperacionesIncidente", "BitacoraIncidentes", new { IdRegistro = IdRegistrado });
+            var result = bitacoraservice.ValidarSolicitudIncidente(modelo.BIPBitacoraIncidentes.CasoSD);
+            if (result == true) {
+                ViewBag.Validacio = "El Caso SD Ingresado ya se encuentra registrado en el sistema";
+                return View(modelo);
+            }
+            else
+            {
+
+                modelo.BIPBitacoraIncidentes.UsuarioCreacion = Convert.ToString(Session["Usuario"].ToString());
+                modelo.BIPBitacoraIncidentes.NombreUsuarioCreacion = Session["NombreUsuario"].ToString();
+                modelo.BIPBitacoraIncidentes.UsuarioUltimaActualizacion = Convert.ToString(Session["Usuario"].ToString());
+                modelo.BIPBitacoraIncidentes.NombreUsuarioUltimaActualizacion = Session["NombreUsuario"].ToString();
+                decimal IdRegistrado = bitacoraservice.RegistrarIncidente(modelo.BIPBitacoraIncidentes);
+
+                return RedirectToAction("RegistrarOperacionesIncidente", "BitacoraIncidentes", new { IdRegistro = IdRegistrado });
+            }
         }
         [HttpGet]
         public ActionResult RegistrarOperacionesIncidente(string IdRegistro)
@@ -136,7 +145,8 @@ namespace Dime.Controllers
         }
         [HttpGet]
         public JsonResult ListaIncidentesEnGestionJson() {
-            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaDeIncidentesEnGestion()), JsonRequestBehavior.AllowGet);
+            decimal Cedula = Convert.ToDecimal(Session["Usuario"].ToString());
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaDeIncidentesEnGestion(Cedula)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
@@ -144,10 +154,20 @@ namespace Dime.Controllers
         public ActionResult ActualizacionDeIncidentes(string IdRegistro)
         {
             ViewModelBitacoraIncidentes modelo = new ViewModelBitacoraIncidentes();
-            int Id = Convert.ToInt32(IdRegistro);
-            modelo.BIPBitacoraIncidentes = bitacoraservice.TraeIncidentePorId(Id);
-            modelo.BIPBitacoraIncidentes.DescripcionAfectacion = "";
-            return View(modelo);
+            decimal Id = Convert.ToInt32(IdRegistro);
+
+            var Validacion = bitacoraservice.TransaccionIncidenteEnGestion(Session["Usuario"].ToString(), Id);
+
+            if (Validacion == true)
+            {
+                return RedirectToAction("ListaIncidentesEnGestion");
+            }
+            else
+            {
+                modelo.BIPBitacoraIncidentes = bitacoraservice.TraeIncidentePorId(Convert.ToInt32(Id));
+                modelo.BIPBitacoraIncidentes.DescripcionAfectacion = "";
+                return View(modelo);
+            }
         }
         [HttpPost]
         public ActionResult ActualizacionDeIncidentes(ViewModelBitacoraIncidentes modelo)
@@ -390,6 +410,117 @@ namespace Dime.Controllers
             var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.LogDeIncidentesPorId(Id)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult HerramientasActuales()
+        {
+            return View();
+        }
+        [HttpGet]
+        public JsonResult HerramientasActualesAdminJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaDeHerramientasAdmin()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult AdministrarHerramientas(string IdHerramienta)
+        {
+            BIMHerramientas modelo = new BIMHerramientas();
+            int Id = Convert.ToInt32(IdHerramienta);
+            if (Id > 0)
+            {
+                modelo = bitacoraservice.HerramientasPorId(Id);
+
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        public ActionResult AdministrarHerramientas(BIMHerramientas modelo)
+        {
+            if (modelo.IdHerramienta > 0)
+            {
+                bitacoraservice.ActualizarHerramienta(modelo);
+            }
+            else
+            {
+                bitacoraservice.AgregarHerramienta(modelo);
+            }
+            return RedirectToAction("HerramientasActuales");
+        }
+        [HttpGet]
+        public ActionResult PrioridadesActuales()
+        {
+            return View();
+        }
+        [HttpGet]
+        public JsonResult PrioridadesActualesAdminJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaDePrioridadesAdmin()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult AdministrarPrioridades(string IdPrioridad)
+        {
+            BIMPrioridades modelo = new BIMPrioridades();
+            int Id = Convert.ToInt32(IdPrioridad);
+            if (Id > 0)
+            {
+                modelo = bitacoraservice.PrioridadesPorId(Id);
+
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        public ActionResult AdministrarPrioridades(BIMPrioridades modelo)
+        {
+            if (modelo.IdPrioridad > 0)
+            {
+                bitacoraservice.ActualizarPrioridad(modelo);
+            }
+            else
+            {
+                bitacoraservice.AgregarPrioridad(modelo);
+            }
+            return RedirectToAction("PrioridadesActuales");
+        }
+        [HttpGet]
+        public ActionResult TipodeFallasActuales()
+        {
+            return View();
+        }
+        [HttpGet]
+        public JsonResult TipodeFallasActualesAdminJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ListaTiposDeFallasAdmin()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult AdministrarTiposDeFalla(string IdTipoFalla)
+        {
+            BIMTipoFalla modelo = new BIMTipoFalla();
+            int Id = Convert.ToInt32(IdTipoFalla);
+            if (Id > 0)
+            {
+                modelo = bitacoraservice.TipoFallaPorId(Id);
+
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        public ActionResult AdministrarTiposDeFalla(BIMTipoFalla modelo)
+        {
+            if (modelo.IdTipoFalla > 0)
+            {
+                bitacoraservice.ActualizarTipoFalla(modelo);
+            }
+            else
+            {
+                bitacoraservice.AgregarTipoFalla(modelo);
+            }
+            return RedirectToAction("TipodeFallasActuales");
         }
     }
 }

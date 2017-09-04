@@ -1,0 +1,60 @@
+﻿@model Telmexla.Servicios.DIME.Entity.BIMPrioridades
+@{ ViewBag.Title = "Registro y Actualización de Prioridades";
+    ViewBag.SubTitle = "Procesos - COS";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("AdministrarPrioridades", "BitacoraIncidentes", FormMethod.Post, new { id = "Prioridades", role = "form" }))
+{ 
+
+    <div class="box box-danger">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-xs-12">
+
+                </div>
+            </div>
+        </div>
+        <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
+            <i class="fa fa-info-circle"></i> Información de la Prioridad
+        </h2>
+        <div id="ARBOL" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+            <br />
+            <table>
+                <tr>
+                    <td style="padding-left:1px; width:200px;">
+                        <small>Id Prioridad</small>
+                        @Html.TextBoxFor(m => m.IdPrioridad , new { @class = "form-control input-sm", @readonly = "true", @Id = "IdHerramienta" })
+                    </td>
+                    <td style="padding-left:1px; width:280px;">
+                        <small>Prioridad</small>
+                        @Html.TextBoxFor(m => m.Prioridad, new { @class = "form-control input-sm", @Id = "NombreHerramienta" })
+                    </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Estado</small>
+                        @Html.DropDownListFor(m => m.Estado, new List<SelectListItem> {new SelectListItem{Text="ACTIVO", Value="ACTIVO" },
+                                                                                             new SelectListItem{Text="INACTIVO", Value="INACTIVO" }},
+                                                                                                              "--SELECCIONE--", new { @class = "form-control input-sm" })
+                    </td>
+
+                </tr>
+
+            </table>
+        </div>
+        <br />
+    </div>
+
+    <div class="box box-danger">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-xs-12">
+
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;  margin-left:1%;">Guardar</button><br />
+
+    </div>
+}
+

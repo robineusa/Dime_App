@@ -24,5 +24,6 @@ namespace Telmexla.Servicios.DIME.Entity
         public decimal CantidadUsuariosAfectados { get; set; }
         public string ComentariosDeCierre { get; set; }
         public string EstadoDelCaso { get; set; }
+        public decimal UsuarioGestionando { get; set; }
     }
 }
