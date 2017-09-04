@@ -2292,12 +2292,16 @@
     <Content Include="Scripts\BitacoraIncidentes\ActualizacionDeIncidentes.js" />
     <Content Include="Scripts\BitacoraIncidentes\ActualizarOperacionesIncidente.js" />
     <Content Include="Scripts\BitacoraIncidentes\AdministrarOperaciones.js" />
+    <Content Include="Scripts\BitacoraIncidentes\ConsultaDeIncidentes.js" />
+    <Content Include="Scripts\BitacoraIncidentes\HerramientasActuales.js" />
     <Content Include="Scripts\BitacoraIncidentes\ListaDeAliadosActuales.js" />
     <Content Include="Scripts\BitacoraIncidentes\ListaDeGerenciasActuales.js" />
     <Content Include="Scripts\BitacoraIncidentes\ListaDeOperacionesActuales.js" />
     <Content Include="Scripts\BitacoraIncidentes\ListaIncidentesEnGestion.js" />
+    <Content Include="Scripts\BitacoraIncidentes\PrioridadesActuales.js" />
     <Content Include="Scripts\BitacoraIncidentes\RegistrarOperacionesIncidente.js" />
     <Content Include="Scripts\BitacoraIncidentes\RegistrodeIncidentes.js" />
+    <Content Include="Scripts\BitacoraIncidentes\TipodeFallasActuales.js" />
     <Content Include="Scripts\BitacoraIncidentes\VisualizadordeIncidentes.js" />
     <Content Include="Scripts\BuenServicio\Visualizador_Imagenes.js" />
     <Content Include="Scripts\Calculadoras\Advanced.js" />
@@ -3373,6 +3377,13 @@
     <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\BitacoraIncidentes\HerramientasActuales.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\AdministrarHerramientas.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\PrioridadesActuales.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\AdministrarPrioridades.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\TipodeFallasActuales.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\AdministrarTiposDeFalla.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\ConsultaDeIncidentes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

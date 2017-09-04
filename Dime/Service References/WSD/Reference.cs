@@ -14593,10 +14593,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task EliminarOpoeracionDeIncidenteAsync(int Id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeIncidentesEnGestion", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeIncidentesEnGestionResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> ListaDeIncidentesEnGestion();
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> ListaDeIncidentesEnGestion(decimal Cedula);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeIncidentesEnGestion", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeIncidentesEnGestionResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes>> ListaDeIncidentesEnGestionAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes>> ListaDeIncidentesEnGestionAsync(decimal Cedula);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/AgregarAliado", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/AgregarAliadoResponse")]
         void AgregarAliado(Telmexla.Servicios.DIME.Entity.BIMAliados AliadoNuevo);
@@ -14687,6 +14687,118 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/LogDeIncidentesPorId", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/LogDeIncidentesPorIdResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes>> LogDeIncidentesPorIdAsync(decimal IdRegistro);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ValidarSolicitudIncidente", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ValidarSolicitudIncidenteResponse")]
+        bool ValidarSolicitudIncidente(string CasoSD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ValidarSolicitudIncidente", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ValidarSolicitudIncidenteResponse")]
+        System.Threading.Tasks.Task<bool> ValidarSolicitudIncidenteAsync(string CasoSD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/TransaccionIncidenteEnGestion", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/TransaccionIncidenteEnGestionRespon" +
+            "se")]
+        bool TransaccionIncidenteEnGestion(string Cedula, decimal IdRegistro);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/TransaccionIncidenteEnGestion", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/TransaccionIncidenteEnGestionRespon" +
+            "se")]
+        System.Threading.Tasks.Task<bool> TransaccionIncidenteEnGestionAsync(string Cedula, decimal IdRegistro);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/HerramientasPorId", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/HerramientasPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.BIMHerramientas HerramientasPorId(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/HerramientasPorId", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/HerramientasPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BIMHerramientas> HerramientasPorIdAsync(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/PrioridadesPorId", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/PrioridadesPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.BIMPrioridades PrioridadesPorId(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/PrioridadesPorId", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/PrioridadesPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BIMPrioridades> PrioridadesPorIdAsync(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/TipoFallaPorId", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/TipoFallaPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.BIMTipoFalla TipoFallaPorId(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/TipoFallaPorId", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/TipoFallaPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BIMTipoFalla> TipoFallaPorIdAsync(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/AgregarHerramienta", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/AgregarHerramientaResponse")]
+        void AgregarHerramienta(Telmexla.Servicios.DIME.Entity.BIMHerramientas HerramientaNueva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/AgregarHerramienta", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/AgregarHerramientaResponse")]
+        System.Threading.Tasks.Task AgregarHerramientaAsync(Telmexla.Servicios.DIME.Entity.BIMHerramientas HerramientaNueva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ActualizarHerramienta", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ActualizarHerramientaResponse")]
+        void ActualizarHerramienta(Telmexla.Servicios.DIME.Entity.BIMHerramientas Herramienta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ActualizarHerramienta", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ActualizarHerramientaResponse")]
+        System.Threading.Tasks.Task ActualizarHerramientaAsync(Telmexla.Servicios.DIME.Entity.BIMHerramientas Herramienta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/AgregarPrioridad", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/AgregarPrioridadResponse")]
+        void AgregarPrioridad(Telmexla.Servicios.DIME.Entity.BIMPrioridades PrioridadNueva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/AgregarPrioridad", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/AgregarPrioridadResponse")]
+        System.Threading.Tasks.Task AgregarPrioridadAsync(Telmexla.Servicios.DIME.Entity.BIMPrioridades PrioridadNueva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ActualizarPrioridad", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ActualizarPrioridadResponse")]
+        void ActualizarPrioridad(Telmexla.Servicios.DIME.Entity.BIMPrioridades Prioridad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ActualizarPrioridad", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ActualizarPrioridadResponse")]
+        System.Threading.Tasks.Task ActualizarPrioridadAsync(Telmexla.Servicios.DIME.Entity.BIMPrioridades Prioridad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/AgregarTipoFalla", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/AgregarTipoFallaResponse")]
+        void AgregarTipoFalla(Telmexla.Servicios.DIME.Entity.BIMTipoFalla TipoFallaNueva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/AgregarTipoFalla", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/AgregarTipoFallaResponse")]
+        System.Threading.Tasks.Task AgregarTipoFallaAsync(Telmexla.Servicios.DIME.Entity.BIMTipoFalla TipoFallaNueva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ActualizarTipoFalla", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ActualizarTipoFallaResponse")]
+        void ActualizarTipoFalla(Telmexla.Servicios.DIME.Entity.BIMTipoFalla TipoFalla);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ActualizarTipoFalla", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ActualizarTipoFallaResponse")]
+        System.Threading.Tasks.Task ActualizarTipoFallaAsync(Telmexla.Servicios.DIME.Entity.BIMTipoFalla TipoFalla);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeHerramientasAdmin", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeHerramientasAdminResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMHerramientas> ListaDeHerramientasAdmin();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDeHerramientasAdmin", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDeHerramientasAdminResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMHerramientas>> ListaDeHerramientasAdminAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaTiposDeFallasAdmin", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaTiposDeFallasAdminResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMTipoFalla> ListaTiposDeFallasAdmin();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaTiposDeFallasAdmin", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaTiposDeFallasAdminResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMTipoFalla>> ListaTiposDeFallasAdminAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDePrioridadesAdmin", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDePrioridadesAdminResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMPrioridades> ListaDePrioridadesAdmin();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDePrioridadesAdmin", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDePrioridadesAdminResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMPrioridades>> ListaDePrioridadesAdminAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/TraeIncidentePorCasoSD", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/TraeIncidentePorCasoSDResponse")]
+        Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes TraeIncidentePorCasoSD(string CasoSD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/TraeIncidentePorCasoSD", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/TraeIncidentePorCasoSDResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> TraeIncidentePorCasoSDAsync(string CasoSD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ConsultaPrincipalIncidentes", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ConsultaPrincipalIncidentesResponse" +
+            "")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> ConsultaPrincipalIncidentes(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ConsultaPrincipalIncidentes", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ConsultaPrincipalIncidentesResponse" +
+            "")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes>> ConsultaPrincipalIncidentesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ConsultaLogIncidentes", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ConsultaLogIncidentesResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes> ConsultaLogIncidentes(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ConsultaLogIncidentes", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ConsultaLogIncidentesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes>> ConsultaLogIncidentesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ConsultaDeIncidentePorSD", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ConsultaDeIncidentePorSDResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> ConsultaDeIncidentePorSD(string SD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ConsultaDeIncidentePorSD", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ConsultaDeIncidentePorSDResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes>> ConsultaDeIncidentePorSDAsync(string SD);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -14852,12 +14964,12 @@ namespace Dime.WSD {
             return base.Channel.EliminarOpoeracionDeIncidenteAsync(Id);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> ListaDeIncidentesEnGestion() {
-            return base.Channel.ListaDeIncidentesEnGestion();
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> ListaDeIncidentesEnGestion(decimal Cedula) {
+            return base.Channel.ListaDeIncidentesEnGestion(Cedula);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes>> ListaDeIncidentesEnGestionAsync() {
-            return base.Channel.ListaDeIncidentesEnGestionAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes>> ListaDeIncidentesEnGestionAsync(decimal Cedula) {
+            return base.Channel.ListaDeIncidentesEnGestionAsync(Cedula);
         }
         
         public void AgregarAliado(Telmexla.Servicios.DIME.Entity.BIMAliados AliadoNuevo) {
@@ -14978,6 +15090,150 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes>> LogDeIncidentesPorIdAsync(decimal IdRegistro) {
             return base.Channel.LogDeIncidentesPorIdAsync(IdRegistro);
+        }
+        
+        public bool ValidarSolicitudIncidente(string CasoSD) {
+            return base.Channel.ValidarSolicitudIncidente(CasoSD);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarSolicitudIncidenteAsync(string CasoSD) {
+            return base.Channel.ValidarSolicitudIncidenteAsync(CasoSD);
+        }
+        
+        public bool TransaccionIncidenteEnGestion(string Cedula, decimal IdRegistro) {
+            return base.Channel.TransaccionIncidenteEnGestion(Cedula, IdRegistro);
+        }
+        
+        public System.Threading.Tasks.Task<bool> TransaccionIncidenteEnGestionAsync(string Cedula, decimal IdRegistro) {
+            return base.Channel.TransaccionIncidenteEnGestionAsync(Cedula, IdRegistro);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.BIMHerramientas HerramientasPorId(int Id) {
+            return base.Channel.HerramientasPorId(Id);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BIMHerramientas> HerramientasPorIdAsync(int Id) {
+            return base.Channel.HerramientasPorIdAsync(Id);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.BIMPrioridades PrioridadesPorId(int Id) {
+            return base.Channel.PrioridadesPorId(Id);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BIMPrioridades> PrioridadesPorIdAsync(int Id) {
+            return base.Channel.PrioridadesPorIdAsync(Id);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.BIMTipoFalla TipoFallaPorId(int Id) {
+            return base.Channel.TipoFallaPorId(Id);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BIMTipoFalla> TipoFallaPorIdAsync(int Id) {
+            return base.Channel.TipoFallaPorIdAsync(Id);
+        }
+        
+        public void AgregarHerramienta(Telmexla.Servicios.DIME.Entity.BIMHerramientas HerramientaNueva) {
+            base.Channel.AgregarHerramienta(HerramientaNueva);
+        }
+        
+        public System.Threading.Tasks.Task AgregarHerramientaAsync(Telmexla.Servicios.DIME.Entity.BIMHerramientas HerramientaNueva) {
+            return base.Channel.AgregarHerramientaAsync(HerramientaNueva);
+        }
+        
+        public void ActualizarHerramienta(Telmexla.Servicios.DIME.Entity.BIMHerramientas Herramienta) {
+            base.Channel.ActualizarHerramienta(Herramienta);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarHerramientaAsync(Telmexla.Servicios.DIME.Entity.BIMHerramientas Herramienta) {
+            return base.Channel.ActualizarHerramientaAsync(Herramienta);
+        }
+        
+        public void AgregarPrioridad(Telmexla.Servicios.DIME.Entity.BIMPrioridades PrioridadNueva) {
+            base.Channel.AgregarPrioridad(PrioridadNueva);
+        }
+        
+        public System.Threading.Tasks.Task AgregarPrioridadAsync(Telmexla.Servicios.DIME.Entity.BIMPrioridades PrioridadNueva) {
+            return base.Channel.AgregarPrioridadAsync(PrioridadNueva);
+        }
+        
+        public void ActualizarPrioridad(Telmexla.Servicios.DIME.Entity.BIMPrioridades Prioridad) {
+            base.Channel.ActualizarPrioridad(Prioridad);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarPrioridadAsync(Telmexla.Servicios.DIME.Entity.BIMPrioridades Prioridad) {
+            return base.Channel.ActualizarPrioridadAsync(Prioridad);
+        }
+        
+        public void AgregarTipoFalla(Telmexla.Servicios.DIME.Entity.BIMTipoFalla TipoFallaNueva) {
+            base.Channel.AgregarTipoFalla(TipoFallaNueva);
+        }
+        
+        public System.Threading.Tasks.Task AgregarTipoFallaAsync(Telmexla.Servicios.DIME.Entity.BIMTipoFalla TipoFallaNueva) {
+            return base.Channel.AgregarTipoFallaAsync(TipoFallaNueva);
+        }
+        
+        public void ActualizarTipoFalla(Telmexla.Servicios.DIME.Entity.BIMTipoFalla TipoFalla) {
+            base.Channel.ActualizarTipoFalla(TipoFalla);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarTipoFallaAsync(Telmexla.Servicios.DIME.Entity.BIMTipoFalla TipoFalla) {
+            return base.Channel.ActualizarTipoFallaAsync(TipoFalla);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMHerramientas> ListaDeHerramientasAdmin() {
+            return base.Channel.ListaDeHerramientasAdmin();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMHerramientas>> ListaDeHerramientasAdminAsync() {
+            return base.Channel.ListaDeHerramientasAdminAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMTipoFalla> ListaTiposDeFallasAdmin() {
+            return base.Channel.ListaTiposDeFallasAdmin();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMTipoFalla>> ListaTiposDeFallasAdminAsync() {
+            return base.Channel.ListaTiposDeFallasAdminAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMPrioridades> ListaDePrioridadesAdmin() {
+            return base.Channel.ListaDePrioridadesAdmin();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMPrioridades>> ListaDePrioridadesAdminAsync() {
+            return base.Channel.ListaDePrioridadesAdminAsync();
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes TraeIncidentePorCasoSD(string CasoSD) {
+            return base.Channel.TraeIncidentePorCasoSD(CasoSD);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> TraeIncidentePorCasoSDAsync(string CasoSD) {
+            return base.Channel.TraeIncidentePorCasoSDAsync(CasoSD);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> ConsultaPrincipalIncidentes(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaPrincipalIncidentes(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes>> ConsultaPrincipalIncidentesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaPrincipalIncidentesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes> ConsultaLogIncidentes(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaLogIncidentes(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes>> ConsultaLogIncidentesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaLogIncidentesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> ConsultaDeIncidentePorSD(string SD) {
+            return base.Channel.ConsultaDeIncidentePorSD(SD);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes>> ConsultaDeIncidentePorSDAsync(string SD) {
+            return base.Channel.ConsultaDeIncidentePorSDAsync(SD);
         }
     }
     
