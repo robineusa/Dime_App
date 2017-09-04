@@ -54,13 +54,14 @@ function cargargrilla(data) {
 
     });
 }
-function finalizaconsulta() {
-    document.getElementById('dataLoading').style.display = 'none';
 
-}
 function ActualizarProceso(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
     window.location.href = 'AdministrarDistrubucionBackElite?Id=' + dataItem.Id;
 
-};
+}
+function finalizaconsulta() {
+    document.getElementById('dataLoading').style.display = 'none';
+
+}

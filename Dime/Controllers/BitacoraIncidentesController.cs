@@ -522,5 +522,16 @@ namespace Dime.Controllers
             }
             return RedirectToAction("TipodeFallasActuales");
         }
+        [HttpGet]
+        public ActionResult ConsultaDeIncidentes() {
+        return View();
+        }
+        [HttpGet]
+        public JsonResult TraerIncidentePorSDJson(string CasoSD)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ConsultaDeIncidentePorSD(CasoSD)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }

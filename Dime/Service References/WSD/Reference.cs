@@ -14773,6 +14773,32 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ListaDePrioridadesAdmin", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ListaDePrioridadesAdminResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMPrioridades>> ListaDePrioridadesAdminAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/TraeIncidentePorCasoSD", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/TraeIncidentePorCasoSDResponse")]
+        Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes TraeIncidentePorCasoSD(string CasoSD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/TraeIncidentePorCasoSD", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/TraeIncidentePorCasoSDResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> TraeIncidentePorCasoSDAsync(string CasoSD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ConsultaPrincipalIncidentes", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ConsultaPrincipalIncidentesResponse" +
+            "")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> ConsultaPrincipalIncidentes(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ConsultaPrincipalIncidentes", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ConsultaPrincipalIncidentesResponse" +
+            "")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes>> ConsultaPrincipalIncidentesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ConsultaLogIncidentes", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ConsultaLogIncidentesResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes> ConsultaLogIncidentes(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ConsultaLogIncidentes", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ConsultaLogIncidentesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes>> ConsultaLogIncidentesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ConsultaDeIncidentePorSD", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ConsultaDeIncidentePorSDResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> ConsultaDeIncidentePorSD(string SD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBitacoraIncidentesService/ConsultaDeIncidentePorSD", ReplyAction="http://tempuri.org/IBitacoraIncidentesService/ConsultaDeIncidentePorSDResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes>> ConsultaDeIncidentePorSDAsync(string SD);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -15176,6 +15202,38 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIMPrioridades>> ListaDePrioridadesAdminAsync() {
             return base.Channel.ListaDePrioridadesAdminAsync();
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes TraeIncidentePorCasoSD(string CasoSD) {
+            return base.Channel.TraeIncidentePorCasoSD(CasoSD);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> TraeIncidentePorCasoSDAsync(string CasoSD) {
+            return base.Channel.TraeIncidentePorCasoSDAsync(CasoSD);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> ConsultaPrincipalIncidentes(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaPrincipalIncidentes(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes>> ConsultaPrincipalIncidentesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaPrincipalIncidentesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes> ConsultaLogIncidentes(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaLogIncidentes(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes>> ConsultaLogIncidentesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaLogIncidentesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes> ConsultaDeIncidentePorSD(string SD) {
+            return base.Channel.ConsultaDeIncidentePorSD(SD);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BIPBitacoraIncidentes>> ConsultaDeIncidentePorSDAsync(string SD) {
+            return base.Channel.ConsultaDeIncidentePorSDAsync(SD);
         }
     }
     

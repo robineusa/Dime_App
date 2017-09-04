@@ -5272,10 +5272,68 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="TraeIncidentePorCasoSD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CasoSD" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraeIncidentePorCasoSDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q369="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraeIncidentePorCasoSDResult" nillable="true" type="q369:BIPBitacoraIncidentes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaPrincipalIncidentes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaPrincipalIncidentesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q370="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaPrincipalIncidentesResult" nillable="true" type="q370:ArrayOfBIPBitacoraIncidentes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaLogIncidentes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaLogIncidentesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q371="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaLogIncidentesResult" nillable="true" type="q371:ArrayOfBILBitacoraIncidentes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaDeIncidentePorSD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SD" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaDeIncidentePorSDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q372="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaDeIncidentePorSDResult" nillable="true" type="q372:ArrayOfBIPBitacoraIncidentes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RegistrarSolicitudPom">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q369="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Solicitud" nillable="true" type="q369:POMSolicitudes" />
+        <xs:element xmlns:q373="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Solicitud" nillable="true" type="q373:POMSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -5309,7 +5367,7 @@
   <xs:element name="ListaSolicitudesPomResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q370="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSolicitudesPomResult" nillable="true" type="q370:ArrayOfPOMSolicitudes" />
+        <xs:element xmlns:q374="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSolicitudesPomResult" nillable="true" type="q374:ArrayOfPOMSolicitudes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
