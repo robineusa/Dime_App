@@ -256,8 +256,8 @@
                             </table>
                             
     
-                            @Html.TextBoxFor(m => m.PermisosOtorgadosMasivos, new { @style = "display:none", id = "listaPermisosCrearMasivo" })
-                            @Html.TextBoxFor(m => m.UsuariosACambiarMasivo, new { @style = "display:none", id = "listaUsuariosMasivo" })
+                            @Html.TextBoxFor(m => m.PermisosOtorgadosMasivos, new { @style = "display:block", id = "listaPermisosCrearMasivo" })
+                            @Html.TextBoxFor(m => m.UsuariosACambiarMasivo, new { @style = "display:block", id = "listaUsuariosMasivo" })
                         </div>
                     </div>
                     <br />
@@ -287,7 +287,7 @@
 
             //$("#cedulaCreacion").val(0);
         </script>
-        <script src="~/Scripts/AdminUsuarios/Accesos.js?1.2.2"></script>
+        <script src="~/Scripts/AdminUsuarios/Accesos.js?1.2.4"></script>
         <script src="~/Scripts/AdminUsuarios/xls.js"></script>
     }
 }
