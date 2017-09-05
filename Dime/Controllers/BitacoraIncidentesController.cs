@@ -533,5 +533,10 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        [HttpGet]
+        public ActionResult ConsultaIncidentesGeneral()
+        {
+            return View();
+        }
     }
 }
