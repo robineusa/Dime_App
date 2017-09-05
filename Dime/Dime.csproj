@@ -2293,6 +2293,8 @@
     <Content Include="Scripts\BitacoraIncidentes\ActualizarOperacionesIncidente.js" />
     <Content Include="Scripts\BitacoraIncidentes\AdministrarOperaciones.js" />
     <Content Include="Scripts\BitacoraIncidentes\ConsultaDeIncidentes.js" />
+    <Content Include="Scripts\BitacoraIncidentes\ConsultaIncidentesGeneral.js" />
+    <Content Include="Scripts\BitacoraIncidentes\ConsultaIncidentesLog.js" />
     <Content Include="Scripts\BitacoraIncidentes\HerramientasActuales.js" />
     <Content Include="Scripts\BitacoraIncidentes\ListaDeAliadosActuales.js" />
     <Content Include="Scripts\BitacoraIncidentes\ListaDeGerenciasActuales.js" />
@@ -3384,6 +3386,8 @@
     <Content Include="Views\BitacoraIncidentes\TipodeFallasActuales.cshtml" />
     <Content Include="Views\BitacoraIncidentes\AdministrarTiposDeFalla.cshtml" />
     <Content Include="Views\BitacoraIncidentes\ConsultaDeIncidentes.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\ConsultaIncidentesGeneral.cshtml" />
+    <Content Include="Views\BitacoraIncidentes\ConsultaIncidentesLog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

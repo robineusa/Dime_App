@@ -538,5 +538,26 @@ namespace Dime.Controllers
         {
             return View();
         }
+        public JsonResult ConsultaIncidentesGeneralJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ConsultaPrincipalIncidentes(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult ConsultaIncidentesLog()
+        {
+            return View();
+        }
+        public JsonResult ConsultaIncidentesLogJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(bitacoraservice.ConsultaLogIncidentes(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }
