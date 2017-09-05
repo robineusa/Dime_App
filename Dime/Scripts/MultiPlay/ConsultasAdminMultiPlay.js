@@ -98,6 +98,11 @@ function ShowGridMultiplay(data) {
             }
         },
         sortable: true,
+        pageable: {
+            refresh: true,
+            pageSizes: false,
+            buttonCount: 5
+        },
         columns: [
             { field: "IdSubReg", title: "Id", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "FechaGestion", title: "Fecha de Gestión", width: 80, headerAttributes: { style: "white-space: normal" } },
