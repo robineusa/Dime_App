@@ -458,16 +458,7 @@ function CargaInformacionGrid(cedulas) {
             var json = JSON.parse(result);
             console.log(json);
             FillGridViewResult(json);
-            //var grid = $("#infoCotejeadaGrid").data("kendoGrid");
-            //var gridDataArray = $('#infoCotejeadaGrid').data('kendoGrid')._data;
-            //for (var i = 1; i <= (grid.table.children().length) ; i++) {
-            //    alert(gridDataArray.length);
-            //    if ($("#listaUsuariosMasivo").val() == "") {
-            //        $("#listaUsuariosMasivo").val(gridDataArray[i - 1].Cedula);
-            //    } else {
-            //        $("#listaUsuariosMasivo").val($("#listaUsuariosMasivo").val() + "-" + gridDataArray[i - 1].Cedula);
-            //    }
-            //}
+            
             for (var index = 0, len = json.length; index < len; index++) {
                 if ($("#listaUsuariosMasivo").val() == "") {
                     $("#listaUsuariosMasivo").val(json[index].Cedula);
@@ -476,13 +467,6 @@ function CargaInformacionGrid(cedulas) {
                     $("#listaUsuariosMasivo").val($("#listaUsuariosMasivo").val() + "-" + json[index].Cedula);
                     //alert('lleno');
                 }
-
-
-
-                //$('#listaUsuariosMasivo').append($('<option>', {
-                //    value: json[index].OpcionesRecurrencia,
-                //    text: json[index].OpcionesRecurrencia
-                //}));
             }
         }
     });
