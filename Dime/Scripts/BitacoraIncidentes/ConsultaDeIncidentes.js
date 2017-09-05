@@ -15,8 +15,8 @@ function ListaSD() {
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
-            //cambiarfechas(json);
-            cargargrillaDatos(json);
+            cambiarfechas(json);
+            cargargrilla(json);
             finalizaconsulta();
         },
         error: function (request, status, error) {
@@ -25,13 +25,13 @@ function ListaSD() {
     });
 }
 
-//function cambiarfechas(data) {
-//    for (var i = 0; i < data.length; i++) {
-//        data[i].FechaDeRegistro = kendo.toString(kendo.parseDate(data[i].FechaDeRegistro, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-//        data[i].FechaUltimaActualizacion = kendo.toString(kendo.parseDate(data[i].FechaUltimaActualizacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-//    }
+function cambiarfechas(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i].FechaDeRegistro = kendo.toString(kendo.parseDate(data[i].FechaDeRegistro, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+        data[i].FechaUltimaActualizacion = kendo.toString(kendo.parseDate(data[i].FechaUltimaActualizacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+    }
 
-//}
+}
 function cargargrilla(data) {
     $("#gridViewConsulta").kendoGrid({
         width: 100,
@@ -60,7 +60,7 @@ function cargargrilla(data) {
         },
         sortable: true,
         columns: [
-        { command: { text: "Editar", click: ActualizarProceso, imageClass: "fa fa-fw fa-pencil-square-o", }, title: "Editar", width: "90px" },
+        { command: { text: "Editar", click: Actualizar, imageClass: "fa fa-fw fa-pencil-square-o", }, title: "Editar", width: "90px" },
         { field: "IdRegistro", title: "Id Registro", width: 100 },
         { field: "NombreUsuarioCreacion", title: "Nombre Usuario Creacion", width: 100 },
         { field: "FechaDeRegistro", title: "Fecha De Registro", width: 100 },
@@ -78,7 +78,7 @@ function finalizaconsulta() {
     document.getElementById('dataLoading').style.display = 'none';
 
 }
-function ActualizarProceso(e) {
+function Actualizar(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
     window.location.href = 'ActualizacionDeIncidentes?IdRegistro=' + dataItem.IdRegistro;
