@@ -1,0 +1,41 @@
+﻿@{ ViewBag.Title = "Administrar Tipo de Fallas";
+    ViewBag.SubTitle = "Procesos - COS";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <a href="~/BitacoraIncidentes/AdministrarTiposDeFalla" style="margin-right:15px; float:right;">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> <span class="glyphicon-class" style="font-size:medium;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Agregar Nuevo Tipo de Falla</span>
+                        </a>
+                        <h2 class="page-header" style="margin-top:25px"><i class="fa fa-list-alt"></i> Lista de Tipo de Fallas Actuales:</h2>
+                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                            <div class="box-body">
+                                <div id="dataLoading" style="display:none;text-align:center;width:100%;height:auto;">
+                                    <div><img src="~/Resources/Images/Loading.gif" height="100" width="100" /></div>
+                                </div>
+                                <div id="gridViewConsulta"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button id="submitDatos" type="submit" class="btn btn-primary" value="true" style="width:10%; height:40px; display:none;">Guardar Datos</button>
+
+@section scripts{
+    <script>
+            var UrlListaTipoFallas = '@Url.Action("TipodeFallasActualesAdminJson", "BitacoraIncidentes")';
+    </script>
+    <script src="~/Scripts/BitacoraIncidentes/TipodeFallasActuales.js?1.0.0"></script>
+
+}
+
+
+

@@ -1,21 +1,324 @@
-﻿
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelBitacoraIncidentes
 @{
     ViewBag.Title = "Visualizador de Incidentes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="~/Styles/Bitacora/Visualizador.css" rel="stylesheet" />
+@using (Html.BeginForm("VisualizadordeIncidentes", "BitacoraIncidentes", FormMethod.Post, new { id = "Registro", role = "form" }))
+{
+    @Html.HiddenFor(m => m.BIPBitacoraIncidentesFinal.IdRegistro, new { @class = "form-control input-sm", @Id = "idRegistro" })
 
-<div class="row">
-    <div class="col-md-9" style="width:100%; ">
-        <div class="alert" style="width:100%;height:auto; background-color:white;position:absolute;">
-            <div style="border-width:1px;border-style:solid;background-color:lightgray; border-color:black; padding:10px;width:70%; max-width:70%;min-width:70%; float:left;border-radius:5px;">
-                <div class="alert-danger" style="height:50px;padding-top:10px;width:90%; max-width:90%;float:left;border-radius:5px;">
-                    <div style="font-size:20px;font-family:sans-serif;">
-                        &nbsp; <i class="ion-android-alert text-bold"></i> INFORMACIÓN INCIDENCIA CLARO
+    <input type="tel" name="@ViewBag.TipoVisu" value="@ViewBag.TipoVisu" id="TipoV" style="display:none;" />
+     
+    <div id="Rojo">
+        <div class="row">
+            <div class="col-md-9" style="width:100%; ">
+                <div class="alert" style="width:100%;height:auto; background-color:white;position:absolute;">
+                    <div class="Rojo">
+                        <div>
+                            <div class="Title">
+                                <div style="font-size:20px;font-family:sans-serif;">
+                                    &nbsp; <i class="ion-android-alert text-bold"></i> INFORMACIÓN INCIDENCIA CLARO
+                                </div>
+                            </div>
+                            <div style="max-width:5%;float:left; margin-left:2%;text-align:center;align-content:center;"><img src="~/Resources/Images/Claro.png" height="50" width="50" /></div>
+                        </div>
+                        <div style="border-style:solid;border-color:black;border-top-width:1px;border-bottom-width:0px; float:left;width:100%;margin-top:5px;"></div>
+                        <div class="content1">
+                            <div class="Inicio">
+                                <small>INICIO</small>
+                            </div>
+                            <table>
+                                <tr>
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px; padding-left:2px;text-align:left;">
+                                        <small>Fecha:</small>
+                                    </td>
+                                    <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;">
+                                        @ViewBag.Fecha
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;text-align:left;">
+                                        <small>Hora:</small>
+                                    </td>
+                                    <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;">
+                                        @ViewBag.Hora
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;text-align:left;">
+                                        <small>Prioridad:</small>
+                                    </td>
+                                    <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;">
+                                        <b>   @ViewBag.Prioridad</b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="content2">
+                            <div class="SD">
+                                <small>CASO SD</small>
+                            </div>
+                            <div class="DATOSD">
+                                <b>@ViewBag.SD</b>
+                            </div>
+                            <table>
+                                <tr>
+                                    <td width="140" style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px; padding-left:2px;">
+                                        <small>Aliados Afectados:</small>
+                                    </td>
+                                    <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;font-size:12px;padding:2px;">
+                                        <table id="ListaDeAliadosAfectadosTableRojo">
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="120" style="border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;">
+                                        <small>Plataforma:</small>
+                                    </td>
+                                    <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;font-size:12px;padding-left:2px;">
+                                        @ViewBag.Plataforma
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                        <div style="border-style:solid;border-color:black;border-top-width:1px;border-bottom-width:0px; float:left;width:100%;margin-top:5px;"></div>
+                        <div class="TipoRed">
+                            <b>AFECTACION</b>
+                        </div>
+                        <div style="border-style:solid;border-color:black;border-top-width:1px;border-bottom-width:0px; float:left;width:100%;margin-top:5px;"></div>
+                        <div class="Content3">
+                            @ViewBag.Afectacion
+                        </div>
                     </div>
                 </div>
-                <div style="max-width:5%;float:left; margin-left:2%;text-align:center;align-content:center;"><img src="~/Resources/Images/Claro.png" height="50" width="50" /></div>
             </div>
         </div>
     </div>
-</div>
 
+    
+    <div id="Naranja">
+        <div class="row">
+            <div class="col-md-9" style="width:100%; ">
+                <div class="alert" style="width:100%;height:auto; background-color:white;position:absolute;">
+                    <div class="Naranja">
+                        <div>
+                            <div class="TitleNaranja">
+                                <div style="font-size:20px;font-family:sans-serif;">
+                                    &nbsp; <i class="ion-android-alert text-bold"></i> INFORMACIÓN INCIDENCIA CLARO
+                                </div>
+                            </div>
+                            <div style="max-width:5%;float:left; margin-left:2%;text-align:center;align-content:center;"><img src="~/Resources/Images/Claro.png" height="50" width="50" /></div>
+                        </div>
+                        <div style="border-style:solid;border-color:black;border-top-width:1px;border-bottom-width:0px; float:left;width:100%;margin-top:5px;"></div>
+                        <div class="content1Naranja">
+                            <div class="InicioNaranja">
+                                <small>INICIO</small>
+                            </div>
+                            <table>
+                                <tr>
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px; padding-left:2px;text-align:left;">
+                                        <small>Fecha:</small>
+                                    </td>
+                                    <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;">
+                                        @ViewBag.Fecha
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;text-align:left;">
+                                        <small>Hora:</small>
+                                    </td>
+                                    <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;">
+                                        @ViewBag.Hora
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;text-align:left;">
+                                        <small>Prioridad:</small>
+                                    </td>
+                                    <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;">
+                                        <b>   @ViewBag.Prioridad</b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="contentnaranja">
+                            <div class="SDNaranja">
+                                <small>CASO SD</small>
+                            </div>
+                            <div class="DATOSDNaranja">
+                                <b>@ViewBag.SD</b>
+                            </div>
+                            <table>
+                                <tr>
+                                    <td width="140" style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px; padding-left:2px;">
+                                        <small>Aliados Afectados:</small>
+                                    </td>
+                                    <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;font-size:12px;padding:2px;">
+                                        <table id="ListaDeAliadosAfectadosTableNaranja">
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="120" style="border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;">
+                                        <small>Plataforma:</small>
+                                    </td>
+                                    <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;font-size:12px;padding-left:2px;">
+                                        @ViewBag.Plataforma
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                        <div style="border-style:solid;border-color:black;border-top-width:1px;border-bottom-width:0px; float:left;width:100%;margin-top:5px;"></div>
+                        <div class="TipoRednaranja">
+                            <b>AVANCE</b>
+                        </div>
+                        <div style="border-style:solid;border-color:black;border-top-width:1px;border-bottom-width:0px; float:left;width:100%;margin-top:5px;"></div>
+                        <div class="Content3naranja">
+                            <table id="LogGestionIncidentes">
+
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <div id="VerdeS">
+        <div class="row">
+            <div class="col-md-9" style="width:100%; ">
+                <div class="alert" style="width:100%;height:auto; background-color:white;position:absolute;">
+                    <div class="Verde">
+                        <div>
+                            <div class="TitleVerde">
+                                <div style="font-size:20px;font-family:sans-serif;">
+                                    &nbsp; <i class="ion-android-alert text-bold"></i> INFORMACIÓN INCIDENCIA CLARO
+                                </div>
+                            </div>
+                            <div style="max-width:5%;float:left; margin-left:2%;text-align:center;align-content:center;"><img src="~/Resources/Images/Claro.png" height="50" width="50" /></div>
+                        </div>
+                        <div style="border-style:solid;border-color:black;border-top-width:1px;border-bottom-width:0px; float:left;width:100%;margin-top:5px;"></div>
+                        <div class="content1Verde">
+                            <table>
+                                <tr>
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:0px;background-color:white"></td>
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:1px;border-left-width:1px;border-right-width:1px; background-color:white;">
+                                        <div class="InicioVerde">
+                                            <small>INICIO</small>
+                                        </div>
+                                    </td>
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:1px;border-left-width:1px;border-right-width:1px; background-color:white;">
+                                        <div class="InicioVerde">
+                                            <small>FIN</small>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:1px;border-left-width:1px;border-right-width:1px; padding-left:2px;text-align:left;">
+                                        <small>Fecha:</small>
+                                    </td>
+                                    <td style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;color:black;padding-left:2px;">
+                                        @ViewBag.Fecha
+                                    </td>
+                                    <td style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;color:black;padding-left:2px;">
+                                        @ViewBag.FechaCierre
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:1px;border-right-width:1px;padding-left:2px;text-align:left;">
+                                        <small>Hora:</small>
+                                    </td>
+                                    <td style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;color:black;padding-left:2px;">
+                                        @ViewBag.Hora
+                                    </td>
+                                    <td style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;color:black;padding-left:2px;">
+                                        @ViewBag.HoraCierre
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:1px;border-right-width:1px;padding-left:2px;text-align:left;">
+                                        <small>Prioridad:</small>
+                                    </td>
+                                    <td colspan="2" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px;color:black;padding-left:2px;">
+                                        <b>   @ViewBag.Prioridad</b>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="contentVerde">
+                            <div class="SDVerde">
+                                <small>CASO SD</small>
+                            </div>
+                            <div class="DATOSDVerde">
+                                <b>@ViewBag.SD</b>
+                            </div>
+                            <table>
+                                <tr>
+                                    <td width="140" style="border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:1px; padding-left:2px;">
+                                        <small>Aliados Afectados:</small>
+                                    </td>
+                                    <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:1px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;font-size:12px;padding:2px;">
+                                        <table id="ListaDeAliadosAfectadosTableVerde">
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="120" style="border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:1px;padding-left:2px;">
+                                        <small>Plataforma:</small>
+                                    </td>
+                                    <td class="dos" style="background-color:white;border-style:solid;border-color:black;border-bottom-width:0px;border-top-width:0px;border-left-width:0px;border-right-width:0px;color:black;font-size:12px;padding-left:2px;">
+                                        @ViewBag.Plataforma
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </div>
+                        <div style="border-style:solid;border-color:black;border-top-width:1px;border-bottom-width:0px; float:left;width:100%;margin-top:5px;"></div>
+                        <div class="TipoRedVerde">
+                            <b>CIERRE</b>
+                        </div>
+                        <div style="border-style:solid;border-color:black;border-top-width:1px;border-bottom-width:0px; float:left;width:100%;margin-top:5px;"></div>
+                        <div class="Content3Verde">
+                            @ViewBag.ComentariosCierre
+                        </div>
+                    </div>
+                    
+                </div>
+               
+            </div>
+        </div>
+       
+    </div>
+    
+}
+        @section Scripts{
+            <script>
+                var UrlAliadosAfectados = '@Url.Action("ListaAliadosAfectadosJson", "BitacoraIncidentes")';
+                var UrlLogDeIncident = '@Url.Action("LogDeIncidentesJson", "BitacoraIncidentes")';
+            </script>
+            <script src="~/Scripts/BitacoraIncidentes/VisualizadordeIncidentes.js?1.0.5"></script>
+        }

@@ -89,7 +89,7 @@
                             <table>
                                 <tr>
                                     <td colspan="7" style="padding:1px; width:1200px;">
-                                        <small>Descripción de la Afectación</small>
+                                        <small>Descripción de la Afectación O Observaciones</small>
                                         @Html.TextAreaFor(m => m.BIPBitacoraIncidentes.DescripcionAfectacion, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text" })
                                     </td>
                                 </tr>
@@ -103,7 +103,15 @@
 
                         </div>
                         <br />
-                        <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;  margin-left:1%;">Guardar</button><br />
+                        <table style="margin-left:5px;">
+                            <tr>
+                                <td width="50" style="padding:2px;"><button type="submit" class="btn btn-block btn-success" name="GRARDARDATOS" value="true" style="width:100%;">Guardar</button></td>
+                                <td width="50" style="padding:2px;"><a style="width:100%;" class="btn btn-block btn-danger" href="@Url.Action("ActualizarOperacionesIncidente", "BitacoraIncidentes",new {IdRegistro=Model.BIPBitacoraIncidentes.IdRegistro})">Omitir </a></td>
+                            </tr>
+                        </table>
+                        
+                        
+                        <br />
                     </div>
                 </div>
             </div>

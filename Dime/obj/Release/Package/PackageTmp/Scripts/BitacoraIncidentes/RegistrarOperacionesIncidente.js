@@ -215,7 +215,7 @@ function RegistrarOperaciones() {
         data: JSON.stringify({ Operaciones: IdOperacionesArray, IdRegistro: IdRegistro}),
         dataType: "json",
         success: function (result) {
-            window.location.href = 'RegistrodeIncidentes';
+            window.location.href = 'VisualizadordeIncidentes?IdRegistro=' + IdRegistro;
         },
         error: function (request, status, error) {
             alert(request.responseText + " " + status + "  " + error);

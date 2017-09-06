@@ -1,17 +1,14 @@
-﻿$("#CedulaUsuario").blur(function (event) {
-    event.preventDefault();
-    ListaProcesos();
+﻿$(document).ready(function () {
+    ListaDeHerramientas();
+
 });
 
-function ListaProcesos() {
+function ListaDeHerramientas() {
     document.getElementById('dataLoading').style.display = 'inline-block';
-    var Cedula = $("#CedulaUsuario").val();
-    if (Cedula == "" ||Cedula == null ) { Cedula = 0; } else { }
     $.ajax({
         type: "GET",
-        url: UrlListaProcesosAsignadosUsuarioJson,
+        url: UrlListaDeHerramientasJson,
         contentType: "application/json; charset=utf-8",
-        data: { Cedula: Cedula},
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
@@ -47,21 +44,21 @@ function cargargrilla(data) {
             buttonCount: 5
         },
         columns: [
-        { command: { text: "Eliminar", click: ActualizarProceso, imageClass: "ion-trash-a", }, title: "Eliminar", width: "90px" },
-        { field: "Id", title: "Id", width: 100 },
-        { field: "TipoEscalamientoAsignado", title: "Tipo De Escalamiento Asignado", width: 400 }
+        { command: { text: "Editar", click: ActualizarProceso, imageClass: "fa fa-fw fa-pencil-square-o", }, title: "Editar", width: "90px" },
+        { field: "IdHerramienta", title: "Id Herramienta", width: 100 },
+        { field: "NombreHerramienta", title: "Nombre Herramienta", width: 100 },
+        { field: "Estado", title: "Estado", width: 100 }
         ]
 
     });
-}
-
-function ActualizarProceso(e) {
-    e.preventDefault();
-    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = 'AdministrarDistrubucionBackElite?Id=' + dataItem.Id;
-
 }
 function finalizaconsulta() {
     document.getElementById('dataLoading').style.display = 'none';
 
 }
+function ActualizarProceso(e) {
+    e.preventDefault();
+    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    window.location.href = 'AdministrarHerramientas?IdHerramienta=' + dataItem.IdHerramienta;
+
+};

@@ -2268,6 +2268,8 @@
     <Content Include="Resources\Images\Layout\apc4.png" />
     <Content Include="Resources\Images\Layout\Dam_Modificado1.png" />
     <Content Include="Resources\Images\Layout\Logo_BS.png" />
+    <Content Include="Resources\Images\Layout\user.jpg" />
+    <Content Include="Resources\Images\Layout\User_Orange.png" />
     <Content Include="Resources\Images\Loading.gif" />
     <Content Include="Resources\Images\Logo.png" />
     <Content Include="Resources\Images\logo1.gif" />
@@ -3115,7 +3117,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService.disco" />
+    <None Include="Service References\WSD\WebService1.disco" />
     <Content Include="Styles\Bitacora\Visualizador.css" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
@@ -3363,22 +3365,6 @@
     <Content Include="Views\BitacoraIncidentes\VisualizadordeIncidentes.cshtml" />
     <Content Include="Views\EncuestaCav\EncuestadeSatisfaccion.cshtml" />
     <Content Include="Views\EncuestaCav\ConsultaEncuestaCavs.cshtml" />
-    <None Include="Service References\WSD\WebService.wsdl" />
-    <None Include="Service References\WSD\WebService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSD\WebService4.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Views\BitacoraIncidentes\HerramientasActuales.cshtml" />
     <Content Include="Views\BitacoraIncidentes\AdministrarHerramientas.cshtml" />
     <Content Include="Views\BitacoraIncidentes\PrioridadesActuales.cshtml" />
@@ -3388,6 +3374,22 @@
     <Content Include="Views\BitacoraIncidentes\ConsultaDeIncidentes.cshtml" />
     <Content Include="Views\BitacoraIncidentes\ConsultaIncidentesGeneral.cshtml" />
     <Content Include="Views\BitacoraIncidentes\ConsultaIncidentesLog.cshtml" />
+    <None Include="Service References\WSD\WebService1.wsdl" />
+    <None Include="Service References\WSD\WebService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSD\WebService54.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
