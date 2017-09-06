@@ -303,25 +303,32 @@ namespace Dime.Controllers
             }
         }
 
+        //[HttpPost]
+        //public JsonResult ConsultaUsuariosAccesosMasivos(IList<string> cedulas)
+        //{
+        //    var result0 = loginService.ListaDatosUsuariosDimePorCedulas(cedulas.ToList());
+        //    //var cedulasSinError = result0.Where(c => c.InfoRegistro == null);
+        //    bool datosValidos = result0.ToList().Count == result0.ToList().Count;
+        //    var result = new
+        //    {
+        //        DataUsuario = result0,
+        //        DataValid = datosValidos
+        //    };
+
+        //    return new JsonResult
+        //    {
+        //        Data = JsonConvert.SerializeObject(result),
+        //        JsonRequestBehavior = JsonRequestBehavior.AllowGet
+        //    };
+        //}
+
         [HttpPost]
         public JsonResult ConsultaUsuariosAccesosMasivos(IList<string> cedulas)
         {
-            var result0 = loginService.ListaDatosUsuariosDimePorCedulas(cedulas.ToList());
-            //var cedulasSinError = result0.Where(c => c.InfoRegistro == null);
-            bool datosValidos = result0.ToList().Count == result0.ToList().Count;
-            var result = new
-            {
-                DataUsuario = result0,
-                DataValid = datosValidos
-            };
-
-            return new JsonResult
-            {
-                Data = JsonConvert.SerializeObject(result),
-                JsonRequestBehavior = JsonRequestBehavior.AllowGet
-            };
+            var jsonResult = Json(JsonConvert.SerializeObject(loginService.ListaDatosUsuariosDimePorCedulas(cedulas.ToList())), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
-
 
     }
 }

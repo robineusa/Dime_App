@@ -328,14 +328,14 @@ function GuardarTotalAccesosNuevos() {
 
         var row = grid.table.find("tr:nth-child(" + i + ")");
         var checkbox = $(row).find(".checkControl");
-        if (checkbox.is(":checked")) {
+        //if (checkbox.is(":checked")) {
 
-            if ($("#listaUsuariosMasivo").val() == "") {
-                $("#listaUsuariosMasivo").val(gridDataArray[i - 1].Cedula);
-            } else {
-                $("#listaUsuariosMasivo").val($("#listaUsuariosMasivo").val() + "-" + gridDataArray[i - 1].Cedula);
-            }
-        }
+        //    if ($("#listaUsuariosMasivo").val() == "") {
+        //        $("#listaUsuariosMasivo").val(gridDataArray[i - 1].Cedula);
+        //    } else {
+        //        $("#listaUsuariosMasivo").val($("#listaUsuariosMasivo").val() + "-" + gridDataArray[i - 1].Cedula);
+        //    }
+        //}
     }
 
 };
@@ -457,28 +457,24 @@ function CargaInformacionGrid(cedulas) {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
-            FillGridViewResult(json.DataUsuario);
-            var grid = $("#infoCotejeadaGrid").data("kendoGrid");
-            var gridDataArray = $('#infoCotejeadaGrid').data('kendoGrid')._data;
-            for (var i = 1; i <= (grid.table.children().length + 1) ; i++) {
+            FillGridViewResult(json);
+            
+            for (var index = 0, len = json.length; index < len; index++) {
                 if ($("#listaUsuariosMasivo").val() == "") {
-                    $("#listaUsuariosMasivo").val(gridDataArray[i - 1].Cedula);
+                    $("#listaUsuariosMasivo").val(json[index].Cedula);
+                    //alert('vacio');
                 } else {
-                    $("#listaUsuariosMasivo").val($("#listaUsuariosMasivo").val() + "-" + gridDataArray[i - 1].Cedula);
+                    $("#listaUsuariosMasivo").val($("#listaUsuariosMasivo").val() + "-" + json[index].Cedula);
+                    //alert('lleno');
                 }
             }
-            //if (json.DataValid == true) {
-            //    $("#perfilUsuarios").show();
-            //} else {
-            //    $("#perfilUsuarios").hide();
-            //}
         }
     });
 }
 
 function FillGridViewResult(data) {
 
-
+    $("#gridViewConsulta").empty();
     $("#infoCotejeadaGrid").kendoGrid({
         autoBind: true,
         toolbar: ["excel"],
