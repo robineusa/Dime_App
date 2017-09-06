@@ -36,7 +36,13 @@ namespace Dime.Controllers
         { 
            
             ViewBag.UsuarioExiste = null;
-        
+
+            if (opcionMando.Equals("ExecProc"))
+            {
+                loginService.EjecutraProcedimiento();
+                ViewBag.UsuarioExiste = "Se Actualizo BD Personal";
+            }
+
             if (opcionMando.Equals("ConsultarCreando"))
             {
                 if (loginService.RecibirIdUsuario(model.UsuarioHolos.Cedula) != 0)

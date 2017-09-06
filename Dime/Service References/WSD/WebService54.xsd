@@ -576,6 +576,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="EjecutraProcedimiento">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EjecutraProcedimientoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RegistrarActualizarDatosAdicionalesCliente">
     <xs:complexType>
       <xs:sequence>

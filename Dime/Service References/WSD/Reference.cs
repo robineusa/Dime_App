@@ -9174,6 +9174,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ListaDatosUsuariosDimePorCedulas", ReplyAction="http://tempuri.org/ILoginService/ListaDatosUsuariosDimePorCedulasResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.UsuariosMasivoData>> ListaDatosUsuariosDimePorCedulasAsync(System.Collections.Generic.List<string> cedulas);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/EjecutraProcedimiento", ReplyAction="http://tempuri.org/ILoginService/EjecutraProcedimientoResponse")]
+        void EjecutraProcedimiento();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/EjecutraProcedimiento", ReplyAction="http://tempuri.org/ILoginService/EjecutraProcedimientoResponse")]
+        System.Threading.Tasks.Task EjecutraProcedimientoAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -9513,6 +9519,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.UsuariosMasivoData>> ListaDatosUsuariosDimePorCedulasAsync(System.Collections.Generic.List<string> cedulas) {
             return base.Channel.ListaDatosUsuariosDimePorCedulasAsync(cedulas);
+        }
+        
+        public void EjecutraProcedimiento() {
+            base.Channel.EjecutraProcedimiento();
+        }
+        
+        public System.Threading.Tasks.Task EjecutraProcedimientoAsync() {
+            return base.Channel.EjecutraProcedimientoAsync();
         }
     }
     
