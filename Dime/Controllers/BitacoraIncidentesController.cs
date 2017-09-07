@@ -25,6 +25,7 @@ namespace Dime.Controllers
             return View(modelo);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult RegistrodeIncidentes(ViewModelBitacoraIncidentes modelo)
         {
             var result = bitacoraservice.ValidarSolicitudIncidente(modelo.BIPBitacoraIncidentes.CasoSD);
