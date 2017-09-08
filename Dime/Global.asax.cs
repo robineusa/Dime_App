@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -19,6 +20,7 @@ namespace Dime
             GlobalHost.Configuration.ConnectionTimeout = TimeSpan.FromDays(910);
             GlobalHost.Configuration.DisconnectTimeout = TimeSpan.FromDays(270);
             GlobalHost.Configuration.KeepAlive = TimeSpan.FromDays(90);
+            AntiForgeryConfig.SuppressXFrameOptionsHeader = false;
 
             //RouteTable.Routes.MapHubs();
         }
