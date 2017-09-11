@@ -58,6 +58,7 @@ namespace Dime.Controllers
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Index(InboundModel model, string cambiarDatos)
         {
 
@@ -204,6 +205,7 @@ namespace Dime.Controllers
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Actualizar(InboundModel model)
         {
 
@@ -278,6 +280,7 @@ namespace Dime.Controllers
             return View(model);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Retencion(InboundModel model, string BotonEnvia)
         {
             if (model.Retencion.Cuenta != 0)

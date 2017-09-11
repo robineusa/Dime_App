@@ -49,6 +49,7 @@ namespace Dime.Controllers
 
     
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult GuardaImagen(ViewModelNotificacionesBS model, HttpPostedFileBase file)
         {
             var name = file.FileName;

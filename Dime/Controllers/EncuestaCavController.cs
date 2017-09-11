@@ -25,6 +25,7 @@ namespace Dime.Controllers
             return View(modelo);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult EncuestadeSatisfaccion(POMSolicitudes modelo)
         {
             modelo.UsuarioTransaccion = Session["Usuario"].ToString();

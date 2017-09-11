@@ -226,6 +226,7 @@ namespace Dime.Controllers
 
         [HttpPost]
         [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public ActionResult Login(Usuario mUsuario)
         {
 
@@ -325,6 +326,7 @@ namespace Dime.Controllers
 
         [HttpPost]
         [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public ActionResult SRegistroDatosUsuarioConfirmation(Usuario model)
         {  
             loginService.RegistrarActualizarDatosUsuario(model);
@@ -477,6 +479,7 @@ namespace Dime.Controllers
 
         [AllowAnonymous]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult PresentacionPost(string sesionPassed, string id)
         {
             loginService.CapacitarUsuario(int.Parse(id));

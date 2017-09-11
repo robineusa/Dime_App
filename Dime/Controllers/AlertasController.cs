@@ -44,6 +44,7 @@ namespace Dime.Controllers
         }
         
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Claro_Video(ActivacionClaroVideo model)
         {
 
@@ -65,6 +66,7 @@ namespace Dime.Controllers
         }
         
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Siguiente_Mejor_Oferta(SiguienteMejorOferta model , string TipCon, string Gest, string Cier, string Raz)
         {
             
@@ -82,6 +84,7 @@ namespace Dime.Controllers
         }
        
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Siembra_HD(ViewModelCuentasSiembraHD model, string cuentaCliente, string Ofrecimiento)
         {
            
@@ -109,6 +112,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Mejoras_Tecnicas(MejorasTecnicas model)
         {
             model.UsuarioGestion = Session["Usuario"].ToString();
@@ -127,6 +131,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult FOX(GestionFoxInbound model)
         {
             model.UsuarioGestion = Session["Usuario"].ToString();

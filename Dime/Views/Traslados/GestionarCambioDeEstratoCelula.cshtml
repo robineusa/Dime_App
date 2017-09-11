@@ -8,6 +8,7 @@
 {
     using (Html.BeginForm("GestionarCambioDeEstratoCelula", "Traslados", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
     {
+        @Html.AntiForgeryToken()
     <div class="row">
 
         <div class="box box-primary">

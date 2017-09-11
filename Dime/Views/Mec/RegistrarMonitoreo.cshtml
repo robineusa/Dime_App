@@ -9,6 +9,7 @@
 {
     using (Html.BeginForm("RegistrarMonitoreo", "Mec", FormMethod.Post, new { id = "datosCliente", role = "form" }))
     {
+        @Html.AntiForgeryToken()
         <div class="row">
             <div class="col-md-9" style="width:100%; ">
                 <div class="nav-tabs-custom">

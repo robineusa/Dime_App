@@ -32,6 +32,7 @@ namespace Dime.Controllers
 
         
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Creacion(ViewModelAdminUsuario model, string opcionMando)
         { 
            
@@ -110,6 +111,7 @@ namespace Dime.Controllers
 
        
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AccesosUsuarios(ViewModelAdminUsuario model, string opcionMando)
         {
 

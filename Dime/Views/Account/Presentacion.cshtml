@@ -36,6 +36,7 @@
                         <div class="box-header with-border">
                           @using (Html.BeginForm("PresentacionPost", "Account", new { sesionPassed = ViewBag.Sesion, id = ViewBag.Id }, FormMethod.Post, new { role = "form" }))
                           {
+                            @Html.AntiForgeryToken()
                             <input type="submit" class="btn btn-danger" value="Continuar" />
                           }
                             </div>

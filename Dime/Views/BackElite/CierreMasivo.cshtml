@@ -8,6 +8,7 @@
 {
     using (Html.BeginForm("ActualizarZolicitudesMasivo", "BackElite", FormMethod.Post, new { id = "datosCliente", role = "form" }))
     {
+        @Html.AntiForgeryToken()
         <div class="row">
             <div class="col-md-12">
                 <div class="box box-danger">

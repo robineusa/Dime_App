@@ -33,6 +33,7 @@ namespace Dime.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SolicitudCrearDireccion(ViewModelTraslados modelo)
         {
 
@@ -136,6 +137,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult GestionarDireccionCelula(ViewModelTraslados modelo)
         {
 
@@ -249,6 +251,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult GestionarDireccionOutbound(ViewModelTraslados modelo)
         {
             modelo.NotaTrasladoVacia.IdTransaccion = modelo.NotaTrasladoInicial.IdTransaccion;
@@ -326,6 +329,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SolicitudCambioDeEstrato(ViewModelTraslados modelo)
         {
 
@@ -435,6 +439,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult GestionarCambioDeEstratoCelula(ViewModelTraslados modelo)
         {
 
@@ -513,6 +518,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SolicitudLiberacionHomePass(ViewModelTraslados modelo)
         {
 
@@ -624,6 +630,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult GestionarLiberacionHomePassCelula(ViewModelTraslados modelo)
         {
             modelo.LiberacionHomePassVacia.IdTransaccion = modelo.LiberacionHomePassInicial.IdTransaccion;
@@ -702,6 +709,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SolicitudMatrices(ViewModelTraslados modelo)
         {
 
@@ -813,6 +821,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult GestionarCreacionDeMatriz(ViewModelTraslados modelo)
         {
             modelo.GestionMatrizVacia.IdTransaccion = modelo.GestionMatrizInicial.IdTransaccion;
@@ -940,6 +949,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult GestionMatricesCelula(ViewModelTraslados modelo)
         {
             modelo.GestionMatrizVacia.IdTransaccion = modelo.GestionMatrizInicial.IdTransaccion;
@@ -1206,6 +1216,7 @@ namespace Dime.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult RegistrotrasladoFallido(ViewModelTraslados modelo)
         {
 

@@ -41,6 +41,7 @@ namespace Dime.Controllers
             return View(modelo);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SolicitudBackElite(ViewModelBackElite modelo)
         {
 
@@ -141,6 +142,7 @@ namespace Dime.Controllers
             return View(modelo);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult GestionarSolicitud(ViewModelBackElite modelo)
         {
             modelo.BEPSolicitudes.UsuarioQueSolicita = Convert.ToString(Session["Usuario"].ToString());
@@ -242,6 +244,7 @@ namespace Dime.Controllers
 
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AdministrarDistrubucionBackElite(ViewModelBackElite modelo)
         {
             if (modelo.BEMDistribuciones.Id > 0)
@@ -332,6 +335,7 @@ namespace Dime.Controllers
             }
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult ActualizarZolicitudesMasivo(ViewModelBackElite modelo)
         {
             return RedirectToAction("CierreMasivo", "BackElite");

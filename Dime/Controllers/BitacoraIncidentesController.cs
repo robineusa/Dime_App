@@ -171,6 +171,7 @@ namespace Dime.Controllers
             }
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult ActualizacionDeIncidentes(ViewModelBitacoraIncidentes modelo)
         {
            
@@ -233,6 +234,7 @@ namespace Dime.Controllers
             return View(modelo);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AgregarNuevaGerencia(BIMGerencias modelo) {
             if (modelo.IdGerencia > 0)
             {
@@ -268,6 +270,7 @@ namespace Dime.Controllers
             return View(modelo);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AdministrarAliados(BIMAliados modelo)
         {
             if (modelo.IdAliado > 0)
@@ -304,6 +307,7 @@ namespace Dime.Controllers
             return View(modelo);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AdministrarOperaciones(BIMOperaciones modelo)
         {
             if (modelo.IdOperacion > 0)
@@ -437,6 +441,7 @@ namespace Dime.Controllers
             return View(modelo);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AdministrarHerramientas(BIMHerramientas modelo)
         {
             if (modelo.IdHerramienta > 0)
@@ -474,6 +479,7 @@ namespace Dime.Controllers
             return View(modelo);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AdministrarPrioridades(BIMPrioridades modelo)
         {
             if (modelo.IdPrioridad > 0)
@@ -511,6 +517,7 @@ namespace Dime.Controllers
             return View(modelo);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AdministrarTiposDeFalla(BIMTipoFalla modelo)
         {
             if (modelo.IdTipoFalla > 0)

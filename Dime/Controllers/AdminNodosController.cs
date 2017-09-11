@@ -28,6 +28,7 @@ namespace Dime.Controllers
         }
         
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult RegistrarNodo(MaestroNodo modelo)
         {
 
@@ -83,6 +84,7 @@ namespace Dime.Controllers
         }
         
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult ActualizarNodo(ViewModelNodos model)
         {
 

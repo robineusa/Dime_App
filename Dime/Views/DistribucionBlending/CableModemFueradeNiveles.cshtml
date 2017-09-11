@@ -12,7 +12,7 @@
 
 @using (Html.BeginForm("CableModemFueradeNiveles", "DistribucionBlending", FormMethod.Post, new { id = "datosCliente", role = "form" }))
 {
-
+    @Html.AntiForgeryToken()
     <div class="callout callout-info" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
         <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
             <div class="row">

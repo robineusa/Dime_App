@@ -28,6 +28,7 @@ namespace Dime.Controllers
             return View(model);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult MultiPlayCelula(ViewModelMultiPlay model, string BotonEnvia)
         {
 

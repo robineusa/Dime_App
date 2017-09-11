@@ -331,6 +331,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SkillsUsuariosAdmin(ViewModelBlending model, string opcionMando)
         {
             ViewBag.UsuarioExiste = null;
@@ -558,6 +559,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AsignarBasesAdmin(ViewModelBlending model, string opcionMando)
         {
             if (opcionMando.Equals("AsignarBases"))

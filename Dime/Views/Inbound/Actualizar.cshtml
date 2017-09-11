@@ -8,6 +8,7 @@
 
 @using (Html.BeginForm("Actualizar", "Inbound", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
 {
+    @Html.AntiForgeryToken()
     <div class="row">
         @Html.HiddenFor(m => m.ModelTipiMarca.IngresoTipMarcacion.IdIngreso, new { @Value = Model.ModelTipiMarca.IngresoTipMarcacion.IdIngreso })
         <div class="col-md-12">

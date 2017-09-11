@@ -6,6 +6,7 @@
 }
 @using (Html.BeginForm("RegistrarNodo", "AdminNodos", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
 {
+    @Html.AntiForgeryToken()
     if (Session["Administracion Nodos"] != null)
     {
         <div class="row">

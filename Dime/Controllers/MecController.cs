@@ -82,6 +82,7 @@ namespace Dime.Controllers
             return View(model);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult RegistrarMonitoreo(ViewModelMec model)
         {
             model.MecMonitoreosP.UsuarioGestion = Session["IdUsuario"].ToString();
@@ -116,6 +117,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult ActualizarMonitoreo(ViewModelMec model)
         {
             MecMonitoreosP monitoreo = model.MecMonitoreosP;
@@ -162,6 +164,7 @@ namespace Dime.Controllers
             return View(modelo);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AgregarNuevoProceso(ViewModelMec modelo)
         {
             if (modelo.MecProcesos.IdProceso > 0)
@@ -204,6 +207,7 @@ namespace Dime.Controllers
 
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult ActualizarLineasMec(ViewModelMec modelo)
         {
             modelo.MecLineas.IdProceso = modelo.MecProcesos.IdProceso;
@@ -314,6 +318,8 @@ namespace Dime.Controllers
     
             return View(modelo);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult ActualizarTipodeAlarmas(ViewModelMec modelo)
         {
             if (modelo.MecTipoAlarmas.IdAlarma > 0)

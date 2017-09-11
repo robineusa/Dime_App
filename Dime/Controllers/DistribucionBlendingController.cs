@@ -74,6 +74,7 @@ namespace Dime.Controllers
             };
         }
         //CABLE MODEM FUERA DE NIVELES
+        [HttpGet]
         public ActionResult CableModemFueradeNiveles(string CuentaCliente, string Seg)
         {
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
@@ -158,6 +159,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult CableModemFueradeNiveles(ViewModelDistribucionesBlending model)
         {
             model.GBPFueradeNiveles.UsuarioGestion = Session["IdUsuario"].ToString();
@@ -350,6 +352,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Rentabilizacion(ViewModelDistribucionesBlending model)
         {
             model.GBPRentabilizacion.UsuarioGestion = Session["IdUsuario"].ToString();
@@ -519,6 +522,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Producto(ViewModelDistribucionesBlending model)
         {
             model.GBPProducto.UsuarioGestion = Session["IdUsuario"].ToString();
@@ -681,6 +685,7 @@ namespace Dime.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Docsis(ViewModelDistribucionesBlending model)
         {
             model.GBPDocsis.UsuarioGestion = Session["IdUsuario"].ToString();

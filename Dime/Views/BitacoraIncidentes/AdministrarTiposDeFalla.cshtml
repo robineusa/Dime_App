@@ -5,8 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using (Html.BeginForm("AdministrarTiposDeFalla", "BitacoraIncidentes", FormMethod.Post, new { id = "TiposDeFallas", role = "form" }))
-{ 
-
+{
+    @Html.AntiForgeryToken()
     <div class="box box-danger">
         <div class="box-body">
             <div class="row">

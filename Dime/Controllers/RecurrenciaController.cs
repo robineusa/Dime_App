@@ -86,6 +86,7 @@ namespace Dime.Controllers
             return View(model);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Recurrencia(ViewModelRecurrencia model, string BotonEnvia)
         {
 

@@ -5,6 +5,7 @@
 }
 @using (Html.BeginForm("EncuestadeSatisfaccion", "EncuestaCav", FormMethod.Post, new { id = "pomdatos", role = "form", onkeydown = "return event.keyCode!=13" }))
 {
+    @Html.AntiForgeryToken()
     <div class="row">
         <div class="col-md-9" style="width:100%; ">
             <div class="nav-tabs-custom">

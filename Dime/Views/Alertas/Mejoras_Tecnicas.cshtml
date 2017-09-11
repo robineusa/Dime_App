@@ -15,6 +15,7 @@
 <body>
     @using (Html.BeginForm("Mejoras_Tecnicas", "Alertas", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
     {
+        @Html.AntiForgeryToken()
         <div>           
             <hr />
             <div class="box-header ui-sortable-handle" style="cursor: inherit;">

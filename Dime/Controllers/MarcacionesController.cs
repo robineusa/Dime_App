@@ -33,6 +33,7 @@ namespace Dime.Controllers
 
 
         [HttpPost, ValidateInput(false)]
+        [ValidateAntiForgeryToken]
         public ActionResult NuevasMarcaciones(MaestroMarcacione modelo)
         {  
             modelo.UsuarioCreacion = Session["Usuario"].ToString();
@@ -91,6 +92,7 @@ namespace Dime.Controllers
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AgregarActuCodigoCierre(PqrMaestroCodCierre model)
         {
            
