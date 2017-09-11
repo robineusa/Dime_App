@@ -20,7 +20,7 @@ namespace Dime
             GlobalHost.Configuration.ConnectionTimeout = TimeSpan.FromDays(910);
             GlobalHost.Configuration.DisconnectTimeout = TimeSpan.FromDays(270);
             GlobalHost.Configuration.KeepAlive = TimeSpan.FromDays(90);
-            AntiForgeryConfig.SuppressXFrameOptionsHeader = false;
+            AntiForgeryConfig.SuppressXFrameOptionsHeader = true;
 
             //RouteTable.Routes.MapHubs();
         }

@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.SessionState;
 using Telmexla.Servicios.DIME.Entity;
 using static Dime.Controllers.ManageController;
 
@@ -460,6 +461,7 @@ namespace Dime.Controllers
         public ActionResult LogOff()
         {
             Session.Clear();
+            Session.Abandon();
             return RedirectToAction("Login", "Account");
         }
 
