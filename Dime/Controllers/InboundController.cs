@@ -30,6 +30,7 @@ namespace Dime.Controllers
             marcacionService.ClientCredentials.Authenticate();
             usabilidad = new WSD.UsabilidadServiceClient();
             usabilidad.ClientCredentials.Authenticate();
+            Response.AddHeader("Cache-control","no-cache");
         }
 
 
