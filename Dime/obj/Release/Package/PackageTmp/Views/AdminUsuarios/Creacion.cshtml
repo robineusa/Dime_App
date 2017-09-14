@@ -10,12 +10,14 @@
 {
     using (Html.BeginForm("Creacion", "AdminUsuarios", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
     {
+        @Html.AntiForgeryToken()
         <div class="row">
             <div class="col-md-9" style="width:100%; ">
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
                         <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321;"><a href="#Datos_Usuario" style="background-color: transparent;" data-toggle="tab">Creacion de Usuarios</a></li>
                         <li id="Li2"><a style="background-color: transparent;" href="#Consulta_Usuario" data-toggle="tab" id="consultaUsuarioTab">Consulta de Usuarios</a></li>
+                        <li style="float:right; margin-right:5px; "><button class="btn btn-block btn-primary btn-twitter" type="submit" name="opcionMando" value="ExecProc" style="display:block">Actualizar BD Personal</button></li>
                     </ul>
                     <div class="tab-content" style="padding-left:0; padding-top: 0">
                         <div class="active tab-pane" id="Datos_Usuario" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">

@@ -9,6 +9,7 @@
 {
     using (Html.BeginForm("SkillsUsuariosAdmin", "GestionBlending", FormMethod.Post, new { role = "form", onkeydown = "return event.keyCode!=13" }))
     {
+        @Html.AntiForgeryToken()
         <div class="row">
             <div class="col-md-9" style="width:100%; ">
                 <div class="nav-tabs-custom">

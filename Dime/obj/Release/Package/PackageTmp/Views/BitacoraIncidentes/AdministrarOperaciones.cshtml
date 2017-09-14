@@ -6,7 +6,7 @@
 }
 @using (Html.BeginForm("AdministrarOperaciones", "BitacoraIncidentes", FormMethod.Post, new { id = "procesoscos", role = "form" }))
 {
-
+    @Html.AntiForgeryToken()
     <div class="box box-danger">
         <div class="box-body">
             <div class="row">

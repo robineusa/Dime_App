@@ -3375,6 +3375,7 @@
     <Content Include="Views\BitacoraIncidentes\ConsultaDeIncidentes.cshtml" />
     <Content Include="Views\BitacoraIncidentes\ConsultaIncidentesGeneral.cshtml" />
     <Content Include="Views\BitacoraIncidentes\ConsultaIncidentesLog.cshtml" />
+    <Content Include="Views\BackElite\ReasignacionDeSolicitudes.cshtml" />
     <None Include="Service References\WSD\WebService1.wsdl" />
     <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
@@ -3391,7 +3392,6 @@
     <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\BackElite\ReasignacionDeSolicitudes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

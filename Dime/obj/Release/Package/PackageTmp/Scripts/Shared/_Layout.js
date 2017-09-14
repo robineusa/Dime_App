@@ -1,11 +1,4 @@
-﻿/**
- * AdminLTE Demo Menu
- * ------------------
- * You should not use this file in production.
- * This file is for demo purposes only.
- */
-//alert(UserConnect);
-
+﻿//var bPreguntar = true;
 var lockScreenShow = false;
 var closingPage = false;
 var mouseMovedTimeAgo = false;
@@ -506,3 +499,10 @@ function ResetearDivs() {
 
     }
 })(jQuery, $.AdminLTE);
+
+//window.onbeforeunload = preguntarAntesDeSalir;
+//function preguntarAntesDeSalir() {
+//    if (bPreguntar == true) {
+
+//    }
+//}

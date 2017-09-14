@@ -44,7 +44,9 @@
              </div>
          </div>
         &nbsp;&nbsp;
-        @using(Html.BeginForm("Login", "Account")) {
+        @using (Html.BeginForm("Login", "Account"))
+        {
+            @Html.AntiForgeryToken();
                 <input type="submit" class="btn btn-danger" value="Continuar" id="btnContinuar"  style="display:none;" />
         }
                 <br />

@@ -12,6 +12,7 @@
 <div class="row">
 @using (Html.BeginForm("GuardaImagen", "BuenServicio", FormMethod.Post, new { enctype = "multipart/form-data", role = "form", onkeydown = "return event.keyCode!=13" }))
 {
+    @Html.AntiForgeryToken()
     <div class="col-md-4">
         <div class="info-box bg-blue">
             <span class="info-box-icon">

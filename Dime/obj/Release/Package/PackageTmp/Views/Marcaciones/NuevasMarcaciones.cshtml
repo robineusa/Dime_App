@@ -9,6 +9,7 @@
 {
     using (Html.BeginForm("NuevasMarcaciones", "Marcaciones", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
     {
+        @Html.AntiForgeryToken()
         if (Session["Administracion Marcaciones"] != null)
         {
         <div class="row">

@@ -16,6 +16,7 @@
 <body>
 @using (Html.BeginForm("Claro_Video", "Alertas", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
 {
+    @Html.AntiForgeryToken()
     <div>
         <hr />
         <div class="box-header ui-sortable-handle" style="cursor: inherit;">

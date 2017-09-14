@@ -18,6 +18,7 @@
     <div style="width:100%; margin-left:15px;">
         @using (Html.BeginForm("SRegistroDatosUsuarioConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
         {
+            @Html.AntiForgeryToken()
             <div data-ng-controller="PreguntasController" id="mainDiv">
                 <br />
                 @Html.LabelFor(m => m.Genero)
