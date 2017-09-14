@@ -340,6 +340,42 @@ namespace Dime.Controllers
         {
             return RedirectToAction("CierreMasivo", "BackElite");
         }
+        [HttpGet]
+        public ActionResult ReasignacionDeSolicitudes()
+        {
+            return View();
+        }
+        public JsonResult ListaSolicitudesPorBackJson(string Cedula)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(backeliteservice.ListaCasosEnGestionPorBack(Convert.ToDecimal(Cedula))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ListaUsuariosBackJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(backeliteservice.ListaDeUsuariosBackElite()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpPost]
+        public JsonResult ReasignacionDeSolicitudesJson(IList<string> Solicitudes, string Usuario)
+        {
+            if (Solicitudes != null && Usuario != "")
+            {
+                decimal Cedula = Convert.ToDecimal(Usuario);
+                backeliteservice.ReasignarGestionBack(Solicitudes.ToList(), Cedula);
 
+                return new JsonResult
+                {
+                    Data = JsonConvert.SerializeObject("Solicitudes Reasignadas Correctamente"),
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+
+                };
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

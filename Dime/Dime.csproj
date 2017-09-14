@@ -2289,6 +2289,7 @@
     <Content Include="Scripts\BackElite\ConsultaDeGestion.js" />
     <Content Include="Scripts\BackElite\GestionarSolicitud.js" />
     <Content Include="Scripts\BackElite\ListaDistribucionUsuario.js" />
+    <Content Include="Scripts\BackElite\ReasignacionDeSolicitudes.js" />
     <Content Include="Scripts\BackElite\SeguimientoSolicitudes.js" />
     <Content Include="Scripts\BackElite\SolicitudBackElite.js" />
     <Content Include="Scripts\BitacoraIncidentes\ActualizacionDeIncidentes.js" />
@@ -3390,6 +3391,7 @@
     <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\BackElite\ReasignacionDeSolicitudes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

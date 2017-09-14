@@ -14029,6 +14029,24 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ActualizarSolicitudesMasivo", ReplyAction="http://tempuri.org/IBackEliteService/ActualizarSolicitudesMasivoResponse")]
         System.Threading.Tasks.Task ActualizarSolicitudesMasivoAsync(System.Collections.Generic.List<string> Solicitudes, Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaCasosEnGestionPorBack", ReplyAction="http://tempuri.org/IBackEliteService/ListaCasosEnGestionPorBackResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes> ListaCasosEnGestionPorBack(decimal Cedula);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaCasosEnGestionPorBack", ReplyAction="http://tempuri.org/IBackEliteService/ListaCasosEnGestionPorBackResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ListaCasosEnGestionPorBackAsync(decimal Cedula);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ReasignarGestionBack", ReplyAction="http://tempuri.org/IBackEliteService/ReasignarGestionBackResponse")]
+        void ReasignarGestionBack(System.Collections.Generic.List<string> Solicitudes, decimal UsuarioNuevo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ReasignarGestionBack", ReplyAction="http://tempuri.org/IBackEliteService/ReasignarGestionBackResponse")]
+        System.Threading.Tasks.Task ReasignarGestionBackAsync(System.Collections.Generic.List<string> Solicitudes, decimal UsuarioNuevo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaDeUsuariosBackElite", ReplyAction="http://tempuri.org/IBackEliteService/ListaDeUsuariosBackEliteResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Usuario> ListaDeUsuariosBackElite();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBackEliteService/ListaDeUsuariosBackElite", ReplyAction="http://tempuri.org/IBackEliteService/ListaDeUsuariosBackEliteResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Usuario>> ListaDeUsuariosBackEliteAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -14248,6 +14266,30 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task ActualizarSolicitudesMasivoAsync(System.Collections.Generic.List<string> Solicitudes, Telmexla.Servicios.DIME.Entity.BEPSolicitudes Solicitud) {
             return base.Channel.ActualizarSolicitudesMasivoAsync(Solicitudes, Solicitud);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes> ListaCasosEnGestionPorBack(decimal Cedula) {
+            return base.Channel.ListaCasosEnGestionPorBack(Cedula);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BEPSolicitudes>> ListaCasosEnGestionPorBackAsync(decimal Cedula) {
+            return base.Channel.ListaCasosEnGestionPorBackAsync(Cedula);
+        }
+        
+        public void ReasignarGestionBack(System.Collections.Generic.List<string> Solicitudes, decimal UsuarioNuevo) {
+            base.Channel.ReasignarGestionBack(Solicitudes, UsuarioNuevo);
+        }
+        
+        public System.Threading.Tasks.Task ReasignarGestionBackAsync(System.Collections.Generic.List<string> Solicitudes, decimal UsuarioNuevo) {
+            return base.Channel.ReasignarGestionBackAsync(Solicitudes, UsuarioNuevo);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Usuario> ListaDeUsuariosBackElite() {
+            return base.Channel.ListaDeUsuariosBackElite();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Usuario>> ListaDeUsuariosBackEliteAsync() {
+            return base.Channel.ListaDeUsuariosBackEliteAsync();
         }
     }
     
