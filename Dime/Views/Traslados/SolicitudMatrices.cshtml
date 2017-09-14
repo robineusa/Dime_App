@@ -9,7 +9,7 @@
     using (Html.BeginForm("SolicitudMatrices", "Traslados", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
     {
         @Html.AntiForgeryToken()
-        <div class="row">
+        <div class="row" id="ContenidoPrincipal">
             <div class="col-md-9" style="width:100%; ">
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
@@ -220,8 +220,8 @@
                                         </td>
                                         <td width="200" style="padding:1px;">
                                             <small>Tipo Cliente:</small>
-                                            @Html.TextBoxFor(m => m.GestionMatriz.TipoCliente, null, new { id = "tipocliente", @class = "form-control input-sm"})
-                                         </td>
+                                            @Html.TextBoxFor(m => m.GestionMatriz.TipoCliente, null, new { id = "tipocliente", @class = "form-control input-sm" })
+                                        </td>
                                         <td width="200" style="padding:1px;">
                                             <small>Cuenta Cliente:</small>
                                             @Html.TextBoxFor(m => m.IngresoTraslado.CuentaCliente, null, new { id = "cuentacliente", @class = "form-control input-sm" })
@@ -252,22 +252,22 @@
                                         <td width="200" style="padding:1px;">
                                             <small>Nombre Conjunto - Edificio:</small>
                                             @Html.TextBoxFor(m => m.GestionMatriz.NombreConjuntoEdificio, null, new { id = "nombreconjuntoedificio", @class = "form-control input-sm" })
-                                            
+
                                         </td>
                                         <td width="200" style="padding:1px;">
                                             <small>Teléfono Cliente:</small>
                                             @Html.TextBoxFor(m => m.GestionMatriz.TelefonoCLiente, null, new { id = "telefonocliente", @class = "form-control input-sm" })
-                                            
+
                                         </td>
                                         <td width="200" style="padding:1px;">
                                             <small>Teléfono Administrador:</small>
                                             @Html.TextBoxFor(m => m.GestionMatriz.TelefonoAdministrador, null, new { id = "telefonoadministrador", @class = "form-control input-sm" })
-                                            
+
                                         </td>
                                         <td width="200" style="padding:1px;">
                                             <small>Nombre Administrador:</small>
                                             @Html.TextBoxFor(m => m.GestionMatriz.NombreAdministrador, null, new { id = "nombreadministrador", @class = "form-control input-sm" })
-                                            
+
                                         </td>
                                     </tr>
                                     <tr>
@@ -298,7 +298,7 @@
                             {
                                 <label style="font-size:16px; color:red;font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight: 400;">@ViewBag.CuentayaescaladaError.ToString() </label>
                             }
-                            
+
                         </div>
                         <br />
                         <button type="submit" class="btn btn-primary" name="cdgardar" value="true" style="width:10%; height:40px; margin-left:1.5%;">Guardar Datos</button><br />

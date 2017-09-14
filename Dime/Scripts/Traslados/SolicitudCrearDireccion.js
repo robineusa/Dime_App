@@ -1,4 +1,5 @@
-﻿$("#Li1").click(function () {
+﻿
+$("#Li1").click(function () {
 
     $("#Li2").css('background-color', '#f6f6f6');
     $("#Li1").css("background-color", "#dcdcdc");
@@ -25,6 +26,8 @@ $('#tipoDireccion').change(function () {
 })
 
 function ValidarTipoDireccion() {
+    
+
     if ($('#tipoDireccion').val() == '--Seleccione--')
     {
         document.getElementById('tabladirBasica').style.display = 'none';
@@ -74,7 +77,7 @@ function ValidarTipoDireccion() {
                             document.getElementById('tabladirmultiorigen').style.display = 'none';
                         }
                     }
-                   
+    $('input[name="__RequestVerificationToken"]').val(headers);
 }
 function generarDireccionFinalBasica() {
     var Tipodevia = "";
@@ -215,7 +218,7 @@ $('#dm_complemento').keyup(function () {
 })
 
 function limpiarcontroles() {
-    $('input').val('');
+    $("#ContenidoPrincipal input[type=text]").val('');
     $('#dbtipoDeVia option').prop('selected', function () { return this.defaultSelected; });
     $('#dmtipoDeVia option').prop('selected', function () { return this.defaultSelected; });
 }

@@ -256,7 +256,7 @@ $('#dm_complemento').keyup(function () {
 })
 
 function limpiarcontroles() {
-    $('input').val('');
+    $("#ContenidoPrincipal input[type=text]").val('');
     $('#dbtipoDeVia option').prop('selected', function () { return this.defaultSelected; });
     $('#dmtipoDeVia option').prop('selected', function () { return this.defaultSelected; });
 }

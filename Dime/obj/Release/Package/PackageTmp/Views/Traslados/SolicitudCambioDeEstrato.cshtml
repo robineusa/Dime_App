@@ -8,8 +8,9 @@
 {
     using (Html.BeginForm("SolicitudCambioDeEstrato", "Traslados", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
     {
-        @Html.AntiForgeryToken()
-    <div class="row">
+            @Html.AntiForgeryToken()
+     
+    <div class="row" id="ContenidoPrincipal">
         <div class="col-md-9" style="width:100%; ">
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
@@ -300,7 +301,7 @@
     </div>
 }
 @section Scripts{
-    <script src="~/Scripts/Traslados/SolicitudCambioDeEstrato.js?1.1.0.0"></script>
+    <script src="~/Scripts/Traslados/SolicitudCambioDeEstrato.js?1.1.0.1"></script>
 }
 }
 else

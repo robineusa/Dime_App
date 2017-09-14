@@ -9,7 +9,8 @@
     using (Html.BeginForm("RegistrotrasladoFallido", "Traslados", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
     {
         @Html.AntiForgeryToken()
-        <div class="row">
+
+        <div class="row" id="ContenidoPrincipal">
             <div class="col-md-9" style="width:100%; ">
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
@@ -169,7 +170,7 @@
                                         <td width="200" style="padding:1px;">
                                             <small>Placa:</small>
                                         </td>
-                                        
+
                                     </tr>
                                     <tr>
                                         <td style="padding:1px;">
@@ -192,7 +193,7 @@
                                         <td><input type="text" class="form-control input-sm" id="dm_cuadrante" /> </td>
                                         <td><input type="text" class="form-control input-sm" id="dm_barrio" /> </td>
                                         <td><input type="text" class="form-control input-sm" id="dm_placa" /> </td>
-                                        
+
                                     </tr>
                                     <tr>
                                         <td width="200" style="padding:1px;">
@@ -204,24 +205,24 @@
                                     </tr>
                                 </table>
                             </div>
-                                <table>
-                                    <tr>
-                                        <td width="1000" style="padding:1px;" colspan="5">
-                                            <small>Dirección Final:</small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="1000" colspan="5">
-                                            @Html.TextBoxFor(m => m.TrasladoFallido.Direccion, null, new { id = "cd_direccionfinal", @class = "form-control input-sm", @style = "text-transform:uppercase;", @readonly = "true" })
-                                            @Html.ValidationMessageFor(m => m.TrasladoFallido.Direccion, "", new { @class = "text-danger" })<br />
-                                        </td>
-                                    </tr>
-                                </table>
+                            <table>
+                                <tr>
+                                    <td width="1000" style="padding:1px;" colspan="5">
+                                        <small>Dirección Final:</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="1000" colspan="5">
+                                        @Html.TextBoxFor(m => m.TrasladoFallido.Direccion, null, new { id = "cd_direccionfinal", @class = "form-control input-sm", @style = "text-transform:uppercase;", @readonly = "true" })
+                                        @Html.ValidationMessageFor(m => m.TrasladoFallido.Direccion, "", new { @class = "text-danger" })<br />
+                                    </td>
+                                </tr>
+                            </table>
                             <table>
                                 <tr>
                                     <td width="200" style="padding:1px;" colspan="5">
                                         <small>Departamento:</small>
-                                        @Html.DropDownListFor(m => m.TrasladoFallido.NombreDepartamento, new List<SelectListItem> {},"--SELECCIONE--", new {Id="NombreDepartamentoSelect", @class = "form-control input-sm" })
+                                        @Html.DropDownListFor(m => m.TrasladoFallido.NombreDepartamento, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "NombreDepartamentoSelect", @class = "form-control input-sm" })
                                         @Html.ValidationMessageFor(m => m.TrasladoFallido.NombreDepartamento, "", new { @class = "text-danger" })
                                     </td>
                                     <td width="200" style="padding:1px;" colspan="5">
@@ -241,74 +242,74 @@
                                     </td>
                                 </tr>
                             </table>
-                                <table style="text-align:initial;">
-                                    <tr>
-                                        <td width="370" style="padding:1px;" colspan="5">
-                                            <small>Motivo Traslado Fallido:</small>
-                                        </td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
+                            <table style="text-align:initial;">
+                                <tr>
+                                    <td width="370" style="padding:1px;" colspan="5">
+                                        <small>Motivo Traslado Fallido:</small>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
 
-                                        <td width="370" style="padding:1px; text-align:initial;">
-                                            @Html.DropDownListFor(m => m.TrasladoFallido.MotivoTrasladoFallido, new List<SelectListItem> {new SelectListItem{Text="AUMENTO TARIFA TRASLADO", Value="AUMENTO TARIFA TRASLADO" },
+                                    <td width="370" style="padding:1px; text-align:initial;">
+                                        @Html.DropDownListFor(m => m.TrasladoFallido.MotivoTrasladoFallido, new List<SelectListItem> {new SelectListItem{Text="AUMENTO TARIFA TRASLADO", Value="AUMENTO TARIFA TRASLADO" },
                                                                                              new SelectListItem{Text="CIENTE NO ESPERA TIEMPOS DE GESTION PARA EL TRASLADO", Value="CIENTE NO ESPERA TIEMPOS DE GESTION PARA EL TRASLADO" },
                                                                                              new SelectListItem{Text="FUERA DE COBERTURA", Value="FUERA DE COBERTURA" },
                                                                                              new SelectListItem{Text="HOME PASS OCUPADO", Value="HOME PASS OCUPADO" },
                                                                                              new SelectListItem{Text="MATRIZ SIN ACOMETIDA", Value="MATRIZ SIN ACOMETIDA" }},
                                                                                                        "--SELECCIONE--", new { @class = "form-control input-sm", @id = "MotivoTrasladoFallido" })
-                                           
-                                        </td>
-                                       <td>@Html.ValidationMessageFor(m => m.TrasladoFallido.MotivoTrasladoFallido, "", new { @class = "text-danger" })<br /></td>
-                                    </tr>
-                                    </table>
-                                <table>
-                                    <tr>
-                                        <td style="padding:5px;">
-                                            <div class="info-box" id="Aviso1" style="display:none;">
-                                                <span style="height:95px" class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
-                                                <div class="info-box-content">
-                                                    <span class="info-box-number">USAR SOLO CUANDO</span>
-                                                    <span style="text-transform:initial;" class="info-box-text">Dirección de traslado no tiene cobertura bajo ninguna red (Bidireccional, DTH, Unidireccional)</span> 
-                                                    <span style="text-transform:initial;" class="info-box-text">Direccion de traslado solo tiene cobertura DTH y cliente bidireccional no acepta traslado</span> 
-                                                    <span style="text-transform:initial;" class="info-box-text">Sector con cobertura en alguna red (Bidireccional, DTH, Unidireccional) pero aliado técnico confirma no es posible instalación</span> 
-                                                </div>
-                                            </div>
-                                            <div class="info-box" id="Aviso2" style="display:none;">
-                                                <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
-                                                <div class="info-box-content">
-                                                    <span class="info-box-number">USAR SOLO CUANDO</span>
-                                                    <span style="text-transform:initial;" class="info-box-text">Cliente no acepta cambio de tarifa por politicas comerciales que aplican a dirección de traslado</span>
-                                                    <span style="text-transform:initial;" class="info-box-text">Cliente no acepta cambio de tarifa por estrato que aplica a dirección de traslado</span>
-                                                </div>
-                                            </div>
-                                            <div class="info-box" id="Aviso3" style="display:none;">
-                                                <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
-                                                <div class="info-box-content">
-                                                    <span class="info-box-number">USAR SOLO CUANDO</span>
-                                                    <span style="text-transform:initial;" class="info-box-text">Después de gestión Back Office no fue posible liberar HHPP de traslado (solo uso back office)</span>
-                                                    
-                                                </div>
-                                            </div>
-                                            <div class="info-box" id="Aviso4" style="display:none;">
-                                                <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
-                                                <div class="info-box-content">
-                                                    <span class="info-box-number">USAR SOLO CUANDO</span>
-                                                    <span style="text-transform:initial;" class="info-box-text">Matriz de traslado no tiene cableado (sin visita tecnica, visita tecnica) y esta fuera de PEN 2017</span>
 
-                                                </div>
+                                    </td>
+                                    <td>@Html.ValidationMessageFor(m => m.TrasladoFallido.MotivoTrasladoFallido, "", new { @class = "text-danger" })<br /></td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td style="padding:5px;">
+                                        <div class="info-box" id="Aviso1" style="display:none;">
+                                            <span style="height:95px" class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="info-box-number">USAR SOLO CUANDO</span>
+                                                <span style="text-transform:initial;" class="info-box-text">Dirección de traslado no tiene cobertura bajo ninguna red (Bidireccional, DTH, Unidireccional)</span>
+                                                <span style="text-transform:initial;" class="info-box-text">Direccion de traslado solo tiene cobertura DTH y cliente bidireccional no acepta traslado</span>
+                                                <span style="text-transform:initial;" class="info-box-text">Sector con cobertura en alguna red (Bidireccional, DTH, Unidireccional) pero aliado técnico confirma no es posible instalación</span>
                                             </div>
-                                            <div class="info-box" id="Aviso5" style="display:none;">
-                                                <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
-                                                <div class="info-box-content">
-                                                    <span class="info-box-number">USAR SOLO CUANDO</span>
-                                                    <span style="text-transform:initial;" class="info-box-text">Cliente no desea esperar tiempos de gestión por escalamiento a Back Office traslados</span>
+                                        </div>
+                                        <div class="info-box" id="Aviso2" style="display:none;">
+                                            <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="info-box-number">USAR SOLO CUANDO</span>
+                                                <span style="text-transform:initial;" class="info-box-text">Cliente no acepta cambio de tarifa por politicas comerciales que aplican a dirección de traslado</span>
+                                                <span style="text-transform:initial;" class="info-box-text">Cliente no acepta cambio de tarifa por estrato que aplica a dirección de traslado</span>
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="Aviso3" style="display:none;">
+                                            <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="info-box-number">USAR SOLO CUANDO</span>
+                                                <span style="text-transform:initial;" class="info-box-text">Después de gestión Back Office no fue posible liberar HHPP de traslado (solo uso back office)</span>
 
-                                                </div>
                                             </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                                        </div>
+                                        <div class="info-box" id="Aviso4" style="display:none;">
+                                            <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="info-box-number">USAR SOLO CUANDO</span>
+                                                <span style="text-transform:initial;" class="info-box-text">Matriz de traslado no tiene cableado (sin visita tecnica, visita tecnica) y esta fuera de PEN 2017</span>
+
+                                            </div>
+                                        </div>
+                                        <div class="info-box" id="Aviso5" style="display:none;">
+                                            <span class="info-box-icon bg-red"><i class="ion-android-alert"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="info-box-number">USAR SOLO CUANDO</span>
+                                                <span style="text-transform:initial;" class="info-box-text">Cliente no desea esperar tiempos de gestión por escalamiento a Back Office traslados</span>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
                             <div id="ControlesComplemento" style="height:auto;width:1000px;overflow:hidden;margin-top:-15px;margin-left:5px;">
                                 <div id="DCuentaCliente" style="padding:2px; width:200px;float:left;display:none;">
                                     <small>Cuenta Cliente</small>
@@ -336,7 +337,7 @@
                                                                                              new SelectListItem{Text="SIN VISITA TECNICA", Value="SIN VISITA TECNICA" },
                                                                                              new SelectListItem{Text="TRABAJO DE ACOMETIDA", Value="TRABAJO DE ACOMETIDA" },
                                                                                              new SelectListItem{Text="VISITA TECNICA", Value="VISITA TECNICA" }},
-                                                                                                       "--SELECCIONE--", new { @class = "form-control input-sm",@id= "DEstadoMatriz" })
+                                                                                                       "--SELECCIONE--", new { @class = "form-control input-sm", @id = "DEstadoMatriz" })
                                 </div>
                                 <div id="DEstratoOrigen" style="float:left;padding:2px; width:200px;display:none;">
                                     <small>Estrato Origen</small>
@@ -361,7 +362,7 @@
                                                                                                new SelectListItem{Text="CREACION DE MATRIZ", Value="CREACION DE MATRIZ" },
                                                                                                new SelectListItem{Text="MATRIZ SIN ACOMETIDA", Value="MATRIZ SIN ACOMETIDA" },
                                                                                                new SelectListItem{Text="LIBERACION DE HOME PASS", Value="LIBERACION DE HOME PASS" }},
-                                                                                                       "--SELECCIONE--", new { @class = "form-control input-sm",@id= "DGestionPorTraslado" })
+                                                                                                       "--SELECCIONE--", new { @class = "form-control input-sm", @id = "DGestionPorTraslado" })
                                 </div>
                                 <div id="DNodo" style="float:left;padding:2px; width:200px;display:none;">
                                     <small>Nodo</small>
@@ -394,16 +395,17 @@
                                             </td>
                                         </tr>
                                     </table>
-                                    </div>
+                                </div>
                                 <br />
                                 <div style="float:left;width:1000px;margin-top:5px;">
-                                    <button type="submit" class="btn btn-primary" name="cdgardar" value="true" style="width:15%; height:40px;">Guardar Datos</button><br /></div>
-                                </div>    
-                                
+                                    <button type="submit" class="btn btn-primary" name="cdgardar" value="true" style="width:15%; height:40px;">Guardar Datos</button><br />
+                                </div>
+                            </div>
+
                         </div>
                         <br />
-                        
-                        
+
+
                     </div>
                 </div>
             </div>
@@ -418,7 +420,7 @@
         </script>
         <script src="~/Scripts/Traslados/RegistrotrasladoFallido.js?1.1.7"></script>
 
-@Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+        @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
     }
 }
 else

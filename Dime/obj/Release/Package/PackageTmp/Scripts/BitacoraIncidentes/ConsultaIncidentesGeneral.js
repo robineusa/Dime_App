@@ -6,7 +6,7 @@ $('#Fecha_Inicial').datetimepicker({
 
 $('#Fecha_Final').datetimepicker({
     format: 'Y-m-d',
-    onShow: function (ct) {
+    onShow: function (ct) {$('input').val('')
         this.setOptions({
             minDate: $('#Fecha_Inicial').val() ? $('#Fecha_Inicial').val() : false
         })

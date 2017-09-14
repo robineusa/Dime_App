@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using Telmexla.Servicios.DIME.Entity;
 namespace Dime.Controllers
 {
-    [ExpiringFilter]
+    
     public class TrasladosController : MyController
     {
         WSD.TrasladosServiceClient trasladowebservice;
@@ -25,7 +25,7 @@ namespace Dime.Controllers
             maestrosService.ClientCredentials.Authenticate();
         }
 
-        // GET: Traslados
+       
         [HttpGet]
         public ActionResult SolicitudCrearDireccion()
         {
@@ -36,8 +36,7 @@ namespace Dime.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SolicitudCrearDireccion(ViewModelTraslados modelo)
         {
-
-
+            
             DateTime fechainiciotransaccion = Convert.ToDateTime(Session["FechaInicial"].ToString());
             DateTime fechafintransaccion = DateTime.Now;
 
