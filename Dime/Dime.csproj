@@ -241,6 +241,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\WSP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="UserDetail.cs" />
     <Compile Include="UsersNotify.cs" />
@@ -3118,7 +3123,28 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService1.disco" />
+    <None Include="Service References\WSD\WebService.disco" />
+    <None Include="Service References\WSP\configuration91.svcinfo" />
+    <None Include="Service References\WSP\configuration.svcinfo" />
+    <Content Include="Service References\WSP\Dime.WSP.enviarEncuestaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSP\Dime.WSP.registrarLogResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSP\Dime.WSP.resetPropiedadesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSP\Dime.WSP.RespConsultarParamCobranza.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSP\Dime.WSP.respGenerarEncuesta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WSP\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Styles\Bitacora\Visualizador.css" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
@@ -3376,20 +3402,24 @@
     <Content Include="Views\BitacoraIncidentes\ConsultaIncidentesGeneral.cshtml" />
     <Content Include="Views\BitacoraIncidentes\ConsultaIncidentesLog.cshtml" />
     <Content Include="Views\BackElite\ReasignacionDeSolicitudes.cshtml" />
-    <None Include="Service References\WSD\WebService1.wsdl" />
-    <None Include="Service References\WSD\WebService5.xsd">
+    <None Include="Service References\WSD\WebService.wsdl" />
+    <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService51.xsd">
+    <None Include="Service References\WSD\WebService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService52.xsd">
+    <None Include="Service References\WSD\WebService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService53.xsd">
+    <None Include="Service References\WSD\WebService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService54.xsd">
+    <None Include="Service References\WSD\WebService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WSP\GeneracionEncuestaService.wsdl" />
+    <None Include="Service References\WSP\GeneracionEncuestaService.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">
@@ -3424,6 +3454,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\WSD\" />
+    <WCFMetadataStorage Include="Service References\WSP\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

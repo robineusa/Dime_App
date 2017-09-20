@@ -15298,10 +15298,10 @@ namespace Dime.WSD {
     public interface IPOMSolicitudesService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPOMSolicitudesService/RegistrarSolicitudPom", ReplyAction="http://tempuri.org/IPOMSolicitudesService/RegistrarSolicitudPomResponse")]
-        void RegistrarSolicitudPom(Telmexla.Servicios.DIME.Entity.POMSolicitudes Solicitud);
+        Telmexla.Servicios.DIME.Entity.POMSolicitudes RegistrarSolicitudPom(Telmexla.Servicios.DIME.Entity.POMSolicitudes Solicitud);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPOMSolicitudesService/RegistrarSolicitudPom", ReplyAction="http://tempuri.org/IPOMSolicitudesService/RegistrarSolicitudPomResponse")]
-        System.Threading.Tasks.Task RegistrarSolicitudPomAsync(Telmexla.Servicios.DIME.Entity.POMSolicitudes Solicitud);
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.POMSolicitudes> RegistrarSolicitudPomAsync(Telmexla.Servicios.DIME.Entity.POMSolicitudes Solicitud);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPOMSolicitudesService/ValidarCuentaEnBaseSolicitudesPom", ReplyAction="http://tempuri.org/IPOMSolicitudesService/ValidarCuentaEnBaseSolicitudesPomRespon" +
             "se")]
@@ -15345,11 +15345,11 @@ namespace Dime.WSD {
                 base(binding, remoteAddress) {
         }
         
-        public void RegistrarSolicitudPom(Telmexla.Servicios.DIME.Entity.POMSolicitudes Solicitud) {
-            base.Channel.RegistrarSolicitudPom(Solicitud);
+        public Telmexla.Servicios.DIME.Entity.POMSolicitudes RegistrarSolicitudPom(Telmexla.Servicios.DIME.Entity.POMSolicitudes Solicitud) {
+            return base.Channel.RegistrarSolicitudPom(Solicitud);
         }
         
-        public System.Threading.Tasks.Task RegistrarSolicitudPomAsync(Telmexla.Servicios.DIME.Entity.POMSolicitudes Solicitud) {
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.POMSolicitudes> RegistrarSolicitudPomAsync(Telmexla.Servicios.DIME.Entity.POMSolicitudes Solicitud) {
             return base.Channel.RegistrarSolicitudPomAsync(Solicitud);
         }
         

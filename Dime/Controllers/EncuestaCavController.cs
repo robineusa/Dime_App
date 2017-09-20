@@ -13,10 +13,16 @@ namespace Dime.Controllers
     public class EncuestaCavController : MyController
     {
         WSD.POMSolicitudesServiceClient PomService;
+        WSP.GeneracionEncuestaClient EncuestaService;
+        WSP.reqGenerarEncuesta EntidadEncuesta;
         public EncuestaCavController()
         {
             PomService = new WSD.POMSolicitudesServiceClient();
             PomService.ClientCredentials.Authenticate();
+            EncuestaService = new WSP.GeneracionEncuestaClient();
+            EncuestaService.ClientCredentials.Authenticate();
+            EntidadEncuesta = new WSP.reqGenerarEncuesta();
+            
         }
         [HttpGet]
         public ActionResult EncuestadeSatisfaccion()
@@ -29,8 +35,22 @@ namespace Dime.Controllers
         public ActionResult EncuestadeSatisfaccion(POMSolicitudes modelo)
         {
             modelo.UsuarioTransaccion = Session["Usuario"].ToString();
-            PomService.RegistrarSolicitudPom(modelo);
-            PomService.Close();
+            POMSolicitudes EncuestaRegistrada =  PomService.RegistrarSolicitudPom(modelo);
+            
+            //envia encuesta poom
+            EntidadEncuesta.id = Convert.ToString(EncuestaRegistrada.IdTansaccion);
+            EntidadEncuesta.canal = Convert.ToString(EncuestaRegistrada.CanalTransaccion);
+            EntidadEncuesta.zona = Convert.ToString(EncuestaRegistrada.ZonaTransaccion);
+            EntidadEncuesta.fecha = Convert.ToString(EncuestaRegistrada.FechaTransaccion);
+            EntidadEncuesta.min = Convert.ToString(EncuestaRegistrada.TelefonoCeluar);
+            EntidadEncuesta.minContacto = Convert.ToString(EncuestaRegistrada.TelefonoDeContacto);
+            EntidadEncuesta.email = Convert.ToString(EncuestaRegistrada.CorreoElectronico);
+            EntidadEncuesta.cuenta = Convert.ToString(EncuestaRegistrada.CuentaCliente);
+            EntidadEncuesta.operacion = Convert.ToString(EncuestaRegistrada.Operacion);
+            EntidadEncuesta.tokenId = Convert.ToString(EncuestaRegistrada.TokenId);
+            EntidadEncuesta.usuarioRegistra = Convert.ToString(EncuestaRegistrada.UsuarioTransaccion);
+
+            EncuestaService.enviarEncuesta(EntidadEncuesta);
             return RedirectToAction("EncuestadeSatisfaccion", "EncuestaCav");
         }
         [HttpGet]
