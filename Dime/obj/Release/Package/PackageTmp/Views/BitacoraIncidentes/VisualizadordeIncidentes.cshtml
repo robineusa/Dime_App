@@ -3,7 +3,7 @@
     ViewBag.Title = "Visualizador de Incidentes";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link href="~/Styles/Bitacora/Visualizador.css" rel="stylesheet" />
+<link href="~/Styles/Bitacora/Visualizador.css?1.0.1" rel="stylesheet" />
 @using (Html.BeginForm("VisualizadordeIncidentes", "BitacoraIncidentes", FormMethod.Post, new { id = "Registro", role = "form" }))
 {
     @Html.HiddenFor(m => m.BIPBitacoraIncidentesFinal.IdRegistro, new { @class = "form-control input-sm", @Id = "idRegistro" })
@@ -95,6 +95,12 @@
                         <div style="border-style:solid;border-color:black;border-top-width:1px;border-bottom-width:0px; float:left;width:100%;margin-top:5px;"></div>
                         <div class="Content3">
                             @ViewBag.Afectacion
+                        </div>
+                        <div class="Piedepagina">
+                            <div style="font-size:12px;font-family:sans-serif;float:left;">
+                                &nbsp; <i class="ion-chatboxes"></i> Control Operativo - Gestion Incidentes
+                                &nbsp; <i class="ion-email"></i> gestionincidentes@claro.com.co
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -195,6 +201,12 @@
                                 </tr>
                             </table>
 
+                        </div>
+                        <div class="Piedepagina">
+                            <div style="font-size:12px;font-family:sans-serif;float:left;">
+                                &nbsp; <i class="ion-chatboxes"></i> Control Operativo - Gestion Incidentes
+                                &nbsp; <i class="ion-email"></i> gestionincidentes@claro.com.co
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -305,6 +317,12 @@
                         <div class="Content3Verde">
                             @ViewBag.ComentariosCierre
                         </div>
+                        <div class="Piedepagina">
+                            <div style="font-size:12px;font-family:sans-serif;float:left;">
+                                &nbsp; <i class="ion-chatboxes"></i> Control Operativo - Gestion Incidentes
+                                &nbsp; <i class="ion-email"></i> gestionincidentes@claro.com.co
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
@@ -320,5 +338,5 @@
                 var UrlAliadosAfectados = '@Url.Action("ListaAliadosAfectadosJson", "BitacoraIncidentes")';
                 var UrlLogDeIncident = '@Url.Action("LogDeIncidentesJson", "BitacoraIncidentes")';
             </script>
-            <script src="~/Scripts/BitacoraIncidentes/VisualizadordeIncidentes.js?1.0.5"></script>
+            <script src="~/Scripts/BitacoraIncidentes/VisualizadordeIncidentes.js?1.0.7"></script>
         }

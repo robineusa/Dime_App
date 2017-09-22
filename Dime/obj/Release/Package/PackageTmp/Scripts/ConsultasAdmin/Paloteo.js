@@ -133,6 +133,8 @@ function ShowGridGestiones(data) {
             buttonCount: 5
         },
         columns: [
+            
+            { field: "IdIngreso", title: "Id Ingreso", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "AliadoApertura", title: "Aliado", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "Area", title: "Area", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "CuentaCliente", title: "Cuenta", width: 80, headerAttributes: { style: "white-space: normal" } },

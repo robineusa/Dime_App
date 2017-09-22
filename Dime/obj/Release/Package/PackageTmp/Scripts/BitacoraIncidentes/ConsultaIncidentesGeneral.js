@@ -6,7 +6,7 @@ $('#Fecha_Inicial').datetimepicker({
 
 $('#Fecha_Final').datetimepicker({
     format: 'Y-m-d',
-    onShow: function (ct) {$('input').val('')
+    onShow: function (ct) {
         this.setOptions({
             minDate: $('#Fecha_Inicial').val() ? $('#Fecha_Inicial').val() : false
         })
@@ -30,7 +30,6 @@ $("#Fecha_Final").blur(function (event) {
     TraerDatosConsulta(F1, F2);
 
 });
-
 function TraerDatosConsulta(F1, F2) {
     document.getElementById('dataLoading').style.display = 'inline-block';
     $.ajax({

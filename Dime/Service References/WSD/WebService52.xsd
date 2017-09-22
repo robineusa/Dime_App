@@ -3186,4 +3186,51 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfPOMSolicitudes" nillable="true" type="tns:ArrayOfPOMSolicitudes" />
+  <xs:complexType name="ArrayOfFidelizacionMaestroServicios">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionMaestroServicios" nillable="true" type="tns:FidelizacionMaestroServicios" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFidelizacionMaestroServicios" nillable="true" type="tns:ArrayOfFidelizacionMaestroServicios" />
+  <xs:complexType name="FidelizacionMaestroServicios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdRetencion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdServicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FidelizacionMaestroServicios" nillable="true" type="tns:FidelizacionMaestroServicios" />
+  <xs:complexType name="FidelizacionMotivosCancelacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Eliminado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtrosCampos" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OtrosOfrecimientos" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Registro" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FidelizacionMotivosCancelacion" nillable="true" type="tns:FidelizacionMotivosCancelacion" />
+  <xs:complexType name="ArrayOfFidelizacionMotivosCancelacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionMotivosCancelacion" nillable="true" type="tns:FidelizacionMotivosCancelacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFidelizacionMotivosCancelacion" nillable="true" type="tns:ArrayOfFidelizacionMotivosCancelacion" />
+  <xs:complexType name="ArrayOfFidelizacionSubmotivosCancelacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionSubmotivosCancelacion" nillable="true" type="tns:FidelizacionSubmotivosCancelacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFidelizacionSubmotivosCancelacion" nillable="true" type="tns:ArrayOfFidelizacionSubmotivosCancelacion" />
+  <xs:complexType name="FidelizacionSubmotivosCancelacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Eliminado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FIDMotivoId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Registro" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Submotivo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FidelizacionSubmotivosCancelacion" nillable="true" type="tns:FidelizacionSubmotivosCancelacion" />
 </xs:schema>

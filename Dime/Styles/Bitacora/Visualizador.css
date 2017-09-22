@@ -361,6 +361,7 @@ font-weight: 300;
 	width: 100%;
 	height: auto;
 	min-height: 40PX;
+	min-width: 100%;
 }
 
 .Comentarios:before {
@@ -380,6 +381,12 @@ font-weight: 300;
 	margin-left: -65px;
 	margin-top: -5px;
 	
+}
+.LogGestionIncidentes{
+	width: 100%;
+}
+.LogGestionIncidentes td{
+	width: 800px;
 }
 
 /*informacion del cuadro verde*/
@@ -530,4 +537,17 @@ font-weight: 300;
 	font-weight: 500;
 	font-family: sans-serif;
 	font-size: 11px;
+}
+.Piedepagina{
+	margin-top:1%;
+	float:left;
+	font-size: 10px;
+	margin-top: 1%;
+}
+.Piedepagina i{
+	font-size: 18px;
+	font-style: bold;
+	color: black;
+padding-top: 10px;
+
 }

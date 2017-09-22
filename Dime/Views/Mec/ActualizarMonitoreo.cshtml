@@ -25,11 +25,14 @@
                                         <small>Seleccione el Proceso</small>
                                         @Html.DropDownListFor(m => m.MecMonitoreosP.IdProceso, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Procesos", @class = "form-control" })
                                         @Html.HiddenFor(m => m.MecMonitoreosP.IdMonitoreo, new { @class = "form-control input-sm", @Id = "IdMonitoreo" })
+                                        @Html.HiddenFor(m => m.MecMonitoreosP.NombreProceso, new { @class = "form-control input-sm", @Id = "NombreProceso1" })
+                                        @Html.HiddenFor(m => m.MecMonitoreosP.IdProceso, new { @class = "form-control input-sm", @Id = "IdDelProceso" })
                                     </td>
                                     <td style="padding-left:4px; width:300px;">
                                         <small>Seleccione la Linea</small>
                                         @Html.DropDownListFor(m => m.MecMonitoreosP.IdLinea, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Lineas", @class = "form-control" })
                                         @Html.HiddenFor(m => m.MecMonitoreosP.IdListaDistribucion, new { @class = "form-control input-sm", @Id = "IdListaDistri" })
+                                        @Html.HiddenFor(m => m.MecMonitoreosP.NombreLinea, new { @class = "form-control input-sm", @Id = "NombreLinea1" })
                                     </td>
                                 </tr>
                                 <tr>
@@ -160,6 +163,7 @@
                         <td style="padding-left:1px; width:300px;">
                             <small>Tipo de Alarma</small>
                             @Html.DropDownListFor(m => m.MecMonitoreosP.TipoDeAlarma, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "TipoAlarmas", @class = "form-control" })
+                            @Html.HiddenFor(m => m.MecMonitoreosP.TipoDeAlarma, new { @class = "form-control input-sm", @Id = "TipoDeAlarma1" })
 
                         </td>
                         <td style="padding-left:4px; width:220px;">
@@ -267,7 +271,7 @@
             var UrlAlarmas = '@Url.Action("TraerListaTiposAlarmas", "Mec")';
             var UrlListaDistribucion = '@Url.Action("TraerListasDistribucion", "Mec")';
         </script>
-        <script src="~/Scripts/Mec/ActualizarMonitoreo.js?1.0.0"></script>
+        <script src="~/Scripts/Mec/ActualizarMonitoreo.js?1.0.6"></script>
     }
 
 

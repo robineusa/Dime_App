@@ -5422,4 +5422,106 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getMaestroServiciosAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMaestroServiciosAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q379="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="getMaestroServiciosAllResult" nillable="true" type="q379:ArrayOfFidelizacionMaestroServicios" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMaestroServiciosById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codServicio" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMaestroServiciosByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q380="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="getMaestroServiciosByIdResult" nillable="true" type="q380:FidelizacionMaestroServicios" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setMotivosCancelacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q381="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="MotivoCancelacion" nillable="true" type="q381:FidelizacionMotivosCancelacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setMotivosCancelacionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMotivosCancelacionById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codMotivo" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMotivosCancelacionByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q382="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="getMotivosCancelacionByIdResult" nillable="true" type="q382:FidelizacionMotivosCancelacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMotivosCancelacionAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMotivosCancelacionAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q383="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="getMotivosCancelacionAllResult" nillable="true" type="q383:ArrayOfFidelizacionMotivosCancelacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSubmotivosCancelacionAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSubmotivosCancelacionAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q384="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="getSubmotivosCancelacionAllResult" nillable="true" type="q384:ArrayOfFidelizacionSubmotivosCancelacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSubmotivosCancelacionById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSubmotivo" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSubmotivosCancelacionByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q385="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="getSubmotivosCancelacionByIdResult" nillable="true" type="q385:FidelizacionSubmotivosCancelacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setSubmotivoCancelacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q386="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ObjFidelizacion" nillable="true" type="q386:FidelizacionSubmotivosCancelacion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setSubmotivoCancelacionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

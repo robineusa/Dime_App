@@ -1,7 +1,22 @@
-﻿$(document).ready(function () {
+﻿var NombreProceso = document.getElementById("NombreProceso1").value;
+var IdProceso = $('#IdDelProceso').val();
+var NombreLinea = document.getElementById("NombreLinea1").value;
+var TipoAlarmaAntigua = document.getElementById("TipoDeAlarma1").value;
+
+$(document).ready(function () {
     ListaProcesos();
+    ListaLineas();
     ListaTipoAlarmas();
 });
+$('#Procesos').change(function () {
+    NombreProceso = "";
+    NombreLinea = "";
+    TipoAlarmaAntigua = "";
+    IdProceso = $('#Procesos').val();
+    ListaLineas();
+    ListaTipoAlarmas();
+  
+})
 function ListaProcesos() {
     $.ajax({
         type: "POST",
@@ -18,15 +33,25 @@ function ListaProcesos() {
                 }));
 
             }
-
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("Procesos");
+            // obtenemos el valor a buscar
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == NombreProceso) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                }
+            }
+            
         },
         error: function (request, status, error) {
             alert(request.responseText);
         }
     });
 }
+
 function ListaLineas() {
-    var IdProceso = $('#Procesos').val();
     $.ajax({
         type: "POST",
         url: urlLineas,
@@ -42,14 +67,22 @@ function ListaLineas() {
                 }));
 
             }
-
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("Lineas");
+            // obtenemos el valor a buscar
+            
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == NombreLinea) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                }
+            }
         }
     });
     $('#Lineas').find('option:not(:first)').remove();
 }
-$('#Procesos').change(function () {
-    ListaLineas();
-})
+
 function DatosUsuario() {
     var Cedula = $('#CedulaUsuarioMonitoreado').val();
     $.ajax({
@@ -113,6 +146,7 @@ function ListaTipoAlarmas() {
         type: "POST",
         url: UrlAlarmas,
         contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdProceso: IdProceso }),
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
@@ -123,7 +157,16 @@ function ListaTipoAlarmas() {
                 }));
 
             }
-
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("TipoAlarmas");
+            // obtenemos el valor a buscar
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == TipoAlarmaAntigua) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                }
+            }
         }
     });
     $('#TipoAlarmas').find('option:not(:first)').remove();
