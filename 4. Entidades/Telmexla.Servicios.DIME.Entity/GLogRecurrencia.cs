@@ -30,21 +30,22 @@ namespace Telmexla.Servicios.DIME.Entity
         public string UsoClaroVideo { get; set; }
         public string ClienteNagra { get; set; }
         public string Ofrecimiento1 { get; set; }
+        public string AceptacionPrimerOfrecimiento { get; set; }
         public string Ofrecimiento2 { get; set; }
+        public string AceptacionSegundoOfrecimiento { get; set; }
         public string Ofrecimiento3 { get; set; }
+        public string AceptacionTercerOfrecimiento { get; set; }
         public string Diferenciador { get; set; }
         public decimal Prioridad { get; set; }
         public decimal VecesGestionado { get; set; }
-        public string MacroProcesoRecurrencia1 { get; set; }
-        public string MacroProcesoRecurrencia2 { get; set; }
-        public string MacroProcesoRecurrencia3 { get; set; }
-        public string MarcacionRecurrente1 { get; set; }
-        public string MarcacionRecurrente2 { get; set; }
-        public string MarcacionRecurrente3 { get; set; }
-        public string VolvioLlamar { get; set; }
+        public string MarcacionInicialAfectacion { get; set; }
+        public string MarcacionReincidenteRecurrencia { get; set; }
+        public string ClieComunicaRealizadaGestRecu { get; set; }
         public string PorQue { get; set; }
         public string Contacto { get; set; }
-        public string VozCliente { get; set; }
+        public string VozClienteCausaRaiz { get; set; }
+        public string Solucionado { get; set; }
+        public string AreaParticipaSolucion { get; set; }
         public string ClientePresentaNovedades { get; set; }
         public string Proceso { get; set; }
         public string Macroproceso { get; set; }
@@ -52,12 +53,16 @@ namespace Telmexla.Servicios.DIME.Entity
         public string FallaEspecificaArbolCCAA { get; set; }
         public string FallaCausaRaiz { get; set; }
         public string SolucionEspecifica { get; set; }
-        public string Solucionado { get; set; }
         public string Estado { get; set; }
+        public string MarcaEquiposFalla { get; set; }
+        public string UbicacionModem { get; set; }
+        public string DispositivosInalambricosAlrededorModem { get; set; }
+        public string CantEquiposConecInternet { get; set; }
+        public string TipoDispConectaInternet { get; set; }
+        public string UsoBrindaInternet { get; set; }
         public string ActivacionClaroVideoNagra { get; set; }
-        public string AceptacionPrimerOfrecimiento { get; set; }
-        public string AceptacionSegundoOfrecimiento { get; set; }
-        public string AceptacionTercerOfrecimiento { get; set; }
+        public string ServicioOfrecido { get; set; }
+        public string AceptacionServicioOfrecido { get; set; }
         public string Observaciones { get; set; }
     }
 }
