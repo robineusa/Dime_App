@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,75 +30,40 @@ namespace Telmexla.Servicios.DIME.Entity
         public string UsoClaroVideo { get; set; }
         public string ClienteNagra { get; set; }
         public string Ofrecimiento1 { get; set; }
+        public string AceptacionPrimerOfrecimiento { get; set; }
         public string Ofrecimiento2 { get; set; }
+        public string AceptacionSegundoOfrecimiento { get; set; }
         public string Ofrecimiento3 { get; set; }
+        public string AceptacionTercerOfrecimiento { get; set; }
         public string Diferenciador { get; set; }
         public decimal Prioridad { get; set; }
         public decimal VecesGestionado { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
-        public string MacroProcesoRecurrencia1{ get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
-        public string MacroProcesoRecurrencia2 { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
-        public string MacroProcesoRecurrencia3 { get; set; }
-        public string MarcacionRecurrente1 { get; set; }
-        public string MarcacionRecurrente2 { get; set; }
-        public string MarcacionRecurrente3 { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
-        public string VolvioLlamar { get; set; }
+        public string MarcacionInicialAfectacion { get; set; }
+        public string MarcacionReincidenteRecurrencia { get; set; }
+        public string ClieComunicaRealizadaGestRecu { get; set; }
         public string PorQue { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
         public string Contacto { get; set; }
-        public string VozCliente { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
+        public string VozClienteCausaRaiz { get; set; }
+        public string Solucionado { get; set; }
+        public string AreaParticipaSolucion { get; set; }
         public string ClientePresentaNovedades { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
         public string Proceso { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
         public string Macroproceso { get; set; }
         public string ServicioAfectado{ get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
-        public string ServicioAfectadoR { get; set; }
         public string FallaEspecificaArbolCCAA { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
-        public string FallaEspecificaArbolCCAAR { get; set; }
         public string FallaCausaRaiz { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
-        public string FallaCausaRaizR { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
         public string SolucionEspecifica { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
-        public string Solucionado { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
         public string Estado { get; set; }
 
-        [Required(ErrorMessage = "Seleccione una opción")]
+        public string MarcaEquiposFalla { get; set; }
+        public string UbicacionModem { get; set; }
+        public string DispositivosInalambricosAlrededorModem { get; set; }
+        public string CantEquiposConecInternet { get; set; }
+        public string TipoDispConectaInternet { get; set; }
+        public string UsoBrindaInternet { get; set; }
         public string ActivacionClaroVideoNagra { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
-        public string AceptacionPrimerOfrecimiento { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
-        public string AceptacionSegundoOfrecimiento { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
-        public string AceptacionTercerOfrecimiento { get; set; }
-
-        [Required(ErrorMessage = "Debe Digitar unas Notas")]
+        public string ServicioOfrecido{ get; set; }
+        public string AceptacionServicioOfrecido { get; set; }
         public string Observaciones { get; set; }
         public decimal UsuarioGestionando { get; set; }
 
