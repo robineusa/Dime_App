@@ -208,13 +208,19 @@ function SetOpciones() {
         $("#Estado").attr("disabled", "disabled");
         $("#ActivacionClaroVideoNagra").empty();
         $("#ActivacionClaroVideoNagra").append("<option value=''>--Select Option--</option>");
+        $("#ActivacionClaroVideoNagra").append("<option value='INCENTIVA USO CLARO VIDEO'>INCENTIVA USO CLARO VIDEO</option>");
+        $("#ActivacionClaroVideoNagra").append("<option value='NO DESEA ACTIVACION'>NO DESEA ACTIVACION</option>");
+        $("#ActivacionClaroVideoNagra").append("<option value='SE ACTIVA CLARO VIDEO'>SE ACTIVA CLARO VIDEO</option>");
         $("#ActivacionClaroVideoNagra").append("<option value='TARIFA NO DEFINIDA'>TARIFA NO DEFINIDA</option>");
-        $("#ActivacionClaroVideoNagra").append("<option value='YA SE ENCUENTRA ACTIVO'>YA SE ENCUENTRA ACTIVO</option>");
-        $("#ActivacionClaroVideoNagra").append("<option value='ACTIVA CLARO VIDEO'>ACTIVA CLARO VIDEO</option>");
-        $("#ActivacionClaroVideoNagra").append("<option value='CLIENTE NO ACEPTA ACTIVACION'>CLIENTE NO ACEPTA ACTIVACION</option>");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
-        $("#MarcaEquiposFalla").empty();
-        $("#MarcaEquiposFalla").append("<option value=''>--Select Option--</option>");
+        
+        SetServiciosOfrecer();
+        $("#AceptacionServicioOfrecido").empty();
+        $("#AceptacionServicioOfrecido").append("<option value=''>--Select Option--</option>");
+        $("#AceptacionServicioOfrecido").append("<option value='ACEPTA OFRECIMIENTO'>ACEPTA OFRECIMIENTO</option>");
+        $("#AceptacionServicioOfrecido").append("<option value='NO ESTA DISPONIBLE'>NO ESTA DISPONIBLE</option>");
+        $("#AceptacionServicioOfrecido").append("<option value='NO LE INTERESA'>NO LE INTERESA</option>");
+        $("#AceptacionServicioOfrecido").append("<option value='NO LE INTERESA POR COSTOS'>NO LE INTERESA POR COSTOS</option>");
         
     }
     else {
@@ -243,6 +249,10 @@ function SetOpciones() {
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
         $("#MarcaEquiposFalla").append("<option value=''>--Select Option--</option>");
+        $("#ServicioOfrecido").empty();
+        $("#ServicioOfrecido").append("<option value=''>--Select Option--</option>");
+        $("#AceptacionServicioOfrecido").empty();
+        $("#AceptacionServicioOfrecido").append("<option value=''>--Select Option--</option>");
 
 
         $("#VozCliente").val('');
@@ -632,6 +642,50 @@ function SetCampoFallaCausaRaiz()
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
         $("#MarcaEquiposFalla").append("<option value=''>--Select Option--</option>");
+        alert(FallaCausaRaiz);
+        if ((FallaCausaRaiz == "ACCESO A PAGINAS ESPECIFICAS") || (FallaCausaRaiz == "CONECTIVIDAD LIMITADA O NULA")
+            (FallaCausaRaiz == "INTERMITENCIA") || (FallaCausaRaiz == "PROBLEMAS DE POTENCIA WIFI") || (FallaCausaRaiz == "SIN NAVEGACION"))
+        {  
+            $("#UbicacionModem").removeAttr("disabled");
+            $("#UbicacionModem").empty();
+            $("#UbicacionModem").append("<option value=''>--Select Option--</option>");
+            $("#UbicacionModem").append("<option value='CENTRAL Y A MAS DE 1 MTS CORRECTA'>CENTRAL Y A MAS DE 1 MTS CORRECTA</option>");
+            $("#UbicacionModem").append("<option value='A MENOS DE 1 MTS DEL SUELO INCORRECTA'>A MENOS DE 1 MTS DEL SUELO INCORRECTA</option>");
+            $("#UbicacionModem").append("<option value='EN UN RINCON DE LA CASA INCORRECTA'>EN UN RINCON DE LA CASA INCORRECTA</option>");
+            $("#UbicacionModem").append("<option value='CLIENTE NO BRINDA INFORMACION'>CLIENTE NO BRINDA INFORMACION</option>");
+            $("#DispositivosInalambricosAlrededorModem").attr("disabled", "disabled");
+            $("#DispositivosInalambricosAlrededorModem").empty();
+            $("#DispositivosInalambricosAlrededorModem").append("<option value=''>--Select Option--</option>");
+            $("#CantEquiposConecInternet").Attr("disabled", "disabled");
+            $("#CantEquiposConecInternet").empty();
+            $("#CantEquiposConecInternet").append("<option value=''>--Select Option--</option>");
+            $("#TipoDispConectaInternet").attr("disabled", "disabled");
+            $("#TipoDispConectaInternet").empty();
+            $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
+            $("#UsoBrindaInternet").attr("disabled", "disabled");
+            $("#UsoBrindaInternet").empty();
+            $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
+        }
+        else
+        {
+            alert();
+            $("#UbicacionModem").attr("disabled", "disabled");
+            $("#UbicacionModem").empty();
+            $("#UbicacionModem").append("<option value=''>--Select Option--</option>");
+            $("#DispositivosInalambricosAlrededorModem").Attr("disabled", "disabled");
+            $("#DispositivosInalambricosAlrededorModem").empty();
+            $("#DispositivosInalambricosAlrededorModem").append("<option value=''>--Select Option--</option>");
+            $("#CantEquiposConecInternet").Attr("disabled", "disabled");
+            $("#CantEquiposConecInternet").empty();
+            $("#CantEquiposConecInternet").append("<option value=''>--Select Option--</option>");
+            $("#TipoDispConectaInternet").Attr("disabled", "disabled");
+            $("#TipoDispConectaInternet").empty();
+            $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
+            $("#UsoBrindaInternet").Attr("disabled", "disabled");
+            $("#UsoBrindaInternet").empty();
+            $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
+        }
+        
         //alert($('#FallaCausaRaizO').val() + '3');
     }
     else
@@ -649,6 +703,9 @@ function SetCampoFallaCausaRaiz()
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
         $("#MarcaEquiposFalla").append("<option value=''>--Select Option--</option>");
+        $("#UbicacionModem").attr("disabled", "disabled");
+        $("#UbicacionModem").empty();
+        $("#UbicacionModem").append("<option value=''>--Select Option--</option>");
         
     }
 }
@@ -994,15 +1051,319 @@ function ShowGridHistorial(data) {
 
 function SetMarcaEquiposFalla()
 {
-    if (($("#Estado").val() != "")) {
+    if ($("#Estado").val() != '') {
         $("#MarcaEquiposFalla").removeAttr("disabled");
-        alert();
+        $("#MarcaEquiposFalla").empty();
+        $("#MarcaEquiposFalla").append("<option value=''>--Seleccione--</option>");
+        $.ajax({
+            type: "POST",
+            url: urlContactoList,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ idProceso: 12 }),
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+                var object = json[0];
+                for (var index = 0, len = json.length; index < len; index++) {
+                    $('#MarcaEquiposFalla').append($('<option>', {
+                        value: json[index].OpcionesRecurrencia,
+                        text: json[index].OpcionesRecurrencia
+                    }));
+                }
+
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
     }
     else
     {
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
-        $("#MarcaEquiposFalla").append("<option value=''>--Select Option--</option>");
+        $("#MarcaEquiposFalla").append("<option value=''>--Seleccione--</option>");
+    }
+}
+
+function SetServiciosOfrecer() {
+    $("#ServicioOfrecido").removeAttr("disabled");
+    $("#ServicioOfrecido").empty();
+    $("#ServicioOfrecido").append("<option value=''>--Seleccione--</option>");
+        $.ajax({
+            type: "POST",
+            url: urlContactoList,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ idProceso: 13 }),
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+                var object = json[0];
+                for (var index = 0, len = json.length; index < len; index++) {
+                    $('#ServicioOfrecido').append($('<option>', {
+                        value: json[index].OpcionesRecurrencia,
+                        text: json[index].OpcionesRecurrencia
+                    }));
+                }
+
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
+}
+
+function setDispositivosInalam()
+{
+    if ($("#UbicacionModem").val() != "")
+    {
+        $("#DispositivosInalambricosAlrededorModem").removeAttr("disabled");
+        $("#DispositivosInalambricosAlrededorModem").empty();
+        $("#DispositivosInalambricosAlrededorModem").append("<option value=''>--Select Option--</option>");
+        $("#DispositivosInalambricosAlrededorModem").append("<option value='SIN DISPOSITIVOS CORRECTA'>SIN DISPOSITIVOS CORRECTA</option>");
+        $("#DispositivosInalambricosAlrededorModem").append("<option value='TEL. INALAMBRICO INCORRECTA'>TEL. INALAMBRICO INCORRECTA</option>");
+        $("#DispositivosInalambricosAlrededorModem").append("<option value='SOBRE O MUY CERCA AL ALTAVOZ DE UN EQUIPO DE SONIDO INCORRECTA'>SOBRE O MUY CERCA AL ALTAVOZ DE UN EQUIPO DE SONIDO INCORRECTA</option>");
+        $("#DispositivosInalambricosAlrededorModem").append("<option value='CLIENTE NO BRINDA INFORMACION'>CLIENTE NO BRINDA INFORMACION</option>");
+    }
+    else {
+
+        $("#DispositivosInalambricosAlrededorModem").Attr("disabled", "disabled");
+        $("#DispositivosInalambricosAlrededorModem").empty();
+        $("#DispositivosInalambricosAlrededorModem").append("<option value=''>--Select Option--</option>");
+        $("#CantEquiposConecInternet").Attr("disabled", "disabled");
+        $("#CantEquiposConecInternet").empty();
+        $("#CantEquiposConecInternet").append("<option value=''>--Select Option--</option>");
+        $("#TipoDispConectaInternet").Attr("disabled", "disabled");
+        $("#TipoDispConectaInternet").empty();
+        $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
+        $("#UsoBrindaInternet").Attr("disabled", "disabled");
+        $("#UsoBrindaInternet").empty();
+        $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
+    }
+}
+
+function setCantEquipos() {
+    if ($("#DispositivosInalambricosAlrededorModem").val() != "")
+    {
+        if ($("#DispositivosInalambricosAlrededorModem").val() == "SIN DISPOSITIVOS CORRECTA")
+        {
+            $("#CantEquiposConecInternet").removeAttr("disabled");
+            $("#CantEquiposConecInternet").empty();
+            $("#CantEquiposConecInternet").append("<option value=''>--Select Option--</option>");
+            $("#CantEquiposConecInternet").append("<option value='6'>6</option>");
+            $("#CantEquiposConecInternet").append("<option value='3'>3</option>");
+            $("#CantEquiposConecInternet").append("<option value='2'>2</option>");
+            $("#CantEquiposConecInternet").append("<option value='4'>4</option>");
+            $("#CantEquiposConecInternet").append("<option value='5'>5</option>");
+            $("#CantEquiposConecInternet").append("<option value='1'>1</option>");
+            $("#CantEquiposConecInternet").append("<option value='7'>7</option>");
+            $("#CantEquiposConecInternet").append("<option value='8'>8</option>");
+            $("#CantEquiposConecInternet").append("<option value='9'>9</option>");
+            $("#CantEquiposConecInternet").append("<option value='MAS DE 10'>MAS DE 10</option>");
+        }
+        else
+        {
+            if ($("#DispositivosInalambricosAlrededorModem").val() == "CLIENTE NO BRINDA INFORMACION") {
+                $("#CantEquiposConecInternet").removeAttr("disabled");
+                $("#CantEquiposConecInternet").empty();
+                $("#CantEquiposConecInternet").append("<option value=''>--Select Option--</option>");
+                $("#CantEquiposConecInternet").append("<option value='SIN DISPOSITIVOS CORRECTA'>SIN DISPOSITIVOS CORRECTA</option>");
+                $("#CantEquiposConecInternet").append("<option value='SOBRE O MUY CERCA AL ALTAVOZ DE UN EQUIOPO DE SONIDO INCORRECTA'>SOBRE O MUY CERCA AL ALTAVOZ DE UN EQUIOPO DE SONIDO INCORRECTA</option>");
+                $("#CantEquiposConecInternet").append("<option value='TEL. INALAMBRICO INCORRECTA'>TEL. INALAMBRICO INCORRECTA</option>");
+                $("#CantEquiposConecInternet").append("<option value='CLIENTE NO BRINDA INFORMACION'>CLIENTE NO BRINDA INFORMACION</option>");
+                $("#CantEquiposConecInternet").append("<option value='ROMPEMUROS INCORRECTA'>ROMPEMUROS INCORRECTA</option>");
+                $("#CantEquiposConecInternet").append("<option value='REPETIDORAS INCORRECTA'>REPETIDORAS INCORRECTA</option>");
+            }
+            else
+            {
+                $("#CantEquiposConecInternet").removeAttr("disabled");
+                $("#CantEquiposConecInternet").empty();
+                $("#CantEquiposConecInternet").append("<option value=''>--Select Option--</option>");
+                $("#CantEquiposConecInternet").append("<option value='1'>1</option>");
+                $("#CantEquiposConecInternet").append("<option value='2'>2</option>");
+                $("#CantEquiposConecInternet").append("<option value='3'>3</option>");
+                $("#CantEquiposConecInternet").append("<option value='4'>4</option>");
+                $("#CantEquiposConecInternet").append("<option value='5'>5</option>");
+                $("#CantEquiposConecInternet").append("<option value='6'>6</option>");
+                $("#CantEquiposConecInternet").append("<option value='7'>7</option>");
+                $("#CantEquiposConecInternet").append("<option value='8'>8</option>");
+                $("#CantEquiposConecInternet").append("<option value='9'>9</option>");
+                $("#CantEquiposConecInternet").append("<option value='MAS DE 10'>MAS DE 10</option>");
+            }
+        }
+        
+    }
+    else {
+        $("#CantEquiposConecInternet").Attr("disabled", "disabled");
+        $("#CantEquiposConecInternet").empty();
+        $("#CantEquiposConecInternet").append("<option value=''>--Select Option--</option>");
+        $("#TipoDispConectaInternet").Attr("disabled", "disabled");
+        $("#TipoDispConectaInternet").empty();
+        $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
+        $("#UsoBrindaInternet").Attr("disabled", "disabled");
+        $("#UsoBrindaInternet").empty();
+        $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
+    }
+}
+
+function setTipoDisp() {
+    if ($("#CantEquiposConecInternet").val() != "") {
+        if ($("#CantEquiposConecInternet").val() == "SIN DISPOSITIVOS CORRECTA") {
+            $("#TipoDispConectaInternet").removeAttr("disabled");
+            $("#TipoDispConectaInternet").empty();
+            $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
+            $("#TipoDispConectaInternet").append("<option value='6'>6</option>");
+            $("#TipoDispConectaInternet").append("<option value='3'>3</option>");
+            $("#TipoDispConectaInternet").append("<option value='2'>2</option>");
+            $("#TipoDispConectaInternet").append("<option value='4'>4</option>");
+            $("#TipoDispConectaInternet").append("<option value='5'>5</option>");
+            $("#TipoDispConectaInternet").append("<option value='1'>1</option>");
+            $("#TipoDispConectaInternet").append("<option value='7'>7</option>");
+            $("#TipoDispConectaInternet").append("<option value='8'>8</option>");
+            $("#TipoDispConectaInternet").append("<option value='9'>9</option>");
+            $("#TipoDispConectaInternet").append("<option value='MAS DE 10'>MAS DE 10</option>");
+        }
+        else {
+            if ($("#CantEquiposConecInternet").val() == "CLIENTE NO BRINDA INFORMACION") {
+                $("#TipoDispConectaInternet").removeAttr("disabled");
+                $("#TipoDispConectaInternet").empty();
+                $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
+                $("#TipoDispConectaInternet").append("<option value='SIN DISPOSITIVOS CORRECTA'>SIN DISPOSITIVOS CORRECTA</option>");
+                $("#TipoDispConectaInternet").append("<option value='SOBRE O MUY CERCA AL ALTAVOZ DE UN EQUIOPO DE SONIDO INCORRECTA'>SOBRE O MUY CERCA AL ALTAVOZ DE UN EQUIOPO DE SONIDO INCORRECTA</option>");
+                $("#TipoDispConectaInternet").append("<option value='TEL. INALAMBRICO INCORRECTA'>TEL. INALAMBRICO INCORRECTA</option>");
+                $("#TipoDispConectaInternet").append("<option value='CLIENTE NO BRINDA INFORMACION'>CLIENTE NO BRINDA INFORMACION</option>");
+                $("#TipoDispConectaInternet").append("<option value='ROMPEMUROS INCORRECTA'>ROMPEMUROS INCORRECTA</option>");
+                $("#TipoDispConectaInternet").append("<option value='REPETIDORAS INCORRECTA'>REPETIDORAS INCORRECTA</option>");
+            }
+            else {
+
+                if ($("#CantEquiposConecInternet").val() == "1" || $("#CantEquiposConecInternet").val() == "2" || $("#CantEquiposConecInternet").val() == "3" ||
+                $("#CantEquiposConecInternet").val() == "4" || $("#CantEquiposConecInternet").val() == "5" || $("#CantEquiposConecInternet").val() == "6" ||
+                $("#CantEquiposConecInternet").val() == "7" || $("#CantEquiposConecInternet").val() == "8" || $("#CantEquiposConecInternet").val() == "9" ||
+                $("#CantEquiposConecInternet").val() == "MAS DE 10")
+                {
+                    $("#TipoDispConectaInternet").removeAttr("disabled");
+                    $("#TipoDispConectaInternet").empty();
+                    $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
+                    $("#TipoDispConectaInternet").append("<option value='PC PORTATIL'>PC PORTATIL</option>");
+                    $("#TipoDispConectaInternet").append("<option value='PC ESCRITORIO'>PC ESCRITORIO</option>");
+                    $("#TipoDispConectaInternet").append("<option value='CELULAR'>CELULAR</option>");
+                    $("#TipoDispConectaInternet").append("<option value='SMART TV'>SMART TV</option>");
+                    $("#TipoDispConectaInternet").append("<option value='TABLET'>TABLET</option>");
+                    $("#TipoDispConectaInternet").append("<option value='CONSOLA DE VIDEOJUEGOS'>CONSOLA DE VIDEOJUEGOS</option>");
+                    $("#TipoDispConectaInternet").append("<option value='CONSOLA BLURAY'>CONSOLA BLURAY</option>");
+                    $("#TipoDispConectaInternet").append("<option value='ELECTRODOMESTICO'>ELECTRODOMESTICO</option>");
+                }
+                else 
+                {
+                    $("#TipoDispConectaInternet").removeAttr("disabled");
+                    $("#TipoDispConectaInternet").empty();
+                    $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
+                    $("#TipoDispConectaInternet").append("<option value='1'>1</option>");
+                    $("#TipoDispConectaInternet").append("<option value='2'>2</option>");
+                    $("#TipoDispConectaInternet").append("<option value='3'>3</option>");
+                    $("#TipoDispConectaInternet").append("<option value='4'>4</option>");
+                    $("#TipoDispConectaInternet").append("<option value='5'>5</option>");
+                    $("#TipoDispConectaInternet").append("<option value='6'>6</option>");
+                    $("#TipoDispConectaInternet").append("<option value='7'>7</option>");
+                    $("#TipoDispConectaInternet").append("<option value='8'>8</option>");
+                    $("#TipoDispConectaInternet").append("<option value='9'>9</option>");
+                    $("#TipoDispConectaInternet").append("<option value='MAS DE 10'>MAS DE 10</option>");
+                }
+            }
+        }
+    }
+    else {
+        $("#TipoDispConectaInternet").Attr("disabled", "disabled");
+        $("#TipoDispConectaInternet").empty();
+        $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
+        $("#UsoBrindaInternet").Attr("disabled", "disabled");
+        $("#UsoBrindaInternet").empty();
+        $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
+    }
+}
+
+function setUsoBrindaInter() {
+    if ($("#TipoDispConectaInternet").val() != "") {
+        if ($("#TipoDispConectaInternet").val() == "SIN DISPOSITIVOS CORRECTA") {
+            $("#UsoBrindaInternet").removeAttr("disabled");
+            $("#UsoBrindaInternet").empty();
+            $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
+            $("#UsoBrindaInternet").append("<option value='6'>6</option>");
+            $("#UsoBrindaInternet").append("<option value='3'>3</option>");
+            $("#UsoBrindaInternet").append("<option value='2'>2</option>");
+            $("#UsoBrindaInternet").append("<option value='4'>4</option>");
+            $("#UsoBrindaInternet").append("<option value='5'>5</option>");
+            $("#UsoBrindaInternet").append("<option value='1'>1</option>");
+            $("#UsoBrindaInternet").append("<option value='7'>7</option>");
+            $("#UsoBrindaInternet").append("<option value='8'>8</option>");
+            $("#UsoBrindaInternet").append("<option value='9'>9</option>");
+            $("#UsoBrindaInternet").append("<option value='MAS DE 10'>MAS DE 10</option>");
+        }
+        else {
+            if ($("#TipoDispConectaInternet").val() == "CLIENTE NO BRINDA INFORMACION") {
+                $("#UsoBrindaInternet").removeAttr("disabled");
+                $("#UsoBrindaInternet").empty();
+                $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
+                $("#UsoBrindaInternet").append("<option value='SIN DISPOSITIVOS CORRECTA'>SIN DISPOSITIVOS CORRECTA</option>");
+                $("#UsoBrindaInternet").append("<option value='SOBRE O MUY CERCA AL ALTAVOZ DE UN EQUIOPO DE SONIDO INCORRECTA'>SOBRE O MUY CERCA AL ALTAVOZ DE UN EQUIOPO DE SONIDO INCORRECTA</option>");
+                $("#UsoBrindaInternet").append("<option value='TEL. INALAMBRICO INCORRECTA'>TEL. INALAMBRICO INCORRECTA</option>");
+                $("#UsoBrindaInternet").append("<option value='CLIENTE NO BRINDA INFORMACION'>CLIENTE NO BRINDA INFORMACION</option>");
+                $("#UsoBrindaInternet").append("<option value='ROMPEMUROS INCORRECTA'>ROMPEMUROS INCORRECTA</option>");
+                $("#UsoBrindaInternet").append("<option value='REPETIDORAS INCORRECTA'>REPETIDORAS INCORRECTA</option>");
+            }
+            else {
+                $("#UsoBrindaInternet").removeAttr("disabled");
+                $("#UsoBrindaInternet").empty();
+                $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
+                $("#UsoBrindaInternet").append("<option value='1'>1</option>");
+                $("#UsoBrindaInternet").append("<option value='2'>2</option>");
+                $("#UsoBrindaInternet").append("<option value='3'>3</option>");
+                $("#UsoBrindaInternet").append("<option value='4'>4</option>");
+                $("#UsoBrindaInternet").append("<option value='5'>5</option>");
+                $("#UsoBrindaInternet").append("<option value='6'>6</option>");
+                $("#UsoBrindaInternet").append("<option value='7'>7</option>");
+                $("#UsoBrindaInternet").append("<option value='8'>8</option>");
+                $("#UsoBrindaInternet").append("<option value='9'>9</option>");
+                $("#UsoBrindaInternet").append("<option value='MAS DE 10'>MAS DE 10</option>");
+
+                if ($("#TipoDispConectaInternet").val() == "1" || $("#TipoDispConectaInternet").val() == "2" || $("#TipoDispConectaInternet").val() == "3" ||
+                $("#TipoDispConectaInternet").val() == "4" || $("#TipoDispConectaInternet").val() == "5" || $("#TipoDispConectaInternet").val() == "6" ||
+                $("#TipoDispConectaInternet").val() == "7" || $("#TipoDispConectaInternet").val() == "8" || $("#TipoDispConectaInternet").val() == "9" ||
+                $("#TipoDispConectaInternet").val() == "MAS DE 10") {
+                    $("#UsoBrindaInternet").removeAttr("disabled");
+                    $("#UsoBrindaInternet").empty();
+                    $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
+                    $("#UsoBrindaInternet").append("<option value='PC PORTATIL'>PC PORTATIL</option>");
+                    $("#UsoBrindaInternet").append("<option value='PC ESCRITORIO'>PC ESCRITORIO</option>");
+                    $("#UsoBrindaInternet").append("<option value='CELULAR'>CELULAR</option>");
+                    $("#UsoBrindaInternet").append("<option value='SMART TV'>SMART TV</option>");
+                    $("#UsoBrindaInternet").append("<option value='TABLET'>TABLET</option>");
+                    $("#UsoBrindaInternet").append("<option value='CONSOLA DE VIDEOJUEGOS'>CONSOLA DE VIDEOJUEGOS</option>");
+                    $("#UsoBrindaInternet").append("<option value='CONSOLA BLURAY'>CONSOLA BLURAY</option>");
+                    $("#UsoBrindaInternet").append("<option value='ELECTRODOMESTICO'>ELECTRODOMESTICO</option>");
+                }
+                else {
+                    $("#UsoBrindaInternet").removeAttr("disabled");
+                    $("#UsoBrindaInternet").empty();
+                    $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
+                    $("#UsoBrindaInternet").append("<option value='1'>1</option>");
+                    $("#UsoBrindaInternet").append("<option value='2'>2</option>");
+                    $("#UsoBrindaInternet").append("<option value='3'>3</option>");
+                    $("#UsoBrindaInternet").append("<option value='4'>4</option>");
+                    $("#UsoBrindaInternet").append("<option value='5'>5</option>");
+                    $("#UsoBrindaInternet").append("<option value='6'>6</option>");
+                    $("#UsoBrindaInternet").append("<option value='7'>7</option>");
+                    $("#UsoBrindaInternet").append("<option value='8'>8</option>");
+                    $("#UsoBrindaInternet").append("<option value='9'>9</option>");
+                    $("#UsoBrindaInternet").append("<option value='MAS DE 10'>MAS DE 10</option>");
+                }
+            }
+        }
+    }
+    else {
+        $("#UsoBrindaInternet").Attr("disabled", "disabled");
+        $("#UsoBrindaInternet").empty();
+        $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
     }
 }
 

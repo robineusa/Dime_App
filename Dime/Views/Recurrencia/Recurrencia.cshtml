@@ -444,21 +444,21 @@
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
                                             <small>Servicio Afectado: </small>
-                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.ServicioAfectado, new List<SelectListItem> { },
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.ServicioAfectadoR, new List<SelectListItem> { },
                                            "--Select Option--", new { Id = "ServicioAfectado", @class = "form-control input-sm", disabled = "true", onchange = "SetFallaEspecificaArbol();" })
                                             @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.ServicioAfectado, "", new { @class = "text-danger" })
                                             @Html.HiddenFor(m => m.GPrincipalRecurrencia.ServicioAfectado, new { @id = "ServicioAfectadoO" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
                                             <small>Falla Específica Árbol CCAA: </small>
-                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.FallaEspecificaArbolCCAA, new List<SelectListItem> { },
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.FallaEspecificaArbolCCAAR, new List<SelectListItem> { },
                                            "--Select Option--", new { Id = "FallaEspecificaArbolCCAA", @class = "form-control input-sm", disabled = "true", onchange = "SetFallaCausaRaiz();" })
                                             @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.FallaEspecificaArbolCCAA, "", new { @class = "text-danger" })
                                             @Html.HiddenFor(m => m.GPrincipalRecurrencia.FallaEspecificaArbolCCAA, new { @id = "FallaEspecificaArbolCCAAO" })
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
                                             <small>Falla Causa Raíz: </small>
-                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.FallaCausaRaiz, new List<SelectListItem> { },
+                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.FallaCausaRaizR, new List<SelectListItem> { },
                                            "--Select Option--", new { Id = "FallaCausaRaiz", @class = "form-control input-sm", disabled = "true", onchange = "SetCampoFallaCausaRaiz();" })
                                             @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.FallaCausaRaiz, "", new { @class = "text-danger" })
                                             @Html.HiddenFor(m => m.GPrincipalRecurrencia.FallaCausaRaiz, new { @id = "FallaCausaRaizO" })
@@ -474,7 +474,7 @@
                                         <td style="padding-left:1px; width:200px;">
                                             <small>Estado: </small>
                                             @Html.DropDownListFor(m => m.GPrincipalRecurrencia.Estado, new List<SelectListItem> { },
-                                           "--Select Option--", new { Id = "Estado", @class = "form-control input-sm", disabled = "true", onchange = "SetMarcaEquiposFalla();" })
+                                           "--Select Option--", new { Id = "Estado", @class = "form-control input-sm", disabled = "true", onchange= "SetMarcaEquiposFalla();" })
                                             @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.Estado, "", new { @class = "text-danger"})
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
@@ -520,31 +520,31 @@
                                     <td  style="padding-left:1px; width:200px;">
                                         <small>¿Ubicación del Módem?: </small>
                                         @Html.DropDownListFor(m => m.GPrincipalRecurrencia.UbicacionModem, new List<SelectListItem> { },
-                                           "--Select Option--", new { Id = "UbicacionModem", @class = "form-control input-sm"})
+                                           "--Select Option--", new { Id = "UbicacionModem", @class = "form-control input-sm", disabled = "true", onchange="setDispositivosInalam();" })
                                         @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.UbicacionModem, "", new { @class = "text-danger" })
                                     </td>
                                     <td style="padding-left:1px; width:200px;">
                                         <small>¿Dispositivos Inalámbricos Alrededor Módem?: </small>
                                         @Html.DropDownListFor(m => m.GPrincipalRecurrencia.DispositivosInalambricosAlrededorModem, new List<SelectListItem> { },
-                                           "--Select Option--", new { Id = "DispositivosInalambricosAlrededorModem", @class = "form-control input-sm" })
+                                           "--Select Option--", new { Id = "DispositivosInalambricosAlrededorModem", @class = "form-control input-sm", disabled = "true", onchange = "setCantEquipos();" })
                                         @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.DispositivosInalambricosAlrededorModem, "", new { @class = "text-danger" })
                                     </td>
                                     <td style="padding-left:1px; width:200px;">
                                         <small>¿Cantidad Equipos que Conecta A Internet?: </small>
                                         @Html.DropDownListFor(m => m.GPrincipalRecurrencia.CantEquiposConecInternet, new List<SelectListItem> { },
-                                           "--Select Option--", new { Id = "CantEquiposConecInternet", @class = "form-control input-sm" })
+                                           "--Select Option--", new { Id = "CantEquiposConecInternet", @class = "form-control input-sm", disabled = "true", onchange = "setTipoDisp();" })
                                         @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.CantEquiposConecInternet, "", new { @class = "text-danger" })
                                     </td>
                                     <td style="padding-left:1px; width:200px;">
                                         <small>¿Tipo de Dispositivo que Conecta a Internet?: </small>
                                         @Html.DropDownListFor(m => m.GPrincipalRecurrencia.TipoDispConectaInternet, new List<SelectListItem> { },
-                                           "--Select Option--", new { Id = "TipoDispConectaInternet", @class = "form-control input-sm" })
+                                           "--Select Option--", new { Id = "TipoDispConectaInternet", @class = "form-control input-sm", disabled = "true", onchange = "setTipoDisp();" })
                                         @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.TipoDispConectaInternet, "", new { @class = "text-danger" })
                                     </td>
                                     <td style="padding-left:1px; width:200px;">
                                         <small>¿Uso que Brinda al Internet?: </small>
                                         @Html.DropDownListFor(m => m.GPrincipalRecurrencia.UsoBrindaInternet, new List<SelectListItem> { },
-                                           "--Select Option--", new { Id = "UsoBrindaInternet", @class = "form-control input-sm" })
+                                           "--Select Option--", new { Id = "UsoBrindaInternet", @class = "form-control input-sm", disabled = "true" })
                                         @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.UsoBrindaInternet, "", new { @class = "text-danger" })
                                     </td>
                                 </tr>
@@ -592,7 +592,7 @@
 
     </script>
 @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
-    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.2.1"></script>
+    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.2.4"></script>
 }
 }
 
