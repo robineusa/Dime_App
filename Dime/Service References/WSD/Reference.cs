@@ -9201,6 +9201,320 @@ namespace Dime.WSD {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FidelizacionOtrosOfrecimientos", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class FidelizacionOtrosOfrecimientos : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal ActivoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal EliminadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UsuarioIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Activo {
+            get {
+                return this.ActivoField;
+            }
+            set {
+                if ((this.ActivoField.Equals(value) != true)) {
+                    this.ActivoField = value;
+                    this.RaisePropertyChanged("Activo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Eliminado {
+            get {
+                return this.EliminadoField;
+            }
+            set {
+                if ((this.EliminadoField.Equals(value) != true)) {
+                    this.EliminadoField = value;
+                    this.RaisePropertyChanged("Eliminado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UsuarioId {
+            get {
+                return this.UsuarioIdField;
+            }
+            set {
+                if ((this.UsuarioIdField.Equals(value) != true)) {
+                    this.UsuarioIdField = value;
+                    this.RaisePropertyChanged("UsuarioId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FidelizacionTipificacion", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class FidelizacionTipificacion : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal ActivoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal EliminadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal ModuloField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal Nivel1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal Nivel2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal Nivel3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NotaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> RegistroField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UsuarioIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Activo {
+            get {
+                return this.ActivoField;
+            }
+            set {
+                if ((this.ActivoField.Equals(value) != true)) {
+                    this.ActivoField = value;
+                    this.RaisePropertyChanged("Activo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Eliminado {
+            get {
+                return this.EliminadoField;
+            }
+            set {
+                if ((this.EliminadoField.Equals(value) != true)) {
+                    this.EliminadoField = value;
+                    this.RaisePropertyChanged("Eliminado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Modulo {
+            get {
+                return this.ModuloField;
+            }
+            set {
+                if ((this.ModuloField.Equals(value) != true)) {
+                    this.ModuloField = value;
+                    this.RaisePropertyChanged("Modulo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Nivel1 {
+            get {
+                return this.Nivel1Field;
+            }
+            set {
+                if ((this.Nivel1Field.Equals(value) != true)) {
+                    this.Nivel1Field = value;
+                    this.RaisePropertyChanged("Nivel1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Nivel2 {
+            get {
+                return this.Nivel2Field;
+            }
+            set {
+                if ((this.Nivel2Field.Equals(value) != true)) {
+                    this.Nivel2Field = value;
+                    this.RaisePropertyChanged("Nivel2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Nivel3 {
+            get {
+                return this.Nivel3Field;
+            }
+            set {
+                if ((this.Nivel3Field.Equals(value) != true)) {
+                    this.Nivel3Field = value;
+                    this.RaisePropertyChanged("Nivel3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nota {
+            get {
+                return this.NotaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NotaField, value) != true)) {
+                    this.NotaField = value;
+                    this.RaisePropertyChanged("Nota");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> Registro {
+            get {
+                return this.RegistroField;
+            }
+            set {
+                if ((this.RegistroField.Equals(value) != true)) {
+                    this.RegistroField = value;
+                    this.RaisePropertyChanged("Registro");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int UsuarioId {
+            get {
+                return this.UsuarioIdField;
+            }
+            set {
+                if ((this.UsuarioIdField.Equals(value) != true)) {
+                    this.UsuarioIdField = value;
+                    this.RaisePropertyChanged("UsuarioId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IWebService")]
     public interface IWebService {
@@ -15732,6 +16046,30 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/setSubmotivoCancelacion", ReplyAction="http://tempuri.org/IFidelizacionService/setSubmotivoCancelacionResponse")]
         System.Threading.Tasks.Task setSubmotivoCancelacionAsync(Dime.WSD.FidelizacionSubmotivosCancelacion ObjFidelizacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/setOtrosOfrecimientos", ReplyAction="http://tempuri.org/IFidelizacionService/setOtrosOfrecimientosResponse")]
+        void setOtrosOfrecimientos(Dime.WSD.FidelizacionOtrosOfrecimientos ObjOfrecimientos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/setOtrosOfrecimientos", ReplyAction="http://tempuri.org/IFidelizacionService/setOtrosOfrecimientosResponse")]
+        System.Threading.Tasks.Task setOtrosOfrecimientosAsync(Dime.WSD.FidelizacionOtrosOfrecimientos ObjOfrecimientos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getOtrosOfrecimientosById", ReplyAction="http://tempuri.org/IFidelizacionService/getOtrosOfrecimientosByIdResponse")]
+        Dime.WSD.FidelizacionOtrosOfrecimientos getOtrosOfrecimientosById(decimal idOfrecimiento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getOtrosOfrecimientosById", ReplyAction="http://tempuri.org/IFidelizacionService/getOtrosOfrecimientosByIdResponse")]
+        System.Threading.Tasks.Task<Dime.WSD.FidelizacionOtrosOfrecimientos> getOtrosOfrecimientosByIdAsync(decimal idOfrecimiento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getOtrosOfrecimientosAll", ReplyAction="http://tempuri.org/IFidelizacionService/getOtrosOfrecimientosAllResponse")]
+        System.Collections.Generic.List<Dime.WSD.FidelizacionOtrosOfrecimientos> getOtrosOfrecimientosAll();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getOtrosOfrecimientosAll", ReplyAction="http://tempuri.org/IFidelizacionService/getOtrosOfrecimientosAllResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.FidelizacionOtrosOfrecimientos>> getOtrosOfrecimientosAllAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/setTipificacion", ReplyAction="http://tempuri.org/IFidelizacionService/setTipificacionResponse")]
+        void setTipificacion(Dime.WSD.FidelizacionTipificacion objTipificacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/setTipificacion", ReplyAction="http://tempuri.org/IFidelizacionService/setTipificacionResponse")]
+        System.Threading.Tasks.Task setTipificacionAsync(Dime.WSD.FidelizacionTipificacion objTipificacion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -15823,6 +16161,38 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task setSubmotivoCancelacionAsync(Dime.WSD.FidelizacionSubmotivosCancelacion ObjFidelizacion) {
             return base.Channel.setSubmotivoCancelacionAsync(ObjFidelizacion);
+        }
+        
+        public void setOtrosOfrecimientos(Dime.WSD.FidelizacionOtrosOfrecimientos ObjOfrecimientos) {
+            base.Channel.setOtrosOfrecimientos(ObjOfrecimientos);
+        }
+        
+        public System.Threading.Tasks.Task setOtrosOfrecimientosAsync(Dime.WSD.FidelizacionOtrosOfrecimientos ObjOfrecimientos) {
+            return base.Channel.setOtrosOfrecimientosAsync(ObjOfrecimientos);
+        }
+        
+        public Dime.WSD.FidelizacionOtrosOfrecimientos getOtrosOfrecimientosById(decimal idOfrecimiento) {
+            return base.Channel.getOtrosOfrecimientosById(idOfrecimiento);
+        }
+        
+        public System.Threading.Tasks.Task<Dime.WSD.FidelizacionOtrosOfrecimientos> getOtrosOfrecimientosByIdAsync(decimal idOfrecimiento) {
+            return base.Channel.getOtrosOfrecimientosByIdAsync(idOfrecimiento);
+        }
+        
+        public System.Collections.Generic.List<Dime.WSD.FidelizacionOtrosOfrecimientos> getOtrosOfrecimientosAll() {
+            return base.Channel.getOtrosOfrecimientosAll();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.FidelizacionOtrosOfrecimientos>> getOtrosOfrecimientosAllAsync() {
+            return base.Channel.getOtrosOfrecimientosAllAsync();
+        }
+        
+        public void setTipificacion(Dime.WSD.FidelizacionTipificacion objTipificacion) {
+            base.Channel.setTipificacion(objTipificacion);
+        }
+        
+        public System.Threading.Tasks.Task setTipificacionAsync(Dime.WSD.FidelizacionTipificacion objTipificacion) {
+            return base.Channel.setTipificacionAsync(objTipificacion);
         }
     }
 }

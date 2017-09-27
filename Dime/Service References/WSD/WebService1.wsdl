@@ -17825,6 +17825,158 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IFidelizacionService_setOtrosOfrecimientos_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IFidelizacionService_setOtrosOfrecimientos_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IFidelizacionService_getOtrosOfrecimientosById_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IFidelizacionService_getOtrosOfrecimientosById_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IFidelizacionService_getOtrosOfrecimientosAll_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IFidelizacionService_getOtrosOfrecimientosAll_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IFidelizacionService_setTipificacion_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IFidelizacionService_setTipificacion_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -20234,6 +20386,30 @@
   <wsdl:message name="IFidelizacionService_setSubmotivoCancelacion_OutputMessage">
     <wsdl:part name="parameters" element="tns:setSubmotivoCancelacionResponse" />
   </wsdl:message>
+  <wsdl:message name="IFidelizacionService_setOtrosOfrecimientos_InputMessage">
+    <wsdl:part name="parameters" element="tns:setOtrosOfrecimientos" />
+  </wsdl:message>
+  <wsdl:message name="IFidelizacionService_setOtrosOfrecimientos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setOtrosOfrecimientosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFidelizacionService_getOtrosOfrecimientosById_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOtrosOfrecimientosById" />
+  </wsdl:message>
+  <wsdl:message name="IFidelizacionService_getOtrosOfrecimientosById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOtrosOfrecimientosByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFidelizacionService_getOtrosOfrecimientosAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOtrosOfrecimientosAll" />
+  </wsdl:message>
+  <wsdl:message name="IFidelizacionService_getOtrosOfrecimientosAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOtrosOfrecimientosAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFidelizacionService_setTipificacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:setTipificacion" />
+  </wsdl:message>
+  <wsdl:message name="IFidelizacionService_setTipificacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:setTipificacionResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWebService">
     <wsdl:operation name="MuestraEntidades">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MuestraEntidades" message="tns:IWebService_MuestraEntidades_InputMessage" />
@@ -21882,6 +22058,22 @@
     <wsdl:operation name="setSubmotivoCancelacion">
       <wsdl:input wsaw:Action="http://tempuri.org/IFidelizacionService/setSubmotivoCancelacion" message="tns:IFidelizacionService_setSubmotivoCancelacion_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFidelizacionService/setSubmotivoCancelacionResponse" message="tns:IFidelizacionService_setSubmotivoCancelacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setOtrosOfrecimientos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFidelizacionService/setOtrosOfrecimientos" message="tns:IFidelizacionService_setOtrosOfrecimientos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFidelizacionService/setOtrosOfrecimientosResponse" message="tns:IFidelizacionService_setOtrosOfrecimientos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOtrosOfrecimientosById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFidelizacionService/getOtrosOfrecimientosById" message="tns:IFidelizacionService_getOtrosOfrecimientosById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFidelizacionService/getOtrosOfrecimientosByIdResponse" message="tns:IFidelizacionService_getOtrosOfrecimientosById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOtrosOfrecimientosAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFidelizacionService/getOtrosOfrecimientosAll" message="tns:IFidelizacionService_getOtrosOfrecimientosAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFidelizacionService/getOtrosOfrecimientosAllResponse" message="tns:IFidelizacionService_getOtrosOfrecimientosAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="setTipificacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFidelizacionService/setTipificacion" message="tns:IFidelizacionService_setTipificacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFidelizacionService/setTipificacionResponse" message="tns:IFidelizacionService_setTipificacion_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IWebService" type="tns:IWebService">
@@ -26380,6 +26572,50 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IFidelizacionService_setSubmotivoCancelacion_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setOtrosOfrecimientos">
+      <soap12:operation soapAction="http://tempuri.org/IFidelizacionService/setOtrosOfrecimientos" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IFidelizacionService_setOtrosOfrecimientos_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IFidelizacionService_setOtrosOfrecimientos_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOtrosOfrecimientosById">
+      <soap12:operation soapAction="http://tempuri.org/IFidelizacionService/getOtrosOfrecimientosById" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IFidelizacionService_getOtrosOfrecimientosById_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IFidelizacionService_getOtrosOfrecimientosById_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOtrosOfrecimientosAll">
+      <soap12:operation soapAction="http://tempuri.org/IFidelizacionService/getOtrosOfrecimientosAll" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IFidelizacionService_getOtrosOfrecimientosAll_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IFidelizacionService_getOtrosOfrecimientosAll_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTipificacion">
+      <soap12:operation soapAction="http://tempuri.org/IFidelizacionService/setTipificacion" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IFidelizacionService_setTipificacion_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IFidelizacionService_setTipificacion_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
