@@ -1,0 +1,60 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    @Styles.Render("~/AdminLTEbootstrap/css")
+    @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+</head>
+<body>
+    @using (Html.BeginForm("Recurrencia", "Recurrencia", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            <hr />
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-user-plus"></i>
+                <h3 class="box-title">Beneficios</h3>
+            </div>
+            
+            <br />
+            <br />
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-phone"></i>
+                <h3 class="box-title">Servicio</h3>
+            </div>
+            @*<strong><i class="fa fa-chevron-circle-right"></i> Servicio:</strong>*@
+            <div class="callout" style="margin-bottom: 0 ;border-color: #d4a057 !important;background-color:gainsboro !important; color: black !important; width: 98%;">
+                <div class="row">
+                    <div class="col-xs-2" style="width:auto;color:black; margin-left: -5px;">
+
+                        <small>El cliente acepto el ofrecimiento:</small>
+                    </div>
+
+                    <br />
+                    <div class="form-group" style="margin-left: 10px;">
+                        @*@Html.DropDownListFor(m => m.AceptacionClaroVideo, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="SI" },
+                            new SelectListItem{Text="NO", Value="NO" } }, "",
+                             new { @class = "form-control input-sm", @style = "width:20%" })*@
+                        @*@Html.ValidationMessageFor(m => m.AceptacionClaroVideo, "", new { @class = "text-danger" })*@
+                    </div>
+                    <div class="form-group" style="margin-left: 5px;">
+                        @*@Html.TextBoxFor(m => m.CuentaCliente, null, new { id = "cuentaCliente", @class = "form-control input-sm", @style = "display: none" })*@
+                    </div>
+                </div>
+            </div>
+            <br />
+            <button id="btnSubmitActivacionClaroVideo" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;">Guardar</button>
+        </div>
+    }
+    <script>
+        $("#cuentaCliente").val($("#inputCuenta").val());
+    </script>
+
+</body>
+</html>

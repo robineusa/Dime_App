@@ -273,6 +273,21 @@ function SetOpciones() {
         $("#ActivacionClaroVideoNagra").append("<option value=''>--Select Option--</option>");
         $("#ServicioOfrecido").attr("disabled", "disabled");
         $("#AceptacionServicioOfrecido").attr("disabled", "disabled");
+        $("#UbicacionModem").attr("disabled", "disabled");
+        $("#UbicacionModem").empty();
+        $("#UbicacionModem").append("<option value=''>--Select Option--</option>");
+        $("#DispositivosInalambricosAlrededorModem").attr("disabled", "disabled");
+        $("#DispositivosInalambricosAlrededorModem").empty();
+        $("#DispositivosInalambricosAlrededorModem").append("<option value=''>--Select Option--</option>");
+        $("#CantEquiposConecInternet").attr("disabled", "disabled");
+        $("#CantEquiposConecInternet").empty();
+        $("#CantEquiposConecInternet").append("<option value=''>--Select Option--</option>");
+        $("#TipoDispConectaInternet").attr("disabled", "disabled");
+        $("#TipoDispConectaInternet").empty();
+        $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
+        $("#UsoBrindaInternet").attr("disabled", "disabled");
+        $("#UsoBrindaInternet").empty();
+        $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
     }
 
 }
@@ -642,9 +657,9 @@ function SetCampoFallaCausaRaiz()
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
         $("#MarcaEquiposFalla").append("<option value=''>--Select Option--</option>");
-        alert(FallaCausaRaiz);
-        if ((FallaCausaRaiz == "ACCESO A PAGINAS ESPECIFICAS") || (FallaCausaRaiz == "CONECTIVIDAD LIMITADA O NULA")
-            (FallaCausaRaiz == "INTERMITENCIA") || (FallaCausaRaiz == "PROBLEMAS DE POTENCIA WIFI") || (FallaCausaRaiz == "SIN NAVEGACION"))
+        //alert(FallaCausaRaiz);
+        if (FallaCausaRaiz == "ACCESO A PAGINAS ESPECIFICAS" || FallaCausaRaiz == "CONECTIVIDAD LIMITADA O NULA" ||
+            FallaCausaRaiz == "INTERMITENCIA" || FallaCausaRaiz == "PROBLEMAS DE POTENCIA WIFI" || FallaCausaRaiz == "SIN NAVEGACION" )
         {  
             $("#UbicacionModem").removeAttr("disabled");
             $("#UbicacionModem").empty();
@@ -656,7 +671,7 @@ function SetCampoFallaCausaRaiz()
             $("#DispositivosInalambricosAlrededorModem").attr("disabled", "disabled");
             $("#DispositivosInalambricosAlrededorModem").empty();
             $("#DispositivosInalambricosAlrededorModem").append("<option value=''>--Select Option--</option>");
-            $("#CantEquiposConecInternet").Attr("disabled", "disabled");
+            $("#CantEquiposConecInternet").attr("disabled", "disabled");
             $("#CantEquiposConecInternet").empty();
             $("#CantEquiposConecInternet").append("<option value=''>--Select Option--</option>");
             $("#TipoDispConectaInternet").attr("disabled", "disabled");
@@ -665,25 +680,27 @@ function SetCampoFallaCausaRaiz()
             $("#UsoBrindaInternet").attr("disabled", "disabled");
             $("#UsoBrindaInternet").empty();
             $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
+            //alert('1');
         }
         else
         {
-            alert();
+            //alert('2');
             $("#UbicacionModem").attr("disabled", "disabled");
             $("#UbicacionModem").empty();
             $("#UbicacionModem").append("<option value=''>--Select Option--</option>");
-            $("#DispositivosInalambricosAlrededorModem").Attr("disabled", "disabled");
+            $("#DispositivosInalambricosAlrededorModem").attr("disabled", "disabled");
             $("#DispositivosInalambricosAlrededorModem").empty();
             $("#DispositivosInalambricosAlrededorModem").append("<option value=''>--Select Option--</option>");
-            $("#CantEquiposConecInternet").Attr("disabled", "disabled");
+            $("#CantEquiposConecInternet").attr("disabled", "disabled");
             $("#CantEquiposConecInternet").empty();
             $("#CantEquiposConecInternet").append("<option value=''>--Select Option--</option>");
-            $("#TipoDispConectaInternet").Attr("disabled", "disabled");
+            $("#TipoDispConectaInternet").attr("disabled", "disabled");
             $("#TipoDispConectaInternet").empty();
             $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
-            $("#UsoBrindaInternet").Attr("disabled", "disabled");
+            $("#UsoBrindaInternet").attr("disabled", "disabled");
             $("#UsoBrindaInternet").empty();
             $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
+            //alert('fin2');
         }
         
         //alert($('#FallaCausaRaizO').val() + '3');
@@ -1012,16 +1029,14 @@ function ShowGridHistorial(data) {
        { field: "UsuarioGestion", title: "Usuario Gestion", headerAttributes: { style: "white-space: normal" }, width: 130 },
        { field: "NombreUsuarioGestion", title: "Nombre Usuario Gestion", headerAttributes: { style: "white-space: normal" }, width: 130 },
        { field: "AliadoGestion", title: "Aliado Gestion", headerAttributes: { style: "white-space: normal" }, width: 130 },
-       { field: "MacroProcesoRecurrencia1", title: "MacroProceso Recurrencia 1", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "MacroProcesoRecurrencia2", title: "MacroProceso Recurrencia 2", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "MacroProcesoRecurrencia3", title: "MacroProceso Recurrencia 3", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "MarcacionRecurrente1", title: "Marcacion Recurrente 1", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "MarcacionRecurrente2", title: "Marcacion Recurrente 2", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "MarcacionRecurrente3", title: "Marcacion Recurrente 3", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "VolvioLlamar", title: "Volvio A Llamar", headerAttributes: { style: "white-space: normal" }, width: 80 },
+       { field: "MarcacionInicialAfectacion", title: "Marcacion Inicial de Afectacion", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "MarcacionReincidenteRecurrencia", title: "Marcacion Reincidente por la Recurrencia", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "ClieComunicaRealizadaGestRecu", title: "Cliente se Vuelve a Comunicar Despues de Realizada Gestión Recurrentes", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "PorQue", title: "Por Que", headerAttributes: { style: "white-space: normal" }, width: 120 },
        { field: "Contacto", title: "Contacto", headerAttributes: { style: "white-space: normal" }, width: 120 },
-       { field: "VozCliente", title: "Voz Cliente", headerAttributes: { style: "white-space: normal" }, width: 120 },
+       { field: "VozClienteCausaRaiz", title: "Voz Cliente Causa Raiz", headerAttributes: { style: "white-space: normal" }, width: 120 },
+       { field: "Solucionado", title: "Solucionado", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "AreaParticipaSolucion", title: "Area que particiapa en la Solucion", headerAttributes: { style: "white-space: normal" }, width: 100 },    
        { field: "ClientePresentaNovedades", title: "Cliente Presenta Novedades", headerAttributes: { style: "white-space: normal" }, width: 80 },
        { field: "Proceso", title: "Proceso", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "Macroproceso", title: "Macroproceso", headerAttributes: { style: "white-space: normal" }, width: 100 },
@@ -1029,11 +1044,21 @@ function ShowGridHistorial(data) {
        { field: "FallaEspecificaArbolCCAA", title: "Falla Especifica Arbol CCAA", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "FallaCausaRaiz", title: "Falla Causa Raiz", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "SolucionEspecifica", title: "Solucion Especifica", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "Solucionado", title: "Solucionado", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "Estado", title: "Estado", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "MarcaEquiposFalla", title: "Marca Equipos con Falla", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "UbicacionModem", title: "Ubicacion del Modem", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "DispositivosInalambricosAlrededorModem", title: "Dispositivos Inalambricos Alrededor del Modem", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "CantEquiposConecInternet", title: "Cantidad Equipos que Conecta a Internet", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "TipoDispConectaInternet", title: "Tipo de Dispositivo que Conecta a Internet", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "UsoBrindaInternet", title: "Uso que Brinda al Internet", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "ActivacionClaroVideoNagra", title: "Activacion Claro Video Nagra", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "ServicioOfrecido", title: "Servicio Ofrecido", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "AceptacionServicioOfrecido", title: "Aceptacion del Servicio Ofrecido", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Ofrecimiento1", title: "Ofrecimiento 1", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "AceptacionPrimerOfrecimiento", title: "Aceptacion Primer Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Ofrecimiento2", title: "Ofrecimiento 2", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "AceptacionSegundoOfrecimiento", title: "Aceptacion Segundo Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Ofrecimiento3", title: "Ofrecimiento 3", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "AceptacionTercerOfrecimiento", title: "Aceptacion Tercer Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "Observaciones", title: "Observaciones", headerAttributes: { style: "white-space: normal" }, width: 130 }
         ]
@@ -1120,22 +1145,34 @@ function setDispositivosInalam()
         $("#DispositivosInalambricosAlrededorModem").empty();
         $("#DispositivosInalambricosAlrededorModem").append("<option value=''>--Select Option--</option>");
         $("#DispositivosInalambricosAlrededorModem").append("<option value='SIN DISPOSITIVOS CORRECTA'>SIN DISPOSITIVOS CORRECTA</option>");
-        $("#DispositivosInalambricosAlrededorModem").append("<option value='TEL. INALAMBRICO INCORRECTA'>TEL. INALAMBRICO INCORRECTA</option>");
         $("#DispositivosInalambricosAlrededorModem").append("<option value='SOBRE O MUY CERCA AL ALTAVOZ DE UN EQUIPO DE SONIDO INCORRECTA'>SOBRE O MUY CERCA AL ALTAVOZ DE UN EQUIPO DE SONIDO INCORRECTA</option>");
+        $("#DispositivosInalambricosAlrededorModem").append("<option value='TEL. INALAMBRICO INCORRECTA'>TEL. INALAMBRICO INCORRECTA</option>");
         $("#DispositivosInalambricosAlrededorModem").append("<option value='CLIENTE NO BRINDA INFORMACION'>CLIENTE NO BRINDA INFORMACION</option>");
-    }
-    else {
-
-        $("#DispositivosInalambricosAlrededorModem").Attr("disabled", "disabled");
-        $("#DispositivosInalambricosAlrededorModem").empty();
-        $("#DispositivosInalambricosAlrededorModem").append("<option value=''>--Select Option--</option>");
-        $("#CantEquiposConecInternet").Attr("disabled", "disabled");
+        $("#DispositivosInalambricosAlrededorModem").append("<option value='ROMPEMUROS INCORRECTA'>ROMPEMUROS INCORRECTA</option>");
+        $("#DispositivosInalambricosAlrededorModem").append("<option value='REPETIDORAS INCORRECTA'>REPETIDORAS INCORRECTA</option>");
+        $("#CantEquiposConecInternet").attr("disabled", "disabled");
         $("#CantEquiposConecInternet").empty();
         $("#CantEquiposConecInternet").append("<option value=''>--Select Option--</option>");
-        $("#TipoDispConectaInternet").Attr("disabled", "disabled");
+        $("#TipoDispConectaInternet").attr("disabled", "disabled");
         $("#TipoDispConectaInternet").empty();
         $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
-        $("#UsoBrindaInternet").Attr("disabled", "disabled");
+        $("#UsoBrindaInternet").attr("disabled", "disabled");
+        $("#UsoBrindaInternet").empty();
+        $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
+    }
+    else
+    {
+
+        $("#DispositivosInalambricosAlrededorModem").attr("disabled", "disabled");
+        $("#DispositivosInalambricosAlrededorModem").empty();
+        $("#DispositivosInalambricosAlrededorModem").append("<option value=''>--Select Option--</option>");
+        $("#CantEquiposConecInternet").attr("disabled", "disabled");
+        $("#CantEquiposConecInternet").empty();
+        $("#CantEquiposConecInternet").append("<option value=''>--Select Option--</option>");
+        $("#TipoDispConectaInternet").attr("disabled", "disabled");
+        $("#TipoDispConectaInternet").empty();
+        $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
+        $("#UsoBrindaInternet").attr("disabled", "disabled");
         $("#UsoBrindaInternet").empty();
         $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
     }
@@ -1144,6 +1181,7 @@ function setDispositivosInalam()
 function setCantEquipos() {
     if ($("#DispositivosInalambricosAlrededorModem").val() != "")
     {
+
         if ($("#DispositivosInalambricosAlrededorModem").val() == "SIN DISPOSITIVOS CORRECTA")
         {
             $("#CantEquiposConecInternet").removeAttr("disabled");
@@ -1190,16 +1228,21 @@ function setCantEquipos() {
                 $("#CantEquiposConecInternet").append("<option value='MAS DE 10'>MAS DE 10</option>");
             }
         }
-        
-    }
-    else {
-        $("#CantEquiposConecInternet").Attr("disabled", "disabled");
-        $("#CantEquiposConecInternet").empty();
-        $("#CantEquiposConecInternet").append("<option value=''>--Select Option--</option>");
-        $("#TipoDispConectaInternet").Attr("disabled", "disabled");
+        $("#TipoDispConectaInternet").attr("disabled", "disabled");
         $("#TipoDispConectaInternet").empty();
         $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
-        $("#UsoBrindaInternet").Attr("disabled", "disabled");
+        $("#UsoBrindaInternet").attr("disabled", "disabled");
+        $("#UsoBrindaInternet").empty();
+        $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
+    }
+    else {
+        $("#CantEquiposConecInternet").attr("disabled", "disabled");
+        $("#CantEquiposConecInternet").empty();
+        $("#CantEquiposConecInternet").append("<option value=''>--Select Option--</option>");
+        $("#TipoDispConectaInternet").attr("disabled", "disabled");
+        $("#TipoDispConectaInternet").empty();
+        $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
+        $("#UsoBrindaInternet").attr("disabled", "disabled");
         $("#UsoBrindaInternet").empty();
         $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
     }
@@ -1271,12 +1314,15 @@ function setTipoDisp() {
                 }
             }
         }
+        $("#UsoBrindaInternet").attr("disabled", "disabled");
+        $("#UsoBrindaInternet").empty();
+        $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
     }
     else {
-        $("#TipoDispConectaInternet").Attr("disabled", "disabled");
+        $("#TipoDispConectaInternet").attr("disabled", "disabled");
         $("#TipoDispConectaInternet").empty();
         $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
-        $("#UsoBrindaInternet").Attr("disabled", "disabled");
+        $("#UsoBrindaInternet").attr("disabled", "disabled");
         $("#UsoBrindaInternet").empty();
         $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
     }
@@ -1346,24 +1392,39 @@ function setUsoBrindaInter() {
                     $("#UsoBrindaInternet").removeAttr("disabled");
                     $("#UsoBrindaInternet").empty();
                     $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
-                    $("#UsoBrindaInternet").append("<option value='1'>1</option>");
-                    $("#UsoBrindaInternet").append("<option value='2'>2</option>");
-                    $("#UsoBrindaInternet").append("<option value='3'>3</option>");
-                    $("#UsoBrindaInternet").append("<option value='4'>4</option>");
-                    $("#UsoBrindaInternet").append("<option value='5'>5</option>");
-                    $("#UsoBrindaInternet").append("<option value='6'>6</option>");
-                    $("#UsoBrindaInternet").append("<option value='7'>7</option>");
-                    $("#UsoBrindaInternet").append("<option value='8'>8</option>");
-                    $("#UsoBrindaInternet").append("<option value='9'>9</option>");
-                    $("#UsoBrindaInternet").append("<option value='MAS DE 10'>MAS DE 10</option>");
+
+                    $("#UsoBrindaInternet").append("<option value='NAVEGACION'>NAVEGACION</option>");
+                    $("#UsoBrindaInternet").append("<option value='ENTRETENIMIENTO'>ENTRETENIMIENTO</option>");
+                    $("#UsoBrindaInternet").append("<option value='ESTUDIO'>ESTUDIO</option>");
+                    $("#UsoBrindaInternet").append("<option value='PELICULAS ONLINE'>PELICULAS ONLINE</option>");
+                    $("#UsoBrindaInternet").append("<option value='TRABAJO'>TRABAJO</option>");
+                    $("#UsoBrindaInternet").append("<option value='REDES SOCIALES'>REDES SOCIALES</option>");
+                    $("#UsoBrindaInternet").append("<option value='DESCARGAS'>DESCARGAS</option>");
+                    $("#UsoBrindaInternet").append("<option value='PELICULAS'>PELICULAS</option>");
+                    $("#UsoBrindaInternet").append("<option value='YOUTUBE'>YOUTUBE</option>");
+                    $("#UsoBrindaInternet").append("<option value='VIDEO JUEGOS EN LINEA'>VIDEO JUEGOS EN LINEA</option>");
+                    $("#UsoBrindaInternet").append("<option value='CHAT'>CHAT</option>");
+                    $("#UsoBrindaInternet").append("<option value='MUSICA'>MUSICA</option>");
+                    $("#UsoBrindaInternet").append("<option value='CORREO'>CORREO</option>");
+
                 }
             }
         }
     }
     else {
-        $("#UsoBrindaInternet").Attr("disabled", "disabled");
+        $("#UsoBrindaInternet").attr("disabled", "disabled");
         $("#UsoBrindaInternet").empty();
         $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
     }
 }
 
+function LlamarTipificadorAvaya() {
+    $.ajax({
+        type: "GET",
+        url: urlTipificadorAvaya,
+        dataType: "html",
+        success: function (result) {
+            $('#TipiAvayaBody').html(result);
+        }
+    });
+}

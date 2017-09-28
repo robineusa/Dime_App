@@ -31,10 +31,16 @@ namespace Telmexla.Servicios.DIME.Entity
         public string UsoClaroVideo { get; set; }
         public string ClienteNagra { get; set; }
         public string Ofrecimiento1 { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string AceptacionPrimerOfrecimiento { get; set; }
         public string Ofrecimiento2 { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string AceptacionSegundoOfrecimiento { get; set; }
         public string Ofrecimiento3 { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string AceptacionTercerOfrecimiento { get; set; }
         public string Diferenciador { get; set; }
         public decimal Prioridad { get; set; }
@@ -47,8 +53,6 @@ namespace Telmexla.Servicios.DIME.Entity
         [Required(ErrorMessage = "Seleccione una opción")]
         public string Contacto { get; set; }
         public string VozClienteCausaRaiz { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
         public string Solucionado { get; set; }
         public string AreaParticipaSolucion { get; set; }
 
@@ -59,7 +63,9 @@ namespace Telmexla.Servicios.DIME.Entity
         public string Proceso { get; set; }
 
         [Required(ErrorMessage = "Seleccione una opción")]
-        public string Macroproceso { get; set; }        
+        public string Macroproceso { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string ServicioAfectado{ get; set; }
 
         [Required(ErrorMessage = "Seleccione una opción")]
@@ -78,13 +84,21 @@ namespace Telmexla.Servicios.DIME.Entity
 
         [Required(ErrorMessage = "Seleccione una opción")]
         public string Estado { get; set; }
+        public string MarcaEquiposFalla { get; set; }
 
         [Required(ErrorMessage = "Seleccione una opción")]
-        public string MarcaEquiposFalla { get; set; }
         public string UbicacionModem { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string DispositivosInalambricosAlrededorModem { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string CantEquiposConecInternet { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string TipoDispConectaInternet { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string UsoBrindaInternet { get; set; }
 
         [Required(ErrorMessage = "Seleccione una opción")]

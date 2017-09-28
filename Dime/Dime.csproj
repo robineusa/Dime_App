@@ -3434,6 +3434,7 @@
     <None Include="Service References\WSP\GeneracionEncuestaService.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Recurrencia\TipificadorAvaya.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

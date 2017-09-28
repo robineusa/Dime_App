@@ -100,7 +100,6 @@ namespace Dime.Controllers
                 model.GPrincipalRecurrencia.UsuarioGestion = Session["IdUsuario"].ToString();
                 model.GPrincipalRecurrencia.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
                 model.GPrincipalRecurrencia.AliadoGestion = Session["AliadoLogeado"].ToString();
-                //model.GPrincipalRecurrencia.FallaEspecificaArbolCCAA = model.GPrincipalRecurrencia.FallaEspecificaArbolCCAA.
                 model.GPrincipalRecurrencia.UsuarioGestionando = 0;
                 if (result != null)
                 {
@@ -194,5 +193,12 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+
+        [HttpGet]
+        public ActionResult TipificadorAvaya()
+        {
+            return View();
+        }
+
     }
 }
