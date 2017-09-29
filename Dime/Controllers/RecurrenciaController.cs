@@ -199,6 +199,41 @@ namespace Dime.Controllers
         {
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult TipificadorAvaya(ViewModelRecurrencia model, string BotonEnvia)
+        {
+            if (BotonEnvia == "BuscaCliente")
+            {
 
+            }
+            if (BotonEnvia == "GuardaDatos")
+            {
+                if (model.GPrincipalRecurrencia.CuentaCliente.Equals(0))
+                {
+                    ViewBag.NoDatos = "ERROR: No se puede guardar por que no hay cuentas para gestionar";
+                }
+                else
+                {
+                    var result = recurrencia.TraerGPrinRecurrencia(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
+                    model.GPrincipalRecurrencia.UsuarioGestion = Session["IdUsuario"].ToString();
+                    model.GPrincipalRecurrencia.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+                    model.GPrincipalRecurrencia.AliadoGestion = Session["AliadoLogeado"].ToString();
+                    model.GPrincipalRecurrencia.UsuarioGestionando = 0;
+                    if (result != null)
+                    {
+                        recurrencia.ActualizarGRecurrencia(model.GPrincipalRecurrencia);
+
+                    }
+                    else
+                    {
+                        recurrencia.InsertarGRecurrencia(model.GPrincipalRecurrencia);
+                    }
+                    recurrencia.EliminaCuentaRecurrencia(model.GPrincipalRecurrencia.CuentaCliente);
+
+                }
+            }
+            return View();
+        }
     }
 }

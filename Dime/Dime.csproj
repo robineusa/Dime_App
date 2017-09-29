@@ -2358,6 +2358,7 @@
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorLog.js" />
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorPrincipal.js" />
     <Content Include="Scripts\Recurrencia\Recurrencia.js" />
+    <Content Include="Scripts\Recurrencia\TipificadorAvaya.js" />
     <Content Include="Scripts\Reportes\ReporteAdministrador.js" />
     <Content Include="Scripts\Reportes\ReporteAsesor.js" />
     <Content Include="Scripts\Reportes\ReporteBlending.js" />

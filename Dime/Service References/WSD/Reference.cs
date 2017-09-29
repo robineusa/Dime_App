@@ -15387,6 +15387,18 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ListaHistorialSeguimientosRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ListaHistorialSeguimientosRecurrenciaRespo" +
             "nse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia>> ListaHistorialSeguimientosRecurrenciaAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/InsertarGRecurrenciaInbound", ReplyAction="http://tempuri.org/IRecurrenciaService/InsertarGRecurrenciaInboundResponse")]
+        void InsertarGRecurrenciaInbound(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound recurrenciainbound);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/InsertarGRecurrenciaInbound", ReplyAction="http://tempuri.org/IRecurrenciaService/InsertarGRecurrenciaInboundResponse")]
+        System.Threading.Tasks.Task InsertarGRecurrenciaInboundAsync(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound recurrenciainbound);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ActualizarGRecurrenciaInbound", ReplyAction="http://tempuri.org/IRecurrenciaService/ActualizarGRecurrenciaInboundResponse")]
+        void ActualizarGRecurrenciaInbound(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound recurrenciainbound);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ActualizarGRecurrenciaInbound", ReplyAction="http://tempuri.org/IRecurrenciaService/ActualizarGRecurrenciaInboundResponse")]
+        System.Threading.Tasks.Task ActualizarGRecurrenciaInboundAsync(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound recurrenciainbound);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -15526,6 +15538,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia>> ListaHistorialSeguimientosRecurrenciaAsync(decimal CuentaCliente) {
             return base.Channel.ListaHistorialSeguimientosRecurrenciaAsync(CuentaCliente);
+        }
+        
+        public void InsertarGRecurrenciaInbound(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound recurrenciainbound) {
+            base.Channel.InsertarGRecurrenciaInbound(recurrenciainbound);
+        }
+        
+        public System.Threading.Tasks.Task InsertarGRecurrenciaInboundAsync(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound recurrenciainbound) {
+            return base.Channel.InsertarGRecurrenciaInboundAsync(recurrenciainbound);
+        }
+        
+        public void ActualizarGRecurrenciaInbound(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound recurrenciainbound) {
+            base.Channel.ActualizarGRecurrenciaInbound(recurrenciainbound);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarGRecurrenciaInboundAsync(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound recurrenciainbound) {
+            return base.Channel.ActualizarGRecurrenciaInboundAsync(recurrenciainbound);
         }
     }
     
