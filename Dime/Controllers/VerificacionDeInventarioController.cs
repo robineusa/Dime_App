@@ -22,6 +22,7 @@ namespace Dime.Controllers
             Maestronodosservice.ClientCredentials.Authenticate();
         }
         [HttpGet]
+        [ValidateAntiForgeryToken]
         public ActionResult RegistrarSolicitud()
         {
             ViewModelVerificacionInventario modelo = new ViewModelVerificacionInventario();
