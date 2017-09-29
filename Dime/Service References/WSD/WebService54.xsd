@@ -5574,4 +5574,92 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="setRecursiva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q391="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="objRecursiva" nillable="true" type="q391:FidelizacionRecursiva" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setRecursivaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRecursivaById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idRecursiva" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRecursivaByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q392="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="getRecursivaByIdResult" nillable="true" type="q392:FidelizacionRecursiva" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRecursivaAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRecursivaAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q393="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="getRecursivaAllResult" nillable="true" type="q393:ArrayOfFidelizacionRecursiva" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setRegistro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q394="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="objRegistro" nillable="true" type="q394:FidelizacionRegistro" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="setRegistroResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRegistroAll">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRegistroAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q395="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="getRegistroAllResult" nillable="true" type="q395:ArrayOfFidelizacionRegistro" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReistrarSolicitud">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q396="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Solicitud" nillable="true" type="q396:VIPSolicitudes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReistrarSolicitudResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReistrarSolicitudResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarSolicitud">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q397="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Solicitud" nillable="true" type="q397:VIPSolicitudes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarSolicitudResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

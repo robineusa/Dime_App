@@ -231,6 +231,14 @@
     <Compile Include="ViewModelResidPredictTipificador.cs" />
     <Compile Include="ViewModelTipificacionMarcaciones.cs" />
     <Compile Include="ViewModelTraslados.cs" />
+    <Compile Include="VILSolicitudes.cs" />
+    <Compile Include="VIMAliadoTecnico.cs" />
+    <Compile Include="VIMGestion.cs" />
+    <Compile Include="VIMSubrazon.cs" />
+    <Compile Include="VIMTipoDeEquipos.cs" />
+    <Compile Include="VIMTipoDeRequerimiento.cs" />
+    <Compile Include="VIPSolicitudes.cs" />
+    <Compile Include="VIPSolicitudesPorEquipo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
