@@ -231,6 +231,7 @@
     <Compile Include="ViewModelResidPredictTipificador.cs" />
     <Compile Include="ViewModelTipificacionMarcaciones.cs" />
     <Compile Include="ViewModelTraslados.cs" />
+    <Compile Include="ViewModelVerificacionInventario.cs" />
     <Compile Include="VILSolicitudes.cs" />
     <Compile Include="VIMAliadoTecnico.cs" />
     <Compile Include="VIMGestion.cs" />

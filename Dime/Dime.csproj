@@ -217,6 +217,7 @@
     <Compile Include="Controllers\RecurrenciaController.cs" />
     <Compile Include="Controllers\ReportesController.cs" />
     <Compile Include="Controllers\TrasladosController.cs" />
+    <Compile Include="Controllers\VerificacionDeInventarioController.cs" />
     <Compile Include="Extensions\ClaimsExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -3441,6 +3442,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Views\Recurrencia\TipificadorAvaya.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\RegistrarSolicitud.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
