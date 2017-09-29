@@ -3020,6 +3020,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Scripts\VerificacionDeInventario\RegistrarSolicitud.js" />
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaGestion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>

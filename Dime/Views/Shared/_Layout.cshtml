@@ -209,7 +209,7 @@
                                 <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("ReporteAdministrador", "Reportes")"><i class="fa fa-circle-o text-orange"></i> Reporte Administrador</a></li>}
                             @if (Session["Reporte Blending"] != null)
                             {
-                            <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("ReporteBlending", "Reportes")"><i class="fa fa-circle-o text-red"></i> Reporte Blending</a></li>}
+                                <li id="left-sidebar-menu-charts-chartjs"><a href="@Url.Action("ReporteBlending", "Reportes")"><i class="fa fa-circle-o text-red"></i> Reporte Blending</a></li>}
                         </ul>
 
                     </li>
@@ -537,7 +537,7 @@
                                     <li><a href="@Url.Action("ConsultaDeIncidentes", "BitacoraIncidentes")"><i class="fa fa-search text-red"></i>Consulta de Incidentes</a></li>
                                     <li><a href="@Url.Action("ConsultaIncidentesGeneral", "BitacoraIncidentes")"><i class="fa fa-search text-blue"></i>Consulta Base Principal</a></li>
                                     <li><a href="@Url.Action("ConsultaIncidentesLog", "BitacoraIncidentes")"><i class="fa fa-search text-yellow"></i>Consulta Base Log</a></li>
-                                    
+
                                 }
                             </ul>
 
@@ -607,30 +607,11 @@
                                 <i class="fa fa-dot-circle-o text-orange"></i> <span>Procesos Cierre de Ciclo</span><i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                @if (Session["Cierre Ciclo Residencial Predictivo"] != null || Session["Cierre Ciclo Residencial Potencial"] != null || Session["Cierre Ciclo Instalacion"] != null || Session["Cierre Ciclo Pymes"] != null)
+                                @if (Session["Registrar Solicitud Back Elite"] != null || Session["Gestionar Solcitud Back Elite"] != null || Session["Distribucion Back Elite"] != null || Session["Cierre Masivo Back Elite"] != null || Session["Consultas Administrador Back Elite"] != null)
                                 {
-                                    <li>
-                                        <a href="#"><i class="fa fa-dot-circle-o text-blue" aria-hidden="true"></i>Gestión Cierre de Ciclo<i class="fa fa-angle-left pull-right"></i></a>
-                                        <ul class="treeview-menu">
-                                            @if (Session["Cierre Ciclo Residencial Predictivo"] != null)
-                                            {
-                                                <li><a href="@Url.Action("ResidencialPredictivoConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Residencial Predictivo</a></li>}
-                                            @if (Session["Cierre Ciclo Residencial Potencial"] != null)
-                                            {
-                                                <li><a href="@Url.Action("ResidencialPotencialConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Residencial Potencial</a></li>}
-                                            @if (Session["Cierre Ciclo Instalacion"] != null)
-                                            {
-                                                <li><a href="@Url.Action("InstalacionConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Instalaciones</a></li>}
-                                            @if (Session["Cierre Ciclo Pymes"] != null)
-                                            {
-                                                <li><a href="@Url.Action("PymesConsulta", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Pymes</a></li>}
 
-                                        </ul>
-                                    </li>}
-                                @if (Session["Registrar Solicitud Back Elite"] != null || Session["Gestionar Solcitud Back Elite"] != null)
-                                {
                                     <li>
-                                        <a href="#"><i class="fa fa-behance-square text-red" aria-hidden="true"></i>Gestión Back Elite<i class="fa fa-angle-left pull-right"></i></a>
+                                        <a href="#"><i class="fa fa-behance-square text-red" aria-hidden="true"></i>Proceso Back Elite<i class="fa fa-angle-left pull-right"></i></a>
                                         <ul class="treeview-menu">
                                             @if (Session["Registrar Solicitud Back Elite"] != null)
                                             {
@@ -641,62 +622,87 @@
                                                 <li><a href="@Url.Action("SeguimientoSolicitudes", "BackElite")"><i class="fa fa-circle-o"></i>Seguimientos Back Elite</a></li>
                                                 <li><a href="@Url.Action("ConsultaDeGestion", "BackElite")"><i class="fa fa-circle-o"></i>Consulta de Gestión</a></li>
                                             }
+                                            @if (Session["Distribucion Back Elite"] != null)
+                                            {
+                                                <li>
+                                                    <a href="#"><i class="fa fa-cog text-orange" aria-hidden="true"></i> Distribuciones Back Elite<i class="fa fa-angle-left pull-right"></i></a>
+                                                    <ul class="treeview-menu">
+                                                        <li><a href="@Url.Action("ListaDistribucionUsuario", "BackElite")"><i class="fa fa-cog text-orange"></i> Administrar Distribución</a></li>
+                                                        <li><a href="@Url.Action("ReasignacionDeSolicitudes", "BackElite")"><i class="fa fa-cog text-orange"></i> Reasignación de Solicitudes</a></li>
+                                                    </ul>
+                                                </li>
+                                            }
+                                            @if (Session["Cierre Masivo Back Elite"] != null)
+                                            {
+                                                <li>
+                                                    <a href="#"><i class="fa fa-eraser text-green" aria-hidden="true"></i> Cierre Masivo Back Elite<i class="fa fa-angle-left pull-right"></i></a>
+                                                    <ul class="treeview-menu">
+                                                        <li><a href="@Url.Action("CierreMasivo", "BackElite")"><i class="fa fa-circle-o text-green"></i> Finalizar Solicitudes</a></li>
+                                                    </ul>
+                                                </li>
+                                            }
+                                            @if (Session["Consultas Administrador Back Elite"] != null)
+                                            {
+                                                <li>
+                                                    <a href="#"><i class="fa  fa-search text-orange" aria-hidden="true"></i>Consultas Admin Back Elite<i class="fa fa-angle-left pull-right"></i></a>
+                                                    <ul class="treeview-menu">
+                                                        <li><a href="@Url.Action("ConsultaAdministradorLog", "BackElite")"><i class="fa fa-circle-o"></i>Consulta Log</a></li>
+                                                        <li><a href="@Url.Action("ConsultaAdminstradorPrincipal", "BackElite")"><i class="fa fa-circle-o"></i>Consulta Pricipal</a></li>
+
+                                                    </ul>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+
+                                }
+                                @if (Session["Registrar Solicitud Inventario"] != null || Session["Gestionar Solicitud Inventario"] != null)
+                                {
+                                    <li>
+                                        <a href="#"><i class="fa fa-behance-square text-red" aria-hidden="true"></i>Proceso Verificación de Inventario<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            @if (Session["Registrar Solicitud Inventario"] != null || Session["Gestionar Solicitud Inventario"] != null)
+                                            {
+                                                <li>
+                                                    <a href="#"><i class="fa fa-behance-square text-red" aria-hidden="true"></i>Verificación de Inventario<i class="fa fa-angle-left pull-right"></i></a>
+                                                    <ul class="treeview-menu">
+                                                        @if (Session["Registrar Solicitud Inventario"] != null)
+                                                        {
+                                                            <li><a href="@Url.Action("RegistrarSolicitud", "VerificacionDeInventario")"><i class="fa fa-circle-o"></i>Registrar Solicitud</a></li>}
+
+                                                    </ul>
+                                                </li>
+                                            }
+
                                         </ul>
                                     </li>
                                 }
-                                @if (Session["Cierre Ciclo Recurrencia"] != null)
+                                @if (Session["Cierre Ciclo Recurrencia"] != null || Session["Consultas Administrador Recurrencia"] != null)
                                 {
                                     <li>
-                                        <a href="#"><i class="fa fa-retweet text-aqua" aria-hidden="true"></i>Gestión Recurrencia<i class="fa fa-angle-left pull-right"></i></a>
+                                        <a href="#"><i class="fa fa-retweet text-aqua" aria-hidden="true"></i>Proceso Recurrencia<i class="fa fa-angle-left pull-right"></i></a>
                                         <ul class="treeview-menu">
-
+                                            @if (Session["Cierre Ciclo Recurrencia"] != null)
+                                            {
                                             <li><a href="@Url.Action("Recurrencia", "Recurrencia")"><i class="fa fa-circle-o"></i>Recurrencia</a></li>
+                                            }
+                                            @if (Session["Consultas Administrador Recurrencia"] != null)
+                                            {
+                                                <li>
+                                                    <a href="#"><i class="fa  fa-search text-orange" aria-hidden="true"></i>Consultas Admin Recurrencia<i class="fa fa-angle-left pull-right"></i></a>
+                                                    <ul class="treeview-menu">
+                                                        <li><a href="@Url.Action("ConsultaAdministradorLog", "Recurrencia")"><i class="fa fa-circle-o"></i>Consulta Log</a></li>
+                                                        <li><a href="@Url.Action("ConsultaAdminstradorPrincipal", "Recurrencia")"><i class="fa fa-circle-o"></i>Consulta Pricipal</a></li>
 
+                                                    </ul>
+                                                </li>
+                                            }
                                         </ul>
                                     </li>
                                 }
-                                @if (Session["Consultas Administrador Back Elite"] != null)
-                                {
-                                    <li>
-                                        <a href="#"><i class="fa  fa-search text-orange" aria-hidden="true"></i>Consultas Admin Back Elite<i class="fa fa-angle-left pull-right"></i></a>
-                                        <ul class="treeview-menu">
-                                            <li><a href="@Url.Action("ConsultaAdministradorLog", "BackElite")"><i class="fa fa-circle-o"></i>Consulta Log</a></li>
-                                            <li><a href="@Url.Action("ConsultaAdminstradorPrincipal", "BackElite")"><i class="fa fa-circle-o"></i>Consulta Pricipal</a></li>
 
-                                        </ul>
-                                    </li>
-                                }
-                                @if (Session["Distribucion Back Elite"] != null)
-                                {
-                                    <li>
-                                        <a href="#"><i class="fa fa-cog text-orange" aria-hidden="true"></i> Distribuciones Back Elite<i class="fa fa-angle-left pull-right"></i></a>
-                                        <ul class="treeview-menu">
-                                            <li><a href="@Url.Action("ListaDistribucionUsuario", "BackElite")"><i class="fa fa-cog text-orange"></i> Administrar Distribución</a></li>
-                                            <li><a href="@Url.Action("ReasignacionDeSolicitudes", "BackElite")"><i class="fa fa-cog text-orange"></i> Reasignación de Solicitudes</a></li>
-                                        </ul>
-                                    </li>
-                                }
-                                @if (Session["Cierre Masivo Back Elite"] != null)
-                                {
-                                    <li>
-                                        <a href="#"><i class="fa fa-eraser text-green" aria-hidden="true"></i> Cierre Masivo Back Elite<i class="fa fa-angle-left pull-right"></i></a>
-                                        <ul class="treeview-menu">
-                                            <li><a href="@Url.Action("CierreMasivo", "BackElite")"><i class="fa fa-circle-o text-green"></i> Finalizar Solicitudes</a></li>
-                                        </ul>
-                                    </li>
-                                }
-                                @if (Session["Consultas Administrador Recurrencia"] != null)
-                                {
-                                    <li>
-                                        <a href="#"><i class="fa  fa-search text-orange" aria-hidden="true"></i>Consultas Admin Recurrencia<i class="fa fa-angle-left pull-right"></i></a>
-                                        <ul class="treeview-menu">
-                                            <li><a href="@Url.Action("ConsultaAdministradorLog", "Recurrencia")"><i class="fa fa-circle-o"></i>Consulta Log</a></li>
-                                            <li><a href="@Url.Action("ConsultaAdminstradorPrincipal", "Recurrencia")"><i class="fa fa-circle-o"></i>Consulta Pricipal</a></li>
-
-                                        </ul>
-                                    </li>
-                                }
                             </ul>
+
                         </li>
                     }
                     <li class="header">CONSULTAS</li>
@@ -838,7 +844,7 @@
                                             </li>
                                         </ul>
                                     </li>}
-                               
+
                             </ul>
                         </li>
                     }
@@ -978,9 +984,9 @@
                             </li>
                             @if (Session["Encuesta Pom"] != null)
                             {
-                            <li id="">
-                                <a href="@Url.Action("EncuestadeSatisfaccion", "EncuestaCav")"><i class="fa fa-link text-blue" aria-hidden="true"></i>Encuesta Cavs</a>
-                            </li>}
+                                <li id="">
+                                    <a href="@Url.Action("EncuestadeSatisfaccion", "EncuestaCav")"><i class="fa fa-link text-blue" aria-hidden="true"></i>Encuesta Cavs</a>
+                                </li>}
                         </ul>
                     </li>
                 </ul>
