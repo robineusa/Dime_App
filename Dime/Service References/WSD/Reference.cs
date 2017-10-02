@@ -15399,6 +15399,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ActualizarGRecurrenciaInbound", ReplyAction="http://tempuri.org/IRecurrenciaService/ActualizarGRecurrenciaInboundResponse")]
         System.Threading.Tasks.Task ActualizarGRecurrenciaInboundAsync(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound recurrenciainbound);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/TraerGPrinRecurrenciaInbound", ReplyAction="http://tempuri.org/IRecurrenciaService/TraerGPrinRecurrenciaInboundResponse")]
+        Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound TraerGPrinRecurrenciaInbound(int CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/TraerGPrinRecurrenciaInbound", ReplyAction="http://tempuri.org/IRecurrenciaService/TraerGPrinRecurrenciaInboundResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound> TraerGPrinRecurrenciaInboundAsync(int CuentaCliente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -15554,6 +15560,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task ActualizarGRecurrenciaInboundAsync(Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound recurrenciainbound) {
             return base.Channel.ActualizarGRecurrenciaInboundAsync(recurrenciainbound);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound TraerGPrinRecurrenciaInbound(int CuentaCliente) {
+            return base.Channel.TraerGPrinRecurrenciaInbound(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound> TraerGPrinRecurrenciaInboundAsync(int CuentaCliente) {
+            return base.Channel.TraerGPrinRecurrenciaInboundAsync(CuentaCliente);
         }
     }
     

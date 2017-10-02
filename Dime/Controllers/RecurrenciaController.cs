@@ -195,45 +195,47 @@ namespace Dime.Controllers
         }
 
         [HttpGet]
-        public ActionResult TipificadorAvaya()
+        public ActionResult TipificadorAvaya(ViewModelRecurrencia model)
         {
-            return View();
+            model.GPrincipalRecurrenciaInbound = new GPrincipalRecurrenciaInbound();
+            return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult TipificadorAvaya(ViewModelRecurrencia model, string BotonEnvia)
+        public ActionResult TipificadorAvaya(ViewModelRecurrencia model, string BotonEnvia, string NomClie)
         {
-            if (BotonEnvia == "BuscaCliente")
-            {
-
-            }
             if (BotonEnvia == "GuardaDatos")
             {
-                if (model.GPrincipalRecurrencia.CuentaCliente.Equals(0))
+                if ((model.GPrincipalRecurrenciaInbound.CuentaCliente.Equals(0)))
                 {
-                    ViewBag.NoDatos = "ERROR: No se puede guardar por que no hay cuentas para gestionar";
+                    ViewBag.ErrorI = "ERROR: Busque un Cliente antes de Guardar";
                 }
                 else
                 {
-                    var result = recurrencia.TraerGPrinRecurrencia(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
-                    model.GPrincipalRecurrencia.UsuarioGestion = Session["IdUsuario"].ToString();
-                    model.GPrincipalRecurrencia.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
-                    model.GPrincipalRecurrencia.AliadoGestion = Session["AliadoLogeado"].ToString();
-                    model.GPrincipalRecurrencia.UsuarioGestionando = 0;
+                    var result = recurrencia.TraerGPrinRecurrenciaInbound(Convert.ToInt32(model.GPrincipalRecurrenciaInbound.CuentaCliente));
+                    model.GPrincipalRecurrenciaInbound.UsuarioGestion = Session["IdUsuario"].ToString();
+                    model.GPrincipalRecurrenciaInbound.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+                    model.GPrincipalRecurrenciaInbound.AliadoGestion = Session["AliadoLogeado"].ToString();
+                    //model.GPrincipalRecurrenciaInbound.UsuarioGestionando = 0;
                     if (result != null)
                     {
-                        recurrencia.ActualizarGRecurrencia(model.GPrincipalRecurrencia);
+                        recurrencia.ActualizarGRecurrenciaInbound(model.GPrincipalRecurrenciaInbound);
 
                     }
                     else
                     {
-                        recurrencia.InsertarGRecurrencia(model.GPrincipalRecurrencia);
+                        recurrencia.InsertarGRecurrenciaInbound(model.GPrincipalRecurrenciaInbound);
                     }
-                    recurrencia.EliminaCuentaRecurrencia(model.GPrincipalRecurrencia.CuentaCliente);
-
+                    //recurrencia.EliminaCuentaRecurrencia(model.GPrincipalRecurrencia.CuentaCliente);
                 }
             }
-            return View();
+            return RedirectToAction("Recurrencia", "Recurrencia");
+        }
+        public JsonResult BuscaCliente(string CuentaCliente)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(inboundService.TraerClienteCompletoPorCuenta(Convert.ToInt32(CuentaCliente))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
     }
 }

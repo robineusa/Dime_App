@@ -3014,6 +3014,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ViewModelIncidentesOperaciones.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.POMSolicitudes.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />

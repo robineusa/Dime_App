@@ -64,8 +64,6 @@ namespace Telmexla.Servicios.DIME.Entity
 
         [Required(ErrorMessage = "Seleccione una opción")]
         public string Macroproceso { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
         public string ServicioAfectado{ get; set; }
 
         [Required(ErrorMessage = "Seleccione una opción")]
