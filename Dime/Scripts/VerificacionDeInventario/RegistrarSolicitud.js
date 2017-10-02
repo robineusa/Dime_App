@@ -1,6 +1,5 @@
 ﻿$(document).ready(function () {
     ListaTiepoDeRequerimientos();
-
 });
 
 function ListaTiepoDeRequerimientos() {

@@ -18,21 +18,22 @@
 
                                 <table>
                                     <tr>
-                                        <td>
+                                        <td width="200">
                                             <small>Cuenta del Cliente</small>
                                             @Html.TextBoxFor(m => m.VIPSolicitudes.CuentaCliente, new { @class = "form-control input-sm", @Id = "CuentaCliente" })
                                         </td>
-                                        <td style="padding-left:4px; width:300px;">
+                                        <td width="200" style="padding-left:2px;">
                                             <small>Tipo de Requerimiento</small>
-                                            @Html.DropDownListFor(m => m.VIPSolicitudes.TipoDeRequerimiento, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "TipoDeRequerimiento", @class = "form-control" })
+                                            @Html.DropDownListFor(m => m.VIPSolicitudes.TipoDeRequerimiento, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "TipoDeRequerimiento", @class = "form-control input-sm" })
+                                           
                                         </td>
-                                        <td>
+                                        <td width="200" style="padding-left:2px;">
                                             <small>Requiere Ajuste</small>
                                             @Html.DropDownListFor(m => m.VIPSolicitudes.RequiereAjuste, new List<SelectListItem> {new SelectListItem{Text="SI", Value="SI" },
                                                                                              new SelectListItem{Text="NO", Value="NO" } },
                                                                                                               "--SELECCIONE--", new { @class = "form-control input-sm" })
                                         </td>
-                                        <td>
+                                        <td width="200" style="padding-left:2px;">
                                             <small>Nodo</small>
                                             @Html.TextBoxFor(m => m.VIPSolicitudes.Nodo, new { @class = "form-control input-sm", @Id = "Nodo" })
                                         </td>
@@ -40,7 +41,7 @@
                                 </table>
                                 <table>
                                     <tr>
-                                        <td style="padding-left:4px; width:700px;">
+                                        <td width="800" colspan="4">
                                             <small>Observaciones</small>
                                             @Html.TextAreaFor(m => m.VIPSolicitudes.Observaciones, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text" })
                                         </td>
