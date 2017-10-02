@@ -16701,6 +16701,14 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ActualizarSolicitud", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ActualizarSolicitudResponse")]
         System.Threading.Tasks.Task ActualizarSolicitudAsync(Telmexla.Servicios.DIME.Entity.VIPSolicitudes Solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaTiposDeRequerimientos", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaTiposDeRequerimientosRes" +
+            "ponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento> ListaTiposDeRequerimientos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaTiposDeRequerimientos", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaTiposDeRequerimientosRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento>> ListaTiposDeRequerimientosAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -16744,6 +16752,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task ActualizarSolicitudAsync(Telmexla.Servicios.DIME.Entity.VIPSolicitudes Solicitud) {
             return base.Channel.ActualizarSolicitudAsync(Solicitud);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento> ListaTiposDeRequerimientos() {
+            return base.Channel.ListaTiposDeRequerimientos();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento>> ListaTiposDeRequerimientosAsync() {
+            return base.Channel.ListaTiposDeRequerimientosAsync();
         }
     }
 }
