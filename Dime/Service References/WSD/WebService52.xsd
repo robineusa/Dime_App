@@ -3363,4 +3363,18 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="VIPSolicitudes" nillable="true" type="tns:VIPSolicitudes" />
+  <xs:complexType name="ArrayOfVIMTipoDeRequerimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VIMTipoDeRequerimiento" nillable="true" type="tns:VIMTipoDeRequerimiento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVIMTipoDeRequerimiento" nillable="true" type="tns:ArrayOfVIMTipoDeRequerimiento" />
+  <xs:complexType name="VIMTipoDeRequerimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoDeRequerimiento" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VIMTipoDeRequerimiento" nillable="true" type="tns:VIMTipoDeRequerimiento" />
 </xs:schema>
