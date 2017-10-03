@@ -15344,6 +15344,82 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_AliadoTecnico_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_AliadoTecnico_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_InventarioEquiposCuenta_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_InventarioEquiposCuenta_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -20643,6 +20719,18 @@
   <wsdl:message name="IRecurrenciaService_ListaHistSeguiRecurrenciaInbound_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListaHistSeguiRecurrenciaInboundResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_AliadoTecnico_InputMessage">
+    <wsdl:part name="parameters" element="tns:AliadoTecnico" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_AliadoTecnico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AliadoTecnicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_InventarioEquiposCuenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:InventarioEquiposCuenta" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_InventarioEquiposCuenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InventarioEquiposCuentaResponse" />
+  </wsdl:message>
   <wsdl:message name="IBitacoraIncidentesService_RegistrarIncidente_InputMessage">
     <wsdl:part name="parameters" element="tns:RegistrarIncidente" />
   </wsdl:message>
@@ -22501,6 +22589,14 @@
     <wsdl:operation name="ListaHistSeguiRecurrenciaInbound">
       <wsdl:input wsaw:Action="http://tempuri.org/IRecurrenciaService/ListaHistSeguiRecurrenciaInbound" message="tns:IRecurrenciaService_ListaHistSeguiRecurrenciaInbound_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecurrenciaService/ListaHistSeguiRecurrenciaInboundResponse" message="tns:IRecurrenciaService_ListaHistSeguiRecurrenciaInbound_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AliadoTecnico">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecurrenciaService/AliadoTecnico" message="tns:IRecurrenciaService_AliadoTecnico_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecurrenciaService/AliadoTecnicoResponse" message="tns:IRecurrenciaService_AliadoTecnico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InventarioEquiposCuenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecurrenciaService/InventarioEquiposCuenta" message="tns:IRecurrenciaService_InventarioEquiposCuenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecurrenciaService/InventarioEquiposCuentaResponse" message="tns:IRecurrenciaService_InventarioEquiposCuenta_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IBitacoraIncidentesService">
@@ -26664,6 +26760,28 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_ListaHistSeguiRecurrenciaInbound_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AliadoTecnico">
+      <soap12:operation soapAction="http://tempuri.org/IRecurrenciaService/AliadoTecnico" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_AliadoTecnico_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_AliadoTecnico_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InventarioEquiposCuenta">
+      <soap12:operation soapAction="http://tempuri.org/IRecurrenciaService/InventarioEquiposCuenta" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_InventarioEquiposCuenta_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_InventarioEquiposCuenta_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

@@ -8,6 +8,8 @@
         $("#Li2").css("border-color", "transparent");
         $("#Li3").css("border-color", "transparent");
         $("#Li3").css('background-color', 'transparent');
+        $("#Li4").css('background-color', 'transparent');
+        $("#Li4").css("border-color", "transparent");
 
     });
 
@@ -18,6 +20,8 @@
         $("#Li1").css("border-color", "transparent");
         $("#Li3").css("border-color", "transparent");
         $("#Li3").css('background-color', 'transparent');
+        $("#Li4").css('background-color', 'transparent');
+        $("#Li4").css("border-color", "transparent");
     });
 
     $("#Li3").click(function () {
@@ -27,7 +31,22 @@
         $("#Li1").css("border-color", "transparent");
         $("#Li2").css("border-color", "transparent");
         $("#Li2").css('background-color', 'transparent');
+        $("#Li4").css('background-color', 'transparent');
+        $("#Li4").css("border-color", "transparent");
+
     });
+
+    $("#Li4").click(function () {
+        $("#Li4").css('background-color', '#dcdcdc');
+        $("#Li4").css("border-color", "#c23321");
+        $("#Li1").css("background-color", "transparent");
+        $("#Li3").css("background-color", "transparent");
+        $("#Li3").css("border-color", "transparent");
+        $("#Li1").css("border-color", "transparent");
+        $("#Li2").css("border-color", "transparent");
+        $("#Li2").css('background-color', 'transparent');
+    });
+    
 
     $("#inputCuenta").on("keyup", function (e) {
 
@@ -44,7 +63,10 @@
     {
         CargaHistorialSeguimientos();
     }
-
+    if (DecisionInventarioEquipos == "block") {
+        CargaInventariosEquipos();
+    }
+    
     $("#AceptacionPrimerOfrecimiento").empty();
     $("#AceptacionPrimerOfrecimiento").append("<option value=''>--Select Option--</option>");
     $("#AceptacionPrimerOfrecimiento").append("<option value='ACEPTA OFRECIMIENTO'>ACEPTA OFRECIMIENTO</option>");
@@ -1427,4 +1449,61 @@ function LlamarTipificadorAvaya() {
             $('#TipiAvayaBody').html(result);
         }
     });
+}
+
+function CargaInventariosEquipos()
+{
+    var CuentaCli = $('#inputCuenta').val();
+    $.ajax({
+        type: "GET",
+        url: urlConsultaInventarioEquipos,
+        contentType: "application/json; charset=utf-8",
+        data: { CuentaCliente: CuentaCli },
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            ShowGridInventarioEquipos(json);
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+}
+
+function ShowGridInventarioEquipos(data) {
+
+    $("#InventEquiposGrid").kendoGrid({
+        autoBind: true,
+        dataSource: {
+            data: data,
+            pageSize: 10,
+        },
+        scrollable: true,
+        filterable: {
+            extra: false,
+            operators: {
+                string: {
+                    eq: "Es igual a"
+                }
+            }
+        },
+        sortable: true,
+        pageable: {
+            refresh: true,
+            pageSizes: true,
+            buttonCount: 5
+        },
+        columns: [
+       { field: "Cuenta", title: "Cuenta Cliente", headerAttributes: { style: "white-space: normal" }, width: 90 },
+       { field: "Tipo", title: "Usuario Gestion", headerAttributes: { style: "white-space: normal" }, width: 90 },
+       { field: "FabEquipo", title: "Nombre Usuario Gestion", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "SerieEquipo", title: "Aliado Gestion", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Estado", title: "Marcacion Inicial de Afectacion", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       //{ field: "Descripcion", title: "Fecha de Gestión", headerAttributes: { style: "white-space: normal" }, width: 150 },
+        ]
+
+    });
+
+    
+
 }

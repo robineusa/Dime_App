@@ -13,6 +13,7 @@ namespace Telmexla.Servicios.DIME.Entity
         private GPrincipalRecurrencia gPrincipalRecurrencia;
         private GLogRecurrencia gLogRecurrencia;
         private GPrincipalRecurrenciaInbound gPrincipalRecurrenciaInbound;
+        private NodosZonificados nodosZonificados;
 
         public ViewModelRecurrencia()
         {
@@ -21,6 +22,7 @@ namespace Telmexla.Servicios.DIME.Entity
             GPrincipalRecurrencia = new GPrincipalRecurrencia();
             GLogRecurrencia = new GLogRecurrencia();
             GPrincipalRecurrenciaInbound = new GPrincipalRecurrenciaInbound();
+            NodosZonificados = new NodosZonificados();
 
         }
 
@@ -86,6 +88,19 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 gPrincipalRecurrenciaInbound = value;
+            }
+        }
+
+        public NodosZonificados NodosZonificados
+        {
+            get
+            {
+                return nodosZonificados;
+            }
+
+            set
+            {
+                nodosZonificados = value;
             }
         }
     }

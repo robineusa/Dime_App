@@ -3060,6 +3060,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GLogRecurrenciaInbound" nillable="true" type="tns:GLogRecurrenciaInbound" />
+  <xs:complexType name="ArrayOfInventarioEquipos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InventarioEquipos" nillable="true" type="tns:InventarioEquipos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInventarioEquipos" nillable="true" type="tns:ArrayOfInventarioEquipos" />
+  <xs:complexType name="InventarioEquipos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cuenta" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FabEquipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="SerieEquipo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InventarioEquipos" nillable="true" type="tns:InventarioEquipos" />
   <xs:complexType name="BIPBitacoraIncidentes">
     <xs:sequence>
       <xs:element minOccurs="0" name="CantidadUsuariosAfectados" type="xs:decimal" />

@@ -9209,6 +9209,147 @@ namespace Dime.WSD {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="InventarioEquipos", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class InventarioEquipos : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> CuentaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FabEquipoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SerieEquipoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TipoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> Cuenta {
+            get {
+                return this.CuentaField;
+            }
+            set {
+                if ((this.CuentaField.Equals(value) != true)) {
+                    this.CuentaField = value;
+                    this.RaisePropertyChanged("Cuenta");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descripcion {
+            get {
+                return this.DescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FabEquipo {
+            get {
+                return this.FabEquipoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FabEquipoField, value) != true)) {
+                    this.FabEquipoField = value;
+                    this.RaisePropertyChanged("FabEquipo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SerieEquipo {
+            get {
+                return this.SerieEquipoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SerieEquipoField, value) != true)) {
+                    this.SerieEquipoField = value;
+                    this.RaisePropertyChanged("SerieEquipo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Tipo {
+            get {
+                return this.TipoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TipoField, value) != true)) {
+                    this.TipoField = value;
+                    this.RaisePropertyChanged("Tipo");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="FidelizacionMaestroServicios", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
     [System.SerializableAttribute()]
     public partial class FidelizacionMaestroServicios : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -15736,6 +15877,18 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ListaHistSeguiRecurrenciaInbound", ReplyAction="http://tempuri.org/IRecurrenciaService/ListaHistSeguiRecurrenciaInboundResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.GLogRecurrenciaInbound>> ListaHistSeguiRecurrenciaInboundAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/AliadoTecnico", ReplyAction="http://tempuri.org/IRecurrenciaService/AliadoTecnicoResponse")]
+        Telmexla.Servicios.DIME.Entity.NodosZonificados AliadoTecnico(string Nodo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/AliadoTecnico", ReplyAction="http://tempuri.org/IRecurrenciaService/AliadoTecnicoResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.NodosZonificados> AliadoTecnicoAsync(string Nodo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/InventarioEquiposCuenta", ReplyAction="http://tempuri.org/IRecurrenciaService/InventarioEquiposCuentaResponse")]
+        System.Collections.Generic.List<Dime.WSD.InventarioEquipos> InventarioEquiposCuenta(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/InventarioEquiposCuenta", ReplyAction="http://tempuri.org/IRecurrenciaService/InventarioEquiposCuentaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.InventarioEquipos>> InventarioEquiposCuentaAsync(decimal CuentaCliente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -15915,6 +16068,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.GLogRecurrenciaInbound>> ListaHistSeguiRecurrenciaInboundAsync(decimal CuentaCliente) {
             return base.Channel.ListaHistSeguiRecurrenciaInboundAsync(CuentaCliente);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.NodosZonificados AliadoTecnico(string Nodo) {
+            return base.Channel.AliadoTecnico(Nodo);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.NodosZonificados> AliadoTecnicoAsync(string Nodo) {
+            return base.Channel.AliadoTecnicoAsync(Nodo);
+        }
+        
+        public System.Collections.Generic.List<Dime.WSD.InventarioEquipos> InventarioEquiposCuenta(decimal CuentaCliente) {
+            return base.Channel.InventarioEquiposCuenta(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.InventarioEquipos>> InventarioEquiposCuentaAsync(decimal CuentaCliente) {
+            return base.Channel.InventarioEquiposCuentaAsync(CuentaCliente);
         }
     }
     

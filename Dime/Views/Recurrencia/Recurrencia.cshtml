@@ -51,6 +51,7 @@
                 <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321"><a href="#datosBasicos" aria-controls="datosBasicos" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Básicos</a></li>
                 <li id="Li2" class="" style=""><a href="#Seguimientos" aria-controls="Seguimientos" data-toggle="tab" role="tab" style="background-color:transparent;">Seguimientos</a></li>
                 <li id="Li3" class="" style="display:@ViewBag.Display;"><a href="#Historial_Seguimientos" aria-controls="Historial_Seguimientos" data-toggle="tab" role="tab" style="background-color:transparent;">Historial</a></li>
+                <li id="Li4" class="" style="display:@ViewBag.InventEquipos;"><a href="#Invent_Equipos" aria-controls="Invent_Equipos" data-toggle="tab" role="tab" style="background-color:transparent;">Inventario Equipos</a></li>
             </ul>
             <div class="tab-content" style="padding-left:0; padding-top: 0">
                 <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosBasicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
@@ -184,7 +185,16 @@
                                 <input class="form-control input-sm" type="text" placeholder="Descripción" value="@Model.ClientesTodos.Descripcion" readonly>
                             </td>
                         </tr>
-
+                        <tr>
+                            <td style="padding:1px;">
+                                <small>Aliado Técnico: </small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input class="form-control input-sm" type="text" placeholder="Descripción" value="@Model.NodosZonificados.AliadoZonificado" readonly>
+                            </td>
+                        </tr>
                     </table>
                 </div>
                 <div id="Seguimientos" class="tab-pane" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
@@ -192,6 +202,9 @@
                 </div>
                 <div class="tab-pane" id="Historial_Seguimientos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
                     <br /><div id="HistSeguimGrid"></div>
+                </div>
+                <div class="tab-pane" id="Invent_Equipos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                    <br /><div id="InventEquiposGrid"></div>
                 </div>
             </div>
         </div>
@@ -616,15 +629,14 @@
         var urlListSeguimientos = '@Url.Action("ListSeguimientos", "Recurrencia")';
         var urlListHistorialSeguimientos = '@Url.Action("ConsultaHistorialSeguimientoJson", "Recurrencia")';
         var urlTipificadorAvaya = '@Url.Action("TipificadorAvaya", "Recurrencia")';
-
+        var urlConsultaInventarioEquipos = '@Url.Action("ConsultaInventarioEquipos", "Recurrencia")';
+        
         var DecisionHistorialSeguimientos = '@ViewBag.Display';
-
-
-
+        var DecisionInventarioEquipos = '@ViewBag.InventEquipos';
 
     </script>
 @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
-    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.2.7"></script>
+    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.2.8"></script>
 }
 }
 
