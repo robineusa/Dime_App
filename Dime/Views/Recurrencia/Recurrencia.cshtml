@@ -16,13 +16,13 @@
             
         </div>
         <div class="row">
-            <div class="col-xs-4" style="width:250px;">
+            <div class="col-xs-4" style="width:450px;">
                 <table>
                     <tr>
                         <td style="min-width:200px; padding:1px;">
                             @Html.TextBoxFor(m => m.GPrincipalRecurrencia.CuentaCliente, new { @class = "form-control input-sm", placeholder = "Ingrese la cuenta", id = "inputCuenta", ReadOnly="true", Value = Model.ClientesTodos.Cuenta })
                         </td>
-                        <td>
+                        <td style="min-width:200px; padding:1px;">
                             @if (ViewBag.NoDatos2 != "")
                             {
                                 <label style="color:red; display:inline-block"> &nbsp;&nbsp; @ViewBag.NoDatos2</label>
@@ -576,6 +576,8 @@
             </div>
         </div>
         <button type="submit" style="display:block;" class="btn btn-primary" name="BotonEnvia" value="GuardaDatos" id="BotonEnvia">Guardar</button>
+        <br />
+        <br />
     </div>
 </div>
 

@@ -32,7 +32,10 @@
                 <div class="col-md-9" style="width:100%; margin-left:5px;">
                     <div class="nav-tabs-custom" style="width:97%; box-shadow:none;">
                         <ul class="nav nav-tabs">
-                            <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #d4a057"><a href="#datosBasicosInbound" aria-controls="datosBasicosInbound" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Básicos</a></li>
+                            <li id="Li1I" class="active" style="background-color: #dcdcdc; border-color: #d4a057"><a href="#datosBasicosInbound" aria-controls="datosBasicosInbound" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Básicos</a></li>
+                            <li id="Li2I" class="" style=""><a href="#SeguimientosInbound" aria-controls="SeguimientosInbound" data-toggle="tab" role="tab" style="background-color:transparent;">Seguimientos</a></li>
+                            <li id="Li3I" class="" style="display:none;"><a href="#HistorialInbound" aria-controls="HistorialInbound" data-toggle="tab" role="tab" style="background-color:transparent;">Historial</a></li>
+
                         </ul>
                         <div class="tab-content" style="padding:0;">
                             <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosBasicosInbound" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
@@ -164,6 +167,12 @@
                                     </tr>
                                 </table>
                             </div>
+                            <div id="SeguimientosInbound" class="tab-pane" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                                <br /><div id="SeguimientosIGrid"></div>
+                            </div>
+                            <div class="tab-pane" id="HistorialInbound" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                                <br /><div id="HistorialIGrid"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -285,13 +294,14 @@
         </div>
     }
     <script>
-        //$("#cuentaCliente").val($("#inputCuenta").val());
         var urlBuscaCliente = '@Url.Action("BuscaCliente", "Recurrencia")';
         var urlFallaEspecificaList = '@Url.Action("FallaEspecificaList", "Recurrencia")';
         var urlFallaCausaRaizList = '@Url.Action("FallaCausaRaiz", "Recurrencia")';
         var urlSolucionEspecificaList = '@Url.Action("SolucionEspecifica", "Recurrencia")';
         var urlContactoList = '@Url.Action("ContactoList", "Recurrencia")';
+        var urlListSeguimientosI = '@Url.Action("ListSeguimientosInbound", "Recurrencia")';
+        var urlListHistorialI = '@Url.Action("HistorialInbound", "Recurrencia")';
     </script>
-    <script src="~/Scripts/Recurrencia/TipificadorAvaya.js?1.0.7"></script>
+    <script src="~/Scripts/Recurrencia/TipificadorAvaya.js?1.0.8"></script>
 </body>
 </html>
