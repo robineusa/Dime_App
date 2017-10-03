@@ -37,5 +37,10 @@ namespace Dime.Controllers
         {
             return View();
         }
+        public ActionResult DashboardRentabilizacion()
+        {
+            return View();
+        }
+        
     }
 }

@@ -3450,6 +3450,7 @@
     </None>
     <Content Include="Views\Recurrencia\TipificadorAvaya.cshtml" />
     <Content Include="Views\VerificacionDeInventario\RegistrarSolicitud.cshtml" />
+    <Content Include="Views\Home\DashboardRentabilizacion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

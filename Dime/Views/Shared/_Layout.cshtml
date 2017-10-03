@@ -187,6 +187,10 @@
                                 {
                                     <li id="left-sidebar-menu-dashboard-dashboardV1"><a href="@Url.Action("DashboardPotencial", "Home")"><i class="fa fa-circle-o text-green"></i> Dashboard Potencial</a></li>
                                 }
+                                @if (Session["Dashboard Rentabilizacion"] != null)
+                                {
+                                    <li id="left-sidebar-menu-dashboard-dashboardV1"><a href="@Url.Action("DashboardRentabilizacion", "Home")"><i class="fa fa-circle-o text-red"></i> Dashboard Rentabilización</a></li>
+                                }
                             </ul>
                         </li>
                     }
