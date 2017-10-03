@@ -27,10 +27,10 @@
 <body id="Body_Layout" class="hold-transition skin-red sidebar-mini">
 
     <div class="wrapper">
-        <header class="main-header">
+        <header class="main-header" style="position:fixed;width:100%;">
             <a href="#" class="logo">
                 <span class="logo-mini"><b>D</b>ime</span>
-                <span class="logo-lg"><b>Plataforma</b> Dime</span>
+                <span class="logo-lg" style="width:250px; text-align:left;"><b>Plataforma</b> Dime</span>
             </a>
             <nav class="navbar navbar-static-top" role="navigation">
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
@@ -142,7 +142,7 @@
                 </div>
             </nav>
         </header>
-        <aside class="main-sidebar">
+        <aside class="main-sidebar" style="width:250px;height:1500px;">
             <section class="sidebar">
                 <div id="User" class="user-panel">
                     <div class="pull-left image">
@@ -611,7 +611,7 @@
                                 {
 
                                     <li>
-                                        <a href="#"><i class="fa fa-behance-square text-red" aria-hidden="true"></i>Proceso Back Elite<i class="fa fa-angle-left pull-right"></i></a>
+                                        <a href="#"><i class="fa fa-behance-square text-red" aria-hidden="true"></i>Back Elite<i class="fa fa-angle-left pull-right"></i></a>
                                         <ul class="treeview-menu">
                                             @if (Session["Registrar Solicitud Back Elite"] != null)
                                             {
@@ -659,7 +659,7 @@
                                 @if (Session["Registrar Solicitud Inventario"] != null || Session["Gestionar Solicitud Inventario"] != null)
                                 {
                                     <li>
-                                        <a href="#"><i class="fa fa-behance-square text-red" aria-hidden="true"></i>Proceso Verificación de Inventario<i class="fa fa-angle-left pull-right"></i></a>
+                                        <a href="#"><i class="fa fa-behance-square text-red" aria-hidden="true"></i>Verificación de Inventario<i class="fa fa-angle-left pull-right"></i></a>
                                         <ul class="treeview-menu">
                                             @if (Session["Registrar Solicitud Inventario"] != null || Session["Gestionar Solicitud Inventario"] != null)
                                             {
@@ -680,7 +680,7 @@
                                 @if (Session["Cierre Ciclo Recurrencia"] != null || Session["Consultas Administrador Recurrencia"] != null)
                                 {
                                     <li>
-                                        <a href="#"><i class="fa fa-retweet text-aqua" aria-hidden="true"></i>Proceso Recurrencia<i class="fa fa-angle-left pull-right"></i></a>
+                                        <a href="#"><i class="fa fa-retweet text-aqua" aria-hidden="true"></i>Recurrencia<i class="fa fa-angle-left pull-right"></i></a>
                                         <ul class="treeview-menu">
                                             @if (Session["Cierre Ciclo Recurrencia"] != null)
                                             {
@@ -993,7 +993,7 @@
 
             </section>
         </aside>
-        <div class="content-wrapper">
+        <div class="content-wrapper" style="margin-left:250px;margin-top:40px;">
             @if (ViewBag.Title != null && ViewBag.Title != "")
             {
                 <section class="content-header">
@@ -1065,7 +1065,7 @@
                 <ng-view></ng-view>
             </section>
         </div>
-        <footer class="main-footer">
+        <footer class="main-footer" style="margin-left:250px;">
             <div class="pull-right hidden-xs">
                 <b>Version</b> 2.0.0
             </div>

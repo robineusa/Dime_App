@@ -5708,7 +5708,7 @@
   <xs:element name="ListaTiposDeRequerimientosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q400="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaTiposDeRequerimientosResult" nillable="true" type="q400:ArrayOfVIMTipoDeRequerimiento" />
+        <xs:element xmlns:q401="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaTiposDeRequerimientosResult" nillable="true" type="q401:ArrayOfVIMTipoDeRequerimiento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
