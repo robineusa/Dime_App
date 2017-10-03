@@ -237,5 +237,17 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        public JsonResult ListSeguimientosInbound()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(recurrencia.ListaSeguimientosRecurrenciaInbound()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult HistorialInbound(string CuentaCliente)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(recurrencia.ListaHistSeguiRecurrenciaInbound(Convert.ToDecimal(CuentaCliente))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }

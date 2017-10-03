@@ -3015,6 +3015,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.POMSolicitudes.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento1.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3139,6 +3140,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.FidelizacionRegistro.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.GLogRecurrenciaInbound.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\WSD\Reference.svcmap">
