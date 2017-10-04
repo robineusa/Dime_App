@@ -3016,6 +3016,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BILBitacoraIncidentes.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento1.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIPSolicitudesPorEquipo.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3454,6 +3455,7 @@
     <Content Include="Views\Recurrencia\TipificadorAvaya.cshtml" />
     <Content Include="Views\VerificacionDeInventario\RegistrarSolicitud.cshtml" />
     <Content Include="Views\Home\DashboardRentabilizacion.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\EquiposPorSolicitud.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

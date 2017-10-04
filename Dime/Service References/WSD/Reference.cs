@@ -17225,6 +17225,22 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaTiposDeRequerimientos", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaTiposDeRequerimientosRes" +
             "ponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento>> ListaTiposDeRequerimientosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/RegistrarEquiposPorSolicitud", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/RegistrarEquiposPorSolicitudR" +
+            "esponse")]
+        void RegistrarEquiposPorSolicitud(Telmexla.Servicios.DIME.Entity.VIPSolicitudesPorEquipo Equipos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/RegistrarEquiposPorSolicitud", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/RegistrarEquiposPorSolicitudR" +
+            "esponse")]
+        System.Threading.Tasks.Task RegistrarEquiposPorSolicitudAsync(Telmexla.Servicios.DIME.Entity.VIPSolicitudesPorEquipo Equipos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaDeEquiposPorSolicitud", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaDeEquiposPorSolicitudRes" +
+            "ponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudesPorEquipo> ListaDeEquiposPorSolicitud(decimal IdSolicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaDeEquiposPorSolicitud", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaDeEquiposPorSolicitudRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudesPorEquipo>> ListaDeEquiposPorSolicitudAsync(decimal IdSolicitud);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17276,6 +17292,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento>> ListaTiposDeRequerimientosAsync() {
             return base.Channel.ListaTiposDeRequerimientosAsync();
+        }
+        
+        public void RegistrarEquiposPorSolicitud(Telmexla.Servicios.DIME.Entity.VIPSolicitudesPorEquipo Equipos) {
+            base.Channel.RegistrarEquiposPorSolicitud(Equipos);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarEquiposPorSolicitudAsync(Telmexla.Servicios.DIME.Entity.VIPSolicitudesPorEquipo Equipos) {
+            return base.Channel.RegistrarEquiposPorSolicitudAsync(Equipos);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudesPorEquipo> ListaDeEquiposPorSolicitud(decimal IdSolicitud) {
+            return base.Channel.ListaDeEquiposPorSolicitud(IdSolicitud);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudesPorEquipo>> ListaDeEquiposPorSolicitudAsync(decimal IdSolicitud) {
+            return base.Channel.ListaDeEquiposPorSolicitudAsync(IdSolicitud);
         }
     }
 }

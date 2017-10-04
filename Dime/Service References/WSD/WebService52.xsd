@@ -3430,4 +3430,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="VIMTipoDeRequerimiento" nillable="true" type="tns:VIMTipoDeRequerimiento" />
+  <xs:complexType name="VIPSolicitudesPorEquipo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdSolicitud" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Mac" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tarjeta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDeEquipo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VIPSolicitudesPorEquipo" nillable="true" type="tns:VIPSolicitudesPorEquipo" />
+  <xs:complexType name="ArrayOfVIPSolicitudesPorEquipo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VIPSolicitudesPorEquipo" nillable="true" type="tns:VIPSolicitudesPorEquipo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVIPSolicitudesPorEquipo" nillable="true" type="tns:ArrayOfVIPSolicitudesPorEquipo" />
 </xs:schema>
