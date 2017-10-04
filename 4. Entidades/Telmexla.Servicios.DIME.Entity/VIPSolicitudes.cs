@@ -1,4 +1,6 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace Telmexla.Servicios.DIME.Entity
 {
     public class VIPSolicitudes
@@ -12,13 +14,21 @@ namespace Telmexla.Servicios.DIME.Entity
         public System.DateTime? FechaUltimaActualizacion { get; set; }
         public decimal UsuarioUltimaActualizacion { get; set; }
         public string NombreUsuarioUltimaActualizacion { get; set; }
+        [Required(ErrorMessage = "Seleccione una opción")]
         public decimal CuentaCliente { get; set; }
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string TipoDeRequerimiento { get; set; }
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string RequiereAjuste { get; set; }
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string Nodo { get; set; }
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string Gestion { get; set; }
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string Subrazon { get; set; }
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string EstadoSolicitud { get; set; }
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string AliadoTecnico { get; set; }
         public string Observaciones { get; set; }
     }

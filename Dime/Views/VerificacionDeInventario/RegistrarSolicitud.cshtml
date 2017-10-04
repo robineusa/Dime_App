@@ -38,6 +38,12 @@
                                             @Html.TextBoxFor(m => m.VIPSolicitudes.Nodo, new { @class = "form-control input-sm", @Id = "Nodo" })
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td>@Html.ValidationMessageFor(m => m.VIPSolicitudes.CuentaCliente, "", new { @class = "text-danger" })</td>
+                                        <td>@Html.ValidationMessageFor(m => m.VIPSolicitudes.TipoDeRequerimiento, "", new { @class = "text-danger" })</td>
+                                        <td>@Html.ValidationMessageFor(m => m.VIPSolicitudes.RequiereAjuste, "", new { @class = "text-danger" })</td>
+                                        <td>@Html.ValidationMessageFor(m => m.VIPSolicitudes.Nodo, "", new { @class = "text-danger" })</td>
+                                    </tr>
                                 </table>
                                 <table>
                                     <tr>
@@ -47,24 +53,15 @@
                                         </td>
                                     </tr>
                                 </table>
+                                <br />
+                                <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;  margin-left:1%;">Guardar</button><br />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="box box-danger">
-            <div class="box-body">
-                <div class="row">
-                    <div class="col-xs-12">
-
-                    </div>
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;  margin-left:1%;">Guardar</button><br />
-
-        </div>
+        
     }
 
     @section Scripts{

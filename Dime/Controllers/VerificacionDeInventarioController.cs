@@ -50,5 +50,10 @@ namespace Dime.Controllers
 
             return RedirectToAction("RegistrarSolicitud");
         }
+        [HttpGet]
+        public ActionResult EquiposPorSolicitud()
+        {
+            return View();
+        }
     }
 }
