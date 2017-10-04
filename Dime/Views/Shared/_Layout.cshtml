@@ -693,10 +693,18 @@
                                             @if (Session["Consultas Administrador Recurrencia"] != null)
                                             {
                                                 <li>
-                                                    <a href="#"><i class="fa  fa-search text-orange" aria-hidden="true"></i>Consultas Admin Recurrencia<i class="fa fa-angle-left pull-right"></i></a>
+                                                    <a href="#"><i class="fa  fa-search text-orange" aria-hidden="true"></i>Consultas Inbound<i class="fa fa-angle-left pull-right"></i></a>
                                                     <ul class="treeview-menu">
-                                                        <li><a href="@Url.Action("ConsultaAdministradorLog", "Recurrencia")"><i class="fa fa-circle-o"></i>Consulta Log</a></li>
-                                                        <li><a href="@Url.Action("ConsultaAdminstradorPrincipal", "Recurrencia")"><i class="fa fa-circle-o"></i>Consulta Pricipal</a></li>
+                                                        <li><a href="@Url.Action("ConsultaAdministradorLogInbound", "Recurrencia")"><i class="fa fa-circle-o"></i>Consulta Log</a></li>
+                                                        <li><a href="@Url.Action("ConsultaAdminstradorPrincipalInbound", "Recurrencia")"><i class="fa fa-circle-o"></i>Consulta Principal</a></li>
+
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><i class="fa  fa-search text-orange" aria-hidden="true"></i>Consultas Outbound<i class="fa fa-angle-left pull-right"></i></a>
+                                                    <ul class="treeview-menu">
+                                                        <li><a href="@Url.Action("ConsultaAdministradorLogInbound", "Recurrencia")"><i class="fa fa-circle-o"></i>Consulta Log</a></li>
+                                                        <li><a href="@Url.Action("ConsultaAdminstradorPrincipal", "Recurrencia")"><i class="fa fa-circle-o"></i>Consulta Principal</a></li>
 
                                                     </ul>
                                                 </li>

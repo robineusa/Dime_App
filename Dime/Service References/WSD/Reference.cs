@@ -15889,6 +15889,22 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/InventarioEquiposCuenta", ReplyAction="http://tempuri.org/IRecurrenciaService/InventarioEquiposCuentaResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.InventarioEquipos>> InventarioEquiposCuentaAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminPrincipalRecurrenciaInbound", ReplyAction="http://tempuri.org/IRecurrenciaService/ConsultaAdminPrincipalRecurrenciaInboundRe" +
+            "sponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound> ConsultaAdminPrincipalRecurrenciaInbound(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminPrincipalRecurrenciaInbound", ReplyAction="http://tempuri.org/IRecurrenciaService/ConsultaAdminPrincipalRecurrenciaInboundRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound>> ConsultaAdminPrincipalRecurrenciaInboundAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminLogRecurrenciaInbound", ReplyAction="http://tempuri.org/IRecurrenciaService/ConsultaAdminLogRecurrenciaInboundResponse" +
+            "")]
+        System.Collections.Generic.List<Dime.WSD.GLogRecurrenciaInbound> ConsultaAdminLogRecurrenciaInbound(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminLogRecurrenciaInbound", ReplyAction="http://tempuri.org/IRecurrenciaService/ConsultaAdminLogRecurrenciaInboundResponse" +
+            "")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.GLogRecurrenciaInbound>> ConsultaAdminLogRecurrenciaInboundAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -16084,6 +16100,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.InventarioEquipos>> InventarioEquiposCuentaAsync(decimal CuentaCliente) {
             return base.Channel.InventarioEquiposCuentaAsync(CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound> ConsultaAdminPrincipalRecurrenciaInbound(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalRecurrenciaInbound(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrenciaInbound>> ConsultaAdminPrincipalRecurrenciaInboundAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalRecurrenciaInboundAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Dime.WSD.GLogRecurrenciaInbound> ConsultaAdminLogRecurrenciaInbound(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogRecurrenciaInbound(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.GLogRecurrenciaInbound>> ConsultaAdminLogRecurrenciaInboundAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogRecurrenciaInboundAsync(FechaInicial, FechaFinal);
         }
     }
     

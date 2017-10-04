@@ -1,0 +1,324 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelRecurrencia
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+</head>
+<body>
+    @using (Html.BeginForm("TipificadorAvaya", "Recurrencia", FormMethod.Post, new { role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            <hr />
+            <div class="callout" style="margin-bottom: 0 ;border-color: #d4a057 !important;background-color:gainsboro !important; color: black !important; width: 98%;">
+                <table>
+                    <tr>
+                        <td style="padding-left:1px; width:200px;">
+                            <small>Número de Cuenta: </small>
+                            @Html.TextBoxFor(m => m.GPrincipalRecurrenciaInbound.CuentaCliente, null, new { id = "cuentaCliente", @class = "form-control input-sm" })
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-9" style="width:100%; margin-left:5px;">
+                    <div class="nav-tabs-custom" style="width:97%; box-shadow:none;">
+                        <ul class="nav nav-tabs">
+                            <li id="Li1I" class="active" style="background-color: #dcdcdc; border-color: #d4a057"><a href="#datosBasicosInbound" aria-controls="datosBasicosInbound" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Básicos</a></li>
+                            <li id="Li2I" class="" style=""><a href="#SeguimientosInbound" aria-controls="SeguimientosInbound" data-toggle="tab" role="tab" style="background-color:transparent;">Seguimientos</a></li>
+                            <li id="Li3I" class="" style="display:none;"><a href="#HistorialInbound" aria-controls="HistorialInbound" data-toggle="tab" role="tab" style="background-color:transparent;">Historial</a></li>
+                            <li id="Li4I" class="" style="display:none;"><a href="#InventaEquipos" aria-controls="InventaEquipos" data-toggle="tab" role="tab" style="background-color:transparent;">Inventario Equipos</a></li>
+
+                        </ul>
+                        <div class="tab-content" style="padding:0;">
+                            <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosBasicosInbound" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                                <table>
+                                    <tr>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Nombre del Cliente:  </small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Apellido del Cliente:  </small>
+                                        </td>
+
+                                        <td width="200" style="padding:1px;">
+                                            <small>Teléfono Telmex:  </small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Teléfono 1:  </small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Teléfono 2: </small>
+                                        </td>
+                                        <td width="200" style="padding:1px;">
+                                            <small>Teléfono 3:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <input name="NomClie" type="text" class="form-control input-sm" id="NombreCliente" readonly="readonly"/>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="ApellidoCliente" readonly="readonly" />
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="TelefonoTel" readonly="readonly" />
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="Telefono1" readonly="readonly" />
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="Telefono2" readonly="readonly" />
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="Telefono3" readonly="readonly" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td style="padding:1px;">
+                                            <small>Dirección de Instalación: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Correspondencia:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>Nodo: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Red:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>División:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Área:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="DirInsta" readonly="readonly" />
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="Correspondencia" readonly="readonly" />
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="Nodo" readonly="readonly" />
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="Red" readonly="readonly" />
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="Division" readonly="readonly" />
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="Area" readonly="readonly" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td style="padding:1px;">
+                                            <small>Zona:</small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Distrito:  </small>
+                                        </td>
+
+                                        <td style="padding:1px;">
+                                            <small>Nombre Comunidad: </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Estrato:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Tipo de Cliente:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Descripción:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="Zona" readonly="readonly" />
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="Distrito" readonly="readonly" />
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="NomComunidad" readonly="readonly" />
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="Estrato" readonly="readonly" />
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="TipoCliente" readonly="readonly" />
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <input type="text" class="form-control input-sm" id="Descripcion" readonly="readonly" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <small>Aliado Técnico: </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input id="AliadoTecnicoI" class="form-control input-sm" type="text" placeholder="AliadoTecnico" readonly>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="SeguimientosInbound" class="tab-pane" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                                <br /><div id="SeguimientosIGrid"></div>
+                            </div>
+                            <div class="tab-pane" id="HistorialInbound" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                                <br /><div id="HistorialIGrid"></div>
+                            </div>
+                            <div class="tab-pane" id="InventaEquipos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                                <br /><div id="InventEquiGrid"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-tty"></i>
+                <h3 class="box-title"> Interacción con el Cliente</h3>
+            </div>
+            <div class="callout" style="margin-bottom: 0 ;border-color: #d4a057 !important;background-color:gainsboro !important; color: black !important; width: 98%;">
+                <div class="row">
+                    <table style="width:100%; margin-left:10px;">
+                        <tr>
+                            <td style="padding-left:1px; width:200px;" >
+                                <small>Macroproceso:</small>
+                                @Html.DropDownListFor(m => m.GPrincipalRecurrenciaInbound.Macroproceso, new List<SelectListItem> { },
+                                           "--Select Option--", new { Id = "MacroprocesoI", @class = "form-control input-sm", disabled = "true", onchange="SetServicioAfectado();" })
+                                @Html.ValidationMessageFor(m => m.GPrincipalRecurrenciaInbound.Macroproceso, "", new { @class = "text-danger" })
+                            </td>
+                            <td style="padding-left:1px; width:200px;" >
+                                <small>Servicio Afectado:</small>
+                                @Html.DropDownListFor(m => m.GPrincipalRecurrenciaInbound.ServicioAfectadoR, new List<SelectListItem> { },
+                                           "--Select Option--",
+                                                new { Id = "ServicioAfectadoI", @class = "form-control input-sm", disabled = "true", onchange= "SetArbolSoporte();" })
+                                @Html.ValidationMessageFor(m => m.GPrincipalRecurrenciaInbound.ServicioAfectadoR, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(m => m.GPrincipalRecurrenciaInbound.ServicioAfectado, new { @id = "ServicioAfectadoIO" })
+                            </td>
+                            <td style="padding-left:1px; width:200px;" >
+                                <small>Árbol de soporte:</small>
+                                @Html.DropDownListFor(m => m.GPrincipalRecurrenciaInbound.ArbolSoporteR, new List<SelectListItem> { },
+                                           "--Select Option--",
+                                                new { Id = "ArbolSoporteI", @class = "form-control input-sm", disabled = "true", onchange = "SetFallaCausaRTaiz();" })
+                                @Html.ValidationMessageFor(m => m.GPrincipalRecurrenciaInbound.ArbolSoporteR, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(m => m.GPrincipalRecurrenciaInbound.ArbolSoporte, new { @id = "ArbolSoporteIO" })
+                            </td>
+                            <td style="padding-left:1px; width:200px;" >
+                                <small>Falla Causa Raíz:</small>
+                                @Html.DropDownListFor(m => m.GPrincipalRecurrenciaInbound.FallaCausaRaizR, new List<SelectListItem> { },
+                                           "--Select Option--",
+                                                new { Id = "FallaCausaRaizI", @class = "form-control input-sm", onchange = "SetOpciones();", disabled = "true" })
+                                @Html.ValidationMessageFor(m => m.GPrincipalRecurrenciaInbound.FallaCausaRaizR, "", new { @class = "text-danger"})
+                                @Html.HiddenFor(m => m.GPrincipalRecurrenciaInbound.FallaCausaRaiz, new { @id = "FallaCausaRaizIO" })
+                            </td>
+                            <td style="padding-left:1px; width:200px;" >
+                                <small>Solución Específica:</small>
+                                @Html.DropDownListFor(m => m.GPrincipalRecurrenciaInbound.SolucionEspecifica, new List<SelectListItem> { },
+                                           "--Select Option--",
+                                                new { Id = "SolucionEspecificaI", @class = "form-control input-sm", disabled = "true", onchange="SetEstado();" })
+                                @Html.ValidationMessageFor(m => m.GPrincipalRecurrenciaInbound.SolucionEspecifica, "", new { @class = "text-danger" })
+                            </td>
+                            <td style="padding-left:1px; width:200px;" >
+                                <small>Estado:</small>
+                                @Html.DropDownListFor(m => m.GPrincipalRecurrenciaInbound.Estado, new List<SelectListItem> { },
+                                           "--Select Option--",
+                                                new { Id = "EstadoI", @class = "form-control input-sm", disabled = "true" })
+                                @Html.ValidationMessageFor(m => m.GPrincipalRecurrenciaInbound.Estado, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left:1px; width:200px;" >
+                                <small>Falla Atribuible a:</small>
+                                @Html.DropDownListFor(m => m.GPrincipalRecurrenciaInbound.FallaAtribuibleA, new List<SelectListItem> { },
+                                           "--Select Option--",
+                                                new { Id = "FallaAtribuibleAI", @class = "form-control input-sm", disabled = "true" })
+                                @Html.ValidationMessageFor(m => m.GPrincipalRecurrenciaInbound.FallaAtribuibleA, "", new { @class = "text-danger" })
+                            </td>
+                            <td style="padding-left:1px; width:200px;" colspan="2">
+                                <small>PorQue: </small>
+                                @Html.TextBoxFor(m => m.GPrincipalRecurrenciaInbound.PorQue, new { id = "PorQueI", @class = "form-control input-sm" , disabled = "true", placeholder = "Digite el Porque" })
+                            </td>
+                            <td style="padding-left:1px; width:200px;" >
+                                <small>Claro Video Nagra: </small>
+                                @Html.DropDownListFor(m => m.GPrincipalRecurrenciaInbound.ActivacionClaroVideoNagra, new List<SelectListItem> { },
+                                           "--Select Option--",
+                                                new { Id = "ActivacionClaroVideoNagraI", @class = "form-control input-sm", disabled = "true" })
+                                @Html.ValidationMessageFor(m => m.GPrincipalRecurrenciaInbound.ActivacionClaroVideoNagra, "", new { @class = "text-danger" })
+                            </td>
+                            <td style="padding-left:1px; width:200px;">
+                                <small>Servicios a Ofrecer: </small>
+                                @Html.DropDownListFor(m => m.GPrincipalRecurrenciaInbound.ServicioOfrecido, new List<SelectListItem> { },
+                                           "--Select Option--",
+                                                new { Id = "ServicioOfrecidoI", @class = "form-control input-sm", disabled = "true", onchange="SetAceptacionServicioOfrecido();" })
+                                @Html.ValidationMessageFor(m => m.GPrincipalRecurrenciaInbound.ServicioOfrecido, "", new { @class = "text-danger" })
+                            </td>
+                            <td style="padding-left:1px; width:200px;">
+                                <small>Aceptación Ofrecimiento: </small>
+                                @Html.DropDownListFor(m => m.GPrincipalRecurrenciaInbound.AceptacionServicioOfrecido, new List<SelectListItem> { },
+                                           "--Select Option--",
+                                                new { Id = "AceptacionServicioOfrecidoI", @class = "form-control input-sm", disabled = "true" })
+                                @Html.ValidationMessageFor(m => m.GPrincipalRecurrenciaInbound.AceptacionServicioOfrecido, "", new { @class = "text-danger" })
+                            
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <br/>
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-comments"></i>
+                <h3 class="box-title">Observaciones</h3>
+            </div>
+            @*<strong><i class="fa fa-chevron-circle-right"></i> Servicio:</strong>*@
+            <div class="callout" style="margin-bottom: 0 ;border-color: #d4a057 !important;background-color:gainsboro !important; color: black !important; width: 98%;">
+                <div class="row">
+                    <div class="col-xs-2" style="width:100%;color:black; margin-left: -5px;">
+                        <table style="width:100%;">
+                            <tr>
+                                <td style="padding-left:1px; width:200px;">
+                                    @Html.TextBoxFor(m => m.GPrincipalRecurrenciaInbound.Observaciones, new { id = "ObservacionesI", @class = "form-control input-sm", @style = "margin-left:0px; width:100%; height:70px;" })
+                                </td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                </div>
+            </div>
+            <br />
+            <button id="" type="submit" class="btn btn-primary" name="BotonEnvia" value="GuardaDatos" style="width:10%; height:40px; display:block;">Guardar</button>
+        </div>
+    }
+    <script>
+        var urlBuscaCliente = '@Url.Action("BuscaCliente", "Recurrencia")';
+        var urlFallaEspecificaList = '@Url.Action("FallaEspecificaList", "Recurrencia")';
+        var urlFallaCausaRaizList = '@Url.Action("FallaCausaRaiz", "Recurrencia")';
+        var urlSolucionEspecificaList = '@Url.Action("SolucionEspecifica", "Recurrencia")';
+        var urlContactoList = '@Url.Action("ContactoList", "Recurrencia")';
+        var urlListSeguimientosI = '@Url.Action("ListSeguimientosInbound", "Recurrencia")';
+        var urlListHistorialI = '@Url.Action("HistorialInbound", "Recurrencia")';
+        var urlConsultaInventarioEquiposI = '@Url.Action("ConsultaInventarioEquipos", "Recurrencia")';
+        var urlAliadoTecnicoI = '@Url.Action("AliadoTecnico", "Recurrencia")';
+        
+    </script>
+    <script src="~/Scripts/Recurrencia/TipificadorAvaya.js?1.0.9"></script>
+</body>
+</html>
