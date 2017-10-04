@@ -35,6 +35,7 @@
                             <li id="Li1I" class="active" style="background-color: #dcdcdc; border-color: #d4a057"><a href="#datosBasicosInbound" aria-controls="datosBasicosInbound" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Básicos</a></li>
                             <li id="Li2I" class="" style=""><a href="#SeguimientosInbound" aria-controls="SeguimientosInbound" data-toggle="tab" role="tab" style="background-color:transparent;">Seguimientos</a></li>
                             <li id="Li3I" class="" style="display:none;"><a href="#HistorialInbound" aria-controls="HistorialInbound" data-toggle="tab" role="tab" style="background-color:transparent;">Historial</a></li>
+                            <li id="Li4I" class="" style="display:none;"><a href="#InventaEquipos" aria-controls="InventaEquipos" data-toggle="tab" role="tab" style="background-color:transparent;">Inventario Equipos</a></li>
 
                         </ul>
                         <div class="tab-content" style="padding:0;">
@@ -165,6 +166,16 @@
                                             <input type="text" class="form-control input-sm" id="Descripcion" readonly="readonly" />
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <small>Aliado Técnico: </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input id="AliadoTecnicoI" class="form-control input-sm" type="text" placeholder="AliadoTecnico" readonly>
+                                        </td>
+                                    </tr>
                                 </table>
                             </div>
                             <div id="SeguimientosInbound" class="tab-pane" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
@@ -172,6 +183,9 @@
                             </div>
                             <div class="tab-pane" id="HistorialInbound" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
                                 <br /><div id="HistorialIGrid"></div>
+                            </div>
+                            <div class="tab-pane" id="InventaEquipos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                                <br /><div id="InventEquiGrid"></div>
                             </div>
                         </div>
                     </div>
@@ -301,7 +315,10 @@
         var urlContactoList = '@Url.Action("ContactoList", "Recurrencia")';
         var urlListSeguimientosI = '@Url.Action("ListSeguimientosInbound", "Recurrencia")';
         var urlListHistorialI = '@Url.Action("HistorialInbound", "Recurrencia")';
+        var urlConsultaInventarioEquiposI = '@Url.Action("ConsultaInventarioEquipos", "Recurrencia")';
+        var urlAliadoTecnicoI = '@Url.Action("AliadoTecnico", "Recurrencia")';
+        
     </script>
-    <script src="~/Scripts/Recurrencia/TipificadorAvaya.js?1.0.8"></script>
+    <script src="~/Scripts/Recurrencia/TipificadorAvaya.js?1.0.9"></script>
 </body>
 </html>

@@ -8,6 +8,8 @@ $(document).ready(function () {
         $("#Li2I").css("border-color", "transparent");
         $("#Li3I").css("border-color", "transparent");
         $("#Li3I").css('background-color', 'transparent');
+        $("#Li4I").css("border-color", "transparent");
+        $("#Li4I").css('background-color', 'transparent');
 
     });
 
@@ -18,6 +20,8 @@ $(document).ready(function () {
         $("#Li1I").css("border-color", "transparent");
         $("#Li3I").css("border-color", "transparent");
         $("#Li3I").css('background-color', 'transparent');
+        $("#Li4I").css("border-color", "transparent");
+        $("#Li4I").css('background-color', 'transparent');
     });
 
     $("#Li3I").click(function () {
@@ -27,6 +31,22 @@ $(document).ready(function () {
         $("#Li1I").css("border-color", "transparent");
         $("#Li2I").css("border-color", "transparent");
         $("#Li2I").css('background-color', 'transparent');
+        $("#Li4I").css("border-color", "transparent");
+        $("#Li4I").css('background-color', 'transparent');
+    });
+
+    $("#Li4I").click(function () {
+
+        $("#Li2I").css('background-color', 'transparent');
+        $("#Li4I").css("background-color", "#dcdcdc");
+        $("#Li4I").css("border-color", "#d4a057");
+        $("#Li2I").css("border-color", "transparent");
+        $("#Li3I").css("border-color", "transparent");
+        $("#Li3I").css('background-color', 'transparent');
+        $("#Li1I").css("border-color", "transparent");
+        $("#Li1I").css('background-color', 'transparent');
+
+
     });
 
     $('#cuentaCliente').val('');
@@ -80,9 +100,13 @@ function BuscaCliente(Cliente) {
                 $('#Estrato').val(json.Estrato);
                 $('#TipoCliente').val(json.TipoCliente);
                 $('#Descripcion').val(json.Descripcion);
+                
+                var Nodo = $('#Nodo').val();
 
+                SetAliadoTecnico(Nodo);
                 SetMacroProceso();
                 SetHistorial(Cliente);
+                SetInventarioEquipos(Cliente);
             }
             else {
                 LimpiarControles();
@@ -731,8 +755,86 @@ function LimpiarControles() {
     $("#Li1I").click();
     $("#Li3I").removeClass("active").addClass("");
     $("#Li2I").removeClass("active").addClass("");
+    $("#Li4I").removeClass("active").addClass("");
     $("#Li1I").removeClass("").addClass("active");
     //$("#SeguimientosInbound").removeClass("tab-pane active").addClass("tab-pane");
     $("#HistorialInbound").removeClass("tab-pane active").addClass("tab-pane");
+    $("#InventaEquipos").removeClass("tab-pane active").addClass("tab-pane");
     $("#datosBasicosInbound").removeClass("tab-pane tab-dime-first").addClass("tab-pane tab-dime-first active");
+}
+
+function SetInventarioEquipos(Cliente)
+{
+    $("#Li4I").css("display", "block");
+    $.ajax({
+        type: "POST",
+        url: urlConsultaInventarioEquiposI,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ CuentaCliente: Cliente }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            
+            ShowGridInventEquiI(json);
+            
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+}
+
+function ShowGridInventEquiI(data)
+{
+    $("#InventEquiGrid").kendoGrid({
+        autoBind: true,
+        dataSource: {
+            data: data,
+            pageSize: 
+                10,
+        },
+        scrollable: true,
+        filterable: {
+            extra: false,
+            operators: {
+                string: {
+                    eq: "Es igual a"
+                }
+            }
+        },
+        sortable: true,
+        pageable: {
+            refresh: true,
+            pageSizes: true,
+            buttonCount: 5
+        },
+        columns: [
+       { field: "Cuenta", title: "Cuenta Cliente", headerAttributes: { style: "white-space: normal" }, width: 90 },
+       { field: "Tipo", title: "Tipo", headerAttributes: { style: "white-space: normal" }, width: 90 },
+       { field: "FabEquipo", title: "Fabrica Equipo", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "SerieEquipo", title: "Serie Equipo", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Estado", title: "Estado", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       //{ field: "Descripcion", title: "Fecha de Gestión", headerAttributes: { style: "white-space: normal" }, width: 150 },
+        ]
+
+    });
+}
+
+function SetAliadoTecnico(Nodo)
+{
+    $.ajax({
+        type: "POST",
+        url: urlAliadoTecnicoI,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ Nodo: Nodo }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            $("#AliadoTecnicoI").val(json.AliadoZonificado);
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+    
 }
