@@ -1495,10 +1495,10 @@ function ShowGridInventarioEquipos(data) {
         },
         columns: [
        { field: "Cuenta", title: "Cuenta Cliente", headerAttributes: { style: "white-space: normal" }, width: 90 },
-       { field: "Tipo", title: "Usuario Gestion", headerAttributes: { style: "white-space: normal" }, width: 90 },
-       { field: "FabEquipo", title: "Nombre Usuario Gestion", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "SerieEquipo", title: "Aliado Gestion", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "Estado", title: "Marcacion Inicial de Afectacion", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Tipo", title: "Tipo", headerAttributes: { style: "white-space: normal" }, width: 90 },
+       { field: "FabEquipo", title: "Fabrica Equipo", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "SerieEquipo", title: "Serie Equipo", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Estado", title: "Estado", headerAttributes: { style: "white-space: normal" }, width: 100 },
        //{ field: "Descripcion", title: "Fecha de Gestión", headerAttributes: { style: "white-space: normal" }, width: 150 },
         ]
 

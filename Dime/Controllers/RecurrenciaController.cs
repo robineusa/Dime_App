@@ -264,6 +264,12 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        public JsonResult AliadoTecnico(string Nodo)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(recurrencia.AliadoTecnico(Nodo)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
 
     }
 }
