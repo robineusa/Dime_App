@@ -3020,6 +3020,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento1.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIPSolicitudesPorEquipo1.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIPSolicitudes.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3028,6 +3029,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="Scripts\VerificacionDeInventario\AdministrarEquipos.js" />
+    <Content Include="Scripts\VerificacionDeInventario\ConsultaSolicitudesPorCliente.js" />
     <Content Include="Scripts\VerificacionDeInventario\EquiposPorSolicitud.js" />
     <Content Include="Scripts\VerificacionDeInventario\RegistrarSolicitud.js" />
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaGestion.datasource">
@@ -3464,6 +3466,7 @@
     <Content Include="Views\Recurrencia\ConsultaAdminstradorPrincipalInbound.cshtml" />
     <Content Include="Views\VerificacionDeInventario\EquiposPorSolicitud.cshtml" />
     <Content Include="Views\VerificacionDeInventario\AdministrarEquipos.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\ConsultaSolicitudesPorCliente.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

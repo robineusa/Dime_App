@@ -667,17 +667,10 @@
                                     <li>
                                         <a href="#"><i class="fa ion-easel text-orange" aria-hidden="true"></i>Verificación de Inventario<i class="fa fa-angle-left pull-right"></i></a>
                                         <ul class="treeview-menu">
-                                            @if (Session["Registrar Solicitud Inventario"] != null || Session["Gestionar Solicitud Inventario"] != null)
+                                            @if (Session["Registrar Solicitud Inventario"] != null)
                                             {
-                                                <li>
-                                                    <a href="#"><i class="fa ion-compose text-orange" aria-hidden="true"></i>Registrar Solicitud<i class="fa fa-angle-left pull-right"></i></a>
-                                                    <ul class="treeview-menu">
-                                                        @if (Session["Registrar Solicitud Inventario"] != null)
-                                                        {
-                                                            <li><a href="@Url.Action("RegistrarSolicitud", "VerificacionDeInventario")"><i class="fa fa-circle-o"></i> Registrar</a></li>}
-
-                                                    </ul>
-                                                </li>
+                                                <li><a href="@Url.Action("RegistrarSolicitud", "VerificacionDeInventario")"><i class="fa ion-compose text-orange" aria-hidden="true"></i>Registrar Solicitud</a></li>
+                                                <li><a href="@Url.Action("ConsultaSolicitudesPorCliente", "VerificacionDeInventario")"><i class="fa ion-search text-orange" aria-hidden="true"></i>Consultar Cliente</a></li>
                                             }
 
                                         </ul>

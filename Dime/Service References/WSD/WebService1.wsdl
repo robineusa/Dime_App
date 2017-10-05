@@ -15420,6 +15420,82 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_ConsultaAdminPrincipalRecurrenciaInbound_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_ConsultaAdminPrincipalRecurrenciaInbound_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_ConsultaAdminLogRecurrenciaInbound_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRecurrenciaService_ConsultaAdminLogRecurrenciaInbound_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IBitacoraIncidentesService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -18880,6 +18956,120 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IVerificacionDeInventarioService_ExisteSolicitudEscalada_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IVerificacionDeInventarioService_ExisteSolicitudEscalada_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IVerificacionDeInventarioService_ConsultaSolicitudesPorCliente_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IVerificacionDeInventarioService_ConsultaSolicitudesPorCliente_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IVerificacionDeInventarioService_ConsultaSolicitudesPorFecha_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IVerificacionDeInventarioService_ConsultaSolicitudesPorFecha_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -20959,6 +21149,18 @@
   <wsdl:message name="IRecurrenciaService_InventarioEquiposCuenta_OutputMessage">
     <wsdl:part name="parameters" element="tns:InventarioEquiposCuentaResponse" />
   </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_ConsultaAdminPrincipalRecurrenciaInbound_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaAdminPrincipalRecurrenciaInbound" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_ConsultaAdminPrincipalRecurrenciaInbound_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaAdminPrincipalRecurrenciaInboundResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_ConsultaAdminLogRecurrenciaInbound_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaAdminLogRecurrenciaInbound" />
+  </wsdl:message>
+  <wsdl:message name="IRecurrenciaService_ConsultaAdminLogRecurrenciaInbound_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaAdminLogRecurrenciaInboundResponse" />
+  </wsdl:message>
   <wsdl:message name="IBitacoraIncidentesService_RegistrarIncidente_InputMessage">
     <wsdl:part name="parameters" element="tns:RegistrarIncidente" />
   </wsdl:message>
@@ -21438,6 +21640,24 @@
   </wsdl:message>
   <wsdl:message name="IVerificacionDeInventarioService_ListaTipoDeEquipos_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListaTipoDeEquiposResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVerificacionDeInventarioService_ExisteSolicitudEscalada_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExisteSolicitudEscalada" />
+  </wsdl:message>
+  <wsdl:message name="IVerificacionDeInventarioService_ExisteSolicitudEscalada_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExisteSolicitudEscaladaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVerificacionDeInventarioService_ConsultaSolicitudesPorCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaSolicitudesPorCliente" />
+  </wsdl:message>
+  <wsdl:message name="IVerificacionDeInventarioService_ConsultaSolicitudesPorCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaSolicitudesPorClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVerificacionDeInventarioService_ConsultaSolicitudesPorFecha_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaSolicitudesPorFecha" />
+  </wsdl:message>
+  <wsdl:message name="IVerificacionDeInventarioService_ConsultaSolicitudesPorFecha_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaSolicitudesPorFechaResponse" />
   </wsdl:message>
   <wsdl:portType name="IWebService">
     <wsdl:operation name="MuestraEntidades">
@@ -22862,6 +23082,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IRecurrenciaService/InventarioEquiposCuenta" message="tns:IRecurrenciaService_InventarioEquiposCuenta_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRecurrenciaService/InventarioEquiposCuentaResponse" message="tns:IRecurrenciaService_InventarioEquiposCuenta_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ConsultaAdminPrincipalRecurrenciaInbound">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminPrincipalRecurrenciaInbound" message="tns:IRecurrenciaService_ConsultaAdminPrincipalRecurrenciaInbound_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminPrincipalRecurrenciaInboundResponse" message="tns:IRecurrenciaService_ConsultaAdminPrincipalRecurrenciaInbound_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaAdminLogRecurrenciaInbound">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminLogRecurrenciaInbound" message="tns:IRecurrenciaService_ConsultaAdminLogRecurrenciaInbound_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminLogRecurrenciaInboundResponse" message="tns:IRecurrenciaService_ConsultaAdminLogRecurrenciaInbound_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IBitacoraIncidentesService">
     <wsdl:operation name="RegistrarIncidente">
@@ -23189,6 +23417,18 @@
     <wsdl:operation name="ListaTipoDeEquipos">
       <wsdl:input wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/ListaTipoDeEquipos" message="tns:IVerificacionDeInventarioService_ListaTipoDeEquipos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/ListaTipoDeEquiposResponse" message="tns:IVerificacionDeInventarioService_ListaTipoDeEquipos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExisteSolicitudEscalada">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/ExisteSolicitudEscalada" message="tns:IVerificacionDeInventarioService_ExisteSolicitudEscalada_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/ExisteSolicitudEscaladaResponse" message="tns:IVerificacionDeInventarioService_ExisteSolicitudEscalada_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSolicitudesPorCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/ConsultaSolicitudesPorCliente" message="tns:IVerificacionDeInventarioService_ConsultaSolicitudesPorCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/ConsultaSolicitudesPorClienteResponse" message="tns:IVerificacionDeInventarioService_ConsultaSolicitudesPorCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSolicitudesPorFecha">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/ConsultaSolicitudesPorFecha" message="tns:IVerificacionDeInventarioService_ConsultaSolicitudesPorFecha_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/ConsultaSolicitudesPorFechaResponse" message="tns:IVerificacionDeInventarioService_ConsultaSolicitudesPorFecha_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IWebService" type="tns:IWebService">
@@ -27073,6 +27313,28 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ConsultaAdminPrincipalRecurrenciaInbound">
+      <soap12:operation soapAction="http://tempuri.org/IRecurrenciaService/ConsultaAdminPrincipalRecurrenciaInbound" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_ConsultaAdminPrincipalRecurrenciaInbound_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_ConsultaAdminPrincipalRecurrenciaInbound_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaAdminLogRecurrenciaInbound">
+      <soap12:operation soapAction="http://tempuri.org/IRecurrenciaService/ConsultaAdminLogRecurrenciaInbound" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_ConsultaAdminLogRecurrenciaInbound_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRecurrenciaService_ConsultaAdminLogRecurrenciaInbound_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WSHttpBinding_IBitacoraIncidentesService" type="tns:IBitacoraIncidentesService">
     <wsp:PolicyReference URI="#WSHttpBinding_IBitacoraIncidentesService_policy" />
@@ -27966,6 +28228,39 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IVerificacionDeInventarioService_ListaTipoDeEquipos_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExisteSolicitudEscalada">
+      <soap12:operation soapAction="http://tempuri.org/IVerificacionDeInventarioService/ExisteSolicitudEscalada" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IVerificacionDeInventarioService_ExisteSolicitudEscalada_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IVerificacionDeInventarioService_ExisteSolicitudEscalada_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSolicitudesPorCliente">
+      <soap12:operation soapAction="http://tempuri.org/IVerificacionDeInventarioService/ConsultaSolicitudesPorCliente" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IVerificacionDeInventarioService_ConsultaSolicitudesPorCliente_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IVerificacionDeInventarioService_ConsultaSolicitudesPorCliente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaSolicitudesPorFecha">
+      <soap12:operation soapAction="http://tempuri.org/IVerificacionDeInventarioService/ConsultaSolicitudesPorFecha" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IVerificacionDeInventarioService_ConsultaSolicitudesPorFecha_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IVerificacionDeInventarioService_ConsultaSolicitudesPorFecha_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

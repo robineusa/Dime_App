@@ -14,13 +14,16 @@ namespace Dime.Controllers
     {
         WSD.VerificacionDeInventarioServiceClient VerificacionInventarioService;
         WSD.MaestroNodoServiceClient Maestronodosservice;
-        
+        WSD.BackEliteServiceClient backeliteservice;
+
         public VerificacionDeInventarioController()
         {
             VerificacionInventarioService = new WSD.VerificacionDeInventarioServiceClient();
             VerificacionInventarioService.ClientCredentials.Authenticate();
             Maestronodosservice = new WSD.MaestroNodoServiceClient();
             Maestronodosservice.ClientCredentials.Authenticate();
+            backeliteservice = new WSD.BackEliteServiceClient();
+            backeliteservice.ClientCredentials.Authenticate();
         }
         [HttpGet]
         public ActionResult RegistrarSolicitud()
@@ -45,10 +48,28 @@ namespace Dime.Controllers
             modelo.VIPSolicitudes.UsuarioUltimaActualizacion = Convert.ToDecimal(Session["Usuario"].ToString());
             modelo.VIPSolicitudes.NombreUsuarioUltimaActualizacion = Session["NombreUsuario"].ToString();
 
+            NodosZonificados Nodo = backeliteservice.TraerNodoPorId(modelo.VIPSolicitudes.Nodo);
 
-            decimal IdRegistrado =  VerificacionInventarioService.ReistrarSolicitud(modelo.VIPSolicitudes);
+            if (Nodo != null)
+            {
+                var cuentaescalada = VerificacionInventarioService.ExisteSolicitudEscalada(modelo.VIPSolicitudes.CuentaCliente);
+                if (cuentaescalada == false)
+                {
+                    decimal IdRegistrado = VerificacionInventarioService.ReistrarSolicitud(modelo.VIPSolicitudes);
+                    return RedirectToAction("EquiposPorSolicitud", "VerificacionDeInventario", new { IdSolicitud = IdRegistrado });
+                }
+                else
+                {
+                    ViewBag.ErrorCuenta = "La cuenta ya tiene una solicitud en trámite, por favor verifique su estado actual.";
+                    return View(modelo);
+                }
 
-            return RedirectToAction("EquiposPorSolicitud", "VerificacionDeInventario", new { IdSolicitud = IdRegistrado });
+            }
+            else
+            {
+                ViewBag.ErrorNodo = "El nodo ingresado no existe";
+                return View(modelo);
+            }
         }
         [HttpGet]
         public ActionResult EquiposPorSolicitud(string IdSolicitud)
@@ -67,17 +88,19 @@ namespace Dime.Controllers
         public ActionResult AdministrarEquipos(string IdSolicitud, string IdEquipo)
         {
             int IdEquipoActual = Convert.ToInt32(IdEquipo);
-            if (IdEquipoActual > 0) {
+            if (IdEquipoActual > 0)
+            {
                 VIPSolicitudesPorEquipo modelo = VerificacionInventarioService.TraeEquipoPorId(IdEquipoActual);
                 return View(modelo);
-            } else
+            }
+            else
             {
                 VIPSolicitudesPorEquipo modelo = new VIPSolicitudesPorEquipo();
                 modelo.IdSolicitud = Convert.ToDecimal(IdSolicitud);
                 return View(modelo);
             }
 
-           
+
         }
         [HttpPost]
         public JsonResult EliminarEquipoDeSolicitudJson(string IdRegistro)
@@ -98,7 +121,8 @@ namespace Dime.Controllers
             if (modelo.Id > 0)
             {
                 VerificacionInventarioService.ActualizarEquiposPorSolicitud(modelo);
-            } else
+            }
+            else
             {
                 VerificacionInventarioService.RegistrarEquiposPorSolicitud(modelo);
             }
@@ -111,5 +135,19 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        [HttpGet]
+        public ActionResult ConsultaSolicitudesPorCliente()
+        {
+            return View();
+        }
+        public JsonResult ConsultaSolicitudesPorClienteJson(string CuentaCliente)
+        {   
+                decimal Cuenta = Convert.ToDecimal(CuentaCliente);
+                var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ConsultaSolicitudesPorCliente(Cuenta)), JsonRequestBehavior.AllowGet);
+                jsonResult.MaxJsonLength = int.MaxValue;
+                return jsonResult;
+            
+        }
+
     }
 }
