@@ -48,12 +48,68 @@ namespace Dime.Controllers
 
             decimal IdRegistrado =  VerificacionInventarioService.ReistrarSolicitud(modelo.VIPSolicitudes);
 
-            return RedirectToAction("RegistrarSolicitud");
+            return RedirectToAction("EquiposPorSolicitud", "VerificacionDeInventario", new { IdSolicitud = IdRegistrado });
         }
         [HttpGet]
-        public ActionResult EquiposPorSolicitud()
+        public ActionResult EquiposPorSolicitud(string IdSolicitud)
         {
-            return View();
+            VIPSolicitudes modelo = new VIPSolicitudes();
+            modelo.IdSolicitud = Convert.ToDecimal(IdSolicitud);
+            return View(modelo);
+        }
+        public JsonResult EquiposPorSolicitudJson(string IdSolicitud)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ListaDeEquiposPorSolicitud(Convert.ToDecimal(IdSolicitud))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult AdministrarEquipos(string IdSolicitud, string IdEquipo)
+        {
+            int IdEquipoActual = Convert.ToInt32(IdEquipo);
+            if (IdEquipoActual > 0) {
+                VIPSolicitudesPorEquipo modelo = VerificacionInventarioService.TraeEquipoPorId(IdEquipoActual);
+                return View(modelo);
+            } else
+            {
+                VIPSolicitudesPorEquipo modelo = new VIPSolicitudesPorEquipo();
+                modelo.IdSolicitud = Convert.ToDecimal(IdSolicitud);
+                return View(modelo);
+            }
+
+           
+        }
+        [HttpPost]
+        public JsonResult EliminarEquipoDeSolicitudJson(string IdRegistro)
+        {
+            decimal Id = Convert.ToDecimal(IdRegistro);
+            VerificacionInventarioService.EliminarEquiposPorSolicitud(Id);
+
+            return new JsonResult
+            {
+                Data = JsonConvert.SerializeObject("Registro Eliminado"),
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdministrarEquipos(VIPSolicitudesPorEquipo modelo)
+        {
+            if (modelo.Id > 0)
+            {
+                VerificacionInventarioService.ActualizarEquiposPorSolicitud(modelo);
+            } else
+            {
+                VerificacionInventarioService.RegistrarEquiposPorSolicitud(modelo);
+            }
+
+            return RedirectToAction("EquiposPorSolicitud", "VerificacionDeInventario", new { IdSolicitud = modelo.IdSolicitud });
+        }
+        public JsonResult ListaTipoDeEquiposJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ListaTipoDeEquipos()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
     }
 }
