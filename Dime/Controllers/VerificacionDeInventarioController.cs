@@ -148,6 +148,18 @@ namespace Dime.Controllers
                 return jsonResult;
             
         }
+        [HttpGet]
+        public ActionResult SolicitudesPendientes()
+        {
+            return View();
+        }
+        public JsonResult ListaDeSolicitudesPendientesJson(string CuentaCliente)
+        {
+            decimal Cuenta = Convert.ToDecimal(CuentaCliente);
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ConsultaSolicitudesPorCliente(Cuenta)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
 
+        }
     }
 }

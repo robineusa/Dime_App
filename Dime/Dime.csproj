@@ -3467,6 +3467,7 @@
     <Content Include="Views\VerificacionDeInventario\EquiposPorSolicitud.cshtml" />
     <Content Include="Views\VerificacionDeInventario\AdministrarEquipos.cshtml" />
     <Content Include="Views\VerificacionDeInventario\ConsultaSolicitudesPorCliente.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\SolicitudesPendientes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
