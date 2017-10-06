@@ -956,10 +956,9 @@ function ShowGridSeguimientos(data) {
             { command: { text: " ", click:CargaSeguimiento, imageClass: "k-icon k-i-pencil", }, title: "Editar", width: "60px" },
        { field: "FechaGestion", title: "Fecha de Gestión",headerAttributes: { style: "white-space: normal" }, width: 100, template: "#= kendo.toString(kendo.parseDate(FechaGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #" },
        { field: "CuentaCliente", title: "Cuenta Cliente",headerAttributes: { style: "white-space: normal" }, width: 90 },
-            { field: "Division", title: "Division",headerAttributes: { style: "white-space: normal" }, width: 130 },
-           { field: "Area", title: "Area",headerAttributes: { style: "white-space: normal" }, width: 130 },
-             { field: "Zona", title: "Zona",headerAttributes: { style: "white-space: normal" }, width: 130 },
-       { field: "Marcaciones", title: "Marcaciones",headerAttributes: { style: "white-space: normal" }, width: 80},
+            { field: "NombreCliente", title: "Nombre Cliente", headerAttributes: { style: "white-space: normal" }, width: 130 },
+           { field: "ApellidoCliente", title: "Apellido Cliente", headerAttributes: { style: "white-space: normal" }, width: 130 },
+       { field: "Marcaciones", title: "Numero Marcaciones",headerAttributes: { style: "white-space: normal" }, width: 80},
         ]
 
     });
