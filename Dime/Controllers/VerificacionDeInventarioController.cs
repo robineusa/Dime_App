@@ -141,22 +141,95 @@ namespace Dime.Controllers
             return View();
         }
         public JsonResult ConsultaSolicitudesPorClienteJson(string CuentaCliente)
-        {   
-                decimal Cuenta = Convert.ToDecimal(CuentaCliente);
-                var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ConsultaSolicitudesPorCliente(Cuenta)), JsonRequestBehavior.AllowGet);
-                jsonResult.MaxJsonLength = int.MaxValue;
-                return jsonResult;
-            
-        }
-        [HttpGet]
-        public ActionResult SolicitudesPendientes()
-        {
-            return View();
-        }
-        public JsonResult ListaDeSolicitudesPendientesJson(string CuentaCliente)
         {
             decimal Cuenta = Convert.ToDecimal(CuentaCliente);
             var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ConsultaSolicitudesPorCliente(Cuenta)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        [HttpGet]
+        public ActionResult GestionarSolicitud(string IdSolicitud)
+        {
+            ViewModelVerificacionInventario modelo = new ViewModelVerificacionInventario();
+            int norecu = 0;
+
+            if (IdSolicitud == null || IdSolicitud.Equals(""))
+            {
+                modelo.VIPSolicitudes = VerificacionInventarioService.ApartarCuentaVerificacionInventario(Convert.ToDecimal(Session["Usuario"].ToString()), norecu);
+                Session["TipoDireccionamiento"] = 0;
+            }
+            else
+            {
+                modelo.VIPSolicitudes = VerificacionInventarioService.ConsultarSolicitudPorIdInventario(Convert.ToDecimal(IdSolicitud));
+                Session["TipoDireccionamiento"] = IdSolicitud;
+            }
+            if (modelo.VIPSolicitudes != null)
+            {
+                modelo.VIPSolicitudes.Observaciones = "";
+                modelo.NodosZonificados = backeliteservice.TraerNodoPorId(modelo.VIPSolicitudes.Nodo);
+                ViewBag.NohayBase = null;
+            }
+            else
+            {
+                modelo.VIPSolicitudes = new VIPSolicitudes();
+                ViewBag.NohayBase = "NO HAY REGISTROS DISPONIBLES";
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult GestionarSolicitud(ViewModelVerificacionInventario modelo)
+        {
+            modelo.VIPSolicitudes.UsuarioUltimaActualizacion = Convert.ToDecimal(Session["Usuario"]);
+            modelo.VIPSolicitudes.NombreUsuarioUltimaActualizacion = Session["NombreUsuario"].ToString();
+            
+            decimal direccionPagina = Convert.ToDecimal(Session["TipoDireccionamiento"]);
+            Session.Remove("TipoDireccionamiento");
+            if (direccionPagina > 0)
+            {
+                return RedirectToAction("SeguimientoSolicitudes");
+            }
+            else
+            {
+                return RedirectToAction("GestionarSolicitud");
+            }
+            
+        }
+        public JsonResult ListaDeInteraccionesPorSolicitud(string IdSolicitud)
+        {
+            decimal Id = Convert.ToDecimal(IdSolicitud);
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ListaDeInteraccionesPorSolicitud(Id)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public JsonResult TraeListaDeGestiones()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ListaDeGestion()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public JsonResult TraeListaDeSubrazones(string IdGestion)
+        {
+            decimal Id = Convert.ToDecimal(IdGestion);
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ListaSubrazon(Id)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public JsonResult TraeListaDeAliadosTecnicos()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ListaAliadosTecnicos()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public JsonResult TraeListaDeEquiposPorSolicitud(string IdSolicitud)
+        {
+            decimal Id = Convert.ToDecimal(IdSolicitud);
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ListaDeEquiposPorSolicitud(Id)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 

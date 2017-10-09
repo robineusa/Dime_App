@@ -3411,6 +3411,7 @@
       <xs:element minOccurs="0" name="RequiereAjuste" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Subrazon" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TipoDeRequerimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestionando" type="xs:decimal" />
       <xs:element minOccurs="0" name="UsuarioSolicitud" type="xs:decimal" />
       <xs:element minOccurs="0" name="UsuarioUltimaActualizacion" type="xs:decimal" />
     </xs:sequence>
@@ -3466,4 +3467,79 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfVIPSolicitudes" nillable="true" type="tns:ArrayOfVIPSolicitudes" />
+  <xs:complexType name="ArrayOfVILSolicitudes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VILSolicitudes" nillable="true" type="tns:VILSolicitudes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVILSolicitudes" nillable="true" type="tns:ArrayOfVILSolicitudes" />
+  <xs:complexType name="VILSolicitudes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoTecnico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstadoSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaSolicitud" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaTransaccion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdSolicitud" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdTransaccion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperacionSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequiereAjuste" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subrazon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDeRequerimiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestionando" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsuarioSolicitud" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsuarioTransaccion" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VILSolicitudes" nillable="true" type="tns:VILSolicitudes" />
+  <xs:complexType name="ArrayOfVIMGestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VIMGestion" nillable="true" type="tns:VIMGestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVIMGestion" nillable="true" type="tns:ArrayOfVIMGestion" />
+  <xs:complexType name="VIMGestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdGestion" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VIMGestion" nillable="true" type="tns:VIMGestion" />
+  <xs:complexType name="ArrayOfVIMSubrazon">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VIMSubrazon" nillable="true" type="tns:VIMSubrazon" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVIMSubrazon" nillable="true" type="tns:ArrayOfVIMSubrazon" />
+  <xs:complexType name="VIMSubrazon">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoFinal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdGestion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdSubrazon" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Subrazon" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VIMSubrazon" nillable="true" type="tns:VIMSubrazon" />
+  <xs:complexType name="ArrayOfVIMAliadoTecnico">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VIMAliadoTecnico" nillable="true" type="tns:VIMAliadoTecnico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVIMAliadoTecnico" nillable="true" type="tns:ArrayOfVIMAliadoTecnico" />
+  <xs:complexType name="VIMAliadoTecnico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoTecnico" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdAliado" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VIMAliadoTecnico" nillable="true" type="tns:VIMAliadoTecnico" />
 </xs:schema>

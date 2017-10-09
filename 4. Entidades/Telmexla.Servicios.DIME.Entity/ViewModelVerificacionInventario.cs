@@ -18,6 +18,7 @@ namespace Telmexla.Servicios.DIME.Entity
         VIMSubrazon vIMSubrazon;
         VIMTipoDeEquipos vIMTipoDeEquipos;
         VIMTipoDeRequerimiento vIMTipoDeRequerimiento;
+        NodosZonificados nodosZonificados;
 
         #endregion
 
@@ -33,6 +34,7 @@ namespace Telmexla.Servicios.DIME.Entity
             vIMSubrazon = new VIMSubrazon();
             vIMTipoDeEquipos = new VIMTipoDeEquipos();
             vIMTipoDeRequerimiento = new VIMTipoDeRequerimiento();
+            nodosZonificados = new NodosZonificados();
         }
 
         #endregion
@@ -140,6 +142,19 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 vIMTipoDeRequerimiento = value;
+            }
+        }
+
+        public NodosZonificados NodosZonificados
+        {
+            get
+            {
+                return nodosZonificados;
+            }
+
+            set
+            {
+                nodosZonificados = value;
             }
         }
 

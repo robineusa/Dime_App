@@ -31,5 +31,6 @@ namespace Telmexla.Servicios.DIME.Entity
         [Required(ErrorMessage = "Seleccione una opción")]
         public string AliadoTecnico { get; set; }
         public string Observaciones { get; set; }
+        public decimal UsuarioGestionando { get; set; }
     }
 }

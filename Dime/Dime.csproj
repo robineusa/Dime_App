@@ -3021,6 +3021,10 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIPSolicitudesPorEquipo1.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIPSolicitudes.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VILSolicitudes.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIMGestion.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIMSubrazon.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3031,6 +3035,7 @@
     <Content Include="Scripts\VerificacionDeInventario\AdministrarEquipos.js" />
     <Content Include="Scripts\VerificacionDeInventario\ConsultaSolicitudesPorCliente.js" />
     <Content Include="Scripts\VerificacionDeInventario\EquiposPorSolicitud.js" />
+    <Content Include="Scripts\VerificacionDeInventario\GestionarSolicitud.js" />
     <Content Include="Scripts\VerificacionDeInventario\RegistrarSolicitud.js" />
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaGestion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -3467,7 +3472,7 @@
     <Content Include="Views\VerificacionDeInventario\EquiposPorSolicitud.cshtml" />
     <Content Include="Views\VerificacionDeInventario\AdministrarEquipos.cshtml" />
     <Content Include="Views\VerificacionDeInventario\ConsultaSolicitudesPorCliente.cshtml" />
-    <Content Include="Views\VerificacionDeInventario\SolicitudesPendientes.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\GestionarSolicitud.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
