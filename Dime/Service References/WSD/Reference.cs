@@ -15905,6 +15905,18 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ConsultaAdminLogRecurrenciaInbound", ReplyAction="http://tempuri.org/IRecurrenciaService/ConsultaAdminLogRecurrenciaInboundResponse" +
             "")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.GLogRecurrenciaInbound>> ConsultaAdminLogRecurrenciaInboundAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/TraerDatosRecurrenciaCarga", ReplyAction="http://tempuri.org/IRecurrenciaService/TraerDatosRecurrenciaCargaResponse")]
+        Telmexla.Servicios.DIME.Entity.RecurrenciaCargaBase TraerDatosRecurrenciaCarga(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/TraerDatosRecurrenciaCarga", ReplyAction="http://tempuri.org/IRecurrenciaService/TraerDatosRecurrenciaCargaResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.RecurrenciaCargaBase> TraerDatosRecurrenciaCargaAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ActualizarUusuarioGestionando", ReplyAction="http://tempuri.org/IRecurrenciaService/ActualizarUusuarioGestionandoResponse")]
+        void ActualizarUusuarioGestionando(int Usuario, decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ActualizarUusuarioGestionando", ReplyAction="http://tempuri.org/IRecurrenciaService/ActualizarUusuarioGestionandoResponse")]
+        System.Threading.Tasks.Task ActualizarUusuarioGestionandoAsync(int Usuario, decimal Cuenta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -16116,6 +16128,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.GLogRecurrenciaInbound>> ConsultaAdminLogRecurrenciaInboundAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
             return base.Channel.ConsultaAdminLogRecurrenciaInboundAsync(FechaInicial, FechaFinal);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.RecurrenciaCargaBase TraerDatosRecurrenciaCarga(decimal CuentaCliente) {
+            return base.Channel.TraerDatosRecurrenciaCarga(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.RecurrenciaCargaBase> TraerDatosRecurrenciaCargaAsync(decimal CuentaCliente) {
+            return base.Channel.TraerDatosRecurrenciaCargaAsync(CuentaCliente);
+        }
+        
+        public void ActualizarUusuarioGestionando(int Usuario, decimal Cuenta) {
+            base.Channel.ActualizarUusuarioGestionando(Usuario, Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarUusuarioGestionandoAsync(int Usuario, decimal Cuenta) {
+            return base.Channel.ActualizarUusuarioGestionandoAsync(Usuario, Cuenta);
         }
     }
     
