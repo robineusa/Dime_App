@@ -178,15 +178,19 @@
                                 <div class="tab-pane tab-dime-first active" role="tabpanel" id="gestioncelulacrdireccion">
                                     <table>
                                         <tr>
-                                            <td width="400">
+                                            <td width="300">
                                                 <small>Gestión:</small>
                                                 @Html.DropDownListFor(m => m.VIPSolicitudes.Gestion, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Gestion", @class = "form-control input-sm" })
                                             </td>
-                                            <td width="400">
+                                            <td width="300">
                                                 <small>Subrazón:</small>
                                                 @Html.DropDownListFor(m => m.VIPSolicitudes.Subrazon, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Subrazon", @class = "form-control input-sm" })
                                             </td>
-                                            <td width="400">
+                                            <td width="300">
+                                                <small>Estado Solicitud:</small>
+                                                @Html.TextBoxFor(m => m.VIPSolicitudes.EstadoSolicitud, new { @class = "form-control input-sm", id = "estadosolicitud", @readonly = "true" })
+                                            </td>
+                                            <td width="300">
                                                 <small>Aliado Técnico:</small>
                                                 @Html.DropDownListFor(m => m.VIPSolicitudes.AliadoTecnico, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "AliadoTecnico", @class = "form-control input-sm" })
                                             </td>
@@ -223,6 +227,7 @@
             var UrlListaSubrazon = '@Url.Action("TraeListaDeSubrazones", "VerificacionDeInventario")';
             var UrlListaAliados = '@Url.Action("TraeListaDeAliadosTecnicos", "VerificacionDeInventario")';
             var UrlListaDeEquiposPorSolicitud = '@Url.Action("TraeListaDeEquiposPorSolicitud", "VerificacionDeInventario")';
+            var UrlEstadoCaso = '@Url.Action("TraerEstadoCaso", "VerificacionDeInventario")';
         </script>
 
         <script src="~/Scripts/VerificacionDeInventario/GestionarSolicitud.js?1.0.2"></script>
