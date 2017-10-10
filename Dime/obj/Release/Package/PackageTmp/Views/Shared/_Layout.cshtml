@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Dime</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
     @Styles.Render("~/AdminLTEbootstrap/css")
     @Styles.Render("~/AdminLTEdist/css")
     @Styles.Render("~/AdminLTEdist/css/skins")
@@ -16,6 +15,8 @@
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.common.min.css" rel="stylesheet" />
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.min.css" rel="stylesheet" />
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.mobile.min.css" rel="stylesheet" />
+  
+   
 
     <link rel="shortcut icon" href="~/favicon.ico">
     <script>
@@ -27,7 +28,8 @@
 <body id="Body_Layout" class="hold-transition skin-red sidebar-mini">
 
     <div class="wrapper">
-        <header class="main-header" style="position:fixed;width:100%;">
+
+        <header class="main-header" style="position:absolute;width:100%;">
             <a href="#" class="logo">
                 <span class="logo-mini"><b>D</b>ime</span>
                 <span class="logo-lg" style="width:250px; text-align:left;"><b>Plataforma</b> Dime</span>
@@ -663,21 +665,18 @@
                                 @if (Session["Registrar Solicitud Inventario"] != null || Session["Gestionar Solicitud Inventario"] != null)
                                 {
                                     <li>
-                                        <a href="#"><i class="fa fa-behance-square text-red" aria-hidden="true"></i>Verificación de Inventario<i class="fa fa-angle-left pull-right"></i></a>
+                                        <a href="#"><i class="fa ion-easel text-orange" aria-hidden="true"></i>Verificación de Inventario<i class="fa fa-angle-left pull-right"></i></a>
                                         <ul class="treeview-menu">
-                                            @if (Session["Registrar Solicitud Inventario"] != null || Session["Gestionar Solicitud Inventario"] != null)
+                                            @if (Session["Registrar Solicitud Inventario"] != null)
                                             {
-                                                <li>
-                                                    <a href="#"><i class="fa fa-behance-square text-red" aria-hidden="true"></i>Verificación de Inventario<i class="fa fa-angle-left pull-right"></i></a>
-                                                    <ul class="treeview-menu">
-                                                        @if (Session["Registrar Solicitud Inventario"] != null)
-                                                        {
-                                                            <li><a href="@Url.Action("RegistrarSolicitud", "VerificacionDeInventario")"><i class="fa fa-circle-o"></i>Registrar Solicitud</a></li>}
-
-                                                    </ul>
-                                                </li>
+                                                <li><a href="@Url.Action("RegistrarSolicitud", "VerificacionDeInventario")"><i class="fa ion-compose text-orange" aria-hidden="true"></i>Registrar Solicitud</a></li>
+                                                <li><a href="@Url.Action("ConsultaSolicitudesPorCliente", "VerificacionDeInventario")"><i class="fa ion-search text-orange" aria-hidden="true"></i>Consultar Cliente</a></li>
                                             }
-
+                                            @if (Session["Gestionar Solicitud Inventario"] != null)
+                                            {
+                                                <li><a href="@Url.Action("GestionarSolicitud", "VerificacionDeInventario")"><i class="fa ion-compose text-orange" aria-hidden="true"></i>Gestionar Solicitud</a></li>
+                                                @*<li><a href="@Url.Action("ConsultaSolicitudesPorCliente", "VerificacionDeInventario")"><i class="fa ion-search text-orange" aria-hidden="true"></i>Consultar Cliente</a></li>*@
+                                            }
                                         </ul>
                                     </li>
                                 }
@@ -1019,7 +1018,7 @@
                     </ol>
                 </section>
             }
-            <section class="content" style="height:100px;">
+            <section class="content" style="height:1500px;">
                 <div class="col-md-4" style="z-index:999; float: left; position: absolute; display:block">
                     <div id="ChatGeneral" style="display:none">
                         <div id="ChatGeneral2" class="box box-danger direct-chat direct-chat-danger" style="display: block;">
@@ -1125,10 +1124,9 @@
                 </div>
             </div>
         </aside>
-
-
-        <div class="control-sidebar-bg"></div>
+        
     </div>
+
     <!--paneles calculadoras-->
     <div>
         <div id="campanas" class="modal">
@@ -1342,7 +1340,9 @@
         <div id="lockScreenDiv"></div>
 
     </div>
-    @Scripts.Render("~/AdminLTEplugins/jquery/js")
+
+
+      @Scripts.Render("~/AdminLTEplugins/jquery/js")
     @Scripts.Render("~/AdminLTEdist/js/angularjs")
     <script src="~/AdminLTE/plugins/jquery-ui/js/jquery-ui.js"></script>
     <script src="~/Scripts/Signal/jquery.signalR-2.2.1.js"></script>
@@ -1351,14 +1351,14 @@
     <script src="~/Scripts/Shared/Helper.js?1.1.9"></script>
     <script src="~/Scripts/Shared/_Layout.js?1.4.5"></script>
 
-
+    <script src="~/Scripts/Shared/_AlertasLayout.js?1.1.9"></script>
     <script src="~/ViewsAlr/app.js?1.0.3"></script>
     <script src="~/ControllersAlr/mainAccessController.js?1.0.3"></script>
     <script src="~/ControllersAlr/ConsultaGestionController.js?1.3.4"></script>
     <script src="~/ControllersAlr/DepuraCasosCellController.js?1.1.3"></script>
     <script src="~/ControllersAlr/AdminCasosController.js?1.1.6"></script>
 
-    <script src="~/Scripts/Shared/_AlertasLayout.js?1.1.9"></script>
+    
 
     <script>
         var urlCampanasView = '@Url.Action("Campanas","Calculadoras")';

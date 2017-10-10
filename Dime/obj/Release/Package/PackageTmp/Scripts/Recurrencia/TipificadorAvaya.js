@@ -14,7 +14,7 @@ $(document).ready(function () {
     });
 
     $("#Li2I").click(function () {
-        $("#Li1I").css("background-color", "transparent");
+        $("#Li1I").css("background-color", "transparent");  
         $("#Li2I").css("background-color", "#dcdcdc");
         $("#Li2I").css("border-color", "#d4a057");
         $("#Li1I").css("border-color", "transparent");
@@ -145,6 +145,7 @@ function SetMacroProceso() {
             alert(request.responseText);
         }
     });
+    $("#MacroprocesoI").append("<option value='SOPORTE SOP'>SOPORTE SOP</option>");
 
     $("#ServicioAfectadoI").attr("disabled");
     $("#ServicioAfectadoI").empty();

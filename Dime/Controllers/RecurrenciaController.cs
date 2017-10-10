@@ -146,6 +146,12 @@ namespace Dime.Controllers
                 if (model.GPrincipalRecurrencia.CuentaCliente.Equals(0) || model.GPrincipalRecurrencia.NombreCliente == null)
                 {
                     ViewBag.NoDatos = "ERROR: Busque una Cuenta Antes de Guardar";
+                    ViewBag.Display = "none";
+                    ViewBag.InventEquipos = "none";
+                    model.ClientesTodos = new ClientesTodo();
+                    model.CargueBase = new RecurrenciaCargaBase();
+                    model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
+                    model.NodosZonificados = new NodosZonificados();
                 }
                 else
                 {
@@ -159,18 +165,39 @@ namespace Dime.Controllers
                         if (result != null)
                         {
                             recurrencia.ActualizarGRecurrencia(model.GPrincipalRecurrencia);
+                            recurrencia.EliminaCuentaRecurrencia(model.GPrincipalRecurrencia.CuentaCliente);
+                            ViewBag.NoDatos = "Registro Almacenado";
+                            ViewBag.Display = "none";
+                            ViewBag.InventEquipos = "none";
+                            model.ClientesTodos = new ClientesTodo();
+                            model.CargueBase = new RecurrenciaCargaBase();
+                            model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
+                            model.NodosZonificados = new NodosZonificados();
 
                         }
                         else
                         {
                             recurrencia.InsertarGRecurrencia(model.GPrincipalRecurrencia);
+                            recurrencia.EliminaCuentaRecurrencia(model.GPrincipalRecurrencia.CuentaCliente);
+                            ViewBag.NoDatos = "Registro Almacenado";
+                            ViewBag.Display = "none";
+                            ViewBag.InventEquipos = "none";
+                            model.ClientesTodos = new ClientesTodo();
+                            model.CargueBase = new RecurrenciaCargaBase();
+                            model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
+                            model.NodosZonificados = new NodosZonificados();
                         }
-                        recurrencia.EliminaCuentaRecurrencia(model.GPrincipalRecurrencia.CuentaCliente);
                     }
                     else
                     {
                         ViewBag.NoDatos = "Seleccione una opción en el campo 'Contacto'";
                         recurrencia.ActualizarUusuarioGestionando(0, Convert.ToDecimal(model.GPrincipalRecurrencia.CuentaCliente));
+                        ViewBag.Display = "none";
+                        ViewBag.InventEquipos = "none";
+                        model.ClientesTodos = new ClientesTodo();
+                        model.CargueBase = new RecurrenciaCargaBase();
+                        model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
+                        model.NodosZonificados = new NodosZonificados();
                     }
                 }
             }

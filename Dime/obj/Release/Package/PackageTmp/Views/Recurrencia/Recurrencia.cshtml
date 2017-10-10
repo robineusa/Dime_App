@@ -20,7 +20,7 @@
                 <table>
                     <tr>
                         <td style="min-width:200px; padding:1px;">
-                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.CuentaCliente, new { @class = "form-control input-sm", placeholder = "Ingrese la cuenta", id = "inputCuenta", ReadOnly="true", Value = Model.ClientesTodos.Cuenta })
+                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.CuentaCliente, new { @class = "form-control input-sm", placeholder = "Ingrese la cuenta", id = "inputCuenta", Value = Model.ClientesTodos.Cuenta })
                         </td>
                         <td style="min-width:200px; padding:1px;">
                             @if (ViewBag.NoDatos2 != "")
@@ -594,7 +594,7 @@
     </div>
 </div>
 
-<button type="submit" style="display:none;" class="btn btn-primary" name="BotonEnvia" value="Buscar" id="BotonEnvia">Submit</button>
+<button type="submit" style="display:none;" class="btn btn-primary" name="BotonEnvia" value="Buscar" id="BotonBusca">123</button>
 
 <div>
     <div id="TipiAvaya" class="modal">
@@ -636,7 +636,7 @@
 
     </script>
 @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
-    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.2.9"></script>
+    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.3.2"></script>
 }
 }
 
