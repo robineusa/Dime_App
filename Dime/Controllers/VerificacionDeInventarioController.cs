@@ -183,7 +183,10 @@ namespace Dime.Controllers
         {
             modelo.VIPSolicitudes.UsuarioUltimaActualizacion = Convert.ToDecimal(Session["Usuario"]);
             modelo.VIPSolicitudes.NombreUsuarioUltimaActualizacion = Session["NombreUsuario"].ToString();
-            
+
+
+            VerificacionInventarioService.ActualizarSolicitud(modelo.VIPSolicitudes);
+
             decimal direccionPagina = Convert.ToDecimal(Session["TipoDireccionamiento"]);
             Session.Remove("TipoDireccionamiento");
             if (direccionPagina > 0)
@@ -230,6 +233,14 @@ namespace Dime.Controllers
         {
             decimal Id = Convert.ToDecimal(IdSolicitud);
             var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ListaDeEquiposPorSolicitud(Id)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public JsonResult TraerEstadoCaso(string IdSubrazon)
+        {
+            int Id = Convert.ToInt32(IdSubrazon);
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.TraeSubrazonporIdGestion(Id)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 
