@@ -13,7 +13,7 @@ namespace Dime.Controllers
     {
         WSD.InboundServiceClient inboundService;
         WSD.RecurrenciaServiceClient recurrencia;
-        
+
 
 
         public RecurrenciaController()
@@ -29,24 +29,26 @@ namespace Dime.Controllers
             ViewModelRecurrencia model = new ViewModelRecurrencia();
             if (cuentaSeleccionada == null || cuentaSeleccionada.Equals(""))
             {
-                model.ClientesTodos = recurrencia.TraerInformacionCuentaRecurrencia(Convert.ToInt32(Session["IdUsuario"].ToString()));
+                //    model.ClientesTodos = recurrencia.TraerInformacionCuentaRecurrencia(Convert.ToInt32(Session["IdUsuario"].ToString()));
 
-                if (model.ClientesTodos != null)
-                {
-                    var Cuenta = model.ClientesTodos.Cuenta;
-                    model.CargueBase = recurrencia.TraerDatosRecurrencia(Convert.ToInt32(Session["IdUsuario"].ToString()), Cuenta);
-                    model.NodosZonificados.AliadoZonificado = recurrencia.AliadoTecnico(Convert.ToString(model.ClientesTodos.Nodo)).AliadoZonificado;
-                    ViewBag.Display = "none";
-                    ViewBag.InventEquipos = "block";
-                }
-                else
-                {
-                    model.ClientesTodos = new ClientesTodo();
-                    model.NodosZonificados = new NodosZonificados();
-                    model.ClientesTodos.Cuenta = 0;
-                    ViewBag.Display = "none";
-                    ViewBag.InventEquipos = "none";
-                }
+                //    if (model.ClientesTodos != null)
+                //    {
+                //        var Cuenta = model.ClientesTodos.Cuenta;
+                //        model.CargueBase = recurrencia.TraerDatosRecurrencia(Convert.ToInt32(Session["IdUsuario"].ToString()), Cuenta);
+                //        model.NodosZonificados.AliadoZonificado = recurrencia.AliadoTecnico(Convert.ToString(model.ClientesTodos.Nodo)).AliadoZonificado;
+                //        ViewBag.Display = "none";
+                //        ViewBag.InventEquipos = "block";
+                //    }
+                //    else
+                //    {
+                //        model.ClientesTodos = new ClientesTodo();
+                //        model.NodosZonificados = new NodosZonificados();
+                //        model.ClientesTodos.Cuenta = 0;
+                //        ViewBag.Display = "none";
+                //        ViewBag.InventEquipos = "none";
+                //    }
+                ViewBag.Display = "none";
+                ViewBag.InventEquipos = "none";
             }
             else
             {
@@ -82,7 +84,7 @@ namespace Dime.Controllers
                     model.CargueBase = new RecurrenciaCargaBase();
                     model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
                     model.NodosZonificados = new NodosZonificados();
-                } 
+                }
             }
             if (model.ClientesTodos.Cuenta == 0)
             {
@@ -90,39 +92,89 @@ namespace Dime.Controllers
                 model.CargueBase = new RecurrenciaCargaBase();
                 model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
                 model.NodosZonificados = new NodosZonificados();
-                ViewBag.NoDatos2 = "No existen Datos en la Base";
+                //ViewBag.NoDatos2 = "No existen Datos en la Base";
             }
+
             return View(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Recurrencia(ViewModelRecurrencia model, string BotonEnvia)
         {
-
-            if (model.GPrincipalRecurrencia.CuentaCliente.Equals(0))
+            if (BotonEnvia == "Buscar")
             {
-                ViewBag.NoDatos = "ERROR: No se puede guardar por que no hay cuentas para gestionar";
-            }
-            else
-            {
-                var result = recurrencia.TraerGPrinRecurrencia(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
-                model.GPrincipalRecurrencia.UsuarioGestion = Session["IdUsuario"].ToString();
-                model.GPrincipalRecurrencia.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
-                model.GPrincipalRecurrencia.AliadoGestion = Session["AliadoLogeado"].ToString();
-                model.GPrincipalRecurrencia.UsuarioGestionando = 0;
-                if (result != null)
+                var Usuario = Session["IdUsuario"].ToString();
+                model.CargueBase = recurrencia.TraerDatosRecurrenciaCarga(Convert.ToDecimal(model.GPrincipalRecurrencia.CuentaCliente));
+                if (model.CargueBase != null)
                 {
-                    recurrencia.ActualizarGRecurrencia(model.GPrincipalRecurrencia);
+                    if (model.CargueBase.Usuario_gestionando == 0 || model.CargueBase.Usuario_gestionando == Convert.ToDecimal(Usuario))
+                    {
+                        recurrencia.ActualizarUusuarioGestionando(Convert.ToInt32(Usuario), Convert.ToDecimal(model.CargueBase.Cuenta));
+                        model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
+                        model.NodosZonificados.AliadoZonificado = recurrencia.AliadoTecnico(Convert.ToString(model.ClientesTodos.Nodo)).AliadoZonificado;
+                        model.GPrincipalRecurrencia = recurrencia.TraerGPrinRecurrencia(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
+                        if (model.GPrincipalRecurrencia != null)
+                        { ViewBag.Display = "block"; }
+                        else { ViewBag.Display = "none"; }
+                        ViewBag.InventEquipos = "block";
+                    }
+                    else
+                    {
+                        ViewBag.NoDatos = "Otro Usuario esta gestionando esta cuenta";
+                        ViewBag.Display = "none";
+                        ViewBag.InventEquipos = "none";
+                        //model.ClientesTodos.Cuenta = Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente);
+                        model.CargueBase = new RecurrenciaCargaBase();
+                        model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
+                        model.NodosZonificados = new NodosZonificados();
+                    }
 
                 }
                 else
                 {
-                    recurrencia.InsertarGRecurrencia(model.GPrincipalRecurrencia);
+                    ViewBag.NoDatos = "Esta Cuenta No esta en la Base Para Gestionar";
+                    ViewBag.Display = "none";
+                    ViewBag.InventEquipos = "none";
+                    //model.ClientesTodos.Cuenta = Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente);
+                    model.CargueBase = new RecurrenciaCargaBase();
+                    model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
+                    model.NodosZonificados = new NodosZonificados();
                 }
-                recurrencia.EliminaCuentaRecurrencia(model.GPrincipalRecurrencia.CuentaCliente);
-                
             }
-            return RedirectToAction("Recurrencia");
+            if (BotonEnvia == "GuardaDatos")
+            {
+                if (model.GPrincipalRecurrencia.CuentaCliente.Equals(0) || model.GPrincipalRecurrencia.NombreCliente == null)
+                {
+                    ViewBag.NoDatos = "ERROR: Busque una Cuenta Antes de Guardar";
+                }
+                else
+                {
+                    if (model.GPrincipalRecurrencia.Contacto != null)
+                    {
+                        var result = recurrencia.TraerGPrinRecurrencia(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
+                        model.GPrincipalRecurrencia.UsuarioGestion = Session["IdUsuario"].ToString();
+                        model.GPrincipalRecurrencia.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+                        model.GPrincipalRecurrencia.AliadoGestion = Session["AliadoLogeado"].ToString();
+                        model.GPrincipalRecurrencia.UsuarioGestionando = 0;
+                        if (result != null)
+                        {
+                            recurrencia.ActualizarGRecurrencia(model.GPrincipalRecurrencia);
+
+                        }
+                        else
+                        {
+                            recurrencia.InsertarGRecurrencia(model.GPrincipalRecurrencia);
+                        }
+                        recurrencia.EliminaCuentaRecurrencia(model.GPrincipalRecurrencia.CuentaCliente);
+                    }
+                    else
+                    {
+                        ViewBag.NoDatos = "Seleccione una opción en el campo 'Contacto'";
+                        recurrencia.ActualizarUusuarioGestionando(0, Convert.ToDecimal(model.GPrincipalRecurrencia.CuentaCliente));
+                    }
+                }
+            }
+            return View(model);
         }
         public JsonResult MacroProcesoRecurrenciaList(int idProceso)
         {

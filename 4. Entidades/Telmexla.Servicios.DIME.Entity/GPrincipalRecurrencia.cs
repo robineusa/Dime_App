@@ -32,15 +32,15 @@ namespace Telmexla.Servicios.DIME.Entity
         public string ClienteNagra { get; set; }
         public string Ofrecimiento1 { get; set; }
 
-        [Required(ErrorMessage = "Seleccione una opción")]
+        //[Required(ErrorMessage = "Seleccione una opción")]
         public string AceptacionPrimerOfrecimiento { get; set; }
         public string Ofrecimiento2 { get; set; }
 
-        [Required(ErrorMessage = "Seleccione una opción")]
+        //[Required(ErrorMessage = "Seleccione una opción")]
         public string AceptacionSegundoOfrecimiento { get; set; }
         public string Ofrecimiento3 { get; set; }
 
-        [Required(ErrorMessage = "Seleccione una opción")]
+        //[Required(ErrorMessage = "Seleccione una opción")]
         public string AceptacionTercerOfrecimiento { get; set; }
         public string Diferenciador { get; set; }
         public decimal Prioridad { get; set; }
@@ -50,7 +50,7 @@ namespace Telmexla.Servicios.DIME.Entity
         public string ClieComunicaRealizadaGestRecu { get; set; }
         public string PorQue { get; set; }
 
-        [Required(ErrorMessage = "Seleccione una opción")]
+        //[Required(ErrorMessage = "Seleccione una opción")]
         public string Contacto { get; set; }
         public string VozClienteCausaRaiz { get; set; }
         public string Solucionado { get; set; }
