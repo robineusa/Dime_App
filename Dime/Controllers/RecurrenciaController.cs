@@ -357,21 +357,21 @@ namespace Dime.Controllers
         {
             return View();
         }
-        //public JsonResult ConsultaAdministradorLogInboundJson(string F1, string F2)
-        //{
-        //    DateTime FechaInicial = Convert.ToDateTime(F1);
-        //    DateTime FechaFinal = Convert.ToDateTime(F2);
-        //    var jsonResult = Json(JsonConvert.SerializeObject(recurrencia.ConsultaAdminLogRecurrenciaInbound(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
-        //    jsonResult.MaxJsonLength = int.MaxValue;
-        //    return jsonResult;
-        //}
-        //public JsonResult ConsultaAdministradorPrincipalInboundJson(string F1, string F2)
-        //{
-        //    DateTime FechaInicial = Convert.ToDateTime(F1);
-        //    DateTime FechaFinal = Convert.ToDateTime(F2);
-        //    var jsonResult = Json(JsonConvert.SerializeObject(recurrencia.ConsultaAdminPrincipalRecurrenciaInbound(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
-        //    jsonResult.MaxJsonLength = int.MaxValue;
-        //    return jsonResult;
-        //}
+        public JsonResult ConsultaAdministradorLogInboundJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(recurrencia.ConsultaAdminLogRecurrenciaInbound(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ConsultaAdministradorPrincipalInboundJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(recurrencia.ConsultaAdminPrincipalRecurrenciaInbound(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }
