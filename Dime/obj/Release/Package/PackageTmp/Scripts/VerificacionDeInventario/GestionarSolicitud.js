@@ -31,6 +31,9 @@ function ListadeGestion() {
 $('#Gestion').change(function () {
     ListaSubrazon();
 })
+$('#Subrazon').change(function () {
+    TraerEstadoCaso();
+})
 
 function ListaSubrazon() {
     var IdGestion = $('#Gestion').val();
@@ -194,4 +197,20 @@ function cargargrillaequipos(data) {
         ]
 
     });
+}
+function TraerEstadoCaso() {
+    var IdSubrazon = $('#Subrazon').val();
+    $.ajax({
+        type: "POST",
+        url: UrlEstadoCaso,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdSubrazon: IdSubrazon }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            $('#estadosolicitud').val(json.EstadoFinal);
+
+        }
+    });
+
 }

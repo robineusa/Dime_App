@@ -17503,6 +17503,14 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaAliadosTecnicos", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaAliadosTecnicosResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico>> ListaAliadosTecnicosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/TraeSubrazonporIdGestion", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/TraeSubrazonporIdGestionRespo" +
+            "nse")]
+        Telmexla.Servicios.DIME.Entity.VIMSubrazon TraeSubrazonporIdGestion(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/TraeSubrazonporIdGestion", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/TraeSubrazonporIdGestionRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMSubrazon> TraeSubrazonporIdGestionAsync(int Id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17674,6 +17682,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico>> ListaAliadosTecnicosAsync() {
             return base.Channel.ListaAliadosTecnicosAsync();
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.VIMSubrazon TraeSubrazonporIdGestion(int Id) {
+            return base.Channel.TraeSubrazonporIdGestion(Id);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMSubrazon> TraeSubrazonporIdGestionAsync(int Id) {
+            return base.Channel.TraeSubrazonporIdGestionAsync(Id);
         }
     }
 }

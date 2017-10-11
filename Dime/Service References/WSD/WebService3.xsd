@@ -6107,4 +6107,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="TraeSubrazonporIdGestion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraeSubrazonporIdGestionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q429="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraeSubrazonporIdGestionResult" nillable="true" type="q429:VIMSubrazon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
