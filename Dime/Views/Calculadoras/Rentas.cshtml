@@ -6,6 +6,7 @@
 <html>
 <head>
     <title>Rentas</title>
+    @*  @Styles.Render("~/AdminLTEbootstrap/css")*@
 </head>
 <body>
     <hr />
@@ -27,8 +28,8 @@
             </tr>
             <tr>
                 <td style="padding:2px; width:16.6%"><input type="text" class="form-control input-sm" id="tbCuenta" /> </td>
-                <td id="verificado" style="display:none"><p id="chuloRentasVerifi"><i class="fa fa-check-circle verde"></i></p></td>
-                <td id="noVerificado" style="display:none"><div class="alert alert-warning">Realizar validación de renta en RR</div> </td>
+                <td id="verificado" style="display:none"><p id="chuloRentasVerifi" style="margin-left: 20px;"><i class="fa fa-check-circle verde"></i></p></td>
+                <td id="noVerificado" style="display:none"><div class="alert alert-warning" style="margin-left: 20px; width: 250px;text-align: center;">Realizar Validación de Renta en RR</div> </td>
             </tr>
             <tr>
                 <td style="padding:2px; width:20%">Estrato:</td>
@@ -100,17 +101,17 @@
             <div class="col-sm-6 " style="padding-left:50px;">
                 <table id="opcionesCalcular">
                     <tr>
-                        <td width="30"> VOZ:</td>
+                        <td width="30"><b>VOZ</b> </td>
                         <td width="60">&nbsp;</td>
-                        <td width="30">TV:</td>
+                        <td width="30"><b>TV</b> </td>
                         <td width="50">&nbsp;</td>
                         <td width="50">&nbsp;</td>
-                        <td width="35">INTERNET:</td>
+                        <td width="35"><b>INTERNET</b> </td>
                     </tr>
                     <tr>
                         <td width="30">Si</td>
                         <td width="60"><input type="radio" id="cbVoz" name="vozCheck" value="SI" /></td>
-                        <td width="30">&nbsp;</td>
+                        @*<td width="30">&nbsp;</td>*@
                         <td width="50"><p class="TvNormal">No</p></td>
                         <td width="50" style="display:block"><input id="cbTvNO" type="radio" name="tvCheck" value="NO" class="TvNormal" /></td>
                         <td width="35">&nbsp;</td>
@@ -121,9 +122,9 @@
                     <tr>
                         <td width="30">No</td>
                         <td width="60"><input id="cbVozNo" type="radio" name="vozCheck" value="NO" /></td>
-                        <td width="30">&nbsp;</td>
-                        <td width="50"><p class="TvNormal">Básica</p></td>
-                        <td width="50"><input type="radio" id="cbTvBasica" name="tvCheck" value="BASICA" class="TvNormal" /></td>
+                        @*<td width="30">&nbsp;</td>*@
+                        <td width="50"><p class="TvNormal">Básica Plus</p></td>
+                        <td width="50"><input type="radio" id="cbTvBasica" name="tvCheck" value="PLUS" class="TvNormal" /></td>
                         <td width="35">&nbsp;</td>
                         <td width="50">5 MB</td>
                         <td width="60" style="display:none">&nbsp;</td>
@@ -132,7 +133,7 @@
                      <tr>
                         <td width="30">&nbsp;</td>
                         <td width="60">&nbsp;</td>
-                        <td width="30"></td>
+                        @*<td width="30"></td>*@
                         <td width="50"><p class="TvNormal">Avanzada</p></td>
                         <td width="50"><input type="radio" id="cbTvAvanzada" name="tvCheck" value="AVANZADA" class="TvNormal" /></td>
                         <td width="35">&nbsp;</td>
@@ -142,7 +143,7 @@
                     <tr>
                         <td width="30">&nbsp;</td>
                         <td width="60">&nbsp;</td>
-                        <td width="30">&nbsp;</td>
+                        @*<td width="30">&nbsp;</td>*@
                         <td width="50"><p class="TvNormal">Superior</p></td>
                         <td width="50"><input type="radio" id="cbTvSuperior" name="tvCheck" value="SUPERIOR" class="TvNormal" /></td>
                         <td width="35">&nbsp;</td>
@@ -152,7 +153,7 @@
                     <tr>
                         <td width="30"> &nbsp;</td>
                         <td width="60">&nbsp;</td>
-                        <td width="30">&nbsp;</td>
+                        @*<td width="30">&nbsp;</td>*@
                         <td width="50" ><p class="TvSatelital">Satelital Basica</p></td>
                         <td width="50"><input type="radio" id="cbTvSatelitalBasica" name="tvCheck" value="SATELITAL BASICA" class="TvSatelital"/></td>
                         <td width="35">&nbsp;</td>
@@ -162,7 +163,7 @@
                     <tr>
                         <td width="30"> &nbsp;</td>
                         <td width="60">&nbsp;</td>
-                        <td width="30">&nbsp;</td>
+                        @*<td width="30">&nbsp;</td>*@
                         <td width="50"><p class="TvSatelital">Satelital Avanzada</p></td>
                         <td width="50"><input type="radio" id="cbTvSatelitalAvanzada" name="tvCheck" value="SATELITAL AVANZADA" class="TvSatelital" /></td>
                         <td width="35">&nbsp;</td>
@@ -172,7 +173,7 @@
                     <tr>
                         <td width="30"> &nbsp;</td>
                         <td width="60">&nbsp;</td>
-                        <td width="30">&nbsp;</td>
+                        @*<td width="30">&nbsp;</td>*@
                         <td width="50"><p class="TvSatelital">Satelital Superior</p></td>
                         <td width="50"><input type="radio" id="cbTvSatelitalSuperior" name="tvCheck" value="SATELITAL SUPERIOR" class="TvSatelital" /></td>
                         <td width="35">&nbsp;</td>
@@ -245,12 +246,12 @@
                     </tr>
                 </table>
                 <br />
-                <table id="tablaAdicionales">   
+                <table id="tablaAdicionales" style="display:none; background-color: gainsboro; border-radius: 5px;">   
                     <tr >
-                        <td style="padding:2px; width:100px">Producto</td>
-                        <td width="50">Promo</td>
+                        <td style="padding:2px; width:100px"><b>Producto</b></td>
+                        <td width="50"><b>Promo</b></td>
                         <td style="padding:2px; width:100px">&nbsp;</td>
-                        <td width="50">Plena</td>
+                        <td width="50"><b>Plena</b></td>
                         <td style="padding:2px; width:100px">&nbsp;</td>
                         <td width="50">&nbsp;</td>
                     </tr>
@@ -358,7 +359,7 @@
     </script>
     <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
     <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
-    <script src="~/Scripts/Calculadoras/Rentas.js?1.2.2"></script>
+    <script src="~/Scripts/Calculadoras/Rentas.js?1.2.4"></script>
 
 </body>
 </html>

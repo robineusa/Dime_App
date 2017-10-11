@@ -37,7 +37,8 @@ $(document).ready(function () {
 });
 
 function Rentas()
-{   $(".adicionales").attr('checked', false);
+{
+    $(".adicionales").attr('checked', false);
     ConfigRadioButtonVoz();
     ConfigRadioButtonTV();
     ConfigRadioButtonInternet();
@@ -51,7 +52,7 @@ function ConfigRadioButtonVoz() {
     var booRadio;
     var x = 0;
     for (x = 0; x < allRadios.length; x++) {
-
+        //alert('1' + booRadio);
         allRadios[x].onclick = function () {
          
             if (booRadio == this) {
@@ -62,6 +63,7 @@ function ConfigRadioButtonVoz() {
                 booRadio = this;
               
             }
+            
             ActualizarParametros();
         };
     }
@@ -73,7 +75,7 @@ function ActualizarParametros()
     var tvSelected = $("input[name=tvCheck]:checked").val();
     var interSelected = $("input[name=interCheck]:checked").val();
     var estrato = $("#tbEstrato").val();
-
+    //alert(vozSelected + ','+tvSelected + ','+interSelected + ',');
     $.ajax({
         type: "GET",
         url: urlConsultaTarifaNueva,
