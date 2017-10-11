@@ -272,5 +272,233 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        //procesos admin
+        [HttpGet]
+        public ActionResult ListaTiposDeRequerimientos()
+        {
+            return View();
+        }
+        public JsonResult ListaTiposDeRequerimientosJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ListaTiposDeRequerimientosAdmin()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        [HttpGet]
+        public ActionResult AdministrarTipodeRequerimientos(string Id)
+        {
+            VIMTipoDeRequerimiento modelo = new VIMTipoDeRequerimiento();
+            int IdTipo = Convert.ToInt32(Id);
+            if (IdTipo > 0)
+            {
+                modelo = VerificacionInventarioService.TipoDeRequerimientoPorId(IdTipo);
+
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdministrarTipodeRequerimientos(VIMTipoDeRequerimiento modelo)
+        {
+            if (modelo.Id > 0)
+            {
+                VerificacionInventarioService.ActualizarTiposDeRequerimientos(modelo);
+            }
+            else
+            {
+                VerificacionInventarioService.AgregarTiposDeRequerimientos(modelo);
+            }
+            return RedirectToAction("ListaTiposDeRequerimientos");
+        }
+        [HttpGet]
+        public ActionResult ListaTipoDeEquipos()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult AdministrarTipoDeEquipos(string Id)
+        {
+            VIMTipoDeEquipos modelo = new VIMTipoDeEquipos();
+            int IdTipo = Convert.ToInt32(Id);
+            if (IdTipo > 0)
+            {
+                modelo = VerificacionInventarioService.TipoDeEquiposPorId(IdTipo);
+
+            }
+            return View(modelo);
+        }
+        public JsonResult AdministrarTipoDeEquiposJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ListaTipoDeEquiposAdmin()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdministrarTipoDeEquipos(VIMTipoDeEquipos modelo)
+        {
+            if (modelo.Id > 0)
+            {
+                VerificacionInventarioService.ActualizarTipoDeEquipos(modelo);
+            }
+            else
+            {
+                VerificacionInventarioService.AgregarTipoDeEquipos(modelo);
+            }
+            return RedirectToAction("ListaTipoDeEquipos");
+        }
+        [HttpGet]
+        public ActionResult ListaDeGestion()
+        {
+            return View();
+        }
+        public JsonResult ListaDeGestionJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ListaDeGestionAdmin()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        [HttpGet]
+        public ActionResult AdministrarGestiones(string Id)
+        {
+            VIMGestion modelo = new VIMGestion();
+            int IdTipo = Convert.ToInt32(Id);
+            if (IdTipo > 0)
+            {
+                modelo = VerificacionInventarioService.GestionPorId(IdTipo);
+
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdministrarGestiones(VIMGestion modelo)
+        {
+            if (modelo.IdGestion > 0)
+            {
+                VerificacionInventarioService.ActualizarGestion(modelo);
+            }
+            else
+            {
+                VerificacionInventarioService.AgregarGestion(modelo);
+            }
+            return RedirectToAction("ListaDeGestion");
+        }
+        [HttpGet]
+        public ActionResult ListaSubrazones(string IdGestion)
+        {
+            VIMSubrazon modelo = new VIMSubrazon();
+            modelo.IdGestion = Convert.ToDecimal(IdGestion);
+            return View(modelo);
+        }
+        public JsonResult ListaSubrazonesJson(string IdGestion)
+        {
+            decimal Id = Convert.ToDecimal(IdGestion);
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ListaSubrazonAdmin(Id)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        [HttpGet]
+        public ActionResult AdministrarSubrazones(string IdSubrazon, string IdGestion)
+        {
+            VIMSubrazon modelo = new VIMSubrazon();
+            int IdTipo = Convert.ToInt32(IdSubrazon);
+            if (IdTipo > 0)
+            {
+               
+                modelo = VerificacionInventarioService.SubrazonPorId(IdTipo);
+                return View(modelo);
+            }
+            else
+            {
+                modelo.IdGestion = Convert.ToDecimal(IdGestion);
+                return View(modelo);
+
+            }
+            
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdministrarSubrazones(VIMSubrazon modelo)
+        {
+            if (modelo.IdSubrazon > 0)
+            {
+                VerificacionInventarioService.ActualizarSubrazon(modelo);
+            }
+            else
+            {
+                VerificacionInventarioService.AgregarSubrazon(modelo);
+            }
+            return RedirectToAction("ListaSubrazones", "VerificacionDeInventario", new { IdGestion = modelo.IdGestion });
+            
+        }
+        [HttpGet]
+        public ActionResult ListaAliadosTecnicos()
+        {
+            return View();
+        }
+        public JsonResult ListaAliadosTecnicosJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ListaAliadosTecnicosAdmin()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        [HttpGet]
+        public ActionResult AdministrarAliadosTecnicos(string IdAliado)
+        {
+            VIMAliadoTecnico modelo = new VIMAliadoTecnico();
+            int IdTipo = Convert.ToInt32(IdAliado);
+            if (IdTipo > 0)
+            {
+                modelo = VerificacionInventarioService.AliadoTecnicoPorId(IdTipo);
+
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdministrarAliadosTecnicos(VIMAliadoTecnico modelo)
+        {
+            if (modelo.IdAliado > 0)
+            {
+                VerificacionInventarioService.ActualizarAliadoTecnico(modelo);
+            }
+            else
+            {
+                VerificacionInventarioService.AgregarAliadoTecnico(modelo);
+            }
+            return RedirectToAction("ListaAliadosTecnicos");
+        }
+        [HttpGet]
+        public ActionResult ConsultaAdminPrincipal()
+        {
+            return View();
+        }
+        public JsonResult ConsultaAdminPrincipalJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ConsultaAdminSolicitudesPrincipal(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public ActionResult ConsultaAdminLog()
+        {
+            return View();
+        }
+        public JsonResult ConsultaAdminLogJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ConsultaAdminSolicitudesLog(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
     }
 }

@@ -17448,13 +17448,15 @@ namespace Dime.WSD {
             "Response")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes>> ConsultaSolicitudesPorClienteAsync(decimal CuentaCliente);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ConsultaSolicitudesPorFecha", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ConsultaSolicitudesPorFechaRe" +
-            "sponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes> ConsultaSolicitudesPorFecha(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ConsultaAdminSolicitudesPrinc" +
+            "ipal", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ConsultaAdminSolicitudesPrinc" +
+            "ipalResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes> ConsultaAdminSolicitudesPrincipal(System.DateTime FechaInicial, System.DateTime FechaFinal);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ConsultaSolicitudesPorFecha", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ConsultaSolicitudesPorFechaRe" +
-            "sponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes>> ConsultaSolicitudesPorFechaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ConsultaAdminSolicitudesPrinc" +
+            "ipal", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ConsultaAdminSolicitudesPrinc" +
+            "ipalResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes>> ConsultaAdminSolicitudesPrincipalAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaDeInteraccionesPorSolici" +
             "tud", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaDeInteraccionesPorSolici" +
@@ -17527,6 +17529,154 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ConsultaDeGestionBack", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ConsultaDeGestionBackResponse" +
             "")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VILSolicitudes>> ConsultaDeGestionBackAsync(decimal Cedula, System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ConsultaAdminSolicitudesLog", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ConsultaAdminSolicitudesLogRe" +
+            "sponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VILSolicitudes> ConsultaAdminSolicitudesLog(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ConsultaAdminSolicitudesLog", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ConsultaAdminSolicitudesLogRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VILSolicitudes>> ConsultaAdminSolicitudesLogAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaTiposDeRequerimientosAdm" +
+            "in", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaTiposDeRequerimientosAdm" +
+            "inResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento> ListaTiposDeRequerimientosAdmin();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaTiposDeRequerimientosAdm" +
+            "in", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaTiposDeRequerimientosAdm" +
+            "inResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento>> ListaTiposDeRequerimientosAdminAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaTipoDeEquiposAdmin", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaTipoDeEquiposAdminRespon" +
+            "se")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos> ListaTipoDeEquiposAdmin();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaTipoDeEquiposAdmin", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaTipoDeEquiposAdminRespon" +
+            "se")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos>> ListaTipoDeEquiposAdminAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaDeGestionAdmin", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaDeGestionAdminResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMGestion> ListaDeGestionAdmin();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaDeGestionAdmin", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaDeGestionAdminResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMGestion>> ListaDeGestionAdminAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaSubrazonAdmin", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaSubrazonAdminResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMSubrazon> ListaSubrazonAdmin(decimal IdGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaSubrazonAdmin", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaSubrazonAdminResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMSubrazon>> ListaSubrazonAdminAsync(decimal IdGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaAliadosTecnicosAdmin", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaAliadosTecnicosAdminResp" +
+            "onse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico> ListaAliadosTecnicosAdmin();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaAliadosTecnicosAdmin", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaAliadosTecnicosAdminResp" +
+            "onse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico>> ListaAliadosTecnicosAdminAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/AgregarTiposDeRequerimientos", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/AgregarTiposDeRequerimientosR" +
+            "esponse")]
+        void AgregarTiposDeRequerimientos(Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento TipoRequerimiento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/AgregarTiposDeRequerimientos", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/AgregarTiposDeRequerimientosR" +
+            "esponse")]
+        System.Threading.Tasks.Task AgregarTiposDeRequerimientosAsync(Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento TipoRequerimiento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ActualizarTiposDeRequerimient" +
+            "os", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ActualizarTiposDeRequerimient" +
+            "osResponse")]
+        void ActualizarTiposDeRequerimientos(Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento TipoRequerimiento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ActualizarTiposDeRequerimient" +
+            "os", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ActualizarTiposDeRequerimient" +
+            "osResponse")]
+        System.Threading.Tasks.Task ActualizarTiposDeRequerimientosAsync(Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento TipoRequerimiento);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/AgregarTipoDeEquipos", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/AgregarTipoDeEquiposResponse")]
+        void AgregarTipoDeEquipos(Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos TipoEquipos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/AgregarTipoDeEquipos", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/AgregarTipoDeEquiposResponse")]
+        System.Threading.Tasks.Task AgregarTipoDeEquiposAsync(Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos TipoEquipos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ActualizarTipoDeEquipos", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ActualizarTipoDeEquiposRespon" +
+            "se")]
+        void ActualizarTipoDeEquipos(Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos TipoEquipos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ActualizarTipoDeEquipos", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ActualizarTipoDeEquiposRespon" +
+            "se")]
+        System.Threading.Tasks.Task ActualizarTipoDeEquiposAsync(Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos TipoEquipos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/AgregarGestion", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/AgregarGestionResponse")]
+        void AgregarGestion(Telmexla.Servicios.DIME.Entity.VIMGestion Gestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/AgregarGestion", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/AgregarGestionResponse")]
+        System.Threading.Tasks.Task AgregarGestionAsync(Telmexla.Servicios.DIME.Entity.VIMGestion Gestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ActualizarGestion", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ActualizarGestionResponse")]
+        void ActualizarGestion(Telmexla.Servicios.DIME.Entity.VIMGestion Gestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ActualizarGestion", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ActualizarGestionResponse")]
+        System.Threading.Tasks.Task ActualizarGestionAsync(Telmexla.Servicios.DIME.Entity.VIMGestion Gestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/AgregarSubrazon", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/AgregarSubrazonResponse")]
+        void AgregarSubrazon(Telmexla.Servicios.DIME.Entity.VIMSubrazon DataSubrazon);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/AgregarSubrazon", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/AgregarSubrazonResponse")]
+        System.Threading.Tasks.Task AgregarSubrazonAsync(Telmexla.Servicios.DIME.Entity.VIMSubrazon DataSubrazon);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ActualizarSubrazon", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ActualizarSubrazonResponse")]
+        void ActualizarSubrazon(Telmexla.Servicios.DIME.Entity.VIMSubrazon DataSubrazon);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ActualizarSubrazon", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ActualizarSubrazonResponse")]
+        System.Threading.Tasks.Task ActualizarSubrazonAsync(Telmexla.Servicios.DIME.Entity.VIMSubrazon DataSubrazon);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/AgregarAliadoTecnico", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/AgregarAliadoTecnicoResponse")]
+        void AgregarAliadoTecnico(Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico DataAliado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/AgregarAliadoTecnico", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/AgregarAliadoTecnicoResponse")]
+        System.Threading.Tasks.Task AgregarAliadoTecnicoAsync(Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico DataAliado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ActualizarAliadoTecnico", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ActualizarAliadoTecnicoRespon" +
+            "se")]
+        void ActualizarAliadoTecnico(Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico DataAliado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ActualizarAliadoTecnico", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ActualizarAliadoTecnicoRespon" +
+            "se")]
+        System.Threading.Tasks.Task ActualizarAliadoTecnicoAsync(Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico DataAliado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/TipoDeRequerimientoPorId", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/TipoDeRequerimientoPorIdRespo" +
+            "nse")]
+        Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento TipoDeRequerimientoPorId(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/TipoDeRequerimientoPorId", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/TipoDeRequerimientoPorIdRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento> TipoDeRequerimientoPorIdAsync(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/TipoDeEquiposPorId", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/TipoDeEquiposPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos TipoDeEquiposPorId(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/TipoDeEquiposPorId", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/TipoDeEquiposPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos> TipoDeEquiposPorIdAsync(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/GestionPorId", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/GestionPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.VIMGestion GestionPorId(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/GestionPorId", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/GestionPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMGestion> GestionPorIdAsync(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/SubrazonPorId", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/SubrazonPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.VIMSubrazon SubrazonPorId(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/SubrazonPorId", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/SubrazonPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMSubrazon> SubrazonPorIdAsync(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/AliadoTecnicoPorId", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/AliadoTecnicoPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico AliadoTecnicoPorId(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/AliadoTecnicoPorId", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/AliadoTecnicoPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico> AliadoTecnicoPorIdAsync(int Id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17644,12 +17794,12 @@ namespace Dime.WSD {
             return base.Channel.ConsultaSolicitudesPorClienteAsync(CuentaCliente);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes> ConsultaSolicitudesPorFecha(System.DateTime FechaInicial, System.DateTime FechaFinal) {
-            return base.Channel.ConsultaSolicitudesPorFecha(FechaInicial, FechaFinal);
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes> ConsultaAdminSolicitudesPrincipal(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminSolicitudesPrincipal(FechaInicial, FechaFinal);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes>> ConsultaSolicitudesPorFechaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
-            return base.Channel.ConsultaSolicitudesPorFechaAsync(FechaInicial, FechaFinal);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes>> ConsultaAdminSolicitudesPrincipalAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminSolicitudesPrincipalAsync(FechaInicial, FechaFinal);
         }
         
         public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VILSolicitudes> ListaDeInteraccionesPorSolicitud(decimal IdSolicitud) {
@@ -17722,6 +17872,174 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VILSolicitudes>> ConsultaDeGestionBackAsync(decimal Cedula, System.DateTime FechaInicial, System.DateTime FechaFinal) {
             return base.Channel.ConsultaDeGestionBackAsync(Cedula, FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VILSolicitudes> ConsultaAdminSolicitudesLog(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminSolicitudesLog(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VILSolicitudes>> ConsultaAdminSolicitudesLogAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminSolicitudesLogAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento> ListaTiposDeRequerimientosAdmin() {
+            return base.Channel.ListaTiposDeRequerimientosAdmin();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento>> ListaTiposDeRequerimientosAdminAsync() {
+            return base.Channel.ListaTiposDeRequerimientosAdminAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos> ListaTipoDeEquiposAdmin() {
+            return base.Channel.ListaTipoDeEquiposAdmin();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos>> ListaTipoDeEquiposAdminAsync() {
+            return base.Channel.ListaTipoDeEquiposAdminAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMGestion> ListaDeGestionAdmin() {
+            return base.Channel.ListaDeGestionAdmin();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMGestion>> ListaDeGestionAdminAsync() {
+            return base.Channel.ListaDeGestionAdminAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMSubrazon> ListaSubrazonAdmin(decimal IdGestion) {
+            return base.Channel.ListaSubrazonAdmin(IdGestion);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMSubrazon>> ListaSubrazonAdminAsync(decimal IdGestion) {
+            return base.Channel.ListaSubrazonAdminAsync(IdGestion);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico> ListaAliadosTecnicosAdmin() {
+            return base.Channel.ListaAliadosTecnicosAdmin();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico>> ListaAliadosTecnicosAdminAsync() {
+            return base.Channel.ListaAliadosTecnicosAdminAsync();
+        }
+        
+        public void AgregarTiposDeRequerimientos(Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento TipoRequerimiento) {
+            base.Channel.AgregarTiposDeRequerimientos(TipoRequerimiento);
+        }
+        
+        public System.Threading.Tasks.Task AgregarTiposDeRequerimientosAsync(Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento TipoRequerimiento) {
+            return base.Channel.AgregarTiposDeRequerimientosAsync(TipoRequerimiento);
+        }
+        
+        public void ActualizarTiposDeRequerimientos(Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento TipoRequerimiento) {
+            base.Channel.ActualizarTiposDeRequerimientos(TipoRequerimiento);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarTiposDeRequerimientosAsync(Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento TipoRequerimiento) {
+            return base.Channel.ActualizarTiposDeRequerimientosAsync(TipoRequerimiento);
+        }
+        
+        public void AgregarTipoDeEquipos(Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos TipoEquipos) {
+            base.Channel.AgregarTipoDeEquipos(TipoEquipos);
+        }
+        
+        public System.Threading.Tasks.Task AgregarTipoDeEquiposAsync(Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos TipoEquipos) {
+            return base.Channel.AgregarTipoDeEquiposAsync(TipoEquipos);
+        }
+        
+        public void ActualizarTipoDeEquipos(Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos TipoEquipos) {
+            base.Channel.ActualizarTipoDeEquipos(TipoEquipos);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarTipoDeEquiposAsync(Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos TipoEquipos) {
+            return base.Channel.ActualizarTipoDeEquiposAsync(TipoEquipos);
+        }
+        
+        public void AgregarGestion(Telmexla.Servicios.DIME.Entity.VIMGestion Gestion) {
+            base.Channel.AgregarGestion(Gestion);
+        }
+        
+        public System.Threading.Tasks.Task AgregarGestionAsync(Telmexla.Servicios.DIME.Entity.VIMGestion Gestion) {
+            return base.Channel.AgregarGestionAsync(Gestion);
+        }
+        
+        public void ActualizarGestion(Telmexla.Servicios.DIME.Entity.VIMGestion Gestion) {
+            base.Channel.ActualizarGestion(Gestion);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarGestionAsync(Telmexla.Servicios.DIME.Entity.VIMGestion Gestion) {
+            return base.Channel.ActualizarGestionAsync(Gestion);
+        }
+        
+        public void AgregarSubrazon(Telmexla.Servicios.DIME.Entity.VIMSubrazon DataSubrazon) {
+            base.Channel.AgregarSubrazon(DataSubrazon);
+        }
+        
+        public System.Threading.Tasks.Task AgregarSubrazonAsync(Telmexla.Servicios.DIME.Entity.VIMSubrazon DataSubrazon) {
+            return base.Channel.AgregarSubrazonAsync(DataSubrazon);
+        }
+        
+        public void ActualizarSubrazon(Telmexla.Servicios.DIME.Entity.VIMSubrazon DataSubrazon) {
+            base.Channel.ActualizarSubrazon(DataSubrazon);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarSubrazonAsync(Telmexla.Servicios.DIME.Entity.VIMSubrazon DataSubrazon) {
+            return base.Channel.ActualizarSubrazonAsync(DataSubrazon);
+        }
+        
+        public void AgregarAliadoTecnico(Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico DataAliado) {
+            base.Channel.AgregarAliadoTecnico(DataAliado);
+        }
+        
+        public System.Threading.Tasks.Task AgregarAliadoTecnicoAsync(Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico DataAliado) {
+            return base.Channel.AgregarAliadoTecnicoAsync(DataAliado);
+        }
+        
+        public void ActualizarAliadoTecnico(Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico DataAliado) {
+            base.Channel.ActualizarAliadoTecnico(DataAliado);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarAliadoTecnicoAsync(Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico DataAliado) {
+            return base.Channel.ActualizarAliadoTecnicoAsync(DataAliado);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento TipoDeRequerimientoPorId(int Id) {
+            return base.Channel.TipoDeRequerimientoPorId(Id);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMTipoDeRequerimiento> TipoDeRequerimientoPorIdAsync(int Id) {
+            return base.Channel.TipoDeRequerimientoPorIdAsync(Id);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos TipoDeEquiposPorId(int Id) {
+            return base.Channel.TipoDeEquiposPorId(Id);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMTipoDeEquipos> TipoDeEquiposPorIdAsync(int Id) {
+            return base.Channel.TipoDeEquiposPorIdAsync(Id);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.VIMGestion GestionPorId(int Id) {
+            return base.Channel.GestionPorId(Id);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMGestion> GestionPorIdAsync(int Id) {
+            return base.Channel.GestionPorIdAsync(Id);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.VIMSubrazon SubrazonPorId(int Id) {
+            return base.Channel.SubrazonPorId(Id);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMSubrazon> SubrazonPorIdAsync(int Id) {
+            return base.Channel.SubrazonPorIdAsync(Id);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico AliadoTecnicoPorId(int Id) {
+            return base.Channel.AliadoTecnicoPorId(Id);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico> AliadoTecnicoPorIdAsync(int Id) {
+            return base.Channel.AliadoTecnicoPorIdAsync(Id);
         }
     }
 }

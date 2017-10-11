@@ -35,7 +35,7 @@ function TraerDatosConsulta(F1, F2) {
     document.getElementById('dataLoading').style.display = 'inline-block';
     $.ajax({
         type: "GET",
-        url: UrlConsultaDeGestionBack,
+        url: UrlConsultaAdminInventarioLog,
         contentType: "application/json; charset=utf-8",
         data: { F1: F1, F2: F2 },
         dataType: "JSON",
@@ -56,7 +56,7 @@ function cambiarfechas(data) {
     for (var i = 0; i < data.length; i++) {
         data[i].FechaSolicitud = kendo.toString(kendo.parseDate(data[i].FechaSolicitud, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
         data[i].FechaTransaccion = kendo.toString(kendo.parseDate(data[i].FechaTransaccion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-        }
+    }
 
 }
 function cargargrilla(data) {
@@ -64,7 +64,7 @@ function cargargrilla(data) {
         autoBind: true,
         toolbar: ["excel"],
         excel: {
-            fileName: "ConsultaGestionVerificacionInventario.xlsx",
+            fileName: "ConsultaVerificacionInventarioLog.xlsx",
         },
         dataSource: {
             data: data,
@@ -105,7 +105,8 @@ function cargargrilla(data) {
         { field: "Subrazon", title: "Subrazon", width: 100 },
         { field: "EstadoSolicitud", title: "Estado Solicitud", width: 100 },
         { field: "AliadoTecnico", title: "Aliado Tecnico", width: 100 },
-        { field: "Observaciones", title: "Observaciones", width: 100 }
+        { field: "Observaciones", title: "Observaciones", width: 100 },
+        { field: "UsuarioGestionando", title: "Usuario Gestionando", width: 100 }
         ]
 
     });
