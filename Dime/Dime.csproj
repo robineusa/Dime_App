@@ -3033,10 +3033,12 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="Scripts\VerificacionDeInventario\AdministrarEquipos.js" />
+    <Content Include="Scripts\VerificacionDeInventario\ConsultaDeGestion.js" />
     <Content Include="Scripts\VerificacionDeInventario\ConsultaSolicitudesPorCliente.js" />
     <Content Include="Scripts\VerificacionDeInventario\EquiposPorSolicitud.js" />
     <Content Include="Scripts\VerificacionDeInventario\GestionarSolicitud.js" />
     <Content Include="Scripts\VerificacionDeInventario\RegistrarSolicitud.js" />
+    <Content Include="Scripts\VerificacionDeInventario\SolicitudesEnSeguimiento.js" />
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaGestion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -3165,25 +3167,25 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService.wsdl" />
-    <None Include="Service References\WSD\WebService.xsd">
+    <None Include="Service References\WSD\WebService1.wsdl" />
+    <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService1.xsd">
+    <None Include="Service References\WSD\WebService51.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService2.xsd">
+    <None Include="Service References\WSD\WebService52.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService3.xsd">
+    <None Include="Service References\WSD\WebService53.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService4.xsd">
+    <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\WSP\configuration91.svcinfo" />
     <None Include="Service References\WSP\configuration.svcinfo" />
-    <None Include="Service References\WSD\WebService.disco" />
+    <None Include="Service References\WSD\WebService1.disco" />
     <Content Include="Service References\WSP\Dime.WSP.enviarEncuestaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -3473,6 +3475,8 @@
     <Content Include="Views\VerificacionDeInventario\AdministrarEquipos.cshtml" />
     <Content Include="Views\VerificacionDeInventario\ConsultaSolicitudesPorCliente.cshtml" />
     <Content Include="Views\VerificacionDeInventario\GestionarSolicitud.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\SolicitudesEnSeguimiento.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\ConsultaDeGestion.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

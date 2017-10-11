@@ -17503,6 +17503,30 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaAliadosTecnicos", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaAliadosTecnicosResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico>> ListaAliadosTecnicosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/TraeSubrazonporIdGestion", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/TraeSubrazonporIdGestionRespo" +
+            "nse")]
+        Telmexla.Servicios.DIME.Entity.VIMSubrazon TraeSubrazonporIdGestion(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/TraeSubrazonporIdGestion", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/TraeSubrazonporIdGestionRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMSubrazon> TraeSubrazonporIdGestionAsync(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/SolicitudesEnSeguimiento", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/SolicitudesEnSeguimientoRespo" +
+            "nse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes> SolicitudesEnSeguimiento(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/SolicitudesEnSeguimiento", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/SolicitudesEnSeguimientoRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes>> SolicitudesEnSeguimientoAsync(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ConsultaDeGestionBack", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ConsultaDeGestionBackResponse" +
+            "")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VILSolicitudes> ConsultaDeGestionBack(decimal Cedula, System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ConsultaDeGestionBack", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ConsultaDeGestionBackResponse" +
+            "")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VILSolicitudes>> ConsultaDeGestionBackAsync(decimal Cedula, System.DateTime FechaInicial, System.DateTime FechaFinal);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17674,6 +17698,30 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico>> ListaAliadosTecnicosAsync() {
             return base.Channel.ListaAliadosTecnicosAsync();
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.VIMSubrazon TraeSubrazonporIdGestion(int Id) {
+            return base.Channel.TraeSubrazonporIdGestion(Id);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMSubrazon> TraeSubrazonporIdGestionAsync(int Id) {
+            return base.Channel.TraeSubrazonporIdGestionAsync(Id);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes> SolicitudesEnSeguimiento(decimal Usuario) {
+            return base.Channel.SolicitudesEnSeguimiento(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes>> SolicitudesEnSeguimientoAsync(decimal Usuario) {
+            return base.Channel.SolicitudesEnSeguimientoAsync(Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VILSolicitudes> ConsultaDeGestionBack(decimal Cedula, System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaDeGestionBack(Cedula, FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VILSolicitudes>> ConsultaDeGestionBackAsync(decimal Cedula, System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaDeGestionBackAsync(Cedula, FechaInicial, FechaFinal);
         }
     }
 }

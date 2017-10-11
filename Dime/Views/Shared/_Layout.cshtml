@@ -675,7 +675,8 @@
                                             @if (Session["Gestionar Solicitud Inventario"] != null)
                                             {
                                                 <li><a href="@Url.Action("GestionarSolicitud", "VerificacionDeInventario")"><i class="fa ion-compose text-orange" aria-hidden="true"></i>Gestionar Solicitud</a></li>
-                                                @*<li><a href="@Url.Action("ConsultaSolicitudesPorCliente", "VerificacionDeInventario")"><i class="fa ion-search text-orange" aria-hidden="true"></i>Consultar Cliente</a></li>*@
+                                                <li><a href="@Url.Action("SolicitudesEnSeguimiento", "VerificacionDeInventario")"><i class="fa ion-ios-eye text-orange" aria-hidden="true"></i>Seguimientos</a></li>
+                                                <li><a href="@Url.Action("ConsultaDeGestion", "VerificacionDeInventario")"><i class="fa ion-ios-eye text-orange" aria-hidden="true"></i>Consulta de Gestión</a></li>
                                             }
                                         </ul>
                                     </li>

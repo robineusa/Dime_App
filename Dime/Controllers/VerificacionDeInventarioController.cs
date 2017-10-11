@@ -245,5 +245,32 @@ namespace Dime.Controllers
             return jsonResult;
 
         }
+        [HttpGet]
+        public ActionResult SolicitudesEnSeguimiento()
+        {
+            return View();
+        }
+        public JsonResult TraeListaDeSolicitudesEnSeguimiento()
+        {
+            decimal Cedula = Convert.ToDecimal(Session["Usuario"]);
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.SolicitudesEnSeguimiento(Cedula)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        [HttpGet]
+        public ActionResult ConsultaDeGestion()
+        {
+            return View();
+        }
+        public JsonResult ConsultaDeGestionJson(string F1, string F2)
+        {
+            decimal Cedula = Convert.ToDecimal(Session["Usuario"]);
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ConsultaDeGestionBack(Cedula, FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }
