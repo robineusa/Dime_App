@@ -1,4 +1,6 @@
-﻿$(document).ready(function () {
+﻿var NombreAliadoTecnico = document.getElementById("AliadoTecnico1").value;
+
+$(document).ready(function () {
     TraerInformacionListaInteracciones();
     TraeListaDeEquipos();
     ListadeGestion();
@@ -30,6 +32,7 @@ function ListadeGestion() {
 }
 $('#Gestion').change(function () {
     ListaSubrazon();
+    NombreAliadoTecnico = "";
 })
 $('#Subrazon').change(function () {
     TraerEstadoCaso();
@@ -77,7 +80,16 @@ function ListaAliados() {
                 }));
 
             }
-
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("AliadoTecnico");
+            // obtenemos el valor a buscar
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == NombreAliadoTecnico) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                }
+            }
         },
         error: function (request, status, error) {
             alert(request.responseText);

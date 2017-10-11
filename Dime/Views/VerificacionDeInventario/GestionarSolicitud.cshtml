@@ -192,8 +192,15 @@
                                             </td>
                                             <td width="300">
                                                 <small>Aliado Técnico:</small>
+                                                @Html.Hidden("AliadoTecnico1", Model.VIPSolicitudes.AliadoTecnico )
                                                 @Html.DropDownListFor(m => m.VIPSolicitudes.AliadoTecnico, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "AliadoTecnico", @class = "form-control input-sm" })
                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.ValidationMessageFor(m => m.VIPSolicitudes.Gestion, "", new { @class = "text-danger" })</td>
+                                            <td>@Html.ValidationMessageFor(m => m.VIPSolicitudes.Subrazon, "", new { @class = "text-danger" })</td>
+                                            <td>@Html.ValidationMessageFor(m => m.VIPSolicitudes.EstadoSolicitud, "", new { @class = "text-danger" })</td>
+                                            <td>@Html.ValidationMessageFor(m => m.VIPSolicitudes.AliadoTecnico, "", new { @class = "text-danger" })</td>
                                         </tr>
                                     </table>
                                     <table>
@@ -230,7 +237,7 @@
             var UrlEstadoCaso = '@Url.Action("TraerEstadoCaso", "VerificacionDeInventario")';
         </script>
 
-        <script src="~/Scripts/VerificacionDeInventario/GestionarSolicitud.js?1.0.2"></script>
+        <script src="~/Scripts/VerificacionDeInventario/GestionarSolicitud.js?1.0.3"></script>
 @*<link href="~/AdminLTE/Kendo2016.3.11/css/kendo.material.min.css" rel="stylesheet" />*@
     }
 }

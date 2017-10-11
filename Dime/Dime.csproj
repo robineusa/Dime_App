@@ -3033,10 +3033,19 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Content Include="Scripts\VerificacionDeInventario\AdministrarEquipos.js" />
+    <Content Include="Scripts\VerificacionDeInventario\ConsultaAdminLog.js" />
+    <Content Include="Scripts\VerificacionDeInventario\ConsultaAdminPrincipal.js" />
+    <Content Include="Scripts\VerificacionDeInventario\ConsultaDeGestion.js" />
     <Content Include="Scripts\VerificacionDeInventario\ConsultaSolicitudesPorCliente.js" />
     <Content Include="Scripts\VerificacionDeInventario\EquiposPorSolicitud.js" />
     <Content Include="Scripts\VerificacionDeInventario\GestionarSolicitud.js" />
+    <Content Include="Scripts\VerificacionDeInventario\ListaAliadosTecnicos.js" />
+    <Content Include="Scripts\VerificacionDeInventario\ListaDeGestion.js" />
+    <Content Include="Scripts\VerificacionDeInventario\ListaSubrazones.js" />
+    <Content Include="Scripts\VerificacionDeInventario\ListaTipoDeEquipos.js" />
+    <Content Include="Scripts\VerificacionDeInventario\ListaTiposDeRequerimientos.js" />
     <Content Include="Scripts\VerificacionDeInventario\RegistrarSolicitud.js" />
+    <Content Include="Scripts\VerificacionDeInventario\SolicitudesEnSeguimiento.js" />
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaGestion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -3473,6 +3482,20 @@
     <Content Include="Views\VerificacionDeInventario\AdministrarEquipos.cshtml" />
     <Content Include="Views\VerificacionDeInventario\ConsultaSolicitudesPorCliente.cshtml" />
     <Content Include="Views\VerificacionDeInventario\GestionarSolicitud.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\SolicitudesEnSeguimiento.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\ConsultaDeGestion.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\ListaTiposDeRequerimientos.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\AdministrarTipodeRequerimientos.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\ListaTipoDeEquipos.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\AdministrarTipoDeEquipos.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\ListaDeGestion.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\AdministrarGestiones.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\ListaSubrazones.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\AdministrarSubrazones.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\ListaAliadosTecnicos.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\AdministrarAliadosTecnicos.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\ConsultaAdminPrincipal.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\ConsultaAdminLog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

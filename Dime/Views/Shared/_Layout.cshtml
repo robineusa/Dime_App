@@ -675,8 +675,25 @@
                                             @if (Session["Gestionar Solicitud Inventario"] != null)
                                             {
                                                 <li><a href="@Url.Action("GestionarSolicitud", "VerificacionDeInventario")"><i class="fa ion-compose text-orange" aria-hidden="true"></i>Gestionar Solicitud</a></li>
-                                                @*<li><a href="@Url.Action("ConsultaSolicitudesPorCliente", "VerificacionDeInventario")"><i class="fa ion-search text-orange" aria-hidden="true"></i>Consultar Cliente</a></li>*@
+                                                <li><a href="@Url.Action("SolicitudesEnSeguimiento", "VerificacionDeInventario")"><i class="fa ion-ios-eye text-orange" aria-hidden="true"></i>Seguimientos</a></li>
+                                                <li><a href="@Url.Action("ConsultaDeGestion", "VerificacionDeInventario")"><i class="fa ion-ios-eye text-orange" aria-hidden="true"></i>Consulta de Gestión</a></li>
                                             }
+                                        </ul>
+                                    </li>
+                                }
+                                @if (Session["Admin Verificacion Inventario"] != null)
+                                {
+                                    <li>
+                                        <a href="#"><i class="fa ion-easel text-orange" aria-hidden="true"></i>Verificación de Inventario<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                           
+                                                <li><a href="@Url.Action("ListaTiposDeRequerimientos", "VerificacionDeInventario")"><i class="fa fa-cog text-orange" aria-hidden="true"></i>Tipos de Requerimiento</a></li>
+                                                <li><a href="@Url.Action("ListaTipoDeEquipos", "VerificacionDeInventario")"><i class="fa fa-cog text-orange" aria-hidden="true"></i>Tipos de Equipo</a></li>
+                                                <li><a href="@Url.Action("ListaDeGestion", "VerificacionDeInventario")"><i class="fa fa-cog text-orange" aria-hidden="true"></i>Árboles de Gestión</a></li>
+                                                <li><a href="@Url.Action("ListaAliadosTecnicos", "VerificacionDeInventario")"><i class="fa fa-cog text-orange" aria-hidden="true"></i>Aliados Tecnicos</a></li>
+                                               <li><a href="@Url.Action("ConsultaAdminPrincipal", "VerificacionDeInventario")"><i class="fa fa-search text-orange" aria-hidden="true"></i>Consulta Base Principal</a></li>
+                                            <li><a href="@Url.Action("ConsultaAdminLog", "VerificacionDeInventario")"><i class="fa fa-search text-orange" aria-hidden="true"></i>Consulta Base Log</a></li>
+                                            
                                         </ul>
                                     </li>
                                 }
