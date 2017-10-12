@@ -499,6 +499,43 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        [HttpGet]
+        public ActionResult ReasignacionDeSolicitudes()
+        {
+            return View();
+        }
+        public JsonResult ListaSolicitudesPorBackJson(string Cedula)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.SolicitudesEnGestionPorBack(Convert.ToDecimal(Cedula))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ListaUsuariosBackJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(VerificacionInventarioService.ListaDeUsuariosVerificacionInventario()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpPost]
+        public JsonResult ReasignacionDeSolicitudesJson(IList<string> Solicitudes, string Usuario)
+        {
+            if (Solicitudes != null && Usuario != "")
+            {
+                decimal Cedula = Convert.ToDecimal(Usuario);
+                VerificacionInventarioService.ReasignarGestionBackInventario(Solicitudes.ToList(), Cedula);
+
+                return new JsonResult
+                {
+                    Data = JsonConvert.SerializeObject("Solicitudes Reasignadas Correctamente"),
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+
+                };
+            }
+            else
+            {
+                return null;
+            }
+        }
 
     }
 }

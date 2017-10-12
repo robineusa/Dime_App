@@ -3044,6 +3044,7 @@
     <Content Include="Scripts\VerificacionDeInventario\ListaSubrazones.js" />
     <Content Include="Scripts\VerificacionDeInventario\ListaTipoDeEquipos.js" />
     <Content Include="Scripts\VerificacionDeInventario\ListaTiposDeRequerimientos.js" />
+    <Content Include="Scripts\VerificacionDeInventario\ReasignacionDeSolicitudes.js" />
     <Content Include="Scripts\VerificacionDeInventario\RegistrarSolicitud.js" />
     <Content Include="Scripts\VerificacionDeInventario\SolicitudesEnSeguimiento.js" />
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaGestion.datasource">
@@ -3496,6 +3497,7 @@
     <Content Include="Views\VerificacionDeInventario\AdministrarAliadosTecnicos.cshtml" />
     <Content Include="Views\VerificacionDeInventario\ConsultaAdminPrincipal.cshtml" />
     <Content Include="Views\VerificacionDeInventario\ConsultaAdminLog.cshtml" />
+    <Content Include="Views\VerificacionDeInventario\ReasignacionDeSolicitudes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
