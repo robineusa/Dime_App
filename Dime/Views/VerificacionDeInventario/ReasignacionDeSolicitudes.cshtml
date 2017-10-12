@@ -1,0 +1,120 @@
+﻿
+@{ ViewBag.Title = "Reasignación de Solicitudes Inventario";
+    ViewBag.SubTitle = "Procesos - Cierre de Ciclo";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Session["Admin Verificacion Inventario"] != null)
+{
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <table>
+                                <tr>
+                                    <td style="width:300px; padding:1px;">
+                                        <small>Cédula Usuario:</small>
+                                        <input type="text" class="form-control input-sm" id="CedulaUsuario" placeholder="Ingrese la cédula del usuario" name="cedula" />
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-danger">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h2 class="page-header" style="margin-top:25px"><i class="fa fa-list-alt"></i> Solicitudes en gestión por el usuario:</h2>
+                                <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                    <div class="box-body">
+                                        <div id="dataLoading" style="display:none;text-align:center;width:100%;height:auto;">
+                                            <div><img src="~/Resources/Images/Loading.gif" height="100" width="100" /></div>
+                                        </div>
+                                        <div id="gridViewConsulta"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-danger">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h2 class="page-header" style="margin-top:25px"><i class="fa fa-user"></i> Usuario a reasignar:</h2>
+                                <table>
+                                    <tr>
+                                        <td style="padding-left:4px; width:300px;">
+                                            <small>Nombre del Usuario</small>
+                                            @Html.DropDownList("Usuarios", new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Usuarios", @class = "form-control" })
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br />
+                                <a href="#" id="guardar" class="btn btn-primary">
+                                    Guardar
+                                </a>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @section scripts{
+            <script>
+                var UrlListaSolicitudesPorBackInventarioJson = '@Url.Action("ListaSolicitudesPorBackJson", "VerificacionDeInventario")';
+                var UrlReasignarsolicitudesInventario = '@Url.Action("ReasignacionDeSolicitudesJson", "VerificacionDeInventario")';
+                var UrListaDeUsuariosInventario = '@Url.Action("ListaUsuariosBackJson", "VerificacionDeInventario")';
+            </script>
+            <script src="~/Scripts/VerificacionDeInventario/ReasignacionDeSolicitudes.js?1.0.0"></script>
+
+        }
+}
+
+else
+{
+    <div class="row">
+
+        <div class="box box-primary">
+
+            <div class="box-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-page">
+                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                            <div class="error-content">
+                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                <p style="text-align:justify;">
+                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                    Por favor solicite al administrador del sistema el acceso correspondiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+

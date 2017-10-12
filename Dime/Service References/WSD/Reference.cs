@@ -17677,6 +17677,34 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/AliadoTecnicoPorId", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/AliadoTecnicoPorIdResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico> AliadoTecnicoPorIdAsync(int Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/SolicitudesEnGestionPorBack", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/SolicitudesEnGestionPorBackRe" +
+            "sponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes> SolicitudesEnGestionPorBack(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/SolicitudesEnGestionPorBack", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/SolicitudesEnGestionPorBackRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes>> SolicitudesEnGestionPorBackAsync(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaDeUsuariosVerificacionIn" +
+            "ventario", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaDeUsuariosVerificacionIn" +
+            "ventarioResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Usuario> ListaDeUsuariosVerificacionInventario();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ListaDeUsuariosVerificacionIn" +
+            "ventario", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ListaDeUsuariosVerificacionIn" +
+            "ventarioResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Usuario>> ListaDeUsuariosVerificacionInventarioAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ReasignarGestionBackInventari" +
+            "o", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ReasignarGestionBackInventari" +
+            "oResponse")]
+        void ReasignarGestionBackInventario(System.Collections.Generic.List<string> Solicitudes, decimal UsuarioNuevo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVerificacionDeInventarioService/ReasignarGestionBackInventari" +
+            "o", ReplyAction="http://tempuri.org/IVerificacionDeInventarioService/ReasignarGestionBackInventari" +
+            "oResponse")]
+        System.Threading.Tasks.Task ReasignarGestionBackInventarioAsync(System.Collections.Generic.List<string> Solicitudes, decimal UsuarioNuevo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18040,6 +18068,30 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.VIMAliadoTecnico> AliadoTecnicoPorIdAsync(int Id) {
             return base.Channel.AliadoTecnicoPorIdAsync(Id);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes> SolicitudesEnGestionPorBack(decimal Usuario) {
+            return base.Channel.SolicitudesEnGestionPorBack(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VIPSolicitudes>> SolicitudesEnGestionPorBackAsync(decimal Usuario) {
+            return base.Channel.SolicitudesEnGestionPorBackAsync(Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Usuario> ListaDeUsuariosVerificacionInventario() {
+            return base.Channel.ListaDeUsuariosVerificacionInventario();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Usuario>> ListaDeUsuariosVerificacionInventarioAsync() {
+            return base.Channel.ListaDeUsuariosVerificacionInventarioAsync();
+        }
+        
+        public void ReasignarGestionBackInventario(System.Collections.Generic.List<string> Solicitudes, decimal UsuarioNuevo) {
+            base.Channel.ReasignarGestionBackInventario(Solicitudes, UsuarioNuevo);
+        }
+        
+        public System.Threading.Tasks.Task ReasignarGestionBackInventarioAsync(System.Collections.Generic.List<string> Solicitudes, decimal UsuarioNuevo) {
+            return base.Channel.ReasignarGestionBackInventarioAsync(Solicitudes, UsuarioNuevo);
         }
     }
 }
