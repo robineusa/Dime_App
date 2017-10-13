@@ -13750,11 +13750,11 @@ namespace Dime.WSD {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IUsabilidadService")]
     public interface IUsabilidadService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadInboundConvenio", ReplyAction="http://tempuri.org/IUsabilidadService/InsertarUsabilidadInboundConvenioResponse")]
-        void InsertarUsabilidadInboundConvenio(Telmexla.Servicios.DIME.Entity.UsabilidadConvenioInbound convenio);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadAlertasInbound", ReplyAction="http://tempuri.org/IUsabilidadService/InsertarUsabilidadAlertasInboundResponse")]
+        void InsertarUsabilidadAlertasInbound(Telmexla.Servicios.DIME.Entity.UsabilidadAlertasInbound alertas);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadInboundConvenio", ReplyAction="http://tempuri.org/IUsabilidadService/InsertarUsabilidadInboundConvenioResponse")]
-        System.Threading.Tasks.Task InsertarUsabilidadInboundConvenioAsync(Telmexla.Servicios.DIME.Entity.UsabilidadConvenioInbound convenio);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadAlertasInbound", ReplyAction="http://tempuri.org/IUsabilidadService/InsertarUsabilidadAlertasInboundResponse")]
+        System.Threading.Tasks.Task InsertarUsabilidadAlertasInboundAsync(Telmexla.Servicios.DIME.Entity.UsabilidadAlertasInbound alertas);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadCuentaInbound", ReplyAction="http://tempuri.org/IUsabilidadService/InsertarUsabilidadCuentaInboundResponse")]
         void InsertarUsabilidadCuentaInbound(Telmexla.Servicios.DIME.Entity.UsabilidadBusquedaCuentaInbound CuentaInbound);
@@ -13790,12 +13790,12 @@ namespace Dime.WSD {
                 base(binding, remoteAddress) {
         }
         
-        public void InsertarUsabilidadInboundConvenio(Telmexla.Servicios.DIME.Entity.UsabilidadConvenioInbound convenio) {
-            base.Channel.InsertarUsabilidadInboundConvenio(convenio);
+        public void InsertarUsabilidadAlertasInbound(Telmexla.Servicios.DIME.Entity.UsabilidadAlertasInbound alertas) {
+            base.Channel.InsertarUsabilidadAlertasInbound(alertas);
         }
         
-        public System.Threading.Tasks.Task InsertarUsabilidadInboundConvenioAsync(Telmexla.Servicios.DIME.Entity.UsabilidadConvenioInbound convenio) {
-            return base.Channel.InsertarUsabilidadInboundConvenioAsync(convenio);
+        public System.Threading.Tasks.Task InsertarUsabilidadAlertasInboundAsync(Telmexla.Servicios.DIME.Entity.UsabilidadAlertasInbound alertas) {
+            return base.Channel.InsertarUsabilidadAlertasInboundAsync(alertas);
         }
         
         public void InsertarUsabilidadCuentaInbound(Telmexla.Servicios.DIME.Entity.UsabilidadBusquedaCuentaInbound CuentaInbound) {

@@ -525,7 +525,17 @@ function LlamarClaroVideo() {
         success: function (result) {
             $('#ClaroVideoBody').html(result);
         }
-    })
+    });
+    var data = { Cuenta: choosenCuenta };
+    $.ajax({
+        type: "GET",
+        url: urlUsabilidadClaroVideo,
+        data: data,
+        contentType: false,
+        success: function (result) {
+
+        }
+    });
 }
 
 function LlamarSMO() {
@@ -536,7 +546,17 @@ function LlamarSMO() {
         success: function (result) {
             $('#SMOBody').html(result);
         }
-    })
+    });
+    var data = { Cuenta: choosenCuenta };
+    $.ajax({
+        type: "GET",
+        url: urlUsabilidadSMO,
+        data: data,
+        contentType: false,
+        success: function (result) {
+
+        }
+    });
 }
 
 function LlamarSiembraHD() {
@@ -547,7 +567,17 @@ function LlamarSiembraHD() {
         success: function (result) {
             $('#SiembraBody').html(result);
         }
-    })
+    });
+    var data = { Cuenta: choosenCuenta };
+    $.ajax({
+        type: "GET",
+        url: urlUsabilidadSiembraHD,
+        data: data,
+        contentType: false,
+        success: function (result) {
+
+        }
+    });
 }
 
 function LlamarMejorasTecnicas() {
@@ -558,7 +588,17 @@ function LlamarMejorasTecnicas() {
         success: function (result) {
             $('#MejorasTBody').html(result);
         }
-    })
+    });
+    var data = { Cuenta: choosenCuenta };
+    $.ajax({
+        type: "GET",
+        url: urlUsabilidadMejorasTecnicas,
+        data: data,
+        contentType: false,
+        success: function (result) {
+
+        }
+    });
 }
 
 function LlamarFOX() {
@@ -568,6 +608,16 @@ function LlamarFOX() {
         dataType: "html",
         success: function (result) {
             $('#FOXTBody').html(result);
+        }
+    });
+    var data = { Cuenta: choosenCuenta };
+    $.ajax({
+        type: "GET",
+        url: urlUsabilidadFOX,
+        data: data,
+        contentType: false,
+        success: function (result) {
+
         }
     });
 }

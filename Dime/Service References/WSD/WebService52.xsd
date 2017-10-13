@@ -1535,8 +1535,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfGraficos" nillable="true" type="tns:ArrayOfGraficos" />
-  <xs:complexType name="UsabilidadConvenioInbound">
+  <xs:complexType name="UsabilidadAlertasInbound">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Alerta" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Aliado" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CuentaRevisoTabla" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="FechaRevision" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
@@ -1544,7 +1546,7 @@
       <xs:element minOccurs="0" name="NombreUsuarioRevision" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="UsabilidadConvenioInbound" nillable="true" type="tns:UsabilidadConvenioInbound" />
+  <xs:element name="UsabilidadAlertasInbound" nillable="true" type="tns:UsabilidadAlertasInbound" />
   <xs:complexType name="UsabilidadBusquedaCuentaInbound">
     <xs:sequence>
       <xs:element minOccurs="0" name="CuentaRevisoTabla" nillable="true" type="xs:int" />

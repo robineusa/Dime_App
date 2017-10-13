@@ -9432,7 +9432,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IUsabilidadService_InsertarUsabilidadInboundConvenio_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IUsabilidadService_InsertarUsabilidadAlertasInbound_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -9451,7 +9451,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IUsabilidadService_InsertarUsabilidadInboundConvenio_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IUsabilidadService_InsertarUsabilidadAlertasInbound_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -20552,6 +20552,120 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IVerificacionDeInventarioService_SolicitudesEnGestionPorBack_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IVerificacionDeInventarioService_SolicitudesEnGestionPorBack_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IVerificacionDeInventarioService_ListaDeUsuariosVerificacionInventario_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IVerificacionDeInventarioService_ListaDeUsuariosVerificacionInventario_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IVerificacionDeInventarioService_ReasignarGestionBackInventario_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IVerificacionDeInventarioService_ReasignarGestionBackInventario_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -21785,11 +21899,11 @@
   <wsdl:message name="IGraficosService_GraficoAsesorNotasIngresosSac_OutputMessage">
     <wsdl:part name="parameters" element="tns:GraficoAsesorNotasIngresosSacResponse" />
   </wsdl:message>
-  <wsdl:message name="IUsabilidadService_InsertarUsabilidadInboundConvenio_InputMessage">
-    <wsdl:part name="parameters" element="tns:InsertarUsabilidadInboundConvenio" />
+  <wsdl:message name="IUsabilidadService_InsertarUsabilidadAlertasInbound_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarUsabilidadAlertasInbound" />
   </wsdl:message>
-  <wsdl:message name="IUsabilidadService_InsertarUsabilidadInboundConvenio_OutputMessage">
-    <wsdl:part name="parameters" element="tns:InsertarUsabilidadInboundConvenioResponse" />
+  <wsdl:message name="IUsabilidadService_InsertarUsabilidadAlertasInbound_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarUsabilidadAlertasInboundResponse" />
   </wsdl:message>
   <wsdl:message name="IUsabilidadService_InsertarUsabilidadCuentaInbound_InputMessage">
     <wsdl:part name="parameters" element="tns:InsertarUsabilidadCuentaInbound" />
@@ -23375,6 +23489,24 @@
   <wsdl:message name="IVerificacionDeInventarioService_AliadoTecnicoPorId_OutputMessage">
     <wsdl:part name="parameters" element="tns:AliadoTecnicoPorIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IVerificacionDeInventarioService_SolicitudesEnGestionPorBack_InputMessage">
+    <wsdl:part name="parameters" element="tns:SolicitudesEnGestionPorBack" />
+  </wsdl:message>
+  <wsdl:message name="IVerificacionDeInventarioService_SolicitudesEnGestionPorBack_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SolicitudesEnGestionPorBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVerificacionDeInventarioService_ListaDeUsuariosVerificacionInventario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDeUsuariosVerificacionInventario" />
+  </wsdl:message>
+  <wsdl:message name="IVerificacionDeInventarioService_ListaDeUsuariosVerificacionInventario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDeUsuariosVerificacionInventarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVerificacionDeInventarioService_ReasignarGestionBackInventario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReasignarGestionBackInventario" />
+  </wsdl:message>
+  <wsdl:message name="IVerificacionDeInventarioService_ReasignarGestionBackInventario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReasignarGestionBackInventarioResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWebService">
     <wsdl:operation name="MuestraEntidades">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MuestraEntidades" message="tns:IWebService_MuestraEntidades_InputMessage" />
@@ -24222,9 +24354,9 @@
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IUsabilidadService">
-    <wsdl:operation name="InsertarUsabilidadInboundConvenio">
-      <wsdl:input wsaw:Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadInboundConvenio" message="tns:IUsabilidadService_InsertarUsabilidadInboundConvenio_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadInboundConvenioResponse" message="tns:IUsabilidadService_InsertarUsabilidadInboundConvenio_OutputMessage" />
+    <wsdl:operation name="InsertarUsabilidadAlertasInbound">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadAlertasInbound" message="tns:IUsabilidadService_InsertarUsabilidadAlertasInbound_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadAlertasInboundResponse" message="tns:IUsabilidadService_InsertarUsabilidadAlertasInbound_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertarUsabilidadCuentaInbound">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsabilidadService/InsertarUsabilidadCuentaInbound" message="tns:IUsabilidadService_InsertarUsabilidadCuentaInbound_InputMessage" />
@@ -25301,6 +25433,18 @@
     <wsdl:operation name="AliadoTecnicoPorId">
       <wsdl:input wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/AliadoTecnicoPorId" message="tns:IVerificacionDeInventarioService_AliadoTecnicoPorId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/AliadoTecnicoPorIdResponse" message="tns:IVerificacionDeInventarioService_AliadoTecnicoPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudesEnGestionPorBack">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/SolicitudesEnGestionPorBack" message="tns:IVerificacionDeInventarioService_SolicitudesEnGestionPorBack_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/SolicitudesEnGestionPorBackResponse" message="tns:IVerificacionDeInventarioService_SolicitudesEnGestionPorBack_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaDeUsuariosVerificacionInventario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/ListaDeUsuariosVerificacionInventario" message="tns:IVerificacionDeInventarioService_ListaDeUsuariosVerificacionInventario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/ListaDeUsuariosVerificacionInventarioResponse" message="tns:IVerificacionDeInventarioService_ListaDeUsuariosVerificacionInventario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReasignarGestionBackInventario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/ReasignarGestionBackInventario" message="tns:IVerificacionDeInventarioService_ReasignarGestionBackInventario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVerificacionDeInventarioService/ReasignarGestionBackInventarioResponse" message="tns:IVerificacionDeInventarioService_ReasignarGestionBackInventario_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IWebService" type="tns:IWebService">
@@ -27610,14 +27754,14 @@
   <wsdl:binding name="WSHttpBinding_IUsabilidadService" type="tns:IUsabilidadService">
     <wsp:PolicyReference URI="#WSHttpBinding_IUsabilidadService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="InsertarUsabilidadInboundConvenio">
-      <soap12:operation soapAction="http://tempuri.org/IUsabilidadService/InsertarUsabilidadInboundConvenio" style="document" />
+    <wsdl:operation name="InsertarUsabilidadAlertasInbound">
+      <soap12:operation soapAction="http://tempuri.org/IUsabilidadService/InsertarUsabilidadAlertasInbound" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IUsabilidadService_InsertarUsabilidadInboundConvenio_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IUsabilidadService_InsertarUsabilidadAlertasInbound_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IUsabilidadService_InsertarUsabilidadInboundConvenio_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IUsabilidadService_InsertarUsabilidadAlertasInbound_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
@@ -30562,6 +30706,39 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IVerificacionDeInventarioService_AliadoTecnicoPorId_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudesEnGestionPorBack">
+      <soap12:operation soapAction="http://tempuri.org/IVerificacionDeInventarioService/SolicitudesEnGestionPorBack" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IVerificacionDeInventarioService_SolicitudesEnGestionPorBack_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IVerificacionDeInventarioService_SolicitudesEnGestionPorBack_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaDeUsuariosVerificacionInventario">
+      <soap12:operation soapAction="http://tempuri.org/IVerificacionDeInventarioService/ListaDeUsuariosVerificacionInventario" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IVerificacionDeInventarioService_ListaDeUsuariosVerificacionInventario_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IVerificacionDeInventarioService_ListaDeUsuariosVerificacionInventario_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReasignarGestionBackInventario">
+      <soap12:operation soapAction="http://tempuri.org/IVerificacionDeInventarioService/ReasignarGestionBackInventario" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IVerificacionDeInventarioService_ReasignarGestionBackInventario_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IVerificacionDeInventarioService_ReasignarGestionBackInventario_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

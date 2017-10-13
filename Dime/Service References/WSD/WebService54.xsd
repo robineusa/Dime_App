@@ -2883,14 +2883,14 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="InsertarUsabilidadInboundConvenio">
+  <xs:element name="InsertarUsabilidadAlertasInbound">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q204="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="convenio" nillable="true" type="q204:UsabilidadConvenioInbound" />
+        <xs:element xmlns:q204="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="alertas" nillable="true" type="q204:UsabilidadAlertasInbound" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="InsertarUsabilidadInboundConvenioResponse">
+  <xs:element name="InsertarUsabilidadAlertasInboundResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

@@ -249,14 +249,16 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult Guardar_Usabilidad_Convenio(string Cuenta)
         {
-            UsabilidadConvenioInbound model = new UsabilidadConvenioInbound();
+            UsabilidadAlertasInbound model = new UsabilidadAlertasInbound();
             model.Id = 0;
             model.FechaRevision = DateTime.Now;
             model.IdUsuarioRevision = Convert.ToInt32(Session["IdUsuario"].ToString());
             model.NombreUsuarioRevision = Session["NombreUsuario"].ToString();
+            model.Aliado = Session["AliadoLogeado"].ToString();
             model.CuentaRevisoTabla = Convert.ToInt32(Cuenta);
+            model.Alerta = "CONVENIO ELECTRONICO";
 
-            usabilidad.InsertarUsabilidadInboundConvenio(model);
+            usabilidad.InsertarUsabilidadAlertasInbound(model);
 
             return View();
         }
@@ -314,6 +316,81 @@ namespace Dime.Controllers
                 model = new InboundModel();
             }
             return View(model);
+        }
+        public ActionResult GuardarUsabilidadClaroVideo(string Cuenta)
+        {
+            UsabilidadAlertasInbound model = new UsabilidadAlertasInbound();
+            model.Id = 0;
+            model.FechaRevision = DateTime.Now;
+            model.IdUsuarioRevision = Convert.ToInt32(Session["IdUsuario"].ToString());
+            model.NombreUsuarioRevision = Session["NombreUsuario"].ToString();
+            model.Aliado = Session["AliadoLogeado"].ToString();
+            model.CuentaRevisoTabla = Convert.ToInt32(Cuenta);
+            model.Alerta = "CLARO VIDEO";
+
+            usabilidad.InsertarUsabilidadAlertasInbound(model);
+
+            return View();
+        }
+        public ActionResult GuardarUsabilidadSMO(string Cuenta)
+        {
+            UsabilidadAlertasInbound model = new UsabilidadAlertasInbound();
+            model.Id = 0;
+            model.FechaRevision = DateTime.Now;
+            model.IdUsuarioRevision = Convert.ToInt32(Session["IdUsuario"].ToString());
+            model.NombreUsuarioRevision = Session["NombreUsuario"].ToString();
+            model.Aliado = Session["AliadoLogeado"].ToString();
+            model.CuentaRevisoTabla = Convert.ToInt32(Cuenta);
+            model.Alerta = "SIGUIENTE MEJOR OFERTA";
+
+            usabilidad.InsertarUsabilidadAlertasInbound(model);
+
+            return View();
+        }
+        public ActionResult GuardarUsabilidadSiembraHD(string Cuenta)
+        {
+            UsabilidadAlertasInbound model = new UsabilidadAlertasInbound();
+            model.Id = 0;
+            model.FechaRevision = DateTime.Now;
+            model.IdUsuarioRevision = Convert.ToInt32(Session["IdUsuario"].ToString());
+            model.NombreUsuarioRevision = Session["NombreUsuario"].ToString();
+            model.Aliado = Session["AliadoLogeado"].ToString();
+            model.CuentaRevisoTabla = Convert.ToInt32(Cuenta);
+            model.Alerta = "SIEMBRA HD";
+
+            usabilidad.InsertarUsabilidadAlertasInbound(model);
+
+            return View();
+        }
+        public ActionResult GuardarUsabilidadMejorasTecnicas(string Cuenta)
+        {
+            UsabilidadAlertasInbound model = new UsabilidadAlertasInbound();
+            model.Id = 0;
+            model.FechaRevision = DateTime.Now;
+            model.IdUsuarioRevision = Convert.ToInt32(Session["IdUsuario"].ToString());
+            model.NombreUsuarioRevision = Session["NombreUsuario"].ToString();
+            model.Aliado = Session["AliadoLogeado"].ToString();
+            model.CuentaRevisoTabla = Convert.ToInt32(Cuenta);
+            model.Alerta = "MEJORAS TECNICAS";
+
+            usabilidad.InsertarUsabilidadAlertasInbound(model);
+
+            return View();
+        }
+        public ActionResult GuardarUsabilidadFOX(string Cuenta)
+        {
+            UsabilidadAlertasInbound model = new UsabilidadAlertasInbound();
+            model.Id = 0;
+            model.FechaRevision = DateTime.Now;
+            model.IdUsuarioRevision = Convert.ToInt32(Session["IdUsuario"].ToString());
+            model.NombreUsuarioRevision = Session["NombreUsuario"].ToString();
+            model.Aliado = Session["AliadoLogeado"].ToString();
+            model.CuentaRevisoTabla = Convert.ToInt32(Cuenta);
+            model.Alerta = "FOX";
+
+            usabilidad.InsertarUsabilidadAlertasInbound(model);
+
+            return View();
         }
     }
 }
