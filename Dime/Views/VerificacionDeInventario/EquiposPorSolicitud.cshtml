@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@if (Session["Registrar Solicitud Inventario"] != null)
+@if (Session["Registrar Solicitud Inventario"] != null || Session["Gestionar Solicitud Inventario"] != null)
 {
 
     <div class="row">
@@ -25,15 +25,24 @@
                                         <div><img src="~/Resources/Images/Loading.gif" height="100" width="100" /></div>
                                     </div>
                                     <div id="gridViewConsulta"></div>
+                                    
                                 </div>
+                               
                             </div>
+                            <br />
+                            <table>
+                                <tr>
+                                    <td width="50" style="padding:2px;"><a style="width:100%;" class="btn btn-block btn-primary" href="@Url.Action("RegistrarSolicitud", "VerificacionDeInventario")">Finalizar</a></td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <button id="submitDatos" type="submit" class="btn btn-primary" value="true" style="width:10%; height:40px; display:none;">Guardar Datos</button>
+   
+    
 
     @section scripts{
         <script>
