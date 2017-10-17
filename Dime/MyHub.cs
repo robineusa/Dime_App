@@ -21,6 +21,7 @@ namespace Dime
             AddMessageinCache(userName, message, fecha);
             var NoNotif = CurrentMessage.FirstOrDefault(x => x.Message == message);
             Clients.All.addMessage(NoNotif.Id, userName, message);
+
         }
         public void notificacion(string Nombre_Imagen, string Ruta_Imagen, string Id_Notificado, string Descripcion_Imagen)
         {
@@ -47,15 +48,13 @@ namespace Dime
                 }
             }
             // send to caller
-            if (ListTemporal.LongCount() == 0)
+            if (ListTemporal.LongCount() != 0)
             {
-                Clients.All.connectEver(CurrentMessage);
-            }
-            else {
                 Clients.Caller.onConnected(ListTemporal);
                 ListTemporal.Clear();
             }
-            
+            Clients.All.connectEver(CurrentMessage);
+
         }
         public void UsurioNotify(int IdNotify, string userName)
         {
