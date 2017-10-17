@@ -729,7 +729,15 @@
                                         </ul>
                                     </li>
                                 }
-
+                                @if (Session["Cierre Ciclo Instalaciones"] != null)
+                                {
+                                    <li>
+                                        <a href="#"><i class="fa fa-download text-green" aria-hidden="true"></i>Instalaciones<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="@Url.Action("Instalaciones", "CierreDeCiclo")"><i class="fa fa-circle-o"></i>Instalaciones</a></li>
+                                        </ul>
+                                    </li>                                            
+                                }
                             </ul>
 
                         </li>

@@ -3147,24 +3147,6 @@
     <Content Include="Service References\WSD\Dime.WSD.ConsultaBlendingOperacionDestinoReturnViewModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionMaestroServicios.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionMotivosCancelacion.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionSubmotivosCancelacion.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionOtrosOfrecimientos.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionRecursiva.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionRegistro.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\WSD\Dime.WSD.GLogRecurrenciaInbound.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -3498,6 +3480,7 @@
     <Content Include="Views\VerificacionDeInventario\ConsultaAdminPrincipal.cshtml" />
     <Content Include="Views\VerificacionDeInventario\ConsultaAdminLog.cshtml" />
     <Content Include="Views\VerificacionDeInventario\ReasignacionDeSolicitudes.cshtml" />
+    <Content Include="Views\CierreDeCiclo\Instalaciones.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

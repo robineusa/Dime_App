@@ -53,7 +53,7 @@ namespace Dime
                 Clients.Caller.onConnected(ListTemporal);
                 ListTemporal.Clear();
             }
-            Clients.All.connectEver(CurrentMessage);
+            Clients.Caller.connectEver(CurrentMessage);
 
         }
         public void UsurioNotify(int IdNotify, string userName)

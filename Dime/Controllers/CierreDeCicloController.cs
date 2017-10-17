@@ -38,9 +38,9 @@ namespace Dime.Controllers
             return View("ConsultaGestiones");
         }
 
-        public ActionResult InstalacionConsulta()
+        public ActionResult Instalaciones()
         {
-            return View("ConsultaGestiones");
+            return View();
         }
 
         public ActionResult PymesConsulta()
