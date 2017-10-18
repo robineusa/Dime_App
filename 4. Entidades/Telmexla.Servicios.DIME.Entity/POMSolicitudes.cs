@@ -17,5 +17,11 @@ namespace Telmexla.Servicios.DIME.Entity
         [Required(ErrorMessage = "Seleccione una opción")]
         public string Operacion { get; set; }
         public string TokenId { get; set; }
+        public string SubCanal { get; set; }
+        public System.DateTime? FechaEnvioEncuesta { get; set; }
+        public decimal MinOrigen { get; set; }
+        public decimal EnviaReintento { get; set; }
+        public string EnviaSoloEmail { get; set; }
+        public decimal IdEncuesta { get; set; }
     }
 }

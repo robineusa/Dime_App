@@ -50,6 +50,8 @@
                                 <td>@Html.ValidationMessageFor(m => m.Operacion, "", new { @class = "text-danger" })</td>
                             </tr>
                         </table>
+                        <br />
+                        <h5 class="text-red"> @ViewBag.Resultado</h5>
                     </div>
                     <br />
                     <button id="btnguardarpom" type="submit" class="btn btn-primary" name="Guardar" value="true" style="width:10%; height:40px;">Guardar</button>

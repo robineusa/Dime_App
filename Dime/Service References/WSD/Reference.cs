@@ -15934,6 +15934,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPOMSolicitudesService/ListaSolicitudesPom", ReplyAction="http://tempuri.org/IPOMSolicitudesService/ListaSolicitudesPomResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.POMSolicitudes>> ListaSolicitudesPomAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPOMSolicitudesService/EliminarEncuestaDime", ReplyAction="http://tempuri.org/IPOMSolicitudesService/EliminarEncuestaDimeResponse")]
+        void EliminarEncuestaDime(Telmexla.Servicios.DIME.Entity.POMSolicitudes Encuesta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPOMSolicitudesService/EliminarEncuestaDime", ReplyAction="http://tempuri.org/IPOMSolicitudesService/EliminarEncuestaDimeResponse")]
+        System.Threading.Tasks.Task EliminarEncuestaDimeAsync(Telmexla.Servicios.DIME.Entity.POMSolicitudes Encuesta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -15985,6 +15991,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.POMSolicitudes>> ListaSolicitudesPomAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
             return base.Channel.ListaSolicitudesPomAsync(FechaInicial, FechaFinal);
+        }
+        
+        public void EliminarEncuestaDime(Telmexla.Servicios.DIME.Entity.POMSolicitudes Encuesta) {
+            base.Channel.EliminarEncuestaDime(Encuesta);
+        }
+        
+        public System.Threading.Tasks.Task EliminarEncuestaDimeAsync(Telmexla.Servicios.DIME.Entity.POMSolicitudes Encuesta) {
+            return base.Channel.EliminarEncuestaDimeAsync(Encuesta);
         }
     }
     

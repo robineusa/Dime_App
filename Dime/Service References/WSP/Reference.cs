@@ -15,19 +15,6 @@ namespace Dime.WSP {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", ConfigurationName="WSP.GeneracionEncuesta")]
     public interface GeneracionEncuesta {
         
-        // CODEGEN: El parámetro 'Respuesta' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
-            "sRequest", ReplyAction="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
-            "sResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="Respuesta")]
-        Dime.WSP.resetPropiedadesResponse resetPropiedades(Dime.WSP.resetPropiedadesRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
-            "sRequest", ReplyAction="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
-            "sResponse")]
-        System.Threading.Tasks.Task<Dime.WSP.resetPropiedadesResponse> resetPropiedadesAsync(Dime.WSP.resetPropiedadesRequest request);
-        
         // CODEGEN: El parámetro 'RespGenerarEncuesta' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/enviarEncuestaR" +
             "equest", ReplyAction="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/enviarEncuestaR" +
@@ -53,47 +40,19 @@ namespace Dime.WSP {
             "uest", ReplyAction="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/registrarLogRes" +
             "ponse")]
         System.Threading.Tasks.Task<Dime.WSP.registrarLogResponse> registrarLogAsync(Dime.WSP.registrarLogRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="resetPropiedades", WrapperNamespace="http://servicios.generacionencuestas.claro.com/", IsWrapped=true)]
-    public partial class resetPropiedadesRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string usuario;
+        // CODEGEN: El parámetro 'Respuesta' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
+            "sRequest", ReplyAction="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
+            "sResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="Respuesta")]
+        Dime.WSP.resetPropiedadesResponse resetPropiedades(Dime.WSP.resetPropiedadesRequest request);
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string psw;
-        
-        public resetPropiedadesRequest() {
-        }
-        
-        public resetPropiedadesRequest(string usuario, string psw) {
-            this.usuario = usuario;
-            this.psw = psw;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="resetPropiedadesResponse", WrapperNamespace="http://servicios.generacionencuestas.claro.com/", IsWrapped=true)]
-    public partial class resetPropiedadesResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Respuesta;
-        
-        public resetPropiedadesResponse() {
-        }
-        
-        public resetPropiedadesResponse(string Respuesta) {
-            this.Respuesta = Respuesta;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
+            "sRequest", ReplyAction="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
+            "sResponse")]
+        System.Threading.Tasks.Task<Dime.WSP.resetPropiedadesResponse> resetPropiedadesAsync(Dime.WSP.resetPropiedadesRequest request);
     }
     
     /// <comentarios/>
@@ -104,17 +63,29 @@ namespace Dime.WSP {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://servicios.generacionencuestas.claro.com/")]
     public partial class reqGenerarEncuesta : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string idField;
+        private string idtransaccionField;
+        
+        private int idEncuestaField;
+        
+        private bool idEncuestaFieldSpecified;
         
         private string canalField;
         
+        private string subCanalField;
+        
         private string zonaField;
         
-        private string fechaField;
+        private string fechaAtencionClienteField;
+        
+        private string fechaEnvioEncuestaField;
+        
+        private string fechaReenvioEncuestaField;
         
         private string minField;
         
         private string minContactoField;
+        
+        private string minOrigenField;
         
         private string emailField;
         
@@ -126,20 +97,48 @@ namespace Dime.WSP {
         
         private string usuarioRegistraField;
         
+        private string enviaReintentoField;
+        
+        private string enviaSoloEmailField;
+        
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string id {
+        public string idtransaccion {
             get {
-                return this.idField;
+                return this.idtransaccionField;
             }
             set {
-                this.idField = value;
-                this.RaisePropertyChanged("id");
+                this.idtransaccionField = value;
+                this.RaisePropertyChanged("idtransaccion");
             }
         }
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int idEncuesta {
+            get {
+                return this.idEncuestaField;
+            }
+            set {
+                this.idEncuestaField = value;
+                this.RaisePropertyChanged("idEncuesta");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool idEncuestaSpecified {
+            get {
+                return this.idEncuestaFieldSpecified;
+            }
+            set {
+                this.idEncuestaFieldSpecified = value;
+                this.RaisePropertyChanged("idEncuestaSpecified");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public string canal {
             get {
                 return this.canalField;
@@ -151,7 +150,19 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string subCanal {
+            get {
+                return this.subCanalField;
+            }
+            set {
+                this.subCanalField = value;
+                this.RaisePropertyChanged("subCanal");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
         public string zona {
             get {
                 return this.zonaField;
@@ -163,19 +174,43 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public string fecha {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public string fechaAtencionCliente {
             get {
-                return this.fechaField;
+                return this.fechaAtencionClienteField;
             }
             set {
-                this.fechaField = value;
-                this.RaisePropertyChanged("fecha");
+                this.fechaAtencionClienteField = value;
+                this.RaisePropertyChanged("fechaAtencionCliente");
             }
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public string fechaEnvioEncuesta {
+            get {
+                return this.fechaEnvioEncuestaField;
+            }
+            set {
+                this.fechaEnvioEncuestaField = value;
+                this.RaisePropertyChanged("fechaEnvioEncuesta");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        public string fechaReenvioEncuesta {
+            get {
+                return this.fechaReenvioEncuestaField;
+            }
+            set {
+                this.fechaReenvioEncuestaField = value;
+                this.RaisePropertyChanged("fechaReenvioEncuesta");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
         public string min {
             get {
                 return this.minField;
@@ -187,7 +222,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
         public string minContacto {
             get {
                 return this.minContactoField;
@@ -199,7 +234,19 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public string minOrigen {
+            get {
+                return this.minOrigenField;
+            }
+            set {
+                this.minOrigenField = value;
+                this.RaisePropertyChanged("minOrigen");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
         public string email {
             get {
                 return this.emailField;
@@ -211,7 +258,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
         public string cuenta {
             get {
                 return this.cuentaField;
@@ -223,7 +270,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
         public string operacion {
             get {
                 return this.operacionField;
@@ -235,7 +282,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
         public string tokenId {
             get {
                 return this.tokenIdField;
@@ -247,7 +294,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
         public string usuarioRegistra {
             get {
                 return this.usuarioRegistraField;
@@ -255,6 +302,30 @@ namespace Dime.WSP {
             set {
                 this.usuarioRegistraField = value;
                 this.RaisePropertyChanged("usuarioRegistra");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
+        public string enviaReintento {
+            get {
+                return this.enviaReintentoField;
+            }
+            set {
+                this.enviaReintentoField = value;
+                this.RaisePropertyChanged("enviaReintento");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
+        public string enviaSoloEmail {
+            get {
+                return this.enviaSoloEmailField;
+            }
+            set {
+                this.enviaSoloEmailField = value;
+                this.RaisePropertyChanged("enviaSoloEmail");
             }
         }
         
@@ -340,6 +411,8 @@ namespace Dime.WSP {
         
         private string canalField;
         
+        private string subCanalField;
+        
         private string zonaRegionField;
         
         private string fechaAtencionClienteField;
@@ -380,7 +453,7 @@ namespace Dime.WSP {
         
         private bool tipoIdentificacionFieldSpecified;
         
-        private int numeroIdentificacionField;
+        private long numeroIdentificacionField;
         
         private bool numeroIdentificacionFieldSpecified;
         
@@ -403,6 +476,8 @@ namespace Dime.WSP {
         private int numeroReintentosField;
         
         private bool numeroReintentosFieldSpecified;
+        
+        private string desReintentoFallidoField;
         
         private string urlConexionField;
         
@@ -434,6 +509,18 @@ namespace Dime.WSP {
         
         /// <comentarios/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string subCanal {
+            get {
+                return this.subCanalField;
+            }
+            set {
+                this.subCanalField = value;
+                this.RaisePropertyChanged("subCanal");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
         public string zonaRegion {
             get {
                 return this.zonaRegionField;
@@ -445,7 +532,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
         public string FechaAtencionCliente {
             get {
                 return this.fechaAtencionClienteField;
@@ -457,7 +544,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
         public string fechaEnvioEncuesta {
             get {
                 return this.fechaEnvioEncuestaField;
@@ -469,7 +556,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
         public string fechaReenvioEncuesta {
             get {
                 return this.fechaReenvioEncuestaField;
@@ -481,7 +568,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
         public long msisdn {
             get {
                 return this.msisdnField;
@@ -505,7 +592,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
         public long minContacto {
             get {
                 return this.minContactoField;
@@ -529,7 +616,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
         public int telefonoLineaOrigen {
             get {
                 return this.telefonoLineaOrigenField;
@@ -553,7 +640,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
         public string email {
             get {
                 return this.emailField;
@@ -565,7 +652,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
         public int cuenta {
             get {
                 return this.cuentaField;
@@ -589,7 +676,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
         public int coId {
             get {
                 return this.coIdField;
@@ -613,7 +700,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
         public string operacion {
             get {
                 return this.operacionField;
@@ -625,7 +712,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
         public string tipoLinea {
             get {
                 return this.tipoLineaField;
@@ -637,7 +724,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
         public string segmento {
             get {
                 return this.segmentoField;
@@ -649,7 +736,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
         public int tipoIdentificacion {
             get {
                 return this.tipoIdentificacionField;
@@ -673,8 +760,8 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
-        public int numeroIdentificacion {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
+        public long numeroIdentificacion {
             get {
                 return this.numeroIdentificacionField;
             }
@@ -697,7 +784,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
         public string nombreCliente {
             get {
                 return this.nombreClienteField;
@@ -709,7 +796,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
         public int estado {
             get {
                 return this.estadoField;
@@ -733,7 +820,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
         public string tokenId {
             get {
                 return this.tokenIdField;
@@ -745,7 +832,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=21)]
         public string causalesNoExito {
             get {
                 return this.causalesNoExitoField;
@@ -757,7 +844,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=21)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=22)]
         public int idEncuesta {
             get {
                 return this.idEncuestaField;
@@ -781,7 +868,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=22)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=23)]
         public string nombreEncuesta {
             get {
                 return this.nombreEncuestaField;
@@ -793,7 +880,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=23)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
         public int numeroReintentos {
             get {
                 return this.numeroReintentosField;
@@ -817,7 +904,19 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=24)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
+        public string desReintentoFallido {
+            get {
+                return this.desReintentoFallidoField;
+            }
+            set {
+                this.desReintentoFallidoField = value;
+                this.RaisePropertyChanged("desReintentoFallido");
+            }
+        }
+        
+        /// <comentarios/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=26)]
         public string urlConexion {
             get {
                 return this.urlConexionField;
@@ -829,7 +928,7 @@ namespace Dime.WSP {
         }
         
         /// <comentarios/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=25)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=27)]
         public string usuarioRegistraSistema {
             get {
                 return this.usuarioRegistraSistemaField;
@@ -982,6 +1081,47 @@ namespace Dime.WSP {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="resetPropiedades", WrapperNamespace="http://servicios.generacionencuestas.claro.com/", IsWrapped=true)]
+    public partial class resetPropiedadesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string usuario;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string psw;
+        
+        public resetPropiedadesRequest() {
+        }
+        
+        public resetPropiedadesRequest(string usuario, string psw) {
+            this.usuario = usuario;
+            this.psw = psw;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="resetPropiedadesResponse", WrapperNamespace="http://servicios.generacionencuestas.claro.com/", IsWrapped=true)]
+    public partial class resetPropiedadesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Respuesta;
+        
+        public resetPropiedadesResponse() {
+        }
+        
+        public resetPropiedadesResponse(string Respuesta) {
+            this.Respuesta = Respuesta;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface GeneracionEncuestaChannel : Dime.WSP.GeneracionEncuesta, System.ServiceModel.IClientChannel {
     }
@@ -1007,31 +1147,6 @@ namespace Dime.WSP {
         
         public GeneracionEncuestaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dime.WSP.resetPropiedadesResponse Dime.WSP.GeneracionEncuesta.resetPropiedades(Dime.WSP.resetPropiedadesRequest request) {
-            return base.Channel.resetPropiedades(request);
-        }
-        
-        public string resetPropiedades(string usuario, string psw) {
-            Dime.WSP.resetPropiedadesRequest inValue = new Dime.WSP.resetPropiedadesRequest();
-            inValue.usuario = usuario;
-            inValue.psw = psw;
-            Dime.WSP.resetPropiedadesResponse retVal = ((Dime.WSP.GeneracionEncuesta)(this)).resetPropiedades(inValue);
-            return retVal.Respuesta;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Dime.WSP.resetPropiedadesResponse> Dime.WSP.GeneracionEncuesta.resetPropiedadesAsync(Dime.WSP.resetPropiedadesRequest request) {
-            return base.Channel.resetPropiedadesAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<Dime.WSP.resetPropiedadesResponse> resetPropiedadesAsync(string usuario, string psw) {
-            Dime.WSP.resetPropiedadesRequest inValue = new Dime.WSP.resetPropiedadesRequest();
-            inValue.usuario = usuario;
-            inValue.psw = psw;
-            return ((Dime.WSP.GeneracionEncuesta)(this)).resetPropiedadesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1078,6 +1193,31 @@ namespace Dime.WSP {
             Dime.WSP.registrarLogRequest inValue = new Dime.WSP.registrarLogRequest();
             inValue.ReqGenerarLog = ReqGenerarLog;
             return ((Dime.WSP.GeneracionEncuesta)(this)).registrarLogAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dime.WSP.resetPropiedadesResponse Dime.WSP.GeneracionEncuesta.resetPropiedades(Dime.WSP.resetPropiedadesRequest request) {
+            return base.Channel.resetPropiedades(request);
+        }
+        
+        public string resetPropiedades(string usuario, string psw) {
+            Dime.WSP.resetPropiedadesRequest inValue = new Dime.WSP.resetPropiedadesRequest();
+            inValue.usuario = usuario;
+            inValue.psw = psw;
+            Dime.WSP.resetPropiedadesResponse retVal = ((Dime.WSP.GeneracionEncuesta)(this)).resetPropiedades(inValue);
+            return retVal.Respuesta;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Dime.WSP.resetPropiedadesResponse> Dime.WSP.GeneracionEncuesta.resetPropiedadesAsync(Dime.WSP.resetPropiedadesRequest request) {
+            return base.Channel.resetPropiedadesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Dime.WSP.resetPropiedadesResponse> resetPropiedadesAsync(string usuario, string psw) {
+            Dime.WSP.resetPropiedadesRequest inValue = new Dime.WSP.resetPropiedadesRequest();
+            inValue.usuario = usuario;
+            inValue.psw = psw;
+            return ((Dime.WSP.GeneracionEncuesta)(this)).resetPropiedadesAsync(inValue);
         }
     }
 }

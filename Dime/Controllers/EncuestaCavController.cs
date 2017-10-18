@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -25,33 +26,61 @@ namespace Dime.Controllers
             
         }
         [HttpGet]
-        public ActionResult EncuestadeSatisfaccion()
+        public ActionResult EncuestadeSatisfaccion(string data)
         {
             POMSolicitudes modelo = new POMSolicitudes();
+            ViewBag.Resultado = data;
             return View(modelo);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EncuestadeSatisfaccion(POMSolicitudes modelo)
         {
+            var FechaTransaccion = DateTime.Now;
+            modelo.FechaTransaccion = FechaTransaccion;
             modelo.UsuarioTransaccion = Session["Usuario"].ToString();
+            modelo.CanalTransaccion = Session["LineaLogeado"].ToString();
+            modelo.SubCanal = Session["OperacionUsuarioHolos"].ToString();
+            modelo.ZonaTransaccion = Session["LineaUsuarioHolos"].ToString();
+            
             POMSolicitudes EncuestaRegistrada =  PomService.RegistrarSolicitudPom(modelo);
+            //dia/mes/año hora:min:seg am o pm
+            //18/10/2017 10:44:00 AM
+
+            var FechaParaEncuesta = FechaTransaccion.ToString(@"dd/MM/yyyy hh:mm:ss tt", new CultureInfo("en-US"));
             
             //envia encuesta poom
-            EntidadEncuesta.id = Convert.ToString(EncuestaRegistrada.IdTansaccion);
+            EntidadEncuesta.idtransaccion = Convert.ToString(EncuestaRegistrada.IdTansaccion);
             EntidadEncuesta.canal = Convert.ToString(EncuestaRegistrada.CanalTransaccion);
-            EntidadEncuesta.zona = Convert.ToString(EncuestaRegistrada.ZonaTransaccion);
-            EntidadEncuesta.fecha = Convert.ToString(EncuestaRegistrada.FechaTransaccion);
+            EntidadEncuesta.subCanal = EncuestaRegistrada.SubCanal;
+            EntidadEncuesta.zona = EncuestaRegistrada.ZonaTransaccion;
+            EntidadEncuesta.fechaAtencionCliente = FechaParaEncuesta;
+            //EntidadEncuesta.fechaEnvioEncuesta = "";
             EntidadEncuesta.min = Convert.ToString(EncuestaRegistrada.TelefonoCeluar);
             EntidadEncuesta.minContacto = Convert.ToString(EncuestaRegistrada.TelefonoDeContacto);
+            EntidadEncuesta.minOrigen = Convert.ToString(EncuestaRegistrada.MinOrigen);
             EntidadEncuesta.email = Convert.ToString(EncuestaRegistrada.CorreoElectronico);
             EntidadEncuesta.cuenta = Convert.ToString(EncuestaRegistrada.CuentaCliente);
             EntidadEncuesta.operacion = Convert.ToString(EncuestaRegistrada.Operacion);
-            EntidadEncuesta.tokenId = Convert.ToString(EncuestaRegistrada.TokenId);
+            EntidadEncuesta.tokenId = "";
             EntidadEncuesta.usuarioRegistra = Convert.ToString(EncuestaRegistrada.UsuarioTransaccion);
+            EntidadEncuesta.enviaReintento = Convert.ToString(EncuestaRegistrada.EnviaReintento);
+            EntidadEncuesta.enviaSoloEmail = EncuestaRegistrada.EnviaSoloEmail;
+            EntidadEncuesta.idEncuesta = Convert.ToInt32(EncuestaRegistrada.IdEncuesta);
+            
 
-            EncuestaService.enviarEncuesta(EntidadEncuesta);
-            return RedirectToAction("EncuestadeSatisfaccion", "EncuestaCav");
+           var respuesta = EncuestaService.enviarEncuesta(EntidadEncuesta);
+            if (respuesta.codigo == 0)
+            {
+                return RedirectToAction("EncuestadeSatisfaccion", "EncuestaCav", new { data =  respuesta.descripcion });
+            }
+            else
+            {
+                PomService.EliminarEncuestaDime(EncuestaRegistrada);
+                ViewBag.Resultado = "No se pudo registrar la encuesta, por favor verifique la información suministrada y vuelva a intentarlo.";
+                return View(modelo);
+            }
+          
         }
         [HttpGet]
         public ActionResult ConsultaEncuestaCavs()

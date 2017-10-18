@@ -54,6 +54,7 @@ function TraerDatosConsulta(F1, F2) {
 function cambiarfechas(data) {
     for (var i = 0; i < data.length; i++) {
         data[i].FechaTransaccion = kendo.toString(kendo.parseDate(data[i].FechaTransaccion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+        data[i].FechaEnvioEncuesta = kendo.toString(kendo.parseDate(data[i].FechaEnvioEncuesta, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
 
     }
 
@@ -96,7 +97,13 @@ function cargargrilla(data) {
         { field: "CorreoElectronico", title: "Correo Electronico", width: 100 },
         { field: "CuentaCliente", title: "Cuenta Cliente", width: 100 },
         { field: "Operacion", title: "Operacion", width: 100 },
-        { field: "TokenId", title: "TokenId", width: 100 }
+        { field: "TokenId", title: "TokenId", width: 100 },
+        { field: "SubCanal", title: "Sub Canal", width: 100 },
+        { field: "FechaEnvioEncuesta", title: "Fecha Envio Encuesta", width: 100 },
+        { field: "MinOrigen", title: "Min Origen", width: 100 },
+        { field: "EnviaReintento", title: "Envia Reintento", width: 100 },
+        { field: "EnviaSoloEmail", title: "Envia Solo Email", width: 100 },
+        { field: "IdEncuesta", title: "Id Encuesta", width: 100 },
         ]
 
     });

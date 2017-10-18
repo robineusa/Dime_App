@@ -3257,9 +3257,15 @@
       <xs:element minOccurs="0" name="CanalTransaccion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CorreoElectronico" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EnviaReintento" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EnviaSoloEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaEnvioEncuesta" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaTransaccion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdEncuesta" type="xs:decimal" />
       <xs:element minOccurs="0" name="IdTansaccion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MinOrigen" type="xs:decimal" />
       <xs:element minOccurs="0" name="Operacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubCanal" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TelefonoCeluar" type="xs:decimal" />
       <xs:element minOccurs="0" name="TelefonoDeContacto" type="xs:decimal" />
       <xs:element minOccurs="0" name="TokenId" nillable="true" type="xs:string" />

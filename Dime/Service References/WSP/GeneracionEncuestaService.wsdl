@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://172.22.87.27:8101/WSGeneraEncuestas/GeneracionEncuestaService?xsd=1" namespace="http://servicios.generacionencuestas.claro.com/" />
     </xsd:schema>
   </types>
-  <message name="resetPropiedades">
-    <part name="parameters" element="tns:resetPropiedades" />
-  </message>
-  <message name="resetPropiedadesResponse">
-    <part name="parameters" element="tns:resetPropiedadesResponse" />
-  </message>
   <message name="enviarEncuesta">
     <part name="parameters" element="tns:enviarEncuesta" />
   </message>
@@ -23,11 +17,13 @@
   <message name="registrarLogResponse">
     <part name="parameters" element="tns:registrarLogResponse" />
   </message>
+  <message name="resetPropiedades">
+    <part name="parameters" element="tns:resetPropiedades" />
+  </message>
+  <message name="resetPropiedadesResponse">
+    <part name="parameters" element="tns:resetPropiedadesResponse" />
+  </message>
   <portType name="GeneracionEncuesta">
-    <operation name="resetPropiedades">
-      <input wsam:Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedadesRequest" message="tns:resetPropiedades" />
-      <output wsam:Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedadesResponse" message="tns:resetPropiedadesResponse" />
-    </operation>
     <operation name="enviarEncuesta">
       <input wsam:Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/enviarEncuestaRequest" message="tns:enviarEncuesta" />
       <output wsam:Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/enviarEncuestaResponse" message="tns:enviarEncuestaResponse" />
@@ -36,18 +32,13 @@
       <input wsam:Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/registrarLogRequest" message="tns:registrarLog" />
       <output wsam:Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/registrarLogResponse" message="tns:registrarLogResponse" />
     </operation>
+    <operation name="resetPropiedades">
+      <input wsam:Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedadesRequest" message="tns:resetPropiedades" />
+      <output wsam:Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedadesResponse" message="tns:resetPropiedadesResponse" />
+    </operation>
   </portType>
   <binding name="GeneracionEncuestaPortBinding" type="tns:GeneracionEncuesta">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="resetPropiedades">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="enviarEncuesta">
       <soap:operation soapAction="" />
       <input>
@@ -58,6 +49,15 @@
       </output>
     </operation>
     <operation name="registrarLog">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="resetPropiedades">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
