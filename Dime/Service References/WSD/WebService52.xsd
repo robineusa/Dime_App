@@ -1529,6 +1529,26 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BalanceScoreCard" nillable="true" type="tns:BalanceScoreCard" />
+  <xs:complexType name="BSCAdministracionBalanced">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivacionClaroVideo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ActivacionConvenioElectronico" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AjustesCorrectos" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LlamadasAtendidas" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Marcaciones" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreSkill" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NotaBuenServicio" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NotaCalidad" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PqrEscalados" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Recomendacion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Reincidencia" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Skill" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Tmo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsoCCAA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VolumenDeVentas" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BSCAdministracionBalanced" nillable="true" type="tns:BSCAdministracionBalanced" />
   <xs:complexType name="ArrayOfGraficos">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Graficos" nillable="true" type="tns:Graficos" />

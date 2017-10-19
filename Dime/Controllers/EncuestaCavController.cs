@@ -31,7 +31,7 @@ namespace Dime.Controllers
             POMSolicitudes modelo = new POMSolicitudes();
             if (data!=null)
             {
-                ViewBag.Mensaje = "Registro almacenado";
+                ViewBag.Mensaje = "Señor usuario el proceso de envió de encuesta ha sido solicitado.";
             }
             return View(modelo);
         }
