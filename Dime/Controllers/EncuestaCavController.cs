@@ -29,7 +29,10 @@ namespace Dime.Controllers
         public ActionResult EncuestadeSatisfaccion(string data)
         {
             POMSolicitudes modelo = new POMSolicitudes();
-            ViewBag.Resultado = data;
+            if (data!=null)
+            {
+                ViewBag.Mensaje = "Registro almacenado";
+            }
             return View(modelo);
         }
         [HttpPost]
@@ -72,12 +75,13 @@ namespace Dime.Controllers
            var respuesta = EncuestaService.enviarEncuesta(EntidadEncuesta);
             if (respuesta.codigo == 0)
             {
-                return RedirectToAction("EncuestadeSatisfaccion", "EncuestaCav", new { data =  respuesta.descripcion });
+                return RedirectToAction("EncuestadeSatisfaccion", "EncuestaCav", new { data = "true" });
+               
             }
             else
             {
                 PomService.EliminarEncuestaDime(EncuestaRegistrada);
-                ViewBag.Resultado = "No se pudo registrar la encuesta, por favor verifique la información suministrada y vuelva a intentarlo.";
+                ViewBag.Mensaje = "No se pudo registrar la encuesta, por favor verifique la información suministrada y vuelva a intentarlo.";
                 return View(modelo);
             }
           
