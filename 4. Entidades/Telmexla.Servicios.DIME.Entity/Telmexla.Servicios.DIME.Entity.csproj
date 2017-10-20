@@ -105,6 +105,8 @@
     <Compile Include="BIPIncidentesPorOperacion.cs" />
     <Compile Include="BlendingFueraNivel.cs" />
     <Compile Include="BlendingFueraNivelCollection.cs" />
+    <Compile Include="BSCAdministracionBalanced.cs" />
+    <Compile Include="BSCAdministracionBalancedLog.cs" />
     <Compile Include="BuscarCuentasViewModel.cs" />
     <Compile Include="CambioEstrato.cs" />
     <Compile Include="CambioEstratoCollection.cs" />

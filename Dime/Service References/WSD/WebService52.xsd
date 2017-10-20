@@ -1549,6 +1549,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="BSCAdministracionBalanced" nillable="true" type="tns:BSCAdministracionBalanced" />
+  <xs:complexType name="ArrayOfBSCAdministracionBalanced">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BSCAdministracionBalanced" nillable="true" type="tns:BSCAdministracionBalanced" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBSCAdministracionBalanced" nillable="true" type="tns:ArrayOfBSCAdministracionBalanced" />
   <xs:complexType name="ArrayOfGraficos">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Graficos" nillable="true" type="tns:Graficos" />

@@ -111,5 +111,34 @@ namespace Dime.Controllers
         //    Session["Datos_ReporteFormulario"] = JSON.ToString();
         //    return Content("" + JSON); ;
         //}
+        [HttpGet]
+        public ActionResult ListaDeUmbralesActuales()
+        {
+            return View();
+        }
+        public JsonResult ListaDeUmbralesJson()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(balancescorecardservice.ListaDeUmbralesActuales()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult AdministrarUmbralesBalanced(string Skill)
+        {
+            return View();
+        }
+        [HttpPost]
+        public JsonResult EliminarSkillesJson(string Skill)
+        {
+            decimal Id = Convert.ToDecimal(Skill);
+            BSCAdministracionBalanced umbral = balancescorecardservice.ConsultaUmbralPorSkill(Id);
+            balancescorecardservice.EliminaUmbral(umbral,Convert.ToDecimal(Session["Usuario"]),Session["NombreUsuario"].ToString());
+
+            return new JsonResult
+            {
+                Data = JsonConvert.SerializeObject("Registro Eliminado"),
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+            };
+        }
     }
 }

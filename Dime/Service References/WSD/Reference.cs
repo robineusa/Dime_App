@@ -5427,275 +5427,6 @@ namespace Dime.WSD {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BSCAdministracionBalanced", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
-    [System.SerializableAttribute()]
-    public partial class BSCAdministracionBalanced : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal ActivacionClaroVideoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal ActivacionConvenioElectronicoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal AjustesCorrectosField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal LlamadasAtendidasField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal MarcacionesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreSkillField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal NotaBuenServicioField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal NotaCalidadField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal PqrEscaladosField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal RecomendacionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal ReincidenciaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal SkillField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TmoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal UsoCCAAField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal VolumenDeVentasField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal ActivacionClaroVideo {
-            get {
-                return this.ActivacionClaroVideoField;
-            }
-            set {
-                if ((this.ActivacionClaroVideoField.Equals(value) != true)) {
-                    this.ActivacionClaroVideoField = value;
-                    this.RaisePropertyChanged("ActivacionClaroVideo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal ActivacionConvenioElectronico {
-            get {
-                return this.ActivacionConvenioElectronicoField;
-            }
-            set {
-                if ((this.ActivacionConvenioElectronicoField.Equals(value) != true)) {
-                    this.ActivacionConvenioElectronicoField = value;
-                    this.RaisePropertyChanged("ActivacionConvenioElectronico");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal AjustesCorrectos {
-            get {
-                return this.AjustesCorrectosField;
-            }
-            set {
-                if ((this.AjustesCorrectosField.Equals(value) != true)) {
-                    this.AjustesCorrectosField = value;
-                    this.RaisePropertyChanged("AjustesCorrectos");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal LlamadasAtendidas {
-            get {
-                return this.LlamadasAtendidasField;
-            }
-            set {
-                if ((this.LlamadasAtendidasField.Equals(value) != true)) {
-                    this.LlamadasAtendidasField = value;
-                    this.RaisePropertyChanged("LlamadasAtendidas");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal Marcaciones {
-            get {
-                return this.MarcacionesField;
-            }
-            set {
-                if ((this.MarcacionesField.Equals(value) != true)) {
-                    this.MarcacionesField = value;
-                    this.RaisePropertyChanged("Marcaciones");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NombreSkill {
-            get {
-                return this.NombreSkillField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreSkillField, value) != true)) {
-                    this.NombreSkillField = value;
-                    this.RaisePropertyChanged("NombreSkill");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal NotaBuenServicio {
-            get {
-                return this.NotaBuenServicioField;
-            }
-            set {
-                if ((this.NotaBuenServicioField.Equals(value) != true)) {
-                    this.NotaBuenServicioField = value;
-                    this.RaisePropertyChanged("NotaBuenServicio");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal NotaCalidad {
-            get {
-                return this.NotaCalidadField;
-            }
-            set {
-                if ((this.NotaCalidadField.Equals(value) != true)) {
-                    this.NotaCalidadField = value;
-                    this.RaisePropertyChanged("NotaCalidad");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal PqrEscalados {
-            get {
-                return this.PqrEscaladosField;
-            }
-            set {
-                if ((this.PqrEscaladosField.Equals(value) != true)) {
-                    this.PqrEscaladosField = value;
-                    this.RaisePropertyChanged("PqrEscalados");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal Recomendacion {
-            get {
-                return this.RecomendacionField;
-            }
-            set {
-                if ((this.RecomendacionField.Equals(value) != true)) {
-                    this.RecomendacionField = value;
-                    this.RaisePropertyChanged("Recomendacion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal Reincidencia {
-            get {
-                return this.ReincidenciaField;
-            }
-            set {
-                if ((this.ReincidenciaField.Equals(value) != true)) {
-                    this.ReincidenciaField = value;
-                    this.RaisePropertyChanged("Reincidencia");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal Skill {
-            get {
-                return this.SkillField;
-            }
-            set {
-                if ((this.SkillField.Equals(value) != true)) {
-                    this.SkillField = value;
-                    this.RaisePropertyChanged("Skill");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Tmo {
-            get {
-                return this.TmoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TmoField, value) != true)) {
-                    this.TmoField = value;
-                    this.RaisePropertyChanged("Tmo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal UsoCCAA {
-            get {
-                return this.UsoCCAAField;
-            }
-            set {
-                if ((this.UsoCCAAField.Equals(value) != true)) {
-                    this.UsoCCAAField = value;
-                    this.RaisePropertyChanged("UsoCCAA");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal VolumenDeVentas {
-            get {
-                return this.VolumenDeVentasField;
-            }
-            set {
-                if ((this.VolumenDeVentasField.Equals(value) != true)) {
-                    this.VolumenDeVentasField = value;
-                    this.RaisePropertyChanged("VolumenDeVentas");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="GBPFueraNivelesCA", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
     [System.SerializableAttribute()]
     public partial class GBPFueraNivelesCA : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -12901,28 +12632,34 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BalanceScoreCard> IndicadoresUsuarioAsync(decimal cedula);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBalanceScoreCardService/RegistrarUmbralesBalanced", ReplyAction="http://tempuri.org/IBalanceScoreCardService/RegistrarUmbralesBalancedResponse")]
-        void RegistrarUmbralesBalanced(Dime.WSD.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario);
+        void RegistrarUmbralesBalanced(Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBalanceScoreCardService/RegistrarUmbralesBalanced", ReplyAction="http://tempuri.org/IBalanceScoreCardService/RegistrarUmbralesBalancedResponse")]
-        System.Threading.Tasks.Task RegistrarUmbralesBalancedAsync(Dime.WSD.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario);
+        System.Threading.Tasks.Task RegistrarUmbralesBalancedAsync(Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBalanceScoreCardService/ActualizarUmbralesBalanced", ReplyAction="http://tempuri.org/IBalanceScoreCardService/ActualizarUmbralesBalancedResponse")]
-        void ActualizarUmbralesBalanced(Dime.WSD.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario);
+        void ActualizarUmbralesBalanced(Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBalanceScoreCardService/ActualizarUmbralesBalanced", ReplyAction="http://tempuri.org/IBalanceScoreCardService/ActualizarUmbralesBalancedResponse")]
-        System.Threading.Tasks.Task ActualizarUmbralesBalancedAsync(Dime.WSD.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario);
+        System.Threading.Tasks.Task ActualizarUmbralesBalancedAsync(Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBalanceScoreCardService/EliminaUmbral", ReplyAction="http://tempuri.org/IBalanceScoreCardService/EliminaUmbralResponse")]
-        void EliminaUmbral(Dime.WSD.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario);
+        void EliminaUmbral(Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBalanceScoreCardService/EliminaUmbral", ReplyAction="http://tempuri.org/IBalanceScoreCardService/EliminaUmbralResponse")]
-        System.Threading.Tasks.Task EliminaUmbralAsync(Dime.WSD.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario);
+        System.Threading.Tasks.Task EliminaUmbralAsync(Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBalanceScoreCardService/ConsultaUmbralPorSkill", ReplyAction="http://tempuri.org/IBalanceScoreCardService/ConsultaUmbralPorSkillResponse")]
-        Dime.WSD.BSCAdministracionBalanced ConsultaUmbralPorSkill(decimal Skill);
+        Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced ConsultaUmbralPorSkill(decimal Skill);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBalanceScoreCardService/ConsultaUmbralPorSkill", ReplyAction="http://tempuri.org/IBalanceScoreCardService/ConsultaUmbralPorSkillResponse")]
-        System.Threading.Tasks.Task<Dime.WSD.BSCAdministracionBalanced> ConsultaUmbralPorSkillAsync(decimal Skill);
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced> ConsultaUmbralPorSkillAsync(decimal Skill);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBalanceScoreCardService/ListaDeUmbralesActuales", ReplyAction="http://tempuri.org/IBalanceScoreCardService/ListaDeUmbralesActualesResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced> ListaDeUmbralesActuales();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBalanceScoreCardService/ListaDeUmbralesActuales", ReplyAction="http://tempuri.org/IBalanceScoreCardService/ListaDeUmbralesActualesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced>> ListaDeUmbralesActualesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -12960,36 +12697,44 @@ namespace Dime.WSD {
             return base.Channel.IndicadoresUsuarioAsync(cedula);
         }
         
-        public void RegistrarUmbralesBalanced(Dime.WSD.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario) {
+        public void RegistrarUmbralesBalanced(Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario) {
             base.Channel.RegistrarUmbralesBalanced(Umbrales, Usuario, NombreUsuario);
         }
         
-        public System.Threading.Tasks.Task RegistrarUmbralesBalancedAsync(Dime.WSD.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario) {
+        public System.Threading.Tasks.Task RegistrarUmbralesBalancedAsync(Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario) {
             return base.Channel.RegistrarUmbralesBalancedAsync(Umbrales, Usuario, NombreUsuario);
         }
         
-        public void ActualizarUmbralesBalanced(Dime.WSD.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario) {
+        public void ActualizarUmbralesBalanced(Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario) {
             base.Channel.ActualizarUmbralesBalanced(Umbrales, Usuario, NombreUsuario);
         }
         
-        public System.Threading.Tasks.Task ActualizarUmbralesBalancedAsync(Dime.WSD.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario) {
+        public System.Threading.Tasks.Task ActualizarUmbralesBalancedAsync(Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario) {
             return base.Channel.ActualizarUmbralesBalancedAsync(Umbrales, Usuario, NombreUsuario);
         }
         
-        public void EliminaUmbral(Dime.WSD.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario) {
+        public void EliminaUmbral(Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario) {
             base.Channel.EliminaUmbral(Umbrales, Usuario, NombreUsuario);
         }
         
-        public System.Threading.Tasks.Task EliminaUmbralAsync(Dime.WSD.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario) {
+        public System.Threading.Tasks.Task EliminaUmbralAsync(Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced Umbrales, decimal Usuario, string NombreUsuario) {
             return base.Channel.EliminaUmbralAsync(Umbrales, Usuario, NombreUsuario);
         }
         
-        public Dime.WSD.BSCAdministracionBalanced ConsultaUmbralPorSkill(decimal Skill) {
+        public Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced ConsultaUmbralPorSkill(decimal Skill) {
             return base.Channel.ConsultaUmbralPorSkill(Skill);
         }
         
-        public System.Threading.Tasks.Task<Dime.WSD.BSCAdministracionBalanced> ConsultaUmbralPorSkillAsync(decimal Skill) {
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced> ConsultaUmbralPorSkillAsync(decimal Skill) {
             return base.Channel.ConsultaUmbralPorSkillAsync(Skill);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced> ListaDeUmbralesActuales() {
+            return base.Channel.ListaDeUmbralesActuales();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced>> ListaDeUmbralesActualesAsync() {
+            return base.Channel.ListaDeUmbralesActualesAsync();
         }
     }
     
