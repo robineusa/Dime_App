@@ -125,7 +125,14 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult AdministrarUmbralesBalanced(string Skill)
         {
-            return View();
+            BSCAdministracionBalanced modelo = new BSCAdministracionBalanced();
+            int skill = Convert.ToInt32(Skill);
+            if (skill > 0)
+            {
+                modelo = balancescorecardservice.ConsultaUmbralPorSkill(skill);
+
+            }
+            return View(modelo);
         }
         [HttpPost]
         public JsonResult EliminarSkillesJson(string Skill)
@@ -139,6 +146,23 @@ namespace Dime.Controllers
                 Data = JsonConvert.SerializeObject("Registro Eliminado"),
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdministrarUmbralesBalanced(BSCAdministracionBalanced modelo)
+        {
+            BSCAdministracionBalanced umbral = new BSCAdministracionBalanced();
+            umbral = balancescorecardservice.ConsultaUmbralPorSkill(modelo.Skill);
+
+            if (umbral != null)
+            {
+                balancescorecardservice.ActualizarUmbralesBalanced(modelo, Convert.ToDecimal(Session["Usuario"]), Session["NombreUsuario"].ToString());
+            }
+            else
+            {
+                balancescorecardservice.RegistrarUmbralesBalanced(modelo, Convert.ToDecimal(Session["Usuario"]), Session["NombreUsuario"].ToString());
+            }
+            return RedirectToAction("ListaDeUmbralesActuales");
         }
     }
 }

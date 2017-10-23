@@ -1,0 +1,116 @@
+﻿@model Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced
+@{ ViewBag.Title = "Registro y Actualización de Skilles";
+    ViewBag.SubTitle = "Procesos - COS";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("AdministrarUmbralesBalanced", "Reportes", FormMethod.Post, new { id = "skilles", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="box box-danger">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-xs-12">
+
+                </div>
+            </div>
+        </div>
+        <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
+            <i class="ion-ios-shuffle-strong"></i> Información del Skill
+        </h2>
+        <div id="ARBOL" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+            <br />
+            <table>
+                <tr>
+                    <td style="padding-left:1px; width:280px;">
+                        <small>Skill</small>
+                      @if (Model.Skill > 0) {
+                          @Html.TextBoxFor(m => m.Skill, new { @class = "form-control input-sm", @readonly = "true", @Id = "skill" })}
+                      else
+                      {
+                          @Html.TextBoxFor(m => m.Skill, new { @class = "form-control input-sm", @Id = "skill" })
+                           }
+                </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Nombre del Skill</small>
+                        @Html.TextBoxFor(m => m.NombreSkill, new { @class = "form-control input-sm", @Id = "nombreskill" })
+                    </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Tmo</small>
+                        @Html.TextBoxFor(m => m.Tmo, new { @class = "form-control input-sm", @Id = "tmo",@placeholder="Formato: 07:00:00" })
+                    </td>
+                    <td style="padding-left:1px; width:280px;">
+                        <small>Llamadas Atendidas</small>
+                        @Html.TextBoxFor(m => m.LlamadasAtendidas, new { @class = "form-control input-sm", @Id = "llamadasatendidas" })
+                    </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Marcaciones</small>
+                        @Html.TextBoxFor(m => m.Marcaciones, new { @class = "form-control input-sm", @Id = "marcaciones" })
+                    </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Ajustes Correctos</small>
+                        @Html.TextBoxFor(m => m.AjustesCorrectos, new { @class = "form-control input-sm", @Id = "ajustescorrectos" })
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Pqr Escalados</small>
+                        @Html.TextBoxFor(m => m.PqrEscalados, new { @class = "form-control input-sm", @Id = "pqrescalados" })
+                    </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Volumen de Ventas</small>
+                        @Html.TextBoxFor(m => m.VolumenDeVentas, new { @class = "form-control input-sm", @Id = "ventas" })
+                    </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Reincidencia</small>
+                        @Html.TextBoxFor(m => m.Reincidencia, new { @class = "form-control input-sm", @Id = "reincidencia" })
+                    </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Recomendacion</small>
+                        @Html.TextBoxFor(m => m.Recomendacion, new { @class = "form-control input-sm", @Id = "recomendacion" })
+                    </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Nota Calidad</small>
+                        @Html.TextBoxFor(m => m.NotaCalidad, new { @class = "form-control input-sm", @Id = "notacalidad" })
+                    </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Nota Buen Servicio</small>
+                        @Html.TextBoxFor(m => m.NotaBuenServicio, new { @class = "form-control input-sm", @Id = "notabuenservicio" })
+                    </td>
+                   
+                   </tr>
+                <tr>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Activacion Claro Video</small>
+                        @Html.TextBoxFor(m => m.ActivacionClaroVideo, new { @class = "form-control input-sm", @Id = "activacionclarovideo" })
+                    </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Activacio Convenio Electrónico</small>
+                        @Html.TextBoxFor(m => m.ActivacionConvenioElectronico, new { @class = "form-control input-sm", @Id = "convenioelectronico" })
+                    </td>
+                    <td style="padding-left:4px; width:280px;">
+                        <small>Uso CCAA</small>
+                        @Html.TextBoxFor(m => m.UsoCCAA, new { @class = "form-control input-sm", @Id = "usoccaa" })
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+        <br />
+    </div>
+
+    <div class="box box-danger">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-xs-12">
+
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;  margin-left:1%;">Guardar</button><br />
+
+    </div>
+}
+

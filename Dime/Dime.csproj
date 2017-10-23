@@ -3484,6 +3484,7 @@
     <Content Include="Views\VerificacionDeInventario\ReasignacionDeSolicitudes.cshtml" />
     <Content Include="Views\CierreDeCiclo\Instalaciones.cshtml" />
     <Content Include="Views\Reportes\ListaDeUmbralesActuales.cshtml" />
+    <Content Include="Views\Reportes\AdministrarUmbralesBalanced.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
