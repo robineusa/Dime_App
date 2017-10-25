@@ -81,7 +81,7 @@ namespace Dime.Controllers
             else
             {
                 PomService.EliminarEncuestaDime(EncuestaRegistrada);
-                ViewBag.Mensaje = "No se pudo registrar la encuesta, por favor verifique la información suministrada y vuelva a intentarlo.";
+                ViewBag.Mensaje = "No se pudo registrar la solicitud del envío de la encuesta, por favor verifique la información suministrada y vuelva a intentarlo.";
                 return View(modelo);
             }
           

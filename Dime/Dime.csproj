@@ -2337,6 +2337,7 @@
     <Content Include="Scripts\DistribucionBlending\Producto.js" />
     <Content Include="Scripts\DistribucionBlending\Rentabilizacion.js" />
     <Content Include="Scripts\EncuestaCav\ConsultaEncuestaCavs.js" />
+    <Content Include="Scripts\EncuestaCav\EncuestadeSatisfaccion.js" />
     <Content Include="Scripts\Gestion_Blending\AsignarBasesAdmin.js" />
     <Content Include="Scripts\Gestion_Blending\SkillsUsuariosAdmin.js" />
     <Content Include="Scripts\Inbound\Retencion.js" />
