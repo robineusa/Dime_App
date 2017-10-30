@@ -18,6 +18,13 @@
                         <table>
                             <tr>
                                 <td style="padding-left:4px; width:200px;">
+                                    <small>Operación</small>
+                                    @Html.DropDownListFor(m => m.Operacion, new List<SelectListItem> {new SelectListItem{Text="FIJA", Value="FIJA" },
+                                                                                                      new SelectListItem{Text="MOVIL", Value="MOVIL" },
+                                                                                                      new SelectListItem{Text="MULTIPLAY", Value="MULTIPLAY" }},
+                                                                                                      "--SELECCIONE--", new { @class = "form-control input-sm", @id = "operacion" })
+                                </td>
+                                <td style="padding-left:4px; width:200px;">
                                     <small>Cuenta del Cliente</small>
                                     @Html.TextBoxFor(m => m.CuentaCliente, new { @class = "form-control input-sm", @Id = "cuenta" })
                                 </td>
@@ -27,32 +34,27 @@
                                 </td>
                                 <td style="padding-left:4px; width:200px;">
                                     <small>Teléfono de Contacto</small>
-                                    @Html.TextBoxFor(m => m.TelefonoDeContacto, new { @class = "form-control input-sm", @Id = "celu", @maxlength = "10", @minlength = "7" })
+                                    @Html.TextBoxFor(m => m.TelefonoDeContacto, new { @class = "form-control input-sm", @Id = "contacto", @maxlength = "10", @minlength = "7" })
                                 </td>
                                 <td style="padding-left:4px; width:200px;">
                                     <small>Correo Electrónico</small>
                                     @Html.TextBoxFor(m => m.CorreoElectronico, new { @class = "form-control input-sm", @Id = "correo", @type = "email" })
                                 </td>
-                                <td style="padding-left:4px; width:200px;">
-                                    <small>Operación</small>
-                                    @Html.DropDownListFor(m => m.Operacion, new List<SelectListItem> {new SelectListItem{Text="FIJA", Value="FIJA" },
-                                                                                                      new SelectListItem{Text="MOVIL", Value="MOVIL" },
-                                                                                                      new SelectListItem{Text="MULTIPLAY", Value="MULTIPLAY" }},
-                                                                                                      "--SELECCIONE--", new { @class = "form-control input-sm" })
-                                </td>
+                                
 
                             </tr>
                             <tr>
                                 <td></td>
-                                <td>@Html.ValidationMessageFor(m => m.TelefonoCeluar, "", new { @class = "text-danger" })</td>
                                 <td></td>
+                                <td>@Html.ValidationMessageFor(m => m.TelefonoCeluar, "", new { @class = "text-danger" })</td>
                                 <td></td>
                                 <td>@Html.ValidationMessageFor(m => m.Operacion, "", new { @class = "text-danger" })</td>
                             </tr>
                         </table>
+                        <h5 class="text-red"> @ViewBag.Mensaje</h5>
                     </div>
                     <br />
-                    <button id="btnguardarpom" type="submit" class="btn btn-primary" name="Guardar" value="true" style="width:10%; height:40px;">Guardar</button>
+                    <button id="btnguardarpom" type="submit" class="btn btn-primary" onclick="Limpiar()" name="Guardar" value="true" style="width:10%; height:40px;">Guardar</button>
                 </div>
             </div>
         </div>
@@ -62,4 +64,5 @@
 
 @section Scripts{
     @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+    <script src="~/Scripts/EncuestaCav/EncuestadeSatisfaccion.js?1.0.0"></script>
 }

@@ -35,12 +35,13 @@ function TraerDatosConsulta(F1, F2) {
     document.getElementById('dataLoading').style.display = 'inline-block';
     $.ajax({
         type: "GET",
-        url: UrlConsultaEncuestaCavs,
+        url: UrlConsultaAdminInventarioPrincipal,
         contentType: "application/json; charset=utf-8",
         data: { F1: F1, F2: F2 },
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
+            console.log(json);
             cambiarfechas(json);
             cargargrilla(json);
             finalizaconsulta();
@@ -53,9 +54,8 @@ function TraerDatosConsulta(F1, F2) {
 
 function cambiarfechas(data) {
     for (var i = 0; i < data.length; i++) {
-        data[i].FechaTransaccion = kendo.toString(kendo.parseDate(data[i].FechaTransaccion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-        data[i].FechaEnvioEncuesta = kendo.toString(kendo.parseDate(data[i].FechaEnvioEncuesta, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-
+        data[i].FechaSolicitud = kendo.toString(kendo.parseDate(data[i].FechaSolicitud, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+        data[i].FechaUltimaActualizacion = kendo.toString(kendo.parseDate(data[i].FechaUltimaActualizacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
     }
 
 }
@@ -64,11 +64,11 @@ function cargargrilla(data) {
         autoBind: true,
         toolbar: ["excel"],
         excel: {
-            fileName: "EncuestasCavs.xlsx",
+            fileName: "ConsultaVerificacionInventarioPrincipal.xlsx",
         },
         dataSource: {
             data: data,
-
+            pageSize: 20,
         },
         scrollable: true,
         filterable: {
@@ -87,23 +87,25 @@ function cargargrilla(data) {
             buttonCount: 5
         },
         columns: [
-        { field: "IdTansaccion", title: "Id Tansaccion", width: 100 },
-        { field: "FechaTransaccion", title: "Fecha de Transaccion", width: 100 },
-        { field: "UsuarioTransaccion", title: "Usuario Transaccion", width: 100 },
-        { field: "CanalTransaccion", title: "Canal Transaccion", width: 100 },
-        { field: "ZonaTransaccion", title: "Zona Transaccion", width: 100 },
-        { field: "TelefonoCeluar", title: "Telefono Celuar", width: 100 },
-        { field: "TelefonoDeContacto", title: "Telefono De Contacto", width: 100 },
-        { field: "CorreoElectronico", title: "Correo Electronico", width: 100 },
+        { field: "IdSolicitud", title: "Id Solicitud", width: 100 },
+        { field: "FechaSolicitud", title: "Fecha de Solicitud", width: 100 },
+        { field: "UsuarioSolicitud", title: "Usuario de Solicitud", width: 100 },
+        { field: "NombreUsuarioSolicitud", title: "Nombre Usuario Solicitud", width: 100 },
+        { field: "AliadoSolicitud", title: "Aliado Solicitud", width: 100 },
+        { field: "OperacionSolicitud", title: "Operacion Solicitud", width: 100 },
+        { field: "FechaUltimaActualizacion", title: "Fecha Actualizacion", width: 100 },
+        { field: "UsuarioUltimaActualizacion", title: "Usuario Actualizavcion", width: 100 },
+        { field: "NombreUsuarioUltimaActualizacion", title: "Nombre Usuario Actualizacion", width: 100 },
         { field: "CuentaCliente", title: "Cuenta Cliente", width: 100 },
-        { field: "Operacion", title: "Operacion", width: 100 },
-        { field: "TokenId", title: "TokenId", width: 100 },
-        { field: "SubCanal", title: "Sub Canal", width: 100 },
-        { field: "FechaEnvioEncuesta", title: "Fecha Envio Encuesta", width: 100 },
-        { field: "MinOrigen", title: "Min Origen", width: 100 },
-        { field: "EnviaReintento", title: "Envia Reintento", width: 100 },
-        { field: "EnviaSoloEmail", title: "Envia Solo Email", width: 100 },
-        { field: "IdEncuesta", title: "Id Encuesta", width: 100 },
+        { field: "TipoDeRequerimiento", title: "Tipo De Requerimiento", width: 100 },
+        { field: "RequiereAjuste", title: "Requiere Ajuste", width: 100 },
+        { field: "Nodo", title: "Nodo", width: 100 },
+        { field: "Gestion", title: "Gestion", width: 100 },
+        { field: "Subrazon", title: "Subrazon", width: 100 },
+        { field: "EstadoSolicitud", title: "Estado Solicitud", width: 100 },
+        { field: "AliadoTecnico", title: "Aliado Tecnico", width: 100 },
+        { field: "Observaciones", title: "Observaciones", width: 100 },
+        { field: "UsuarioGestionando", title: "Usuario Gestionando", width: 100 }
         ]
 
     });

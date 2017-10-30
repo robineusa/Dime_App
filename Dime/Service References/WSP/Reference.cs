@@ -15,6 +15,19 @@ namespace Dime.WSP {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", ConfigurationName="WSP.GeneracionEncuesta")]
     public interface GeneracionEncuesta {
         
+        // CODEGEN: El parámetro 'Respuesta' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
+            "sRequest", ReplyAction="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
+            "sResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="Respuesta")]
+        Dime.WSP.resetPropiedadesResponse resetPropiedades(Dime.WSP.resetPropiedadesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
+            "sRequest", ReplyAction="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
+            "sResponse")]
+        System.Threading.Tasks.Task<Dime.WSP.resetPropiedadesResponse> resetPropiedadesAsync(Dime.WSP.resetPropiedadesRequest request);
+        
         // CODEGEN: El parámetro 'RespGenerarEncuesta' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/enviarEncuestaR" +
             "equest", ReplyAction="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/enviarEncuestaR" +
@@ -40,19 +53,47 @@ namespace Dime.WSP {
             "uest", ReplyAction="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/registrarLogRes" +
             "ponse")]
         System.Threading.Tasks.Task<Dime.WSP.registrarLogResponse> registrarLogAsync(Dime.WSP.registrarLogRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="resetPropiedades", WrapperNamespace="http://servicios.generacionencuestas.claro.com/", IsWrapped=true)]
+    public partial class resetPropiedadesRequest {
         
-        // CODEGEN: El parámetro 'Respuesta' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
-            "sRequest", ReplyAction="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
-            "sResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="Respuesta")]
-        Dime.WSP.resetPropiedadesResponse resetPropiedades(Dime.WSP.resetPropiedadesRequest request);
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string usuario;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
-            "sRequest", ReplyAction="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
-            "sResponse")]
-        System.Threading.Tasks.Task<Dime.WSP.resetPropiedadesResponse> resetPropiedadesAsync(Dime.WSP.resetPropiedadesRequest request);
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string psw;
+        
+        public resetPropiedadesRequest() {
+        }
+        
+        public resetPropiedadesRequest(string usuario, string psw) {
+            this.usuario = usuario;
+            this.psw = psw;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="resetPropiedadesResponse", WrapperNamespace="http://servicios.generacionencuestas.claro.com/", IsWrapped=true)]
+    public partial class resetPropiedadesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string Respuesta;
+        
+        public resetPropiedadesResponse() {
+        }
+        
+        public resetPropiedadesResponse(string Respuesta) {
+            this.Respuesta = Respuesta;
+        }
     }
     
     /// <comentarios/>
@@ -1081,47 +1122,6 @@ namespace Dime.WSP {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="resetPropiedades", WrapperNamespace="http://servicios.generacionencuestas.claro.com/", IsWrapped=true)]
-    public partial class resetPropiedadesRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string usuario;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string psw;
-        
-        public resetPropiedadesRequest() {
-        }
-        
-        public resetPropiedadesRequest(string usuario, string psw) {
-            this.usuario = usuario;
-            this.psw = psw;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="resetPropiedadesResponse", WrapperNamespace="http://servicios.generacionencuestas.claro.com/", IsWrapped=true)]
-    public partial class resetPropiedadesResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string Respuesta;
-        
-        public resetPropiedadesResponse() {
-        }
-        
-        public resetPropiedadesResponse(string Respuesta) {
-            this.Respuesta = Respuesta;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface GeneracionEncuestaChannel : Dime.WSP.GeneracionEncuesta, System.ServiceModel.IClientChannel {
     }
@@ -1147,6 +1147,31 @@ namespace Dime.WSP {
         
         public GeneracionEncuestaClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Dime.WSP.resetPropiedadesResponse Dime.WSP.GeneracionEncuesta.resetPropiedades(Dime.WSP.resetPropiedadesRequest request) {
+            return base.Channel.resetPropiedades(request);
+        }
+        
+        public string resetPropiedades(string usuario, string psw) {
+            Dime.WSP.resetPropiedadesRequest inValue = new Dime.WSP.resetPropiedadesRequest();
+            inValue.usuario = usuario;
+            inValue.psw = psw;
+            Dime.WSP.resetPropiedadesResponse retVal = ((Dime.WSP.GeneracionEncuesta)(this)).resetPropiedades(inValue);
+            return retVal.Respuesta;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Dime.WSP.resetPropiedadesResponse> Dime.WSP.GeneracionEncuesta.resetPropiedadesAsync(Dime.WSP.resetPropiedadesRequest request) {
+            return base.Channel.resetPropiedadesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Dime.WSP.resetPropiedadesResponse> resetPropiedadesAsync(string usuario, string psw) {
+            Dime.WSP.resetPropiedadesRequest inValue = new Dime.WSP.resetPropiedadesRequest();
+            inValue.usuario = usuario;
+            inValue.psw = psw;
+            return ((Dime.WSP.GeneracionEncuesta)(this)).resetPropiedadesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1193,31 +1218,6 @@ namespace Dime.WSP {
             Dime.WSP.registrarLogRequest inValue = new Dime.WSP.registrarLogRequest();
             inValue.ReqGenerarLog = ReqGenerarLog;
             return ((Dime.WSP.GeneracionEncuesta)(this)).registrarLogAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Dime.WSP.resetPropiedadesResponse Dime.WSP.GeneracionEncuesta.resetPropiedades(Dime.WSP.resetPropiedadesRequest request) {
-            return base.Channel.resetPropiedades(request);
-        }
-        
-        public string resetPropiedades(string usuario, string psw) {
-            Dime.WSP.resetPropiedadesRequest inValue = new Dime.WSP.resetPropiedadesRequest();
-            inValue.usuario = usuario;
-            inValue.psw = psw;
-            Dime.WSP.resetPropiedadesResponse retVal = ((Dime.WSP.GeneracionEncuesta)(this)).resetPropiedades(inValue);
-            return retVal.Respuesta;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Dime.WSP.resetPropiedadesResponse> Dime.WSP.GeneracionEncuesta.resetPropiedadesAsync(Dime.WSP.resetPropiedadesRequest request) {
-            return base.Channel.resetPropiedadesAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<Dime.WSP.resetPropiedadesResponse> resetPropiedadesAsync(string usuario, string psw) {
-            Dime.WSP.resetPropiedadesRequest inValue = new Dime.WSP.resetPropiedadesRequest();
-            inValue.usuario = usuario;
-            inValue.psw = psw;
-            return ((Dime.WSP.GeneracionEncuesta)(this)).resetPropiedadesAsync(inValue);
         }
     }
 }

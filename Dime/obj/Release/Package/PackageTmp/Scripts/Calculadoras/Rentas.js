@@ -1,4 +1,4 @@
-﻿var ip = 0;
+﻿    var ip = 0;
 var decosInicial = 0;
 var decosNagraInicial = 0;
 
@@ -37,7 +37,8 @@ $(document).ready(function () {
 });
 
 function Rentas()
-{   $(".adicionales").attr('checked', false);
+{
+    $(".adicionales").attr('checked', false);
     ConfigRadioButtonVoz();
     ConfigRadioButtonTV();
     ConfigRadioButtonInternet();
@@ -51,7 +52,7 @@ function ConfigRadioButtonVoz() {
     var booRadio;
     var x = 0;
     for (x = 0; x < allRadios.length; x++) {
-
+        //alert('1' + booRadio);
         allRadios[x].onclick = function () {
          
             if (booRadio == this) {
@@ -62,6 +63,7 @@ function ConfigRadioButtonVoz() {
                 booRadio = this;
               
             }
+            
             ActualizarParametros();
         };
     }
@@ -73,7 +75,7 @@ function ActualizarParametros()
     var tvSelected = $("input[name=tvCheck]:checked").val();
     var interSelected = $("input[name=interCheck]:checked").val();
     var estrato = $("#tbEstrato").val();
-
+    //alert(vozSelected + ','+tvSelected + ','+interSelected + ',');
     $.ajax({
         type: "GET",
         url: urlConsultaTarifaNueva,
@@ -404,7 +406,38 @@ function CargarDatosActuales()
 
 
             }
-            if (json == null || json == "null") { alert("La cuenta digitada no existe"); }
+            if (json == null || json == "null") {
+                
+                $("#tablaAdicionales").hide();
+                RehabilitarDatosDeshabilitados();
+                document.getElementById('cbVozNo').click();
+                document.getElementById('cbTvNO').click();
+                document.getElementById('cbInterNO').click();
+                Rentas();
+                $("#tbEstrato").val('');
+                $("#tbCampañaVigente").val('');
+                $("#tbFechaVencCampaña").val('');
+                $("#tbTarifaActual").val('');
+                $("#tbRentaActual").val('');
+                $("#tbVozInfo").val('');
+                $("#tbTvInfo").val('');
+                $("#tbInternetInfo").val('');
+                $("#tbHBOInfo").val('');
+                $("#tbFoxInfo").val('');
+                $("#tbUFCInfo").val('');
+                $("#tbGoldenInfo").val('');
+                $("#tbRevistaInfo").val('');
+                $("#tbClaroVideoInfo").val('');
+                $("#tbSrvHdInfo").val('');
+                $("#tbHotPackInfo").val('');
+                $("#tbTotalDecos").val('');
+                $("#tbDecosHD").val('');
+                $("#tbDecosNagra").val('');
+                $("#tbRentaActualDos").val('');
+                $("#tbIncremento").val('');
+                alert("La cuenta digitada no existe");
+
+            }
 
         },
         error: function (request, status, error) {

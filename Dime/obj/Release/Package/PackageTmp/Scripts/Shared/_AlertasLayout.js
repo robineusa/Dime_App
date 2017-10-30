@@ -75,6 +75,7 @@ function Registra_Eventos(connect) {
     });
     $('#BListNotify').click(function () {
         connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
+        //alert($("#IdMsj").val()+'1');
     });
     connect.server.connect(UserConnect2);
 }
@@ -143,26 +144,26 @@ function Llama_Metodos(connect, UserConnect) {
             $('#Id_Notificado').val(Id_Notificado);
             $('#Descripcion_Imagen').val(Descripcion_Imagen);
             $('#Buen_Servicio').css('display', 'inline-block');
-            alert('si');
+            //alert('si');
         }
         //play_single_sound();
     }
 
     connect.client.onConnected = function (messages) {
-        
+        //alert();
         if (messages.length > 0) {
             if (UserConnect2 != 'Buen Servicio') {
                 MensajesaGuardar = messages;
                 //$('#messHeader').append('Usted tiene ' + messages.length + ' Mensajes Nuevos');
                 $('#MensajeCount').append('' + messages.length + '');
-
+                //alert(''+messages.length);
                 for (i = 0; i < messages.length; i++) {
                     AddMessage(messages[i].Id, messages[i].UserName, messages[i].Message);
                 }
 
             }
         }
-        else { $('#MensajeCount').empty();}
+        else { alert('' + messages.length); $('#MensajeCount').empty(); }
     }
     
     connect.client.connectEver = function (messages) {
