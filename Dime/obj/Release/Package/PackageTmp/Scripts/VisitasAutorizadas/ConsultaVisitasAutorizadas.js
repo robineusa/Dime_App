@@ -96,7 +96,7 @@ function cargargrilla(data) {
         { field: "LlamadaServicio", title: "Llamada Servicio", width: 100 },
         { field: "Aviso", title: "Aviso", width: 100 },
         { field: "Motivo", title: "Motivo", width: 100 },
-        { field: "CedulaUsuarioGestion", title: "Cedula del Asesor", width: 100 }
+        { field: "CedulaUsuarioGestion", title: "Cedula Usuario Gestion", width: 100 }
         ]
 
     });
