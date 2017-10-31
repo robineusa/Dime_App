@@ -9348,6 +9348,83 @@ namespace Dime.WSD {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VAMotivosSolicitud", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class VAMotivosSolicitud : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal IdMotivoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MotivoField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal IdMotivo {
+            get {
+                return this.IdMotivoField;
+            }
+            set {
+                if ((this.IdMotivoField.Equals(value) != true)) {
+                    this.IdMotivoField = value;
+                    this.RaisePropertyChanged("IdMotivo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Motivo {
+            get {
+                return this.MotivoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MotivoField, value) != true)) {
+                    this.MotivoField = value;
+                    this.RaisePropertyChanged("Motivo");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IWebService")]
     public interface IWebService {
@@ -16804,6 +16881,83 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task ReasignarGestionBackInventarioAsync(System.Collections.Generic.List<string> Solicitudes, decimal UsuarioNuevo) {
             return base.Channel.ReasignarGestionBackInventarioAsync(Solicitudes, UsuarioNuevo);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IVisitasAutorizadasService")]
+    public interface IVisitasAutorizadasService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVisitasAutorizadasService/AgregarNuevaVisita", ReplyAction="http://tempuri.org/IVisitasAutorizadasService/AgregarNuevaVisitaResponse")]
+        void AgregarNuevaVisita(Telmexla.Servicios.DIME.Entity.VisitasAutorizadas Visita);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVisitasAutorizadasService/AgregarNuevaVisita", ReplyAction="http://tempuri.org/IVisitasAutorizadasService/AgregarNuevaVisitaResponse")]
+        System.Threading.Tasks.Task AgregarNuevaVisitaAsync(Telmexla.Servicios.DIME.Entity.VisitasAutorizadas Visita);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVisitasAutorizadasService/ConsultaBaseVisitasAutorizadas", ReplyAction="http://tempuri.org/IVisitasAutorizadasService/ConsultaBaseVisitasAutorizadasRespo" +
+            "nse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VisitasAutorizadas> ConsultaBaseVisitasAutorizadas(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVisitasAutorizadasService/ConsultaBaseVisitasAutorizadas", ReplyAction="http://tempuri.org/IVisitasAutorizadasService/ConsultaBaseVisitasAutorizadasRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VisitasAutorizadas>> ConsultaBaseVisitasAutorizadasAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVisitasAutorizadasService/ListaMotivosSolicitud", ReplyAction="http://tempuri.org/IVisitasAutorizadasService/ListaMotivosSolicitudResponse")]
+        System.Collections.Generic.List<Dime.WSD.VAMotivosSolicitud> ListaMotivosSolicitud();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVisitasAutorizadasService/ListaMotivosSolicitud", ReplyAction="http://tempuri.org/IVisitasAutorizadasService/ListaMotivosSolicitudResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.VAMotivosSolicitud>> ListaMotivosSolicitudAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IVisitasAutorizadasServiceChannel : Dime.WSD.IVisitasAutorizadasService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class VisitasAutorizadasServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IVisitasAutorizadasService>, Dime.WSD.IVisitasAutorizadasService {
+        
+        public VisitasAutorizadasServiceClient() {
+        }
+        
+        public VisitasAutorizadasServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public VisitasAutorizadasServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public VisitasAutorizadasServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public VisitasAutorizadasServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public void AgregarNuevaVisita(Telmexla.Servicios.DIME.Entity.VisitasAutorizadas Visita) {
+            base.Channel.AgregarNuevaVisita(Visita);
+        }
+        
+        public System.Threading.Tasks.Task AgregarNuevaVisitaAsync(Telmexla.Servicios.DIME.Entity.VisitasAutorizadas Visita) {
+            return base.Channel.AgregarNuevaVisitaAsync(Visita);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VisitasAutorizadas> ConsultaBaseVisitasAutorizadas(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaBaseVisitasAutorizadas(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.VisitasAutorizadas>> ConsultaBaseVisitasAutorizadasAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaBaseVisitasAutorizadasAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Dime.WSD.VAMotivosSolicitud> ListaMotivosSolicitud() {
+            return base.Channel.ListaMotivosSolicitud();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.VAMotivosSolicitud>> ListaMotivosSolicitudAsync() {
+            return base.Channel.ListaMotivosSolicitudAsync();
         }
     }
 }

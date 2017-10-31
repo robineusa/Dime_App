@@ -1,0 +1,88 @@
+﻿@model Telmexla.Servicios.DIME.Entity.VisitasAutorizadas
+@{
+    ViewBag.Title = "RegistrarVisitaAutorizada";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Session["Registrar Solicitud Inventario"] != null)
+{
+using (Html.BeginForm("RegistrarVisitaAutorizada", "VisitasAutorizadas", FormMethod.Post, new { id = "solicitud", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-9" style="width:100%; ">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+
+                            <table>
+                                <tr>
+                                    <td width="200">
+                                        <small>Cuenta del Cliente</small>
+                                        @Html.TextBoxFor(m => m.CuentaCliente, new { @class = "form-control input-sm", @Id = "CuentaCliente" })
+                                    </td>
+                                    <td width="200" style="padding-left:2px;">
+                                        <small>Llamada de Servicio</small>
+                                        @Html.TextBoxFor(m => m.LlamadaServicio, new { @class = "form-control input-sm", @Id = "Llamadaservicio" })
+                                    </td>
+                                    <td width="200"  style="padding-left:2px;">
+                                        <small>Aviso</small>
+                                        @Html.TextBoxFor(m => m.Aviso, new { @class = "form-control input-sm", @Id = "aviso" })
+                                    </td>
+                                    <td width="200" style="padding-left:2px;" >
+                                        <small>Motivo de Solicitud</small>
+                                        @Html.DropDownListFor(m => m.Motivo, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "motivo", @class = "form-control input-sm" })
+                                    </td>
+                                    <td width="200" style="padding-left:2px;">
+                                        <small>Cedula Usuario de Gestión</small>
+                                        @Html.TextBoxFor(m => m.CedulaUsuarioGestion, new { @class = "form-control input-sm", @Id = "cedulausuario" })
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;">Guardar</button><br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+@section Scripts{
+    <script>
+        var UrlListaMotivosJson = '@Url.Action("ListaDeMotivosDeEscalamientoJson", "VisitasAutorizadas")';
+    </script>
+    
+    <script src="~/Scripts/VisitasAutorizadas/RegistrarVisitaAutorizada.js?1.0.0"></script>
+    
+}
+
+}
+else
+{
+    <div class="row">
+
+        <div class="box box-primary">
+
+            <div class="box-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="error-page">
+                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                            <div class="error-content">
+                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                <p style="text-align:justify;">
+                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                    Por favor solicite al administrador del sistema el acceso correspondiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

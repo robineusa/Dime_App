@@ -751,10 +751,33 @@
                                         </ul>
                                     </li>
                                 }
+                                @if (Session["Registrar Visita Autorizada"] != null || Session["Administrar Visitas Autorizadas"] != null)
+                                {
+                                    <li id="left-sidebar-menu-multilevel" class="treeview">
+                                        <a href="#">
+                                            <i class="fa fa-car text-yellow"></i> <span>Visitas Autorizadas</span><i class="fa fa-angle-left pull-right"></i>
+                                        </a>
+                                        <ul class="treeview-menu">
+                                            @if (Session["Registrar Visita Autorizada"] != null)
+                                            {
+                                                <li><a href="@Url.Action("RegistrarVisitaAutorizada", "VisitasAutorizadas")"><i class="fa fa-circle-o"></i>Registrar Visita</a></li>
+
+                                            }
+                                            @if (Session["Administrar Visitas Autorizadas"] != null)
+                                            {
+                                                <li><a href="@Url.Action("ConsultaVisitasAutorizadas", "VisitasAutorizadas")"><i class="fa fa-circle-o"></i>Consultar Visitas</a></li>
+
+                                            }
+                                        </ul>
+
+                                    </li>
+                                }
                             </ul>
 
                         </li>
                     }
+                    
+
                     <li class="header">CONSULTAS</li>
                     @if (Session["Consultas Asesor"] != null)
                     {

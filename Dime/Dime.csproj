@@ -218,6 +218,7 @@
     <Compile Include="Controllers\ReportesController.cs" />
     <Compile Include="Controllers\TrasladosController.cs" />
     <Compile Include="Controllers\VerificacionDeInventarioController.cs" />
+    <Compile Include="Controllers\VisitasAutorizadasController.cs" />
     <Compile Include="Extensions\ClaimsExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -3028,6 +3029,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIMGestion.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIMSubrazon.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VisitasAutorizadas.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3050,6 +3052,8 @@
     <Content Include="Scripts\VerificacionDeInventario\ReasignacionDeSolicitudes.js" />
     <Content Include="Scripts\VerificacionDeInventario\RegistrarSolicitud.js" />
     <Content Include="Scripts\VerificacionDeInventario\SolicitudesEnSeguimiento.js" />
+    <Content Include="Scripts\VisitasAutorizadas\ConsultaVisitasAutorizadas.js" />
+    <Content Include="Scripts\VisitasAutorizadas\RegistrarVisitaAutorizada.js" />
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaGestion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -3154,6 +3158,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.InventarioEquipos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.VAMotivosSolicitud.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\WSD\Reference.svcmap">
@@ -3486,6 +3493,8 @@
     <Content Include="Views\CierreDeCiclo\Instalaciones.cshtml" />
     <Content Include="Views\Reportes\ListaDeUmbralesActuales.cshtml" />
     <Content Include="Views\Reportes\AdministrarUmbralesBalanced.cshtml" />
+    <Content Include="Views\VisitasAutorizadas\RegistrarVisitaAutorizada.cshtml" />
+    <Content Include="Views\VisitasAutorizadas\ConsultaVisitasAutorizadas.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
