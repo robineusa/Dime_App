@@ -3456,4 +3456,39 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="VIMAliadoTecnico" nillable="true" type="tns:VIMAliadoTecnico" />
+  <xs:complexType name="VisitasAutorizadas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoRegistro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Aviso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CedulaUsuarioGestion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaRegistro" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdVisita" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LlamadaServicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperacionRegistro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioRegistro" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VisitasAutorizadas" nillable="true" type="tns:VisitasAutorizadas" />
+  <xs:complexType name="ArrayOfVisitasAutorizadas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VisitasAutorizadas" nillable="true" type="tns:VisitasAutorizadas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVisitasAutorizadas" nillable="true" type="tns:ArrayOfVisitasAutorizadas" />
+  <xs:complexType name="ArrayOfVAMotivosSolicitud">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VAMotivosSolicitud" nillable="true" type="tns:VAMotivosSolicitud" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVAMotivosSolicitud" nillable="true" type="tns:ArrayOfVAMotivosSolicitud" />
+  <xs:complexType name="VAMotivosSolicitud">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdMotivo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VAMotivosSolicitud" nillable="true" type="tns:VAMotivosSolicitud" />
 </xs:schema>

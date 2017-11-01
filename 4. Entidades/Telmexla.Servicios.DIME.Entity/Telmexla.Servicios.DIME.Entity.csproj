@@ -244,6 +244,7 @@
     <Compile Include="VIMTipoDeRequerimiento.cs" />
     <Compile Include="VIPSolicitudes.cs" />
     <Compile Include="VIPSolicitudesPorEquipo.cs" />
+    <Compile Include="VisitasAutorizadas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
