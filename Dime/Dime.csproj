@@ -3029,6 +3029,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VIMSubrazon.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Business.ListaAccesoSUsuario.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VisitasAutorizadas1.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3155,6 +3156,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.UsuariosMasivoData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.VAMotivosSolicitud1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\WSD\Reference.svcmap">

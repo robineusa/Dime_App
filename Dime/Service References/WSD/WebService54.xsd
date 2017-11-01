@@ -6269,7 +6269,7 @@
   <xs:element name="AgregarNuevaVisita">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q438="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Visita" nillable="true" type="q438:VisitasAutorizadas" />
+        <xs:element xmlns:q439="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Visita" nillable="true" type="q439:VisitasAutorizadas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -6289,7 +6289,7 @@
   <xs:element name="ConsultaBaseVisitasAutorizadasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q439="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaBaseVisitasAutorizadasResult" nillable="true" type="q439:ArrayOfVisitasAutorizadas" />
+        <xs:element xmlns:q440="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaBaseVisitasAutorizadasResult" nillable="true" type="q440:ArrayOfVisitasAutorizadas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -6301,7 +6301,7 @@
   <xs:element name="ListaMotivosSolicitudResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q440="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaMotivosSolicitudResult" nillable="true" type="q440:ArrayOfVAMotivosSolicitud" />
+        <xs:element xmlns:q441="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaMotivosSolicitudResult" nillable="true" type="q441:ArrayOfVAMotivosSolicitud" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
