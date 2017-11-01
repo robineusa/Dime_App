@@ -167,8 +167,11 @@
                                 </tr>
                             </table>
                             <br />
-
-                            <strong><i class="fa fa-chevron-circle-down"></i> Accesos y privilegios a Otorgar:</strong>
+                            <strong><i class="fa fa-chevron-circle-down"></i> Accesos Actuales Del Usuario:</strong>
+                            <br />
+                            <div id="gridViewConsultaAccesos"></div>
+                            <br />
+                            <strong><i class="fa fa-chevron-circle-down"></i> Accesos y Privilegios a Otorgar:</strong>
                             <br />
                             <table id="accesosPrivilegiosConsulta">
 
@@ -189,7 +192,19 @@
                                     <td width="200" style="padding:1px;"></td>
                                 </tr>
                             </table>
+                            <br />
                             @Html.TextBoxFor(m => m.PermisosOtorgados, new { @style = "display:none", id = "listaPermisosCrear" })
+                            <strong><i class="fa fa-chevron-circle-down"></i> Accesos Seleccionados:</strong>
+                            <br />
+                            <table>
+                                <tr>
+                                    <td width="200" style="padding:1px;">Hasta el Momento serán agregados:</td>
+                                </tr>
+                                <tr>
+                                    <td width="1200" rowspan="3" colspan="6" style="padding:1px;"><textarea id="AccesosaAgregar" style="height:100px;" class="form-control input-sm"></textarea></td>
+                                </tr>
+                            </table>
+                            <br />
                         </div>
 
                         <div class="tab-pane" id="Consulta_Usuario" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
@@ -285,10 +300,11 @@
             var urlPosiblesAccesosDeUsuario = '@Url.Action("PosiblesAccesosDeUsuario", "AdminUsuarios")';
             var urlPosiblesAccesosDeLinea = '@Url.Action("PosiblesAccesosDeLineas", "AdminUsuarios")';
             var urlConsultaUsuariosAccesosMasivos = '@Url.Action("ConsultaUsuariosAccesosMasivos", "AdminUsuarios")';
+            var urlBorrarAccesoUsuario = '@Url.Action("EliminaAcceso", "AdminUsuarios")';
 
             //$("#cedulaCreacion").val(0);
         </script>
-        <script src="~/Scripts/AdminUsuarios/Accesos.js?1.2.5"></script>
+        <script src="~/Scripts/AdminUsuarios/Accesos.js?1.2.9"></script>
         <script src="~/Scripts/AdminUsuarios/xls.js"></script>
     }
 }

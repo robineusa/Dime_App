@@ -243,15 +243,18 @@ namespace Dime.Controllers
             if (cedUsuario != 0 )
             {
                 
-                var result = new
-                {
-                    accesos = loginService.ListaAccesosDeUsuario(cedUsuario)
-                };
-                return new JsonResult
-                {
-                    Data = JsonConvert.SerializeObject(result),
-                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
-                };
+                //var result = new
+                //{
+                //    accesos = loginService.ListaAccesosDeUsuario(cedUsuario)
+                //};
+                //return new JsonResult
+                //{
+                //    Data = JsonConvert.SerializeObject(result),
+                //    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+                //};
+                var jsonResult = Json(JsonConvert.SerializeObject(loginService.ListaAccesosDeUsuario2(cedUsuario)), JsonRequestBehavior.AllowGet);
+                jsonResult.MaxJsonLength = int.MaxValue;
+                return jsonResult;
             }
             return new JsonResult
             {
@@ -336,6 +339,16 @@ namespace Dime.Controllers
             var jsonResult = Json(JsonConvert.SerializeObject(loginService.ListaDatosUsuariosDimePorCedulas(cedulas.ToList())), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
+        }
+
+        [HttpPost]
+        public ActionResult EliminaAcceso(string cedUsuario, string idAcceso)
+        {
+            int IdUser = loginService.RecibirIdUsuario(Convert.ToDecimal(cedUsuario));
+            int idAccess = Convert.ToInt32(idAcceso);
+            loginService.EliminarAccesosUsuario(IdUser, idAccess);
+
+            return Content("Exitoso");
         }
 
     }

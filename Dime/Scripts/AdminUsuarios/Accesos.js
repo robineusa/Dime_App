@@ -53,6 +53,7 @@
         $("#listaUsuariosMasivo").val("");
     }
     $("#listaPermisosCrearMasivo").val("");
+    $("#listaPermisosCrear").val("")
     $("#listaUsuariosMasivo").val("");
 });
 
@@ -71,29 +72,82 @@ function LlenarAccesosDePerfilConsulta() {
             var table = document.getElementById("accesosPrivilegiosConsulta");
             var i = 0;
             if ($("#Aliado_Actu").val() != "") {
-                do {
-                    var acceso = document.getElementById(data.accesos[i]);
-                    if (acceso != null) {
-                        acceso.checked = true;
-                        SelectCrearAccesoPorValue(document.getElementById(data.accesos[i]).value);
-                    }
+                //do {
+                //    var acceso = document.getElementById(data.accesos[i]);
+                //    if (acceso != null) {
+                //        acceso.checked = true;
+                //        SelectCrearAccesoPorValue(document.getElementById(data.accesos[i]).value);
+                //    }
 
-                    i++;
-                } while (i < data.accesos.length)
+                //    i++;
+                //} while (i < data.accesos.length)
+                LlenarGridiviewAccesos(data);
             }
         }
     });
 }
 
+function LlenarGridiviewAccesos(data)
+{
+    $("#gridViewConsultaAccesos").kendoGrid({
+        autoBind: true,
+        dataSource: {
+            data: data,
+            schema: {
+                model: {
+
+                }
+            },
+        },
+        scrollable: true,
+        filterable: {
+            extra: false,
+            operators: {
+                string: {
+
+                    eq: "Es igual a"
+                }
+            }
+        },
+        sortable: true,
+        columns: [
+            { field: "IdAcceso", title: "Id Acceso", width: 60, headerAttributes: { style: "white-space: normal" } },
+            { field: "NombreAcceso", title: "Nombre Acceso", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "DescripcionAcceso", title: "Descripcion", width: 140, headerAttributes: { style: "white-space: normal" } },
+            { command: { text: " ", click: BorrarAcceso, imageClass: "k-icon k-i-delete", }, title: "Eliminar", width: "50px" },
+            
+        ]
+
+
+    });
+}
+
+function BorrarAcceso(e) {
+    e.preventDefault();
+    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    var data = { cedUsuario: cedulaConsultado, idAcceso: dataItem.IdAcceso };
+    $.ajax({
+        type: "POST",
+        url: urlBorrarAccesoUsuario,
+        data: data,
+        success: function (result) {
+            $('#gridViewConsultaAccesos').empty();
+            LlenarAccesosDePerfilConsulta();
+        }
+    })
+
+}
 
 function SelectCrearAcceso(e) {
     if ($(e.target).is(':checked')) {
+        var id = $(e.target).attr('id');
         if ($("#listaPermisosCrear").val() != "") {
             $("#listaPermisosCrear").val($("#listaPermisosCrear").val() + "-" + $(e.target).val());
+            $("#AccesosaAgregar").val($("#AccesosaAgregar").val() + ', ' + id);
         } else {
             $("#listaPermisosCrear").val($(e.target).val());
+            $("#AccesosaAgregar").val(id);
         }
-
     } else {
         var listaPermisos = $("#listaPermisosCrear").val().split('-');
         var resultado = "";
@@ -108,6 +162,22 @@ function SelectCrearAcceso(e) {
             }
         }
 
+        var listaAccesos = $("#AccesosaAgregar").val().split(', ');
+        var resultado2 = "";
+        var id2 = $(e.target).attr('id');
+        
+        for (var i = 0; i < listaAccesos.length; i++) {
+            if (listaAccesos[i] != id2) {
+                if (resultado2 != "") {
+                    resultado2 = resultado2 + ", " + listaAccesos[i];
+                } else {
+                    resultado2 = listaAccesos[i];
+                }
+
+            }
+        }
+
+        $("#AccesosaAgregar").val(resultado2);
         $("#listaPermisosCrear").val(resultado);
     }
 }
@@ -165,7 +235,7 @@ function LlenarAccesosDeLineaCreacion(data) {
     $("#accesosPrivilegiosCreacion").empty();
     $("#accesosPrivilegiosConsulta").empty();
     $("#listaPermisosCrearMasivo").val("");
-    $("#listaPermisosCrear").val("");
+    //$("#listaPermisosCrear").val("");
     var table = document.getElementById("accesosPrivilegiosCreacion");
     var i = 0;
     do {
@@ -236,7 +306,7 @@ function ConsultarUsuariosDeAliadoYPerfil() {
 function TraerPosiblesLineasDePerfil() {
     $("#accesosPrivilegiosCreacion").empty();
     $("#accesosPrivilegiosConsulta").empty();
-    $("#listaPermisosCrearMasivo").val("");
+    //$("#listaPermisosCrearMasivo").val("");
 
     $.ajax({
         type: "GET",

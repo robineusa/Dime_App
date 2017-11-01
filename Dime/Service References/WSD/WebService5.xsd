@@ -30,6 +30,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UsuariosMasivoData" nillable="true" type="tns:UsuariosMasivoData" />
+  <xs:complexType name="ArrayOfListaAccesoSUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListaAccesoSUsuario" nillable="true" type="tns:ListaAccesoSUsuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListaAccesoSUsuario" nillable="true" type="tns:ArrayOfListaAccesoSUsuario" />
+  <xs:complexType name="ListaAccesoSUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DescripcionAcceso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdAcceso" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreAcceso" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListaAccesoSUsuario" nillable="true" type="tns:ListaAccesoSUsuario" />
   <xs:complexType name="ArrayOfTablaActualizarInbound">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="TablaActualizarInbound" nillable="true" type="tns:TablaActualizarInbound" />

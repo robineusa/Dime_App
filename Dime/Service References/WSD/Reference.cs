@@ -9633,6 +9633,18 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ListaDatosUsuariosDimePorCedulas", ReplyAction="http://tempuri.org/ILoginService/ListaDatosUsuariosDimePorCedulasResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.UsuariosMasivoData>> ListaDatosUsuariosDimePorCedulasAsync(System.Collections.Generic.List<string> cedulas);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ListaAccesosDeUsuario2", ReplyAction="http://tempuri.org/ILoginService/ListaAccesosDeUsuario2Response")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.ListaAccesoSUsuario> ListaAccesosDeUsuario2(int cedUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ListaAccesosDeUsuario2", ReplyAction="http://tempuri.org/ILoginService/ListaAccesosDeUsuario2Response")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.ListaAccesoSUsuario>> ListaAccesosDeUsuario2Async(int cedUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/EliminarAccesosUsuario", ReplyAction="http://tempuri.org/ILoginService/EliminarAccesosUsuarioResponse")]
+        void EliminarAccesosUsuario(int idUsuario, int idAcceso);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/EliminarAccesosUsuario", ReplyAction="http://tempuri.org/ILoginService/EliminarAccesosUsuarioResponse")]
+        System.Threading.Tasks.Task EliminarAccesosUsuarioAsync(int idUsuario, int idAcceso);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/EjecutraProcedimiento", ReplyAction="http://tempuri.org/ILoginService/EjecutraProcedimientoResponse")]
         void EjecutraProcedimiento();
         
@@ -9977,6 +9989,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.UsuariosMasivoData>> ListaDatosUsuariosDimePorCedulasAsync(System.Collections.Generic.List<string> cedulas) {
             return base.Channel.ListaDatosUsuariosDimePorCedulasAsync(cedulas);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.ListaAccesoSUsuario> ListaAccesosDeUsuario2(int cedUsuario) {
+            return base.Channel.ListaAccesosDeUsuario2(cedUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Business.ListaAccesoSUsuario>> ListaAccesosDeUsuario2Async(int cedUsuario) {
+            return base.Channel.ListaAccesosDeUsuario2Async(cedUsuario);
+        }
+        
+        public void EliminarAccesosUsuario(int idUsuario, int idAcceso) {
+            base.Channel.EliminarAccesosUsuario(idUsuario, idAcceso);
+        }
+        
+        public System.Threading.Tasks.Task EliminarAccesosUsuarioAsync(int idUsuario, int idAcceso) {
+            return base.Channel.EliminarAccesosUsuarioAsync(idUsuario, idAcceso);
         }
         
         public void EjecutraProcedimiento() {

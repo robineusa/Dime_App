@@ -51,6 +51,7 @@
   <xs:complexType name="Acceso">
     <xs:sequence>
       <xs:element minOccurs="0" name="AccesosXLineas" nillable="true" type="tns:ArrayOfAccesosXLinea" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdModoLogin" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="ModosLogin" nillable="true" type="tns:ModosLogin" />
