@@ -340,8 +340,7 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
-
-        [HttpPost]
+        [HttpGet]
         public ActionResult EliminaAcceso(string cedUsuario, string idAcceso)
         {
             int IdUser = loginService.RecibirIdUsuario(Convert.ToDecimal(cedUsuario));
