@@ -3056,6 +3056,14 @@
     <Content Include="Scripts\VerificacionDeInventario\SolicitudesEnSeguimiento.js" />
     <Content Include="Scripts\VisitasAutorizadas\ConsultaVisitasAutorizadas.js" />
     <Content Include="Scripts\VisitasAutorizadas\RegistrarVisitaAutorizada.js" />
+    <Content Include="Resources\Documents\Formato_Back_Elite.xls" />
+    <Content Include="Resources\Documents\Formato_Usuarios_Masivo.xls" />
+    <Content Include="Service References\WSD\Dime.WSD.ConsultaBlendingCampañaDestinoReturnViewModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.ConsultaBlendingOperacionDestinoReturnViewModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaGestion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -3089,6 +3097,12 @@
     <Content Include="Service References\WSD\Dime.WSD.GestionDeCelulaUsr.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\WSD\Dime.WSD.GLogRecurrenciaInbound.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.InventarioEquipos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Service References\WSD\Dime.WSD.LogCierreCiclo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -3096,6 +3110,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.LogDocsisOverlap.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.MaestroFallaCausaRaiz.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.MaestroFallaEspecifica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.MaestroOpcionesRecurrencia.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.MaestroOutboundCausa.datasource">
@@ -3131,41 +3154,12 @@
     <Content Include="Service References\WSD\Dime.WSD.TablaActualizarInbound.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\WSD\Dime.WSD.ViewModelSkillsUsuariosBlending.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.MaestroFallaCausaRaiz.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.MaestroFallaEspecifica.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.MaestroOpcionesRecurrencia.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Resources\Documents\Formato_Back_Elite.xls" />
-    <Content Include="Resources\Documents\Formato_Usuarios_Masivo.xls" />
-    <None Include="Service References\WSD\configuration91.svcinfo" />
-    <None Include="Service References\WSD\configuration.svcinfo" />
-    <Content Include="Service References\WSD\Dime.WSD.ConsultaBlendingCampañaDestinoReturnViewModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.ConsultaBlendingOperacionDestinoReturnViewModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.GLogRecurrenciaInbound.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.InventarioEquipos.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\WSD\Dime.WSD.UsuariosMasivoData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\WSD\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <Content Include="Service References\WSD\Dime.WSD.ViewModelSkillsUsuariosBlending.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\WSD\WebService.wsdl" />
     <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
@@ -3185,6 +3179,12 @@
     <None Include="Service References\WSP\configuration91.svcinfo" />
     <None Include="Service References\WSP\configuration.svcinfo" />
     <None Include="Service References\WSD\WebService.disco" />
+    <None Include="Service References\WSD\configuration91.svcinfo" />
+    <None Include="Service References\WSD\configuration.svcinfo" />
+    <None Include="Service References\WSD\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Service References\WSP\Dime.WSP.enviarEncuestaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>

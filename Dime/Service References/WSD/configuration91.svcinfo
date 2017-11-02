@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="ZFqu34oaTbwowCRcNDnBGfdNN0U=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="odZaXs8a1tHX/jI6Y8kqiAVvxRI=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IWebService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IWebService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IWebService1</serializedValue>
+          <serializedValue>WSHttpBinding_IWebService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -125,10 +125,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_ILoginService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_ILoginService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_ILoginService1</serializedValue>
+          <serializedValue>WSHttpBinding_ILoginService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -249,10 +249,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IInboundService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IInboundService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IInboundService1</serializedValue>
+          <serializedValue>WSHttpBinding_IInboundService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -373,10 +373,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IMaestrosService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IMaestrosService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IMaestrosService1</serializedValue>
+          <serializedValue>WSHttpBinding_IMaestrosService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -497,10 +497,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IBlendingService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IBlendingService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IBlendingService1</serializedValue>
+          <serializedValue>WSHttpBinding_IBlendingService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -621,10 +621,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IMarcacionesService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IMarcacionesService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IMarcacionesService1</serializedValue>
+          <serializedValue>WSHttpBinding_IMarcacionesService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -745,10 +745,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_INotificacionesBuenServicioService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_INotificacionesBuenServicioService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_INotificacionesBuenServicioService1</serializedValue>
+          <serializedValue>WSHttpBinding_INotificacionesBuenServicioService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -869,10 +869,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_ICasosCelulaService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_ICasosCelulaService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_ICasosCelulaService1</serializedValue>
+          <serializedValue>WSHttpBinding_ICasosCelulaService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -993,10 +993,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_ICasosAdminService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_ICasosAdminService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_ICasosAdminService1</serializedValue>
+          <serializedValue>WSHttpBinding_ICasosAdminService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1117,10 +1117,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_ITrasladosService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_ITrasladosService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_ITrasladosService1</serializedValue>
+          <serializedValue>WSHttpBinding_ITrasladosService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1241,10 +1241,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IMaestroNodoService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IMaestroNodoService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IMaestroNodoService1</serializedValue>
+          <serializedValue>WSHttpBinding_IMaestroNodoService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1365,10 +1365,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IActivacionClaroVideoService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IActivacionClaroVideoService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IActivacionClaroVideoService1</serializedValue>
+          <serializedValue>WSHttpBinding_IActivacionClaroVideoService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1489,10 +1489,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IActivacionSiembraHDService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IActivacionSiembraHDService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IActivacionSiembraHDService1</serializedValue>
+          <serializedValue>WSHttpBinding_IActivacionSiembraHDService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1613,10 +1613,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IBalanceScoreCardService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IBalanceScoreCardService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IBalanceScoreCardService1</serializedValue>
+          <serializedValue>WSHttpBinding_IBalanceScoreCardService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1737,10 +1737,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IGraficosService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IGraficosService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IGraficosService1</serializedValue>
+          <serializedValue>WSHttpBinding_IGraficosService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1861,10 +1861,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IUsabilidadService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IUsabilidadService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IUsabilidadService1</serializedValue>
+          <serializedValue>WSHttpBinding_IUsabilidadService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -1985,10 +1985,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IDistribucionBlendingService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IDistribucionBlendingService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IDistribucionBlendingService1</serializedValue>
+          <serializedValue>WSHttpBinding_IDistribucionBlendingService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2109,10 +2109,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IMecService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IMecService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IMecService1</serializedValue>
+          <serializedValue>WSHttpBinding_IMecService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2233,10 +2233,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IMultiPlayService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IMultiPlayService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IMultiPlayService1</serializedValue>
+          <serializedValue>WSHttpBinding_IMultiPlayService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2357,10 +2357,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_ICierreCicloService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_ICierreCicloService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_ICierreCicloService1</serializedValue>
+          <serializedValue>WSHttpBinding_ICierreCicloService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2481,10 +2481,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IBackEliteService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IBackEliteService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IBackEliteService1</serializedValue>
+          <serializedValue>WSHttpBinding_IBackEliteService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2605,10 +2605,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IRecurrenciaService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IRecurrenciaService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IRecurrenciaService1</serializedValue>
+          <serializedValue>WSHttpBinding_IRecurrenciaService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2729,10 +2729,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IBitacoraIncidentesService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IBitacoraIncidentesService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IBitacoraIncidentesService1</serializedValue>
+          <serializedValue>WSHttpBinding_IBitacoraIncidentesService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2853,10 +2853,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IPOMSolicitudesService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IPOMSolicitudesService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IPOMSolicitudesService1</serializedValue>
+          <serializedValue>WSHttpBinding_IPOMSolicitudesService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -2977,10 +2977,10 @@
         </property>
       </properties>
     </bindingConfiguration>
-    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IVerificacionDeInventarioService1">
+    <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IVerificacionDeInventarioService">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IVerificacionDeInventarioService1</serializedValue>
+          <serializedValue>WSHttpBinding_IVerificacionDeInventarioService</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3227,10 +3227,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="WSHttpBinding_IWebService" contract="WSD.IWebService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IWebService1">
+    <endpoint name="WSHttpBinding_IWebService" contract="WSD.IWebService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IWebService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3239,7 +3239,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IWebService1</serializedValue>
+          <serializedValue>WSHttpBinding_IWebService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IWebService</serializedValue>
@@ -3281,7 +3281,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -3312,10 +3312,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_ILoginService" contract="WSD.ILoginService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ILoginService1">
+    <endpoint name="WSHttpBinding_ILoginService" contract="WSD.ILoginService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ILoginService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3324,7 +3324,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_ILoginService1</serializedValue>
+          <serializedValue>WSHttpBinding_ILoginService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.ILoginService</serializedValue>
@@ -3366,7 +3366,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -3397,10 +3397,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IInboundService" contract="WSD.IInboundService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IInboundService1">
+    <endpoint name="WSHttpBinding_IInboundService" contract="WSD.IInboundService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IInboundService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3409,7 +3409,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IInboundService1</serializedValue>
+          <serializedValue>WSHttpBinding_IInboundService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IInboundService</serializedValue>
@@ -3451,7 +3451,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -3482,10 +3482,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IMaestrosService" contract="WSD.IMaestrosService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMaestrosService1">
+    <endpoint name="WSHttpBinding_IMaestrosService" contract="WSD.IMaestrosService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMaestrosService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3494,7 +3494,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IMaestrosService1</serializedValue>
+          <serializedValue>WSHttpBinding_IMaestrosService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IMaestrosService</serializedValue>
@@ -3536,7 +3536,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -3567,10 +3567,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IBlendingService" contract="WSD.IBlendingService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IBlendingService1">
+    <endpoint name="WSHttpBinding_IBlendingService" contract="WSD.IBlendingService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IBlendingService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3579,7 +3579,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IBlendingService1</serializedValue>
+          <serializedValue>WSHttpBinding_IBlendingService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IBlendingService</serializedValue>
@@ -3621,7 +3621,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -3652,10 +3652,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IMarcacionesService" contract="WSD.IMarcacionesService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMarcacionesService1">
+    <endpoint name="WSHttpBinding_IMarcacionesService" contract="WSD.IMarcacionesService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMarcacionesService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3664,7 +3664,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IMarcacionesService1</serializedValue>
+          <serializedValue>WSHttpBinding_IMarcacionesService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IMarcacionesService</serializedValue>
@@ -3706,7 +3706,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -3737,10 +3737,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_INotificacionesBuenServicioService" contract="WSD.INotificacionesBuenServicioService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_INotificacionesBuenServicioService1">
+    <endpoint name="WSHttpBinding_INotificacionesBuenServicioService" contract="WSD.INotificacionesBuenServicioService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_INotificacionesBuenServicioService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3749,7 +3749,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_INotificacionesBuenServicioService1</serializedValue>
+          <serializedValue>WSHttpBinding_INotificacionesBuenServicioService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.INotificacionesBuenServicioService</serializedValue>
@@ -3791,7 +3791,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -3822,10 +3822,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_ICasosCelulaService" contract="WSD.ICasosCelulaService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ICasosCelulaService1">
+    <endpoint name="WSHttpBinding_ICasosCelulaService" contract="WSD.ICasosCelulaService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ICasosCelulaService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3834,7 +3834,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_ICasosCelulaService1</serializedValue>
+          <serializedValue>WSHttpBinding_ICasosCelulaService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.ICasosCelulaService</serializedValue>
@@ -3876,7 +3876,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -3907,10 +3907,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_ICasosAdminService" contract="WSD.ICasosAdminService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ICasosAdminService1">
+    <endpoint name="WSHttpBinding_ICasosAdminService" contract="WSD.ICasosAdminService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ICasosAdminService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3919,7 +3919,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_ICasosAdminService1</serializedValue>
+          <serializedValue>WSHttpBinding_ICasosAdminService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.ICasosAdminService</serializedValue>
@@ -3961,7 +3961,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -3992,10 +3992,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_ITrasladosService" contract="WSD.ITrasladosService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ITrasladosService1">
+    <endpoint name="WSHttpBinding_ITrasladosService" contract="WSD.ITrasladosService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ITrasladosService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4004,7 +4004,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_ITrasladosService1</serializedValue>
+          <serializedValue>WSHttpBinding_ITrasladosService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.ITrasladosService</serializedValue>
@@ -4046,7 +4046,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -4077,10 +4077,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IMaestroNodoService" contract="WSD.IMaestroNodoService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMaestroNodoService1">
+    <endpoint name="WSHttpBinding_IMaestroNodoService" contract="WSD.IMaestroNodoService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMaestroNodoService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4089,7 +4089,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IMaestroNodoService1</serializedValue>
+          <serializedValue>WSHttpBinding_IMaestroNodoService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IMaestroNodoService</serializedValue>
@@ -4131,7 +4131,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -4162,10 +4162,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IActivacionClaroVideoService" contract="WSD.IActivacionClaroVideoService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IActivacionClaroVideoService1">
+    <endpoint name="WSHttpBinding_IActivacionClaroVideoService" contract="WSD.IActivacionClaroVideoService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IActivacionClaroVideoService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4174,7 +4174,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IActivacionClaroVideoService1</serializedValue>
+          <serializedValue>WSHttpBinding_IActivacionClaroVideoService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IActivacionClaroVideoService</serializedValue>
@@ -4216,7 +4216,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -4247,10 +4247,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IActivacionSiembraHDService" contract="WSD.IActivacionSiembraHDService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IActivacionSiembraHDService1">
+    <endpoint name="WSHttpBinding_IActivacionSiembraHDService" contract="WSD.IActivacionSiembraHDService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IActivacionSiembraHDService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4259,7 +4259,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IActivacionSiembraHDService1</serializedValue>
+          <serializedValue>WSHttpBinding_IActivacionSiembraHDService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IActivacionSiembraHDService</serializedValue>
@@ -4301,7 +4301,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -4332,10 +4332,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IBalanceScoreCardService" contract="WSD.IBalanceScoreCardService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IBalanceScoreCardService1">
+    <endpoint name="WSHttpBinding_IBalanceScoreCardService" contract="WSD.IBalanceScoreCardService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IBalanceScoreCardService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4344,7 +4344,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IBalanceScoreCardService1</serializedValue>
+          <serializedValue>WSHttpBinding_IBalanceScoreCardService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IBalanceScoreCardService</serializedValue>
@@ -4386,7 +4386,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -4417,10 +4417,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IGraficosService" contract="WSD.IGraficosService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IGraficosService1">
+    <endpoint name="WSHttpBinding_IGraficosService" contract="WSD.IGraficosService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IGraficosService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4429,7 +4429,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IGraficosService1</serializedValue>
+          <serializedValue>WSHttpBinding_IGraficosService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IGraficosService</serializedValue>
@@ -4471,7 +4471,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -4502,10 +4502,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IUsabilidadService" contract="WSD.IUsabilidadService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IUsabilidadService1">
+    <endpoint name="WSHttpBinding_IUsabilidadService" contract="WSD.IUsabilidadService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IUsabilidadService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4514,7 +4514,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IUsabilidadService1</serializedValue>
+          <serializedValue>WSHttpBinding_IUsabilidadService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IUsabilidadService</serializedValue>
@@ -4556,7 +4556,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -4587,10 +4587,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IDistribucionBlendingService" contract="WSD.IDistribucionBlendingService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IDistribucionBlendingService1">
+    <endpoint name="WSHttpBinding_IDistribucionBlendingService" contract="WSD.IDistribucionBlendingService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IDistribucionBlendingService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4599,7 +4599,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IDistribucionBlendingService1</serializedValue>
+          <serializedValue>WSHttpBinding_IDistribucionBlendingService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IDistribucionBlendingService</serializedValue>
@@ -4641,7 +4641,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -4672,10 +4672,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IMecService" contract="WSD.IMecService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMecService1">
+    <endpoint name="WSHttpBinding_IMecService" contract="WSD.IMecService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMecService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4684,7 +4684,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IMecService1</serializedValue>
+          <serializedValue>WSHttpBinding_IMecService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IMecService</serializedValue>
@@ -4726,7 +4726,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -4757,10 +4757,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IMultiPlayService" contract="WSD.IMultiPlayService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMultiPlayService1">
+    <endpoint name="WSHttpBinding_IMultiPlayService" contract="WSD.IMultiPlayService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IMultiPlayService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4769,7 +4769,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IMultiPlayService1</serializedValue>
+          <serializedValue>WSHttpBinding_IMultiPlayService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IMultiPlayService</serializedValue>
@@ -4811,7 +4811,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -4842,10 +4842,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_ICierreCicloService" contract="WSD.ICierreCicloService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ICierreCicloService1">
+    <endpoint name="WSHttpBinding_ICierreCicloService" contract="WSD.ICierreCicloService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_ICierreCicloService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4854,7 +4854,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_ICierreCicloService1</serializedValue>
+          <serializedValue>WSHttpBinding_ICierreCicloService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.ICierreCicloService</serializedValue>
@@ -4896,7 +4896,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -4927,10 +4927,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IBackEliteService" contract="WSD.IBackEliteService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IBackEliteService1">
+    <endpoint name="WSHttpBinding_IBackEliteService" contract="WSD.IBackEliteService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IBackEliteService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4939,7 +4939,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IBackEliteService1</serializedValue>
+          <serializedValue>WSHttpBinding_IBackEliteService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IBackEliteService</serializedValue>
@@ -4981,7 +4981,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -5012,10 +5012,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IRecurrenciaService" contract="WSD.IRecurrenciaService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IRecurrenciaService1">
+    <endpoint name="WSHttpBinding_IRecurrenciaService" contract="WSD.IRecurrenciaService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IRecurrenciaService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -5024,7 +5024,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IRecurrenciaService1</serializedValue>
+          <serializedValue>WSHttpBinding_IRecurrenciaService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IRecurrenciaService</serializedValue>
@@ -5066,7 +5066,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -5097,10 +5097,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IBitacoraIncidentesService" contract="WSD.IBitacoraIncidentesService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IBitacoraIncidentesService1">
+    <endpoint name="WSHttpBinding_IBitacoraIncidentesService" contract="WSD.IBitacoraIncidentesService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IBitacoraIncidentesService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -5109,7 +5109,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IBitacoraIncidentesService1</serializedValue>
+          <serializedValue>WSHttpBinding_IBitacoraIncidentesService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IBitacoraIncidentesService</serializedValue>
@@ -5151,7 +5151,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -5182,10 +5182,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IPOMSolicitudesService" contract="WSD.IPOMSolicitudesService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IPOMSolicitudesService1">
+    <endpoint name="WSHttpBinding_IPOMSolicitudesService" contract="WSD.IPOMSolicitudesService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IPOMSolicitudesService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -5194,7 +5194,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IPOMSolicitudesService1</serializedValue>
+          <serializedValue>WSHttpBinding_IPOMSolicitudesService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IPOMSolicitudesService</serializedValue>
@@ -5236,7 +5236,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -5267,10 +5267,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IVerificacionDeInventarioService" contract="WSD.IVerificacionDeInventarioService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IVerificacionDeInventarioService1">
+    <endpoint name="WSHttpBinding_IVerificacionDeInventarioService" contract="WSD.IVerificacionDeInventarioService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IVerificacionDeInventarioService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -5279,7 +5279,7 @@
           <serializedValue>wsHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>WSHttpBinding_IVerificacionDeInventarioService1</serializedValue>
+          <serializedValue>WSHttpBinding_IVerificacionDeInventarioService</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>WSD.IVerificacionDeInventarioService</serializedValue>
@@ -5321,7 +5321,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
@@ -5352,10 +5352,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="WSHttpBinding_IVisitasAutorizadasService" contract="WSD.IVisitasAutorizadasService" bindingType="wsHttpBinding" address="http://localhost:49400/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IVisitasAutorizadasService">
+    <endpoint name="WSHttpBinding_IVisitasAutorizadasService" contract="WSD.IVisitasAutorizadasService" bindingType="wsHttpBinding" address="http://172.18.175.56/WSD/WebService.svc/WebService" bindingConfiguration="WSHttpBinding_IVisitasAutorizadasService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:49400/WebService.svc/WebService</serializedValue>
+          <serializedValue>http://172.18.175.56/WSD/WebService.svc/WebService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -5406,7 +5406,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAdKQfD3rl+bFg2QQhdGqRAktWwMggAAAAAQAAACQDAAAwggMgMIICDKADAgECAhC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQAwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMB4XDTE3MDcxMDE1MjQwMloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqa9YOEFpfd3H5wgyQ9YPKDh86SF+9arYEbmXDcvUOOGgQVleHdD+vpsF8X3LexU+KvfOuN3dwvOQpIIr6v8HMCZXwFY0A/ErVmW2lA63lu10Wu46yKeL8ATUnr/SDNUGTshQ1EXPF9EveSZLuXQZSO+4nnp/1WwRjh0Rer9QWZDLzDCWl0qmRK0jg1RwD/WS9/D3+DkivNI3VGrkFDa0vTRGX4j66GpRH4WD6ssyTXv5P7BHoOXsHCQbwHCN2D3kMvnegyJjFV8ujqotRjwcZoSBXFfXsgiUP/l2cVlprEabOms4qx32vc8/ahXThGv2C93rqEvvRHxneql9KpCStwIDAQABo1gwVjBUBgNVHQEETTBLgBBQniTlDmPN7B1KkzTuI2ffoSUwIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9ughC6LbD7zv1im0qu/vDQuI6IMAkGBSsOAwIdBQADggEBAIlwcVRt42Dz/nxFQxDixVz4uP0+BEcV3XgIWbZo1iFDh5ZvOE6nWMoF7QspkkqLsZYx7NBy96b+dtilGZMMDyBeKwVEhgDF9T2aROML8x3IOQWZmSTVf6gACmf/rK37FRkkixFWpwAaVuGdgu37c09H3bqv1IiKNT3HnOX10kaMvXRo5qn+roMMGo0RU87nvBJLq27kaePQGP786pCXlIAsx1NltOrqgDLItanSUGJfcvW0GWKpP04P+R8KygtCO0kXDs6bR+0f54Bnfc3QGyTI+q+Wi1tOxwFS04QolT8Z4AaSPjzoyGPXkC5SMBc+ekTQFocEUeMsaDr5wn/cnZA=</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAA1oNoiFokM3IvzjUwP6auw6zRczIgAAAAAQAAAEgCAAAwggJEMIIB8qADAgECAhBPiBXf9t+PlU9oV9g2LVL+MAkGBSsOAwIdBQAwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3kwHhcNMTcwMTEyMjEyNzA2WhcNMzkxMjMxMjM1OTU5WjAjMSEwHwYDVQQDExhEaW1lU2VydmljZUNlcnRpZmljYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC0/+2yptG/4+bQZ7j1b+wa3BiikcUk9qq8IozRjrGBqRxvG+qgQ318ciYIQkjjwzEXpzmhdIlB+2wHKY4tfdG6sMQ6bh44ASL0Gpi/nuLZwFAxoGzsQdcB96M0jwfASVxWvHNkXwV+fXjC4vgiovTOtczOWnJE/gh1MTXRodY9l7oLBnumGy+tMpFOgJQTG88j7+m3pXQ2yy6tH8VXbI9JCyrRT3+aZtWNBNnUZGndB6q/HYifyPbFQ7L7ya33g8Y1o+Ek12X1OW9V+GIToug8noU2B4EelFehx9RWOLNTcCt610j0GJvcyFEV6ksgaB4f1g+xQZVft8eP0/okeg1FAgMBAAGjSzBJMEcGA1UdAQRAMD6AEBLkCS0GHR1PAI1hIdwWZGOhGDAWMRQwEgYDVQQDEwtSb290IEFnZW5jeYIQBjdsAKoAZIoRz7jUqlw19DAJBgUrDgMCHQUAA0EAgOrfMDH6CKQq9Y1uBtrXPu3nNrrkeJGxtAIeoCP1asc7WKbNxLBQuHlTRrN6wcx9i5ALv2yzuXgRadijz19hVQ==</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
