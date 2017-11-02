@@ -75,7 +75,7 @@ function ActualizarParametros()
     var tvSelected = $("input[name=tvCheck]:checked").val();
     var interSelected = $("input[name=interCheck]:checked").val();
     var estrato = $("#tbEstrato").val();
-    //alert(vozSelected + ','+tvSelected + ','+interSelected + ',');
+    
     $.ajax({
         type: "GET",
         url: urlConsultaTarifaNueva,
@@ -279,16 +279,21 @@ function SetDataComposicionProductoInicial(voz, tv, internet)
         {
         document.getElementById("cbVoz").click();
        }
-
+     alert(tv);
      if (tv != "NO") {
          
          var tvDividida = tv.split(" ");
+         alert(tvDividida);
          if (tvDividida[0] == "BASICA" || tvDividida[0] == "AVANZADA" || tvDividida[0] == "SUPERIOR")
          {
              $("[value='" + tv + "']").click();
+             if (tvDividida[0] == "BASICA")
+             {
+                 $("[value='PLUS']").click();
+             }
          } else
             {
-             if (tvDividida[2] == "(B)") { $("#cbTvSatelitalBasica").click(); }
+             if (tvDividida[2] == "(B)") { $("#cbTvSatelitalBasica").click();}
              if (tvDividida[2] == "(A)") { $("#cbTvSatelitalAvanzada").click(); }
              if (tvDividida[2] == "(S)") { $("#cbTvSatelitalSuperior").click(); }
          }

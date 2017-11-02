@@ -53,6 +53,7 @@
         $("#listaUsuariosMasivo").val("");
     }
     $("#listaPermisosCrearMasivo").val("");
+    $("#listaPermisosCrear").val("")
     $("#listaUsuariosMasivo").val("");
 });
 
@@ -68,32 +69,93 @@ function LlenarAccesosDePerfilConsulta() {
             var data = JSON.parse(result);
             console.log(data);
             $("#accesosPrivilegiosConsulta").empty();
-            var table = document.getElementById("accesosPrivilegiosConsulta");
+            var table = "";
+            table = document.getElementById("accesosPrivilegiosConsulta");
             var i = 0;
             if ($("#Aliado_Actu").val() != "") {
-                do {
-                    var acceso = document.getElementById(data.accesos[i]);
-                    if (acceso != null) {
-                        acceso.checked = true;
-                        SelectCrearAccesoPorValue(document.getElementById(data.accesos[i]).value);
-                    }
+                //do {
+                //    var acceso = document.getElementById(data.accesos[i]);
+                //    if (acceso != null) {
+                //        acceso.checked = true;
+                //        SelectCrearAccesoPorValue(document.getElementById(data.accesos[i]).value);
+                //    }
 
-                    i++;
-                } while (i < data.accesos.length)
+                //    i++;
+                //} while (i < data.accesos.length)
+                LlenarGridiviewAccesos(data);
             }
         }
     });
 }
 
+function LlenarGridiviewAccesos(data)
+{
+    $("#gridViewConsultaAccesos").empty();
+    $("#gridViewConsultaAccesos").kendoGrid({
+        autoBind: true,
+        dataSource: {
+            data: data,
+            schema: {
+                model: {
+
+                }
+            },
+        },
+        scrollable: true,
+        filterable: {
+            extra: false,
+            operators: {
+                string: {
+
+                    eq: "Es igual a"
+                }
+            }
+        },
+        sortable: true,
+        columns: [
+            { field: "IdAcceso", title: "Id Acceso", width: 60, headerAttributes: { style: "white-space: normal" } },
+            { field: "NombreAcceso", title: "Nombre Acceso", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "DescripcionAcceso", title: "Descripcion", width: 140, headerAttributes: { style: "white-space: normal" } },
+            { command: { text: " ", click: BorrarAcceso, imageClass: "k-icon k-i-delete", }, title: "Eliminar", width: "50px" },
+            
+        ]
+
+
+    });
+}
+
+function BorrarAcceso(e) {
+    e.preventDefault();
+    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    dataItem.empty();
+    dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    var data = { cedUsuario: cedulaConsultado, idAcceso: dataItem.IdAcceso };
+    var id = dataItem.IdAcceso;
+    alert(data.idAcceso);
+    $.ajax({
+        type: "GET",
+        url: urlBorrarAccesoUsuario,
+        data: data,
+        dataType: "html",
+        success: function (result) {
+            $('#gridViewConsultaAccesos').empty();
+            //$('#gridViewConsultaAccesos').html(result);
+            LlenarAccesosDePerfilConsulta();
+        }
+    });
+
+}
 
 function SelectCrearAcceso(e) {
     if ($(e.target).is(':checked')) {
+        var id = $(e.target).attr('id');
         if ($("#listaPermisosCrear").val() != "") {
             $("#listaPermisosCrear").val($("#listaPermisosCrear").val() + "-" + $(e.target).val());
+            $("#AccesosaAgregar").val($("#AccesosaAgregar").val() + ', ' + id);
         } else {
             $("#listaPermisosCrear").val($(e.target).val());
+            $("#AccesosaAgregar").val(id);
         }
-
     } else {
         var listaPermisos = $("#listaPermisosCrear").val().split('-');
         var resultado = "";
@@ -108,6 +170,22 @@ function SelectCrearAcceso(e) {
             }
         }
 
+        var listaAccesos = $("#AccesosaAgregar").val().split(', ');
+        var resultado2 = "";
+        var id2 = $(e.target).attr('id');
+        
+        for (var i = 0; i < listaAccesos.length; i++) {
+            if (listaAccesos[i] != id2) {
+                if (resultado2 != "") {
+                    resultado2 = resultado2 + ", " + listaAccesos[i];
+                } else {
+                    resultado2 = listaAccesos[i];
+                }
+
+            }
+        }
+
+        $("#AccesosaAgregar").val(resultado2);
         $("#listaPermisosCrear").val(resultado);
     }
 }
@@ -121,11 +199,15 @@ function SelectCrearAccesoPorValue(value) {
 }
 
 function SelectCrearAccesoMasivo(e) {
+    var idm = $(e.target).attr('id');
+    
     if ($(e.target).is(':checked')) {
         if ($("#listaPermisosCrearMasivo").val() != "") {
             $("#listaPermisosCrearMasivo").val($("#listaPermisosCrearMasivo").val() + "-" + $(e.target).val());
+            $("#AccesosaAgregarMasivos").val($("#AccesosaAgregarMasivos").val() + ', ' + idm);
         } else {
             $("#listaPermisosCrearMasivo").val($(e.target).val());
+            $("#AccesosaAgregarMasivos").val(idm);
         }
 
     } else {
@@ -142,11 +224,27 @@ function SelectCrearAccesoMasivo(e) {
             }
         }
 
+        var listaAccesosMasivo = $("#AccesosaAgregarMasivos").val().split(', ');
+        var resultado3 = "";
+        //var id2 = $(e.target).attr('id');
+
+        for (var i = 0; i < listaAccesosMasivo.length; i++) {
+            if (listaAccesosMasivo[i] != idm) {
+                if (resultado3 != "") {
+                    resultado3 = resultado3 + ", " + listaAccesosMasivo[i];
+                } else {
+                    resultado3 = listaAccesosMasivo[i];
+                }
+
+            }
+        }
+
+        $("#AccesosaAgregarMasivos").val(resultado3);
         $("#listaPermisosCrearMasivo").val(resultado);
     }
 }
 function TraerPosiblesAccesosDeLinea() {
-    $("#listaPermisosCrearMasivo").val("");
+    //$("#listaPermisosCrearMasivo").val("");
 
     $.ajax({
         type: "GET",
@@ -164,8 +262,8 @@ function TraerPosiblesAccesosDeLinea() {
 function LlenarAccesosDeLineaCreacion(data) {
     $("#accesosPrivilegiosCreacion").empty();
     $("#accesosPrivilegiosConsulta").empty();
-    $("#listaPermisosCrearMasivo").val("");
-    $("#listaPermisosCrear").val("");
+    //$("#listaPermisosCrearMasivo").val("");
+    //$("#listaPermisosCrear").val("");
     var table = document.getElementById("accesosPrivilegiosCreacion");
     var i = 0;
     do {
@@ -236,7 +334,7 @@ function ConsultarUsuariosDeAliadoYPerfil() {
 function TraerPosiblesLineasDePerfil() {
     $("#accesosPrivilegiosCreacion").empty();
     $("#accesosPrivilegiosConsulta").empty();
-    $("#listaPermisosCrearMasivo").val("");
+    //$("#listaPermisosCrearMasivo").val("");
 
     $.ajax({
         type: "GET",
@@ -266,7 +364,7 @@ function TraerPosiblesLineasDePerfil() {
 
 function TraerPosiblesLineasDePerfilMasivo() {
     $("#accesosPrivilegiosMasivos").empty();
-    $("#listaPermisosCrearMasivo").val("");
+    //$("#listaPermisosCrearMasivo").val("");
 
     $.ajax({
         type: "GET",
@@ -287,8 +385,7 @@ function TraerPosiblesLineasDePerfilMasivo() {
     });
 };
 function TraerPosiblesAccesosDeLineaMasivo() {
-    $("#listaPermisosCrearMasivo").val("");
-
+    //$("#listaPermisosCrearMasivo").val("");
     $.ajax({
         type: "GET",
         url: urlPosiblesAccesosDeLinea,
@@ -314,7 +411,7 @@ function LlenarAccesosDeLineaMasivos(data) {
             var newCell = row.insertCell(j);
             newCell.style.padding = "4px";
             newCell.innerHTML = '  <label style="font-weight: 400; padding:5px;  border-color: burlywood; background-color:rgba(222, 184, 135, 0.8); width:100%">' +
-                                               ' <input type="checkbox" class="minimal" value="' + data.accesos[i].Id + '" onchange="SelectCrearAccesoMasivo(event);"  /> ' + data.accesos[i].Nombre +
+                                               ' <input type="checkbox" class="minimal" value="' + data.accesos[i].Id + '" onchange="SelectCrearAccesoMasivo(event);" id="' + data.accesos[i].Nombre + '"  /> ' + data.accesos[i].Nombre +
                                     '</label>';
         }
     } while (i < data.accesos.length)

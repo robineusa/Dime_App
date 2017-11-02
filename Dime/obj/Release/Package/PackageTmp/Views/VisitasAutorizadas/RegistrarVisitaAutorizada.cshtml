@@ -1,6 +1,6 @@
 ﻿@model Telmexla.Servicios.DIME.Entity.VisitasAutorizadas
 @{
-    ViewBag.Title = "RegistrarVisitaAutorizada";
+    ViewBag.Title = "Registrar Visita Autorizada";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @if (Session["Registrar Solicitud Inventario"] != null)
@@ -34,7 +34,7 @@ using (Html.BeginForm("RegistrarVisitaAutorizada", "VisitasAutorizadas", FormMet
                                         @Html.DropDownListFor(m => m.Motivo, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "motivo", @class = "form-control input-sm" })
                                     </td>
                                     <td width="200" style="padding-left:2px;">
-                                        <small>Cedula Usuario de Gestión</small>
+                                        <small>Cedula del Asesor</small>
                                         @Html.TextBoxFor(m => m.CedulaUsuarioGestion, new { @class = "form-control input-sm", @Id = "cedulausuario" })
                                     </td>
                                 </tr>

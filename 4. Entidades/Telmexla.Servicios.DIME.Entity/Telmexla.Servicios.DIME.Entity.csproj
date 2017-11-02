@@ -217,6 +217,7 @@
     <Compile Include="UsuariosNotificados.cs" />
     <Compile Include="UsuariosXAcceso.cs" />
     <Compile Include="UsuariosXPreguntasDesb.cs" />
+    <Compile Include="VAMotivosSolicitud.cs" />
     <Compile Include="ViewModelBackElite.cs" />
     <Compile Include="ViewModelBitacoraIncidentes.cs" />
     <Compile Include="ViewModelBlending.cs" />

@@ -218,6 +218,7 @@
     <Compile Include="Controllers\ReportesController.cs" />
     <Compile Include="Controllers\TrasladosController.cs" />
     <Compile Include="Controllers\VerificacionDeInventarioController.cs" />
+    <Compile Include="Controllers\VisitasAutorizadasController.cs" />
     <Compile Include="Extensions\ClaimsExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -3030,6 +3031,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BSCAdministracionBalanced.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Business.ListaAccesoSUsuario.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VisitasAutorizadas1.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VAMotivosSolicitud.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3052,6 +3054,8 @@
     <Content Include="Scripts\VerificacionDeInventario\ReasignacionDeSolicitudes.js" />
     <Content Include="Scripts\VerificacionDeInventario\RegistrarSolicitud.js" />
     <Content Include="Scripts\VerificacionDeInventario\SolicitudesEnSeguimiento.js" />
+    <Content Include="Scripts\VisitasAutorizadas\ConsultaVisitasAutorizadas.js" />
+    <Content Include="Scripts\VisitasAutorizadas\RegistrarVisitaAutorizada.js" />
     <Content Include="Service References\WSD\Dime.WSD.DatoConsultaGestion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -3158,32 +3162,29 @@
     <Content Include="Service References\WSD\Dime.WSD.UsuariosMasivoData.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\WSD\Dime.WSD.VAMotivosSolicitud1.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\WSD\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService1.wsdl" />
-    <None Include="Service References\WSD\WebService5.xsd">
+    <None Include="Service References\WSD\WebService.wsdl" />
+    <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService51.xsd">
+    <None Include="Service References\WSD\WebService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService52.xsd">
+    <None Include="Service References\WSD\WebService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService53.xsd">
+    <None Include="Service References\WSD\WebService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService54.xsd">
+    <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\WSP\configuration91.svcinfo" />
     <None Include="Service References\WSP\configuration.svcinfo" />
-    <None Include="Service References\WSD\WebService1.disco" />
+    <None Include="Service References\WSD\WebService.disco" />
     <Content Include="Service References\WSP\Dime.WSP.enviarEncuestaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -3491,6 +3492,8 @@
     <Content Include="Views\CierreDeCiclo\Instalaciones.cshtml" />
     <Content Include="Views\Reportes\ListaDeUmbralesActuales.cshtml" />
     <Content Include="Views\Reportes\AdministrarUmbralesBalanced.cshtml" />
+    <Content Include="Views\VisitasAutorizadas\ConsultaVisitasAutorizadas.cshtml" />
+    <Content Include="Views\VisitasAutorizadas\RegistrarVisitaAutorizada.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
