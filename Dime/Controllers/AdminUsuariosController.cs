@@ -340,14 +340,22 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
-        [HttpGet]
-        public ActionResult EliminaAcceso(string cedUsuario, string idAcceso)
+        [HttpPost]
+        public JsonResult EliminaAcceso(string cedUsuario, IList<string> idAcceso)
         {
-            int IdUser = loginService.RecibirIdUsuario(Convert.ToDecimal(cedUsuario));
-            int idAccess = Convert.ToInt32(idAcceso);
-            loginService.EliminarAccesosUsuario(IdUser, idAccess);
+            foreach (var Access in idAcceso)
+            {
+                int IdUser = loginService.RecibirIdUsuario(Convert.ToDecimal(cedUsuario));
+                int idAccess = Convert.ToInt32(Access);
+                loginService.EliminarAccesosUsuario(IdUser, idAccess);
+            }
 
-            return Content("Exitoso");
+            return new JsonResult
+            {
+                Data = JsonConvert.SerializeObject("Correcto"),
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+
+            };
         }
 
     }

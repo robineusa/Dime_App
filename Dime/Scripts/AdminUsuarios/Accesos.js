@@ -1,4 +1,5 @@
-﻿$(document).ready(function () {
+﻿var IdAccessos = [];
+$(document).ready(function () {
     $("#Actualizar_Usuarios_Masivo").css("display", "none");
     $("#Li1").click(function () {
 
@@ -91,6 +92,7 @@ function LlenarAccesosDePerfilConsulta() {
 function LlenarGridiviewAccesos(data)
 {
     $("#gridViewConsultaAccesos").empty();
+    $("#gridViewConsultaAccesos").css("display","block"); 
     $("#gridViewConsultaAccesos").kendoGrid({
         autoBind: true,
         dataSource: {
@@ -116,33 +118,55 @@ function LlenarGridiviewAccesos(data)
             { field: "IdAcceso", title: "Id Acceso", width: 60, headerAttributes: { style: "white-space: normal" } },
             { field: "NombreAcceso", title: "Nombre Acceso", width: 80, headerAttributes: { style: "white-space: normal" } },
             { field: "DescripcionAcceso", title: "Descripcion", width: 140, headerAttributes: { style: "white-space: normal" } },
-            { command: { text: " ", click: BorrarAcceso, imageClass: "k-icon k-i-delete", }, title: "Eliminar", width: "50px" },
-            
+            //{ command: { text: " ", click: BorrarAcceso, imageClass: "k-icon k-i-delete", }, title: "Eliminar", width: "50px" },
+            {
+
+                width: 60, title: "<input id='checkAll', type='checkbox', class='check-box'  onchange='CheckBoxAll()' /><div id='' class='btn btn-block btn-danger' style='float: right; max-width:50%;' onclick='AgregaAccesosaBorrar()'>Eliminar Accesos </div>",
+                template: "<input type=\"checkbox\" class=\"checkControl\"/>"
+            },            
         ]
-
-
     });
 }
 
-function BorrarAcceso(e) {
-    e.preventDefault();
-    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    dataItem.empty();
-    dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    var data = { cedUsuario: cedulaConsultado, idAcceso: dataItem.IdAcceso };
-    var id = dataItem.IdAcceso;
-    alert(data.idAcceso);
-    $.ajax({
-        type: "GET",
-        url: urlBorrarAccesoUsuario,
-        data: data,
-        dataType: "html",
-        success: function (result) {
-            $('#gridViewConsultaAccesos').empty();
-            //$('#gridViewConsultaAccesos').html(result);
-            LlenarAccesosDePerfilConsulta();
+function AgregaAccesosaBorrar()
+{
+    var grid = $("#gridViewConsultaAccesos").data("kendoGrid");
+    var gridDataArray = $('#gridViewConsultaAccesos').data('kendoGrid')._data;
+    for (var i = 1; i <= (200+ 1) ; i++) {
+        var row = grid.table.find("tr:nth-child(" + i + ")");
+        var checkbox = $(row).find(".checkControl");
+        if (checkbox.is(":checked")) {
+            var id = gridDataArray[i - 1].IdAcceso;
+            IdAccessos.push(gridDataArray[i - 1].IdAcceso);
         }
-    });
+    }
+    BorrarAcceso();
+}
+
+
+function BorrarAcceso() {
+    var data = JSON.stringify({ cedUsuario: cedulaConsultado, idAcceso: IdAccessos });
+    if (IdAccessos.length > 0) {
+        $.ajax({
+            type: "POST",
+            traditional: true,
+            url: urlBorrarAccesoUsuario,
+            data: data,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (result) {
+                $('#gridViewConsultaAccesos').empty();
+                //$('#gridViewConsultaAccesos').html(result);
+                LlenarAccesosDePerfilConsulta();
+            }
+        });
+        IdAccessos = [];
+    }
+    else
+    {
+        alert('Debe seleccionar al menos un ACCESO');
+    }
+    //alert('3');
 
 }
 
@@ -435,12 +459,19 @@ function GuardarTotalAccesosNuevos() {
         //}
     }
 
-};
-
+}
 
 
 function CheckBoxAll() {
-    $(".checkControl").prop("checked", true);
+    //alert(Check.is(":cheked"));
+    var Check = document.getElementById('checkAll').checked;
+    if (Check == true) {
+        $(".checkControl").prop("checked", true);
+    }
+    else {
+        $(".checkControl").prop("checked", false);
+    }
+
 }
 
 function CargarGridDefault(data) {
