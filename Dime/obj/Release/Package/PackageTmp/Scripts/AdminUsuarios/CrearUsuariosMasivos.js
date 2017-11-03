@@ -90,21 +90,113 @@ function TraerPosiblesLineasYAccesosDePerfil() {
 
 function TraerPosiblesAccesosDeLinea() {
 
+    //$.ajax({
+    //    type: "GET",
+    //    url: urlPosiblesAccesosMasivo,
+    //    contentType: "application/json; charset=utf-8",
+    //    data: { idLinea: $("#lineaCreacion").val() },
+    //    dataType: 'json',
+    //    success: function (result) {
+    //        var json = JSON.parse(result);
+    //        console.log(json);
+    //        LlenarAccesosDeLineaCreacion(json);
+    //    }
+    //});
     $.ajax({
         type: "GET",
-        url: urlPosiblesAccesosMasivo,
+        url: urlListaAccesos,
         contentType: "application/json; charset=utf-8",
-        data: { idLinea: $("#lineaCreacion").val() },
         dataType: 'json',
         success: function (result) {
-            var json = JSON.parse(result);
-            console.log(json);
-            LlenarAccesosDeLineaCreacion(json);
+            var data = JSON.parse(result);
+            CambiarModoLogin(data);
+            TaerTodosAccesos(data);
         }
     });
 
 };
 
+function CambiarModoLogin(data) {
+    for (var i = 0; i < data.length; i++) {
+
+        if (data[i].IdModoLogin == "1") {
+            data[i].IdModoLogin = "ADMINISTRADOR";
+        }
+        if (data[i].IdModoLogin == "2") {
+            data[i].IdModoLogin = "ASESOR";
+        }
+        if (data[i].IdModoLogin == "3") {
+            data[i].IdModoLogin = "CELULA";
+        }
+
+    }
+
+}
+
+function TaerTodosAccesos(data) {
+    $("#GridAccesosMasivo").empty();
+    $("#GridAccesosMasivo").kendoGrid({
+        autoBind: true,
+        dataSource: {
+            data: data,
+            schema: {
+                model: {
+
+                }
+            },
+        },
+        scrollable: true,
+        filterable: {
+            extra: false,
+            operators: {
+                string: {
+
+                    eq: "Es igual a"
+                }
+            }
+        },
+        sortable: true,
+        columns: [
+            { field: "Id", title: "Id Acceso", width: 60, headerAttributes: { style: "white-space: normal" } },
+            { field: "Nombre", title: "Nombre Acceso", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "IdModoLogin", title: "Modo de Logueo", width: 50, headerAttributes: { style: "white-space: normal" } },
+            { field: "Descripcion", title: "Descripcion", width: 140, headerAttributes: { style: "white-space: normal" } },
+            {
+
+                width: 40, title: "<input id='checkAll', type='checkbox', class='check-box'  onchange='CheckBoxAll()' />Marcar/Desmarcar",
+                template: "<input type=\"checkbox\" class=\"checkControl\"/>"
+            },
+        ]
+    });
+}
+
+function CheckBoxAll() {
+    var Check = document.getElementById('checkAll').checked;
+    if (Check == true) {
+        $(".checkControl").prop("checked", true);
+    }
+    else {
+        $(".checkControl").prop("checked", false);
+    }
+
+}
+
+function AgregaAccesosaGuardarMasivo() {
+    var grid = $("#GridAccesosMasivo").data("kendoGrid");
+    var gridDataArray = $('#GridAccesosMasivo').data('kendoGrid')._data;
+    for (var i = 1; i <= (200 + 1) ; i++) {
+
+        var row = grid.table.find("tr:nth-child(" + i + ")");
+        var checkbox = $(row).find(".checkControl");
+        if (checkbox.is(":checked")) {
+            if ($("#listaPermisosCrearMas").val() != "") {
+                $("#listaPermisosCrearMas").val($("#listaPermisosCrearMas").val() + "-" + gridDataArray[i - 1].Id);
+            } else {
+                $("#listaPermisosCrearMas").val(gridDataArray[i - 1].Id);
+            }
+        }
+    }
+}
 
 function LlenarLineasDePerfil(data) {
     $("#lineaCreacion").empty();
@@ -166,6 +258,7 @@ function SelectCrearAcceso(e) {
 
 function GuardarUsuarios()
 {
+    AgregaAccesosaGuardarMasivo();
     var accesosCrear = $("#listaPermisosCrearMas").val();
     var perfilCrear = $("#perfilCreate").val();
     var lineaCrear = $("#lineaCreacion").val();
