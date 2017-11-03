@@ -357,6 +357,12 @@ namespace Dime.Controllers
 
             };
         }
-
+        [HttpGet]
+        public JsonResult ListaAccesos()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(loginService.ListaAccesos()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }

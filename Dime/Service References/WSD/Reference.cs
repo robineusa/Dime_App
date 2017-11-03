@@ -9650,6 +9650,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/EjecutraProcedimiento", ReplyAction="http://tempuri.org/ILoginService/EjecutraProcedimientoResponse")]
         System.Threading.Tasks.Task EjecutraProcedimientoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ListaAccesos", ReplyAction="http://tempuri.org/ILoginService/ListaAccesosResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Acceso> ListaAccesos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ListaAccesos", ReplyAction="http://tempuri.org/ILoginService/ListaAccesosResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Acceso>> ListaAccesosAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10013,6 +10019,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task EjecutraProcedimientoAsync() {
             return base.Channel.EjecutraProcedimientoAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Acceso> ListaAccesos() {
+            return base.Channel.ListaAccesos();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Acceso>> ListaAccesosAsync() {
+            return base.Channel.ListaAccesosAsync();
         }
     }
     

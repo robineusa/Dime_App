@@ -84,9 +84,22 @@ function LlenarAccesosDePerfilConsulta() {
                 //    i++;
                 //} while (i < data.accesos.length)
                 LlenarGridiviewAccesos(data);
+                
             }
         }
     });
+    $.ajax({
+        type: "GET",
+        url: urlListaAccesos,
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+        success: function (result) {
+            var data = JSON.parse(result);
+            CambiarModoLogin(data);
+            TaerTodosAccesos(data);
+        }
+    });
+    
 }
 
 function LlenarGridiviewAccesos(data)
@@ -168,6 +181,78 @@ function BorrarAcceso() {
     }
     //alert('3');
 
+}
+
+function CambiarModoLogin(data) {
+    for (var i = 0; i < data.length; i++) {
+
+        if (data[i].IdModoLogin == "1") {
+            data[i].IdModoLogin = "ADMINISTRADOR";
+        }
+        if (data[i].IdModoLogin == "2") {
+            data[i].IdModoLogin = "ASESOR";
+        }
+        if (data[i].IdModoLogin == "3") {
+            data[i].IdModoLogin = "CELULA";
+        }
+
+    }
+
+}
+
+function TaerTodosAccesos(data) {
+    $("#GridListaAccesos").empty();
+    $("#GridListaAccesos").kendoGrid({
+        autoBind: true,
+        dataSource: {
+            data: data,
+            schema: {
+                model: {
+
+                }
+            },
+        },
+        scrollable: true,
+        filterable: {
+            extra: false,
+            operators: {
+                string: {
+
+                    eq: "Es igual a"
+                }
+            }
+        },
+        sortable: true,
+        columns: [
+            { field: "Id", title: "Id Acceso", width: 60, headerAttributes: { style: "white-space: normal" } },
+            { field: "Nombre", title: "Nombre Acceso", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "IdModoLogin", title: "Modo de Logueo", width: 50, headerAttributes: { style: "white-space: normal" } },
+            { field: "Descripcion", title: "Descripcion", width: 140, headerAttributes: { style: "white-space: normal" } },
+            {
+
+                width: 40, title: "<input id='checkAll2', type='checkbox', class='check-box'  onchange='CheckBoxAll2()' />Marcar/Desmarcar",
+                template: "<input type=\"checkbox\" class=\"checkControl2\"/>"
+            },
+        ]
+    });
+}
+
+function AgregaAccesosaGuardar() {
+    var grid = $("#GridListaAccesos").data("kendoGrid");
+    var gridDataArray = $('#GridListaAccesos').data('kendoGrid')._data;
+    for (var i = 1; i <= (200 + 1) ; i++) {
+        
+        var row = grid.table.find("tr:nth-child(" + i + ")");
+        var checkbox = $(row).find(".checkControl2");
+        if (checkbox.is(":checked"))
+        {
+            if ($("#listaPermisosCrear").val() != "") {
+                $("#listaPermisosCrear").val($("#listaPermisosCrear").val() + "-" + gridDataArray[i - 1].Id);
+            } else {
+                $("#listaPermisosCrear").val(gridDataArray[i - 1].Id);
+            }
+        }
+    }
 }
 
 function SelectCrearAcceso(e) {
@@ -474,6 +559,17 @@ function CheckBoxAll() {
 
 }
 
+function CheckBoxAll2() {
+    //alert(Check.is(":cheked"));
+    var Check = document.getElementById('checkAll2').checked;
+    if (Check == true) {
+        $(".checkControl2").prop("checked", true);
+    }
+    else {
+        $(".checkControl2").prop("checked", false);
+    }
+
+}
 function CargarGridDefault(data) {
     $("#gridViewConsulta").empty();
     $("#gridViewConsulta").kendoGrid({
@@ -586,7 +682,7 @@ function CargaInformacionGrid(cedulas) {
             var json = JSON.parse(result);
             console.log(json);
             FillGridViewResult(json);
-            
+            CargaAccesosMasivo();
             for (var index = 0, len = json.length; index < len; index++) {
                 if ($("#listaUsuariosMasivo").val() == "") {
                     $("#listaUsuariosMasivo").val(json[index].Cedula);
@@ -652,3 +748,83 @@ function FillGridViewResult(data) {
 
 }
 
+function CargaAccesosMasivo()
+{
+    $.ajax({
+        type: "GET",
+        url: urlListaAccesos,
+        contentType: "application/json; charset=utf-8",
+        dataType: 'json',
+        success: function (result) {
+            var data = JSON.parse(result);
+            CambiarModoLogin(data);
+            TaerTodosAccesosMasivo(data);
+        }
+    });
+}
+
+function TaerTodosAccesosMasivo(data) {
+    $("#GridListaAccesosMasivo").empty();
+    $("#GridListaAccesosMasivo").kendoGrid({
+        autoBind: true,
+        dataSource: {
+            data: data,
+            schema: {
+                model: {
+
+                }
+            },
+        },
+        scrollable: true,
+        filterable: {
+            extra: false,
+            operators: {
+                string: {
+
+                    eq: "Es igual a"
+                }
+            }
+        },
+        sortable: true,
+        columns: [
+            { field: "Id", title: "Id Acceso", width: 60, headerAttributes: { style: "white-space: normal" } },
+            { field: "Nombre", title: "Nombre Acceso", width: 80, headerAttributes: { style: "white-space: normal" } },
+            { field: "IdModoLogin", title: "Modo de Logueo", width: 50, headerAttributes: { style: "white-space: normal" } },
+            { field: "Descripcion", title: "Descripcion", width: 140, headerAttributes: { style: "white-space: normal" } },
+            {
+
+                width: 50, title: "<input id='checkAll3', type='checkbox', class='check-box'  onchange='CheckBoxAll3()' />Marcar/Desmarcar",
+                template: "<input type=\"checkbox\" class=\"checkControl3\"/>"
+            },
+        ]
+    });
+}
+
+function AgregaAccesosaGuardarMasivo() {
+    var grid = $("#GridListaAccesosMasivo").data("kendoGrid");
+    var gridDataArray = $('#GridListaAccesosMasivo').data('kendoGrid')._data;
+    for (var i = 1; i <= (200 + 1) ; i++) {
+
+        var row = grid.table.find("tr:nth-child(" + i + ")");
+        var checkbox = $(row).find(".checkControl3");
+        if (checkbox.is(":checked")) {
+            if ($("#listaPermisosCrearMasivo").val() != "") {
+                $("#listaPermisosCrearMasivo").val($("#listaPermisosCrearMasivo").val() + "-" + gridDataArray[i - 1].Id);
+            } else {
+                $("#listaPermisosCrearMasivo").val(gridDataArray[i - 1].Id);
+            }
+        }
+    }
+}
+
+function CheckBoxAll3() {
+    //alert(Check.is(":cheked"));
+    var Check = document.getElementById('checkAll3').checked;
+    if (Check == true) {
+        $(".checkControl3").prop("checked", true);
+    }
+    else {
+        $(".checkControl3").prop("checked", false);
+    }
+
+}

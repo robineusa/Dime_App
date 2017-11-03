@@ -176,7 +176,8 @@
                             <br />
                             <strong><i class="fa fa-chevron-circle-down"></i> Accesos y Privilegios a Otorgar:</strong>
                             <br />
-                            <table id="accesosPrivilegiosConsulta">
+                            <div id="GridListaAccesos"></div>
+                            @*<table id="accesosPrivilegiosConsulta">
 
                                 <tr>
                                     <td width="200" style="padding:1px;"></td>
@@ -194,10 +195,10 @@
                                     <td width="200" style="padding:1px;"></td>
                                     <td width="200" style="padding:1px;"></td>
                                 </tr>
-                            </table>
+                            </table>*@
                             <br />
                             @Html.TextBoxFor(m => m.PermisosOtorgados, new { @style = "display:none", id = "listaPermisosCrear" })
-                            <strong><i class="fa fa-chevron-circle-down"></i> Accesos Seleccionados:</strong>
+                            @*<strong><i class="fa fa-chevron-circle-down"></i> Accesos Seleccionados:</strong>
                             <br />
                             <table>
                                 <tr>
@@ -206,7 +207,7 @@
                                 <tr>
                                     <td width="1200" rowspan="3" colspan="6" style="padding:1px;"><textarea id="AccesosaAgregar" style="height:100px;" class="form-control input-sm"></textarea></td>
                                 </tr>
-                            </table>
+                            </table>*@
                             <br />
                         </div>
 
@@ -260,11 +261,12 @@
                                                                                 new SelectListItem { Text = "CÉLULA", Value = "3" } }, "-Seleccione-", new { @class = "form-control input-sm", onchange = "TraerPosiblesLineasDePerfilMasivo()", @style = "width:200px", id = "perfilSelectedCreateMasivo" })
                             <br />
                             <strong><i class="fa fa-chevron-circle-down"></i> Linea a otorgar:</strong>
-                            @Html.DropDownListFor(m => m.IdLineaMasivo, new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm", @style = "width:200px", id = "lineaSelectCreacionMasivo", onchange = "TraerPosiblesAccesosDeLineaMasivo()" })
+                            @Html.DropDownListFor(m => m.IdLineaMasivo, new List<SelectListItem>() { new SelectListItem { Text = "-Seleccione-", Value = "0" } }, new { @class = "form-control input-sm", @style = "width:200px", id = "lineaSelectCreacionMasivo"})
                             <br />
                             <strong><i class="fa fa-chevron-circle-down"></i> Accesos y privilegios:</strong>
                             <br />
-                            <table id="accesosPrivilegiosMasivos">
+                            <div id="GridListaAccesosMasivo"></div>
+                            @*<table id="accesosPrivilegiosMasivos">
                                 <tr>
                                     <td width="200" style="padding:1px;"></td>
                                     <td width="200" style="padding:1px;"></td>
@@ -272,9 +274,9 @@
                                     <td width="200" style="padding:1px;"></td>
                                     <td width="200" style="padding:1px;"></td>
                                 </tr>
-                            </table>
+                            </table>*@
                             <br />
-                            <strong><i class="fa fa-chevron-circle-down"></i> Accesos Seleccionados:</strong>
+                            @*<strong><i class="fa fa-chevron-circle-down"></i> Accesos Seleccionados:</strong>
                             <br />
                             <table>
                                 <tr>
@@ -283,7 +285,7 @@
                                 <tr>
                                     <td width="1200" rowspan="3" colspan="6" style="padding:1px;"><textarea id="AccesosaAgregarMasivos" style="height:100px;" class="form-control input-sm"></textarea></td>
                                 </tr>
-                            </table>
+                            </table>*@
                             <br />    
                             @Html.TextBoxFor(m => m.PermisosOtorgadosMasivos, new { @style = "display:none", id = "listaPermisosCrearMasivo" })
                             @Html.TextBoxFor(m => m.UsuariosACambiarMasivo, new { @style = "display:none", id = "listaUsuariosMasivo" })
@@ -293,8 +295,8 @@
                     <div class="box-footer">
                         <button id="consultarUsuarioConsulta" type="submit" name="opcionMando" value="ConsultarConsulta" style="display:none"></button>
                         <button id="consultarUsuario" type="submit" name="opcionMando" value="ConsultaActualizarAcceso" style="display:none"></button>
-                        <button id="Crear_Usuario" type="submit" class="btn btn-block btn-primary btn-lg" name="opcionMando" value="ActualizarAcceso" style="width:15%;  margin-left:42.5%;">Actualizar Usuario </button>
-                        <button id="Actualizar_Usuarios_Masivo" type="submit" class="btn btn-block btn-primary btn-lg" name="opcionMando" value="ActualizarAccesosMasivos" style="width:15%;  margin-left:42.5%;" onclick="GuardarTotalAccesosNuevos()">Actualizar Usuarios </button>
+                        <button id="Crear_Usuario" type="submit" class="btn btn-block btn-primary btn-lg" name="opcionMando" value="ActualizarAcceso" style="width:15%;  margin-left:42.5%;" onclick="AgregaAccesosaGuardar()">Actualizar Usuario </button>
+                        <button id="Actualizar_Usuarios_Masivo" type="submit" class="btn btn-block btn-primary btn-lg" name="opcionMando" value="ActualizarAccesosMasivos" style="width:15%;  margin-left:42.5%;" onclick="AgregaAccesosaGuardarMasivo()">Actualizar Usuarios </button>
                     </div>
                     <br />
                 </div>
@@ -314,10 +316,11 @@
             var urlPosiblesAccesosDeLinea = '@Url.Action("PosiblesAccesosDeLineas", "AdminUsuarios")';
             var urlConsultaUsuariosAccesosMasivos = '@Url.Action("ConsultaUsuariosAccesosMasivos", "AdminUsuarios")';
             var urlBorrarAccesoUsuario = '@Url.Action("EliminaAcceso", "AdminUsuarios")';
+            var urlListaAccesos = '@Url.Action("ListaAccesos", "AdminUsuarios")';
 
             //$("#cedulaCreacion").val(0);
         </script>
-        <script src="~/Scripts/AdminUsuarios/Accesos.js?1.3.5"></script>
+        <script src="~/Scripts/AdminUsuarios/Accesos.js?1.3.6"></script>
         <script src="~/Scripts/AdminUsuarios/xls.js"></script>
     }
 }
