@@ -279,23 +279,22 @@ function SetDataComposicionProductoInicial(voz, tv, internet)
         {
         document.getElementById("cbVoz").click();
        }
-     alert(tv);
+     
      if (tv != "NO") {
          
          var tvDividida = tv.split(" ");
-         alert(tvDividida);
-         if (tvDividida[0] == "BASICA" || tvDividida[0] == "AVANZADA" || tvDividida[0] == "SUPERIOR")
+         if (tvDividida[0] == "BASICA" || tvDividida[0] == "AVANZADA" || tvDividida[0] == "SUPERIOR" || tvDividida[0] == "BASICO")
          {
-             $("[value='" + tv + "']").click();
-             if (tvDividida[0] == "BASICA")
+             if (tvDividida[0] == "BASICA" || tvDividida[0] == "BASICO")
              {
                  $("[value='PLUS']").click();
              }
          } else
             {
-             if (tvDividida[2] == "(B)") { $("#cbTvSatelitalBasica").click();}
+             if (tvDividida[2] == "(B)") { $("#cbTvSatelitalBasica").click(); }
              if (tvDividida[2] == "(A)") { $("#cbTvSatelitalAvanzada").click(); }
              if (tvDividida[2] == "(S)") { $("#cbTvSatelitalSuperior").click(); }
+             if (tvDividida[1] == "(P)") { $("[value='PLUS']").click(); }
          }
 
          if(tvDividida[0] == "BASICA"  && $("#tbSrvHdInfo").val() == "SI")
@@ -446,7 +445,7 @@ function CargarDatosActuales()
 
         },
         error: function (request, status, error) {
-            alert("error");
+            alert("Datos de Busqueda NO válidos");
 
         }
     });

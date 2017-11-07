@@ -70,11 +70,12 @@ function cargargrilla(data) {
         autoBind: true,
         toolbar: ["excel"],
         excel: {
-            fileName: "ConsultaPrincipalRecurrenciaInbound.xlsx"
+            fileName: "ConsultaPrincipalRecurrenciaInbound.xlsx",
+            allPages: true
         },
         dataSource: {
             data: data,
-            pageSize: 20,
+            pageSize: 10,
         },
         scrollable: true,
         filterable: {
