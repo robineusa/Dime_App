@@ -52,7 +52,7 @@ function CambiarEstado() {
             $('#cuentamatriz').prop('readonly', false); document.getElementById('cuentamatriz').style.background = "rgba(215, 44, 44, 0.3)";
             $("#ordendetrabajo").prop('readonly', false); document.getElementById('ordendetrabajo').style.background = "rgba(215, 44, 44, 0.3)";
         } else
-            if ($("#Subrazon").val() == "DATOS ERRADOS" || $("#Subrazon").val() == "MATRIZ DUPLICADA" || $("#Subrazon").val() == "NO HAY COBERTURA") {
+            if ($("#Subrazon").val() == "DATOS ERRADOS" || $("#Subrazon").val() == "MATRIZ DUPLICADA" || $("#Subrazon").val() == "NO HAY COBERTURA" || $("#Subrazon").val() == "01 CLIENTE DESISTE DEL TRASLADO" || $("#Subrazon").val() == "02 NO CONTACTO CON EL CLIENTE" || $("#Subrazon").val() == "03 SOLICITUD DE TRASLADO ERRADA") {
                 $("#estado").empty();
                 $("#estado").append("<option>FINALIZADO</option>")
                 $("#cuentamatriz").prop('readonly', true); document.getElementById('cuentamatriz').style.background = "#EEE";

@@ -179,9 +179,9 @@
                                                                                              new SelectListItem{Text="OT CREADA CUENTA QUE TRASLADA", Value="OT CREADA CUENTA QUE TRASLADA" },
                                                                                              new SelectListItem{Text="TRASLADO A OTRA DIRECCION", Value="TRASLADO A OTRA DIRECCION" },
                                                                                              new SelectListItem{Text="TRASLADO OK", Value="TRASLADO OK" },
-                                           new SelectListItem{Text="CLIENTE DESISTE DEL TRASLADO", Value="CLIENTE DESISTE DEL TRASLADO" },
-                                           new SelectListItem{Text="NO CONTACTO CON EL CLIENTE", Value="NO CONTACTO CON EL CLIENTE" },
-                                           new SelectListItem{Text="SOLICITUD DE TRASLADO ERRADA", Value="SOLICITUD DE TRASLADO ERRADA" },},
+                                           new SelectListItem{Text="01 CLIENTE DESISTE DEL TRASLADO", Value="01 CLIENTE DESISTE DEL TRASLADO" },
+                                           new SelectListItem{Text="02 NO CONTACTO CON EL CLIENTE", Value="02 NO CONTACTO CON EL CLIENTE" },
+                                           new SelectListItem{Text="03 SOLICITUD DE TRASLADO ERRADA", Value="03 SOLICITUD DE TRASLADO ERRADA" },},
                                                                "--SELECCIONE--", new { @class = "form-control input-sm", @id = "Subrazon" })
                                             
                                             </td>
@@ -219,7 +219,7 @@
 }
 @section Scripts{
     <script>var jsonInteraccionesHHPP = @Html.Raw(Json.Encode(Model.ListaLiberacionHomePass));</script>
-    <script src="~/Scripts/Traslados/GestionarLiberacionHomePassCelula.js?2.0.0"></script>
+    <script src="~/Scripts/Traslados/GestionarLiberacionHomePassCelula.js?2.0.1"></script>
 }
 
 

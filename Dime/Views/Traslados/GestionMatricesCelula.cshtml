@@ -178,7 +178,10 @@
                                                                                              new SelectListItem{Text="TRABAJOS DE DISENO", Value="TRABAJOS DE DISENO" },
                                                                                              new SelectListItem{Text="TRABAJOS DE RED EXTERNA O ACOMETIDAS", Value="TRABAJOS DE RED EXTERNA O ACOMETIDAS" },
                                                                                              new SelectListItem{Text="TRABAJOS REPLANT ACOMETIDA", Value="TRABAJOS REPLANT ACOMETIDA" },
-                                                                                             new SelectListItem{Text="TRASLADO OK", Value="TRASLADO OK" }},
+                                                                                             new SelectListItem{Text="TRASLADO OK", Value="TRASLADO OK" },
+                                           new SelectListItem{Text="01 CLIENTE DESISTE DEL TRASLADO", Value="01 CLIENTE DESISTE DEL TRASLADO" },
+                                           new SelectListItem{Text="02 NO CONTACTO CON EL CLIENTE", Value="02 NO CONTACTO CON EL CLIENTE" },
+                                           new SelectListItem{Text="03 SOLICITUD DE TRASLADO ERRADA", Value="03 SOLICITUD DE TRASLADO ERRADA" },},
                                                                "--SELECCIONE--", new { @class = "form-control input-sm", @id = "Subrazon" })
 
                                             </td>
@@ -216,7 +219,7 @@
 }
 @section Scripts{
     <script>var jsonInteraccionesCreacionMatriz = @Html.Raw(Json.Encode(Model.ListaGestionMatriz));</script>
-    <script src="~/Scripts/Traslados/GestionMatricesCelula.js?2.0.0"></script>
+    <script src="~/Scripts/Traslados/GestionMatricesCelula.js?2.0.1"></script>
 }
 
 

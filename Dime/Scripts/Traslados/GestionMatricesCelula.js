@@ -40,7 +40,7 @@ $('#Subrazon').change(function () {
     CambiarEstado();
 })
 function CambiarEstado() {
-    if ($("#Subrazon").val() == "AGENDADO" || $("#Subrazon").val() == "CANCELADO/DESISTE TRASLADO" || $("#Subrazon").val() == "ESCALADO" || $("#Subrazon").val() == "FUERA ZONA (UNIDIRECCIONAL)" || $("#Subrazon").val() == "INPOSIBILIDAD TECNICA" || $("#Subrazon").val() == "NO CONTACTO" || $("#Subrazon").val() == "NO DESEA AUN EL SERVICIO" || $("#Subrazon").val() == "PROBLEMA INTERNO SUSCRIPTOR" || $("#Subrazon").val() == "TRASLADO OK") {
+    if ($("#Subrazon").val() == "AGENDADO" || $("#Subrazon").val() == "CANCELADO/DESISTE TRASLADO" || $("#Subrazon").val() == "ESCALADO" || $("#Subrazon").val() == "FUERA ZONA (UNIDIRECCIONAL)" || $("#Subrazon").val() == "INPOSIBILIDAD TECNICA" || $("#Subrazon").val() == "NO CONTACTO" || $("#Subrazon").val() == "NO DESEA AUN EL SERVICIO" || $("#Subrazon").val() == "PROBLEMA INTERNO SUSCRIPTOR" || $("#Subrazon").val() == "TRASLADO OK" || $("#Subrazon").val() == "01 CLIENTE DESISTE DEL TRASLADO" || $("#Subrazon").val() == "02 NO CONTACTO CON EL CLIENTE" || $("#Subrazon").val() == "03 SOLICITUD DE TRASLADO ERRADA") {
         $("#estado").empty();
         $("#estado").append("<option>FINALIZADO</option>")
 

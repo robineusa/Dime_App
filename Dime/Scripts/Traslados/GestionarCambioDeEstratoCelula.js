@@ -42,7 +42,7 @@ function CambiarEstado() {
         $("#estado").empty();
         $("#estado").append("<option>SEGUIMIENTO</option>")
     }else 
-        if ($("#Subrazon").val() == "DESISTE DE TRASLADO" || $("#Subrazon").val() == "NO COBERTURA" || $("#Subrazon").val() == "NO RESPONDE PLANTILLA" || $("#Subrazon").val() == "PROCESO MATRIZ" || $("#Subrazon").val() == "TRASLADO OK" ) {
+        if ($("#Subrazon").val() == "DESISTE DE TRASLADO" || $("#Subrazon").val() == "NO COBERTURA" || $("#Subrazon").val() == "NO RESPONDE PLANTILLA" || $("#Subrazon").val() == "PROCESO MATRIZ" || $("#Subrazon").val() == "TRASLADO OK" || $("#Subrazon").val() == "01 CLIENTE DESISTE DEL TRASLADO" || $("#Subrazon").val() == "02 NO CONTACTO CON EL CLIENTE" || $("#Subrazon").val() == "03 SOLICITUD DE TRASLADO ERRADA") {
             $("#estado").empty();
             $("#estado").append("<option>FINALIZADO</option>")
         } else {
