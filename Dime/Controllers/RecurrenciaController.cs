@@ -115,62 +115,66 @@ namespace Dime.Controllers
                         model.GPrincipalRecurrencia = recurrencia.TraerGPrinRecurrencia(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
                         if (model.GPrincipalRecurrencia != null)
                         { ViewBag.Display = "block"; }
-                        else { ViewBag.Display = "none"; }
+                        else { ViewBag.Display = "block"; }
                         ViewBag.InventEquipos = "block";
                     }
                     else
                     {
-                        model.GPrincipalRecurrencia = recurrencia.TraerGPrinRecurrencia(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
-                        if (model.GPrincipalRecurrencia.UsuarioGestionando == 0 || model.GPrincipalRecurrencia.UsuarioGestionando == Convert.ToDecimal(Usuario))
-                        {
-                            recurrencia.UsuarioGestionandoGRecurrencia(Convert.ToInt32(Usuario), Convert.ToInt32(model.GPrincipalRecurrencia.Id));
-                            model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
-
-                            model.CargueBase.Marcaciones = model.GPrincipalRecurrencia.Marcaciones;
-                            model.CargueBase.FechaUltimaMarcacion = model.GPrincipalRecurrencia.FechaUltimaMarcacion;
-                            model.CargueBase.FechaUltimaGestion = model.GPrincipalRecurrencia.FechaUltimaGestion;
-                            model.CargueBase.IncluyeClaroVideo = model.GPrincipalRecurrencia.IncluyeClaroVideo;
-                            model.CargueBase.UsoClaroVideo = model.GPrincipalRecurrencia.UsoClaroVideo;
-                            model.CargueBase.ClienteNagra = model.GPrincipalRecurrencia.ClienteNagra;
-                            model.CargueBase.Ofrecimiento1 = model.GPrincipalRecurrencia.Ofrecimiento1;
-                            model.CargueBase.Ofrecimiento2 = model.GPrincipalRecurrencia.Ofrecimiento2;
-                            model.CargueBase.Ofrecimiento3 = model.GPrincipalRecurrencia.Ofrecimiento3;
-                            model.CargueBase.Diferenciador = model.GPrincipalRecurrencia.Diferenciador;
-                            model.CargueBase.Prioridad = model.GPrincipalRecurrencia.Prioridad;
-                            model.CargueBase.Veces_Gestionado = model.GPrincipalRecurrencia.VecesGestionado;
-                            model.NodosZonificados.AliadoZonificado = recurrencia.AliadoTecnico(Convert.ToString(model.ClientesTodos.Nodo)).AliadoZonificado;
-                            ViewBag.Display = "none";
-                            ViewBag.InventEquipos = "block";
-                        }
-                        else
-                        {
-                            ViewBag.NoDatos = "Otro Usuario esta gestionando esta cuenta";
-                            ViewBag.Display = "none";
-                            ViewBag.InventEquipos = "none";
-                            model.ClientesTodos.Cuenta = Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente);
-                            model.CargueBase = new RecurrenciaCargaBase();
-                            model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
-                            model.NodosZonificados = new NodosZonificados();
-                        }
-                        //ViewBag.NoDatos = "Otro Usuario esta gestionando esta cuenta";
-                        //ViewBag.Display = "none";
-                        //ViewBag.InventEquipos = "none";
-                        ////model.ClientesTodos.Cuenta = Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente);
-                        //model.CargueBase = new RecurrenciaCargaBase();
-                        //model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
-                        //model.NodosZonificados = new NodosZonificados();
+                        ViewBag.NoDatos = "Otro Usuario esta gestionando esta cuenta";
+                        ViewBag.Display = "none";
+                        ViewBag.InventEquipos = "none";
+                        //model.ClientesTodos.Cuenta = Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente);
+                        model.CargueBase = new RecurrenciaCargaBase();
+                        model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
+                        model.NodosZonificados = new NodosZonificados();
                     }
 
                 }
                 else
                 {
-                    ViewBag.NoDatos = "Esta Cuenta No esta en la Base Para Gestionar";
-                    ViewBag.Display = "none";
-                    ViewBag.InventEquipos = "none";
-                    //model.ClientesTodos.Cuenta = Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente);
                     model.CargueBase = new RecurrenciaCargaBase();
-                    model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
+                    //model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
                     model.NodosZonificados = new NodosZonificados();
+                    model.GPrincipalRecurrencia = recurrencia.TraerGPrinRecurrencia(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
+                    //var Usuario = Session["IdUsuario"].ToString();
+                    if (model.GPrincipalRecurrencia.UsuarioGestionando == 0 || model.GPrincipalRecurrencia.UsuarioGestionando == Convert.ToDecimal(Usuario))
+                    {
+                        recurrencia.UsuarioGestionandoGRecurrencia(Convert.ToInt32(Usuario), Convert.ToInt32(model.GPrincipalRecurrencia.Id));
+                        model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
+
+                        model.CargueBase.Marcaciones = model.GPrincipalRecurrencia.Marcaciones;
+                        model.CargueBase.FechaUltimaMarcacion = model.GPrincipalRecurrencia.FechaUltimaMarcacion;
+                        model.CargueBase.FechaUltimaGestion = model.GPrincipalRecurrencia.FechaUltimaGestion;
+                        model.CargueBase.IncluyeClaroVideo = model.GPrincipalRecurrencia.IncluyeClaroVideo;
+                        model.CargueBase.UsoClaroVideo = model.GPrincipalRecurrencia.UsoClaroVideo;
+                        model.CargueBase.ClienteNagra = model.GPrincipalRecurrencia.ClienteNagra;
+                        model.CargueBase.Ofrecimiento1 = model.GPrincipalRecurrencia.Ofrecimiento1;
+                        model.CargueBase.Ofrecimiento2 = model.GPrincipalRecurrencia.Ofrecimiento2;
+                        model.CargueBase.Ofrecimiento3 = model.GPrincipalRecurrencia.Ofrecimiento3;
+                        model.CargueBase.Diferenciador = model.GPrincipalRecurrencia.Diferenciador;
+                        model.CargueBase.Prioridad = model.GPrincipalRecurrencia.Prioridad;
+                        model.CargueBase.Veces_Gestionado = model.GPrincipalRecurrencia.VecesGestionado;
+                        model.NodosZonificados.AliadoZonificado = recurrencia.AliadoTecnico(Convert.ToString(model.ClientesTodos.Nodo)).AliadoZonificado;
+                        ViewBag.Display = "block";
+                        ViewBag.InventEquipos = "block";
+                    }
+                    else
+                    {
+                        ViewBag.NoDatos = "Otro Usuario esta gestionando esta cuenta o No esta en la Base Para Gestionar";
+                        ViewBag.Display = "none";
+                        ViewBag.InventEquipos = "none";
+                        model.ClientesTodos.Cuenta = Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente);
+                        model.CargueBase = new RecurrenciaCargaBase();
+                        model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
+                        model.NodosZonificados = new NodosZonificados();
+                    }
+                    //ViewBag.NoDatos = "Esta Cuenta No esta en la Base Para Gestionar";
+                    //ViewBag.Display = "none";
+                    //ViewBag.InventEquipos = "none";
+                    ////model.ClientesTodos.Cuenta = Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente);
+                    //model.CargueBase = new RecurrenciaCargaBase();
+                    //model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
+                    //model.NodosZonificados = new NodosZonificados();
                 }
             }
             if (BotonEnvia == "GuardaDatos")

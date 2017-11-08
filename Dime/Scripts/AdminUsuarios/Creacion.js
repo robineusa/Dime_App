@@ -291,35 +291,35 @@ function LlenarAccesosDeLineaCreacion(data)
 
 function LlenarAccesosDePerfilConsulta() {
 
-    $.ajax({
-        type: "GET",
-        url: urlPosiblesAccesosDeUsuario,
-        contentType: "application/json; charset=utf-8",
-        data: { cedUsuario: cedulaUsuario },
-        dataType: 'json',
-        success: function (result) {
-            var  data = JSON.parse(result);
-            console.log(data);
-            $("#accesosPrivilegiosConsulta").empty();
-            var table = document.getElementById("accesosPrivilegiosConsulta");
-            var i = 0;
-            do {
+    //$.ajax({
+    //    type: "GET",
+    //    url: urlPosiblesAccesosDeUsuario,
+    //    contentType: "application/json; charset=utf-8",
+    //    data: { cedUsuario: cedulaUsuario },
+    //    dataType: 'json',
+    //    success: function (result) {
+    //        var  data = JSON.parse(result);
+    //        console.log(data);
+    //        $("#accesosPrivilegiosConsulta").empty();
+    //        var table = document.getElementById("accesosPrivilegiosConsulta");
+    //        var i = 0;
+    //        do {
 
-                var row = table.insertRow(0);
-                for (var j = 0; j < 7 && i < data.accesos.length; j++, i++) {
-                    var newCell = row.insertCell(j);
-                    newCell.style.padding = "4px";
-                    newCell.innerHTML = '  <label style="font-weight: 400; padding:5px;  border-color: burlywood; background-color:rgba(222, 184, 135, 0.8); width:100%">' +
-                                                       ' <input type="checkbox" class="minimal" checked disabled /> ' + data.accesos[i] +
-                                            '</label>';
-                }
+    //            var row = table.insertRow(0);
+    //            for (var j = 0; j < 7 && i < data.accesos.length; j++, i++) {
+    //                var newCell = row.insertCell(j);
+    //                newCell.style.padding = "4px";
+    //                newCell.innerHTML = '  <label style="font-weight: 400; padding:5px;  border-color: burlywood; background-color:rgba(222, 184, 135, 0.8); width:100%">' +
+    //                                                   ' <input type="checkbox" class="minimal" checked disabled /> ' + data.accesos[i] +
+    //                                        '</label>';
+    //            }
 
-            } while (i < data.accesos.length)
+    //        } while (i < data.accesos.length)
 
-        }
+    //    }
 
 
-    });
+    //});
 
 
 }

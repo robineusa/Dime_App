@@ -2920,6 +2920,7 @@
       <xs:element minOccurs="0" name="FallaCausaRaiz" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FallaEspecificaArbolCCAA" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSesguimiento" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaUltimaGestion" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaUltimaMarcacion" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
@@ -2994,6 +2995,7 @@
       <xs:element minOccurs="0" name="FallaCausaRaiz" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FallaEspecificaArbolCCAA" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSesguimiento" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaUltimaGestion" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaUltimaMarcacion" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />

@@ -31,16 +31,10 @@ namespace Telmexla.Servicios.DIME.Entity
         public string UsoClaroVideo { get; set; }
         public string ClienteNagra { get; set; }
         public string Ofrecimiento1 { get; set; }
-
-        //[Required(ErrorMessage = "Seleccione una opción")]
         public string AceptacionPrimerOfrecimiento { get; set; }
         public string Ofrecimiento2 { get; set; }
-
-        //[Required(ErrorMessage = "Seleccione una opción")]
         public string AceptacionSegundoOfrecimiento { get; set; }
         public string Ofrecimiento3 { get; set; }
-
-        //[Required(ErrorMessage = "Seleccione una opción")]
         public string AceptacionTercerOfrecimiento { get; set; }
         public string Diferenciador { get; set; }
         public decimal Prioridad { get; set; }
@@ -49,8 +43,6 @@ namespace Telmexla.Servicios.DIME.Entity
         public string MarcacionReincidenteRecurrencia { get; set; }
         public string ClieComunicaRealizadaGestRecu { get; set; }
         public string PorQue { get; set; }
-
-        //[Required(ErrorMessage = "Seleccione una opción")]
         public string Contacto { get; set; }
         public string VozClienteCausaRaiz { get; set; }
         public string Solucionado { get; set; }
@@ -64,24 +56,26 @@ namespace Telmexla.Servicios.DIME.Entity
 
         [Required(ErrorMessage = "Seleccione una opción")]
         public string Macroproceso { get; set; }
-        public string ServicioAfectado{ get; set; }
 
         [Required(ErrorMessage = "Seleccione una opción")]
         public string ServicioAfectadoR { get; set; }
-        public string FallaEspecificaArbolCCAA { get; set; }
+        public string ServicioAfectado{ get; set; }
 
         [Required(ErrorMessage = "Seleccione una opción")]
         public string FallaEspecificaArbolCCAAR { get; set; }
-        public string FallaCausaRaiz { get; set; }
+        public string FallaEspecificaArbolCCAA { get; set; }
 
         [Required(ErrorMessage = "Seleccione una opción")]
         public string FallaCausaRaizR { get; set; }
+        public string FallaCausaRaiz { get; set; }
 
         [Required(ErrorMessage = "Seleccione una opción")]
         public string SolucionEspecifica { get; set; }
 
         [Required(ErrorMessage = "Seleccione una opción")]
         public string Estado { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una opción")]
         public string MarcaEquiposFalla { get; set; }
 
         [Required(ErrorMessage = "Seleccione una opción")]
@@ -89,8 +83,6 @@ namespace Telmexla.Servicios.DIME.Entity
 
         [Required(ErrorMessage = "Seleccione una opción")]
         public string DispositivosInalambricosAlrededorModem { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
         public string CantEquiposConecInternet { get; set; }
 
         [Required(ErrorMessage = "Seleccione una opción")]
@@ -109,6 +101,9 @@ namespace Telmexla.Servicios.DIME.Entity
         public string AceptacionServicioOfrecido { get; set; }
         public string Observaciones { get; set; }
         public decimal UsuarioGestionando { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una opción")]
+        public string FechaSesguimiento { get; set; }
 
     }
 }
