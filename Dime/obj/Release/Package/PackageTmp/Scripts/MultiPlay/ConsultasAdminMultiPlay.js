@@ -78,9 +78,11 @@ function ShowGridMultiplay(data) {
         toolbar: ["excel"],
         excel: {
             fileName: "BasePresidencial.xlsx",
+            allPages: true,
         },
         dataSource: {
             data: data,
+            pageSize: 10,
             schema: {
                 model: {
 

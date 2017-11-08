@@ -2,10 +2,11 @@
 $(document).ready(function () {
 
     $('#FechaSesguimiento').datetimepicker({
-        format: 'Y-m-d 00:00',
-        maxDate: '+0d',
+        //format: 'Y-m-d h:mm',
+        //Format: "Y.m.d",
+        format: "Y-m-d H:00",
+        minDate: '+0d',
         timepicker: true,
-        step: 30,
     });
 
     $("#Li1").click(function () {
@@ -236,7 +237,7 @@ function SetOpciones() {
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
         $("#Estado").attr("disabled", "disabled");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#ActivacionClaroVideoNagra").empty();
         $("#ActivacionClaroVideoNagra").append("<option value=''>--Select Option--</option>");
@@ -275,7 +276,7 @@ function SetOpciones() {
         $("#Solucionado").append("<option value=''>--Select Option--</option>");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#Solucionado").empty();
         $("#Solucionado").append("<option value=''>--Select Option--</option>");
         $("#Solucionado").append("<option Value='SI'>SI</option>");
@@ -347,7 +348,7 @@ function SetProceso() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -376,7 +377,7 @@ function SetProceso() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -424,7 +425,7 @@ function SetMacroProceso() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -476,7 +477,7 @@ function SetMacroProceso() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -521,7 +522,7 @@ function SetServicioAfectado() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -545,7 +546,7 @@ function SetServicioAfectado() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -601,7 +602,7 @@ function SetFallaEspecificaArbol() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -621,7 +622,7 @@ function SetFallaEspecificaArbol() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -673,7 +674,7 @@ function SetFallaCausaRaiz() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -690,7 +691,7 @@ function SetFallaCausaRaiz() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -708,7 +709,7 @@ function SetCampoFallaCausaRaiz()
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -773,7 +774,7 @@ function SetCampoFallaCausaRaiz()
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -813,7 +814,7 @@ function SetSolucionEspecifica() {
     $("#Estado").attr("disabled", "disabled");
     $("#Estado").empty();
     $("#Estado").append("<option value=''>--Select Option--</option>");
-    $("#FechaSesguimiento").empty();
+    $("#FechaSesguimiento").val('');
     $("#FechaSesguimiento").attr("disabled", "disabled");
     $("#MarcaEquiposFalla").attr("disabled", "disabled");
     $("#MarcaEquiposFalla").empty();
@@ -863,7 +864,7 @@ function SetEstado() {
         $("#Estado").append("<option value=''>--Select Option--</option>");
         $("#Estado").append("<option value='FINALIZADO'>FINALIZADO</option>");
         $("#Estado").removeAttr("disabled");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
     }
     else {
@@ -871,7 +872,7 @@ function SetEstado() {
         $("#Estado").append("<option value=''>--Select Option--</option>");
         $("#Estado").append("<option value='SEGUIMIENTO'>SEGUIMIENTO</option>");
         $("#Estado").removeAttr("disabled");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
 
         if (Valor == "") {
@@ -1142,8 +1143,15 @@ function ShowGridHistorial(data) {
 function SetMarcaEquiposFalla()
 {
     if ($("#Estado").val() != '') {
-        $("#FechaSesguimiento").empty();
-        $("#FechaSesguimiento").removeAttr("disabled");
+        if ($("#Estado").val() == "SEGUIMIENTO") {
+            $("#FechaSesguimiento").val('');
+            $("#FechaSesguimiento").removeAttr("disabled");
+        }
+        else
+        {
+            $("#FechaSesguimiento").val('');
+            $("#FechaSesguimiento").attr("disabled", "disabled");
+        }
         $("#MarcaEquiposFalla").removeAttr("disabled");
         $("#MarcaEquiposFalla").empty();
         $("#MarcaEquiposFalla").append("<option value=''>--Seleccione--</option>");
@@ -1174,7 +1182,7 @@ function SetMarcaEquiposFalla()
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
         $("#MarcaEquiposFalla").append("<option value=''>--Seleccione--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
     }
 }

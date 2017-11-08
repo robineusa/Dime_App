@@ -71,10 +71,16 @@ function cargargrilla(data) {
         toolbar: ["excel"],
         excel: {
             fileName: "ConsultaLogRecurrencia.xlsx",
+            allPages: true
         },
         dataSource: {
             data: data,
-            pageSize: 20,
+            pageSize: 10,
+            schema: {
+                model: {
+
+                }
+            },
         },
         scrollable: true,
         filterable: {

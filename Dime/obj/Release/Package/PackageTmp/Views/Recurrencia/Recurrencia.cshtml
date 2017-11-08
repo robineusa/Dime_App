@@ -497,6 +497,11 @@
                                             @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.Estado, "", new { @class = "text-danger"})
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
+                                            <small>Fecha Seguimiento: </small>
+                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.FechaSesguimiento, new { id = "FechaSesguimiento", @class = "form-control input-sm", placeholder = "Select Date", disabled = "true" })
+                                            @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.FechaSesguimiento, "", new { @class = "text-danger" })
+                                        </td>
+                                        <td style="padding-left:1px; width:200px;">
                                             <small>Marca Equipos con Falla: </small>
                                             @Html.DropDownListFor(m => m.GPrincipalRecurrencia.MarcaEquiposFalla, new List<SelectListItem> { },
                                            "--Select Option--", new { Id = "MarcaEquiposFalla", @class = "form-control input-sm", disabled = "true" })
@@ -636,7 +641,11 @@
 
     </script>
 @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
-    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.3.2"></script>
+<script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
+@*<script src="~/AdminLTE/documentation/js/jquery.datetimepicker.min.js"></script>*@
+<script src="~/AdminLTE/documentation/js/jquery.datetimepicker.js"></script>
+<link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
+    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.3.3"></script>
 }
 }
 

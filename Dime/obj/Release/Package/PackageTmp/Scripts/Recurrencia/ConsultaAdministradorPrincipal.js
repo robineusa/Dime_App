@@ -70,11 +70,11 @@ function cargargrilla(data) {
         toolbar: ["excel"],
         excel: {
             fileName: "ConsultaPrincipalRecurrencia.xlsx",
-
+            allPages: true
         },
         dataSource: {
             data: data,
-            pageSize: 20,
+            pageSize: 10,
         },
         scrollable: true,
         filterable: {
