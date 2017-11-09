@@ -16925,4 +16925,123 @@ namespace Dime.WSD {
             return base.Channel.ListaMotivosSolicitudAsync();
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IBannerAlertasService")]
+    public interface IBannerAlertasService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnConvenioElectronico", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnConvenioElectronicoRespo" +
+            "nse")]
+        bool ValidarClienteEnConvenioElectronico(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnConvenioElectronico", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnConvenioElectronicoRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<bool> ValidarClienteEnConvenioElectronicoAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnClaroVideo", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnClaroVideoResponse")]
+        bool ValidarClienteEnClaroVideo(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnClaroVideo", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnClaroVideoResponse")]
+        System.Threading.Tasks.Task<bool> ValidarClienteEnClaroVideoAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnMejorOferta", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnMejorOfertaResponse")]
+        bool ValidarClienteEnMejorOferta(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnMejorOferta", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnMejorOfertaResponse")]
+        System.Threading.Tasks.Task<bool> ValidarClienteEnMejorOfertaAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnSiembraHD", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnSiembraHDResponse")]
+        bool ValidarClienteEnSiembraHD(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnSiembraHD", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnSiembraHDResponse")]
+        System.Threading.Tasks.Task<bool> ValidarClienteEnSiembraHDAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnMejorasTecnicas", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnMejorasTecnicasResponse")]
+        bool ValidarClienteEnMejorasTecnicas(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnMejorasTecnicas", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnMejorasTecnicasResponse")]
+        System.Threading.Tasks.Task<bool> ValidarClienteEnMejorasTecnicasAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnFox", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnFoxResponse")]
+        bool ValidarClienteEnFox(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnFox", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnFoxResponse")]
+        System.Threading.Tasks.Task<bool> ValidarClienteEnFoxAsync(decimal CuentaCliente);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IBannerAlertasServiceChannel : Dime.WSD.IBannerAlertasService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class BannerAlertasServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IBannerAlertasService>, Dime.WSD.IBannerAlertasService {
+        
+        public BannerAlertasServiceClient() {
+        }
+        
+        public BannerAlertasServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public BannerAlertasServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public BannerAlertasServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public BannerAlertasServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public bool ValidarClienteEnConvenioElectronico(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnConvenioElectronico(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarClienteEnConvenioElectronicoAsync(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnConvenioElectronicoAsync(CuentaCliente);
+        }
+        
+        public bool ValidarClienteEnClaroVideo(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnClaroVideo(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarClienteEnClaroVideoAsync(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnClaroVideoAsync(CuentaCliente);
+        }
+        
+        public bool ValidarClienteEnMejorOferta(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnMejorOferta(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarClienteEnMejorOfertaAsync(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnMejorOfertaAsync(CuentaCliente);
+        }
+        
+        public bool ValidarClienteEnSiembraHD(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnSiembraHD(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarClienteEnSiembraHDAsync(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnSiembraHDAsync(CuentaCliente);
+        }
+        
+        public bool ValidarClienteEnMejorasTecnicas(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnMejorasTecnicas(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarClienteEnMejorasTecnicasAsync(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnMejorasTecnicasAsync(CuentaCliente);
+        }
+        
+        public bool ValidarClienteEnFox(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnFox(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarClienteEnFoxAsync(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnFoxAsync(CuentaCliente);
+        }
+    }
 }

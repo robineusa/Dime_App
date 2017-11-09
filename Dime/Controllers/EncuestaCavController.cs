@@ -70,9 +70,9 @@ namespace Dime.Controllers
             EntidadEncuesta.enviaReintento = Convert.ToString(EncuestaRegistrada.EnviaReintento);
             EntidadEncuesta.enviaSoloEmail = EncuestaRegistrada.EnviaSoloEmail;
             EntidadEncuesta.idEncuesta = Convert.ToInt32(EncuestaRegistrada.IdEncuesta);
-            
 
-           var respuesta = EncuestaService.enviarEncuesta(EntidadEncuesta);
+
+            var respuesta = EncuestaService.enviarEncuesta(EntidadEncuesta);
             if (respuesta.codigo == 0)
             {
                 return RedirectToAction("EncuestadeSatisfaccion", "EncuestaCav", new { data = "true" });

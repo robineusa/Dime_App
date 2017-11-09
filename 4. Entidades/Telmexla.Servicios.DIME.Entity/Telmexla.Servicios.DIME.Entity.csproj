@@ -219,6 +219,7 @@
     <Compile Include="UsuariosXPreguntasDesb.cs" />
     <Compile Include="VAMotivosSolicitud.cs" />
     <Compile Include="ViewModelBackElite.cs" />
+    <Compile Include="ViewModelBannerAlertas.cs" />
     <Compile Include="ViewModelBitacoraIncidentes.cs" />
     <Compile Include="ViewModelBlending.cs" />
     <Compile Include="ViewModelAdminUsuario.cs" />
