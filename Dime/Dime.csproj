@@ -191,6 +191,7 @@
     <Compile Include="Controllers\AdminUsuariosController.cs" />
     <Compile Include="Controllers\AlertasController.cs" />
     <Compile Include="Controllers\BackEliteController.cs" />
+    <Compile Include="Controllers\BannerController.cs" />
     <Compile Include="Controllers\BitacoraIncidentesController.cs" />
     <Compile Include="Controllers\BuenServicioController.cs" />
     <Compile Include="Controllers\CalculadorasController.cs" />
@@ -3506,6 +3507,7 @@
     <Folder Include="bin\" />
     <Folder Include="obj\" />
     <Folder Include="Views\AdminBlending\" />
+    <Folder Include="Views\Banner\" />
     <Folder Include="Views\CasosAdmin\" />
   </ItemGroup>
   <ItemGroup>

@@ -13,7 +13,7 @@ namespace Dime.WSP {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", ConfigurationName="WSP.GeneracionEncuesta")]
-    public interface GeneracionEncuesta {
+    internal interface GeneracionEncuesta {
         
         // CODEGEN: El parámetro 'Respuesta' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://servicios.generacionencuestas.claro.com/GeneracionEncuesta/resetPropiedade" +
@@ -59,7 +59,7 @@ namespace Dime.WSP {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="resetPropiedades", WrapperNamespace="http://servicios.generacionencuestas.claro.com/", IsWrapped=true)]
-    public partial class resetPropiedadesRequest {
+    internal partial class resetPropiedadesRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -82,7 +82,7 @@ namespace Dime.WSP {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="resetPropiedadesResponse", WrapperNamespace="http://servicios.generacionencuestas.claro.com/", IsWrapped=true)]
-    public partial class resetPropiedadesResponse {
+    internal partial class resetPropiedadesResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -1054,7 +1054,7 @@ namespace Dime.WSP {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="enviarEncuesta", WrapperNamespace="http://servicios.generacionencuestas.claro.com/", IsWrapped=true)]
-    public partial class enviarEncuestaRequest {
+    internal partial class enviarEncuestaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -1072,7 +1072,7 @@ namespace Dime.WSP {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="enviarEncuestaResponse", WrapperNamespace="http://servicios.generacionencuestas.claro.com/", IsWrapped=true)]
-    public partial class enviarEncuestaResponse {
+    internal partial class enviarEncuestaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -1090,7 +1090,7 @@ namespace Dime.WSP {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="registrarLog", WrapperNamespace="http://servicios.generacionencuestas.claro.com/", IsWrapped=true)]
-    public partial class registrarLogRequest {
+    internal partial class registrarLogRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -1108,7 +1108,7 @@ namespace Dime.WSP {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="registrarLogResponse", WrapperNamespace="http://servicios.generacionencuestas.claro.com/", IsWrapped=true)]
-    public partial class registrarLogResponse {
+    internal partial class registrarLogResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://servicios.generacionencuestas.claro.com/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -1123,12 +1123,12 @@ namespace Dime.WSP {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface GeneracionEncuestaChannel : Dime.WSP.GeneracionEncuesta, System.ServiceModel.IClientChannel {
+    internal interface GeneracionEncuestaChannel : Dime.WSP.GeneracionEncuesta, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GeneracionEncuestaClient : System.ServiceModel.ClientBase<Dime.WSP.GeneracionEncuesta>, Dime.WSP.GeneracionEncuesta {
+    internal partial class GeneracionEncuestaClient : System.ServiceModel.ClientBase<Dime.WSP.GeneracionEncuesta>, Dime.WSP.GeneracionEncuesta {
         
         public GeneracionEncuestaClient() {
         }
