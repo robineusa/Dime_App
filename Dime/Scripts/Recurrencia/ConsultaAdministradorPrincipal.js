@@ -93,6 +93,7 @@ function cargargrilla(data) {
             buttonCount: 5
         },
         columns: [
+            { field: "Id", title: "Id", headerAttributes: { style: "white-space: normal" }, width: 80 },
             { field: "FechaGestion", title: "Fecha de Gestión", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "CuentaCliente", title: "Cuenta Cliente", headerAttributes: { style: "white-space: normal" }, width: 90 },
        { field: "UsuarioGestion", title: "Usuario Gestion", headerAttributes: { style: "white-space: normal" }, width: 130 },

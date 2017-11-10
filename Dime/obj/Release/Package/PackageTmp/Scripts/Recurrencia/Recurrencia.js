@@ -1,11 +1,18 @@
 ﻿$.datetimepicker.setLocale('es');
 $(document).ready(function () {
-
+    $('#MarcacionReincidenteRecurrencia').val('');
+    $('#MarcacionInicialAfectacion').val('');
+    $('#PorQue').val('');
+    $('#VozCliente').val('');
+    $('#AreaParticipaSolucion').val('');
+    $("#FechaSesguimiento").val('');
+    
     $('#FechaSesguimiento').datetimepicker({
-        format: 'Y-m-d 00:00',
-        maxDate: '+0d',
+        //format: 'Y-m-d h:mm',
+        //Format: "Y.m.d",
+        format: "Y-m-d H:00",
+        minDate: '+0d',
         timepicker: true,
-        step: 30,
     });
 
     $("#Li1").click(function () {
@@ -18,6 +25,8 @@ $(document).ready(function () {
         $("#Li3").css('background-color', 'transparent');
         $("#Li4").css('background-color', 'transparent');
         $("#Li4").css("border-color", "transparent");
+        $("#Li5").css('background-color', 'transparent');
+        $("#Li5").css("border-color", "transparent");
 
     });
 
@@ -30,6 +39,8 @@ $(document).ready(function () {
         $("#Li3").css('background-color', 'transparent');
         $("#Li4").css('background-color', 'transparent');
         $("#Li4").css("border-color", "transparent");
+        $("#Li5").css('background-color', 'transparent');
+        $("#Li5").css("border-color", "transparent");
     });
 
     $("#Li3").click(function () {
@@ -41,6 +52,8 @@ $(document).ready(function () {
         $("#Li2").css('background-color', 'transparent');
         $("#Li4").css('background-color', 'transparent');
         $("#Li4").css("border-color", "transparent");
+        $("#Li5").css('background-color', 'transparent');
+        $("#Li5").css("border-color", "transparent");
 
     });
 
@@ -53,6 +66,21 @@ $(document).ready(function () {
         $("#Li1").css("border-color", "transparent");
         $("#Li2").css("border-color", "transparent");
         $("#Li2").css('background-color', 'transparent');
+        $("#Li5").css('background-color', 'transparent');
+        $("#Li5").css("border-color", "transparent");
+    });
+
+    $("#Li5").click(function () {
+        $("#Li5").css('background-color', '#dcdcdc');
+        $("#Li5").css("border-color", "#c23321");
+        $("#Li1").css("background-color", "transparent");
+        $("#Li3").css("background-color", "transparent");
+        $("#Li3").css("border-color", "transparent");
+        $("#Li1").css("border-color", "transparent");
+        $("#Li2").css("border-color", "transparent");
+        $("#Li2").css('background-color', 'transparent');
+        $("#Li4").css('background-color', 'transparent');
+        $("#Li4").css("border-color", "transparent");
     });
     
 
@@ -64,6 +92,7 @@ $(document).ready(function () {
         }
     });
     //SetMacroProcesoRecurrencias();
+    CargaMiHistorial();
     SetContactoList();
     CargaSeguimientos();
     $("#Observaciones").val('');
@@ -209,7 +238,6 @@ function SetOpciones() {
         $("#ClientePresentaNovedades").removeAttr("disabled");
         $("#ActivacionClaroVideoNagra").removeAttr("disabled");
         $("#ServicioOfrecido").removeAttr("disabled");
-        $("#ServicioOfrecido").removeAttr("disabled");
         $("#AceptacionServicioOfrecido").removeAttr("disabled");
         $("#VozCliente").val('');
         $("#AreaParticipaSolucion").val('');
@@ -236,7 +264,7 @@ function SetOpciones() {
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
         $("#Estado").attr("disabled", "disabled");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#ActivacionClaroVideoNagra").empty();
         $("#ActivacionClaroVideoNagra").append("<option value=''>--Select Option--</option>");
@@ -275,11 +303,82 @@ function SetOpciones() {
         $("#Solucionado").append("<option value=''>--Select Option--</option>");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#Solucionado").empty();
         $("#Solucionado").append("<option value=''>--Select Option--</option>");
         $("#Solucionado").append("<option Value='SI'>SI</option>");
         $("#Solucionado").append("<option Value='NO'>NO</option>");        
+        $("#MarcaEquiposFalla").attr("disabled", "disabled");
+        $("#MarcaEquiposFalla").empty();
+        $("#MarcaEquiposFalla").append("<option value=''>--Select Option--</option>");
+        $("#ServicioOfrecido").empty();
+        $("#ServicioOfrecido").append("<option value=''>--Select Option--</option>");
+        $("#AceptacionServicioOfrecido").empty();
+        $("#AceptacionServicioOfrecido").append("<option value=''>--Select Option--</option>");
+
+
+        $("#VozCliente").val('');
+        $("#AreaParticipaSolucion").val('');
+        $("#ClientePresentaNovedades").empty();
+        $("#ClientePresentaNovedades").append("<option value=''>--Select Option--</option>");
+        $("#Proceso").empty();
+        $("#Proceso").append("<option value=''>--Select Option--</option>");
+        $("#Macroproceso").empty();
+        $("#Macroproceso").append("<option value=''>--Select Option--</option>");
+        $("#ServicioAfectado").empty();
+        $("#ServicioAfectado").append("<option value=''>--Select Option--</option>");
+        $("#FallaEspecificaArbolCCAA").empty();
+        $("#FallaEspecificaArbolCCAA").append("<option value=''>--Select Option--</option>");
+        $("#FallaCausaRaiz").empty();
+        $("#FallaCausaRaiz").append("<option value=''>--Select Option--</option>");
+        $("#ActivacionClaroVideoNagra").empty();
+        $("#ActivacionClaroVideoNagra").append("<option value=''>--Select Option--</option>");
+        $("#ServicioOfrecido").attr("disabled", "disabled");
+        $("#AceptacionServicioOfrecido").attr("disabled", "disabled");
+        $("#UbicacionModem").attr("disabled", "disabled");
+        $("#UbicacionModem").empty();
+        $("#UbicacionModem").append("<option value=''>--Select Option--</option>");
+        $("#DispositivosInalambricosAlrededorModem").attr("disabled", "disabled");
+        $("#DispositivosInalambricosAlrededorModem").empty();
+        $("#DispositivosInalambricosAlrededorModem").append("<option value=''>--Select Option--</option>");
+        $("#CantEquiposConecInternet").attr("disabled", "disabled");
+        $("#CantEquiposConecInternet").empty();
+        $("#CantEquiposConecInternet").append("<option value=''>--Select Option--</option>");
+        $("#TipoDispConectaInternet").attr("disabled", "disabled");
+        $("#TipoDispConectaInternet").empty();
+        $("#TipoDispConectaInternet").append("<option value=''>--Select Option--</option>");
+        $("#UsoBrindaInternet").attr("disabled", "disabled");
+        $("#UsoBrindaInternet").empty();
+        $("#UsoBrindaInternet").append("<option value=''>--Select Option--</option>");
+    }
+
+    if ($("#Contacto").val() == "CLIENTE NO ATIENDE")
+    {
+        $("#VozCliente").removeAttr("disabled");
+        $("#AreaParticipaSolucion").attr("disabled", "disabled");
+        $("#ClientePresentaNovedades").attr("disabled", "disabled");
+        $("#Proceso").attr("disabled", "disabled");
+        $("#Macroproceso").attr("disabled", "disabled");
+        $("#ServicioAfectado").attr("disabled", "disabled");
+        $("#FallaEspecificaArbolCCAA").attr("disabled", "disabled");
+        $("#FallaCausaRaiz").attr("disabled", "disabled");
+        $("#SolucionEspecifica").attr("disabled", "disabled");
+        $("#Solucionado").attr("disabled", "disabled");
+        $("#Estado").removeAttr("disabled");
+        $("#FechaSesguimiento").attr("disabled", "disabled");
+        $("#ActivacionClaroVideoNagra").attr("disabled", "disabled");
+        $("#SolucionEspecifica").empty();
+        $("#SolucionEspecifica").append("<option value=''>--Select Option--</option>");
+        $("#Solucionado").empty();
+        $("#Solucionado").append("<option value=''>--Select Option--</option>");
+        $("#Estado").empty();
+        $("#Estado").append("<option value=''>--Select Option--</option>");
+        $("#Estado").append("<option value='SEGUIMIENTO'>SEGUIMIENTO</option>");
+        $("#FechaSesguimiento").val('');
+        $("#Solucionado").empty();
+        $("#Solucionado").append("<option value=''>--Select Option--</option>");
+        $("#Solucionado").append("<option Value='SI'>SI</option>");
+        $("#Solucionado").append("<option Value='NO'>NO</option>");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
         $("#MarcaEquiposFalla").append("<option value=''>--Select Option--</option>");
@@ -347,7 +446,7 @@ function SetProceso() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -376,7 +475,7 @@ function SetProceso() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -424,7 +523,7 @@ function SetMacroProceso() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -476,7 +575,7 @@ function SetMacroProceso() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -521,7 +620,7 @@ function SetServicioAfectado() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -545,7 +644,7 @@ function SetServicioAfectado() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -601,7 +700,7 @@ function SetFallaEspecificaArbol() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -621,7 +720,7 @@ function SetFallaEspecificaArbol() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -673,7 +772,7 @@ function SetFallaCausaRaiz() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -690,7 +789,7 @@ function SetFallaCausaRaiz() {
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -708,7 +807,7 @@ function SetCampoFallaCausaRaiz()
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -773,7 +872,7 @@ function SetCampoFallaCausaRaiz()
         $("#Estado").attr("disabled", "disabled");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
@@ -813,7 +912,7 @@ function SetSolucionEspecifica() {
     $("#Estado").attr("disabled", "disabled");
     $("#Estado").empty();
     $("#Estado").append("<option value=''>--Select Option--</option>");
-    $("#FechaSesguimiento").empty();
+    $("#FechaSesguimiento").val('');
     $("#FechaSesguimiento").attr("disabled", "disabled");
     $("#MarcaEquiposFalla").attr("disabled", "disabled");
     $("#MarcaEquiposFalla").empty();
@@ -863,7 +962,7 @@ function SetEstado() {
         $("#Estado").append("<option value=''>--Select Option--</option>");
         $("#Estado").append("<option value='FINALIZADO'>FINALIZADO</option>");
         $("#Estado").removeAttr("disabled");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
     }
     else {
@@ -871,7 +970,7 @@ function SetEstado() {
         $("#Estado").append("<option value=''>--Select Option--</option>");
         $("#Estado").append("<option value='SEGUIMIENTO'>SEGUIMIENTO</option>");
         $("#Estado").removeAttr("disabled");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
 
         if (Valor == "") {
@@ -996,10 +1095,13 @@ function ShowGridSeguimientos(data) {
         },
         columns: [
             { command: { text: " ", click:CargaSeguimiento, imageClass: "k-icon k-i-pencil", }, title: "Editar", width: "60px" },
-       { field: "FechaGestion", title: "Fecha de Gestión",headerAttributes: { style: "white-space: normal" }, width: 100, template: "#= kendo.toString(kendo.parseDate(FechaGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #" },
+       { field: "FechaGestion", title: "Fecha de Gestión", headerAttributes: { style: "white-space: normal" }, width: 100, template: "#= kendo.toString(kendo.parseDate(FechaGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #" },
+       { field: "NombreUsuarioGestion", title: "Nombre Usuario Gestiono", headerAttributes: { style: "white-space: normal" }, width: 100},
        { field: "CuentaCliente", title: "Cuenta Cliente",headerAttributes: { style: "white-space: normal" }, width: 90 },
             { field: "NombreCliente", title: "Nombre Cliente", headerAttributes: { style: "white-space: normal" }, width: 130 },
            { field: "ApellidoCliente", title: "Apellido Cliente", headerAttributes: { style: "white-space: normal" }, width: 130 },
+           { field: "MarcacionInicialAfectacion", title: "Marcación Inicial Afectacion", headerAttributes: { style: "white-space: normal" }, width: 100 },
+           { field: "MarcacionReincidenteRecurrencia", title: "Marcación Reincidente", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "Marcaciones", title: "Numero Marcaciones", headerAttributes: { style: "white-space: normal" }, width: 80 },
        { field: "FechaSesguimiento", title: "Fecha Seguimiento", headerAttributes: { style: "white-space: normal" }, width: 80 },
         ]
@@ -1067,6 +1169,7 @@ function ShowGridHistorial(data) {
         toolbar: ["excel"],
         excel: {
             fileName: "HistoricoSeguimientosCuenta_" + CuentaCli + ".xlsx",
+            allPages: true
         },
         dataSource: {
             data: data,
@@ -1088,6 +1191,8 @@ function ShowGridHistorial(data) {
             buttonCount: 5
         },
         columns: [
+            { field: "Id", title: "Id", headerAttributes: { style: "white-space: normal" }, width: 80 },
+       { field: "IdGprincipal", title: "Id Gestion Principal", headerAttributes: { style: "white-space: normal" }, width: 80 },
        { field: "FechaGestion", title: "Fecha de Gestión", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "CuentaCliente", title: "Cuenta Cliente", headerAttributes: { style: "white-space: normal" }, width: 90 },
        { field: "UsuarioGestion", title: "Usuario Gestion", headerAttributes: { style: "white-space: normal" }, width: 130 },
@@ -1142,8 +1247,42 @@ function ShowGridHistorial(data) {
 function SetMarcaEquiposFalla()
 {
     if ($("#Estado").val() != '') {
-        $("#FechaSesguimiento").empty();
-        $("#FechaSesguimiento").removeAttr("disabled");
+        if ($("#Estado").val() == "SEGUIMIENTO") {
+            $("#FechaSesguimiento").val('');
+            $("#FechaSesguimiento").removeAttr("disabled");
+
+            $("#ActivacionClaroVideoNagra").attr("disabled", "disabled");
+            $("#ActivacionClaroVideoNagra").empty();
+            $("#ActivacionClaroVideoNagra").append("<option value=''>--Select Option--</option>");
+            $("#ServicioOfrecido").attr("disabled", "disabled");
+            $("#ServicioOfrecido").empty();
+            $("#ServicioOfrecido").append("<option value=''>--Seleccione--</option>");
+            $("#AceptacionServicioOfrecido").attr("disabled", "disabled");
+            $("#AceptacionServicioOfrecido").empty();
+            $("#AceptacionServicioOfrecido").append("<option value=''>--Seleccione--</option>");
+        }
+        else
+        {
+            $("#FechaSesguimiento").val('');
+            $("#FechaSesguimiento").attr("disabled", "disabled");
+
+            $("#ActivacionClaroVideoNagra").removeAttr("disabled", "disabled");
+            $("#ActivacionClaroVideoNagra").empty();
+            $("#ActivacionClaroVideoNagra").append("<option value=''>--Select Option--</option>");
+            $("#ActivacionClaroVideoNagra").append("<option value='INCENTIVA USO CLARO VIDEO'>INCENTIVA USO CLARO VIDEO</option>");
+            $("#ActivacionClaroVideoNagra").append("<option value='NO DESEA ACTIVACION'>NO DESEA ACTIVACION</option>");
+            $("#ActivacionClaroVideoNagra").append("<option value='SE ACTIVA CLARO VIDEO'>SE ACTIVA CLARO VIDEO</option>");
+            $("#ActivacionClaroVideoNagra").append("<option value='TARIFA NO DEFINIDA'>TARIFA NO DEFINIDA</option>");
+            SetServiciosOfrecer();
+            $("#AceptacionServicioOfrecido").removeAttr("disabled", "disabled");
+            $("#AceptacionServicioOfrecido").empty();
+            $("#AceptacionServicioOfrecido").append("<option value=''>--Select Option--</option>");
+            $("#AceptacionServicioOfrecido").append("<option value='ACEPTA OFRECIMIENTO'>ACEPTA OFRECIMIENTO</option>");
+            $("#AceptacionServicioOfrecido").append("<option value='NO ESTA DISPONIBLE'>NO ESTA DISPONIBLE</option>");
+            $("#AceptacionServicioOfrecido").append("<option value='NO LE INTERESA'>NO LE INTERESA</option>");
+            $("#AceptacionServicioOfrecido").append("<option value='NO LE INTERESA POR COSTOS'>NO LE INTERESA POR COSTOS</option>");
+
+        }
         $("#MarcaEquiposFalla").removeAttr("disabled");
         $("#MarcaEquiposFalla").empty();
         $("#MarcaEquiposFalla").append("<option value=''>--Seleccione--</option>");
@@ -1174,7 +1313,7 @@ function SetMarcaEquiposFalla()
         $("#MarcaEquiposFalla").attr("disabled", "disabled");
         $("#MarcaEquiposFalla").empty();
         $("#MarcaEquiposFalla").append("<option value=''>--Seleccione--</option>");
-        $("#FechaSesguimiento").empty();
+        $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
     }
 }
@@ -1553,4 +1692,106 @@ function ShowGridInventarioEquipos(data) {
 
     
 
+}
+
+function CargaMiHistorial()
+{
+    $.ajax({
+        type: "POST",
+        url: urlListMiHistorial,
+        contentType: "application/json; charset=utf-8",
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            ShowGridMiHistorial(json);
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+}
+
+function ShowGridMiHistorial(data)
+{
+    if (data != null) {
+        cambiarfechas(data);
+    }
+
+    $("#MiHistorialGrid").kendoGrid({
+        autoBind: true,
+        toolbar: ["excel"],
+        excel: {
+            fileName: "MiHistorial.xlsx",
+            allPages: true
+        },
+        dataSource: {
+            data: data,
+            pageSize: 5,
+        },
+        scrollable: true,
+        filterable: {
+            extra: false,
+            operators: {
+                string: {
+                    eq: "Es igual a"
+                }
+            }
+        },
+        sortable: true,
+        pageable: {
+            refresh: true,
+            pageSizes: true,
+            buttonCount: 5
+        },
+        columns: [
+            { field: "Id", title: "Id", headerAttributes: { style: "white-space: normal" }, width: 80 },
+       { field: "IdGprincipal", title: "Id Gestion Principal", headerAttributes: { style: "white-space: normal" }, width: 80 },
+       { field: "FechaGestion", title: "Fecha de Gestión", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "CuentaCliente", title: "Cuenta Cliente", headerAttributes: { style: "white-space: normal" }, width: 90 },
+       { field: "UsuarioGestion", title: "Usuario Gestion", headerAttributes: { style: "white-space: normal" }, width: 130 },
+       { field: "NombreUsuarioGestion", title: "Nombre Usuario Gestion", headerAttributes: { style: "white-space: normal" }, width: 130 },
+       { field: "AliadoGestion", title: "Aliado Gestion", headerAttributes: { style: "white-space: normal" }, width: 130 },
+       { field: "MarcacionInicialAfectacion", title: "Marcacion Inicial de Afectacion", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "MarcacionReincidenteRecurrencia", title: "Marcacion Reincidente por la Recurrencia", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "ClieComunicaRealizadaGestRecu", title: "Cliente se Vuelve a Comunicar Despues de Realizada Gestión Recurrentes", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "PorQue", title: "Por Que", headerAttributes: { style: "white-space: normal" }, width: 120 },
+       { field: "Contacto", title: "Contacto", headerAttributes: { style: "white-space: normal" }, width: 120 },
+       { field: "VozClienteCausaRaiz", title: "Voz Cliente Causa Raiz", headerAttributes: { style: "white-space: normal" }, width: 120 },
+       { field: "Solucionado", title: "Solucionado", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "AreaParticipaSolucion", title: "Area que particiapa en la Solucion", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "ClientePresentaNovedades", title: "Cliente Presenta Novedades", headerAttributes: { style: "white-space: normal" }, width: 80 },
+       { field: "Proceso", title: "Proceso", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Macroproceso", title: "Macroproceso", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "ServicioAfectado", title: "Servicio Afectado", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "FallaEspecificaArbolCCAA", title: "Falla Especifica Arbol CCAA", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "FallaCausaRaiz", title: "Falla Causa Raiz", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "SolucionEspecifica", title: "Solucion Especifica", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Estado", title: "Estado", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "MarcaEquiposFalla", title: "Marca Equipos con Falla", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "UbicacionModem", title: "Ubicacion del Modem", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "DispositivosInalambricosAlrededorModem", title: "Dispositivos Inalambricos Alrededor del Modem", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "CantEquiposConecInternet", title: "Cantidad Equipos que Conecta a Internet", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "TipoDispConectaInternet", title: "Tipo de Dispositivo que Conecta a Internet", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "UsoBrindaInternet", title: "Uso que Brinda al Internet", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "ActivacionClaroVideoNagra", title: "Activacion Claro Video Nagra", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "ServicioOfrecido", title: "Servicio Ofrecido", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "AceptacionServicioOfrecido", title: "Aceptacion del Servicio Ofrecido", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Ofrecimiento1", title: "Ofrecimiento 1", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "AceptacionPrimerOfrecimiento", title: "Aceptacion Primer Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Ofrecimiento2", title: "Ofrecimiento 2", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "AceptacionSegundoOfrecimiento", title: "Aceptacion Segundo Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Ofrecimiento3", title: "Ofrecimiento 3", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "AceptacionTercerOfrecimiento", title: "Aceptacion Tercer Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
+       { field: "Observaciones", title: "Observaciones", headerAttributes: { style: "white-space: normal" }, width: 130 },
+       { field: "FechaSesguimiento", title: "Fecha Seguimiento", headerAttributes: { style: "white-space: normal" }, width: 80 },
+        ]
+
+    });
+
+    function cambiarfechas(data) {
+        for (var i = 0; i < data.length; i++) {
+            data[i].FechaGestion = kendo.toString(kendo.parseDate(data[i].FechaGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+        }
+
+    }
 }
