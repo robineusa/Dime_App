@@ -136,7 +136,7 @@ namespace Dime.Controllers
                     //model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
                     model.NodosZonificados = new NodosZonificados();
                     model.GPrincipalRecurrencia = recurrencia.TraerGPrinRecurrencia(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
-                    if (model.GPrincipalRecurrencia.CuentaCliente != 0)
+                    if (model.GPrincipalRecurrencia != null)
                     {
                         //var Usuario = Session["IdUsuario"].ToString();
                         if (model.GPrincipalRecurrencia.UsuarioGestionando == 0 || model.GPrincipalRecurrencia.UsuarioGestionando == Convert.ToDecimal(Usuario))
@@ -176,7 +176,7 @@ namespace Dime.Controllers
                         ViewBag.NoDatos = "Esta Cuenta No esta en la Base Para Gestionar";
                         ViewBag.Display = "none";
                         ViewBag.InventEquipos = "none";
-                        model.ClientesTodos.Cuenta = Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente);
+                        //model.ClientesTodos.Cuenta = Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente);
                         model.CargueBase = new RecurrenciaCargaBase();
                         model.GPrincipalRecurrencia = new GPrincipalRecurrencia();
                         model.NodosZonificados = new NodosZonificados();
@@ -214,9 +214,12 @@ namespace Dime.Controllers
                         if (model.GPrincipalRecurrencia.MarcacionInicialAfectacion != null)
                         {
                             model.GPrincipalRecurrencia.MarcacionInicialAfectacion = (model.GPrincipalRecurrencia.MarcacionInicialAfectacion).ToUpper();
+                        }
+                        if (model.GPrincipalRecurrencia.MarcacionReincidenteRecurrencia != null)
+                        {
                             model.GPrincipalRecurrencia.MarcacionReincidenteRecurrencia = (model.GPrincipalRecurrencia.MarcacionReincidenteRecurrencia).ToUpper();
                         }
-                        
+
                         if (result.Count != 0)
                         {
                             var Revisar = result.Any(a => a.CuentaCliente == model.GPrincipalRecurrencia.CuentaCliente && a.MarcacionInicialAfectacion == model.GPrincipalRecurrencia.MarcacionInicialAfectacion
@@ -447,5 +450,13 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        public JsonResult ListaMiHistorialRecurrencia()
+        {
+            var Usuario = Session["IdUsuario"].ToString();
+            var jsonResult = Json(JsonConvert.SerializeObject(recurrencia.ListaMiHistorialRecurrencia(Usuario)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        
     }
 }

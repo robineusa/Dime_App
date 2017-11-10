@@ -74,8 +74,6 @@ namespace Telmexla.Servicios.DIME.Entity
 
         [Required(ErrorMessage = "Seleccione una opción")]
         public string Estado { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
         public string MarcaEquiposFalla { get; set; }
 
         [Required(ErrorMessage = "Seleccione una opción")]
@@ -102,7 +100,7 @@ namespace Telmexla.Servicios.DIME.Entity
         public string Observaciones { get; set; }
         public decimal UsuarioGestionando { get; set; }
 
-        [Required(ErrorMessage = "Seleccione una opción")]
+        [Required(ErrorMessage = "Seleccione una Fecha")]
         public string FechaSesguimiento { get; set; }
 
         public virtual System.Collections.Generic.ICollection<GLogRecurrencia> GLogRecurrenciaVirtual { get; set; }
