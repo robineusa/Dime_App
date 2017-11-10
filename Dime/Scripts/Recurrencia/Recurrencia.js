@@ -997,10 +997,13 @@ function ShowGridSeguimientos(data) {
         },
         columns: [
             { command: { text: " ", click:CargaSeguimiento, imageClass: "k-icon k-i-pencil", }, title: "Editar", width: "60px" },
-       { field: "FechaGestion", title: "Fecha de Gestión",headerAttributes: { style: "white-space: normal" }, width: 100, template: "#= kendo.toString(kendo.parseDate(FechaGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #" },
+       { field: "FechaGestion", title: "Fecha de Gestión", headerAttributes: { style: "white-space: normal" }, width: 100, template: "#= kendo.toString(kendo.parseDate(FechaGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #" },
+       { field: "NombreUsuarioGestion", title: "Nombre Usuario Gestiono", headerAttributes: { style: "white-space: normal" }, width: 100},
        { field: "CuentaCliente", title: "Cuenta Cliente",headerAttributes: { style: "white-space: normal" }, width: 90 },
             { field: "NombreCliente", title: "Nombre Cliente", headerAttributes: { style: "white-space: normal" }, width: 130 },
            { field: "ApellidoCliente", title: "Apellido Cliente", headerAttributes: { style: "white-space: normal" }, width: 130 },
+           { field: "MarcacionInicialAfectacion", title: "Marcación Inicial Afectacion", headerAttributes: { style: "white-space: normal" }, width: 100 },
+           { field: "MarcacionReincidenteRecurrencia", title: "Marcación Reincidente", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "Marcaciones", title: "Numero Marcaciones", headerAttributes: { style: "white-space: normal" }, width: 80 },
        { field: "FechaSesguimiento", title: "Fecha Seguimiento", headerAttributes: { style: "white-space: normal" }, width: 80 },
         ]

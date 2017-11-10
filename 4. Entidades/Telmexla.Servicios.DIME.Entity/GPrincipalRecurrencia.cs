@@ -105,5 +105,7 @@ namespace Telmexla.Servicios.DIME.Entity
         [Required(ErrorMessage = "Seleccione una opción")]
         public string FechaSesguimiento { get; set; }
 
+        public virtual System.Collections.Generic.ICollection<GLogRecurrencia> GLogRecurrenciaVirtual { get; set; }
+
     }
 }

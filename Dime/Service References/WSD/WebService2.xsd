@@ -2923,6 +2923,7 @@
       <xs:element minOccurs="0" name="FechaSesguimiento" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaUltimaGestion" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaUltimaMarcacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GLogRecurrenciaVirtual" nillable="true" type="tns:ArrayOfGLogRecurrencia" />
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
       <xs:element minOccurs="0" name="IncluyeClaroVideo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Macroproceso" nillable="true" type="xs:string" />
@@ -2959,12 +2960,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GPrincipalRecurrencia" nillable="true" type="tns:GPrincipalRecurrencia" />
-  <xs:complexType name="ArrayOfGPrincipalRecurrencia">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="GPrincipalRecurrencia" nillable="true" type="tns:GPrincipalRecurrencia" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfGPrincipalRecurrencia" nillable="true" type="tns:ArrayOfGPrincipalRecurrencia" />
   <xs:complexType name="ArrayOfGLogRecurrencia">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="GLogRecurrencia" nillable="true" type="tns:GLogRecurrencia" />
@@ -2998,7 +2993,9 @@
       <xs:element minOccurs="0" name="FechaSesguimiento" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaUltimaGestion" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaUltimaMarcacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GPrincipalRecurrencia" nillable="true" type="tns:GPrincipalRecurrencia" />
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdGprincipal" type="xs:decimal" />
       <xs:element minOccurs="0" name="IncluyeClaroVideo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Macroproceso" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MarcaEquiposFalla" nillable="true" type="xs:string" />
@@ -3033,6 +3030,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GLogRecurrencia" nillable="true" type="tns:GLogRecurrencia" />
+  <xs:complexType name="ArrayOfGPrincipalRecurrencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GPrincipalRecurrencia" nillable="true" type="tns:GPrincipalRecurrencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGPrincipalRecurrencia" nillable="true" type="tns:ArrayOfGPrincipalRecurrencia" />
   <xs:complexType name="GPrincipalRecurrenciaInbound">
     <xs:sequence>
       <xs:element minOccurs="0" name="AceptacionServicioOfrecido" nillable="true" type="xs:string" />
