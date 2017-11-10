@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Styles/Banner/BannerAlertas.css?1.0.1" rel="stylesheet" />
+    </head>
+<body>
+   
+    <div class="BannerAlertasContent">
+        @if (ViewBag.ConvenioElectronico == true || ViewBag.ClaroVideo == true || ViewBag.MejorOferta == true || ViewBag.SiembraHD == true || ViewBag.MejorasTecnicas == true || ViewBag.Fox == true)
+        {
+            <div class="col-xs-2" style="right:30px; float: right;">
+
+                <div id="Latido" class="latir">
+                    @if (ViewBag.ConvenioElectronico == true)
+                {
+                        <a href="#ActivarConvenio" onclick="LlamarConvenioElectronico()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                            <div id="Icono_1" style="display: block;"></div>
+                        </a>
+                    }
+                    @if (ViewBag.ClaroVideo == true)
+                {
+                        <a href="#ClaroVideo" onclick="return LlamarClaroVideo();" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                            <div id="Icono_3" style="display: block"></div>
+                        </a>
+                    }
+                    @if (ViewBag.MejorOferta == true)
+                {
+                        <a href="#MejorOferta" onclick="return LlamarSMO()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                            <div id="Icono_4" style="display: block"></div>
+                        </a>
+                    }
+                    @if (ViewBag.SiembraHD == true)
+                {
+                        <a href="#SiembraHD" onclick="return LlamarSiembraHD()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                            <div id="Icono_5" style="display: block"></div>
+                        </a>
+                    }
+                    @if (ViewBag.MejorasTecnicas == true)
+                {
+                        <a href="#MejorasTecnicas" onclick="return LlamarMejorasTecnicas()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                            <div id="Icono_6" style="display: block"></div>
+                        </a>
+                    }
+                    @if (ViewBag.Fox == true)
+                {
+                        <a href="#FOX" onclick="return LlamarFOX()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                            <div id="Icono_7" style="display: block"></div>
+                        </a>
+                    }
+                </div>
+
+            </div>
+        }
+        
+            @*<div class="col-xs-2" style="right:30px; float: right;">
+
+                <div id="Latido" class="latir">
+                        <a href="#ActivarConvenio" onclick="LlamarConvenioElectronico()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                            <div id="Icono_1" style="display: block;"></div>
+                        </a>
+                  
+                        <a href="#ClaroVideo" onclick="return LlamarClaroVideo();" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                            <div id="Icono_3" style="display: block"></div>
+                        </a>
+
+                        <a href="#MejorOferta" onclick="return LlamarSMO()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                            <div id="Icono_4" style="display: block"></div>
+                        </a>
+                   
+                        <a href="#SiembraHD" onclick="return LlamarSiembraHD()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                            <div id="Icono_5" style="display: block"></div>
+                        </a>
+                    
+                        <a href="#MejorasTecnicas" onclick="return LlamarMejorasTecnicas()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                            <div id="Icono_6" style="display: block"></div>
+                        </a>
+                    
+                        <a href="#FOX" onclick="return LlamarFOX()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                            <div id="Icono_7" style="display: block"></div>
+                        </a>
+                    
+                </div>
+
+            </div>*@
+        
+    </div>
+    <div>
+        <div id="ActivarConvenio" class="modal">
+            <div class="modal-dialog" style="width:1000px;">
+                <div class="modal-content" style="width:1000px;">
+                    <div class="modal-header" style="width:1000px;">
+                        <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                        <h2 class="modal-title"><i class="fa fa-envelope" style="color:#D92028;" aria-hidden="true"></i>&nbsp;&nbsp;Formulario Activación Convenio Electrónico</h2>
+                    </div>
+                    <div class="modal-body" style="width:1000px;">
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="margin-left:25px;">
+                                <div id="ConvenioBody"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    @section Scripts{
+        <script>
+            var urlConvenioElectronicoView = '@Url.Action("ConvenioElectronico", "Banner")';
+            var urlElegidoView = '@Url.Action("Elegido_Fijo_Movil", "Banner")';
+            var urlClaroVideoView = '@Url.Action("Claro_Video", "Banner")';
+            var urlSMOView = '@Url.Action("Siguiente_Mejor_Oferta", "Banner")';
+            var urlSiembraHDView = '@Url.Action("Siembra_HD", "Banner")';
+            var urlMejorasTecnicas = '@Url.Action("Mejoras_Tecnicas", "Banner")';
+            var urlFOX = '@Url.Action("FOX", "Banner")';
+        </script>
+        <script src="~/Scripts/Banner/BannerAlertas.js?1.0.4"></script>
+
+    }
+</body>
+   
+</html>

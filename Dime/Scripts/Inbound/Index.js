@@ -650,5 +650,3 @@ function ResetearDivs() {
 //    });
 
 //}
-
-

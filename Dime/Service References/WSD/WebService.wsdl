@@ -30911,18 +30911,5 @@
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
-    <wsdl:port name="WSHttpBinding_IBannerAlertasService" binding="tns:WSHttpBinding_IBannerAlertasService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
-      <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
-            <X509Data>
-              <X509Certificate>MIIDIzCCAg+gAwIBAgIQL5jTcMPEhphMYxtdPK8r1jAJBgUrDgMCHQUAMCQxIjAgBgNVBAMTGURpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjIwHhcNMTcwODIzMTUwMjEyWhcNMzkxMjMxMjM1OTU5WjAkMSIwIAYDVQQDExlEaW1lU2VydmljZUNlcnRpZmljYXRpb24yMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvXVX6fO9/EJDdJosKppntY/sKFCYvV9DAN3J9o4KXj7Ibw58DYhKk6kXHX6LnNrWBzDRr254iLJcnDwUirx1Hf4GHU7LnlzLh+v+sNa6p2a2WZvIF/aD4hNV4htTKfi7B3cKB/TWclsC5LsHO8DezWcZEgCifjZPU3pbTskoBY77etPu4V9WUDJ0HZodP7tDSVSatEFL/25lgk8v0nLlMismDiAhTW0AYZri/YaNu1U+3xJtbGFmDUJhs33SQR56IpoA5XWCGsPQFcBWZvVG9D2dS9fVYnz9zJN8GdbBwmSKV+zZnXBZGnvL3U9gaAoMTAj1l07gwp6BmqYiRrIvvwIDAQABo1kwVzBVBgNVHQEETjBMgBAH0AEYMCiVfyXex13eIFRsoSYwJDEiMCAGA1UEAxMZRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMoIQL5jTcMPEhphMYxtdPK8r1jAJBgUrDgMCHQUAA4IBAQA64/SIJeqPOHoPo/OlQ4lt8SYEpqhRr4jpYj9U9NdsyDoJZI/B2ISYEW9vVL55rJqQxqtXEU8/ayQwEJf2VtyV9zb3CKZNAz0LXrLzHE3wvrXd5rSpZfIaQhcE5/zTbr/3+oLx/g7HQIwQE1vN3LTOugdEk4K7LxGm2XLXT/4Apa86Hyp6E85vDA3cUrfBI8MeNn0VcSwqAEu4tchJ1SmYb5bJ/pw8Pu0FjS4JiAvX0pTmS+Gv5qJp2YFrHUKF4nyoEPyUptLRtVI4SCgQD4tbM7YuNC6yRLCjNuwrZ4VzfzvhuqJy9ntzQGFJouUAdkT59c76Ck6tb2XlQFz9v1l+</X509Certificate>
-            </X509Data>
-          </KeyInfo>
-        </Identity>
-      </wsa10:EndpointReference>
-    </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

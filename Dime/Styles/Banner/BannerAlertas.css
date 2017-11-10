@@ -1,0 +1,298 @@
+.BannerAlertasContent{
+    background-color: transparent;
+    width: 80px;
+    height: auto;
+    position: fixed;
+    z-index: 888;
+    right: 5px;
+    
+}
+#Menu_Opciones {
+    width:250%;
+    float: left;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    padding:6px;
+    height: 55px;
+}
+
+.latir{
+    animation: 2.5s infinite latidico;
+    height:44px;
+    border-radius:5px;
+
+}
+
+@keyframes latidico {
+  0% {
+          transform: translate(0%,0%) scale(1);
+  }
+  94% {
+   
+          transform: translate(0%,0%) scale(1);
+  }
+  98% {
+   
+          transform: translate(0%,0%) scale(1.35); /* Alem do scale mantemos o translate, para o ponto continuar centrado ao variar de tamanho */
+  }
+  100% {
+    
+          transform: translate(0%,0%) scale(1);
+  }
+}
+
+
+@keyframes bounceInDown {
+ /* from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+*/
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  /*to {
+    transform: none;
+  }*/
+}
+#Icono_1 {
+    animation: 0.8s bounceInDown;
+    width:45px; 
+    height:45px;
+    background: url(../../Resources/Images/Inbound/correo.png) center no-repeat;
+    background-size: 42px 42px;
+}
+#Icono_1:hover:after{
+    content: 'Activar Convenio Electrónico'; 
+    position: absolute;
+    z-index: 888;
+    margin-left: -150px;
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 150px;
+    height: 35px;
+    animation: 1s infinite latidico;
+}
+#Icono_2 {
+    animation: 3s bounceInDown;
+    width:45px; 
+    height:45px;
+    background: url(../../Resources/Images/Inbound/Elegido.png) center no-repeat;
+    background-size: 42px 42px;
+    
+}
+#Icono_2:hover:after{
+    content: 'Activar Elegido Fijo Móvil'; 
+    position: absolute;
+    z-index: 888;
+    margin-left: -150px;
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 150px;
+    height: 35px;
+    animation: 1s infinite latidico;
+}
+#Icono_3 {
+    animation: 1s bounceInDown;
+    width:60px; 
+    height:45px;
+    background: url(../../Resources/Images/Inbound/Claro_Video.png) center no-repeat;
+    background-size: 60px 42px;
+    vertical-align: center;
+    margin-left: -10px;
+
+}
+#Icono_3:hover:after{
+    vertical-align: center;
+    content:'Activar Claro Video'; 
+    position: absolute;
+    z-index: 888;
+   margin-left: -150px;
+    margin-top: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 150px;
+    height: 35px;
+    line-height: 35px;
+    animation: 1s infinite latidico;
+}
+#Icono_4 {
+    animation: 1.2s bounceInDown;
+    width:45px; 
+    height:45px;
+    margin-right: 5px;
+    background: url(../../Resources/Images/Inbound/Carrito.png) center no-repeat;
+    background-size: 35px 35px;
+}
+#Icono_4:hover:after{
+ content: 'Activar Siguiente Mejor Oferta'; 
+    position: absolute;
+    z-index: 888;
+   margin-left: -150px;
+    margin-top: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 150px;
+    height: 35px;
+    animation: 1s infinite latidico;
+}
+#Icono_5 {
+    animation: 1.4s bounceInDown;
+    width:40px; 
+    height:40px;
+    background: url(../../Resources/Images/Inbound/hd2.png) center no-repeat;
+    background-size: 38px 38px;
+}
+
+#Icono_5:hover:after{
+ content: 'Activar Siembra HD'; 
+    position: absolute;
+    z-index: 888;
+    margin-left: -150px;
+    margin-top: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 150px;
+    height: 35px;
+    line-height: 35px;
+    animation: 1s infinite latidico;
+}
+#Icono_6 {
+    animation: 1.6s bounceInDown;
+    width: 35px;
+    height: 35px;
+    background: url('../../Resources/Images/Inbound/Mejoras_Tecnicas.png') center no-repeat;
+    background-size: 32px 32px;
+}
+
+#Icono_6:hover:after{
+ content: 'Activar Mejoras Técnicas'; 
+    position: absolute;
+    z-index: 999;
+   margin-left: -150px;
+   margin-right: -5px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 150px;
+    height: 35px;
+    line-height: 35px;
+    animation: 1s infinite latidico;
+}
+#Icono_7 {
+    animation: 1.8s bounceInDown;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    background: url('../../Resources/Images/Inbound/Fox.png') center no-repeat;
+    background-size: 38px 38px;
+}
+
+#Icono_7:hover:after{
+ content: 'Activar FOX Premium'; 
+    position: absolute;
+    z-index: 999;
+   margin-left: -150px;
+   margin-right: -5px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+   width: 150px;
+    height: 35px;
+    line-height: 35px;
+    animation: 1s infinite latidico;
+}
+
+#Icono_8 {
+    float: left;
+    width: 45px;
+    height: 45px;
+    background: url('../../Resources/Images/Inbound/Pom.png') center no-repeat;
+    background-size: 42px 42px;
+    margin-top: -6px;
+    margin-left: 0px;
+    position: relative;
+}
+#Icono_8:hover{
+ -webkit-transform:scale(1.15);
+-moz-transform:scale(1.15);
+-ms-transform:scale(1.15);
+-o-transform:scale(1.15);
+transform:scale(1.15);
+-moz-transition: 0.5s;
+z-index: 999;
+ animation: 1s infinite ;
+}
+#Icono_8:hover:after{
+ content: 'Encuesta CAVS'; 
+    position: absolute;
+    z-index: 999;
+   margin-left: -45px;
+    margin-top: 47px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    width: 150px;
+    animation: 1s infinite ;
+}

@@ -2300,6 +2300,7 @@
     <Content Include="Scripts\BackElite\ReasignacionDeSolicitudes.js" />
     <Content Include="Scripts\BackElite\SeguimientoSolicitudes.js" />
     <Content Include="Scripts\BackElite\SolicitudBackElite.js" />
+    <Content Include="Scripts\Banner\BannerAlertas.js" />
     <Content Include="Scripts\BitacoraIncidentes\ActualizacionDeIncidentes.js" />
     <Content Include="Scripts\BitacoraIncidentes\ActualizarOperacionesIncidente.js" />
     <Content Include="Scripts\BitacoraIncidentes\AdministrarOperaciones.js" />
@@ -3205,6 +3206,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Styles\Banner\BannerAlertas.css" />
     <Content Include="Styles\Bitacora\Visualizador.css" />
     <Content Include="Styles\Elements\Alertas.css" />
     <Content Include="Styles\Elements\Dime2.css" />
@@ -3495,6 +3497,8 @@
     <Content Include="Views\Reportes\AdministrarUmbralesBalanced.cshtml" />
     <Content Include="Views\VisitasAutorizadas\ConsultaVisitasAutorizadas.cshtml" />
     <Content Include="Views\VisitasAutorizadas\RegistrarVisitaAutorizada.cshtml" />
+    <Content Include="Views\Banner\BannerAlertas.cshtml" />
+    <Content Include="Views\Banner\ConvenioElectronico.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3507,7 +3511,6 @@
     <Folder Include="bin\" />
     <Folder Include="obj\" />
     <Folder Include="Views\AdminBlending\" />
-    <Folder Include="Views\Banner\" />
     <Folder Include="Views\CasosAdmin\" />
   </ItemGroup>
   <ItemGroup>
