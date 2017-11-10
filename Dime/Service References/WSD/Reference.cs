@@ -15032,6 +15032,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/CuentaGprincipalRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/CuentaGprincipalRecurrenciaResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia>> CuentaGprincipalRecurrenciaAsync(int CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ListaMiHistorialRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ListaMiHistorialRecurrenciaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia> ListaMiHistorialRecurrencia(string usuarioGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ListaMiHistorialRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ListaMiHistorialRecurrenciaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia>> ListaMiHistorialRecurrenciaAsync(string usuarioGestion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -15267,6 +15273,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia>> CuentaGprincipalRecurrenciaAsync(int CuentaCliente) {
             return base.Channel.CuentaGprincipalRecurrenciaAsync(CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia> ListaMiHistorialRecurrencia(string usuarioGestion) {
+            return base.Channel.ListaMiHistorialRecurrencia(usuarioGestion);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia>> ListaMiHistorialRecurrenciaAsync(string usuarioGestion) {
+            return base.Channel.ListaMiHistorialRecurrenciaAsync(usuarioGestion);
         }
     }
     
