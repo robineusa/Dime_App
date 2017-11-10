@@ -6,6 +6,7 @@
 }
 @if (Session["Tipificacor Sac"] != null)
 {
+    @Html.Action("BannerAlertas", "Banner")
     using (Html.BeginForm("Index", "Inbound", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
     {
         @Html.AntiForgeryToken()
@@ -34,7 +35,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                @*<div class="row">
 
                     @if (Model.ClientesTodos.Convenio == "SI" || Model.ClientesTodos.Clarovideo == "SI" || Model.ListaSiembraHD.Count > 0 || Model.ListaSMO.Count > 0 || Model.ListaMejorasTecnicas.Count > 0 || Model.CuentaFox.Cuenta != 0)
                     {
@@ -90,7 +91,7 @@
 
                     }
 
-                </div>
+                </div>*@
 
             </div>
         </div>
@@ -585,7 +586,7 @@
         </div>
 
     }
-
+    
     <a href="#buscarCuenta" class="btn btn-primary btn-lg" data-toggle="modal" id="modalActivarCuenta" style="visibility:hidden">Ver Modal</a>
 
     <div class="modal" id="buscarCuenta">
@@ -605,7 +606,7 @@
         </div>
     </div>
 
-    <div>
+    @*<div>
         <div id="ActivarConvenio" class="modal">
             <div class="modal-dialog" style="width:1000px;">
                 <div class="modal-content" style="width:1000px;">
@@ -740,12 +741,13 @@
             </div>
         </div>
 
-    </div>
-
+    </div>*@
+    
     @section Scripts{
         <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
         <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
-        <link href="~/Styles/Elements/Alertas.css?1.0.4" rel="stylesheet" />
+        @*<link href="~/Styles/Elements/Alertas.css?1.0.4" rel="stylesheet" />*@
+<script src="~/Scripts/Banner/BannerAlertas.js"></script>
         <script>
             $.datetimepicker.setLocale('es');
             $('#FechaNacimiento').datetimepicker({
@@ -793,9 +795,13 @@
             }, 1000);
 
             //$('select').val('')
+
+            //nuevo banner
+            var UrlConultarClienteBanner = '@Url.Action("BannerAlertas", "Banner")';
+            
         </script>
 
-        <script src="~/Scripts/Inbound/Index.js?1.1.7"></script>
+        <script src="~/Scripts/Inbound/Index.js?1.2.5"></script>
 
     }
 
