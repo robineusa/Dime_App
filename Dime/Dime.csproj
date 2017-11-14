@@ -66,7 +66,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.IdentityModel.Selectors" />
@@ -79,7 +78,6 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -120,7 +118,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -2301,6 +2298,7 @@
     <Content Include="Scripts\BackElite\SeguimientoSolicitudes.js" />
     <Content Include="Scripts\BackElite\SolicitudBackElite.js" />
     <Content Include="Scripts\Banner\BannerAlertas.js" />
+    <Content Include="Scripts\Banner\MejorOferta.js" />
     <Content Include="Scripts\BitacoraIncidentes\ActualizacionDeIncidentes.js" />
     <Content Include="Scripts\BitacoraIncidentes\ActualizarOperacionesIncidente.js" />
     <Content Include="Scripts\BitacoraIncidentes\AdministrarOperaciones.js" />
@@ -3162,20 +3160,20 @@
     <Content Include="Service References\WSD\Dime.WSD.ViewModelSkillsUsuariosBlending.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\WSD\WebService1.wsdl" />
-    <None Include="Service References\WSD\WebService5.xsd">
+    <None Include="Service References\WSD\WebService.wsdl" />
+    <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService51.xsd">
+    <None Include="Service References\WSD\WebService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService52.xsd">
+    <None Include="Service References\WSD\WebService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService53.xsd">
+    <None Include="Service References\WSD\WebService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService54.xsd">
+    <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\WSP\configuration91.svcinfo" />
@@ -3186,7 +3184,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService1.disco" />
+    <None Include="Service References\WSD\WebService.disco" />
     <Content Include="Service References\WSP\Dime.WSP.enviarEncuestaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -3202,6 +3200,10 @@
     <Content Include="Service References\WSP\Dime.WSP.respGenerarEncuesta.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Service References\WSP\GeneracionEncuestaService1.wsdl" />
+    <None Include="Service References\WSP\GeneracionEncuestaService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\WSP\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -3464,10 +3466,6 @@
     <Content Include="Views\BitacoraIncidentes\ConsultaIncidentesGeneral.cshtml" />
     <Content Include="Views\BitacoraIncidentes\ConsultaIncidentesLog.cshtml" />
     <Content Include="Views\BackElite\ReasignacionDeSolicitudes.cshtml" />
-    <None Include="Service References\WSP\GeneracionEncuestaService.wsdl" />
-    <None Include="Service References\WSP\GeneracionEncuestaService.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Views\Recurrencia\TipificadorAvaya.cshtml" />
     <Content Include="Views\VerificacionDeInventario\RegistrarSolicitud.cshtml" />
     <Content Include="Views\Home\DashboardRentabilizacion.cshtml" />
@@ -3499,6 +3497,8 @@
     <Content Include="Views\VisitasAutorizadas\RegistrarVisitaAutorizada.cshtml" />
     <Content Include="Views\Banner\BannerAlertas.cshtml" />
     <Content Include="Views\Banner\ConvenioElectronico.cshtml" />
+    <Content Include="Views\Banner\ClaroVideo.cshtml" />
+    <Content Include="Views\Banner\MejorOferta.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

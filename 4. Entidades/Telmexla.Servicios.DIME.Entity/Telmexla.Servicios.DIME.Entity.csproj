@@ -230,6 +230,7 @@
     <Compile Include="ViewModelHistorialGestiones.cs" />
     <Compile Include="ViewModelIncidentesOperaciones.cs" />
     <Compile Include="ViewModelMec.cs" />
+    <Compile Include="ViewModelMejorOferta.cs" />
     <Compile Include="ViewModelMultiPlay.cs" />
     <Compile Include="ViewModelNodos.cs" />
     <Compile Include="ViewModelNotificacionesBS.cs" />

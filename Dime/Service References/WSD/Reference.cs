@@ -16995,6 +16995,18 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnFox", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnFoxResponse")]
         System.Threading.Tasks.Task<bool> ValidarClienteEnFoxAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ConsultarClienteMejorOferta", ReplyAction="http://tempuri.org/IBannerAlertasService/ConsultarClienteMejorOfertaResponse")]
+        Telmexla.Servicios.DIME.Entity.CuentasSiguienteMejorOferta ConsultarClienteMejorOferta(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ConsultarClienteMejorOferta", ReplyAction="http://tempuri.org/IBannerAlertasService/ConsultarClienteMejorOfertaResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CuentasSiguienteMejorOferta> ConsultarClienteMejorOfertaAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistrarSMO", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistrarSMOResponse")]
+        void RegistrarSMO(Telmexla.Servicios.DIME.Entity.SiguienteMejorOferta smo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistrarSMO", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistrarSMOResponse")]
+        System.Threading.Tasks.Task RegistrarSMOAsync(Telmexla.Servicios.DIME.Entity.SiguienteMejorOferta smo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17070,6 +17082,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<bool> ValidarClienteEnFoxAsync(decimal CuentaCliente) {
             return base.Channel.ValidarClienteEnFoxAsync(CuentaCliente);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CuentasSiguienteMejorOferta ConsultarClienteMejorOferta(decimal CuentaCliente) {
+            return base.Channel.ConsultarClienteMejorOferta(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CuentasSiguienteMejorOferta> ConsultarClienteMejorOfertaAsync(decimal CuentaCliente) {
+            return base.Channel.ConsultarClienteMejorOfertaAsync(CuentaCliente);
+        }
+        
+        public void RegistrarSMO(Telmexla.Servicios.DIME.Entity.SiguienteMejorOferta smo) {
+            base.Channel.RegistrarSMO(smo);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarSMOAsync(Telmexla.Servicios.DIME.Entity.SiguienteMejorOferta smo) {
+            return base.Channel.RegistrarSMOAsync(smo);
         }
     }
 }

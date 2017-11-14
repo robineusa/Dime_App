@@ -1,0 +1,235 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelMejorOferta
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Siguiente Mejor Oferta</title>
+    @Styles.Render("~/AdminLTEbootstrap/css")
+    @Styles.Render("~/AdminLTEdist/css")
+    @Styles.Render("~/AdminLTEdist/css/skins")
+    @Scripts.Render("~/AdminLTEdist/js")
+    @Scripts.Render("~/ScriptsShared/_Layout")
+    <link href="~/Styles/Elements/Dime2.css?1.1.6" rel="stylesheet" />
+    <link href="~/AdminLTE/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="~/AdminLTE/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    @Scripts.Render("~/AdminLTEplugins/jquery/js")
+    @Scripts.Render("~/AdminLTEbootstrap/js")
+    @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+        <script>
+            var urlControlTipoContatoList = '@Url.Action("TiposDeContactoList","Banner")';
+            var urlControlTiposCierresList = '@Url.Action("TiposCierresList", "Banner")';
+            var urlControlTiposRazonesList = '@Url.Action("TiposRazonesList", "Banner")';
+            var urlControlTiposCausasList = '@Url.Action("TiposCausasList", "Banner")';
+            var urlControlTiposMotivosList = '@Url.Action("TiposMotivosList", "Banner")';
+          
+        </script>
+        <script src="~/Scripts/Banner/MejorOferta.js?1.0.8"></script>
+</head>
+<body>
+    @using (Html.BeginForm("MejorOferta", "Banner", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            <hr />
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-info"></i>
+                <h3 class="box-title"> Informacion Básica del Cliente</h3>
+            </div>
+            <div class="callout" style="margin-bottom: 0 ;border-color:#1e89ef !important; background-color:gainsboro !important; color: black !important">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <small>Cuenta Cliente:</small>
+                    </div>
+                    <div class="col-xs-2">
+                        <small>Nombre del Cliente:  </small>
+                    </div>
+                    <div class="col-xs-2">
+                        <small>Apellido del Cliente:  </small>
+                    </div>
+                    <div class="col-xs-2" style="width: 30%;">
+                        <small>Documento de Identidad:  </small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2">
+                        @Html.TextBoxFor(m => m.CuentasMejorOferta.CuentaCliente, null, new { @class = "form-control input-sm", @id = "Cuenta_Cliente", style = "width:150px;", @name = "cuentaCliente" })
+                    </div>
+                    <div class="col-xs-2">
+                        @Html.TextBoxFor(m => m.ClientesTodo.Nombre, null, new { @class = "form-control input-sm", @id = "nombrecliente", style = "width:150px;", @name = "nombrecliente" })
+                    </div>
+                    <div class="col-xs-2">
+                        @Html.TextBoxFor(m => m.ClientesTodo.Apellido, null, new { @class = "form-control input-sm", @id = "apellidocliente", style = "width:150px;", @name = "apellidocliente" })
+                    </div>
+                    <div class="col-xs-2">
+                        @Html.TextBoxFor(m => m.ClientesTodo.Cedula, null, new { @class = "form-control input-sm", @id = "cedulacliente", style = "width:150px;", @name = "cedulacliente" })
+                    </div>
+                </div>
+            </div><br />
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-gift"></i>
+                <h3 class="box-title">Ofrecimientos</h3>
+            </div>
+
+            <div class="callout" style="margin-bottom: 0 ;border-color:#1e89ef !important; background-color:gainsboro !important; color: black !important">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td style="padding:1px;" width="200">
+                                <small>Primer Ofrecimiento:  </small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="padding:1px; width:1200px;">
+                                @Html.TextBoxFor(m => m.CuentasMejorOferta.Ofrecimiento1, null, new { @class = "form-control input-sm", @id = "Ofrecimiento1SMO", style = "width:100%; height:70px;", @name = "ofrecimiento1" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <small>El cliente acepto este ofrecimiento?</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    @Html.DropDownListFor(m => m.SiguienteMejorOferta.Ofrecimiento1, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="1" },
+                                    new SelectListItem{Text="NO", Value="0" } }, "",
+                                    new { @class = "form-control input-sm", @style = "width:20%",@id= "DDLOfre1", @onchange = "return Ofrecimiento1()" })
+
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div id="2ofre" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="padding:1px;" width="200">
+                                    <small>Segundo Ofrecimiento:  </small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="padding:1px; width:1200px;">
+                                    @Html.TextBoxFor(m => m.CuentasMejorOferta.Ofrecimiento2, null, new { @class = "form-control input-sm", @id = "Ofrecimiento2SMO", style = "width:100%; height:70px;", @name = "Ofrecimiento2SMO" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <small>El cliente acepto este ofrecimiento?</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        @Html.DropDownListFor(m => m.SiguienteMejorOferta.Ofrecimiento2, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="1" },
+                                    new SelectListItem{Text="NO", Value="0" } }, "",
+                                    new { @class = "form-control input-sm", @style = "width:20%", @onchange = "return Ofrecimiento2()", id = "DDLOfre2" })
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="3ofre" style="display:none">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="padding:1px;" width="200">
+                                    <small>Tercer Ofrecimiento:  </small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="padding:1px; width:1200px;">
+                                    @Html.TextBoxFor(m => m.CuentasMejorOferta.Ofrecimiento3, null, new { @class = "form-control input-sm", @id = "Ofrecimiento3SMO", style = "width:100%; height:70px;", @name = "Ofrecimiento3SMO" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <small>El cliente acepto este ofrecimiento?</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-group">
+                                        @Html.DropDownListFor(m => m.SiguienteMejorOferta.Ofrecimiento3, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="1" },
+                                    new SelectListItem{Text="NO", Value="0" } }, "",
+                                    new { @class = "form-control input-sm", @style = "width:20%", @onchange = "return Ofrecimiento3()", id = "DDLOfre3" })
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br />
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-sitemap"></i>
+                <h3 class="box-title">Árbol de Tipificación</h3>
+            </div>
+            <div class="callout" style="margin-bottom: 0 ;border-color:#1e89ef !important; background-color:gainsboro !important; color: black !important">
+                <br />
+                <div class="form-group">
+                    <table>
+                        <tr style="margin-left:5px;">
+                            <td width="200" style="padding-left:1px;">
+                                <small>Tipo Contacto: </small>
+                            </td>
+                            <td width="200" style="padding-left:1px;">
+                                <small>Gestión: </small>
+                            </td>
+                            <td width="200" style="padding-left:1px;">
+                                <small>Cierre: </small>
+                            </td>
+                            <td width="200" style="padding-left:1px;">
+                                <small>Razon: </small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-left:1px; width:200px;">
+                                @Html.DropDownListFor(m => m.SiguienteMejorOferta.TipoContacto, new List<SelectListItem> { }, "", new { Id = "tipoContactosSelect", @class = "form-control", onchange = "SetearCierresChoices();" })
+                                @Html.ValidationMessageFor(m => m.SiguienteMejorOferta.TipoContacto, "", new { @class = "text-danger" })
+                                <input id="TipCon" type="hidden" name="TipCon" />
+                            </td>
+                            <td style="padding-left:1px; width:220px;">
+                                @Html.DropDownListFor(m => m.SiguienteMejorOferta.Gestion, new List<SelectListItem> { }, "", new { Id = "tiposCierresSelect", @class = "form-control", onchange = "SetearRazonesChoices();" })
+                                @Html.ValidationMessageFor(m => m.SiguienteMejorOferta.Gestion, "", new { @class = "text-danger" })
+                                <input id="Gest" type="hidden" name="Gest" />
+                            </td>
+                            <td style="padding-left:4px; width:260px;">
+                                @Html.DropDownListFor(m => m.SiguienteMejorOferta.Cierre, new List<SelectListItem> { }, "", new { Id = "tiposRazonSelect", @class = "form-control", onchange = "SetearCausaChoices();" })
+                                @Html.ValidationMessageFor(m => m.SiguienteMejorOferta.Cierre, "", new { @class = "text-danger" })
+                                <input id="Cier" type="hidden" name="Cier" />
+                            </td>
+                            <td style="padding-left:4px; width:260px;">
+                                @Html.DropDownListFor(m => m.SiguienteMejorOferta.Razon, new List<SelectListItem> { }, "", new { Id = "tiposCausasSelect", @class = "form-control", onchange = "TextoRazon();" })
+                                @Html.ValidationMessageFor(m => m.SiguienteMejorOferta.Razon, "", new { @class = "text-danger" })
+                                <input id="Raz" type="hidden" name="Raz" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <br />
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-comment"></i>
+                <h3 class="box-title">Observaciónes</h3>
+            </div>
+            <div class="callout" style="margin-bottom: 0 ;border-color:#1e89ef !important; background-color:gainsboro !important; color: black !important">
+                <br />
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.SiguienteMejorOferta.Observaciones, null, new { @class = "form-control input-sm", @style = "margin-left:5px; width:100%; height:70px;" })
+                </div>
+            </div>
+            <br />
+            <button id="btnSubmitActivacionSMO" type="submit" class="btn btn-primary" name="cambiarDatos" value="true" style="width:10%; height:40px;">Guardar</button>
+        </div>
+    }
+
+</body>
+</html>

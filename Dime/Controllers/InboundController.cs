@@ -44,7 +44,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult Index(string choosenCuenta)
         {
-            Session.Remove("CuentaBanner");
+           
             InboundModel model = new InboundModel();
             List<string> hobbieOptions = inboundService.ConsultarHobbiesOptions();
             model.HobbyOptions = new List<SelectListItem>();
@@ -62,7 +62,7 @@ namespace Dime.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(InboundModel model, string cambiarDatos)
         {
-            Session.Remove("CuentaBanner");
+           
             int cuentaCliente = model.ClientesTodos.Cuenta;
             model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(cuentaCliente);
             Guardar_Usabilidad_Consulta_Cuenta(Convert.ToString(cuentaCliente));
@@ -101,46 +101,6 @@ namespace Dime.Controllers
             foreach (var item in hobbieOptions)
                 model.HobbyOptions.Add(new SelectListItem { Text = item, Value = item });
 
-            /////consulta siembra HD
-            //var siembraHD = acsiembrahdwebservice.BuscarCuentaSiembraHD(Convert.ToDecimal(cuentaCliente));
-            //model.ListaSiembraHD = siembraHD.Select(x => new CuentasSiembraHD
-            //{
-            //    Id = x.Id,
-            //    CuentaCliente = x.CuentaCliente,
-            //    Ofrecimiento = x.Ofrecimiento
-            //}).ToList();
-
-            /////consulta SMO
-            //var SMO = acsiembrahdwebservice.BuscarCuentaSMO(Convert.ToDecimal(cuentaCliente));
-            //model.ListaSMO = SMO.Select(x => new CuentasSiguienteMejorOferta
-            //{
-            //    Id = x.Id,
-            //    CuentaCliente = x.CuentaCliente,
-            //    Ofrecimiento1 = x.Ofrecimiento1,
-            //    Ofrecimiento2 = x.Ofrecimiento2,
-            //    Ofrecimiento3 = x.Ofrecimiento3
-            //}).ToList();
-
-            /////consulta MejorasTecnicas
-            //var MejorasTecnicas = acsiembrahdwebservice.BuscarCuentaMejorasTecnicas(Convert.ToDecimal(cuentaCliente));
-            //model.ListaMejorasTecnicas = MejorasTecnicas.Select(x => new CuentasMejorasTecnicas
-            //{
-            //    Id = x.Id,
-            //    Cuenta = x.Cuenta,
-            //    Accionable = x.Accionable
-            //}).ToList();
-
-            ////consultaFOX
-            //var CuentaFoxx = acsiembrahdwebservice.BuscarCuentaFoxInbound(Convert.ToDecimal(cuentaCliente));
-            //if (CuentaFoxx != null)
-            //{
-            //    model.CuentaFox = CuentaFoxx;
-            //    model.CuentaFox.FechaVencimiento2 = Convert.ToString(CuentaFoxx.FechaVencimiento);
-            //}
-            //else
-            //{
-            //    model.CuentaFox = new CargaBaseFoxInbound();
-            //}
 
             Session["CuentaBanner"] = cuentaCliente;
 

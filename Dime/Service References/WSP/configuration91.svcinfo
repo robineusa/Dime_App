@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="qQO5F+k0r5TBD+UwmIDLn7O8Bqg=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="iKRqW9NvQEAZ8RYQD1z0od2vw/8=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="GeneracionEncuestaPortBinding">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="GeneracionEncuestaPort" contract="WSP.GeneracionEncuesta" bindingType="basicHttpBinding" address="http://172.22.87.27:8101/WSGeneraEncuestas/GeneracionEncuestaService" bindingConfiguration="GeneracionEncuestaPortBinding">
+    <endpoint name="GeneracionEncuestaPort" contract="WSP.GeneracionEncuesta" bindingType="basicHttpBinding" address="http://172.22.61.94:9028/WSGeneraEncuestas/GeneracionEncuestaService" bindingConfiguration="GeneracionEncuestaPortBinding">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://172.22.87.27:8101/WSGeneraEncuestas/GeneracionEncuestaService</serializedValue>
+          <serializedValue>http://172.22.61.94:9028/WSGeneraEncuestas/GeneracionEncuestaService</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

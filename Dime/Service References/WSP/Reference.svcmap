@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://172.22.87.27:8101/WSGeneraEncuestas/GeneracionEncuestaService?WSDL" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://172.22.61.94:9028/WSGeneraEncuestas/GeneracionEncuestaService?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="GeneracionEncuestaService.wsdl" MetadataType="Wsdl" ID="d801c6d7-f329-4df7-ade9-1c006353f00c" SourceId="1" SourceUrl="http://172.22.87.27:8101/WSGeneraEncuestas/GeneracionEncuestaService?WSDL" />
-    <MetadataFile FileName="GeneracionEncuestaService.xsd" MetadataType="Schema" ID="cbd94664-f66c-4167-9f40-c32b53e075c5" SourceId="1" SourceUrl="http://172.22.87.27:8101/WSGeneraEncuestas/GeneracionEncuestaService?xsd=1" />
+    <MetadataFile FileName="GeneracionEncuestaService1.xsd" MetadataType="Schema" ID="2ba5d8ba-5360-44b2-9300-300c474ae179" SourceId="1" SourceUrl="http://172.22.61.94:9028/WSGeneraEncuestas/GeneracionEncuestaService?xsd=1" />
+    <MetadataFile FileName="GeneracionEncuestaService1.wsdl" MetadataType="Wsdl" ID="e490b3df-3679-414c-9133-cfc88b50c539" SourceId="1" SourceUrl="http://172.22.61.94:9028/WSGeneraEncuestas/GeneracionEncuestaService?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

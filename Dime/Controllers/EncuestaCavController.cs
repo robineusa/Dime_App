@@ -51,8 +51,10 @@ namespace Dime.Controllers
             //18/10/2017 10:44:00 AM
 
             var FechaParaEncuesta = FechaTransaccion.ToString(@"dd/MM/yyyy hh:mm:ss tt", new CultureInfo("en-US"));
-            
+
             //envia encuesta poom
+            EntidadEncuesta.idEncuesta = Convert.ToInt32(EncuestaRegistrada.IdEncuesta);
+            EntidadEncuesta.idEncuestaSpecified = true;
             EntidadEncuesta.idtransaccion = Convert.ToString(EncuestaRegistrada.IdTansaccion);
             EntidadEncuesta.canal = Convert.ToString(EncuestaRegistrada.CanalTransaccion);
             EntidadEncuesta.subCanal = EncuestaRegistrada.SubCanal;
@@ -69,9 +71,7 @@ namespace Dime.Controllers
             EntidadEncuesta.usuarioRegistra = Convert.ToString(EncuestaRegistrada.UsuarioTransaccion);
             EntidadEncuesta.enviaReintento = Convert.ToString(EncuestaRegistrada.EnviaReintento);
             EntidadEncuesta.enviaSoloEmail = EncuestaRegistrada.EnviaSoloEmail;
-            EntidadEncuesta.idEncuesta = Convert.ToInt32(EncuestaRegistrada.IdEncuesta);
-
-
+           
             var respuesta = EncuestaService.enviarEncuesta(EntidadEncuesta);
             if (respuesta.codigo == 0)
             {
