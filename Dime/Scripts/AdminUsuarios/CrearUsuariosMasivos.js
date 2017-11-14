@@ -47,7 +47,6 @@ function CotejarInformacionGrid(cedulas)
     {
         cedulasArray.push(cedulas[i].CEDULA);
     }
-    console.log(cedulasArray);
         $.ajax({
             type: "POST",
             traditional: true,
@@ -56,7 +55,6 @@ function CotejarInformacionGrid(cedulas)
             dataType: 'json',
             success: function (result) {
                 var json = JSON.parse(result);
-                console.log(json);
                 FillGridViewResult(json.DataUsuario);
                 if(json.DataValid == true)
                 {
@@ -286,6 +284,9 @@ function GuardarUsuarios()
 
 function FillGridViewResult(data) {
 
+    if (data != null) {
+        GuardaCedulas(data);
+    }
 
     $("#infoCotejeadaGrid").kendoGrid({
         autoBind: true,
@@ -334,4 +335,15 @@ function FillGridViewResult(data) {
 
     });
 
+}
+
+
+function GuardaCedulas(data)
+{
+    cedulasArray = new Array();
+    for (var i = 0; i < data.length; i++) {
+        cedulasArray.push(data[i].Cedula);
+        //data[i].Cedula = kendo.toString(kendo.parseDate(data[i].FechaGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+    }
+    console.log(cedulasArray);
 }
