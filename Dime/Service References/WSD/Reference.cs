@@ -17007,6 +17007,48 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistrarSMO", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistrarSMOResponse")]
         System.Threading.Tasks.Task RegistrarSMOAsync(Telmexla.Servicios.DIME.Entity.SiguienteMejorOferta smo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistrarClaroVideo", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistrarClaroVideoResponse")]
+        void RegistrarClaroVideo(Telmexla.Servicios.DIME.Entity.ActivacionClaroVideo ClaroVideo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistrarClaroVideo", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistrarClaroVideoResponse")]
+        System.Threading.Tasks.Task RegistrarClaroVideoAsync(Telmexla.Servicios.DIME.Entity.ActivacionClaroVideo ClaroVideo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ConsultarCuentaSiembraHD", ReplyAction="http://tempuri.org/IBannerAlertasService/ConsultarCuentaSiembraHDResponse")]
+        Telmexla.Servicios.DIME.Entity.CuentasSiembraHD ConsultarCuentaSiembraHD(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ConsultarCuentaSiembraHD", ReplyAction="http://tempuri.org/IBannerAlertasService/ConsultarCuentaSiembraHDResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CuentasSiembraHD> ConsultarCuentaSiembraHDAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistrarSiembraHD", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistrarSiembraHDResponse")]
+        void RegistrarSiembraHD(Telmexla.Servicios.DIME.Entity.SiembraHD siembra);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistrarSiembraHD", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistrarSiembraHDResponse")]
+        System.Threading.Tasks.Task RegistrarSiembraHDAsync(Telmexla.Servicios.DIME.Entity.SiembraHD siembra);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ConsultarCuentaMejorasTecnicas", ReplyAction="http://tempuri.org/IBannerAlertasService/ConsultarCuentaMejorasTecnicasResponse")]
+        Telmexla.Servicios.DIME.Entity.CuentasMejorasTecnicas ConsultarCuentaMejorasTecnicas(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ConsultarCuentaMejorasTecnicas", ReplyAction="http://tempuri.org/IBannerAlertasService/ConsultarCuentaMejorasTecnicasResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CuentasMejorasTecnicas> ConsultarCuentaMejorasTecnicasAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistrarMejorasTecnicas", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistrarMejorasTecnicasResponse")]
+        void RegistrarMejorasTecnicas(Telmexla.Servicios.DIME.Entity.MejorasTecnicas Mejoras);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistrarMejorasTecnicas", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistrarMejorasTecnicasResponse")]
+        System.Threading.Tasks.Task RegistrarMejorasTecnicasAsync(Telmexla.Servicios.DIME.Entity.MejorasTecnicas Mejoras);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ConsultaCuentaBaseFox", ReplyAction="http://tempuri.org/IBannerAlertasService/ConsultaCuentaBaseFoxResponse")]
+        Telmexla.Servicios.DIME.Entity.CargaBaseFoxInbound ConsultaCuentaBaseFox(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ConsultaCuentaBaseFox", ReplyAction="http://tempuri.org/IBannerAlertasService/ConsultaCuentaBaseFoxResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CargaBaseFoxInbound> ConsultaCuentaBaseFoxAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistraFox", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistraFoxResponse")]
+        void RegistraFox(Telmexla.Servicios.DIME.Entity.GestionFoxInbound Fox);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistraFox", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistraFoxResponse")]
+        System.Threading.Tasks.Task RegistraFoxAsync(Telmexla.Servicios.DIME.Entity.GestionFoxInbound Fox);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17098,6 +17140,62 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task RegistrarSMOAsync(Telmexla.Servicios.DIME.Entity.SiguienteMejorOferta smo) {
             return base.Channel.RegistrarSMOAsync(smo);
+        }
+        
+        public void RegistrarClaroVideo(Telmexla.Servicios.DIME.Entity.ActivacionClaroVideo ClaroVideo) {
+            base.Channel.RegistrarClaroVideo(ClaroVideo);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarClaroVideoAsync(Telmexla.Servicios.DIME.Entity.ActivacionClaroVideo ClaroVideo) {
+            return base.Channel.RegistrarClaroVideoAsync(ClaroVideo);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CuentasSiembraHD ConsultarCuentaSiembraHD(decimal CuentaCliente) {
+            return base.Channel.ConsultarCuentaSiembraHD(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CuentasSiembraHD> ConsultarCuentaSiembraHDAsync(decimal CuentaCliente) {
+            return base.Channel.ConsultarCuentaSiembraHDAsync(CuentaCliente);
+        }
+        
+        public void RegistrarSiembraHD(Telmexla.Servicios.DIME.Entity.SiembraHD siembra) {
+            base.Channel.RegistrarSiembraHD(siembra);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarSiembraHDAsync(Telmexla.Servicios.DIME.Entity.SiembraHD siembra) {
+            return base.Channel.RegistrarSiembraHDAsync(siembra);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CuentasMejorasTecnicas ConsultarCuentaMejorasTecnicas(decimal CuentaCliente) {
+            return base.Channel.ConsultarCuentaMejorasTecnicas(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CuentasMejorasTecnicas> ConsultarCuentaMejorasTecnicasAsync(decimal CuentaCliente) {
+            return base.Channel.ConsultarCuentaMejorasTecnicasAsync(CuentaCliente);
+        }
+        
+        public void RegistrarMejorasTecnicas(Telmexla.Servicios.DIME.Entity.MejorasTecnicas Mejoras) {
+            base.Channel.RegistrarMejorasTecnicas(Mejoras);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarMejorasTecnicasAsync(Telmexla.Servicios.DIME.Entity.MejorasTecnicas Mejoras) {
+            return base.Channel.RegistrarMejorasTecnicasAsync(Mejoras);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CargaBaseFoxInbound ConsultaCuentaBaseFox(decimal CuentaCliente) {
+            return base.Channel.ConsultaCuentaBaseFox(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CargaBaseFoxInbound> ConsultaCuentaBaseFoxAsync(decimal CuentaCliente) {
+            return base.Channel.ConsultaCuentaBaseFoxAsync(CuentaCliente);
+        }
+        
+        public void RegistraFox(Telmexla.Servicios.DIME.Entity.GestionFoxInbound Fox) {
+            base.Channel.RegistraFox(Fox);
+        }
+        
+        public System.Threading.Tasks.Task RegistraFoxAsync(Telmexla.Servicios.DIME.Entity.GestionFoxInbound Fox) {
+            return base.Channel.RegistraFoxAsync(Fox);
         }
     }
 }

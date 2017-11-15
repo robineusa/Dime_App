@@ -74,12 +74,37 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult ClaroVideo()
         {
+            ViewModelBanner modelo = new ViewModelBanner();
+
+            if (Session["CuentaBanner"] != null)
+            {
+                
+                int CuentaCliente = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                modelo.ClientesTodo.Cuenta = CuentaCliente;
+            }
+            else
+            {}
+
+            return View(modelo);
+            
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ClaroVideo(ViewModelBanner modelo)
+        {
+            modelo.ActivacionClaroVideo.UsuarioGestion = Session["Usuario"].ToString();
+            modelo.ActivacionClaroVideo.NombreUsuario = Session["NombreUsuario"].ToString();
+            modelo.ActivacionClaroVideo.AliadoGestion = Session["AliadoLogeado"].ToString();
+            modelo.ActivacionClaroVideo.CuentaCliente = modelo.ClientesTodo.Cuenta;
+
+            bannerservice.RegistrarClaroVideo(modelo.ActivacionClaroVideo);
+
             return View();
         }
-       [HttpGet]
+        [HttpGet]
         public ActionResult MejorOferta()
         {
-            ViewModelMejorOferta modelo = new ViewModelMejorOferta();
+            ViewModelBanner modelo = new ViewModelBanner();
 
             if (Session["CuentaBanner"] != null)
             {
@@ -97,10 +122,12 @@ namespace Dime.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult MejorOferta(ViewModelMejorOferta modelo)
+        public ActionResult MejorOferta(ViewModelBanner modelo)
         {
             modelo.SiguienteMejorOferta.UsuarioGestion = Session["Usuario"].ToString();
             modelo.SiguienteMejorOferta.AliadoGestion = Session["AliadoLogeado"].ToString();
+            modelo.SiguienteMejorOferta.CuentaCliente = modelo.ClientesTodo.Cuenta;
+
             bannerservice.RegistrarSMO(modelo.SiguienteMejorOferta);
             ViewBag.Guardado = "SI";
             return View();
@@ -108,16 +135,96 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult SiembraHD()
         {
+            ViewModelBanner modelo = new ViewModelBanner();
+
+            if (Session["CuentaBanner"] != null)
+            {
+                int CuentaIn = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                decimal CuentaCliente = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(CuentaIn);
+                modelo.CuentasSiembraHD = bannerservice.ConsultarCuentaSiembraHD(CuentaCliente);
+                
+            }
+            else
+            {
+
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SiembraHD(ViewModelBanner modelo)
+        {
+            modelo.SiembraHD.UsuarioGestion = Session["Usuario"].ToString();
+            modelo.SiembraHD.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+            modelo.SiembraHD.AliadoGestion = Session["AliadoLogeado"].ToString();
+            modelo.SiembraHD.CuentaCliente = modelo.ClientesTodo.Cuenta;
+            modelo.SiembraHD.Ofrecimiento = modelo.CuentasSiembraHD.Ofrecimiento;
+
+            bannerservice.RegistrarSiembraHD(modelo.SiembraHD);
             return View();
         }
         [HttpGet]
         public ActionResult MejorasTecnicas()
         {
+            ViewModelBanner modelo = new ViewModelBanner();
+
+            if (Session["CuentaBanner"] != null)
+            {
+                int CuentaIn = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                decimal CuentaCliente = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(CuentaIn);
+                modelo.CuentasMejorasTecnicas = bannerservice.ConsultarCuentaMejorasTecnicas(CuentaCliente);
+            }
+            else
+            {
+
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult MejorasTecnicas(ViewModelBanner modelo)
+        {
+            modelo.MejorasTecnicas.UsuarioGestion = Session["Usuario"].ToString();
+            modelo.MejorasTecnicas.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+            modelo.MejorasTecnicas.AliadoGestion = Session["AliadoLogeado"].ToString();
+            modelo.MejorasTecnicas.CuentaCliente = modelo.CuentasMejorasTecnicas.Cuenta;
+            modelo.MejorasTecnicas.Accionable = modelo.CuentasMejorasTecnicas.Accionable;
+
+            bannerservice.RegistrarMejorasTecnicas(modelo.MejorasTecnicas);
             return View();
         }
         [HttpGet]
         public ActionResult Fox()
         {
+            ViewModelBanner modelo = new ViewModelBanner();
+
+            if (Session["CuentaBanner"] != null)
+            {
+                int CuentaIn = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                decimal CuentaCliente = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(CuentaIn);
+                modelo.CuentasFox = bannerservice.ConsultaCuentaBaseFox(CuentaCliente);
+            }
+            else
+            {
+
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Fox(ViewModelBanner modelo)
+        {
+            modelo.GestionFox.UsuarioGestion = Session["Usuario"].ToString();
+            modelo.GestionFox.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+            modelo.GestionFox.AliadoGestion = Session["AliadoLogeado"].ToString();
+            modelo.GestionFox.CuentaCliente = modelo.CuentasFox.Cuenta;
+            modelo.GestionFox.FechaVencimiento = Convert.ToString(modelo.CuentasFox.FechaVencimiento);
+            modelo.GestionFox.Ofrecimiento = modelo.CuentasFox.Ofrecimiento;
+
+            bannerservice.RegistraFox(modelo.GestionFox);
             return View();
         }
         public JsonResult TiposDeContactoList(decimal gestion)

@@ -20695,6 +20695,272 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_RegistrarClaroVideo_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_RegistrarClaroVideo_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_ConsultarCuentaSiembraHD_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_ConsultarCuentaSiembraHD_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_RegistrarSiembraHD_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_RegistrarSiembraHD_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_ConsultarCuentaMejorasTecnicas_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_ConsultarCuentaMejorasTecnicas_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_RegistrarMejorasTecnicas_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_RegistrarMejorasTecnicas_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_ConsultaCuentaBaseFox_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_ConsultaCuentaBaseFox_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_RegistraFox_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_RegistraFox_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -23524,6 +23790,48 @@
   <wsdl:message name="IBannerAlertasService_RegistrarSMO_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegistrarSMOResponse" />
   </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_RegistrarClaroVideo_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarClaroVideo" />
+  </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_RegistrarClaroVideo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarClaroVideoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_ConsultarCuentaSiembraHD_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCuentaSiembraHD" />
+  </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_ConsultarCuentaSiembraHD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCuentaSiembraHDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_RegistrarSiembraHD_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarSiembraHD" />
+  </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_RegistrarSiembraHD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarSiembraHDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_ConsultarCuentaMejorasTecnicas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCuentaMejorasTecnicas" />
+  </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_ConsultarCuentaMejorasTecnicas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarCuentaMejorasTecnicasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_RegistrarMejorasTecnicas_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarMejorasTecnicas" />
+  </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_RegistrarMejorasTecnicas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarMejorasTecnicasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_ConsultaCuentaBaseFox_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaCuentaBaseFox" />
+  </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_ConsultaCuentaBaseFox_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaCuentaBaseFoxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_RegistraFox_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistraFox" />
+  </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_RegistraFox_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistraFoxResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWebService">
     <wsdl:operation name="MuestraEntidades">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MuestraEntidades" message="tns:IWebService_MuestraEntidades_InputMessage" />
@@ -25456,6 +25764,34 @@
     <wsdl:operation name="RegistrarSMO">
       <wsdl:input wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistrarSMO" message="tns:IBannerAlertasService_RegistrarSMO_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistrarSMOResponse" message="tns:IBannerAlertasService_RegistrarSMO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarClaroVideo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistrarClaroVideo" message="tns:IBannerAlertasService_RegistrarClaroVideo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistrarClaroVideoResponse" message="tns:IBannerAlertasService_RegistrarClaroVideo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCuentaSiembraHD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBannerAlertasService/ConsultarCuentaSiembraHD" message="tns:IBannerAlertasService_ConsultarCuentaSiembraHD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBannerAlertasService/ConsultarCuentaSiembraHDResponse" message="tns:IBannerAlertasService_ConsultarCuentaSiembraHD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarSiembraHD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistrarSiembraHD" message="tns:IBannerAlertasService_RegistrarSiembraHD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistrarSiembraHDResponse" message="tns:IBannerAlertasService_RegistrarSiembraHD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCuentaMejorasTecnicas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBannerAlertasService/ConsultarCuentaMejorasTecnicas" message="tns:IBannerAlertasService_ConsultarCuentaMejorasTecnicas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBannerAlertasService/ConsultarCuentaMejorasTecnicasResponse" message="tns:IBannerAlertasService_ConsultarCuentaMejorasTecnicas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarMejorasTecnicas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistrarMejorasTecnicas" message="tns:IBannerAlertasService_RegistrarMejorasTecnicas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistrarMejorasTecnicasResponse" message="tns:IBannerAlertasService_RegistrarMejorasTecnicas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCuentaBaseFox">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBannerAlertasService/ConsultaCuentaBaseFox" message="tns:IBannerAlertasService_ConsultaCuentaBaseFox_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBannerAlertasService/ConsultaCuentaBaseFoxResponse" message="tns:IBannerAlertasService_ConsultaCuentaBaseFox_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistraFox">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistraFox" message="tns:IBannerAlertasService_RegistraFox_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistraFoxResponse" message="tns:IBannerAlertasService_RegistraFox_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IWebService" type="tns:IWebService">
@@ -30732,6 +31068,83 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_RegistrarSMO_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarClaroVideo">
+      <soap12:operation soapAction="http://tempuri.org/IBannerAlertasService/RegistrarClaroVideo" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_RegistrarClaroVideo_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_RegistrarClaroVideo_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCuentaSiembraHD">
+      <soap12:operation soapAction="http://tempuri.org/IBannerAlertasService/ConsultarCuentaSiembraHD" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_ConsultarCuentaSiembraHD_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_ConsultarCuentaSiembraHD_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarSiembraHD">
+      <soap12:operation soapAction="http://tempuri.org/IBannerAlertasService/RegistrarSiembraHD" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_RegistrarSiembraHD_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_RegistrarSiembraHD_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarCuentaMejorasTecnicas">
+      <soap12:operation soapAction="http://tempuri.org/IBannerAlertasService/ConsultarCuentaMejorasTecnicas" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_ConsultarCuentaMejorasTecnicas_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_ConsultarCuentaMejorasTecnicas_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarMejorasTecnicas">
+      <soap12:operation soapAction="http://tempuri.org/IBannerAlertasService/RegistrarMejorasTecnicas" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_RegistrarMejorasTecnicas_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_RegistrarMejorasTecnicas_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaCuentaBaseFox">
+      <soap12:operation soapAction="http://tempuri.org/IBannerAlertasService/ConsultaCuentaBaseFox" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_ConsultaCuentaBaseFox_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_ConsultaCuentaBaseFox_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraFox">
+      <soap12:operation soapAction="http://tempuri.org/IBannerAlertasService/RegistraFox" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_RegistraFox_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_RegistraFox_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

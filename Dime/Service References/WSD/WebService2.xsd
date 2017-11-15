@@ -1492,6 +1492,7 @@
       <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
       <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaVencimiento" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
       <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Ofrecimiento" nillable="true" type="xs:string" />

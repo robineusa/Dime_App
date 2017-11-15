@@ -1,0 +1,82 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelBanner
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FOX</title>
+    @Styles.Render("~/AdminLTEbootstrap/css")
+    @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+</head>
+<body>
+    @using (Html.BeginForm("Fox", "Banner", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
+    { 
+        @Html.AntiForgeryToken()
+        <div>
+            <hr />
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-gift"></i>
+                <h3 class="box-title">Ofrecimiento</h3>
+            </div>
+            <div class="callout" style="margin-bottom: 0 ;border-color:#d66b2a !important; background-color:gainsboro !important; color: black !important">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="3" style="padding:1px; width:1200px;">
+                                @Html.TextBoxFor(m => m.CuentasFox.Ofrecimiento, null, new { @class = "form-control input-sm", @id = "Ofrecimiento", @name = "Ofrecimiento", @style = "margin-left:5px; width:100%; height:70px;" })
+                                @Html.HiddenFor(m => m.CuentasFox.Cuenta, null)
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-image"></i>
+                <h3 class="box-title">Pieza Comunicacion FOX</h3>
+            </div>
+            <div class="callout" style="margin-bottom: 0 ;border-color:#d66b2a !important; background-color:gainsboro !important; color: black !important">
+                <div>
+                    <img src="../Resources/Images/Inbound/Pieza_Comunicacion_FOX.jpg" />
+                </div>
+            </div>
+            <div class="box-header ui-sortable-handle" style="cursor: inherit;">
+                <i class="fa fa-exchange"></i>
+                <h3 class="box-title">Aceptacion</h3>
+            </div>
+            <div class="callout" style="margin-bottom: 0 ;border-color:#d66b2a !important; background-color:gainsboro !important; color: black !important">
+                <div class="col-xs-2" style="width:auto;color:black; margin-left: -20px;">
+                    <small>El cliente acepto el ofrecimiento:</small>
+                </div>
+                <div class="col-xs-2" style="width:auto;color:black; margin-left: 20px;">
+                    <small>Fecha de Vencimiento:</small>
+                </div>
+                <br />
+                <div class="col-xs-2" style="margin-left: -15px;">
+                    <small>
+                        @Html.DropDownListFor(m => m.GestionFox.AceptacionFoxInbound, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="SI" },
+                            new SelectListItem{Text="NO", Value="NO" } }, "",
+                             new { @class = "form-control input-sm", @style = "width: 150%" })
+                        @Html.ValidationMessageFor(m => m.GestionFox.AceptacionFoxInbound, "", new { @class = "text-danger" })
+                    </small>
+
+                </div>
+                <div class="col-xs-2" style="margin-left: 50px;">
+                    <small>
+                        @Html.TextBoxFor(m => m.CuentasFox.FechaVencimiento, null, new { @class = "form-control input-sm", @id = "FechaVencimiento", @style = "width:150%; " })
+                    </small>
+                </div>
+                <br /><br /><br />
+            </div>
+            <br />
+            <button id="btnSubmitActivacionSiembra" type="submit" class="btn btn-primary" name="Guardar" value="true" style="width:10%; height:40px;">Guardar</button>
+        </div>
+        
+    }
+    
+</body>
+</html>
+

@@ -3499,6 +3499,9 @@
     <Content Include="Views\Banner\ConvenioElectronico.cshtml" />
     <Content Include="Views\Banner\ClaroVideo.cshtml" />
     <Content Include="Views\Banner\MejorOferta.cshtml" />
+    <Content Include="Views\Banner\SiembraHD.cshtml" />
+    <Content Include="Views\Banner\MejorasTecnicas.cshtml" />
+    <Content Include="Views\Banner\Fox.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

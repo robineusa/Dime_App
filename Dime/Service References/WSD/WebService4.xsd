@@ -6455,4 +6455,94 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="RegistrarClaroVideo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q447="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ClaroVideo" nillable="true" type="q447:ActivacionClaroVideo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarClaroVideoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarCuentaSiembraHD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarCuentaSiembraHDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q448="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarCuentaSiembraHDResult" nillable="true" type="q448:CuentasSiembraHD" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarSiembraHD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q449="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="siembra" nillable="true" type="q449:SiembraHD" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarSiembraHDResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarCuentaMejorasTecnicas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarCuentaMejorasTecnicasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q450="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarCuentaMejorasTecnicasResult" nillable="true" type="q450:CuentasMejorasTecnicas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarMejorasTecnicas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q451="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Mejoras" nillable="true" type="q451:MejorasTecnicas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarMejorasTecnicasResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaCuentaBaseFox">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaCuentaBaseFoxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q452="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaCuentaBaseFoxResult" nillable="true" type="q452:CargaBaseFoxInbound" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistraFox">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q453="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Fox" nillable="true" type="q453:GestionFoxInbound" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistraFoxResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
