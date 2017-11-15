@@ -137,6 +137,7 @@
                         </li>
 
                         @Html.Partial("_LoginPartial")
+                     
                         <li>
                             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
                         </li>
@@ -1066,6 +1067,7 @@
             </section>
         </aside>
         <div class="content-wrapper" style="margin-left:250px;margin-top:40px;">
+            
             @if (ViewBag.Title != null && ViewBag.Title != "")
             {
                 <section class="content-header">
@@ -1079,7 +1081,7 @@
                     </ol>
                 </section>
             }
-            <section class="content" style="height:1500px;">
+            <section class="content" style="height:2000px;">
                 <div class="col-md-4" style="z-index:999; float: left; position: absolute; display:block">
                     <div id="ChatGeneral" style="display:none">
                         <div id="ChatGeneral2" class="box box-danger direct-chat direct-chat-danger" style="display: block;">
@@ -1399,7 +1401,8 @@
         </div>
         <a id="lockScreenActivate" onclick="LockScreen(this)" style="display:none" value="LockScreenVal"></a>
         <div id="lockScreenDiv"></div>
-
+       
+        
     </div>
 
 
@@ -1446,6 +1449,6 @@
     <script src="~/AdminLTE/Kendo2016.3.11/js/kendo.all.min.js"></script>
     <script src="~/AdminLTE/Kendo2016.3.11/js/kendo.web.min.js"></script>
     @RenderSection("scripts", required: false)
-
+    
 </body>
 </html>
