@@ -10,7 +10,7 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
-    public class BannerController : Controller
+    public class BannerController : MyController
     {
         WSD.BannerAlertasServiceClient bannerservice;
         WSD.MaestrosServiceClient mastersServices;
@@ -24,41 +24,47 @@ namespace Dime.Controllers
             inboundservice = new WSD.InboundServiceClient();
             inboundservice.ClientCredentials.Authenticate();
         }
-     
+       public static class GlobalVariable{
+            public static decimal CuentaParaBanner { get; set; }
+        }
         public ActionResult BannerAlertas()
         {
-            
+          
             if (Session["CuentaBanner"] != null)
             {
-               decimal Cuenta = Convert.ToDecimal(Session["CuentaBanner"].ToString());
-            //Verificacion convenio electronico
-            if (bannerservice.ValidarClienteEnConvenioElectronico(Cuenta))
+               
+                GlobalVariable.CuentaParaBanner = Convert.ToDecimal(Session["CuentaBanner"].ToString());
+                Session.Remove("CuentaBanner");
+                //Verificacion convenio electronico
+            if (bannerservice.ValidarClienteEnConvenioElectronico(GlobalVariable.CuentaParaBanner))
             {ViewBag.ConvenioElectronico = true;}else { ViewBag.ConvenioElectronico = false; }
 
             //Verificacion claro video
-            if (bannerservice.ValidarClienteEnClaroVideo(Cuenta))
+            if (bannerservice.ValidarClienteEnClaroVideo(GlobalVariable.CuentaParaBanner))
             { ViewBag.ClaroVideo = true; }
             else { ViewBag.ClaroVideo = false; }
 
             //Verificacion siguiente mejor oferta
-            if (bannerservice.ValidarClienteEnMejorOferta(Cuenta))
+            if (bannerservice.ValidarClienteEnMejorOferta(GlobalVariable.CuentaParaBanner))
             { ViewBag.MejorOferta = true; }
             else { ViewBag.MejorOferta = false; }
 
             //Verificacion Siembra HD
-            if (bannerservice.ValidarClienteEnSiembraHD(Cuenta))
+            if (bannerservice.ValidarClienteEnSiembraHD(GlobalVariable.CuentaParaBanner))
             { ViewBag.SiembraHD = true; }
             else { ViewBag.SiembraHD = false; }
 
             //Verificacion Mejoras Tecnicas
-            if (bannerservice.ValidarClienteEnMejorasTecnicas(Cuenta))
+            if (bannerservice.ValidarClienteEnMejorasTecnicas(GlobalVariable.CuentaParaBanner))
             { ViewBag.MejorasTecnicas = true; }
             else { ViewBag.MejorasTecnicas = false; }
 
             //Verificacion Fox
-            if (bannerservice.ValidarClienteEnFox(Cuenta))
+            if (bannerservice.ValidarClienteEnFox(GlobalVariable.CuentaParaBanner))
             { ViewBag.Fox = true; }
             else { ViewBag.Fox = false; }
+
+                
             }
             else {  }
 
@@ -66,6 +72,7 @@ namespace Dime.Controllers
             return PartialView();
 
         }
+        
         [HttpGet]
         public ActionResult ConvenioElectronico()
         {
@@ -76,15 +83,15 @@ namespace Dime.Controllers
         {
             ViewModelBanner modelo = new ViewModelBanner();
 
-            if (Session["CuentaBanner"] != null)
+            if (GlobalVariable.CuentaParaBanner != 0)
             {
                 
-                int CuentaCliente = Convert.ToInt32(Session["CuentaBanner"].ToString());
-                modelo.ClientesTodo.Cuenta = CuentaCliente;
+                //int CuentaCliente = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                modelo.ClientesTodo.Cuenta = Convert.ToInt32(GlobalVariable.CuentaParaBanner);
             }
             else
             {}
-
+            ViewBag.GuardadoClaroVideo = "SIN GUARDAR";
             return View(modelo);
             
         }
@@ -95,10 +102,10 @@ namespace Dime.Controllers
             modelo.ActivacionClaroVideo.UsuarioGestion = Session["Usuario"].ToString();
             modelo.ActivacionClaroVideo.NombreUsuario = Session["NombreUsuario"].ToString();
             modelo.ActivacionClaroVideo.AliadoGestion = Session["AliadoLogeado"].ToString();
-            modelo.ActivacionClaroVideo.CuentaCliente = modelo.ClientesTodo.Cuenta;
+            modelo.ActivacionClaroVideo.CuentaCliente = GlobalVariable.CuentaParaBanner;
 
             bannerservice.RegistrarClaroVideo(modelo.ActivacionClaroVideo);
-
+            ViewBag.GuardadoClaroVideo = "GUARDADO";
             return View();
         }
         [HttpGet]
@@ -106,18 +113,19 @@ namespace Dime.Controllers
         {
             ViewModelBanner modelo = new ViewModelBanner();
 
-            if (Session["CuentaBanner"] != null)
+            if (GlobalVariable.CuentaParaBanner != 0)
             {
-                int CuentaIn = Convert.ToInt32(Session["CuentaBanner"].ToString());
-                decimal CuentaCliente = Convert.ToInt32(Session["CuentaBanner"].ToString());
-                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(CuentaIn);
-                modelo.CuentasMejorOferta = bannerservice.ConsultarClienteMejorOferta(CuentaCliente);
+                //int CuentaIn = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                //decimal CuentaCliente = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(Convert.ToInt32(GlobalVariable.CuentaParaBanner));
+                modelo.CuentasMejorOferta = bannerservice.ConsultarClienteMejorOferta(GlobalVariable.CuentaParaBanner);
               
             }
             else
             {
               
             }
+            ViewBag.GuardadoSMO = "SIN GUARDAR";
             return View(modelo);
         }
         [HttpPost]
@@ -126,10 +134,11 @@ namespace Dime.Controllers
         {
             modelo.SiguienteMejorOferta.UsuarioGestion = Session["Usuario"].ToString();
             modelo.SiguienteMejorOferta.AliadoGestion = Session["AliadoLogeado"].ToString();
-            modelo.SiguienteMejorOferta.CuentaCliente = modelo.ClientesTodo.Cuenta;
+            modelo.SiguienteMejorOferta.CuentaCliente = GlobalVariable.CuentaParaBanner;
 
             bannerservice.RegistrarSMO(modelo.SiguienteMejorOferta);
             ViewBag.Guardado = "SI";
+            ViewBag.GuardadoSMO = "GUARDADO";
             return View();
         }
         [HttpGet]
@@ -137,18 +146,19 @@ namespace Dime.Controllers
         {
             ViewModelBanner modelo = new ViewModelBanner();
 
-            if (Session["CuentaBanner"] != null)
+            if (GlobalVariable.CuentaParaBanner != 0)
             {
-                int CuentaIn = Convert.ToInt32(Session["CuentaBanner"].ToString());
-                decimal CuentaCliente = Convert.ToInt32(Session["CuentaBanner"].ToString());
-                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(CuentaIn);
-                modelo.CuentasSiembraHD = bannerservice.ConsultarCuentaSiembraHD(CuentaCliente);
+                //int CuentaIn = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                //decimal CuentaCliente = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(Convert.ToInt32(GlobalVariable.CuentaParaBanner));
+                modelo.CuentasSiembraHD = bannerservice.ConsultarCuentaSiembraHD(GlobalVariable.CuentaParaBanner);
                 
             }
             else
             {
 
             }
+            ViewBag.GuardadoSiembraHD = "SIN GUARDAR";
             return View(modelo);
         }
         [HttpPost]
@@ -158,10 +168,11 @@ namespace Dime.Controllers
             modelo.SiembraHD.UsuarioGestion = Session["Usuario"].ToString();
             modelo.SiembraHD.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
             modelo.SiembraHD.AliadoGestion = Session["AliadoLogeado"].ToString();
-            modelo.SiembraHD.CuentaCliente = modelo.ClientesTodo.Cuenta;
+            modelo.SiembraHD.CuentaCliente = GlobalVariable.CuentaParaBanner;
             modelo.SiembraHD.Ofrecimiento = modelo.CuentasSiembraHD.Ofrecimiento;
 
             bannerservice.RegistrarSiembraHD(modelo.SiembraHD);
+            ViewBag.GuardadoSiembraHD = "GUARDADO";
             return View();
         }
         [HttpGet]
@@ -169,17 +180,18 @@ namespace Dime.Controllers
         {
             ViewModelBanner modelo = new ViewModelBanner();
 
-            if (Session["CuentaBanner"] != null)
+            if (GlobalVariable.CuentaParaBanner != 0)
             {
-                int CuentaIn = Convert.ToInt32(Session["CuentaBanner"].ToString());
-                decimal CuentaCliente = Convert.ToInt32(Session["CuentaBanner"].ToString());
-                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(CuentaIn);
-                modelo.CuentasMejorasTecnicas = bannerservice.ConsultarCuentaMejorasTecnicas(CuentaCliente);
+                //int CuentaIn = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                //decimal CuentaCliente = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(Convert.ToInt32(GlobalVariable.CuentaParaBanner));
+                modelo.CuentasMejorasTecnicas = bannerservice.ConsultarCuentaMejorasTecnicas(GlobalVariable.CuentaParaBanner);
             }
             else
             {
 
             }
+            ViewBag.GuardadoMejorasTecnicas = "SIN GUARDAR";
             return View(modelo);
         }
         [HttpPost]
@@ -189,10 +201,11 @@ namespace Dime.Controllers
             modelo.MejorasTecnicas.UsuarioGestion = Session["Usuario"].ToString();
             modelo.MejorasTecnicas.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
             modelo.MejorasTecnicas.AliadoGestion = Session["AliadoLogeado"].ToString();
-            modelo.MejorasTecnicas.CuentaCliente = modelo.CuentasMejorasTecnicas.Cuenta;
+            modelo.MejorasTecnicas.CuentaCliente = GlobalVariable.CuentaParaBanner;
             modelo.MejorasTecnicas.Accionable = modelo.CuentasMejorasTecnicas.Accionable;
 
             bannerservice.RegistrarMejorasTecnicas(modelo.MejorasTecnicas);
+            ViewBag.GuardadoMejorasTecnicas = "GUARDADO";
             return View();
         }
         [HttpGet]
@@ -200,17 +213,18 @@ namespace Dime.Controllers
         {
             ViewModelBanner modelo = new ViewModelBanner();
 
-            if (Session["CuentaBanner"] != null)
+            if (GlobalVariable.CuentaParaBanner != 0)
             {
-                int CuentaIn = Convert.ToInt32(Session["CuentaBanner"].ToString());
-                decimal CuentaCliente = Convert.ToInt32(Session["CuentaBanner"].ToString());
-                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(CuentaIn);
-                modelo.CuentasFox = bannerservice.ConsultaCuentaBaseFox(CuentaCliente);
+                //int CuentaIn = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                //decimal CuentaCliente = Convert.ToInt32(Session["CuentaBanner"].ToString());
+                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(Convert.ToInt32(GlobalVariable.CuentaParaBanner));
+                modelo.CuentasFox = bannerservice.ConsultaCuentaBaseFox(GlobalVariable.CuentaParaBanner);
             }
             else
             {
 
             }
+            ViewBag.GuardadoFox = "SIN GUARDAR";
             return View(modelo);
         }
         [HttpPost]
@@ -220,11 +234,12 @@ namespace Dime.Controllers
             modelo.GestionFox.UsuarioGestion = Session["Usuario"].ToString();
             modelo.GestionFox.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
             modelo.GestionFox.AliadoGestion = Session["AliadoLogeado"].ToString();
-            modelo.GestionFox.CuentaCliente = modelo.CuentasFox.Cuenta;
+            modelo.GestionFox.CuentaCliente = GlobalVariable.CuentaParaBanner;
             modelo.GestionFox.FechaVencimiento = Convert.ToString(modelo.CuentasFox.FechaVencimiento);
             modelo.GestionFox.Ofrecimiento = modelo.CuentasFox.Ofrecimiento;
 
             bannerservice.RegistraFox(modelo.GestionFox);
+            ViewBag.GuardadoFox = "GUARDADO";
             return View();
         }
         public JsonResult TiposDeContactoList(decimal gestion)
@@ -279,6 +294,44 @@ namespace Dime.Controllers
                 JsonRequestBehavior = JsonRequestBehavior.DenyGet
             };
         }
+        //Guarda Usabilidad Banner
+        [HttpPost]
+        public JsonResult RegistrarUsabilidadBanner(string Alerta)
+        {
+            UsabilidadAlertasInbound modelo = new UsabilidadAlertasInbound();
+            modelo.Id = 0;
+            modelo.FechaRevision = DateTime.Now;
+            modelo.IdUsuarioRevision = Convert.ToInt32(Session["IdUsuario"].ToString());
+            modelo.NombreUsuarioRevision = Session["NombreUsuario"].ToString();
+            modelo.Aliado = Session["AliadoLogeado"].ToString();
+            modelo.CuentaRevisoTabla = Convert.ToInt32(GlobalVariable.CuentaParaBanner);
+            modelo.Alerta = Alerta;
+            bannerservice.RegistraUsabilidadBanner(modelo);
 
+            return new JsonResult
+                {
+                    Data = JsonConvert.SerializeObject("Usabilidad Registrada"),
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+
+                };
+        }
+        //Guarda Usabilidad Banner
+        [HttpPost]
+        public JsonResult RecargaCuentaBanner(string CuentaCliente)
+        {
+            GlobalVariable.CuentaParaBanner = Convert.ToDecimal(CuentaCliente);
+            BannerAlertas();
+            ClaroVideo();
+            MejorOferta();
+            SiembraHD();
+            MejorasTecnicas();
+            Fox();
+            return new JsonResult
+            {
+                Data = JsonConvert.SerializeObject(""),
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
+
+            };
+        }
     }
 }

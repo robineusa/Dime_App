@@ -19,7 +19,7 @@ namespace Dime.Controllers
         WSD.ActivacionSiembraHDServiceClient acsiembrahdwebservice;
         WSD.UsabilidadServiceClient usabilidad;
 
-
+       
         public InboundController()
         {
             inboundService = new WSD.InboundServiceClient();
@@ -40,11 +40,11 @@ namespace Dime.Controllers
         /// </summary>
         /// <param name="choosenCuenta"></param>
         /// <returns></returns>
-
+        
         [HttpGet]
         public ActionResult Index(string choosenCuenta)
         {
-           
+            
             InboundModel model = new InboundModel();
             List<string> hobbieOptions = inboundService.ConsultarHobbiesOptions();
             model.HobbyOptions = new List<SelectListItem>();
@@ -62,7 +62,6 @@ namespace Dime.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index(InboundModel model, string cambiarDatos)
         {
-           
             int cuentaCliente = model.ClientesTodos.Cuenta;
             model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(cuentaCliente);
             Guardar_Usabilidad_Consulta_Cuenta(Convert.ToString(cuentaCliente));
@@ -100,10 +99,8 @@ namespace Dime.Controllers
             model.HobbyOptions = new List<SelectListItem>();
             foreach (var item in hobbieOptions)
                 model.HobbyOptions.Add(new SelectListItem { Text = item, Value = item });
-
-
+            
             Session["CuentaBanner"] = cuentaCliente;
-
             model.DatosAdcionalesCliente = inboundService.TraerDatosAdicionalesCliente(cuentaCliente) ?? new DatosAdicionalesCliente();
             model.iniciarOptionsVista();
             model.LineaDeUsuarioActual = Session["LineaLogeado"].ToString();
@@ -115,11 +112,19 @@ namespace Dime.Controllers
             
             return View(model);
         }
+        [HttpPost]
+        public JsonResult ActivarBanner(string CuentaCliente)
+        {  
+            Session["CuentaBanner"] = CuentaCliente;
+            var dato = RedirectToAction("BannerAlertas", "Banner");
+            return new JsonResult
+            {
+                Data = JsonConvert.SerializeObject("Usabilidad Registrada"),
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet
 
-
-
-
-
+            };
+        }
+        
         public JsonResult IngresosListDeCuenta(string cuenta)
         {
 

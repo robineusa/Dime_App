@@ -6545,4 +6545,16 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="RegistraUsabilidadBanner">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q454="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Usabilidad" nillable="true" type="q454:UsabilidadAlertasInbound" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistraUsabilidadBannerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

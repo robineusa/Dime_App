@@ -17049,6 +17049,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistraFox", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistraFoxResponse")]
         System.Threading.Tasks.Task RegistraFoxAsync(Telmexla.Servicios.DIME.Entity.GestionFoxInbound Fox);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistraUsabilidadBanner", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistraUsabilidadBannerResponse")]
+        void RegistraUsabilidadBanner(Telmexla.Servicios.DIME.Entity.UsabilidadAlertasInbound Usabilidad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistraUsabilidadBanner", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistraUsabilidadBannerResponse")]
+        System.Threading.Tasks.Task RegistraUsabilidadBannerAsync(Telmexla.Servicios.DIME.Entity.UsabilidadAlertasInbound Usabilidad);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17196,6 +17202,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task RegistraFoxAsync(Telmexla.Servicios.DIME.Entity.GestionFoxInbound Fox) {
             return base.Channel.RegistraFoxAsync(Fox);
+        }
+        
+        public void RegistraUsabilidadBanner(Telmexla.Servicios.DIME.Entity.UsabilidadAlertasInbound Usabilidad) {
+            base.Channel.RegistraUsabilidadBanner(Usabilidad);
+        }
+        
+        public System.Threading.Tasks.Task RegistraUsabilidadBannerAsync(Telmexla.Servicios.DIME.Entity.UsabilidadAlertasInbound Usabilidad) {
+            return base.Channel.RegistraUsabilidadBannerAsync(Usabilidad);
         }
     }
 }

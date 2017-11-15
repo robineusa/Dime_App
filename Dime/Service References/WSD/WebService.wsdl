@@ -20961,6 +20961,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_RegistraUsabilidadBanner_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IBannerAlertasService_RegistraUsabilidadBanner_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -23832,6 +23870,12 @@
   <wsdl:message name="IBannerAlertasService_RegistraFox_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegistraFoxResponse" />
   </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_RegistraUsabilidadBanner_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistraUsabilidadBanner" />
+  </wsdl:message>
+  <wsdl:message name="IBannerAlertasService_RegistraUsabilidadBanner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistraUsabilidadBannerResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWebService">
     <wsdl:operation name="MuestraEntidades">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MuestraEntidades" message="tns:IWebService_MuestraEntidades_InputMessage" />
@@ -25792,6 +25836,10 @@
     <wsdl:operation name="RegistraFox">
       <wsdl:input wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistraFox" message="tns:IBannerAlertasService_RegistraFox_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistraFoxResponse" message="tns:IBannerAlertasService_RegistraFox_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistraUsabilidadBanner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistraUsabilidadBanner" message="tns:IBannerAlertasService_RegistraUsabilidadBanner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistraUsabilidadBannerResponse" message="tns:IBannerAlertasService_RegistraUsabilidadBanner_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IWebService" type="tns:IWebService">
@@ -31145,6 +31193,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_RegistraFox_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistraUsabilidadBanner">
+      <soap12:operation soapAction="http://tempuri.org/IBannerAlertasService/RegistraUsabilidadBanner" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_RegistraUsabilidadBanner_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IBannerAlertasService_RegistraUsabilidadBanner_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

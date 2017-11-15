@@ -1,25 +1,8 @@
 ﻿
-//function LlamarConvenioElectronico() {
-//    $.ajax({
-//        type: "GET",
-//        url: urlConvenioElectronicoView,
-//        dataType: "html",
-//        success: function (result) {
-//            $('#ConvenioBody').html(result);
-//        }
-//    });
-//    //var data = { Cuenta: DataCuenta };
-//    //$.ajax({
-//    //    type: "GET",
-//    //    url: urlUsabilidadConvenio,
-//    //    data: data,
-//    //    contentType: false,
-//    //    success: function (result) {
-
-//    //    }
-//    //});
-
-//}
+function LlamarConvenioElectronico() {
+    var Alerta = "CONVENIO ELECTRONICO";
+    RegistrarUsoBanner(Alerta);
+}
 
 //function LlamarElegidoFijo() {
 //    $.ajax({
@@ -32,117 +15,32 @@
 //    })
 //}
 
-//function LlamarClaroVideo() {
-//    $.ajax({
-//        type: "GET",
-//        url: urlClaroVideoView,
-//        dataType: "html",
-//        success: function (result) {
-//            $('#ClaroVideoBody').html(result);
-//        }
-//    });
-//    //var data = { Cuenta: choosenCuenta };
-//    //$.ajax({
-//    //    type: "GET",
-//    //    url: urlUsabilidadClaroVideo,
-//    //    data: data,
-//    //    contentType: false,
-//    //    success: function (result) {
+function LlamarClaroVideo() {
+    var Alerta = "CLARO VIDEO";
+    RegistrarUsoBanner(Alerta);
+}
 
-//    //    }
-//    //});
-//}
+function LlamarSMO() {
+    var Alerta = "SIGUIENTE MEJOR OFERTA";
+    RegistrarUsoBanner(Alerta);
+}
 
-//function LlamarSMO() {
-//    alert('si');
-//    document.getElementById('ismo').contentWindow.SetearTiposContacto();
-//    //$.ajax({
-//    //    type: "GET",
-//    //    url: urlSMOView,
-//    //    dataType: "html",
-//    //    success: function (result) {
-//    //        $('#SMOBody').html(result);
-//    //        alert(result);
-//    //    }
-//    //});
-//    //var data = { Cuenta: choosenCuenta };
-//    //$.ajax({
-//    //    type: "GET",
-//    //    url: urlUsabilidadSMO,
-//    //    data: data,
-//    //    contentType: false,
-//    //    success: function (result) {
+function LlamarSiembraHD() {
+    var Alerta = "SIEMBRA HD";
+    RegistrarUsoBanner(Alerta);
+}
 
-//    //    }
-//    //});
-//}
+function LlamarMejorasTecnicas() {
+    var Alerta = "MEJORAS TECNICAS";
+    RegistrarUsoBanner(Alerta);
+}
 
-//function LlamarSiembraHD() {
-//    $.ajax({
-//        type: "GET",
-//        url: urlSiembraHDView,
-//        dataType: "html",
-//        success: function (result) {
-//            $('#SiembraBody').html(result);
-//        }
-//    });
-//    //var data = { Cuenta: choosenCuenta };
-//    //$.ajax({
-//    //    type: "GET",
-//    //    url: urlUsabilidadSiembraHD,
-//    //    data: data,
-//    //    contentType: false,
-//    //    success: function (result) {
-
-//    //    }
-//    //});
-//}
-
-//function LlamarMejorasTecnicas() {
-//    $.ajax({
-//        type: "GET",
-//        url: urlMejorasTecnicas,
-//        dataType: "html",
-//        success: function (result) {
-//            $('#MejorasTBody').html(result);
-//        }
-//    });
-//    //var data = { Cuenta: choosenCuenta };
-//    //$.ajax({
-//    //    type: "GET",
-//    //    url: urlUsabilidadMejorasTecnicas,
-//    //    data: data,
-//    //    contentType: false,
-//    //    success: function (result) {
-
-//    //    }
-//    //});
-//}
-
-//function LlamarFOX() {
-//    $.ajax({
-//        type: "GET",
-//        url: urlFOX,
-//        dataType: "html",
-//        success: function (result) {
-//            $('#FOXTBody').html(result);
-//        }
-//    });
-//    //var data = { Cuenta: choosenCuenta };
-//    //$.ajax({
-//    //    type: "GET",
-//    //    url: urlUsabilidadFOX,
-//    //    data: data,
-//    //    contentType: false,
-//    //    success: function (result) {
-
-//    //    }
-//    //});
-//}
-
+function LlamarFOX() {
+    var Alerta = "FOX";
+    RegistrarUsoBanner(Alerta);
+}
 
 function ResetearDivs() {
-
     var vacio = $("<div></div>");
     $('#ConvenioBody').html(vacio);
     $('#ElegidoBody').html(vacio);
@@ -152,4 +50,21 @@ function ResetearDivs() {
     $('#MejorasTBody').html(vacio);
     $('#FOXTBody').html(vacio);
 
+}
+
+function RegistrarUsoBanner(Alerta) {
+    $.ajax({
+        type: "POST",
+        traditional: true,
+        url: UrlUsabilidadBanner,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ Alerta: Alerta }),
+        dataType: "json",
+        success: function (result) {
+            
+        },
+        error: function (request, status, error) {
+            alert(request.responseText + " " + status + "  " + error);
+        }
+    });
 }
