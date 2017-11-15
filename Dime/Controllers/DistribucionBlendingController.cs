@@ -34,8 +34,7 @@ namespace Dime.Controllers
                 JsonRequestBehavior = JsonRequestBehavior.DenyGet
             };
         }
-
-
+        
         public JsonResult TiposCierresList(decimal idContacto)
         {
 
@@ -141,6 +140,7 @@ namespace Dime.Controllers
                 ViewBag.Razon = null;
 
             }
+            Session["CuentaBanner"] = model.DatosDelCliente.Cuenta;
             return View(model);
 
         }
@@ -334,6 +334,7 @@ namespace Dime.Controllers
                 ViewBag.Cierre = null;
                 ViewBag.Razon = null;
             }
+            Session["CuentaBanner"] = model.DatosDelCliente.Cuenta;
             return View(model);
 
         }
@@ -504,6 +505,7 @@ namespace Dime.Controllers
                 ViewBag.Cierre = null;
                 ViewBag.Razon = null;
             }
+            Session["CuentaBanner"] = model.DatosDelCliente.Cuenta;
             return View(model);
 
         }
@@ -667,6 +669,7 @@ namespace Dime.Controllers
                 ViewBag.Razon = null;
 
             }
+            Session["CuentaBanner"] = model.DatosDelCliente.Cuenta;
             return View(model);
 
         }

@@ -7,7 +7,7 @@
     else { ViewBag.SubTitle = "Gestión Blending" + " - Usted no tiene una campaña Blending asignada: "; }
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@Html.Action("BannerAlertas", "Banner")
 @using (Html.BeginForm("Rentabilizacion", "DistribucionBlending", FormMethod.Post, new { id = "datosCliente", role = "form" }))
 {
     @Html.AntiForgeryToken()

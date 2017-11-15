@@ -10,7 +10,7 @@
     }
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@Html.Action("BannerAlertas", "Banner")
 @using (Html.BeginForm("Producto", "DistribucionBlending", FormMethod.Post, new { id = "datosCliente", role = "form" }))
 {
     @Html.AntiForgeryToken()

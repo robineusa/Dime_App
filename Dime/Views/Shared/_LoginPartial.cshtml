@@ -1,5 +1,15 @@
 ﻿@using System.Globalization;
-
+@Styles.Render("~/AdminLTEbootstrap/css")
+@Styles.Render("~/AdminLTEdist/css")
+@Styles.Render("~/AdminLTEdist/css/skins")
+@Scripts.Render("~/AdminLTEdist/js")
+@Scripts.Render("~/ScriptsShared/_Layout")
+<link href="~/Styles/Elements/Dime2.css?1.1.6" rel="stylesheet" />
+<link href="~/AdminLTE/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+<link href="~/AdminLTE/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+@Scripts.Render("~/AdminLTEplugins/jquery/js")
+@Scripts.Render("~/AdminLTEbootstrap/js")
+@Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
 <li class="dropdown user user-menu">
     @if (Session["IdUsuario"] != null)
     {
@@ -9,7 +19,7 @@
                 string[] nombreUsuario;
                 nombreUsuario = @Session["NombreUsuario"].ToString().Split(' ');
                 string nombreFinal = nombreUsuario[0];
-                if (nombreUsuario.Count() == 4)  nombreFinal = nombreFinal + " " + nombreUsuario[2];
+                if (nombreUsuario.Count() == 4) nombreFinal = nombreFinal + " " + nombreUsuario[2];
                 else nombreFinal = nombreFinal + " " + nombreUsuario[1];
 
                 nombreFinal = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(nombreFinal.ToLower());
@@ -20,13 +30,13 @@
             <li class="user-header">
                 <img src="~/AdminLTE/dist/img/user.svg" class="img-circle" alt="User Image">
                 <p>
-                    <small><b>@Session["Usuario"].ToString()</b></small>  
+                    <small><b>@Session["Usuario"].ToString()</b></small>
                 </p>
                 <p>
-                    @{ 
+                    @{
                         string aliadoYLinea = Session["AliadoLogeado"].ToString() + " " + Session["LineaLogeado"].ToString();
-                 
-                    <small> <b>@aliadoYLinea</b> </small>
+
+                        <small> <b>@aliadoYLinea</b> </small>
                     }
                 </p>
 
@@ -34,9 +44,9 @@
             <li class="user-body">
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <a id="linkLocker" onclick="KillTimeLockScreen(); lockScreenShow = true; $('#lockScreenActivate').click();"  class="btn btn-default btn-flat">Bloquear Pantalla</a>
+                        <a id="linkLocker" onclick="KillTimeLockScreen(); lockScreenShow = true; $('#lockScreenActivate').click();" class="btn btn-default btn-flat">Bloquear Pantalla</a>
                     </div>
-   
+
                 </div>
             </li>
 
@@ -53,12 +63,12 @@
                 }
             </li>
         </ul>
-    }
-    else
-    {
-        <ul class="nav navbar-nav">
-            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-            <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-        </ul>
-    }
+                        }
+                        else
+                        {
+                            <ul class="nav navbar-nav">
+                                <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                            </ul>
+                        }
 </li>
