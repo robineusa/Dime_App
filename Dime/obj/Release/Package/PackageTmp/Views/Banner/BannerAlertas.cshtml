@@ -74,20 +74,21 @@
                     <div class="modal-content" style="width:1000px;">
                         <div class="modal-header" style="width:1000px;">
                             <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
-                            <h2 class="modal-title"><i class="fa fa-envelope" style="color:#D92028;" aria-hidden="true"></i>&nbsp;&nbsp;Formulario Activación Convenio Electrónico</h2>
+                            <h2 class="modal-title"><i class="fa fa-tty" aria-hidden="true" style="color:#918de9;"></i>&nbsp;&nbsp;Formulario Convenio electronico</h2>
                         </div>
                         <div class="modal-body" style="width:1000px;">
                             <br />
                             <div class="row">
-                                <div class="col-lg-offset-1" style="margin-left:25px;">
-                                    <iframe style="width:100%;height:950px;margin-left:-10px;margin-top:-30px;" src="@Url.Action("ConvenioElectronico", "Banner")" frameborder="0" allowFullScreen="true"></iframe>
+                                <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                    <iframe id="ismo" style="width:100%;height:400px;margin-left:-10px;margin-top:-30px;" src="@Url.Action("ConvenioElectronico", "Banner")" frameborder="0" allowFullScreen="true"></iframe>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
+
+           
         }
         @if (ViewBag.ClaroVideo == true)
         {
@@ -102,13 +103,14 @@
                             <br />
                             <div class="row">
                                 <div class="col-lg-offset-1" style="width:1300px; margin-left:25px;">
-                                      <iframe id="ismo" style="width:100%;height:950px;margin-left:0px;margin-top:-30px;padding:5px;" src="@Url.Action("ClaroVideo", "Banner")" frameborder="0" allowFullScreen="true"></iframe>
+                                    <iframe id="ismo" style="width:100%;height:950px;margin-left:0px;margin-top:-30px;padding:5px;" src="@Url.Action("ClaroVideo", "Banner")" frameborder="0" allowFullScreen="true"></iframe>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         }
         @if (ViewBag.MejorOferta == true)
         {
@@ -133,7 +135,7 @@
         }
         @if (ViewBag.SiembraHD == true)
         {
-            <div id="SiembraHD" class="modal">
+           <div id="SiembraHD" class="modal">
                 <div class="modal-dialog" style="width:1000px;">
                     <div class="modal-content" style="width:1000px;">
                         <div class="modal-header" style="width:1000px;">
@@ -159,7 +161,7 @@
                     <div class="modal-content" style="width:1000px;">
                         <div class="modal-header" style="width:1000px;">
                             <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
-                            <h2 class="modal-title"><i class="fa fa-cog fa-2x" aria-hidden="true" style="color:#508f3e;"></i>&nbsp;&nbsp;Formulario Mejoras Técnicas</h2>
+                            <h2 class="modal-title"><i class="fa fa-tty" aria-hidden="true" style="color:#918de9;"></i>&nbsp;&nbsp;Formulario Mejoras Tecnicas</h2>
                         </div>
                         <div class="modal-body" style="width:1000px;">
                             <br />
@@ -172,6 +174,7 @@
                     </div>
                 </div>
             </div>
+            
         }
         @if (ViewBag.Fox == true)
         {
@@ -193,6 +196,7 @@
                     </div>
                 </div>
             </div>
+
         }
 
     </div>

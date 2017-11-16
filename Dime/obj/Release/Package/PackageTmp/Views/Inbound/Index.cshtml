@@ -4,7 +4,7 @@
     ViewBag.Subtitle = "Asesor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<script>
+@*<script>
     var Cuenta =  @Model.ClientesTodos.Cuenta;
     var urlsesionbanner = '@Url.Action("RecargaCuentaBanner", "Banner")';
     $.ajax({
@@ -21,7 +21,7 @@
             alert(request.responseText + " " + status + "  " + error);
         }
     });
-</script>
+</script>*@
 
 @if (Session["Tipificacor Sac"] != null)
 {
@@ -590,7 +590,7 @@
             var datosDeMarcacionUrl = "@Url.Action("DatosDeMarcacion", "Marcaciones")";
             var hitorialUrl =  "@Url.Action("IngresosListDeCuenta", "Inbound")";
             var urlCodigosDeCierre = "@Url.Action("CodigosDeCierre", "Marcaciones")";
-            var urlsesionbanner = '@Url.Action("RecargaCuentaBanner", "Banner")';
+            @*var urlsesionbanner = '@Url.Action("RecargaCuentaBanner", "Banner")';*@
             $("#tbMacroproceso").val('');
             $("#tbMarcacion").val('');
             $("#TipiMarca_Observaciones").val('');
@@ -600,7 +600,7 @@
 
             }, 1000);
         </script>
-        <script src="~/Scripts/Inbound/Index.js?1.3.1"></script>
+        <script src="~/Scripts/Inbound/Index.js?1.3.3"></script>
 
     }
 
