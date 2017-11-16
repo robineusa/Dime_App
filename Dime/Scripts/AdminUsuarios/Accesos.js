@@ -355,17 +355,17 @@ function SelectCrearAccesoMasivo(e) {
 function TraerPosiblesAccesosDeLinea() {
     //$("#listaPermisosCrearMasivo").val("");
 
-    $.ajax({
-        type: "GET",
-        url: urlPosiblesAccesosDeLinea,
-        contentType: "application/json; charset=utf-8",
-        data: { idLinea: $("#lineaSelectCreacion").val() },
-        dataType: 'json',
-        success: function (result) {
-            var json = JSON.parse(result);
-            LlenarAccesosDeLineaCreacion(json)
-        }
-    });
+    //$.ajax({
+    //    type: "GET",
+    //    url: urlPosiblesAccesosDeLinea,
+    //    contentType: "application/json; charset=utf-8",
+    //    data: { idLinea: $("#lineaSelectCreacion").val() },
+    //    dataType: 'json',
+    //    success: function (result) {
+    //        var json = JSON.parse(result);
+    //        LlenarAccesosDeLineaCreacion(json)
+    //  });  }
+    
 };
 
 function LlenarAccesosDeLineaCreacion(data) {
