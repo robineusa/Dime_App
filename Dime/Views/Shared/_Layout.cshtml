@@ -137,7 +137,7 @@
                         </li>
 
                         @Html.Partial("_LoginPartial")
-                     
+
                         <li>
                             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
                         </li>
@@ -776,7 +776,7 @@
 
                         </li>
                     }
-                    
+
 
                     <li class="header">CONSULTAS</li>
                     @if (Session["Consultas Asesor"] != null)
@@ -1067,7 +1067,7 @@
             </section>
         </aside>
         <div class="content-wrapper" style="margin-left:250px;margin-top:40px;">
-            
+
             @if (ViewBag.Title != null && ViewBag.Title != "")
             {
                 <section class="content-header">
@@ -1289,32 +1289,7 @@
         </div>
 
 
-        <div id="Buen_Servicio" class="modal">
-            <div class="modal-dialog" style="width:1000px;">
-                <div class="modal-content" style="width:1000px; background-color:transparent">
-                    <div class="modal-header" style="width:1000px; background-color:transparent; border-bottom: none; margin-top:20px;">
-                        <button id="CerrarBS" type="button" onclick="return GuardarUsuarioNotificado()" class="close" style="color:white; margin-right:-35px;" data-dismiss="modal">X</button>
-
-                        <h2 class="modal-title"></h2>
-                    </div>
-                    <div class="modal-body" style="width:1000px;">
-
-                        <br />
-                        <div class="row">
-                            <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
-                                <a id="LinkBS" href="#" target="_blank">
-                                    <img id="imgBS" src="#" style="max-width:103%;" />
-                                </a>
-                                <input id="Nombre_Imagen" type="hidden" />
-                                <input id="Ruta_Imagen" type="hidden" />
-                                <input id="Id_Notificado" type="hidden" />
-                                <input id="Descripcion_Imagen" type="hidden" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
         <div id="Visor_1" class="modal">
             <div class="modal-dialog" style="width:1000px;">
@@ -1401,8 +1376,8 @@
         </div>
         <a id="lockScreenActivate" onclick="LockScreen(this)" style="display:none" value="LockScreenVal"></a>
         <div id="lockScreenDiv"></div>
-       
-        
+
+
     </div>
 
 
@@ -1449,6 +1424,6 @@
     <script src="~/AdminLTE/Kendo2016.3.11/js/kendo.all.min.js"></script>
     <script src="~/AdminLTE/Kendo2016.3.11/js/kendo.web.min.js"></script>
     @RenderSection("scripts", required: false)
-    
+
 </body>
 </html>

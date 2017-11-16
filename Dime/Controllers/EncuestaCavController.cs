@@ -11,7 +11,7 @@ using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime.Controllers
 {
-    public class EncuestaCavController : MyController
+    public class EncuestaCavController : Controller
     {
         WSD.POMSolicitudesServiceClient PomService;
         WSP.GeneracionEncuestaClient EncuestaService;

@@ -44,7 +44,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult Index(string choosenCuenta)
         {
-            
+            Session.Remove("CuentaBanner");
             InboundModel model = new InboundModel();
             List<string> hobbieOptions = inboundService.ConsultarHobbiesOptions();
             model.HobbyOptions = new List<SelectListItem>();

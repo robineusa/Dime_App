@@ -1,7 +1,7 @@
 ﻿var consultar;
 
 $(document).ready(function () {
-    BannerLoad();
+    //BannerLoad();
    
     $("#hobbieOption").prop("selectedIndex", 0);
     $("#rangoEdadOption").prop("selectedIndex", 0);

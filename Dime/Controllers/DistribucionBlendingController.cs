@@ -76,6 +76,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult CableModemFueradeNiveles(string CuentaCliente, string Seg)
         {
+            Session.Remove("CuentaBanner");
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
             GBPFueraNiveles ClienteGestionado = new GBPFueraNiveles();
             if (Session["CampañaBlending"] != null) { }
@@ -266,6 +267,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult Rentabilizacion(string CuentaCliente, string Seg)
         {
+            Session.Remove("CuentaBanner");
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
             if (Session["CampañaBlending"] != null) { }
             else
@@ -444,6 +446,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult Producto(string CuentaCliente, string Seg)
         {
+            Session.Remove("CuentaBanner");
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
             if (Session["CampañaBlending"] != null) { }
             else
@@ -606,6 +609,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult Docsis(string CuentaCliente, string Seg)
         {
+            Session.Remove("CuentaBanner");
             ViewModelDistribucionesBlending model = new ViewModelDistribucionesBlending();
             GBPDocsis ClienteGestionado = new GBPDocsis();
             if (Session["CampañaBlending"] != null) { }
