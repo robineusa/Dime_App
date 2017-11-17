@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
+    $('#DDLOfre1 option').prop('selected', function () { return this.defaultSelected; });
     SetearTiposContacto();
-   
+    
 });
 
 $('#DDLOfre1').change(function () {
@@ -20,10 +21,15 @@ function Ofrecimiento1() {
         $("#2ofre").css("display", "none");
         $("#3ofre").css("display", "none");
     }
-    else {
+    else if ($("#DDLOfre1").val() == "0") {
         $("#DDLOfre2").val('');
         $("#DDLOfre3").val('');
         $("#2ofre").css("display", "block");
+        $("#3ofre").css("display", "none");
+    } else if ($("#DDLOfre1").val() == "") {
+        $("#DDLOfre2").val('');
+        $("#DDLOfre3").val('');
+        $("#2ofre").css("display", "none");
         $("#3ofre").css("display", "none");
     }
 }
@@ -33,12 +39,16 @@ function Ofrecimiento2() {
         $("#DDLOfre1").val('0');
         $("#DDLOfre3").val('0');
         $("#3ofre").css("display", "none");
-    } else {
+    } else if ($("#DDLOfre2").val() == "0") {
         $("#DDLOfre3").val('');
         $("#3ofre").css("display", "block");
+    } else if ($("#DDLOfre2").val() == "") {
+        $("#DDLOfre3").val('');
+        $("#3ofre").css("display", "none");
     }
 }
 function Ofrecimiento3() {
+
 }
 
 

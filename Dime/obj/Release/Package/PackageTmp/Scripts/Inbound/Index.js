@@ -1,7 +1,6 @@
 ﻿var consultar;
 
 $(document).ready(function () {
-    //BannerLoad();
    
     $("#hobbieOption").prop("selectedIndex", 0);
     $("#rangoEdadOption").prop("selectedIndex", 0);
@@ -21,24 +20,7 @@ $(document).ready(function () {
         
 
     });
-    function BannerLoad() {
-        var Cuenta = $('#inputCuenta').val();
-        $.ajax({
-            type: "POST",
-            traditional: true,
-            url: urlsesionbanner,
-            contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({ CuentaCliente: Cuenta }),
-            dataType: "json",
-            success: function (result) {
-
-            },
-            error: function (request, status, error) {
-                alert(request.responseText + " " + status + "  " + error);
-            }
-        });
-
- }
+    
     
     $("#keyMarcacion").on("keyup", function (e) {
      

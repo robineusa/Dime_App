@@ -23,7 +23,7 @@
         var urlControlTiposMotivosList = '@Url.Action("TiposMotivosList", "Banner")';
 
     </script>
-    <script src="~/Scripts/Banner/MejorOferta.js?1.0.8"></script>
+    <script src="~/Scripts/Banner/MejorOferta.js?1.1.1"></script>
 </head>
 <body>
     @using (Html.BeginForm("MejorOferta", "Banner", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
@@ -93,10 +93,9 @@
                             <tr>
                                 <td>
                                     <div class="form-group">
-                                        @Html.DropDownListFor(m => m.SiguienteMejorOferta.Ofrecimiento1, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="1" },
-                                    new SelectListItem{Text="NO", Value="0" } }, "",
-                 new { @class = "form-control input-sm", @style = "width:20%", @id = "DDLOfre1", @onchange = "return Ofrecimiento1()" })
-
+                                        @Html.DropDownListFor(m => m.SiguienteMejorOferta.Ofrecimiento1, new List<SelectListItem>{ new SelectListItem{Text="SI", Value="1" },
+                                        new SelectListItem{Text="NO", Value="0" } }, "--SELECCIONE--",
+                                        new { @class = "form-control input-sm", @style = "width:20%", @id = "DDLOfre1", @onchange = "return Ofrecimiento1()" })
                                     </div>
                                 </td>
                             </tr>
@@ -124,9 +123,9 @@
                                 <tr>
                                     <td>
                                         <div class="form-group">
-                                            @Html.DropDownListFor(m => m.SiguienteMejorOferta.Ofrecimiento2, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="1" },
-                                    new SelectListItem{Text="NO", Value="0" } }, "",
-             new { @class = "form-control input-sm", @style = "width:20%", @onchange = "return Ofrecimiento2()", id = "DDLOfre2" })
+                                            @Html.DropDownListFor(m => m.SiguienteMejorOferta.Ofrecimiento2, new List<SelectListItem>{ new SelectListItem{Text="SI", Value="1" },
+                                    new SelectListItem{Text="NO", Value="0" } }, "--SELECCIONE--",
+                                         new { @class = "form-control input-sm", @style = "width:20%", @onchange = "return Ofrecimiento2()", id = "DDLOfre2" })
                                         </div>
                                     </td>
                                 </tr>
@@ -154,9 +153,9 @@
                                 <tr>
                                     <td>
                                         <div class="form-group">
-                                            @Html.DropDownListFor(m => m.SiguienteMejorOferta.Ofrecimiento3, new @List<SelectListItem>{ new SelectListItem{Text="SI", Value="1" },
-                                    new SelectListItem{Text="NO", Value="0" } }, "",
-             new { @class = "form-control input-sm", @style = "width:20%", @onchange = "return Ofrecimiento3()", id = "DDLOfre3" })
+                                            @Html.DropDownListFor(m => m.SiguienteMejorOferta.Ofrecimiento3, new List<SelectListItem>{ new SelectListItem{Text="SI", Value="1" },
+                                    new SelectListItem{Text="NO", Value="0" } }, "--SELECCIONE--",
+                                     new { @class = "form-control input-sm", @style = "width:20%", @onchange = "return Ofrecimiento3()", id = "DDLOfre3" })
                                         </div>
                                     </td>
                                 </tr>

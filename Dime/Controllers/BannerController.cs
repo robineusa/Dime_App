@@ -31,32 +31,39 @@ namespace Dime.Controllers
             if (Session["CuentaBanner"] != null)
             {
                 decimal CuentaConsulta = Convert.ToDecimal(Session["CuentaBanner"].ToString());
-                
-            //Verificacion convenio electronico
-            if (bannerservice.ValidarClienteEnConvenioElectronico(CuentaConsulta))
-               {ViewBag.ConvenioElectronico = true;}else { ViewBag.ConvenioElectronico = false; }
+                if (CuentaConsulta !=0 )
+                {
+                    //Verificacion convenio electronico
+                    if (bannerservice.ValidarClienteEnConvenioElectronico(CuentaConsulta))
+                    { ViewBag.ConvenioElectronico = true; }
+                    else { ViewBag.ConvenioElectronico = false; }
 
-            //Verificacion claro video
-            if (bannerservice.ValidarClienteEnClaroVideo(CuentaConsulta))
-                {ViewBag.ClaroVideo = true;}else {ViewBag.ClaroVideo = false;}
+                    //Verificacion claro video
+                    if (bannerservice.ValidarClienteEnClaroVideo(CuentaConsulta))
+                    { ViewBag.ClaroVideo = true; }
+                    else { ViewBag.ClaroVideo = false; }
 
-            //Verificacion siguiente mejor oferta
-            if (bannerservice.ValidarClienteEnMejorOferta(CuentaConsulta))
-                {ViewBag.MejorOferta = true;}else {ViewBag.MejorOferta = false;}
+                    //Verificacion siguiente mejor oferta
+                    if (bannerservice.ValidarClienteEnMejorOferta(CuentaConsulta))
+                    { ViewBag.MejorOferta = true; }
+                    else { ViewBag.MejorOferta = false; }
 
-            //Verificacion Siembra HD
-            if (bannerservice.ValidarClienteEnSiembraHD(CuentaConsulta))
-                {ViewBag.SiembraHD = true;}else {ViewBag.SiembraHD = false;}
+                    //Verificacion Siembra HD
+                    if (bannerservice.ValidarClienteEnSiembraHD(CuentaConsulta))
+                    { ViewBag.SiembraHD = true; }
+                    else { ViewBag.SiembraHD = false; }
 
-            //Verificacion Mejoras Tecnicas
-            if (bannerservice.ValidarClienteEnMejorasTecnicas(CuentaConsulta))
-                {ViewBag.MejorasTecnicas = true;}else {ViewBag.MejorasTecnicas = false;}
+                    //Verificacion Mejoras Tecnicas
+                    if (bannerservice.ValidarClienteEnMejorasTecnicas(CuentaConsulta))
+                    { ViewBag.MejorasTecnicas = true; }
+                    else { ViewBag.MejorasTecnicas = false; }
 
-            //Verificacion Fox
-            if (bannerservice.ValidarClienteEnFox(CuentaConsulta))
-                {ViewBag.Fox = true;}else {ViewBag.Fox = false;}
+                    //Verificacion Fox
+                    if (bannerservice.ValidarClienteEnFox(CuentaConsulta))
+                    { ViewBag.Fox = true; }
+                    else { ViewBag.Fox = false; }
 
-                
+                }
             }
             else {  }
             
@@ -74,12 +81,6 @@ namespace Dime.Controllers
         public ActionResult ClaroVideo()
         {
             ViewModelBanner modelo = new ViewModelBanner();
-            if (Session["CuentaBanner"] != null)
-            {
-                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(Convert.ToInt32(Session["CuentaBanner"]));
-            }
-            else { }
-
             ViewBag.GuardadoClaroVideo = "SIN GUARDAR";
             return View(modelo);
             
@@ -97,7 +98,7 @@ namespace Dime.Controllers
             ViewBag.GuardadoClaroVideo = "GUARDADO";
             return View();
         }
-      
+      [HttpGet]
         public ActionResult MejorOferta()
         {
             ViewModelBanner modelo = new ViewModelBanner();
@@ -108,7 +109,7 @@ namespace Dime.Controllers
                 modelo.CuentasMejorOferta = bannerservice.ConsultarClienteMejorOferta(Convert.ToDecimal(Session["CuentaBanner"]));
             }
             else { }
-
+            
             ViewBag.GuardadoSMO = "SIN GUARDAR";
             return View(modelo);
         }
@@ -132,7 +133,6 @@ namespace Dime.Controllers
 
             if (Session["CuentaBanner"] != null)
             {
-                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(Convert.ToInt32(Session["CuentaBanner"]));
                 modelo.CuentasSiembraHD = bannerservice.ConsultarCuentaSiembraHD(Convert.ToDecimal(Session["CuentaBanner"]));
             }
             else { }
@@ -153,14 +153,13 @@ namespace Dime.Controllers
             ViewBag.GuardadoSiembraHD = "GUARDADO";
             return View();
         }
-      
+      [HttpGet]
         public ActionResult MejorasTecnicas()
         {
             ViewModelBanner modelo = new ViewModelBanner();
 
             if (Session["CuentaBanner"] != null)
             {
-                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(Convert.ToInt32(Session["CuentaBanner"]));
                 modelo.CuentasMejorasTecnicas = bannerservice.ConsultarCuentaMejorasTecnicas(Convert.ToDecimal(Session["CuentaBanner"]));
             }
             else { }
@@ -181,14 +180,13 @@ namespace Dime.Controllers
             ViewBag.GuardadoMejorasTecnicas = "GUARDADO";
             return View();
         }
-     
+     [HttpGet]
         public ActionResult Fox()
         {
             ViewModelBanner modelo = new ViewModelBanner();
 
             if (Session["CuentaBanner"] != null)
             {
-                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(Convert.ToInt32(Session["CuentaBanner"]));
                 modelo.CuentasFox = bannerservice.ConsultaCuentaBaseFox(Convert.ToDecimal(Session["CuentaBanner"]));
             }
             else { }

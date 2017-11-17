@@ -828,3 +828,29 @@ function CheckBoxAll3() {
     }
 
 }
+
+function CambiaPerfil()
+{
+    
+    var Check = document.getElementById('CambiarPerfilyLinea').checked;
+    if (Check == true) {
+        $("#perfilSelectedCreateMasivo").empty();
+        $("#perfilSelectedCreateMasivo").append("<option value=''>--Select Option--</option>");
+        $("#perfilSelectedCreateMasivo").append("<option value='1'>ADMINISTRADOR</option>");
+        $("#perfilSelectedCreateMasivo").append("<option value='2'>ASESOR</option>");
+        $("#perfilSelectedCreateMasivo").append("<option value='3'>CELULA</option>");
+        $("#perfilSelectedCreateMasivo").removeAttr("disabled");
+        $("#lineaSelectCreacionMasivo").empty();
+        $("#lineaSelectCreacionMasivo").append("<option value=''>--Select Option--</option>");
+        $("#lineaSelectCreacionMasivo").removeAttr("disabled");
+        
+    }
+    else {
+        $("#perfilSelectedCreateMasivo").empty();
+        $("#perfilSelectedCreateMasivo").append("<option value=''>--Select Option--</option>");
+        $("#perfilSelectedCreateMasivo").attr("disabled", "disabled");
+        $("#lineaSelectCreacionMasivo").empty();
+        $("#lineaSelectCreacionMasivo").append("<option value=''>--Select Option--</option>");
+        $("#lineaSelectCreacionMasivo").attr("disabled", "disabled");        
+    }
+}

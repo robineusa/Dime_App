@@ -112,19 +112,6 @@ namespace Dime.Controllers
             
             return View(model);
         }
-        [HttpPost]
-        public JsonResult ActivarBanner(string CuentaCliente)
-        {  
-            Session["CuentaBanner"] = CuentaCliente;
-            var dato = RedirectToAction("BannerAlertas", "Banner");
-            return new JsonResult
-            {
-                Data = JsonConvert.SerializeObject("Usabilidad Registrada"),
-                JsonRequestBehavior = JsonRequestBehavior.AllowGet
-
-            };
-        }
-        
         public JsonResult IngresosListDeCuenta(string cuenta)
         {
 

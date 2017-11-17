@@ -36,7 +36,6 @@
                         <tr>
                             <td colspan="3" style="padding:1px; width:1200px;">
                                 @Html.TextBoxFor(m => m.CuentasMejorasTecnicas.Accionable, null, new { @class = "form-control input-sm", @id = "Accionable", @name = "Accionable", @style = "margin-left:5px; width:100%; height:70px;" })
-                                @Html.HiddenFor(m => m.CuentasMejorasTecnicas.Cuenta, null)
                             </td>
                         </tr>
                     </tbody>
@@ -64,7 +63,7 @@
         }
         else
         {
-            <div class="row">
+        <div class="row">
                 <div class="box box-primary">
                     <div class="box-body">
                         <div class="row">
