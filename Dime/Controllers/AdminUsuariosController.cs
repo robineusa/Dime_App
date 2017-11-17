@@ -174,18 +174,27 @@ namespace Dime.Controllers
             }
           if (opcionMando.Equals("ActualizarAccesosMasivos"))
             {
-                string[] permisos = model.PermisosOtorgadosMasivos.Split('-');
-                List<string> listaPermisos = permisos.OfType<string>().ToList();
-                List<string> listaUsuariosCambiados = model.UsuariosACambiarMasivo.Split('-').OfType<string>().ToList();
-                if (model.UsuariosACambiarMasivo.Count() > 0)
+                if (model.UsuariosACambiarMasivo != null)
                 {
-                   loginService.ActualizarAccesosUsuarioMasivo(listaUsuariosCambiados, model.IdLineaMasivo, listaPermisos, Session["IdUsuario"].ToString());
-                    model = new ViewModelAdminUsuario();
-                    ViewBag.UsuarioExiste = "Actualización realizada";
+                    string[] permisos = { };
+                    if(model.PermisosOtorgadosMasivos != null)
+                        permisos = model.PermisosOtorgadosMasivos.Split('-');
+                    List<string> listaPermisos = permisos.OfType<string>().ToList();
+                    List<string> listaUsuariosCambiados = model.UsuariosACambiarMasivo.Split('-').OfType<string>().ToList();
+                    if (model.UsuariosACambiarMasivo.Count() > 0)
+                    {
+                        loginService.ActualizarAccesosUsuarioMasivo(listaUsuariosCambiados, model.IdLineaMasivo, listaPermisos, Session["IdUsuario"].ToString());
+                        model = new ViewModelAdminUsuario();
+                        ViewBag.UsuarioExiste = "Actualización realizada";
+                    }
+                    else
+                    {
+                        ViewBag.UsuarioExiste = "El usuario ingresado no existe ";
+                    }
                 }
                 else
                 {
-                    ViewBag.UsuarioExiste = "El usuario ingresado no existe ";
+                    ViewBag.UsuarioExiste = "Cargue Como Minimo un Usuario Antes de Guardar";
                 }
             }
 
