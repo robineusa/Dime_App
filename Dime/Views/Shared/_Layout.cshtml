@@ -776,6 +776,36 @@
 
                         </li>
                     }
+                    @if (Session["Procesos Check"] != null)
+                    {
+                        <li id="left-sidebar-menu-multilevel" class="treeview">
+                        <a href="#">
+                            <i class="fa fa-check-square text-green"></i> <span>Procesos Check</span><i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            @if (Session["Gestion NoCheck Tecnico"] != null)
+                            {
+                                <li>
+                                    <a href="#"><i class="fa fa-sitemap" aria-hidden="true"></i>Árboles<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="@Url.Action("GestionNoCheck", "Procesos")"><i class="fa fa-phone"></i>Gestión</a></li>
+                                    </ul>
+                                </li>
+                            }
+                            @if (Session["Admin Arboles NoCheck"] != null)
+                            {
+                                <li>
+                                    <a href="#"><i class="fa fa-wrench" aria-hidden="true"></i>Administrar Árboles<i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="@Url.Action("AdminArboles", "Procesos")"><i class="fa fa-cog"></i>Administración</a></li>
+                                    </ul>
+                                </li>
+
+                            }
+                        </ul>
+
+                    </li>
+                    }
 
 
                     <li class="header">CONSULTAS</li>
@@ -1289,7 +1319,7 @@
         </div>
 
 
-        
+
 
         <div id="Visor_1" class="modal">
             <div class="modal-dialog" style="width:1000px;">

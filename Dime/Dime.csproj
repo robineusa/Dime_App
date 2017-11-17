@@ -214,6 +214,7 @@
     <Compile Include="Controllers\MarcacionesController.cs" />
     <Compile Include="Controllers\MecController.cs" />
     <Compile Include="Controllers\MultiPlayController.cs" />
+    <Compile Include="Controllers\ProcesosController.cs" />
     <Compile Include="Controllers\PruebasController.cs" />
     <Compile Include="Controllers\RecurrenciaController.cs" />
     <Compile Include="Controllers\ReportesController.cs" />
@@ -3163,20 +3164,20 @@
     <Content Include="Service References\WSD\Dime.WSD.ViewModelSkillsUsuariosBlending.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\WSD\WebService.wsdl" />
-    <None Include="Service References\WSD\WebService.xsd">
+    <None Include="Service References\WSD\WebService1.wsdl" />
+    <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService1.xsd">
+    <None Include="Service References\WSD\WebService51.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService2.xsd">
+    <None Include="Service References\WSD\WebService52.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService3.xsd">
+    <None Include="Service References\WSD\WebService53.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService4.xsd">
+    <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\WSP\configuration91.svcinfo" />
@@ -3187,7 +3188,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService.disco" />
+    <None Include="Service References\WSD\WebService1.disco" />
     <Content Include="Service References\WSP\Dime.WSP.enviarEncuestaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -3505,6 +3506,8 @@
     <Content Include="Views\Banner\SiembraHD.cshtml" />
     <Content Include="Views\Banner\MejorasTecnicas.cshtml" />
     <Content Include="Views\Banner\Fox.cshtml" />
+    <Content Include="Views\Procesos\GestionNoCheck.cshtml" />
+    <Content Include="Views\Procesos\AdminArboles.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
