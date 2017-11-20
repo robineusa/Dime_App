@@ -71,7 +71,7 @@ namespace Dime.Controllers
                 {
 
                     model.DatosAdcionalesCliente.Cuenta = model.ClientesTodos.Cuenta;
-                    inboundService.RegistrarActualizarDatosAdicionalesCliente(model.DatosAdcionalesCliente);
+                    //inboundService.RegistrarActualizarDatosAdicionalesCliente(model.DatosAdcionalesCliente);
                     model.ModelTipiMarca.IngresoTipMarcacion.UsuarioApertura = Session["IdUsuario"].ToString(); model.ModelTipiMarca.IngresoTipMarcacion.AliadoApertura = Session["AliadoLogeado"].ToString(); model.ModelTipiMarca.IngresoTipMarcacion.NombreLineaIngreso = Session["LineaLogeado"].ToString();
                     if (model.ModelTipiMarca.Observaciones == null || model.ModelTipiMarca.Observaciones == "") { model.ModelTipiMarca.Observaciones = "SIN OBSERVACIONES - AUTOMATICO SISTEMAS"; } else { model.ModelTipiMarca.Observaciones = model.ModelTipiMarca.Observaciones.ToUpper(); }
 
