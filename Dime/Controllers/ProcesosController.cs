@@ -20,6 +20,10 @@ namespace Dime.Controllers
             return View();
         }
 
+        public ActionResult EditarArbol()
+        {
+            return View();
+        }
 
     }
 }

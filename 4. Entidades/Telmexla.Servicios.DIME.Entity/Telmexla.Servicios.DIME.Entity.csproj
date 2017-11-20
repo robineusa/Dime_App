@@ -84,6 +84,7 @@
     <Compile Include="ActivacionClaroVideo.cs" />
     <Compile Include="ActivacionClaroVideoCollection.cs" />
     <Compile Include="ActualizarUsuarioGestionBackIngresoReturnModel.cs" />
+    <Compile Include="Arbol.cs" />
     <Compile Include="BalanceScoreCard.cs" />
     <Compile Include="BalanceScoreCardCollection.cs" />
     <Compile Include="BasePersonalHolo.cs" />
@@ -188,6 +189,7 @@
     <Compile Include="ModosLogin.cs" />
     <Compile Include="MultiplayCargue.cs" />
     <Compile Include="MultiPlayRegistro.cs" />
+    <Compile Include="Nodo.cs" />
     <Compile Include="NodosZonificados.cs" />
     <Compile Include="NotasIngreso.cs" />
     <Compile Include="NotasTraslado.cs" />
