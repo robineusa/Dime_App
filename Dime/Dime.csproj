@@ -3508,6 +3508,7 @@
     <Content Include="Views\Banner\Fox.cshtml" />
     <Content Include="Views\Procesos\GestionNoCheck.cshtml" />
     <Content Include="Views\Procesos\AdminArboles.cshtml" />
+    <Content Include="Views\Procesos\EditarArbol.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
