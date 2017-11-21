@@ -1,0 +1,41 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelSubmotivosCancelacion
+@{
+    ViewBag.Title = "Crear Submotivo de Cancelación";
+    ViewBag.SubTitle = "Procesos Fidelización";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("CrearSubmotivoCancelacion", "Fidelizacion", FormMethod.Post, new { id = "formCrearSubmotivos", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+<div class="row">
+    <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="col-md-12">
+                        <small>Submotivo</small>
+                        @Html.TextBoxFor(m => m.FidelizacionSubmotivos.Submotivo, null, new { @class = "form-control input-sm ", Id = "txtSubmotivo" })
+                        @Html.ValidationMessageFor(m => m.FidelizacionSubmotivos.Submotivo, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-12">
+                        <small>Motivo</small>
+                        @Html.DropDownListFor(m => m.FidelizacionSubmotivos.FIDMotivoId, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "sltMotivosCancelacion", @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(m => m.FidelizacionSubmotivos.FIDMotivoId, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <button id="btnguardarpom" type="submit" class="btn btn-primary" name="Guardar" value="true">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="col-md-3"></div>
+    </div>
+    @section Scripts{
+
+        <script>
+            var UrlListaTiposDeRequerimientos = '@Url.Action("ListaMotivosCancelacionJson", "Fidelizacion")';
+        </script>
+        <script src="~/Scripts/Fidelizacion/CrearSubmotivoCancelacion.js?1.0.0"></script>
+        @*<script src="http://malsup.github.com/jquery.form.js"></script>*@ 
+    }
+}
