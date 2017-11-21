@@ -236,6 +236,7 @@
     <Compile Include="ViewModelMultiPlay.cs" />
     <Compile Include="ViewModelNodos.cs" />
     <Compile Include="ViewModelNotificacionesBS.cs" />
+    <Compile Include="ViewModelProcesos.cs" />
     <Compile Include="ViewModelRecurrencia.cs" />
     <Compile Include="ViewModelResidPredictTipificador.cs" />
     <Compile Include="ViewModelTipificacionMarcaciones.cs" />
