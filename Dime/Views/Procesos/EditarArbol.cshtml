@@ -1,4 +1,4 @@
-﻿@model Telmexla.Servicios.DIME.Entity.Nodo
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelProcesos
 
 @{
     ViewBag.Title = "EditarArbol";
@@ -7,29 +7,26 @@
 
 <h2>EditarArbol</h2>
 
-<a href="#crearnombre" data-keyboard="false">
+
 
     <a href="#campanas" data-toggle="modal" data-backdrop="static" data-keyboard="false"> PRUEBAS
         
     </a>
 
     <div id="campanas" class="modal">
-        <div class="modal-dialog" style="width:200px; height:200px;">
-            <div class="modal-content" style="width:200px;  height:200px;">
-
-                <div class="modal-body" style="width:1000px;">
+        <div class="modal-dialog" style="width:290px; height:100px;">
+            <div class="modal-content" style="width:290px;  height:100px;">
+                <div class="row">
                     <br />
-                    <div class="row">
+                    @using (Html.BeginForm("EditarArbol", "Procesos", FormMethod.Post, new { role = "form" }))
+                    {
                         <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
                             <label name="labelnodo">Digite el nombre del nodo</label><br />
-                            <input type="text" name="nombreNodo" />
+                            @Html.TextBoxFor(m=>m.Nodo.NombreNodo)
                             <input type="submit" name="crearnodo" value="Crear" />
                         </div>
-                    </div>
+                    }
                 </div>
-               
-               
-
             </div>
 
         </div>

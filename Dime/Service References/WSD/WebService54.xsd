@@ -6557,4 +6557,30 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="CrearNodo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q455="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="nodo" nillable="true" type="q455:Nodo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearNodoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarNodos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdArbol" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarNodosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q456="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarNodosResult" nillable="true" type="q456:ArrayOfNodo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

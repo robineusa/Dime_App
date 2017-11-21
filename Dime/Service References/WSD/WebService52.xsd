@@ -3497,4 +3497,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="VAMotivosSolicitud" nillable="true" type="tns:VAMotivosSolicitud" />
+  <xs:complexType name="Nodo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdArbol" type="xs:int" />
+      <xs:element minOccurs="0" name="IdPadre" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreNodo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Nodo" nillable="true" type="tns:Nodo" />
+  <xs:complexType name="ArrayOfNodo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Nodo" nillable="true" type="tns:Nodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNodo" nillable="true" type="tns:ArrayOfNodo" />
 </xs:schema>

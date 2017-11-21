@@ -3036,6 +3036,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Business.ListaAccesoSUsuario.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VisitasAutorizadas1.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VAMotivosSolicitud.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Nodo.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
