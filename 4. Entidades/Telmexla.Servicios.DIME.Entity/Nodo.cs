@@ -1,5 +1,7 @@
 ﻿
 
+using System.Collections.Generic;
+
 namespace Telmexla.Servicios.DIME.Entity
 {
     public class Nodo 
@@ -7,6 +9,6 @@ namespace Telmexla.Servicios.DIME.Entity
         public int Id { get; set; }
         public int IdPadre { get; set; }
         public int IdArbol { get; set; }
-
+        public string NombreNodo { get; set; }
     }
 }
