@@ -287,14 +287,18 @@ function SetDataComposicionProductoInicial(voz, tv, internet)
          {
              if (tvDividida[0] == "BASICA" || tvDividida[0] == "BASICO")
              {
-                 $("[value='PLUS']").click();
+                 //alert(tvDividida[0]);
+                 $('#cbTvBasica').removeAttr('disabled');
+                 $("#cbTvBasica").click();
+                 $('#cbTvBasica').attr('disabled', 'disabled');
+                 
              }
          } else
             {
-             if (tvDividida[2] == "(B)") { $("#cbTvSatelitalBasica").click(); }
-             if (tvDividida[2] == "(A)") { $("#cbTvSatelitalAvanzada").click(); }
-             if (tvDividida[2] == "(S)") { $("#cbTvSatelitalSuperior").click(); }
-             if (tvDividida[1] == "(P)") { $("[value='PLUS']").click(); }
+             if (tvDividida[2] == "(B)") { $("#cbTvSatelitalBasica").click();  }
+             if (tvDividida[2] == "(A)") { $("#cbTvSatelitalAvanzada").click();  }
+             if (tvDividida[2] == "(S)") { $("#cbTvSatelitalSuperior").click();  }
+             if (tvDividida[1] == "(P)") { $('#cbTvDigital').removeAttr('disabled'); $("#cbTvDigital").click(); $('#cbTvDigital').attr('disabled', 'disabled'); }
          }
 
          if(tvDividida[0] == "BASICA"  && $("#tbSrvHdInfo").val() == "SI")
@@ -319,7 +323,7 @@ function SetDataComposicionProductoInicial(voz, tv, internet)
 
 function SetOptionsForTipoTV(tipoTv)
 {
-    if(tipoTv == "NO" ||tipoTv == "BASICA" || tipoTv == "AVANZADA" || tipoTv == "SUPERIOR"  )
+    if (tipoTv == "NO" || tipoTv == "BASICA" || tipoTv == "AVANZADA" || tipoTv == "SUPERIOR" || tipoTv == "DIGITAL")
     {
         $(".TvSatelital").hide();
         $("#rowDecosNagra").show();
