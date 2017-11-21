@@ -8,26 +8,49 @@
 <h2>EditarArbol</h2>
 
 
+<li>
+    <label>@Model.NombreArbol</label> <a href="#campanas" data-toggle="modal" data-backdrop="static" data-keyboard="false"> Crear</a>
+    @foreach (var item in Model.ColeccionVmp)
+    {
+        <ul>
+            @foreach (var nodopadre in item.ListarNodos)
+            {
+                <li>
+                    @Html.TextBox("nodopadre", nodopadre.NombreNodo)
+                    <ul>
+                        @foreach (var nodohijo in item.NodosHijos)
+                    {
+                            <li>@Html.TextBox("nodohijo", nodohijo.NombreNodo)</li>
+                        }
+                    </ul>
+                </li>
+            }
+        </ul>
+    }
+</li>
 
-    <a href="#campanas" data-toggle="modal" data-backdrop="static" data-keyboard="false"> PRUEBAS
-        
-    </a>
-
-    <div id="campanas" class="modal">
-        <div class="modal-dialog" style="width:290px; height:100px;">
-            <div class="modal-content" style="width:290px;  height:100px;">
+<div id="campanas" class="modal">
+    <div class="modal-dialog" style="width:290px; height:150px;">
+        <div class="modal-content" style="width:290px;  height:150px;">
+            <div class="modal-header" style="width:290px;">
+                <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+            </div>
+            <div class="modal-body" style="width:290px;">
+                <br />
                 <div class="row">
-                    <br />
                     @using (Html.BeginForm("EditarArbol", "Procesos", FormMethod.Post, new { role = "form" }))
                     {
-                        <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
-                            <label name="labelnodo">Digite el nombre del nodo</label><br />
-                            @Html.TextBoxFor(m=>m.Nodo.NombreNodo)
+
+                        <label name="labelnodo">Digite el nombre del nodo</label><br />
+                        <input type="text" name="nombrenodo" value="" />
                             <input type="submit" name="crearnodo" value="Crear" />
-                        </div>
                     }
                 </div>
-            </div>
 
+
+
+            </div>
         </div>
+
     </div>
+</div>
