@@ -39,7 +39,8 @@ namespace Dime.Controllers
         [HttpPost]
         public ActionResult EditarArbol(string nombreNodo)
         {
-          
+            Nodo nodo = new Nodo();
+      
             return View();
 
         }
