@@ -5,7 +5,4 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm("EditarArbol", "Procesos", FormMethod.Post, new { role = "form" }))
-{
-    <input type="submit" name="Arbol" value="Arbol" />
-}
+<a href="@Url.Action("AdminArboles", "Procesos")">
