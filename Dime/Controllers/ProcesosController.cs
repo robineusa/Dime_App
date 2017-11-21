@@ -1,4 +1,5 @@
 ﻿using Dime.Helpers;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,5 +45,13 @@ namespace Dime.Controllers
 
         }
 
+        public JsonResult LLamarArbolId(string IDdArbol)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarNodos(Convert.ToInt32(IDdArbol))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
+        
     }
 }
