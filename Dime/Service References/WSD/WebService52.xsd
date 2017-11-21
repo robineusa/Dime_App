@@ -3499,6 +3499,7 @@
   <xs:element name="VAMotivosSolicitud" nillable="true" type="tns:VAMotivosSolicitud" />
   <xs:complexType name="Nodo">
     <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoHtml" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdArbol" type="xs:int" />
       <xs:element minOccurs="0" name="IdPadre" type="xs:int" />

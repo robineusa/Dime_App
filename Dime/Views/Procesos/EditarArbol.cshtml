@@ -8,27 +8,6 @@
 <h2>EditarArbol</h2>
 
 
-<li>
-    <label>@Model.NombreArbol</label> <a href="#campanas" data-toggle="modal" data-backdrop="static" data-keyboard="false"> Crear</a>
-    @foreach (var item in Model.ColeccionVmp)
-    {
-        <ul>
-            @foreach (var nodopadre in item.ListarNodos)
-            {
-                <li>
-                    @Html.TextBox("nodopadre", nodopadre.NombreNodo)
-                    <ul>
-                        @foreach (var nodohijo in item.NodosHijos)
-                    {
-                            <li>@Html.TextBox("nodohijo", nodohijo.NombreNodo)</li>
-                        }
-                    </ul>
-                </li>
-            }
-        </ul>
-    }
-</li>
-
 <div id="campanas" class="modal">
     <div class="modal-dialog" style="width:290px; height:150px;">
         <div class="modal-content" style="width:290px;  height:150px;">
