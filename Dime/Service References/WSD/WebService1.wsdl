@@ -20999,6 +20999,187 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IProcesosService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:ProtectionToken>
+              <wsp:Policy>
+                <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                  <wsp:Policy>
+                    <sp:RequireDerivedKeys />
+                    <sp:BootstrapPolicy>
+                      <wsp:Policy>
+                        <sp:SignedParts>
+                          <sp:Body />
+                          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+                        </sp:SignedParts>
+                        <sp:EncryptedParts>
+                          <sp:Body />
+                        </sp:EncryptedParts>
+                        <sp:SymmetricBinding>
+                          <wsp:Policy>
+                            <sp:ProtectionToken>
+                              <wsp:Policy>
+                                <mssp:SslContextToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient" xmlns:mssp="http://schemas.microsoft.com/ws/2005/07/securitypolicy">
+                                  <wsp:Policy>
+                                    <sp:RequireDerivedKeys />
+                                  </wsp:Policy>
+                                </mssp:SslContextToken>
+                              </wsp:Policy>
+                            </sp:ProtectionToken>
+                            <sp:AlgorithmSuite>
+                              <wsp:Policy>
+                                <sp:Basic256 />
+                              </wsp:Policy>
+                            </sp:AlgorithmSuite>
+                            <sp:Layout>
+                              <wsp:Policy>
+                                <sp:Strict />
+                              </wsp:Policy>
+                            </sp:Layout>
+                            <sp:IncludeTimestamp />
+                            <sp:EncryptSignature />
+                            <sp:OnlySignEntireHeadersAndBody />
+                          </wsp:Policy>
+                        </sp:SymmetricBinding>
+                        <sp:SignedSupportingTokens>
+                          <wsp:Policy>
+                            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                              <wsp:Policy>
+                                <sp:WssUsernameToken10 />
+                              </wsp:Policy>
+                            </sp:UsernameToken>
+                          </wsp:Policy>
+                        </sp:SignedSupportingTokens>
+                        <sp:Wss11>
+                          <wsp:Policy />
+                        </sp:Wss11>
+                        <sp:Trust10>
+                          <wsp:Policy>
+                            <sp:MustSupportIssuedTokens />
+                            <sp:RequireClientEntropy />
+                            <sp:RequireServerEntropy />
+                          </wsp:Policy>
+                        </sp:Trust10>
+                      </wsp:Policy>
+                    </sp:BootstrapPolicy>
+                  </wsp:Policy>
+                </sp:SecureConversationToken>
+              </wsp:Policy>
+            </sp:ProtectionToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+            <sp:EncryptSignature />
+            <sp:OnlySignEntireHeadersAndBody />
+          </wsp:Policy>
+        </sp:SymmetricBinding>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IProcesosService_CrearNodo_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IProcesosService_CrearNodo_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IProcesosService_ConsultarNodos_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IProcesosService_ConsultarNodos_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -23876,6 +24057,18 @@
   <wsdl:message name="IBannerAlertasService_RegistraUsabilidadBanner_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegistraUsabilidadBannerResponse" />
   </wsdl:message>
+  <wsdl:message name="IProcesosService_CrearNodo_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearNodo" />
+  </wsdl:message>
+  <wsdl:message name="IProcesosService_CrearNodo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearNodoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProcesosService_ConsultarNodos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarNodos" />
+  </wsdl:message>
+  <wsdl:message name="IProcesosService_ConsultarNodos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarNodosResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWebService">
     <wsdl:operation name="MuestraEntidades">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MuestraEntidades" message="tns:IWebService_MuestraEntidades_InputMessage" />
@@ -25840,6 +26033,16 @@
     <wsdl:operation name="RegistraUsabilidadBanner">
       <wsdl:input wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistraUsabilidadBanner" message="tns:IBannerAlertasService_RegistraUsabilidadBanner_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBannerAlertasService/RegistraUsabilidadBannerResponse" message="tns:IBannerAlertasService_RegistraUsabilidadBanner_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IProcesosService">
+    <wsdl:operation name="CrearNodo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProcesosService/CrearNodo" message="tns:IProcesosService_CrearNodo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProcesosService/CrearNodoResponse" message="tns:IProcesosService_CrearNodo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarNodos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProcesosService/ConsultarNodos" message="tns:IProcesosService_ConsultarNodos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProcesosService/ConsultarNodosResponse" message="tns:IProcesosService_ConsultarNodos_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IWebService" type="tns:IWebService">
@@ -31208,6 +31411,32 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IProcesosService" type="tns:IProcesosService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IProcesosService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CrearNodo">
+      <soap12:operation soapAction="http://tempuri.org/IProcesosService/CrearNodo" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IProcesosService_CrearNodo_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IProcesosService_CrearNodo_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarNodos">
+      <soap12:operation soapAction="http://tempuri.org/IProcesosService/ConsultarNodos" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IProcesosService_ConsultarNodos_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IProcesosService_ConsultarNodos_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
   <wsdl:service name="WebService">
     <wsdl:port name="WSHttpBinding_IWebService" binding="tns:WSHttpBinding_IWebService">
       <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
@@ -31548,6 +31777,19 @@
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IBannerAlertasService" binding="tns:WSHttpBinding_IBannerAlertasService">
+      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+            <X509Data>
+              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+            </X509Data>
+          </KeyInfo>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IProcesosService" binding="tns:WSHttpBinding_IProcesosService">
       <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
       <wsa10:EndpointReference>
         <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>

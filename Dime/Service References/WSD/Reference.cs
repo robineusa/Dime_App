@@ -17212,4 +17212,65 @@ namespace Dime.WSD {
             return base.Channel.RegistraUsabilidadBannerAsync(Usabilidad);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IProcesosService")]
+    public interface IProcesosService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/CrearNodo", ReplyAction="http://tempuri.org/IProcesosService/CrearNodoResponse")]
+        void CrearNodo(Telmexla.Servicios.DIME.Entity.Nodo nodo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/CrearNodo", ReplyAction="http://tempuri.org/IProcesosService/CrearNodoResponse")]
+        System.Threading.Tasks.Task CrearNodoAsync(Telmexla.Servicios.DIME.Entity.Nodo nodo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarNodos", ReplyAction="http://tempuri.org/IProcesosService/ConsultarNodosResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Nodo> ConsultarNodos(int IdArbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarNodos", ReplyAction="http://tempuri.org/IProcesosService/ConsultarNodosResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Nodo>> ConsultarNodosAsync(int IdArbol);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IProcesosServiceChannel : Dime.WSD.IProcesosService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ProcesosServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IProcesosService>, Dime.WSD.IProcesosService {
+        
+        public ProcesosServiceClient() {
+        }
+        
+        public ProcesosServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public ProcesosServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ProcesosServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public ProcesosServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public void CrearNodo(Telmexla.Servicios.DIME.Entity.Nodo nodo) {
+            base.Channel.CrearNodo(nodo);
+        }
+        
+        public System.Threading.Tasks.Task CrearNodoAsync(Telmexla.Servicios.DIME.Entity.Nodo nodo) {
+            return base.Channel.CrearNodoAsync(nodo);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Nodo> ConsultarNodos(int IdArbol) {
+            return base.Channel.ConsultarNodos(IdArbol);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Nodo>> ConsultarNodosAsync(int IdArbol) {
+            return base.Channel.ConsultarNodosAsync(IdArbol);
+        }
+    }
 }
