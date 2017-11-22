@@ -8,7 +8,7 @@ namespace Telmexla.Servicios.DIME.Entity
     public class ViewModelRecursiva
     {
         private FidelizacionRecursiva recursiva;
-        private List<FidelizacionRecursiva> listaRecursiva;
+        private List<FidelizacionRecursivaVista> listaRecursiva;
 
         public FidelizacionRecursiva Recursiva
         {
@@ -19,7 +19,7 @@ namespace Telmexla.Servicios.DIME.Entity
                 recursiva = value;
             }
         }
-        public List<FidelizacionRecursiva> ListRecursiva {
+        public List<FidelizacionRecursivaVista> ListRecursiva {
             get {
                 return listaRecursiva;
             }

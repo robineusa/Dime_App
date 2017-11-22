@@ -19,12 +19,94 @@ namespace Dime.Controllers
             fidelizacionServicio = new WSD.FidelizacionServiceClient();
             fidelizacionServicio.ClientCredentials.Authenticate();
         }
+
+
+        [HttpGet]
         public ActionResult CrearMotivoCancelacion()
         {
             FidelizacionMotivosCancelacion modelo = new FidelizacionMotivosCancelacion();
-            fidelizacionServicio.setMotivosCancelacion(modelo);
             return View(modelo);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CrearMotivoCancelacion(FidelizacionMotivosCancelacion modelo)
+        {
+
+            if (modelo.Motivo == "" || modelo.Motivo == null)
+            {
+                ViewBag.errorMotivo = "Escriba el Motivo que desea crear";
+            }
+            else if (modelo.OtrosCampos < 0 || modelo.OtrosCampos > 1)
+            {
+                ViewBag.errorOtrosCampos = "Indique si se visualizan otros campos";
+            }
+            else if (modelo.OtrosOfrecimientos < 0 || modelo.OtrosOfrecimientos > 1)
+            {
+                ViewBag.errorOtrosOfrecimientos = "Indique si se visualizan otros ofrecimientos";
+            }
+            else
+            {
+                FidelizacionMotivosCancelacion MotivoCancelacion = new FidelizacionMotivosCancelacion();
+                MotivoCancelacion.Eliminado = 0;
+                MotivoCancelacion.Motivo = modelo.Motivo;
+                MotivoCancelacion.OtrosCampos = ((modelo.OtrosCampos == 1) ? 1 : 0);
+                MotivoCancelacion.OtrosOfrecimientos = ((modelo.OtrosOfrecimientos == 1) ? 1 : 0);
+                MotivoCancelacion.Registro = DateTime.Now;
+
+                fidelizacionServicio.setMotivosCancelacion(MotivoCancelacion);
+                return RedirectToAction("CrearMotivoCancelacion");
+            }
+
+
+            return View(modelo);
+
+
+
+            //    return RedirectToAction("RegistrarOperacionesIncidente", "BitacoraIncidentes", new { IdRegistro = IdRegistrado });
+            //}
+
+        }
+        [HttpGet]
+        public ActionResult CrearSubmotivoCancelacion()
+        {
+            ViewModelSubmotivosCancelacion modelo = new ViewModelSubmotivosCancelacion();
+            var Motivos = fidelizacionServicio.getMotivosCancelacionAll();
+            List<FidelizacionMotivosCancelacion> listado = new List<FidelizacionMotivosCancelacion>();
+            
+            foreach (var test in Motivos) {
+                if (test.Eliminado == 0) {
+                    listado.Add(test);
+                }
+            }
+
+            ViewBag.sltMotivos = listado;
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CrearSubmotivoCancelacion(ViewModelSubmotivosCancelacion modelo)
+        {
+            if (modelo.FidelizacionSubmotivos.Submotivo == "" || modelo.FidelizacionSubmotivos.Submotivo == null)
+            {
+                ViewBag.errorSubmotivo = "Escriba el submotivo que desea crear";
+            }
+            else if (modelo.FidelizacionSubmotivos.FIDMotivoId == 0)
+            {
+                ViewBag.errorMotivo = "Seleccione un motivo";
+            }
+            else
+            {
+                modelo.FidelizacionSubmotivos.Eliminado = 0;
+                modelo.FidelizacionSubmotivos.Registro = DateTime.Now;
+                fidelizacionServicio.setSubmotivoCancelacion(modelo.FidelizacionSubmotivos);
+                return RedirectToAction("CrearSubmotivoCancelacion");
+            }
+            //return Json(JsonConvert.SerializeObject(0), JsonRequestBehavior.AllowGet);
+
+            ViewModelSubmotivosCancelacion model = new ViewModelSubmotivosCancelacion();
+            return View(model);
+        }
+        
         public ActionResult ListarMotivosCancelacion()
         {
             List<FidelizacionMotivosCancelacion> modelo = new List<FidelizacionMotivosCancelacion>();
@@ -46,7 +128,7 @@ namespace Dime.Controllers
         {
 
             List<FidelizacionTipificacion> modelo = new List<FidelizacionTipificacion>();
-            var jsonResult = Json(JsonConvert.SerializeObject(fidelizacionServicio.getRecursivaVistaAll()), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(fidelizacionServicio.getTipificacionAll()), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 
@@ -55,7 +137,6 @@ namespace Dime.Controllers
         {
 
             List<FidelizacionMotivosCancelacion> modelo = new List<FidelizacionMotivosCancelacion>();
-            //modelo = maestroNodosWebService.ListaNodosCreados();
             var jsonResult = Json(JsonConvert.SerializeObject(fidelizacionServicio.getMotivosCancelacionAll()), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
@@ -78,6 +159,46 @@ namespace Dime.Controllers
             FidelizacionTipificacion modelo = new FidelizacionTipificacion();
             var modeloObtenido = fidelizacionServicio.getTipificacionById(id);
             return View(modeloObtenido);
+        }
+        [HttpGet]
+        public ActionResult ActualizarRecursiva(decimal id)
+        {
+            ViewModelRecursiva modelo = new ViewModelRecursiva();
+            modelo.Recursiva = fidelizacionServicio.getRecursivaById(id);
+            modelo.ListRecursiva = fidelizacionServicio.getRecursivaVistaAll();
+            
+            ViewBag.Lista = fidelizacionServicio.getRecursivaVistaAll();
+
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ActualizarRecursiva(ViewModelRecursiva objRecursiva) {
+            
+            if (objRecursiva.Recursiva.Nombre == "" || objRecursiva.Recursiva.Nombre == null)
+            {
+                ViewBag.errorMotivo = "Escriba el título de la opción que desea crear";
+            }
+            else if (objRecursiva.Recursiva.ParentId < 1 || Convert.ToString(objRecursiva.Recursiva.ParentId) == "")
+            {
+                ViewBag.errorOtrosCampos = "Indique a cual opcion desea asociarlo (Escoja un padre)";
+            }
+            else if (objRecursiva.Recursiva.Label == "" || objRecursiva.Recursiva.Label ==  null)
+            {
+                ViewBag.errorOtrosOfrecimientos = "Indique La etiqueta que desea colocarle en el momento de seleccionarlo";
+            }
+            else
+            {
+                var Padre = fidelizacionServicio.getRecursivaVistaById(objRecursiva.Recursiva.ParentId);
+                string recu = ((Request.Form["Recuperacion"] == "false") ? "0" : "1");
+                string ret = ((Request.Form["Retencion"] == "false") ? "0" : "1");
+                string cont = ((Request.Form["Contencion"] == "false") ? "0" : "1");
+
+                objRecursiva.Recursiva.VerNivel = cont + ret + recu;
+                fidelizacionServicio.updateRecursiva(objRecursiva.Recursiva);
+                return RedirectToAction("ListarRecursiva");
+            }
+            return View(objRecursiva);
         }
 
         [HttpGet]
@@ -170,11 +291,6 @@ namespace Dime.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ActualizarSubmotivoCancelacion(ViewModelSubmotivosCancelacion objFidelizacion)
         {
-            //objFidelizacion.Eliminado;
-            //objFidelizacion.FIDMotivoId;
-            //objFidelizacion.Id;
-            //objFidelizacion.Registro;
-
             if (objFidelizacion.FidelizacionSubmotivos.Submotivo == "" || objFidelizacion.FidelizacionSubmotivos.Submotivo == null)
             {
                 ViewBag.errorMotivo = "Escriba el submotivo que desea crear";
@@ -225,7 +341,7 @@ namespace Dime.Controllers
                 string recu = ((Request.Form["Recuperacion"] == "false") ? "0" : "1");
                 string ret = ((Request.Form["Retencion"] == "false") ? "0" : "1");
                 string cont = ((Request.Form["Contencion"] == "false") ? "0" : "1");
-                modelo.Recursiva.Label = "Test";
+                //modelo.Recursiva.Label = "Test";
                 modelo.Recursiva.VerNivel = cont + ret + recu;
                 modelo.Recursiva.Nivel = Padre.Nivel - 1;
                 fidelizacionServicio.setRecursiva(modelo.Recursiva);
@@ -268,6 +384,27 @@ namespace Dime.Controllers
                 return RedirectToAction("CrearTipificacion");
 
             }
+            return View(modelo);
+        }
+
+        public ActionResult ListarRecursiva()
+        {
+            List<ViewModelRecursiva> modelo = new List<ViewModelRecursiva>();
+            return View(modelo);
+        }
+        public JsonResult ListarRecursivaJson()
+        {
+
+            List<ViewModelRecursiva> modelo = new List<ViewModelRecursiva>();
+            var jsonResult = Json(JsonConvert.SerializeObject(fidelizacionServicio.getRecursivaVistaAll()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        [HttpGet]
+        public ActionResult CrearOtrosCampos()
+        {
+            FidelizacionOtrosCampos modelo = new FidelizacionOtrosCampos();
             return View(modelo);
         }
 
