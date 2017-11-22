@@ -6164,7 +6164,7 @@
   <xs:element name="getRecursivaVistaByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q434="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="getRecursivaVistaByIdResult" nillable="true" type="q434:FidelizacionRecursiva" />
+        <xs:element xmlns:q434="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="getRecursivaVistaByIdResult" nillable="true" type="q434:FidelizacionRecursivaVista" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -252,6 +252,7 @@
     <Compile Include="ViewModelRecurrencia.cs" />
     <Compile Include="ViewModelRecursiva.cs" />
     <Compile Include="ViewModelResidPredictTipificador.cs" />
+    <Compile Include="ViewModelRetencion.cs" />
     <Compile Include="ViewModelSubmotivosCancelacion.cs" />
     <Compile Include="ViewModelTipificacionMarcaciones.cs" />
     <Compile Include="ViewModelTraslados.cs" />

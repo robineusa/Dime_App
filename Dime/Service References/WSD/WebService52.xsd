@@ -3479,13 +3479,15 @@
   </xs:complexType>
   <xs:element name="ArrayOfFidelizacionRecursivaVista" nillable="true" type="tns:ArrayOfFidelizacionRecursivaVista" />
   <xs:complexType name="FidelizacionRecursivaVista">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:FidelizacionRecursiva">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Ordr" nillable="true" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nivel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ordr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VerNivel" nillable="true" type="xs:string" />
+    </xs:sequence>
   </xs:complexType>
   <xs:element name="FidelizacionRecursivaVista" nillable="true" type="tns:FidelizacionRecursivaVista" />
   <xs:complexType name="VIPSolicitudes">
