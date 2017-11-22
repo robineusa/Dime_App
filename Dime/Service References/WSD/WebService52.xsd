@@ -3313,6 +3313,181 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfPOMSolicitudes" nillable="true" type="tns:ArrayOfPOMSolicitudes" />
+  <xs:complexType name="ArrayOfFidelizacionMaestroServicios">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionMaestroServicios" nillable="true" type="tns:FidelizacionMaestroServicios" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFidelizacionMaestroServicios" nillable="true" type="tns:ArrayOfFidelizacionMaestroServicios" />
+  <xs:complexType name="FidelizacionMaestroServicios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdRetencion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdServicio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FidelizacionMaestroServicios" nillable="true" type="tns:FidelizacionMaestroServicios" />
+  <xs:complexType name="FidelizacionMotivosCancelacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Eliminado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtrosCampos" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OtrosOfrecimientos" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Registro" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FidelizacionMotivosCancelacion" nillable="true" type="tns:FidelizacionMotivosCancelacion" />
+  <xs:complexType name="ArrayOfFidelizacionMotivosCancelacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionMotivosCancelacion" nillable="true" type="tns:FidelizacionMotivosCancelacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFidelizacionMotivosCancelacion" nillable="true" type="tns:ArrayOfFidelizacionMotivosCancelacion" />
+  <xs:complexType name="ArrayOfFidelizacionSubmotivosCancelacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionSubmotivosCancelacion" nillable="true" type="tns:FidelizacionSubmotivosCancelacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFidelizacionSubmotivosCancelacion" nillable="true" type="tns:ArrayOfFidelizacionSubmotivosCancelacion" />
+  <xs:complexType name="FidelizacionSubmotivosCancelacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Eliminado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FIDMotivoId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Registro" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Submotivo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FidelizacionSubmotivosCancelacion" nillable="true" type="tns:FidelizacionSubmotivosCancelacion" />
+  <xs:complexType name="FidelizacionOtrosOfrecimientos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Eliminado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FidelizacionOtrosOfrecimientos" nillable="true" type="tns:FidelizacionOtrosOfrecimientos" />
+  <xs:complexType name="ArrayOfFidelizacionOtrosOfrecimientos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionOtrosOfrecimientos" nillable="true" type="tns:FidelizacionOtrosOfrecimientos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFidelizacionOtrosOfrecimientos" nillable="true" type="tns:ArrayOfFidelizacionOtrosOfrecimientos" />
+  <xs:complexType name="FidelizacionTipificacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Activo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Eliminado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Modulo" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nivel1" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nivel2" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nivel3" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Registro" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UsuarioId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FidelizacionTipificacion" nillable="true" type="tns:FidelizacionTipificacion" />
+  <xs:complexType name="FidelizacionRecursiva">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nivel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="VerNivel" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FidelizacionRecursiva" nillable="true" type="tns:FidelizacionRecursiva" />
+  <xs:complexType name="ArrayOfFidelizacionRecursiva">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionRecursiva" nillable="true" type="tns:FidelizacionRecursiva" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFidelizacionRecursiva" nillable="true" type="tns:ArrayOfFidelizacionRecursiva" />
+  <xs:complexType name="FidelizacionRegistro">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cuenta" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DiaCorte" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaCorte" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaRegistro" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Notas" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OtrosOfrecimientosId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Permanencia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecursivaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ServiciosId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiciosRetenidosId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubmotivoId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipificacionId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsuarioId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FidelizacionRegistro" nillable="true" type="tns:FidelizacionRegistro" />
+  <xs:complexType name="ArrayOfFidelizacionRegistro">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionRegistro" nillable="true" type="tns:FidelizacionRegistro" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFidelizacionRegistro" nillable="true" type="tns:ArrayOfFidelizacionRegistro" />
+  <xs:complexType name="ArrayOfFidelizacionTipificacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionTipificacion" nillable="true" type="tns:FidelizacionTipificacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFidelizacionTipificacion" nillable="true" type="tns:ArrayOfFidelizacionTipificacion" />
+  <xs:complexType name="FidelizacionOtrosCampos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Eliminado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nivel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Opciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FidelizacionOtrosCampos" nillable="true" type="tns:FidelizacionOtrosCampos" />
+  <xs:complexType name="ArrayOfFidelizacionOtrosCampos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionOtrosCampos" nillable="true" type="tns:FidelizacionOtrosCampos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFidelizacionOtrosCampos" nillable="true" type="tns:ArrayOfFidelizacionOtrosCampos" />
+  <xs:complexType name="FidelizacionRegistroCampos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OtrosCamposId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RegistroId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Valor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FidelizacionRegistroCampos" nillable="true" type="tns:FidelizacionRegistroCampos" />
+  <xs:complexType name="ArrayOfFidelizacionRegistroCampos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionRegistroCampos" nillable="true" type="tns:FidelizacionRegistroCampos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFidelizacionRegistroCampos" nillable="true" type="tns:ArrayOfFidelizacionRegistroCampos" />
+  <xs:complexType name="ArrayOfFidelizacionRecursivaVista">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionRecursivaVista" nillable="true" type="tns:FidelizacionRecursivaVista" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFidelizacionRecursivaVista" nillable="true" type="tns:ArrayOfFidelizacionRecursivaVista" />
+  <xs:complexType name="FidelizacionRecursivaVista">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:FidelizacionRecursiva">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Ordr" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FidelizacionRecursivaVista" nillable="true" type="tns:FidelizacionRecursivaVista" />
   <xs:complexType name="VIPSolicitudes">
     <xs:sequence>
       <xs:element minOccurs="0" name="AliadoSolicitud" nillable="true" type="xs:string" />
@@ -3513,6 +3688,15 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfNodo" nillable="true" type="tns:ArrayOfNodo" />
+  <xs:complexType name="Arbol">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoHtml" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreArbol" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Arbol" nillable="true" type="tns:Arbol" />
   <xs:complexType name="RSPSeguimientos">
     <xs:sequence>
       <xs:element minOccurs="0" name="AliadoSolicitud" nillable="true" type="xs:string" />

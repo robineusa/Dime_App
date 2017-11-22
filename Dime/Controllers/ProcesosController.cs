@@ -48,7 +48,7 @@ namespace Dime.Controllers
 
         public JsonResult LLamarArbolId(string IDdArbol)
         {
-            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarNodos(Convert.ToInt32(IDdArbol))), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarArbol(Convert.ToInt32(IDdArbol))), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }

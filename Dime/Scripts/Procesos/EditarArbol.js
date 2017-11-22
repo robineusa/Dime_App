@@ -3,8 +3,7 @@
     ConstruirArbol(IdArbol);
 });
 
-function ConstruirArbol(idArbol)
-{
+function ConstruirArbol(idArbol) {
     $.ajax({
         type: "POST",
         url: urlLLamarArbolId,
@@ -13,22 +12,12 @@ function ConstruirArbol(idArbol)
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
-            console.log(json);
-            for (var index = 0, len = json.length; index < len; index++) {
-                if (json[index] == "0") {
-                    $('#InsertaArbol').append(
-                        '<ul>'+
-                            '<li id="' + json[index].Id+ '">' +
-                                '<input type="text"/>'+
-                            '</li>'+
-                        '</ul>'
-                    );
-                }
-                else
-                {
-
-                }
-            }
+            console.log(result);
+            $('#InsertaArbol').append('<ul>' +
+                '<strong>' +
+                    '<i class="fa fa-folder"></i> ' + json.NombreArbol +
+                '</strong>' + json.CodigoHtml + '<i class="fa fa-plus-square"></i><br/>' +
+            '</ul>');
         },
         error: function (request, status, error) {
             alert(request.responseText);
