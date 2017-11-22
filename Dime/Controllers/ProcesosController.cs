@@ -1,4 +1,5 @@
 ﻿using Dime.Helpers;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,8 +34,6 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult EditarArbol()
         {
-            ViewModelProcesos vmp = new ViewModelProcesos();
-            vmp.ListarNodos = ProcesosService.ConsultarNodos(1);
             return View();
         }
 
@@ -42,13 +41,18 @@ namespace Dime.Controllers
         public ActionResult EditarArbol(string nombreNodo)
         {
             Nodo nodo = new Nodo();
-            nodo.IdPadre = 0;
-            nodo.NombreNodo = nombreNodo;
-            nodo.IdArbol = 1;
-            ProcesosService.CrearNodo(nodo);
+      
             return View();
 
         }
 
+        public JsonResult LLamarArbolId(string IDdArbol)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarNodos(Convert.ToInt32(IDdArbol))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
+        
     }
 }

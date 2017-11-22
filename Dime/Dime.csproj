@@ -2361,6 +2361,7 @@
     <Content Include="Scripts\Mec\RegistrarMonitoreo.js" />
     <Content Include="Scripts\MultiPlay\ConsultasAdminMultiPlay.js" />
     <Content Include="Scripts\MultiPlay\MultiPlay.js" />
+    <Content Include="Scripts\Procesos\EditarArbol.js" />
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorLog.js" />
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorLogInbound.js" />
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorPrincipal.js" />

@@ -1,33 +1,63 @@
-﻿@model Telmexla.Servicios.DIME.Entity.ViewModelProcesos
-
+﻿
 @{
-    ViewBag.Title = "EditarArbol";
+    ViewBag.Title = "Editar Arbol";
+    ViewBag.SubTitle = "Procesos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>EditarArbol</h2>
-
-
-
-    <a href="#campanas" data-toggle="modal" data-backdrop="static" data-keyboard="false"> PRUEBAS
-        
-    </a>
-
-    <div id="campanas" class="modal">
-        <div class="modal-dialog" style="width:290px; height:100px;">
-            <div class="modal-content" style="width:290px;  height:100px;">
-                <div class="row">
+<div class="row">
+    <div class="col-md-6">
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h2 class="page-header" style="margin-top:40px">
+                    <i class="fa fa-tree"></i> Árbol
+                </h2>
+                <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                     <br />
+                    <div id="InsertaArbol"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h2 class="page-header" style="margin-top:40px">
+                    <i class="fa fa-html5"></i> Código HTML
+                </h2>
+                <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                    <br />
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="campanas" class="modal">
+    <div class="modal-dialog" style="width:290px; height:150px;">
+        <div class="modal-content" style="width:290px;  height:150px;">
+            <div class="modal-header" style="width:290px;">
+                <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+            </div>
+            <div class="modal-body" style="width:290px;">
+                <br />
+                <div class="row">
                     @using (Html.BeginForm("EditarArbol", "Procesos", FormMethod.Post, new { role = "form" }))
                     {
-                        <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
-                            <label name="labelnodo">Digite el nombre del nodo</label><br />
-                            @Html.TextBoxFor(m=>m.Nodo.NombreNodo)
-                            <input type="submit" name="crearnodo" value="Crear" />
-                        </div>
+
+                        <label name="labelnodo">Digite el nombre del nodo</label><br />
+                                            <input type="text" name="nombrenodo" value="" />
+                                            <input type="submit" name="crearnodo" value="Crear" />
                     }
                 </div>
             </div>
-
         </div>
+
     </div>
+</div>
+@section Scripts{
+    <script>
+        var urlLLamarArbolId = '@Url.Action("LLamarArbolId", "Procesos")';
+    </script>
+    <script src="~/Scripts/Procesos/EditarArbol.js?1.0.2"></script>
+}
