@@ -144,6 +144,16 @@
     <Compile Include="DistribucionBlendingCollection.cs" />
     <Compile Include="DocsisOverlap.cs" />
     <Compile Include="DocsisOverlapCollection.cs" />
+    <Compile Include="FidelizacionMaestroServicios.cs" />
+    <Compile Include="FidelizacionMotivosCancelacion.cs" />
+    <Compile Include="FidelizacionOtrosCampos.cs" />
+    <Compile Include="FidelizacionOtrosOfrecimientos.cs" />
+    <Compile Include="FidelizacionRecursiva.cs" />
+    <Compile Include="FidelizacionRecursivaVista.cs" />
+    <Compile Include="FidelizacionRegistro.cs" />
+    <Compile Include="FidelizacionRegistroCampos.cs" />
+    <Compile Include="FidelizacionSubmotivosCancelacion.cs" />
+    <Compile Include="FidelizacionTipificacion.cs" />
     <Compile Include="GBCDocsis.cs" />
     <Compile Include="GBCProducto.cs" />
     <Compile Include="GBC_Rentabilizacion.cs" />
@@ -203,6 +213,9 @@
     <Compile Include="RecurrenciaCargaBase.cs" />
     <Compile Include="RegistroSesion.cs" />
     <Compile Include="Retencion.cs" />
+    <Compile Include="RSLSeguimientos.cs" />
+    <Compile Include="RSMArboles.cs" />
+    <Compile Include="RSPSeguimientos.cs" />
     <Compile Include="SiembraHD.cs" />
     <Compile Include="SiembraHDCollection.cs" />
     <Compile Include="SiguienteMejorOferta.cs" />
@@ -237,7 +250,9 @@
     <Compile Include="ViewModelNodos.cs" />
     <Compile Include="ViewModelNotificacionesBS.cs" />
     <Compile Include="ViewModelRecurrencia.cs" />
+    <Compile Include="ViewModelRecursiva.cs" />
     <Compile Include="ViewModelResidPredictTipificador.cs" />
+    <Compile Include="ViewModelSubmotivosCancelacion.cs" />
     <Compile Include="ViewModelTipificacionMarcaciones.cs" />
     <Compile Include="ViewModelTraslados.cs" />
     <Compile Include="ViewModelVerificacionInventario.cs" />

@@ -218,6 +218,7 @@
     <Compile Include="Controllers\PruebasController.cs" />
     <Compile Include="Controllers\RecurrenciaController.cs" />
     <Compile Include="Controllers\ReportesController.cs" />
+    <Compile Include="Controllers\RetencionController.cs" />
     <Compile Include="Controllers\TrasladosController.cs" />
     <Compile Include="Controllers\VerificacionDeInventarioController.cs" />
     <Compile Include="Controllers\VisitasAutorizadasController.cs" />
@@ -2343,6 +2344,13 @@
     <Content Include="Scripts\DistribucionBlending\Rentabilizacion.js" />
     <Content Include="Scripts\EncuestaCav\ConsultaEncuestaCavs.js" />
     <Content Include="Scripts\EncuestaCav\EncuestadeSatisfaccion.js" />
+    <Content Include="Scripts\Fidelizacion\ActualizarSubmotivoCancelacion.js" />
+    <Content Include="Scripts\Fidelizacion\CrearRecursiva.js" />
+    <Content Include="Scripts\Fidelizacion\CrearSubmotivoCancelacion.js" />
+    <Content Include="Scripts\Fidelizacion\ListarMotivosCancelacion.js" />
+    <Content Include="Scripts\Fidelizacion\ListarRecursiva.js" />
+    <Content Include="Scripts\Fidelizacion\ListarSubmotivosCancelacion.js" />
+    <Content Include="Scripts\Fidelizacion\ListarTipificacion.js" />
     <Content Include="Scripts\Gestion_Blending\AsignarBasesAdmin.js" />
     <Content Include="Scripts\Gestion_Blending\SkillsUsuariosAdmin.js" />
     <Content Include="Scripts\Inbound\Retencion.js" />
@@ -3511,6 +3519,20 @@
     <Content Include="Views\Procesos\GestionNoCheck.cshtml" />
     <Content Include="Views\Procesos\AdminArboles.cshtml" />
     <Content Include="Views\Procesos\EditarArbol.cshtml" />
+    <Content Include="Views\Fidelizacion\ActualizarMotivoCancelacion.cshtml" />
+    <Content Include="Views\Fidelizacion\ActualizarRecursiva.cshtml" />
+    <Content Include="Views\Fidelizacion\ActualizarSubmotivoCancelacion.cshtml" />
+    <Content Include="Views\Fidelizacion\ActualizarTipificacion.cshtml" />
+    <Content Include="Views\Fidelizacion\CrearMotivoCancelacion.cshtml" />
+    <Content Include="Views\Fidelizacion\CrearOtrosCampos.cshtml" />
+    <Content Include="Views\Fidelizacion\CrearRecursiva.cshtml" />
+    <Content Include="Views\Fidelizacion\CrearSubmotivoCancelacion.cshtml" />
+    <Content Include="Views\Fidelizacion\CrearTipificacion.cshtml" />
+    <Content Include="Views\Fidelizacion\ListarMotivosCancelacion.cshtml" />
+    <Content Include="Views\Fidelizacion\ListarRecursiva.cshtml" />
+    <Content Include="Views\Fidelizacion\ListarSubmotivosCancelacion.cshtml" />
+    <Content Include="Views\Fidelizacion\ListarTipificacion.cshtml" />
+    <Content Include="Views\Retencion\RegistroSetguimientos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

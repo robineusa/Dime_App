@@ -3513,4 +3513,31 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfNodo" nillable="true" type="tns:ArrayOfNodo" />
+  <xs:complexType name="RSPSeguimientos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DetalleEscalamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estrategia1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estrategia2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estrategia3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaActualizacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSolicitud" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdSolicitud" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LineaSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotivoEscalamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioActualizacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperacionSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RazonEscalamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubRazonEscalamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TicketRr" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoEscalamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioActualizacion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsuarioSolicitud" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RSPSeguimientos" nillable="true" type="tns:RSPSeguimientos" />
 </xs:schema>

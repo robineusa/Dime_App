@@ -17273,4 +17273,51 @@ namespace Dime.WSD {
             return base.Channel.ConsultarNodosAsync(IdArbol);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IRetencionService")]
+    public interface IRetencionService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetencionService/RegistrarSolicitudRetencion", ReplyAction="http://tempuri.org/IRetencionService/RegistrarSolicitudRetencionResponse")]
+        decimal RegistrarSolicitudRetencion(Telmexla.Servicios.DIME.Entity.RSPSeguimientos Solicitud);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetencionService/RegistrarSolicitudRetencion", ReplyAction="http://tempuri.org/IRetencionService/RegistrarSolicitudRetencionResponse")]
+        System.Threading.Tasks.Task<decimal> RegistrarSolicitudRetencionAsync(Telmexla.Servicios.DIME.Entity.RSPSeguimientos Solicitud);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IRetencionServiceChannel : Dime.WSD.IRetencionService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class RetencionServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IRetencionService>, Dime.WSD.IRetencionService {
+        
+        public RetencionServiceClient() {
+        }
+        
+        public RetencionServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public RetencionServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RetencionServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public RetencionServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public decimal RegistrarSolicitudRetencion(Telmexla.Servicios.DIME.Entity.RSPSeguimientos Solicitud) {
+            return base.Channel.RegistrarSolicitudRetencion(Solicitud);
+        }
+        
+        public System.Threading.Tasks.Task<decimal> RegistrarSolicitudRetencionAsync(Telmexla.Servicios.DIME.Entity.RSPSeguimientos Solicitud) {
+            return base.Channel.RegistrarSolicitudRetencionAsync(Solicitud);
+        }
+    }
 }
