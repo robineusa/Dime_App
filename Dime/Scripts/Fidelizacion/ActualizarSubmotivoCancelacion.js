@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
     ListarMotivosCancelacion();
     var options = {
-        
+
     };
 
     // bind form using 'ajaxForm' 
@@ -22,7 +22,7 @@ function ListarMotivosCancelacion() {
                     $('#sltMotivosCancelacion').append($('<option>', {
                         value: json[index].Id,
                         text: json[index].Motivo
-                        }
+                    }
 
                     ))
                 };

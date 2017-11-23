@@ -1,6 +1,6 @@
-﻿@model List<Telmexla.Servicios.DIME.Entity.ViewModelSubmotivosCancelacion>
+﻿@model List<Telmexla.Servicios.DIME.Entity.FidelizacionOtrosCampos>
 @{
-    ViewBag.Title = "Lista Submotivos Cancelacion";
+    ViewBag.Title = "Lista Otros Campos";
     ViewBag.Subtitle = "Fidelizacion";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -11,10 +11,10 @@
             <div class="box-body">
                 <div class="row">
                     <div class="col-xs-12">
-                        <h2 class="page-header" style="margin-top:25px"><i class="fa fa-navicon"></i> Lista Submotivos Cancelacion:</h2>
+                        <h2 class="page-header" style="margin-top:25px"><i class="fa fa-navicon"></i> Lista Otros Campos:</h2>
                         <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                             <div class="box-body">
-                                <div id="gridSubmotivos"></div>
+                                <div id="gridOtrosCampos"></div>
 
                             </div>
                         </div>
@@ -27,10 +27,10 @@
 
 @section Scripts{
     <script>
-        var urlListaKendo = '@Url.Action("ListarSubmotivosCancelacionJson", "Fidelizacion")';
+        var urlListaKendo = '@Url.Action("ListarOtrosCamposJson", "Fidelizacion")';
     </script>
 
-    <script src="~/Scripts/Fidelizacion/ListarSubmotivosCancelacion.js?1.0.4"></script>
+    <script src="~/Scripts/Fidelizacion/ListarOtrosCampos.js?1.0.0"></script>
 }
 <style>
     .k-filter-row th, .k-grid-header th.k-header {

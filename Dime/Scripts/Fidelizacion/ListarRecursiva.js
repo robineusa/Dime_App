@@ -17,8 +17,7 @@ $(document).ready(function () {
     });
 });
 
-function ShowGrid(data)
-{
+function ShowGrid(data) {
     $("#gridRecursiva").kendoGrid({
         autoBind: true,
         dataSource: {
@@ -55,7 +54,7 @@ function ShowGrid(data)
     });
 }
 
-ActualizarRecursiva = function(e) {
+ActualizarRecursiva = function (e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
     window.location.href = 'ActualizarRecursiva?id=' + dataItem.Id;

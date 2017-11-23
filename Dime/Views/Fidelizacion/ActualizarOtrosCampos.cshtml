@@ -1,10 +1,10 @@
 ﻿@model Telmexla.Servicios.DIME.Entity.FidelizacionOtrosCampos
 @{
-    ViewBag.Title = "Crear OtrosCampos";
-    ViewBag.SubTitle = "Procesos Fidelización";
+    ViewBag.Title = "Actualizar Otros Campos";
+    ViewBag.Subtitle = "Fidelizacion";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("CrearOtrosCampos", "Fidelizacion", FormMethod.Post, new { id = "formCrearOtrosCampos", role = "form" }))
+@using (Html.BeginForm("ActualizarOtrosCampos", "Fidelizacion", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
 {
     @Html.AntiForgeryToken()
     if (Session["Administracion Fidelizacion"] != null)
@@ -15,6 +15,11 @@
                 <div class="box box-danger">
                     <div class="box-body">
                         <div class="col-md-12">
+                            <small>Id Campo</small>
+                            @Html.TextBoxFor(r => r.Id, null, new { id = "txtIdCampo", @class = "form-control input-sm", @readonly = "true" })
+                            @Html.ValidationMessageFor(r => r.Id, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-12">
                             <small>Etiqueta</small>
                             @Html.TextBoxFor(c => c.Nombre, null, new { @class = "form-control input-sm ", Id = "txtNombre" })
                             @Html.ValidationMessageFor(c => c.Nombre, "", new { @class = "text-danger" })
@@ -23,8 +28,8 @@
                             <small>Tipo de Campo</small>
                             @Html.DropDownListFor(m => m.Tipo, new List<SelectListItem> {
                                new SelectListItem { Text = "-Seleccione-", Value = "0", Selected = true },
-                               new SelectListItem { Text = "Numerico", Value = "Numero", Selected = false },
-                               new SelectListItem { Text = "Alfanumerico", Value = "Alfanumero", Selected = false },
+                               new SelectListItem { Text = "Numerico", Value = "Numerico", Selected = false },
+                               new SelectListItem { Text = "Alfanumerico", Value = "Alfanumerico", Selected = false },
                                new SelectListItem { Text = "Listado", Value = "Listado", Selected = false }
                             }, new { Id = "sltTipo", @class = "form-control" })
                             @Html.ValidationMessageFor(m => m.Tipo, "", new { @class = "text-danger" })
@@ -34,13 +39,56 @@
                             @Html.TextAreaFor(m => m.Opciones, new { Id = "sltOpciones", @class = "form-control", placeholder = "Si es un listado separe las opciones con comas\nSi es Caja de Texto indique el tamaño" })
                             @Html.ValidationMessageFor(m => m.Opciones, "", new { @class = "text-danger" })
                         </div>
-                        <div class="col-md-12 text-center">
-                            @Html.CheckBox("Contencion") Contencion
-                            @Html.CheckBox("Retencion") Retencion
-                            @Html.CheckBox("Recuperacion") Recuperacion
+                        <div class="col-md-12">
+                            <small>Eliminar</small>
+                            @Html.DropDownListFor(m => m.Eliminado, new List<SelectListItem> { new SelectListItem { Text = "SI", Value = "1", Selected = true }, new SelectListItem { Text = "NO", Value = "0", Selected = false } }, new { Id = "sltEliminado", @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Eliminado, "", new { @class = "text-danger" })
                         </div>
                         <div class="col-md-12 text-center">
+
+                            @if (Model.Nivel != null)
+                            {
+                                if ((Model.Nivel.Substring(0, 1)) == "1")
+                                {
+                                    @: @Html.CheckBox("Contencion", true) Contencion
+                        }
+                                else
+                                {
+                                    @: @Html.CheckBox("Contencion", false) Contencion
+                        }
+                        if ((Model.Nivel.Substring(1, 1)) == "1")
+                        {
+                                    @: @Html.CheckBox("Retencion", true) Retencion
+                        }
+                        else
+                        {
+                                    @: @Html.CheckBox("Retencion", false) Retencion
+                        }
+                        if ((Model.Nivel.Substring(2, 1)) == "1")
+                        {
+                                    @: @Html.CheckBox("Recuperacion", true) Recuperacion
+                        }
+                        else
+                        {
+                                    @: @Html.CheckBox("Recuperacion", false) Recuperacion
+                        }
+                            }
+                            else
+                            {
+                                @: @Html.CheckBox("Contencion") Contencion
+                                @: @Html.CheckBox("Retencion") Retencion
+                                @: @Html.CheckBox("Recuperacion") Recuperacion
+                        }
+
+                        </div>
+
+
+                        <div class="col-md-12 text-center" style="padding-top:0.8em">
                             <button id="btnguardarpom" type="submit" class="btn btn-primary" name="Guardar" value="true">Guardar</button>
+                            <button id="btnguardarpom" type="button" onclick="redirectList()" class="btn btn-danger" name="Guardar" value="true">Ver Listado</button>
+                        </div>
+                        <div class="col-md-12 text-center">
+
                         </div>
 
                         @*@if (ViewBag.nodoExisteError != null){
@@ -82,4 +130,14 @@
             </div>
         </div>
     }
+}
+@section Scripts{
+
+    <script src="~/Scripts/Fidelizacion/CrearSubmotivoCancelacion.js?1.0.1"></script>
+    <script>
+        redirectList = function () {
+            window.location.href = 'ListarRecursiva';
+        }
+    </script>
+
 }
