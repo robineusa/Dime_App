@@ -165,19 +165,7 @@ namespace Dime.Controllers
         public JsonResult ListarSubmotivosCancelacionJson()
         {
 
-            List<ViewModelSubmotivosCancelacion> modelo = new List<ViewModelSubmotivosCancelacion>();
-            var listado = fidelizacionServicio.getSubmotivosCancelacionAll();
-            List<FidelizacionSubmotivosCancelacion> Submotivo = new List<FidelizacionSubmotivosCancelacion>();
-
-            foreach (var tmp in listado)
-            {
-                if (tmp.Eliminado == 0)
-                {
-                    Submotivo.Add(tmp);
-                }
-            }
-
-            var jsonResult = Json(JsonConvert.SerializeObject(Submotivo), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(fidelizacionServicio.getSubmotivosCancelacionAll(0)), JsonRequestBehavior.AllowGet);
 
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;

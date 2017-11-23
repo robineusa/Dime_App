@@ -787,21 +787,29 @@
                                         <li><a href="@Url.Action("CrearMotivoCancelacion", "Fidelizacion")"><i class="fa fa-circle-o"></i>Agregar Motivos</a></li>
                                         <li><a href="@Url.Action("ListarMotivosCancelacion", "Fidelizacion")"><i class="fa fa-circle-o"></i>Mostrar Motivos</a></li>
                                     </ul>
+                                </li>
+                                <li>
                                     <a href="#"><i class="fa fa-behance-square text-blue" aria-hidden="true"></i>Submotivos de Cancelación<i class="fa fa-angle-left pull-right"></i></a>
                                     <ul class="treeview-menu">
                                         <li><a href="@Url.Action("CrearSubmotivoCancelacion", "Fidelizacion")"><i class="fa fa-circle-o"></i>Agregar Submotivo</a></li>
                                         <li><a href="@Url.Action("ListarSubmotivosCancelacion", "Fidelizacion")"><i class="fa fa-circle-o"></i>Mostrar Submotivos</a></li>
                                     </ul>
+                                </li>
+                                <li>
                                     <a href="#"><i class="fa fa-behance-square text-light-blue" aria-hidden="true"></i>Tipificaiones<i class="fa fa-angle-left pull-right"></i></a>
                                     <ul class="treeview-menu">
                                         <li><a href="@Url.Action("CrearTipificacion", "Fidelizacion")"><i class="fa fa-circle-o"></i>Agregar Tipificacions</a></li>
                                         <li><a href="@Url.Action("ListarTipificacion", "Fidelizacion")"><i class="fa fa-circle-o"></i>Mostrar Tipificaciones</a></li>
                                     </ul>
+                                </li>
+                                <li>
                                     <a href="#"><i class="fa fa-behance-square text-aqua" aria-hidden="true"></i>Estrategias<i class="fa fa-angle-left pull-right"></i></a>
                                     <ul class="treeview-menu">
                                         <li><a href="@Url.Action("CrearRecursiva", "Fidelizacion")"><i class="fa fa-circle-o"></i>Agregar Estrategias</a></li>
                                         <li><a href="@Url.Action("ListarRecursiva", "Fidelizacion")"><i class="fa fa-circle-o"></i>Mostrar Estrategias</a></li>
                                     </ul>
+                                </li>
+                                <li>
                                     <a href="#"><i class="fa fa-behance-square text-aqua" aria-hidden="true"></i>Otros Campos<i class="fa fa-angle-left pull-right"></i></a>
                                     <ul class="treeview-menu">
                                         <li><a href="@Url.Action("CrearOtrosCampos", "Fidelizacion")"><i class="fa fa-circle-o"></i>Agregar Campos</a></li>
@@ -815,32 +823,32 @@
                     @if (Session["Procesos Check"] != null)
                     {
                         <li id="left-sidebar-menu-multilevel" class="treeview">
-                        <a href="#">
-                            <i class="fa fa-check-square text-green"></i> <span>Procesos Check</span><i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            @if (Session["Gestion NoCheck Tecnico"] != null)
-                            {
-                                <li>
-                                    <a href="#"><i class="fa fa-sitemap" aria-hidden="true"></i>Árboles<i class="fa fa-angle-left pull-right"></i></a>
-                                    <ul class="treeview-menu">
-                                        <li><a href="@Url.Action("GestionNoCheck", "Procesos")"><i class="fa fa-phone"></i>Gestión</a></li>
-                                    </ul>
-                                </li>
-                            }
-                            @if (Session["Admin Arboles NoCheck"] != null)
-                            {
-                                <li>
-                                    <a href="#"><i class="fa fa-wrench" aria-hidden="true"></i>Administrar Árboles<i class="fa fa-angle-left pull-right"></i></a>
-                                    <ul class="treeview-menu">
-                                        <li><a href="@Url.Action("AdminArboles", "Procesos")"><i class="fa fa-cog"></i>Administración</a></li>
-                                    </ul>
-                                </li>
+                            <a href="#">
+                                <i class="fa fa-check-square text-green"></i> <span>Procesos Check</span><i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                @if (Session["Gestion NoCheck Tecnico"] != null)
+                                {
+                                    <li>
+                                        <a href="#"><i class="fa fa-sitemap" aria-hidden="true"></i>Árboles<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="@Url.Action("GestionNoCheck", "Procesos")"><i class="fa fa-phone"></i>Gestión</a></li>
+                                        </ul>
+                                    </li>
+                                }
+                                @if (Session["Admin Arboles NoCheck"] != null)
+                                {
+                                    <li>
+                                        <a href="#"><i class="fa fa-wrench" aria-hidden="true"></i>Administrar Árboles<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="@Url.Action("AdminArboles", "Procesos")"><i class="fa fa-cog"></i>Administración</a></li>
+                                        </ul>
+                                    </li>
 
-                            }
-                        </ul>
+                                }
+                            </ul>
 
-                    </li>
+                        </li>
                     }
 
 
