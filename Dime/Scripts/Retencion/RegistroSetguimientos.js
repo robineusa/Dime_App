@@ -1,20 +1,22 @@
-﻿var BusquedaCedula = 0;
-var BusquedaCuenta = "NO";
+﻿
 $(document).ready(function () {
+    TipodeEscalamientos();
 });
 
 $("#CuentaCliente").blur(function (event) {
     event.preventDefault();
     $('#Nombre').focus();
     var Cuenta = $("#CuentaCliente").val();
-    if (Cuenta == "" || Cuenta == null) {
+    LimpiarCampos();
+    if (Cuenta == "" || Cuenta == null || Cuenta == "0") {
     } else { DatosClienteCuenta(Cuenta); }
 
 });
 
 $('#Cedula').blur(function () {
     var Cedula = $("#Cedula").val();
-    if (Cedula == "" || Cedula == null || Cedula == "0") {
+    LimpiarCampos();
+    if (Cedula == "" || Cedula == null) {
     } else { DatosClienteCedula(Cedula); }
 
 })
@@ -31,7 +33,8 @@ function DatosClienteCuenta(Cuenta) {
         success: function (result) {
             var json = JSON.parse(result);
             //$('#Cedula').prop('readonly', true);
-            $('#CuentaCliente').val(json.Cuenta);
+            $('#CuentaCliente').val(Cuenta);
+            $('#clientecuenta').val(Cuenta);
             $('#Cedula').val(json.Cedula);
             $('#Nombre').val(json.Nombre);
             $('#Apellido').val(json.Apellido);
@@ -97,7 +100,7 @@ function cargargrilla(data) {
         pageable: {
             refresh: true,
             pageSizes: true,
-            buttonCount: 5
+            buttonCount: 10
         },
         columns: [
         { command: { text: " Seleccionar", click: ActualizarProceso, imageClass: "ion-checkmark-circled", }, title: "Seleccionar", width: "90px" },
@@ -120,4 +123,225 @@ function ActualizarProceso(e) {
 function finalizaconsulta() {
     document.getElementById('CuentasPorCedula').style.display = 'none';
 
+}
+function LimpiarCampos() {
+    $('#CuentaCliente').val("");
+    $('#Cedula').val("");
+    $('#Nombre').val("");
+    $('#Apellido').val("");
+    $('#TelefonoTelmex').val("");
+    $('#Telefono1').val("");
+    $('#Telefono2').val("");
+    $('#Telefono3').val("");
+    $('#DirInstalacion').val("");
+    $('#DirCorrespondencia').val("");
+    $('#Nodo').val("");
+    $('#Red').val("");
+    $('#Division').val("");
+    $('#Area').val("");
+    $('#Zona').val("");
+    $('#Distrito').val("");
+    $('#NombreComunidad').val("");
+    $('#Estrato').val("");
+    $('#TipoCliente').val("");
+    $('#Descripcion').val("");
+    $(":text").each(function () {
+        $($(this)).val('');
+        $($(this)).empty();
+    });
+    $('#DetalleEscalamiento').find('option:not(:first)').remove();
+    $('#MotivoEscalamiento').find('option:not(:first)').remove();
+    $('#RazonEscalamiento').find('option:not(:first)').remove();
+    $('#SubRazonEscalamiento').find('option:not(:first)').remove();
+}
+//trae arboles de tipificacion
+function TipodeEscalamientos() {
+    var IdPadre = "0";
+    $.ajax({
+        type: "POST",
+        url: urlarbolesdetipificacion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            var object = json[0];
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#TipoEscalamiento').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+    $('#DetalleEscalamiento').find('option:not(:first)').remove();
+    $('#MotivoEscalamiento').find('option:not(:first)').remove();
+    $('#RazonEscalamiento').find('option:not(:first)').remove();
+    $('#SubRazonEscalamiento').find('option:not(:first)').remove();
+}
+
+$('#TipoEscalamiento').change(function () {
+    DetalleDeEscalamientos();
+    MotivodeEscalamiento();
+    RazonEscalamiento();
+    SubRazonEscalamiento();
+})
+
+function DetalleDeEscalamientos() {
+    var IdPadre = $('#TipoEscalamiento').val();
+    if (IdPadre == "--SELECCIONE--" || IdPadre == "" || IdPadre == " ") {
+        $('#DetalleEscalamiento').find('option:not(:first)').remove();
+        $('#MotivoEscalamiento').find('option:not(:first)').remove();
+        $('#RazonEscalamiento').find('option:not(:first)').remove();
+        $('#SubRazonEscalamiento').find('option:not(:first)').remove();
+    } else {
+        $.ajax({
+            type: "POST",
+            url: urlarbolesdetipificacion,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ IdPadre: IdPadre }),
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+                var object = json[0];
+                for (var index = 0, len = json.length; index < len; index++) {
+                    $('#DetalleEscalamiento').append($('<option>', {
+                        value: json[index].IdArbol,
+                        text: json[index].Descripcion
+                    }));
+
+                }
+
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
+        $('#DetalleEscalamiento').find('option:not(:first)').remove();
+        $('#MotivoEscalamiento').find('option:not(:first)').remove();
+        $('#RazonEscalamiento').find('option:not(:first)').remove();
+        $('#SubRazonEscalamiento').find('option:not(:first)').remove();
+    }
+}
+
+$('#DetalleEscalamiento').change(function () {
+    MotivodeEscalamiento();
+    RazonEscalamiento();
+    SubRazonEscalamiento();
+})
+
+function MotivodeEscalamiento() {
+    var IdPadre = $('#DetalleEscalamiento').val();
+    if (IdPadre == "--SELECCIONE--" || IdPadre == "" || IdPadre == " ") {
+        $('#MotivoEscalamiento').find('option:not(:first)').remove();
+        $('#RazonEscalamiento').find('option:not(:first)').remove();
+        $('#SubRazonEscalamiento').find('option:not(:first)').remove();
+    } else
+    {
+        $.ajax({
+            type: "POST",
+            url: urlarbolesdetipificacion,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ IdPadre: IdPadre }),
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+                var object = json[0];
+                for (var index = 0, len = json.length; index < len; index++) {
+                    $('#MotivoEscalamiento').append($('<option>', {
+                        value: json[index].IdArbol,
+                        text: json[index].Descripcion
+                    }));
+
+                }
+
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
+        $('#MotivoEscalamiento').find('option:not(:first)').remove();
+        $('#RazonEscalamiento').find('option:not(:first)').remove();
+        $('#SubRazonEscalamiento').find('option:not(:first)').remove();
+    }
+}
+
+$('#MotivoEscalamiento').change(function () {
+    RazonEscalamiento();
+    SubRazonEscalamiento();
+})
+
+function RazonEscalamiento() {
+    var IdPadre = $('#MotivoEscalamiento').val();
+    if (IdPadre == "--SELECCIONE--" || IdPadre == "" || IdPadre == " ") {
+        $('#RazonEscalamiento').find('option:not(:first)').remove();
+        $('#SubRazonEscalamiento').find('option:not(:first)').remove();
+    } else
+    {
+        $.ajax({
+            type: "POST",
+            url: urlarbolesdetipificacion,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ IdPadre: IdPadre }),
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+                var object = json[0];
+                for (var index = 0, len = json.length; index < len; index++) {
+                    $('#RazonEscalamiento').append($('<option>', {
+                        value: json[index].IdArbol,
+                        text: json[index].Descripcion
+                    }));
+
+                }
+
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
+        $('#RazonEscalamiento').find('option:not(:first)').remove();
+        $('#SubRazonEscalamiento').find('option:not(:first)').remove();
+    }
+}
+
+$('#RazonEscalamiento').change(function () {
+    SubRazonEscalamiento();
+})
+
+function SubRazonEscalamiento() {
+    var IdPadre = $('#RazonEscalamiento').val();
+    if (IdPadre == "--SELECCIONE--" || IdPadre == "" || IdPadre == " ") {
+        $('#SubRazonEscalamiento').find('option:not(:first)').remove();
+    }
+    else {
+        $.ajax({
+            type: "POST",
+            url: urlarbolesdetipificacion,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ IdPadre: IdPadre }),
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+                var object = json[0];
+                for (var index = 0, len = json.length; index < len; index++) {
+                    $('#SubRazonEscalamiento').append($('<option>', {
+                        value: json[index].IdArbol,
+                        text: json[index].Descripcion
+                    }));
+
+                }
+
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
+        $('#SubRazonEscalamiento').find('option:not(:first)').remove();
+    }
 }

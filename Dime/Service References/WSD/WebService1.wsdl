@@ -22796,7 +22796,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IRetencionService_RegistrarSolicitudRetencion_Input_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetencionService_RegistrarSolicitudRetencionAutomatico_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -22815,7 +22815,197 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WSHttpBinding_IRetencionService_RegistrarSolicitudRetencion_output_policy">
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetencionService_RegistrarSolicitudRetencionAutomatico_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetencionService_RegistrarSolicitudRetencionFormulario_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetencionService_RegistrarSolicitudRetencionFormulario_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetencionService_ListasDeArbolesRetencion_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetencionService_ListasDeArbolesRetencion_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetencionService_ListasDeArbolesRetencionAdmin_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetencionService_ListasDeArbolesRetencionAdmin_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetencionService_ActualizarArbolRetencion_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetencionService_ActualizarArbolRetencion_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetencionService_RegistrarNuevoArbol_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetencionService_RegistrarNuevoArbol_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -25945,11 +26135,41 @@
   <wsdl:message name="IProcesosService_ConsultarArbol_OutputMessage">
     <wsdl:part name="parameters" element="tns:ConsultarArbolResponse" />
   </wsdl:message>
-  <wsdl:message name="IRetencionService_RegistrarSolicitudRetencion_InputMessage">
-    <wsdl:part name="parameters" element="tns:RegistrarSolicitudRetencion" />
+  <wsdl:message name="IRetencionService_RegistrarSolicitudRetencionAutomatico_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarSolicitudRetencionAutomatico" />
   </wsdl:message>
-  <wsdl:message name="IRetencionService_RegistrarSolicitudRetencion_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RegistrarSolicitudRetencionResponse" />
+  <wsdl:message name="IRetencionService_RegistrarSolicitudRetencionAutomatico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarSolicitudRetencionAutomaticoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetencionService_RegistrarSolicitudRetencionFormulario_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarSolicitudRetencionFormulario" />
+  </wsdl:message>
+  <wsdl:message name="IRetencionService_RegistrarSolicitudRetencionFormulario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarSolicitudRetencionFormularioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetencionService_ListasDeArbolesRetencion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListasDeArbolesRetencion" />
+  </wsdl:message>
+  <wsdl:message name="IRetencionService_ListasDeArbolesRetencion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListasDeArbolesRetencionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetencionService_ListasDeArbolesRetencionAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListasDeArbolesRetencionAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IRetencionService_ListasDeArbolesRetencionAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListasDeArbolesRetencionAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetencionService_ActualizarArbolRetencion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarArbolRetencion" />
+  </wsdl:message>
+  <wsdl:message name="IRetencionService_ActualizarArbolRetencion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarArbolRetencionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetencionService_RegistrarNuevoArbol_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarNuevoArbol" />
+  </wsdl:message>
+  <wsdl:message name="IRetencionService_RegistrarNuevoArbol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarNuevoArbolResponse" />
   </wsdl:message>
   <wsdl:portType name="IWebService">
     <wsdl:operation name="MuestraEntidades">
@@ -28078,9 +28298,29 @@
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRetencionService">
-    <wsdl:operation name="RegistrarSolicitudRetencion">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRetencionService/RegistrarSolicitudRetencion" message="tns:IRetencionService_RegistrarSolicitudRetencion_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRetencionService/RegistrarSolicitudRetencionResponse" message="tns:IRetencionService_RegistrarSolicitudRetencion_OutputMessage" />
+    <wsdl:operation name="RegistrarSolicitudRetencionAutomatico">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRetencionService/RegistrarSolicitudRetencionAutomatico" message="tns:IRetencionService_RegistrarSolicitudRetencionAutomatico_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRetencionService/RegistrarSolicitudRetencionAutomaticoResponse" message="tns:IRetencionService_RegistrarSolicitudRetencionAutomatico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarSolicitudRetencionFormulario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRetencionService/RegistrarSolicitudRetencionFormulario" message="tns:IRetencionService_RegistrarSolicitudRetencionFormulario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRetencionService/RegistrarSolicitudRetencionFormularioResponse" message="tns:IRetencionService_RegistrarSolicitudRetencionFormulario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListasDeArbolesRetencion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRetencionService/ListasDeArbolesRetencion" message="tns:IRetencionService_ListasDeArbolesRetencion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRetencionService/ListasDeArbolesRetencionResponse" message="tns:IRetencionService_ListasDeArbolesRetencion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListasDeArbolesRetencionAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRetencionService/ListasDeArbolesRetencionAdmin" message="tns:IRetencionService_ListasDeArbolesRetencionAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRetencionService/ListasDeArbolesRetencionAdminResponse" message="tns:IRetencionService_ListasDeArbolesRetencionAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarArbolRetencion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRetencionService/ActualizarArbolRetencion" message="tns:IRetencionService_ActualizarArbolRetencion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRetencionService/ActualizarArbolRetencionResponse" message="tns:IRetencionService_ActualizarArbolRetencion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarNuevoArbol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRetencionService/RegistrarNuevoArbol" message="tns:IRetencionService_RegistrarNuevoArbol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRetencionService/RegistrarNuevoArbolResponse" message="tns:IRetencionService_RegistrarNuevoArbol_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IWebService" type="tns:IWebService">
@@ -33889,14 +34129,69 @@
   <wsdl:binding name="WSHttpBinding_IRetencionService" type="tns:IRetencionService">
     <wsp:PolicyReference URI="#WSHttpBinding_IRetencionService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="RegistrarSolicitudRetencion">
-      <soap12:operation soapAction="http://tempuri.org/IRetencionService/RegistrarSolicitudRetencion" style="document" />
+    <wsdl:operation name="RegistrarSolicitudRetencionAutomatico">
+      <soap12:operation soapAction="http://tempuri.org/IRetencionService/RegistrarSolicitudRetencionAutomatico" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WSHttpBinding_IRetencionService_RegistrarSolicitudRetencion_Input_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IRetencionService_RegistrarSolicitudRetencionAutomatico_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WSHttpBinding_IRetencionService_RegistrarSolicitudRetencion_output_policy" />
+        <wsp:PolicyReference URI="#WSHttpBinding_IRetencionService_RegistrarSolicitudRetencionAutomatico_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarSolicitudRetencionFormulario">
+      <soap12:operation soapAction="http://tempuri.org/IRetencionService/RegistrarSolicitudRetencionFormulario" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRetencionService_RegistrarSolicitudRetencionFormulario_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRetencionService_RegistrarSolicitudRetencionFormulario_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListasDeArbolesRetencion">
+      <soap12:operation soapAction="http://tempuri.org/IRetencionService/ListasDeArbolesRetencion" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRetencionService_ListasDeArbolesRetencion_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRetencionService_ListasDeArbolesRetencion_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListasDeArbolesRetencionAdmin">
+      <soap12:operation soapAction="http://tempuri.org/IRetencionService/ListasDeArbolesRetencionAdmin" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRetencionService_ListasDeArbolesRetencionAdmin_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRetencionService_ListasDeArbolesRetencionAdmin_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarArbolRetencion">
+      <soap12:operation soapAction="http://tempuri.org/IRetencionService/ActualizarArbolRetencion" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRetencionService_ActualizarArbolRetencion_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRetencionService_ActualizarArbolRetencion_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarNuevoArbol">
+      <soap12:operation soapAction="http://tempuri.org/IRetencionService/RegistrarNuevoArbol" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRetencionService_RegistrarNuevoArbol_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IRetencionService_RegistrarNuevoArbol_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

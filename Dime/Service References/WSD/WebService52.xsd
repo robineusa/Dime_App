@@ -3344,12 +3344,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfFidelizacionMotivosCancelacion" nillable="true" type="tns:ArrayOfFidelizacionMotivosCancelacion" />
-  <xs:complexType name="ArrayOfFidelizacionSubmotivosCancelacion">
+  <xs:complexType name="ArrayOfFidelizacionSubmotivosCancelacionDetalle">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionSubmotivosCancelacion" nillable="true" type="tns:FidelizacionSubmotivosCancelacion" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionSubmotivosCancelacionDetalle" nillable="true" type="tns:FidelizacionSubmotivosCancelacionDetalle" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfFidelizacionSubmotivosCancelacion" nillable="true" type="tns:ArrayOfFidelizacionSubmotivosCancelacion" />
+  <xs:element name="ArrayOfFidelizacionSubmotivosCancelacionDetalle" nillable="true" type="tns:ArrayOfFidelizacionSubmotivosCancelacionDetalle" />
+  <xs:complexType name="FidelizacionSubmotivosCancelacionDetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Eliminado" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FIDMotivoId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreMotivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Registro" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Submotivo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FidelizacionSubmotivosCancelacionDetalle" nillable="true" type="tns:FidelizacionSubmotivosCancelacionDetalle" />
   <xs:complexType name="FidelizacionSubmotivosCancelacion">
     <xs:sequence>
       <xs:element minOccurs="0" name="Eliminado" type="xs:decimal" />
@@ -3726,4 +3737,19 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RSPSeguimientos" nillable="true" type="tns:RSPSeguimientos" />
+  <xs:complexType name="ArrayOfRSMArboles">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RSMArboles" nillable="true" type="tns:RSMArboles" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRSMArboles" nillable="true" type="tns:ArrayOfRSMArboles" />
+  <xs:complexType name="RSMArboles">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdArbol" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdPadre" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RSMArboles" nillable="true" type="tns:RSMArboles" />
 </xs:schema>

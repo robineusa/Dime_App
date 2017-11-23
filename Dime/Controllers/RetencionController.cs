@@ -32,8 +32,15 @@ namespace Dime.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RegistroSetguimientos(ViewModelRetencion modelo)
         {
+            modelo.RSPSeguimientos.UsuarioSolicitud = Convert.ToDecimal(Session["Usuario"]);
+            modelo.RSPSeguimientos.NombreUsuarioSolicitud = Session["NombreUsuario"].ToString();
+            modelo.RSPSeguimientos.AliadoSolicitud = Session["AliadoLogeado"].ToString();
+            modelo.RSPSeguimientos.OperacionSolicitud = Session["OperacionUsuarioHolos"].ToString();
+            modelo.RSPSeguimientos.LineaSolicitud = Session["LineaLogeado"].ToString();
+            modelo.RSPSeguimientos.CuentaCliente = modelo.ClientesTodo.Cuenta;
 
-            return View();
+            retencionservice.RegistrarSolicitudRetencionFormulario(modelo.RSPSeguimientos);
+            return RedirectToAction("RegistroSetguimientos");
         }
         public JsonResult TraerInformacionCliente(int CuentaCliente)
         {
@@ -46,11 +53,18 @@ namespace Dime.Controllers
         [HttpPost]
         public JsonResult TraerInformacionClienteCedula(string Cedula)
         {
-            return new JsonResult()
-            {
-                Data = JsonConvert.SerializeObject(inboundservice.ConsultarCuentasPorcedula(Cedula)),
-                JsonRequestBehavior = JsonRequestBehavior.DenyGet
-            };
+            var jsonResult = Json(JsonConvert.SerializeObject(inboundservice.ConsultarCuentasPorcedula(Cedula)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ArbolesDeTipificacion(int IdPadre)
+        {
+         
+                return new JsonResult()
+                {
+                    Data = JsonConvert.SerializeObject(retencionservice.ListasDeArbolesRetencion(IdPadre)),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
         }
     }
 }

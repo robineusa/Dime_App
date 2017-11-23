@@ -29,9 +29,10 @@
                         <td width="200">
                             <small>Cuenta del Cliente</small>
                             <input type="text" class="form-control input-sm" id="CuentaCliente" placeholder="Ingrese la cuenta" name="cuenta" />
+                            @Html.HiddenFor(m => m.ClientesTodo.Cuenta, new { @Id = "clientecuenta"})
                         </td>
                         <td width="200">
-                            <small>Cédula del Cliente</small>
+                            <small>Documento del Cliente</small>
                             <input type="text" class="form-control input-sm" id="Cedula" placeholder="Ingrese el documento" name="Cedula" />
                         </td>
                     </tr>
@@ -63,7 +64,7 @@
             <br />
         </div>
         
-        <div class="box box-danger">
+        <div class="box box-danger" style="padding-left:5px;">
             <div class="box-body">
                 <div class="row">
                     <div class="col-xs-12">
@@ -78,7 +79,7 @@
                 <br />
                 <table>
                     <tr>
-                        <td style="padding-left:1px; width:200px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Nombre del Cliente</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.Nombre, new { @class = "form-control input-sm", @Id = "Nombre", @readonly="true" })
                         </td>
@@ -86,71 +87,71 @@
                             <small>Apellido Cliente</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.Apellido, new { @class = "form-control input-sm", @Id = "Apellido", @readonly = "true" })
                         </td>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Teléfono Telmex</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.TelefonoTelmex, new { @class = "form-control input-sm", @Id = "TelefonoTelmex", @readonly = "true" })
                         </td>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Teléfono 1</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.Telefono1, new { @class = "form-control input-sm", @Id = "Telefono1", @readonly = "true" })
                         </td>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Teléfono 2</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.Telefono2, new { @class = "form-control input-sm", @Id = "Telefono2", @readonly = "true" })
                         </td>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Teléfono 3</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.Telefono3, new { @class = "form-control input-sm", @Id = "Telefono3", @readonly = "true" })
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Dirección de Instalación</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.DirInstalacion, new { @class = "form-control input-sm", @Id = "DirInstalacion", @readonly = "true" })
                         </td>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Dirección Correspondencia</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.DirCorrespondencia, new { @class = "form-control input-sm", @Id = "DirCorrespondencia", @readonly = "true" })
                         </td>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Nodo</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.Nodo, new { @class = "form-control input-sm", @Id = "Nodo", @readonly = "true" })
                         </td>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Red</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.Red, new { @class = "form-control input-sm", @Id = "Red", @readonly = "true" })
                         </td>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>División</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.Division, new { @class = "form-control input-sm", @Id = "Division", @readonly = "true" })
                         </td>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Área</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.Area, new { @class = "form-control input-sm", @Id = "Area", @readonly = "true" })
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Zona</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.Zona, new { @class = "form-control input-sm", @Id = "Zona", @readonly = "zona" })
                         </td>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Distrito</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.Distrito, new { @class = "form-control input-sm", @Id = "Distrito", @readonly = "true" })
                         </td>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Nombre Comunidad</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.NombreComunidad, new { @class = "form-control input-sm", @Id = "NombreComunidad", @readonly = "true" })
                         </td>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Estrato</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.Estrato, new { @class = "form-control input-sm", @Id = "Estrato", @readonly = "true" })
                         </td>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Tipo Cliente</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.TipoCliente, new { @class = "form-control input-sm", @Id = "TipoCliente", @readonly = "true" })
                         </td>
-                        <td style="padding-left:4px; width:280px;">
+                        <td style="padding-left:1px; width:280px;">
                             <small>Descripcion</small>
                             @Html.TextBoxFor(m => m.ClientesTodo.Descripcion, new { @class = "form-control input-sm", @Id = "Descripcion", @readonly = "true" })
                         </td>
@@ -159,7 +160,62 @@
             </div>
             <br />
         </div>
-       
+
+        <div class="box box-danger" style="padding-left:5px;">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                    </div>
+                </div>
+            </div>
+            <h5 class="page-header" style="margin-top: 0px; margin-left:1px;">
+                <i class="fa fa-newspaper-o"></i> Detalle de la Solicitud
+            </h5>
+            <div id="Cliente" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+                <br />
+                <table>
+                    <tr>
+                        <td style="padding-left:1px; width:300px;">
+                            <small>Tipo de Escalamiento</small>
+                            @Html.DropDownListFor(m => m.RSPSeguimientos.TipoEscalamiento, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "TipoEscalamiento", @class = "form-control input-sm" })
+                        </td>
+                        <td style="padding-left:1px; width:300px;">
+                            <small>Detalle de Escalamiento</small>
+                            @Html.DropDownListFor(m => m.RSPSeguimientos.DetalleEscalamiento, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "DetalleEscalamiento", @class = "form-control input-sm" })
+                        </td>
+                        <td style="padding-left:1px; width:300px;">
+                            <small>Motivo de Escalamiento</small>
+                            @Html.DropDownListFor(m => m.RSPSeguimientos.MotivoEscalamiento, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "MotivoEscalamiento", @class = "form-control input-sm" })
+                        </td>
+                        <td style="padding-left:1px; width:300px;">
+                            <small>Razón Escalamiento</small>
+                            @Html.DropDownListFor(m => m.RSPSeguimientos.RazonEscalamiento, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "RazonEscalamiento", @class = "form-control input-sm" })
+                        </td>
+                        <td style="padding-left:1px; width:300px;">
+                            <small>Sub Razón Escalamiento</small>
+                            @Html.DropDownListFor(m => m.RSPSeguimientos.SubRazonEscalamiento, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "SubRazonEscalamiento", @class = "form-control input-sm" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-left:1px; width:300px;">
+                            <small>Ticket RR</small>
+                            @Html.TextBoxFor(m => m.RSPSeguimientos.TicketRr, new { @class = "form-control input-sm", @Id = "TicketRr", @placeholder = "Ingrese el Ticket o CUN de RR" })
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td width="1500" colspan="6">
+                            <small>Observaciones</small>
+                            @Html.TextAreaFor(m => m.RSPSeguimientos.Observaciones, new { @class = "form-control input-sm", style = "width:100%; height:70px;", type = "text",@Id= "Observaciones" })
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br />
+            <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;">Guardar</button><br />
+        </div>
     }
     @section Scripts{
         @Scripts.Render("~/AdminLTEplugins/jquery/js")
@@ -170,9 +226,10 @@
     <script>
         var urlconsultaclientecuenta = '@Url.Action("TraerInformacionCliente", "Retencion")';
         var urlconsultaclientecedula = '@Url.Action("TraerInformacionClienteCedula", "Retencion")';
+        var urlarbolesdetipificacion = '@Url.Action("ArbolesDeTipificacion", "Retencion")';
     </script>
 
-    <script src="~/Scripts/Retencion/RegistroSetguimientos.js?1.0.3"></script>
+    <script src="~/Scripts/Retencion/RegistroSetguimientos.js?1.0.6"></script>
         }
 </body>
 </html>

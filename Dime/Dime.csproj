@@ -3058,6 +3058,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionRegistroCampos.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionSubmotivosCancelacion.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSMArboles.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3184,6 +3185,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.ViewModelSkillsUsuariosBlending.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.FidelizacionSubmotivosCancelacionDetalle.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\WSD\WebService1.wsdl" />

@@ -5784,13 +5784,15 @@
   </xs:element>
   <xs:element name="getSubmotivosCancelacionAll">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="estado" type="xs:decimal" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="getSubmotivosCancelacionAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q404="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="getSubmotivosCancelacionAllResult" nillable="true" type="q404:ArrayOfFidelizacionSubmotivosCancelacion" />
+        <xs:element xmlns:q404="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="getSubmotivosCancelacionAllResult" nillable="true" type="q404:ArrayOfFidelizacionSubmotivosCancelacionDetalle" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -7047,18 +7049,84 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="RegistrarSolicitudRetencion">
+  <xs:element name="RegistrarSolicitudRetencionAutomatico">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q494="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Solicitud" nillable="true" type="q494:RSPSeguimientos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="RegistrarSolicitudRetencionResponse">
+  <xs:element name="RegistrarSolicitudRetencionAutomaticoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="RegistrarSolicitudRetencionResult" type="xs:decimal" />
+        <xs:element minOccurs="0" name="RegistrarSolicitudRetencionAutomaticoResult" type="xs:decimal" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarSolicitudRetencionFormulario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q495="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Solicitud" nillable="true" type="q495:RSPSeguimientos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarSolicitudRetencionFormularioResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegistrarSolicitudRetencionFormularioResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListasDeArbolesRetencion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdPadre" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListasDeArbolesRetencionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q496="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListasDeArbolesRetencionResult" nillable="true" type="q496:ArrayOfRSMArboles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListasDeArbolesRetencionAdmin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdPadre" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListasDeArbolesRetencionAdminResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q497="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListasDeArbolesRetencionAdminResult" nillable="true" type="q497:ArrayOfRSMArboles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarArbolRetencion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q498="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Arbol" nillable="true" type="q498:RSMArboles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarArbolRetencionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarNuevoArbol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q499="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Arbol" nillable="true" type="q499:RSMArboles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarNuevoArbolResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>
