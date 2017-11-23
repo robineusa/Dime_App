@@ -37,8 +37,7 @@ namespace Dime.Controllers
             modelo.RSPSeguimientos.AliadoSolicitud = Session["AliadoLogeado"].ToString();
             modelo.RSPSeguimientos.OperacionSolicitud = Session["OperacionUsuarioHolos"].ToString();
             modelo.RSPSeguimientos.LineaSolicitud = Session["LineaLogeado"].ToString();
-            modelo.RSPSeguimientos.CuentaCliente = modelo.ClientesTodo.Cuenta;
-
+           
             retencionservice.RegistrarSolicitudRetencionFormulario(modelo.RSPSeguimientos);
             return RedirectToAction("RegistroSetguimientos");
         }

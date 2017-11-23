@@ -35,6 +35,7 @@ function DatosClienteCuenta(Cuenta) {
             //$('#Cedula').prop('readonly', true);
             $('#CuentaCliente').val(Cuenta);
             $('#clientecuenta').val(Cuenta);
+            $('#segcuenta').val(Cuenta);
             $('#Cedula').val(json.Cedula);
             $('#Nombre').val(json.Nombre);
             $('#Apellido').val(json.Apellido);

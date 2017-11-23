@@ -15163,6 +15163,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/ListaMiHistorialRecurrencia", ReplyAction="http://tempuri.org/IRecurrenciaService/ListaMiHistorialRecurrenciaResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia>> ListaMiHistorialRecurrenciaAsync(string usuarioGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/TraerGPrinRecurrenciaid", ReplyAction="http://tempuri.org/IRecurrenciaService/TraerGPrinRecurrenciaidResponse")]
+        Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia TraerGPrinRecurrenciaid(int CuentaCliente, int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRecurrenciaService/TraerGPrinRecurrenciaid", ReplyAction="http://tempuri.org/IRecurrenciaService/TraerGPrinRecurrenciaidResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia> TraerGPrinRecurrenciaidAsync(int CuentaCliente, int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -15406,6 +15412,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GLogRecurrencia>> ListaMiHistorialRecurrenciaAsync(string usuarioGestion) {
             return base.Channel.ListaMiHistorialRecurrenciaAsync(usuarioGestion);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia TraerGPrinRecurrenciaid(int CuentaCliente, int id) {
+            return base.Channel.TraerGPrinRecurrenciaid(CuentaCliente, id);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GPrincipalRecurrencia> TraerGPrinRecurrenciaidAsync(int CuentaCliente, int id) {
+            return base.Channel.TraerGPrinRecurrenciaidAsync(CuentaCliente, id);
         }
     }
     

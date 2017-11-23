@@ -28,12 +28,16 @@
                     <tr>
                         <td width="200">
                             <small>Cuenta del Cliente</small>
-                            <input type="text" class="form-control input-sm" id="CuentaCliente" placeholder="Ingrese la cuenta" name="cuenta" />
-                            @Html.HiddenFor(m => m.ClientesTodo.Cuenta, new { @Id = "clientecuenta"})
-                        </td>
+                            @Html.TextBoxFor(m => m.RSPSeguimientos.CuentaCliente, new { @class = "form-control input-sm", @Id = "CuentaCliente", @placeholder = "Ingrese la cuenta" })
+                         </td>
                         <td width="200">
                             <small>Documento del Cliente</small>
-                            <input type="text" class="form-control input-sm" id="Cedula" placeholder="Ingrese el documento" name="Cedula" />
+                            @Html.TextBoxFor(m => m.ClientesTodo.Cedula, new { @class = "form-control input-sm", @Id = "Cedula", @placeholder = "Ingrese el documento" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.ValidationMessageFor(m => m.RSPSeguimientos.CuentaCliente, "", new { @class = "text-danger" })
                         </td>
                     </tr>
                 </table>
@@ -198,9 +202,31 @@
                         </td>
                     </tr>
                     <tr>
+                        <td>
+                            @Html.ValidationMessageFor(m => m.RSPSeguimientos.TipoEscalamiento, "", new { @class = "text-danger" })
+                        </td>
+                        <td>
+                            @Html.ValidationMessageFor(m => m.RSPSeguimientos.DetalleEscalamiento, "", new { @class = "text-danger" })
+                        </td>
+                        <td>
+                            @Html.ValidationMessageFor(m => m.RSPSeguimientos.MotivoEscalamiento, "", new { @class = "text-danger" })
+                        </td>
+                        <td>
+                            @Html.ValidationMessageFor(m => m.RSPSeguimientos.RazonEscalamiento, "", new { @class = "text-danger" })
+                        </td>
+                        <td>
+                            @Html.ValidationMessageFor(m => m.RSPSeguimientos.SubRazonEscalamiento, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+                    <tr>
                         <td style="padding-left:1px; width:300px;">
                             <small>Ticket RR</small>
                             @Html.TextBoxFor(m => m.RSPSeguimientos.TicketRr, new { @class = "form-control input-sm", @Id = "TicketRr", @placeholder = "Ingrese el Ticket o CUN de RR" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.ValidationMessageFor(m => m.RSPSeguimientos.TicketRr, "", new { @class = "text-danger" })
                         </td>
                     </tr>
                 </table>
@@ -219,6 +245,7 @@
     }
     @section Scripts{
         @Scripts.Render("~/AdminLTEplugins/jquery/js")
+    @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
     <script src="~/AdminLTE/Kendo2016.3.11/js/jszip.min.js"></script>
     <script src="~/AdminLTE/Kendo2016.3.11/js/kendo.all.min.js"></script>
     <script src="~/AdminLTE/Kendo2016.3.11/js/kendo.web.min.js"></script>
@@ -229,7 +256,7 @@
         var urlarbolesdetipificacion = '@Url.Action("ArbolesDeTipificacion", "Retencion")';
     </script>
 
-    <script src="~/Scripts/Retencion/RegistroSetguimientos.js?1.0.6"></script>
+    <script src="~/Scripts/Retencion/RegistroSetguimientos.js?1.0.7"></script>
         }
 </body>
 </html>
