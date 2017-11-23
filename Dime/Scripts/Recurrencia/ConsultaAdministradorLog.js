@@ -131,12 +131,6 @@ function cargargrilla(data) {
        { field: "ActivacionClaroVideoNagra", title: "Activacion Claro Video Nagra", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "ServicioOfrecido", title: "Servicio Ofrecido", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "AceptacionServicioOfrecido", title: "Aceptacion del Servicio Ofrecido", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "Ofrecimiento1", title: "Ofrecimiento 1", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "AceptacionPrimerOfrecimiento", title: "Aceptacion Primer Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "Ofrecimiento2", title: "Ofrecimiento 2", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "AceptacionSegundoOfrecimiento", title: "Aceptacion Segundo Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "Ofrecimiento3", title: "Ofrecimiento 3", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "AceptacionTercerOfrecimiento", title: "Aceptacion Tercer Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "Observaciones", title: "Observaciones", headerAttributes: { style: "white-space: normal" }, width: 130 }
         ]
     });

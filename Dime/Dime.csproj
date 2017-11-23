@@ -3047,6 +3047,16 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.VAMotivosSolicitud.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Nodo.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Arbol.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionMaestroServicios.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionMotivosCancelacion.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionOtrosCampos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionOtrosOfrecimientos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionRecursivaVista.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionRegistro.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionRegistroCampos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionSubmotivosCancelacion.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3173,36 +3183,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.ViewModelSkillsUsuariosBlending.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionMaestroServicios.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionMotivosCancelacion.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionOtrosCampos.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionOtrosOfrecimientos.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionRecursiva.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionRecursivaVista.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionRegistro.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionRegistroCampos.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionSubmotivosCancelacion.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.FidelizacionTipificacion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\WSD\WebService1.wsdl" />

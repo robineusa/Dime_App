@@ -264,75 +264,7 @@
                                         @Html.TextBoxFor(m => m.GPrincipalRecurrencia.ClienteNagra, new { @class = "form-control input-sm", placeholder = "Apellido del cliente", Value = Model.CargueBase.ClienteNagra, ReadOnly = "true" })
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td width="200" style="padding:1px;">
-                                        <small>Ofrecimiento 1:  </small>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="6" style="padding:1px; width:1200px;">
-                                        @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Ofrecimiento1, null, new { @class = "form-control input-sm", @id = "Ofrecimiento", @Value = Model.CargueBase.Ofrecimiento1, @name = "Ofrecimiento", @style = "margin-left:0px; width:100%; height:70px;", @Readonly="true"})
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">
-                                        <small>El cliente acepto este ofrecimiento? </small>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                           @Html.DropDownListFor(m => m.GPrincipalRecurrencia.AceptacionPrimerOfrecimiento, new List<SelectListItem> { },
-                                           "--Select Option--",
-                                                new { Id = "AceptacionPrimerOfrecimiento", @class = "form-control input-sm" }) 
-                                        @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.AceptacionPrimerOfrecimiento, "", new { @class = "text-danger" })
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td width="200" style="padding:1px;">
-                                        <small>Ofrecimiento 2:  </small>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="6" style="padding:1px; width:1200px;">
-                                        @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Ofrecimiento2, null, new { @class = "form-control input-sm", @id = "Ofrecimiento", @Value = Model.CargueBase.Ofrecimiento2, @name = "Ofrecimiento", @style = "margin-left:0px; width:100%; height:70px;", @Readonly = "true" })
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                        <small>El cliente acepto este ofrecimiento? </small>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.AceptacionSegundoOfrecimiento, new List<SelectListItem> { },
-                                           "--Select Option--",
-                                                new { Id = "AceptacionSegundoOfrecimiento", @class = "form-control input-sm" })
-                                        @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.AceptacionSegundoOfrecimiento, "", new { @class = "text-danger" })
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td width="200" style="padding:1px;">
-                                        <small>Ofrecimiento 3:  </small>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="6" style="padding:1px; width:1200px;">
-                                        @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Ofrecimiento3, null, new { @class = "form-control input-sm", @id = "Ofrecimiento", @Value =Model.CargueBase.Ofrecimiento3, @name = "Ofrecimiento", @style = "margin-left:0px; width:100%; height:70px;", @Readonly = "true" })
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="3">
-                                        <small>El cliente acepto este ofrecimiento? </small>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td >
-                                            @Html.DropDownListFor(m => m.GPrincipalRecurrencia.AceptacionTercerOfrecimiento, new List<SelectListItem> { },
-                                           "--Select Option--",
-                                                new { Id = "AceptacionTercerOfrecimiento", @class = "form-control input-sm" }) 
-                                        @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.AceptacionTercerOfrecimiento, "", new { @class = "text-danger" })
-                                    </td>
-                                </tr>
+                                
                                 <tr>
                                     <td width="200" style="padding:1px;">
                                         <small>Diferenciador:  </small>
@@ -349,7 +281,6 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:1px;">
-                                        <input type="text" name="name" value="" />
                                         @Html.TextBoxFor(m => m.GPrincipalRecurrencia.Diferenciador, new { @class = "form-control input-sm", Value = Model.CargueBase.Diferenciador, ReadOnly = "true" })
                                     </td>
                                     <td style="padding:1px;">
@@ -411,7 +342,7 @@
                                             new SelectListItem { Text = "SI", Value = "SI" },
                                             new SelectListItem { Text = "NO", Value = "NO" } },
                                            "--Select Option--",
-                                                new { Id = "", @class = "form-control input-sm" })
+                                                new { Id = "ClieComunicaRealizadaGestRecu", @class = "form-control input-sm" })
                                             @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.ClieComunicaRealizadaGestRecu, "", new { @class = "text-danger"})
                                         </td>
                                         <td style="padding-left:1px; width:200px;" colspan="3">
@@ -441,7 +372,7 @@
                                         </td>
                                         <td style="padding-left:1px; width:200px;">
                                             <small>Área que Participa en la Solución: </small>
-                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.PorQue, new { id = "AreaParticipaSolucion", @class = "form-control input-sm",
+                                            @Html.TextBoxFor(m => m.GPrincipalRecurrencia.AreaParticipaSolucion, new { id = "AreaParticipaSolucion", @class = "form-control input-sm",
                                            placeholder = "Área que Participo en la Solución", disabled = "true" })
                                             @Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.AreaParticipaSolucion, "", new { @class = "text-danger" })
                                         </td>
@@ -651,7 +582,7 @@
 @*<script src="~/AdminLTE/documentation/js/jquery.datetimepicker.min.js"></script>*@
 <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.js"></script>
 <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
-    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.3.6"></script>
+    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.3.9"></script>
 }
 }
 

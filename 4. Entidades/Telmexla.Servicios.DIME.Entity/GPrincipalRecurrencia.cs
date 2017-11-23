@@ -30,12 +30,6 @@ namespace Telmexla.Servicios.DIME.Entity
         public string IncluyeClaroVideo { get; set; }
         public string UsoClaroVideo { get; set; }
         public string ClienteNagra { get; set; }
-        public string Ofrecimiento1 { get; set; }
-        public string AceptacionPrimerOfrecimiento { get; set; }
-        public string Ofrecimiento2 { get; set; }
-        public string AceptacionSegundoOfrecimiento { get; set; }
-        public string Ofrecimiento3 { get; set; }
-        public string AceptacionTercerOfrecimiento { get; set; }
         public string Diferenciador { get; set; }
         public decimal Prioridad { get; set; }
         public decimal VecesGestionado { get; set; }
@@ -88,14 +82,8 @@ namespace Telmexla.Servicios.DIME.Entity
 
         [Required(ErrorMessage = "Seleccione una opción")]
         public string UsoBrindaInternet { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
         public string ActivacionClaroVideoNagra { get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
         public string ServicioOfrecido{ get; set; }
-
-        [Required(ErrorMessage = "Seleccione una opción")]
         public string AceptacionServicioOfrecido { get; set; }
         public string Observaciones { get; set; }
         public decimal UsuarioGestionando { get; set; }
