@@ -7129,4 +7129,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="TraerArbolPorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdArbol" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraerArbolPorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q500="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerArbolPorIdResult" nillable="true" type="q500:RSMArboles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

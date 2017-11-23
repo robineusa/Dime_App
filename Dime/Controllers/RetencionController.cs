@@ -66,5 +66,56 @@ namespace Dime.Controllers
                     JsonRequestBehavior = JsonRequestBehavior.DenyGet
                 };
         }
+        public JsonResult ArbolesDeTipificacionaAdmin(int IdPadre)
+        {
+
+            return new JsonResult()
+            {
+                Data = JsonConvert.SerializeObject(retencionservice.ListasDeArbolesRetencionAdmin(IdPadre)),
+                JsonRequestBehavior = JsonRequestBehavior.DenyGet
+            };
+        }
+        [HttpGet]
+        public ActionResult ListaTipoEscalamientos(string IdPadre)
+        {
+            RSMArboles modelo = new RSMArboles();
+            modelo.IdPadre = Convert.ToDecimal(IdPadre);
+            return View(modelo);
+        }
+        [HttpGet]
+        public ActionResult AdministrarArboles(string IdPadre,string IdArbol)
+        {
+            RSMArboles modelo = new RSMArboles();
+            decimal Padre = Convert.ToDecimal(IdPadre);
+            decimal Id = Convert.ToDecimal(IdArbol);
+            if (Id > 0)
+            {
+                modelo = retencionservice.TraerArbolPorId(Id);
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdministrarArboles(RSMArboles modelo)
+        {
+            if (modelo.IdArbol > 0)
+            {
+                retencionservice.ActualizarArbolRetencion(modelo);
+            }
+            else
+            {
+                retencionservice.RegistrarNuevoArbol(modelo);
+            }
+            return RedirectToAction("ListaTipoEscalamientos", "Retencion", new { IdPadre = modelo.IdPadre });
+        }
+        public JsonResult RetornarPagina(int IdArbol)
+        {
+            RSMArboles Arbol =  retencionservice.TraerArbolPorId(IdArbol);
+            return new JsonResult()
+            {
+                Data = JsonConvert.SerializeObject(Arbol.IdPadre),
+                JsonRequestBehavior = JsonRequestBehavior.DenyGet
+            };
+        }
     }
 }

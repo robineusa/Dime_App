@@ -206,6 +206,7 @@
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DistribucionBlendingController.cs" />
     <Compile Include="Controllers\EncuestaCavController.cs" />
+    <Compile Include="Controllers\FidelizacionController.cs" />
     <Compile Include="Controllers\GestionBlendingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InboundController.cs" />
@@ -2381,6 +2382,7 @@
     <Content Include="Scripts\Reportes\ReporteAsesor.js" />
     <Content Include="Scripts\Reportes\ReporteBlending.js" />
     <Content Include="Scripts\Reportes\ReporteCelula.js" />
+    <Content Include="Scripts\Retencion\ListaTipoEscalamientos.js" />
     <Content Include="Scripts\Retencion\RegistroSetguimientos.js" />
     <Content Include="Scripts\Shared\_AlertasLayout.js" />
     <Content Include="Scripts\Shared\Helper.js" />
@@ -3549,6 +3551,8 @@
     <Content Include="Views\Fidelizacion\ListarSubmotivosCancelacion.cshtml" />
     <Content Include="Views\Fidelizacion\ListarTipificacion.cshtml" />
     <Content Include="Views\Retencion\RegistroSetguimientos.cshtml" />
+    <Content Include="Views\Retencion\ListaTipoEscalamientos.cshtml" />
+    <Content Include="Views\Retencion\AdministrarArboles.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

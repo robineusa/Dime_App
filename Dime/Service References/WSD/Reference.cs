@@ -17993,6 +17993,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetencionService/RegistrarNuevoArbol", ReplyAction="http://tempuri.org/IRetencionService/RegistrarNuevoArbolResponse")]
         System.Threading.Tasks.Task RegistrarNuevoArbolAsync(Telmexla.Servicios.DIME.Entity.RSMArboles Arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetencionService/TraerArbolPorId", ReplyAction="http://tempuri.org/IRetencionService/TraerArbolPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.RSMArboles TraerArbolPorId(decimal IdArbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetencionService/TraerArbolPorId", ReplyAction="http://tempuri.org/IRetencionService/TraerArbolPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.RSMArboles> TraerArbolPorIdAsync(decimal IdArbol);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18068,6 +18074,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task RegistrarNuevoArbolAsync(Telmexla.Servicios.DIME.Entity.RSMArboles Arbol) {
             return base.Channel.RegistrarNuevoArbolAsync(Arbol);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.RSMArboles TraerArbolPorId(decimal IdArbol) {
+            return base.Channel.TraerArbolPorId(IdArbol);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.RSMArboles> TraerArbolPorIdAsync(decimal IdArbol) {
+            return base.Channel.TraerArbolPorIdAsync(IdArbol);
         }
     }
 }
