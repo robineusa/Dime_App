@@ -18,7 +18,7 @@ $(document).ready(function () {
 });
 
 function ShowGrid(data) {
-    $("#gridTipificaciones").kendoGrid({
+    $("#gridOtrosCampos").kendoGrid({
         autoBind: true,
         dataSource: {
             data: data,
@@ -43,30 +43,28 @@ function ShowGrid(data) {
         columns: [
         {
             command: [
-              { text: "Editar", click: ActualizarTipificacion, imageClass: "k-icon k-i-pencil", },
-              { text: "Eliminar", click: EliminarTipificacion, imageClass: "k-icon k-i-delete", }
-            ], title: "Acciones", width: "80px"
+              { text: "Editar", click: ActualizarCampos, imageClass: "k-icon k-i-pencil" },
+              { text: "Eliminar", click: EliminarCampos, imageClass: "k-icon k-i-delete" },
+            ], title: "Acciones", width: "70px"
         },
-        { field: "Id", title: "Cod", width: 40 },
-        { field: "Nombre", title: "Nombre", width: 120 },
-        //{ field: "Eliminado", title: "Eliminado", width: 65 },
-        { field: "Activo", title: "Activo", width: 55, },
-        { field: "Nivel1", title: "Contencion", width: 70 },
-        { field: "Nivel2", title: "Retencion", width: 65 },
-        { field: "Nivel3", title: "Recuperacion", width: 80 },
-        { field: "Registro", title: "F. Actualizado", width: 90, type: 'date', format: "{0:dd/MM/yyyy HH:mm}", },
+        { field: "Id", title: "Codigo", width: 50 },
+        { field: "Nombre", title: "Campo", width: 120 },
+        { field: "Tipo", title: "Tipo", width: 70 },
+        { field: "Opciones", title: "Opciones", width: 90 },
+        { field: "Nivel", title: "Aplica Nivel", width: 110 },
+        { field: "Eliminado", title: "Eliminado", width: 120 },
         ]
 
     });
 }
 
-ActualizarTipificacion = function (e) {
+ActualizarCampos = function (e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = 'ActualizarTipificacion?id=' + dataItem.Id;
+    window.location.href = 'ActualizarOtrosCampos?id=' + dataItem.Id;
 }
-EliminarTipificacion = function (e) {
+EliminarCampos = function (e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = 'EliminarTipificacion?id=' + dataItem.Id;
+    window.location.href = 'EliminarOtrosCampos?id=' + dataItem.Id;
 }

@@ -1,13 +1,13 @@
 ﻿$(document).ready(function () {
     ListarRecursiva();
     var options = {
-        
+
     };
 
     // bind form using 'ajaxForm' 
     //$('#formCrearSubmotivos').ajaxForm(options);
 });
-var Lineas = ['','-','--','---','----','-----','------','-------','-------'];
+var Lineas = ['', '-', '--', '---', '----', '-----', '------', '-------', '-------'];
 
 function ListarRecursiva() {
     $.ajax({
@@ -20,12 +20,12 @@ function ListarRecursiva() {
             var object = json[0];
             for (var index = 0, len = json.length; index < len; index++) {
                 //if (json[index].Eliminado == 0) {
-                    $('#sltPadreRecursiva').append($('<option>', {
-                        value: json[index].Id,
-                        text: Lineas[json[index].Nivel] + json[index].Nombre
-                        }
+                $('#sltPadreRecursiva').append($('<option>', {
+                    value: json[index].Id,
+                    text: Lineas[json[index].Nivel] + json[index].Nombre
+                }
 
-                    ))
+                ))
                 //};
 
             }

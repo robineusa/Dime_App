@@ -18,8 +18,7 @@ $(document).ready(function () {
     });
 });
 
-function ShowGrid(data)
-{
+function ShowGrid(data) {
     $("#gridSubmotivos").kendoGrid({
         autoBind: true,
         dataSource: {
@@ -43,12 +42,17 @@ function ShowGrid(data)
             buttonCount: 5
         },
         columns: [
-        { command: { text: "Editar", click: ActualizarSubmotivo, imageClass: "k-icon k-i-pencil", }, title: "Acciones", width: "70px" },
+        {
+            command: [
+              { text: "Editar", click: ActualizarSubmotivo, imageClass: "k-icon k-i-pencil", },
+              { text: "Elimiar", click: EliminarSubmotivo, imageClass: "k-icon k-i-delete", }
+            ], title: "Acciones", width: "70px"
+        },
         { field: "Id", title: "Codigo", width: 50 },
         { field: "Submotivo", title: "Submotivo", width: 120 },
         { field: "Eliminado", title: "Eliminado", width: 70 },
         { field: "Registro", title: "Creacion", width: 90, type: 'date', format: "{0:dd/MM/yyyy HH:mm}", },
-        { field: "FIDMotivoId", title: "Motivo Id", width: 110 },
+        { field: "NombreMotivo", title: "Motivo", width: 110 },
         ]
 
     });
@@ -58,4 +62,9 @@ ActualizarSubmotivo = function (e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
     window.location.href = 'ActualizarSubmotivoCancelacion?id=' + dataItem.Id;
+}
+EliminarSubmotivo = function (e) {
+    e.preventDefault();
+    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    window.location.href = 'EliminarSubmotivoCancelacion?id=' + dataItem.Id;
 }

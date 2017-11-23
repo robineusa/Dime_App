@@ -17,8 +17,7 @@ $(document).ready(function () {
     });
 });
 
-function ShowGrid(data)
-{
+function ShowGrid(data) {
     $("#gridMotivos").kendoGrid({
         autoBind: true,
         dataSource: {
@@ -42,7 +41,12 @@ function ShowGrid(data)
             buttonCount: 5
         },
         columns: [
-        { command: { text: "Editar", click: ActualizarMotivo, imageClass: "k-icon k-i-pencil", }, title: "Acciones", width: "70px" },
+        {
+            command: [
+              { text: "Editar", click: ActualizarMotivo, imageClass: "k-icon k-i-pencil" },
+              { text: "Eliminar", click: EliminarMotivo, imageClass: "k-icon k-i-delete" },
+            ], title: "Acciones", width: "70px"
+        },
         { field: "Id", title: "Codigo", width: 50 },
         { field: "Motivo", title: "Motivo Cancelacion", width: 120 },
         { field: "Eliminado", title: "Eliminado", width: 70 },
@@ -54,8 +58,13 @@ function ShowGrid(data)
     });
 }
 
-ActualizarMotivo = function(e) {
+ActualizarMotivo = function (e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
     window.location.href = 'ActualizarMotivoCancelacion?id=' + dataItem.Id;
+}
+EliminarMotivo = function (e) {
+    e.preventDefault();
+    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    window.location.href = 'EliminarMotivos?id=' + dataItem.Id;
 }

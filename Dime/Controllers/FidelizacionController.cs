@@ -72,9 +72,11 @@ namespace Dime.Controllers
             ViewModelSubmotivosCancelacion modelo = new ViewModelSubmotivosCancelacion();
             var Motivos = fidelizacionServicio.getMotivosCancelacionAll();
             List<FidelizacionMotivosCancelacion> listado = new List<FidelizacionMotivosCancelacion>();
-            
-            foreach (var test in Motivos) {
-                if (test.Eliminado == 0) {
+
+            foreach (var test in Motivos)
+            {
+                if (test.Eliminado == 0)
+                {
                     listado.Add(test);
                 }
             }
@@ -106,7 +108,7 @@ namespace Dime.Controllers
             ViewModelSubmotivosCancelacion model = new ViewModelSubmotivosCancelacion();
             return View(model);
         }
-        
+
         public ActionResult ListarMotivosCancelacion()
         {
             List<FidelizacionMotivosCancelacion> modelo = new List<FidelizacionMotivosCancelacion>();
@@ -128,7 +130,16 @@ namespace Dime.Controllers
         {
 
             List<FidelizacionTipificacion> modelo = new List<FidelizacionTipificacion>();
-            var jsonResult = Json(JsonConvert.SerializeObject(fidelizacionServicio.getTipificacionAll()), JsonRequestBehavior.AllowGet);
+            var listado = fidelizacionServicio.getTipificacionAll();
+
+            foreach (var tmp in listado)
+            {
+                if (tmp.Eliminado == 0)
+                {
+                    modelo.Add(tmp);
+                }
+            }
+            var jsonResult = Json(JsonConvert.SerializeObject(modelo), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 
@@ -137,7 +148,16 @@ namespace Dime.Controllers
         {
 
             List<FidelizacionMotivosCancelacion> modelo = new List<FidelizacionMotivosCancelacion>();
-            var jsonResult = Json(JsonConvert.SerializeObject(fidelizacionServicio.getMotivosCancelacionAll()), JsonRequestBehavior.AllowGet);
+            var listado = fidelizacionServicio.getMotivosCancelacionAll();
+
+            foreach (var tmp in listado)
+            {
+                if (tmp.Eliminado == 0)
+                {
+                    modelo.Add(tmp);
+                }
+            }
+            var jsonResult = Json(JsonConvert.SerializeObject(modelo), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 
@@ -145,9 +165,7 @@ namespace Dime.Controllers
         public JsonResult ListarSubmotivosCancelacionJson()
         {
 
-            List<ViewModelSubmotivosCancelacion> modelo = new List<ViewModelSubmotivosCancelacion>();
-
-            var jsonResult = Json(JsonConvert.SerializeObject(fidelizacionServicio.getSubmotivosCancelacionAll()), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(fidelizacionServicio.getSubmotivosCancelacionAll(0)), JsonRequestBehavior.AllowGet);
 
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
@@ -166,15 +184,16 @@ namespace Dime.Controllers
             ViewModelRecursiva modelo = new ViewModelRecursiva();
             modelo.Recursiva = fidelizacionServicio.getRecursivaById(id);
             modelo.ListRecursiva = fidelizacionServicio.getRecursivaVistaAll();
-            
+
             ViewBag.Lista = fidelizacionServicio.getRecursivaVistaAll();
 
             return View(modelo);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ActualizarRecursiva(ViewModelRecursiva objRecursiva) {
-            
+        public ActionResult ActualizarRecursiva(ViewModelRecursiva objRecursiva)
+        {
+
             if (objRecursiva.Recursiva.Nombre == "" || objRecursiva.Recursiva.Nombre == null)
             {
                 ViewBag.errorMotivo = "Escriba el título de la opción que desea crear";
@@ -183,7 +202,7 @@ namespace Dime.Controllers
             {
                 ViewBag.errorOtrosCampos = "Indique a cual opcion desea asociarlo (Escoja un padre)";
             }
-            else if (objRecursiva.Recursiva.Label == "" || objRecursiva.Recursiva.Label ==  null)
+            else if (objRecursiva.Recursiva.Label == "" || objRecursiva.Recursiva.Label == null)
             {
                 ViewBag.errorOtrosOfrecimientos = "Indique La etiqueta que desea colocarle en el momento de seleccionarlo";
             }
@@ -406,6 +425,141 @@ namespace Dime.Controllers
         {
             FidelizacionOtrosCampos modelo = new FidelizacionOtrosCampos();
             return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CrearOtrosCampos(FidelizacionOtrosCampos objOtrosCampos)
+        {
+            if (objOtrosCampos.Nombre == "" || objOtrosCampos.Nombre == null)
+            {
+                ViewBag.errorNombre = "Escriba la etiqueta del campo";
+            }
+            else if (objOtrosCampos.Tipo == "0")
+            {
+                ViewBag.errorTipo = "Seleccione el tipo de campo que se va a crear";
+            }
+            else if (objOtrosCampos.Opciones == "" || objOtrosCampos.Opciones == null)
+            {
+                ViewBag.errorOpcion = "Si es de tipo listado indique las opciones separadas por coma (,) o la longitud del campo.";
+            }
+            else
+            {
+                string recu = ((Request.Form["Recuperacion"] == "false") ? "0" : "1");
+                string ret = ((Request.Form["Retencion"] == "false") ? "0" : "1");
+                string cont = ((Request.Form["Contencion"] == "false") ? "0" : "1");
+
+                objOtrosCampos.Nivel = cont + ret + recu;
+                objOtrosCampos.Eliminado = 0;
+                fidelizacionServicio.setOtrosCampos(objOtrosCampos);
+                return RedirectToAction("CrearOtrosCampos");
+            }
+            return View(objOtrosCampos);
+
+        }
+        public ActionResult ListarOtrosCampos()
+        {
+            List<FidelizacionOtrosCampos> modelo = new List<FidelizacionOtrosCampos>();
+            return View(modelo);
+        }
+        public JsonResult ListarOtrosCamposJson()
+        {
+
+            List<FidelizacionOtrosCampos> modelo = new List<FidelizacionOtrosCampos>();
+            var listado = fidelizacionServicio.getOtrosCamposAll();
+            
+            foreach (var tmp in listado) {
+                if (tmp.Eliminado == 0)
+                {
+                    modelo.Add(tmp);
+                }
+            }
+            var jsonResult = Json(JsonConvert.SerializeObject(modelo), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        [HttpGet]
+        public ActionResult ActualizarOtrosCampos(decimal id)
+        {
+            FidelizacionOtrosCampos modelo = new FidelizacionOtrosCampos();
+            modelo = fidelizacionServicio.getOtrosCamposById(id);
+            
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ActualizarOtrosCampos(FidelizacionOtrosCampos objFidelizacion)
+        {
+            //objFidelizacion.Eliminado;
+            //objFidelizacion.Id;
+            //objFidelizacion.Nivel;
+            //objFidelizacion.Nombre;
+            //objFidelizacion.Opciones;
+            //objFidelizacion.Tipo;
+
+
+
+            
+            if (objFidelizacion.Nombre == "" || objFidelizacion.Nombre == null)
+            {
+                ViewBag.errorNombre = "Escriba la etiqueta del campo";
+            }
+            else if (objFidelizacion.Tipo == "0" || objFidelizacion.Tipo == "")
+            {
+                ViewBag.errorOtrosTipo = "Seleccione el tipo de campo que se va a crear";
+            }
+            else if (objFidelizacion.Opciones == "" || objFidelizacion.Opciones == null)
+            {
+                ViewBag.errorOpcion = "Si es de tipo listado indique las opciones separadas por coma (,) o la longitud del campo.";
+            }
+            else
+            {
+                string recu = ((Request.Form["Recuperacion"] == "false") ? "0" : "1");
+                string ret = ((Request.Form["Retencion"] == "false") ? "0" : "1");
+                string cont = ((Request.Form["Contencion"] == "false") ? "0" : "1");
+
+                objFidelizacion.Nivel = cont + ret + recu;
+                fidelizacionServicio.updateOtrosCampos(objFidelizacion);
+                return RedirectToAction("ListarOtrosCampos");
+            }
+            return View(objFidelizacion);
+        }
+        [HttpGet]
+        public ActionResult EliminarOtrosCampos(decimal id)
+        {
+            FidelizacionOtrosCampos modelo = new FidelizacionOtrosCampos();
+            modelo = fidelizacionServicio.getOtrosCamposById(id);
+            modelo.Eliminado = 1;
+            fidelizacionServicio.updateOtrosCampos(modelo);
+            return RedirectToAction("ListarOtrosCampos");
+        }
+        [HttpGet]
+        public ActionResult EliminarMotivos(decimal id)
+        {
+            FidelizacionMotivosCancelacion modelo = new FidelizacionMotivosCancelacion();
+            modelo = fidelizacionServicio.getMotivosCancelacionById(id);
+            modelo.Eliminado = 1;
+            fidelizacionServicio.updateMotivoCancelacion(modelo);
+            return RedirectToAction("ListarMotivosCancelacion");
+        }
+
+        [HttpGet]
+        public ActionResult EliminarSubmotivoCancelacion(decimal id)
+        {
+            FidelizacionSubmotivosCancelacion modelo = new FidelizacionSubmotivosCancelacion();
+            modelo = fidelizacionServicio.getSubmotivosCancelacionById(id);
+            modelo.Eliminado = 1;
+            fidelizacionServicio.updateSubmotivoCancelacion(modelo);
+            return RedirectToAction("ListarSubmotivosCancelacion");
+        }
+        [HttpGet]
+        public ActionResult EliminarTipificacion(decimal id)
+        {
+            FidelizacionTipificacion modelo = new FidelizacionTipificacion();
+            modelo = fidelizacionServicio.getTipificacionById(id);
+            modelo.Eliminado = 1;
+            fidelizacionServicio.updateTipificacion(modelo);
+            return RedirectToAction("ListarTipificacion");
         }
 
     }
