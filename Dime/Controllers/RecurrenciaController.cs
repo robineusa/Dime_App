@@ -24,7 +24,7 @@ namespace Dime.Controllers
             recurrencia.ClientCredentials.Authenticate();
         }
         [HttpGet]
-        public ActionResult Recurrencia(string cuentaSeleccionada)
+        public ActionResult Recurrencia(string cuentaSeleccionada, string id)
         {
             ViewModelRecurrencia model = new ViewModelRecurrencia();
             if (cuentaSeleccionada == null || cuentaSeleccionada.Equals(""))
@@ -52,8 +52,8 @@ namespace Dime.Controllers
             }
             else
             {
-                model.GPrincipalRecurrencia = recurrencia.TraerGPrinRecurrencia(Convert.ToInt32(cuentaSeleccionada));
-                var Usuario = Session["IdUsuario"].ToString();
+                model.GPrincipalRecurrencia = recurrencia.TraerGPrinRecurrenciaid(Convert.ToInt32(cuentaSeleccionada), Convert.ToInt32(id));
+                var Usuario = 0;
                 if (model.GPrincipalRecurrencia.UsuarioGestionando == 0 || model.GPrincipalRecurrencia.UsuarioGestionando == Convert.ToDecimal(Usuario))
                 {
                     recurrencia.UsuarioGestionandoGRecurrencia(Convert.ToInt32(Usuario), Convert.ToInt32(model.GPrincipalRecurrencia.Id));
@@ -65,9 +65,6 @@ namespace Dime.Controllers
                     model.CargueBase.IncluyeClaroVideo = model.GPrincipalRecurrencia.IncluyeClaroVideo;
                     model.CargueBase.UsoClaroVideo = model.GPrincipalRecurrencia.UsoClaroVideo;
                     model.CargueBase.ClienteNagra = model.GPrincipalRecurrencia.ClienteNagra;
-                    model.CargueBase.Ofrecimiento1 = model.GPrincipalRecurrencia.Ofrecimiento1;
-                    model.CargueBase.Ofrecimiento2 = model.GPrincipalRecurrencia.Ofrecimiento2;
-                    model.CargueBase.Ofrecimiento3 = model.GPrincipalRecurrencia.Ofrecimiento3;
                     model.CargueBase.Diferenciador = model.GPrincipalRecurrencia.Diferenciador;
                     model.CargueBase.Prioridad = model.GPrincipalRecurrencia.Prioridad;
                     model.CargueBase.Veces_Gestionado = model.GPrincipalRecurrencia.VecesGestionado;
@@ -103,7 +100,7 @@ namespace Dime.Controllers
         {
             if (BotonEnvia == "Buscar")
             {
-                var Usuario = Session["IdUsuario"].ToString();
+                var Usuario = 0;
                 model.CargueBase = recurrencia.TraerDatosRecurrenciaCarga(Convert.ToDecimal(model.GPrincipalRecurrencia.CuentaCliente));
                 if (model.CargueBase != null)
                 {
@@ -112,10 +109,7 @@ namespace Dime.Controllers
                         recurrencia.ActualizarUusuarioGestionando(Convert.ToInt32(Usuario), Convert.ToDecimal(model.CargueBase.Cuenta));
                         model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
                         model.NodosZonificados.AliadoZonificado = recurrencia.AliadoTecnico(Convert.ToString(model.ClientesTodos.Nodo)).AliadoZonificado;
-                        model.GPrincipalRecurrencia = recurrencia.TraerGPrinRecurrencia(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
-                        if (model.GPrincipalRecurrencia != null)
-                        { ViewBag.Display = "block"; }
-                        else { ViewBag.Display = "block"; }
+                        ViewBag.Display = "block";
                         ViewBag.InventEquipos = "block";
                     }
                     else
@@ -138,7 +132,6 @@ namespace Dime.Controllers
                     model.GPrincipalRecurrencia = recurrencia.TraerGPrinRecurrencia(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
                     if (model.GPrincipalRecurrencia != null)
                     {
-                        //var Usuario = Session["IdUsuario"].ToString();
                         if (model.GPrincipalRecurrencia.UsuarioGestionando == 0 || model.GPrincipalRecurrencia.UsuarioGestionando == Convert.ToDecimal(Usuario))
                         {
                             recurrencia.UsuarioGestionandoGRecurrencia(Convert.ToInt32(Usuario), Convert.ToInt32(model.GPrincipalRecurrencia.Id));
@@ -150,9 +143,6 @@ namespace Dime.Controllers
                             model.CargueBase.IncluyeClaroVideo = model.GPrincipalRecurrencia.IncluyeClaroVideo;
                             model.CargueBase.UsoClaroVideo = model.GPrincipalRecurrencia.UsoClaroVideo;
                             model.CargueBase.ClienteNagra = model.GPrincipalRecurrencia.ClienteNagra;
-                            model.CargueBase.Ofrecimiento1 = model.GPrincipalRecurrencia.Ofrecimiento1;
-                            model.CargueBase.Ofrecimiento2 = model.GPrincipalRecurrencia.Ofrecimiento2;
-                            model.CargueBase.Ofrecimiento3 = model.GPrincipalRecurrencia.Ofrecimiento3;
                             model.CargueBase.Diferenciador = model.GPrincipalRecurrencia.Diferenciador;
                             model.CargueBase.Prioridad = model.GPrincipalRecurrencia.Prioridad;
                             model.CargueBase.Veces_Gestionado = model.GPrincipalRecurrencia.VecesGestionado;
@@ -227,7 +217,7 @@ namespace Dime.Controllers
 
                             if (Revisar == true)
                             {
-                                model.GPrincipalRecurrencia.Id = result.Find(a => a.CuentaCliente == model.GPrincipalRecurrencia.CuentaCliente).Id;
+                                model.GPrincipalRecurrencia.Id = result.Find(a => a.CuentaCliente == model.GPrincipalRecurrencia.CuentaCliente && a.Estado == "SEGUIMIENTO").Id;
                                 recurrencia.ActualizarGRecurrencia(model.GPrincipalRecurrencia);
                                 recurrencia.EliminaCuentaRecurrencia(model.GPrincipalRecurrencia.CuentaCliente);
                                 ViewBag.NoDatos = "Registro Almacenado";
