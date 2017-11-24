@@ -3740,4 +3740,41 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RSMArboles" nillable="true" type="tns:RSMArboles" />
+  <xs:complexType name="ArrayOfRSPSeguimientos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RSPSeguimientos" nillable="true" type="tns:RSPSeguimientos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRSPSeguimientos" nillable="true" type="tns:ArrayOfRSPSeguimientos" />
+  <xs:complexType name="ArrayOfRSLSeguimientos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RSLSeguimientos" nillable="true" type="tns:RSLSeguimientos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRSLSeguimientos" nillable="true" type="tns:ArrayOfRSLSeguimientos" />
+  <xs:complexType name="RSLSeguimientos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DetalleEscalamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estrategia1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estrategia2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estrategia3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaTransaccion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdSolicitud" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdTransaccion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LineaTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotivoEscalamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperacionTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RazonEscalamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubRazonEscalamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TicketRr" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TipoEscalamiento" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioTransaccion" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RSLSeguimientos" nillable="true" type="tns:RSLSeguimientos" />
 </xs:schema>

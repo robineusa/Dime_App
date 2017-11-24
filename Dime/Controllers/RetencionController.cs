@@ -116,5 +116,31 @@ namespace Dime.Controllers
                 JsonRequestBehavior = JsonRequestBehavior.DenyGet
             };
         }
+        [HttpGet]
+        public ActionResult ConsultaAdminPrincipal()
+        {
+            return View();
+        }
+        public JsonResult ConsultaAdminPrincipalJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(retencionservice.ConsultaAdministradorPricipal(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult ConsultaAdminLog()
+        {
+            return View();
+        }
+        public JsonResult ConsultaAdminLogJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(retencionservice.ConsultaAdministradorLog(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }

@@ -18013,6 +18013,18 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetencionService/TraerArbolPorId", ReplyAction="http://tempuri.org/IRetencionService/TraerArbolPorIdResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.RSMArboles> TraerArbolPorIdAsync(decimal IdArbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetencionService/ConsultaAdministradorPricipal", ReplyAction="http://tempuri.org/IRetencionService/ConsultaAdministradorPricipalResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.RSPSeguimientos> ConsultaAdministradorPricipal(System.DateTime FechaInicio, System.DateTime FechaFin);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetencionService/ConsultaAdministradorPricipal", ReplyAction="http://tempuri.org/IRetencionService/ConsultaAdministradorPricipalResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.RSPSeguimientos>> ConsultaAdministradorPricipalAsync(System.DateTime FechaInicio, System.DateTime FechaFin);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetencionService/ConsultaAdministradorLog", ReplyAction="http://tempuri.org/IRetencionService/ConsultaAdministradorLogResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.RSLSeguimientos> ConsultaAdministradorLog(System.DateTime FechaInicio, System.DateTime FechaFin);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRetencionService/ConsultaAdministradorLog", ReplyAction="http://tempuri.org/IRetencionService/ConsultaAdministradorLogResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.RSLSeguimientos>> ConsultaAdministradorLogAsync(System.DateTime FechaInicio, System.DateTime FechaFin);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18096,6 +18108,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.RSMArboles> TraerArbolPorIdAsync(decimal IdArbol) {
             return base.Channel.TraerArbolPorIdAsync(IdArbol);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.RSPSeguimientos> ConsultaAdministradorPricipal(System.DateTime FechaInicio, System.DateTime FechaFin) {
+            return base.Channel.ConsultaAdministradorPricipal(FechaInicio, FechaFin);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.RSPSeguimientos>> ConsultaAdministradorPricipalAsync(System.DateTime FechaInicio, System.DateTime FechaFin) {
+            return base.Channel.ConsultaAdministradorPricipalAsync(FechaInicio, FechaFin);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.RSLSeguimientos> ConsultaAdministradorLog(System.DateTime FechaInicio, System.DateTime FechaFin) {
+            return base.Channel.ConsultaAdministradorLog(FechaInicio, FechaFin);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.RSLSeguimientos>> ConsultaAdministradorLogAsync(System.DateTime FechaInicio, System.DateTime FechaFin) {
+            return base.Channel.ConsultaAdministradorLogAsync(FechaInicio, FechaFin);
         }
     }
 }

@@ -7158,4 +7158,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ConsultaAdministradorPricipal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFin" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaAdministradorPricipalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q502="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdministradorPricipalResult" nillable="true" type="q502:ArrayOfRSPSeguimientos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaAdministradorLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFin" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaAdministradorLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q503="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaAdministradorLogResult" nillable="true" type="q503:ArrayOfRSLSeguimientos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

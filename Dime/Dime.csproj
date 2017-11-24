@@ -2382,6 +2382,8 @@
     <Content Include="Scripts\Reportes\ReporteAsesor.js" />
     <Content Include="Scripts\Reportes\ReporteBlending.js" />
     <Content Include="Scripts\Reportes\ReporteCelula.js" />
+    <Content Include="Scripts\Retencion\ConsultaAdminLog.js" />
+    <Content Include="Scripts\Retencion\ConsultaAdminPrincipal.js" />
     <Content Include="Scripts\Retencion\ListaTipoEscalamientos.js" />
     <Content Include="Scripts\Retencion\RegistroSetguimientos.js" />
     <Content Include="Scripts\Shared\_AlertasLayout.js" />
@@ -3061,6 +3063,8 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionSubmotivosCancelacion.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSMArboles.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSLSeguimientos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSPSeguimientos.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3553,6 +3557,8 @@
     <Content Include="Views\Retencion\RegistroSetguimientos.cshtml" />
     <Content Include="Views\Retencion\ListaTipoEscalamientos.cshtml" />
     <Content Include="Views\Retencion\AdministrarArboles.cshtml" />
+    <Content Include="Views\Retencion\ConsultaAdminPrincipal.cshtml" />
+    <Content Include="Views\Retencion\ConsultaAdminLog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
