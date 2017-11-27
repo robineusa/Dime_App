@@ -2385,7 +2385,7 @@
     <Content Include="Scripts\Retencion\ConsultaAdminLog.js" />
     <Content Include="Scripts\Retencion\ConsultaAdminPrincipal.js" />
     <Content Include="Scripts\Retencion\ListaTipoEscalamientos.js" />
-    <Content Include="Scripts\Retencion\RegistroSetguimientos.js" />
+    <Content Include="Scripts\Retencion\RegistroSeguimientos.js" />
     <Content Include="Scripts\Shared\_AlertasLayout.js" />
     <Content Include="Scripts\Shared\Helper.js" />
     <Content Include="AdminLTE\Kendo2016.3.11\css\fonts\DejaVu\DejaVuSans-Bold.ttf" />
@@ -3554,11 +3554,12 @@
     <Content Include="Views\Fidelizacion\ListarRecursiva.cshtml" />
     <Content Include="Views\Fidelizacion\ListarSubmotivosCancelacion.cshtml" />
     <Content Include="Views\Fidelizacion\ListarTipificacion.cshtml" />
-    <Content Include="Views\Retencion\RegistroSetguimientos.cshtml" />
+    <Content Include="Views\Retencion\RegistroSeguimientos.cshtml" />
     <Content Include="Views\Retencion\ListaTipoEscalamientos.cshtml" />
     <Content Include="Views\Retencion\AdministrarArboles.cshtml" />
     <Content Include="Views\Retencion\ConsultaAdminPrincipal.cshtml" />
     <Content Include="Views\Retencion\ConsultaAdminLog.cshtml" />
+    <Content Include="Views\Retencion\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

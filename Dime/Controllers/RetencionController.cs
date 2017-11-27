@@ -23,14 +23,14 @@ namespace Dime.Controllers
 
         }
         [HttpGet]
-        public ActionResult RegistroSetguimientos()
+        public ActionResult RegistroSeguimientos()
         {
             ViewModelRetencion modelo = new ViewModelRetencion();
             return View(modelo);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RegistroSetguimientos(ViewModelRetencion modelo)
+        public ActionResult RegistroSeguimientos(ViewModelRetencion modelo)
         {
             modelo.RSPSeguimientos.UsuarioSolicitud = Convert.ToDecimal(Session["Usuario"]);
             modelo.RSPSeguimientos.NombreUsuarioSolicitud = Session["NombreUsuario"].ToString();
@@ -141,6 +141,10 @@ namespace Dime.Controllers
             var jsonResult = Json(JsonConvert.SerializeObject(retencionservice.ConsultaAdministradorLog(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
+        }
+        public ActionResult Index()
+        {
+            return View();
         }
     }
 }

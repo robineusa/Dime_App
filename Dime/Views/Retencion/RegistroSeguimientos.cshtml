@@ -1,4 +1,8 @@
 ﻿@model Telmexla.Servicios.DIME.Entity.ViewModelRetencion
+@{
+    ViewBag.Title = "Seguimientos Retención";
+    Layout =null;
+}
 <!DOCTYPE html>
 
 <html>
@@ -8,7 +12,7 @@
     @Styles.Render("~/AdminLTEbootstrap/css")
     @Styles.Render("~/AdminLTEdist/css")
     @Styles.Render("~/AdminLTEdist/css/skins")
-    
+    @Scripts.Render("~/AdminLTEplugins/jquery/js")
     <link href="~/Styles/Elements/Dime2.css?1.1.6" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -18,7 +22,7 @@
     
 </head>
 <body>
-    @using (Html.BeginForm("RegistroSetguimientos", "Retencion", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
+    @using (Html.BeginForm("RegistroSeguimientos", "Retencion", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
     {
         @Html.AntiForgeryToken()
 
@@ -243,9 +247,8 @@
             <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;">Guardar</button><br />
         </div>
     }
-    @section Scripts{
-        @Scripts.Render("~/AdminLTEplugins/jquery/js")
     @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+        
     <script src="~/AdminLTE/Kendo2016.3.11/js/jszip.min.js"></script>
     <script src="~/AdminLTE/Kendo2016.3.11/js/kendo.all.min.js"></script>
     <script src="~/AdminLTE/Kendo2016.3.11/js/kendo.web.min.js"></script>
@@ -256,7 +259,7 @@
         var urlarbolesdetipificacion = '@Url.Action("ArbolesDeTipificacion", "Retencion")';
     </script>
 
-    <script src="~/Scripts/Retencion/RegistroSetguimientos.js?1.1.2"></script>
-        }
+    <script src="~/Scripts/Retencion/RegistroSeguimientos.js?1.1.2"></script>
+        
 </body>
 </html>
