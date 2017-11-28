@@ -52,7 +52,6 @@ function ShowGrid(data) {
         { field: "Tipo", title: "Tipo", width: 70 },
         { field: "Opciones", title: "Opciones", width: 90 },
         { field: "Nivel", title: "Aplica Nivel", width: 110 },
-        { field: "Eliminado", title: "Eliminado", width: 120 },
         ]
 
     });

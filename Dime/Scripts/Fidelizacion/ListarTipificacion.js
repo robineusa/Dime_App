@@ -49,7 +49,6 @@ function ShowGrid(data) {
         },
         { field: "Id", title: "Cod", width: 40 },
         { field: "Nombre", title: "Nombre", width: 120 },
-        //{ field: "Eliminado", title: "Eliminado", width: 65 },
         { field: "Activo", title: "Activo", width: 55, },
         { field: "Nivel1", title: "Contencion", width: 70 },
         { field: "Nivel2", title: "Retencion", width: 65 },

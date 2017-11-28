@@ -50,7 +50,6 @@ function ShowGrid(data) {
         },
         { field: "Id", title: "Codigo", width: 50 },
         { field: "Submotivo", title: "Submotivo", width: 120 },
-        { field: "Eliminado", title: "Eliminado", width: 70 },
         { field: "Registro", title: "Creacion", width: 90, type: 'date', format: "{0:dd/MM/yyyy HH:mm}", },
         { field: "NombreMotivo", title: "Motivo", width: 110 },
         ]

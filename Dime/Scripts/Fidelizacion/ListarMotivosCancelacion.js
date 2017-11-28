@@ -49,7 +49,6 @@ function ShowGrid(data) {
         },
         { field: "Id", title: "Codigo", width: 50 },
         { field: "Motivo", title: "Motivo Cancelacion", width: 120 },
-        { field: "Eliminado", title: "Eliminado", width: 70 },
         { field: "Registro", title: "Creacion", width: 90, type: 'date', format: "{0:dd/MM/yyyy HH:mm}", },
         { field: "OtrosCampos", title: "Campos Adicionales", width: 110 },
         { field: "OtrosOfrecimientos", title: "Ver Otros Ofrecimientos", width: 120 },

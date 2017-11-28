@@ -13,7 +13,9 @@ namespace Dime.Controllers
     public class FidelizacionController : MyController
     {
         WSD.FidelizacionServiceClient fidelizacionServicio;
+        WSD.InboundServiceClient inboundService;
         // GET: Fidelizacion
+
         public FidelizacionController()
         {
             fidelizacionServicio = new WSD.FidelizacionServiceClient();
@@ -70,18 +72,10 @@ namespace Dime.Controllers
         public ActionResult CrearSubmotivoCancelacion()
         {
             ViewModelSubmotivosCancelacion modelo = new ViewModelSubmotivosCancelacion();
-            var Motivos = fidelizacionServicio.getMotivosCancelacionAll();
+            var Motivos = fidelizacionServicio.getMotivosCancelacionAll(0);
             List<FidelizacionMotivosCancelacion> listado = new List<FidelizacionMotivosCancelacion>();
 
-            foreach (var test in Motivos)
-            {
-                if (test.Eliminado == 0)
-                {
-                    listado.Add(test);
-                }
-            }
-
-            ViewBag.sltMotivos = listado;
+            ViewBag.sltMotivos = Motivos;
             return View(modelo);
         }
         [HttpPost]
@@ -148,16 +142,9 @@ namespace Dime.Controllers
         {
 
             List<FidelizacionMotivosCancelacion> modelo = new List<FidelizacionMotivosCancelacion>();
-            var listado = fidelizacionServicio.getMotivosCancelacionAll();
+            var listado = fidelizacionServicio.getMotivosCancelacionAll(0);
 
-            foreach (var tmp in listado)
-            {
-                if (tmp.Eliminado == 0)
-                {
-                    modelo.Add(tmp);
-                }
-            }
-            var jsonResult = Json(JsonConvert.SerializeObject(modelo), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(listado), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
 
@@ -165,7 +152,7 @@ namespace Dime.Controllers
         public JsonResult ListarSubmotivosCancelacionJson()
         {
 
-            var jsonResult = Json(JsonConvert.SerializeObject(fidelizacionServicio.getSubmotivosCancelacionAll(0)), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(fidelizacionServicio.getSubmotivosCancelacionAll(0,0)), JsonRequestBehavior.AllowGet);
 
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
@@ -183,7 +170,7 @@ namespace Dime.Controllers
         {
             ViewModelRecursiva modelo = new ViewModelRecursiva();
             modelo.Recursiva = fidelizacionServicio.getRecursivaById(id);
-            modelo.ListRecursiva = fidelizacionServicio.getRecursivaVistaAll();
+            //modelo.ListRecursiva = fidelizacionServicio.getRecursivaVistaAll();
 
             ViewBag.Lista = fidelizacionServicio.getRecursivaVistaAll();
 
@@ -285,20 +272,19 @@ namespace Dime.Controllers
         {
             ViewModelSubmotivosCancelacion modelo = new ViewModelSubmotivosCancelacion();
             modelo.FidelizacionSubmotivos = fidelizacionServicio.getSubmotivosCancelacionById(id);
-            modelo.FidelizacionMotivos = fidelizacionServicio.getMotivosCancelacionAll();
+            modelo.FidelizacionMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
 
 
 
             IList<SelectListItem> selectItems = new List<SelectListItem>();
             foreach (var role in modelo.FidelizacionMotivos)
             {
-                if (role.Eliminado == 0)
-                {
+                
                     SelectListItem listItem = new SelectListItem();
                     listItem.Value = Convert.ToString(role.Id);
                     listItem.Text = role.Motivo;
                     selectItems.Add(listItem);
-                }
+                
 
             }
 
@@ -560,6 +546,35 @@ namespace Dime.Controllers
             modelo.Eliminado = 1;
             fidelizacionServicio.updateTipificacion(modelo);
             return RedirectToAction("ListarTipificacion");
+        }
+        [HttpGet]
+        public ActionResult RegistrarSolicitud()
+        {
+            ViewModelRegistrarSolicitud modelo = new ViewModelRegistrarSolicitud();
+            ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+            var s = fidelizacionServicio.getRecursivaAll(1);
+            ViewBag.slEstrategia = s;
+            return View(modelo);
+            
+        }
+        public JsonResult TraerInformacionCliente(int CuentaCliente)
+        {
+            return new JsonResult()
+            {
+                Data = JsonConvert.SerializeObject(inboundService.TraerClienteCompletoPorCuenta(CuentaCliente)),
+                JsonRequestBehavior = JsonRequestBehavior.DenyGet
+            };
+        }
+        public JsonResult getSubmotivosPorMotivoJson(int idMotivo)
+        {
+            var Motivos = fidelizacionServicio.getSubmotivosCancelacionAll(0,idMotivo);
+            return Json(Motivos, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult getHijoRecursivaJson(int idPadre)
+        {
+            //var s = fidelizacionServicio.getRecursivaAll(1);
+            var Motivos = fidelizacionServicio.getRecursivaAll(idPadre);
+            return Json(Motivos, JsonRequestBehavior.AllowGet);
         }
 
     }
