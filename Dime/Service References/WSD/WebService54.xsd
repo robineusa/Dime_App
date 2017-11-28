@@ -5787,7 +5787,9 @@
   </xs:element>
   <xs:element name="getMotivosCancelacionAll">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eliminado" type="xs:decimal" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="getMotivosCancelacionAllResponse">
@@ -5801,6 +5803,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="estado" type="xs:decimal" />
+        <xs:element minOccurs="0" name="idMotivo" type="xs:decimal" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -5915,7 +5918,9 @@
   </xs:element>
   <xs:element name="getRecursivaAll">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPadre" type="xs:decimal" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="getRecursivaAllResponse">
@@ -6167,7 +6172,7 @@
   <xs:element name="getRecursivaVistaAllResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q434="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="getRecursivaVistaAllResult" nillable="true" type="q434:ArrayOfFidelizacionRecursivaVista" />
+        <xs:element xmlns:q434="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="getRecursivaVistaAllResult" nillable="true" type="q434:ArrayOfFidelizacionRecursivaVistaDetalle" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

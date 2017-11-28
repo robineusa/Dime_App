@@ -550,11 +550,11 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult RegistrarSolicitud()
         {
-            ViewModelRegistrarSolicitud modelo = new ViewModelRegistrarSolicitud();
+            //ViewModelRegistrarSolicitud modelo = new ViewModelRegistrarSolicitud();
             ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
             var s = fidelizacionServicio.getRecursivaAll(1);
             ViewBag.slEstrategia = s;
-            return View(modelo);
+            return View();
             
         }
         public JsonResult TraerInformacionCliente(int CuentaCliente)

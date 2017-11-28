@@ -3196,6 +3196,9 @@
     <Content Include="Service References\WSD\Dime.WSD.FidelizacionSubmotivosCancelacionDetalle.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\WSD\Dime.WSD.FidelizacionRecursivaVistaDetalle.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\WSD\WebService1.wsdl" />
     <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>

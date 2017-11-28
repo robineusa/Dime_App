@@ -3471,12 +3471,25 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfFidelizacionRegistroCampos" nillable="true" type="tns:ArrayOfFidelizacionRegistroCampos" />
-  <xs:complexType name="ArrayOfFidelizacionRecursivaVista">
+  <xs:complexType name="ArrayOfFidelizacionRecursivaVistaDetalle">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionRecursivaVista" nillable="true" type="tns:FidelizacionRecursivaVista" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionRecursivaVistaDetalle" nillable="true" type="tns:FidelizacionRecursivaVistaDetalle" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfFidelizacionRecursivaVista" nillable="true" type="tns:ArrayOfFidelizacionRecursivaVista" />
+  <xs:element name="ArrayOfFidelizacionRecursivaVistaDetalle" nillable="true" type="tns:ArrayOfFidelizacionRecursivaVistaDetalle" />
+  <xs:complexType name="FidelizacionRecursivaVistaDetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nivel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ordr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ParentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VerNivel" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FidelizacionRecursivaVistaDetalle" nillable="true" type="tns:FidelizacionRecursivaVistaDetalle" />
   <xs:complexType name="FidelizacionRecursivaVista">
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
