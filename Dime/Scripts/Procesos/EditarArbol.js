@@ -1,6 +1,10 @@
 ﻿$(document).ready(function () {
     var IdArbol = 1;
+    var IdPadre = 0;
     ConstruirArbol(IdArbol);
+
+    $('#Body_Layout').on('click', function () { ocultar(); });
+
 });
 
 function ConstruirArbol(idArbol) {
@@ -13,50 +17,107 @@ function ConstruirArbol(idArbol) {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(result);
-            $('#InsertaArbol').append('<ul>' +
-                '<strong>' +
-                    '<i class="fa fa-folder"></i> ' + json.NombreArbol +
-                '</strong>' + json.CodigoHtml + '<i class="fa fa-plus-square"></i><br/>' +
-            '</ul>');
+            $('#InsertaArbol').append('<label id="Nombre" onmousedown="return evnt(this)" style="; font-weight:bold;"><i class="fa fa-folder"></i>' +
+                        '&nbsp' + json.NombreArbol + '</label>' +
+                  '<br/><ul id="ulPrincipal">' +
+                            json.CodigoHtml +
+                        '</ul>');
         },
         error: function (request, status, error) {
             alert(request.responseText);
         }
     });
 }
-function evnt(objeto) {
-
-    var posicion = objeto.getBoundingClientRect();
-    document.getElementById("lista").style.position = "absolute";
-    document.getElementById("lista").style.display = "block";
-    document.getElementById("lista").style.left = posicion.left + 20 + "px";
-    document.getElementById("lista").style.top = posicion.top + "px";
+function evnt(e) {
+    if (event.button == 2) {
+        window.event.cancelBubble = true;
+        var x = event.clientX;
+        var y = event.clientY;
+        document.getElementById("Menu").style.position = "absolute";
+        document.getElementById("Menu").style.display = "block";
+        document.getElementById("Menu").style.marginLeft = x - 270 + "px";
+        document.getElementById("Menu").style.marginTop = y - 240 + "px";
+        event.preventDefault();
+        $(document.getElementById(e.id)).bind("contextmenu", function (e) {
+            return false;
+        });
+        IdPadre = e.id;
+    }
 
 }
 
 function crear() {
-    var obj = document.getElementById("ulPrincipal");
+    var NomNodo = $('#Nombre_Nodo').val();
 
-    var li = document.createElement("li");
-    var txt = document.createTextNode("Primer nodo exitoso");
-    li.appendChild(txt);
-    li.setAttribute("id", "li" + contador);
-    li.setAttribute("onclick", "evnt(this)");
-    obj.appendChild(li);
+    //ajax
 
-    contador++;
+    var html = $("#ulPrincipal").html();
+    //alert(html);
+    if (IdPadre == 'Nombre') {
+        var objeto = document.getElementById('ulPrincipal');
+
+        $(objeto).append('<ul id="0">' +
+                '<li id="5" onmousedown=" return evnt(this)">' +
+                    '<i class="fa fa-folder"></i>&nbsp' + NomNodo + '' +
+                '</li>' +
+            '</ul>');
+        $('#CerrarModal').click();
+        $(".modal-backdrop  in").removeClass();
+        $(".modal-backdrop  in").remove();
+        $('#Nombre_Nodo').val('');
+    }
+    else {
+        var objeto = document.getElementById(IdPadre);
+        alert(objeto.nodeName+', '+objeto.id);
+        if (objeto.firstElementChild != "UL") {
+            $(objeto).append('<ul>' +
+                    '<li id="7" onmousedown=" return evnt(this)">' +
+                        '<i class="fa fa-folder"></i>&nbsp' + NomNodo + '' +
+                    '</li>' +
+                '</ul>');
+            $('#CerrarModal').click();
+            $(".modal-backdrop in").remove();
+            $(".modal-backdrop in").remove();
+            $('#Nombre_Nodo').val('');
+
+        }
+        else {
+            $(objeto).append('<li id="8" onmousedown=" return evnt(this)">' +
+                                '<i class="fa fa-folder"></i>&nbsp' + NomNodo + '' +
+                    '</li>'
+                    );
+            $('#CerrarModal').click();
+            $(".modal-backdrop  in").remove();
+            $(".modal-backdrop  in").remove();
+            $('#Nombre_Nodo').val('');
+        }
+    }
+
+
+
+
+    //var obj = document.getElementById("ulPrincipal");
+
+    //var li = document.createElement("li");
+    //var txt = document.createTextNode("Primer Nodo Exitoso");
+    //li.appendChild(txt);
+    //li.setAttribute("id", "li" + contador);
+    //li.setAttribute("onclick", "evnt(this)");
+    //obj.appendChild(li);
+
+    IdPadre = null;
 }
 
 function ocultar() {
-    document.getElementById("lista").style.display = "none";
+    document.getElementById("Menu").style.display = "none";
 
 }
 
 function poner() {
-    document.getElementById("lista").style.display = "block";
+    document.getElementById("Menu").style.display = "block";
 
 }
 
 function seleccionado() {
-    document.getElementById("lista").style.display = "none";
+    document.getElementById("Menu").style.display = "block";
 }

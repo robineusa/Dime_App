@@ -260,6 +260,7 @@
     <Content Include="AdminLTE\bootstrap\css\bootstrap.css" />
     <Content Include="AdminLTE\bootstrap\css\bootstrap.css.map" />
     <Content Include="AdminLTE\bootstrap\css\bootstrap.min.css" />
+    <Content Include="AdminLTE\bootstrap\css\EditarArbol.css" />
     <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
