@@ -17908,6 +17908,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistrarActualizaciondeDatos", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistrarActualizaciondeDatosResponse")]
         System.Threading.Tasks.Task RegistrarActualizaciondeDatosAsync(System.Collections.Generic.List<string> IdAsociadosSi, System.Collections.Generic.List<string> IdAsociadosNo, Telmexla.Servicios.DIME.Entity.BAPActualizarDatos Datos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ConsultarTelefonoPorCuenta", ReplyAction="http://tempuri.org/IBannerAlertasService/ConsultarTelefonoPorCuentaResponse")]
+        decimal ConsultarTelefonoPorCuenta(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ConsultarTelefonoPorCuenta", ReplyAction="http://tempuri.org/IBannerAlertasService/ConsultarTelefonoPorCuentaResponse")]
+        System.Threading.Tasks.Task<decimal> ConsultarTelefonoPorCuentaAsync(decimal CuentaCliente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18087,6 +18093,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task RegistrarActualizaciondeDatosAsync(System.Collections.Generic.List<string> IdAsociadosSi, System.Collections.Generic.List<string> IdAsociadosNo, Telmexla.Servicios.DIME.Entity.BAPActualizarDatos Datos) {
             return base.Channel.RegistrarActualizaciondeDatosAsync(IdAsociadosSi, IdAsociadosNo, Datos);
+        }
+        
+        public decimal ConsultarTelefonoPorCuenta(decimal CuentaCliente) {
+            return base.Channel.ConsultarTelefonoPorCuenta(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<decimal> ConsultarTelefonoPorCuentaAsync(decimal CuentaCliente) {
+            return base.Channel.ConsultarTelefonoPorCuentaAsync(CuentaCliente);
         }
     }
     

@@ -1,0 +1,143 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelBanner
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Actualizacion de Datos</title>
+    
+    @Styles.Render("~/AdminLTEbootstrap/css")
+    @Styles.Render("~/AdminLTEdist/css")
+    @Styles.Render("~/AdminLTEdist/css/skins")
+    @Scripts.Render("~/AdminLTEplugins/jquery/js")
+
+    
+    <script src="~/AdminLTE/Kendo2016.3.11/js/kendo.all.min.js"></script>
+    <script src="~/AdminLTE/Kendo2016.3.11/js/kendo.web.min.js"></script>
+    <link href="~/Styles/Elements/Dime2.css?1.1.6" rel="stylesheet" />
+    <link href="~/AdminLTE/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <link href="~/AdminLTE/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.common.min.css" rel="stylesheet" />
+    <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.min.css" rel="stylesheet" />
+    <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.mobile.min.css" rel="stylesheet" />
+    <script src="~/Scripts/Banner/ActualizacionDatos.js?1.0.1"></script>
+    <script>
+        var UrlListaDeCuentasPorTelefono = '@Url.Action("ListaDeCuentasPorNumeroTelefonico", "Banner")';
+        var UrlGuardarRegistroCliente = '@Url.Action("RegistrarCuentasPorTelefono", "Banner")';
+        
+    </script>
+  
+</head>
+<body>
+        @if (ViewBag.GuardarActDatos == "SIN GUARDAR")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-danger">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <table>
+                                        <tr>
+                                            <td style="width:300px; padding-left:1px;">
+                                                <small>Cuenta del Cliente</small>
+                                               @Html.TextBoxFor(m => m.ClientesTodo.Cuenta, null, new { @class = "form-control input-sm", @id = "Cuenta_Cliente", @readonly = "true", @name = "cuentaCliente" })
+                                            </td>
+                                            <td style="width:300px; padding-left:1px;">
+                                                <small>Nombre del Cliente</small>
+                                                @Html.TextBoxFor(m => m.ClientesTodo.Nombre, null, new { @class = "form-control input-sm", @id = "nombre", @readonly = "true", @name = "nombre" })
+                                            </td>
+                                            <td style="width:300px; padding-left:1px;">
+                                                <small>Apellido del Cliente</small>
+                                                @Html.TextBoxFor(m => m.ClientesTodo.Apellido, null, new { @class = "form-control input-sm", @id = "apellido", @readonly = "true", @name = "apellido" })
+                                            </td>
+                                            <td style="width:300px; padding-left:1px;">
+                                                <small>Dirección de Instalación</small>
+                                                @Html.TextBoxFor(m => m.ClientesTodo.DirInstalacion, null, new { @class = "form-control input-sm", @id = "direcion", @readonly = "true", @name = "direcion" })
+                                            </td>
+                                            <td style="width:300px; padding-left:1px;">
+                                                <small>Teléfono</small>
+                                                @Html.TextBoxFor(m => m.ClientesTodo.Telefono1, null, new { @class = "form-control input-sm", @id = "telefono", @readonly = "true", @name = "telefono" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-danger">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h2 class="page-header" style="margin-top:25px"><i class="fa fa-list-alt"></i> Solicitudes en gestión por el usuario:</h2>
+                                    <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                        <div class="box-body">
+                                            <div id="dataLoading" style="display:none;text-align:center;width:100%;height:auto;">
+                                                <div><img src="~/Resources/Images/Loading.gif" height="100" width="100" /></div>
+                                            </div>
+                                            <div id="gridViewConsulta"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-danger">
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h2 class="page-header" style="margin-top:25px"><i class="fa fa-list-alt"></i> Solicitudes en gestión por el usuario:</h2>
+                                    <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                        <div class="box-body">
+                                            <br />
+                                            <a href="#" id="guardarcambios"  class="btn btn-primary" onclick="GuardarInfo();">
+                                                Guardar
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="box box-primary">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="error-page">
+                                    <h2 class="headline text-green" style="margin-top:-18px;">505</h2>
+                                    <div class="error-content" style="text-align:center;">
+                                        <h3><i class="ion-happy-outline text-green"></i> Super! Registro Almacenado.</h3>
+                                        <p style="text-align:center;margin-top:20px;">
+                                            La información que enviaste fue almacenada satisfactoriamente, ahora puedes continuar con tu gestión.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+  <input type="checkbox" checked="checked" />
+
+</body>
+</html>

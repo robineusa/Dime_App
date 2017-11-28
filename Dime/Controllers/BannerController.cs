@@ -63,6 +63,11 @@ namespace Dime.Controllers
                     { ViewBag.Fox = true; }
                     else { ViewBag.Fox = false; }
 
+                    //Verificacion Actualizacion de Datos
+                    if (bannerservice.ValidarClienteEnActualizaciondeDatos(CuentaConsulta))
+                    { ViewBag.ActDatos = true; }
+                    else { ViewBag.ActDatos = false; }
+
                 }
             }
             else {  }
@@ -204,6 +209,68 @@ namespace Dime.Controllers
             modelo.GestionFox.FechaVencimiento = Convert.ToString(modelo.CuentasFox.FechaVencimiento);
             modelo.GestionFox.Ofrecimiento = modelo.CuentasFox.Ofrecimiento;
 
+            bannerservice.RegistraFox(modelo.GestionFox);
+            ViewBag.GuardadoFox = "GUARDADO";
+            return View();
+        }
+        [HttpGet]
+        public ActionResult ActualizacionDatos(string Data)
+        {
+            ViewModelBanner modelo = new ViewModelBanner();
+
+            if (Session["CuentaBanner"] != null)
+            {
+                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(Convert.ToInt32(Session["CuentaBanner"]));
+            }
+            else { }
+            if (Data!= null)
+            {
+                ViewBag.GuardarActDatos = Data;
+            }
+            else
+            {
+                ViewBag.GuardarActDatos = "SIN GUARDAR";
+            }
+            
+            return View(modelo);
+        }
+        public JsonResult ListaDeCuentasPorNumeroTelefonico()
+        {
+            decimal Telefono = bannerservice.ConsultarTelefonoPorCuenta(Convert.ToInt32(Session["CuentaBanner"]));
+            var jsonResult = Json(JsonConvert.SerializeObject(bannerservice.ListaClientesPorTelefono(Telefono)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpPost]
+        public JsonResult RegistrarCuentasPorTelefono(IList<string> IAsociadosSi, IList<string> IAsociadosNo)
+        {
+            
+            if (IAsociadosSi != null && IAsociadosSi != null)
+            {
+                BAPActualizarDatos Datos = new BAPActualizarDatos();
+                bannerservice.RegistrarActualizaciondeDatos(IAsociadosSi.ToList(), IAsociadosNo.ToList(), Datos);
+
+                return new JsonResult
+                {
+                    Data = JsonConvert.SerializeObject("Informacion Almacenada Correctamente"),
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+
+                };
+               
+            }
+            else
+            {
+                return null;
+            }
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ActualizacionDatos(ViewModelBanner modelo)
+        {
+            modelo.BAPActualizarDatos.UsuarioGestion = Convert.ToDecimal(Session["Usuario"]);
+            modelo.BAPActualizarDatos.AliadoGestion = Session["AliadoLogeado"].ToString();
+            modelo.BAPActualizarDatos.OperacionGestion = Session["OperacionUsuarioHolos"].ToString();
+            
             bannerservice.RegistraFox(modelo.GestionFox);
             ViewBag.GuardadoFox = "GUARDADO";
             return View();
