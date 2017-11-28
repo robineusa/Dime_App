@@ -29,12 +29,6 @@ namespace Telmexla.Servicios.DIME.Entity
         public string IncluyeClaroVideo { get; set; }
         public string UsoClaroVideo { get; set; }
         public string ClienteNagra { get; set; }
-        public string Ofrecimiento1 { get; set; }
-        public string AceptacionPrimerOfrecimiento { get; set; }
-        public string Ofrecimiento2 { get; set; }
-        public string AceptacionSegundoOfrecimiento { get; set; }
-        public string Ofrecimiento3 { get; set; }
-        public string AceptacionTercerOfrecimiento { get; set; }
         public string Diferenciador { get; set; }
         public decimal Prioridad { get; set; }
         public decimal VecesGestionado { get; set; }

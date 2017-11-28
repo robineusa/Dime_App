@@ -24,3 +24,20 @@ function ConstruirArbol(idArbol) {
         }
     });
 }
+function evnt(objeto) {
+   
+    var posicion = objeto.getBoundingClientRect();
+
+    document.getElementById("lista").style.position = "absolute";
+    document.getElementById("lista").style.display = "block";
+    document.getElementById("lista").style.left = posicion.left + 20 + "px";
+    document.getElementById("lista").style.top = posicion.top + "px";
+
+}
+function ocultar() {
+    document.getElementById("lista").style.display = "none";
+
+}
+function poner() {
+    document.getElementById("lista").style.display = "block";
+}

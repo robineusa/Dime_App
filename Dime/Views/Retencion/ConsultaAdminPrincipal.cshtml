@@ -1,11 +1,8 @@
-﻿
-@{
-    ViewBag.Title = "Consulta Recurrencia Log";
-    ViewBag.SubTitle = "Administrador";
+﻿@{
+    ViewBag.Title = "Seguimientos Retención - Principal";
+    ViewBag.Subtitle = "Procesos - Retención";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@if (Session["Consultas Administrador Recurrencia"] != null)
-{
         <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
             <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
                 <div class="row">
@@ -60,41 +57,14 @@
                     </div>
                 </div>
             </div>
-            
+            <button id="submitDatos" type="submit" class="btn btn-primary" value="true" style="width:10%; height:40px; display:none;"></button>
         </div>
-
+    
     @section scripts{
-        <script>var UrlConsultaAdministradorLogJson = '@Url.Action("ConsultaAdministradorLogJson", "Recurrencia")';</script>
+        <script>var urlconsultaprincipaladminretencion = '@Url.Action("ConsultaAdminPrincipalJson", "Retencion")';</script>
 
-        <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.2"></script>
-        <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.2" rel="stylesheet" />
-        <script src="~/Scripts/Recurrencia/ConsultaAdministradorLog.js?1.0.6"></script>
+        <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.1"></script>
+        <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.1" rel="stylesheet" />
+        <script src="~/Scripts/Retencion/ConsultaAdminPrincipal.js?1.0.0"></script>
 
     }
-}
-else
-{
-    <div class="row">
-
-        <div class="box box-primary">
-
-            <div class="box-body">
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="error-page">
-                            <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
-                            <div class="error-content">
-                                <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
-                                <p style="text-align:justify;">
-                                    La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
-                                    Por favor solicite al administrador del sistema el acceso correspondiente.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-}

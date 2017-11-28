@@ -206,6 +206,7 @@
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DistribucionBlendingController.cs" />
     <Compile Include="Controllers\EncuestaCavController.cs" />
+    <Compile Include="Controllers\FidelizacionController.cs" />
     <Compile Include="Controllers\GestionBlendingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InboundController.cs" />
@@ -2381,7 +2382,10 @@
     <Content Include="Scripts\Reportes\ReporteAsesor.js" />
     <Content Include="Scripts\Reportes\ReporteBlending.js" />
     <Content Include="Scripts\Reportes\ReporteCelula.js" />
-    <Content Include="Scripts\Retencion\RegistroSetguimientos.js" />
+    <Content Include="Scripts\Retencion\ConsultaAdminLog.js" />
+    <Content Include="Scripts\Retencion\ConsultaAdminPrincipal.js" />
+    <Content Include="Scripts\Retencion\ListaTipoEscalamientos.js" />
+    <Content Include="Scripts\Retencion\RegistroSeguimientos.js" />
     <Content Include="Scripts\Shared\_AlertasLayout.js" />
     <Content Include="Scripts\Shared\Helper.js" />
     <Content Include="AdminLTE\Kendo2016.3.11\css\fonts\DejaVu\DejaVuSans-Bold.ttf" />
@@ -3058,6 +3062,9 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionRegistroCampos.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionSubmotivosCancelacion.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSMArboles.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSLSeguimientos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSPSeguimientos.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3184,6 +3191,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.ViewModelSkillsUsuariosBlending.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WSD\Dime.WSD.FidelizacionSubmotivosCancelacionDetalle.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\WSD\WebService1.wsdl" />
@@ -3544,7 +3554,12 @@
     <Content Include="Views\Fidelizacion\ListarRecursiva.cshtml" />
     <Content Include="Views\Fidelizacion\ListarSubmotivosCancelacion.cshtml" />
     <Content Include="Views\Fidelizacion\ListarTipificacion.cshtml" />
-    <Content Include="Views\Retencion\RegistroSetguimientos.cshtml" />
+    <Content Include="Views\Retencion\RegistroSeguimientos.cshtml" />
+    <Content Include="Views\Retencion\ListaTipoEscalamientos.cshtml" />
+    <Content Include="Views\Retencion\AdministrarArboles.cshtml" />
+    <Content Include="Views\Retencion\ConsultaAdminPrincipal.cshtml" />
+    <Content Include="Views\Retencion\ConsultaAdminLog.cshtml" />
+    <Content Include="Views\Retencion\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

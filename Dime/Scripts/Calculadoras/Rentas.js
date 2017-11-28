@@ -275,43 +275,46 @@ function  SetDataComposicionProductoInicialAdicionales(Hbo, Fox, Ufc, Gld, Revis
 function SetDataComposicionProductoInicial(voz, tv, internet)
 {
     console.log(internet);
-     if (voz == "SI")
-        {
-        document.getElementById("cbVoz").click();
-       }
+     //if (voz == "SI")
+     //   {
+     //   document.getElementById("cbVoz").click();
+     //  }
      
-     if (tv != "NO") {
+     //if (tv != "NO") {
          
-         var tvDividida = tv.split(" ");
-         if (tvDividida[0] == "BASICA" || tvDividida[0] == "AVANZADA" || tvDividida[0] == "SUPERIOR" || tvDividida[0] == "BASICO")
-         {
-             if (tvDividida[0] == "BASICA" || tvDividida[0] == "BASICO")
-             {
-                 //alert(tvDividida[0]);
-                 $('#cbTvBasica').removeAttr('disabled');
-                 $("#cbTvBasica").click();
-                 $('#cbTvBasica').attr('disabled', 'disabled');
+     //    var tvDividida = tv.split(" ");
+     //    if (tvDividida[0] == "BASICA" || tvDividida[0] == "AVANZADA" || tvDividida[0] == "SUPERIOR" || tvDividida[0] == "BASICO")
+     //    {
+     //        if (tvDividida[0] == "BASICA" || tvDividida[0] == "BASICO")
+     //        {
+     //            //alert(tvDividida[0]);
+     //            $('#cbTvBasica').removeAttr('disabled');
+     //            $("#cbTvBasica").click();
+     //            $('#cbTvBasica').attr('disabled', 'disabled');
                  
-             }
-         } else
-            {
-             if (tvDividida[2] == "(B)") { $("#cbTvSatelitalBasica").click();  }
-             if (tvDividida[2] == "(A)") { $("#cbTvSatelitalAvanzada").click();  }
-             if (tvDividida[2] == "(S)") { $("#cbTvSatelitalSuperior").click();  }
-             if (tvDividida[1] == "(P)") { $('#cbTvDigital').removeAttr('disabled'); $("#cbTvDigital").click(); $('#cbTvDigital').attr('disabled', 'disabled'); }
-         }
+     //        }
+     //    } else
+     //       {
+     //        if (tvDividida[2] == "(B)") { $("#cbTvSatelitalBasica").click();  }
+     //        if (tvDividida[2] == "(A)") { $("#cbTvSatelitalAvanzada").click();  }
+     //        if (tvDividida[2] == "(S)") { $("#cbTvSatelitalSuperior").click();  }
+     //        if (tvDividida[1] == "(P)") { $('#cbTvDigital').removeAttr('disabled'); $("#cbTvDigital").click(); $('#cbTvDigital').attr('disabled', 'disabled'); }
+     //    }
 
-         if(tvDividida[0] == "BASICA"  && $("#tbSrvHdInfo").val() == "SI")
-         {
-             var tv = "AVANZADA";
-             $("[value='" + tv + "']").click();
-         }
+     //    if(tvDividida[0] == "BASICA"  && $("#tbSrvHdInfo").val() == "SI")
+     //    {
+     //        var tv = "AVANZADA";
+     //        $("[value='" + tv + "']").click();
+     //    }
 
-        }
+     //   }
   
-     if (internet != "NO") {
-            $("[value='" + internet + "']").click();
-     }
+     //if (internet != "NO") {
+     //       $("[value='" + internet + "']").click();
+     //}
+    $("#cbVozNo").click();
+    $("#cbTvNO").click();
+    $("#cbInterNO").click();
 
      setTimeout(function () {
          ActualizarParametros();
