@@ -17888,6 +17888,26 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistraUsabilidadBanner", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistraUsabilidadBannerResponse")]
         System.Threading.Tasks.Task RegistraUsabilidadBannerAsync(Telmexla.Servicios.DIME.Entity.UsabilidadAlertasInbound Usabilidad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnActualizaciondeDatos", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnActualizaciondeDatosResp" +
+            "onse")]
+        bool ValidarClienteEnActualizaciondeDatos(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnActualizaciondeDatos", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnActualizaciondeDatosResp" +
+            "onse")]
+        System.Threading.Tasks.Task<bool> ValidarClienteEnActualizaciondeDatosAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ListaClientesPorTelefono", ReplyAction="http://tempuri.org/IBannerAlertasService/ListaClientesPorTelefonoResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BACActualizarDatos> ListaClientesPorTelefono(decimal Telefono);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ListaClientesPorTelefono", ReplyAction="http://tempuri.org/IBannerAlertasService/ListaClientesPorTelefonoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BACActualizarDatos>> ListaClientesPorTelefonoAsync(decimal Telefono);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistrarActualizaciondeDatos", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistrarActualizaciondeDatosResponse")]
+        void RegistrarActualizaciondeDatos(System.Collections.Generic.List<string> IdAsociadosSi, System.Collections.Generic.List<string> IdAsociadosNo, Telmexla.Servicios.DIME.Entity.BAPActualizarDatos Datos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistrarActualizaciondeDatos", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistrarActualizaciondeDatosResponse")]
+        System.Threading.Tasks.Task RegistrarActualizaciondeDatosAsync(System.Collections.Generic.List<string> IdAsociadosSi, System.Collections.Generic.List<string> IdAsociadosNo, Telmexla.Servicios.DIME.Entity.BAPActualizarDatos Datos);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18043,6 +18063,30 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task RegistraUsabilidadBannerAsync(Telmexla.Servicios.DIME.Entity.UsabilidadAlertasInbound Usabilidad) {
             return base.Channel.RegistraUsabilidadBannerAsync(Usabilidad);
+        }
+        
+        public bool ValidarClienteEnActualizaciondeDatos(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnActualizaciondeDatos(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarClienteEnActualizaciondeDatosAsync(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnActualizaciondeDatosAsync(CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BACActualizarDatos> ListaClientesPorTelefono(decimal Telefono) {
+            return base.Channel.ListaClientesPorTelefono(Telefono);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BACActualizarDatos>> ListaClientesPorTelefonoAsync(decimal Telefono) {
+            return base.Channel.ListaClientesPorTelefonoAsync(Telefono);
+        }
+        
+        public void RegistrarActualizaciondeDatos(System.Collections.Generic.List<string> IdAsociadosSi, System.Collections.Generic.List<string> IdAsociadosNo, Telmexla.Servicios.DIME.Entity.BAPActualizarDatos Datos) {
+            base.Channel.RegistrarActualizaciondeDatos(IdAsociadosSi, IdAsociadosNo, Datos);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarActualizaciondeDatosAsync(System.Collections.Generic.List<string> IdAsociadosSi, System.Collections.Generic.List<string> IdAsociadosNo, Telmexla.Servicios.DIME.Entity.BAPActualizarDatos Datos) {
+            return base.Channel.RegistrarActualizaciondeDatosAsync(IdAsociadosSi, IdAsociadosNo, Datos);
         }
     }
     

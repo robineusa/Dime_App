@@ -3065,6 +3065,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSMArboles.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSLSeguimientos.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSPSeguimientos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BACActualizarDatos.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
