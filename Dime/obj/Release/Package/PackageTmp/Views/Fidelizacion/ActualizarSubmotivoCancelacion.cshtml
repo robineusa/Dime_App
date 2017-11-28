@@ -1,0 +1,97 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelSubmotivosCancelacion
+@{
+    ViewBag.Title = "Actualizar Submotivo Cancelacion";
+    ViewBag.Subtitle = "Fidelizacion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("ActualizarSubmotivoCancelacion", "Fidelizacion", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    if (Session["Administracion Fidelizacion"] != null)
+    {
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="box box-danger">
+                    <div class="box-body">
+                        <div class="col-md-12">
+                            <small>Id Submotivo</small>
+                            @Html.TextBoxFor(r => r.FidelizacionSubmotivos.Id, null, new { id = "txtIdMotivo", @class = "form-control input-sm", @readonly = "true" })
+                            @Html.ValidationMessageFor(r => r.FidelizacionSubmotivos.Id, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-12">
+                            <small>Submotivo</small>
+                            @Html.TextBoxFor(r => r.FidelizacionSubmotivos.Submotivo, null, new { @class = "form-control input-sm ", Id = "txtSubmotivoCanceelaciion" })
+                            @Html.ValidationMessageFor(m => m.FidelizacionSubmotivos.Submotivo, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-12">
+                            <small>Motivo</small>
+                            @Html.DropDownListFor(r => r.FidelizacionSubmotivos.FIDMotivoId, (IEnumerable<SelectListItem>)ViewBag.sltMotivos, new { Id = "sltMotivoCancelacion", @class = "form-control" })
+                            @Html.ValidationMessageFor(r => r.FidelizacionSubmotivos.FIDMotivoId, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-12">
+                            <small>Eliminar</small>
+                            @Html.DropDownListFor(r => r.FidelizacionSubmotivos.Eliminado, new List<SelectListItem> { new SelectListItem { Text = "SI", Value = "1", Selected = true }, new SelectListItem { Text = "NO", Value = "0", Selected = false } }, new { Id = "sltEliminado", @class = "form-control" })
+                            @Html.ValidationMessageFor(r => r.FidelizacionSubmotivos.FIDMotivoId, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="col-md-12 text-center" style="padding-top:0.8em">
+                            <button id="btnguardarpom" type="submit" class="btn btn-primary" name="Guardar" value="true">Guardar</button>
+                            <button id="btnguardarpom" type="button" onclick="redirectList()" class="btn btn-danger" name="Guardar" value="true">Ver Listado</button>
+                        </div>
+                        <div class="col-md-12 text-center">
+
+                        </div>
+
+                        @*@if (ViewBag.nodoExisteError != null){
+                                <div class="alert alert-dange">@ViewBag.nodoExisteError.ToString()</div>
+                                <label style="font-size:16px; color:red;font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight: 400;">@ViewBag.nodoExisteError.ToString() </label>
+                            }*@
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+
+            <div class="box box-primary">
+
+                <div class="box-body">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="error-page">
+                                <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                                <div class="error-content">
+                                    <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                                    <p style="text-align:justify;">
+                                        La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                        Por favor solicite al administrador del sistema el acceso correspondiente.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+}
+@section Scripts{
+
+    <script src="~/Scripts/Fidelizacion/CrearSubmotivoCancelacion.js?1.0.0"></script>
+    <script>
+        redirectList = function () {
+            window.location.href = 'ListarSubmotivosCancelacion';
+        }
+    </script>
+
+}

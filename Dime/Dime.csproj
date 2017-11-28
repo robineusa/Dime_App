@@ -2304,6 +2304,7 @@
     <Content Include="Scripts\BackElite\ReasignacionDeSolicitudes.js" />
     <Content Include="Scripts\BackElite\SeguimientoSolicitudes.js" />
     <Content Include="Scripts\BackElite\SolicitudBackElite.js" />
+    <Content Include="Scripts\Banner\ActualizacionDatos.js" />
     <Content Include="Scripts\Banner\BannerAlertas.js" />
     <Content Include="Scripts\Banner\MejorOferta.js" />
     <Content Include="Scripts\BitacoraIncidentes\ActualizacionDeIncidentes.js" />
@@ -3066,6 +3067,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSMArboles.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSLSeguimientos.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSPSeguimientos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BACActualizarDatos.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3564,6 +3566,7 @@
     <Content Include="Views\Retencion\ConsultaAdminPrincipal.cshtml" />
     <Content Include="Views\Retencion\ConsultaAdminLog.cshtml" />
     <Content Include="Views\Retencion\Index.cshtml" />
+    <Content Include="Views\Banner\ActualizacionDatos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

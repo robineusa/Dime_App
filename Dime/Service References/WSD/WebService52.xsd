@@ -3686,6 +3686,37 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="VAMotivosSolicitud" nillable="true" type="tns:VAMotivosSolicitud" />
+  <xs:complexType name="ArrayOfBACActualizarDatos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BACActualizarDatos" nillable="true" type="tns:BACActualizarDatos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBACActualizarDatos" nillable="true" type="tns:ArrayOfBACActualizarDatos" />
+  <xs:complexType name="BACActualizarDatos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ciudad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaAsociada" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Telefono" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BACActualizarDatos" nillable="true" type="tns:BACActualizarDatos" />
+  <xs:complexType name="BAPActualizarDatos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ciudad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaAsociada" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OperacionGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PropiedadCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsuarioGestion" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BAPActualizarDatos" nillable="true" type="tns:BAPActualizarDatos" />
   <xs:complexType name="Nodo">
     <xs:sequence>
       <xs:element minOccurs="0" name="CodigoHtml" nillable="true" type="xs:string" />

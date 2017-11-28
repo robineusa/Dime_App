@@ -85,8 +85,10 @@
     <Compile Include="ActivacionClaroVideoCollection.cs" />
     <Compile Include="ActualizarUsuarioGestionBackIngresoReturnModel.cs" />
     <Compile Include="Arbol.cs" />
+    <Compile Include="BACActualizarDatos.cs" />
     <Compile Include="BalanceScoreCard.cs" />
     <Compile Include="BalanceScoreCardCollection.cs" />
+    <Compile Include="BAPActualizarDatos.cs" />
     <Compile Include="BasePersonalHolo.cs" />
     <Compile Include="BELSolicitudes.cs" />
     <Compile Include="BEMDetalleDeGestion.cs" />
@@ -251,6 +253,7 @@
     <Compile Include="ViewModelNotificacionesBS.cs" />
     <Compile Include="ViewModelRecurrencia.cs" />
     <Compile Include="ViewModelRecursiva.cs" />
+    <Compile Include="ViewModelRegistrarSolicitud.cs" />
     <Compile Include="ViewModelResidPredictTipificador.cs" />
     <Compile Include="ViewModelRetencion.cs" />
     <Compile Include="ViewModelSubmotivosCancelacion.cs" />

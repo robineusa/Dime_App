@@ -1,11 +1,6 @@
 ﻿$.datetimepicker.setLocale('es');
 $(document).ready(function () {
-    $('#MarcacionReincidenteRecurrencia').val('');
-    $('#MarcacionInicialAfectacion').val('');
-    $('#PorQue').val('');
-    $('#VozCliente').val('');
-    $('#AreaParticipaSolucion').val('');
-    $("#FechaSesguimiento").val('');
+    
     
     $('#FechaSesguimiento').datetimepicker({
         //format: 'Y-m-d h:mm',
@@ -95,7 +90,24 @@ $(document).ready(function () {
     CargaMiHistorial();
     SetContactoList();
     CargaSeguimientos();
+
+    $('#MarcacionReincidenteRecurrencia').val('');
+    $('#MarcacionInicialAfectacion').val('');
+    $('#PorQue').val('');
+    $('#VozCliente').val('');
+    $('#AreaParticipaSolucion').val('');
+    $("#FechaSesguimiento").val('');
+    $('#ServicioAfectado').val('');
+    $('#FallaEspecificaArbolCCAA').val('');
+    $('#FallaCausaRaiz').val('');
+    $('#ServicioAfectadoO').val('');
+    $('#FallaEspecificaArbolCCAAO').val('');
+    $('#FallaCausaRaizO').val('');
+    $('#FallaCausaRaizO').val('');
+    $('#ServicioOfrecido').val('');
+    $('#AceptacionServicioOfrecido').val('');
     $("#Observaciones").val('');
+
     if (DecisionHistorialSeguimientos == "block")
     {
         CargaHistorialSeguimientos();
@@ -128,10 +140,10 @@ $(document).ready(function () {
     $("#MarcacionRecurrente2").val('');
     $("#MarcacionRecurrente3").val('');
     $("#PorQue").val('');
-    $("#VolvioLlamar").empty();
-    $("#VolvioLlamar").append("<option value=''>--Select Option--</option>");
-    $("#VolvioLlamar").append("<option value='SI'>SI</option>");
-    $("#VolvioLlamar").append("<option value='NO'>NO</option>");
+    $("#ClieComunicaRealizadaGestRecu").empty();
+    $("#ClieComunicaRealizadaGestRecu").append("<option value=''>--Select Option--</option>");
+    $("#ClieComunicaRealizadaGestRecu").append("<option value='SI'>SI</option>");
+    $("#ClieComunicaRealizadaGestRecu").append("<option value='NO'>NO</option>");
     
 });
 
@@ -373,6 +385,7 @@ function SetOpciones() {
         $("#Solucionado").append("<option value=''>--Select Option--</option>");
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
+        $("#Estado").append("<option value='FINALIZADO'>FINALIZADO</option>");
         $("#Estado").append("<option value='SEGUIMIENTO'>SEGUIMIENTO</option>");
         $("#FechaSesguimiento").val('');
         $("#Solucionado").empty();
@@ -920,64 +933,23 @@ function SetSolucionEspecifica() {
 }
 function SetEstado() {
     var Valor = $('#SolucionEspecifica').val();
-    if (Valor == "PERSONALIZACION CLAVE WIFI"
-    || Valor == "CAMBIO ENCRIPTACION"
-    || Valor == "CONFIGURACION ACCESOS"
-    || Valor == "CAMBIO CANAL FRECUENCIA"
-    || Valor == "CAMBIO UBICACIÓN MODEM CON COSTO"
-    || Valor == "DESCONEXION EQUIPOS CERCANOS WIFI"
-    || Valor == "CAMBIO TOMA ELECTRICA"
-    || Valor == "DESCONEXION DISPOSITIVOS AL CABLE MODEM CANTIDAD"
-    || Valor == "REPARACION CONEXIÓN DISPOSITIVOS"
-    || Valor == "REINICIO MODEM DIAGNOSTICADOR"
-    || Valor == "REINICIO MODEM FABRICA"
-    || Valor == "ENVIO COMANDO REFRESH"
-    || Valor == "ENVIO COMANDO REPAIR"
-    || Valor == "ENVIO COMANDO CLEARPARENTALKEY"
-    || Valor == "ACTUALIZACION SERVICIOS MODULO GESTION"
-    || Valor == "REPARACION SERVICIOS MODULO GESTION"
-    || Valor == "REINICIO DISPOSITIVOS DEL CLIENTE"
-    || Valor == "CONFIGURACION AVANZADA MODEM"
-    || Valor == "RESET ENERGIA EQUIPOS CLARO"
-    || Valor == "RESET ENERGIA EQUIPOS CLIENTE"
-    || Valor == "FALLA ATRIBUIBLE AL USUARIO"
-    || Valor == "SOPORTE CCAA TELEFONIA"
-    || Valor == "SOPORTE CCAA TELEVISION"
-    || Valor == "SOPORTE CCAA INTERNET"
-    || Valor == "ENVIO FACTURA ELECTRONICA"
-    || Valor == "ESCALAMIENTO ENVIO FACTURA FISICA"
-    || Valor == "ACLARACION FACTURA"
-    || Valor == "INFORMACION DE SALDO"
-    || Valor == "INFORMACION DE PRODUCTO"
-    || Valor == "INFORMACION DE TRAMITES"
-    || Valor == "RECONEXION SERVICIOS"
-    || Valor == "REALIZACION TRASLADO"
-    || Valor == "CANCELACION VISITA"
-    || Valor == "VENTA SERVICIOS"
-    || Valor == "RADICAR SOLICITUD CANCELACION"
-    || Valor == "INFORMACION ESTADO CANCELACION"
-    || Valor == "SERVICIO OK")
+    if (Valor != "")
     {
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
         $("#Estado").append("<option value='FINALIZADO'>FINALIZADO</option>");
+        $("#Estado").append("<option value='SEGUIMIENTO'>SEGUIMIENTO</option>");
         $("#Estado").removeAttr("disabled");
-        $("#FechaSesguimiento").val('');
-        $("#FechaSesguimiento").attr("disabled", "disabled");
+        //$("#FechaSesguimiento").val('');
+        //$("#FechaSesguimiento").attr("disabled", "disabled");
     }
     else {
         $("#Estado").empty();
         $("#Estado").append("<option value=''>--Select Option--</option>");
-        $("#Estado").append("<option value='SEGUIMIENTO'>SEGUIMIENTO</option>");
-        $("#Estado").removeAttr("disabled");
+        $("#Estado").attr("disabled", "disabled");
         $("#FechaSesguimiento").val('');
         $("#FechaSesguimiento").attr("disabled", "disabled");
 
-        if (Valor == "") {
-            $("#Estado").empty();
-            $("#Estado").append("<option value=''>--Select Option--</option>");
-            $("#Estado").attr("disabled", "disabled");
-        }
     }
 
 }
@@ -1094,7 +1066,8 @@ function ShowGridSeguimientos(data) {
             buttonCount: 5
         },
         columns: [
-            { command: { text: " ", click:CargaSeguimiento, imageClass: "k-icon k-i-pencil", }, title: "Editar", width: "60px" },
+            { command: { text: " ", click: CargaSeguimiento, imageClass: "k-icon k-i-pencil", }, title: "Editar", width: "60px" },
+            { field: "Id", title: "Id", headerAttributes: { style: "white-space: normal" }, width: 50 },
        { field: "FechaGestion", title: "Fecha de Gestión", headerAttributes: { style: "white-space: normal" }, width: 100, template: "#= kendo.toString(kendo.parseDate(FechaGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss') #" },
        { field: "NombreUsuarioGestion", title: "Nombre Usuario Gestiono", headerAttributes: { style: "white-space: normal" }, width: 100},
        { field: "CuentaCliente", title: "Cuenta Cliente",headerAttributes: { style: "white-space: normal" }, width: 90 },
@@ -1113,7 +1086,7 @@ function ShowGridSeguimientos(data) {
 function CargaSeguimiento(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    window.location.href = '../Recurrencia/Recurrencia?cuentaSeleccionada=' + dataItem.CuentaCliente;
+    window.location.href = '../Recurrencia/Recurrencia?cuentaSeleccionada=' + dataItem.CuentaCliente + '&id=' + dataItem.Id;
     
 }
 
@@ -1223,12 +1196,6 @@ function ShowGridHistorial(data) {
        { field: "ActivacionClaroVideoNagra", title: "Activacion Claro Video Nagra", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "ServicioOfrecido", title: "Servicio Ofrecido", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "AceptacionServicioOfrecido", title: "Aceptacion del Servicio Ofrecido", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "Ofrecimiento1", title: "Ofrecimiento 1", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "AceptacionPrimerOfrecimiento", title: "Aceptacion Primer Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "Ofrecimiento2", title: "Ofrecimiento 2", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "AceptacionSegundoOfrecimiento", title: "Aceptacion Segundo Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "Ofrecimiento3", title: "Ofrecimiento 3", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "AceptacionTercerOfrecimiento", title: "Aceptacion Tercer Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "Observaciones", title: "Observaciones", headerAttributes: { style: "white-space: normal" }, width: 130 },
        { field: "FechaSesguimiento", title: "Fecha Seguimiento", headerAttributes: { style: "white-space: normal" }, width: 80 },
         ]
@@ -1776,12 +1743,6 @@ function ShowGridMiHistorial(data)
        { field: "ActivacionClaroVideoNagra", title: "Activacion Claro Video Nagra", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "ServicioOfrecido", title: "Servicio Ofrecido", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "AceptacionServicioOfrecido", title: "Aceptacion del Servicio Ofrecido", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "Ofrecimiento1", title: "Ofrecimiento 1", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "AceptacionPrimerOfrecimiento", title: "Aceptacion Primer Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "Ofrecimiento2", title: "Ofrecimiento 2", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "AceptacionSegundoOfrecimiento", title: "Aceptacion Segundo Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "Ofrecimiento3", title: "Ofrecimiento 3", headerAttributes: { style: "white-space: normal" }, width: 100 },
-       { field: "AceptacionTercerOfrecimiento", title: "Aceptacion Tercer Ofrecimiento", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "Observaciones", title: "Observaciones", headerAttributes: { style: "white-space: normal" }, width: 130 },
        { field: "FechaSesguimiento", title: "Fecha Seguimiento", headerAttributes: { style: "white-space: normal" }, width: 80 },
         ]
