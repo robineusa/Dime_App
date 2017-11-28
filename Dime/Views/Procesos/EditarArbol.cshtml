@@ -15,9 +15,14 @@
                     <br />
                     <div id="InsertaArbol">
                         <p id="obj1" onclick="evnt(this)">parrafo</p>
+                        <div>
+                            <ul id="ulPrincipal">
+
+                            </ul>
+                        </div>
                         <ul id="lista" style="display:none;" onmouseover="poner()" onmouseout="ocultar()">
-                            <li onclick="llamar(this)">Crear</li>
-                            <li onclick="llamar(this)">Eliminar</li>
+                            <li onclick="crear()" onmouseup="seleccionado()">Crear</li>
+                            <li>Eliminar</li>
                         </ul>
 
                     </div>
