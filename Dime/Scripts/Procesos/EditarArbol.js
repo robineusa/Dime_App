@@ -17,7 +17,7 @@ function ConstruirArbol(idArbol) {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(result);
-            $('#InsertaArbol').append('<label id="Nombre" onmousedown="return evnt(this)" style="; font-weight:bold;"><i class="fa fa-folder"></i>' +
+            $('#InsertaArbol').append('<label id="NombreArbol" idArb="' + json.Id+ '" onmousedown="return evnt(this)" style="; font-weight:bold;"><i class="fa fa-folder"></i>' +
                         '&nbsp' + json.NombreArbol + '</label>' +
                   '<br/><ul id="ulPrincipal">' +
                             json.CodigoHtml +
@@ -42,70 +42,84 @@ function evnt(e) {
             return false;
         });
         IdPadre = e.id;
+        IdArbol = $("#NombreArbol").attr("idArb");
     }
 
 }
 
 function crear() {
     var NomNodo = $('#Nombre_Nodo').val();
+    var Result;
+    
+    $.ajax({
+        type: "POST",
+        url: urlRetornaIdNodo,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IDPadre: IdPadre, IDdArbol: IdArbol, NombreNodo: NomNodo }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            console.log(json);
+            AgregaNodo(json, IdPadre);
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
 
-    //ajax
+    //IdPadre = null;
+}
 
-    var html = $("#ulPrincipal").html();
-    //alert(html);
-    if (IdPadre == 'Nombre') {
+function AgregaNodo(Data, IdPadre)
+{
+    alert(IdPadre);
+    if (IdPadre == 'NombreArbol') {
+
         var objeto = document.getElementById('ulPrincipal');
-
-        $(objeto).append('<ul id="0">' +
-                '<li id="5" onmousedown=" return evnt(this)">' +
-                    '<i class="fa fa-folder"></i>&nbsp' + NomNodo + '' +
-                '</li>' +
-            '</ul>');
-        $('#CerrarModal').click();
-        $(".modal-backdrop  in").removeClass();
-        $(".modal-backdrop  in").remove();
+        if (objeto.firstElementChild == null) {
+            $(objeto).append('<ul id="0">' +
+                    '<li id="' + Data.Id + '" onmousedown=" return evnt(this)">' +
+                        '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo + '' +
+                    '</li>' +
+                '</ul>');
+        }
+        else {
+            $('#0').append('' +
+                    '<li id="' + Data.Id + '" onmousedown=" return evnt(this)">' +
+                        '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo + '' +
+                    '</li>' +
+                '');
+        }
+        var x = document.getElementById('CerrarModal');
+        x.click();
         $('#Nombre_Nodo').val('');
     }
     else {
         var objeto = document.getElementById(IdPadre);
-        alert(objeto.nodeName+', '+objeto.id);
-        if (objeto.firstElementChild != "UL") {
-            $(objeto).append('<ul>' +
-                    '<li id="7" onmousedown=" return evnt(this)">' +
-                        '<i class="fa fa-folder"></i>&nbsp' + NomNodo + '' +
+        if (objeto.childNodes.length < 3) {
+            $(objeto).append('<ul id="' + objeto.id + '">' +
+                    '<li id="' + Data.Id + '" onmousedown=" return evnt(this)">' +
+                        '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo + '' +
                     '</li>' +
                 '</ul>');
             $('#CerrarModal').click();
-            $(".modal-backdrop in").remove();
-            $(".modal-backdrop in").remove();
+            var x = document.getElementById('CerrarModal');
+            x.click();
             $('#Nombre_Nodo').val('');
 
         }
         else {
-            $(objeto).append('<li id="8" onmousedown=" return evnt(this)">' +
-                                '<i class="fa fa-folder"></i>&nbsp' + NomNodo + '' +
+            $('#' + objeto.id + ' ul').append('<li id="' + Data.Id + '" onmousedown=" return evnt(this)">' +
+                                '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo + '' +
                     '</li>'
                     );
-            $('#CerrarModal').click();
-            $(".modal-backdrop  in").remove();
-            $(".modal-backdrop  in").remove();
+            var x = document.getElementById('CerrarModal');
+            x.click();
             $('#Nombre_Nodo').val('');
         }
     }
-
-
-
-
-    //var obj = document.getElementById("ulPrincipal");
-
-    //var li = document.createElement("li");
-    //var txt = document.createTextNode("Primer Nodo Exitoso");
-    //li.appendChild(txt);
-    //li.setAttribute("id", "li" + contador);
-    //li.setAttribute("onclick", "evnt(this)");
-    //obj.appendChild(li);
-
-    IdPadre = null;
+    var html = $("#ulPrincipal").html();
+    alert(html);
 }
 
 function ocultar() {

@@ -18125,6 +18125,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarArbol", ReplyAction="http://tempuri.org/IProcesosService/ConsultarArbolResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Arbol> ConsultarArbolAsync(int IdArbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarNodoCreado", ReplyAction="http://tempuri.org/IProcesosService/ConsultarNodoCreadoResponse")]
+        Telmexla.Servicios.DIME.Entity.Nodo ConsultarNodoCreado(int IdArbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarNodoCreado", ReplyAction="http://tempuri.org/IProcesosService/ConsultarNodoCreadoResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Nodo> ConsultarNodoCreadoAsync(int IdArbol);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18176,6 +18182,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Arbol> ConsultarArbolAsync(int IdArbol) {
             return base.Channel.ConsultarArbolAsync(IdArbol);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.Nodo ConsultarNodoCreado(int IdArbol) {
+            return base.Channel.ConsultarNodoCreado(IdArbol);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Nodo> ConsultarNodoCreadoAsync(int IdArbol) {
+            return base.Channel.ConsultarNodoCreadoAsync(IdArbol);
         }
     }
     

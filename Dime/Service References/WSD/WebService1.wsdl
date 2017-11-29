@@ -22881,6 +22881,44 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IProcesosService_ConsultarNodoCreado_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IProcesosService_ConsultarNodoCreado_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IRetencionService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -26469,6 +26507,12 @@
   <wsdl:message name="IProcesosService_ConsultarArbol_OutputMessage">
     <wsdl:part name="parameters" element="tns:ConsultarArbolResponse" />
   </wsdl:message>
+  <wsdl:message name="IProcesosService_ConsultarNodoCreado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarNodoCreado" />
+  </wsdl:message>
+  <wsdl:message name="IProcesosService_ConsultarNodoCreado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarNodoCreadoResponse" />
+  </wsdl:message>
   <wsdl:message name="IRetencionService_RegistrarSolicitudRetencionAutomatico_InputMessage">
     <wsdl:part name="parameters" element="tns:RegistrarSolicitudRetencionAutomatico" />
   </wsdl:message>
@@ -28667,6 +28711,10 @@
     <wsdl:operation name="ConsultarArbol">
       <wsdl:input wsaw:Action="http://tempuri.org/IProcesosService/ConsultarArbol" message="tns:IProcesosService_ConsultarArbol_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProcesosService/ConsultarArbolResponse" message="tns:IProcesosService_ConsultarArbol_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarNodoCreado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProcesosService/ConsultarNodoCreado" message="tns:IProcesosService_ConsultarNodoCreado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProcesosService/ConsultarNodoCreadoResponse" message="tns:IProcesosService_ConsultarNodoCreado_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IRetencionService">
@@ -34561,6 +34609,17 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IProcesosService_ConsultarArbol_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarNodoCreado">
+      <soap12:operation soapAction="http://tempuri.org/IProcesosService/ConsultarNodoCreado" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IProcesosService_ConsultarNodoCreado_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IProcesosService_ConsultarNodoCreado_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
