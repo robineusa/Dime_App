@@ -7061,8 +7061,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q493="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IdAsociadosSi" nillable="true" type="q493:ArrayOfstring" />
-        <xs:element xmlns:q494="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="IdAsociadosNo" nillable="true" type="q494:ArrayOfstring" />
-        <xs:element xmlns:q495="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Datos" nillable="true" type="q495:BAPActualizarDatos" />
+        <xs:element xmlns:q494="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Datos" nillable="true" type="q494:BAPActualizarDatos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -7088,7 +7087,7 @@
   <xs:element name="CrearNodo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q496="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="nodo" nillable="true" type="q496:Nodo" />
+        <xs:element xmlns:q495="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="nodo" nillable="true" type="q495:Nodo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -7107,7 +7106,7 @@
   <xs:element name="ConsultarNodosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q497="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarNodosResult" nillable="true" type="q497:ArrayOfNodo" />
+        <xs:element xmlns:q496="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarNodosResult" nillable="true" type="q496:ArrayOfNodo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -7121,7 +7120,21 @@
   <xs:element name="ConsultarArbolResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q498="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarArbolResult" nillable="true" type="q498:Arbol" />
+        <xs:element xmlns:q497="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarArbolResult" nillable="true" type="q497:Arbol" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarNodoCreado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdArbol" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarNodoCreadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q498="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarNodoCreadoResult" nillable="true" type="q498:Nodo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

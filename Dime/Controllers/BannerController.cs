@@ -242,13 +242,18 @@ namespace Dime.Controllers
             return jsonResult;
         }
         [HttpPost]
-        public JsonResult RegistrarCuentasPorTelefono(IList<string> IAsociadosSi, IList<string> IAsociadosNo)
+        public JsonResult RegistrarCuentasPorTelefono(IList<string> IAsociadosSi)
         {
             
             if (IAsociadosSi != null && IAsociadosSi != null)
             {
                 BAPActualizarDatos Datos = new BAPActualizarDatos();
-                bannerservice.RegistrarActualizaciondeDatos(IAsociadosSi.ToList(), IAsociadosNo.ToList(), Datos);
+                Datos.CuentaAsociada = Convert.ToDecimal(Session["CuentaBanner"]);
+                Datos.UsuarioGestion = Convert.ToDecimal(Session["Usuario"]);
+                Datos.AliadoGestion = Session["AliadoLogeado"].ToString();
+                Datos.OperacionGestion = Session["OperacionUsuarioHolos"].ToString();
+              
+                bannerservice.RegistrarActualizaciondeDatos(IAsociadosSi.ToList(), Datos);
 
                 return new JsonResult
                 {
@@ -262,18 +267,6 @@ namespace Dime.Controllers
             {
                 return null;
             }
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult ActualizacionDatos(ViewModelBanner modelo)
-        {
-            modelo.BAPActualizarDatos.UsuarioGestion = Convert.ToDecimal(Session["Usuario"]);
-            modelo.BAPActualizarDatos.AliadoGestion = Session["AliadoLogeado"].ToString();
-            modelo.BAPActualizarDatos.OperacionGestion = Session["OperacionUsuarioHolos"].ToString();
-            
-            bannerservice.RegistraFox(modelo.GestionFox);
-            ViewBag.GuardadoFox = "GUARDADO";
-            return View();
         }
         public JsonResult TiposDeContactoList(decimal gestion)
         {
