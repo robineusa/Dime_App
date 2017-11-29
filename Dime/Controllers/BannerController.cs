@@ -64,9 +64,9 @@ namespace Dime.Controllers
                     else { ViewBag.Fox = false; }
 
                     //Verificacion Actualizacion de Datos
-                    if (bannerservice.ValidarClienteEnActualizaciondeDatos(CuentaConsulta))
-                    { ViewBag.ActDatos = true; }
-                    else { ViewBag.ActDatos = false; }
+                    //if (bannerservice.ValidarClienteEnActualizaciondeDatos(CuentaConsulta))
+                    //{ ViewBag.ActDatos = true; }
+                    //else { ViewBag.ActDatos = false; }
 
                 }
             }
