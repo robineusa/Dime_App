@@ -52,7 +52,7 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
-
+        [HttpPost]
         public JsonResult RetornaIdNodo(string IDPadre, string IDdArbol, string NombreNodo)
         {
             Nodo model = new Nodo();
@@ -65,8 +65,20 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        [HttpPost]
+        public JsonResult ActualizaCodigoHTMLArbol(string CodigoHTML, string IDdArbol)
+        {
+            Arbol model = new Arbol();
 
-        
+            model.Id = Convert.ToInt32(IDdArbol);
+            model.CodigoHtml = CodigoHTML;
+            ProcesosService.ActualizarCodigoArbol(model);
+
+            var jsonResult = Json(JsonConvert.SerializeObject("Proceso Exitoso"), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
 
 
     }

@@ -1,11 +1,15 @@
 ﻿$(document).ready(function () {
     var IdArbol = 1;
     var IdPadre = 0;
+
     ConstruirArbol(IdArbol);
 
-    $('#Body_Layout').on('click', function () { ocultar(); });
+    //$('#Body_Layout').on('click', function () { });
+
+
 
 });
+
 
 function ConstruirArbol(idArbol) {
     $.ajax({
@@ -17,9 +21,10 @@ function ConstruirArbol(idArbol) {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(result);
-            $('#InsertaArbol').append('<label id="NombreArbol" idArb="' + json.Id+ '" onmousedown="return evnt(this)" style="; font-weight:bold;"><i class="fa fa-folder"></i>' +
-                        '&nbsp' + json.NombreArbol + '</label>' +
-                  '<br/><ul id="ulPrincipal">' +
+            $('#InsertaArbol').append('<div id="NombreArbol" idArb="' + json.Id + '" onclick="return evnt(this)" style="font-weight:bold;"><i class="fa fa-folder"></i>' +
+                        '&nbsp' + json.NombreArbol + ' '+
+                        '<a href="#CrearNodo" data-toggle="modal" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus-square-o"></i></a></div>' +
+                  '<ul id="ulPrincipal">' +
                             json.CodigoHtml +
                         '</ul>');
         },
@@ -28,23 +33,15 @@ function ConstruirArbol(idArbol) {
         }
     });
 }
+
+
+
 function evnt(e) {
-    if (event.button == 2) {
-        window.event.cancelBubble = true;
-        var x = event.clientX;
-        var y = event.clientY;
-        document.getElementById("Menu").style.position = "absolute";
-        document.getElementById("Menu").style.display = "block";
-        document.getElementById("Menu").style.marginLeft = x - 270 + "px";
-        document.getElementById("Menu").style.marginTop = y - 240 + "px";
-        event.preventDefault();
-        $(document.getElementById(e.id)).bind("contextmenu", function (e) {
-            return false;
-        });
+    if (event.button == 0) {
+        if (e.id != "NombreArbol") { window.event.cancelBubble = true; }
         IdPadre = e.id;
         IdArbol = $("#NombreArbol").attr("idArb");
     }
-
 }
 
 function crear() {
@@ -60,33 +57,34 @@ function crear() {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
-            AgregaNodo(json, IdPadre);
+            AgregaNodo(json, IdPadre, IdArbol);
         },
         error: function (request, status, error) {
             alert(request.responseText);
         }
     });
-
-    //IdPadre = null;
 }
 
-function AgregaNodo(Data, IdPadre)
+function AgregaNodo(Data, IdPadre, idarbol)
 {
-    alert(IdPadre);
     if (IdPadre == 'NombreArbol') {
 
         var objeto = document.getElementById('ulPrincipal');
         if (objeto.firstElementChild == null) {
             $(objeto).append('<ul id="0">' +
-                    '<li id="' + Data.Id + '" onmousedown=" return evnt(this)">' +
-                        '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo + '' +
+                    '<li id="' + Data.Id + '" onmouseup="return evnt(this)">' +
+                        '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo +
+                        '<a href="#CrearNodo" data-toggle="modal" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus-square-o"></i></a>' +
                     '</li>' +
                 '</ul>');
         }
+
+
         else {
             $('#0').append('' +
-                    '<li id="' + Data.Id + '" onmousedown=" return evnt(this)">' +
-                        '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo + '' +
+                    '<li id="' + Data.Id + '" onmouseup=" return evnt(this)">' +
+                        '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo +
+                        '<a href="#CrearNodo" data-toggle="modal" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus-square-o"></i></a>' +
                     '</li>' +
                 '');
         }
@@ -96,10 +94,12 @@ function AgregaNodo(Data, IdPadre)
     }
     else {
         var objeto = document.getElementById(IdPadre);
-        if (objeto.childNodes.length < 3) {
+        alert(objeto.childNodes.length);
+        if (objeto.childNodes.length < 4) {
             $(objeto).append('<ul id="' + objeto.id + '">' +
-                    '<li id="' + Data.Id + '" onmousedown=" return evnt(this)">' +
-                        '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo + '' +
+                    '<li id="' + Data.Id + '" onmouseup=" return evnt(this)">' +
+                        '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo +
+                        '<a href="#CrearNodo" data-toggle="modal" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus-square-o"></i></a>' +
                     '</li>' +
                 '</ul>');
             $('#CerrarModal').click();
@@ -109,8 +109,9 @@ function AgregaNodo(Data, IdPadre)
 
         }
         else {
-            $('#' + objeto.id + ' ul').append('<li id="' + Data.Id + '" onmousedown=" return evnt(this)">' +
-                                '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo + '' +
+            $('#' + objeto.id + ' ul').append('<li id="' + Data.Id + '" onmouseup=" return evnt(this)">' +
+                                '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo +
+                                '<a href="#CrearNodo" data-toggle="modal" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus-square-o"></i></a>' +
                     '</li>'
                     );
             var x = document.getElementById('CerrarModal');
@@ -119,7 +120,20 @@ function AgregaNodo(Data, IdPadre)
         }
     }
     var html = $("#ulPrincipal").html();
-    alert(html);
+    $.ajax({
+        type: "POST",
+        url: urlActualizaHTMLArbol,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ CodigoHTML: html, IDdArbol: idarbol }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            console.log(json);
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
 }
 
 function ocultar() {
@@ -135,3 +149,4 @@ function poner() {
 function seleccionado() {
     document.getElementById("Menu").style.display = "block";
 }
+

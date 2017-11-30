@@ -33,3 +33,20 @@
 {
     list-style: none;
 }
+
+#ulPrincipal li:hover
+{
+    background-color:rgba(100, 100, 100, 0.1);
+    /*color:#c82e2e;*/
+}
+
+#ulPrincipal a, #InsertaArbol a
+{
+    text-decoration:none;
+    color:black;
+    float:right;
+    margin-right: 30px;
+}
+
+
+

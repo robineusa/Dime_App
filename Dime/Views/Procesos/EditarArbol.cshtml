@@ -4,7 +4,7 @@
     ViewBag.SubTitle = "Procesos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link href="~/AdminLTE/bootstrap/css/EditarArbol.css" rel="stylesheet" />
+<link href="~/AdminLTE/bootstrap/css/EditarArbol.css?1.0.4" rel="stylesheet" />
 <div class="row">
     <div class="col-md-6">
         <div class="box box-danger">
@@ -22,12 +22,13 @@
                             </ul>
                         </div>*@
                     </div>
-                    <ul id="Menu" onmouseover="poner()">
+                    @*<ul id="Menu" onmouseover="poner()">
                         <li  onmouseup="seleccionado()"><a href="#CrearNodo" style="text-decoration:none; color:black;" data-toggle="modal" data-backdrop="static"
                                                                                  data-keyboard="false">Crear</a><i class="fa fa-plus-square-o"></i>
                         </li>
                         <li>Eliminar <i class="fa fa-times"></i></li>
-                    </ul>
+                    </ul>*@
+                    
                 </div>
             </div>
         </div>
@@ -89,6 +90,8 @@
     <script>
         var urlLLamarArbolId = '@Url.Action("LLamarArbolId", "Procesos")';
         var urlRetornaIdNodo = '@Url.Action("RetornaIdNodo", "Procesos")';
+        var urlActualizaHTMLArbol = '@Url.Action("ActualizaCodigoHTMLArbol", "Procesos")';
+        
     </script>
-    <script src="~/Scripts/Procesos/EditarArbol.js?1.0.6"></script>
+    <script src="~/Scripts/Procesos/EditarArbol.js?1.1.3"></script>
 }

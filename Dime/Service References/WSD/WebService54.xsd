@@ -7138,18 +7138,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ConsultarNodoCreado">
+  <xs:element name="ActualizarCodigoArbol">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="IdArbol" type="xs:int" />
+        <xs:element xmlns:q499="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="arbol" nillable="true" type="q499:Arbol" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ConsultarNodoCreadoResponse">
+  <xs:element name="ActualizarCodigoArbolResponse">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q499="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarNodoCreadoResult" nillable="true" type="q499:Nodo" />
-      </xs:sequence>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
   <xs:element name="RegistrarSolicitudRetencionAutomatico">
