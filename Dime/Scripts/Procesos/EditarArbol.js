@@ -11,130 +11,110 @@
 });
 
 
-function ConstruirArbol(idArbol) {
-    $.ajax({
-        type: "POST",
-        url: urlLLamarArbolId,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ IDdArbol: idArbol }),
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            console.log(result);
-            $('#InsertaArbol').append('<div id="NombreArbol" idArb="' + json.Id + '" onclick="return evnt(this)" style="font-weight:bold;"><i class="fa fa-folder"></i>' +
-                        '&nbsp' + json.NombreArbol + ' '+
-                        '<a href="#CrearNodo" data-toggle="modal" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus-square-o"></i></a></div>' +
-                  '<ul id="ulPrincipal">' +
-                            json.CodigoHtml +
-                        '</ul>');
-        },
-        error: function (request, status, error) {
-            alert(request.responseText);
-        }
-    });
+//function ConstruirArbol(idArbol) {
+//    $.ajax({
+//        type: "POST",
+//        url: urlLLamarArbolId,
+//        contentType: "application/json; charset=utf-8",
+//        data: JSON.stringify({ IDdArbol: idArbol }),
+//        dataType: "JSON",
+//        success: function (result) {
+//            var json = JSON.parse(result);
+//            console.log(result);
+//            $('#InsertaArbol').append('<div id="NombreArbol" idArb="' + json.Id + '" onclick="return evnt(this)" style="font-weight:bold;"><i class="fa fa-folder"></i>' +
+//                        '&nbsp' + json.NombreArbol + ' '+
+//                        '<a href="#CrearNodo" data-toggle="modal" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus-square-o"></i></a></div>' +
+//                  '<ul id="ulPrincipal">' +
+//                            json.CodigoHtml +
+//                        '</ul>');
+//        },
+//        error: function (request, status, error) {
+//            alert(request.responseText);
+//        }
+//    });
+//}
+
+var contador = 0;
+var contador1 = 0;
+var nodoSeleccionado = {
+    IdPadre: "",
+    Id: ""
 }
+//var IdPadre = 0;
 
+function evnt(objeto) {
 
+    window.event.cancelBubble = true;
+    obj = objeto.parentNode;
+    nodoSeleccionado.IdPadre = obj.id;
+    nodoSeleccionado.Id = objeto.id;
 
-function evnt(e) {
-    if (event.button == 0) {
-        if (e.id != "NombreArbol") { window.event.cancelBubble = true; }
-        IdPadre = e.id;
-        IdArbol = $("#NombreArbol").attr("idArb");
-    }
 }
 
 function crear() {
-    var NomNodo = $('#Nombre_Nodo').val();
-    var Result;
-    
-    $.ajax({
-        type: "POST",
-        url: urlRetornaIdNodo,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ IDPadre: IdPadre, IDdArbol: IdArbol, NombreNodo: NomNodo }),
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            console.log(json);
-            AgregaNodo(json, IdPadre, IdArbol);
-        },
-        error: function (request, status, error) {
-            alert(request.responseText);
-        }
-    });
-}
+    if (nodoSeleccionado.IdPadre == "InsertaArbol") {
 
-function AgregaNodo(Data, IdPadre, idarbol)
-{
-    if (IdPadre == 'NombreArbol') {
+        $("#ulPrincipal").append("<i></i><li  onmousedown='return evnt(this)'" + "id= 'li" + contador + "'>"
+           + "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'> Primer nodo exitoso  <i onclick='crear()' class='fa fa-plus-circle'></i><i onclick='Eliminar()' class='fa fa-minus-circle'></i></span> </li>")
 
-        var objeto = document.getElementById('ulPrincipal');
-        if (objeto.firstElementChild == null) {
-            $(objeto).append('<ul id="0">' +
-                    '<li id="' + Data.Id + '" onmouseup="return evnt(this)">' +
-                        '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo +
-                        '<a href="#CrearNodo" data-toggle="modal" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus-square-o"></i></a>' +
-                    '</li>' +
-                '</ul>');
+        contador++;
+
+    } else {
+        var objeto = document.getElementById(nodoSeleccionado.Id);
+        //alert("Creacion li - " + objeto.id);
+
+        if (objeto.childNodes.length < 3) {
+
+            $(objeto).append("<ul id='ul  ;" + contador1 + "'>" + "<i></i>" + "<li  onmousedown='return evnt(this)'" +
+                           "id= 'li" + contador + "." + contador1 + "'>" + "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'> nodo creado <i onclick='crear()' class='fa fa-plus-circle'></i><i onclick='Eliminar()' class='fa fa-minus-circle'></i></span></li> </ul>");
+
+            contador1++;
+
+        } else {
+
+            var ulNivel1 = objeto.childNodes[2];
+            $(ulNivel1).append("<i></i>" + "<li  id='subHijo1." + contador + "-" + contador1 +
+                "'  onmousedown='return evnt(this)'>" +
+                "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'>nodo creado<i onclick='crear()' class='fa fa-plus-circle'></i><i onclick='Eliminar()' class='fa fa-minus-circle'></i><span/></li>");
+
+            contador1++;
+
         }
 
-
-        else {
-            $('#0').append('' +
-                    '<li id="' + Data.Id + '" onmouseup=" return evnt(this)">' +
-                        '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo +
-                        '<a href="#CrearNodo" data-toggle="modal" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus-square-o"></i></a>' +
-                    '</li>' +
-                '');
-        }
-        var x = document.getElementById('CerrarModal');
-        x.click();
-        $('#Nombre_Nodo').val('');
     }
-    else {
-        var objeto = document.getElementById(IdPadre);
-        alert(objeto.childNodes.length);
-        if (objeto.childNodes.length < 4) {
-            $(objeto).append('<ul id="' + objeto.id + '">' +
-                    '<li id="' + Data.Id + '" onmouseup=" return evnt(this)">' +
-                        '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo +
-                        '<a href="#CrearNodo" data-toggle="modal" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus-square-o"></i></a>' +
-                    '</li>' +
-                '</ul>');
-            $('#CerrarModal').click();
-            var x = document.getElementById('CerrarModal');
-            x.click();
-            $('#Nombre_Nodo').val('');
+}
+function Eliminar() {
 
-        }
-        else {
-            $('#' + objeto.id + ' ul').append('<li id="' + Data.Id + '" onmouseup=" return evnt(this)">' +
-                                '<i class="fa fa-folder"></i>&nbsp' + Data.NombreNodo +
-                                '<a href="#CrearNodo" data-toggle="modal" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus-square-o"></i></a>' +
-                    '</li>'
-                    );
-            var x = document.getElementById('CerrarModal');
-            x.click();
-            $('#Nombre_Nodo').val('');
+    var objeto;
+    objeto = document.getElementById(nodoSeleccionado.Id);
+    var objPadre = objeto.parentNode;
+
+    var cont = objPadre.childNodes.length;
+    //alert(objPadre.getAttribute("id") + "-" + cont);
+    var numeral;
+    for (f = 0; f < cont; f++) {
+        if (objPadre.childNodes[f].nodeType == Node.ELEMENT_NODE) {
+
+            if (objPadre.childNodes[f].id == objeto.getAttribute("id")) {
+                numeral = f;
+
+            }
         }
     }
-    var html = $("#ulPrincipal").html();
-    $.ajax({
-        type: "POST",
-        url: urlActualizaHTMLArbol,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ CodigoHTML: html, IDdArbol: idarbol }),
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            console.log(json);
-        },
-        error: function (request, status, error) {
-            alert(request.responseText);
-        }
-    });
+    objPadre.removeChild(objPadre.childNodes[numeral]);
 }
+function ocultar() {
+    document.getElementById("lista").style.display = "none";
+
+}
+
+function poner() {
+    document.getElementById("lista").style.display = "block";
+
+}
+
+
+
 
 function ocultar() {
     document.getElementById("Menu").style.display = "none";
@@ -150,3 +130,10 @@ function seleccionado() {
     document.getElementById("Menu").style.display = "block";
 }
 
+function pruebas(obj) {
+    obj.style.backgroundColor = "#336699";
+}
+
+function pruebas2(obj) {
+    obj.style.backgroundColor = "";
+}

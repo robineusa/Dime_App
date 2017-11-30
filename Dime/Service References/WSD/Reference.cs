@@ -18131,12 +18131,6 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarNodoCreado", ReplyAction="http://tempuri.org/IProcesosService/ConsultarNodoCreadoResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Nodo> ConsultarNodoCreadoAsync(int IdArbol);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ActualizarCodigoArbol", ReplyAction="http://tempuri.org/IProcesosService/ActualizarCodigoArbolResponse")]
-        void ActualizarCodigoArbol(Telmexla.Servicios.DIME.Entity.Arbol arbol);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ActualizarCodigoArbol", ReplyAction="http://tempuri.org/IProcesosService/ActualizarCodigoArbolResponse")]
-        System.Threading.Tasks.Task ActualizarCodigoArbolAsync(Telmexla.Servicios.DIME.Entity.Arbol arbol);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18196,14 +18190,6 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Nodo> ConsultarNodoCreadoAsync(int IdArbol) {
             return base.Channel.ConsultarNodoCreadoAsync(IdArbol);
-        }
-        
-        public void ActualizarCodigoArbol(Telmexla.Servicios.DIME.Entity.Arbol arbol) {
-            base.Channel.ActualizarCodigoArbol(arbol);
-        }
-        
-        public System.Threading.Tasks.Task ActualizarCodigoArbolAsync(Telmexla.Servicios.DIME.Entity.Arbol arbol) {
-            return base.Channel.ActualizarCodigoArbolAsync(arbol);
         }
     }
     

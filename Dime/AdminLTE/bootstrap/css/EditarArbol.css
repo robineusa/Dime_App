@@ -1,4 +1,4 @@
-﻿#Menu {
+﻿/*#Menu {
     display:none; 
     background-color: white; 
     width: 200px; 
@@ -38,14 +38,11 @@
 {
     background-color:rgba(100, 100, 100, 0.1);
     /*color:#c82e2e;*/
-}
+}*/
 
-#ulPrincipal a, #InsertaArbol a
+#ulPrincipal li
 {
-    text-decoration:none;
-    color:black;
-    float:right;
-    margin-right: 30px;
+     text-decoration: none;
 }
 
 
