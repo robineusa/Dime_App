@@ -31,6 +31,22 @@ namespace Dime.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdminArboles(Arbol model, string Envia)
+        {
+            if (Envia == "Guardar" && model.NombreArbol != "")
+            {
+                ProcesosService.CrearArbol(model);
+                ViewBag.Mensaje = "Arbol Guardado";
+            }
+            else
+            {
+                ViewBag.Mensaje = "El Nombre del Arbol NO Puede ser Vacio";
+            }
+            return View(model);
+        }
+
         [HttpGet]
         public ActionResult EditarArbol()
         {
@@ -78,7 +94,13 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
-
+        [HttpPost]
+        public JsonResult ConsultaArboles()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ListaArboles()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
 
 
     }

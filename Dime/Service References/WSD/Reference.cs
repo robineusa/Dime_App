@@ -18131,6 +18131,18 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarNodoCreado", ReplyAction="http://tempuri.org/IProcesosService/ConsultarNodoCreadoResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Nodo> ConsultarNodoCreadoAsync(int IdArbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/CrearArbol", ReplyAction="http://tempuri.org/IProcesosService/CrearArbolResponse")]
+        void CrearArbol(Telmexla.Servicios.DIME.Entity.Arbol arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/CrearArbol", ReplyAction="http://tempuri.org/IProcesosService/CrearArbolResponse")]
+        System.Threading.Tasks.Task CrearArbolAsync(Telmexla.Servicios.DIME.Entity.Arbol arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ListaArboles", ReplyAction="http://tempuri.org/IProcesosService/ListaArbolesResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Arbol> ListaArboles();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ListaArboles", ReplyAction="http://tempuri.org/IProcesosService/ListaArbolesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Arbol>> ListaArbolesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18190,6 +18202,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Nodo> ConsultarNodoCreadoAsync(int IdArbol) {
             return base.Channel.ConsultarNodoCreadoAsync(IdArbol);
+        }
+        
+        public void CrearArbol(Telmexla.Servicios.DIME.Entity.Arbol arbol) {
+            base.Channel.CrearArbol(arbol);
+        }
+        
+        public System.Threading.Tasks.Task CrearArbolAsync(Telmexla.Servicios.DIME.Entity.Arbol arbol) {
+            return base.Channel.CrearArbolAsync(arbol);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Arbol> ListaArboles() {
+            return base.Channel.ListaArboles();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Arbol>> ListaArbolesAsync() {
+            return base.Channel.ListaArbolesAsync();
         }
     }
     

@@ -1,7 +1,9 @@
 ﻿$(document).ready(function () {
-    var IdArbol = 1;
+    
+    var urlParams = new URLSearchParams(window.location.search);
+    var Parametro = urlParams.get('IdArbol');
+    var IdArbol = Parametro;
     var IdPadre = 0;
-
     ConstruirArbol(IdArbol);
 
     //$('#Body_Layout').on('click', function () { });

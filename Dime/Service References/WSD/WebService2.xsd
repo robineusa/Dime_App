@@ -3743,6 +3743,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Arbol" nillable="true" type="tns:Arbol" />
+  <xs:complexType name="ArrayOfArbol">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Arbol" nillable="true" type="tns:Arbol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArbol" nillable="true" type="tns:ArrayOfArbol" />
   <xs:complexType name="RSPSeguimientos">
     <xs:sequence>
       <xs:element minOccurs="0" name="AliadoSolicitud" nillable="true" type="xs:string" />
