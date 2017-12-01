@@ -4,8 +4,9 @@
     ViewBag.SubTitle = "Procesos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="~/AdminLTE/bootstrap/css/EditarArbol.css?1.0.4" rel="stylesheet" />
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="box box-danger">
             <div class="box-header with-border">
                 <h2 class="page-header" style="margin-top:40px">
@@ -14,23 +15,29 @@
                 <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                     <br />
                     <div id="InsertaArbol">
-                        <p id="obj1" onclick="evnt(this)">parrafo</p>
-                        <div>
+                        <p id="Nombre" onmouseover="evnt(this)"> Nuevo arbol<i onclick="crear()" class='fa fa-plus-circle'></i></p>
+                        <ul id="ulPrincipal">
+                            
+                        </ul>
+                        @*<p id="obj1" onclick="evnt(this)">parrafo</p>*@
+                        @*<div>
                             <ul id="ulPrincipal">
 
                             </ul>
-                        </div>
-                        <ul id="lista" style="display:none;" onmouseover="poner()" onmouseout="ocultar()">
-                            <li onclick="crear()" onmouseup="seleccionado()">Crear</li>
-                            <li>Eliminar</li>
-                        </ul>
-
+                        </div>*@
                     </div>
+                    @*<ul id="Menu" onmouseover="poner()">
+                        <li  onmouseup="seleccionado()"><a href="#CrearNodo" style="text-decoration:none; color:black;" data-toggle="modal" data-backdrop="static"
+                                                                                 data-keyboard="false">Crear</a><i class="fa fa-plus-square-o"></i>
+                        </li>
+                        <li>Eliminar <i class="fa fa-times"></i></li>
+                    </ul>*@
+                    
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="box box-danger">
             <div class="box-header with-border">
                 <h2 class="page-header" style="margin-top:40px">
@@ -45,31 +52,50 @@
         </div>
     </div>
 </div>
-<div id="campanas" class="modal">
-    <div class="modal-dialog" style="width:290px; height:150px;">
-        <div class="modal-content" style="width:290px;  height:150px;">
-            <div class="modal-header" style="width:290px;">
-                <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
-            </div>
-            <div class="modal-body" style="width:290px;">
-                <br />
-                <div class="row">
-                    @using (Html.BeginForm("EditarArbol", "Procesos", FormMethod.Post, new { role = "form" }))
-                    {
-
-                        <label name="labelnodo">Digite el nombre del nodo</label><br />
-                                            <input type="text" name="nombrenodo" value="" />
-                                            <input type="submit" name="crearnodo" value="Crear" />
-                    }
+<div id="CrearNodo" class="modal">
+                <div class="modal-dialog" style="width:500px;">
+                    <div class="modal-content" style="width:500px; top:50px;">
+                        <div style="width:500px; height:25px;">
+                            <button id="CerrarModal" type="button" class="close" style="color:white; margin-right: -25px; margin-top:-25px;" data-dismiss="modal">X</button>
+                        </div>
+                        
+                        <div class="modal-body" style="width:500px;">
+                            <br />
+                            <div class="row">
+                                <div class="col-lg-offset-1" style="width:480px; margin-left:20px;">
+                                    <h2 class="page-header" style="margin-top:-40px; font-weight: bold;">
+                                        <i class="fa fa-code-fork"></i> Nombre Nodo
+                                    </h2>
+                                    <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                        <br />
+                                        <table>
+                                            <tr>
+                                                <td style="padding-left:1px; width:200px;">
+                                                    <small>Digite el Nombre del Nodo:</small>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-left:1px; width:200px;">
+                                                    <input id="Nombre_Nodo" type="text" class="form-control input-sm" placeholder="Digite Nombre" />
+                                                </td>
+                                                <td style="padding-left:1px; width:200px; text-align:center;">
+                                                    <button type="submit" id="BotonBusca" class="btn btn-primary" name="BotonEnvia" value="Buscar" onclick="crear();" >Agregar</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
     </div>
-</div>
 @section Scripts{
     <script>
         var urlLLamarArbolId = '@Url.Action("LLamarArbolId", "Procesos")';
+        var urlRetornaIdNodo = '@Url.Action("RetornaIdNodo", "Procesos")';
+        var urlActualizaHTMLArbol = '@Url.Action("ActualizaCodigoHTMLArbol", "Procesos")';
+        
     </script>
-    <script src="~/Scripts/Procesos/EditarArbol.js?1.0.3"></script>
+    <script src="~/Scripts/Procesos/EditarArbol.js?1.1.3"></script>
 }
