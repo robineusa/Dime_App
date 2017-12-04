@@ -51,13 +51,25 @@ function evnt(objeto) {
     nodoSeleccionado.IdPadre = obj.id;
     nodoSeleccionado.Id = objeto.id;
 
+    //for (var i = 0; i < objeto.childNodes.length; i++) {
+    //    //alert(objeto.childNodes[i].nodeName);
+    //    if (objeto.childNodes[i].nodeName == "DIV") {
+    //        div = objeto.childNodes[i];
+    //    }
+    //}
+    //div.style.visibility = "visible";
+
 }
 
 function crear() {
     if (nodoSeleccionado.IdPadre == "InsertaArbol") {
 
-        $("#ulPrincipal").append("<i></i><li  onmousedown='return evnt(this)'" + "id= 'li" + contador + "'>"
-           + "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'> Primer nodo exitoso  <i onclick='crear()' class='fa fa-plus-circle'></i><i onclick='Eliminar()' class='fa fa-minus-circle'></i></span> </li>")
+        $("#ulPrincipal").append("<i></i>" +
+           "<li  onmousedown='return evnt(this)'" + "id= 'li" + contador + "'>" +
+            "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'> Primer nodo exitoso </span>" +
+            "<i onclick='crear()' class='fa fa-plus-circle'></i>" +
+            "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>"+
+           "</li>")
 
         contador++;
 
@@ -67,17 +79,24 @@ function crear() {
 
         if (objeto.childNodes.length < 3) {
 
-            $(objeto).append("<ul id='ul  ;" + contador1 + "'>" + "<i></i>" + "<li  onmousedown='return evnt(this)'" +
-                           "id= 'li" + contador + "." + contador1 + "'>" + "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'> nodo creado <i onclick='crear()' class='fa fa-plus-circle'></i><i onclick='Eliminar()' class='fa fa-minus-circle'></i></span></li> </ul>");
+            $(objeto).append("<ul id='ul  ;" + contador1 + "'>" + "<i></i>" +
+                "<li  onmousedown='return evnt(this)'" + "id= 'li" + contador + "." + contador1 + "'>" +
+                   "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'> nodo creado </span>" +
+                   "<i onclick='crear()' class='fa fa-plus-circle'></i>" +
+                   "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
+                "</li> </ul>");
 
             contador1++;
 
         } else {
 
             var ulNivel1 = objeto.childNodes[2];
-            $(ulNivel1).append("<i></i>" + "<li  id='subHijo1." + contador + "-" + contador1 +
-                "'  onmousedown='return evnt(this)'>" +
-                "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'>nodo creado<i onclick='crear()' class='fa fa-plus-circle'></i><i onclick='Eliminar()' class='fa fa-minus-circle'></i><span/></li>");
+            $(ulNivel1).append("<i></i>" + "<li  id='subHijo1." + contador + "-" + contador1 + "'  onmousedown='return evnt(this)'>" +
+                "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'>nodo creado" +
+                  "<i onclick='crear()' class='fa fa-plus-circle'></i>"+
+                  "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>"+
+                "<span/>" +
+               "</li>");
 
             contador1++;
 
