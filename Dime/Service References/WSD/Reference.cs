@@ -18383,4 +18383,65 @@ namespace Dime.WSD {
             return base.Channel.ConsultaAdministradorLogAsync(FechaInicio, FechaFin);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IOfertasComercialesService")]
+    public interface IOfertasComercialesService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/RegistrarImagen", ReplyAction="http://tempuri.org/IOfertasComercialesService/RegistrarImagenResponse")]
+        decimal RegistrarImagen(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/RegistrarImagen", ReplyAction="http://tempuri.org/IOfertasComercialesService/RegistrarImagenResponse")]
+        System.Threading.Tasks.Task<decimal> RegistrarImagenAsync(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/ConsultarImagenPorId", ReplyAction="http://tempuri.org/IOfertasComercialesService/ConsultarImagenPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales ConsultarImagenPorId(decimal IdImagen);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/ConsultarImagenPorId", ReplyAction="http://tempuri.org/IOfertasComercialesService/ConsultarImagenPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales> ConsultarImagenPorIdAsync(decimal IdImagen);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IOfertasComercialesServiceChannel : Dime.WSD.IOfertasComercialesService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class OfertasComercialesServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IOfertasComercialesService>, Dime.WSD.IOfertasComercialesService {
+        
+        public OfertasComercialesServiceClient() {
+        }
+        
+        public OfertasComercialesServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public OfertasComercialesServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public OfertasComercialesServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public OfertasComercialesServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public decimal RegistrarImagen(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen) {
+            return base.Channel.RegistrarImagen(Imagen);
+        }
+        
+        public System.Threading.Tasks.Task<decimal> RegistrarImagenAsync(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen) {
+            return base.Channel.RegistrarImagenAsync(Imagen);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales ConsultarImagenPorId(decimal IdImagen) {
+            return base.Channel.ConsultarImagenPorId(IdImagen);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales> ConsultarImagenPorIdAsync(decimal IdImagen) {
+            return base.Channel.ConsultarImagenPorIdAsync(IdImagen);
+        }
+    }
 }

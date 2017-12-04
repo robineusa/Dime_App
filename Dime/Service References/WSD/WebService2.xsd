@@ -3828,4 +3828,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RSLSeguimientos" nillable="true" type="tns:RSLSeguimientos" />
+  <xs:complexType name="IMGOfertasComeciales">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdImagen" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Imagen" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Link" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IMGOfertasComeciales" nillable="true" type="tns:IMGOfertasComeciales" />
 </xs:schema>

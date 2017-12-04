@@ -7286,4 +7286,32 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="RegistrarImagen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q510="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Imagen" nillable="true" type="q510:IMGOfertasComeciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarImagenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegistrarImagenResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarImagenPorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdImagen" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarImagenPorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q511="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarImagenPorIdResult" nillable="true" type="q511:IMGOfertasComeciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -5,6 +5,6 @@
     Renaming the file extension or editing the content of this file may   
     cause the file to be unrecognizable by the program.
 -->
-<GenericObjectDataSource DisplayName="VIPSolicitudes" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <TypeInfo>Dime.WSD.VIPSolicitudes</TypeInfo>
+<GenericObjectDataSource DisplayName="IMGOfertasComeciales" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+   <TypeInfo>Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales, Telmexla.Servicios.DIME.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
 </GenericObjectDataSource>

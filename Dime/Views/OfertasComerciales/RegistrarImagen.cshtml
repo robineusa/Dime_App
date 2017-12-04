@@ -1,0 +1,48 @@
+﻿@model Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales
+@{
+    ViewBag.Title = "RegistrarImagen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("RegistrarImagen", "OfertasComerciales", FormMethod.Post, new { id = "imagen", role = "form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-9" style="width:100%; ">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+
+                            <table>
+                                <tr>
+                                    <td width="200">
+                                        <small>Cuenta del Cliente</small>
+                                        @Html.TextBoxFor(m => m.Link, new { @class = "form-control input-sm", @Id = "Link" })
+                                    </td>
+                                    <td width="200">
+                                        <small>Cuenta del Cliente</small>
+                                        @Html.TextBoxFor(m => m.Descripcion, new { @class = "form-control input-sm", @Id = "Descripcion" })
+                                    </td>
+                                    <td width="200" style="padding-left:2px;">
+                                        <small>Estado</small>
+                                        @Html.DropDownListFor(m => m.Estado, new List<SelectListItem> {new SelectListItem{Text="ACTIVA", Value="ACTIVA" },
+                                                                                             new SelectListItem{Text="INACTIVA", Value="INACTIVA" } },
+                                                                                                              "--SELECCIONE--", new { @class = "form-control input-sm" })
+                                    </td>
+                                    <td width="200" style="padding-left:2px;">
+                                        <small>Estado</small>
+                                        <input type="file" id="imagen" name="imagen" />
+                                </tr>
+                            </table>
+                            <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;">Siguiente</button>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+

@@ -177,6 +177,7 @@
     <Compile Include="GPrincipalRecurrencia.cs" />
     <Compile Include="GPrincipalRecurrenciaInbound.cs" />
     <Compile Include="Graficos.cs" />
+    <Compile Include="IMGOfertasComeciales.cs" />
     <Compile Include="InboundModel.cs" />
     <Compile Include="Ingreso.cs" />
     <Compile Include="IngresosSoporte.cs" />
