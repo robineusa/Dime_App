@@ -154,7 +154,7 @@
 
                 @Html.TextBox("listaPermisosCrearMas", "", new { @style = "display:none" })
                 <br />
-                <button id="Crear_Usuarios" class="btn btn-block btn-primary btn-lg" style="width:15%;  margin-left:42.5%;" onclick="GuardarUsuarios()">Crear Usuarios</button>
+                <button id="Crear_Usuarios" class="btn btn-block btn-primary btn-lg" style="width:15%;  margin-left:42.5%; display:none;" onclick="GuardarUsuarios()">Crear Usuarios</button>
                 <label style="color:red" id="mensajeFinal"></label>
             </div>
         </div>
@@ -166,7 +166,7 @@
             var urlCrearUsuariosMasivo = '@Url.Action("GuardarUsuariosMasivos", "AdminUsuarios")';
             var urlPosiblesAccesosMasivo = '@Url.Action("PosiblesAccesosDeLineas", "AdminUsuarios")';
         </script>
-        <script src="~/Scripts/AdminUsuarios/CrearUsuariosMasivos.js?1.1.9"></script>
+        <script src="~/Scripts/AdminUsuarios/CrearUsuariosMasivos.js?1.2.0"></script>
         <script src="~/Scripts/AdminUsuarios/xls.js"></script>
 
 
