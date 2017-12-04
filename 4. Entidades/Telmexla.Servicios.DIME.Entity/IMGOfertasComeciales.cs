@@ -10,7 +10,7 @@ namespace Telmexla.Servicios.DIME.Entity
     public class IMGOfertasComeciales
     {
         public decimal IdImagen { get; set; }
-        public byte Imagen { get; set; }
+        public byte[] Imagen { get; set; }
         public string Link { get; set; }
         public string Descripcion { get; set; }
         public string Estado { get; set; }

@@ -38,7 +38,7 @@ namespace Dime.Controllers
                 {
                     imagendata = binaryimagen.ReadBytes(imagen.ContentLength);
                 }
-                modelo.Imagen =Convert.ToByte(imagendata);
+                modelo.Imagen =imagendata;
             }
 
             return View();
