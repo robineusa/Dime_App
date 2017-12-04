@@ -3205,9 +3205,6 @@
     <Content Include="Service References\WSD\Dime.WSD.FidelizacionRecursivaVistaDetalle.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\WSD\Dime.WSD.IMGOfertasComeciales.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\WSD\WebService.wsdl" />
     <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
