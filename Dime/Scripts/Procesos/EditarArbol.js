@@ -66,7 +66,7 @@ function crear() {
 
         $("#ulPrincipal").append("<i></i>" +
            "<li  onmousedown='return evnt(this)'" + "id= 'li" + contador + "'>" +
-            "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'> Primer nodo exitoso </span>" +
+            "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'> Primer nodo  </span>" +
             "<i onclick='crear()' class='fa fa-plus-circle'></i>" +
             "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>"+
            "</li>")
@@ -81,7 +81,7 @@ function crear() {
 
             $(objeto).append("<ul id='ul  ;" + contador1 + "'>" + "<i></i>" +
                 "<li  onmousedown='return evnt(this)'" + "id= 'li" + contador + "." + contador1 + "'>" +
-                   "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'> nodo creado </span>" +
+                   "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'> Nodo </span>" +
                    "<i onclick='crear()' class='fa fa-plus-circle'></i>" +
                    "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
                 "</li> </ul>");
@@ -92,7 +92,7 @@ function crear() {
 
             var ulNivel1 = objeto.childNodes[2];
             $(ulNivel1).append("<i></i>" + "<li  id='subHijo1." + contador + "-" + contador1 + "'  onmousedown='return evnt(this)'>" +
-                "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'>nodo creado" +
+                "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'>Subnivel" +
                   "<i onclick='crear()' class='fa fa-plus-circle'></i>"+
                   "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>"+
                 "<span/>" +

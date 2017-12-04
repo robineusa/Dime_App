@@ -108,7 +108,10 @@ namespace Dime.Controllers
                     {
                         recurrencia.ActualizarUusuarioGestionando(Convert.ToInt32(Usuario), Convert.ToDecimal(model.CargueBase.Cuenta));
                         model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
-                        model.NodosZonificados.AliadoZonificado = recurrencia.AliadoTecnico(Convert.ToString(model.ClientesTodos.Nodo)).AliadoZonificado;
+                        var result = recurrencia.AliadoTecnico(Convert.ToString(model.ClientesTodos.Nodo));
+                        if (result != null)
+                        { model.NodosZonificados.AliadoZonificado = result.AliadoZonificado; }
+                        else { model.NodosZonificados.AliadoZonificado = ""; }
                         ViewBag.Display = "block";
                         ViewBag.InventEquipos = "block";
                     }
