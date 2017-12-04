@@ -162,4 +162,3 @@ function poner(obj) {
 
 function quitar(obj) {
     obj.style.backgroundColor = "";
-}
