@@ -183,13 +183,13 @@ namespace Dime.Controllers
                     List<string> listaUsuariosCambiados = model.UsuariosACambiarMasivo.Split('-').OfType<string>().ToList();
                     if (model.UsuariosACambiarMasivo.Count() > 0)
                     {
-                        loginService.ActualizarAccesosUsuarioMasivo(listaUsuariosCambiados, model.IdLineaMasivo, listaPermisos, Session["IdUsuario"].ToString());
+                        loginService.ActualizarAccesosUsuarioMasivo(listaUsuariosCambiados, model.IdLineaMasivo, listaPermisos, Session["IdUsuario"].ToString(), model.ContraseñaMasiva);
                         model = new ViewModelAdminUsuario();
                         ViewBag.UsuarioExiste = "Actualización realizada";
                     }
                     else
                     {
-                        ViewBag.UsuarioExiste = "El usuario ingresado no existe ";
+                        ViewBag.UsuarioExiste = "No se selecciono ningun Usuario";
                     }
                 }
                 else

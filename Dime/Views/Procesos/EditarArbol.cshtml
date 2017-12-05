@@ -17,8 +17,17 @@
                     <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                         <br />
                         <div id="InsertaArbol">
-                            <p id="NombreArbol" onmouseover="evnt(this)"> Nuevo arbol<i onclick="crear()" class='fa fa-plus-circle'></i></p>
-                            <ul id="ulPrincipal" ></ul>
+                            <p id="NombreArbol" onmouseover="evnt(this)">
+                                Nuevo arbol
+
+                                <a href="#CrearNodo" style="text-decoration:none;" data-toggle="modal" data-keyboard="false">
+                                
+                                    <i class="fa fa-plus-circle"></i> 
+                                    
+                                </a> 
+                                <i onclick='Eliminar()' class='fa fa-minus-circle'></i> 
+                            </p>
+                            <ul id="ulPrincipal"></ul>
                             @*<p id="obj1" onclick="evnt(this)">parrafo</p>*@
                             @*<div>
                                     <ul id="ulPrincipal">

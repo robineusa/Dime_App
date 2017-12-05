@@ -9856,10 +9856,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task ActualizarAccesosUsuarioAsync(int idUsuario, int idPerfil, int idLinea, System.Collections.Generic.List<string> permisosOtorgados, string contraseña, string usuarioCambioo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ActualizarAccesosUsuarioMasivo", ReplyAction="http://tempuri.org/ILoginService/ActualizarAccesosUsuarioMasivoResponse")]
-        void ActualizarAccesosUsuarioMasivo(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo);
+        void ActualizarAccesosUsuarioMasivo(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo, string contraseña);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ActualizarAccesosUsuarioMasivo", ReplyAction="http://tempuri.org/ILoginService/ActualizarAccesosUsuarioMasivoResponse")]
-        System.Threading.Tasks.Task ActualizarAccesosUsuarioMasivoAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo);
+        System.Threading.Tasks.Task ActualizarAccesosUsuarioMasivoAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo, string contraseña);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ListaDatosUsuariosHolosPorCedulas", ReplyAction="http://tempuri.org/ILoginService/ListaDatosUsuariosHolosPorCedulasResponse")]
         System.Collections.Generic.List<Dime.WSD.UsuariosMasivoData> ListaDatosUsuariosHolosPorCedulas(System.Collections.Generic.List<string> cedulas);
@@ -10199,12 +10199,12 @@ namespace Dime.WSD {
             return base.Channel.ActualizarAccesosUsuarioAsync(idUsuario, idPerfil, idLinea, permisosOtorgados, contraseña, usuarioCambioo);
         }
         
-        public void ActualizarAccesosUsuarioMasivo(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo) {
-            base.Channel.ActualizarAccesosUsuarioMasivo(listaUsuariosCambiados, idLinea, listaPermisos, idUsuarioCambioo);
+        public void ActualizarAccesosUsuarioMasivo(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo, string contraseña) {
+            base.Channel.ActualizarAccesosUsuarioMasivo(listaUsuariosCambiados, idLinea, listaPermisos, idUsuarioCambioo, contraseña);
         }
         
-        public System.Threading.Tasks.Task ActualizarAccesosUsuarioMasivoAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo) {
-            return base.Channel.ActualizarAccesosUsuarioMasivoAsync(listaUsuariosCambiados, idLinea, listaPermisos, idUsuarioCambioo);
+        public System.Threading.Tasks.Task ActualizarAccesosUsuarioMasivoAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo, string contraseña) {
+            return base.Channel.ActualizarAccesosUsuarioMasivoAsync(listaUsuariosCambiados, idLinea, listaPermisos, idUsuarioCambioo, contraseña);
         }
         
         public System.Collections.Generic.List<Dime.WSD.UsuariosMasivoData> ListaDatosUsuariosHolosPorCedulas(System.Collections.Generic.List<string> cedulas) {

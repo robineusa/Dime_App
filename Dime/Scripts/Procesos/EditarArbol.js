@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    
+
     var urlParams = new URLSearchParams(window.location.search);
     var Parametro = urlParams.get('IdArbol');
     var IdArbol = Parametro;
@@ -51,8 +51,7 @@ function evnt(objeto) {
     obj = objeto.parentNode;
     nodoSeleccionado.IdPadre = obj.id;
     nodoSeleccionado.Id = objeto.id;
-    if (nodoSeleccionado.IdPadre == "")
-    {
+    if (nodoSeleccionado.IdPadre == "") {
         var objAbuelo = obj.parentNode;
         nodoSeleccionado.IdPadre = objAbuelo.id;
     }
@@ -62,36 +61,43 @@ function evnt(objeto) {
 function crear() {
     var NomNodo = $('#Nombre_Nodo').val();
     var Result;
-    
-    $.ajax({
-        type: "POST",
-        url: urlRetornaIdNodo,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ IDPadre: nodoSeleccionado.IdPadre, IDdArbol: IdArbol, NombreNodo: "Nodo Creado" }),
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            console.log(json);
-            AgregaNodo(json);
-        },
-        error: function (request, status, error) {
-            alert(request.responseText);
-        }
+    if (nodoSeleccionado.IdPadre != "" && NomNodo != "") {
+        $.ajax({
+            type: "POST",
+            url: urlRetornaIdNodo,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ IDPadre: nodoSeleccionado.IdPadre, IDdArbol: IdArbol, NombreNodo: NomNodo }),
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+                console.log(json);
+                AgregaNodo(json);
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
 
-    });
-    
+        });
+        $('#Nombre_Nodo').val('');
+    }
 }
 
 function AgregaNodo(Data) {
     window.event.cancelBubble = true;
     if (nodoSeleccionado.IdPadre == "InsertaArbol") {
-
-        $("#ulPrincipal").append("<i></i>" +
-           "<li id=' " + Data.Id + " ' onmouseover='return evnt(this)'>" +
+        //onmouseover='return evnt(this)'
+        $("#ulPrincipal").append(
+           "<li id=' " + Data.Id + " ' onmouseover='return evnt(this)' >" +
              "<span onmouseover='poner(this)' onmouseout='quitar(this)'> " + Data.NombreNodo + " </span>" +
-               "<i onclick='crear()' class='fa fa-plus-circle'></i>" +
-               "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
-           "</li>");
+               "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
+                        "<i class='fa fa-plus-circle'></i>" +
+                "</a>" +
+                        "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
+                 "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
+           "</li>"
+         
+
+           );
 
     } else {
         var objeto = document.getElementById(nodoSeleccionado.Id);
@@ -102,7 +108,7 @@ function AgregaNodo(Data) {
             if (objeto.childNodes[i].nodeName == "UL") {
                 ulPrincipal = false;
                 ulPosicion = i;
-            }               
+            }
         }
 
         if (ulPrincipal) {
@@ -111,8 +117,10 @@ function AgregaNodo(Data) {
                 "<i></i>" +
                 "<li id=' " + Data.Id + " '  onmouseover='return evnt(this)'>" +
                    "<span onmouseover='poner(this)' onmouseout='quitar(this)'>" + Data.NombreNodo + " </span>" +
-                     "<i onclick='crear()' class='fa fa-plus-circle'></i>" +
-                     "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
+                     "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
+                        "<i class='fa fa-plus-circle'></i>" +
+                      "</a>" +
+                        "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
                 "</li>" +
               "</ul>");
         } else {
@@ -121,8 +129,10 @@ function AgregaNodo(Data) {
             $(ulNivel1).append("<i></i>" +
               "<li  id=' " + Data.Id + " '  onmouseover='return evnt(this)'>" +
                  "<span onmouseover='poner(this)' onmouseout='quitar(this)'>" + Data.NombreNodo + "<span/>" +
-                    "<i onclick='crear()' class='fa fa-plus-circle'></i>"+
-                    "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>"+
+                    "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
+                       "<i class='fa fa-plus-circle'></i>" +
+                     "</a>" +
+                       "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
                "</li>");
 
             contador1++;
@@ -136,7 +146,7 @@ function Eliminar() {
     var objeto;
     objeto = document.getElementById(nodoSeleccionado.Id);
     var objPadre = objeto.parentNode;
- 
+
     var cont = objPadre.childNodes.length;
     //alert(objPadre.getAttribute("id") + "-" + cont);
     var numeral;
@@ -151,10 +161,22 @@ function Eliminar() {
     }
     objPadre.removeChild(objPadre.childNodes[numeral]);
     //objPadre.removeChild(objPadre.childNodes[numeral]);
-    
 
-    
+
+
 }
+
+function ValidarTexto(obj) {
+
+    if (obj.value != "") {
+        $("#BotonCrear").removeAttr("disabled");
+    }
+    else {
+        $("#BotonCrear").attr("disabled", "true");
+    }
+}
+
+
 
 function poner(obj) {
     obj.style.backgroundColor = "#336699";
@@ -162,3 +184,4 @@ function poner(obj) {
 
 function quitar(obj) {
     obj.style.backgroundColor = "";
+}
