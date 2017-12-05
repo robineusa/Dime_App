@@ -4,10 +4,6 @@
     ViewBag.SubTitle = "Procesos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
-
-
 @if (Session["Admin Arboles NoCheck"] != null)
 {
     <link href="~/AdminLTE/bootstrap/css/EditarArbol.css?1.0.4" rel="stylesheet" />
@@ -20,8 +16,8 @@
                     </h2>
                     <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                         <br />
-                        <div id="InsertaArbol" class="clt">
-                            <p id="NombreArbol" onmousedown="evnt(this)">
+                        <div id="InsertaArbol">
+                            <p id="NombreArbol" onmouseover="evnt(this)">
                                 Nuevo arbol
 
                                 <a href="#CrearNodo" style="text-decoration:none;" data-toggle="modal" data-keyboard="false">
@@ -31,7 +27,7 @@
                                 </a> 
                                 <i onclick='Eliminar()' class='fa fa-minus-circle'></i> 
                             </p>
-                            <ul id="ulPrincipal"  style="list-style-type: none;"></ul>
+                            <ul id="ulPrincipal"></ul>
                             @*<p id="obj1" onclick="evnt(this)">parrafo</p>*@
                             @*<div>
                                     <ul id="ulPrincipal">
@@ -89,10 +85,10 @@
                                     </tr>
                                     <tr>
                                         <td style="padding-left:1px; width:200px;">
-                                            <input id="Nombre_Nodo" type="text" class="form-control input-sm" placeholder="Digite Nombre" onblur="ValidarTexto(this)" />
+                                            <input id="Nombre_Nodo" type="text" class="form-control input-sm" placeholder="Digite Nombre" />
                                         </td>
                                         <td style="padding-left:1px; width:200px; text-align:center;">
-                                            <button type="submit" id="BotonCrear" class="btn btn-primary" name="BotonEnvia" value="Buscar" onclick="crear();" data-dismiss="modal" disabled>Agregar</button>
+                                            <button type="submit" id="BotonBusca" class="btn btn-primary" name="BotonEnvia" value="Buscar" onclick="crear();">Agregar</button>
                                         </td>
                                     </tr>
                                 </table>
@@ -110,7 +106,7 @@
             var urlActualizaHTMLArbol = '@Url.Action("ActualizaCodigoHTMLArbol", "Procesos")';
 
         </script>
-        <script src="~/Scripts/Procesos/EditarArbol.js?1.1.7"></script>
+        <script src="~/Scripts/Procesos/EditarArbol.js?1.1.6"></script>
     }
 
 }
