@@ -79,7 +79,7 @@ function crear() {
 
         });
         $('#Nombre_Nodo').val('');
-        
+
     }
 }
 
@@ -93,10 +93,10 @@ function AgregaNodo(Data) {
                "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
                         "<i class='fa fa-plus-circle'></i>" +
                 "</a>" +
-                      
+
                  "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
            "</li>"
-         
+
 
            );
 
@@ -104,7 +104,7 @@ function AgregaNodo(Data) {
         var objeto = document.getElementById(nodoSeleccionado.Id);
         var ulPosicion;
         var ulPrincipal = true;
-        
+
         for (var i = 0; i < objeto.childNodes.length; i++) {
             if (objeto.childNodes[i].nodeName == "UL") {
                 ulPrincipal = false;
@@ -139,7 +139,7 @@ function AgregaNodo(Data) {
         }
 
     }
- 
+
     $("#BotonCrear").attr("disabled", "disabled");
 }
 function Eliminar() {
