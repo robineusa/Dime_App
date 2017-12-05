@@ -259,6 +259,8 @@
     animation: 1s infinite latidico;
 }
 
+
+
 #Icono_8 {
     float: left;
     width: 45px;
@@ -295,4 +297,33 @@ z-index: 999;
     text-shadow: 1px 1px 1px #000;
     width: 150px;
     animation: 1s infinite ;
+}
+
+#Icono_9 {
+    animation: 1.8s bounceInDown;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    background: url('../../Resources/Images/Inbound/actudata.png') center no-repeat;
+    background-size: 38px 38px;
+}
+
+#Icono_9:hover:after{
+ content: 'Actualizar Datos'; 
+    position: absolute;
+    z-index: 999;
+   margin-left: -150px;
+   margin-right: -5px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    color: #eee; 
+    font-family: Century Gothic;
+    font-size: 12px;
+    /*padding: 5px 15px;*/
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+   width: 150px;
+    height: 35px;
+    line-height: 35px;
+    animation: 1s infinite latidico;
 }

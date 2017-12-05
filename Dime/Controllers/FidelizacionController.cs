@@ -867,7 +867,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult RegistrarSolicitud()
         {
-            ViewModelRegistrarSolicitud modelo = new ViewModelRegistrarSolicitud();
+            //ViewModelRegistrarSolicitud modelo = new ViewModelRegistrarSolicitud();
             ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
             var idNivel = 0;
             if (Session["Formulario Recuperacion"] != null)
@@ -880,7 +880,7 @@ namespace Dime.Controllers
             ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
             var s = fidelizacionServicio.getRecursivaAll(1);
             ViewBag.slEstrategia = s;
-            return View(modelo);
+            return View();
             
         }
         public JsonResult TraerInformacionCliente(int CuentaCliente)

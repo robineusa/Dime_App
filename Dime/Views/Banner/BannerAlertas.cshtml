@@ -14,7 +14,7 @@
             var urlFOX = '@Url.Action("Fox", "Banner")';
             var UrlUsabilidadBanner = '@Url.Action("RegistrarUsabilidadBanner", "Banner")';
     </script>
-    <script src="~/Scripts/Banner/BannerAlertas.js?1.1.5"></script>
+    <script src="~/Scripts/Banner/BannerAlertas.js?1.1.6"></script>
 </head>
 <body>
 
@@ -60,6 +60,12 @@
                             <div id="Icono_7" style="display: block"></div>
                         </a>
                     }
+                    @if (ViewBag.ActDatos == true)
+                {
+                        <a href="#ActualizarDatos" onclick="return LlamarActdatos()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                            <div id="Icono_9" style="display: block"></div>
+                        </a>
+                    }
                 </div>
 
             </div>
@@ -87,8 +93,6 @@
                     </div>
                 </div>
             </div>
-
-           
         }
         @if (ViewBag.ClaroVideo == true)
         {
@@ -110,7 +114,6 @@
                     </div>
                 </div>
             </div>
-
         }
         @if (ViewBag.MejorOferta == true)
         {
@@ -197,6 +200,27 @@
                 </div>
             </div>
 
+        }
+        @if (ViewBag.ActDatos == true)
+        {
+            <div id="ActualizarDatos" class="modal">
+                <div class="modal-dialog" style="width:1000px;">
+                    <div class="modal-content" style="width:1000px;">
+                        <div class="modal-header" style="width:1000px;">
+                            <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                            <h2 class="modal-title"><i class="fa fa-calendar-plus-o" aria-hidden="true" style="color:#d66b2a;"></i>&nbsp;&nbsp;Formulario Actualización de Datos</h2>
+                        </div>
+                        <div class="modal-body" style="width:1000px;">
+                            <br />
+                            <div class="row">
+                                <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                    <iframe id="ismo" style="width:100%;height:950px;margin-left:-10px;margin-top:-30px;" src="@Url.Action("ActualizacionDatos", "Banner")" frameborder="0" allowFullScreen="true"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         }
 
     </div>

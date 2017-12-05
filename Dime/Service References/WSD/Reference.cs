@@ -9473,6 +9473,163 @@ namespace Dime.WSD {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FidelizacionRecursivaVistaDetalle", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class FidelizacionRecursivaVistaDetalle : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string LabelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal NivelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrdrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal ParentIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ParentNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VerNivelField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Label {
+            get {
+                return this.LabelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LabelField, value) != true)) {
+                    this.LabelField = value;
+                    this.RaisePropertyChanged("Label");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Nivel {
+            get {
+                return this.NivelField;
+            }
+            set {
+                if ((this.NivelField.Equals(value) != true)) {
+                    this.NivelField = value;
+                    this.RaisePropertyChanged("Nivel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Ordr {
+            get {
+                return this.OrdrField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrdrField, value) != true)) {
+                    this.OrdrField = value;
+                    this.RaisePropertyChanged("Ordr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal ParentId {
+            get {
+                return this.ParentIdField;
+            }
+            set {
+                if ((this.ParentIdField.Equals(value) != true)) {
+                    this.ParentIdField = value;
+                    this.RaisePropertyChanged("ParentId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ParentName {
+            get {
+                return this.ParentNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ParentNameField, value) != true)) {
+                    this.ParentNameField = value;
+                    this.RaisePropertyChanged("ParentName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VerNivel {
+            get {
+                return this.VerNivelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VerNivelField, value) != true)) {
+                    this.VerNivelField = value;
+                    this.RaisePropertyChanged("VerNivel");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IWebService")]
     public interface IWebService {
@@ -9699,10 +9856,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task ActualizarAccesosUsuarioAsync(int idUsuario, int idPerfil, int idLinea, System.Collections.Generic.List<string> permisosOtorgados, string contraseña, string usuarioCambioo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ActualizarAccesosUsuarioMasivo", ReplyAction="http://tempuri.org/ILoginService/ActualizarAccesosUsuarioMasivoResponse")]
-        void ActualizarAccesosUsuarioMasivo(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo);
+        void ActualizarAccesosUsuarioMasivo(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo, string contraseña);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ActualizarAccesosUsuarioMasivo", ReplyAction="http://tempuri.org/ILoginService/ActualizarAccesosUsuarioMasivoResponse")]
-        System.Threading.Tasks.Task ActualizarAccesosUsuarioMasivoAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo);
+        System.Threading.Tasks.Task ActualizarAccesosUsuarioMasivoAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo, string contraseña);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ListaDatosUsuariosHolosPorCedulas", ReplyAction="http://tempuri.org/ILoginService/ListaDatosUsuariosHolosPorCedulasResponse")]
         System.Collections.Generic.List<Dime.WSD.UsuariosMasivoData> ListaDatosUsuariosHolosPorCedulas(System.Collections.Generic.List<string> cedulas);
@@ -10042,12 +10199,12 @@ namespace Dime.WSD {
             return base.Channel.ActualizarAccesosUsuarioAsync(idUsuario, idPerfil, idLinea, permisosOtorgados, contraseña, usuarioCambioo);
         }
         
-        public void ActualizarAccesosUsuarioMasivo(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo) {
-            base.Channel.ActualizarAccesosUsuarioMasivo(listaUsuariosCambiados, idLinea, listaPermisos, idUsuarioCambioo);
+        public void ActualizarAccesosUsuarioMasivo(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo, string contraseña) {
+            base.Channel.ActualizarAccesosUsuarioMasivo(listaUsuariosCambiados, idLinea, listaPermisos, idUsuarioCambioo, contraseña);
         }
         
-        public System.Threading.Tasks.Task ActualizarAccesosUsuarioMasivoAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo) {
-            return base.Channel.ActualizarAccesosUsuarioMasivoAsync(listaUsuariosCambiados, idLinea, listaPermisos, idUsuarioCambioo);
+        public System.Threading.Tasks.Task ActualizarAccesosUsuarioMasivoAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo, string contraseña) {
+            return base.Channel.ActualizarAccesosUsuarioMasivoAsync(listaUsuariosCambiados, idLinea, listaPermisos, idUsuarioCambioo, contraseña);
         }
         
         public System.Collections.Generic.List<Dime.WSD.UsuariosMasivoData> ListaDatosUsuariosHolosPorCedulas(System.Collections.Generic.List<string> cedulas) {
@@ -16310,16 +16467,16 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.FidelizacionMotivosCancelacion> getMotivosCancelacionByIdAsync(decimal codMotivo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getMotivosCancelacionAll", ReplyAction="http://tempuri.org/IFidelizacionService/getMotivosCancelacionAllResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionMotivosCancelacion> getMotivosCancelacionAll();
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionMotivosCancelacion> getMotivosCancelacionAll(decimal eliminado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getMotivosCancelacionAll", ReplyAction="http://tempuri.org/IFidelizacionService/getMotivosCancelacionAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionMotivosCancelacion>> getMotivosCancelacionAllAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionMotivosCancelacion>> getMotivosCancelacionAllAsync(decimal eliminado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getSubmotivosCancelacionAll", ReplyAction="http://tempuri.org/IFidelizacionService/getSubmotivosCancelacionAllResponse")]
-        System.Collections.Generic.List<Dime.WSD.FidelizacionSubmotivosCancelacionDetalle> getSubmotivosCancelacionAll(decimal estado);
+        System.Collections.Generic.List<Dime.WSD.FidelizacionSubmotivosCancelacionDetalle> getSubmotivosCancelacionAll(decimal estado, decimal idMotivo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getSubmotivosCancelacionAll", ReplyAction="http://tempuri.org/IFidelizacionService/getSubmotivosCancelacionAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.FidelizacionSubmotivosCancelacionDetalle>> getSubmotivosCancelacionAllAsync(decimal estado);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.FidelizacionSubmotivosCancelacionDetalle>> getSubmotivosCancelacionAllAsync(decimal estado, decimal idMotivo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getSubmotivosCancelacionById", ReplyAction="http://tempuri.org/IFidelizacionService/getSubmotivosCancelacionByIdResponse")]
         Telmexla.Servicios.DIME.Entity.FidelizacionSubmotivosCancelacion getSubmotivosCancelacionById(decimal idSubmotivo);
@@ -16370,10 +16527,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva> getRecursivaByIdAsync(decimal idRecursiva);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getRecursivaAll", ReplyAction="http://tempuri.org/IFidelizacionService/getRecursivaAllResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva> getRecursivaAll();
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva> getRecursivaAll(decimal idPadre);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getRecursivaAll", ReplyAction="http://tempuri.org/IFidelizacionService/getRecursivaAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva>> getRecursivaAllAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva>> getRecursivaAllAsync(decimal idPadre);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/setRegistro", ReplyAction="http://tempuri.org/IFidelizacionService/setRegistroResponse")]
         void setRegistro(Telmexla.Servicios.DIME.Entity.FidelizacionRegistro objRegistro);
@@ -16490,10 +16647,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task updateRegistroCamposAsync(Telmexla.Servicios.DIME.Entity.FidelizacionRegistroCampos objRegistroCampos);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getRecursivaVistaAll", ReplyAction="http://tempuri.org/IFidelizacionService/getRecursivaVistaAllResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursivaVista> getRecursivaVistaAll();
+        System.Collections.Generic.List<Dime.WSD.FidelizacionRecursivaVistaDetalle> getRecursivaVistaAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getRecursivaVistaAll", ReplyAction="http://tempuri.org/IFidelizacionService/getRecursivaVistaAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursivaVista>> getRecursivaVistaAllAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.FidelizacionRecursivaVistaDetalle>> getRecursivaVistaAllAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getRecursivaVistaById", ReplyAction="http://tempuri.org/IFidelizacionService/getRecursivaVistaByIdResponse")]
         Telmexla.Servicios.DIME.Entity.FidelizacionRecursivaVista getRecursivaVistaById(decimal idRecursiva);
@@ -16561,20 +16718,20 @@ namespace Dime.WSD {
             return base.Channel.getMotivosCancelacionByIdAsync(codMotivo);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionMotivosCancelacion> getMotivosCancelacionAll() {
-            return base.Channel.getMotivosCancelacionAll();
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionMotivosCancelacion> getMotivosCancelacionAll(decimal eliminado) {
+            return base.Channel.getMotivosCancelacionAll(eliminado);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionMotivosCancelacion>> getMotivosCancelacionAllAsync() {
-            return base.Channel.getMotivosCancelacionAllAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionMotivosCancelacion>> getMotivosCancelacionAllAsync(decimal eliminado) {
+            return base.Channel.getMotivosCancelacionAllAsync(eliminado);
         }
         
-        public System.Collections.Generic.List<Dime.WSD.FidelizacionSubmotivosCancelacionDetalle> getSubmotivosCancelacionAll(decimal estado) {
-            return base.Channel.getSubmotivosCancelacionAll(estado);
+        public System.Collections.Generic.List<Dime.WSD.FidelizacionSubmotivosCancelacionDetalle> getSubmotivosCancelacionAll(decimal estado, decimal idMotivo) {
+            return base.Channel.getSubmotivosCancelacionAll(estado, idMotivo);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.FidelizacionSubmotivosCancelacionDetalle>> getSubmotivosCancelacionAllAsync(decimal estado) {
-            return base.Channel.getSubmotivosCancelacionAllAsync(estado);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.FidelizacionSubmotivosCancelacionDetalle>> getSubmotivosCancelacionAllAsync(decimal estado, decimal idMotivo) {
+            return base.Channel.getSubmotivosCancelacionAllAsync(estado, idMotivo);
         }
         
         public Telmexla.Servicios.DIME.Entity.FidelizacionSubmotivosCancelacion getSubmotivosCancelacionById(decimal idSubmotivo) {
@@ -16641,12 +16798,12 @@ namespace Dime.WSD {
             return base.Channel.getRecursivaByIdAsync(idRecursiva);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva> getRecursivaAll() {
-            return base.Channel.getRecursivaAll();
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva> getRecursivaAll(decimal idPadre) {
+            return base.Channel.getRecursivaAll(idPadre);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva>> getRecursivaAllAsync() {
-            return base.Channel.getRecursivaAllAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva>> getRecursivaAllAsync(decimal idPadre) {
+            return base.Channel.getRecursivaAllAsync(idPadre);
         }
         
         public void setRegistro(Telmexla.Servicios.DIME.Entity.FidelizacionRegistro objRegistro) {
@@ -16801,11 +16958,11 @@ namespace Dime.WSD {
             return base.Channel.updateRegistroCamposAsync(objRegistroCampos);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursivaVista> getRecursivaVistaAll() {
+        public System.Collections.Generic.List<Dime.WSD.FidelizacionRecursivaVistaDetalle> getRecursivaVistaAll() {
             return base.Channel.getRecursivaVistaAll();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursivaVista>> getRecursivaVistaAllAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.FidelizacionRecursivaVistaDetalle>> getRecursivaVistaAllAsync() {
             return base.Channel.getRecursivaVistaAllAsync();
         }
         
@@ -17731,6 +17888,32 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistraUsabilidadBanner", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistraUsabilidadBannerResponse")]
         System.Threading.Tasks.Task RegistraUsabilidadBannerAsync(Telmexla.Servicios.DIME.Entity.UsabilidadAlertasInbound Usabilidad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnActualizaciondeDatos", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnActualizaciondeDatosResp" +
+            "onse")]
+        bool ValidarClienteEnActualizaciondeDatos(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ValidarClienteEnActualizaciondeDatos", ReplyAction="http://tempuri.org/IBannerAlertasService/ValidarClienteEnActualizaciondeDatosResp" +
+            "onse")]
+        System.Threading.Tasks.Task<bool> ValidarClienteEnActualizaciondeDatosAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ListaClientesPorTelefono", ReplyAction="http://tempuri.org/IBannerAlertasService/ListaClientesPorTelefonoResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BACActualizarDatos> ListaClientesPorTelefono(decimal Telefono);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ListaClientesPorTelefono", ReplyAction="http://tempuri.org/IBannerAlertasService/ListaClientesPorTelefonoResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BACActualizarDatos>> ListaClientesPorTelefonoAsync(decimal Telefono);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistrarActualizaciondeDatos", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistrarActualizaciondeDatosResponse")]
+        void RegistrarActualizaciondeDatos(System.Collections.Generic.List<string> IdAsociadosSi, Telmexla.Servicios.DIME.Entity.BAPActualizarDatos Datos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/RegistrarActualizaciondeDatos", ReplyAction="http://tempuri.org/IBannerAlertasService/RegistrarActualizaciondeDatosResponse")]
+        System.Threading.Tasks.Task RegistrarActualizaciondeDatosAsync(System.Collections.Generic.List<string> IdAsociadosSi, Telmexla.Servicios.DIME.Entity.BAPActualizarDatos Datos);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ConsultarTelefonoPorCuenta", ReplyAction="http://tempuri.org/IBannerAlertasService/ConsultarTelefonoPorCuentaResponse")]
+        decimal ConsultarTelefonoPorCuenta(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBannerAlertasService/ConsultarTelefonoPorCuenta", ReplyAction="http://tempuri.org/IBannerAlertasService/ConsultarTelefonoPorCuentaResponse")]
+        System.Threading.Tasks.Task<decimal> ConsultarTelefonoPorCuentaAsync(decimal CuentaCliente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17887,6 +18070,38 @@ namespace Dime.WSD {
         public System.Threading.Tasks.Task RegistraUsabilidadBannerAsync(Telmexla.Servicios.DIME.Entity.UsabilidadAlertasInbound Usabilidad) {
             return base.Channel.RegistraUsabilidadBannerAsync(Usabilidad);
         }
+        
+        public bool ValidarClienteEnActualizaciondeDatos(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnActualizaciondeDatos(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarClienteEnActualizaciondeDatosAsync(decimal CuentaCliente) {
+            return base.Channel.ValidarClienteEnActualizaciondeDatosAsync(CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BACActualizarDatos> ListaClientesPorTelefono(decimal Telefono) {
+            return base.Channel.ListaClientesPorTelefono(Telefono);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.BACActualizarDatos>> ListaClientesPorTelefonoAsync(decimal Telefono) {
+            return base.Channel.ListaClientesPorTelefonoAsync(Telefono);
+        }
+        
+        public void RegistrarActualizaciondeDatos(System.Collections.Generic.List<string> IdAsociadosSi, Telmexla.Servicios.DIME.Entity.BAPActualizarDatos Datos) {
+            base.Channel.RegistrarActualizaciondeDatos(IdAsociadosSi, Datos);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarActualizaciondeDatosAsync(System.Collections.Generic.List<string> IdAsociadosSi, Telmexla.Servicios.DIME.Entity.BAPActualizarDatos Datos) {
+            return base.Channel.RegistrarActualizaciondeDatosAsync(IdAsociadosSi, Datos);
+        }
+        
+        public decimal ConsultarTelefonoPorCuenta(decimal CuentaCliente) {
+            return base.Channel.ConsultarTelefonoPorCuenta(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<decimal> ConsultarTelefonoPorCuentaAsync(decimal CuentaCliente) {
+            return base.Channel.ConsultarTelefonoPorCuentaAsync(CuentaCliente);
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17910,6 +18125,24 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarArbol", ReplyAction="http://tempuri.org/IProcesosService/ConsultarArbolResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Arbol> ConsultarArbolAsync(int IdArbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarNodoCreado", ReplyAction="http://tempuri.org/IProcesosService/ConsultarNodoCreadoResponse")]
+        Telmexla.Servicios.DIME.Entity.Nodo ConsultarNodoCreado(int IdArbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarNodoCreado", ReplyAction="http://tempuri.org/IProcesosService/ConsultarNodoCreadoResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Nodo> ConsultarNodoCreadoAsync(int IdArbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/CrearArbol", ReplyAction="http://tempuri.org/IProcesosService/CrearArbolResponse")]
+        void CrearArbol(Telmexla.Servicios.DIME.Entity.Arbol arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/CrearArbol", ReplyAction="http://tempuri.org/IProcesosService/CrearArbolResponse")]
+        System.Threading.Tasks.Task CrearArbolAsync(Telmexla.Servicios.DIME.Entity.Arbol arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ListaArboles", ReplyAction="http://tempuri.org/IProcesosService/ListaArbolesResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Arbol> ListaArboles();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ListaArboles", ReplyAction="http://tempuri.org/IProcesosService/ListaArbolesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Arbol>> ListaArbolesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17961,6 +18194,30 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Arbol> ConsultarArbolAsync(int IdArbol) {
             return base.Channel.ConsultarArbolAsync(IdArbol);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.Nodo ConsultarNodoCreado(int IdArbol) {
+            return base.Channel.ConsultarNodoCreado(IdArbol);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Nodo> ConsultarNodoCreadoAsync(int IdArbol) {
+            return base.Channel.ConsultarNodoCreadoAsync(IdArbol);
+        }
+        
+        public void CrearArbol(Telmexla.Servicios.DIME.Entity.Arbol arbol) {
+            base.Channel.CrearArbol(arbol);
+        }
+        
+        public System.Threading.Tasks.Task CrearArbolAsync(Telmexla.Servicios.DIME.Entity.Arbol arbol) {
+            return base.Channel.CrearArbolAsync(arbol);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Arbol> ListaArboles() {
+            return base.Channel.ListaArboles();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Arbol>> ListaArbolesAsync() {
+            return base.Channel.ListaArbolesAsync();
         }
     }
     
@@ -18124,6 +18381,67 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.RSLSeguimientos>> ConsultaAdministradorLogAsync(System.DateTime FechaInicio, System.DateTime FechaFin) {
             return base.Channel.ConsultaAdministradorLogAsync(FechaInicio, FechaFin);
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IOfertasComercialesService")]
+    public interface IOfertasComercialesService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/RegistrarImagen", ReplyAction="http://tempuri.org/IOfertasComercialesService/RegistrarImagenResponse")]
+        decimal RegistrarImagen(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/RegistrarImagen", ReplyAction="http://tempuri.org/IOfertasComercialesService/RegistrarImagenResponse")]
+        System.Threading.Tasks.Task<decimal> RegistrarImagenAsync(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/ConsultarImagenPorId", ReplyAction="http://tempuri.org/IOfertasComercialesService/ConsultarImagenPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales ConsultarImagenPorId(decimal IdImagen);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/ConsultarImagenPorId", ReplyAction="http://tempuri.org/IOfertasComercialesService/ConsultarImagenPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales> ConsultarImagenPorIdAsync(decimal IdImagen);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IOfertasComercialesServiceChannel : Dime.WSD.IOfertasComercialesService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class OfertasComercialesServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IOfertasComercialesService>, Dime.WSD.IOfertasComercialesService {
+        
+        public OfertasComercialesServiceClient() {
+        }
+        
+        public OfertasComercialesServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public OfertasComercialesServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public OfertasComercialesServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public OfertasComercialesServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public decimal RegistrarImagen(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen) {
+            return base.Channel.RegistrarImagen(Imagen);
+        }
+        
+        public System.Threading.Tasks.Task<decimal> RegistrarImagenAsync(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen) {
+            return base.Channel.RegistrarImagenAsync(Imagen);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales ConsultarImagenPorId(decimal IdImagen) {
+            return base.Channel.ConsultarImagenPorId(IdImagen);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales> ConsultarImagenPorIdAsync(decimal IdImagen) {
+            return base.Channel.ConsultarImagenPorIdAsync(IdImagen);
         }
     }
 }

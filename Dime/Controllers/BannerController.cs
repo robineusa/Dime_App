@@ -63,6 +63,11 @@ namespace Dime.Controllers
                     { ViewBag.Fox = true; }
                     else { ViewBag.Fox = false; }
 
+                    //Verificacion Actualizacion de Datos
+                    if (bannerservice.ValidarClienteEnActualizaciondeDatos(CuentaConsulta))
+                    { ViewBag.ActDatos = true; }
+                    else { ViewBag.ActDatos = false; }
+
                 }
             }
             else {  }
@@ -207,6 +212,61 @@ namespace Dime.Controllers
             bannerservice.RegistraFox(modelo.GestionFox);
             ViewBag.GuardadoFox = "GUARDADO";
             return View();
+        }
+        [HttpGet]
+        public ActionResult ActualizacionDatos(string Data)
+        {
+            ViewModelBanner modelo = new ViewModelBanner();
+
+            if (Session["CuentaBanner"] != null)
+            {
+                modelo.ClientesTodo = inboundservice.TraerClienteCompletoPorCuenta(Convert.ToInt32(Session["CuentaBanner"]));
+            }
+            else { }
+            if (Data!= null)
+            {
+                ViewBag.GuardarActDatos = Data;
+            }
+            else
+            {
+                ViewBag.GuardarActDatos = "SIN GUARDAR";
+            }
+            
+            return View(modelo);
+        }
+        public JsonResult ListaDeCuentasPorNumeroTelefonico()
+        {
+            decimal Telefono = bannerservice.ConsultarTelefonoPorCuenta(Convert.ToInt32(Session["CuentaBanner"]));
+            var jsonResult = Json(JsonConvert.SerializeObject(bannerservice.ListaClientesPorTelefono(Telefono)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpPost]
+        public JsonResult RegistrarCuentasPorTelefono(IList<string> IAsociadosSi)
+        {
+            
+            if (IAsociadosSi != null && IAsociadosSi != null)
+            {
+                BAPActualizarDatos Datos = new BAPActualizarDatos();
+                Datos.CuentaAsociada = Convert.ToDecimal(Session["CuentaBanner"]);
+                Datos.UsuarioGestion = Convert.ToDecimal(Session["Usuario"]);
+                Datos.AliadoGestion = Session["AliadoLogeado"].ToString();
+                Datos.OperacionGestion = Session["OperacionUsuarioHolos"].ToString();
+              
+                bannerservice.RegistrarActualizaciondeDatos(IAsociadosSi.ToList(), Datos);
+
+                return new JsonResult
+                {
+                    Data = JsonConvert.SerializeObject("Informacion Almacenada Correctamente"),
+                    JsonRequestBehavior = JsonRequestBehavior.AllowGet
+
+                };
+               
+            }
+            else
+            {
+                return null;
+            }
         }
         public JsonResult TiposDeContactoList(decimal gestion)
         {

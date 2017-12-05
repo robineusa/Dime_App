@@ -3471,12 +3471,25 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfFidelizacionRegistroCampos" nillable="true" type="tns:ArrayOfFidelizacionRegistroCampos" />
-  <xs:complexType name="ArrayOfFidelizacionRecursivaVista">
+  <xs:complexType name="ArrayOfFidelizacionRecursivaVistaDetalle">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionRecursivaVista" nillable="true" type="tns:FidelizacionRecursivaVista" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FidelizacionRecursivaVistaDetalle" nillable="true" type="tns:FidelizacionRecursivaVistaDetalle" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfFidelizacionRecursivaVista" nillable="true" type="tns:ArrayOfFidelizacionRecursivaVista" />
+  <xs:element name="ArrayOfFidelizacionRecursivaVistaDetalle" nillable="true" type="tns:ArrayOfFidelizacionRecursivaVistaDetalle" />
+  <xs:complexType name="FidelizacionRecursivaVistaDetalle">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nivel" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ordr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ParentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VerNivel" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FidelizacionRecursivaVistaDetalle" nillable="true" type="tns:FidelizacionRecursivaVistaDetalle" />
   <xs:complexType name="FidelizacionRecursivaVista">
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
@@ -3673,9 +3686,41 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="VAMotivosSolicitud" nillable="true" type="tns:VAMotivosSolicitud" />
+  <xs:complexType name="ArrayOfBACActualizarDatos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BACActualizarDatos" nillable="true" type="tns:BACActualizarDatos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBACActualizarDatos" nillable="true" type="tns:ArrayOfBACActualizarDatos" />
+  <xs:complexType name="BACActualizarDatos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ciudad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaAsociada" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Telefono" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BACActualizarDatos" nillable="true" type="tns:BACActualizarDatos" />
+  <xs:complexType name="BAPActualizarDatos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ciudad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaAsociada" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OperacionGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PropiedadCliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefono" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsuarioGestion" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BAPActualizarDatos" nillable="true" type="tns:BAPActualizarDatos" />
   <xs:complexType name="Nodo">
     <xs:sequence>
       <xs:element minOccurs="0" name="CodigoHtml" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdArbol" type="xs:int" />
       <xs:element minOccurs="0" name="IdPadre" type="xs:int" />
@@ -3698,6 +3743,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Arbol" nillable="true" type="tns:Arbol" />
+  <xs:complexType name="ArrayOfArbol">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Arbol" nillable="true" type="tns:Arbol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArbol" nillable="true" type="tns:ArrayOfArbol" />
   <xs:complexType name="RSPSeguimientos">
     <xs:sequence>
       <xs:element minOccurs="0" name="AliadoSolicitud" nillable="true" type="xs:string" />
@@ -3777,4 +3828,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="RSLSeguimientos" nillable="true" type="tns:RSLSeguimientos" />
+  <xs:complexType name="IMGOfertasComeciales">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IdImagen" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Link" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioCreacion" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IMGOfertasComeciales" nillable="true" type="tns:IMGOfertasComeciales" />
 </xs:schema>

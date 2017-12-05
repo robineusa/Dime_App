@@ -18,6 +18,9 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="AdminLTE/bootstrap/css/bootstrap.min.css">
       <publishTime>10/12/2017 06:20:15</publishTime>
     </File>
+    <File Include="AdminLTE/bootstrap/css/EditarArbol.css">
+      <publishTime>11/30/2017 18:56:02</publishTime>
+    </File>
     <File Include="AdminLTE/bootstrap/fonts/glyphicons-halflings-regular.eot">
       <publishTime>07/13/2017 06:36:42</publishTime>
     </File>
@@ -7528,7 +7531,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="bin/Dime.dll">
-      <publishTime>11/17/2017 15:06:28</publishTime>
+      <publishTime>12/01/2017 05:51:34</publishTime>
     </File>
     <File Include="bin/Dime.dll.config">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -7666,7 +7669,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>07/13/2017 06:37:48</publishTime>
     </File>
     <File Include="bin/Telmexla.Servicios.DIME.Entity.dll">
-      <publishTime>11/17/2017 15:06:22</publishTime>
+      <publishTime>12/01/2017 05:25:48</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>07/13/2017 06:37:51</publishTime>
@@ -7741,7 +7744,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>07/13/2017 06:36:57</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>11/17/2017 15:01:48</publishTime>
+      <publishTime>11/30/2017 19:10:47</publishTime>
     </File>
     <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Business.DatoConsultaGestionAdmin.datasource">
       <publishTime>07/13/2017 06:36:57</publishTime>
@@ -7754,6 +7757,12 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     </File>
     <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.Acceso.datasource">
       <publishTime>07/13/2017 06:36:57</publishTime>
+    </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.Arbol.datasource">
+      <publishTime>11/22/2017 11:30:30</publishTime>
+    </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.BACActualizarDatos.datasource">
+      <publishTime>11/28/2017 11:43:29</publishTime>
     </File>
     <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.BalanceScoreCard.datasource">
       <publishTime>07/13/2017 06:36:57</publishTime>
@@ -7938,6 +7947,36 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.DocsisOverlap3.datasource">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.FidelizacionMaestroServicios.datasource">
+      <publishTime>11/22/2017 13:25:30</publishTime>
+    </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.FidelizacionMotivosCancelacion.datasource">
+      <publishTime>11/22/2017 13:25:32</publishTime>
+    </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.FidelizacionOtrosCampos.datasource">
+      <publishTime>11/22/2017 13:25:39</publishTime>
+    </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.FidelizacionOtrosOfrecimientos.datasource">
+      <publishTime>11/22/2017 13:25:34</publishTime>
+    </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva.datasource">
+      <publishTime>11/22/2017 13:25:36</publishTime>
+    </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.FidelizacionRecursivaVista.datasource">
+      <publishTime>11/22/2017 13:25:42</publishTime>
+    </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.FidelizacionRegistro.datasource">
+      <publishTime>11/22/2017 13:25:37</publishTime>
+    </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.FidelizacionRegistroCampos.datasource">
+      <publishTime>11/22/2017 13:25:41</publishTime>
+    </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.FidelizacionSubmotivosCancelacion.datasource">
+      <publishTime>11/22/2017 13:25:33</publishTime>
+    </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion.datasource">
+      <publishTime>11/22/2017 13:25:38</publishTime>
+    </File>
     <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.GBCDocsis.datasource">
       <publishTime>07/13/2017 06:36:57</publishTime>
     </File>
@@ -8067,6 +8106,9 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.MultiPlayRegistro.datasource">
       <publishTime>07/27/2017 06:37:44</publishTime>
     </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.Nodo.datasource">
+      <publishTime>11/21/2017 14:01:17</publishTime>
+    </File>
     <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.NodosZonificados.datasource">
       <publishTime>07/27/2017 10:52:42</publishTime>
     </File>
@@ -8111,6 +8153,15 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     </File>
     <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.Retencion.datasource">
       <publishTime>07/13/2017 06:36:58</publishTime>
+    </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.RSLSeguimientos.datasource">
+      <publishTime>11/24/2017 07:24:45</publishTime>
+    </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.RSMArboles.datasource">
+      <publishTime>11/23/2017 07:41:08</publishTime>
+    </File>
+    <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.RSPSeguimientos.datasource">
+      <publishTime>11/24/2017 07:24:45</publishTime>
     </File>
     <File Include="Properties/DataSources/Telmexla.Servicios.DIME.Entity.SkillsUsuariosBlending.datasource">
       <publishTime>07/13/2017 06:36:58</publishTime>
@@ -8275,13 +8326,13 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>07/13/2017 06:36:58</publishTime>
     </File>
     <File Include="Scripts/AdminUsuarios/Accesos.js">
-      <publishTime>11/17/2017 12:06:27</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Scripts/AdminUsuarios/Creacion.js">
       <publishTime>11/09/2017 07:18:12</publishTime>
     </File>
     <File Include="Scripts/AdminUsuarios/CrearUsuariosMasivos.js">
-      <publishTime>11/14/2017 15:59:34</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Scripts/AdminUsuarios/xls.js">
       <publishTime>07/13/2017 06:36:59</publishTime>
@@ -8319,11 +8370,14 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="Scripts/BackElite/SolicitudBackElite.js">
       <publishTime>07/26/2017 10:54:29</publishTime>
     </File>
+    <File Include="Scripts/Banner/ActualizacionDatos.js">
+      <publishTime>11/29/2017 06:41:38</publishTime>
+    </File>
     <File Include="Scripts/Banner/BannerAlertas.js">
-      <publishTime>11/17/2017 11:00:14</publishTime>
+      <publishTime>11/28/2017 15:27:58</publishTime>
     </File>
     <File Include="Scripts/Banner/MejorOferta.js">
-      <publishTime>11/17/2017 14:09:19</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Scripts/BitacoraIncidentes/ActualizacionDeIncidentes.js">
       <publishTime>08/17/2017 09:14:00</publishTime>
@@ -8395,7 +8449,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>07/13/2017 06:37:04</publishTime>
     </File>
     <File Include="Scripts/Calculadoras/Rentas.js">
-      <publishTime>11/09/2017 07:18:12</publishTime>
+      <publishTime>11/27/2017 06:20:23</publishTime>
     </File>
     <File Include="Scripts/CasosCelula/CasosAbiertos.js">
       <publishTime>07/13/2017 06:37:05</publishTime>
@@ -8490,6 +8544,27 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="Scripts/EncuestaCav/EncuestadeSatisfaccion.js">
       <publishTime>10/25/2017 07:12:50</publishTime>
     </File>
+    <File Include="Scripts/Fidelizacion/ActualizarSubmotivoCancelacion.js">
+      <publishTime>11/23/2017 06:27:43</publishTime>
+    </File>
+    <File Include="Scripts/Fidelizacion/CrearRecursiva.js">
+      <publishTime>11/23/2017 06:27:43</publishTime>
+    </File>
+    <File Include="Scripts/Fidelizacion/CrearSubmotivoCancelacion.js">
+      <publishTime>11/23/2017 06:27:43</publishTime>
+    </File>
+    <File Include="Scripts/Fidelizacion/ListarMotivosCancelacion.js">
+      <publishTime>11/28/2017 06:31:07</publishTime>
+    </File>
+    <File Include="Scripts/Fidelizacion/ListarRecursiva.js">
+      <publishTime>11/28/2017 06:31:07</publishTime>
+    </File>
+    <File Include="Scripts/Fidelizacion/ListarSubmotivosCancelacion.js">
+      <publishTime>11/28/2017 06:31:07</publishTime>
+    </File>
+    <File Include="Scripts/Fidelizacion/ListarTipificacion.js">
+      <publishTime>11/28/2017 06:31:07</publishTime>
+    </File>
     <File Include="Scripts/Forms/Advanced-menu.js">
       <publishTime>07/13/2017 06:37:07</publishTime>
     </File>
@@ -8548,7 +8623,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>07/13/2017 06:37:07</publishTime>
     </File>
     <File Include="Scripts/Inbound/Index.js">
-      <publishTime>11/17/2017 14:31:56</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Scripts/Inbound/Retencion.js">
       <publishTime>07/13/2017 06:37:07</publishTime>
@@ -8613,20 +8688,23 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="Scripts/MultiPlay/MultiPlay.js">
       <publishTime>07/19/2017 09:53:44</publishTime>
     </File>
+    <File Include="Scripts/Procesos/EditarArbol.js">
+      <publishTime>11/30/2017 18:56:02</publishTime>
+    </File>
     <File Include="Scripts/Recurrencia/ConsultaAdministradorLog.js">
-      <publishTime>11/14/2017 06:39:51</publishTime>
+      <publishTime>11/23/2017 14:09:48</publishTime>
     </File>
     <File Include="Scripts/Recurrencia/ConsultaAdministradorLogInbound.js">
       <publishTime>11/09/2017 07:18:12</publishTime>
     </File>
     <File Include="Scripts/Recurrencia/ConsultaAdministradorPrincipal.js">
-      <publishTime>11/14/2017 06:39:51</publishTime>
+      <publishTime>11/23/2017 14:09:48</publishTime>
     </File>
     <File Include="Scripts/Recurrencia/ConsultaAdministradorPrincipalInbound.js">
       <publishTime>11/09/2017 07:18:13</publishTime>
     </File>
     <File Include="Scripts/Recurrencia/Recurrencia.js">
-      <publishTime>11/14/2017 06:39:51</publishTime>
+      <publishTime>11/23/2017 14:09:48</publishTime>
     </File>
     <File Include="Scripts/Recurrencia/TipificadorAvaya.js">
       <publishTime>10/11/2017 06:11:12</publishTime>
@@ -8645,6 +8723,18 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     </File>
     <File Include="Scripts/Reportes/ReporteCelula.js">
       <publishTime>07/13/2017 06:37:08</publishTime>
+    </File>
+    <File Include="Scripts/Retencion/ConsultaAdminLog.js">
+      <publishTime>11/24/2017 07:51:35</publishTime>
+    </File>
+    <File Include="Scripts/Retencion/ConsultaAdminPrincipal.js">
+      <publishTime>11/24/2017 07:49:41</publishTime>
+    </File>
+    <File Include="Scripts/Retencion/ListaTipoEscalamientos.js">
+      <publishTime>11/23/2017 13:57:37</publishTime>
+    </File>
+    <File Include="Scripts/Retencion/RegistroSeguimientos.js">
+      <publishTime>11/24/2017 14:32:30</publishTime>
     </File>
     <File Include="Scripts/Shared/ChatHub.js">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -8839,16 +8929,16 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>10/31/2017 09:30:36</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.ConsultaBlendingCampañaDestinoReturnViewModel.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.ConsultaBlendingFormularioDestinoReturnViewModel.datasource">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.ConsultaBlendingOperacionDestinoReturnViewModel.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaGestion.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaGestionAdmin.datasource">
       <publishTime>09/03/2017 14:05:40</publishTime>
@@ -8857,7 +8947,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>09/03/2017 14:05:40</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.DatoConsultaRechazo.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.FidelizacionMaestroServicios.datasource">
       <publishTime>10/11/2017 08:22:51</publishTime>
@@ -8871,125 +8961,131 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="Service References/WSD/Dime.WSD.FidelizacionRecursiva.datasource">
       <publishTime>10/11/2017 08:22:51</publishTime>
     </File>
+    <File Include="Service References/WSD/Dime.WSD.FidelizacionRecursivaVistaDetalle.datasource">
+      <publishTime>12/01/2017 05:45:33</publishTime>
+    </File>
     <File Include="Service References/WSD/Dime.WSD.FidelizacionRegistro.datasource">
       <publishTime>10/11/2017 08:22:51</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.FidelizacionSubmotivosCancelacion.datasource">
       <publishTime>10/11/2017 08:22:51</publishTime>
     </File>
+    <File Include="Service References/WSD/Dime.WSD.FidelizacionSubmotivosCancelacionDetalle.datasource">
+      <publishTime>12/01/2017 05:45:33</publishTime>
+    </File>
     <File Include="Service References/WSD/Dime.WSD.GBLDocsisCA.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.GBLFueraNivelesCA.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.GBLProductoCA.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.GBLRentabilizacionCA.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.GBPDocsisCA.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.GBPFueraNivelesCA.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.GBPProductoCA.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.GBPRentabilizacionCA.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.GestionDeCelulaUsr.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.GLogRecurrenciaInbound.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.InventarioEquipos.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogCierreCiclo.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogClaroVideo.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.LogDocsisOverlap.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroFallaCausaRaiz.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroFallaEspecifica.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOpcionesRecurrencia.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundCausa.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundCierre.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundMotivo.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundRazon.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.MaestroOutboundTipoContacto.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.RazonIngresoSoporte.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.SmoRentaActual.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.SmoTarifaActual.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.Subrazon1IngresoSoporte.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.Subrazon2IngresoSoporte.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.TablaActualizarInbound.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.Usuario.datasource">
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.UsuariosMasivoData.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.VAMotivosSolicitud.datasource">
       <publishTime>10/31/2017 15:08:25</publishTime>
     </File>
     <File Include="Service References/WSD/Dime.WSD.ViewModelSkillsUsuariosBlending.datasource">
-      <publishTime>11/17/2017 15:02:10</publishTime>
+      <publishTime>12/01/2017 05:45:33</publishTime>
     </File>
     <File Include="Service References/WSP/Dime.WSP.enviarEncuestaResponse.datasource">
-      <publishTime>11/17/2017 15:02:24</publishTime>
+      <publishTime>11/30/2017 19:11:29</publishTime>
     </File>
     <File Include="Service References/WSP/Dime.WSP.registrarLogResponse.datasource">
-      <publishTime>11/17/2017 15:02:24</publishTime>
+      <publishTime>11/30/2017 19:11:29</publishTime>
     </File>
     <File Include="Service References/WSP/Dime.WSP.resetPropiedadesResponse.datasource">
-      <publishTime>11/17/2017 15:02:24</publishTime>
+      <publishTime>11/30/2017 19:11:29</publishTime>
     </File>
     <File Include="Service References/WSP/Dime.WSP.RespConsultarParamCobranza.datasource">
-      <publishTime>11/17/2017 15:02:24</publishTime>
+      <publishTime>11/30/2017 19:11:29</publishTime>
     </File>
     <File Include="Service References/WSP/Dime.WSP.respGenerarEncuesta.datasource">
-      <publishTime>11/17/2017 15:02:24</publishTime>
+      <publishTime>11/30/2017 19:11:29</publishTime>
     </File>
     <File Include="Styles/Banner/BannerAlertas.css">
-      <publishTime>11/15/2017 14:08:25</publishTime>
+      <publishTime>11/28/2017 14:28:52</publishTime>
     </File>
     <File Include="Styles/Bitacora/Visualizador.css">
       <publishTime>09/22/2017 11:56:19</publishTime>
@@ -9046,10 +9142,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>09/11/2017 06:30:09</publishTime>
     </File>
     <File Include="Views/AdminUsuarios/AccesosUsuarios.cshtml">
-      <publishTime>11/17/2017 12:06:27</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Views/AdminUsuarios/AdminUsuariosMasivo.cshtml">
-      <publishTime>11/14/2017 15:59:34</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Views/AdminUsuarios/Creacion.cshtml">
       <publishTime>11/07/2017 06:16:03</publishTime>
@@ -9108,26 +9204,29 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="Views/BackElite/SolicitudBackElite.cshtml">
       <publishTime>09/14/2017 11:38:30</publishTime>
     </File>
+    <File Include="Views/Banner/ActualizacionDatos.cshtml">
+      <publishTime>11/29/2017 09:44:32</publishTime>
+    </File>
     <File Include="Views/Banner/BannerAlertas.cshtml">
-      <publishTime>11/17/2017 13:43:21</publishTime>
+      <publishTime>11/28/2017 14:20:49</publishTime>
     </File>
     <File Include="Views/Banner/ClaroVideo.cshtml">
-      <publishTime>11/17/2017 13:38:02</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Views/Banner/ConvenioElectronico.cshtml">
-      <publishTime>11/14/2017 14:05:34</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Views/Banner/Fox.cshtml">
-      <publishTime>11/17/2017 13:42:42</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Views/Banner/MejorasTecnicas.cshtml">
-      <publishTime>11/17/2017 13:41:33</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Views/Banner/MejorOferta.cshtml">
-      <publishTime>11/17/2017 14:13:13</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Views/Banner/SiembraHD.cshtml">
-      <publishTime>11/17/2017 13:39:35</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Views/BitacoraIncidentes/ActualizacionDeIncidentes.cshtml">
       <publishTime>09/11/2017 06:39:09</publishTime>
@@ -9217,7 +9316,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>07/13/2017 06:37:08</publishTime>
     </File>
     <File Include="Views/Calculadoras/Rentas.cshtml">
-      <publishTime>11/09/2017 07:18:13</publishTime>
+      <publishTime>11/27/2017 06:20:23</publishTime>
     </File>
     <File Include="Views/CasosCelula/CasosAbiertos.cshtml">
       <publishTime>07/13/2017 06:37:08</publishTime>
@@ -9274,7 +9373,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>07/21/2017 06:18:25</publishTime>
     </File>
     <File Include="Views/DistribucionBlending/CableModemFueradeNiveles.cshtml">
-      <publishTime>11/15/2017 14:00:05</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Views/DistribucionBlending/ConsultaAdminDocsisLog.cshtml">
       <publishTime>07/13/2017 06:37:09</publishTime>
@@ -9301,19 +9400,58 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>07/13/2017 06:37:09</publishTime>
     </File>
     <File Include="Views/DistribucionBlending/Docsis.cshtml">
-      <publishTime>11/15/2017 14:00:17</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Views/DistribucionBlending/Producto.cshtml">
-      <publishTime>11/15/2017 13:54:51</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Views/DistribucionBlending/Rentabilizacion.cshtml">
-      <publishTime>11/15/2017 13:38:55</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Views/EncuestaCav/ConsultaEncuestaCavs.cshtml">
       <publishTime>10/20/2017 06:40:02</publishTime>
     </File>
     <File Include="Views/EncuestaCav/EncuestadeSatisfaccion.cshtml">
       <publishTime>10/31/2017 06:56:54</publishTime>
+    </File>
+    <File Include="Views/Fidelizacion/ActualizarMotivoCancelacion.cshtml">
+      <publishTime>11/22/2017 07:58:47</publishTime>
+    </File>
+    <File Include="Views/Fidelizacion/ActualizarRecursiva.cshtml">
+      <publishTime>11/22/2017 07:58:47</publishTime>
+    </File>
+    <File Include="Views/Fidelizacion/ActualizarSubmotivoCancelacion.cshtml">
+      <publishTime>11/22/2017 07:58:47</publishTime>
+    </File>
+    <File Include="Views/Fidelizacion/ActualizarTipificacion.cshtml">
+      <publishTime>11/22/2017 07:58:47</publishTime>
+    </File>
+    <File Include="Views/Fidelizacion/CrearMotivoCancelacion.cshtml">
+      <publishTime>11/22/2017 07:58:47</publishTime>
+    </File>
+    <File Include="Views/Fidelizacion/CrearOtrosCampos.cshtml">
+      <publishTime>11/23/2017 06:27:43</publishTime>
+    </File>
+    <File Include="Views/Fidelizacion/CrearRecursiva.cshtml">
+      <publishTime>11/22/2017 07:58:48</publishTime>
+    </File>
+    <File Include="Views/Fidelizacion/CrearSubmotivoCancelacion.cshtml">
+      <publishTime>11/22/2017 07:58:48</publishTime>
+    </File>
+    <File Include="Views/Fidelizacion/CrearTipificacion.cshtml">
+      <publishTime>11/22/2017 07:58:48</publishTime>
+    </File>
+    <File Include="Views/Fidelizacion/ListarMotivosCancelacion.cshtml">
+      <publishTime>11/28/2017 06:31:07</publishTime>
+    </File>
+    <File Include="Views/Fidelizacion/ListarRecursiva.cshtml">
+      <publishTime>11/28/2017 06:31:07</publishTime>
+    </File>
+    <File Include="Views/Fidelizacion/ListarSubmotivosCancelacion.cshtml">
+      <publishTime>11/28/2017 06:31:07</publishTime>
+    </File>
+    <File Include="Views/Fidelizacion/ListarTipificacion.cshtml">
+      <publishTime>11/28/2017 06:31:07</publishTime>
     </File>
     <File Include="Views/GestionBlending/AsignarBasesAdmin.cshtml">
       <publishTime>09/11/2017 06:51:02</publishTime>
@@ -9358,7 +9496,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>09/11/2017 06:53:22</publishTime>
     </File>
     <File Include="Views/Inbound/Index.cshtml">
-      <publishTime>11/17/2017 14:32:38</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Views/Inbound/Retencion.cshtml">
       <publishTime>09/11/2017 06:54:30</publishTime>
@@ -9456,23 +9594,32 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="Views/MultiPlay/MultiPlayCelula.cshtml">
       <publishTime>09/11/2017 07:01:51</publishTime>
     </File>
+    <File Include="Views/Procesos/AdminArboles.cshtml">
+      <publishTime>11/30/2017 18:56:02</publishTime>
+    </File>
+    <File Include="Views/Procesos/EditarArbol.cshtml">
+      <publishTime>11/30/2017 18:56:02</publishTime>
+    </File>
+    <File Include="Views/Procesos/GestionNoCheck.cshtml">
+      <publishTime>11/21/2017 14:01:17</publishTime>
+    </File>
     <File Include="Views/Pruebas/Index.cshtml">
       <publishTime>07/13/2017 06:37:09</publishTime>
     </File>
     <File Include="Views/Recurrencia/ConsultaAdministradorLog.cshtml">
-      <publishTime>11/14/2017 06:39:51</publishTime>
+      <publishTime>11/27/2017 10:30:54</publishTime>
     </File>
     <File Include="Views/Recurrencia/ConsultaAdministradorLogInbound.cshtml">
       <publishTime>11/09/2017 07:18:13</publishTime>
     </File>
     <File Include="Views/Recurrencia/ConsultaAdminstradorPrincipal.cshtml">
-      <publishTime>11/14/2017 06:39:51</publishTime>
+      <publishTime>11/27/2017 10:30:54</publishTime>
     </File>
     <File Include="Views/Recurrencia/ConsultaAdminstradorPrincipalInbound.cshtml">
       <publishTime>11/09/2017 07:18:13</publishTime>
     </File>
     <File Include="Views/Recurrencia/Recurrencia.cshtml">
-      <publishTime>11/16/2017 11:02:10</publishTime>
+      <publishTime>11/23/2017 14:09:48</publishTime>
     </File>
     <File Include="Views/Recurrencia/TipificadorAvaya.cshtml">
       <publishTime>10/11/2017 06:11:12</publishTime>
@@ -9495,6 +9642,24 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <File Include="Views/Reportes/ReporteCelula.cshtml">
       <publishTime>07/13/2017 06:37:09</publishTime>
     </File>
+    <File Include="Views/Retencion/AdministrarArboles.cshtml">
+      <publishTime>11/23/2017 14:02:01</publishTime>
+    </File>
+    <File Include="Views/Retencion/ConsultaAdminLog.cshtml">
+      <publishTime>11/24/2017 07:46:12</publishTime>
+    </File>
+    <File Include="Views/Retencion/ConsultaAdminPrincipal.cshtml">
+      <publishTime>11/24/2017 07:40:12</publishTime>
+    </File>
+    <File Include="Views/Retencion/Index.cshtml">
+      <publishTime>11/27/2017 07:26:42</publishTime>
+    </File>
+    <File Include="Views/Retencion/ListaTipoEscalamientos.cshtml">
+      <publishTime>11/23/2017 14:05:10</publishTime>
+    </File>
+    <File Include="Views/Retencion/RegistroSeguimientos.cshtml">
+      <publishTime>11/27/2017 06:50:56</publishTime>
+    </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>07/13/2017 06:37:09</publishTime>
     </File>
@@ -9514,10 +9679,10 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>07/13/2017 06:37:09</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>11/16/2017 14:06:45</publishTime>
+      <publishTime>11/28/2017 06:31:07</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
-      <publishTime>11/15/2017 15:22:28</publishTime>
+      <publishTime>11/21/2017 14:01:17</publishTime>
     </File>
     <File Include="Views/Shared/_RecordarContrasena.cshtml">
       <publishTime>07/13/2017 06:37:09</publishTime>
@@ -9733,7 +9898,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>07/13/2017 06:37:09</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/17/2017 15:07:20</publishTime>
+      <publishTime>12/01/2017 05:52:27</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -1,0 +1,43 @@
+﻿@model List<Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion>
+@{
+    ViewBag.Title = "Lista Tipificacion";
+    ViewBag.Subtitle = "Fidelizacion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="page-header" style="margin-top:25px"><i class="fa fa-navicon"></i> Lista Motivos Cancelacion:</h2>
+                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                            <div class="box-body">
+                                <div id="gridTipificaciones"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        var urlListaKendo = '@Url.Action("ListarTipificacionJson", "Fidelizacion")';
+    </script>
+
+    <script src="~/Scripts/Fidelizacion/ListarTipificacion.js?1.0.2"></script>
+}
+<style>
+    .k-filter-row th, .k-grid-header th.k-header {
+        vertical-align: middle !important;
+    }
+
+        .k-grid-header th.k-header > .k-link {
+            overflow: initial !important;
+        }
+</style>

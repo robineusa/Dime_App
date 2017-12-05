@@ -39,6 +39,10 @@ function LlamarFOX() {
     var Alerta = "FOX";
     RegistrarUsoBanner(Alerta);
 }
+function LlamarActdatos() {
+    var Alerta = "ACTUALIZACION DE DATOS";
+    RegistrarUsoBanner(Alerta);
+}
 
 function ResetearDivs() {
     var vacio = $("<div></div>");

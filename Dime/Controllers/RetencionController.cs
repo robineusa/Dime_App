@@ -39,7 +39,7 @@ namespace Dime.Controllers
             modelo.RSPSeguimientos.LineaSolicitud = Session["LineaLogeado"].ToString();
            
             retencionservice.RegistrarSolicitudRetencionFormulario(modelo.RSPSeguimientos);
-            return RedirectToAction("RegistroSetguimientos");
+            return RedirectToAction("RegistroSeguimientos");
         }
         public JsonResult TraerInformacionCliente(int CuentaCliente)
         {

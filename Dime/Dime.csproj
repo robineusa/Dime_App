@@ -215,6 +215,7 @@
     <Compile Include="Controllers\MarcacionesController.cs" />
     <Compile Include="Controllers\MecController.cs" />
     <Compile Include="Controllers\MultiPlayController.cs" />
+    <Compile Include="Controllers\OfertasComercialesController.cs" />
     <Compile Include="Controllers\ProcesosController.cs" />
     <Compile Include="Controllers\PruebasController.cs" />
     <Compile Include="Controllers\RecurrenciaController.cs" />
@@ -260,6 +261,7 @@
     <Content Include="AdminLTE\bootstrap\css\bootstrap.css" />
     <Content Include="AdminLTE\bootstrap\css\bootstrap.css.map" />
     <Content Include="AdminLTE\bootstrap\css\bootstrap.min.css" />
+    <Content Include="AdminLTE\bootstrap\css\EditarArbol.css" />
     <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
@@ -2303,6 +2305,7 @@
     <Content Include="Scripts\BackElite\ReasignacionDeSolicitudes.js" />
     <Content Include="Scripts\BackElite\SeguimientoSolicitudes.js" />
     <Content Include="Scripts\BackElite\SolicitudBackElite.js" />
+    <Content Include="Scripts\Banner\ActualizacionDatos.js" />
     <Content Include="Scripts\Banner\BannerAlertas.js" />
     <Content Include="Scripts\Banner\MejorOferta.js" />
     <Content Include="Scripts\BitacoraIncidentes\ActualizacionDeIncidentes.js" />
@@ -2370,6 +2373,7 @@
     <Content Include="Scripts\Mec\RegistrarMonitoreo.js" />
     <Content Include="Scripts\MultiPlay\ConsultasAdminMultiPlay.js" />
     <Content Include="Scripts\MultiPlay\MultiPlay.js" />
+    <Content Include="Scripts\Procesos\AdminArboles.js" />
     <Content Include="Scripts\Procesos\EditarArbol.js" />
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorLog.js" />
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorLogInbound.js" />
@@ -3065,6 +3069,8 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSMArboles.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSLSeguimientos.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSPSeguimientos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BACActualizarDatos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3196,20 +3202,23 @@
     <Content Include="Service References\WSD\Dime.WSD.FidelizacionSubmotivosCancelacionDetalle.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Service References\WSD\WebService1.wsdl" />
-    <None Include="Service References\WSD\WebService5.xsd">
+    <Content Include="Service References\WSD\Dime.WSD.FidelizacionRecursivaVistaDetalle.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WSD\WebService.wsdl" />
+    <None Include="Service References\WSD\WebService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService51.xsd">
+    <None Include="Service References\WSD\WebService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService52.xsd">
+    <None Include="Service References\WSD\WebService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService53.xsd">
+    <None Include="Service References\WSD\WebService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService54.xsd">
+    <None Include="Service References\WSD\WebService4.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\WSP\configuration91.svcinfo" />
@@ -3220,7 +3229,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService1.disco" />
+    <None Include="Service References\WSD\WebService.disco" />
     <Content Include="Service References\WSP\Dime.WSP.enviarEncuestaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -3560,6 +3569,9 @@
     <Content Include="Views\Retencion\ConsultaAdminPrincipal.cshtml" />
     <Content Include="Views\Retencion\ConsultaAdminLog.cshtml" />
     <Content Include="Views\Retencion\Index.cshtml" />
+    <Content Include="Views\Banner\ActualizacionDatos.cshtml" />
+    <Content Include="Views\OfertasComerciales\RegistrarImagen.cshtml" />
+    <Content Include="Views\OfertasComerciales\EditarImagen.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3571,6 +3583,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="bin\" />
     <Folder Include="obj\" />
+    <Folder Include="Scripts\OfertasComerciales\" />
     <Folder Include="Views\AdminBlending\" />
     <Folder Include="Views\CasosAdmin\" />
   </ItemGroup>

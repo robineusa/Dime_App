@@ -20,7 +20,11 @@ namespace Telmexla.Servicios.DIME.Entity
         MejorasTecnicas mejorasTecnicas;
         CargaBaseFoxInbound cuentasFox;
         GestionFoxInbound gestionFox;
+        BACActualizarDatos bACActualizarDatos;
+        BAPActualizarDatos bAPActualizarDatos;
+
         #endregion
+
         #region Constructores
         public ViewModelBanner()
         {
@@ -34,8 +38,11 @@ namespace Telmexla.Servicios.DIME.Entity
             mejorasTecnicas = new MejorasTecnicas();
             cuentasFox = new CargaBaseFoxInbound();
             gestionFox = new GestionFoxInbound();
+            bACActualizarDatos = new BACActualizarDatos();
+            bAPActualizarDatos = new BAPActualizarDatos();
         }
         #endregion
+
         #region Encapsulamientos
         public SiguienteMejorOferta SiguienteMejorOferta
         {
@@ -164,6 +171,32 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 gestionFox = value;
+            }
+        }
+
+        public BACActualizarDatos BACActualizarDatos
+        {
+            get
+            {
+                return bACActualizarDatos;
+            }
+
+            set
+            {
+                bACActualizarDatos = value;
+            }
+        }
+
+        public BAPActualizarDatos BAPActualizarDatos
+        {
+            get
+            {
+                return bAPActualizarDatos;
+            }
+
+            set
+            {
+                bAPActualizarDatos = value;
             }
         }
         #endregion

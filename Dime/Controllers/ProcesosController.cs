@@ -31,6 +31,22 @@ namespace Dime.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdminArboles(Arbol model, string Envia)
+        {
+            if (Envia == "Guardar" && model.NombreArbol != "")
+            {
+                ProcesosService.CrearArbol(model);
+                ViewBag.Mensaje = "Arbol Guardado";
+            }
+            else
+            {
+                ViewBag.Mensaje = "El Nombre del Arbol NO Puede ser Vacio";
+            }
+            return View(model);
+        }
+
         [HttpGet]
         public ActionResult EditarArbol()
         {
@@ -52,7 +68,40 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        [HttpPost]
+        public JsonResult RetornaIdNodo(string IDPadre, string IDdArbol, string NombreNodo)
+        {
+            Nodo model = new Nodo();
+            if (IDPadre == "InsertaArbol" || IDPadre == "ulPrincipal") { model.IdPadre = 0; } else { model.IdPadre = Convert.ToInt32(IDPadre); }
+            model.IdArbol = Convert.ToInt32(IDdArbol);
+            model.NombreNodo = NombreNodo;
+            ProcesosService.CrearNodo(model);
 
-        
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarNodoCreado(Convert.ToInt32(IDdArbol))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpPost]
+        public JsonResult ActualizaCodigoHTMLArbol(string CodigoHTML, string IDdArbol)
+        {
+            Arbol model = new Arbol();
+
+            model.Id = Convert.ToInt32(IDdArbol);
+            model.CodigoHtml = CodigoHTML;
+            //ProcesosService.ActualizarCodigoArbol(model);
+
+            var jsonResult = Json(JsonConvert.SerializeObject("Proceso Exitoso"), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpPost]
+        public JsonResult ConsultaArboles()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ListaArboles()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
+
     }
 }
