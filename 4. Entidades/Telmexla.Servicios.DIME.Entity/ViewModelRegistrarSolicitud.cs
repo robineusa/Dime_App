@@ -17,6 +17,7 @@ namespace Telmexla.Servicios.DIME.Entity
         private FidelizacionRecursiva fidelizacionRecursivaB;
         private FidelizacionRecursiva fidelizacionRecursivaC;
         private FidelizacionRegistro fidelizacionRegistro;
+        private FidelizacionOtrosCampos otrosCampos;
 
         public ViewModelRegistrarSolicitud()
         {
@@ -29,6 +30,7 @@ namespace Telmexla.Servicios.DIME.Entity
             FidelizacionTipificacion = new FidelizacionTipificacion();
             FidelizacionServiciosRetenidos = new FidelizacionMaestroServicios();
             FidelizacionRegistro = new FidelizacionRegistro();
+            FidelizacionOtrosCampos = new FidelizacionOtrosCampos();
 
         }
 
@@ -138,6 +140,18 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 fidelizacionMotivos = value;
+            }
+        }
+        public FidelizacionOtrosCampos FidelizacionOtrosCampos
+        {
+            get
+            {
+                return otrosCampos;
+            }
+
+            set
+            {
+                otrosCampos = value;
             }
         }
 

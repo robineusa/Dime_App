@@ -124,9 +124,25 @@ namespace Dime.Controllers
         {
 
             List<FidelizacionTipificacion> modelo = new List<FidelizacionTipificacion>();
-            var listado = fidelizacionServicio.getTipificacionAll();
+            var listado = fidelizacionServicio.getTipificacionAll(0,1);
+            var listado1 = fidelizacionServicio.getTipificacionAll(0, 2);
+            var listado2 = fidelizacionServicio.getTipificacionAll(0, 3);
 
             foreach (var tmp in listado)
+            {
+                if (tmp.Eliminado == 0)
+                {
+                    modelo.Add(tmp);
+                }
+            }
+            foreach (var tmp in listado1)
+            {
+                if (tmp.Eliminado == 0)
+                {
+                    modelo.Add(tmp);
+                }
+            }
+            foreach (var tmp in listado2)
             {
                 if (tmp.Eliminado == 0)
                 {
@@ -238,6 +254,7 @@ namespace Dime.Controllers
                 objTipificacion.UsuarioId = Convert.ToInt32(Session["IdUsuario"]);
                 objTipificacion.Registro = DateTime.Now;
                 fidelizacionServicio.updateTipificacion(objTipificacion);
+                var test = ";;";
                 return RedirectToAction("ListarTipificacion");
 
             }
@@ -451,9 +468,25 @@ namespace Dime.Controllers
         {
 
             List<FidelizacionOtrosCampos> modelo = new List<FidelizacionOtrosCampos>();
-            var listado = fidelizacionServicio.getOtrosCamposAll();
-            
+            var listado = fidelizacionServicio.getOtrosCamposAll(0,1);
+            var listado1 = fidelizacionServicio.getOtrosCamposAll(0, 2);
+            var listado2 = fidelizacionServicio.getOtrosCamposAll(0, 3);
+
             foreach (var tmp in listado) {
+                if (tmp.Eliminado == 0)
+                {
+                    modelo.Add(tmp);
+                }
+            }
+            foreach (var tmp in listado1)
+            {
+                if (tmp.Eliminado == 0)
+                {
+                    modelo.Add(tmp);
+                }
+            }
+            foreach (var tmp in listado2)
+            {
                 if (tmp.Eliminado == 0)
                 {
                     modelo.Add(tmp);
@@ -547,11 +580,304 @@ namespace Dime.Controllers
             fidelizacionServicio.updateTipificacion(modelo);
             return RedirectToAction("ListarTipificacion");
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RegistrarSolicitud(ViewModelRegistrarSolicitud r)
+        {
+            var interRet = (((r.FidelizacionRegistro.InternetRet == null || r.FidelizacionRegistro.InternetRet == false)) ? "0" : "1");
+            var televRet = (((r.FidelizacionRegistro.TelevisionRet == null || r.FidelizacionRegistro.TelevisionRet == false)) ? "0" : "1");
+            var telefRet = (((r.FidelizacionRegistro.TelevisionRet == null || r.FidelizacionRegistro.TelevisionRet == false)) ? "0" : "1");
+
+            var idEstrategiaA = 1;
+            var idEstrategiaB = 1;
+            var idEstrategiaC = 1;
+
+            var inter = (((r.FidelizacionRegistro.Internet == false)) ? "0" : "1");
+            var telev = (((r.FidelizacionRegistro.Television == false)) ? "0" : "1");
+            var telef = (((r.FidelizacionRegistro.Telefonia == false)) ? "0" : "1");
+
+            var idNivel = 0;
+            if (Session["Formulario Recuperacion"] != null)
+                idNivel = 3;
+            if (Session["Formulario Retencion"] != null)
+                idNivel = 2;
+            if (Session["Formulario Contencion"] != null)
+                idNivel = 1;
+
+            if ((r.FidelizacionRegistro.TipificacionId == 0))
+            {
+                ViewBag.errorTipificacion = "Seleccione el acuerdo";
+                ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+               
+                ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+                ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
+                var s = fidelizacionServicio.getRecursivaAll(1);
+                ViewBag.slEstrategia = s;
+                return View(r);
+            }
+            else if (r.FidelizacionRegistro.SubmotivoId == 0)
+            {
+                ViewBag.errorTipificacion = "Seleccione un submotivo";
+
+                ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+                
+                ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+                ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
+                var s = fidelizacionServicio.getRecursivaAll(1);
+                ViewBag.slEstrategia = s;
+                return View(r);
+            }
+            else if (r.FidelizacionMotivos.Id == 0) {
+                //seleccionar Motivo
+                ViewBag.errorMotivo = "Seleccione un Motivo";
+
+                ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+                
+                ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+                ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
+                var s = fidelizacionServicio.getRecursivaAll(1);
+                ViewBag.slEstrategia = s;
+                return View(r);
+            }
+            else if (inter == "0" && telev == "0" && telef == "0")
+            {
+                //seleccionar Servicios
+                ViewBag.errorServicios = "Indique la intención de cancelacion";
+
+                ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+                
+                ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+                ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
+                var s = fidelizacionServicio.getRecursivaAll(1);
+                ViewBag.slEstrategia = s;
+                return View(r);
+            }
+            else if (Request.Form["rbPermanencia"] == null)
+            {
+                //seleccionar permanencia
+                ViewBag.errorPermanencia = "Indique Si el clliente tiene o no permanencia";
+
+                ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+                
+                ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+                ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
+                var s = fidelizacionServicio.getRecursivaAll(1);
+                ViewBag.slEstrategia = s;
+                return View(r);
+            }
+            else if (Request.Form["rbCorte"] == null)
+            {
+                //seleccionar corte
+                ViewBag.errorCorte = "Seleccione el día de corte";
+
+                ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+                
+                ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+                ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
+                var s = fidelizacionServicio.getRecursivaAll(1);
+                ViewBag.slEstrategia = s;
+                return View(r);
+            }
+            else if (r.FidelizacionRegistro.Ticket == null || r.FidelizacionRegistro.Ticket == 0)
+            {
+                //dIGITE TICKET
+                ViewBag.errorTicket = "Digite el número del ticket";
+
+                ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+                
+                ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+                ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
+                var s = fidelizacionServicio.getRecursivaAll(1);
+                ViewBag.slEstrategia = s;
+                return View(r);
+            }
+            else if (Session["Formulario Contencion"] != null && (r.FidelizacionRegistro.UsuarioTransfiere == null || r.FidelizacionRegistro.UsuarioTransfiere == ""))
+            {
+                //dIGITE TICKET
+                ViewBag.errorUsuario = "Escriba el usuario de la presona que transfiere";
+
+                ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+                
+                ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+                ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
+                var s = fidelizacionServicio.getRecursivaAll(1);
+                ViewBag.slEstrategia = s;
+                return View(r);
+            }
+            else if (r.FidelizacionRegistro.Notas == null)
+            {
+                //seleccionar Notas
+
+                ViewBag.errorCorte = "Genere la notas para esta solicitud";
+
+                ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+                
+                ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+                ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
+                var s = fidelizacionServicio.getRecursivaAll(1);
+                ViewBag.slEstrategia = s;
+                return View(r);
+            }
+            var Tipificacion = fidelizacionServicio.getTipificacionById(Convert.ToInt32(r.FidelizacionRegistro.TipificacionId));
+            var rest = ""
+;
+
+            //return View(r);
+            if (Tipificacion.ValidaRetencion == 1)
+             {//Contenido o retenido
+                if (r.FidelizacionRegistro.RecursivaIdA == 0)
+                {
+                    //seleccionar Estrategia1
+                    ViewBag.errorEstrategiaA = "Selecciona una estrategia";
+                    ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+                    
+                    ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+                    ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
+                    var s = fidelizacionServicio.getRecursivaAll(1);
+                    ViewBag.slEstrategia = s;
+                    return View(r);
+                }
+                else
+                {
+                    var c1 = 1;
+                    
+                    do
+                    {
+                        c1++;
+                    }
+                    while (Request.Form["sltEstrategiasA_" + c1] != null);var tmp = Convert.ToInt32(Request.Form["sltEstrategiasA_" + (c1 - 1)]);
+
+
+                    var E1 = fidelizacionServicio.getRecursivaAll(Convert.ToInt32(Request.Form["sltEstrategiasA_" + (c1 - 1)]));
+                    if (E1.Count > 0 || E1 == null)
+                    {
+                        //seleccionar hijo
+                        ViewBag.errorHijoA = "Completa la estrategia N° 1";
+                        ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+                        
+                        ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+                        ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
+                        var s = fidelizacionServicio.getRecursivaAll(1);
+                        ViewBag.slEstrategia = s;
+                        return View(r);
+                    }else
+                        idEstrategiaA = Convert.ToInt32 (Request.Form["sltEstrategiasA_" + (c1 - 1)]);
+
+                }
+                if (r.FidelizacionRegistro.RecursivaIdB != 0)
+                {
+                    var c2 = 1;
+
+                    do
+                    {
+                        c2++;
+                    }
+                    while (Request.Form["sltEstrategiasB_" + c2] != null);
+
+                    var E2 = ((Request.Form["sltEstrategiasB_" + (c2 - 1)] != null)? fidelizacionServicio.getRecursivaAll(Convert.ToInt32(Request.Form["sltEstrategiasB_" + (c2 - 1)])):null) ;
+                    
+                    if (E2 == null) { }
+                    else if (E2.Count > 0)
+
+                    {
+                        //seleccionar hijo
+                        ViewBag.errorHijoB = "Completa la estrategia N° 2";
+                        ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+                        
+                        ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+                        ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
+                        var s = fidelizacionServicio.getRecursivaAll(1);
+                        ViewBag.slEstrategia = s;
+                        return View(r);
+                    }else
+                        idEstrategiaB = Convert.ToInt32 (Request.Form["sltEstrategiasB_" + (c2 - 1)]);
+                }
+                if (r.FidelizacionRegistro.RecursivaIdC != 0)
+                {
+                    var c3 = 1;
+
+                    do
+                    {
+                        c3++;
+                    }
+                    while (Request.Form["sltEstrategiasA_" + c3] != null);
+
+                    var E3 = ((Request.Form["sltEstrategiasC_" + (c3 - 1)] != null) ? fidelizacionServicio.getRecursivaAll(Convert.ToInt32(Request.Form["sltEstrategiasB_" + (c3 - 1)])) : null);
+                    if (E3 == null) { }
+                    else if (E3.Count > 0 || E3 == null)
+                    {
+                        //seleccionar hijo
+                        ViewBag.errorHijoC = "Completa la estrategia N° 3";
+                        ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+                        
+                        ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+                        ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
+                        var s = fidelizacionServicio.getRecursivaAll(1);
+                        ViewBag.slEstrategia = s;
+                        return View();
+                    }
+                    else
+                        idEstrategiaC = Convert.ToInt32(Request.Form["sltEstrategiasC_" + (c3 - 1)]);
+                }
+                
+            if (interRet + televRet + telefRet == "000"  && idNivel != 1)
+                {
+                    //seleccionar servicios retenidos
+                    ViewBag.errorServiciosRet = "Indique los servicios que desea mantener";
+                    ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+                    
+                    ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+                    ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
+                    var s = fidelizacionServicio.getRecursivaAll(1);
+                    ViewBag.slEstrategia = s;
+                    return View();
+
+                }
+            }
+            else {
+                interRet = televRet = telefRet = "0";
+                    }
+
+            FidelizacionRegistro Registro = new FidelizacionRegistro();
+            Registro.Cuenta = r.FidelizacionRegistro.Cuenta;
+            Registro.DiaCorte = Convert.ToInt32( Request.Form["rbCorte"]);
+            Registro.Direccion = "";
+            Registro.FechaCorte = DateTime.Now;
+            Registro.FechaRegistro = DateTime.Now;
+            Registro.Nivel = idNivel;
+            Registro.Notas = r.FidelizacionRegistro.Notas;
+            Registro.Permanencia = Request.Form["rbPermanencia"];
+            Registro.RecursivaIdA = idEstrategiaA;
+            Registro.RecursivaIdB = idEstrategiaB;
+            Registro.RecursivaIdC = idEstrategiaC;
+            Registro.Renta = r.FidelizacionRegistro.Renta;
+            Registro.ServiciosId = inter + telev + telef;
+            Registro.ServiciosRetenidosId = interRet + televRet + telefRet;
+            Registro.SubmotivoId = r.FidelizacionRegistro.SubmotivoId;
+            Registro.Ticket = r.FidelizacionRegistro.Ticket;
+            Registro.TipificacionId = r.FidelizacionRegistro.TipificacionId;
+            Registro.UsuarioId = Convert.ToInt32(Session["IdUsuario"]);
+            Registro.UsuarioTransfiere = r.FidelizacionRegistro.UsuarioTransfiere;
+            fidelizacionServicio.setRegistro(Registro);
+
+            
+            return RedirectToAction
+                ("RegistrarSolicitud");
+        }
         [HttpGet]
         public ActionResult RegistrarSolicitud()
         {
             //ViewModelRegistrarSolicitud modelo = new ViewModelRegistrarSolicitud();
             ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+            var idNivel = 0;
+            if (Session["Formulario Recuperacion"] != null)
+                idNivel = 3;
+            if (Session["Formulario Retencion"] != null)
+                idNivel = 2;
+            if (Session["Formulario Contencion"] != null)
+                idNivel = 1;
+            ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+            ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
             var s = fidelizacionServicio.getRecursivaAll(1);
             ViewBag.slEstrategia = s;
             return View();
@@ -576,6 +902,80 @@ namespace Dime.Controllers
             var Motivos = fidelizacionServicio.getRecursivaAll(idPadre);
             return Json(Motivos, JsonRequestBehavior.AllowGet);
         }
+        public JsonResult getNotasJson(decimal idNota, decimal idSubmotivo, string idServicios, string idServiciosRet, decimal idE1, decimal idE2, decimal idE3, string permanencia, int idTicket, string userTransfer, int renta)
+        {
+ 
+            var Tipificacion = fidelizacionServicio.getTipificacionById(Convert.ToInt32(idNota));
+            var txt = Tipificacion.Nota;
+            var t = "";
+            var Submotivo = fidelizacionServicio.getSubmotivosCancelacionById(Convert.ToInt32(idSubmotivo));
+            var Motivo = fidelizacionServicio.getMotivosCancelacionById(Submotivo.FIDMotivoId);
+             
+            //FidelizacionMaestroServicios ServRet = new FidelizacionMaestroServicios();
+            //if (Session["Formulariio Contencion"] == null)
+            var ServRet = fidelizacionServicio.getMaestroServiciosById(idServiciosRet);
+            var Serv = fidelizacionServicio.getMaestroServiciosById(idServicios);
+            
+            List<FidelizacionRecursiva> E2 = new List<FidelizacionRecursiva>();
+            List<FidelizacionRecursiva> E3 = new List<FidelizacionRecursiva>();
+            List<FidelizacionRecursiva> E1 = new List<FidelizacionRecursiva>();
+            if (idE1 == 0) { }
+            else
+                E1 = fidelizacionServicio.getRecursivaArbol(Convert.ToInt32(idE1));
+            if (idE2 == 0) { }
+            else {
+                E2 = fidelizacionServicio.getRecursivaArbol(Convert.ToInt32(idE2));
+            }
+            if (idE3 == 0) { }
+            else
+            {
+                E3 = fidelizacionServicio.getRecursivaArbol(Convert.ToInt32(idE3));
+            }
+            var txtE1 = "";
+            var txtE2 = "";
+            var txtE3 = "";
+            for (var i = 0; i < E1.Count; i++) {
+                txtE1 += E1[i].Nombre+", ";
+            }
+            for (var i = 0; i < E2.Count; i++)
+            {
+                txtE2 += E2[i].Nombre+",";
+            }
+            for (var i = 0; i < E3.Count; i++)
+            {
+                txtE3 += E3[i].Nombre+",";
+            }
+            var myClausula = "";
+            if (permanencia == "conPermanencia")
+            {
+                myClausula = "con clausula de permanencia activa se confirma valor";
+            }
+            else if (permanencia == "sinPermanencia")
+            {
+                myClausula = "sin clausula de permanencia activa";
+            }
+
+            txt = txt.Replace("[:Motivo:]", Motivo.Motivo);
+            txt = txt.Replace("[:Submotivo:]", Submotivo.Submotivo);
+            txt = txt.Replace("[:Estrategia1:]", txtE1);
+            txt = txt.Replace("[:Estrategia2:]", txtE2);            txt = txt.Replace("[:Estrategia3:]", txtE3);
+            if(Session["Formulario Contencion"] == null)
+                txt = txt.Replace("[:ServiciosRet:]", ServRet.Nombre);
+            txt = txt.Replace("[:Ticket:]", Convert.ToString(idTicket));
+            txt = txt.Replace("[:Servicios:]", Serv.Nombre);
+            txt = txt.Replace("[:Clausula:]", myClausula);
+            txt = txt.Replace("[:UsuarioTransfiere:]", userTransfer);
+            txt = txt.Replace("[:Ticket:]", Convert.ToString(idTicket));
+            txt = txt.Replace("[:Renta:]", Convert.ToString(renta));
+            txt = txt.Replace("[:Permanencia:]", myClausula);
+
+            var test = "";
+
+
+
+            return Json(txt.ToUpper(), JsonRequestBehavior.AllowGet);
+        }
+        
 
     }
 }

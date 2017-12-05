@@ -29,10 +29,15 @@
                             @Html.DropDownListFor(r => r.Eliminado, new List<SelectListItem> { new SelectListItem { Text = "SI", Value = "1", Selected = true }, new SelectListItem { Text = "NO", Value = "0", Selected = false } }, new { Id = "sltEliminado", @class = "form-control" })
                             @Html.ValidationMessageFor(r => r.Eliminado, "", new { @class = "text-danger" })
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <small>Activar</small>
                             @Html.DropDownListFor(r => r.Activo, new List<SelectListItem> { new SelectListItem { Text = "SI", Value = "1", Selected = true }, new SelectListItem { Text = "NO", Value = "0", Selected = false } }, new { Id = "sltActivo", @class = "form-control" })
                             @Html.ValidationMessageFor(r => r.Activo, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-6">
+                            <small>Valida Retencion</small>
+                            @Html.DropDownListFor(z => z.ValidaRetencion, new List<SelectListItem> { new SelectListItem { Text = "SI", Value = "1", Selected = true }, new SelectListItem { Text = "NO", Value = "0", Selected = false } }, new { Id = "sltValidaRetencion", @class = "form-control" })
+                            @Html.ValidationMessageFor(z => z.ValidaRetencion, "", new { @class = "text-danger" })
                         </div>
                         <div class="col-md-12">
                             <small>Nota</small>
