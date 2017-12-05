@@ -23,5 +23,6 @@ namespace Telmexla.Servicios.DIME.Entity
         public decimal Nivel3 { get; set; }//te cambiamos estos tres tipos de datos por el error 
         public int UsuarioId { get; set; }
         public System.DateTime? Registro { get; set; }
+        public decimal ValidaRetencion { get; set; }
     }
 }
