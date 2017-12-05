@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm("RegistrarImagen", "OfertasComerciales", FormMethod.Post, new { id = "imagen", role = "form", enctype = "multipart/form-data" }))
+@using (Html.BeginForm("RegistrarImagen", "OfertasComerciales", FormMethod.Post, new { id = "imagen", role = "form",enctype="" }))
 {
     @Html.AntiForgeryToken()
     <div class="row">
@@ -17,11 +17,11 @@
                             <table>
                                 <tr>
                                     <td width="200">
-                                        <small>Cuenta del Cliente</small>
+                                        <small>Link</small>
                                         @Html.TextBoxFor(m => m.Link, new { @class = "form-control input-sm", @Id = "Link" })
                                     </td>
                                     <td width="200">
-                                        <small>Cuenta del Cliente</small>
+                                        <small>Descripción</small>
                                         @Html.TextBoxFor(m => m.Descripcion, new { @class = "form-control input-sm", @Id = "Descripcion" })
                                     </td>
                                     <td width="200" style="padding-left:2px;">
@@ -31,10 +31,13 @@
                                                                                                               "--SELECCIONE--", new { @class = "form-control input-sm" })
                                     </td>
                                     <td width="200" style="padding-left:2px;">
-                                        <small>Estado</small>
-                                        <input type="file" id="imagen" name="imagen" />
+                                        <small>Imagen</small>
+                           
+                                        
+                                                    <input type="file" id="Imagen" name="Imagen" />
                                 </tr>
                             </table>
+
                             <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;">Siguiente</button>
                             <br />
                         </div>

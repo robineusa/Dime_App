@@ -29,16 +29,16 @@ namespace Dime.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RegistrarImagen(IMGOfertasComeciales modelo, HttpPostedFileBase imagen)
+        public ActionResult RegistrarImagen([Bind(Include ="Link,Descripcion,Estado")] IMGOfertasComeciales modelo, HttpPostedFileBase Imagen)
         {
-            if(imagen!= null && imagen.ContentLength > 0)
+            if(Imagen != null && Imagen.ContentLength > 0)
             {
                 byte[] imagendata = null;
-                using (var binaryimagen = new BinaryReader(imagen.InputStream))
+                using (var binaryimagen = new BinaryReader(Imagen.InputStream))
                 {
-                    imagendata = binaryimagen.ReadBytes(imagen.ContentLength);
+                    imagendata = binaryimagen.ReadBytes(Imagen.ContentLength);
                 }
-                modelo.Imagen =imagendata;
+                modelo.Imagen = imagendata;
             }
 
             return View();
