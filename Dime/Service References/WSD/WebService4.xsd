@@ -439,6 +439,7 @@
         <xs:element minOccurs="0" name="idLinea" type="xs:int" />
         <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listaPermisos" nillable="true" type="q23:ArrayOfstring" />
         <xs:element minOccurs="0" name="idUsuarioCambioo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contraseña" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

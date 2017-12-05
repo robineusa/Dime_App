@@ -9630,147 +9630,6 @@ namespace Dime.WSD {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IMGOfertasComeciales", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
-    [System.SerializableAttribute()]
-    public partial class IMGOfertasComeciales : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescripcionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EstadoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime FechaCreacionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal IdImagenField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] ImagenField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LinkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal UsuarioCreacionField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Descripcion {
-            get {
-                return this.DescripcionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
-                    this.DescripcionField = value;
-                    this.RaisePropertyChanged("Descripcion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Estado {
-            get {
-                return this.EstadoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
-                    this.EstadoField = value;
-                    this.RaisePropertyChanged("Estado");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime FechaCreacion {
-            get {
-                return this.FechaCreacionField;
-            }
-            set {
-                if ((this.FechaCreacionField.Equals(value) != true)) {
-                    this.FechaCreacionField = value;
-                    this.RaisePropertyChanged("FechaCreacion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal IdImagen {
-            get {
-                return this.IdImagenField;
-            }
-            set {
-                if ((this.IdImagenField.Equals(value) != true)) {
-                    this.IdImagenField = value;
-                    this.RaisePropertyChanged("IdImagen");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public byte[] Imagen {
-            get {
-                return this.ImagenField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ImagenField, value) != true)) {
-                    this.ImagenField = value;
-                    this.RaisePropertyChanged("Imagen");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Link {
-            get {
-                return this.LinkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LinkField, value) != true)) {
-                    this.LinkField = value;
-                    this.RaisePropertyChanged("Link");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal UsuarioCreacion {
-            get {
-                return this.UsuarioCreacionField;
-            }
-            set {
-                if ((this.UsuarioCreacionField.Equals(value) != true)) {
-                    this.UsuarioCreacionField = value;
-                    this.RaisePropertyChanged("UsuarioCreacion");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IWebService")]
     public interface IWebService {
@@ -9997,10 +9856,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task ActualizarAccesosUsuarioAsync(int idUsuario, int idPerfil, int idLinea, System.Collections.Generic.List<string> permisosOtorgados, string contraseña, string usuarioCambioo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ActualizarAccesosUsuarioMasivo", ReplyAction="http://tempuri.org/ILoginService/ActualizarAccesosUsuarioMasivoResponse")]
-        void ActualizarAccesosUsuarioMasivo(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo);
+        void ActualizarAccesosUsuarioMasivo(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo, string contraseña);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ActualizarAccesosUsuarioMasivo", ReplyAction="http://tempuri.org/ILoginService/ActualizarAccesosUsuarioMasivoResponse")]
-        System.Threading.Tasks.Task ActualizarAccesosUsuarioMasivoAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo);
+        System.Threading.Tasks.Task ActualizarAccesosUsuarioMasivoAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo, string contraseña);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILoginService/ListaDatosUsuariosHolosPorCedulas", ReplyAction="http://tempuri.org/ILoginService/ListaDatosUsuariosHolosPorCedulasResponse")]
         System.Collections.Generic.List<Dime.WSD.UsuariosMasivoData> ListaDatosUsuariosHolosPorCedulas(System.Collections.Generic.List<string> cedulas);
@@ -10340,12 +10199,12 @@ namespace Dime.WSD {
             return base.Channel.ActualizarAccesosUsuarioAsync(idUsuario, idPerfil, idLinea, permisosOtorgados, contraseña, usuarioCambioo);
         }
         
-        public void ActualizarAccesosUsuarioMasivo(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo) {
-            base.Channel.ActualizarAccesosUsuarioMasivo(listaUsuariosCambiados, idLinea, listaPermisos, idUsuarioCambioo);
+        public void ActualizarAccesosUsuarioMasivo(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo, string contraseña) {
+            base.Channel.ActualizarAccesosUsuarioMasivo(listaUsuariosCambiados, idLinea, listaPermisos, idUsuarioCambioo, contraseña);
         }
         
-        public System.Threading.Tasks.Task ActualizarAccesosUsuarioMasivoAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo) {
-            return base.Channel.ActualizarAccesosUsuarioMasivoAsync(listaUsuariosCambiados, idLinea, listaPermisos, idUsuarioCambioo);
+        public System.Threading.Tasks.Task ActualizarAccesosUsuarioMasivoAsync(System.Collections.Generic.List<string> listaUsuariosCambiados, int idLinea, System.Collections.Generic.List<string> listaPermisos, string idUsuarioCambioo, string contraseña) {
+            return base.Channel.ActualizarAccesosUsuarioMasivoAsync(listaUsuariosCambiados, idLinea, listaPermisos, idUsuarioCambioo, contraseña);
         }
         
         public System.Collections.Generic.List<Dime.WSD.UsuariosMasivoData> ListaDatosUsuariosHolosPorCedulas(System.Collections.Generic.List<string> cedulas) {
@@ -18530,16 +18389,16 @@ namespace Dime.WSD {
     public interface IOfertasComercialesService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/RegistrarImagen", ReplyAction="http://tempuri.org/IOfertasComercialesService/RegistrarImagenResponse")]
-        decimal RegistrarImagen(Dime.WSD.IMGOfertasComeciales Imagen);
+        decimal RegistrarImagen(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/RegistrarImagen", ReplyAction="http://tempuri.org/IOfertasComercialesService/RegistrarImagenResponse")]
-        System.Threading.Tasks.Task<decimal> RegistrarImagenAsync(Dime.WSD.IMGOfertasComeciales Imagen);
+        System.Threading.Tasks.Task<decimal> RegistrarImagenAsync(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/ConsultarImagenPorId", ReplyAction="http://tempuri.org/IOfertasComercialesService/ConsultarImagenPorIdResponse")]
-        Dime.WSD.IMGOfertasComeciales ConsultarImagenPorId(decimal IdImagen);
+        Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales ConsultarImagenPorId(decimal IdImagen);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/ConsultarImagenPorId", ReplyAction="http://tempuri.org/IOfertasComercialesService/ConsultarImagenPorIdResponse")]
-        System.Threading.Tasks.Task<Dime.WSD.IMGOfertasComeciales> ConsultarImagenPorIdAsync(decimal IdImagen);
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales> ConsultarImagenPorIdAsync(decimal IdImagen);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18569,19 +18428,19 @@ namespace Dime.WSD {
                 base(binding, remoteAddress) {
         }
         
-        public decimal RegistrarImagen(Dime.WSD.IMGOfertasComeciales Imagen) {
+        public decimal RegistrarImagen(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen) {
             return base.Channel.RegistrarImagen(Imagen);
         }
         
-        public System.Threading.Tasks.Task<decimal> RegistrarImagenAsync(Dime.WSD.IMGOfertasComeciales Imagen) {
+        public System.Threading.Tasks.Task<decimal> RegistrarImagenAsync(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen) {
             return base.Channel.RegistrarImagenAsync(Imagen);
         }
         
-        public Dime.WSD.IMGOfertasComeciales ConsultarImagenPorId(decimal IdImagen) {
+        public Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales ConsultarImagenPorId(decimal IdImagen) {
             return base.Channel.ConsultarImagenPorId(IdImagen);
         }
         
-        public System.Threading.Tasks.Task<Dime.WSD.IMGOfertasComeciales> ConsultarImagenPorIdAsync(decimal IdImagen) {
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales> ConsultarImagenPorIdAsync(decimal IdImagen) {
             return base.Channel.ConsultarImagenPorIdAsync(IdImagen);
         }
     }

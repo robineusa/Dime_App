@@ -15,6 +15,7 @@ namespace Telmexla.Servicios.DIME.Entity
         private int idPerfil;
         private int idLinea;
         private string contraseña;
+        private string contraseñaMasiva;
         private string nombrePerfil;
         private string nombreLinea;
         private bool usuarioBloqueado;
@@ -80,6 +81,18 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 contraseña = value;
+            }
+        }
+        public string ContraseñaMasiva
+        {
+            get
+            {
+                return contraseñaMasiva;
+            }
+
+            set
+            {
+                contraseñaMasiva = value;
             }
         }
 
