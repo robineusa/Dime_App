@@ -3571,7 +3571,6 @@
     <Content Include="Views\Retencion\Index.cshtml" />
     <Content Include="Views\Banner\ActualizacionDatos.cshtml" />
     <Content Include="Views\OfertasComerciales\RegistrarImagen.cshtml" />
-    <Content Include="Views\OfertasComerciales\EditarImagen.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3583,7 +3582,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="bin\" />
     <Folder Include="obj\" />
-    <Folder Include="Scripts\OfertasComerciales\" />
     <Folder Include="Views\AdminBlending\" />
     <Folder Include="Views\CasosAdmin\" />
   </ItemGroup>

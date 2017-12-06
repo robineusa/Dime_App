@@ -25,44 +25,29 @@ namespace Dime.Controllers
         public ActionResult RegistrarImagen()
         {
             IMGOfertasComeciales modelo = new IMGOfertasComeciales();
-            return View(modelo);
+            return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RegistrarImagen([Bind(Include ="Link,Descripcion,Estado")] IMGOfertasComeciales modelo, HttpPostedFileBase File)
+        public ActionResult RegistrarImagen([Bind(Include ="Link,Descripcion,Estado")] IMGOfertasComeciales modelo, HttpPostedFileBase Imagen)
         {
-            modelo.UsuarioCreacion = Convert.ToDecimal(Session["Usuario"]);
-
-            if (File != null)
+            if(Imagen != null && Imagen.ContentLength > 0)
             {
-                using (MemoryStream ms = new MemoryStream())
+                byte[] imagendata = null;
+                using (var binaryimagen = new BinaryReader(Imagen.InputStream))
                 {
-                    File.InputStream.CopyTo(ms);
-                    byte[] array = ms.GetBuffer();
-
-                    modelo.Imagen = array;
-                    OfertasComercialesService.RegistrarImagen(modelo);
+                    imagendata = binaryimagen.ReadBytes(Imagen.ContentLength);
                 }
-
+                modelo.Imagen = imagendata;
             }
-            
+
             return View();
         }
-        public ActionResult EditarImagen(decimal IdImagen)
-        {
-            IMGOfertasComeciales modelo = OfertasComercialesService.ConsultarImagenPorId(IdImagen);
-            return View(modelo);
-        }
-        public ActionResult ConvertirImagen(decimal IdImagen)
-        {
-            IMGOfertasComeciales ImagenTraida = OfertasComercialesService.ConsultarImagenPorId(IdImagen);
-
-            byte[] imageData = ImagenTraida.Imagen;
-            if (imageData != null)
-            {
-                return File(imageData, "image/png"); 
-            }
-            return null;
-        }
+        //public ActionResult ConvertirImagen (decimal IdImagen)
+        //{
+            
+        //    var ResultImagen =OfertasComercialesService.ConsultarImagenPorId(IdImagen);
+        //    return File(ResultImagen.Imagen, "image/jpeg");
+        //}
     }
 }
