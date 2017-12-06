@@ -53,8 +53,7 @@
                             </table>
                             
                            <br />
-                           
-                            <img id="ImagenTransformada" src="" style="width:600px;height:auto;" />
+                            <img id="ImagenTraida1" src=""/>
                             <br />
                             <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;">Registrar</button>
                             <br />
@@ -67,6 +66,8 @@
 
 }
 @section Scripts{
-   
-<script src="~/Scripts/OfertasComerciales/RegistrarImagen.js?1.0.7"></script>
+    <script>
+        var UrlPreCargarImagen = '@Url.Action("PrecargarImagen", "OfertasComerciales")';
+    </script>
+<script src="~/Scripts/OfertasComerciales/RegistrarImagen.js?1.0.1"></script>
 }
