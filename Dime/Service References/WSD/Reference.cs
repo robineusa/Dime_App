@@ -18427,6 +18427,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/ConsultarImagenPorId", ReplyAction="http://tempuri.org/IOfertasComercialesService/ConsultarImagenPorIdResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales> ConsultarImagenPorIdAsync(decimal IdImagen);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/ActualizarImagen", ReplyAction="http://tempuri.org/IOfertasComercialesService/ActualizarImagenResponse")]
+        void ActualizarImagen(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/ActualizarImagen", ReplyAction="http://tempuri.org/IOfertasComercialesService/ActualizarImagenResponse")]
+        System.Threading.Tasks.Task ActualizarImagenAsync(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18470,6 +18476,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales> ConsultarImagenPorIdAsync(decimal IdImagen) {
             return base.Channel.ConsultarImagenPorIdAsync(IdImagen);
+        }
+        
+        public void ActualizarImagen(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen) {
+            base.Channel.ActualizarImagen(Imagen);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarImagenAsync(Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales Imagen) {
+            return base.Channel.ActualizarImagenAsync(Imagen);
         }
     }
 }

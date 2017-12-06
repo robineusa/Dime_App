@@ -7348,4 +7348,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ActualizarImagen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q514="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Imagen" nillable="true" type="q514:IMGOfertasComeciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarImagenResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

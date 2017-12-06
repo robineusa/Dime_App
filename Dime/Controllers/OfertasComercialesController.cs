@@ -33,7 +33,7 @@ namespace Dime.Controllers
         {
             modelo.UsuarioCreacion = Convert.ToDecimal(Session["Usuario"]);
 
-            if (Archivo != null)
+            if (Archivo != null && Archivo.ContentLength > 0) 
             {
                 using (MemoryStream ms = new MemoryStream())
                 {
@@ -48,10 +48,30 @@ namespace Dime.Controllers
             
             return RedirectToAction("RegistrarImagen");
         }
+        [HttpGet]
         public ActionResult EditarImagen(decimal IdImagen)
         {
             IMGOfertasComeciales modelo = OfertasComercialesService.ConsultarImagenPorId(IdImagen);
             return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditarImagen(IMGOfertasComeciales modelo, HttpPostedFileBase Archivo)
+        {
+            modelo.UsuarioCreacion = Convert.ToDecimal(Session["Usuario"]);
+
+            if (Archivo != null && Archivo.ContentLength > 0)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    Archivo.InputStream.CopyTo(ms);
+                    byte[] array = ms.GetBuffer();
+
+                    modelo.Imagen = array;
+                }
+            }
+            OfertasComercialesService.ActualizarImagen(modelo);
+                return RedirectToAction("EditarImagen","OfertasComerciales", new { IdImagen= modelo.IdImagen });
         }
         public ActionResult ConvertirImagen(decimal IdImagen)
         {
@@ -64,22 +84,8 @@ namespace Dime.Controllers
             }
             return null;
         }
-        public JsonResult PrecargarImagen(HttpPostedFileBase Archivo)
-        {
-            
-            if (Archivo != null)
-            {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    Archivo.InputStream.CopyTo(ms);
-                    byte[] array = ms.GetBuffer();
-                    var jsonResult = Json(JsonConvert.SerializeObject(File(array, "image/png")), JsonRequestBehavior.AllowGet);
-                    jsonResult.MaxJsonLength = int.MaxValue;
-                    return jsonResult;
+        
+        
 
-                }
-            }
-            return null;
-        }
     }
 }
