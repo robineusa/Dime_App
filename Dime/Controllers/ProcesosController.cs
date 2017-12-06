@@ -88,7 +88,7 @@ namespace Dime.Controllers
 
             model.Id = Convert.ToInt32(IDdArbol);
             model.CodigoHtml = CodigoHTML;
-            //ProcesosService.ActualizarCodigoArbol(model);
+            ProcesosService.ActualizaHTMLArbol(model);
 
             var jsonResult = Json(JsonConvert.SerializeObject("Proceso Exitoso"), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
