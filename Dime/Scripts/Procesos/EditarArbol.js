@@ -84,7 +84,7 @@ function evnt(objeto) {
         var objAbuelo = obj.parentNode;
         nodoSeleccionado.IdPadre = objAbuelo.id;
     }
-    IdArbol = 1;
+    //IdArbol = 1;
     IdArbol = $("#NombreArbol").attr("name");
     //alert(nodoSeleccionado.IdPadre + "--" + nodoSeleccionado.Id);
 }
@@ -97,7 +97,7 @@ function crear() {
             type: "POST",
             url: urlRetornaIdNodo,
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({ IDPadre: nodoSeleccionado.IdPadre, IDdArbol: IdArbol, NombreNodo: NomNodo }),
+            data: JSON.stringify({ IDPadre: nodoSeleccionado.Id, IDdArbol: IdArbol, NombreNodo: NomNodo }),
             dataType: "JSON",
             success: function (result) {
                 var json = JSON.parse(result);
@@ -166,7 +166,7 @@ function AgregaNodo(Data) {
             var ulNivel1 = objeto.childNodes[ulPosicion];
             $(ulNivel1).append(
               "<li id=' " + Data.Id + " '  onmousedown='return evnt(this)' >" +
-                 "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-right'></i>" +
+                 "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
                    "<span onmouseover='poner(this)' onmouseout='quitar(this)'> " + Data.NombreNodo + " </span>" +
                      "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
                         "<i class='fa fa-plus-circle'></i>" +
@@ -177,6 +177,7 @@ function AgregaNodo(Data) {
                 "</li>");
         }
     }
+
     var html = $("#ulPrincipal").html();
     $.ajax({
         type: "POST",
@@ -213,7 +214,23 @@ function Eliminar() {
         }
     }
     objPadre.removeChild(objPadre.childNodes[numeral]);
-    //objPadre.removeChild(objPadre.childNodes[numeral]);
+
+    var html = $("#ulPrincipal").html();
+    $.ajax({
+        type: "POST",
+        url: urlActualizaHTMLArbol,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ CodigoHTML: html, IDdArbol: IdArbol }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            console.log(json);
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
 }
 
 function ValidarTexto(obj) {

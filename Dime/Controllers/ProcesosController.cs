@@ -73,7 +73,7 @@ namespace Dime.Controllers
         public JsonResult RetornaIdNodo(string IDPadre, string IDdArbol, string NombreNodo)
         {
             Nodo model = new Nodo();
-            if (IDPadre == "InsertaArbol" || IDPadre == "ulPrincipal") { model.IdPadre = 0; } else { model.IdPadre = Convert.ToInt32(IDPadre); }
+            if (IDPadre == "NombreArbol") { model.IdPadre = 0; } else { model.IdPadre = Convert.ToInt32(IDPadre); }
             model.IdArbol = Convert.ToInt32(IDdArbol);
             model.NombreNodo = NombreNodo;
             ProcesosService.CrearNodo(model);
