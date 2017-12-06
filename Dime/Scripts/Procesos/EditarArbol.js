@@ -47,7 +47,7 @@ function ConstruirArbol(idArbol) {
             var json = JSON.parse(result);
             console.log(result);
             $('#InsertaArbol').append("<p id='NombreArbol' name='" + json.Id + "' onmousedown='evnt(this)'>" +
-                                       "<i onclick= 'mostrarOcultar(this)' class='fa fa-caret-square-o-right'></i>" +
+                                       "<i onclick= 'mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
                                         json.NombreArbol +
                                         "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
                                           "<i class='fa fa-plus-circle'></i>" +
@@ -120,7 +120,7 @@ function AgregaNodo(Data) {
         //onmouseover='return evnt(this)'
         $("#ulPrincipal").append(
            "<li id=' " + Data.Id + " ' onmousedown='return evnt(this)' >" +
-           "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-right'></i>" +
+           "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
              "<span onmouseover='poner(this)' onmouseout='quitar(this)'> " +
                   Data.NombreNodo +
              " </span>" +
@@ -150,7 +150,7 @@ function AgregaNodo(Data) {
             $(objeto).append("<ul  class='collapse in' style='list-style-type:none;' >" +
 
                 "<li id=' " + Data.Id + " '  onmousedown='return evnt(this)' >" +
-                 "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-right'></i>" +
+                 "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
                    "<span onmouseover='poner(this)' onmouseout='quitar(this)'> " + Data.NombreNodo + " </span>" +
                      "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
                         "<i class='fa fa-plus-circle'></i>" +
@@ -278,12 +278,12 @@ function mostrarOcultar(obj) {
 
     if (contraer) {
         $(objetoUl).collapse("toggle");
-        if (icono == "fa fa-caret-square-o-right") {
-            obj.setAttribute("class", "fa fa-caret-square-o-down");
+        if (icono == "fa fa-caret-square-o-down") {
+            obj.setAttribute("class", "fa fa-caret-square-o-right");
         }
         else {
 
-            obj.setAttribute("class", "fa fa-caret-square-o-right");
+            obj.setAttribute("class", "fa fa-caret-square-o-down");
         }
     }
 

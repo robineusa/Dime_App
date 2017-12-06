@@ -37,6 +37,7 @@ namespace Dime.Controllers
         {
             if (Envia == "Guardar" && model.NombreArbol != "")
             {
+                model.CodigoHtml = string.Empty;
                 ProcesosService.CrearArbol(model);
                 ViewBag.Mensaje = "Arbol Guardado";
             }
