@@ -2374,6 +2374,7 @@
     <Content Include="Scripts\MultiPlay\ConsultasAdminMultiPlay.js" />
     <Content Include="Scripts\MultiPlay\MultiPlay.js" />
     <Content Include="Scripts\OfertasComerciales\EditarImagen.js" />
+    <Content Include="Scripts\OfertasComerciales\ListaDeImagenesAdmin.js" />
     <Content Include="Scripts\OfertasComerciales\RegistrarImagen.js" />
     <Content Include="Scripts\Procesos\AdminArboles.js" />
     <Content Include="Scripts\Procesos\EditarArbol.js" />
@@ -3574,6 +3575,7 @@
     <Content Include="Views\Banner\ActualizacionDatos.cshtml" />
     <Content Include="Views\OfertasComerciales\RegistrarImagen.cshtml" />
     <Content Include="Views\OfertasComerciales\EditarImagen.cshtml" />
+    <Content Include="Views\OfertasComerciales\ListaDeImagenesAdmin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

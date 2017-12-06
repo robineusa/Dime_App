@@ -7360,4 +7360,16 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListaDeImagenesAdmin">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeImagenesAdminResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q515="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDeImagenesAdminResult" nillable="true" type="q515:ArrayOfIMGOfertasComeciales" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

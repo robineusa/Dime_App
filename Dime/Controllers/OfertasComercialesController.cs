@@ -84,8 +84,16 @@ namespace Dime.Controllers
             }
             return null;
         }
-        
-        
-
+        public ActionResult ListaDeImagenesAdmin()
+        {
+            return View();
+        }
+        public JsonResult ListaDeImagenesAdminJson()
+        {
+            decimal Cedula = Convert.ToDecimal(Session["Usuario"].ToString());
+            var jsonResult = Json(JsonConvert.SerializeObject(OfertasComercialesService.ListaDeImagenesAdmin()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }
