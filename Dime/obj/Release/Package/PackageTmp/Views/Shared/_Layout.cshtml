@@ -806,9 +806,25 @@
 
                         </li>
                     }
-                    @if (Session["Administracion Fidelizacion"] != null)
+                                        @if (Session["Formulario Contencion"] != null)
+                                        {
+                                            <li><a href="@Url.Action("RegistrarSolicitud", "Fidelizacion")"><i class="fa fa-circle-o"></i>Formulario Contención</a></li>
+                                        }
+                    @if (Session["Formulario Retencion"] != null)
                     {
-                        <li>
+                        <li><a href="@Url.Action("RegistrarSolicitud", "Fidelizacion")"><i class="fa fa-circle-o"></i>Formulario Retención</a></li>
+                    }
+                    @if (Session["Formulario Recuperacion"] != null)
+                    {
+                        <li><a href="@Url.Action("RegistrarSolicitud", "Fidelizacion")"><i class="fa fa-circle-o"></i>Formulario Recuperación</a></li>
+                    }
+
+
+
+
+                                                @if (Session["Administracion Fidelizacion"] != null)
+                                                {
+<li>
                             <a href="#"><i class="fa fa-behance-square text-red" aria-hidden="true"></i>Administración Fidelización<i class="fa fa-angle-left pull-right"></i></a>
                             <ul class="treeview-menu">
                                 <li>
@@ -839,14 +855,14 @@
                                         <li><a href="@Url.Action("ListarRecursiva", "Fidelizacion")"><i class="fa fa-circle-o"></i>Mostrar Estrategias</a></li>
                                     </ul>
                                 </li>
-                                <li>
+                                @*<li>
                                     <a href="#"><i class="fa fa-behance-square text-aqua" aria-hidden="true"></i>Otros Campos<i class="fa fa-angle-left pull-right"></i></a>
                                     <ul class="treeview-menu">
                                         <li><a href="@Url.Action("CrearOtrosCampos", "Fidelizacion")"><i class="fa fa-circle-o"></i>Agregar Campos</a></li>
                                         <li><a href="@Url.Action("ListarOtrosCampos", "Fidelizacion")"><i class="fa fa-circle-o"></i>Mostrar Campos</a></li>
                                     </ul>
-                                </li>
-                                <li><a href="@Url.Action("RegistrarSolicitud", "Fidelizacion")"><i class="fa fa-circle-o"></i>Gestionar</a></li>
+                                </li>*@
+                                
 
                             </ul>
                         </li>

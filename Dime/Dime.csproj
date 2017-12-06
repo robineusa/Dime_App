@@ -2373,6 +2373,7 @@
     <Content Include="Scripts\Mec\RegistrarMonitoreo.js" />
     <Content Include="Scripts\MultiPlay\ConsultasAdminMultiPlay.js" />
     <Content Include="Scripts\MultiPlay\MultiPlay.js" />
+    <Content Include="Scripts\OfertasComerciales\RegistrarImagen.js" />
     <Content Include="Scripts\Procesos\AdminArboles.js" />
     <Content Include="Scripts\Procesos\EditarArbol.js" />
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorLog.js" />
@@ -3583,7 +3584,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="bin\" />
     <Folder Include="obj\" />
-    <Folder Include="Scripts\OfertasComerciales\" />
     <Folder Include="Views\AdminBlending\" />
     <Folder Include="Views\CasosAdmin\" />
   </ItemGroup>

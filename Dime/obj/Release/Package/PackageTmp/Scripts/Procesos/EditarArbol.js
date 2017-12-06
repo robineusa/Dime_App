@@ -1,7 +1,9 @@
 ﻿$(document).ready(function () {
-    var IdArbol = 1;
-    var IdPadre = 0;
 
+    var urlParams = new URLSearchParams(window.location.search);
+    var Parametro = urlParams.get('IdArbol');
+    var IdArbol = Parametro;
+    var IdPadre = 0;
     ConstruirArbol(IdArbol);
 
     //$('#Body_Layout').on('click', function () { });
@@ -40,6 +42,7 @@ var nodoSeleccionado = {
     IdPadre: "",
     Id: ""
 }
+var IdArbol = 1;
 //var IdPadre = 0;
 
 function evnt(objeto) {
@@ -48,34 +51,89 @@ function evnt(objeto) {
     obj = objeto.parentNode;
     nodoSeleccionado.IdPadre = obj.id;
     nodoSeleccionado.Id = objeto.id;
-
+    if (nodoSeleccionado.IdPadre == "") {
+        var objAbuelo = obj.parentNode;
+        nodoSeleccionado.IdPadre = objAbuelo.id;
+    }
+    //alert(nodoSeleccionado.IdPadre + "--" + nodoSeleccionado.Id);
 }
 
 function crear() {
+    var NomNodo = $('#Nombre_Nodo').val();
+    var Result;
+    if (nodoSeleccionado.IdPadre != "" && NomNodo != "") {
+        $.ajax({
+            type: "POST",
+            url: urlRetornaIdNodo,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ IDPadre: nodoSeleccionado.IdPadre, IDdArbol: IdArbol, NombreNodo: NomNodo }),
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+                console.log(json);
+                AgregaNodo(json);
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+
+        });
+        $('#Nombre_Nodo').val('');
+    }
+}
+
+function AgregaNodo(Data) {
+    window.event.cancelBubble = true;
     if (nodoSeleccionado.IdPadre == "InsertaArbol") {
+        //onmouseover='return evnt(this)'
+        $("#ulPrincipal").append(
+           "<li id=' " + Data.Id + " ' onmouseover='return evnt(this)' >" +
+             "<span onmouseover='poner(this)' onmouseout='quitar(this)'> " + Data.NombreNodo + " </span>" +
+               "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
+                        "<i class='fa fa-plus-circle'></i>" +
+                "</a>" +
+                        "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
+                 "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
+           "</li>"
+         
 
-        $("#ulPrincipal").append("<i></i><li  onmousedown='return evnt(this)'" + "id= 'li" + contador + "'>"
-           + "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'> Primer nodo exitoso  <i onclick='crear()' class='fa fa-plus-circle'></i><i onclick='Eliminar()' class='fa fa-minus-circle'></i></span> </li>")
-
-        contador++;
+           );
 
     } else {
         var objeto = document.getElementById(nodoSeleccionado.Id);
-        //alert("Creacion li - " + objeto.id);
+        var ulPosicion;
+        var ulPrincipal = true;
 
-        if (objeto.childNodes.length < 3) {
+        for (var i = 0; i < objeto.childNodes.length; i++) {
+            if (objeto.childNodes[i].nodeName == "UL") {
+                ulPrincipal = false;
+                ulPosicion = i;
+            }
+        }
 
-            $(objeto).append("<ul id='ul  ;" + contador1 + "'>" + "<i></i>" + "<li  onmousedown='return evnt(this)'" +
-                           "id= 'li" + contador + "." + contador1 + "'>" + "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'> nodo creado <i onclick='crear()' class='fa fa-plus-circle'></i><i onclick='Eliminar()' class='fa fa-minus-circle'></i></span></li> </ul>");
+        if (ulPrincipal) {
 
-            contador1++;
-
+            $(objeto).append("<ul>" +
+                "<i></i>" +
+                "<li id=' " + Data.Id + " '  onmouseover='return evnt(this)'>" +
+                   "<span onmouseover='poner(this)' onmouseout='quitar(this)'>" + Data.NombreNodo + " </span>" +
+                     "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
+                        "<i class='fa fa-plus-circle'></i>" +
+                      "</a>" +
+                        "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
+                "</li>" +
+              "</ul>");
         } else {
 
-            var ulNivel1 = objeto.childNodes[2];
-            $(ulNivel1).append("<i></i>" + "<li  id='subHijo1." + contador + "-" + contador1 +
-                "'  onmousedown='return evnt(this)'>" +
-                "<span onmouseover='pruebas(this)' onmouseout='pruebas2(this)'>nodo creado<i onclick='crear()' class='fa fa-plus-circle'></i><i onclick='Eliminar()' class='fa fa-minus-circle'></i><span/></li>");
+            var ulNivel1 = objeto.childNodes[ulPosicion];
+            $(ulNivel1).append("<i></i>" +
+              "<li  id=' " + Data.Id + " '  onmouseover='return evnt(this)'>" +
+                 "<span onmouseover='poner(this)' onmouseout='quitar(this)'>" + Data.NombreNodo + "<span/>" +
+                    "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
+                       "<i class='fa fa-plus-circle'></i>" +
+                     "</a>" +
+                       "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
+               "</li>");
 
             contador1++;
 
@@ -102,38 +160,28 @@ function Eliminar() {
         }
     }
     objPadre.removeChild(objPadre.childNodes[numeral]);
-}
-function ocultar() {
-    document.getElementById("lista").style.display = "none";
+    //objPadre.removeChild(objPadre.childNodes[numeral]);
 
-}
 
-function poner() {
-    document.getElementById("lista").style.display = "block";
 
 }
 
+function ValidarTexto(obj) {
 
-
-
-function ocultar() {
-    document.getElementById("Menu").style.display = "none";
-
+    if (obj.value != "") {
+        $("#BotonCrear").removeAttr("disabled");
+    }
+    else {
+        $("#BotonCrear").attr("disabled", "true");
+    }
 }
 
-function poner() {
-    document.getElementById("Menu").style.display = "block";
 
-}
 
-function seleccionado() {
-    document.getElementById("Menu").style.display = "block";
-}
-
-function pruebas(obj) {
+function poner(obj) {
     obj.style.backgroundColor = "#336699";
 }
 
-function pruebas2(obj) {
+function quitar(obj) {
     obj.style.backgroundColor = "";
 }

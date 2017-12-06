@@ -16587,10 +16587,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task updateRegistroAsync(Telmexla.Servicios.DIME.Entity.FidelizacionRegistro objRegistro);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getTipificacionAll", ReplyAction="http://tempuri.org/IFidelizacionService/getTipificacionAllResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion> getTipificacionAll();
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion> getTipificacionAll(decimal eliminado, decimal nivel);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getTipificacionAll", ReplyAction="http://tempuri.org/IFidelizacionService/getTipificacionAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion>> getTipificacionAllAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion>> getTipificacionAllAsync(decimal eliminado, decimal nivel);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getTipificacionById", ReplyAction="http://tempuri.org/IFidelizacionService/getTipificacionByIdResponse")]
         Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion getTipificacionById(decimal idTipificacion);
@@ -16617,10 +16617,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.FidelizacionOtrosCampos> getOtrosCamposByIdAsync(decimal idOtrosCampos);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getOtrosCamposAll", ReplyAction="http://tempuri.org/IFidelizacionService/getOtrosCamposAllResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionOtrosCampos> getOtrosCamposAll();
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionOtrosCampos> getOtrosCamposAll(decimal eliminado, decimal nivel);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getOtrosCamposAll", ReplyAction="http://tempuri.org/IFidelizacionService/getOtrosCamposAllResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionOtrosCampos>> getOtrosCamposAllAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionOtrosCampos>> getOtrosCamposAllAsync(decimal eliminado, decimal nivel);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/setRegistroCampos", ReplyAction="http://tempuri.org/IFidelizacionService/setRegistroCamposResponse")]
         void setRegistroCampos(Telmexla.Servicios.DIME.Entity.FidelizacionRegistroCampos objRegistroCampos);
@@ -16657,6 +16657,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getRecursivaVistaById", ReplyAction="http://tempuri.org/IFidelizacionService/getRecursivaVistaByIdResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.FidelizacionRecursivaVista> getRecursivaVistaByIdAsync(decimal idRecursiva);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getRecursivaArbol", ReplyAction="http://tempuri.org/IFidelizacionService/getRecursivaArbolResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva> getRecursivaArbol(decimal idHijo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getRecursivaArbol", ReplyAction="http://tempuri.org/IFidelizacionService/getRecursivaArbolResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva>> getRecursivaArbolAsync(decimal idHijo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -16878,12 +16884,12 @@ namespace Dime.WSD {
             return base.Channel.updateRegistroAsync(objRegistro);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion> getTipificacionAll() {
-            return base.Channel.getTipificacionAll();
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion> getTipificacionAll(decimal eliminado, decimal nivel) {
+            return base.Channel.getTipificacionAll(eliminado, nivel);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion>> getTipificacionAllAsync() {
-            return base.Channel.getTipificacionAllAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion>> getTipificacionAllAsync(decimal eliminado, decimal nivel) {
+            return base.Channel.getTipificacionAllAsync(eliminado, nivel);
         }
         
         public Telmexla.Servicios.DIME.Entity.FidelizacionTipificacion getTipificacionById(decimal idTipificacion) {
@@ -16918,12 +16924,12 @@ namespace Dime.WSD {
             return base.Channel.getOtrosCamposByIdAsync(idOtrosCampos);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionOtrosCampos> getOtrosCamposAll() {
-            return base.Channel.getOtrosCamposAll();
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionOtrosCampos> getOtrosCamposAll(decimal eliminado, decimal nivel) {
+            return base.Channel.getOtrosCamposAll(eliminado, nivel);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionOtrosCampos>> getOtrosCamposAllAsync() {
-            return base.Channel.getOtrosCamposAllAsync();
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionOtrosCampos>> getOtrosCamposAllAsync(decimal eliminado, decimal nivel) {
+            return base.Channel.getOtrosCamposAllAsync(eliminado, nivel);
         }
         
         public void setRegistroCampos(Telmexla.Servicios.DIME.Entity.FidelizacionRegistroCampos objRegistroCampos) {
@@ -16972,6 +16978,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.FidelizacionRecursivaVista> getRecursivaVistaByIdAsync(decimal idRecursiva) {
             return base.Channel.getRecursivaVistaByIdAsync(idRecursiva);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva> getRecursivaArbol(decimal idHijo) {
+            return base.Channel.getRecursivaArbol(idHijo);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva>> getRecursivaArbolAsync(decimal idHijo) {
+            return base.Channel.getRecursivaArbolAsync(idHijo);
         }
     }
     

@@ -3388,6 +3388,7 @@
       <xs:element minOccurs="0" name="Nota" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Registro" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="UsuarioId" type="xs:int" />
+      <xs:element minOccurs="0" name="ValidaRetencion" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FidelizacionTipificacion" nillable="true" type="tns:FidelizacionTipificacion" />
@@ -3412,18 +3413,24 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Cuenta" type="xs:decimal" />
       <xs:element minOccurs="0" name="DiaCorte" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaCorte" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="FechaRegistro" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Nivel" type="xs:decimal" />
       <xs:element minOccurs="0" name="Notas" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="OtrosOfrecimientosId" type="xs:decimal" />
       <xs:element minOccurs="0" name="Permanencia" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="RecursivaId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RecursivaIdA" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RecursivaIdB" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RecursivaIdC" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Renta" type="xs:decimal" />
       <xs:element minOccurs="0" name="ServiciosId" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ServiciosRetenidosId" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SubmotivoId" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Ticket" type="xs:decimal" />
       <xs:element minOccurs="0" name="TipificacionId" type="xs:decimal" />
       <xs:element minOccurs="0" name="UsuarioId" type="xs:int" />
+      <xs:element minOccurs="0" name="UsuarioTransfiere" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FidelizacionRegistro" nillable="true" type="tns:FidelizacionRegistro" />

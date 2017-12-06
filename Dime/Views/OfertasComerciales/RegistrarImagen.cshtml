@@ -1,10 +1,11 @@
 ﻿@model Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales
 @{
-    ViewBag.Title = "RegistrarImagen";
+    ViewBag.Title = "Registrar Imagen";
+    ViewBag.SubTitle = "Procesos - Tmk";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm("RegistrarImagen", "OfertasComerciales", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("RegistrarImagen", "OfertasComerciales", FormMethod.Post, new { id="imagenes", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div class="row">
@@ -16,36 +17,45 @@
 
                             <table>
                                 <tr>
-                                    <td width="200">
-                                        <small>Link</small>
-                                        @Html.TextBoxFor(m => m.Link, new { @class = "form-control input-sm", @Id = "Link" })
-                                    </td>
-                                    <td width="200">
-                                        <small>Descripción</small>
-                                        @Html.TextBoxFor(m => m.Descripcion, new { @class = "form-control input-sm", @Id = "Descripcion" })
+                                    <td width="200" style="padding-left:2px;">
+                                        <small>Link:</small>
+                                        @Html.TextBoxFor(m => m.Link, new { @class = "form-control input-sm", @Id = "Link", autocomplete = "off", placeholder = "Ingrese el Link a direccionar..." })
                                     </td>
                                     <td width="200" style="padding-left:2px;">
-                                        <small>Estado</small>
+                                        <small>Descripción:</small>
+                                        @Html.TextBoxFor(m => m.Descripcion, new { @class = "form-control input-sm", @Id = "Descripcion", autocomplete = "off", placeholder = "Ingrese una descripción..." })
+                                    </td>
+                                    <td width="200" style="padding-left:2px;">
+                                        <small>Estado:</small>
                                         @Html.DropDownListFor(m => m.Estado, new List<SelectListItem> {new SelectListItem{Text="ACTIVA", Value="ACTIVA" },
                                                                                              new SelectListItem{Text="INACTIVA", Value="INACTIVA" } },
                                                                                                               "--SELECCIONE--", new { @class = "form-control input-sm" })
                                     </td>
                                 
                             </table>
-                            <small>Imagen</small>
-                            <div class="form-group">
-                                <div class="input-group input-file" name="File">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default btn-choose" type="button">Seleccionar</button>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder='Choose a file...' />
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-warning btn-reset" type="button">Reiniciar</button>
-                                    </span>
-                                </div>
-                            </div>
+                            <table>
+                                <tr>
+                                    <td width="600">
+                                        <small>Imagen:</small>
+                                        <div class="form-group">
+                                            <div class="input-group input-file" name="Archivo">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default btn-choose" type="button">Seleccionar</button>
+                                                </span>
+                                                <input type="text" class="form-control" placeholder='Seleccione una imagen para cargar...' />
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-warning btn-reset" type="button">Limpiar</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
                            <br />
-                            <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;">Siguiente</button>
+                            <img id="ImagenTraida1" src=""/>
+                            <br />
+                            <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;">Registrar</button>
                             <br />
                         </div>
                     </div>
@@ -57,41 +67,7 @@
 }
 @section Scripts{
     <script>
-        function bs_input_file() {
-            $(".input-file").before(
-                function () {
-                    if (!$(this).prev().hasClass('input-ghost')) {
-                        var element = $("<input id='File' name='File' type='file' style='visibility:hidden; height:0'>");
-                        element.attr("name", $(this).attr("name"));
-                        element.change(function () {
-                            element.next(element).find('input').val((element.val()).split('\\').pop());
-                         
-                        });
-                        
-                        $(this).find("button.btn-choose").click(function () {
-                            element.click();
-                        });
-                        $(this).find("button.btn-reset").click(function () {
-                            element.val(null);
-                            $(this).parents(".input-file").find('input').val('');
-                        });
-                        $(this).find('input').css("cursor", "pointer");
-                        $(this).find('input').mousedown(function () {
-                            $(this).parents('.input-file').prev().click();
-                            return false;
-                        });
-                        return element;
-                        
-                    }
-                    
-                }
-            );
-           
-        }
-        $(function () {
-            bs_input_file();
-           
-        });
-        
+        var UrlPreCargarImagen = '@Url.Action("PrecargarImagen", "OfertasComerciales")';
     </script>
+<script src="~/Scripts/OfertasComerciales/RegistrarImagen.js?1.0.1"></script>
 }

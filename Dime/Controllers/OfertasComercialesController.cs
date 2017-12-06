@@ -29,15 +29,15 @@ namespace Dime.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RegistrarImagen([Bind(Include ="Link,Descripcion,Estado")] IMGOfertasComeciales modelo, HttpPostedFileBase File)
+        public ActionResult RegistrarImagen([Bind(Include ="Link,Descripcion,Estado")] IMGOfertasComeciales modelo, HttpPostedFileBase Archivo)
         {
             modelo.UsuarioCreacion = Convert.ToDecimal(Session["Usuario"]);
 
-            if (File != null)
+            if (Archivo != null)
             {
                 using (MemoryStream ms = new MemoryStream())
                 {
-                    File.InputStream.CopyTo(ms);
+                    Archivo.InputStream.CopyTo(ms);
                     byte[] array = ms.GetBuffer();
 
                     modelo.Imagen = array;
@@ -46,7 +46,7 @@ namespace Dime.Controllers
 
             }
             
-            return View();
+            return RedirectToAction("RegistrarImagen");
         }
         public ActionResult EditarImagen(decimal IdImagen)
         {
@@ -61,6 +61,23 @@ namespace Dime.Controllers
             if (imageData != null)
             {
                 return File(imageData, "image/png"); 
+            }
+            return null;
+        }
+        public JsonResult PrecargarImagen(HttpPostedFileBase Archivo)
+        {
+            
+            if (Archivo != null)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    Archivo.InputStream.CopyTo(ms);
+                    byte[] array = ms.GetBuffer();
+                    var jsonResult = Json(JsonConvert.SerializeObject(File(array, "image/png")), JsonRequestBehavior.AllowGet);
+                    jsonResult.MaxJsonLength = int.MaxValue;
+                    return jsonResult;
+
+                }
             }
             return null;
         }

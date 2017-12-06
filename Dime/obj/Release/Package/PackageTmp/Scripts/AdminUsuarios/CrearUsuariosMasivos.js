@@ -29,7 +29,6 @@ function filePicked(oEvent) {
             var sCSV = XLS.utils.make_csv(wb.Sheets[sheetName]);   
             var oJS = XLS.utils.sheet_to_row_object_array(wb.Sheets[sheetName]);   
             $("#my_file_output").html(sCSV);
-           
             CotejarInformacionGrid(oJS);
          
         });
@@ -42,11 +41,16 @@ function filePicked(oEvent) {
 
 function CotejarInformacionGrid(cedulas)
 {
+    
     cedulasArray = new Array();
     for (var i = 0; i < cedulas.length; i++)
     {
-        cedulasArray.push(cedulas[i].CEDULA);
+        if (isNaN(cedulas[i].CEDULA)) {
+        }
+        else { cedulasArray.push(cedulas[i].CEDULA); }
+        
     }
+    //console.log(cedulasArray);
         $.ajax({
             type: "POST",
             traditional: true,
@@ -55,12 +59,27 @@ function CotejarInformacionGrid(cedulas)
             dataType: 'json',
             success: function (result) {
                 var json = JSON.parse(result);
-                FillGridViewResult(json.DataUsuario);
-                if(json.DataValid == true)
+                if (json.DataUsuario != "") {
+                    FillGridViewResult(json.DataUsuario);
+                    if (json.DataValid == true) {
+                        $("#perfilUsuarios").show();
+                        $("#Crear_Usuarios").css("display", "block");
+                    } else {
+                        $("#perfilUsuarios").hide();
+                    }
+                }
+                else
                 {
-                    $("#perfilUsuarios").show();
-                } else {
+                    cedulasArray = new Array();
                     $("#perfilUsuarios").hide();
+                    $("#Crear_Usuarios").css("display", "none");
+                    $("#infoCotejeadaGrid").empty();
+                    $("#GridAccesosMasivo").empty();
+                    $("#listaPermisosCrearMas").val();
+                    $("#perfilCreate").val('');
+                    $("#lineaCreacion").val('');
+                    $("#contraAssigned").val('');
+                    alert("Ningun Usuario Aplica Para la Creación");
                 }
             }
         });
@@ -256,28 +275,47 @@ function SelectCrearAcceso(e) {
 
 function GuardarUsuarios()
 {
+    $("#listaPermisosCrearMas").val('');
     AgregaAccesosaGuardarMasivo();
     var accesosCrear = $("#listaPermisosCrearMas").val();
     var perfilCrear = $("#perfilCreate").val();
     var lineaCrear = $("#lineaCreacion").val();
     var contraMasiva = $("#contraAssigned").val();
-    cedulasArray
-    $.ajax({
-        type: "POST",
-        traditional: true,
-        url: urlCrearUsuariosMasivo,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ cedulas: cedulasArray, accesosCrear: accesosCrear, perfilCrear: perfilCrear, lineaCrear: lineaCrear, contraMasiva: contraMasiva }),
-        dataType: "json",
-        success: function (result) {
-            $("#mensajeFinal").text(result);
-        },
-        error: function (request, status, error) {
-            alert(request.responseText + " " + status + "  " + error);
+    if (perfilCrear != "" && lineaCrear != 0) {
+        if (accesosCrear != "") {
+            $("#Crear_Usuarios").css("display", "none");
+            $.ajax({
+                type: "POST",
+                traditional: true,
+                url: urlCrearUsuariosMasivo,
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({ cedulas: cedulasArray, accesosCrear: accesosCrear, perfilCrear: perfilCrear, lineaCrear: lineaCrear, contraMasiva: contraMasiva }),
+                dataType: "json",
+                success: function (result) {
+                    $("#mensajeFinal").text(result);
+                    $("#perfilUsuarios").hide();
+                    $("#infoCotejeadaGrid").empty();
+                    $("#GridAccesosMasivo").empty();
+                    $("#listaPermisosCrearMas").val('');
+                    $("#perfilCreate").val('');
+                    $("#lineaCreacion").val('');
+                    $("#contraAssigned").val('');                    
+
+                },
+                error: function (request, status, error) {
+                    alert(request.responseText + " " + status + "  " + error);
+                }
+
+            });
+            //$("#Crear_Usuarios").css("display", "block");
         }
-
-    });
-
+        else { alert('Seleccione al Menos un Permiso');  }
+    }
+    else
+    {
+        alert("Seleccione un Perfil y/o Nombre Linea");
+    }
+    
 }
 
 
@@ -342,6 +380,7 @@ function GuardaCedulas(data)
 {
     cedulasArray = new Array();
     for (var i = 0; i < data.length; i++) {
+        
         cedulasArray.push(data[i].Cedula);
         //data[i].Cedula = kendo.toString(kendo.parseDate(data[i].FechaGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
     }
