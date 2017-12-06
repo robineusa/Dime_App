@@ -611,7 +611,7 @@ namespace Dime.Controllers
                
                 ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
                 ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
-                var s = fidelizacionServicio.getRecursivaAll(1);
+                var s = fidelizacionServicio.getRecursivaAll(1,0);
                 ViewBag.slEstrategia = s;
                 return View(r);
             }
@@ -623,7 +623,7 @@ namespace Dime.Controllers
                 
                 ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
                 ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
-                var s = fidelizacionServicio.getRecursivaAll(1);
+                var s = fidelizacionServicio.getRecursivaAll(1,0);
                 ViewBag.slEstrategia = s;
                 return View(r);
             }
@@ -635,7 +635,7 @@ namespace Dime.Controllers
                 
                 ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
                 ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
-                var s = fidelizacionServicio.getRecursivaAll(1);
+                var s = fidelizacionServicio.getRecursivaAll(1,0);
                 ViewBag.slEstrategia = s;
                 return View(r);
             }
@@ -648,7 +648,7 @@ namespace Dime.Controllers
                 
                 ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
                 ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
-                var s = fidelizacionServicio.getRecursivaAll(1);
+                var s = fidelizacionServicio.getRecursivaAll(1,0);
                 ViewBag.slEstrategia = s;
                 return View(r);
             }
@@ -661,7 +661,7 @@ namespace Dime.Controllers
                 
                 ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
                 ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
-                var s = fidelizacionServicio.getRecursivaAll(1);
+                var s = fidelizacionServicio.getRecursivaAll(1,0);
                 ViewBag.slEstrategia = s;
                 return View(r);
             }
@@ -674,7 +674,7 @@ namespace Dime.Controllers
                 
                 ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
                 ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
-                var s = fidelizacionServicio.getRecursivaAll(1);
+                var s = fidelizacionServicio.getRecursivaAll(1,0);
                 ViewBag.slEstrategia = s;
                 return View(r);
             }
@@ -687,7 +687,7 @@ namespace Dime.Controllers
                 
                 ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
                 ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
-                var s = fidelizacionServicio.getRecursivaAll(1);
+                var s = fidelizacionServicio.getRecursivaAll(1,0);
                 ViewBag.slEstrategia = s;
                 return View(r);
             }
@@ -700,7 +700,7 @@ namespace Dime.Controllers
                 
                 ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
                 ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
-                var s = fidelizacionServicio.getRecursivaAll(1);
+                var s = fidelizacionServicio.getRecursivaAll(1,0);
                 ViewBag.slEstrategia = s;
                 return View(r);
             }
@@ -714,7 +714,7 @@ namespace Dime.Controllers
                 
                 ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
                 ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
-                var s = fidelizacionServicio.getRecursivaAll(1);
+                var s = fidelizacionServicio.getRecursivaAll(1,0);
                 ViewBag.slEstrategia = s;
                 return View(r);
             }
@@ -733,7 +733,7 @@ namespace Dime.Controllers
                     
                     ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
                     ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
-                    var s = fidelizacionServicio.getRecursivaAll(1);
+                    var s = fidelizacionServicio.getRecursivaAll(1,0);
                     ViewBag.slEstrategia = s;
                     return View(r);
                 }
@@ -748,7 +748,7 @@ namespace Dime.Controllers
                     while (Request.Form["sltEstrategiasA_" + c1] != null);var tmp = Convert.ToInt32(Request.Form["sltEstrategiasA_" + (c1 - 1)]);
 
 
-                    var E1 = fidelizacionServicio.getRecursivaAll(Convert.ToInt32(Request.Form["sltEstrategiasA_" + (c1 - 1)]));
+                    var E1 = fidelizacionServicio.getRecursivaAll(Convert.ToInt32(Request.Form["sltEstrategiasA_" + (c1 - 1)]),0);
                     if (E1.Count > 0 || E1 == null)
                     {
                         //seleccionar hijo
@@ -757,7 +757,7 @@ namespace Dime.Controllers
                         
                         ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
                         ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
-                        var s = fidelizacionServicio.getRecursivaAll(1);
+                        var s = fidelizacionServicio.getRecursivaAll(1,0);
                         ViewBag.slEstrategia = s;
                         return View(r);
                     }else
@@ -774,7 +774,7 @@ namespace Dime.Controllers
                     }
                     while (Request.Form["sltEstrategiasB_" + c2] != null);
 
-                    var E2 = ((Request.Form["sltEstrategiasB_" + (c2 - 1)] != null)? fidelizacionServicio.getRecursivaAll(Convert.ToInt32(Request.Form["sltEstrategiasB_" + (c2 - 1)])):null) ;
+                    var E2 = ((Request.Form["sltEstrategiasB_" + (c2 - 1)] != null)? fidelizacionServicio.getRecursivaAll(Convert.ToInt32(Request.Form["sltEstrategiasB_" + (c2 - 1)]),0):null) ;
                     
                     if (E2 == null) { }
                     else if (E2.Count > 0)
@@ -786,7 +786,7 @@ namespace Dime.Controllers
                         
                         ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
                         ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
-                        var s = fidelizacionServicio.getRecursivaAll(1);
+                        var s = fidelizacionServicio.getRecursivaAll(1,0);
                         ViewBag.slEstrategia = s;
                         return View(r);
                     }else
@@ -802,7 +802,7 @@ namespace Dime.Controllers
                     }
                     while (Request.Form["sltEstrategiasA_" + c3] != null);
 
-                    var E3 = ((Request.Form["sltEstrategiasC_" + (c3 - 1)] != null) ? fidelizacionServicio.getRecursivaAll(Convert.ToInt32(Request.Form["sltEstrategiasB_" + (c3 - 1)])) : null);
+                    var E3 = ((Request.Form["sltEstrategiasC_" + (c3 - 1)] != null) ? fidelizacionServicio.getRecursivaAll(Convert.ToInt32(Request.Form["sltEstrategiasB_" + (c3 - 1)]),0) : null);
                     if (E3 == null) { }
                     else if (E3.Count > 0 || E3 == null)
                     {
@@ -812,7 +812,7 @@ namespace Dime.Controllers
                         
                         ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
                         ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
-                        var s = fidelizacionServicio.getRecursivaAll(1);
+                        var s = fidelizacionServicio.getRecursivaAll(1,0);
                         ViewBag.slEstrategia = s;
                         return View();
                     }
@@ -828,7 +828,7 @@ namespace Dime.Controllers
                     
                     ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
                     ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
-                    var s = fidelizacionServicio.getRecursivaAll(1);
+                    var s = fidelizacionServicio.getRecursivaAll(1,0);
                     ViewBag.slEstrategia = s;
                     return View();
 
@@ -878,7 +878,7 @@ namespace Dime.Controllers
                 idNivel = 1;
             ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
             ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
-            var s = fidelizacionServicio.getRecursivaAll(1);
+            var s = fidelizacionServicio.getRecursivaAll(1,0);
             ViewBag.slEstrategia = s;
             return View();
             
@@ -899,15 +899,16 @@ namespace Dime.Controllers
         public JsonResult getHijoRecursivaJson(int idPadre)
         {
             var nivel = 0;
-            if (Session["Fidelizacion Contencion"] != null)
+            if (Session["Formulario Contencion"] != null)
                 nivel = 1;
-            else if (Session["Fidelizacion Retencion"] != null)
+            else if (Session["Formulario Retencion"] != null)
                 nivel = 2;
-            else if (Session["Fidelizacion Recuperacion"] != null)
+            else if (Session["Formulario Recuperacion"] != null)
                 nivel = 3;
 
             //var s = fidelizacionServicio.getRecursivaAll(1);
             var Motivos = fidelizacionServicio.getRecursivaAll(idPadre, nivel);
+            var testc = "";
             return Json(Motivos, JsonRequestBehavior.AllowGet);
         }
         public JsonResult getNotasJson(decimal idNota, decimal idSubmotivo, string idServicios, string idServiciosRet, decimal idE1, decimal idE2, decimal idE3, string permanencia, int idTicket, string userTransfer, int renta)
