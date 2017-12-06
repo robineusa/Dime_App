@@ -5,7 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<<<<<<< HEAD
 @using (Html.BeginForm("RegistrarImagen", "OfertasComerciales", FormMethod.Post, new { id="imagenes", enctype = "multipart/form-data" }))
+=======
+@using (Html.BeginForm("RegistrarImagen", "OfertasComerciales", FormMethod.Post, new { id = "imagen", role = "form",enctype="" }))
+>>>>>>> e1491aa137168c7671457a526cc0f68afee7b631
 {
     @Html.AntiForgeryToken()
     <div class="row">
@@ -31,8 +35,14 @@
                                                                                              new SelectListItem{Text="INACTIVA", Value="INACTIVA" } },
                                                                                                               "--SELECCIONE--", new { @class = "form-control input-sm" })
                                     </td>
-                                
+                                    <td width="200" style="padding-left:2px;">
+                                        <small>Imagen</small>
+                           
+                                        
+                                                    <input type="file" id="Imagen" name="Imagen" />
+                                </tr>
                             </table>
+<<<<<<< HEAD
                             <table>
                                 <tr>
                                     <td width="600">
@@ -56,6 +66,10 @@
                             <img id="ImagenTraida1" src=""/>
                             <br />
                             <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;">Registrar</button>
+=======
+
+                            <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;">Siguiente</button>
+>>>>>>> e1491aa137168c7671457a526cc0f68afee7b631
                             <br />
                         </div>
                     </div>
@@ -65,9 +79,13 @@
     </div>
 
 }
+<<<<<<< HEAD
 @section Scripts{
     <script>
         var UrlPreCargarImagen = '@Url.Action("PrecargarImagen", "OfertasComerciales")';
     </script>
 <script src="~/Scripts/OfertasComerciales/RegistrarImagen.js?1.0.1"></script>
 }
+=======
+
+>>>>>>> e1491aa137168c7671457a526cc0f68afee7b631
