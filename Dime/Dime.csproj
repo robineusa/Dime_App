@@ -3572,7 +3572,6 @@
     <Content Include="Views\Retencion\Index.cshtml" />
     <Content Include="Views\Banner\ActualizacionDatos.cshtml" />
     <Content Include="Views\OfertasComerciales\RegistrarImagen.cshtml" />
-    <Content Include="Views\OfertasComerciales\EditarImagen.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
