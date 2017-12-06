@@ -71,7 +71,7 @@ namespace Dime.Controllers
                 }
             }
             OfertasComercialesService.ActualizarImagen(modelo);
-            return RedirectToAction("EditarImagen", "OfertasComerciales", new { IdImagen = modelo.IdImagen });
+            return RedirectToAction("ListaDeImagenesAdmin", "OfertasComerciales");
         }
         public ActionResult ConvertirImagen(decimal IdImagen)
         {

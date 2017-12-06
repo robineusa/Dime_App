@@ -4,34 +4,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-        
-       
-        <div class="row">
-            <div class="col-md-12">
-                <div class="box box-danger">
-                    <div class="box-body">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <h2 class="page-header" style="margin-top:25px"><i class="fa fa-search"></i>Lista de Imagenes Actuales </h2>
-                                <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
-                                    <div class="box-body">
-                                        <div id="dataLoading" style="display:none;text-align:center;width:100%;height:auto;">
-                                            <div><img src="~/Resources/Images/Loading.gif" height="100" width="100" /></div>
-                                        </div>
-                                        <div id="gridViewConsulta"></div>
-                                    </div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="page-header" style="margin-top:25px"><i class="fa fa-search"></i>Lista de Imagenes Actuales </h2>
+                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                            <div class="box-body">
+                                <div id="dataLoading" style="display:none;text-align:center;width:100%;height:auto;">
+                                    <div><img src="~/Resources/Images/Loading.gif" height="100" width="100" /></div>
                                 </div>
+                                <div id="gridViewConsulta"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <button id="submitDatos" type="submit" class="btn btn-primary" value="true" style="width:10%; height:40px; display:none;"></button>
         </div>
-   
-
+        <button id="submitDatos" type="submit" class="btn btn-primary" value="true" style="width:10%; height:40px; display:none;"></button>
+    </div>
+</div>
     @section scripts{
         <script>var UrlImagenesAdminjson = '@Url.Action("ListaDeImagenesAdminJson", "OfertasComerciales")';</script>
-
         <script src="~/Scripts/OfertasComerciales/ListaDeImagenesAdmin.js?1.0.4"></script>
-
     }
