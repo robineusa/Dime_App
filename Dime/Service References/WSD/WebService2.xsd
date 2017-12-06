@@ -3753,6 +3753,7 @@
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdArbol" type="xs:int" />
       <xs:element minOccurs="0" name="IdPadre" type="xs:int" />
+      <xs:element minOccurs="0" name="NodosHijos" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreNodo" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

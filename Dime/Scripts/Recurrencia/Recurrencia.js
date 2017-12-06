@@ -1,7 +1,10 @@
 ﻿$.datetimepicker.setLocale('es');
 $(document).ready(function () {
-    
-    
+    setTimeout(function () {
+        $('#NoDatos').fadeOut(1500);
+        $('#NoDatos2').fadeOut(1500);
+    }, 5000);
+
     $('#FechaSesguimiento').datetimepicker({
         //format: 'Y-m-d h:mm',
         //Format: "Y.m.d",
