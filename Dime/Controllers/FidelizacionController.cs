@@ -898,8 +898,16 @@ namespace Dime.Controllers
         }
         public JsonResult getHijoRecursivaJson(int idPadre)
         {
+            var nivel = 0;
+            if (Session["Fidelizacion Contencion"] != null)
+                nivel = 1;
+            else if (Session["Fidelizacion Retencion"] != null)
+                nivel = 2;
+            else if (Session["Fidelizacion Recuperacion"] != null)
+                nivel = 3;
+
             //var s = fidelizacionServicio.getRecursivaAll(1);
-            var Motivos = fidelizacionServicio.getRecursivaAll(idPadre);
+            var Motivos = fidelizacionServicio.getRecursivaAll(idPadre, nivel);
             return Json(Motivos, JsonRequestBehavior.AllowGet);
         }
         public JsonResult getNotasJson(decimal idNota, decimal idSubmotivo, string idServicios, string idServiciosRet, decimal idE1, decimal idE2, decimal idE3, string permanencia, int idTicket, string userTransfer, int renta)
