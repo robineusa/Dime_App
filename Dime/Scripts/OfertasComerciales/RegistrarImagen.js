@@ -6,7 +6,12 @@
                 element.attr("name", $(this).attr("name"));
                 element.change(function () {
                     element.next(element).find('input').val((element.val()).split('\\').pop());
-                    TraerListaGerenciasActivas();
+                    var reader = new FileReader(); //instanciamos el objeto de la api FileReader
+                    reader.onload = function (e) {
+                        document.getElementById("ImagenTransformada").src = e.target.result;
+                    };
+                    // read the image file as a data URL.
+                    reader.readAsDataURL(this.files[0]);
                 });
 
                 $(this).find("button.btn-choose").click(function () {

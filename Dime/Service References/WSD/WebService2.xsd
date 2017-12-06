@@ -3847,4 +3847,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="IMGOfertasComeciales" nillable="true" type="tns:IMGOfertasComeciales" />
+  <xs:complexType name="ArrayOfIMGOfertasComeciales">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IMGOfertasComeciales" nillable="true" type="tns:IMGOfertasComeciales" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIMGOfertasComeciales" nillable="true" type="tns:ArrayOfIMGOfertasComeciales" />
 </xs:schema>

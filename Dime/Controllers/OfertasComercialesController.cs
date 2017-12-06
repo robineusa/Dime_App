@@ -21,7 +21,7 @@ namespace Dime.Controllers
             OfertasComercialesService = new WSD.OfertasComercialesServiceClient();
             OfertasComercialesService.ClientCredentials.Authenticate();
         }
-         [HttpGet]
+        [HttpGet]
         public ActionResult RegistrarImagen()
         {
             IMGOfertasComeciales modelo = new IMGOfertasComeciales();
@@ -29,11 +29,11 @@ namespace Dime.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RegistrarImagen([Bind(Include ="Link,Descripcion,Estado")] IMGOfertasComeciales modelo, HttpPostedFileBase Archivo)
+        public ActionResult RegistrarImagen([Bind(Include = "Link,Descripcion,Estado")] IMGOfertasComeciales modelo, HttpPostedFileBase Archivo)
         {
             modelo.UsuarioCreacion = Convert.ToDecimal(Session["Usuario"]);
 
-            if (Archivo != null)
+            if (Archivo != null && Archivo.ContentLength > 0)
             {
                 using (MemoryStream ms = new MemoryStream())
                 {
@@ -45,13 +45,33 @@ namespace Dime.Controllers
                 }
 
             }
-            
+
             return RedirectToAction("RegistrarImagen");
         }
+        [HttpGet]
         public ActionResult EditarImagen(decimal IdImagen)
         {
             IMGOfertasComeciales modelo = OfertasComercialesService.ConsultarImagenPorId(IdImagen);
             return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditarImagen(IMGOfertasComeciales modelo, HttpPostedFileBase Archivo)
+        {
+            modelo.UsuarioCreacion = Convert.ToDecimal(Session["Usuario"]);
+
+            if (Archivo != null && Archivo.ContentLength > 0)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    Archivo.InputStream.CopyTo(ms);
+                    byte[] array = ms.GetBuffer();
+
+                    modelo.Imagen = array;
+                }
+            }
+            OfertasComercialesService.ActualizarImagen(modelo);
+            return RedirectToAction("ListaDeImagenesAdmin", "OfertasComerciales");
         }
         public ActionResult ConvertirImagen(decimal IdImagen)
         {
@@ -60,26 +80,20 @@ namespace Dime.Controllers
             byte[] imageData = ImagenTraida.Imagen;
             if (imageData != null)
             {
-                return File(imageData, "image/png"); 
+                return File(imageData, "image/png");
             }
             return null;
         }
-        public JsonResult PrecargarImagen(HttpPostedFileBase Archivo)
+        public ActionResult ListaDeImagenesAdmin()
         {
-            
-            if (Archivo != null)
-            {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    Archivo.InputStream.CopyTo(ms);
-                    byte[] array = ms.GetBuffer();
-                    var jsonResult = Json(JsonConvert.SerializeObject(File(array, "image/png")), JsonRequestBehavior.AllowGet);
-                    jsonResult.MaxJsonLength = int.MaxValue;
-                    return jsonResult;
-
-                }
-            }
-            return null;
+            return View();
+        }
+        public JsonResult ListaDeImagenesAdminJson()
+        {
+            decimal Cedula = Convert.ToDecimal(Session["Usuario"].ToString());
+            var jsonResult = Json(JsonConvert.SerializeObject(OfertasComercialesService.ListaDeImagenesAdmin()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
     }
 }
