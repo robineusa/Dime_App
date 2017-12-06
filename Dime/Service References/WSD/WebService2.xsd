@@ -3509,6 +3509,28 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="FidelizacionRecursivaVista" nillable="true" type="tns:FidelizacionRecursivaVista" />
+  <xs:complexType name="ArrayOfMaestroFestivos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MaestroFestivos" nillable="true" type="tns:MaestroFestivos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaestroFestivos" nillable="true" type="tns:ArrayOfMaestroFestivos" />
+  <xs:complexType name="MaestroFestivos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ano" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaRR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreDia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreMes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroDia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroMes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDiaFestivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDiaLunSab" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDiaLunVier" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaestroFestivos" nillable="true" type="tns:MaestroFestivos" />
   <xs:complexType name="VIPSolicitudes">
     <xs:sequence>
       <xs:element minOccurs="0" name="AliadoSolicitud" nillable="true" type="xs:string" />
@@ -3731,6 +3753,7 @@
       <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="IdArbol" type="xs:int" />
       <xs:element minOccurs="0" name="IdPadre" type="xs:int" />
+      <xs:element minOccurs="0" name="NodosHijos" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreNodo" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

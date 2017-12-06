@@ -25,11 +25,11 @@
                         <td style="min-width:200px; padding:1px;">
                             @if (ViewBag.NoDatos2 != "")
                             {
-                                <label style="color:red; display:inline-block"> &nbsp;&nbsp; @ViewBag.NoDatos2</label>
+                                <label id="NoDatos2" style="color:red; display:inline-block"> &nbsp;&nbsp; @ViewBag.NoDatos2</label>
                             }
                             @if (ViewBag.NoDatos != "")
                             {
-                                <label style="color:red; display:inline-block"> &nbsp;&nbsp; @ViewBag.NoDatos</label>
+                                <label id="NoDatos" style="color:red; display:inline-block"> &nbsp;&nbsp; @ViewBag.NoDatos</label>
                             }
                         </td>
                     </tr>
@@ -582,7 +582,7 @@
 @*<script src="~/AdminLTE/documentation/js/jquery.datetimepicker.min.js"></script>*@
 <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.js"></script>
 <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
-    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.3.9"></script>
+    <script src="~/Scripts/Recurrencia/Recurrencia.js?1.3.10"></script>
 }
 }
 
