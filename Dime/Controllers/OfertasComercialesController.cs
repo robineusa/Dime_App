@@ -25,38 +25,26 @@ namespace Dime.Controllers
         public ActionResult RegistrarImagen()
         {
             IMGOfertasComeciales modelo = new IMGOfertasComeciales();
-            return View();
+            return View(modelo);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-<<<<<<< HEAD
         public ActionResult RegistrarImagen([Bind(Include ="Link,Descripcion,Estado")] IMGOfertasComeciales modelo, HttpPostedFileBase Archivo)
         {
             modelo.UsuarioCreacion = Convert.ToDecimal(Session["Usuario"]);
 
             if (Archivo != null)
-=======
-        public ActionResult RegistrarImagen([Bind(Include ="Link,Descripcion,Estado")] IMGOfertasComeciales modelo, HttpPostedFileBase Imagen)
-        {
-            if(Imagen != null && Imagen.ContentLength > 0)
->>>>>>> e1491aa137168c7671457a526cc0f68afee7b631
             {
-                byte[] imagendata = null;
-                using (var binaryimagen = new BinaryReader(Imagen.InputStream))
+                using (MemoryStream ms = new MemoryStream())
                 {
-<<<<<<< HEAD
                     Archivo.InputStream.CopyTo(ms);
                     byte[] array = ms.GetBuffer();
 
                     modelo.Imagen = array;
                     OfertasComercialesService.RegistrarImagen(modelo);
-=======
-                    imagendata = binaryimagen.ReadBytes(Imagen.ContentLength);
->>>>>>> e1491aa137168c7671457a526cc0f68afee7b631
                 }
-                modelo.Imagen = imagendata;
+
             }
-<<<<<<< HEAD
             
             return RedirectToAction("RegistrarImagen");
         }
@@ -68,12 +56,14 @@ namespace Dime.Controllers
         public ActionResult ConvertirImagen(decimal IdImagen)
         {
             IMGOfertasComeciales ImagenTraida = OfertasComercialesService.ConsultarImagenPorId(IdImagen);
-=======
->>>>>>> e1491aa137168c7671457a526cc0f68afee7b631
 
-            return View();
+            byte[] imageData = ImagenTraida.Imagen;
+            if (imageData != null)
+            {
+                return File(imageData, "image/png"); 
+            }
+            return null;
         }
-<<<<<<< HEAD
         public JsonResult PrecargarImagen(HttpPostedFileBase Archivo)
         {
             
@@ -91,13 +81,5 @@ namespace Dime.Controllers
             }
             return null;
         }
-=======
-        //public ActionResult ConvertirImagen (decimal IdImagen)
-        //{
-            
-        //    var ResultImagen =OfertasComercialesService.ConsultarImagenPorId(IdImagen);
-        //    return File(ResultImagen.Imagen, "image/jpeg");
-        //}
->>>>>>> e1491aa137168c7671457a526cc0f68afee7b631
     }
 }
