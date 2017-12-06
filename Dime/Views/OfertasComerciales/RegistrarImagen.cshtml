@@ -1,10 +1,11 @@
 ﻿@model Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales
 @{
-    ViewBag.Title = "RegistrarImagen";
+    ViewBag.Title = "Registrar Imagen";
+    ViewBag.SubTitle = "Procesos - Tmk";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm("RegistrarImagen", "OfertasComerciales", FormMethod.Post, new { id = "imagen", role = "form",enctype="" }))
+@using (Html.BeginForm("RegistrarImagen", "OfertasComerciales", FormMethod.Post, new { id="imagenes", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div class="row">
@@ -16,29 +17,46 @@
 
                             <table>
                                 <tr>
-                                    <td width="200">
-                                        <small>Link</small>
-                                        @Html.TextBoxFor(m => m.Link, new { @class = "form-control input-sm", @Id = "Link" })
-                                    </td>
-                                    <td width="200">
-                                        <small>Descripción</small>
-                                        @Html.TextBoxFor(m => m.Descripcion, new { @class = "form-control input-sm", @Id = "Descripcion" })
+                                    <td width="200" style="padding-left:2px;">
+                                        <small>Link:</small>
+                                        @Html.TextBoxFor(m => m.Link, new { @class = "form-control input-sm", @Id = "Link", autocomplete = "off", placeholder = "Ingrese el Link a direccionar..." })
                                     </td>
                                     <td width="200" style="padding-left:2px;">
-                                        <small>Estado</small>
+                                        <small>Descripción:</small>
+                                        @Html.TextBoxFor(m => m.Descripcion, new { @class = "form-control input-sm", @Id = "Descripcion", autocomplete = "off", placeholder = "Ingrese una descripción..." })
+                                    </td>
+                                    <td width="200" style="padding-left:2px;">
+                                        <small>Estado:</small>
                                         @Html.DropDownListFor(m => m.Estado, new List<SelectListItem> {new SelectListItem{Text="ACTIVA", Value="ACTIVA" },
                                                                                              new SelectListItem{Text="INACTIVA", Value="INACTIVA" } },
                                                                                                               "--SELECCIONE--", new { @class = "form-control input-sm" })
                                     </td>
-                                    <td width="200" style="padding-left:2px;">
-                                        <small>Imagen</small>
-                           
-                                        
-                                                    <input type="file" id="Imagen" name="Imagen" />
+                                
+                            </table>
+                            <table>
+                                <tr>
+                                    <td width="600">
+                                        <small>Imagen:</small>
+                                        <div class="form-group">
+                                            <div class="input-group input-file" name="Archivo">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default btn-choose" type="button">Seleccionar</button>
+                                                </span>
+                                                <input type="text" class="form-control" placeholder='Seleccione una imagen para cargar...' />
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-warning btn-reset" type="button">Limpiar</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>
                             </table>
-
-                            <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;">Siguiente</button>
+                            
+                           <br />
+                            <img id="ImagenTransformada" style="width:600px;height:auto;" src=""/>
+                            <br />
+                            <br />
+                            <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;">Registrar</button>
                             <br />
                         </div>
                     </div>
@@ -48,4 +66,9 @@
     </div>
 
 }
-
+@section Scripts{
+    <script>
+        var UrlPreCargarImagen = '@Url.Action("PrecargarImagen", "OfertasComerciales")';
+    </script>
+<script src="~/Scripts/OfertasComerciales/RegistrarImagen.js?1.0.1"></script>
+}

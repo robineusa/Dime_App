@@ -21,33 +21,79 @@ namespace Dime.Controllers
             OfertasComercialesService = new WSD.OfertasComercialesServiceClient();
             OfertasComercialesService.ClientCredentials.Authenticate();
         }
-         [HttpGet]
+        [HttpGet]
         public ActionResult RegistrarImagen()
         {
             IMGOfertasComeciales modelo = new IMGOfertasComeciales();
-            return View();
+            return View(modelo);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RegistrarImagen([Bind(Include ="Link,Descripcion,Estado")] IMGOfertasComeciales modelo, HttpPostedFileBase Imagen)
+        public ActionResult RegistrarImagen([Bind(Include = "Link,Descripcion,Estado")] IMGOfertasComeciales modelo, HttpPostedFileBase Archivo)
         {
-            if(Imagen != null && Imagen.ContentLength > 0)
+            modelo.UsuarioCreacion = Convert.ToDecimal(Session["Usuario"]);
+
+            if (Archivo != null && Archivo.ContentLength > 0)
             {
-                byte[] imagendata = null;
-                using (var binaryimagen = new BinaryReader(Imagen.InputStream))
+                using (MemoryStream ms = new MemoryStream())
                 {
-                    imagendata = binaryimagen.ReadBytes(Imagen.ContentLength);
+                    Archivo.InputStream.CopyTo(ms);
+                    byte[] array = ms.GetBuffer();
+
+                    modelo.Imagen = array;
+                    OfertasComercialesService.RegistrarImagen(modelo);
                 }
-                modelo.Imagen = imagendata;
+
             }
 
+            return RedirectToAction("RegistrarImagen");
+        }
+        [HttpGet]
+        public ActionResult EditarImagen(decimal IdImagen)
+        {
+            IMGOfertasComeciales modelo = OfertasComercialesService.ConsultarImagenPorId(IdImagen);
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditarImagen(IMGOfertasComeciales modelo, HttpPostedFileBase Archivo)
+        {
+            modelo.UsuarioCreacion = Convert.ToDecimal(Session["Usuario"]);
+
+            if (Archivo != null && Archivo.ContentLength > 0)
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    Archivo.InputStream.CopyTo(ms);
+                    byte[] array = ms.GetBuffer();
+
+                    modelo.Imagen = array;
+                }
+            }
+            OfertasComercialesService.ActualizarImagen(modelo);
+            return RedirectToAction("ListaDeImagenesAdmin", "OfertasComerciales");
+        }
+        public ActionResult ConvertirImagen(decimal IdImagen)
+        {
+            IMGOfertasComeciales ImagenTraida = OfertasComercialesService.ConsultarImagenPorId(IdImagen);
+
+            byte[] imageData = ImagenTraida.Imagen;
+            if (imageData != null)
+            {
+                return File(imageData, "image/png");
+            }
+            return null;
+        }
+        public ActionResult ListaDeImagenesAdmin()
+        {
             return View();
         }
-        //public ActionResult ConvertirImagen (decimal IdImagen)
-        //{
-            
-        //    var ResultImagen =OfertasComercialesService.ConsultarImagenPorId(IdImagen);
-        //    return File(ResultImagen.Imagen, "image/jpeg");
-        //}
+        public JsonResult ListaDeImagenesAdminJson()
+        {
+            decimal Cedula = Convert.ToDecimal(Session["Usuario"].ToString());
+            var jsonResult = Json(JsonConvert.SerializeObject(OfertasComercialesService.ListaDeImagenesAdmin()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }

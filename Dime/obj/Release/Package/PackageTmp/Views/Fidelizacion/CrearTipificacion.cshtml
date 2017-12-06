@@ -20,6 +20,11 @@
                             @Html.ValidationMessageFor(z => z.Nombre, "", new { @class = "text-danger" })
                         </div>
                         <div class="col-md-12">
+                            <small>Valida Retencion</small>
+                            @Html.DropDownListFor(z => z.ValidaRetencion, new List<SelectListItem> { new SelectListItem { Text = "SI", Value = "1", Selected = true }, new SelectListItem { Text = "NO", Value = "0", Selected = false } }, new { Id = "sltValidaRetencion", @class = "form-control" })
+                            @Html.ValidationMessageFor(z => z.ValidaRetencion, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-12">
                             <small>Nota Plantilla</small>
                             @Html.TextAreaFor(z => z.Nota, new { @class = "form-control input-sm ", Id = "txtNota" })
                             @Html.ValidationMessageFor(z => z.Nota, "", new { @class = "text-danger" })
@@ -31,9 +36,6 @@
                             @Html.CheckBox("Contencion") Contencion
                             @Html.CheckBox("Retencion") Retencion
                             @Html.CheckBox("Recuperacion") Recuperacion
-                            @*@Html.CheckBoxFor(m => m.Check1) Contención
-                                @Html.CheckBoxFor(m => m.Check2) Retencion
-                                @Html.CheckBoxFor(m => m.Check3) Recuperacion*@
 
                         </div>
                         <div class="col-md-12 text-center" style="padding-top:0.8em">

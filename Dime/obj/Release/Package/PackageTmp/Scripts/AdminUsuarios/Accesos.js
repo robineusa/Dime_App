@@ -843,6 +843,8 @@ function CambiaPerfil()
         $("#lineaSelectCreacionMasivo").empty();
         $("#lineaSelectCreacionMasivo").append("<option value=''>--Select Option--</option>");
         $("#lineaSelectCreacionMasivo").removeAttr("disabled");
+        $("#ContaseñaMasiva").val('');
+        $("#ContaseñaMasiva").removeAttr("disabled");
         
     }
     else {
@@ -851,6 +853,8 @@ function CambiaPerfil()
         $("#perfilSelectedCreateMasivo").attr("disabled", "disabled");
         $("#lineaSelectCreacionMasivo").empty();
         $("#lineaSelectCreacionMasivo").append("<option value=''>--Select Option--</option>");
-        $("#lineaSelectCreacionMasivo").attr("disabled", "disabled");        
+        $("#lineaSelectCreacionMasivo").attr("disabled", "disabled");
+        $("#ContaseñaMasiva").val('');
+        $("#ContaseñaMasiva").attr("disabled", "disabled");
     }
 }
