@@ -911,10 +911,21 @@ namespace Dime.Controllers
             var testc = "";
             return Json(Motivos, JsonRequestBehavior.AllowGet);
         }
-        public JsonResult getNotasJson(decimal idNota, decimal idSubmotivo, string idServicios, string idServiciosRet, decimal idE1, decimal idE2, decimal idE3, string permanencia, int idTicket, string userTransfer, int renta)
+        public JsonResult getNotasJson(decimal idNota, decimal idSubmotivo, string idServicios, string idServiciosRet, decimal idE1, decimal idE2, decimal idE3, string permanencia, int idTicket, string userTransfer, int renta, int Corte)
         {
- 
-            var Tipificacion = fidelizacionServicio.getTipificacionById(Convert.ToInt32(idNota));
+            decimal diasPreaviso = 5;
+var Tipificacion = fidelizacionServicio.getTipificacionById(Convert.ToInt32(idNota));
+            List<MaestroFestivos> test = new List<MaestroFestivos>();
+            //if (Tipificacion.ValidaRetencion == 1)
+            test = fidelizacionServicio.getMaestrosByCorteId(diasPreaviso, Corte);
+
+            //var y = Convert.ToDateTime(test[Convert.ToInt32(diasPreaviso - 1)].Fecha);
+            //var esteMes = DateTime.Compare(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")), y);
+            //if (esteMes < 0)
+            //    Convert.ToString(((DateTime.Now).AddMonths(1)).Year)+"-"+Convert.ToString(((DateTime.Now).AddMonths(1)).Month)+"-0"+Convert.ToString(Corte);
+            //else
+            //    //Corte proximo mes
+
             var txt = Tipificacion.Nota;
             var t = "";
             var Submotivo = fidelizacionServicio.getSubmotivosCancelacionById(Convert.ToInt32(idSubmotivo));
@@ -967,7 +978,8 @@ namespace Dime.Controllers
             txt = txt.Replace("[:Motivo:]", Motivo.Motivo);
             txt = txt.Replace("[:Submotivo:]", Submotivo.Submotivo);
             txt = txt.Replace("[:Estrategia1:]", txtE1);
-            txt = txt.Replace("[:Estrategia2:]", txtE2);            txt = txt.Replace("[:Estrategia3:]", txtE3);
+            txt = txt.Replace("[:Estrategia2:]", txtE2);
+            txt = txt.Replace("[:Estrategia3:]", txtE3);
             if(Session["Formulario Contencion"] == null)
                 txt = txt.Replace("[:ServiciosRet:]", ServRet.Nombre);
             txt = txt.Replace("[:Ticket:]", Convert.ToString(idTicket));
@@ -977,8 +989,7 @@ namespace Dime.Controllers
             txt = txt.Replace("[:Ticket:]", Convert.ToString(idTicket));
             txt = txt.Replace("[:Renta:]", Convert.ToString(renta));
             txt = txt.Replace("[:Permanencia:]", myClausula);
-
-            var test = "";
+            
 
 
 
