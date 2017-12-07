@@ -68,7 +68,9 @@ namespace Dime.Controllers
                     model.CargueBase.Diferenciador = model.GPrincipalRecurrencia.Diferenciador;
                     model.CargueBase.Prioridad = model.GPrincipalRecurrencia.Prioridad;
                     model.CargueBase.Veces_Gestionado = model.GPrincipalRecurrencia.VecesGestionado;
-                    model.NodosZonificados.AliadoZonificado = recurrencia.AliadoTecnico(Convert.ToString(model.ClientesTodos.Nodo)).AliadoZonificado;
+                    var AliadoTecnico = recurrencia.AliadoTecnico(Convert.ToString(model.ClientesTodos.Nodo));
+                    if (AliadoTecnico != null) { model.NodosZonificados.AliadoZonificado = AliadoTecnico.AliadoZonificado; } else { model.NodosZonificados.AliadoZonificado = ""; }
+                    //model.NodosZonificados.AliadoZonificado = recurrencia.AliadoTecnico(Convert.ToString(model.ClientesTodos.Nodo)).AliadoZonificado;
                     ViewBag.Display = "block";
                     ViewBag.InventEquipos = "block";
                 }
@@ -108,7 +110,8 @@ namespace Dime.Controllers
                     {
                         recurrencia.ActualizarUusuarioGestionando(Convert.ToInt32(Usuario), Convert.ToDecimal(model.CargueBase.Cuenta));
                         model.ClientesTodos = inboundService.TraerClienteCompletoPorCuenta(Convert.ToInt32(model.GPrincipalRecurrencia.CuentaCliente));
-                        model.NodosZonificados.AliadoZonificado = recurrencia.AliadoTecnico(Convert.ToString(model.ClientesTodos.Nodo)).AliadoZonificado;
+                        var AliadoTecnico = recurrencia.AliadoTecnico(Convert.ToString(model.ClientesTodos.Nodo));
+                        if (AliadoTecnico != null) { model.NodosZonificados.AliadoZonificado = AliadoTecnico.AliadoZonificado; } else { model.NodosZonificados.AliadoZonificado = ""; } 
                         ViewBag.Display = "block";
                         ViewBag.InventEquipos = "block";
                     }
@@ -146,7 +149,8 @@ namespace Dime.Controllers
                             model.CargueBase.Diferenciador = model.GPrincipalRecurrencia.Diferenciador;
                             model.CargueBase.Prioridad = model.GPrincipalRecurrencia.Prioridad;
                             model.CargueBase.Veces_Gestionado = model.GPrincipalRecurrencia.VecesGestionado;
-                            model.NodosZonificados.AliadoZonificado = recurrencia.AliadoTecnico(Convert.ToString(model.ClientesTodos.Nodo)).AliadoZonificado;
+                            var AliadoTecnico = recurrencia.AliadoTecnico(Convert.ToString(model.ClientesTodos.Nodo));
+                            if (AliadoTecnico != null) { model.NodosZonificados.AliadoZonificado = AliadoTecnico.AliadoZonificado; } else { model.NodosZonificados.AliadoZonificado = ""; }
                             ViewBag.Display = "block";
                             ViewBag.InventEquipos = "block";
                         }

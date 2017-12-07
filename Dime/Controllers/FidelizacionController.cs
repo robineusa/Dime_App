@@ -915,9 +915,9 @@ namespace Dime.Controllers
         {
             decimal diasPreaviso = 5;
 var Tipificacion = fidelizacionServicio.getTipificacionById(Convert.ToInt32(idNota));
-            List<MaestroFestivos> test = new List<MaestroFestivos>();
+            //List<MaestroFestivos> test = new List<MaestroFestivos>();
             //if (Tipificacion.ValidaRetencion == 1)
-            test = fidelizacionServicio.getMaestrosByCorteId(diasPreaviso, Corte);
+            //test = fidelizacionServicio.getMaestrosByCorteId(diasPreaviso, Corte);
 
             //var y = Convert.ToDateTime(test[Convert.ToInt32(diasPreaviso - 1)].Fecha);
             //var esteMes = DateTime.Compare(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")), y);
