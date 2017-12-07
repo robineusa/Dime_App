@@ -195,6 +195,7 @@ function AgregaNodo(Data) {
     });
     $("#BotonCrear").attr("disabled", "disabled");
 }
+
 function Eliminar() {
 
     var objeto;
@@ -225,6 +226,22 @@ function Eliminar() {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+    $.ajax({
+        type: "POST",
+        url: urlEliminarNodo,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdNodo: nodoSeleccionado.Id }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            console.log(json);
+            alert(json);
         },
         error: function (request, status, error) {
             alert(request.responseText);

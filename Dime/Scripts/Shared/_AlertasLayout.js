@@ -6,23 +6,9 @@ $(function Buen_Servicio() {
     
     Llama_Metodos(connect);
     
-    $('#Mensaje').focus();
-    
     $.connection.hub.start().done(function () {
-        //alert('1' + UserConnect);
-        Registra_Eventos(connect, UserConnect2);
-        //$("#status").text('Connect');
+        Registra_Eventos(connect);
     });
-    //$.connection.hub.disconnected(function () {
-    //    $("#status").text('Disconnected');
-    //    setTimeout(function () {
-    //        $.connection.hub.start().done(function () {
-                
-    //            Registra_Eventos(connect, UserConnect2);
-    //            $("#status").text('Connect');
-    //        });
-    //    }, 10000);
-    //});
 });
 
 function Registra_Eventos(connect) {
@@ -143,7 +129,7 @@ function Llama_Metodos(connect, UserConnect) {
             $('#Ruta_Imagen').val(Ruta_Imagen);
             $('#Id_Notificado').val(Id_Notificado);
             $('#Descripcion_Imagen').val(Descripcion_Imagen);
-            $('#Buen_Servicio').css('display', 'inline-block');
+            //$('#Buen_Servicio').css('display', 'inline-block');
             //alert('si');
         }
         //play_single_sound();
@@ -216,9 +202,16 @@ function GuardarUsuarioNotificado() {
         url: '../BuenServicio/Guardar_Usuario_Notificado',
         success: function (result) {
             //$('#CerrarBS').click();
+            
 
         }
     });
+}
+
+function Cierramodal()
+{
+    var x = document.getElementById('CerrarImagBuenServ');
+    x.click();
 }
 
 function EjecutaBTN() {

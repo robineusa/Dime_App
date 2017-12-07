@@ -102,7 +102,15 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        public JsonResult EliminarNodo(string IdNodo)
+        {
+            int idNodo = Convert.ToInt32(IdNodo);
+            ProcesosService.EliminaNodo(idNodo);
 
+            var jsonResult = Json(JsonConvert.SerializeObject("Se eliminó exitosamente"), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
 
     }
 }
