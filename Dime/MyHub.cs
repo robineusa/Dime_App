@@ -19,7 +19,7 @@ namespace Dime
         public void sendMessagePublic(string userName, string message, string fecha)
         {
             AddMessageinCache(userName, message, fecha);
-            var NoNotif = CurrentMessage.FirstOrDefault(x => x.Message == message);
+            var NoNotif = CurrentMessage.LastOrDefault(x => x.Message == message && x.UserName == userName);
             Clients.All.addMessage(NoNotif.Id, userName, message);
 
         }
@@ -35,11 +35,11 @@ namespace Dime
                 {
                     for (int i = 0; i < CurrentMessage.LongCount(); i++)
                     {
-                        var UsuarioDeNotif = UsuariosNoti.FirstOrDefault(x => x.Id_Notify == i && x.UserNotif == User);
-                        if (UsuarioDeNotif == null)
+                        var UsuarioDeNotif = UsuariosNoti.Any(x => x.Id_Notify == i+1 && x.UserNotif == User);
+                        if (UsuarioDeNotif == false)
                         {
-                            var MenNoNotif = CurrentMessage.FirstOrDefault(x => x.Id == i);
-                            var Validacion = ListTemporal.Exists(x => x.Id == i);
+                            var MenNoNotif = CurrentMessage.FirstOrDefault(x => x.Id == i+1);
+                            var Validacion = ListTemporal.Exists(x => x.Id == i+1);
                             if (Validacion == false)
                                 ListTemporal.Add(new MessageDetail { Id = MenNoNotif.Id, Message = MenNoNotif.Message, UserName = MenNoNotif.UserName, Fecha_Entrega = MenNoNotif.Fecha_Entrega});
 
@@ -80,7 +80,7 @@ namespace Dime
         }
         public void AddMessageinCache(string userName, string message, string fecha)
         {
-            var id = CurrentMessage.Count;
+            var id = CurrentMessage.Count+1;
             CurrentMessage.Add(new MessageDetail { Id = id, UserName = userName, Message = message, Fecha_Entrega = fecha });
 
             if (CurrentMessage.Count > 100)
@@ -89,7 +89,7 @@ namespace Dime
         }
         public void AddMessageinCache2(int id2, string userName)
         {
-            var id = UsuariosNoti.Count;
+            var id = UsuariosNoti.Count + 1;
             var Validacion2 = UsuariosNoti.Exists(x => x.Id_Notify == id2 && x.UserNotif == userName);
 
             if (Validacion2 == false)

@@ -1,7 +1,6 @@
-﻿var MensajesaGuardar = null;
+﻿var MensajesaGuardar = [];
 
 $(function Buen_Servicio() {
-    
     var connect = $.connection.myHub;
     
     Llama_Metodos(connect);
@@ -50,6 +49,7 @@ function Registra_Eventos(connect) {
         }
     });
     $('#messages_menu').click(function () {
+        alert(MensajesaGuardar.length);
         if (MensajesaGuardar.length > 0) {
             for (i = 0; i < MensajesaGuardar.length; i++) {
                 connect.server.addMessageinCache2(MensajesaGuardar[i].Id, UserConnect2);
@@ -61,7 +61,8 @@ function Registra_Eventos(connect) {
     });
     $('#BListNotify').click(function () {
         connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
-        //alert($("#IdMsj").val()+'1');
+        //connect.server.connect(UserConnect2);
+        $("#IdMsj").val('');
     });
     connect.server.connect(UserConnect2);
 }
@@ -114,9 +115,10 @@ function Llama_Metodos(connect, UserConnect) {
         if (UserConnect2 != 'Buen Servicio') {
             $("#ChatGeneral").css('display', 'block');
             $("#ChatGeneral2").css('display', 'block');
-            setTimeout('EjecutaBTN()', 0);
+            $('#IdMsj').val(id);
+            setTimeout('EjecutaBTN()', 1);
         } else { /*$("#ChatGeneral2").css('display', 'block');*/ }
-        $('#IdMsj').val(id);
+        
     }
 
     connect.client.broadcastMessage = function (Nombre_Imagen, Ruta_Imagen, Id_Notificado, Descripcion_Imagen) {
@@ -129,20 +131,20 @@ function Llama_Metodos(connect, UserConnect) {
             $('#Ruta_Imagen').val(Ruta_Imagen);
             $('#Id_Notificado').val(Id_Notificado);
             $('#Descripcion_Imagen').val(Descripcion_Imagen);
-            //$('#Buen_Servicio').css('display', 'inline-block');
-            //alert('si');
         }
         //play_single_sound();
     }
 
     connect.client.onConnected = function (messages) {
-        //alert();
         if (messages.length > 0) {
+            $('#MensajeCount').empty();
             if (UserConnect2 != 'Buen Servicio') {
-                MensajesaGuardar = messages;
-                //$('#messHeader').append('Usted tiene ' + messages.length + ' Mensajes Nuevos');
+                for (i = 0; i < messages.length; i++)
+                {
+                    MensajesaGuardar.push(messages[i]);
+                }
+                console.log(MensajesaGuardar);
                 $('#MensajeCount').append('' + messages.length + '');
-                //alert(''+messages.length);
                 for (i = 0; i < messages.length; i++) {
                     AddMessage(messages[i].Id, messages[i].UserName, messages[i].Message);
                 }
