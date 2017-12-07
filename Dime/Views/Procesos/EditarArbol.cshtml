@@ -20,7 +20,7 @@
                     </h2>
                     <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                         <br />
-                        <div id="InsertaArbol" class="clt">
+                        <div id="InsertaArbol" style="font-family: 'Lucida Grande';font-size:14px">
 
                             @*<p id="NombreArbol" name="" onmousedown="evnt(this)">
                                     <i onclick="mostrarOcultar(this)" class="fa fa-caret-square-o-right"></i>
@@ -29,7 +29,7 @@
                                         <i class="fa fa-plus-circle"></i>
                                     </a>
                                 </p>
-                                <ul id="ulPrincipal" class="collapse in" style="list-style-type:none;"></ul>*@
+                                <ul id="ulPrincipal" class="collapse in clt" style="list-style-type:none;"></ul>*@
 
                         </div>
 
@@ -91,10 +91,51 @@
             </div>
         </div>
     </div>
+
+
+    <div id="CambiarNombre" class="modal">
+        <div class="modal-dialog" style="width:500px;">
+            <div class="modal-content" style="width:500px; top:50px;">
+                <div style="width:500px; height:25px;">
+                    <button id="CerrarModal" type="button" class="close" style="color:white; margin-right: -25px; margin-top:-25px;" data-dismiss="modal">X</button>
+                </div>
+
+                <div class="modal-body" style="width:500px;">
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-offset-1" style="width:480px; margin-left:20px;">
+                            <h2 class="page-header" style="margin-top:-40px; font-weight: bold;">
+                                <i class="fa fa-code-fork"></i> Nombre Nodo
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <br />
+                                <table>
+                                    <tr>
+                                        <td style="padding-left:1px; width:200px;">
+                                            <small>Digite el Nombre del Nodo:</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:1px; width:200px;">
+                                            <input id="Nombre_Cambiar" type="text" class="form-control input-sm" placeholder="Digite Nombre"  />
+                                        </td>
+                                        <td style="padding-left:1px; width:200px; text-align:center;">
+                                            <button type="submit" id="BotonCambiar" class="btn btn-primary" name="BotonEnvia" value="Buscar" onclick="EditarTexo()" data-dismiss="modal" disabled>Agregar</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     @section Scripts{
         <script>
             var urlLLamarArbolId = '@Url.Action("LLamarArbolId", "Procesos")';
             var urlRetornaIdNodo = '@Url.Action("RetornaIdNodo", "Procesos")';
+            var urlEliminarNodo = '@Url.Action("EliminarNodo", "Procesos")';
             var urlActualizaHTMLArbol = '@Url.Action("ActualizaCodigoHTMLArbol", "Procesos")';
 
         </script>

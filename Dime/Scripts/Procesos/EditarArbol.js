@@ -13,29 +13,6 @@
 });
 
 
-//function ConstruirArbol(idArbol) {
-//    $.ajax({
-//        type: "POST",
-//        url: urlLLamarArbolId,
-//        contentType: "application/json; charset=utf-8",
-//        data: JSON.stringify({ IDdArbol: idArbol }),
-//        dataType: "JSON",
-//        success: function (result) {
-//            var json = JSON.parse(result);
-//            console.log(result);
-//            $('#InsertaArbol').append('<div id="NombreArbol" idArb="' + json.Id + '" onclick="return evnt(this)" style="font-weight:bold;"><i class="fa fa-folder"></i>' +
-//                        '&nbsp' + json.NombreArbol + ' '+
-//                        '<a href="#CrearNodo" data-toggle="modal" data-backdrop="static" data-keyboard="false"><i class="fa fa-plus-square-o"></i></a></div>' +
-//                  '<ul id="ulPrincipal">' +
-//                            json.CodigoHtml +
-//                        '</ul>');
-//        },
-//        error: function (request, status, error) {
-//            alert(request.responseText);
-//        }
-//    });
-//}
-
 function ConstruirArbol(idArbol) {
     $.ajax({
         type: "POST",
@@ -46,14 +23,15 @@ function ConstruirArbol(idArbol) {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(result);
-            $('#InsertaArbol').append("<p id='NombreArbol' name='" + json.Id + "' onmousedown='evnt(this)'>" +
-                                       "<i onclick= 'mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
-                                        json.NombreArbol +
-                                        "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
-                                          "<i class='fa fa-plus-circle'></i>" +
+            $('#InsertaArbol').append("<label id='NombreArbol' name='" + json.Id + "' onmousedown='evnt(this)' >" +
+
+                                       "<i onclick= 'mostrarOcultar(this)' class='fa fa-caret-square-o-down'>  </i>" +
+                                         " "+json.NombreArbol + " "+
+                                        "<a href='#CrearNodo' style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
+                                          "<i class='fa fa-plus-circle' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
                                         "</a>" +
-                                      "</p>" +
-                                      "<ul id='ulPrincipal' class='collapse in' style='list-style-type:none;'>" +
+                                      "</label>" +
+                                      "<ul id='ulPrincipal' class='collapse in' style='list-style-type:none;margin-left:14px;padding:0;'>" +
                                         json.CodigoHtml +
                                       "</ul>");
         },
@@ -119,17 +97,20 @@ function AgregaNodo(Data) {
     if (nodoSeleccionado.IdPadre == "InsertaArbol") {
         //onmouseover='return evnt(this)'
         $("#ulPrincipal").append(
-           "<li id=' " + Data.Id + " ' onmousedown='return evnt(this)' >" +
+           "<li id=' " + Data.Id + " ' onmousedown='return evnt(this)'  >" +
            "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
-             "<span onmouseover='poner(this)' onmouseout='quitar(this)'> " +
-                  Data.NombreNodo +
-             " </span>" +
-               "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
-                        "<i class='fa fa-plus-circle'></i>" +
+             "<span onmouseover='poner(this)' onmouseout='quitar(this)' '> " + Data.NombreNodo +   " </span>" +
+
+               "<a href='#CrearNodo' style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
+                        "<i class='fa fa-plus-circle' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
                 "</a>" +
-                "<a href='#' style='text-decoration:none;'>" +
-                        "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
-                 "</a>" +
+                "<a href='#' style='text-decoration:none;color:#6D6968;'>" +
+                        "<i onclick='Eliminar()' class='fa fa-minus-circle' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
+                "</a>" +
+                "<a href='#CambiarNombre' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
+                        "<i class='fa fa-pencil-square-o'></i>" +
+                "</a>" +
+
            "</li>"
            );
 
@@ -147,16 +128,20 @@ function AgregaNodo(Data) {
 
         if (ulPrincipal) {
 
-            $(objeto).append("<ul  class='collapse in' style='list-style-type:none;' >" +
+            $(objeto).append("<ul  class='collapse in' style='list-style-type:none;margin-left:14px;padding:0;' >" +
 
                 "<li id=' " + Data.Id + " '  onmousedown='return evnt(this)' >" +
                  "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
                    "<span onmouseover='poner(this)' onmouseout='quitar(this)'> " + Data.NombreNodo + " </span>" +
-                     "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
-                        "<i class='fa fa-plus-circle'></i>" +
+
+                    "<a href='#CrearNodo' style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
+                        "<i class='fa fa-plus-circle' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
                       "</a>" +
-                     "<a href='#' style='text-decoration:none;'>" +
-                        "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
+                     "<a href='#' style='text-decoration:none;color:#6D6968;'>" +
+                         "<i onclick='Eliminar()' class='fa fa-minus-circle' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
+                     "</a>" +
+                     "<a href='#CambiarNombre' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
+                        "<i class='fa fa-pencil-square-o'></i>" +
                      "</a>" +
                 "</li>" +
               "</ul>");
@@ -168,11 +153,15 @@ function AgregaNodo(Data) {
               "<li id=' " + Data.Id + " '  onmousedown='return evnt(this)' >" +
                  "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
                    "<span onmouseover='poner(this)' onmouseout='quitar(this)'> " + Data.NombreNodo + " </span>" +
-                     "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
-                        "<i class='fa fa-plus-circle'></i>" +
+
+                     "<a href='#CrearNodo'style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
+                        "<i class='fa fa-plus-circle' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
                       "</a>" +
-                     "<a href='#' style='text-decoration:none;'>" +
-                        "<i onclick='Eliminar()' class='fa fa-minus-circle'></i>" +
+                     "<a href='#' style='text-decoration:none;color:#6D6968;'>" +
+                        "<i onclick='Eliminar()' class='fa fa-minus-circle' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
+                     "</a>" +
+                     "<a href='#CambiarNombre' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
+                        "<i class='fa fa-pencil-square-o'></i>" +
                      "</a>" +
                 "</li>");
         }
@@ -250,6 +239,43 @@ function Eliminar() {
 
 }
 
+function EditarTexo() {
+   
+    //Cambia el nombre visualmente
+    var NombreCambiar = $('#Nombre_Cambiar').val();
+    var nombreNodo;
+    var objPadre = document.getElementById(nodoSeleccionado.Id);
+    for (var i = 0; i < objPadre.childNodes.length; i++) { 
+        
+        if (objPadre.childNodes[i].nodeName == "SPAN") {
+           // alert(objPadre.childNodes[i].nodeValue);
+            nombreNodo = objPadre.childNodes[i];
+            nombreNodo.childNodes[0].nodeValue = " "+ NombreCambiar +" ";
+        }
+    }
+    
+    //Actualiza el codigo html del nodo
+    var html = $("#ulPrincipal").html();
+    $.ajax({
+        type: "POST",
+        url: urlActualizaHTMLArbol,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ CodigoHTML: html, IDdArbol: IdArbol }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            console.log(json);
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+    $('#Nombre_Cambiar').val("");
+    //$("#Nombre_Cambiar").attr("disabled", "disabled");
+
+
+}
+
 function ValidarTexto(obj) {
 
     if (obj.value != "") {
@@ -260,24 +286,6 @@ function ValidarTexto(obj) {
         $("#BotonCrear").attr("disabled", "disabled");
     }
 }
-
-
-
-function poner(obj) {
-    obj.style.backgroundColor = "#336699";
-}
-
-function quitar(obj) {
-    obj.style.backgroundColor = "";
-}
-
-
-
-$("#Nombre_Nodo").on("keyup", function (e) {
-
-    $("#BotonCrear").removeAttr("disabled");
-});
-
 
 function mostrarOcultar(obj) {
 
@@ -322,3 +330,37 @@ function mostrarOcultar(obj) {
     }
 
 }
+
+function poner(obj) {
+    obj.style.backgroundColor = "#336699";
+}
+
+function quitar(obj) {
+    obj.style.backgroundColor = "";
+}
+
+function ponerIconoC(obj) {
+
+    if (obj.getAttribute("onclick") == null)
+        obj.setAttribute("class", "fa fa-plus-circle text-green");
+    else
+        obj.setAttribute("class", "fa fa-minus-circle text-red");
+
+}
+function quitarIconoC(obj) {
+    if (obj.getAttribute("onclick") == null)
+        obj.setAttribute("class", "fa fa-plus-circle");
+    else
+        obj.setAttribute("class", "fa fa-minus-circle");
+
+}
+
+$("#Nombre_Nodo").on("keyup", function (e) {
+
+    $("#BotonCrear").removeAttr("disabled");
+});
+
+$("#Nombre_Cambiar").on("keyup", function (e) {
+
+    $("#BotonCambiar").removeAttr("disabled");
+});
