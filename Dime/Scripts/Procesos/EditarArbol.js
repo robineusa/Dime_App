@@ -238,7 +238,7 @@ function Eliminar() {
     });
 
 }
-
+//IdNodo: NodoSeleccionado.Id, NombreNuevo: NombreCambiar
 function EditarTexo() {
    
     //Cambia el nombre visualmente
@@ -253,6 +253,23 @@ function EditarTexo() {
             nombreNodo.childNodes[0].nodeValue = " "+ NombreCambiar +" ";
         }
     }
+
+    $.ajax({
+        type: "POST",
+        url: urlCambiarNombreNodo,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdNodo: nodoSeleccionado.Id, NombreNuevo: NombreCambiar }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            console.log(json);
+            alert(json);
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+   
     
     //Actualiza el codigo html del nodo
     var html = $("#ulPrincipal").html();

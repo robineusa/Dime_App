@@ -7223,6 +7223,19 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="CambiarNombreNodo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdNodo" type="xs:int" />
+        <xs:element minOccurs="0" name="NuevoNombre" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarNombreNodoResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RegistrarSolicitudRetencionAutomatico">
     <xs:complexType>
       <xs:sequence>

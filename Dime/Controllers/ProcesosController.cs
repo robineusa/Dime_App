@@ -111,6 +111,17 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        [HttpPost]
+        public JsonResult CambiarNombreNodo(string IdNodo,string NombreNuevo)
+        {
+            int idNodo = Convert.ToInt32(IdNodo);
+            ProcesosService.CambiarNombreNodo(idNodo, NombreNuevo);
+
+            var jsonResult = Json(JsonConvert.SerializeObject("Cambio de nombre exitoso"), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
 
     }
 }

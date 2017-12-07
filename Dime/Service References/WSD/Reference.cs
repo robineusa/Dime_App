@@ -18388,6 +18388,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/EliminaNodo", ReplyAction="http://tempuri.org/IProcesosService/EliminaNodoResponse")]
         System.Threading.Tasks.Task EliminaNodoAsync(int IdNodo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/CambiarNombreNodo", ReplyAction="http://tempuri.org/IProcesosService/CambiarNombreNodoResponse")]
+        void CambiarNombreNodo(int IdNodo, string NuevoNombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/CambiarNombreNodo", ReplyAction="http://tempuri.org/IProcesosService/CambiarNombreNodoResponse")]
+        System.Threading.Tasks.Task CambiarNombreNodoAsync(int IdNodo, string NuevoNombre);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18479,6 +18485,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task EliminaNodoAsync(int IdNodo) {
             return base.Channel.EliminaNodoAsync(IdNodo);
+        }
+        
+        public void CambiarNombreNodo(int IdNodo, string NuevoNombre) {
+            base.Channel.CambiarNombreNodo(IdNodo, NuevoNombre);
+        }
+        
+        public System.Threading.Tasks.Task CambiarNombreNodoAsync(int IdNodo, string NuevoNombre) {
+            return base.Channel.CambiarNombreNodoAsync(IdNodo, NuevoNombre);
         }
     }
     
