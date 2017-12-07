@@ -721,10 +721,20 @@ namespace Dime.Controllers
             var Tipificacion = fidelizacionServicio.getTipificacionById(Convert.ToInt32(r.FidelizacionRegistro.TipificacionId));
             var rest = ""
 ;
-
-            //return View(r);
+            var diasPreaviso = 5;
+            var FechaSiguiente = "";
             if (Tipificacion.ValidaRetencion == 1)
              {//Contenido o retenido
+                var test = fidelizacionServicio.getMaestrosByCorteId(diasPreaviso, Convert.ToInt16(Request.Form["rbCorte"]));
+
+                var iniciaConteo = Convert.ToDateTime(test[Convert.ToInt32(diasPreaviso - 1)].Fecha);
+                var esteMes = DateTime.Compare(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")), iniciaConteo);
+                
+                if (esteMes < 0)///se puede radicar este mismo mes
+                    FechaSiguiente = Convert.ToString(((DateTime.Now).AddMonths(1)).Year) + "-" + Convert.ToString(((DateTime.Now).AddMonths(1)).Month.ToString("d2")) + "-0" + Request.Form["rbCorte"];
+                else
+                    FechaSiguiente = Convert.ToString(((DateTime.Now).AddMonths(2)).Year) + "-" + Convert.ToString(((DateTime.Now).AddMonths(2)).Month.ToString("d2")) + "-0" + Request.Form["rbCorte"];
+
                 if (r.FidelizacionRegistro.RecursivaIdA == 0)
                 {
                     //seleccionar Estrategia1
@@ -842,7 +852,7 @@ namespace Dime.Controllers
             Registro.Cuenta = r.FidelizacionRegistro.Cuenta;
             Registro.DiaCorte = Convert.ToInt32( Request.Form["rbCorte"]);
             Registro.Direccion = "";
-            Registro.FechaCorte = DateTime.Now;
+            Registro.FechaCorte = Convert.ToDateTime(FechaSiguiente);
             Registro.FechaRegistro = DateTime.Now;
             Registro.Nivel = idNivel;
             Registro.Notas = r.FidelizacionRegistro.Notas;
@@ -914,20 +924,19 @@ namespace Dime.Controllers
         public JsonResult getNotasJson(decimal idNota, decimal idSubmotivo, string idServicios, string idServiciosRet, decimal idE1, decimal idE2, decimal idE3, string permanencia, int idTicket, string userTransfer, int renta, int Corte)
         {
             decimal diasPreaviso = 5;
-var Tipificacion = fidelizacionServicio.getTipificacionById(Convert.ToInt32(idNota));
-            //List<MaestroFestivos> test = new List<MaestroFestivos>();
+            var Tipificacion = fidelizacionServicio.getTipificacionById(Convert.ToInt32(idNota));
             //if (Tipificacion.ValidaRetencion == 1)
-            //test = fidelizacionServicio.getMaestrosByCorteId(diasPreaviso, Corte);
+            var test = fidelizacionServicio.getMaestrosByCorteId(diasPreaviso, Corte);
 
-            //var y = Convert.ToDateTime(test[Convert.ToInt32(diasPreaviso - 1)].Fecha);
-            //var esteMes = DateTime.Compare(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")), y);
-            //if (esteMes < 0)
-            //    Convert.ToString(((DateTime.Now).AddMonths(1)).Year)+"-"+Convert.ToString(((DateTime.Now).AddMonths(1)).Month)+"-0"+Convert.ToString(Corte);
-            //else
-            //    //Corte proximo mes
+            var iniciaConteo = Convert.ToDateTime(test[Convert.ToInt32(diasPreaviso - 1)].Fecha);
+            var esteMes = DateTime.Compare(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")), iniciaConteo);
+            var FechaSiguiente = "";
+            if (esteMes < 0)///se puede radicar este mismo mes
+                FechaSiguiente =  Convert.ToString(((DateTime.Now).AddMonths(1)).Year) + "-" + Convert.ToString(((DateTime.Now).AddMonths(1)).Month.ToString("d2")) + "-0" + Convert.ToString(Corte);
+            else
+                FechaSiguiente = Convert.ToString(((DateTime.Now).AddMonths(2)).Year) + "-" + Convert.ToString(((DateTime.Now).AddMonths(2)).Month.ToString("d2")) + "-0" + Convert.ToString(Corte);
 
             var txt = Tipificacion.Nota;
-            var t = "";
             var Submotivo = fidelizacionServicio.getSubmotivosCancelacionById(Convert.ToInt32(idSubmotivo));
             var Motivo = fidelizacionServicio.getMotivosCancelacionById(Submotivo.FIDMotivoId);
              
@@ -989,7 +998,9 @@ var Tipificacion = fidelizacionServicio.getTipificacionById(Convert.ToInt32(idNo
             txt = txt.Replace("[:Ticket:]", Convert.ToString(idTicket));
             txt = txt.Replace("[:Renta:]", Convert.ToString(renta));
             txt = txt.Replace("[:Permanencia:]", myClausula);
-            
+            txt = txt.Replace("[:FechaCorte:]", FechaSiguiente);
+
+
 
 
 
