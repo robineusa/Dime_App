@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WebService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WebService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsp:Policy wsu:Id="WSHttpBinding_IWebService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -23891,11 +23891,11 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" />
-      <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Business" />
+      <xsd:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" />
+      <xsd:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://172.18.175.56/WSD/WebService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Business" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IWebService_MuestraEntidades_InputMessage">
@@ -35489,403 +35489,403 @@
   </wsdl:binding>
   <wsdl:service name="WebService">
     <wsdl:port name="WSHttpBinding_IWebService" binding="tns:WSHttpBinding_IWebService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_ILoginService" binding="tns:WSHttpBinding_ILoginService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IInboundService" binding="tns:WSHttpBinding_IInboundService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IMaestrosService" binding="tns:WSHttpBinding_IMaestrosService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IBlendingService" binding="tns:WSHttpBinding_IBlendingService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IMarcacionesService" binding="tns:WSHttpBinding_IMarcacionesService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_INotificacionesBuenServicioService" binding="tns:WSHttpBinding_INotificacionesBuenServicioService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_ICasosCelulaService" binding="tns:WSHttpBinding_ICasosCelulaService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_ICasosAdminService" binding="tns:WSHttpBinding_ICasosAdminService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_ITrasladosService" binding="tns:WSHttpBinding_ITrasladosService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IMaestroNodoService" binding="tns:WSHttpBinding_IMaestroNodoService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IActivacionClaroVideoService" binding="tns:WSHttpBinding_IActivacionClaroVideoService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IActivacionSiembraHDService" binding="tns:WSHttpBinding_IActivacionSiembraHDService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IBalanceScoreCardService" binding="tns:WSHttpBinding_IBalanceScoreCardService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IGraficosService" binding="tns:WSHttpBinding_IGraficosService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IUsabilidadService" binding="tns:WSHttpBinding_IUsabilidadService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IDistribucionBlendingService" binding="tns:WSHttpBinding_IDistribucionBlendingService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IMecService" binding="tns:WSHttpBinding_IMecService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IMultiPlayService" binding="tns:WSHttpBinding_IMultiPlayService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_ICierreCicloService" binding="tns:WSHttpBinding_ICierreCicloService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IBackEliteService" binding="tns:WSHttpBinding_IBackEliteService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IRecurrenciaService" binding="tns:WSHttpBinding_IRecurrenciaService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IBitacoraIncidentesService" binding="tns:WSHttpBinding_IBitacoraIncidentesService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IPOMSolicitudesService" binding="tns:WSHttpBinding_IPOMSolicitudesService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IFidelizacionService" binding="tns:WSHttpBinding_IFidelizacionService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IVerificacionDeInventarioService" binding="tns:WSHttpBinding_IVerificacionDeInventarioService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IVisitasAutorizadasService" binding="tns:WSHttpBinding_IVisitasAutorizadasService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IBannerAlertasService" binding="tns:WSHttpBinding_IBannerAlertasService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IProcesosService" binding="tns:WSHttpBinding_IProcesosService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IRetencionService" binding="tns:WSHttpBinding_IRetencionService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="WSHttpBinding_IOfertasComercialesService" binding="tns:WSHttpBinding_IOfertasComercialesService">
-      <soap12:address location="http://localhost:49400/WebService.svc/WebService" />
+      <soap12:address location="http://172.18.175.56/WSD/WebService.svc/WebService" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://localhost:49400/WebService.svc/WebService</wsa10:Address>
+        <wsa10:Address>http://172.18.175.56/WSD/WebService.svc/WebService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIDIDCCAgygAwIBAgIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjAeFw0xNzA3MTAxNTI0MDJaFw0zOTEyMzEyMzU5NTlaMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKmvWDhBaX3dx+cIMkPWDyg4fOkhfvWq2BG5lw3L1DjhoEFZXh3Q/r6bBfF9y3sVPir3zrjd3cLzkKSCK+r/BzAmV8BWNAPxK1ZltpQOt5btdFruOsini/AE1J6/0gzVBk7IUNRFzxfRL3kmS7l0GUjvuJ56f9VsEY4dEXq/UFmQy8wwlpdKpkStI4NUcA/1kvfw9/g5IrzSN1Rq5BQ2tL00Rl+I+uhqUR+Fg+rLMk17+T+wR6Dl7BwkG8Bwjdg95DL53oMiYxVfLo6qLUY8HGaEgVxX17IIlD/5dnFZaaxGmzprOKsd9r3PP2oV04Rr9gvd66hL70R8Z3qpfSqQkrcCAwEAAaNYMFYwVAYDVR0BBE0wS4AQUJ4k5Q5jzewdSpM07iNn36ElMCMxITAfBgNVBAMTGERpbWVTZXJ2aWNlQ2VydGlmaWNhdGlvboIQui2w+879YptKrv7w0LiOiDAJBgUrDgMCHQUAA4IBAQCJcHFUbeNg8/58RUMQ4sVc+Lj9PgRHFd14CFm2aNYhQ4eWbzhOp1jKBe0LKZJKi7GWMezQcvem/nbYpRmTDA8gXisFRIYAxfU9mkTjC/MdyDkFmZkk1X+oAApn/6yt+xUZJIsRVqcAGlbhnYLt+3NPR926r9SIijU9x5zl9dJGjL10aOap/q6DDBqNEVPO57wSS6tu5Gnj0Bj+/OqQl5SALMdTZbTq6oAyyLWp0lBiX3L1tBliqT9OD/kfCsoLQjtJFw7Om0ftH+eAZ33N0BskyPqvlotbTscBUtOEKJU/GeAGkj486Mhj15AuUjAXPnpE0BaHBFHjLGg6+cJ/3J2Q</X509Certificate>
+              <X509Certificate>MIICRDCCAfKgAwIBAgIQT4gV3/bfj5VPaFfYNi1S/jAJBgUrDgMCHQUAMBYxFDASBgNVBAMTC1Jvb3QgQWdlbmN5MB4XDTE3MDExMjIxMjcwNloXDTM5MTIzMTIzNTk1OVowIzEhMB8GA1UEAxMYRGltZVNlcnZpY2VDZXJ0aWZpY2F0aW9uMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtP/tsqbRv+Pm0Ge49W/sGtwYopHFJPaqvCKM0Y6xgakcbxvqoEN9fHImCEJI48MxF6c5oXSJQftsBymOLX3RurDEOm4eOAEi9BqYv57i2cBQMaBs7EHXAfejNI8HwElcVrxzZF8Ffn14wuL4IqL0zrXMzlpyRP4IdTE10aHWPZe6CwZ7phsvrTKRToCUExvPI+/pt6V0NssurR/FV2yPSQsq0U9/mmbVjQTZ1GRp3Qeqvx2In8j2xUOy+8mt94PGNaPhJNdl9TlvVfhiE6LoPJ6FNgeBHpRXocfUVjizU3AretdI9Bib3MhRFepLIGgeH9YPsUGVX7fHj9P6JHoNRQIDAQABo0swSTBHBgNVHQEEQDA+gBAS5AktBh0dTwCNYSHcFmRjoRgwFjEUMBIGA1UEAxMLUm9vdCBBZ2VuY3mCEAY3bACqAGSKEc+41KpcNfQwCQYFKw4DAh0FAANBAIDq3zAx+gikKvWNbgba1z7t5za65HiRsbQCHqAj9WrHO1imzcSwULh5U0azesHMfYuQC79ss7l4EWnYo89fYVU=</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>
