@@ -95,5 +95,16 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        public ActionResult Visualizador()
+        {
+            return View();
+        }
+        public JsonResult ListaDeImagenesActivasJson()
+        {
+            decimal Cedula = Convert.ToDecimal(Session["Usuario"].ToString());
+            var jsonResult = Json(JsonConvert.SerializeObject(OfertasComercialesService.ListaDeImagenesActivas()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }
