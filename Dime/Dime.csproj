@@ -2261,6 +2261,10 @@
     <Content Include="ImagesClient\Fondox.net_edificios-de-noche_1366x768.jpg" />
     <Content Include="ImagesClient\fotos-paisajes-naturales-suiza-alpes-suizos-swiss-natural-scenery-hd-photo-wallpapers-10.jpg" />
     <Content Include="ImagesClient\hd.png" />
+    <Content Include="ImagesClient\Imagen1.jpg" />
+    <Content Include="ImagesClient\Imagen2.jpg" />
+    <Content Include="ImagesClient\Imagen3.jpg" />
+    <Content Include="ImagesClient\Imagen4.jpg" />
     <Content Include="ImagesClient\Islas-andaman.jpg" />
     <Content Include="Resources\Images\Claro.png" />
     <Content Include="Resources\Images\Excel-icon.png" />
@@ -3268,6 +3272,20 @@
     <Content Include="Styles\Elements\Icons.css" />
     <Content Include="Styles\Elements\jquery.datetimepicker.css" />
     <Content Include="Styles\Elements\Modals.css" />
+    <Content Include="Styles\Slider\css\demo.css" />
+    <Content Include="Styles\Slider\css\elastislide.css" />
+    <Content Include="Styles\Slider\css\style.css" />
+    <Content Include="Styles\Slider\images\ajax-loader.gif" />
+    <Content Include="Styles\Slider\images\black.png" />
+    <Content Include="Styles\Slider\images\ImageAttribution.txt" />
+    <Content Include="Styles\Slider\images\nav.png" />
+    <Content Include="Styles\Slider\images\nav_thumbs.png" />
+    <Content Include="Styles\Slider\images\pattern.png" />
+    <Content Include="Styles\Slider\images\views.png" />
+    <Content Include="Styles\Slider\js\gallery.js" />
+    <Content Include="Styles\Slider\js\jquery.easing.1.3.js" />
+    <Content Include="Styles\Slider\js\jquery.elastislide.js" />
+    <Content Include="Styles\Slider\js\jquery.tmpl.min.js" />
     <Content Include="ViewsAlr\app.js" />
     <Content Include="ViewsAlr\CasosAdmin\AdminCasos.html" />
     <Content Include="ViewsAlr\CasosCelulaEdit\DepuracionCasos.html" />
@@ -3580,6 +3598,10 @@
     <Content Include="Views\OfertasComerciales\RegistrarImagen.cshtml" />
     <Content Include="Views\OfertasComerciales\EditarImagen.cshtml" />
     <Content Include="Views\OfertasComerciales\ListaDeImagenesAdmin.cshtml" />
+    <Content Include="Views\OfertasComerciales\Visualizador.cshtml" />
+    <Content Include="Styles\Slider\images\desktop %281%29.ini" />
+    <Content Include="Styles\Slider\images\desktop.ini" />
+    <Content Include="Styles\Slider\images\thumbs\desktop.ini" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

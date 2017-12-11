@@ -95,5 +95,9 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        public ActionResult Visualizador()
+        {
+            return View();
+        }
     }
 }
