@@ -1,4 +1,5 @@
-$(function() {
+
+$(function () {
 	// ======================= imagesLoaded Plugin ===============================
 	// https://github.com/desandro/imagesloaded
 
@@ -214,7 +215,7 @@ $(function() {
 					largesrc	= $thumb.data('large'),
 					title		= $thumb.data('description');
 				    dir         = $thumb.data('description2');
-				
+				   console.log($thumb);
 				$('<img/>').load( function() {
 					
 				    $rgGallery.find('div.rg-image').empty().append('<a href="' + dir + '" target="_blank"><img src="' + largesrc + '"/></a>');

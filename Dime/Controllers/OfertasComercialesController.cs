@@ -99,5 +99,12 @@ namespace Dime.Controllers
         {
             return View();
         }
+        public JsonResult ListaDeImagenesActivasJson()
+        {
+            decimal Cedula = Convert.ToDecimal(Session["Usuario"].ToString());
+            var jsonResult = Json(JsonConvert.SerializeObject(OfertasComercialesService.ListaDeImagenesActivas()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }

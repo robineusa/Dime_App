@@ -18686,6 +18686,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/ListaDeImagenesAdmin", ReplyAction="http://tempuri.org/IOfertasComercialesService/ListaDeImagenesAdminResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales>> ListaDeImagenesAdminAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/ListaDeImagenesActivas", ReplyAction="http://tempuri.org/IOfertasComercialesService/ListaDeImagenesActivasResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales> ListaDeImagenesActivas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/ListaDeImagenesActivas", ReplyAction="http://tempuri.org/IOfertasComercialesService/ListaDeImagenesActivasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales>> ListaDeImagenesActivasAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18745,6 +18751,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales>> ListaDeImagenesAdminAsync() {
             return base.Channel.ListaDeImagenesAdminAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales> ListaDeImagenesActivas() {
+            return base.Channel.ListaDeImagenesActivas();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales>> ListaDeImagenesActivasAsync() {
+            return base.Channel.ListaDeImagenesActivasAsync();
         }
     }
 }

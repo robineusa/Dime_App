@@ -2381,6 +2381,7 @@
     <Content Include="Scripts\OfertasComerciales\EditarImagen.js" />
     <Content Include="Scripts\OfertasComerciales\ListaDeImagenesAdmin.js" />
     <Content Include="Scripts\OfertasComerciales\RegistrarImagen.js" />
+    <Content Include="Scripts\OfertasComerciales\Visualizador.js" />
     <Content Include="Scripts\Procesos\AdminArboles.js" />
     <Content Include="Scripts\Procesos\EditarArbol.js" />
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorLog.js" />
