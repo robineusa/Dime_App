@@ -18394,6 +18394,18 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/CambiarNombreNodo", ReplyAction="http://tempuri.org/IProcesosService/CambiarNombreNodoResponse")]
         System.Threading.Tasks.Task CambiarNombreNodoAsync(int IdNodo, string NuevoNombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarCodigoHtmlNodo", ReplyAction="http://tempuri.org/IProcesosService/ConsultarCodigoHtmlNodoResponse")]
+        Telmexla.Servicios.DIME.Entity.Nodo ConsultarCodigoHtmlNodo(int IdNodo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarCodigoHtmlNodo", ReplyAction="http://tempuri.org/IProcesosService/ConsultarCodigoHtmlNodoResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Nodo> ConsultarCodigoHtmlNodoAsync(int IdNodo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/GuardarCodigoHtmlNodo", ReplyAction="http://tempuri.org/IProcesosService/GuardarCodigoHtmlNodoResponse")]
+        void GuardarCodigoHtmlNodo(int IdNodo, string CodigoHtml);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/GuardarCodigoHtmlNodo", ReplyAction="http://tempuri.org/IProcesosService/GuardarCodigoHtmlNodoResponse")]
+        System.Threading.Tasks.Task GuardarCodigoHtmlNodoAsync(int IdNodo, string CodigoHtml);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18493,6 +18505,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task CambiarNombreNodoAsync(int IdNodo, string NuevoNombre) {
             return base.Channel.CambiarNombreNodoAsync(IdNodo, NuevoNombre);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.Nodo ConsultarCodigoHtmlNodo(int IdNodo) {
+            return base.Channel.ConsultarCodigoHtmlNodo(IdNodo);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Nodo> ConsultarCodigoHtmlNodoAsync(int IdNodo) {
+            return base.Channel.ConsultarCodigoHtmlNodoAsync(IdNodo);
+        }
+        
+        public void GuardarCodigoHtmlNodo(int IdNodo, string CodigoHtml) {
+            base.Channel.GuardarCodigoHtmlNodo(IdNodo, CodigoHtml);
+        }
+        
+        public System.Threading.Tasks.Task GuardarCodigoHtmlNodoAsync(int IdNodo, string CodigoHtml) {
+            return base.Channel.GuardarCodigoHtmlNodoAsync(IdNodo, CodigoHtml);
         }
     }
     
