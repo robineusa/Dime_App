@@ -3602,6 +3602,7 @@
     <Content Include="Styles\Slider\images\desktop %281%29.ini" />
     <Content Include="Styles\Slider\images\desktop.ini" />
     <Content Include="Styles\Slider\images\thumbs\desktop.ini" />
+    <Content Include="Views\OfertasComerciales\VerImagen.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

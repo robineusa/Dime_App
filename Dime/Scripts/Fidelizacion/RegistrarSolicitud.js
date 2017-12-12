@@ -1,5 +1,5 @@
 ﻿$(function () {
-    
+
 })
 $("#sltMotivosCancelacion").change(function () {
     $.ajax({
@@ -14,7 +14,7 @@ $("#sltMotivosCancelacion").change(function () {
                 value: "0",
                 text: "-SELECCIONE-"
             }))
-            
+
 
             for (i = 0; i < rta.length; i++) {
                 $('#sltSubmotivosCancelacion').append($('<option>', {
@@ -23,15 +23,15 @@ $("#sltMotivosCancelacion").change(function () {
                 }))
             }
             rta = null;
-            
+
             //$.each(rta, function(i, item) {
-                
+
             //    alert(item.Id);
-                
-                
-                
+
+
+
             //});​
-            
+
         },
         //error: function (request, status, error) {
         //    alert(request.responseText + " " + status + "  " + error);
@@ -97,7 +97,7 @@ getChild = function (id, div, opOfrecimiento) {
 
         });
     }
-    
+
 }
 
 
@@ -117,8 +117,8 @@ enableBtn = function (srvId) {
         idObjRet = "chkTelefoniaRet"
         idObj = "chkTelefonia"
     }
-    
-    
+
+
 
     if ($("#" + idObjRet).parent().hasClass("disabled") == true) {
         $("#" + idObjRet).parent().removeClass('disabled')
@@ -135,7 +135,7 @@ enableBtn = function (srvId) {
     }
 }
 
-    $("#sltAcuerdo").change(function(){
+$("#sltAcuerdo").change(function () {
     var internetRet = (($("#chkInternetRet").prop("checked") == true) ? '1' : '0');
     var tvRet = (($("#chkTelevisionRet").prop("checked") == true) ? '1' : '0');
     var telRet = (($("#chkTelefoniaRet").prop("checked") == true) ? '1' : '0');
@@ -155,13 +155,13 @@ enableBtn = function (srvId) {
     if ($(this).val() == 0)
         $("#FidelizacionRegistro_Notas").val("")
 
-        var E1 = ((!$("#sltEstrategiasA_4").val()) ? ((!$("#sltEstrategiasA_2").val()) ? '0' : $("#sltEstrategiasA_2").val()) : $("#sltEstrategiasA_4").val())
-        var E2 = ((!$("#sltEstrategiasB_4").val()) ? ((!$("#sltEstrategiasB_2").val()) ? '0' : $("#sltEstrategiasB_2").val()) : $("#sltEstrategiasB_4").val())
-        var E3 = ((!$("#sltEstrategiasB_4").val()) ? ((!$("#sltEstrategiasC_2").val()) ? '0' : $("#sltEstrategiasC_2").val()) : $("#sltEstrategiasC_4").val())
+    var E1 = ((!$("#sltEstrategiasA_4").val()) ? ((!$("#sltEstrategiasA_2").val()) ? '0' : $("#sltEstrategiasA_2").val()) : $("#sltEstrategiasA_4").val())
+    var E2 = ((!$("#sltEstrategiasB_4").val()) ? ((!$("#sltEstrategiasB_2").val()) ? '0' : $("#sltEstrategiasB_2").val()) : $("#sltEstrategiasB_4").val())
+    var E3 = ((!$("#sltEstrategiasB_4").val()) ? ((!$("#sltEstrategiasC_2").val()) ? '0' : $("#sltEstrategiasC_2").val()) : $("#sltEstrategiasC_4").val())
     $.ajax({
         url: urlGetNotas + "?" + 'idSubmotivo=' + $("#sltSubmotivosCancelacion").val() + "&"
-        +'permanencia='+($("input[name=rbPermanencia]:checked").val())+"&"
-        +'Corte='+($("input[name=rbCorte]:checked").val())+"&"
+        + 'permanencia=' + ($("input[name=rbPermanencia]:checked").val()) + "&"
+        + 'Corte=' + ($("input[name=rbCorte]:checked").val()) + "&"
         + 'idServicios=' + serv + "&"
         + 'idServiciosRet=' + servRet + "&"
         + 'idE1=' + ((!E1) ? "0" : E1) + "&"
@@ -170,14 +170,15 @@ enableBtn = function (srvId) {
         + 'idNota=' + $(this).val() + "&"
         + 'idTicket=' + ((!$("#txtTicket").val()) ? '0' : $("#txtTicket").val()) + "&"
         + 'userTransfer=' + ((!$("#txtUserTransfer").val()) ? '0' : $("#txtUserTransfer").val()) + "&"
-        + 'renta=' + ((!$("#txtRenta").val()) ? '0' : $("#txtRenta").val())
+        + 'renta=' + ((!$("#txtRenta").val()) ? '0' : $("#txtRenta").val()) + "&"
+        + 'Cuenta=' + $("#txtCuenta").val()
         ,
         type: 'get',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         //data: {
-            //'idSubmotivo': $("#sltSubmotivosCancelacion").val(),
-            //'permanencia': ($("input[name=rbPermanencia]:checked").val()),
+        //'idSubmotivo': $("#sltSubmotivosCancelacion").val(),
+        //'permanencia': ($("input[name=rbPermanencia]:checked").val()),
         //    'Corte': ($("input[name=rbCorte]:checked").val()),
         //    'idServicios': serv,
         //    'idE1':((!$("#sltEstrategiasA_4").val()) ? ((!$("#sltEstrategiasA_3").val()) ? '0' : $("#sltEstrategiasA_2").val()) : $("#sltEstrategiasA_1").val()),
@@ -186,8 +187,17 @@ enableBtn = function (srvId) {
         //    'idNota': $(this).val(),
         //},
         success: function (data) {
-            $("#FidelizacionRegistro_Notas").val(data)
+            if (data == "0") {
+                $("#FidelizacionRegistro_Notas").val("");
+                $('#btnguardarpom').fadeOut('fast');
+                $("#txtCuenta").val("")
+                $("#txtCuenta").focus()
+                $('#myModal').modal()
+            }
+            else {
+                $("#FidelizacionRegistro_Notas").val(data)
+                $('#btnguardarpom').fadeIn('slow');
+            }
         }
     })
-    })
- 
+})

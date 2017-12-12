@@ -90,14 +90,44 @@ namespace Dime.Controllers
         }
         public JsonResult ListaDeImagenesAdminJson()
         {
-            decimal Cedula = Convert.ToDecimal(Session["Usuario"].ToString());
-            var jsonResult = Json(JsonConvert.SerializeObject(OfertasComercialesService.ListaDeImagenesAdmin()), JsonRequestBehavior.AllowGet);
+            List<VisualizadorImagenes> model = new List<VisualizadorImagenes>();
+            List<IMGOfertasComeciales> modelo = new List<IMGOfertasComeciales>();
+            modelo = OfertasComercialesService.ListaDeImagenesAdmin();
+            for (var i = 0; i < modelo.ToList().Count(); i++)
+            {
+                VisualizadorImagenes data = new VisualizadorImagenes();
+                data.src = "data:image/jpeg;base64," + Convert.ToBase64String(modelo[i].Imagen);
+                data.Descripcion = modelo[i].Descripcion;
+                data.Link = modelo[i].Link;
+                data.IdImagen = modelo[i].IdImagen;
+                data.Fecha = modelo[i].FechaCreacion;
+                data.Estado = modelo[i].Estado;
+                model.Add(data);
+            }
+            var jsonResult = Json(JsonConvert.SerializeObject(model), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
         public ActionResult Visualizador()
         {
-            return View();
+            List<VisualizadorImagenes> model = new List<VisualizadorImagenes>();
+            List<IMGOfertasComeciales> modelo = new List<IMGOfertasComeciales>();
+            modelo = OfertasComercialesService.ListaDeImagenesActivas();
+            for (var i = 0; i < modelo.ToList().Count(); i++)
+            {
+                VisualizadorImagenes data = new VisualizadorImagenes();
+                data.src = "data:image/jpeg;base64," + Convert.ToBase64String(modelo[i].Imagen);
+                data.Descripcion = modelo[i].Descripcion;
+                data.Link = modelo[i].Link;
+                data.IdImagen = modelo[i].IdImagen;
+                model.Add(data);
+            }
+            return View(model);
         }
+        public ActionResult VerImagen()
+        {
+            return PartialView();
+        }
+        
     }
 }

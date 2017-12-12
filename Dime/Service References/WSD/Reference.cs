@@ -8007,6 +8007,9 @@ namespace Dime.WSD {
         private decimal IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MotivoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreUsuarioGestionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -8160,6 +8163,19 @@ namespace Dime.WSD {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Motivo {
+            get {
+                return this.MotivoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MotivoField, value) != true)) {
+                    this.MotivoField = value;
+                    this.RaisePropertyChanged("Motivo");
                 }
             }
         }
@@ -8292,6 +8308,9 @@ namespace Dime.WSD {
         private decimal IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MotivoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreUsuarioGestionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -8445,6 +8464,19 @@ namespace Dime.WSD {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Motivo {
+            get {
+                return this.MotivoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MotivoField, value) != true)) {
+                    this.MotivoField = value;
+                    this.RaisePropertyChanged("Motivo");
                 }
             }
         }
@@ -18394,6 +18426,18 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/CambiarNombreNodo", ReplyAction="http://tempuri.org/IProcesosService/CambiarNombreNodoResponse")]
         System.Threading.Tasks.Task CambiarNombreNodoAsync(int IdNodo, string NuevoNombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarCodigoHtmlNodo", ReplyAction="http://tempuri.org/IProcesosService/ConsultarCodigoHtmlNodoResponse")]
+        Telmexla.Servicios.DIME.Entity.Nodo ConsultarCodigoHtmlNodo(int IdNodo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarCodigoHtmlNodo", ReplyAction="http://tempuri.org/IProcesosService/ConsultarCodigoHtmlNodoResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Nodo> ConsultarCodigoHtmlNodoAsync(int IdNodo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/GuardarCodigoHtmlNodo", ReplyAction="http://tempuri.org/IProcesosService/GuardarCodigoHtmlNodoResponse")]
+        void GuardarCodigoHtmlNodo(int IdNodo, string CodigoHtml);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/GuardarCodigoHtmlNodo", ReplyAction="http://tempuri.org/IProcesosService/GuardarCodigoHtmlNodoResponse")]
+        System.Threading.Tasks.Task GuardarCodigoHtmlNodoAsync(int IdNodo, string CodigoHtml);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18493,6 +18537,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task CambiarNombreNodoAsync(int IdNodo, string NuevoNombre) {
             return base.Channel.CambiarNombreNodoAsync(IdNodo, NuevoNombre);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.Nodo ConsultarCodigoHtmlNodo(int IdNodo) {
+            return base.Channel.ConsultarCodigoHtmlNodo(IdNodo);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Nodo> ConsultarCodigoHtmlNodoAsync(int IdNodo) {
+            return base.Channel.ConsultarCodigoHtmlNodoAsync(IdNodo);
+        }
+        
+        public void GuardarCodigoHtmlNodo(int IdNodo, string CodigoHtml) {
+            base.Channel.GuardarCodigoHtmlNodo(IdNodo, CodigoHtml);
+        }
+        
+        public System.Threading.Tasks.Task GuardarCodigoHtmlNodoAsync(int IdNodo, string CodigoHtml) {
+            return base.Channel.GuardarCodigoHtmlNodoAsync(IdNodo, CodigoHtml);
         }
     }
     
@@ -18686,6 +18746,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/ListaDeImagenesAdmin", ReplyAction="http://tempuri.org/IOfertasComercialesService/ListaDeImagenesAdminResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales>> ListaDeImagenesAdminAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/ListaDeImagenesActivas", ReplyAction="http://tempuri.org/IOfertasComercialesService/ListaDeImagenesActivasResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales> ListaDeImagenesActivas();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IOfertasComercialesService/ListaDeImagenesActivas", ReplyAction="http://tempuri.org/IOfertasComercialesService/ListaDeImagenesActivasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales>> ListaDeImagenesActivasAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18745,6 +18811,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales>> ListaDeImagenesAdminAsync() {
             return base.Channel.ListaDeImagenesAdminAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales> ListaDeImagenesActivas() {
+            return base.Channel.ListaDeImagenesActivas();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales>> ListaDeImagenesActivasAsync() {
+            return base.Channel.ListaDeImagenesActivasAsync();
         }
     }
 }

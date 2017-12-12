@@ -12,16 +12,7 @@ function TraerDatosConsulta() {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
-            for(var i =0; i< json.length; i++){
-                
-                 var src = "data:image/jpeg;base64," + json[i].Imagen;
-                 json[i].Imagen = src;
-              
-            }
-            
-
             cambiarfechas(json);
-
             cargargrilla(json);
             finalizaconsulta();
         },
@@ -33,7 +24,7 @@ function TraerDatosConsulta() {
 
 function cambiarfechas(data) {
     for (var i = 0; i < data.length; i++) {
-        data[i].FechaCreacion = kendo.toString(kendo.parseDate(data[i].FechaCreacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+        data[i].Fecha = kendo.toString(kendo.parseDate(data[i].Fecha, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
     }
 }
 function cargargrilla(data) {
@@ -71,9 +62,9 @@ function cargargrilla(data) {
         { field: "Descripcion", title: "Descripcion", width: 100 },
         { field: "Estado", title: "Estado", width: 60 },
         {
-            field: "Imagen",
+            field: "src",
             title: "Imagen",
-            template: '<img src="#=Imagen#" alt="image" style="width:100px; height:100px;"/>',
+            template: '<img src="#=src#" alt="image" style="width:100px; height:100px;"/>',
             width: 60,
             filterable: false, headerAttributes: { style: "white-space: normal" }
         }
