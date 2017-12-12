@@ -20,6 +20,8 @@ namespace Telmexla.Servicios.DIME.Entity
         public string Cierre { get; set; }
         [Required(ErrorMessage = "Seleccione una opción")]
         public string Razon { get; set; }
+        [Required(ErrorMessage = "Seleccione una opción")]
+        public string Motivo { get; set; }
         public string Observaciones { get; set; }
         public string Aliado { get; set; }
         public System.DateTime? FechaSeguimiento { get; set; }
