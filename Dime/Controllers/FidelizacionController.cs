@@ -14,12 +14,15 @@ namespace Dime.Controllers
     {
         WSD.FidelizacionServiceClient fidelizacionServicio;
         WSD.InboundServiceClient inboundService;
+        
         // GET: Fidelizacion
 
         public FidelizacionController()
         {
             fidelizacionServicio = new WSD.FidelizacionServiceClient();
             fidelizacionServicio.ClientCredentials.Authenticate();
+            inboundService = new WSD.InboundServiceClient();
+            inboundService.ClientCredentials.Authenticate();
         }
 
 
@@ -921,8 +924,16 @@ namespace Dime.Controllers
             var testc = "";
             return Json(Motivos, JsonRequestBehavior.AllowGet);
         }
-        public JsonResult getNotasJson(decimal idNota, decimal idSubmotivo, string idServicios, string idServiciosRet, decimal idE1, decimal idE2, decimal idE3, string permanencia, int idTicket, string userTransfer, int renta, int Corte)
+        public JsonResult getNotasJson(decimal idNota, decimal idSubmotivo, string idServicios, string idServiciosRet, decimal idE1, decimal idE2, decimal idE3, string permanencia, int idTicket, string userTransfer, int renta, int Corte, int Cuenta)
         {
+            var DataCliente = inboundService.TraerClienteCompletoPorCuenta(Cuenta);
+            var nomCliente = "";
+            if (DataCliente != null)
+                nomCliente = DataCliente.Nombre + " " + DataCliente.Apellido;
+            else
+                return Json("0", JsonRequestBehavior.AllowGet);
+
+
             decimal diasPreaviso = 5;
             var Tipificacion = fidelizacionServicio.getTipificacionById(Convert.ToInt32(idNota));
             //if (Tipificacion.ValidaRetencion == 1)
@@ -999,9 +1010,8 @@ namespace Dime.Controllers
             txt = txt.Replace("[:Renta:]", Convert.ToString(renta));
             txt = txt.Replace("[:Permanencia:]", myClausula);
             txt = txt.Replace("[:FechaCorte:]", FechaSiguiente);
-
-
-
+            txt = txt.Replace("[:Titular:]", nomCliente);
+            txt = txt.Replace("[:Cuenta:]", Convert.ToString(Cuenta));
 
 
             return Json(txt.ToUpper(), JsonRequestBehavior.AllowGet);

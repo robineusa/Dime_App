@@ -9,234 +9,224 @@
     @Html.AntiForgeryToken()
     if (Session["Formulario Recuperacion"] != null || Session["Formulario Contencion"] != null || Session["Formulario Retencion"] != null)
     {
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="box box-danger">
-                    <div class="box-body">
-                        <div class="col-md-4">
-                            <small>Cuenta</small>
-                            @Html.TextBoxFor(c => c.FidelizacionRegistro.Cuenta, null, new { @class = "form-control input-sm ", Id = "txtMotivo" })
-                            @Html.ValidationMessageFor(c => c.FidelizacionRegistro.Cuenta, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-4">
-                            <small>Motivo</small>
-                                 @Html.DropDownListFor(c => c.FidelizacionMotivos.Id, new SelectList(ViewBag.sltMotivos, "Id", "Motivo"), "-SELECCIONE-", new { Id = "sltMotivosCancelacion", @class = "form-control input-sm" })
-                            @Html.ValidationMessageFor(c => c.FidelizacionMotivos.Id, "", new { @class = "text-danger" })
-                            @ViewBag.errorMotivo
-                        </div>
-                        <div class="col-md-4">
-                            <small>Submotivo</small>
-                            @Html.DropDownListFor(c => c.FidelizacionRegistro.SubmotivoId, new List<SelectListItem> { }, "-SELECCIONE-", new { Id = "sltSubmotivosCancelacion", @class = "form-control input-sm" })
-                            @Html.ValidationMessageFor(c => c.FidelizacionRegistro.SubmotivoId, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-2">
-                        </div>
-                        <div class="col-md-7 text-center">
-                            <small>Servicios a Cancelar</small>
-                                                                                                                <div class="col-md-12 btn-group">
-
-            <label class="btn btn-danger">
-                @Html.CheckBoxFor(x => x.FidelizacionRegistro.Internet,  new { id = "chkInternet",onchange ="enableBtn('100')" }) INTERNET
-
-            </label>
-            <label class="btn btn-danger">
-                @Html.CheckBoxFor(x => x.FidelizacionRegistro.Television, new { @id = "chkTelevision", onchange = "enableBtn('010')", })  TELEVISIÓN
-
-            </label>
-            <label class="btn btn-danger">
-               @Html.CheckBoxFor(x => x.FidelizacionRegistro.Telefonia,new { @id = "chkTelefonia", onchange = "enableBtn('001')" }) TELEFONÍA
-            </label>
-            @ViewBag.errorServicios
-        </div>
-                      </div>
-                            
-                        <div class="col-md-3">
-                            </div>
-                            <div class="col-md-12">
-                                <div class="col-md-4" style="padding:0 15px 0 0px">
-                                    <div class="col-md-12" id="divEstrategiasCabeceraA">
-                                        <div class="col-md-12" id="level_1">
-                                            <small>Estrategia 1</small>
-                                            @Html.DropDownListFor(c => c.FidelizacionRegistro.RecursivaIdA, new SelectList(ViewBag.slEstrategia, "Id", "Nombre"), "-SELECCIONE-", new { Id = "sltEstrategias", @class = "form-control input-sm", onchange = "getChild(this.value, 'label_1', 'A')" })
-                                            @Html.ValidationMessageFor(c => c.FidelizacionRegistro.RecursivaIdA, "", new { @class = "text-danger" })
-                                        </div>
-                                        <div class="col-md-12" id="divEstrategiasA">
-                                            @ViewBag.errorHijoA
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4" style="padding:0 0px 0 15px">
-                                    <div class="col-md-12" id="divEstrategiasCabeceraB">
-                                        <div class="col-md-12" id="level_1">
-                                            <small>Estrategia 2</small>
-                                            @Html.DropDownListFor(c => c.FidelizacionRegistro.RecursivaIdB, new SelectList(ViewBag.slEstrategia, "Id", "Nombre"), "-SELECCIONE-", new { Id = "sltEstrategias", @class = "form-control input-sm", onchange = "getChild(this.value, 'label_1', 'B')" })
-                                            @Html.ValidationMessageFor(c => c.FidelizacionRegistro.RecursivaIdB, "", new { @class = "text-danger" })
-                                        </div>
-                                        <div class="col-md-12" id="divEstrategiasB">
-                                            @ViewBag.errorHijoB
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4" style="padding:0 0px 0 15px">
-                                    <div class="col-md-12" id="divEstrategiasCabeceraC">
-                                        <div class="col-md-12" id="level_1">
-                                            <small>Estrategia 3</small>
-                                            @Html.DropDownListFor(c => c.FidelizacionRegistro.RecursivaIdC, new SelectList(ViewBag.slEstrategia, "Id", "Nombre"), "-SELECCIONE-", new { Id = "sltEstrategias", @class = "form-control input-sm", onchange = "getChild(this.value, 'label_1', 'C')" })
-                                            @Html.ValidationMessageFor(c => c.FidelizacionRegistro.RecursivaIdC, "", new { @class = "text-danger" })
-                                            
-                                        </div>
-                                        <div class="col-md-12" id="divEstrategiasC">
-                                            @ViewBag.errorHijoC
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-md-12 pagination-centered">
-                                <div class="col-md-7 text-center pagination-centered">
-                                    <small>Permanencia</small>
-                                    <div class="col-md-12 btn-group" data-toggle="buttons">
-
-                                        <label class="btn btn-danger">
-                                            @Html.RadioButton("rbPermanencia","conPermanencia") Cliente Con Permanencia
-                                        </label>
-                                        <label class="btn btn-danger">
-                                            @Html.RadioButton("rbPermanencia", "sinPermanencia") Cliente Sin Permanencia
-                                        </label>
-                                        @ViewBag.errorPermanencia
-                                    </div>
-                                </div>
-                                <div class="col-md-5 text-center pagination-centered">
-                                    <small>Corte</small>
-                                    <div class="col-md-12 btn-group" data-toggle="buttons">
-
-                                        <label class="btn btn-danger">
-                                            @Html.RadioButton("rbCorte","1") 1ro Mes
-                                        </label>
-                                        <label class="btn btn-danger">
-                                            @Html.RadioButton("rbCorte", "2") 2do Mes
-                                        </label>
-                                        <label class="btn btn-danger">
-                                            @Html.RadioButton("rbCorte", "3") 3ro Mes
-                                        </label>
-                                        @ViewBag.errorCorte
-                                    </div>
-                                </div>
-                            </div>
-                        @if (Session["Formulario Retencion"] != null || Session["Formulario Recuperacion"] != null){
-                        <div class="col-md-2">
-                        </div>
-
-                        <div class="col-md-7 text-center">
-                            <small>Servicios Retenidos</small>
-                            <div class="col-md-12 btn-group">
-
-                                <label class="btn btn-danger disabled">
-                                    @Html.CheckBoxFor(x => x.FidelizacionRegistro.InternetRet, new { @id = "chkInternetRet", @class = "", disabled = true }) INTERNET
-
-                                </label>
-                                <label class="btn btn-danger disabled">
-                                    @Html.CheckBoxFor(x => x.FidelizacionRegistro.TelevisionRet, new { @id = "chkTelevisionRet", @class = "", disabled = true })  TELEVISIÓN
-
-                                </label>
-                                <label class="btn btn-danger disabled">
-                                    @Html.CheckBoxFor(x => x.FidelizacionRegistro.TelefoniaRet, new { @id = "chkTelefoniaRet", @class = "", disabled = true }) TELEFONÍA
-                                </label>
-                                @ViewBag.errorServiciosRet
-                            </div>
-
-                        </div>
-                        <div class="col-md-3">
-                            
-                        </div>
-                        }
-                        
-                            <div class="col-md-4">
-                                <small>Ticket</small>
-                                @Html.TextBoxFor(c => c.FidelizacionRegistro.Ticket, new { @class = "form-control input-sm", Id = "txtTicket"})
-                                @Html.ValidationMessageFor(c => c.FidelizacionRegistro.Ticket, "", new { @class = "text-danger" })
-                                @ViewBag.errorTicket
-                            </div>
-                            @if (Session["Formulario Contencion"] != null){
-                            <div class="col-md-4">
-                                <small>Usuario Transfiere</small>
-                                @Html.TextBoxFor(c => c.FidelizacionRegistro.UsuarioTransfiere, new { @class = "form-control input-sm", Id="txtUserTransfer"})
-                                @Html.ValidationMessageFor(c => c.FidelizacionRegistro.UsuarioTransfiere, "", new { @class = "text-danger" })
-                                @ViewBag.errorUsuario
-                            </div>
-                            }
-                            else if(Session["Formulario Recuperacion"] != null){
-                            <div class="col-md-4">
-                                <small>Renta</small>
-                                @Html.TextBoxFor(c => c.FidelizacionRegistro.Renta, new { @class = "form-control input-sm", Id = "txtRenta"})
-                                @Html.ValidationMessageFor(c => c.FidelizacionRegistro.Renta, "", new { @class = "text-danger" })
-                            </div>
-                            }
-
-                            <div class="col-md-4">
-                                <small>Acuerdo</small>
-                                @Html.DropDownListFor(c => c.FidelizacionRegistro.TipificacionId, new SelectList(ViewBag.sltAcuerdo, "Id", "Nombre"), "-SELECCIONE-", new { Id = "sltAcuerdo", @class = "form-control input-sm" })
-                                @Html.ValidationMessageFor(c => c.FidelizacionRegistro.TipificacionId, "", new { @class = "text-danger" })
-
-                            </div>
-                        
-                        
-                            <div class="col-md-12">
-                                <small>Nota</small>
-                                @Html.TextAreaFor(c => c.FidelizacionRegistro.Notas, new { @class = "form-control input-sm", style="resize:none" })
-                                @Html.ValidationMessageFor(c => c.FidelizacionRegistro.Notas, "", new { @class = "text-danger" })
-                            </div>
-
-
-
-
-
-
-                            @*<div class="col-md-12">
-                                <small>Mostrar Otros Ofrecimientos</small>
-                                @Html.DropDownListFor(m => m.OtrosOfrecimientos, new List<SelectListItem>
-                                    { new SelectListItem { Text = "SI", Value = "1", Selected = true }, new SelectListItem { Text = "NO", Value = "0", Selected = false } }, new { Id = "sltOtrosOfrecimientos", @class = "form-control" })
-                                    @Html.ValidationMessageFor(m => m.OtrosOfrecimientos, "", new { @class = "text-danger" })
-                            </div>
-
-                            <div class="col-md-12">
-                                <small>Adjuntar Campos Adicionales</small>
-                                @Html.DropDownListFor(m => m.OtrosCampos, new List<SelectListItem>
-                                    { new SelectListItem { Text = "SI", Value = "1", Selected = true }, new SelectListItem { Text = "NO", Value = "0", Selected = false } }, new { Id = "sltOtrosCampos", @class = "form-control" })
-                                    @Html.ValidationMessageFor(m => m.OtrosCampos, "", new { @class = "text-danger" })
-                            </div>
-                            *@
-                            <div class="col-md-12 text-center">
-                                <button id="btnguardarpom" type="submit" class="btn btn-primary" name="Guardar" value="true">Guardar</button>
-                            </div>
-
-
-
-                        </div>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="col-md-4">
+                    <small>Cuenta</small>
+                    @Html.TextBoxFor(c => c.FidelizacionRegistro.Cuenta, null, new { @class = "form-control input-sm ", Id = "txtCuenta" })
+                    @Html.ValidationMessageFor(c => c.FidelizacionRegistro.Cuenta, "", new { @class = "text-danger" })
                 </div>
+                <div class="col-md-4">
+                    <small>Motivo</small>
+                    @Html.DropDownListFor(c => c.FidelizacionMotivos.Id, new SelectList(ViewBag.sltMotivos, "Id", "Motivo"), "-SELECCIONE-", new { Id = "sltMotivosCancelacion", @class = "form-control input-sm" })
+                    @Html.ValidationMessageFor(c => c.FidelizacionMotivos.Id, "", new { @class = "text-danger" })
+                    @ViewBag.errorMotivo
+                </div>
+                <div class="col-md-4">
+                    <small>Submotivo</small>
+                    @Html.DropDownListFor(c => c.FidelizacionRegistro.SubmotivoId, new List<SelectListItem>
+                        { }, "-SELECCIONE-", new { Id = "sltSubmotivosCancelacion", @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(c => c.FidelizacionRegistro.SubmotivoId, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-7 text-center">
+                    <small>Servicios a Cancelar</small>
+                    <div class="col-md-12 btn-group">
+
+                        <label class="btn btn-danger">
+                            @Html.CheckBoxFor(x => x.FidelizacionRegistro.Internet,  new { id = "chkInternet",onchange ="enableBtn('100')" }) INTERNET
+
+                        </label>
+                        <label class="btn btn-danger">
+                            @Html.CheckBoxFor(x => x.FidelizacionRegistro.Television, new { @id = "chkTelevision", onchange = "enableBtn('010')", })  TELEVISIÓN
+
+                        </label>
+                        <label class="btn btn-danger">
+                            @Html.CheckBoxFor(x => x.FidelizacionRegistro.Telefonia,new { @id = "chkTelefonia", onchange = "enableBtn('001')" }) TELEFONÍA
+                        </label>
+                        @ViewBag.errorServicios
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4" style="padding:0 15px 0 0px">
+                        <div class="col-md-12" id="divEstrategiasCabeceraA">
+                            <div class="col-md-12" id="level_1">
+                                <small>Estrategia 1</small>
+                                @Html.DropDownListFor(c => c.FidelizacionRegistro.RecursivaIdA, new SelectList(ViewBag.slEstrategia, "Id", "Nombre"), "-SELECCIONE-", new { Id = "sltEstrategias", @class = "form-control input-sm", onchange = "getChild(this.value, 'label_1', 'A')" })
+                                @Html.ValidationMessageFor(c => c.FidelizacionRegistro.RecursivaIdA, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-12" id="divEstrategiasA">
+                                @ViewBag.errorHijoA
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="padding:0 0px 0 15px">
+                        <div class="col-md-12" id="divEstrategiasCabeceraB">
+                            <div class="col-md-12" id="level_1">
+                                <small>Estrategia 2</small>
+                                @Html.DropDownListFor(c => c.FidelizacionRegistro.RecursivaIdB, new SelectList(ViewBag.slEstrategia, "Id", "Nombre"), "-SELECCIONE-", new { Id = "sltEstrategias", @class = "form-control input-sm", onchange = "getChild(this.value, 'label_1', 'B')" })
+                                @Html.ValidationMessageFor(c => c.FidelizacionRegistro.RecursivaIdB, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-12" id="divEstrategiasB">
+                                @ViewBag.errorHijoB
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style="padding:0 0px 0 15px">
+                        <div class="col-md-12" id="divEstrategiasCabeceraC">
+                            <div class="col-md-12" id="level_1">
+                                <small>Estrategia 3</small>
+                                @Html.DropDownListFor(c => c.FidelizacionRegistro.RecursivaIdC, new SelectList(ViewBag.slEstrategia, "Id", "Nombre"), "-SELECCIONE-", new { Id = "sltEstrategias", @class = "form-control input-sm", onchange = "getChild(this.value, 'label_1', 'C')" })
+                                @Html.ValidationMessageFor(c => c.FidelizacionRegistro.RecursivaIdC, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="col-md-12" id="divEstrategiasC">
+                                @ViewBag.errorHijoC
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-12 pagination-centered">
+                    <div class="col-md-7 text-center pagination-centered">
+                        <small>Permanencia</small>
+                        <div class="col-md-12 btn-group" data-toggle="buttons">
+
+                            <label class="btn btn-danger">
+                                @Html.RadioButton("rbPermanencia","conPermanencia") Cliente Con Permanencia
+                            </label>
+                            <label class="btn btn-danger">
+                                @Html.RadioButton("rbPermanencia", "sinPermanencia") Cliente Sin Permanencia
+                            </label>
+                            @ViewBag.errorPermanencia
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-center pagination-centered">
+                        <small>Corte</small>
+                        <div class="col-md-12 btn-group" data-toggle="buttons">
+
+                            <label class="btn btn-danger">
+                                @Html.RadioButton("rbCorte","1") 1ro Mes
+                            </label>
+                            <label class="btn btn-danger">
+                                @Html.RadioButton("rbCorte", "2") 2do Mes
+                            </label>
+                            <label class="btn btn-danger">
+                                @Html.RadioButton("rbCorte", "3") 3ro Mes
+                            </label>
+                            @ViewBag.errorCorte
+                        </div>
+                    </div>
+                </div>
+                @if (Session["Formulario Retencion"] != null || Session["Formulario Recuperacion"] != null){
+                <div class="col-md-2">
+                </div>
+
+                <div class="col-md-7 text-center">
+                    <small>Servicios Retenidos</small>
+                    <div class="col-md-12 btn-group">
+
+                        <label class="btn btn-danger disabled">
+                            @Html.CheckBoxFor(x => x.FidelizacionRegistro.InternetRet, new { @id = "chkInternetRet", @class = "", disabled = true }) INTERNET
+
+                        </label>
+                        <label class="btn btn-danger disabled">
+                            @Html.CheckBoxFor(x => x.FidelizacionRegistro.TelevisionRet, new { @id = "chkTelevisionRet", @class = "", disabled = true })  TELEVISIÓN
+
+                        </label>
+                        <label class="btn btn-danger disabled">
+                            @Html.CheckBoxFor(x => x.FidelizacionRegistro.TelefoniaRet, new { @id = "chkTelefoniaRet", @class = "", disabled = true }) TELEFONÍA
+                        </label>
+                        @ViewBag.errorServiciosRet
+                    </div>
+
+                </div>
+                <div class="col-md-3">
+
+                </div>
+                }
+
+                <div class="col-md-4">
+                    <small>Ticket</small>
+                    @Html.TextBoxFor(c => c.FidelizacionRegistro.Ticket, new { @class = "form-control input-sm", Id = "txtTicket"})
+                    @Html.ValidationMessageFor(c => c.FidelizacionRegistro.Ticket, "", new { @class = "text-danger" })
+                    @ViewBag.errorTicket
+                </div>
+                @if (Session["Formulario Contencion"] != null){
+                <div class="col-md-4">
+                    <small>Usuario Transfiere</small>
+                    @Html.TextBoxFor(c => c.FidelizacionRegistro.UsuarioTransfiere, new { @class = "form-control input-sm", Id="txtUserTransfer"})
+                    @Html.ValidationMessageFor(c => c.FidelizacionRegistro.UsuarioTransfiere, "", new { @class = "text-danger" })
+                    @ViewBag.errorUsuario
+                </div>
+                }
+                else if(Session["Formulario Recuperacion"] != null){
+                <div class="col-md-4">
+                    <small>Renta</small>
+                    @Html.TextBoxFor(c => c.FidelizacionRegistro.Renta, new { @class = "form-control input-sm", Id = "txtRenta"})
+                    @Html.ValidationMessageFor(c => c.FidelizacionRegistro.Renta, "", new { @class = "text-danger" })
+                </div>
+                }
+
+                <div class="col-md-4">
+                    <small>Acuerdo</small>
+                    @Html.DropDownListFor(c => c.FidelizacionRegistro.TipificacionId, new SelectList(ViewBag.sltAcuerdo, "Id", "Nombre"), "-SELECCIONE-", new { Id = "sltAcuerdo", @class = "form-control input-sm" })
+                    @Html.ValidationMessageFor(c => c.FidelizacionRegistro.TipificacionId, "", new { @class = "text-danger" })
+
+                </div>
+
+
+                <div class="col-md-12">
+                    <small>Nota</small>
+                    @Html.TextAreaFor(c => c.FidelizacionRegistro.Notas, new { @class = "form-control input-sm", style="resize:none" })
+                    @Html.ValidationMessageFor(c => c.FidelizacionRegistro.Notas, "", new { @class = "text-danger" })
+                </div>
+
+
+
+
+
+
+                @*<div class="col-md-12">
+                    <small>Mostrar Otros Ofrecimientos</small>
+                    @Html.DropDownListFor(m => m.OtrosOfrecimientos, new List<SelectListItem>
+                        { new SelectListItem { Text = "SI", Value = "1", Selected = true }, new SelectListItem { Text = "NO", Value = "0", Selected = false } }, new { Id = "sltOtrosOfrecimientos", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.OtrosOfrecimientos, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-12">
+                    <small>Adjuntar Campos Adicionales</small>
+                    @Html.DropDownListFor(m => m.OtrosCampos, new List<SelectListItem>
+                        { new SelectListItem { Text = "SI", Value = "1", Selected = true }, new SelectListItem { Text = "NO", Value = "0", Selected = false } }, new { Id = "sltOtrosCampos", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.OtrosCampos, "", new { @class = "text-danger" })
+                </div>
+                *@
+                <div class="col-md-12 text-center">
+                    <button id="btnguardarpom" type="submit" class="btn btn-primary" name="Guardar" value="true">Guardar</button>
+                </div>
+
+
+
             </div>
-            <div class="col-md-1"></div>
-        </div>
-    }
-    else
-    {
-        <div class="row">
-
-            <div class="box box-primary">
-
-                <div class="box-body">
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="error-page">
-                                <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
-                                <div class="error-content">
-                                    <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
-                                    <p style="text-align:justify;">
-                                        La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
-                                        Por favor solicite al administrador del sistema el acceso correspondiente.
-                                    </p>
+            <div id="myModal" class="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                            <h2 class="modal-title"><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:#ff0000;"></i> Error</h2>
+                        </div>
+                        <div class="modal-body">
+                            <br />
+                            <div class="row">
+                                <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                                    <div>Número de cuenta no encontrada, digite un número de cuenta válido</div>
                                 </div>
                             </div>
                         </div>
@@ -244,30 +234,57 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+    }
+    else
+    {
+<div class="row">
+
+    <div class="box box-primary">
+
+        <div class="box-body">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="error-page">
+                        <h2 class="headline text-red" style="margin-top:-18px;">502</h2>
+                        <div class="error-content">
+                            <h3><i class="fa fa-warning text-red"></i> Oops! Acceso Denegado.</h3>
+                            <p style="text-align:justify;">
+                                La información que se relaciona en esta vista no es posible visualizarse ya que su perfil no posee el acceso necesario.
+                                Por favor solicite al administrador del sistema el acceso correspondiente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     }
     @section Scripts{
-        <script>
-            var urlListaKendo = '@Url.Action("getSubmotivosPorMotivoJson", "Fidelizacion")';
-            var urlGetChilds = '@Url.Action("getHijoRecursivaJson", "Fidelizacion")';
-            var urlGetNotas = '@Url.Action("getNotasJson", "Fidelizacion")';
-        </script>
-        <script src="~/Scripts/Fidelizacion/RegistrarSolicitud.js?1.0.6"></script>
+<script>
+    var urlListaKendo = '@Url.Action("getSubmotivosPorMotivoJson", "Fidelizacion")';
+    var urlGetChilds = '@Url.Action("getHijoRecursivaJson", "Fidelizacion")';
+    var urlGetNotas = '@Url.Action("getNotasJson", "Fidelizacion")';
+</script>
+<script src="~/Scripts/Fidelizacion/RegistrarSolicitud.js?1.0.6"></script>
     }
 
-    
-        <style>
-            /*#divEstrategias .col-md-6, #divEstrategias .col-md-12,*/
-             #divEstrategiasCabeceraA .col-md-12,
-             #divEstrategiasCabeceraB .col-md-12,
-             #divEstrategiasCabeceraC .col-md-12
-            {
-                padding: 0px !important;
-            }
-            #divEstrategiasA, #divEstrategiasB, #divEstrategiasC {
-            padding-left: 0;
-            }
 
-            
-        </style>
-    
+<style>
+    /*#divEstrategias .col-md-6, #divEstrategias .col-md-12,*/
+    #divEstrategiasCabeceraA .col-md-12,
+    #divEstrategiasCabeceraB .col-md-12,
+    #divEstrategiasCabeceraC .col-md-12 {
+        padding: 0px !important;
+    }
+
+    #divEstrategiasA, #divEstrategiasB, #divEstrategiasC {
+        padding-left: 0;
+    }
+</style>
+
 }
