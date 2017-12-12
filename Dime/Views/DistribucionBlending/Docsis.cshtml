@@ -314,7 +314,11 @@
                         @Html.DropDownListFor(m => m.GBPDocsis.Razon, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tiposCausasSelect", @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.GBPDocsis.Razon, "", new { @class = "text-danger" })
                     </td>
-
+                    <td style="padding-left:4px; width:300px;">
+                        <label>Motivo</label>
+                        @Html.DropDownListFor(m => m.GBPDocsis.Motivo, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "tiposMotivoSelect", @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.GBPDocsis.Motivo, "", new { @class = "text-danger" })
+                    </td>
                 </tr>
             </table>
         </div>
@@ -400,11 +404,12 @@
             var urlControlTipoGestionList = '@Url.Action("TiposCierresList", "DistribucionBlending")';
             var urlControlTipoCierreList = '@Url.Action("TiposRazonesList", "DistribucionBlending")';
             var urlControlTipoCausaList = '@Url.Action("TiposCausasList", "DistribucionBlending")';
+            var urlControlTipoMotivoList = '@Url.Action("TiposMotivoList", "DistribucionBlending")';
             var urlListaGestion = '@Url.Action("HistoricoGestionDocsis", "DistribucionBlending")';
             var urlListaSeguimientos = '@Url.Action("SeguimientosDocsis", "DistribucionBlending")';
         </script>}
     else { }
-    <script src="~/Scripts/DistribucionBlending/Docsis.js?1.0.6"></script>
+    <script src="~/Scripts/DistribucionBlending/Docsis.js?1.0.8"></script>
     <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
     <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />

@@ -14,6 +14,7 @@
         public string Gestion { get; set; }
         public string Cierre { get; set; }
         public string Razon { get; set; }
+        public string Motivo { get; set; }
         public string Observaciones { get; set; }
         public string Aliado { get; set; }
         public System.DateTime? FechaSeguimiento { get; set; }

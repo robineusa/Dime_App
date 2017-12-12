@@ -2058,6 +2058,7 @@
       <xs:element minOccurs="0" name="FechaSeguimiento" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OperacionGestion" nillable="true" type="xs:string" />
@@ -2084,6 +2085,7 @@
       <xs:element minOccurs="0" name="FechaSeguimiento" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OperacionGestion" nillable="true" type="xs:string" />
@@ -2117,6 +2119,7 @@
       <xs:element minOccurs="0" name="FechaSeguimiento" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OperacionGestion" nillable="true" type="xs:string" />
@@ -2144,6 +2147,7 @@
       <xs:element minOccurs="0" name="FechaSeguimiento" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="OperacionGestion" nillable="true" type="xs:string" />
