@@ -7447,7 +7447,7 @@
   <xs:element name="ListaDeImagenesActivasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q517="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDeImagenesActivasResult" nillable="true" type="q517:ArrayOfIMGOfertasComeciales" />
+        <xs:element xmlns:q518="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDeImagenesActivasResult" nillable="true" type="q518:ArrayOfIMGOfertasComeciales" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

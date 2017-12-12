@@ -42,7 +42,7 @@
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <li id="images_menu" class="dropdown messages-menu">
-                            <a id="llamarofertas" href="#OfertasComerciales" data-toggle="modal" data-backdrop="static" data-keyboard="false" style="font-size:20px;">
+                            <a id="llamarofertas" href="#OfertasComerciales" onclick="LlamarVisualizadorImagenes();" data-toggle="modal" data-backdrop="static" data-keyboard="false" style="font-size:20px;">
                                 <i class="ion-radio-waves"></i>
                                 <span id="MensajeCount" class="label label-success"></span>
                             </a>
@@ -1353,7 +1353,11 @@
                     <br />
                     <div class="row">
                         <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
-                            <iframe id="ismo" style="width:100%;height:5000px;margin-left:-10px;margin-top:-30px;" src="@Url.Action("Visualizador", "OfertasComerciales")" frameborder="0" allowFullScreen="true"></iframe>
+                            @*<iframe id="ismo" style="width:100%;height:5000px;margin-left:-10px;margin-top:-30px;" src="@Url.Action("VerImagen", "OfertasComerciales")" frameborder="0" allowFullScreen="true"></iframe>
+                            @Html.Action("VerImagen", "OfertasComerciales");*@
+                            <div id="Viewimagenes">
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1558,7 +1562,7 @@
     <script src="~/Scripts/Signal/jquery.signalR-2.2.1.min.js"></script>
     <script src="~/signalr/hubs"></script>
     <script src="~/Scripts/Shared/Helper.js?1.1.9"></script>
-    <script src="~/Scripts/Shared/_Layout.js?1.4.5"></script>
+    <script src="~/Scripts/Shared/_Layout.js?1.4.6"></script>
 
     <script src="~/Scripts/Shared/_AlertasLayout.js?1.2.4"></script>
     <script src="~/ViewsAlr/app.js?1.0.3"></script>
@@ -1576,6 +1580,7 @@
         var urlProrrateosView = '@Url.Action("Prorrateos", "Calculadoras")';
         var urlRentasView = '@Url.Action("Rentas", "Calculadoras")';
         var urlLockScreen = '@Url.Action("SLockScreen", "Account")';
+        var urlVisualizadorImagenes = '@Url.Action("VerImagen", "OfertasComerciales")';
         $(function () {
             $('#ChatGeneral').draggable();
             $('#Drag').draggable();

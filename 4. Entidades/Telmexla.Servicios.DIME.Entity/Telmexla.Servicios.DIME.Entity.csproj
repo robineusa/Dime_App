@@ -270,6 +270,7 @@
     <Compile Include="VIPSolicitudes.cs" />
     <Compile Include="VIPSolicitudesPorEquipo.cs" />
     <Compile Include="VisitasAutorizadas.cs" />
+    <Compile Include="VisualizadorImagenes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
