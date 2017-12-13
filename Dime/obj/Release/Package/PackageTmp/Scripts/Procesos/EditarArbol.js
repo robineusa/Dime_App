@@ -8,8 +8,6 @@
 
     //$('#Body_Layout').on('click', function () { });
 
-
-
 });
 
 
@@ -26,7 +24,7 @@ function ConstruirArbol(idArbol) {
             $('#InsertaArbol').append("<label id='NombreArbol' name='" + json.Id + "' onmousedown='evnt(this)' >" +
 
                                        "<i onclick= 'mostrarOcultar(this)' class='fa fa-caret-square-o-down'>  </i>" +
-                                         " "+json.NombreArbol + " "+
+                                         " " + json.NombreArbol + " " +
                                         "<a href='#CrearNodo' style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
                                           "<i class='fa fa-plus-circle' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
                                         "</a>" +
@@ -47,10 +45,7 @@ var nodoSeleccionado = {
     IdPadre: "",
     Id: ""
 }
-//var IdArbol = 1;
-
-//var IdArbol = document.getElementById("NombreArbol").getAttribute("name");
-//var IdPadre = 0;
+var SpanSeleccionado;
 
 function evnt(objeto) {
 
@@ -99,7 +94,7 @@ function AgregaNodo(Data) {
         $("#ulPrincipal").append(
            "<li id=' " + Data.Id + " ' onmousedown='return evnt(this)'  >" +
            "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
-             "<span onmouseover='poner(this)' onmouseout='quitar(this)' '> " + Data.NombreNodo +   " </span>" +
+             "<span onclick='seleccionadoConsultarHtml(this)'> " + Data.NombreNodo + " </span>" +
 
                "<a href='#CrearNodo' style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
                         "<i class='fa fa-plus-circle' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
@@ -132,7 +127,7 @@ function AgregaNodo(Data) {
 
                 "<li id=' " + Data.Id + " '  onmousedown='return evnt(this)' >" +
                  "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
-                   "<span onmouseover='poner(this)' onmouseout='quitar(this)'> " + Data.NombreNodo + " </span>" +
+                   "<span onclick='seleccionadoConsultarHtml(this)'> " + Data.NombreNodo + " </span>" +
 
                     "<a href='#CrearNodo' style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
                         "<i class='fa fa-plus-circle' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
@@ -152,7 +147,7 @@ function AgregaNodo(Data) {
             $(ulNivel1).append(
               "<li id=' " + Data.Id + " '  onmousedown='return evnt(this)' >" +
                  "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
-                   "<span onmouseover='poner(this)' onmouseout='quitar(this)'> " + Data.NombreNodo + " </span>" +
+                   "<span onclick='seleccionadoConsultarHtml(this)'> " + Data.NombreNodo + " </span>" +
 
                      "<a href='#CrearNodo'style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
                         "<i class='fa fa-plus-circle' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
@@ -166,22 +161,7 @@ function AgregaNodo(Data) {
                 "</li>");
         }
     }
-
-    var html = $("#ulPrincipal").html();
-    $.ajax({
-        type: "POST",
-        url: urlActualizaHTMLArbol,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ CodigoHTML: html, IDdArbol: IdArbol }),
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            console.log(json);
-        },
-        error: function (request, status, error) {
-            alert(request.responseText);
-        }
-    });
+    ActualizarHtml()
     $("#BotonCrear").attr("disabled", "disabled");
 }
 
@@ -205,21 +185,8 @@ function Eliminar() {
     }
     objPadre.removeChild(objPadre.childNodes[numeral]);
 
-    var html = $("#ulPrincipal").html();
-    $.ajax({
-        type: "POST",
-        url: urlActualizaHTMLArbol,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ CodigoHTML: html, IDdArbol: IdArbol }),
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            console.log(json);
-        },
-        error: function (request, status, error) {
-            alert(request.responseText);
-        }
-    });
+    //Actualiza el codigo html del arbol
+    ActualizarHtml()
 
     $.ajax({
         type: "POST",
@@ -240,17 +207,17 @@ function Eliminar() {
 }
 //IdNodo: NodoSeleccionado.Id, NombreNuevo: NombreCambiar
 function EditarTexo() {
-   
+
     //Cambia el nombre visualmente
     var NombreCambiar = $('#Nombre_Cambiar').val();
     var nombreNodo;
     var objPadre = document.getElementById(nodoSeleccionado.Id);
-    for (var i = 0; i < objPadre.childNodes.length; i++) { 
-        
+    for (var i = 0; i < objPadre.childNodes.length; i++) {
+
         if (objPadre.childNodes[i].nodeName == "SPAN") {
-           // alert(objPadre.childNodes[i].nodeValue);
+            // alert(objPadre.childNodes[i].nodeValue);
             nombreNodo = objPadre.childNodes[i];
-            nombreNodo.childNodes[0].nodeValue = " "+ NombreCambiar +" ";
+            nombreNodo.childNodes[0].nodeValue = " " + NombreCambiar + " ";
         }
     }
 
@@ -269,28 +236,78 @@ function EditarTexo() {
             alert(request.responseText);
         }
     });
-   
+
+
+    //Actualiza el codigo html del arbol
+    ActualizarHtml()
+    $('#Nombre_Cambiar').val("");
+    //$("#Nombre_Cambiar").attr("disabled", "disabled");
+
+
+}
+
+function seleccionadoConsultarHtml(obj) {
     
-    //Actualiza el codigo html del nodo
-    var html = $("#ulPrincipal").html();
+    if (SpanSeleccionado == null || SpanSeleccionado == "") {
+        SpanSeleccionado = obj;
+        obj.style.backgroundColor = "#336699";
+    }
+    else {
+        var objetoAnterior = SpanSeleccionado;
+        objetoAnterior.style.backgroundColor = "";
+        obj.style.backgroundColor = "#336699";
+    }
+    var objetoPadre = obj.parentNode;
+    var text;
+    var textArea = CKEDITOR.document.getBody();
+    textArea.appendHtml("<p>hola</p>");
     $.ajax({
         type: "POST",
-        url: urlActualizaHTMLArbol,
+        url: urlConsultarCodigoNodo,
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ CodigoHTML: html, IDdArbol: IdArbol }),
+        data: JSON.stringify({ IdNodo: objetoPadre.id }),
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
+            CKEDITOR.instances.ckeditor.setData(json.CodigoHtml);
+
         },
         error: function (request, status, error) {
             alert(request.responseText);
         }
     });
-    $('#Nombre_Cambiar').val("");
-    //$("#Nombre_Cambiar").attr("disabled", "disabled");
 
+    SpanSeleccionado = obj;
 
+}
+
+function GuardarCodigoHtmlNodo() {
+
+    if (SpanSeleccionado != null && SpanSeleccionado != "") {
+        var objetoPadre = SpanSeleccionado.parentNode.getAttribute("id");
+        var codigoHtml = CKEDITOR.instances.ckeditor.getData();
+
+        $.ajax({
+            type: "POST",
+            url: urlGuardarCodigoNodo,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ IdNodo: objetoPadre, CodigoHtml: codigoHtml }),
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+                console.log(json);
+                alert(json);
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+
+        });
+    }
+    else {
+        alert("Debe primero seleccionar algun nodo");
+    }
 }
 
 function ValidarTexto(obj) {
@@ -301,6 +318,16 @@ function ValidarTexto(obj) {
     else {
         //$("#BotonCrear").attr("disabled", "true");
         $("#BotonCrear").attr("disabled", "disabled");
+    }
+}
+function ValidarTextoCambiar(obj) {
+
+    if (obj.value != "") {
+        $("#BotonCambiar").removeAttr("disabled");
+    }
+    else {
+        //$("#BotonCrear").attr("disabled", "true");
+        $("#BotonCambiar").attr("disabled", "disabled");
     }
 }
 
@@ -369,6 +396,26 @@ function quitarIconoC(obj) {
         obj.setAttribute("class", "fa fa-plus-circle");
     else
         obj.setAttribute("class", "fa fa-minus-circle");
+
+}
+
+function ActualizarHtml() {
+
+    var html = $("#ulPrincipal").html();
+    $.ajax({
+        type: "POST",
+        url: urlActualizaHTMLArbol,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ CodigoHTML: html, IDdArbol: IdArbol }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            console.log(json);
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
 
 }
 
