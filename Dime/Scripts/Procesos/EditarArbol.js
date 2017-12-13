@@ -4,6 +4,7 @@
     var Parametro = urlParams.get('IdArbol');
     var IdArbol = Parametro;
     var IdPadre = 0;
+    $('#summernote').summernote();
     ConstruirArbol(IdArbol);
 
     //$('#Body_Layout').on('click', function () { });
@@ -258,9 +259,8 @@ function seleccionadoConsultarHtml(obj) {
         obj.style.backgroundColor = "#336699";
     }
     var objetoPadre = obj.parentNode;
-    var text;
-    var textArea = CKEDITOR.document.getBody();
-    textArea.appendHtml("<p>hola</p>");
+    
+    
     $.ajax({
         type: "POST",
         url: urlConsultarCodigoNodo,
@@ -270,7 +270,7 @@ function seleccionadoConsultarHtml(obj) {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
-            CKEDITOR.instances.ckeditor.setData(json.CodigoHtml);
+            $('#summernote').summernote('code', json.CodigoHtml);
 
         },
         error: function (request, status, error) {
@@ -286,7 +286,7 @@ function GuardarCodigoHtmlNodo() {
 
     if (SpanSeleccionado != null && SpanSeleccionado != "") {
         var objetoPadre = SpanSeleccionado.parentNode.getAttribute("id");
-        var codigoHtml = CKEDITOR.instances.ckeditor.getData();
+        var codigoHtml = $('#summernote').summernote('code');
 
         $.ajax({
             type: "POST",

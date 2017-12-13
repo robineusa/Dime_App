@@ -47,7 +47,7 @@
                     </h2>
                     <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                         <br />
-                        <textarea id="ckeditor" class="ckeditor"></textarea>
+                        <div id="summernote"></div>
                         <br />
                         <button onclick="GuardarCodigoHtmlNodo()">Guardar Cambios</button>
                     </div>
@@ -145,8 +145,10 @@
 
         </script>
         <script src="~/Scripts/Procesos/EditarArbol.js?1.2.1"></script>
-        <script src="~/Scripts/Procesos/ckeditor/ckeditor.js"></script>
-       
+        <link href="~/Scripts/Procesos/dist/summernote.css" rel="stylesheet">
+        <script src="~/Scripts/Procesos/dist/summernote.js"></script>
+
+
     }
 
 }
