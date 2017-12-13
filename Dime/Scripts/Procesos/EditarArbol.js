@@ -4,6 +4,7 @@
     var Parametro = urlParams.get('IdArbol');
     var IdArbol = Parametro;
     var IdPadre = 0;
+    $('#summernote').summernote();
     ConstruirArbol(IdArbol);
 
     //$('#Body_Layout').on('click', function () { });
@@ -268,7 +269,7 @@ function seleccionadoConsultarHtml(obj) {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
-            CKEDITOR.instances.ckeditor.setData(json.CodigoHtml);
+            $('#summernote').summernote('code', json.CodigoHtml);
 
         },
         error: function (request, status, error) {
@@ -277,14 +278,13 @@ function seleccionadoConsultarHtml(obj) {
     });
 
     SpanSeleccionado = obj;
-
 }
 
 function GuardarCodigoHtmlNodo() {
 
     if (SpanSeleccionado != null && SpanSeleccionado != "") {
         var objetoPadre = SpanSeleccionado.parentNode.getAttribute("id");
-  //
+        var codigoHtml=$('#summernote').summernote('code');
 
         $.ajax({
             type: "POST",
