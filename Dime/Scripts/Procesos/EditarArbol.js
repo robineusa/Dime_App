@@ -258,9 +258,7 @@ function seleccionadoConsultarHtml(obj) {
         obj.style.backgroundColor = "#336699";
     }
     var objetoPadre = obj.parentNode;
-    var text;
-    var textArea = CKEDITOR.document.getBody();
-    textArea.appendHtml("<p>hola</p>");
+//
     $.ajax({
         type: "POST",
         url: urlConsultarCodigoNodo,
@@ -286,7 +284,7 @@ function GuardarCodigoHtmlNodo() {
 
     if (SpanSeleccionado != null && SpanSeleccionado != "") {
         var objetoPadre = SpanSeleccionado.parentNode.getAttribute("id");
-        var codigoHtml = CKEDITOR.instances.ckeditor.getData();
+  //
 
         $.ajax({
             type: "POST",
