@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
     $('#DDLOfre1 option').prop('selected', function () { return this.defaultSelected; });
     SetearTiposContacto();
-    
+    $("#DDLOfre1").prop("selectedIndex", 0);
 });
 
 $('#DDLOfre1').change(function () {
