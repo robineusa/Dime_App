@@ -102,7 +102,6 @@ function cargargrilla(data) {
         { field: "Gestion", title: "Gestion", width: 100 },
         { field: "Cierre", title: "Cierre", width: 100 },
         { field: "Razon", title: "Razon", width: 100 },
-        { field: "Motivo", title: "Motivo", width: 100 },
         { field: "FechaSeguimiento", title: "Fecha Seguimiento", width: 100 },
         { field: "Observaciones", title: "Observaciones", width: 100 },
         { field: "Aliado", title: "Aliado", width: 100 }
