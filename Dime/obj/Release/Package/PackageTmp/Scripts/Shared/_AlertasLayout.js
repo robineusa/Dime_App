@@ -49,6 +49,7 @@ function Registra_Eventos(connect) {
         }
     });
     $('#messages_menu').click(function () {
+        alert(MensajesaGuardar.length);
         if (MensajesaGuardar.length > 0) {
             for (i = 0; i < MensajesaGuardar.length; i++) {
                 connect.server.addMessageinCache2(MensajesaGuardar[i].Id, UserConnect2);

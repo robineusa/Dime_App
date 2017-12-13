@@ -23,7 +23,7 @@
         var urlControlTiposMotivosList = '@Url.Action("TiposMotivosList", "Banner")';
 
     </script>
-    <script src="~/Scripts/Banner/MejorOferta.js?1.1.2"></script>
+    <script src="~/Scripts/Banner/MejorOferta.js?1.1.1"></script>
 </head>
 <body>
     @using (Html.BeginForm("MejorOferta", "Banner", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
@@ -94,7 +94,7 @@
                                 <td>
                                     <div class="form-group">
                                         @Html.DropDownListFor(m => m.SiguienteMejorOferta.Ofrecimiento1, new List<SelectListItem>{ new SelectListItem{Text="SI", Value="1" },
-                                        new SelectListItem{Text="NO", Value="0" } }, "--SELECCIONE--",
+                                        new SelectListItem{ } }, "--SELECCIONE--",
                                         new { @class = "form-control input-sm", @style = "width:20%", @id = "DDLOfre1", @onchange = "return Ofrecimiento1()" })
                                     </div>
                                 </td>

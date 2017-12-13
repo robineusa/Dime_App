@@ -99,7 +99,7 @@ function ListaCierre() {
     $('#tiposCierresSelect').find('option:not(:first)').remove();
     $('#tiposRazonSelect').find('option:not(:first)').remove();
     $('#tiposCausasSelect').find('option:not(:first)').remove();
-    $('#tiposMotivoSelect').find('option:not(:first)').remove();
+
 }
 
 function ListaRazones() {
@@ -124,7 +124,7 @@ function ListaRazones() {
     });
     $('#tiposRazonSelect').find('option:not(:first)').remove();
     $('#tiposCausasSelect').find('option:not(:first)').remove();
-    $('#tiposMotivoSelect').find('option:not(:first)').remove();
+
 
 }
 function ListaCausas() {
@@ -148,49 +148,26 @@ function ListaCausas() {
         }
     });
     $('#tiposCausasSelect').find('option:not(:first)').remove();
-    $('#tiposMotivoSelect').find('option:not(:first)').remove();
-}
 
-function ListaMotivos() {
-    var idCausa = $('#tiposCausasSelect').val();
-    $.ajax({
-        type: "POST",
-        url: urlControlTipoMotivoList,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ idCausa: idCausa }),
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            for (var index = 0, len = json.length; index < len; index++) {
-                $('#tiposMotivoSelect').append($('<option>', {
-                    value: json[index].IdMotivo,
-                    text: json[index].Motivo
-                }));
-
-            }
-
-        }
-    });
-    $('#tiposMotivoSelect').find('option:not(:first)').remove();
 }
 
 $('#tipoContactosSelect').change(function () {
     ListaCierre();
     ListaRazones();
     ListaCausas();
-    ListaMotivos();
+
     LimpiarFecha();
 })
 $('#tiposCierresSelect').change(function () {
     ListaRazones();
     ListaCausas();
-    ListaMotivos();
+
     LimpiarFecha();
 
 })
 $('#tiposRazonSelect').change(function () {
     ListaCausas();
-    ListaMotivos();
+
     var IdRazon = $('#tiposRazonSelect').val();
     if (IdRazon == "97") {
         document.getElementById('TituloSeguimiento').style.display = 'inline-block';
@@ -210,11 +187,7 @@ $('#tiposRazonSelect').change(function () {
     });
     LimpiarFecha();
 })
-$('#tiposCausasSelect').change(function () {
-    ListaMotivos();
-    LimpiarFecha();
 
-})
 function TraerListaGestion() {
     $.ajax({
         type: "GET",
@@ -261,7 +234,6 @@ function cargargrilla(data) {
         { field: "Gestion", title: "Gestion", width: 100 },
         { field: "Cierre", title: "Cierre", width: 100 },
         { field: "Razon", title: "Razon", width: 100 },
-        { field: "Motivo", title: "Motivo", width: 100 },
         { field: "Observaciones", title: "Observaciones", width: 100 }
 
         ]
@@ -320,7 +292,6 @@ function cargargrillaseg(data) {
         { field: "Gestion", title: "Gestion", width: 100 },
         { field: "Cierre", title: "Cierre", width: 100 },
         { field: "Razon", title: "Razon", width: 100 },
-        { field: "Motivo", title: "Motivo", width: 100 },
         { field: "Observaciones", title: "Motivo", width: 100 },
         { field: "FechaSeguimiento", title: "Fecha Seguimineto", width: 100 }
         ]
