@@ -151,7 +151,17 @@ function LlamarCalculosRentas() {
         }
     })
 }
+function LlamarVisualizadorImagenes() {
 
+    $.ajax({
+        type: "GET",
+        url: urlVisualizadorImagenes,
+        dataType: "html",
+        success: function (result) {
+            $('#Viewimagenes').html(result);
+        }
+    })
+}
 
 function ResetearDivs() {
 
