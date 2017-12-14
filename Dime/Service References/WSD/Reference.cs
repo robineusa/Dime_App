@@ -18402,10 +18402,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.Nodo> ConsultarCodigoHtmlNodoAsync(int IdNodo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/GuardarCodigoHtmlNodo", ReplyAction="http://tempuri.org/IProcesosService/GuardarCodigoHtmlNodoResponse")]
-        void GuardarCodigoHtmlNodo(int IdNodo, string CodigoHtml);
+        string GuardarCodigoHtmlNodo(int IdNodo, string CodigoHtml);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/GuardarCodigoHtmlNodo", ReplyAction="http://tempuri.org/IProcesosService/GuardarCodigoHtmlNodoResponse")]
-        System.Threading.Tasks.Task GuardarCodigoHtmlNodoAsync(int IdNodo, string CodigoHtml);
+        System.Threading.Tasks.Task<string> GuardarCodigoHtmlNodoAsync(int IdNodo, string CodigoHtml);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18515,11 +18515,11 @@ namespace Dime.WSD {
             return base.Channel.ConsultarCodigoHtmlNodoAsync(IdNodo);
         }
         
-        public void GuardarCodigoHtmlNodo(int IdNodo, string CodigoHtml) {
-            base.Channel.GuardarCodigoHtmlNodo(IdNodo, CodigoHtml);
+        public string GuardarCodigoHtmlNodo(int IdNodo, string CodigoHtml) {
+            return base.Channel.GuardarCodigoHtmlNodo(IdNodo, CodigoHtml);
         }
         
-        public System.Threading.Tasks.Task GuardarCodigoHtmlNodoAsync(int IdNodo, string CodigoHtml) {
+        public System.Threading.Tasks.Task<string> GuardarCodigoHtmlNodoAsync(int IdNodo, string CodigoHtml) {
             return base.Channel.GuardarCodigoHtmlNodoAsync(IdNodo, CodigoHtml);
         }
     }

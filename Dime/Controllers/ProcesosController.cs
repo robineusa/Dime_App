@@ -125,9 +125,9 @@ namespace Dime.Controllers
         public JsonResult GuardarCodigoHtmlNodo(string IdNodo,string CodigoHtml)
         {
             int idNodo = Convert.ToInt32(IdNodo);
-            ProcesosService.GuardarCodigoHtmlNodo(idNodo, CodigoHtml);
+            //ProcesosService.GuardarCodigoHtmlNodo(idNodo, CodigoHtml);
 
-            var jsonResult = Json(JsonConvert.SerializeObject("Cambio de nombre exitoso"), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.GuardarCodigoHtmlNodo(idNodo, CodigoHtml)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }

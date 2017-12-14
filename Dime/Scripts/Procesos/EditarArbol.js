@@ -4,9 +4,19 @@
     var Parametro = urlParams.get('IdArbol');
     var IdArbol = Parametro;
     var IdPadre = 0;
-    $('#summernote').summernote();
-    ConstruirArbol(IdArbol);
+    //Inserta los botones necesarios en para el editor
+    $('#summernote').summernote({
+        toolbar: [
+          // [groupName, [list of button]]
 
+          ['style', ['style', 'bold', 'italic', 'underline', 'clear', 'fontname']],
+          ['fontsize', ['fontsize']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['Insert', ['picture', 'video', 'table', 'link']]
+        ]
+    });
+    ConstruirArbol(IdArbol);
     //$('#Body_Layout').on('click', function () { });
 
 });
@@ -27,7 +37,7 @@ function ConstruirArbol(idArbol) {
                                        "<i onclick= 'mostrarOcultar(this)' class='fa fa-caret-square-o-down'>  </i>" +
                                          " " + json.NombreArbol + " " +
                                         "<a href='#CrearNodo' style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
-                                          "<i class='fa fa-plus-circle' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
+                                          "<i class='fa fa-plus-circle text-green' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
                                         "</a>" +
                                       "</label>" +
                                       "<ul id='ulPrincipal' class='collapse in' style='list-style-type:none;margin-left:14px;padding:0;'>" +
@@ -88,26 +98,32 @@ function crear() {
     }
 }
 
+
+
 function AgregaNodo(Data) {
     window.event.cancelBubble = true;
     if (nodoSeleccionado.IdPadre == "InsertaArbol") {
         //onmouseover='return evnt(this)'
         $("#ulPrincipal").append(
+
            "<li id=' " + Data.Id + " ' onmousedown='return evnt(this)'  >" +
            "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
-             "<span onclick='seleccionadoConsultarHtml(this)'> " + Data.NombreNodo + " </span>" +
+             "<span  onclick='seleccionadoConsultarHtml(this)' onmousedown='poner(this)' onmouseup='quitar(this)'> " + Data.NombreNodo + " </span>" +
 
                "<a href='#CrearNodo' style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
-                        "<i class='fa fa-plus-circle' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
+                        "<i class='fa fa-plus-circle text-green' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'>  </i>" +
                 "</a>" +
                 "<a href='#' style='text-decoration:none;color:#6D6968;'>" +
-                        "<i onclick='Eliminar()' class='fa fa-minus-circle' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
+                        "<i onclick='Eliminar()' class='fa fa-minus-circle text-red' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'>  </i>" +
                 "</a>" +
                 "<a href='#CambiarNombre' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
-                        "<i class='fa fa-pencil-square-o'></i>" +
+                        "<i class='fa fa-pencil-square-o' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'>  </i>" +
                 "</a>" +
 
+
            "</li>"
+
+
            );
 
     } else {
@@ -128,17 +144,18 @@ function AgregaNodo(Data) {
 
                 "<li id=' " + Data.Id + " '  onmousedown='return evnt(this)' >" +
                  "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
-                   "<span onclick='seleccionadoConsultarHtml(this)'> " + Data.NombreNodo + " </span>" +
+                   "<span onclick='seleccionadoConsultarHtml(this)' onmousedown='poner(this)' onmouseup='quitar(this)'> " + Data.NombreNodo + " </span>" +
 
                     "<a href='#CrearNodo' style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
-                        "<i class='fa fa-plus-circle' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
+                        "<i class='fa fa-plus-circle text-green' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
                       "</a>" +
                      "<a href='#' style='text-decoration:none;color:#6D6968;'>" +
-                         "<i onclick='Eliminar()' class='fa fa-minus-circle' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
+                         "<i onclick='Eliminar()' class='fa fa-minus-circle text-red' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
                      "</a>" +
                      "<a href='#CambiarNombre' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
-                        "<i class='fa fa-pencil-square-o'></i>" +
+                        "<i class='fa fa-pencil-square-o' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
                      "</a>" +
+
                 "</li>" +
               "</ul>");
 
@@ -148,16 +165,16 @@ function AgregaNodo(Data) {
             $(ulNivel1).append(
               "<li id=' " + Data.Id + " '  onmousedown='return evnt(this)' >" +
                  "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
-                   "<span onclick='seleccionadoConsultarHtml(this)'> " + Data.NombreNodo + " </span>" +
+                   "<span onclick='seleccionadoConsultarHtml(this)' onmousedown='poner(this)' onmouseup='quitar(this)'> " + Data.NombreNodo + " </span>" +
 
                      "<a href='#CrearNodo'style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
-                        "<i class='fa fa-plus-circle' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
+                        "<i class='fa fa-plus-circle text-green' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
                       "</a>" +
                      "<a href='#' style='text-decoration:none;color:#6D6968;'>" +
-                        "<i onclick='Eliminar()' class='fa fa-minus-circle' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
+                        "<i onclick='Eliminar()' class='fa fa-minus-circle text-red' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
                      "</a>" +
                      "<a href='#CambiarNombre' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
-                        "<i class='fa fa-pencil-square-o'></i>" +
+                        "<i class='fa fa-pencil-square-o' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
                      "</a>" +
                 "</li>");
         }
@@ -248,18 +265,38 @@ function EditarTexo() {
 }
 
 function seleccionadoConsultarHtml(obj) {
-    
-    if (SpanSeleccionado == null || SpanSeleccionado == "") {
-        SpanSeleccionado = obj;
-        obj.style.backgroundColor = "#336699";
+    SpanSeleccionado = obj;
+
+    $('#NodoSeleccionado').val($(SpanSeleccionado).text());
+
+    var objetoPadre = obj.parentNode;
+    var tieneHijos = false;
+
+    for (var i = 0; i < objetoPadre.childNodes.length; i++) {
+        if (objetoPadre.childNodes[i].nodeName == "UL") {
+            tieneHijos = true;
+        }
+
+
+    }
+    //lert(tieneHijos);
+
+
+    //var check = document.getElementById("nodoFinal");
+    //check.setAttribute("class", "checkbox disabled");
+    if (tieneHijos) {
+        alert("0");
+        $("#nodoFinal").attr("disabled", "disabled");
     }
     else {
-        var objetoAnterior = SpanSeleccionado;
-        objetoAnterior.style.backgroundColor = "";
-        obj.style.backgroundColor = "#336699";
+        alert("1");
+        $("#nodoFinal").removeAttr("disabled", "disabled");
     }
+    // $('#nodoFinal').attr('disabled', 'disabled');
+
     var objetoPadre = obj.parentNode;
-//
+
+    //
     $.ajax({
         type: "POST",
         url: urlConsultarCodigoNodo,
@@ -277,14 +314,14 @@ function seleccionadoConsultarHtml(obj) {
         }
     });
 
-    SpanSeleccionado = obj;
+
 }
 
 function GuardarCodigoHtmlNodo() {
 
     if (SpanSeleccionado != null && SpanSeleccionado != "") {
         var objetoPadre = SpanSeleccionado.parentNode.getAttribute("id");
-        var codigoHtml=$('#summernote').summernote('code');
+        var codigoHtml = $('#summernote').summernote('code');
 
         $.ajax({
             type: "POST",
@@ -383,17 +420,22 @@ function quitar(obj) {
 
 function ponerIconoC(obj) {
 
-    if (obj.getAttribute("onclick") == null)
-        obj.setAttribute("class", "fa fa-plus-circle text-green");
+
+    if (obj.getAttribute("onclick") == null && obj.getAttribute("class") != "fa fa-pencil-square-o")
+        obj.setAttribute("class", "fa fa-plus-circle fa-lg text-green");
+    else if (obj.getAttribute("onclick") != null && obj.getAttribute("class") != "fa fa-pencil-square-o")
+        obj.setAttribute("class", "fa fa-minus-circle fa-lg text-red");
     else
-        obj.setAttribute("class", "fa fa-minus-circle text-red");
+        obj.setAttribute("class", "fa fa-pencil-square-o fa-lg");
 
 }
 function quitarIconoC(obj) {
-    if (obj.getAttribute("onclick") == null)
-        obj.setAttribute("class", "fa fa-plus-circle");
+    if (obj.getAttribute("onclick") == null && obj.getAttribute("class") != "fa fa-pencil-square-o fa-lg")
+        obj.setAttribute("class", "fa fa-plus-circle  text-green");
+    else if (obj.getAttribute("onclick") != null && obj.getAttribute("class") != "fa fa-pencil-square-o fa-lg")
+        obj.setAttribute("class", "fa fa-minus-circle  text-red");
     else
-        obj.setAttribute("class", "fa fa-minus-circle");
+        obj.setAttribute("class", "fa fa-pencil-square-o");
 
 }
 

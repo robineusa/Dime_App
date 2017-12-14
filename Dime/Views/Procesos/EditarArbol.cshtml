@@ -31,6 +31,8 @@
                                 </p>
                                 <ul id="ulPrincipal" class="collapse in clt" style="list-style-type:none;"></ul>*@
 
+
+
                         </div>
 
 
@@ -45,11 +47,22 @@
                         <i class="fa fa-html5"></i> Código HTML
 
                     </h2>
+
                     <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                         <br />
-                        <div id="summernote"></div>
+                        <span style="font-size:large;" class="label label-warning">Titulo:</span>
+
+                        <input type="text" id="NodoSeleccionado" class="form-control" style="width:250px;display: inline-block;" readonly>
+
                         <br />
-                        <button onclick="GuardarCodigoHtmlNodo()">Guardar Cambios</button>
+                        <br />
+                        <div id="summernote"></div>
+
+                        <input class="checkbox-inline" type="checkbox" id="nodoFinal">
+                        <label> Marcar como final </label>
+                        <br />
+                        <br />
+                        <button class="btn btn-success" onclick="GuardarCodigoHtmlNodo()">Guardar Cambios</button>
                     </div>
                 </div>
             </div>
@@ -144,7 +157,7 @@
             var urlActualizaHTMLArbol = '@Url.Action("ActualizaCodigoHTMLArbol", "Procesos")';
 
         </script>
-        <script src="~/Scripts/Procesos/EditarArbol.js?1.2.1"></script>
+        <script src="~/Scripts/Procesos/EditarArbol.js?1.2.4"></script>
         <link href="~/Scripts/Procesos/dist/summernote.css" rel="stylesheet">
         <script src="~/Scripts/Procesos/dist/summernote.js"></script>
 
