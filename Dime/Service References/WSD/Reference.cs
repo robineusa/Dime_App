@@ -8007,6 +8007,9 @@ namespace Dime.WSD {
         private decimal IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MotivoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreUsuarioGestionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -8160,6 +8163,19 @@ namespace Dime.WSD {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Motivo {
+            get {
+                return this.MotivoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MotivoField, value) != true)) {
+                    this.MotivoField = value;
+                    this.RaisePropertyChanged("Motivo");
                 }
             }
         }
@@ -8292,6 +8308,9 @@ namespace Dime.WSD {
         private decimal IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MotivoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreUsuarioGestionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -8445,6 +8464,19 @@ namespace Dime.WSD {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Motivo {
+            get {
+                return this.MotivoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MotivoField, value) != true)) {
+                    this.MotivoField = value;
+                    this.RaisePropertyChanged("Motivo");
                 }
             }
         }
@@ -9616,211 +9648,6 @@ namespace Dime.WSD {
                 if ((object.ReferenceEquals(this.VerNivelField, value) != true)) {
                     this.VerNivelField = value;
                     this.RaisePropertyChanged("VerNivel");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MaestroFestivos", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
-    [System.SerializableAttribute()]
-    public partial class MaestroFestivos : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AnoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> FechaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FechaRRField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreDiaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreMesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NumeroDiaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NumeroMesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TipoDiaFestivoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TipoDiaLunSabField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TipoDiaLunVierField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Ano {
-            get {
-                return this.AnoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AnoField, value) != true)) {
-                    this.AnoField = value;
-                    this.RaisePropertyChanged("Ano");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> Fecha {
-            get {
-                return this.FechaField;
-            }
-            set {
-                if ((this.FechaField.Equals(value) != true)) {
-                    this.FechaField = value;
-                    this.RaisePropertyChanged("Fecha");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FechaRR {
-            get {
-                return this.FechaRRField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FechaRRField, value) != true)) {
-                    this.FechaRRField = value;
-                    this.RaisePropertyChanged("FechaRR");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NombreDia {
-            get {
-                return this.NombreDiaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreDiaField, value) != true)) {
-                    this.NombreDiaField = value;
-                    this.RaisePropertyChanged("NombreDia");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NombreMes {
-            get {
-                return this.NombreMesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreMesField, value) != true)) {
-                    this.NombreMesField = value;
-                    this.RaisePropertyChanged("NombreMes");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NumeroDia {
-            get {
-                return this.NumeroDiaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NumeroDiaField, value) != true)) {
-                    this.NumeroDiaField = value;
-                    this.RaisePropertyChanged("NumeroDia");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NumeroMes {
-            get {
-                return this.NumeroMesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NumeroMesField, value) != true)) {
-                    this.NumeroMesField = value;
-                    this.RaisePropertyChanged("NumeroMes");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TipoDiaFestivo {
-            get {
-                return this.TipoDiaFestivoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TipoDiaFestivoField, value) != true)) {
-                    this.TipoDiaFestivoField = value;
-                    this.RaisePropertyChanged("TipoDiaFestivo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TipoDiaLunSab {
-            get {
-                return this.TipoDiaLunSabField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TipoDiaLunSabField, value) != true)) {
-                    this.TipoDiaLunSabField = value;
-                    this.RaisePropertyChanged("TipoDiaLunSab");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TipoDiaLunVier {
-            get {
-                return this.TipoDiaLunVierField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TipoDiaLunVierField, value) != true)) {
-                    this.TipoDiaLunVierField = value;
-                    this.RaisePropertyChanged("TipoDiaLunVier");
                 }
             }
         }
@@ -16870,10 +16697,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.FidelizacionRecursiva>> getRecursivaArbolAsync(decimal idHijo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getMaestrosByCorteId", ReplyAction="http://tempuri.org/IFidelizacionService/getMaestrosByCorteIdResponse")]
-        System.Collections.Generic.List<Dime.WSD.MaestroFestivos> getMaestrosByCorteId(decimal numDias, decimal corte);
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroFestivos> getMaestrosByCorteId(decimal numDias, decimal corte);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFidelizacionService/getMaestrosByCorteId", ReplyAction="http://tempuri.org/IFidelizacionService/getMaestrosByCorteIdResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.MaestroFestivos>> getMaestrosByCorteIdAsync(decimal numDias, decimal corte);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroFestivos>> getMaestrosByCorteIdAsync(decimal numDias, decimal corte);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17199,11 +17026,11 @@ namespace Dime.WSD {
             return base.Channel.getRecursivaArbolAsync(idHijo);
         }
         
-        public System.Collections.Generic.List<Dime.WSD.MaestroFestivos> getMaestrosByCorteId(decimal numDias, decimal corte) {
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroFestivos> getMaestrosByCorteId(decimal numDias, decimal corte) {
             return base.Channel.getMaestrosByCorteId(numDias, corte);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.MaestroFestivos>> getMaestrosByCorteIdAsync(decimal numDias, decimal corte) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroFestivos>> getMaestrosByCorteIdAsync(decimal numDias, decimal corte) {
             return base.Channel.getMaestrosByCorteIdAsync(numDias, corte);
         }
     }

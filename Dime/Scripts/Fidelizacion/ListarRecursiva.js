@@ -45,10 +45,10 @@ function ShowGrid(data) {
         },
         columns: [
         { command: { text: "Editar", click: ActualizarRecursiva, imageClass: "k-icon k-i-pencil", }, title: "Acciones", width: "70px" },
-        { field: "Id", title: "Cod", width: 40 },
+        //{ field: "Id", title: "Cod", width: 40 },
+        { field: "ParentName", title: "Árbol", width: 65 },
         { field: "Nombre", title: "Nombre", width: 120 },
-        { field: "ParentName", title: "Padre", width: 65 },
-        { field: "Nivel", title: "Nivel", width: 55, },
+        //{ field: "Nivel", title: "Nivel", width: 55, },
         { field: "VerNivel", title: "Niveles", width: 55, },
         { field: "Label", title: "Etiqueta", width: 70 },
         ]

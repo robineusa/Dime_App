@@ -29,7 +29,7 @@
                                         <small>Estado:</small>
                                         @Html.DropDownListFor(m => m.Estado, new List<SelectListItem> {new SelectListItem{Text="ACTIVA", Value="ACTIVA" },
                                                                                              new SelectListItem{Text="INACTIVA", Value="INACTIVA" } },
-                                                                                                              "--SELECCIONE--", new { @class = "form-control input-sm" })
+                                                                                                              "--SELECCIONE--", new { @class = "form-control input-sm", id="EstadoImagen" })
                                     </td>
                                 
                             </table>
@@ -56,7 +56,7 @@
                             <img id="ImagenTransformada" style="width:600px;height:auto;" src=""/>
                             <br />
                             <br />
-                            <button type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;">Registrar</button>
+                            <button id="NotificaOfertas" type="submit" class="btn btn-block btn-primary" name="GRARDARDATOS" value="true" style="width:10%;">Registrar</button>
                             <br />
                         </div>
                     </div>
