@@ -342,7 +342,8 @@ namespace Dime.Controllers
         public ActionResult CrearRecursiva()
         {
             ViewModelRecursiva modelo = new ViewModelRecursiva();
-            ViewBag.Lista = fidelizacionServicio.getRecursivaVistaAll();
+            ViewBag.Lista = fidelizacionServicio.getRecursivaAll(1,0);
+            var y = "";
             return View(modelo);
         }
         [HttpPost]
@@ -354,25 +355,53 @@ namespace Dime.Controllers
                 ViewBag.errorNombre = "Escriba el nuevo dato que desea crear";
                 //ViewModelRecursiva modelo = new ViewModelRecursiva();
                 //ViewBag.Lista = fidelizacionServicio.getRecursivaVistaAll();
-                //return View(modelo);
+                return View(modelo);
             }
-            else if (modelo.Recursiva.ParentId == 0)
+            var idPadre = 1;
+            if (modelo.Recursiva.ParentId == 0)
             {
-                ViewBag.errorPadre = "Seleccione el padre de esta opción";
+                modelo.Recursiva.ParentId = idPadre;
+                //ViewBag.errorPadre = "Seleccione el padre de esta opción";
             }
-            else
-            {
-                var Padre = fidelizacionServicio.getRecursivaVistaById(modelo.Recursiva.ParentId);
-                string recu = ((Request.Form["Recuperacion"] == "false") ? "0" : "1");
+            else {
+                
+                    var c1 = 1;
+
+                    do
+                    {
+                        c1++;
+                    }
+                    while (Request.Form["sltEstrategias_" + c1] != null && Request.Form["sltEstrategias_" + c1] != "0");
+                if (c1 - 1 == 1)
+                    idPadre = Convert.ToInt32(modelo.Recursiva.ParentId);
+                else
+                    idPadre = Convert.ToInt32(Request.Form["sltEstrategias_" + (c1 - 1)]);
+                
+
+                    var E1 = fidelizacionServicio.getRecursivaAll(Convert.ToInt32(Request.Form["sltEstrategias_" + (c1 - 1)]), 0);
+                    
+                        //idPadre = Convert.ToInt32(Request.Form["sltEstrategias_" + (c1 - 1)]);
+                //modelo.Recursiva.ParentId = idPadre;
+
+                
+            }
+            var nivelPadre = 1;
+            if (idPadre != 1) {
+                var Padre = fidelizacionServicio.getRecursivaById(idPadre);
+                nivelPadre = Convert.ToInt32(Padre.Nivel + 1);
+            }
+            modelo.Recursiva.ParentId = idPadre;
+
+            string recu = ((Request.Form["Recuperacion"] == "false") ? "0" : "1");
                 string ret = ((Request.Form["Retencion"] == "false") ? "0" : "1");
                 string cont = ((Request.Form["Contencion"] == "false") ? "0" : "1");
                 //modelo.Recursiva.Label = "Test";
                 modelo.Recursiva.VerNivel = cont + ret + recu;
-                modelo.Recursiva.Nivel = Padre.Nivel - 1;
+                modelo.Recursiva.Nivel = nivelPadre;
                 fidelizacionServicio.setRecursiva(modelo.Recursiva);
                 return RedirectToAction("CrearRecursiva");
-            }
-            return View(modelo);
+
+            /*return View(modelo)*/;
         }
         [HttpGet]
         public ActionResult CrearTipificacion()
@@ -921,6 +950,13 @@ namespace Dime.Controllers
 
             //var s = fidelizacionServicio.getRecursivaAll(1);
             var Motivos = fidelizacionServicio.getRecursivaAll(idPadre, nivel);
+            var testc = "";
+            return Json(Motivos, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult getHijoRecursivaAdmonJson(int idPadre)
+        {
+            //var s = fidelizacionServicio.getRecursivaAll(1);
+            var Motivos = fidelizacionServicio.getRecursivaAll(idPadre, 0);
             var testc = "";
             return Json(Motivos, JsonRequestBehavior.AllowGet);
         }
