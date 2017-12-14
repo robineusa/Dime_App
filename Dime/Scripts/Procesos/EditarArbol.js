@@ -110,13 +110,13 @@ function AgregaNodo(Data) {
            "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
              "<span  onclick='seleccionadoConsultarHtml(this)' onmousedown='poner(this)' onmouseup='quitar(this)'> " + Data.NombreNodo + " </span>" +
 
-               "<a href='#CrearNodo' style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
+               "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
                         "<i class='fa fa-plus-circle text-green' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'>  </i>" +
                 "</a>" +
-                "<a href='#' style='text-decoration:none;color:#6D6968;'>" +
+                "<a href='#' style='text-decoration:none;'>" +
                         "<i onclick='Eliminar()' class='fa fa-minus-circle text-red' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'>  </i>" +
                 "</a>" +
-                "<a href='#CambiarNombre' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
+                "<a href='#CambiarNombre' style='text-decoration:none;color:#080809' data-toggle='modal' data-keyboard='false'>" +
                         "<i class='fa fa-pencil-square-o' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'>  </i>" +
                 "</a>" +
 
@@ -146,13 +146,13 @@ function AgregaNodo(Data) {
                  "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
                    "<span onclick='seleccionadoConsultarHtml(this)' onmousedown='poner(this)' onmouseup='quitar(this)'> " + Data.NombreNodo + " </span>" +
 
-                    "<a href='#CrearNodo' style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
+                    "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
                         "<i class='fa fa-plus-circle text-green' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
                       "</a>" +
-                     "<a href='#' style='text-decoration:none;color:#6D6968;'>" +
+                     "<a href='#' style='text-decoration:none;'>" +
                          "<i onclick='Eliminar()' class='fa fa-minus-circle text-red' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
                      "</a>" +
-                     "<a href='#CambiarNombre' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
+                     "<a href='#CambiarNombre' style='text-decoration:none;color:#080809' data-toggle='modal' data-keyboard='false'>" +
                         "<i class='fa fa-pencil-square-o' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
                      "</a>" +
 
@@ -167,13 +167,13 @@ function AgregaNodo(Data) {
                  "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
                    "<span onclick='seleccionadoConsultarHtml(this)' onmousedown='poner(this)' onmouseup='quitar(this)'> " + Data.NombreNodo + " </span>" +
 
-                     "<a href='#CrearNodo'style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
+                     "<a href='#CrearNodo'style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
                         "<i class='fa fa-plus-circle text-green' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
                       "</a>" +
-                     "<a href='#' style='text-decoration:none;color:#6D6968;'>" +
+                     "<a href='#' style='text-decoration:none;'>" +
                         "<i onclick='Eliminar()' class='fa fa-minus-circle text-red' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
                      "</a>" +
-                     "<a href='#CambiarNombre' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
+                     "<a href='#CambiarNombre' style='text-decoration:none;color:#080809' data-toggle='modal' data-keyboard='false'>" +
                         "<i class='fa fa-pencil-square-o' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
                      "</a>" +
                 "</li>");
@@ -276,27 +276,20 @@ function seleccionadoConsultarHtml(obj) {
         if (objetoPadre.childNodes[i].nodeName == "UL") {
             tieneHijos = true;
         }
-
-
     }
-    //lert(tieneHijos);
 
-
-    //var check = document.getElementById("nodoFinal");
-    //check.setAttribute("class", "checkbox disabled");
     if (tieneHijos) {
-        alert("0");
+
         $("#nodoFinal").attr("disabled", "disabled");
     }
     else {
-        alert("1");
+
         $("#nodoFinal").removeAttr("disabled", "disabled");
     }
-    // $('#nodoFinal').attr('disabled', 'disabled');
 
     var objetoPadre = obj.parentNode;
 
-    //
+
     $.ajax({
         type: "POST",
         url: urlConsultarCodigoNodo,
@@ -307,6 +300,11 @@ function seleccionadoConsultarHtml(obj) {
             var json = JSON.parse(result);
             console.log(json);
             $('#summernote').summernote('code', json.CodigoHtml);
+            if (json.EsNodoFinal)
+                document.getElementById("nodoFinal").checked=true;
+            else
+                document.getElementById("nodoFinal").checked=false;
+           
 
         },
         error: function (request, status, error) {
@@ -317,17 +315,22 @@ function seleccionadoConsultarHtml(obj) {
 
 }
 
+
 function GuardarCodigoHtmlNodo() {
 
     if (SpanSeleccionado != null && SpanSeleccionado != "") {
         var objetoPadre = SpanSeleccionado.parentNode.getAttribute("id");
         var codigoHtml = $('#summernote').summernote('code');
+        var nodoFinalCheck = false;
+
+        if (document.getElementById("nodoFinal").checked==true)
+            nodoFinalCheck = true;
 
         $.ajax({
             type: "POST",
             url: urlGuardarCodigoNodo,
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({ IdNodo: objetoPadre, CodigoHtml: codigoHtml }),
+            data: JSON.stringify({ IdNodo: objetoPadre, CodigoHtml: codigoHtml, NodoFinal: nodoFinalCheck }),
             dataType: "JSON",
             success: function (result) {
                 var json = JSON.parse(result);
@@ -411,11 +414,13 @@ function mostrarOcultar(obj) {
 }
 
 function poner(obj) {
-    obj.style.backgroundColor = "#336699";
+    obj.style.backgroundColor = "#5386f1";
+    obj.style.color = "#f6f6f6";
 }
 
 function quitar(obj) {
     obj.style.backgroundColor = "";
+    obj.style.color = "";
 }
 
 function ponerIconoC(obj) {

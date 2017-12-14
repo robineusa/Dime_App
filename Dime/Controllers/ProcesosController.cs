@@ -122,12 +122,12 @@ namespace Dime.Controllers
             return jsonResult;
         }
 
-        public JsonResult GuardarCodigoHtmlNodo(string IdNodo,string CodigoHtml)
+        public JsonResult GuardarCodigoHtmlNodo(string IdNodo,string CodigoHtml,bool NodoFinal)
         {
             int idNodo = Convert.ToInt32(IdNodo);
             //ProcesosService.GuardarCodigoHtmlNodo(idNodo, CodigoHtml);
 
-            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.GuardarCodigoHtmlNodo(idNodo, CodigoHtml)), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.GuardarCodigoHtmlNodo(idNodo, CodigoHtml, NodoFinal)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }

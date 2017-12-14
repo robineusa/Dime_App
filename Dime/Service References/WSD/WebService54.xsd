@@ -7255,6 +7255,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="IdNodo" type="xs:int" />
         <xs:element minOccurs="0" name="CodigoHtml" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NodoFinal" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
