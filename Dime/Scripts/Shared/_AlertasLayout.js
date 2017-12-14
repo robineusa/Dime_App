@@ -63,6 +63,14 @@ function Registra_Eventos(connect) {
         //connect.server.connect(UserConnect2);
         $("#IdMsj").val('');
     });
+    $('#NotificaOfertas').click(function () {
+        var Estado = $('#EstadoImagen').val();
+        if (Estado == "ACTIVA")
+        {
+            connect.server.notificacionComercial();
+        }
+    });
+    
     connect.server.connect(UserConnect2);
 }
 
@@ -173,6 +181,10 @@ function Llama_Metodos(connect, UserConnect) {
             //$('#SeeAllmsn').empty();
             
         }
+    }
+
+    connect.client.notificarBarra = function () {
+        $('#OfertasCount').append('1');
     }
 }
 
