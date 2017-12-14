@@ -20,7 +20,7 @@
                     </h2>
                     <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                         <br />
-                        <div id="InsertaArbol" style="font-family: 'Lucida Grande';font-size:14px">
+                        <div id="InsertaArbol" class="clt">
 
                             @*<p id="NombreArbol" name="" onmousedown="evnt(this)">
                                     <i onclick="mostrarOcultar(this)" class="fa fa-caret-square-o-right"></i>
@@ -50,9 +50,16 @@
 
                     <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                         <br />
-                        <span style="font-size:large;" class="label label-warning">Titulo:</span>
+                        
 
-                        <input type="text" id="NodoSeleccionado" class="form-control" style="width:250px;display: inline-block;" readonly>
+                       
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background-color: #ffae00;color: #f8f8f8;font-size: medium;font-weight: bold;"  >Titulo:</span>
+                            <input type="text" id="NodoSeleccionado" class="form-control" style="width:250px;font-size:medium" readonly>
+                        </div>
+                        
+                      
+
 
                         <br />
                         <br />
@@ -157,8 +164,9 @@
             var urlActualizaHTMLArbol = '@Url.Action("ActualizaCodigoHTMLArbol", "Procesos")';
 
         </script>
-        <script src="~/Scripts/Procesos/EditarArbol.js?1.2.6"></script>
+        <script src="~/Scripts/Procesos/EditarArbol.js?1.2.7"></script>
         <link href="~/Scripts/Procesos/dist/summernote.css" rel="stylesheet">
+        <link href="~/AdminLTE/bootstrap/css/EditarArbol.css" rel="stylesheet">
         <script src="~/Scripts/Procesos/dist/summernote.js"></script>
 
     }

@@ -34,7 +34,28 @@
         height: 8px;
     }
 
-.QuitarBackground  {
-    background-color:blanchedalmond;
+    .clt a {
+        text-decoration: none;
+    }
 
+.ClaseGeneralLi {
+    font-family: Calibri;
+    font-size: 14px;
 }
+
+    .ClaseGeneralLi a {
+        text-decoration: none;
+    }
+
+.eliminarI {
+    color: #f60606;
+}
+
+.agregarI {
+    color: #21a800;
+}
+
+.EditarI {
+    color: #080809;
+}
+
