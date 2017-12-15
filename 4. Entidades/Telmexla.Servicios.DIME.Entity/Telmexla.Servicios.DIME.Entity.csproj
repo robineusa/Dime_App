@@ -208,6 +208,7 @@
     <Compile Include="NotasTraslado.cs" />
     <Compile Include="NotificacionesBuenServicio.cs" />
     <Compile Include="NotificacionesBuenServicioCollection.cs" />
+    <Compile Include="NotificacionSignalR.cs" />
     <Compile Include="POMSolicitudes.cs" />
     <Compile Include="PqrMaestroCodCierre.cs" />
     <Compile Include="PqrMaestroCodCierreCollection.cs" />
@@ -233,6 +234,7 @@
     <Compile Include="UsabilidadBusquedaCuentaInbound.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="UsuariosNotificados.cs" />
+    <Compile Include="UsuariosNotificadosSignalR.cs" />
     <Compile Include="UsuariosXAcceso.cs" />
     <Compile Include="UsuariosXPreguntasDesb.cs" />
     <Compile Include="VAMotivosSolicitud.cs" />

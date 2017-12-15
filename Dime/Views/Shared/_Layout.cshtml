@@ -1550,7 +1550,8 @@
         </div>
         <a id="lockScreenActivate" onclick="LockScreen(this)" style="display:none" value="LockScreenVal"></a>
         <div id="lockScreenDiv"></div>
-
+        <button type="button" id="NotificaOfertaComercialCliente" style="display:none;"></button>
+        <input id="IdOfertaComercial" type="text" style="display:block;"/>
 
     </div>
 
@@ -1564,8 +1565,9 @@
     <script src="~/Scripts/Shared/Helper.js?1.1.9"></script>
     <script src="~/Scripts/Shared/_Layout.js?1.4.6"></script>
 
+    <script>var Usuario = '@Session["Usuario"].ToString()';</script>
     <link href="~/AdminLTE/bootstrap/css/EstilosNotificaciones.css?1.0.1" rel="stylesheet" />
-    <script src="~/Scripts/Shared/_AlertasLayout.js?1.2.8"></script>
+    <script src="~/Scripts/Shared/_AlertasLayout.js?1.2.10"></script>
     <script src="~/ViewsAlr/app.js?1.0.3"></script>
     <script src="~/ControllersAlr/mainAccessController.js?1.0.3"></script>
     <script src="~/ControllersAlr/ConsultaGestionController.js?1.3.4"></script>

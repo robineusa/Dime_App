@@ -18821,4 +18821,79 @@ namespace Dime.WSD {
             return base.Channel.ListaDeImagenesActivasAsync();
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.ISignalRService")]
+    public interface ISignalRService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISignalRService/InsertarNotificacionSignalR", ReplyAction="http://tempuri.org/ISignalRService/InsertarNotificacionSignalRResponse")]
+        void InsertarNotificacionSignalR(Telmexla.Servicios.DIME.Entity.NotificacionSignalR model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISignalRService/InsertarNotificacionSignalR", ReplyAction="http://tempuri.org/ISignalRService/InsertarNotificacionSignalRResponse")]
+        System.Threading.Tasks.Task InsertarNotificacionSignalRAsync(Telmexla.Servicios.DIME.Entity.NotificacionSignalR model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISignalRService/ListaNoNotificados", ReplyAction="http://tempuri.org/ISignalRService/ListaNoNotificadosResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.NotificacionSignalR> ListaNoNotificados(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISignalRService/ListaNoNotificados", ReplyAction="http://tempuri.org/ISignalRService/ListaNoNotificadosResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.NotificacionSignalR>> ListaNoNotificadosAsync(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISignalRService/InsertarUsuarioNotificadoSignalR", ReplyAction="http://tempuri.org/ISignalRService/InsertarUsuarioNotificadoSignalRResponse")]
+        void InsertarUsuarioNotificadoSignalR(System.Collections.Generic.List<string> ListaNotificaciones, Telmexla.Servicios.DIME.Entity.UsuariosNotificadosSignalR model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISignalRService/InsertarUsuarioNotificadoSignalR", ReplyAction="http://tempuri.org/ISignalRService/InsertarUsuarioNotificadoSignalRResponse")]
+        System.Threading.Tasks.Task InsertarUsuarioNotificadoSignalRAsync(System.Collections.Generic.List<string> ListaNotificaciones, Telmexla.Servicios.DIME.Entity.UsuariosNotificadosSignalR model);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ISignalRServiceChannel : Dime.WSD.ISignalRService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class SignalRServiceClient : System.ServiceModel.ClientBase<Dime.WSD.ISignalRService>, Dime.WSD.ISignalRService {
+        
+        public SignalRServiceClient() {
+        }
+        
+        public SignalRServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public SignalRServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public SignalRServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public SignalRServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public void InsertarNotificacionSignalR(Telmexla.Servicios.DIME.Entity.NotificacionSignalR model) {
+            base.Channel.InsertarNotificacionSignalR(model);
+        }
+        
+        public System.Threading.Tasks.Task InsertarNotificacionSignalRAsync(Telmexla.Servicios.DIME.Entity.NotificacionSignalR model) {
+            return base.Channel.InsertarNotificacionSignalRAsync(model);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.NotificacionSignalR> ListaNoNotificados(decimal Usuario) {
+            return base.Channel.ListaNoNotificados(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.NotificacionSignalR>> ListaNoNotificadosAsync(decimal Usuario) {
+            return base.Channel.ListaNoNotificadosAsync(Usuario);
+        }
+        
+        public void InsertarUsuarioNotificadoSignalR(System.Collections.Generic.List<string> ListaNotificaciones, Telmexla.Servicios.DIME.Entity.UsuariosNotificadosSignalR model) {
+            base.Channel.InsertarUsuarioNotificadoSignalR(ListaNotificaciones, model);
+        }
+        
+        public System.Threading.Tasks.Task InsertarUsuarioNotificadoSignalRAsync(System.Collections.Generic.List<string> ListaNotificaciones, Telmexla.Servicios.DIME.Entity.UsuariosNotificadosSignalR model) {
+            return base.Channel.InsertarUsuarioNotificadoSignalRAsync(ListaNotificaciones, model);
+        }
+    }
 }

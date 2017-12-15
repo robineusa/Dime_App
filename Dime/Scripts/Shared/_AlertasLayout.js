@@ -1,4 +1,5 @@
 ﻿var MensajesaGuardar = [];
+var OfertasComerciales = [];
 
 $(function Buen_Servicio() {
     var connect = $.connection.myHub;
@@ -67,10 +68,23 @@ function Registra_Eventos(connect) {
         var Estado = $('#EstadoImagen').val();
         if (Estado == "ACTIVA")
         {
-            connect.server.notificacionComercial();
+            var Contenido = $('#Link').val();
+            connect.server.notificacionComercial("Notificacion Oferta Comercial", Contenido, Usuario);
+        }
+    });
+    $('#NotificaOfertaComercialCliente').click(function () {
+        connect.server.consultaNotificacion(Usuario);
+    });
+    $('#images_menu').click(function () {
+        
+        if ($("#IdOfertaComercial").val() != "")
+        {
+            connect.server.guardaNotificadoOfertaComercial($("#IdOfertaComercial").val(), Usuario);
         }
     });
     
+    
+    connect.server.consultaNotificacion(Usuario);
     connect.server.connect(UserConnect2);
 }
 
@@ -183,8 +197,42 @@ function Llama_Metodos(connect, UserConnect) {
         }
     }
 
-    connect.client.notificarBarra = function () {
-        $('#OfertasCount').append('1');
+    connect.client.enviaCliente = function () {
+        var x = document.getElementById('NotificaOfertaComercialCliente');
+        x.click();
+    }
+
+    connect.client.notificaUsuarios = function (result) {
+        
+        if (result.length > 0) {
+            $("#images_menu").addClass("images_menu");
+            $('#OfertasCount').empty();
+            $('#OfertasCount').append('' + result.length + '');
+            $('#IdOfertaComercial').val('');
+            for (i = 0; i < result.length; i++)
+            {
+                if ($("#IdOfertaComercial").val() != "")
+                {
+                    $("#IdOfertaComercial").val($("#IdOfertaComercial").val() + "-" + result[i].Id);
+                } else
+                {
+                    $("#IdOfertaComercial").val(result[i].Id);
+                }
+                //OfertasComerciales.push(result[i]);
+            }
+        }
+        else
+        {
+            $('#IdOfertaComercial').val('');
+            $('#OfertasCount').empty();
+            $('#images_menu').removeClass("images_menu");
+        }
+    }
+
+    connect.client.FinNotifica = function () {
+        $('#IdOfertaComercial').val('');
+        $('#OfertasCount').empty();
+        $('#images_menu').removeClass("images_menu");
     }
 }
 
