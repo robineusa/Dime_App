@@ -13,9 +13,12 @@
           ['fontsize', ['fontsize']],
           ['color', ['color']],
           ['para', ['ul', 'ol', 'paragraph']],
-          ['Insert', ['picture', 'video', 'table', 'link']]
+          ['Insert', ['picture', 'video', 'table', 'link']],
+          ['Misc',['fullscreen','codeview']]
+
         ]
     });
+
     ConstruirArbol(IdArbol);
     //$('#Body_Layout').on('click', function () { });
 
@@ -215,7 +218,9 @@ function Eliminar() {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
-            alert(json);
+            
+            $("#mensaje").text(json);
+            $("#myModal").modal("toggle");
         },
         error: function (request, status, error) {
             alert(request.responseText);
@@ -248,7 +253,9 @@ function EditarTexo() {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
-            alert(json);
+            
+            $("#mensaje").text(json);
+            $("#myModal").modal("toggle");
         },
         error: function (request, status, error) {
             alert(request.responseText);
@@ -335,7 +342,9 @@ function GuardarCodigoHtmlNodo() {
             success: function (result) {
                 var json = JSON.parse(result);
                 console.log(json);
-                alert(json);
+                             
+                $("#mensaje").text(json);
+                $("#myModal").modal("toggle");
             },
             error: function (request, status, error) {
                 alert(request.responseText);
@@ -344,7 +353,10 @@ function GuardarCodigoHtmlNodo() {
         });
     }
     else {
-        alert("Debe primero seleccionar algun nodo");
+        $("#mensaje").text("Debe primero seleccionar algun nodo");
+        $("#myModal").modal("toggle");
+       
+      
     }
 }
 

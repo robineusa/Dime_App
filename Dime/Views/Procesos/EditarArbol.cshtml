@@ -50,15 +50,38 @@
 
                     <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
                         <br />
-                        
 
-                       
+
+
                         <div class="input-group">
-                            <span class="input-group-addon" style="background-color: #ffae00;color: #f8f8f8;font-size: medium;font-weight: bold;"  >Titulo:</span>
+                            <span class="input-group-addon" style="background-color: #ffae00;color: #f8f8f8;font-size: medium;font-weight: bold;">
+                                Titulo:
+                            </span>
                             <input type="text" id="NodoSeleccionado" class="form-control" style="width:250px;font-size:medium" readonly>
                         </div>
-                        
-                      
+
+                       
+                        <!-- Modal -->
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Administrar Arboles</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p id="mensaje" class="h3 text-center"></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
 
 
                         <br />
@@ -164,7 +187,7 @@
             var urlActualizaHTMLArbol = '@Url.Action("ActualizaCodigoHTMLArbol", "Procesos")';
 
         </script>
-        <script src="~/Scripts/Procesos/EditarArbol.js?1.2.7"></script>
+        <script src="~/Scripts/Procesos/EditarArbol.js?1.2.9"></script>
         <link href="~/Scripts/Procesos/dist/summernote.css" rel="stylesheet">
         <link href="~/AdminLTE/bootstrap/css/EditarArbol.css" rel="stylesheet">
         <script src="~/Scripts/Procesos/dist/summernote.js"></script>
