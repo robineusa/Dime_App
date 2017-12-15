@@ -36,11 +36,11 @@ function ConstruirArbol(idArbol) {
 
                                        "<i onclick= 'mostrarOcultar(this)' class='fa fa-caret-square-o-down'>  </i>" +
                                          " " + json.NombreArbol + " " +
-                                        "<a href='#CrearNodo' style='text-decoration:none;color:#6D6968;' data-toggle='modal' data-keyboard='false'>" +
-                                          "<i class='fa fa-plus-circle text-green' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
+                                        "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
+                                          "<i class='fa fa-plus-circle agregarI' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
                                         "</a>" +
                                       "</label>" +
-                                      "<ul id='ulPrincipal' class='collapse in' style='list-style-type:none;margin-left:14px;padding:0;'>" +
+                                      "<ul id='ulPrincipal' class='collapse in clt' style='list-style-type:none;margin-left:14px;padding:0;'>" +
                                         json.CodigoHtml +
                                       "</ul>");
         },
@@ -110,14 +110,14 @@ function AgregaNodo(Data) {
            "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
              "<span  onclick='seleccionadoConsultarHtml(this)' onmousedown='poner(this)' onmouseup='quitar(this)'> " + Data.NombreNodo + " </span>" +
 
-               "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
-                        "<i class='fa fa-plus-circle text-green' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'>  </i>" +
+               "<a href='#CrearNodo'  data-toggle='modal' data-keyboard='false'>" +
+                        "<i class='fa fa-plus-circle agregarI' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'>  </i>" +
                 "</a>" +
-                "<a href='#' style='text-decoration:none;'>" +
-                        "<i onclick='Eliminar()' class='fa fa-minus-circle text-red' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'>  </i>" +
+                "<a href='#' >" +
+                        "<i onclick='Eliminar()' class='fa fa-minus-circle eliminarI' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'>  </i>" +
                 "</a>" +
-                "<a href='#CambiarNombre' style='text-decoration:none;color:#080809' data-toggle='modal' data-keyboard='false'>" +
-                        "<i class='fa fa-pencil-square-o' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'>  </i>" +
+                "<a href='#CambiarNombre'  data-toggle='modal' data-keyboard='false'>" +
+                        "<i class='fa fa-pencil-square-o EditarI' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'>  </i>" +
                 "</a>" +
 
 
@@ -140,20 +140,20 @@ function AgregaNodo(Data) {
 
         if (ulPrincipal) {
 
-            $(objeto).append("<ul  class='collapse in' style='list-style-type:none;margin-left:14px;padding:0;' >" +
+            $(objeto).append("<ul  class='collapse in clt' style='list-style-type:none;margin-left:14px;padding:0;' >" +
 
                 "<li id=' " + Data.Id + " '  onmousedown='return evnt(this)' >" +
                  "<i onclick='mostrarOcultar(this)' class='fa fa-caret-square-o-down'></i>" +
                    "<span onclick='seleccionadoConsultarHtml(this)' onmousedown='poner(this)' onmouseup='quitar(this)'> " + Data.NombreNodo + " </span>" +
 
-                    "<a href='#CrearNodo' style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
-                        "<i class='fa fa-plus-circle text-green' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
+                    "<a href='#CrearNodo'  data-toggle='modal' data-keyboard='false'>" +
+                        "<i class='fa fa-plus-circle agregarI' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
                       "</a>" +
-                     "<a href='#' style='text-decoration:none;'>" +
-                         "<i onclick='Eliminar()' class='fa fa-minus-circle text-red' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
+                     "<a href='#' >" +
+                         "<i onclick='Eliminar()' class='fa fa-minus-circle eliminarI' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
                      "</a>" +
-                     "<a href='#CambiarNombre' style='text-decoration:none;color:#080809' data-toggle='modal' data-keyboard='false'>" +
-                        "<i class='fa fa-pencil-square-o' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
+                     "<a href='#CambiarNombre'  data-toggle='modal' data-keyboard='false'>" +
+                        "<i class='fa fa-pencil-square-o EditarI' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
                      "</a>" +
 
                 "</li>" +
@@ -168,13 +168,13 @@ function AgregaNodo(Data) {
                    "<span onclick='seleccionadoConsultarHtml(this)' onmousedown='poner(this)' onmouseup='quitar(this)'> " + Data.NombreNodo + " </span>" +
 
                      "<a href='#CrearNodo'style='text-decoration:none;' data-toggle='modal' data-keyboard='false'>" +
-                        "<i class='fa fa-plus-circle text-green' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
+                        "<i class='fa fa-plus-circle agregarI' onmouseover='ponerIconoC(this)'  onmouseout='quitarIconoC(this)'></i>" +
                       "</a>" +
                      "<a href='#' style='text-decoration:none;'>" +
-                        "<i onclick='Eliminar()' class='fa fa-minus-circle text-red' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
+                        "<i onclick='Eliminar()' class='fa fa-minus-circle eliminarI' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
                      "</a>" +
-                     "<a href='#CambiarNombre' style='text-decoration:none;color:#080809' data-toggle='modal' data-keyboard='false'>" +
-                        "<i class='fa fa-pencil-square-o' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
+                     "<a href='#CambiarNombre'  data-toggle='modal' data-keyboard='false'>" +
+                        "<i class='fa fa-pencil-square-o EditarI' onmouseover='ponerIconoC(this)' onmouseout='quitarIconoC(this)'></i>" +
                      "</a>" +
                 "</li>");
         }
@@ -426,21 +426,21 @@ function quitar(obj) {
 function ponerIconoC(obj) {
 
 
-    if (obj.getAttribute("onclick") == null && obj.getAttribute("class") != "fa fa-pencil-square-o")
-        obj.setAttribute("class", "fa fa-plus-circle fa-lg text-green");
-    else if (obj.getAttribute("onclick") != null && obj.getAttribute("class") != "fa fa-pencil-square-o")
-        obj.setAttribute("class", "fa fa-minus-circle fa-lg text-red");
+    if (obj.getAttribute("onclick") == null && obj.getAttribute("class") != "fa fa-pencil-square-o EditarI")
+        obj.setAttribute("class", "fa fa-plus-circle fa-lg agregarI");
+    else if (obj.getAttribute("onclick") != null && obj.getAttribute("class") != "fa fa-pencil-square-o EditarI")
+        obj.setAttribute("class", "fa fa-minus-circle fa-lg eliminarI");
     else
-        obj.setAttribute("class", "fa fa-pencil-square-o fa-lg");
+        obj.setAttribute("class", "fa fa-pencil-square-o fa-lg EditarI");
 
 }
 function quitarIconoC(obj) {
-    if (obj.getAttribute("onclick") == null && obj.getAttribute("class") != "fa fa-pencil-square-o fa-lg")
-        obj.setAttribute("class", "fa fa-plus-circle  text-green");
-    else if (obj.getAttribute("onclick") != null && obj.getAttribute("class") != "fa fa-pencil-square-o fa-lg")
-        obj.setAttribute("class", "fa fa-minus-circle  text-red");
+    if (obj.getAttribute("onclick") == null && obj.getAttribute("class") != "fa fa-pencil-square-o fa-lg EditarI")
+        obj.setAttribute("class", "fa fa-plus-circle  agregarI");
+    else if (obj.getAttribute("onclick") != null && obj.getAttribute("class") != "fa fa-pencil-square-o fa-lg EditarI")
+        obj.setAttribute("class", "fa fa-minus-circle eliminarI");
     else
-        obj.setAttribute("class", "fa fa-pencil-square-o");
+        obj.setAttribute("class", "fa fa-pencil-square-o EditarI");
 
 }
 
