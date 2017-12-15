@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Microsoft.AspNet.SignalR;
+using Dime.Helpers;
+using Telmexla.Servicios.DIME.Entity;
 
 namespace Dime
 {
@@ -16,6 +18,12 @@ namespace Dime
         static List<MessageDetail> ListTemporal = new List<MessageDetail>();
 
         #endregion
+        WSD.SignalRServiceClient signalRService;
+        public MyHub()
+        {
+            signalRService = new WSD.SignalRServiceClient();
+            signalRService.ClientCredentials.Authenticate();
+        }
         public void sendMessagePublic(string userName, string message, string fecha)
         {
             AddMessageinCache(userName, message, fecha);
@@ -103,9 +111,44 @@ namespace Dime
         {
             Clients.All.todosMsm(CurrentMessage);
         }
-        public void NotificacionComercial()
+        public void NotificacionComercial(string TipoNotificacion, string ContenidoAlerta, string Usuario)
         {
-            Clients.All.notificarBarra();
+            NotificacionSignalR model = new NotificacionSignalR();
+            model.TipoNotificacion = TipoNotificacion;
+            model.ContenidoAlerta = ContenidoAlerta;
+            model.UsuarioNotifica = Usuario;
+
+            //signalRService.InsertarNotificacionSignalR(model);
+            
+            Clients.All.enviaCliente();
         }
+        public void ConsultaNotificacion(string Usuario)
+        {
+            var result = signalRService.ListaNoNotificados(Convert.ToDecimal(Usuario));
+            List<NotificacionSignalR> ListaOfertaComercial = new List<NotificacionSignalR>();
+            
+            foreach (var item in result)
+            {
+                if (item.TipoNotificacion == "Notificacion Oferta Comercial")
+                {
+                    ListaOfertaComercial.Add(item);
+                }
+            }
+            Clients.Caller.notificaUsuarios(ListaOfertaComercial);
+        }
+        public void GuardaNotificadoOfertaComercial(string OfertasComerciales, string Usuario)
+        {
+            string[] Ofertas = { };
+            if (OfertasComerciales != null)
+                Ofertas = OfertasComerciales.Split('-');
+            List<string> listaOfertasComerciales = Ofertas.OfType<string>().ToList();
+            UsuariosNotificadosSignalR model = new UsuariosNotificadosSignalR();
+            model.UsuarioNotificado = Convert.ToDecimal(Usuario);
+
+            signalRService.InsertarUsuarioNotificadoSignalR(listaOfertasComerciales, model);
+
+            Clients.Caller.FinNotifica(); ;
+        }
+        
     }
 }

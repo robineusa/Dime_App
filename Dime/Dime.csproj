@@ -3134,6 +3134,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.RSPSeguimientos.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.BACActualizarDatos.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.IMGOfertasComeciales.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.NotificacionSignalR.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
