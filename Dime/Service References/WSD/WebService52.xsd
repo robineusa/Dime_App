@@ -3912,4 +3912,131 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfNotificacionSignalR" nillable="true" type="tns:ArrayOfNotificacionSignalR" />
+  <xs:complexType name="CEPAsigDesconexiones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanalDeIngreso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DiaDeDesconexion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaDeAsignacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeCorte" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDePreaviso" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeSolicitud" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MotivoDeDesconexion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Red" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Servicios" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TarifaAnterior" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestionando" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CEPAsigDesconexiones" nillable="true" type="tns:CEPAsigDesconexiones" />
+  <xs:complexType name="CEPDesconexiones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ajuste" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CanalDeIngreso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CantidadServicio" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DiaDeDesconexion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ErrorSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaDeAsignacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeCorte" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDePreaviso" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeSeguimiento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeSolicitud" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdGestion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MotivoDeDesconexion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MovieLetter" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Red" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Servicios" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subrazon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TarifaAnterior" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDeError" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioDeGestion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsuarioSolicitud" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CEPDesconexiones" nillable="true" type="tns:CEPDesconexiones" />
+  <xs:complexType name="ArrayOfCEMArbolesDeGestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CEMArbolesDeGestion" nillable="true" type="tns:CEMArbolesDeGestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCEMArbolesDeGestion" nillable="true" type="tns:ArrayOfCEMArbolesDeGestion" />
+  <xs:complexType name="CEMArbolesDeGestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoArbol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoDeGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdArbol" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdPadre" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CEMArbolesDeGestion" nillable="true" type="tns:CEMArbolesDeGestion" />
+  <xs:complexType name="ArrayOfCEPDesconexiones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CEPDesconexiones" nillable="true" type="tns:CEPDesconexiones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCEPDesconexiones" nillable="true" type="tns:ArrayOfCEPDesconexiones" />
+  <xs:complexType name="ArrayOfCELDesconexiones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CELDesconexiones" nillable="true" type="tns:CELDesconexiones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCELDesconexiones" nillable="true" type="tns:ArrayOfCELDesconexiones" />
+  <xs:complexType name="CELDesconexiones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ajuste" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CanalDeIngreso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CantidadServicio" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DiaDeDesconexion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ErrorSolicitud" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaDeAsignacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeCorte" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDePreaviso" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeSeguimiento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeSolicitud" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeTransaccion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdGestion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdTransaccion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MotivoDeDesconexion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MovieLetter" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreUsuarioTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Red" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Servicios" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subrazon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TarifaAnterior" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoDeError" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioDeTransaccion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsuarioSolicitud" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CELDesconexiones" nillable="true" type="tns:CELDesconexiones" />
 </xs:schema>

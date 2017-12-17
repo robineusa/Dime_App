@@ -18896,4 +18896,229 @@ namespace Dime.WSD {
             return base.Channel.InsertarUsuarioNotificadoSignalRAsync(ListaNotificaciones, model);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.ICierreExperienciaService")]
+    public interface ICierreExperienciaService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeRegistroAsignacion", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeRegistroAsignacionResponse")]
+        Telmexla.Servicios.DIME.Entity.CEPAsigDesconexiones TraeRegistroAsignacion(decimal Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeRegistroAsignacion", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeRegistroAsignacionResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigDesconexiones> TraeRegistroAsignacionAsync(decimal Id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/RegistrarDesconexion", ReplyAction="http://tempuri.org/ICierreExperienciaService/RegistrarDesconexionResponse")]
+        void RegistrarDesconexion(Telmexla.Servicios.DIME.Entity.CEPDesconexiones Desconexion, decimal IdBaseAsig);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/RegistrarDesconexion", ReplyAction="http://tempuri.org/ICierreExperienciaService/RegistrarDesconexionResponse")]
+        System.Threading.Tasks.Task RegistrarDesconexionAsync(Telmexla.Servicios.DIME.Entity.CEPDesconexiones Desconexion, decimal IdBaseAsig);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ActualizarDesconexion", ReplyAction="http://tempuri.org/ICierreExperienciaService/ActualizarDesconexionResponse")]
+        void ActualizarDesconexion(Telmexla.Servicios.DIME.Entity.CEPDesconexiones Desconexion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ActualizarDesconexion", ReplyAction="http://tempuri.org/ICierreExperienciaService/ActualizarDesconexionResponse")]
+        System.Threading.Tasks.Task ActualizarDesconexionAsync(Telmexla.Servicios.DIME.Entity.CEPDesconexiones Desconexion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ArbolDeGestionAgente", ReplyAction="http://tempuri.org/ICierreExperienciaService/ArbolDeGestionAgenteResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion> ArbolDeGestionAgente(decimal IdPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ArbolDeGestionAgente", ReplyAction="http://tempuri.org/ICierreExperienciaService/ArbolDeGestionAgenteResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion>> ArbolDeGestionAgenteAsync(decimal IdPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ActualizarArbolCierreExperiencia", ReplyAction="http://tempuri.org/ICierreExperienciaService/ActualizarArbolCierreExperienciaResp" +
+            "onse")]
+        void ActualizarArbolCierreExperiencia(Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion Arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ActualizarArbolCierreExperiencia", ReplyAction="http://tempuri.org/ICierreExperienciaService/ActualizarArbolCierreExperienciaResp" +
+            "onse")]
+        System.Threading.Tasks.Task ActualizarArbolCierreExperienciaAsync(Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion Arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/RegistrarNuevoArbolCierreExperiencia" +
+            "", ReplyAction="http://tempuri.org/ICierreExperienciaService/RegistrarNuevoArbolCierreExperiencia" +
+            "Response")]
+        void RegistrarNuevoArbolCierreExperiencia(Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion Arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/RegistrarNuevoArbolCierreExperiencia" +
+            "", ReplyAction="http://tempuri.org/ICierreExperienciaService/RegistrarNuevoArbolCierreExperiencia" +
+            "Response")]
+        System.Threading.Tasks.Task RegistrarNuevoArbolCierreExperienciaAsync(Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion Arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraerArbolCierreExperienciaPorId", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraerArbolCierreExperienciaPorIdResp" +
+            "onse")]
+        Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion TraerArbolCierreExperienciaPorId(decimal IdArbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraerArbolCierreExperienciaPorId", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraerArbolCierreExperienciaPorIdResp" +
+            "onse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion> TraerArbolCierreExperienciaPorIdAsync(decimal IdArbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteCierreExperie" +
+            "ncia", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteCierreExperie" +
+            "nciaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> ListaSeguimientosAgenteCierreExperiencia(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteCierreExperie" +
+            "ncia", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteCierreExperie" +
+            "nciaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones>> ListaSeguimientosAgenteCierreExperienciaAsync(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteCierreExperienci" +
+            "a", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteCierreExperienci" +
+            "aResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones> ListaDeGestionAgenteCierreExperiencia(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteCierreExperienci" +
+            "a", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteCierreExperienci" +
+            "aResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones>> ListaDeGestionAgenteCierreExperienciaAsync(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaGeneralAdministradorCierreEx" +
+            "periencia", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaGeneralAdministradorCierreEx" +
+            "perienciaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> ConsultaGeneralAdministradorCierreExperiencia(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaGeneralAdministradorCierreEx" +
+            "periencia", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaGeneralAdministradorCierreEx" +
+            "perienciaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones>> ConsultaGeneralAdministradorCierreExperienciaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaLogAdministradorCierreExperi" +
+            "encia", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaLogAdministradorCierreExperi" +
+            "enciaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones> ConsultaLogAdministradorCierreExperiencia(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaLogAdministradorCierreExperi" +
+            "encia", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaLogAdministradorCierreExperi" +
+            "enciaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones>> ConsultaLogAdministradorCierreExperienciaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeDesconexionPorId", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeDesconexionPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.CEPDesconexiones TraeDesconexionPorId(decimal IdGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeDesconexionPorId", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeDesconexionPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> TraeDesconexionPorIdAsync(decimal IdGestion);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ICierreExperienciaServiceChannel : Dime.WSD.ICierreExperienciaService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CierreExperienciaServiceClient : System.ServiceModel.ClientBase<Dime.WSD.ICierreExperienciaService>, Dime.WSD.ICierreExperienciaService {
+        
+        public CierreExperienciaServiceClient() {
+        }
+        
+        public CierreExperienciaServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public CierreExperienciaServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CierreExperienciaServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public CierreExperienciaServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPAsigDesconexiones TraeRegistroAsignacion(decimal Id) {
+            return base.Channel.TraeRegistroAsignacion(Id);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigDesconexiones> TraeRegistroAsignacionAsync(decimal Id) {
+            return base.Channel.TraeRegistroAsignacionAsync(Id);
+        }
+        
+        public void RegistrarDesconexion(Telmexla.Servicios.DIME.Entity.CEPDesconexiones Desconexion, decimal IdBaseAsig) {
+            base.Channel.RegistrarDesconexion(Desconexion, IdBaseAsig);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarDesconexionAsync(Telmexla.Servicios.DIME.Entity.CEPDesconexiones Desconexion, decimal IdBaseAsig) {
+            return base.Channel.RegistrarDesconexionAsync(Desconexion, IdBaseAsig);
+        }
+        
+        public void ActualizarDesconexion(Telmexla.Servicios.DIME.Entity.CEPDesconexiones Desconexion) {
+            base.Channel.ActualizarDesconexion(Desconexion);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarDesconexionAsync(Telmexla.Servicios.DIME.Entity.CEPDesconexiones Desconexion) {
+            return base.Channel.ActualizarDesconexionAsync(Desconexion);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion> ArbolDeGestionAgente(decimal IdPadre) {
+            return base.Channel.ArbolDeGestionAgente(IdPadre);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion>> ArbolDeGestionAgenteAsync(decimal IdPadre) {
+            return base.Channel.ArbolDeGestionAgenteAsync(IdPadre);
+        }
+        
+        public void ActualizarArbolCierreExperiencia(Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion Arbol) {
+            base.Channel.ActualizarArbolCierreExperiencia(Arbol);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarArbolCierreExperienciaAsync(Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion Arbol) {
+            return base.Channel.ActualizarArbolCierreExperienciaAsync(Arbol);
+        }
+        
+        public void RegistrarNuevoArbolCierreExperiencia(Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion Arbol) {
+            base.Channel.RegistrarNuevoArbolCierreExperiencia(Arbol);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarNuevoArbolCierreExperienciaAsync(Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion Arbol) {
+            return base.Channel.RegistrarNuevoArbolCierreExperienciaAsync(Arbol);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion TraerArbolCierreExperienciaPorId(decimal IdArbol) {
+            return base.Channel.TraerArbolCierreExperienciaPorId(IdArbol);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion> TraerArbolCierreExperienciaPorIdAsync(decimal IdArbol) {
+            return base.Channel.TraerArbolCierreExperienciaPorIdAsync(IdArbol);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> ListaSeguimientosAgenteCierreExperiencia(decimal Usuario) {
+            return base.Channel.ListaSeguimientosAgenteCierreExperiencia(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones>> ListaSeguimientosAgenteCierreExperienciaAsync(decimal Usuario) {
+            return base.Channel.ListaSeguimientosAgenteCierreExperienciaAsync(Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones> ListaDeGestionAgenteCierreExperiencia(decimal Usuario) {
+            return base.Channel.ListaDeGestionAgenteCierreExperiencia(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones>> ListaDeGestionAgenteCierreExperienciaAsync(decimal Usuario) {
+            return base.Channel.ListaDeGestionAgenteCierreExperienciaAsync(Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> ConsultaGeneralAdministradorCierreExperiencia(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaGeneralAdministradorCierreExperiencia(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones>> ConsultaGeneralAdministradorCierreExperienciaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaGeneralAdministradorCierreExperienciaAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones> ConsultaLogAdministradorCierreExperiencia(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaLogAdministradorCierreExperiencia(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones>> ConsultaLogAdministradorCierreExperienciaAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaLogAdministradorCierreExperienciaAsync(FechaInicial, FechaFinal);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPDesconexiones TraeDesconexionPorId(decimal IdGestion) {
+            return base.Channel.TraeDesconexionPorId(IdGestion);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> TraeDesconexionPorIdAsync(decimal IdGestion) {
+            return base.Channel.TraeDesconexionPorIdAsync(IdGestion);
+        }
+    }
 }

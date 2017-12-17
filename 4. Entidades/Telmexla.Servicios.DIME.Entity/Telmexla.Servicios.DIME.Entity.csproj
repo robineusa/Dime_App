@@ -119,6 +119,10 @@
     <Compile Include="CcGestionResidencialPredictivo.cs" />
     <Compile Include="CcResidencialPredictivoInfo.cs" />
     <Compile Include="CcSegundaTipificacion.cs" />
+    <Compile Include="CELDesconexiones.cs" />
+    <Compile Include="CEMArbolesDeGestion.cs" />
+    <Compile Include="CEPAsigDesconexiones.cs" />
+    <Compile Include="CEPDesconexiones.cs" />
     <Compile Include="CierreCiclo.cs" />
     <Compile Include="CierreCicloCollection.cs" />
     <Compile Include="ClaroVideo.cs" />
@@ -187,6 +191,7 @@
     <Compile Include="LiberacionHomePassCollection.cs" />
     <Compile Include="Linea.cs" />
     <Compile Include="ListaAccesoSUsuario.cs" />
+    <Compile Include="MaestroFestivos.cs" />
     <Compile Include="MaestroLineasBlending.cs" />
     <Compile Include="MaestroMarcacione.cs" />
     <Compile Include="MaestroMarcacioneCollection.cs" />
@@ -244,6 +249,7 @@
     <Compile Include="ViewModelBlending.cs" />
     <Compile Include="ViewModelAdminUsuario.cs" />
     <Compile Include="ViewModelCambioEstrato.cs" />
+    <Compile Include="ViewModelCierreExperiencia.cs" />
     <Compile Include="ViewModelCuentasSiembraHD.cs" />
     <Compile Include="ViewModelDistribucionesBlending.cs" />
     <Compile Include="ViewModelGraficos.cs" />
