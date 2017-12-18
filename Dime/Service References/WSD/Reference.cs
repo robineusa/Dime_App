@@ -9662,83 +9662,6 @@ namespace Dime.WSD {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Macroprocesos", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
-    [System.SerializableAttribute()]
-    public partial class Macroprocesos : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DescripcionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdCategoriaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdCategoriaPadreField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Descripcion {
-            get {
-                return this.DescripcionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
-                    this.DescripcionField = value;
-                    this.RaisePropertyChanged("Descripcion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdCategoria {
-            get {
-                return this.IdCategoriaField;
-            }
-            set {
-                if ((this.IdCategoriaField.Equals(value) != true)) {
-                    this.IdCategoriaField = value;
-                    this.RaisePropertyChanged("IdCategoria");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdCategoriaPadre {
-            get {
-                return this.IdCategoriaPadreField;
-            }
-            set {
-                if ((this.IdCategoriaPadreField.Equals(value) != true)) {
-                    this.IdCategoriaPadreField = value;
-                    this.RaisePropertyChanged("IdCategoriaPadre");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IWebService")]
     public interface IWebService {
@@ -18312,16 +18235,16 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<string> GuardarCodigoHtmlNodoAsync(int IdNodo, string CodigoHtml, bool NodoFinal);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/CrearCategoria", ReplyAction="http://tempuri.org/IProcesosService/CrearCategoriaResponse")]
-        void CrearCategoria(Dime.WSD.Macroprocesos Categoria);
+        void CrearCategoria(Telmexla.Servicios.DIME.Entity.Macroprocesos Categoria);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/CrearCategoria", ReplyAction="http://tempuri.org/IProcesosService/CrearCategoriaResponse")]
-        System.Threading.Tasks.Task CrearCategoriaAsync(Dime.WSD.Macroprocesos Categoria);
+        System.Threading.Tasks.Task CrearCategoriaAsync(Telmexla.Servicios.DIME.Entity.Macroprocesos Categoria);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarCategorias", ReplyAction="http://tempuri.org/IProcesosService/ConsultarCategoriasResponse")]
-        System.Collections.Generic.List<Dime.WSD.Macroprocesos> ConsultarCategorias(int idCategoriaPadre);
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos> ConsultarCategorias(int idCategoriaPadre);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarCategorias", ReplyAction="http://tempuri.org/IProcesosService/ConsultarCategoriasResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.Macroprocesos>> ConsultarCategoriasAsync(int idCategoriaPadre);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos>> ConsultarCategoriasAsync(int idCategoriaPadre);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/EliminarCategoria", ReplyAction="http://tempuri.org/IProcesosService/EliminarCategoriaResponse")]
         void EliminarCategoria(int idCategoria);
@@ -18445,19 +18368,19 @@ namespace Dime.WSD {
             return base.Channel.GuardarCodigoHtmlNodoAsync(IdNodo, CodigoHtml, NodoFinal);
         }
         
-        public void CrearCategoria(Dime.WSD.Macroprocesos Categoria) {
+        public void CrearCategoria(Telmexla.Servicios.DIME.Entity.Macroprocesos Categoria) {
             base.Channel.CrearCategoria(Categoria);
         }
         
-        public System.Threading.Tasks.Task CrearCategoriaAsync(Dime.WSD.Macroprocesos Categoria) {
+        public System.Threading.Tasks.Task CrearCategoriaAsync(Telmexla.Servicios.DIME.Entity.Macroprocesos Categoria) {
             return base.Channel.CrearCategoriaAsync(Categoria);
         }
         
-        public System.Collections.Generic.List<Dime.WSD.Macroprocesos> ConsultarCategorias(int idCategoriaPadre) {
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos> ConsultarCategorias(int idCategoriaPadre) {
             return base.Channel.ConsultarCategorias(idCategoriaPadre);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.Macroprocesos>> ConsultarCategoriasAsync(int idCategoriaPadre) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos>> ConsultarCategoriasAsync(int idCategoriaPadre) {
             return base.Channel.ConsultarCategoriasAsync(idCategoriaPadre);
         }
         

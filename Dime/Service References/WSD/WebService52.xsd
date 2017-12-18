@@ -3786,6 +3786,7 @@
   <xs:complexType name="Macroprocesos">
     <xs:sequence>
       <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdArbol" type="xs:int" />
       <xs:element minOccurs="0" name="IdCategoria" type="xs:int" />
       <xs:element minOccurs="0" name="IdCategoriaPadre" type="xs:int" />
     </xs:sequence>
