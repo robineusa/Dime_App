@@ -2336,6 +2336,7 @@
     <Content Include="Scripts\Calculadoras\Rentas.js" />
     <Content Include="Scripts\CierreDeCiclo\ConsultaGestiones.js" />
     <Content Include="Scripts\CierreDeCiclo\HistorialGestiones.js" />
+    <Content Include="Scripts\CierreExperiencia\Desconexiones.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Gestion.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Paloteo.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Rechazos.js" />
