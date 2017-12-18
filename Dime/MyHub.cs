@@ -43,13 +43,13 @@ namespace Dime
                 {
                     for (int i = 0; i < CurrentMessage.LongCount(); i++)
                     {
-                        var UsuarioDeNotif = UsuariosNoti.Any(x => x.Id_Notify == i+1 && x.UserNotif == User);
+                        var UsuarioDeNotif = UsuariosNoti.Any(x => x.Id_Notify == i + 1 && x.UserNotif == User);
                         if (UsuarioDeNotif == false)
                         {
-                            var MenNoNotif = CurrentMessage.FirstOrDefault(x => x.Id == i+1);
-                            var Validacion = ListTemporal.Exists(x => x.Id == i+1);
+                            var MenNoNotif = CurrentMessage.FirstOrDefault(x => x.Id == i + 1);
+                            var Validacion = ListTemporal.Exists(x => x.Id == i + 1);
                             if (Validacion == false)
-                                ListTemporal.Add(new MessageDetail { Id = MenNoNotif.Id, Message = MenNoNotif.Message, UserName = MenNoNotif.UserName, Fecha_Entrega = MenNoNotif.Fecha_Entrega});
+                                ListTemporal.Add(new MessageDetail { Id = MenNoNotif.Id, Message = MenNoNotif.Message, UserName = MenNoNotif.UserName, Fecha_Entrega = MenNoNotif.Fecha_Entrega });
 
                         }
                     }
@@ -88,7 +88,7 @@ namespace Dime
         }
         public void AddMessageinCache(string userName, string message, string fecha)
         {
-            var id = CurrentMessage.Count+1;
+            var id = CurrentMessage.Count + 1;
             CurrentMessage.Add(new MessageDetail { Id = id, UserName = userName, Message = message, Fecha_Entrega = fecha });
 
             if (CurrentMessage.Count > 100)
@@ -111,30 +111,48 @@ namespace Dime
         {
             Clients.All.todosMsm(CurrentMessage);
         }
-        public void NotificacionComercial(string TipoNotificacion, string ContenidoAlerta, string Usuario)
+        public void InsertaNotificacion(string TipoNotificacion, string ContenidoAlerta, string Usuario)
         {
             NotificacionSignalR model = new NotificacionSignalR();
             model.TipoNotificacion = TipoNotificacion;
             model.ContenidoAlerta = ContenidoAlerta;
             model.UsuarioNotifica = Usuario;
 
-            //signalRService.InsertarNotificacionSignalR(model);
-            
-            Clients.All.enviaCliente();
+            signalRService.InsertarNotificacionSignalR(model);
+
+            if (TipoNotificacion == "Notificacion Oferta Comercial")
+            {
+                Clients.All.enviaCliente();
+            }
+            if (TipoNotificacion == "Mensaje Global Buen Servicio")
+            {
+                Clients.All.addMessage(id, Usuario, ContenidoAlerta);
+                Clients.All.enviaCliente();
+            }
         }
         public void ConsultaNotificacion(string Usuario)
         {
             var result = signalRService.ListaNoNotificados(Convert.ToDecimal(Usuario));
             List<NotificacionSignalR> ListaOfertaComercial = new List<NotificacionSignalR>();
-            
+            List<NotificacionSignalR> ListaMensajesGlobales = new List<NotificacionSignalR>();
+
             foreach (var item in result)
             {
                 if (item.TipoNotificacion == "Notificacion Oferta Comercial")
                 {
                     ListaOfertaComercial.Add(item);
+                    
+                }
+                if (item.TipoNotificacion == "Mensaje Global Buen Servicio")
+                {
+                    ListaMensajesGlobales.Add(item);
                 }
             }
-            Clients.Caller.notificaUsuarios(ListaOfertaComercial);
+            if(ListaOfertaComercial.Count > 0)
+                Clients.Caller.notificaUsuarios(ListaOfertaComercial);
+            if (ListaMensajesGlobales.Count > 0)
+                Clients.Caller.notificaMensajes(ListaMensajesGlobales);
+
         }
         public void GuardaNotificadoOfertaComercial(string OfertasComerciales, string Usuario)
         {
@@ -149,6 +167,6 @@ namespace Dime
 
             Clients.Caller.FinNotifica(); ;
         }
-        
+
     }
 }
