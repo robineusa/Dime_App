@@ -3669,6 +3669,9 @@
     <Content Include="Styles\Slider\images\thumbs\desktop.ini" />
     <Content Include="Views\OfertasComerciales\VerImagen.cshtml" />
     <Content Include="Views\CierreExperiencia\Desconexiones.cshtml" />
+    <Content Include="Views\CierreExperiencia\LiberacionesDeHomePass.cshtml" />
+    <Content Include="Views\CierreExperiencia\Tickets.cshtml" />
+    <Content Include="Views\CierreExperiencia\SuspencionesTemporales.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
