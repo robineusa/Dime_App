@@ -59,6 +59,36 @@ namespace Dime.Controllers
         {
             return View();
         }
+        public JsonResult ListaDeGestionDesconexionesAgente()
+        {
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ListaDeGestionAgenteCierreExperiencia(Usuario)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ListaDeSeguimientosDesconexionesAgente()
+        {
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ListaSeguimientosAgenteCierreExperiencia(Usuario)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ArbolesDeTipificacionDesconexion(int IdPadre)
+        {
+
+            return new JsonResult()
+            {
+                Data = JsonConvert.SerializeObject(CierreService.TraerArbolCierreExperienciaPorId(IdPadre)),
+                JsonRequestBehavior = JsonRequestBehavior.DenyGet
+            };
+        }
+        public JsonResult TraerDatosDelArbol(decimal IdArbol)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.TraerArbolCierreExperienciaPorId(IdArbol)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
         [HttpGet]
         public ActionResult LiberacionesDeHomePass()
         {
