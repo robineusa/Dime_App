@@ -22,6 +22,7 @@ namespace Dime.Controllers
             inboundservice = new WSD.InboundServiceClient();
             inboundservice.ClientCredentials.Authenticate();
         }
+        [HttpGet]
         public ActionResult Desconexiones(string IdGestion)
         {
             ViewModelCierreExperiencia modelo = new ViewModelCierreExperiencia();
@@ -51,6 +52,49 @@ namespace Dime.Controllers
                 modelo.CEPDesconexiones = CierreService.TraeDesconexionPorId(Convert.ToDecimal(IdGestion));
             }
             return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Desconexiones(ViewModelCierreExperiencia modelo)
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult LiberacionesDeHomePass()
+        {
+            ViewModelCierreExperiencia modelo = new ViewModelCierreExperiencia();
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LiberacionesDeHomePass(ViewModelCierreExperiencia modelo)
+        {
+        
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Tickets()
+        {
+            ViewModelCierreExperiencia modelo = new ViewModelCierreExperiencia();
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Tickets(ViewModelCierreExperiencia modelo)
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult SuspencionesTemporales()
+        {
+            ViewModelCierreExperiencia modelo = new ViewModelCierreExperiencia();
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SuspencionesTemporales(ViewModelCierreExperiencia modelo)
+        {
+            return View();
         }
     }
 }
