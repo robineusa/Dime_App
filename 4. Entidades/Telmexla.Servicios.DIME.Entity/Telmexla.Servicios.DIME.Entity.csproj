@@ -191,6 +191,7 @@
     <Compile Include="LiberacionHomePassCollection.cs" />
     <Compile Include="Linea.cs" />
     <Compile Include="ListaAccesoSUsuario.cs" />
+    <Compile Include="Macroprocesos.cs" />
     <Compile Include="MaestroFestivos.cs" />
     <Compile Include="MaestroLineasBlending.cs" />
     <Compile Include="MaestroMarcacione.cs" />
