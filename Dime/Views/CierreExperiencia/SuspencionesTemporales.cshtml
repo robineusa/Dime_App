@@ -32,6 +32,8 @@
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
                 <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321"><a href="#datosInfor" aria-controls="datosBasicos" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Informativos</a></li>
+                <li id="Li2" class="" ><a href="#Seguimientos" aria-controls="Seguimientos" data-toggle="tab" role="tab" style="background-color:transparent;">Seguimientos</a></li>
+                <li id="Li3" class="" ><a href="#MiHistorial" aria-controls="MiHistorial" data-toggle="tab" role="tab" style="background-color:transparent;">Mi Historial</a></li>
             </ul>
             <div class="tab-content" style="padding-left:0; padding-top: 0">
                 <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosInfor" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
@@ -66,6 +68,10 @@
 
                         </tr>
                     </table>
+                </div>
+                <div role="tabpanel" class="tab-pane tab-dime-first active " id="Seguimientos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                </div>
+                <div role="tabpanel" class="tab-pane tab-dime-first active " id="MiHistorial" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
                 </div>
             </div>
             </div>
@@ -185,7 +191,7 @@
                                         </select>
                                     </td>
                                     <td width="200" style="padding:1px;">
-                                        <input type="text" class="form-control input-sm" />
+                                        <input id="FechaSeguimiento" type="text" class="form-control input-sm" />
                                     </td>
                                 </tr>
                             </table>
@@ -195,5 +201,12 @@
             </div>
         </div>
     </div>
+@section Scripts{
+    <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
+    <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.js"></script>
+    <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
+    <script src="~/Scripts/CierreExperiencia/SuspensionesTemporales.js?1.0.0"></script>
 
+
+    }
 
