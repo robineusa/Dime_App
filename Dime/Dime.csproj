@@ -3140,6 +3140,8 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPAsigDesconexiones.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPDesconexiones.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroFestivos1.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Macroprocesos.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3272,9 +3274,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\WSD\Dime.WSD.FidelizacionRecursivaVistaDetalle.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WSD\Dime.WSD.MaestroFestivos.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Scripts\Procesos\dist\font\summernote.eot" />
@@ -3668,6 +3667,9 @@
     <Content Include="Styles\Slider\images\thumbs\desktop.ini" />
     <Content Include="Views\OfertasComerciales\VerImagen.cshtml" />
     <Content Include="Views\CierreExperiencia\Desconexiones.cshtml" />
+    <Content Include="Views\CierreExperiencia\LiberacionesDeHomePass.cshtml" />
+    <Content Include="Views\CierreExperiencia\Tickets.cshtml" />
+    <Content Include="Views\CierreExperiencia\SuspencionesTemporales.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
