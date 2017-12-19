@@ -107,10 +107,6 @@ namespace Dime
                     UsuariosNoti.RemoveAt(0);
             }
         }
-        public void todosMensajes()
-        {
-            Clients.All.todosMsm(CurrentMessage);
-        }
         public void InsertaNotificacion(string TipoNotificacion, string ContenidoAlerta, string Usuario)
         {
             NotificacionSignalR model = new NotificacionSignalR();
@@ -118,7 +114,7 @@ namespace Dime
             model.ContenidoAlerta = ContenidoAlerta;
             model.UsuarioNotifica = Usuario;
 
-            signalRService.InsertarNotificacionSignalR(model);
+            var result = signalRService.InsertarNotificacionSignalR(model);
 
             if (TipoNotificacion == "Notificacion Oferta Comercial")
             {
@@ -126,8 +122,8 @@ namespace Dime
             }
             if (TipoNotificacion == "Mensaje Global Buen Servicio")
             {
-                //Clients.All.addMessage(id, Usuario, ContenidoAlerta);
-                Clients.All.enviaCliente();
+                Clients.All.addMessage(result, Usuario, ContenidoAlerta);
+                
             }
         }
         public void ConsultaNotificacion(string Usuario)
@@ -141,15 +137,16 @@ namespace Dime
                 if (item.TipoNotificacion == "Notificacion Oferta Comercial")
                 {
                     ListaOfertaComercial.Add(item);
-                    
                 }
                 if (item.TipoNotificacion == "Mensaje Global Buen Servicio")
                 {
                     ListaMensajesGlobales.Add(item);
                 }
             }
+
             if(ListaOfertaComercial.Count > 0)
                 Clients.Caller.notificaUsuarios(ListaOfertaComercial);
+
             if (ListaMensajesGlobales.Count > 0)
                 Clients.Caller.notificaMensajes(ListaMensajesGlobales);
 
@@ -166,6 +163,34 @@ namespace Dime
             signalRService.InsertarUsuarioNotificadoSignalR(listaOfertasComerciales, model);
 
             Clients.Caller.FinNotifica(); ;
+        }
+        public void GuardaMensajeBuenServicio(string MensajesBuenS, string Usuario, string Switch)
+        {
+            if (MensajesBuenS != "")
+            {
+                string[] Mensajes = { };
+                if (MensajesBuenS != null)
+                    Mensajes = MensajesBuenS.Split('-');
+                List<string> ListaMensajes = Mensajes.OfType<string>().ToList();
+                UsuariosNotificadosSignalR model = new UsuariosNotificadosSignalR();
+                model.UsuarioNotificado = Convert.ToDecimal(Usuario);
+
+                signalRService.InsertarUsuarioNotificadoSignalR(ListaMensajes, model);
+
+                if (Switch == "1")
+                { Clients.Caller.enviaCliente(); }
+                else { Clients.Caller.FinNotificaMensajes(); }
+                
+            }
+            ConsultaTodosMensajes();
+        }
+        public void ConsultaTodosMensajes()
+        {
+            List<NotificacionSignalR> TodosMensajes = new List<NotificacionSignalR>();
+
+            TodosMensajes = signalRService.ListTodosMensajes().ToList();
+            Clients.Caller.connectEver(TodosMensajes);
+            Clients.Caller.todosMsm(TodosMensajes);
         }
 
     }

@@ -6,7 +6,7 @@
 }
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8">
         <div class="box box-danger">
             <div class="box-body">
                 <div class="row">
@@ -14,7 +14,7 @@
                         <h2 class="page-header" style="margin-top:25px"><i class="fa fa-comment"></i> Mensajes Notificados:</h2>
                         <div style="/*background-color:#dcdcdc;*/ padding-left:10px; padding-bottom:10px; margin-top:-40px; margin-left: -30px; padding-right:10px;">
                             <div class="box-body">
-                                <div class="col-md-8">
+                                <div class="col-md-12">
                                     <div class="box-body" style="display: block;">
                                         <div id="MensajesBS" style="height:auto;" class="direct-chat-messages">
 
@@ -43,7 +43,7 @@
         });
 
         function Registra_Eventos2(connect) {
-            connect.server.todosMensajes();
+            connect.server.consultaTodosMensajes();
         }
 
         function Llama_Metodos2(connect) {
@@ -51,8 +51,9 @@
             connect.client.todosMsm = function (messagesG) {
                 $('#MensajesBS').empty();
                 if (messagesG.length > 0) {
-                    for (i = 0; i < messagesG.length; i++) {
-                        AddMessageG(messagesG[i].Id, messagesG[i].UserName, messagesG[i].Message, messagesG[i].Fecha_Entrega);
+                    //cambiarfechas(messagesG);
+                    for (i = messagesG.length-1; i > 1; i--) {
+                        AddMessageG(messagesG[i].Id, messagesG[i].UsuarioNotifica, messagesG[i].ContenidoAlerta, messagesG[i].FechaEntrega);
                     }
                 }
                 else {
@@ -73,6 +74,13 @@
                                             + message +
                                         '</div>' +
                                     '</div>');
+
+        }
+
+        function cambiarfechas(data) {
+            for (var i = 0; i < data.length; i++) {
+                data[i].FechaEntrega = data.toString(data.parseDate(data[i].FechaGestion,'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+            }
 
         }
     </script>
