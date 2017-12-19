@@ -1,10 +1,12 @@
 ﻿$(document).ready(function () {
+    FormatoFechas();
+    TraerCanalDeIngreso();
     TraerArbolDeGestion();
     ListaSubrazones();
     TraerArbolTipoDeError();
     TraerListaGestionUsuario();
     TraerListaSeguimientosUsuario();
-    
+   
 
     $("#Li1").click(function () {
 
@@ -92,6 +94,45 @@ function TraerArbolDeGestion() {
     $('#SelectGestion').find('option:not(:first)').remove();
 
 }
+function TraerCanalDeIngreso() {
+    var IdPadre = "5";
+
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#CanalDeIngreso').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("CanalDeIngreso");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("CanalDeIngreso1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+    $('#CanalDeIngreso').find('option:not(:first)').remove();
+
+}
 function TraerArbolTipoDeError() {
     var IdPadre = "8";
 
@@ -136,6 +177,11 @@ $('#TipoDeError').change(function () {
     var NuevaIdSelesct = document.getElementById("TipoDeError");
     var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
     $('#TipoDeError1').val(NuevoText);
+})
+$('#CanalDeIngreso').change(function () {
+    var NuevaIdSelesct = document.getElementById("CanalDeIngreso");
+    var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
+    $('#CanalDeIngreso1').val(NuevoText);
 })
 $('#ErrorSolicitud').change(function () {
     var Eserror = $('#ErrorSolicitud').val();
@@ -372,9 +418,73 @@ function ActualizarCasoSeg(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
     var seg = "Ture";
-    window.location.href = 'Desconexiones?IdGestion=' + dataItem.IdGestion;
+    window.location.href = 'DesconexionesIn?IdGestion=' + dataItem.IdGestion;
 }
 function LimpiarFecha() {
     var FechaSeguimiento = document.getElementById('FechaDeSeguimiento');
     FechaSeguimiento.value = "";
 }
+$("#CuentaCliente").blur(function (event) {
+    event.preventDefault();
+    var Cuenta = $("#CuentaCliente").val();
+    if (Cuenta == "" || Cuenta == null || Cuenta == "0") {
+    } else {
+        var IdGes = $("#IdGestion").val();
+        if (IdGes <= 0) {
+            DatosClienteCuenta(Cuenta);
+        }
+    }
+
+});
+function DatosClienteCuenta(Cuenta) {
+    $('#Nombre').focus();
+    $.ajax({
+        type: "POST",
+        url: UrlInformacionCliente,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ CuentaCliente: Cuenta }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            var Nota1 = json.Cuenta + ' - TEL: ' + json.Telefono1 + ' - ' + json.Telefono2 + ' - ' + json.Telefono3;
+            var Nota2 = json.Nombre + ' ' + json.Apellido;
+
+            $('#Nota1').val(Nota1);
+            $('#Nota2').val(Nota2);
+            
+        }
+    });
+
+}
+function FormatoFechas() {
+    var IdGes = $("#IdGestion").val();
+    if (IdGes <= 0) {
+        $('#FechaDeSolicitud').datetimepicker({
+            format: 'Y-m-d',
+            timepicker: false
+        });
+
+        $('#FechaDeCorte').datetimepicker({
+            format: 'Y-m-d',
+            timepicker: false
+        });
+        $('#FechaDePreaviso').datetimepicker({
+            format: 'Y-m-d',
+            timepicker: false
+        });
+        $('#FechaDeAsignacion').datetimepicker({
+            format: 'Y-m-d',
+            timepicker: false
+        });
+    }
+}
+
+function seleccionarNota1() {
+    document.getElementById("Nota1").selectionStart = 0;
+
+}
+function seleccionarNota2() {
+    document.getElementById("Nota2").selectionStart = 0;
+
+}
+
