@@ -18,14 +18,15 @@
             <div class="active tab-pane" id="Datos_Basicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
                 <br />
                 @Html.HiddenFor(m => m.CEPDesconexiones.IdGestion, new { @Id = "IdGestion"})
-                @if (Model.CEPDesconexiones.IdGestion > 0)
+                @Html.HiddenFor(m => m.CEPAsigDesconexiones.Id, new { @Id = "Id" })
+                @if (Model.CEPAsigDesconexiones.Id > 0)
                 {
                 <table>
                     <tr>
                         <td width="200" style="padding:1px;">
                             <small>Cuenta del Cliente:  </small>
                             @Html.TextBoxFor(m => m.CEPDesconexiones.CuentaCliente, new { @class = "form-control input-sm", @readonly = "true", @Id = "CuentaCliente", @placeholder = "Ingrese la cuenta" })
-                            @Html.HiddenFor(m => m.CEPAsigDesconexiones.Id)
+                            
                             @Html.HiddenFor(m => m.CEPDesconexiones.IdGestion)
                         </td>
                         <td width="200" style="padding:1px;">
@@ -282,7 +283,8 @@
             var UrlListaDeSeguimientos = '@Url.Action("ListaDeSeguimientosDesconexionesAgente", "CierreExperiencia")';
             var UrlArbolDeGestion = '@Url.Action("ArbolesDeTipificacionDesconexion", "CierreExperiencia")';
             var UrlDatosArbol = '@Url.Action("TraerDatosDelArbol", "CierreExperiencia")';
-            var UrlInformacionCliente = '@Url.Action("TraerInformacionCliente", "CierreExperiencia")';
+        var UrlInformacionCliente = '@Url.Action("TraerInformacionCliente", "CierreExperiencia")';
+        var UrlInformacionCliente2 = '@Url.Action("TraerInformacionCliente2", "CierreExperiencia")';
     </script>
 <script src="~/Scripts/CierreExperiencia/DesconexionesIn.js?1.0.3"></script>
 <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>

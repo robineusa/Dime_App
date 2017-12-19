@@ -18865,6 +18865,30 @@ namespace Dime.WSD {
             "n", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListasDeArbolesCierreExperienciaAdmi" +
             "nResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion>> ListasDeArbolesCierreExperienciaAdminAsync(decimal IdPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaDeGestionDesconexionesAgente" +
+            "", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaDeGestionDesconexionesAgente" +
+            "Response")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones> ConsultaDeGestionDesconexionesAgente(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaDeGestionDesconexionesAgente" +
+            "", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaDeGestionDesconexionesAgente" +
+            "Response")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones>> ConsultaDeGestionDesconexionesAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ValidarCuentaAsignada", ReplyAction="http://tempuri.org/ICierreExperienciaService/ValidarCuentaAsignadaResponse")]
+        Telmexla.Servicios.DIME.Entity.CEPAsigDesconexiones ValidarCuentaAsignada(decimal Cedula, int noRecursividad, decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ValidarCuentaAsignada", ReplyAction="http://tempuri.org/ICierreExperienciaService/ValidarCuentaAsignadaResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigDesconexiones> ValidarCuentaAsignadaAsync(decimal Cedula, int noRecursividad, decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultarCuentaDesconexionporCuenta", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultarCuentaDesconexionporCuentaR" +
+            "esponse")]
+        Telmexla.Servicios.DIME.Entity.CEPDesconexiones ConsultarCuentaDesconexionporCuenta(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultarCuentaDesconexionporCuenta", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultarCuentaDesconexionporCuentaR" +
+            "esponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> ConsultarCuentaDesconexionporCuentaAsync(decimal Cuenta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19004,6 +19028,30 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion>> ListasDeArbolesCierreExperienciaAdminAsync(decimal IdPadre) {
             return base.Channel.ListasDeArbolesCierreExperienciaAdminAsync(IdPadre);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones> ConsultaDeGestionDesconexionesAgente(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario) {
+            return base.Channel.ConsultaDeGestionDesconexionesAgente(FechaInicial, FechaFinal, Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones>> ConsultaDeGestionDesconexionesAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario) {
+            return base.Channel.ConsultaDeGestionDesconexionesAgenteAsync(FechaInicial, FechaFinal, Usuario);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPAsigDesconexiones ValidarCuentaAsignada(decimal Cedula, int noRecursividad, decimal CuentaCliente) {
+            return base.Channel.ValidarCuentaAsignada(Cedula, noRecursividad, CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigDesconexiones> ValidarCuentaAsignadaAsync(decimal Cedula, int noRecursividad, decimal CuentaCliente) {
+            return base.Channel.ValidarCuentaAsignadaAsync(Cedula, noRecursividad, CuentaCliente);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPDesconexiones ConsultarCuentaDesconexionporCuenta(decimal Cuenta) {
+            return base.Channel.ConsultarCuentaDesconexionporCuenta(Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> ConsultarCuentaDesconexionporCuentaAsync(decimal Cuenta) {
+            return base.Channel.ConsultarCuentaDesconexionporCuentaAsync(Cuenta);
         }
     }
 }

@@ -7737,4 +7737,50 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ConsultaDeGestionDesconexionesAgente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Usuario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaDeGestionDesconexionesAgenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q539="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaDeGestionDesconexionesAgenteResult" nillable="true" type="q539:ArrayOfCELDesconexiones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarCuentaAsignada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Cedula" type="xs:decimal" />
+        <xs:element minOccurs="0" name="noRecursividad" type="xs:int" />
+        <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarCuentaAsignadaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q540="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ValidarCuentaAsignadaResult" nillable="true" type="q540:CEPAsigDesconexiones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarCuentaDesconexionporCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Cuenta" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarCuentaDesconexionporCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q541="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarCuentaDesconexionporCuentaResult" nillable="true" type="q541:CEPDesconexiones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
