@@ -7694,4 +7694,33 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ApartarCuentadeDesconexiones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Cedula" type="xs:decimal" />
+        <xs:element minOccurs="0" name="noRecursividad" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApartarCuentadeDesconexionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q537="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ApartarCuentadeDesconexionesResult" nillable="true" type="q537:CEPAsigDesconexiones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListasDeArbolesCierreExperienciaAdmin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdPadre" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListasDeArbolesCierreExperienciaAdminResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q538="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListasDeArbolesCierreExperienciaAdminResult" nillable="true" type="q538:ArrayOfCEMArbolesDeGestion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
