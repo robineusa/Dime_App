@@ -431,12 +431,12 @@ $("#CuentaCliente").blur(function (event) {
     } else {
         var IdGes = $("#IdGestion").val();
         if (IdGes <= 0) {
-            DatosClienteCuenta(Cuenta);
+            DatosClienteCuenta1(Cuenta);
         }
     }
 
 });
-function DatosClienteCuenta(Cuenta) {
+function DatosClienteCuenta1(Cuenta) {
     $('#Nombre').focus();
     $.ajax({
         type: "POST",
@@ -446,18 +446,76 @@ function DatosClienteCuenta(Cuenta) {
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
-            var Nota1 = json.Cuenta + ' - TEL: ' + json.Telefono1 + ' - ' + json.Telefono2 + ' - ' + json.Telefono3;
-            var Nota2 = json.Nombre + ' ' + json.Apellido;
+            var Nota1 = json.Nota1;
+            var Nota2 = json.Nota2;
+            if (json.IdGestion > 0) {
+                alert('La cuenta ya fue gestionada durante el mes en curso');
+                location.reload();
+            }
+            else {
+                DatosClienteCuenta(Cuenta);
+            }
+           
+        }
+    });
 
-            $('#Nota1').val(Nota1);
-            $('#Nota2').val(Nota2);
-            
+}
+function DatosClienteCuenta(Cuenta) {
+    $('#Nombre').focus();
+    $.ajax({
+        type: "POST",
+        url: UrlInformacionCliente2,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ CuentaCliente: Cuenta }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            var Nota1 = json.Nota1;
+            var Nota2 = json.Nota2;
+            if (json.Id > 0) {
+                alert('La cuenta se encuentra asignada en la base potencial');
+                for (var i = 0; i < json.length; i++) {
+                    json[i].FechaDeSolicitud = kendo.toString(kendo.parseDate(json[i].FechaDeSolicitud, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+                    json[i].FechaDeCorte = kendo.toString(kendo.parseDate(json[i].FechaDeCorte, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+                    json[i].FechaDePreaviso = kendo.toString(kendo.parseDate(json[i].FechaDePreaviso, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+                    json[i].FechaDeAsignacion = kendo.toString(kendo.parseDate(json[i].FechaDeAsignacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+                }
+                $('#Id').val(json.Id);
+                $('#Nota1').val(json.Nota1);
+                $('#Nota2').val(json.Nota2);
+                $('#FechaDeSolicitud').val(json.FechaDeSolicitud);
+                $('#FechaDeSolicitud').prop('readonly', true);
+                $('#FechaDeCorte').val(json.FechaDeCorte);
+                $('#FechaDeCorte').prop('readonly', true);
+                $('#FechaDePreaviso').val(json.FechaDePreaviso);
+                $('#FechaDePreaviso').prop('readonly', true);
+                $('#FechaDeAsignacion').val(json.FechaDeAsignacion);
+                $('#FechaDeAsignacion').prop('readonly', true);
+                $('#CanalDeIngreso1').val(json.CanalDeIngreso);
+                // creamos un variable que hace referencia al select
+                var select = document.getElementById("CanalDeIngreso");
+                // obtenemos el valor a buscar
+                var buscar = document.getElementById("CanalDeIngreso1").value;
+                // recorremos todos los valores del select
+                for (var i = 1; i < select.length; i++) {
+                    if (select.options[i].text == buscar) {
+                        // seleccionamos el valor que coincide
+                        select.selectedIndex = i;
+                    }
+                }
+                FormatoFechas();
+            } else {
+                alert('No existe información de la cuenta, por favor suministrela');
+                $('#Nota1').val(Nota1);
+                $('#Nota2').val(Nota2);
+                FormatoFechas();
+            }
         }
     });
 
 }
 function FormatoFechas() {
-    var IdGes = $("#IdGestion").val();
+    var IdGes = $("#Id").val();
     if (IdGes <= 0) {
         $('#FechaDeSolicitud').datetimepicker({
             format: 'Y-m-d',
@@ -487,4 +545,20 @@ function seleccionarNota2() {
     document.getElementById("Nota2").selectionStart = 0;
 
 }
+function Limpiar() {
+    var valor1 = "";
 
+    $('#Id').val(valor1);
+    $('#Id').val(valor1);
+    $('#Nota1').val(valor1);
+    $('#Nota2').val(valor1);
+    $('#FechaDeSolicitud').val(valor1);
+    $('#FechaDeSolicitud').prop('readonly', true);
+    $('#FechaDeCorte').val(json.FechaDeCorte);
+    $('#FechaDeCorte').prop('readonly', true);
+    $('#FechaDePreaviso').val(json.FechaDePreaviso);
+    $('#FechaDePreaviso').prop('readonly', true);
+    $('#FechaDeAsignacion').val(json.FechaDeAsignacion);
+    $('#FechaDeAsignacion').prop('readonly', true);
+    $('#CanalDeIngreso1').val(json.CanalDeIngreso);
+}

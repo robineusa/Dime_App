@@ -107,11 +107,65 @@ namespace Dime.Controllers
         }
         public JsonResult TraerInformacionCliente(int CuentaCliente)
         {
-            return new JsonResult()
+            CEPDesconexiones clientegestionado = new CEPDesconexiones();
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            decimal cuenta = Convert.ToDecimal(CuentaCliente);
+            clientegestionado = CierreService.ConsultarCuentaDesconexionporCuenta(cuenta);
+
+            if (clientegestionado != null)
             {
-                Data = JsonConvert.SerializeObject(inboundservice.TraerClienteCompletoPorCuenta(CuentaCliente)),
-                JsonRequestBehavior = JsonRequestBehavior.DenyGet
-            };
+                return new JsonResult()
+                {
+                    Data = JsonConvert.SerializeObject(clientegestionado),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
+            }
+            else
+            {
+                clientegestionado = new CEPDesconexiones();
+                clientegestionado.IdGestion = 0;
+                return new JsonResult()
+                {
+                    Data = JsonConvert.SerializeObject(clientegestionado),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
+            }
+        }
+        public ActionResult ConsultaGestionUsuario()
+        {
+            return View();
+        }
+        public JsonResult TraerInformacionCliente2(int CuentaCliente)
+        {
+            CEPAsigDesconexiones clienteasignado = new CEPAsigDesconexiones();
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            decimal cuenta = Convert.ToDecimal(CuentaCliente);
+            clienteasignado = CierreService.ValidarCuentaAsignada(Usuario, 0, cuenta);
+
+            if (clienteasignado != null)
+            {
+                return new JsonResult()
+                {
+                    Data = JsonConvert.SerializeObject(clienteasignado),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
+            }
+            else
+            {
+                ClientesTodo Cliente = new ClientesTodo();
+                clienteasignado = new CEPAsigDesconexiones();
+                Cliente = inboundservice.TraerClienteCompletoPorCuenta(CuentaCliente);
+                if (Cliente != null)
+                {
+                    clienteasignado.Nota1 = Convert.ToString(Cliente.Cuenta + " - TEL: " + Cliente.Telefono1 + " - " + Cliente.Telefono2 + " - " + Cliente.Telefono3);
+                    clienteasignado.Nota2 = Convert.ToString(Cliente.Nodo + " " + Cliente.Apellido);
+                }
+                return new JsonResult()
+                {
+                    Data = JsonConvert.SerializeObject(clienteasignado),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
+            }
         }
         public JsonResult ListaDeGestionDesconexionesAgente()
         {
@@ -231,6 +285,16 @@ namespace Dime.Controllers
                 Data = JsonConvert.SerializeObject(Arbol.IdPadre),
                 JsonRequestBehavior = JsonRequestBehavior.DenyGet
             };
+        }
+        public JsonResult ConsultaDeGestionDesconexionesJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            decimal usuario = Convert.ToDecimal(Session["Usuario"]);
+
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ConsultaDeGestionDesconexionesAgente(FechaInicial, FechaFinal,usuario)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
     }
 }
