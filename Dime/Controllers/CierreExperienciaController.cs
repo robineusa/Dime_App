@@ -39,8 +39,8 @@ namespace Dime.Controllers
                     modelo.CEPDesconexiones.Nota2 = modelo.CEPAsigDesconexiones.Nota2;
                     modelo.CEPDesconexiones.FechaDeSolicitud = modelo.CEPAsigDesconexiones.FechaDeSolicitud;
                     modelo.CEPDesconexiones.FechaDeCorte = modelo.CEPAsigDesconexiones.FechaDeCorte;
-                    modelo.CEPDesconexiones.FechaDePreaviso = modelo.CEPAsigDesconexiones.FechaDePreaviso;
-                    modelo.CEPDesconexiones.FechaDeAsignacion = modelo.CEPAsigDesconexiones.FechaDeAsignacion;
+                    modelo.CEPDesconexiones.FechaDePreaviso = Convert.ToDateTime(modelo.CEPAsigDesconexiones.FechaDePreaviso);
+                    modelo.CEPDesconexiones.FechaDeAsignacion = Convert.ToDateTime(modelo.CEPAsigDesconexiones.FechaDeAsignacion);
                     
                 }
                 else
@@ -51,6 +51,7 @@ namespace Dime.Controllers
             else
             {
                 modelo.CEPDesconexiones = CierreService.TraeDesconexionPorId(Convert.ToDecimal(IdGestion));
+                modelo.CEPDesconexiones.Observaciones = "";
             }
             return View(modelo);
         }
@@ -58,7 +59,59 @@ namespace Dime.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Desconexiones(ViewModelCierreExperiencia modelo)
         {
-            return View();
+            modelo.CEPDesconexiones.UsuarioDeGestion = Convert.ToDecimal(Session["Usuario"]);
+            modelo.CEPDesconexiones.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+
+            if (modelo.CEPDesconexiones.IdGestion > 0) {
+                CierreService.ActualizarDesconexion(modelo.CEPDesconexiones);
+            }
+            else
+            {
+                CierreService.RegistrarDesconexion(modelo.CEPDesconexiones, Convert.ToDecimal(modelo.CEPAsigDesconexiones.Id));
+            }
+            return RedirectToAction("Desconexiones", "CierreExperiencia");
+        }
+        [HttpGet]
+        public ActionResult DesconexionesIn(string IdGestion)
+        {
+            ViewModelCierreExperiencia modelo = new ViewModelCierreExperiencia();
+            ViewBag.Asignacion = null;
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            if (IdGestion == null || IdGestion.Equals(""))
+            {
+               
+            }
+            else
+            {
+                modelo.CEPDesconexiones = CierreService.TraeDesconexionPorId(Convert.ToDecimal(IdGestion));
+                modelo.CEPDesconexiones.Observaciones = "";
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DesconexionesIn(ViewModelCierreExperiencia modelo)
+        {
+            modelo.CEPDesconexiones.UsuarioDeGestion = Convert.ToDecimal(Session["Usuario"]);
+            modelo.CEPDesconexiones.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+
+            if (modelo.CEPDesconexiones.IdGestion > 0)
+            {
+                CierreService.ActualizarDesconexion(modelo.CEPDesconexiones);
+            }
+            else
+            {
+                CierreService.RegistrarDesconexion(modelo.CEPDesconexiones, Convert.ToDecimal(modelo.CEPAsigDesconexiones.Id));
+            }
+            return RedirectToAction("DesconexionesIn", "CierreExperiencia");
+        }
+        public JsonResult TraerInformacionCliente(int CuentaCliente)
+        {
+            return new JsonResult()
+            {
+                Data = JsonConvert.SerializeObject(inboundservice.TraerClienteCompletoPorCuenta(CuentaCliente)),
+                JsonRequestBehavior = JsonRequestBehavior.DenyGet
+            };
         }
         public JsonResult ListaDeGestionDesconexionesAgente()
         {

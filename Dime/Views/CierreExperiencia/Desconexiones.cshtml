@@ -4,7 +4,7 @@
     ViewBag.Subtitle = "Procesos - Cierre de la Experiencia";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("Desconexiones", "CierreExperiencia", FormMethod.Post, new { id = "datosCliente", role = "form", onkeydown = "return event.keyCode!=13" }))
+@using (Html.BeginForm("Desconexiones", "CierreExperiencia", FormMethod.Post, new { id = "desconexiones", role = "form"}))
 {
     @Html.AntiForgeryToken()
     <div class="nav-tabs-custom">
@@ -22,36 +22,46 @@
                         <td width="200" style="padding:1px;">
                             <small>Cuenta del Cliente:  </small>
                             @Html.TextBoxFor(m => m.CEPDesconexiones.CuentaCliente, new { @class = "form-control input-sm", @readonly = "true" })
+                          @Html.HiddenFor(m => m.CEPAsigDesconexiones.Id)
+                            @Html.HiddenFor(m => m.CEPDesconexiones.IdGestion)
                         </td>
                         <td width="200" style="padding:1px;">
                             <small>Fecha de Solicitud:  </small>
                             @Html.TextBoxFor(m => m.CEPDesconexiones.FechaDeSolicitud, new { @class = "form-control input-sm", @readonly = "true" })
+                          
                         </td>
                         <td width="200" style="padding:1px;">
                             <small>Fecha de Corte:  </small>
                             @Html.TextBoxFor(m => m.CEPDesconexiones.FechaDeCorte, new { @class = "form-control input-sm", @readonly = "true" })
+                          
                         </td>
                         <td width="200" style="padding:1px;">
                             <small>Fecha de Preaviso:  </small>
-                            @Html.TextBoxFor(m => m.CEPDesconexiones.FechaDePreaviso, new { @class = "form-control input-sm", @readonly = "true" })
+                            @Html.TextBoxFor(m => m.CEPDesconexiones.FechaDePreaviso, new { @class = "form-control input-sm", @readonly = "true", type = "datetime" })
+                           
+                            
                         </td>
                         <td width="200" style="padding:1px;">
                             <small>Fecha de Asignación: </small>
-                            @Html.TextBoxFor(m => m.CEPDesconexiones.FechaDeAsignacion, new { @class = "form-control input-sm", @readonly = "true" })
+                            @Html.TextBoxFor(m => m.CEPDesconexiones.FechaDeAsignacion, new { @class = "form-control input-sm", @readonly = "true", @Id= "FechaDeAsignacion", type = "datetime" })
+                           
                         </td>
                         <td width="200" style="padding:1px;">
                             <small>Canal de Ingreso:</small>
-                            @Html.DropDownListFor(m => m.CEPDesconexiones.CanalDeIngreso, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "CanalDeIngreso", @class = "form-control input-sm" })
+                            @Html.TextBoxFor(m => m.CEPDesconexiones.CanalDeIngreso, new { @class = "form-control input-sm", @readonly = "true" })
+                            
                         </td>
                     </tr>
                     <tr>
-                        <td width="200" style="padding:1px;">
+                        <td width="600" style="padding:1px;" colspan="3">
                             <small>Nota 1:</small>
                             @Html.TextBoxFor(m => m.CEPDesconexiones.Nota1, new { @class = "form-control input-sm", @readonly = "true" })
+                            
                         </td>
-                        <td width="200" style="padding:1px;">
+                        <td width="600" style="padding:1px;" colspan="3">
                             <small>Nota 2:</small>
                             @Html.TextBoxFor(m => m.CEPDesconexiones.Nota2, new { @class = "form-control input-sm", @readonly = "true" })
+                            
                         </td>
                     </tr>
 
@@ -86,26 +96,30 @@
                 <tr>
                     <td style="padding-left:1px; width:400px;">
                         <smmall>Gestión:</smmall>
+                        @Html.HiddenFor(m => m.CEPDesconexiones.Gestion, new { @class = "form-control input-sm", @Id = "SelectGestion1" })
                         @Html.DropDownListFor(m => m.CEPDesconexiones.Gestion, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "SelectGestion", @class = "form-control input-sm" })
                         @Html.ValidationMessageFor(m => m.CEPDesconexiones.Gestion, "", new { @class = "text-danger" })
                     </td>
                     <td style="padding-left:1px; width:400px;">
                         <small>Subrazon:</small>
+                        @Html.HiddenFor(m => m.CEPDesconexiones.Subrazon, new { @class = "form-control input-sm", @Id = "Subrazon1" })
                         @Html.DropDownListFor(m => m.CEPDesconexiones.Subrazon, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Subrazon", @class = "form-control input-sm" })
                         @Html.ValidationMessageFor(m => m.CEPDesconexiones.Subrazon, "", new { @class = "text-danger" })
                     </td>
                     <td style="padding-left:1px; width:200px;">
                         <small>Estado</small>
                         @Html.TextBoxFor(m => m.CEPDesconexiones.Estado, new { @class = "form-control input-sm", @readonly = "true",Id="Estado" })
+                        
+                    </td>
+                    <td style="padding-left:1px; width:200px;">
+                        <small>Movie Letter:</small>
+                        @Html.TextBoxFor(m => m.CEPDesconexiones.MovieLetter, new { @class = "form-control input-sm" })
                     </td>
                 </tr>
             </table>
            <table>
                <tr>
-                   <td style="padding-left:1px; width:200px;">
-                       <small>Movie Letter:</small>
-                       @Html.TextBoxFor(m => m.CEPDesconexiones.MovieLetter, new { @class = "form-control input-sm" })
-                       </td>
+                   
                    <td style="padding-left:1px; width:200px;">
                        <small>Requiere Ajuste:</small>
                        @Html.DropDownListFor(m => m.CEPDesconexiones.Ajuste, new List<SelectListItem> {new SelectListItem{Text="SI", Value="SI" },
@@ -136,6 +150,7 @@
                    </td>
                    <td style="padding-left:1px; width:200px;">
                        <small>Tipo de Error:</small>
+                       @Html.HiddenFor(m => m.CEPDesconexiones.TipoDeError, new { @class = "form-control input-sm", @Id = "TipoDeError1" })
                        @Html.DropDownListFor(m => m.CEPDesconexiones.TipoDeError, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "TipoDeError", @class = "form-control input-sm" })
                        @Html.ValidationMessageFor(m => m.CEPDesconexiones.TipoDeError, "", new { @class = "text-danger" })
                    </td>
@@ -205,17 +220,17 @@
     </div>
 }
 @section Scripts{
-  
+  @*@Scripts.Render("~/AdminLTEplugins/jquery-validate/js")*@
         <script>
             var UrlListaDeGestion = '@Url.Action("ListaDeGestionDesconexionesAgente", "CierreExperiencia")';
             var UrlListaDeSeguimientos = '@Url.Action("ListaDeSeguimientosDesconexionesAgente", "CierreExperiencia")';
             var UrlArbolDeGestion = '@Url.Action("ArbolesDeTipificacionDesconexion", "CierreExperiencia")';
             var UrlDatosArbol = '@Url.Action("TraerDatosDelArbol", "CierreExperiencia")';
         </script>
-<script src="~/Scripts/CierreExperiencia/Desconexiones.js?1.0.2"></script> 
+<script src="~/Scripts/CierreExperiencia/Desconexiones.js?1.0.4"></script> 
     <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
     <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />
 
-    @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
+    
 }

@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
-    TraerArbolCanalDeIngreso();
     TraerArbolDeGestion();
+    ListaSubrazones();
     TraerArbolTipoDeError();
     TraerListaGestionUsuario();
     TraerListaSeguimientosUsuario();
@@ -51,7 +51,7 @@
         $("#Li5").css("background-color", "#dcdcdc");
 
     });
-
+    
 });
 function TraerArbolDeGestion() {
     var IdPadre = "7";
@@ -71,6 +71,17 @@ function TraerArbolDeGestion() {
                 }));
 
             }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("SelectGestion");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("SelectGestion1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                }
+            }
 
         },
         error: function (request, status, error) {
@@ -81,35 +92,6 @@ function TraerArbolDeGestion() {
     $('#SelectGestion').find('option:not(:first)').remove();
 
 }
-function TraerArbolCanalDeIngreso() {
-    var IdPadre = "5";
-    
-    $.ajax({
-        type: "POST",
-        url: UrlArbolDeGestion,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ IdPadre: IdPadre }),
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            for (var index = 0, len = json.length; index < len; index++) {
-                $('#CanalDeIngreso').append($('<option>', {
-                    value: json[index].IdArbol,
-                    text: json[index].Descripcion
-                }));
-
-            }
-
-        },
-        error: function (request, status, error) {
-            alert(request.responseText);
-        }
-    });
-   
-    $('#CanalDeIngreso').find('option:not(:first)').remove();
-  
-}
-
 function TraerArbolTipoDeError() {
     var IdPadre = "8";
 
@@ -128,19 +110,57 @@ function TraerArbolTipoDeError() {
                 }));
 
             }
-
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("TipoDeError");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("TipoDeError1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                }
+            }
         },
         error: function (request, status, error) {
             alert(request.responseText);
         }
     });
-
+    $("#TipoDeError").append("<option value=''>--SELECCIONE--</option>");
+    $("#TipoDeError").append("<option value='NO APLICA'>--NO APLICA--</option>");
     $('#TipoDeError').find('option:not(:first)').remove();
 
 }
+$('#TipoDeError').change(function () {
+    DatosDeLaGestion();
+    var NuevaIdSelesct = document.getElementById("TipoDeError");
+    var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
+    $('#TipoDeError1').val(NuevoText);
+})
+$('#ErrorSolicitud').change(function () {
+    var Eserror = $('#ErrorSolicitud').val();
+    var val1 = "NO APLICA";
+    var val2 = "";
+    if (Eserror == "SI") {
+        $('#UsuarioSolicitud').prop('readonly', false); $('#UsuarioSolicitud').val(val2);
+        $('#UsuarioSolicitud').prop('placeholder', 'Ingrese el usuario');
+        $("#TipoDeError").empty();
+        TraerArbolTipoDeError();
+    } else {
+        $('#UsuarioSolicitud').prop('readonly', true); $('#UsuarioSolicitud').val(val1);
+        $("#TipoDeError").empty();
+        $('#TipoDeError').prop('readonly', true);
+        $("#TipoDeError").append("<option value='NO APLICA'>NO APLICA</option>");
+        $('#TipoDeError1').val(val1);
+    }
+})
+
 $('#SelectGestion').change(function () {
     ListaSubrazones();
-    
+    var NuevaIdGestion = document.getElementById("SelectGestion");
+        var NuevaGestion = NuevaIdGestion.options[NuevaIdGestion.selectedIndex].text;
+        $('#SelectGestion1').val(NuevaGestion);
+  
 })
 function ListaSubrazones() {
     var IdPadre = $('#SelectGestion').val();
@@ -165,7 +185,17 @@ function ListaSubrazones() {
                     }));
 
                 }
-
+                // creamos un variable que hace referencia al select
+                var select = document.getElementById("Subrazon");
+                // obtenemos el valor a buscar
+                var buscar = document.getElementById("Subrazon1").value;
+                // recorremos todos los valores del select
+                for (var i = 1; i < select.length; i++) {
+                    if (select.options[i].text == buscar) {
+                        // seleccionamos el valor que coincide
+                        select.selectedIndex = i;
+                    }
+                }
             },
             error: function (request, status, error) {
                 alert(request.responseText);
@@ -179,7 +209,9 @@ function ListaSubrazones() {
 
 $('#Subrazon').change(function () {
     DatosDeLaGestion();
-    
+    var NuevaIdSubrazon = document.getElementById("Subrazon");
+    var NuevaSubrazon = NuevaIdSubrazon.options[NuevaIdSubrazon.selectedIndex].text;
+    $('#Subrazon1').val(NuevaSubrazon);
 })
 
 function DatosDeLaGestion() {
@@ -228,12 +260,19 @@ function TraerListaGestionUsuario() {
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
+            cambiarfechas(json);
             cargargrilla(json);
         },
         error: function (request, status, error) {
             alert(request.responseText);
         }
     });
+}
+
+function cambiarfechas(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i].FechaDeTransaccion = kendo.toString(kendo.parseDate(data[i].FechaDeTransaccion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+    }
 }
 function cargargrilla(data) {
     $("#historicoGrid").kendoGrid({
@@ -279,13 +318,19 @@ function TraerListaSeguimientosUsuario() {
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
-            console.log(json);
+            cambiarfechasseg(json);
             cargargrillaseg(json);
         },
         error: function (request, status, error) {
             alert(request.responseText);
         }
     });
+}
+function cambiarfechasseg(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i].FechaDeGestion = kendo.toString(kendo.parseDate(data[i].FechaDeGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+        data[i].FechaDeSeguimiento = kendo.toString(kendo.parseDate(data[i].FechaDeSeguimiento, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+    }
 }
 function cargargrillaseg(data) {
     $("#seguimientosGrid").kendoGrid({
@@ -311,9 +356,8 @@ function cargargrillaseg(data) {
         },
         columns: [
         { command: { text: " Editar", click: ActualizarCasoSeg, imageClass: "fa fa-fw fa-pencil-square-o", }, title: "Editar", width: "60px" },
-        { field: "IdTransaccion", title: "Id Transacción", width: 100 },
         { field: "IdGestion", title: "Id Gestion", width: 100 },
-        { field: "FechaDeTransaccion", title: "Fecha De Transaccion", width: 100 },
+        { field: "FechaDeGestion", title: "Fecha De Gestion", width: 100 },
         { field: "CuentaCliente", title: "Cuenta Cliente", width: 100 },
         { field: "Gestion", title: "Gestion", width: 100 },
         { field: "Subrazon", title: "Subrazon", width: 100 },
