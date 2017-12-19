@@ -2369,6 +2369,7 @@
     <Content Include="Scripts\Gestion_Blending\AsignarBasesAdmin.js" />
     <Content Include="Scripts\Gestion_Blending\SkillsUsuariosAdmin.js" />
     <Content Include="Scripts\Inbound\Retencion.js" />
+    <Content Include="Scripts\LiberacionesHomePass\LiberacionesHomePass.js" />
     <Content Include="Scripts\Manage\ChangeSecurityQuestions.js" />
     <Content Include="Scripts\Manuales\ManualAdministrador.js" />
     <Content Include="Scripts\Manuales\ManualAsesor.js" />
