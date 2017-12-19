@@ -18664,10 +18664,10 @@ namespace Dime.WSD {
     public interface ISignalRService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISignalRService/InsertarNotificacionSignalR", ReplyAction="http://tempuri.org/ISignalRService/InsertarNotificacionSignalRResponse")]
-        void InsertarNotificacionSignalR(Telmexla.Servicios.DIME.Entity.NotificacionSignalR model);
+        decimal InsertarNotificacionSignalR(Telmexla.Servicios.DIME.Entity.NotificacionSignalR model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISignalRService/InsertarNotificacionSignalR", ReplyAction="http://tempuri.org/ISignalRService/InsertarNotificacionSignalRResponse")]
-        System.Threading.Tasks.Task InsertarNotificacionSignalRAsync(Telmexla.Servicios.DIME.Entity.NotificacionSignalR model);
+        System.Threading.Tasks.Task<decimal> InsertarNotificacionSignalRAsync(Telmexla.Servicios.DIME.Entity.NotificacionSignalR model);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISignalRService/ListaNoNotificados", ReplyAction="http://tempuri.org/ISignalRService/ListaNoNotificadosResponse")]
         System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.NotificacionSignalR> ListaNoNotificados(decimal Usuario);
@@ -18680,6 +18680,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISignalRService/InsertarUsuarioNotificadoSignalR", ReplyAction="http://tempuri.org/ISignalRService/InsertarUsuarioNotificadoSignalRResponse")]
         System.Threading.Tasks.Task InsertarUsuarioNotificadoSignalRAsync(System.Collections.Generic.List<string> ListaNotificaciones, Telmexla.Servicios.DIME.Entity.UsuariosNotificadosSignalR model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISignalRService/ListTodosMensajes", ReplyAction="http://tempuri.org/ISignalRService/ListTodosMensajesResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.NotificacionSignalR> ListTodosMensajes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISignalRService/ListTodosMensajes", ReplyAction="http://tempuri.org/ISignalRService/ListTodosMensajesResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.NotificacionSignalR>> ListTodosMensajesAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18709,11 +18715,11 @@ namespace Dime.WSD {
                 base(binding, remoteAddress) {
         }
         
-        public void InsertarNotificacionSignalR(Telmexla.Servicios.DIME.Entity.NotificacionSignalR model) {
-            base.Channel.InsertarNotificacionSignalR(model);
+        public decimal InsertarNotificacionSignalR(Telmexla.Servicios.DIME.Entity.NotificacionSignalR model) {
+            return base.Channel.InsertarNotificacionSignalR(model);
         }
         
-        public System.Threading.Tasks.Task InsertarNotificacionSignalRAsync(Telmexla.Servicios.DIME.Entity.NotificacionSignalR model) {
+        public System.Threading.Tasks.Task<decimal> InsertarNotificacionSignalRAsync(Telmexla.Servicios.DIME.Entity.NotificacionSignalR model) {
             return base.Channel.InsertarNotificacionSignalRAsync(model);
         }
         
@@ -18731,6 +18737,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task InsertarUsuarioNotificadoSignalRAsync(System.Collections.Generic.List<string> ListaNotificaciones, Telmexla.Servicios.DIME.Entity.UsuariosNotificadosSignalR model) {
             return base.Channel.InsertarUsuarioNotificadoSignalRAsync(ListaNotificaciones, model);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.NotificacionSignalR> ListTodosMensajes() {
+            return base.Channel.ListTodosMensajes();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.NotificacionSignalR>> ListTodosMensajesAsync() {
+            return base.Channel.ListTodosMensajesAsync();
         }
     }
     

@@ -14,7 +14,6 @@ function Registra_Eventos(connect) {
     $('#EnviarMSGlobalBS').click(function () {            
         connect.server.insertaNotificacion("Mensaje Global Buen Servicio", $("#MensajeBS").val(), Usuario);
         $("#MensajeBS").val('');
-        //connect.server.connect(UserConnect2); 
     });
     $('#NotificarBS').click(function () {
         connect.server.notificacion(NameImage, LinkDir, Id, Description);
@@ -25,18 +24,11 @@ function Registra_Eventos(connect) {
         }
     });
     $('#messages_menu').click(function () {
-        if (MensajesaGuardar.length > 0) {
-            for (i = 0; i < MensajesaGuardar.length; i++) {
-                connect.server.addMessageinCache2(MensajesaGuardar[i].Id, UserConnect2);
-            }
-        }
-        connect.server.connect(UserConnect2);
-        MensajesaGuardar = null;
-        $('#MensajeCount').empty();
+        connect.server.guardaMensajeBuenServicio($("#IdMsj").val(), Usuario, "2");
+        $("#IdMsj").val('');
     });
     $('#BListNotify').click(function () {
-        connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
-        //connect.server.connect(UserConnect2);
+        connect.server.guardaMensajeBuenServicio($("#IdMsj").val(), Usuario, "1");
         $("#IdMsj").val('');
     });
     $('#NotificaOfertas').click(function () {
@@ -69,6 +61,21 @@ function Llama_Metodos(connect, UserConnect) {
         var V_Usuario = $('<div/>').text(userName).html();
         var V_Message = $('<div/>').text(message).html();
         
+        var f = new Date();
+        var dd = f.getDate();
+        var mm = f.getMonth() + 1;
+        var yy = f.getFullYear();
+        var hh = f.getHours();
+        var m = f.getMinutes();
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+        if (m < 10) {
+            m = '0' + m
+        }
         var V_Fecha = dd + '-' + mm + '-' + yy + '&nbsp;&nbsp;' + hh + ':' + m;
 
         $("#Administrador").append('<div class="direct-chat-msg">' +
@@ -95,8 +102,9 @@ function Llama_Metodos(connect, UserConnect) {
         if (UserConnect2 != 'Buen Servicio') {
             $("#ChatGeneral").css('display', 'block');
             $("#ChatGeneral2").css('display', 'block');
-            $('#IdMsj').val(id);
-            //setTimeout('EjecutaBTN()', 1);
+            $("#IdMsj").val('');
+            $("#IdMsj").val(id);
+            setTimeout('EjecutaBTN()', 0);
         } else { /*$("#ChatGeneral2").css('display', 'block');*/ }
         
     }
@@ -115,33 +123,35 @@ function Llama_Metodos(connect, UserConnect) {
         //play_single_sound();
     }
 
-    connect.client.onConnected = function (messages) {
+    connect.client.notificaMensajes = function (messages) {
         if (messages.length > 0) {
             $('#MensajeCount').empty();
+            $("#IdMsj").val('');
             if (UserConnect2 != 'Buen Servicio') {
                 for (i = 0; i < messages.length; i++)
                 {
-                    MensajesaGuardar.push(messages[i]);
+                    if ($("#IdMsj").val() != "") {
+                        $("#IdMsj").val($("#IdMsj").val() + "-" + messages[i].Id);
+                    } else {
+                        $("#IdMsj").val(messages[i].Id);
+                    }
                 }
-                console.log(MensajesaGuardar);
+
                 $('#MensajeCount').append('' + messages.length + '');
-                for (i = 0; i < messages.length; i++) {
-                    AddMessage(messages[i].Id, messages[i].UserName, messages[i].Message);
-                }
+                //for (i = 0; i < messages.length; i++) {
+                //    AddMessage(messages[i].Id, messages[i].UsuarioNotifica, messages[i].ContenidoAlerta);
+                //}
 
             }
         }
-        else { alert('' + messages.length); $('#MensajeCount').empty(); }
+        else { $('#MensajeCount').empty(); }
     }
     
     connect.client.connectEver = function (messages) {
-        //if (UserConnect2 == 'Buen Servicio') {
-            
-        //}
         if (messages.length > 0) {
                 $('#MensajesNoNotificados').empty();
                 for (i = messages.length-1; i > messages.length - 4; i--) {
-                    AddMessage(messages[i].Id, messages[i].UserName, messages[i].Message);
+                    AddMessage(messages[i].Id, messages[i].UsuarioNotifica, messages[i].ContenidoAlerta);
                 }
         }
         else {
@@ -151,8 +161,6 @@ function Llama_Metodos(connect, UserConnect) {
                                              '<h4 style="text-align: center;"> No existen Mensajes</h4>' +
                                          '</div>' +
                                      '</li>');
-            //$('#SeeAllmsn').empty();
-            
         }
     }
 
@@ -191,6 +199,12 @@ function Llama_Metodos(connect, UserConnect) {
         $('#IdOfertaComercial').val('');
         $('#OfertasCount').empty();
         $('#images_menu').removeClass("images_menu");
+    }
+
+    connect.client.FinNotificaMensajes = function () {
+        $("#IdMsj").val('');
+        $('#MensajeCount').empty();
+        //$('#images_menu').removeClass("images_menu");
     }
 }
 
