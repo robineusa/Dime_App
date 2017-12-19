@@ -158,7 +158,7 @@ namespace Dime.Controllers
                 if (Cliente != null)
                 {
                     clienteasignado.Nota1 = Convert.ToString(Cliente.Cuenta + " - TEL: " + Cliente.Telefono1 + " - " + Cliente.Telefono2 + " - " + Cliente.Telefono3);
-                    clienteasignado.Nota2 = Convert.ToString(Cliente.Nodo + " " + Cliente.Apellido);
+                    clienteasignado.Nota2 = Convert.ToString(Cliente.Nombre + " " + Cliente.Apellido);
                 }
                 return new JsonResult()
                 {
@@ -211,16 +211,36 @@ namespace Dime.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult Tickets()
+        public ActionResult Tickets(string IdGestion)
         {
             ViewModelCierreExperiencia modelo = new ViewModelCierreExperiencia();
+            if (IdGestion == null || IdGestion.Equals(""))
+            {
+                
+            }
+            else
+            {
+                modelo.CEPTickets = CierreService.ConsultaDeTicketPorNumero(Convert.ToDecimal(IdGestion));
+            }
+               
             return View(modelo);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Tickets(ViewModelCierreExperiencia modelo)
         {
-            return View();
+            modelo.CEPTickets.UsuarioDeGestion = Convert.ToDecimal(Session["Usuario"]);
+            modelo.CEPTickets.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+
+            if (modelo.CEPTickets.IdGestion > 0)
+            {
+                CierreService.ActualizarTicket(modelo.CEPTickets);
+            }
+            else
+            {
+                CierreService.RegistrarTicketBase(modelo.CEPTickets);
+            }
+            return RedirectToAction("Tickets", "CierreExperiencia");
         }
         [HttpGet]
         public ActionResult SuspencionesTemporales()
@@ -295,6 +315,51 @@ namespace Dime.Controllers
             var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ConsultaDeGestionDesconexionesAgente(FechaInicial, FechaFinal,usuario)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
+        }
+        public JsonResult ListaDeGestionAgenteTickets()
+        {
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ListaDeGestionAgenteTicketsCierreExperiencia(Usuario)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ListaDeSeguimientosAgenteTickets()
+        {
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ListaSeguimientosAgenteTicketCierreExperiencia(Usuario)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult TraerInformacionClienteTicket(int CuentaCliente)
+        {
+            ClientesTodo Cliente = new ClientesTodo();
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            Cliente = inboundservice.TraerClienteCompletoPorCuenta(CuentaCliente);
+
+            if (Cliente != null)
+            {
+                CEPTickets ticket = new CEPTickets();
+                ticket.Nota1 = Convert.ToString(Cliente.Cuenta + " - TEL: " + Cliente.Telefono1 + " - " + Cliente.Telefono2 + " - " + Cliente.Telefono3);
+                ticket.Nota2 = Convert.ToString(Cliente.Nombre + " " + Cliente.Apellido);
+                return new JsonResult()
+                {
+                    Data = JsonConvert.SerializeObject(ticket),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
+            }
+            else
+            {
+                Cliente = new ClientesTodo();
+                CEPTickets ticket = new CEPTickets();
+                ticket.Nota1 = "";
+                ticket.Nota2 = "";
+
+                return new JsonResult()
+                {
+                    Data = JsonConvert.SerializeObject(ticket),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
+            }
         }
     }
 }

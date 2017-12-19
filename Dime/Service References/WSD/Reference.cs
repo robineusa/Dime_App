@@ -18889,6 +18889,52 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultarCuentaDesconexionporCuenta", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultarCuentaDesconexionporCuentaR" +
             "esponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> ConsultarCuentaDesconexionporCuentaAsync(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/RegistrarTicketBase", ReplyAction="http://tempuri.org/ICierreExperienciaService/RegistrarTicketBaseResponse")]
+        void RegistrarTicketBase(Telmexla.Servicios.DIME.Entity.CEPTickets Ticket);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/RegistrarTicketBase", ReplyAction="http://tempuri.org/ICierreExperienciaService/RegistrarTicketBaseResponse")]
+        System.Threading.Tasks.Task RegistrarTicketBaseAsync(Telmexla.Servicios.DIME.Entity.CEPTickets Ticket);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ActualizarTicket", ReplyAction="http://tempuri.org/ICierreExperienciaService/ActualizarTicketResponse")]
+        void ActualizarTicket(Telmexla.Servicios.DIME.Entity.CEPTickets Ticket);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ActualizarTicket", ReplyAction="http://tempuri.org/ICierreExperienciaService/ActualizarTicketResponse")]
+        System.Threading.Tasks.Task ActualizarTicketAsync(Telmexla.Servicios.DIME.Entity.CEPTickets Ticket);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaDeTicketPorNumero", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaDeTicketPorNumeroResponse")]
+        Telmexla.Servicios.DIME.Entity.CEPTickets ConsultaDeTicketPorNumero(decimal IdGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaDeTicketPorNumero", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaDeTicketPorNumeroResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPTickets> ConsultaDeTicketPorNumeroAsync(decimal IdGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaDeGestionTicketsAgente", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaDeGestionTicketsAgenteRespon" +
+            "se")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets> ConsultaDeGestionTicketsAgente(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaDeGestionTicketsAgente", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaDeGestionTicketsAgenteRespon" +
+            "se")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets>> ConsultaDeGestionTicketsAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteTicketsCierreExp" +
+            "eriencia", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteTicketsCierreExp" +
+            "erienciaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets> ListaDeGestionAgenteTicketsCierreExperiencia(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteTicketsCierreExp" +
+            "eriencia", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteTicketsCierreExp" +
+            "erienciaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets>> ListaDeGestionAgenteTicketsCierreExperienciaAsync(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteTicketCierreE" +
+            "xperiencia", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteTicketCierreE" +
+            "xperienciaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPTickets> ListaSeguimientosAgenteTicketCierreExperiencia(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteTicketCierreE" +
+            "xperiencia", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteTicketCierreE" +
+            "xperienciaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPTickets>> ListaSeguimientosAgenteTicketCierreExperienciaAsync(decimal Usuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19052,6 +19098,54 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> ConsultarCuentaDesconexionporCuentaAsync(decimal Cuenta) {
             return base.Channel.ConsultarCuentaDesconexionporCuentaAsync(Cuenta);
+        }
+        
+        public void RegistrarTicketBase(Telmexla.Servicios.DIME.Entity.CEPTickets Ticket) {
+            base.Channel.RegistrarTicketBase(Ticket);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarTicketBaseAsync(Telmexla.Servicios.DIME.Entity.CEPTickets Ticket) {
+            return base.Channel.RegistrarTicketBaseAsync(Ticket);
+        }
+        
+        public void ActualizarTicket(Telmexla.Servicios.DIME.Entity.CEPTickets Ticket) {
+            base.Channel.ActualizarTicket(Ticket);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarTicketAsync(Telmexla.Servicios.DIME.Entity.CEPTickets Ticket) {
+            return base.Channel.ActualizarTicketAsync(Ticket);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPTickets ConsultaDeTicketPorNumero(decimal IdGestion) {
+            return base.Channel.ConsultaDeTicketPorNumero(IdGestion);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPTickets> ConsultaDeTicketPorNumeroAsync(decimal IdGestion) {
+            return base.Channel.ConsultaDeTicketPorNumeroAsync(IdGestion);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets> ConsultaDeGestionTicketsAgente(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario) {
+            return base.Channel.ConsultaDeGestionTicketsAgente(FechaInicial, FechaFinal, Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets>> ConsultaDeGestionTicketsAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario) {
+            return base.Channel.ConsultaDeGestionTicketsAgenteAsync(FechaInicial, FechaFinal, Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets> ListaDeGestionAgenteTicketsCierreExperiencia(decimal Usuario) {
+            return base.Channel.ListaDeGestionAgenteTicketsCierreExperiencia(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets>> ListaDeGestionAgenteTicketsCierreExperienciaAsync(decimal Usuario) {
+            return base.Channel.ListaDeGestionAgenteTicketsCierreExperienciaAsync(Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPTickets> ListaSeguimientosAgenteTicketCierreExperiencia(decimal Usuario) {
+            return base.Channel.ListaSeguimientosAgenteTicketCierreExperiencia(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPTickets>> ListaSeguimientosAgenteTicketCierreExperienciaAsync(decimal Usuario) {
+            return base.Channel.ListaSeguimientosAgenteTicketCierreExperienciaAsync(Usuario);
         }
     }
 }

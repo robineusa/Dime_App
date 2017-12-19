@@ -2341,6 +2341,7 @@
     <Content Include="Scripts\CierreExperiencia\Desconexiones.js" />
     <Content Include="Scripts\CierreExperiencia\ListaArboles.js" />
     <Content Include="Scripts\CierreExperiencia\SuspensionesTemporales.js" />
+    <Content Include="Scripts\CierreExperiencia\Tickets.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Gestion.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Paloteo.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Rechazos.js" />
@@ -3148,6 +3149,8 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPDesconexiones.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.MaestroFestivos1.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Macroprocesos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPTickets.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CELTickets.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />

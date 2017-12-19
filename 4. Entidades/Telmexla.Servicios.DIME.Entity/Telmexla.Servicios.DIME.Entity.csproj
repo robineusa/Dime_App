@@ -120,9 +120,11 @@
     <Compile Include="CcResidencialPredictivoInfo.cs" />
     <Compile Include="CcSegundaTipificacion.cs" />
     <Compile Include="CELDesconexiones.cs" />
+    <Compile Include="CELTickets.cs" />
     <Compile Include="CEMArbolesDeGestion.cs" />
     <Compile Include="CEPAsigDesconexiones.cs" />
     <Compile Include="CEPDesconexiones.cs" />
+    <Compile Include="CEPTickets.cs" />
     <Compile Include="CierreCiclo.cs" />
     <Compile Include="CierreCicloCollection.cs" />
     <Compile Include="ClaroVideo.cs" />
