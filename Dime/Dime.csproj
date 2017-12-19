@@ -2337,6 +2337,7 @@
     <Content Include="Scripts\CierreDeCiclo\ConsultaGestiones.js" />
     <Content Include="Scripts\CierreDeCiclo\HistorialGestiones.js" />
     <Content Include="Scripts\CierreExperiencia\Desconexiones.js" />
+    <Content Include="Scripts\CierreExperiencia\ListaArboles.js" />
     <Content Include="Scripts\CierreExperiencia\SuspensionesTemporales.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Gestion.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Paloteo.js" />
@@ -3672,6 +3673,8 @@
     <Content Include="Views\CierreExperiencia\LiberacionesDeHomePass.cshtml" />
     <Content Include="Views\CierreExperiencia\Tickets.cshtml" />
     <Content Include="Views\CierreExperiencia\SuspencionesTemporales.cshtml" />
+    <Content Include="Views\CierreExperiencia\ListaArboles.cshtml" />
+    <Content Include="Views\CierreExperiencia\AdministrarArboles.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

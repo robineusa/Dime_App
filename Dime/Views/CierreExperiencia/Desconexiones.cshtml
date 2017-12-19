@@ -20,7 +20,7 @@
                 <table>
                     <tr>
                         <td width="200" style="padding:1px;">
-                            <small>Nombre del Cliente:  </small>
+                            <small>Cuenta del Cliente:  </small>
                             @Html.TextBoxFor(m => m.CEPDesconexiones.CuentaCliente, new { @class = "form-control input-sm", @readonly = "true" })
                         </td>
                         <td width="200" style="padding:1px;">
@@ -41,7 +41,7 @@
                         </td>
                         <td width="200" style="padding:1px;">
                             <small>Canal de Ingreso:</small>
-                            @Html.DropDownListFor(m => m.CEPDesconexiones.CanalDeIngreso, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "CanalDeIngreso", @class = "form-control" })
+                            @Html.DropDownListFor(m => m.CEPDesconexiones.CanalDeIngreso, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "CanalDeIngreso", @class = "form-control input-sm" })
                         </td>
                     </tr>
                     <tr>
@@ -68,8 +68,8 @@
         </div>
     </div>
 
-    <br />
-    <div class="box box-primary">
+    
+    <div class="box box-primary" style="padding-left:5px;">
         <div class="box-body">
             <div class="row">
                 <div class="col-xs-12">
@@ -84,50 +84,59 @@
             <br />
             <table>
                 <tr>
-                    <td style="padding-left:1px; width:200px;">
-                        <label>Gestión:</label>
-                        @Html.DropDownListFor(m => m.CEPDesconexiones.Gestion, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Gestion", @class = "form-control" })
+                    <td style="padding-left:1px; width:400px;">
+                        <smmall>Gestión:</smmall>
+                        @Html.DropDownListFor(m => m.CEPDesconexiones.Gestion, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "SelectGestion", @class = "form-control input-sm" })
                         @Html.ValidationMessageFor(m => m.CEPDesconexiones.Gestion, "", new { @class = "text-danger" })
                     </td>
-                    <td style="padding-left:1px; width:200px;">
-                        <label>Subrazon:</label>
-                        @Html.DropDownListFor(m => m.CEPDesconexiones.Subrazon, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Subrazon", @class = "form-control" })
+                    <td style="padding-left:1px; width:400px;">
+                        <small>Subrazon:</small>
+                        @Html.DropDownListFor(m => m.CEPDesconexiones.Subrazon, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Subrazon", @class = "form-control input-sm" })
                         @Html.ValidationMessageFor(m => m.CEPDesconexiones.Subrazon, "", new { @class = "text-danger" })
                     </td>
                     <td style="padding-left:1px; width:200px;">
-                        <label>Estado</label>
-                        @Html.TextBoxFor(m => m.CEPDesconexiones.Estado, new { @class = "form-control input-sm", @readonly = "true",@Id="Estado" })
+                        <small>Estado</small>
+                        @Html.TextBoxFor(m => m.CEPDesconexiones.Estado, new { @class = "form-control input-sm", @readonly = "true",Id="Estado" })
                     </td>
                 </tr>
             </table>
            <table>
                <tr>
                    <td style="padding-left:1px; width:200px;">
-                       <label>Movie Letter:</label>
-                       @Html.TextBoxFor(m => m.CEPDesconexiones.MovieLetter, new { @class = "form-control input-sm", @readonly = "true" })
+                       <small>Movie Letter:</small>
+                       @Html.TextBoxFor(m => m.CEPDesconexiones.MovieLetter, new { @class = "form-control input-sm" })
                        </td>
                    <td style="padding-left:1px; width:200px;">
-                       <label>Requiere Ajuste:</label>
-                       @Html.DropDownListFor(m => m.CEPDesconexiones.Ajuste, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Ajuste", @class = "form-control" })
+                       <small>Requiere Ajuste:</small>
+                       @Html.DropDownListFor(m => m.CEPDesconexiones.Ajuste, new List<SelectListItem> {new SelectListItem{Text="SI", Value="SI" },
+                                                                                             new SelectListItem{Text="NO", Value="NO" }},
+                                                                                                              "--SELECCIONE--", new { @class = "form-control input-sm" })
                        @Html.ValidationMessageFor(m => m.CEPDesconexiones.Ajuste, "", new { @class = "text-danger" })
                    </td>
                    <td style="padding-left:1px; width:200px;">
-                       <label>Servicios Desconectados:</label>
-                       @Html.DropDownListFor(m => m.CEPDesconexiones.CantidadServicio, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "CantidadServicio", @class = "form-control" })
+                       <small>Servicios Desconectados:</small>
+                       @Html.DropDownListFor(m => m.CEPDesconexiones.CantidadServicio, new List<SelectListItem> {new SelectListItem{Text="0", Value="0" },
+                                                                                             new SelectListItem{Text="1", Value="1" },
+                                                                                             new SelectListItem{Text="2", Value="2" },
+                                                                                             new SelectListItem{Text="3", Value="3" }},
+                                                                                                              "--SELECCIONE--", new { @class = "form-control input-sm" })
                        @Html.ValidationMessageFor(m => m.CEPDesconexiones.CantidadServicio, "", new { @class = "text-danger" })
                    </td>
                    <td style="padding-left:1px; width:200px;">
-                       <label>Error en Solicitud:</label>
-                       @Html.DropDownListFor(m => m.CEPDesconexiones.ErrorSolicitud, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "ErrorSolicitud", @class = "form-control" })
+                       <small>Error en Solicitud:</small>
+                       
+                       @Html.DropDownListFor(m => m.CEPDesconexiones.ErrorSolicitud, new List<SelectListItem> {new SelectListItem{Text="SI", Value="SI" },
+                                                                                             new SelectListItem{Text="NO", Value="NO" }},
+                                                                                                              "--SELECCIONE--", new { @class = "form-control input-sm",@Id= "ErrorSolicitud" })
                        @Html.ValidationMessageFor(m => m.CEPDesconexiones.ErrorSolicitud, "", new { @class = "text-danger" })
                    </td>
                    <td style="padding-left:1px; width:200px;">
-                       <label>Usuario Solicitud:</label>
+                       <small>Usuario Solicitud:</small>
                        @Html.TextBoxFor(m => m.CEPDesconexiones.UsuarioSolicitud, new { @class = "form-control input-sm", @Id= "UsuarioSolicitud" })
                    </td>
                    <td style="padding-left:1px; width:200px;">
-                       <label>Tipo de Error:</label>
-                       @Html.DropDownListFor(m => m.CEPDesconexiones.TipoDeError, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "TipoDeError", @class = "form-control" })
+                       <small>Tipo de Error:</small>
+                       @Html.DropDownListFor(m => m.CEPDesconexiones.TipoDeError, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "TipoDeError", @class = "form-control input-sm" })
                        @Html.ValidationMessageFor(m => m.CEPDesconexiones.TipoDeError, "", new { @class = "text-danger" })
                    </td>
                </tr>
@@ -137,7 +146,7 @@
         <br />
     </div>
 
-    <div class="box box-primary" id="TituloSeguimiento" style="display:inline-block;">
+    <div class="box box-primary" id="TituloSeguimiento" style="display:none; padding-left:5px;">
         <div class="box-body">
             <div class="row">
                 <div class="col-xs-12">
@@ -165,8 +174,8 @@
         </div>
         <br />
     </div>
-    <br />
-    <div class="box box-primary">
+    
+    <div class="box box-primary" style="padding-left:5px;">
         <div class="box-body">
             <div class="row">
                 <div class="col-xs-12">
@@ -180,14 +189,18 @@
         </h2>
         <div id="CuerpoSeguimineto" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
             <br />
-            <table>
+            <table width="100%">
                 <tr>
-                    <td style="padding:1px; width:1200px;">
-                        @Html.TextAreaFor(m => m.CEPDesconexiones.Observaciones, new { @class = "form-control input-sm", placeholder = "", style = "width:100%; height:70px;" })
+                    <td style="padding:1px;">
+                        @Html.TextAreaFor(m => m.CEPDesconexiones.Observaciones, new { @class = "form-control input-sm", placeholder = "", style = "width:100%; height:70px;text-transform:uppercase;",@onkeyup = "javascript:this.value=this.value.toUpperCase();" })
                     </td>
                 </tr>
             </table>
+            
         </div>
+        <br />
+        <button id="guardardesconexion" type="submit" class="btn btn-primary" name="guardar" value="true" style="width:10%; height:40px;">Guardar</button>
+        <br />
         <br />
     </div>
 }
@@ -198,11 +211,11 @@
             var UrlListaDeSeguimientos = '@Url.Action("ListaDeSeguimientosDesconexionesAgente", "CierreExperiencia")';
             var UrlArbolDeGestion = '@Url.Action("ArbolesDeTipificacionDesconexion", "CierreExperiencia")';
             var UrlDatosArbol = '@Url.Action("TraerDatosDelArbol", "CierreExperiencia")';
-        </script>}
- 
+        </script>
+<script src="~/Scripts/CierreExperiencia/Desconexiones.js?1.0.2"></script> 
     <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
     <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />
-<script src="~/Scripts/CierreExperiencia/Desconexiones.js"></script>
+
     @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
 }

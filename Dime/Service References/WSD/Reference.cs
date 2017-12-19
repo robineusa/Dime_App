@@ -18833,6 +18833,24 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeDesconexionPorId", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeDesconexionPorIdResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> TraeDesconexionPorIdAsync(decimal IdGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ApartarCuentadeDesconexiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ApartarCuentadeDesconexionesResponse" +
+            "")]
+        Telmexla.Servicios.DIME.Entity.CEPAsigDesconexiones ApartarCuentadeDesconexiones(decimal Cedula, int noRecursividad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ApartarCuentadeDesconexiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ApartarCuentadeDesconexionesResponse" +
+            "")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigDesconexiones> ApartarCuentadeDesconexionesAsync(decimal Cedula, int noRecursividad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListasDeArbolesCierreExperienciaAdmi" +
+            "n", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListasDeArbolesCierreExperienciaAdmi" +
+            "nResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion> ListasDeArbolesCierreExperienciaAdmin(decimal IdPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListasDeArbolesCierreExperienciaAdmi" +
+            "n", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListasDeArbolesCierreExperienciaAdmi" +
+            "nResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion>> ListasDeArbolesCierreExperienciaAdminAsync(decimal IdPadre);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18956,6 +18974,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> TraeDesconexionPorIdAsync(decimal IdGestion) {
             return base.Channel.TraeDesconexionPorIdAsync(IdGestion);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPAsigDesconexiones ApartarCuentadeDesconexiones(decimal Cedula, int noRecursividad) {
+            return base.Channel.ApartarCuentadeDesconexiones(Cedula, noRecursividad);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigDesconexiones> ApartarCuentadeDesconexionesAsync(decimal Cedula, int noRecursividad) {
+            return base.Channel.ApartarCuentadeDesconexionesAsync(Cedula, noRecursividad);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion> ListasDeArbolesCierreExperienciaAdmin(decimal IdPadre) {
+            return base.Channel.ListasDeArbolesCierreExperienciaAdmin(IdPadre);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEMArbolesDeGestion>> ListasDeArbolesCierreExperienciaAdminAsync(decimal IdPadre) {
+            return base.Channel.ListasDeArbolesCierreExperienciaAdminAsync(IdPadre);
         }
     }
 }

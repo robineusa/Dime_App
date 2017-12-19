@@ -1,8 +1,10 @@
 ﻿$(document).ready(function () {
-    ListaTipoDeContacto();
+    TraerArbolCanalDeIngreso();
+    TraerArbolDeGestion();
+    TraerArbolTipoDeError();
     TraerListaGestionUsuario();
     TraerListaSeguimientosUsuario();
-    TraerArbolDeGestion();
+    
 
     $("#Li1").click(function () {
 
@@ -52,7 +54,8 @@
 
 });
 function TraerArbolDeGestion() {
-    var IdPadre = "0";
+    var IdPadre = "7";
+
     $.ajax({
         type: "POST",
         url: UrlArbolDeGestion,
@@ -61,9 +64,8 @@ function TraerArbolDeGestion() {
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
-            var object = json[0];
             for (var index = 0, len = json.length; index < len; index++) {
-                $('#Gestion').append($('<option>', {
+                $('#SelectGestion').append($('<option>', {
                     value: json[index].IdArbol,
                     text: json[index].Descripcion
                 }));
@@ -75,16 +77,74 @@ function TraerArbolDeGestion() {
             alert(request.responseText);
         }
     });
-    $('#Gestion').find('option:not(:first)').remove();
-    $('#Subrazon').find('option:not(:first)').remove();
+
+    $('#SelectGestion').find('option:not(:first)').remove();
+
+}
+function TraerArbolCanalDeIngreso() {
+    var IdPadre = "5";
+    
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#CanalDeIngreso').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+   
+    $('#CanalDeIngreso').find('option:not(:first)').remove();
   
 }
-$('#Gestion').change(function () {
+
+function TraerArbolTipoDeError() {
+    var IdPadre = "8";
+
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#TipoDeError').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+    $('#TipoDeError').find('option:not(:first)').remove();
+
+}
+$('#SelectGestion').change(function () {
     ListaSubrazones();
     
 })
 function ListaSubrazones() {
-    var IdPadre = $('#Gestion').val();
+    var IdPadre = $('#SelectGestion').val();
+    console.log(IdPadre);
     if (IdPadre == "--SELECCIONE--" || IdPadre == "" || IdPadre == " ") {
         $('#Subrazon').find('option:not(:first)').remove();
         
@@ -119,7 +179,7 @@ function ListaSubrazones() {
 
 $('#Subrazon').change(function () {
     DatosDeLaGestion();
-   
+    
 })
 
 function DatosDeLaGestion() {
@@ -134,12 +194,13 @@ function DatosDeLaGestion() {
             var json = JSON.parse(result);
             
             $('#Estado').val(json.EstadoDeGestion);
+            ValidarEstado(json.EstadoDeGestion);
         }
     });
 
 }
-$('#Estado').change(function () {
-    var Estado = $('#Estado').val();
+function ValidarEstado(Estado) {
+    
     if (Estado == "SEGUIMIENTO") {
         document.getElementById('TituloSeguimiento').style.display = 'inline-block';
         document.getElementById('TituloSeguimiento').style.width = '100%';
@@ -157,7 +218,7 @@ $('#Estado').change(function () {
         step: 30
     });
     LimpiarFecha();
-})
+}
 
 function TraerListaGestionUsuario() {
     $.ajax({
