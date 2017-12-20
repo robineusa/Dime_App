@@ -442,8 +442,22 @@ function DatosClienteCuenta1(Cuenta) {
             var Nota1 = json.Nota1;
             var Nota2 = json.Nota2;
             if (json.IdGestion > 0) {
-                alert('La cuenta ya fue gestionada durante el mes en curso');
-                location.reload();
+                $.alert({
+                    theme: 'Modern',
+                    icon: 'fa fa-warning',
+                    boxWidth: '500px',
+                    useBootstrap: false,
+                    type: 'red',
+                    title: '¡ Oops !',
+                    content: 'La Cuenta ya Fue Gestionada Durante el Mes en Curso',
+                    buttons: {
+                        Ok: {
+                            btnClass: 'btn-red',
+                            action: function () { location.reload(); }
+
+                        },
+                    }
+                });
             }
             else {
                 DatosClienteCuenta(Cuenta);
@@ -466,42 +480,74 @@ function DatosClienteCuenta(Cuenta) {
             var Nota1 = json.Nota1;
             var Nota2 = json.Nota2;
             if (json.Id > 0) {
-                alert('La cuenta se encuentra asignada en la base potencial');
-                for (var i = 0; i < json.length; i++) {
-                    json[i].FechaDeSolicitud = kendo.toString(kendo.parseDate(json[i].FechaDeSolicitud, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-                    json[i].FechaDeCorte = kendo.toString(kendo.parseDate(json[i].FechaDeCorte, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-                    json[i].FechaDePreaviso = kendo.toString(kendo.parseDate(json[i].FechaDePreaviso, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-                    json[i].FechaDeAsignacion = kendo.toString(kendo.parseDate(json[i].FechaDeAsignacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-                }
-                $('#Id').val(json.Id);
-                $('#Nota1').val(json.Nota1);
-                $('#Nota2').val(json.Nota2);
-                $('#FechaDeSolicitud').val(json.FechaDeSolicitud);
-                $('#FechaDeSolicitud').prop('readonly', true);
-                $('#FechaDeCorte').val(json.FechaDeCorte);
-                $('#FechaDeCorte').prop('readonly', true);
-                $('#FechaDePreaviso').val(json.FechaDePreaviso);
-                $('#FechaDePreaviso').prop('readonly', true);
-                $('#FechaDeAsignacion').val(json.FechaDeAsignacion);
-                $('#FechaDeAsignacion').prop('readonly', true);
-                $('#CanalDeIngreso1').val(json.CanalDeIngreso);
-                // creamos un variable que hace referencia al select
-                var select = document.getElementById("CanalDeIngreso");
-                // obtenemos el valor a buscar
-                var buscar = document.getElementById("CanalDeIngreso1").value;
-                // recorremos todos los valores del select
-                for (var i = 1; i < select.length; i++) {
-                    if (select.options[i].text == buscar) {
-                        // seleccionamos el valor que coincide
-                        select.selectedIndex = i;
+                $.alert({
+                    theme: 'Modern',
+                    icon: 'fa fa-warning',
+                    boxWidth: '500px',
+                    useBootstrap: false,
+                    type: 'red',
+                    title: '¡ Oops !',
+                    content: 'La Cuenta se Encuentra Asignada en la Base Potencial',
+                    buttons: {
+                        Ok: {
+                            btnClass: 'btn-red',
+                            action: function () {
+                                for (var i = 0; i < json.length; i++) {
+                                    json[i].FechaDeSolicitud = kendo.toString(kendo.parseDate(json[i].FechaDeSolicitud, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+                                    json[i].FechaDeCorte = kendo.toString(kendo.parseDate(json[i].FechaDeCorte, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+                                    json[i].FechaDePreaviso = kendo.toString(kendo.parseDate(json[i].FechaDePreaviso, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+                                    json[i].FechaDeAsignacion = kendo.toString(kendo.parseDate(json[i].FechaDeAsignacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+                                }
+                                $('#Id').val(json.Id);
+                                $('#Nota1').val(json.Nota1);
+                                $('#Nota2').val(json.Nota2);
+                                $('#FechaDeSolicitud').val(json.FechaDeSolicitud);
+                                $('#FechaDeSolicitud').prop('readonly', true);
+                                $('#FechaDeCorte').val(json.FechaDeCorte);
+                                $('#FechaDeCorte').prop('readonly', true);
+                                $('#FechaDePreaviso').val(json.FechaDePreaviso);
+                                $('#FechaDePreaviso').prop('readonly', true);
+                                $('#FechaDeAsignacion').val(json.FechaDeAsignacion);
+                                $('#FechaDeAsignacion').prop('readonly', true);
+                                $('#CanalDeIngreso1').val(json.CanalDeIngreso);
+                                // creamos un variable que hace referencia al select
+                                var select = document.getElementById("CanalDeIngreso");
+                                // obtenemos el valor a buscar
+                                var buscar = document.getElementById("CanalDeIngreso1").value;
+                                // recorremos todos los valores del select
+                                for (var i = 1; i < select.length; i++) {
+                                    if (select.options[i].text == buscar) {
+                                        // seleccionamos el valor que coincide
+                                        select.selectedIndex = i;
+                                    }
+                                }
+                                FormatoFechas();
+                            }
+
+                        },
                     }
-                }
-                FormatoFechas();
+                });
+                
             } else {
-                alert('No existe información de la cuenta, por favor suministrela');
-                $('#Nota1').val(Nota1);
-                $('#Nota2').val(Nota2);
-                FormatoFechas();
+                $.alert({
+                    theme: 'Modern',
+                    icon: 'fa fa-warning',
+                    boxWidth: '500px',
+                    useBootstrap: false,
+                    type: 'red',
+                    title: '¡ Oops !',
+                    content: 'No Existe Información de la Cuenta, Por Favor Suministrela',
+                    buttons: {
+                        Ok: {
+                            btnClass: 'btn-red',
+                            action: function () {
+                                $('#Nota1').val(Nota1);
+                                $('#Nota2').val(Nota2);
+                                FormatoFechas();
+                            }
+                        },
+                    }
+                });
             }
         }
     });
