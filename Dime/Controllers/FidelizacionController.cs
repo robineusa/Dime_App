@@ -187,43 +187,118 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult ActualizarRecursiva(decimal id)
         {
+            var idNivel = 0;
+            
+
             ViewModelRecursiva modelo = new ViewModelRecursiva();
             modelo.Recursiva = fidelizacionServicio.getRecursivaById(id);
-            //modelo.ListRecursiva = fidelizacionServicio.getRecursivaVistaAll();
+            var test = fidelizacionServicio.getRecursivaArbol(modelo.Recursiva.ParentId);
 
-            ViewBag.Lista = fidelizacionServicio.getRecursivaVistaAll();
+            string [] labelList = new string[test.Count];
+            //IEnumerable<SelectListItem> [] termsList = new IEnumerable<SelectListItem>[test.Count];
+            List<FidelizacionRecursiva> [] termsList = new List<FidelizacionRecursiva>[test.Count];
+            for (int i = 0; i < test.Count; i++)
+            {
+                var listado = fidelizacionServicio.getRecursivaAll(test[i].ParentId, idNivel);
+                List<FidelizacionRecursiva> otra = new List<FidelizacionRecursiva>();
+                termsList[i] = GetSelectListItems(listado, test[i].Id);
+                labelList[i] = test[i].Label;
+                //termsList[i] = otra;
+            }
 
+            
+            
+            ViewBag.Lista = termsList;
+            ViewBag.Label = labelList;
+
+            var est = "";
             return View(modelo);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult ActualizarRecursiva(ViewModelRecursiva objRecursiva)
         {
-
             if (objRecursiva.Recursiva.Nombre == "" || objRecursiva.Recursiva.Nombre == null)
             {
-                ViewBag.errorMotivo = "Escriba el título de la opción que desea crear";
+                ViewBag.errorNombre = "Escriba el nuevo dato que desea crear";
+                return View(objRecursiva);
             }
-            else if (objRecursiva.Recursiva.ParentId < 1 || Convert.ToString(objRecursiva.Recursiva.ParentId) == "")
+            var idPadre = 1;
+            if (Request.Form["sltEstrategias_1"] == "0")
             {
-                ViewBag.errorOtrosCampos = "Indique a cual opcion desea asociarlo (Escoja un padre)";
-            }
-            else if (objRecursiva.Recursiva.Label == "" || objRecursiva.Recursiva.Label == null)
-            {
-                ViewBag.errorOtrosOfrecimientos = "Indique La etiqueta que desea colocarle en el momento de seleccionarlo";
+                objRecursiva.Recursiva.ParentId = idPadre;
+                //ViewBag.errorPadre = "Seleccione el padre de esta opción";
             }
             else
             {
-                var Padre = fidelizacionServicio.getRecursivaVistaById(objRecursiva.Recursiva.ParentId);
-                string recu = ((Request.Form["Recuperacion"] == "false") ? "0" : "1");
-                string ret = ((Request.Form["Retencion"] == "false") ? "0" : "1");
-                string cont = ((Request.Form["Contencion"] == "false") ? "0" : "1");
 
-                objRecursiva.Recursiva.VerNivel = cont + ret + recu;
-                fidelizacionServicio.updateRecursiva(objRecursiva.Recursiva);
-                return RedirectToAction("ListarRecursiva");
+                var c1 = 1;
+
+                do
+                {
+                    c1++;
+                }
+                while (Request.Form["sltEstrategias_" + c1] != null && Request.Form["sltEstrategias_" + c1] != "0");
+                if (c1 - 1 == 1)
+                    idPadre = Convert.ToInt32(Request.Form["sltEstrategias_1"]);
+                else
+                    idPadre = Convert.ToInt32(Request.Form["sltEstrategias_" + (c1 - 1)]);
+
+
+                var E1 = fidelizacionServicio.getRecursivaAll(Convert.ToInt32(Request.Form["sltEstrategias_" + (c1 - 1)]), 0);
+
+                //idPadre = Convert.ToInt32(Request.Form["sltEstrategias_" + (c1 - 1)]);
+                //modelo.Recursiva.ParentId = idPadre;
+
+
             }
-            return View(objRecursiva);
+            var nivelPadre = 1;
+            if (idPadre != 1)
+            {
+                var Padre = fidelizacionServicio.getRecursivaById(idPadre);
+                nivelPadre = Convert.ToInt32(Padre.Nivel + 1);
+            }
+            objRecursiva.Recursiva.ParentId = idPadre;
+
+            string recu = ((Request.Form["Recuperacion"] == "false") ? "0" : "1");
+            string ret = ((Request.Form["Retencion"] == "false") ? "0" : "1");
+            string cont = ((Request.Form["Contencion"] == "false") ? "0" : "1");
+            //modelo.Recursiva.Label = "Test";
+            objRecursiva.Recursiva.VerNivel = cont + ret + recu;
+            objRecursiva.Recursiva.Nivel = nivelPadre;
+            fidelizacionServicio.setRecursiva(objRecursiva.Recursiva);
+            return RedirectToAction("ListarRecursiva");
+
+            /*return View(modelo)*/
+            ;
+
+
+
+
+            //if (objRecursiva.Recursiva.Nombre == "" || objRecursiva.Recursiva.Nombre == null)
+            //{
+            //    ViewBag.errorMotivo = "Escriba el título de la opción que desea crear";
+            //}
+            //else if (objRecursiva.Recursiva.ParentId < 1 || Convert.ToString(objRecursiva.Recursiva.ParentId) == "")
+            //{
+            //    ViewBag.errorOtrosCampos = "Indique a cual opcion desea asociarlo (Escoja un padre)";
+            //}
+            //else if (objRecursiva.Recursiva.Label == "" || objRecursiva.Recursiva.Label == null)
+            //{
+            //    ViewBag.errorOtrosOfrecimientos = "Indique La etiqueta que desea colocarle en el momento de seleccionarlo";
+            //}
+            //else
+            //{
+            //    var Padre = fidelizacionServicio.getRecursivaVistaById(objRecursiva.Recursiva.ParentId);
+            //    string recu = ((Request.Form["Recuperacion"] == "false") ? "0" : "1");
+            //    string ret = ((Request.Form["Retencion"] == "false") ? "0" : "1");
+            //    string cont = ((Request.Form["Contencion"] == "false") ? "0" : "1");
+
+            //    objRecursiva.Recursiva.VerNivel = cont + ret + recu;
+            //    fidelizacionServicio.updateRecursiva(objRecursiva.Recursiva);
+            //    return RedirectToAction("ListarRecursiva");
+            //}
+            //return View(objRecursiva);
         }
 
         [HttpGet]
@@ -1052,7 +1127,83 @@ namespace Dime.Controllers
 
             return Json(txt.ToUpper(), JsonRequestBehavior.AllowGet);
         }
-        
+
+        //private List<SelectListItem> ListaDesplegable(List<FidelizacionRecursiva> test, decimal idSeleccionado) {
+        //    List<FidelizacionRecursiva> items = new List<FidelizacionRecursiva>();
+        //    foreach (FidelizacionRecursiva temporal in test) {
+        //        if (idSeleccionado == temporal.Id)
+        //        items.Add(new SelectListItem { Text = temporal.Nombre, Value = Convert.ToString(temporal.Id), Selected = true });
+        //        else
+        //            items.Add(new SelectListItem { Text = temporal.Nombre, Value = Convert.ToString(temporal.Id)});
+        //    }
+
+        //    //items.Add(new SelectListItem { Text = "Action", Value = "0" });
+
+        //    //items.Add(new SelectListItem { Text = "Drama", Value = "1" });
+
+        //    //items.Add(new SelectListItem { Text = "Comedy", Value = "2", Selected = true });
+
+        //    //items.Add(new SelectListItem { Text = "Science Fiction", Value = "3" });
+
+        //    //ViewBag.MovieType = items;
+        //    return items;
+        //}
+        private List<FidelizacionRecursiva> GetSelectListItems(List<FidelizacionRecursiva> elements, decimal idSeleccionado)
+        {
+            List<FidelizacionRecursiva> selectList = new List<FidelizacionRecursiva>();
+            //var selectList = new Array();
+            
+            foreach (var element in elements)
+            {
+                if (idSeleccionado == element.Id)
+                {
+                    element.Label = "true";
+                    //selectList.Add(new SelectListItem
+                    //{
+                    //    Value = Convert.ToString(element.Id),
+                    //    Text = element.Nombre,
+                    //    Selected = true
+                    //});
+                }
+                else
+                {
+                    element.Label = "false";
+                    //selectList.Add(new SelectListItem
+                    //{
+                    //    Value = Convert.ToString(element.Id),
+                    //    Text = element.Nombre,
+                    //    Selected = false
+                    //});
+                }
+            }
+            var y = "";
+            return elements;
+            //var selectList = new List<SelectListItem>();
+
+            //foreach (var element in elements)
+            //{
+            //    if (idSeleccionado == element.Id)
+            //    {
+            //        selectList.Add(new SelectListItem
+            //        {
+            //            Value = Convert.ToString(element.Id),
+            //            Text = element.Nombre,
+            //            Selected = true
+            //        });
+            //    }
+            //    else
+            //    {
+            //        selectList.Add(new SelectListItem
+            //        {
+            //            Value = Convert.ToString(element.Id),
+            //            Text = element.Nombre,
+            //            Selected = false
+            //        });
+            //    }
+            //}
+            //var y = "";
+            //return selectList;
+        }
 
     }
 }

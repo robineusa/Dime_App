@@ -9,6 +9,11 @@
     @Html.AntiForgeryToken()
     if (Session["Administracion Fidelizacion"] != null)
     {
+        var listado = ViewBag.Lista;
+        var label = ViewBag.label;
+        var count = 0;
+        var labelCount = 1;
+        var tmp = listado[0][0].Nombre;
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
@@ -20,15 +25,60 @@
                             @Html.ValidationMessageFor(r => r.Recursiva.Id, "", new { @class = "text-danger" })
                         </div>
                         <div class="col-md-12">
+                            <small>Categoria</small>
+                            <select class="form-control input-sm">
+                                @foreach (var catPadre in listado[0])
+                                {
+                                    <option name="sltEstrategias_1" id="sltEstrategias_1" value="@catPadre.Id" selected="@catPadre.Label">@catPadre.Nombre</option>
+                                }
+                            </select>
+                            @*@Html.DropDownList(null, (IEnumerable<SelectListItem>)listado[0], "-SELECCIONE-", new { name= "sltEstrategias_1", Id = "sltEstrategias_1", onchange = "getChild(this.value, 'label_1', '')", @class = "form-control input-sm" })*@
+                        </div>
+                        <div class="col-md-12" id="divEstrategias">
+                            @foreach (var item in listado)
+                            {
+                                if (count > 0)
+                                {
+                                    <div class="col-md-12" id="level_@labelCount">
+                                        <small>@label[count] Padre</small>
+                                        <select class="form-control input-sm">
+                                            @foreach (var itemHijos in listado[count])
+                                            {
+                                               <option name="sltEstrategias_@labelCount" id="sltEstrategias_@labelCount" value="@itemHijos.Id" selected="@itemHijos.Label">@itemHijos.Nombre</option>
+                                            }
+                                            @*@Html.DropDownList("sltEstrategias_" + @labelCount, (IEnumerable<SelectListItem>)item, "-SELECCIONE-", new { Id = "sltEstrategias_" + @labelCount, onchange = "getChild(this.value, 'label_" + @labelCount + "', '')", @class = "form-control input-sm" })*@
+                                        </select>
+                                    </div>
+                                }
+
+
+                                count++;
+                                labelCount++;
+
+
+                            }
+                            @*<div class="col-md-12" id="level_@labelCount">
+                                <small>Padre</small>
+                                <select name="sltEstrategias_@labelCount" id="sltEstrategias_@labelCount" class="form-control input-sm">
+                                    <option value="0" >-Ninguno-</option>
+                                </select>
+                            </div>*@
+
+                        </div>
+
+
+
+
+                        <div class="col-md-12">
                             <small>Opcion</small>
                             @Html.TextBoxFor(m => m.Recursiva.Nombre, null, new { @class = "form-control input-sm ", Id = "txtNombreRecursiva" })
                             @Html.ValidationMessageFor(m => m.Recursiva.Nombre, "", new { @class = "text-danger" })
                         </div>
                         <div class="col-md-12">
                             <small>Padre</small>
-                            @Html.DropDownListFor(m => m.Recursiva.ParentId, new SelectList(ViewBag.Lista, "Id", "Nombre"), "-SELECCIONE-", new { Id = "sltPadreRecursiva", @class = "form-control input-sm" })
-                            @*@Html.DropDownListFor(m => m.Recursiva.ParentId, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "sltPadreRecursiva", @class = "form-control input-sm" })*@
-                            @Html.ValidationMessageFor(m => m.Recursiva.ParentId, "", new { @class = "text-danger" })
+                            @*@Html.DropDownList("new", (IEnumerable<SelectListItem>)ViewBag.Lista[2], "-SELECCIONE-", new { Id = "sltPadreRecursiva", @class = "form-control input-sm" })
+                                @Html.DropDownListFor(m => m.Recursiva.ParentId, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "sltPadreRecursiva", @class = "form-control input-sm" })
+                                @Html.ValidationMessageFor(m => m.Recursiva.ParentId, "", new { @class = "text-danger" })*@
 
                         </div>
                         <div class="col-md-12">
@@ -76,6 +126,7 @@
 
 
                         <div class="col-md-12 text-center" style="padding-top:0.8em">
+                            <button id="btnValida" type="button" class="btn btn-primary" name="Validar">Validar</button>
                             <button id="btnguardarpom" type="submit" class="btn btn-primary" name="Guardar" value="true">Guardar</button>
                             <button id="btnguardarpom" type="button" onclick="redirectList()" class="btn btn-danger" name="Guardar" value="true">Ver Listado</button>
                         </div>
@@ -126,10 +177,20 @@
 @section Scripts{
 
     <script src="~/Scripts/Fidelizacion/CrearSubmotivoCancelacion.js?1.0.0"></script>
+    <script src="~/Scripts/Fidelizacion/ActualizarRecursiva.js?v=1.0.0"></script>
     <script>
+        $("#btnValida").click(function () {
+            alert($("#sltEstrategias_1").val())
+        })
         redirectList = function () {
             window.location.href = 'ListarRecursiva';
         }
+        var urlGetChilds = '@Url.Action("getHijoRecursivaAdmonJson", "Fidelizacion")';
     </script>
 
 }
+<style>
+    #divEstrategias div {
+        padding: 0px;
+    }
+</style>
