@@ -192,7 +192,11 @@ namespace Dime.Controllers
 
             ViewModelRecursiva modelo = new ViewModelRecursiva();
             modelo.Recursiva = fidelizacionServicio.getRecursivaById(id);
-            var test = fidelizacionServicio.getRecursivaArbol(modelo.Recursiva.ParentId);
+            List<FidelizacionRecursiva> test = new List<FidelizacionRecursiva>();
+            if (modelo.Recursiva.ParentId == 1)
+                test = fidelizacionServicio.getRecursivaArbol(modelo.Recursiva.Id);
+            else
+                test = fidelizacionServicio.getRecursivaArbol(modelo.Recursiva.Id);
 
             string [] labelList = new string[test.Count];
             //IEnumerable<SelectListItem> [] termsList = new IEnumerable<SelectListItem>[test.Count];
@@ -266,7 +270,7 @@ namespace Dime.Controllers
             //modelo.Recursiva.Label = "Test";
             objRecursiva.Recursiva.VerNivel = cont + ret + recu;
             objRecursiva.Recursiva.Nivel = nivelPadre;
-            fidelizacionServicio.setRecursiva(objRecursiva.Recursiva);
+            fidelizacionServicio.updateRecursiva(objRecursiva.Recursiva);
             return RedirectToAction("ListarRecursiva");
 
             /*return View(modelo)*/
@@ -1157,7 +1161,7 @@ namespace Dime.Controllers
             {
                 if (idSeleccionado == element.Id)
                 {
-                    element.Label = "true";
+                    element.Label = "selected";
                     //selectList.Add(new SelectListItem
                     //{
                     //    Value = Convert.ToString(element.Id),
@@ -1167,7 +1171,7 @@ namespace Dime.Controllers
                 }
                 else
                 {
-                    element.Label = "false";
+                    element.Label = "";
                     //selectList.Add(new SelectListItem
                     //{
                     //    Value = Convert.ToString(element.Id),

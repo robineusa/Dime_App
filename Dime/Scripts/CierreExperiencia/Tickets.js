@@ -631,7 +631,7 @@ function ConsultarTicketBase(data) {
                         boxWidth: '500px',
                         useBootstrap: false,
                         type: 'red',
-                        title: 'Alerta',
+                        title: '¡ Oops !',
                         content: 'El Número de Ticket Ingresado ya se Encuentra en Seguimiento',
                         buttons: {
                             Ok: {
@@ -649,7 +649,7 @@ function ConsultarTicketBase(data) {
                         boxWidth: '500px',
                         useBootstrap: false,
                         type: 'red',
-                        title: 'Alerta',
+                        title: '¡ Oops !',
                         content: 'El Número de Ticket Ingresado ya se Encuentra Finalizado',
                         buttons: {
                             Ok: {
