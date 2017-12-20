@@ -41,7 +41,7 @@
 
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        <li id="images_menu" class="dropdown messages-menu images_menu">
+                        <li id="images_menu" class="dropdown messages-menu">
                             <a id="llamarofertas" href="#OfertasComerciales" onclick="LlamarVisualizadorImagenes();" data-toggle="modal" data-backdrop="static" data-keyboard="false" style="font-size:20px;">
                                 <i class="ion-radio-waves"></i>
                                 <span id="OfertasCount" class="label label-success"></span>
@@ -51,7 +51,7 @@
                         <li id="messages_menu" class="dropdown messages-menu">
                             <a id="number_Mensajes" href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-envelope-o"></i>
-                                <span id="MensajeCount" class="label label-success"></span>
+                                <span id="MensajeCount" class="label label-primary"></span>
                             </a>
                             <ul id="ul_mess_dropdown_menu" class="dropdown-menu">
                                 <li id="messHeader" style="text-align: center;" class="header"></li>
@@ -1254,14 +1254,13 @@
                         </div>
                     </div>
                     <input type="text" id="IdMsj" style="display:none;" />
-                    <button id="BListNotify" style="display:none">Text</button>
+                    <button id="BListNotify" style="display:none"></button>
 
                 </div>
 
                 <a id="BuenServicioHREF" href="#Buen_Servicio" data-toggle="modal" data-backdrop="static" data-keyboard="false">
 
                 </a>
-                @*<p id="status">7</p>*@
                 @RenderBody()
                 <div class="col-md-3" style="z-index:999; float: left; position: absolute; display:block; left:20%;">
                     <div id="ChatPrivado" style="display:block">
@@ -1551,7 +1550,7 @@
         <a id="lockScreenActivate" onclick="LockScreen(this)" style="display:none" value="LockScreenVal"></a>
         <div id="lockScreenDiv"></div>
         <button type="button" id="NotificaOfertaComercialCliente" style="display:none;"></button>
-        <input id="IdOfertaComercial" type="text" style="display:block;"/>
+        <input id="IdOfertaComercial" type="text" style="display:none;"/>
 
     </div>
 
@@ -1567,7 +1566,7 @@
 
     <script>var Usuario = '@Session["Usuario"].ToString()';</script>
     <link href="~/AdminLTE/bootstrap/css/EstilosNotificaciones.css?1.0.1" rel="stylesheet" />
-    <script src="~/Scripts/Shared/_AlertasLayout.js?1.2.10"></script>
+    <script src="~/Scripts/Shared/_AlertasLayout.js?1.2.12"></script>
     <script src="~/ViewsAlr/app.js?1.0.3"></script>
     <script src="~/ControllersAlr/mainAccessController.js?1.0.3"></script>
     <script src="~/ControllersAlr/ConsultaGestionController.js?1.3.4"></script>

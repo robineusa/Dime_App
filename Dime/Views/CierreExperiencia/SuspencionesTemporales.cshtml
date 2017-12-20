@@ -1,0 +1,212 @@
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelCierreExperiencia
+@{
+    ViewBag.Title = "Formulario de Suspensiónes Temporales";
+    ViewBag.Subtitle = "Procesos - Cierre de la Experiencia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
+    <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
+        <div class="row" style="margin-left: 10px;">
+            <div class="col-xs-2" style="width:200px; padding:1px;">
+                <small>Número de Cuenta:</small>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-4" style="width:450px;">
+                <table>
+                    <tr>
+                        <td style="min-width:200px; padding:1px;">
+                            <input type="text" class="form-control input-sm" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-9" style="width:100%; ">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321"><a href="#datosInfor" aria-controls="datosBasicos" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Informativos</a></li>
+                <li id="Li2" class="" ><a href="#Seguimientos" aria-controls="Seguimientos" data-toggle="tab" role="tab" style="background-color:transparent;">Seguimientos</a></li>
+                <li id="Li3" class="" ><a href="#MiHistorial" aria-controls="MiHistorial" data-toggle="tab" role="tab" style="background-color:transparent;">Mi Historial</a></li>
+            </ul>
+            <div class="tab-content" style="padding-left:0; padding-top: 0">
+                <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosInfor" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                    <table>
+                        <tr>
+                            <td width="200" style="padding:1px;">
+                                <small>Canal de ingreso:  </small>
+                            </td>
+                            <td width="200" style="padding:1px;">
+                                <small>Fecha creación:  </small>
+                            </td>
+                            <td width="200" style="padding:1px;">
+                                <small>Usuario creación:  </small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select  class="form-control input-sm">
+                                    <option>--Select--</option>
+                                    <option value="BASE">BASE</option>
+                                    <option value="CORREO">CORREO</option>
+                                    <option value="COMUNICATOR">COMUNICATOR</option>
+                                    <option value="MODULO">MODULO</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control input-sm" />
+                            </td>
+                            <td>
+                                <input type="text" class="form-control input-sm" />
+                            </td>
+
+                        </tr>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane tab-dime-first active " id="Seguimientos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                </div>
+                <div role="tabpanel" class="tab-pane tab-dime-first active " id="MiHistorial" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                </div>
+            </div>
+            </div>
+        </div>
+    <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="page-header" style="margin-top:25px">
+                            <i class="fa fa-sticky-note-o"></i> Gestión Asesor
+                        </h2>
+                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                            <br />
+                            <table>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Servicios a suspender:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Motivos de suspension:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Meses a suspender:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <select class="form-control input-sm">
+                                            <option>--Select--</option>
+                                            <option value="TV">TV</option>
+                                            <option value="INTERNET">INTERNET</option>
+                                            <option value="VOZ">VOZ</option>
+                                            <option value="TV - INTERNET">TV - INTERNET</option>
+                                            <option value="TV - VOZ">TV - VOZ</option>
+                                            <option value="VOZ - INTERNET">VOZ - INTERNET</option>
+                                            <option value="TV - VOZ - INTERNET">TV - VOZ - INTERNET</option>
+                                        </select>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <select class="form-control input-sm">
+                                            <option>--Select--</option>
+                                            <option value="BAJA UTILIZACIÓN">BAJA UTILIZACIÓN</option>
+                                            <option value="DAÑO DE EQUIPOS">DAÑO DE EQUIPOS</option>
+                                            <option value="MOTIVOS PERSONALES">MOTIVOS PERSONALES</option>
+                                            <option value="REMODELACIÓN">REMODELACIÓN</option>
+                                            <option value="TRASLADO">TRASLADO</option>
+                                            <option value="VIAJE">VIAJE</option>
+                                            <option value="SIN MOTIVO">SIN MOTIVO</option>
+                                        </select>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <select class="form-control input-sm">
+                                            <option>--Select--</option>
+                                            <option value="UN MES">UN MES</option>
+                                            <option value="DOS MESES">DOS MESES</option>
+                                            <option value="TRES MESES">TRES MESES</option>
+                                            <option value="CUATRO MESES">CUATRO MESES</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <strong><i class="fa fa-chevron-circle-down"></i>Gestión realizada:</strong>
+                            <table>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Cumple politicas:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Negación:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Seguimiento:  </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Estado: </small>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <small>Fecha Seguimiento:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="200" style="padding:1px;">
+                                        <select class="form-control input-sm">
+                                            <option>--Select--</option>
+                                            <option value="SE SUBE CUENTA AL MODULO">SE SUBE CUENTA AL MODULO</option>
+                                            <option value="SE APLICA CAMPAÑA">SE APLICA CAMPAÑA</option>
+                                            
+                                        </select>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <select class="form-control input-sm">
+                                            <option>--Select--</option>
+                                            <option value="LIMITE DE AÑO">LIMITE DE AÑO</option>
+                                            <option value="CANCELACION">CANCELACION</option>
+                                            <option value="DESISTIMIENTO">DESISTIMIENTO</option>
+                                            <option value="CUENTA DESCONECTADA POR MORA">CUENTA DESCONECTADA POR MORA</option>
+                                            <option value="SIN SOLICITUD">SIN SOLICITUD</option>
+                                            <option value="PYMES">PYMES</option>
+                                            <option value="INFORMACIÓN">INFORMACIÓN</option>
+                                        </select>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <select class="form-control input-sm">
+                                            <option>--Select--</option>
+                                            <option value="EN CURSO">EN CURSO</option>
+                                            <option value="PENDIENTE POR CONECTAR">PENDIENTE POR CONECTAR</option>
+                                            <option value="CUENTA CON CAMPAÑA">CUENTA CON CAMPAÑA</option>
+                                        </select>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <select class="form-control input-sm">
+                                            <option>--Select--</option>
+                                            <option value="FINALIZADO">FINALIZADO</option>
+                                            <option value="SEGUIMIENTO">SEGUIMIENTO</option>
+                                        </select>
+                                    </td>
+                                    <td width="200" style="padding:1px;">
+                                        <input id="FechaSeguimiento" type="text" class="form-control input-sm" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@section Scripts{
+    <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
+    <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.js"></script>
+    <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
+    <script src="~/Scripts/CierreExperiencia/SuspensionesTemporales.js?1.0.0"></script>
+
+
+    }
+

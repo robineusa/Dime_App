@@ -14,6 +14,8 @@ namespace Telmexla.Servicios.DIME.Entity
         CEMArbolesDeGestion cEMArbolesDeGestion;
         CEPAsigDesconexiones cEPAsigDesconexiones;
         CEPDesconexiones cEPDesconexiones;
+        CEPTickets cEPTickets;
+        CELTickets cELTickets;
         #endregion
 
         #region Constructores
@@ -23,6 +25,8 @@ namespace Telmexla.Servicios.DIME.Entity
             cEMArbolesDeGestion = new CEMArbolesDeGestion();
             cEPAsigDesconexiones = new CEPAsigDesconexiones();
             cEPDesconexiones = new CEPDesconexiones();
+            cEPTickets = new CEPTickets();
+            cELTickets = new CELTickets();
         }
 
 
@@ -78,6 +82,32 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 cEPDesconexiones = value;
+            }
+        }
+
+        public CEPTickets CEPTickets
+        {
+            get
+            {
+                return cEPTickets;
+            }
+
+            set
+            {
+                cEPTickets = value;
+            }
+        }
+
+        public CELTickets CELTickets
+        {
+            get
+            {
+                return cELTickets;
+            }
+
+            set
+            {
+                cELTickets = value;
             }
         }
         #endregion
