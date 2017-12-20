@@ -3151,6 +3151,9 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Macroprocesos.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPTickets.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CELTickets.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CELSuspensiones.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPSuspensiones.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />

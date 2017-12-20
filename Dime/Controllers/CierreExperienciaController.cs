@@ -245,6 +245,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult SuspencionesTemporales()
         {
+            //validar la asignacion auto
             ViewModelCierreExperiencia modelo = new ViewModelCierreExperiencia();
             return View(modelo);
         }
@@ -385,5 +386,20 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        public JsonResult ListaDeGestionAgenteSuspensiones()
+        {
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ListaDeGestionAgenteSuspensiones(Usuario)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ListaDeSeguimientosAgenteSuspensiones()
+        {
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ListaSeguimientosAgenteSuspensiones(Usuario)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
     }
 }
