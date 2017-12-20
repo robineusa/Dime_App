@@ -12,7 +12,7 @@ $(function Buen_Servicio() {
 
 function Registra_Eventos(connect) {
     $('#EnviarMSGlobalBS').click(function () {            
-        connect.server.insertaNotificacion("Mensaje Global Buen Servicio", $("#MensajeBS").val(), Usuario);
+        connect.server.insertaNotificacion("Mensaje Global Buen Servicio", $("#MensajeBS").val(), Usuario, NombreUsuario);
         $("#MensajeBS").val('');
     });
     $('#NotificarBS').click(function () {
@@ -36,7 +36,7 @@ function Registra_Eventos(connect) {
         if (Estado == "ACTIVA")
         {
             var Contenido = $('#Link').val();
-            connect.server.insertaNotificacion("Notificacion Oferta Comercial", Contenido, Usuario);
+            connect.server.insertaNotificacion("Notificacion Oferta Comercial", Contenido, Usuario, NombreUsuario);
         }
     });
     $('#NotificaOfertaComercialCliente').click(function () {

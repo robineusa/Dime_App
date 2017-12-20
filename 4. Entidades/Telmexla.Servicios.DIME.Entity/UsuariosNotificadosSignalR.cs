@@ -11,6 +11,7 @@ namespace Telmexla.Servicios.DIME.Entity
         public decimal Id { get; set; }
         public decimal IdNotificacion { get; set; }
         public decimal UsuarioNotificado{ get; set; }
+        public System.DateTime? FechaRevisado { get; set; }
 
         // Foreign keys
         public virtual NotificacionSignalR notificacionSignalR { get; set; }
