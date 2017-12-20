@@ -19007,6 +19007,12 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeRegistroAsignacionSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeRegistroAsignacionSuspensionesRe" +
             "sponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones> TraeRegistroAsignacionSuspensionesAsync(decimal IdAsignacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeSuspensionPorId", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeSuspensionPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.CEPSuspensiones TraeSuspensionPorId(decimal IdGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeSuspensionPorId", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeSuspensionPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> TraeSuspensionPorIdAsync(decimal IdGestion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19306,6 +19312,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones> TraeRegistroAsignacionSuspensionesAsync(decimal IdAsignacion) {
             return base.Channel.TraeRegistroAsignacionSuspensionesAsync(IdAsignacion);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPSuspensiones TraeSuspensionPorId(decimal IdGestion) {
+            return base.Channel.TraeSuspensionPorId(IdGestion);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> TraeSuspensionPorIdAsync(decimal IdGestion) {
+            return base.Channel.TraeSuspensionPorIdAsync(IdGestion);
         }
     }
 }
