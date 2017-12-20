@@ -14,12 +14,14 @@
           ['color', ['color']],
           ['para', ['ul', 'ol', 'paragraph']],
           ['Insert', ['picture', 'video', 'table', 'link']],
-          ['Misc',['fullscreen','codeview']]
+          ['Misc', ['fullscreen', 'codeview']]
 
         ]
     });
 
     ConstruirArbol(IdArbol);
+    var cat = 0;
+    CargarCategorias(cat, "Categorias");
     //$('#Body_Layout').on('click', function () { });
 
 });
@@ -218,7 +220,7 @@ function Eliminar() {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
-            
+
             $("#mensaje").text(json);
             $("#myModal").modal("toggle");
         },
@@ -253,7 +255,7 @@ function EditarTexo() {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(json);
-            
+
             $("#mensaje").text(json);
             $("#myModal").modal("toggle");
         },
@@ -308,10 +310,10 @@ function seleccionadoConsultarHtml(obj) {
             console.log(json);
             $('#summernote').summernote('code', json.CodigoHtml);
             if (json.EsNodoFinal)
-                document.getElementById("nodoFinal").checked=true;
+                document.getElementById("nodoFinal").checked = true;
             else
-                document.getElementById("nodoFinal").checked=false;
-           
+                document.getElementById("nodoFinal").checked = false;
+
 
         },
         error: function (request, status, error) {
@@ -326,23 +328,40 @@ function seleccionadoConsultarHtml(obj) {
 function GuardarCodigoHtmlNodo() {
 
     if (SpanSeleccionado != null && SpanSeleccionado != "") {
+
         var objetoPadre = SpanSeleccionado.parentNode.getAttribute("id");
         var codigoHtml = $('#summernote').summernote('code');
         var nodoFinalCheck = false;
+        var categoria = 0;
+        var subcategoria = 0;
+        var tipo = 0;
 
-        if (document.getElementById("nodoFinal").checked==true)
+        if (document.getElementById("nodoFinal").checked == true) {
             nodoFinalCheck = true;
+
+            objetoCategoria = document.getElementById("Categorias");
+            categoria = objetoCategoria.options[objetoCategoria.selectedIndex].value!=null ? objetoCategoria.options[objetoCategoria.selectedIndex].value : " ";
+            alert(categoria);
+
+            objetoSubCategoria = document.getElementById("subCategoria");
+            subcategoria = objetoSubCategoria.options[objetoSubCategoria.selectedIndex].value != null ? objetoSubCategoria.options[objetoSubCategoria.selectedIndex].value : " ";
+            alert(subcategoria);
+
+            objetoTipo = document.getElementById("Tipo");
+            tipo = objetoTipo.options[objetoTipo.selectedIndex].value != null ? objetoTipo.options[objetoTipo.selectedIndex].value : " ";
+            alert(tipo);
+        }
 
         $.ajax({
             type: "POST",
             url: urlGuardarCodigoNodo,
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({ IdNodo: objetoPadre, CodigoHtml: codigoHtml, NodoFinal: nodoFinalCheck }),
+            data: JSON.stringify({ IdNodo: objetoPadre, CodigoHtml: codigoHtml, NodoFinal: nodoFinalCheck, Categoria:categoria, SubCategoria:subcategoria, Tipo:tipo }),
             dataType: "JSON",
             success: function (result) {
                 var json = JSON.parse(result);
                 console.log(json);
-                             
+
                 $("#mensaje").text(json);
                 $("#myModal").modal("toggle");
             },
@@ -355,8 +374,8 @@ function GuardarCodigoHtmlNodo() {
     else {
         $("#mensaje").text("Debe primero seleccionar algun nodo");
         $("#myModal").modal("toggle");
-       
-      
+
+
     }
 }
 
@@ -475,6 +494,104 @@ function ActualizarHtml() {
     });
 
 }
+
+function CargarCategorias(idCategoria,lista) {
+
+    $.ajax({
+        type: "POST",
+        url: urlCargarCategorias,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ idCategoriapadre: idCategoria }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            var object = json[0];
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#'+lista).append($('<option>', {
+                    value: json[index].IdCategoria,
+                    text: json[index].Descripcion
+                }));
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+
+}
+
+function SetOpciones(obj) {
+    //alert(obj.getAttribute("id"));
+
+
+    if (obj.getAttribute("id") == "Categorias") {
+
+        $("#subCategoria").empty();
+        $("#subCategoria").append("<option value=''>--Select Option--</option>");
+
+        $("#Tipo").empty();
+        $("#Tipo").append("<option value=''>--Select Option--</option>");
+     
+        CargarCategorias(obj.options[obj.selectedIndex].value, "subCategoria");
+
+        $("#subCategoria").removeAttr("hidden");
+        $("#subCategoriaStrong").removeAttr("hidden");
+        
+    }
+
+    
+    if (obj.getAttribute("id") == "subCategoria") {
+
+        $("#Tipo").empty();
+        $("#Tipo").append("<option value=''>--Select Option--</option>");
+
+        CargarCategorias(obj.options[obj.selectedIndex].value, "Tipo");
+
+        $("#Tipo").removeAttr("hidden");
+        $("#tipoStrong").removeAttr("hidden");
+    }
+}
+
+function mostrarCategorias(obj) {
+
+    if (obj.checked) {
+
+        $("#Categorias").removeAttr("hidden");
+        $("#categoriaStrong").removeAttr("hidden");
+
+
+    }
+    else {
+
+        $("#Categorias").attr("hidden", "hidden");
+        $("#categoriaStrong").attr("hidden", "hidden");
+        $("#Categorias").empty();
+
+        $("#subCategoria").attr("hidden", "hidden");
+        $("#subCategoriaStrong").attr("hidden", "hidden");
+        $("#subCategoria").empty();
+
+        $("#Tipo").attr("hidden", "hidden");
+        $("#tipoStrong").attr("hidden", "hidden");
+        $("#Tipo").empty();
+        
+        
+        
+
+        $("#Categorias").append("<option value=''>--Select Option--</option>");
+        $("#subCategoria").append("<option value=''>--Select Option--</option>");
+        $("#Tipo").append("<option value=''>--Select Option--</option>");
+
+        var cat = 0;
+        CargarCategorias(cat, "Categorias");
+
+    }
+
+}
+
+
 
 $("#Nombre_Nodo").on("keyup", function (e) {
 

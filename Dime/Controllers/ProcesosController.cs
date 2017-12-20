@@ -51,17 +51,11 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult EditarArbol()
         {
-            return View();
+            Macroprocesos macro = new Macroprocesos();
+            return View(macro);
         }
 
-        [HttpPost]
-        public ActionResult EditarArbol(string nombreNodo)
-        {
-            Nodo nodo = new Nodo();
-      
-            return View();
 
-        }
 
         public JsonResult LLamarArbolId(string IDdArbol)
         {
@@ -122,12 +116,12 @@ namespace Dime.Controllers
             return jsonResult;
         }
 
-        public JsonResult GuardarCodigoHtmlNodo(string IdNodo,string CodigoHtml,bool NodoFinal)
+        public JsonResult GuardarCodigoHtmlNodo(int IdNodo, string CodigoHtml, bool NodoFinal, int Categoria, int SubCategoria, int Tipo)
         {
             int idNodo = Convert.ToInt32(IdNodo);
             //ProcesosService.GuardarCodigoHtmlNodo(idNodo, CodigoHtml);
 
-            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.GuardarCodigoHtmlNodo(idNodo, CodigoHtml, NodoFinal)), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.GuardarCodigoHtmlNodo(idNodo, CodigoHtml, NodoFinal, Categoria, SubCategoria, Tipo)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
@@ -137,5 +131,12 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        public JsonResult ConsultarCategorias(string idCategoriapadre)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarCategorias(Convert.ToInt32(idCategoriapadre))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
     }
 }
