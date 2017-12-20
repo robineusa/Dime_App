@@ -221,6 +221,7 @@ namespace Dime.Controllers
             else
             {
                 modelo.CEPTickets = CierreService.ConsultaDeTicketPorNumero(Convert.ToDecimal(IdGestion));
+                modelo.CEPTickets.Observaciones = "";
             }
                
             return View(modelo);
@@ -243,17 +244,49 @@ namespace Dime.Controllers
             return RedirectToAction("Tickets", "CierreExperiencia");
         }
         [HttpGet]
-        public ActionResult SuspencionesTemporales()
+        public ActionResult SuspencionesTemporales(string IdGestion)
         {
-            //validar la asignacion auto
             ViewModelCierreExperiencia modelo = new ViewModelCierreExperiencia();
+            ViewBag.Asignacion = null;
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            if (IdGestion == null || IdGestion.Equals(""))
+            {
+                modelo.CEPAsigSuspensiones = CierreService.ApartarCuentadeSuspensiones(Usuario, 0);
+                if (modelo.CEPAsigSuspensiones != null)
+                {
+                    modelo.CEPSuspensiones.CanalDeIngreso = modelo.CEPAsigSuspensiones.CanalDeIngreso;
+                    modelo.CEPSuspensiones.CuentaCliente = modelo.CEPAsigSuspensiones.CuentaCliente;
+                    modelo.CEPSuspensiones.FechaCreacion = modelo.CEPAsigSuspensiones.FechaCreacion;
+                    modelo.CEPSuspensiones.UsuarioCreacion = modelo.CEPAsigSuspensiones.UsuarioCreacion;
+                }
+                else
+                {
+                    ViewBag.Asignacion = "No Existen Mas Registros Cargados";
+                }
+            }
+            else
+            {
+                modelo.CEPSuspensiones = CierreService.TraeSuspensionPorId(Convert.ToDecimal(IdGestion));
+                modelo.CEPSuspensiones.Observaciones = "";
+            }
             return View(modelo);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult SuspencionesTemporales(ViewModelCierreExperiencia modelo)
         {
-            return View();
+            modelo.CEPSuspensiones.UsuarioDeGestion = Convert.ToDecimal(Session["Usuario"]);
+            modelo.CEPSuspensiones.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+
+            if (modelo.CEPSuspensiones.IdGestion > 0)
+            {
+                CierreService.ActualizarSuspencion(modelo.CEPSuspensiones);
+            }
+            else
+            {
+                CierreService.RegistrarSuspencion(modelo.CEPSuspensiones,modelo.CEPAsigSuspensiones.IdAsignacion);
+            }
+            return RedirectToAction("SuspencionesTemporales", "CierreExperiencia");
         }
         [HttpGet]
         public ActionResult ListaArboles(string IdPadre)

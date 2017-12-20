@@ -1,6 +1,8 @@
 ﻿$(document).ready(function () {
     TraerCanalDeIngreso();
+    TraerMotivoSuspension();
     TraerMesesDeSuspension();
+    TraerServiciosASuspender();
     FormatoFechas();
     TraerArbolDeGestion();
     TraerListaGestionUsuario();
@@ -164,6 +166,7 @@ function TraerCanalDeIngreso() {
                 if (select.options[i].text == buscar) {
                     // seleccionamos el valor que coincide
                     select.selectedIndex = i;
+                    $('#CanalDeIngreso').val(select.options[i].value);
                 }
             }
 
@@ -174,6 +177,46 @@ function TraerCanalDeIngreso() {
     });
 
     $('#CanalDeIngreso').find('option:not(:first)').remove();
+
+}
+function TraerMotivoSuspension() {
+    var IdPadre = "33";
+
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#MotivosSuspension').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("MotivosSuspension");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("MotivosSuspension1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#MotivosSuspension').val(select.options[i].value);
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+    $('#MotivosSuspension').find('option:not(:first)').remove();
 
 }
 function TraerMesesDeSuspension() {
@@ -203,6 +246,7 @@ function TraerMesesDeSuspension() {
                 if (select.options[i].text == buscar) {
                     // seleccionamos el valor que coincide
                     select.selectedIndex = i;
+                    $('#MesesSuspender').val(select.options[i].value);
                 }
             }
 
@@ -215,10 +259,68 @@ function TraerMesesDeSuspension() {
     $('#MesesSuspender').find('option:not(:first)').remove();
 
 }
+function TraerServiciosASuspender() {
+    var IdPadre = "35";
+
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#ServiciosSuspender').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("ServiciosSuspender");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("ServiciosSuspender1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#ServiciosSuspender').val(select.options[i].value);
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+    $('#ServiciosSuspender').find('option:not(:first)').remove();
+
+}
+$('#ServiciosSuspender').change(function () {
+    var NuevaIdSelesct = document.getElementById("ServiciosSuspender");
+    var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
+    $('#ServiciosSuspender1').val(NuevoText);
+
+})
 $('#CanalDeIngreso').change(function () {
     var NuevaIdSelesct = document.getElementById("CanalDeIngreso");
     var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
     $('#CanalDeIngreso1').val(NuevoText);
+
+})
+$('#MotivosSuspension').change(function () {
+    var NuevaIdSelesct = document.getElementById("MotivosSuspension");
+    var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
+    $('#MotivosSuspension1').val(NuevoText);
+
+})
+$('#MesesSuspender').change(function () {
+    var NuevaIdSelesct = document.getElementById("MesesSuspender");
+    var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
+    $('#MesesSuspender1').val(NuevoText);
 
 })
 $('#SelectGestion').change(function () {
@@ -398,34 +500,6 @@ function LimpiarFecha() {
     var FechaSeguimiento = document.getElementById('FechaSeguimiento');
     FechaSeguimiento.value = "";
 }
-$("#CuentaCliente").blur(function (event) {
-    event.preventDefault();
-    var Cuenta = $("#CuentaCliente").val();
-    if (Cuenta == "" || Cuenta == null || Cuenta == "0") {
-    } else {
-
-        //DatosClienteCuenta(Cuenta);
-
-    }
-
-});
-function DatosClienteCuenta(Cuenta) {
-
-    $.ajax({
-        type: "POST",
-        url: UrlInformacionClienteticket,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ CuentaCliente: Cuenta }),
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            $('#Nota1').val(json.Nota1);
-            $('#Nota2').val(json.Nota2);
-
-        }
-    });
-
-}
 function FormatoFechas() {
 
     $('#FechaCreacion').datetimepicker({
@@ -434,43 +508,3 @@ function FormatoFechas() {
     });
 
 }
-function ConsultarTicketBase(data) {
-
-    $.ajax({
-        type: "POST",
-        url: UrlConsultarTicket,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ Ticket: data }),
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            if (json != null) {
-                if (json.Estado == "SEGUIMIENTO") {
-                    alert("El número de ticket ingresado ya se encuentra en seguimiento");
-                    location.reload();
-                } else {
-                    alert("El número de ticket ingresado ya se encuentra finalizado");
-                    location.reload();
-                }
-            }
-
-        },
-        error: function (request, status, error) {
-            alert(request.responseText);
-        }
-    });
-
-
-
-}
-$("#NumeroDeTicket").blur(function (event) {
-    event.preventDefault();
-    var Ticket = $("#NumeroDeTicket").val();
-    if (Ticket == "" || Ticket == null || Ticket == "0") {
-    } else {
-
-        ConsultarTicketBase(Ticket);
-
-    }
-
-});
