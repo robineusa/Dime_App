@@ -30,12 +30,12 @@
 
                             </td>
                             <td width="200" style="padding:1px;">
-                                <small>Usuario de Creación:  </small>
+                                <small>Usuario de Creación Ticket:  </small>
                                 @Html.TextBoxFor(m => m.CEPTickets.UsuarioDeCreacion, new { @class = "form-control input-sm", @Id = "UsuarioDeCreacion"})
 
                             </td>
                             <td width="200" style="padding:1px;">
-                                <small>Fecha de Creación:  </small>
+                                <small>Fecha de Creación Ticket:  </small>
                                 @Html.TextBoxFor(m => m.CEPTickets.FechaDeCreacion, new { @class = "form-control input-sm", @Id = "FechaDeCreacion",placeholder= "Seleccione la Fecha" })
 
 
@@ -238,8 +238,10 @@
             var UrlArbolDeGestion = '@Url.Action("ArbolesDeTipificacionDesconexion", "CierreExperiencia")';
             var UrlDatosArbol = '@Url.Action("TraerDatosDelArbol", "CierreExperiencia")';
             var UrlInformacionClienteticket = '@Url.Action("TraerInformacionClienteTicket", "CierreExperiencia")';
+            var UrlListaSrcaus = '@Url.Action("ListaSrcaus", "CierreExperiencia")';
+            var UrlListaSrreas = '@Url.Action("ListaSrreas", "CierreExperiencia")';
     </script>
-    <script src="~/Scripts/CierreExperiencia/Tickets.js?1.0.0"></script>
+    <script src="~/Scripts/CierreExperiencia/Tickets.js?1.0.2"></script>
     <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
     <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />

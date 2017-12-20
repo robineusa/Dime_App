@@ -18935,6 +18935,18 @@ namespace Dime.WSD {
             "xperiencia", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteTicketCierreE" +
             "xperienciaResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPTickets>> ListaSeguimientosAgenteTicketCierreExperienciaAsync(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaSrcaus", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSrcausResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroMarcacione> ListaSrcaus();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaSrcaus", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSrcausResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroMarcacione>> ListaSrcausAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaSrreas", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSrreasResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroMarcacione> ListaSrreas(string Razon);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaSrreas", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSrreasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroMarcacione>> ListaSrreasAsync(string Razon);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19146,6 +19158,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPTickets>> ListaSeguimientosAgenteTicketCierreExperienciaAsync(decimal Usuario) {
             return base.Channel.ListaSeguimientosAgenteTicketCierreExperienciaAsync(Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroMarcacione> ListaSrcaus() {
+            return base.Channel.ListaSrcaus();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroMarcacione>> ListaSrcausAsync() {
+            return base.Channel.ListaSrcausAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroMarcacione> ListaSrreas(string Razon) {
+            return base.Channel.ListaSrreas(Razon);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroMarcacione>> ListaSrreasAsync(string Razon) {
+            return base.Channel.ListaSrreasAsync(Razon);
         }
     }
 }

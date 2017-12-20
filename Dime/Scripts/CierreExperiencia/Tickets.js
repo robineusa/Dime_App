@@ -1,5 +1,6 @@
 ﻿$(document).ready(function () {
     TraerCanalDeIngreso();
+    TraerArbolSrcaus();
     TraerArbolDeGestion();
     TraerArbolDeRazon();
     ListaSubrazones();
@@ -472,3 +473,96 @@ function seleccionarNota2() {
     document.getElementById("Nota2").selectionStart = 0;
 
 }
+function TraerArbolSrcaus() {
+    
+            $.ajax({
+            type: "POST",
+            url: UrlListaSrcaus,
+            contentType: "application/json; charset=utf-8",
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+               
+                for (var index = 0, len = json.length; index < len; index++) {
+                    $('#Srcaus').append($('<option>', {
+                        value: json[index].Razon,
+                        text: json[index].Razon
+                    }));
+
+                }
+                // creamos un variable que hace referencia al select
+                var select = document.getElementById("Srcaus");
+                // obtenemos el valor a buscar
+                var buscar = document.getElementById("Srcaus1").value;
+                // recorremos todos los valores del select
+                for (var i = 1; i < select.length; i++) {
+                    if (select.options[i].text == buscar) {
+                        // seleccionamos el valor que coincide
+                        select.selectedIndex = i;
+                    }
+                }
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
+        $('#Srcaus').find('option:not(:first)').remove();
+        $('#Srreas').find('option:not(:first)').remove();
+    
+}
+function TraerArbolSrreas() {
+    var Razon = $('#Srcaus').val();
+    if (Razon == "--SELECCIONE--" || Razon == "" || Razon == " ") {
+        $('#Srreas').find('option:not(:first)').remove();
+
+    } else {
+        $.ajax({
+            type: "POST",
+            url: UrlListaSrreas,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ Razon: Razon }),
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+                var object = json[0];
+                for (var index = 0, len = json.length; index < len; index++) {
+                    $('#Srreas').append($('<option>', {
+                        value: json[index].Subrazon,
+                        text: json[index].Subrazon
+                    }));
+
+                }
+                // creamos un variable que hace referencia al select
+                var select = document.getElementById("Srreas");
+                // obtenemos el valor a buscar
+                var buscar = document.getElementById("Srreas1").value;
+                // recorremos todos los valores del select
+                for (var i = 1; i < select.length; i++) {
+                    if (select.options[i].text == buscar) {
+                        // seleccionamos el valor que coincide
+                        select.selectedIndex = i;
+                    }
+                }
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
+        
+        $('#Srreas').find('option:not(:first)').remove();
+    }
+}
+$('#Srcaus').change(function () {
+    
+    var NuevaIdSubrazon = document.getElementById("Srcaus");
+    var NuevaSubrazon = NuevaIdSubrazon.options[NuevaIdSubrazon.selectedIndex].text;
+    $('#Srcaus1').val(NuevaSubrazon);
+    TraerArbolSrreas();
+})
+$('#Srreas').change(function () {
+
+    var NuevaIdSubrazon = document.getElementById("Srreas");
+    var NuevaSubrazon = NuevaIdSubrazon.options[NuevaIdSubrazon.selectedIndex].text;
+    $('#Srreas1').val(NuevaSubrazon);
+    
+})

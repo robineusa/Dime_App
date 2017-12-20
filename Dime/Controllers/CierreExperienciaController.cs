@@ -361,5 +361,17 @@ namespace Dime.Controllers
                 };
             }
         }
+        public JsonResult ListaSrcaus()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ListaSrcaus()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ListaSrreas(string Razon)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ListaSrreas(Razon)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }

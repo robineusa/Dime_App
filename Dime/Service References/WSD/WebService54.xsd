@@ -7865,4 +7865,30 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListaSrcaus">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaSrcausResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q549="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSrcausResult" nillable="true" type="q549:ArrayOfMaestroMarcacione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaSrreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Razon" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaSrreasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q550="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSrreasResult" nillable="true" type="q550:ArrayOfMaestroMarcacione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
