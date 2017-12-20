@@ -7284,7 +7284,8 @@
   <xs:element name="ConsultarCategorias">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="idCategoriaPadre" type="xs:int" />
+        <xs:element minOccurs="0" name="idCategoria" type="xs:int" />
+        <xs:element minOccurs="0" name="ConsultarPadre" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -51,17 +51,11 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult EditarArbol()
         {
-            return View();
+            Macroprocesos macro = new Macroprocesos();
+            return View(macro);
         }
 
-        [HttpPost]
-        public ActionResult EditarArbol(string nombreNodo)
-        {
-            Nodo nodo = new Nodo();
-      
-            return View();
 
-        }
 
         public JsonResult LLamarArbolId(string IDdArbol)
         {
@@ -112,7 +106,7 @@ namespace Dime.Controllers
             return jsonResult;
         }
         [HttpPost]
-        public JsonResult CambiarNombreNodo(string IdNodo,string NombreNuevo)
+        public JsonResult CambiarNombreNodo(string IdNodo, string NombreNuevo)
         {
             int idNodo = Convert.ToInt32(IdNodo);
             ProcesosService.CambiarNombreNodo(idNodo, NombreNuevo);
@@ -122,20 +116,27 @@ namespace Dime.Controllers
             return jsonResult;
         }
 
-        //public JsonResult GuardarCodigoHtmlNodo(string IdNodo,string CodigoHtml,bool NodoFinal)
-        //{
-        //    int idNodo = Convert.ToInt32(IdNodo);
-        //    //ProcesosService.GuardarCodigoHtmlNodo(idNodo, CodigoHtml);
+        public JsonResult GuardarCodigoHtmlNodo(int IdNodo, string CodigoHtml, bool NodoFinal, int Categoria, int SubCategoria, int Tipo)
+        {
+            int idNodo = Convert.ToInt32(IdNodo);
+            //ProcesosService.GuardarCodigoHtmlNodo(idNodo, CodigoHtml);
 
-        //    var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.GuardarCodigoHtmlNodo(idNodo, CodigoHtml, NodoFinal)), JsonRequestBehavior.AllowGet);
-        //    jsonResult.MaxJsonLength = int.MaxValue;
-        //    return jsonResult;
-        //}
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.GuardarCodigoHtmlNodo(idNodo, CodigoHtml, NodoFinal, Categoria, SubCategoria, Tipo)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
         public JsonResult ConsultarCodigoHtmlNodo(string IdNodo)
         {
             var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarCodigoHtmlNodo(Convert.ToInt32(IdNodo))), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        public JsonResult ConsultarCategorias(string IdCategoria, bool ConsultarPadre)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarCategorias(Convert.ToInt32(IdCategoria), ConsultarPadre)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
     }
 }
