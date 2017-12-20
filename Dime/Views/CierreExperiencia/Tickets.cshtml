@@ -227,12 +227,13 @@
         </div>
         <br />
         <button id="guardardesconexion" type="submit" class="btn btn-primary" name="guardar" value="true" style="width:10%; height:40px;">Guardar</button>
+        
         <br />
         <br />
     </div>
 }
 @section Scripts{
-    
+
     <script>
             var UrlListaDeGestiontickets = '@Url.Action("ListaDeGestionAgenteTickets", "CierreExperiencia")';
             var UrlListaDeSeguimientostickets = '@Url.Action("ListaDeSeguimientosAgenteTickets", "CierreExperiencia")';
@@ -244,7 +245,7 @@
         var UrlMarcaciones = '@Url.Action("ListaDeMarcaciones", "CierreExperiencia")';
         var UrlConsultarTicket = '@Url.Action("ConsultarTicketBaseDeGestion", "CierreExperiencia")';
     </script>
-    <script src="~/Scripts/CierreExperiencia/Tickets.js?1.0.3"></script>
+    <script src="~/Scripts/CierreExperiencia/Tickets.js?1.0.5"></script>
     <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
     <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />

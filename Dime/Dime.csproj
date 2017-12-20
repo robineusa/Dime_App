@@ -264,6 +264,7 @@
     <Content Include="AdminLTE\bootstrap\css\bootstrap.min.css" />
     <Content Include="AdminLTE\bootstrap\css\EditarArbol.css" />
     <Content Include="AdminLTE\bootstrap\css\EstilosNotificaciones.css" />
+    <Content Include="AdminLTE\bootstrap\css\Jquery-confirm.css" />
     <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
@@ -271,6 +272,7 @@
     <Content Include="AdminLTE\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="AdminLTE\bootstrap\js\bootstrap.js" />
     <Content Include="AdminLTE\bootstrap\js\bootstrap.min.js" />
+    <Content Include="AdminLTE\bootstrap\js\Jquery-confirm.js" />
     <Content Include="AdminLTE\bootstrap\js\ui-bootstrap-tpls-2.4.0.min.js" />
     <Content Include="AdminLTE\dist\css\admin-lte.css" />
     <Content Include="AdminLTE\dist\css\admin-lte.min.css" />
@@ -3291,6 +3293,9 @@
     <Content Include="Scripts\Procesos\dist\font\summernote.eot" />
     <Content Include="Scripts\Procesos\dist\font\summernote.ttf" />
     <Content Include="Scripts\Procesos\dist\font\summernote.woff" />
+    <Content Include="Service References\WSD\Dime.WSD.CEPTickets.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\WSD\WebService1.wsdl" />
     <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
