@@ -1,4 +1,4 @@
-﻿
+﻿@model Telmexla.Servicios.DIME.Entity.Macroprocesos
 @{
     ViewBag.Title = "Editar Arbol";
     ViewBag.SubTitle = "Procesos";
@@ -60,7 +60,7 @@
                             <input type="text" id="NodoSeleccionado" class="form-control" style="width:250px;font-size:medium" readonly>
                         </div>
 
-                       
+
                         <!-- Modal -->
                         <div id="myModal" class="modal fade" role="dialog">
                             <div class="modal-dialog">
@@ -88,11 +88,59 @@
                         <br />
                         <div id="summernote"></div>
 
-                        <input class="checkbox-inline" type="checkbox" id="nodoFinal">
-                        <label> Marcar como final </label>
+                        <table>
+                            <tr>
+                                <td colspan="3">
+                                    <button class="btn btn-success" onclick="GuardarCodigoHtmlNodo()">Guardar Cambios</button>
+                                    <input class="checkbox-inline" type="checkbox" id="nodoFinal" disabled onclick="mostrarCategorias(this)">
+                                    <label> Marcar como final </label>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td width="200" style="padding:1px;">
+                                    <strong id="categoriaStrong" hidden>Categoria: </strong>
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    <strong id="subCategoriaStrong" hidden>Subcategoria: </strong>
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    <strong id="tipoStrong" hidden>Tipo: </strong>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td style="padding:1px;">
+                                    @Html.DropDownListFor(m => m.Descripcion, new List<SelectListItem> { },
+                                           "--Select Option--",
+                                                new { Id = "Categorias", @class = "form-control", onchange = "SetOpciones(this);", @hidden = "hidden" })
+                                </td>
+                                <td style="padding:1px;">
+                                    @Html.DropDownListFor(m => m.Descripcion, new List<SelectListItem> { },
+                                           "--Select Option--",
+                                                new { Id = "subCategoria", @class = "form-control", onchange = "SetOpciones(this);", @hidden = "hidden" })
+                                </td>
+                                <td style="padding:1px;">
+                                    @Html.DropDownListFor(m => m.Descripcion, new List<SelectListItem> { },
+                                           "--Select Option--",
+                                                new { Id = "Tipo", @class = "form-control", onchange = "SetOpciones(this);", @hidden = "hidden" })
+                                </td>
+                            </tr>
+
+                        </table>
+
+
                         <br />
                         <br />
-                        <button class="btn btn-success" onclick="GuardarCodigoHtmlNodo()">Guardar Cambios</button>
+
+                        <br />
+
+
+                        @*@Html.DropDownListFor(m => m.Descripcion , new List<SelectListItem> { },
+                            "--Select Option--",
+                                 new { Id = "Contacto", @class = "form-control input-sm", onchange = "SetOpciones();" })*@
+                        @*@Html.ValidationMessageFor(m => m.GPrincipalRecurrencia.Contacto, "", new { @class = "text-danger" })*@
                     </div>
                 </div>
             </div>
@@ -185,9 +233,10 @@
             var urlGuardarCodigoNodo = '@Url.Action("GuardarCodigoHtmlNodo", "Procesos")';
             var urlConsultarCodigoNodo = '@Url.Action("ConsultarCodigoHtmlNodo", "Procesos")';
             var urlActualizaHTMLArbol = '@Url.Action("ActualizaCodigoHTMLArbol", "Procesos")';
+            var urlCargarCategorias = '@Url.Action("ConsultarCategorias", "Procesos")';
 
         </script>
-        <script src="~/Scripts/Procesos/EditarArbol.js?1.2.9"></script>
+        <script src="~/Scripts/Procesos/EditarArbol.js?1.0.3"></script>
         <link href="~/Scripts/Procesos/dist/summernote.css" rel="stylesheet">
         <link href="~/AdminLTE/bootstrap/css/EditarArbol.css" rel="stylesheet">
         <script src="~/Scripts/Procesos/dist/summernote.js"></script>
