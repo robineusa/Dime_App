@@ -21,7 +21,7 @@
 
     ConstruirArbol(IdArbol);
     var cat = 0;
-    CargarCategorias(cat, "Categorias");
+    CargarCategorias(cat, "Categorias",true);
     //$('#Body_Layout').on('click', function () { });
 
 });
@@ -309,10 +309,7 @@ function seleccionadoConsultarHtml(obj) {
             var json = JSON.parse(result);
             console.log(json);
             $('#summernote').summernote('code', json.CodigoHtml);
-            if (json.EsNodoFinal)
-                document.getElementById("nodoFinal").checked = true;
-            else
-                document.getElementById("nodoFinal").checked = false;
+            EjecutarCategorias(json.EsNodoFinal, json.Categoria, json.SubCategoria, json.Tipo);
 
 
         },
@@ -320,8 +317,32 @@ function seleccionadoConsultarHtml(obj) {
             alert(request.responseText);
         }
     });
+}
+
+function EjecutarCategorias(EsNodoFinal,Categoria,SubCategoria,Tipo){
+
+    if (EsNodoFinal){
+        document.getElementById("nodoFinal").checked = true;
+
+        $("#Categorias").removeAttr("hidden");
+        $("#categoriaStrong").removeAttr("hidden");
 
 
+        $("#subCategoria").attr("hidden", "hidden");
+        $("#subCategoriaStrong").removeAttr("hidden");
+
+
+        $("#Tipo").removeAttr("hidden");
+        $("#tipoStrong").removeAttr("hidden");
+        
+        CargarCategorias(Categoria, "Categorias", false);
+        CargarCategorias(SubCategoria, "subCategoria", false);
+        CargarCategorias(Categoria, "Tipo", false);
+
+    }
+    else{
+        document.getElementById("nodoFinal").checked = false;
+    }
 }
 
 
@@ -495,13 +516,13 @@ function ActualizarHtml() {
 
 }
 
-function CargarCategorias(idCategoria,lista) {
+function CargarCategorias(idCategoria, lista, consultarPadre) {
 
     $.ajax({
         type: "POST",
         url: urlCargarCategorias,
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ idCategoriapadre: idCategoria }),
+        data: JSON.stringify({ IdCategoria: idCategoria, ConsultarPadre: consultarPadre }),
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
@@ -534,7 +555,7 @@ function SetOpciones(obj) {
         $("#Tipo").empty();
         $("#Tipo").append("<option value=''>--Select Option--</option>");
      
-        CargarCategorias(obj.options[obj.selectedIndex].value, "subCategoria");
+        CargarCategorias(obj.options[obj.selectedIndex].value, "subCategoria",true);
 
         $("#subCategoria").removeAttr("hidden");
         $("#subCategoriaStrong").removeAttr("hidden");
@@ -547,7 +568,7 @@ function SetOpciones(obj) {
         $("#Tipo").empty();
         $("#Tipo").append("<option value=''>--Select Option--</option>");
 
-        CargarCategorias(obj.options[obj.selectedIndex].value, "Tipo");
+        CargarCategorias(obj.options[obj.selectedIndex].value, "Tipo",true);
 
         $("#Tipo").removeAttr("hidden");
         $("#tipoStrong").removeAttr("hidden");
@@ -585,7 +606,7 @@ function mostrarCategorias(obj) {
         $("#Tipo").append("<option value=''>--Select Option--</option>");
 
         var cat = 0;
-        CargarCategorias(cat, "Categorias");
+        CargarCategorias(cat, "Categorias",true);
 
     }
 

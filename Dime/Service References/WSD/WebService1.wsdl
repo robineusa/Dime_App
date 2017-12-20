@@ -25239,6 +25239,272 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICierreExperienciaService_ConsultaDeGestionTicketsAgente_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICierreExperienciaService_ConsultaDeGestionTicketsAgente_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICierreExperienciaService_ListaDeGestionAgenteTicketsCierreExperiencia_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICierreExperienciaService_ListaDeGestionAgenteTicketsCierreExperiencia_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICierreExperienciaService_ListaSeguimientosAgenteTicketCierreExperiencia_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICierreExperienciaService_ListaSeguimientosAgenteTicketCierreExperiencia_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICierreExperienciaService_ListaSrcaus_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICierreExperienciaService_ListaSrcaus_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICierreExperienciaService_ListaSrreas_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICierreExperienciaService_ListaSrreas_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICierreExperienciaService_ListaMarcacionesTickets_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICierreExperienciaService_ListaMarcacionesTickets_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICierreExperienciaService_ConsultaDeTicketPorTicket_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_ICierreExperienciaService_ConsultaDeTicketPorTicket_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:49400/WebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
@@ -28686,6 +28952,48 @@
   <wsdl:message name="ICierreExperienciaService_ConsultaDeTicketPorNumero_OutputMessage">
     <wsdl:part name="parameters" element="tns:ConsultaDeTicketPorNumeroResponse" />
   </wsdl:message>
+  <wsdl:message name="ICierreExperienciaService_ConsultaDeGestionTicketsAgente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaDeGestionTicketsAgente" />
+  </wsdl:message>
+  <wsdl:message name="ICierreExperienciaService_ConsultaDeGestionTicketsAgente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaDeGestionTicketsAgenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICierreExperienciaService_ListaDeGestionAgenteTicketsCierreExperiencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDeGestionAgenteTicketsCierreExperiencia" />
+  </wsdl:message>
+  <wsdl:message name="ICierreExperienciaService_ListaDeGestionAgenteTicketsCierreExperiencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaDeGestionAgenteTicketsCierreExperienciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICierreExperienciaService_ListaSeguimientosAgenteTicketCierreExperiencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaSeguimientosAgenteTicketCierreExperiencia" />
+  </wsdl:message>
+  <wsdl:message name="ICierreExperienciaService_ListaSeguimientosAgenteTicketCierreExperiencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaSeguimientosAgenteTicketCierreExperienciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICierreExperienciaService_ListaSrcaus_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaSrcaus" />
+  </wsdl:message>
+  <wsdl:message name="ICierreExperienciaService_ListaSrcaus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaSrcausResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICierreExperienciaService_ListaSrreas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaSrreas" />
+  </wsdl:message>
+  <wsdl:message name="ICierreExperienciaService_ListaSrreas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaSrreasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICierreExperienciaService_ListaMarcacionesTickets_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListaMarcacionesTickets" />
+  </wsdl:message>
+  <wsdl:message name="ICierreExperienciaService_ListaMarcacionesTickets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListaMarcacionesTicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICierreExperienciaService_ConsultaDeTicketPorTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaDeTicketPorTicket" />
+  </wsdl:message>
+  <wsdl:message name="ICierreExperienciaService_ConsultaDeTicketPorTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaDeTicketPorTicketResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWebService">
     <wsdl:operation name="MuestraEntidades">
       <wsdl:input wsaw:Action="http://tempuri.org/IWebService/MuestraEntidades" message="tns:IWebService_MuestraEntidades_InputMessage" />
@@ -31042,6 +31350,34 @@
     <wsdl:operation name="ConsultaDeTicketPorNumero">
       <wsdl:input wsaw:Action="http://tempuri.org/ICierreExperienciaService/ConsultaDeTicketPorNumero" message="tns:ICierreExperienciaService_ConsultaDeTicketPorNumero_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICierreExperienciaService/ConsultaDeTicketPorNumeroResponse" message="tns:ICierreExperienciaService_ConsultaDeTicketPorNumero_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeGestionTicketsAgente">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICierreExperienciaService/ConsultaDeGestionTicketsAgente" message="tns:ICierreExperienciaService_ConsultaDeGestionTicketsAgente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICierreExperienciaService/ConsultaDeGestionTicketsAgenteResponse" message="tns:ICierreExperienciaService_ConsultaDeGestionTicketsAgente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaDeGestionAgenteTicketsCierreExperiencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteTicketsCierreExperiencia" message="tns:ICierreExperienciaService_ListaDeGestionAgenteTicketsCierreExperiencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteTicketsCierreExperienciaResponse" message="tns:ICierreExperienciaService_ListaDeGestionAgenteTicketsCierreExperiencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaSeguimientosAgenteTicketCierreExperiencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteTicketCierreExperiencia" message="tns:ICierreExperienciaService_ListaSeguimientosAgenteTicketCierreExperiencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteTicketCierreExperienciaResponse" message="tns:ICierreExperienciaService_ListaSeguimientosAgenteTicketCierreExperiencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaSrcaus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICierreExperienciaService/ListaSrcaus" message="tns:ICierreExperienciaService_ListaSrcaus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICierreExperienciaService/ListaSrcausResponse" message="tns:ICierreExperienciaService_ListaSrcaus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaSrreas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICierreExperienciaService/ListaSrreas" message="tns:ICierreExperienciaService_ListaSrreas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICierreExperienciaService/ListaSrreasResponse" message="tns:ICierreExperienciaService_ListaSrreas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListaMarcacionesTickets">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICierreExperienciaService/ListaMarcacionesTickets" message="tns:ICierreExperienciaService_ListaMarcacionesTickets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICierreExperienciaService/ListaMarcacionesTicketsResponse" message="tns:ICierreExperienciaService_ListaMarcacionesTickets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeTicketPorTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICierreExperienciaService/ConsultaDeTicketPorTicket" message="tns:ICierreExperienciaService_ConsultaDeTicketPorTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICierreExperienciaService/ConsultaDeTicketPorTicketResponse" message="tns:ICierreExperienciaService_ConsultaDeTicketPorTicket_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSHttpBinding_IWebService" type="tns:IWebService">
@@ -37475,6 +37811,83 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_ICierreExperienciaService_ConsultaDeTicketPorNumero_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeGestionTicketsAgente">
+      <soap12:operation soapAction="http://tempuri.org/ICierreExperienciaService/ConsultaDeGestionTicketsAgente" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICierreExperienciaService_ConsultaDeGestionTicketsAgente_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICierreExperienciaService_ConsultaDeGestionTicketsAgente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaDeGestionAgenteTicketsCierreExperiencia">
+      <soap12:operation soapAction="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteTicketsCierreExperiencia" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICierreExperienciaService_ListaDeGestionAgenteTicketsCierreExperiencia_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICierreExperienciaService_ListaDeGestionAgenteTicketsCierreExperiencia_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaSeguimientosAgenteTicketCierreExperiencia">
+      <soap12:operation soapAction="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteTicketCierreExperiencia" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICierreExperienciaService_ListaSeguimientosAgenteTicketCierreExperiencia_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICierreExperienciaService_ListaSeguimientosAgenteTicketCierreExperiencia_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaSrcaus">
+      <soap12:operation soapAction="http://tempuri.org/ICierreExperienciaService/ListaSrcaus" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICierreExperienciaService_ListaSrcaus_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICierreExperienciaService_ListaSrcaus_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaSrreas">
+      <soap12:operation soapAction="http://tempuri.org/ICierreExperienciaService/ListaSrreas" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICierreExperienciaService_ListaSrreas_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICierreExperienciaService_ListaSrreas_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListaMarcacionesTickets">
+      <soap12:operation soapAction="http://tempuri.org/ICierreExperienciaService/ListaMarcacionesTickets" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICierreExperienciaService_ListaMarcacionesTickets_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICierreExperienciaService_ListaMarcacionesTickets_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaDeTicketPorTicket">
+      <soap12:operation soapAction="http://tempuri.org/ICierreExperienciaService/ConsultaDeTicketPorTicket" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICierreExperienciaService_ConsultaDeTicketPorTicket_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_ICierreExperienciaService_ConsultaDeTicketPorTicket_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

@@ -131,9 +131,9 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
-        public JsonResult ConsultarCategorias(string idCategoriapadre)
+        public JsonResult ConsultarCategorias(string IdCategoria, bool ConsultarPadre)
         {
-            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarCategorias(Convert.ToInt32(idCategoriapadre))), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarCategorias(Convert.ToInt32(IdCategoria), ConsultarPadre)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
