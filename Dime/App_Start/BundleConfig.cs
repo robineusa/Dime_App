@@ -304,7 +304,10 @@ namespace Dime
                                         "~/AdminLTE/dist/js/angular/angular.min.js",
                                         "~/AdminLTE/dist/js/angular-route.js",
                                         "~/AdminLTE/dist/js/angular-ui/ui-bootstrap-tpls.min.js"));
-
+            bundles.Add(new ScriptBundle("~/AdminLTEbootstrap/js/jquery-confirm/css").Include(
+                "~/AdminLTE/bootstrap/css/Jquery-confirm.css"));
+            bundles.Add(new ScriptBundle("~/AdminLTEbootstrap/js/jquery-confirm/js").Include(
+                "~/AdminLTE/bootstrap/js/Jquery-confirm.js"));
 
         }
     }

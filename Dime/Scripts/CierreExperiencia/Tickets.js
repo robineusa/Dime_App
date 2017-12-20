@@ -7,7 +7,6 @@
     TraerListaGestionUsuario();
     TraerListaSeguimientosUsuario();
 
-
     $("#Li1").click(function () {
 
         $("#Li2").css('background-color', 'transparent');
@@ -626,11 +625,40 @@ function ConsultarTicketBase(data) {
             var json = JSON.parse(result);
             if (json != null) {
                 if (json.Estado == "SEGUIMIENTO") {
-                    alert("El número de ticket ingresado ya se encuentra en seguimiento");
-                    location.reload();
+                    $.alert({
+                        theme: 'Modern',
+                        icon: 'fa fa-warning',
+                        boxWidth: '500px',
+                        useBootstrap: false,
+                        type: 'red',
+                        title: 'Alerta',
+                        content: 'El Número de Ticket Ingresado ya se Encuentra en Seguimiento',
+                        buttons: {
+                            Ok: {
+                                btnClass: 'btn-red',
+                                action: function () { location.reload(); }
+
+                            },
+                        }
+                    });
+                    
                 } else {
-                    alert("El número de ticket ingresado ya se encuentra finalizado");
-                    location.reload();
+                    $.alert({
+                        theme: 'Modern',
+                        icon: 'fa fa-warning',
+                        boxWidth: '500px',
+                        useBootstrap: false,
+                        type: 'red',
+                        title: 'Alerta',
+                        content: 'El Número de Ticket Ingresado ya se Encuentra Finalizado',
+                        buttons: {
+                            Ok: {
+                                btnClass: 'btn-red',
+                                action: function () { location.reload(); }
+
+                            },
+                        }
+                    });
                 }
             }
             
