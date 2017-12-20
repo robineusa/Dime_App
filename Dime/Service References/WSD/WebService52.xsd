@@ -3752,6 +3752,7 @@
   <xs:element name="BAPActualizarDatos" nillable="true" type="tns:BAPActualizarDatos" />
   <xs:complexType name="Nodo">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Categoria" type="xs:int" />
       <xs:element minOccurs="0" name="CodigoHtml" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="EsNodoFinal" type="xs:boolean" />
       <xs:element minOccurs="0" name="FechaCreacion" type="xs:dateTime" />
@@ -3759,6 +3760,8 @@
       <xs:element minOccurs="0" name="IdArbol" type="xs:int" />
       <xs:element minOccurs="0" name="IdPadre" type="xs:int" />
       <xs:element minOccurs="0" name="NombreNodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubCategoria" type="xs:int" />
+      <xs:element minOccurs="0" name="Tipo" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Nodo" nillable="true" type="tns:Nodo" />
@@ -3786,7 +3789,6 @@
   <xs:complexType name="Macroprocesos">
     <xs:sequence>
       <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="IdArbol" type="xs:int" />
       <xs:element minOccurs="0" name="IdCategoria" type="xs:int" />
       <xs:element minOccurs="0" name="IdCategoriaPadre" type="xs:int" />
     </xs:sequence>
@@ -4027,4 +4029,31 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CELDesconexiones" nillable="true" type="tns:CELDesconexiones" />
+  <xs:complexType name="CEPTickets">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ajuste" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CanaldeIngreso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaDeCancelacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeCreacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaDeGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdGestion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MarcacionCancelacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nota2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroDeTicket" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Razon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Srcaus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Srreas" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subrazon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioDeCancelacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioDeCreacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioDeGestion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsuarioDeRetencion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CEPTickets" nillable="true" type="tns:CEPTickets" />
 </xs:schema>
