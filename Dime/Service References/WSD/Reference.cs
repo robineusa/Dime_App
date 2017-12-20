@@ -18947,6 +18947,18 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaSrreas", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSrreasResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroMarcacione>> ListaSrreasAsync(string Razon);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaMarcacionesTickets", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaMarcacionesTicketsResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroMarcacione> ListaMarcacionesTickets();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaMarcacionesTickets", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaMarcacionesTicketsResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroMarcacione>> ListaMarcacionesTicketsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaDeTicketPorTicket", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaDeTicketPorTicketResponse")]
+        Telmexla.Servicios.DIME.Entity.CEPTickets ConsultaDeTicketPorTicket(decimal Ticket);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaDeTicketPorTicket", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaDeTicketPorTicketResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPTickets> ConsultaDeTicketPorTicketAsync(decimal Ticket);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19174,6 +19186,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroMarcacione>> ListaSrreasAsync(string Razon) {
             return base.Channel.ListaSrreasAsync(Razon);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroMarcacione> ListaMarcacionesTickets() {
+            return base.Channel.ListaMarcacionesTickets();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.MaestroMarcacione>> ListaMarcacionesTicketsAsync() {
+            return base.Channel.ListaMarcacionesTicketsAsync();
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPTickets ConsultaDeTicketPorTicket(decimal Ticket) {
+            return base.Channel.ConsultaDeTicketPorTicket(Ticket);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPTickets> ConsultaDeTicketPorTicketAsync(decimal Ticket) {
+            return base.Channel.ConsultaDeTicketPorTicketAsync(Ticket);
         }
     }
 }

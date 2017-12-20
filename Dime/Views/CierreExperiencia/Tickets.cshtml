@@ -22,16 +22,16 @@
                             <td width="200" style="padding:1px;">
                                 <small>Cuenta del Cliente:  </small>
                                 @Html.TextBoxFor(m => m.CEPTickets.CuentaCliente, new { @class = "form-control input-sm", @Id = "CuentaCliente", @placeholder = "Ingrese la cuenta" })
-                                
+                                @Html.HiddenFor(m => m.CEPTickets.IdGestion)
                             </td>
                             <td width="200" style="padding:1px;">
                                 <small>Número de Ticket:  </small>
-                                @Html.TextBoxFor(m => m.CEPTickets.NumeroDeTicket, new { @class = "form-control input-sm", @Id = "NumeroDeTicket"})
+                                @Html.TextBoxFor(m => m.CEPTickets.NumeroDeTicket, new { @class = "form-control input-sm", @Id = "NumeroDeTicket", placeholder="Ingrese el número de ticket"})
 
                             </td>
                             <td width="200" style="padding:1px;">
                                 <small>Usuario de Creación Ticket:  </small>
-                                @Html.TextBoxFor(m => m.CEPTickets.UsuarioDeCreacion, new { @class = "form-control input-sm", @Id = "UsuarioDeCreacion"})
+                                @Html.TextBoxFor(m => m.CEPTickets.UsuarioDeCreacion, new { @class = "form-control input-sm", @Id = "UsuarioDeCreacion", placeholder = "Ingrese el usuario que creo el ticket"})
 
                             </td>
                             <td width="200" style="padding:1px;">
@@ -103,19 +103,19 @@
             <br />
             <table>
                 <tr>
-                    <td style="padding-left:1px; width:400px;">
+                    <td style="padding-left:1px; width:350px;">
                         <smmall>Gestión:</smmall>
                         @Html.HiddenFor(m => m.CEPTickets.Gestion, new { @class = "form-control input-sm", @Id = "SelectGestion1" })
                         @Html.DropDownListFor(m => m.CEPTickets.Gestion, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "SelectGestion", @class = "form-control input-sm" })
                         
                     </td>
-                    <td style="padding-left:1px; width:400px;">
+                    <td style="padding-left:1px; width:350px;">
                         <small>Razón:</small>
                         @Html.HiddenFor(m => m.CEPTickets.Razon, new { @class = "form-control input-sm", @Id = "Razon1" })
                         @Html.DropDownListFor(m => m.CEPTickets.Razon, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Razon", @class = "form-control input-sm" })
                         
                     </td>
-                    <td style="padding-left:1px; width:400px;">
+                    <td style="padding-left:1px; width:350px;">
                         <small>Subrazón:</small>
                         @Html.HiddenFor(m => m.CEPTickets.Subrazon, new { @class = "form-control input-sm", @Id = "Subrazon1" })
                         @Html.DropDownListFor(m => m.CEPTickets.Subrazon, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Subrazon", @class = "form-control input-sm" })
@@ -145,15 +145,16 @@
                     </td>
                     <td style="padding-left:1px; width:200px;">
                         <small>Marcacion de Cancelación:</small>
+                        @Html.HiddenFor(m => m.CEPTickets.MarcacionCancelacion, new { @class = "form-control input-sm", @Id = "MarcacionCancelacion1" })
                         @Html.DropDownListFor(m => m.CEPTickets.MarcacionCancelacion, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "MarcacionCancelacion", @class = "form-control input-sm" })
                     </td>
-                    <td style="padding-left:1px; width:200px;">
+                    <td style="padding-left:1px; width:250px;">
                         <small>Usuario de Cancelación:</small>
-                        @Html.TextBoxFor(m => m.CEPTickets.UsuarioDeCancelacion, new { @class = "form-control input-sm", @Id = "UsuarioDeCancelacion" })
+                        @Html.TextBoxFor(m => m.CEPTickets.UsuarioDeCancelacion, new { @class = "form-control input-sm", @Id = "UsuarioDeCancelacion", placeholder = "Ingrese el usuario de cancelación" })
                     </td>
                     <td style="padding-left:1px; width:200px;">
                         <small>Usuario de Retención:</small>
-                        @Html.TextBoxFor(m => m.CEPTickets.UsuarioDeRetencion, new { @class = "form-control input-sm", @Id = "UsuarioDeRetencion" })
+                        @Html.TextBoxFor(m => m.CEPTickets.UsuarioDeRetencion, new { @class = "form-control input-sm", @Id = "UsuarioDeRetencion", placeholder = "Ingrese el usuario de la retención" })
                     </td>
                     <td style="padding-left:1px; width:200px;">
                         <small>Servicios Desconectados:</small>
@@ -239,9 +240,11 @@
             var UrlDatosArbol = '@Url.Action("TraerDatosDelArbol", "CierreExperiencia")';
             var UrlInformacionClienteticket = '@Url.Action("TraerInformacionClienteTicket", "CierreExperiencia")';
             var UrlListaSrcaus = '@Url.Action("ListaSrcaus", "CierreExperiencia")';
-            var UrlListaSrreas = '@Url.Action("ListaSrreas", "CierreExperiencia")';
+        var UrlListaSrreas = '@Url.Action("ListaSrreas", "CierreExperiencia")';
+        var UrlMarcaciones = '@Url.Action("ListaDeMarcaciones", "CierreExperiencia")';
+        var UrlConsultarTicket = '@Url.Action("ConsultarTicketBaseDeGestion", "CierreExperiencia")';
     </script>
-    <script src="~/Scripts/CierreExperiencia/Tickets.js?1.0.2"></script>
+    <script src="~/Scripts/CierreExperiencia/Tickets.js?1.0.3"></script>
     <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
     <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />

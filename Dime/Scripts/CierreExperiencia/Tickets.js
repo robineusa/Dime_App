@@ -1,9 +1,9 @@
 ﻿$(document).ready(function () {
     TraerCanalDeIngreso();
+    FormatoFechas();
     TraerArbolSrcaus();
     TraerArbolDeGestion();
-    TraerArbolDeRazon();
-    ListaSubrazones();
+    TraerArbolMarcaciones();
     TraerListaGestionUsuario();
     TraerListaSeguimientosUsuario();
 
@@ -82,23 +82,21 @@ function TraerArbolDeGestion() {
                 if (select.options[i].text == buscar) {
                     // seleccionamos el valor que coincide
                     select.selectedIndex = i;
-                }
-            }
+                    $('#SelectGestion').val(select.options[i].value);
+                    TraerArbolDeRazon();
+                  }
+               }
 
         },
         error: function (request, status, error) {
             alert(request.responseText);
         }
     });
-
-    $('#SelectGestion').find('option:not(:first)').remove();
-    $('#Razon').find('option:not(:first)').remove();
-    $('#Subrazon').find('option:not(:first)').remove();
+    
 }
 
 function TraerArbolDeRazon() {
     var IdPadre = $('#SelectGestion').val();
-    console.log(IdPadre);
     if (IdPadre == "--SELECCIONE--" || IdPadre == "" || IdPadre == " ") {
         $('#Razon').find('option:not(:first)').remove();
 
@@ -128,6 +126,8 @@ function TraerArbolDeRazon() {
                     if (select.options[i].text == buscar) {
                         // seleccionamos el valor que coincide
                         select.selectedIndex = i;
+                        $('#Razon').val(select.options[i].value);
+                        ListaSubrazones();
                     }
                 }
             },
@@ -135,8 +135,7 @@ function TraerArbolDeRazon() {
                 alert(request.responseText);
             }
         });
-        $('#Razon').find('option:not(:first)').remove();
-        $('#Subrazon').find('option:not(:first)').remove();
+       
     }
 }
 
@@ -172,6 +171,7 @@ function ListaSubrazones() {
                     if (select.options[i].text == buscar) {
                         // seleccionamos el valor que coincide
                         select.selectedIndex = i;
+                        DatosDeLaGestion();
                     }
                 }
             },
@@ -179,8 +179,7 @@ function ListaSubrazones() {
                 alert(request.responseText);
             }
         });
-        $('#Subrazon').find('option:not(:first)').remove();
-
+       
     }
 }
 function TraerCanalDeIngreso() {
@@ -227,18 +226,22 @@ $('#CanalDeIngreso').change(function () {
     var NuevaIdSelesct = document.getElementById("CanalDeIngreso");
     var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
     $('#CanalDeIngreso1').val(NuevoText);
+
 })
 
 $('#SelectGestion').change(function () {
+    $('#Razon').find('option:not(:first)').remove();
+    $('#Subrazon').find('option:not(:first)').remove();
     TraerArbolDeRazon();
     ListaSubrazones();
     var NuevaIdGestion = document.getElementById("SelectGestion");
     var NuevaGestion = NuevaIdGestion.options[NuevaIdGestion.selectedIndex].text;
     $('#SelectGestion1').val(NuevaGestion);
-
+    
 })
 
 $('#Razon').change(function () {
+    $('#Subrazon').find('option:not(:first)').remove();
     ListaSubrazones();
     DatosDeLaGestion();
     var NuevaIdSubrazon = document.getElementById("Razon");
@@ -281,6 +284,7 @@ function ValidarEstado(Estado) {
     else {
         document.getElementById('TituloSeguimiento').style.display = 'none';
         document.getElementById('CuerpoSeguimineto').style.display = 'none';
+        LimpiarFecha();
     }
     $('#FechaDeSeguimiento').datetimepicker({
         minDate: '0',
@@ -288,7 +292,7 @@ function ValidarEstado(Estado) {
         timepicker: true,
         step: 30
     });
-    LimpiarFecha();
+   
 }
 
 function TraerListaGestionUsuario() {
@@ -395,9 +399,9 @@ function cargargrillaseg(data) {
             buttonCount: 5
         },
         columns: [
-        { command: { text: " Editar", click: ActualizarCasoSeg, imageClass: "fa fa-fw fa-pencil-square-o", }, title: "Editar", width: "60px" },
-        { field: "IdGestion", title: "Id Gestion", width: 100 },
-        { field: "FechaDeTransaccion", title: "Fecha De Transaccion", width: 100 },
+        { command: { text: " Editar", click: ActualizarCasoSeg, imageClass: "fa fa-fw fa-pencil-square-o", }, title: "Editar", width: "100px" },
+        { field: "IdGestion", title: "Id Gestion", width: 60 },
+        { field: "FechaDeGestion", title: "Fecha De Gestion", width: 100 },
         { field: "CuentaCliente", title: "Cuenta Cliente", width: 100 },
         { field: "NumeroDeTicket", title: "Numero De Ticket", width: 100 },
         { field: "Gestion", title: "Gestion", width: 100 },
@@ -450,8 +454,7 @@ function DatosClienteCuenta(Cuenta) {
 
 }
 function FormatoFechas() {
-    var IdGes = $("#Id").val();
-    if (IdGes <= 0) {
+   
         $('#FechaDeCreacion').datetimepicker({
             format: 'Y-m-d',
             timepicker: false
@@ -462,7 +465,7 @@ function FormatoFechas() {
             timepicker: false
         });
        
-    }
+   
 }
 
 function seleccionarNota1() {
@@ -499,6 +502,8 @@ function TraerArbolSrcaus() {
                     if (select.options[i].text == buscar) {
                         // seleccionamos el valor que coincide
                         select.selectedIndex = i;
+                        $('#Srcaus').val(select.options[i].value);
+                        TraerArbolSrreas();
                     }
                 }
             },
@@ -506,8 +511,8 @@ function TraerArbolSrcaus() {
                 alert(request.responseText);
             }
         });
-        $('#Srcaus').find('option:not(:first)').remove();
-        $('#Srreas').find('option:not(:first)').remove();
+        
+        
     
 }
 function TraerArbolSrreas() {
@@ -553,7 +558,7 @@ function TraerArbolSrreas() {
     }
 }
 $('#Srcaus').change(function () {
-    
+    $('#Srreas').find('option:not(:first)').remove();
     var NuevaIdSubrazon = document.getElementById("Srcaus");
     var NuevaSubrazon = NuevaIdSubrazon.options[NuevaIdSubrazon.selectedIndex].text;
     $('#Srcaus1').val(NuevaSubrazon);
@@ -566,3 +571,86 @@ $('#Srreas').change(function () {
     $('#Srreas1').val(NuevaSubrazon);
     
 })
+function TraerArbolMarcaciones() {
+
+    $.ajax({
+        type: "POST",
+        url: UrlMarcaciones,
+        contentType: "application/json; charset=utf-8",
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#MarcacionCancelacion').append($('<option>', {
+                    value: json[index].Submarcacion,
+                    text: json[index].Submarcacion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("MarcacionCancelacion");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("MarcacionCancelacion1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                }
+            }
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+    $('#MarcacionCancelacion').find('option:not(:first)').remove();
+    
+}
+$('#MarcacionCancelacion').change(function () {
+
+    var NuevaIdSubrazon = document.getElementById("MarcacionCancelacion");
+    var NuevaSubrazon = NuevaIdSubrazon.options[NuevaIdSubrazon.selectedIndex].text;
+    $('#MarcacionCancelacion1').val(NuevaSubrazon);
+
+})
+function ConsultarTicketBase(data) {
+
+    $.ajax({
+        type: "POST",
+        url: UrlConsultarTicket,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ Ticket: data }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            if (json != null) {
+                if (json.Estado == "SEGUIMIENTO") {
+                    alert("El número de ticket ingresado ya se encuentra en seguimiento");
+                    location.reload();
+                } else {
+                    alert("El número de ticket ingresado ya se encuentra finalizado");
+                    location.reload();
+                }
+            }
+            
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+
+
+}
+$("#NumeroDeTicket").blur(function (event) {
+    event.preventDefault();
+    var Ticket = $("#NumeroDeTicket").val();
+    if (Ticket == "" || Ticket == null || Ticket == "0") {
+    } else {
+
+        ConsultarTicketBase(Ticket);
+
+    }
+
+});

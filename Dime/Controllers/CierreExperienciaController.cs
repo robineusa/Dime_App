@@ -373,5 +373,17 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        public JsonResult ListaDeMarcaciones()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ListaMarcacionesTickets()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ConsultarTicketBaseDeGestion(decimal Ticket)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ConsultaDeTicketPorTicket(Ticket)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }

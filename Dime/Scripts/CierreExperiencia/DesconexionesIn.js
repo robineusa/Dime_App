@@ -2,7 +2,6 @@
     FormatoFechas();
     TraerCanalDeIngreso();
     TraerArbolDeGestion();
-    ListaSubrazones();
     TraerArbolTipoDeError();
     TraerListaGestionUsuario();
     TraerListaSeguimientosUsuario();
@@ -82,6 +81,8 @@ function TraerArbolDeGestion() {
                 if (select.options[i].text == buscar) {
                     // seleccionamos el valor que coincide
                     select.selectedIndex = i;
+                    $('#SelectGestion').val(select.options[i].value);
+                    ListaSubrazones();
                 }
             }
 
@@ -90,8 +91,6 @@ function TraerArbolDeGestion() {
             alert(request.responseText);
         }
     });
-
-    $('#SelectGestion').find('option:not(:first)').remove();
 
 }
 function TraerCanalDeIngreso() {
@@ -173,7 +172,6 @@ function TraerArbolTipoDeError() {
 
 }
 $('#TipoDeError').change(function () {
-    DatosDeLaGestion();
     var NuevaIdSelesct = document.getElementById("TipoDeError");
     var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
     $('#TipoDeError1').val(NuevoText);
@@ -200,8 +198,8 @@ $('#ErrorSolicitud').change(function () {
         $('#TipoDeError1').val(val1);
     }
 })
-
 $('#SelectGestion').change(function () {
+    $('#Subrazon').find('option:not(:first)').remove();
     ListaSubrazones();
     var NuevaIdGestion = document.getElementById("SelectGestion");
         var NuevaGestion = NuevaIdGestion.options[NuevaIdGestion.selectedIndex].text;
@@ -240,6 +238,7 @@ function ListaSubrazones() {
                     if (select.options[i].text == buscar) {
                         // seleccionamos el valor que coincide
                         select.selectedIndex = i;
+                        DatosDeLaGestion();
                     }
                 }
             },
@@ -247,19 +246,15 @@ function ListaSubrazones() {
                 alert(request.responseText);
             }
         });
-        $('#Subrazon').find('option:not(:first)').remove();
-       
+        
     }
 }
-
-
 $('#Subrazon').change(function () {
     DatosDeLaGestion();
     var NuevaIdSubrazon = document.getElementById("Subrazon");
     var NuevaSubrazon = NuevaIdSubrazon.options[NuevaIdSubrazon.selectedIndex].text;
     $('#Subrazon1').val(NuevaSubrazon);
 })
-
 function DatosDeLaGestion() {
     var IdPadre = $('#Subrazon').val();
     $.ajax({
@@ -297,7 +292,6 @@ function ValidarEstado(Estado) {
     });
     LimpiarFecha();
 }
-
 function TraerListaGestionUsuario() {
     $.ajax({
         type: "GET",
@@ -314,7 +308,6 @@ function TraerListaGestionUsuario() {
         }
     });
 }
-
 function cambiarfechas(data) {
     for (var i = 0; i < data.length; i++) {
         data[i].FechaDeTransaccion = kendo.toString(kendo.parseDate(data[i].FechaDeTransaccion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
@@ -401,8 +394,8 @@ function cargargrillaseg(data) {
             buttonCount: 5
         },
         columns: [
-        { command: { text: " Editar", click: ActualizarCasoSeg, imageClass: "fa fa-fw fa-pencil-square-o", }, title: "Editar", width: "60px" },
-        { field: "IdGestion", title: "Id Gestion", width: 100 },
+        { command: { text: " Editar", click: ActualizarCasoSeg, imageClass: "fa fa-fw fa-pencil-square-o", }, title: "Editar", width: "100px" },
+        { field: "IdGestion", title: "Id Gestion", width: 60 },
         { field: "FechaDeGestion", title: "Fecha De Gestion", width: 100 },
         { field: "CuentaCliente", title: "Cuenta Cliente", width: 100 },
         { field: "Gestion", title: "Gestion", width: 100 },
@@ -536,7 +529,6 @@ function FormatoFechas() {
         });
     }
 }
-
 function seleccionarNota1() {
     document.getElementById("Nota1").selectionStart = 0;
 

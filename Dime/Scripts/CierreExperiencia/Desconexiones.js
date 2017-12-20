@@ -1,6 +1,5 @@
 ﻿$(document).ready(function () {
     TraerArbolDeGestion();
-    ListaSubrazones();
     TraerArbolTipoDeError();
     TraerListaGestionUsuario();
     TraerListaSeguimientosUsuario();
@@ -80,6 +79,8 @@ function TraerArbolDeGestion() {
                 if (select.options[i].text == buscar) {
                     // seleccionamos el valor que coincide
                     select.selectedIndex = i;
+                    $('#SelectGestion').val(select.options[i].value);
+                    ListaSubrazones();
                 }
             }
 
@@ -88,8 +89,6 @@ function TraerArbolDeGestion() {
             alert(request.responseText);
         }
     });
-
-    $('#SelectGestion').find('option:not(:first)').remove();
 
 }
 function TraerArbolTipoDeError() {
@@ -132,7 +131,6 @@ function TraerArbolTipoDeError() {
 
 }
 $('#TipoDeError').change(function () {
-    DatosDeLaGestion();
     var NuevaIdSelesct = document.getElementById("TipoDeError");
     var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
     $('#TipoDeError1').val(NuevoText);
@@ -156,6 +154,7 @@ $('#ErrorSolicitud').change(function () {
 })
 
 $('#SelectGestion').change(function () {
+    $('#Subrazon').find('option:not(:first)').remove();
     ListaSubrazones();
     var NuevaIdGestion = document.getElementById("SelectGestion");
         var NuevaGestion = NuevaIdGestion.options[NuevaIdGestion.selectedIndex].text;
@@ -194,6 +193,7 @@ function ListaSubrazones() {
                     if (select.options[i].text == buscar) {
                         // seleccionamos el valor que coincide
                         select.selectedIndex = i;
+                        DatosDeLaGestion();
                     }
                 }
             },
@@ -201,8 +201,7 @@ function ListaSubrazones() {
                 alert(request.responseText);
             }
         });
-        $('#Subrazon').find('option:not(:first)').remove();
-       
+        
     }
 }
 
@@ -242,6 +241,7 @@ function ValidarEstado(Estado) {
     else {
         document.getElementById('TituloSeguimiento').style.display = 'none';
         document.getElementById('CuerpoSeguimineto').style.display = 'none';
+        LimpiarFecha();
     }
     $('#FechaDeSeguimiento').datetimepicker({
         minDate: '0',
@@ -249,7 +249,6 @@ function ValidarEstado(Estado) {
         timepicker: true,
         step: 30
     });
-    LimpiarFecha();
 }
 
 function TraerListaGestionUsuario() {
@@ -355,8 +354,8 @@ function cargargrillaseg(data) {
             buttonCount: 5
         },
         columns: [
-        { command: { text: " Editar", click: ActualizarCasoSeg, imageClass: "fa fa-fw fa-pencil-square-o", }, title: "Editar", width: "60px" },
-        { field: "IdGestion", title: "Id Gestion", width: 100 },
+        { command: { text: " Editar", click: ActualizarCasoSeg, imageClass: "fa fa-fw fa-pencil-square-o", }, title: "Editar", width: "100px" },
+        { field: "IdGestion", title: "Id Gestion", width: 60 },
         { field: "FechaDeGestion", title: "Fecha De Gestion", width: 100 },
         { field: "CuentaCliente", title: "Cuenta Cliente", width: 100 },
         { field: "Gestion", title: "Gestion", width: 100 },

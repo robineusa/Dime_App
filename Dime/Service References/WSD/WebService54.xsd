@@ -7891,4 +7891,30 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListaMarcacionesTickets">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaMarcacionesTicketsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q551="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaMarcacionesTicketsResult" nillable="true" type="q551:ArrayOfMaestroMarcacione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaDeTicketPorTicket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Ticket" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaDeTicketPorTicketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q552="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaDeTicketPorTicketResult" nillable="true" type="q552:CEPTickets" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
