@@ -106,7 +106,7 @@ namespace Dime.Controllers
             return jsonResult;
         }
         [HttpPost]
-        public JsonResult CambiarNombreNodo(string IdNodo,string NombreNuevo)
+        public JsonResult CambiarNombreNodo(string IdNodo, string NombreNuevo)
         {
             int idNodo = Convert.ToInt32(IdNodo);
             ProcesosService.CambiarNombreNodo(idNodo, NombreNuevo);

@@ -18959,6 +18959,54 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaDeTicketPorTicket", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaDeTicketPorTicketResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPTickets> ConsultaDeTicketPorTicketAsync(decimal Ticket);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/RegistrarSuspencion", ReplyAction="http://tempuri.org/ICierreExperienciaService/RegistrarSuspencionResponse")]
+        void RegistrarSuspencion(Telmexla.Servicios.DIME.Entity.CEPSuspensiones Suspencion, decimal IdAsignacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/RegistrarSuspencion", ReplyAction="http://tempuri.org/ICierreExperienciaService/RegistrarSuspencionResponse")]
+        System.Threading.Tasks.Task RegistrarSuspencionAsync(Telmexla.Servicios.DIME.Entity.CEPSuspensiones Suspencion, decimal IdAsignacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ActualizarSuspencion", ReplyAction="http://tempuri.org/ICierreExperienciaService/ActualizarSuspencionResponse")]
+        void ActualizarSuspencion(Telmexla.Servicios.DIME.Entity.CEPSuspensiones Suspencion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ActualizarSuspencion", ReplyAction="http://tempuri.org/ICierreExperienciaService/ActualizarSuspencionResponse")]
+        System.Threading.Tasks.Task ActualizarSuspencionAsync(Telmexla.Servicios.DIME.Entity.CEPSuspensiones Suspencion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteSuspensionesResp" +
+            "onse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones> ListaDeGestionAgenteSuspensiones(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteSuspensionesResp" +
+            "onse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones>> ListaDeGestionAgenteSuspensionesAsync(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteSuspensionesR" +
+            "esponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> ListaSeguimientosAgenteSuspensiones(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteSuspensionesR" +
+            "esponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPSuspensiones>> ListaSeguimientosAgenteSuspensionesAsync(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ValidarCuentaAsigSuspension", ReplyAction="http://tempuri.org/ICierreExperienciaService/ValidarCuentaAsigSuspensionResponse")]
+        Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones ValidarCuentaAsigSuspension(decimal Cedula, decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ValidarCuentaAsigSuspension", ReplyAction="http://tempuri.org/ICierreExperienciaService/ValidarCuentaAsigSuspensionResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones> ValidarCuentaAsigSuspensionAsync(decimal Cedula, decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ApartarCuentadeSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ApartarCuentadeSuspensionesResponse")]
+        Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones ApartarCuentadeSuspensiones(decimal Cedula, int noRecursividad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ApartarCuentadeSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ApartarCuentadeSuspensionesResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones> ApartarCuentadeSuspensionesAsync(decimal Cedula, int noRecursividad);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeRegistroAsignacionSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeRegistroAsignacionSuspensionesRe" +
+            "sponse")]
+        Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones TraeRegistroAsignacionSuspensiones(decimal IdAsignacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeRegistroAsignacionSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeRegistroAsignacionSuspensionesRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones> TraeRegistroAsignacionSuspensionesAsync(decimal IdAsignacion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19202,6 +19250,62 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPTickets> ConsultaDeTicketPorTicketAsync(decimal Ticket) {
             return base.Channel.ConsultaDeTicketPorTicketAsync(Ticket);
+        }
+        
+        public void RegistrarSuspencion(Telmexla.Servicios.DIME.Entity.CEPSuspensiones Suspencion, decimal IdAsignacion) {
+            base.Channel.RegistrarSuspencion(Suspencion, IdAsignacion);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarSuspencionAsync(Telmexla.Servicios.DIME.Entity.CEPSuspensiones Suspencion, decimal IdAsignacion) {
+            return base.Channel.RegistrarSuspencionAsync(Suspencion, IdAsignacion);
+        }
+        
+        public void ActualizarSuspencion(Telmexla.Servicios.DIME.Entity.CEPSuspensiones Suspencion) {
+            base.Channel.ActualizarSuspencion(Suspencion);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarSuspencionAsync(Telmexla.Servicios.DIME.Entity.CEPSuspensiones Suspencion) {
+            return base.Channel.ActualizarSuspencionAsync(Suspencion);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones> ListaDeGestionAgenteSuspensiones(decimal Usuario) {
+            return base.Channel.ListaDeGestionAgenteSuspensiones(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones>> ListaDeGestionAgenteSuspensionesAsync(decimal Usuario) {
+            return base.Channel.ListaDeGestionAgenteSuspensionesAsync(Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> ListaSeguimientosAgenteSuspensiones(decimal Usuario) {
+            return base.Channel.ListaSeguimientosAgenteSuspensiones(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPSuspensiones>> ListaSeguimientosAgenteSuspensionesAsync(decimal Usuario) {
+            return base.Channel.ListaSeguimientosAgenteSuspensionesAsync(Usuario);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones ValidarCuentaAsigSuspension(decimal Cedula, decimal CuentaCliente) {
+            return base.Channel.ValidarCuentaAsigSuspension(Cedula, CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones> ValidarCuentaAsigSuspensionAsync(decimal Cedula, decimal CuentaCliente) {
+            return base.Channel.ValidarCuentaAsigSuspensionAsync(Cedula, CuentaCliente);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones ApartarCuentadeSuspensiones(decimal Cedula, int noRecursividad) {
+            return base.Channel.ApartarCuentadeSuspensiones(Cedula, noRecursividad);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones> ApartarCuentadeSuspensionesAsync(decimal Cedula, int noRecursividad) {
+            return base.Channel.ApartarCuentadeSuspensionesAsync(Cedula, noRecursividad);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones TraeRegistroAsignacionSuspensiones(decimal IdAsignacion) {
+            return base.Channel.TraeRegistroAsignacionSuspensiones(IdAsignacion);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones> TraeRegistroAsignacionSuspensionesAsync(decimal IdAsignacion) {
+            return base.Channel.TraeRegistroAsignacionSuspensionesAsync(IdAsignacion);
         }
     }
 }
