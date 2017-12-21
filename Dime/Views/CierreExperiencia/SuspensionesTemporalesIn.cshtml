@@ -1,10 +1,10 @@
 ﻿@model Telmexla.Servicios.DIME.Entity.ViewModelCierreExperiencia
 @{
-    ViewBag.Title = "Formulario Suspensiones Temporales";
+    ViewBag.Title = "Formulario Ingresos Suspensiones Temporales";
     ViewBag.Subtitle = "Procesos - Cierre de la Experiencia";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("SuspencionesTemporales", "CierreExperiencia", FormMethod.Post, new { id = "suspensiones", role = "form" }))
+@using (Html.BeginForm("SuspensionesTemporalesIn", "CierreExperiencia", FormMethod.Post, new { id = "suspensionesin", role = "form" }))
 {
     @Html.AntiForgeryToken()
     <div class="nav-tabs-custom">
@@ -17,26 +17,26 @@
         <div class="tab-content" style="padding-left:0; padding-top: 0">
             <div class="active tab-pane" id="Datos_Basicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
                 <br />
-               <table>
+                <table>
                     <tr>
                         <td width="200" style="padding:1px;">
                             <small>Cuenta del Cliente:  </small>
-                            @Html.TextBoxFor(m => m.CEPSuspensiones.CuentaCliente, new { @class = "form-control input-sm", @Id = "CuentaCliente", @placeholder = "Ingrese la cuenta",@readonly="true" })
+                            @Html.TextBoxFor(m => m.CEPSuspensiones.CuentaCliente, new { @class = "form-control input-sm", @Id = "CuentaCliente", @placeholder = "Ingrese la cuenta" })
                             @Html.HiddenFor(m => m.CEPSuspensiones.IdGestion)
-                            @Html.HiddenFor(m => m.CEPAsigSuspensiones.IdAsignacion)
+                            @Html.HiddenFor(m => m.CEPAsigSuspensiones.IdAsignacion,new { @Id = "IdAsignacion" })
                         </td>
                         <td width="200" style="padding:1px;">
                             <small>Canal de Ingreso:</small>
                             @Html.HiddenFor(m => m.CEPSuspensiones.CanalDeIngreso, new { @class = "form-control input-sm", @Id = "CanalDeIngreso1" })
-                            @Html.DropDownListFor(m => m.CEPSuspensiones.CanalDeIngreso, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "CanalDeIngreso", @class = "form-control input-sm", @readonly = "true" })
+                            @Html.DropDownListFor(m => m.CEPSuspensiones.CanalDeIngreso, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "CanalDeIngreso", @class = "form-control input-sm"})
                         </td>
                         <td width="200" style="padding:1px;">
                             <small>Fecha de Creación:  </small>
-                            @Html.TextBoxFor(m => m.CEPSuspensiones.FechaCreacion, new { @class = "form-control input-sm", @Id = "FechaCreacion", placeholder = "Seleccione la Fecha", @readonly = "true" })
+                            @Html.TextBoxFor(m => m.CEPSuspensiones.FechaCreacion, new { @class = "form-control input-sm", @Id = "FechaCreacion", placeholder = "Seleccione la Fecha"})
                         </td>
                         <td width="200" style="padding:1px;">
                             <small>Usuario de Creación:  </small>
-                            @Html.TextBoxFor(m => m.CEPSuspensiones.UsuarioCreacion, new { @class = "form-control input-sm", @Id = "UsuarioCreacion", placeholder = "Ingrese el usuario", @readonly = "true" })
+                            @Html.TextBoxFor(m => m.CEPSuspensiones.UsuarioCreacion, new { @class = "form-control input-sm", @Id = "UsuarioCreacion", placeholder = "Ingrese el usuario"})
 
                         </td>
                         <td width="200" style="padding:1px;">
@@ -179,9 +179,10 @@
         var UrlListaDeSeguimientosSuspensiones = '@Url.Action("ListaDeSeguimientosAgenteSuspensiones", "CierreExperiencia")';
         var UrlArbolDeGestion = '@Url.Action("ArbolesDeTipificacionDesconexion", "CierreExperiencia")';
         var UrlDatosArbol = '@Url.Action("TraerDatosDelArbol", "CierreExperiencia")';
-        var RegistrosAsignados = '@ViewBag.Asignacion';
+        var UrlGestionDeClienteSuspensiones = '@Url.Action("ValidarGestionDeClienteEnSuspensiones", "CierreExperiencia")';
+        var UrlAsignacionDeClienteSuspensiones = '@Url.Action("ValidarAsignacionDeClienteEnSuspensiones", "CierreExperiencia")';
     </script>
-    <script src="~/Scripts/CierreExperiencia/SuspensionesTemporales.js?1.0.5"></script>
+    <script src="~/Scripts/CierreExperiencia/SuspencionesTemporalesIn.js?1.0.0"></script>
     <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
     <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />

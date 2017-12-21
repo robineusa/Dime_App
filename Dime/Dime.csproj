@@ -2349,6 +2349,7 @@
     <Content Include="Scripts\CierreExperiencia\DesconexionesIn.js" />
     <Content Include="Scripts\CierreExperiencia\Desconexiones.js" />
     <Content Include="Scripts\CierreExperiencia\ListaArboles.js" />
+    <Content Include="Scripts\CierreExperiencia\SuspencionesTemporalesIn.js" />
     <Content Include="Scripts\CierreExperiencia\SuspensionesTemporales.js" />
     <Content Include="Scripts\CierreExperiencia\Tickets.js" />
     <Content Include="Scripts\Consultas_Admin\Consulta_Gestion.js" />
@@ -3694,11 +3695,12 @@
     <Content Include="Views\CierreExperiencia\Desconexiones.cshtml" />
     <Content Include="Views\CierreExperiencia\LiberacionesDeHomePass.cshtml" />
     <Content Include="Views\CierreExperiencia\Tickets.cshtml" />
-    <Content Include="Views\CierreExperiencia\SuspencionesTemporales.cshtml" />
+    <Content Include="Views\CierreExperiencia\SuspensionesTemporales.cshtml" />
     <Content Include="Views\CierreExperiencia\ListaArboles.cshtml" />
     <Content Include="Views\CierreExperiencia\AdministrarArboles.cshtml" />
     <Content Include="Views\CierreExperiencia\DesconexionesIn.cshtml" />
     <Content Include="Views\CierreExperiencia\ConsultaGestionUsuario.cshtml" />
+    <Content Include="Views\CierreExperiencia\SuspensionesTemporalesIn.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

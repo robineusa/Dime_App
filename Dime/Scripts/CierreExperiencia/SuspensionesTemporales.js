@@ -493,7 +493,7 @@ function ActualizarCasoSeg(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
     var seg = "Ture";
-    window.location.href = 'SuspencionesTemporales?IdGestion=' + dataItem.IdGestion;
+    window.location.href = 'SuspensionesTemporales?IdGestion=' + dataItem.IdGestion;
 }
 function LimpiarFecha() {
     var FechaSeguimiento = document.getElementById('FechaSeguimiento');
@@ -516,7 +516,7 @@ function NoHayMasRegistros() {
             useBootstrap: false,
             type: 'green',
             title: '¡ Super !',
-            content: 'Ya No Existen Mas Registros Asignados',
+            content: 'Ya no existen más registros asignados.',
             buttons: {
                 Ok: {
                     btnClass: 'btn-green',

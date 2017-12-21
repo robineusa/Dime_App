@@ -388,7 +388,7 @@ function NoHayMasRegistros() {
             useBootstrap: false,
             type: 'green',
             title: '¡ Super !',
-            content: 'Ya No Existen Mas Registros Asignados',
+            content: 'Ya no existen más registros asignados.',
             buttons: {
                 Ok: {
                     btnClass: 'btn-green',

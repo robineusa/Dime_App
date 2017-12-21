@@ -1,11 +1,13 @@
 ﻿$(document).ready(function () {
-    FormatoFechas();
     TraerCanalDeIngreso();
+    TraerMotivoSuspension();
+    TraerMesesDeSuspension();
+    TraerServiciosASuspender();
+    FormatoFechas();
     TraerArbolDeGestion();
-    TraerArbolTipoDeError();
     TraerListaGestionUsuario();
     TraerListaSeguimientosUsuario();
-   
+
 
     $("#Li1").click(function () {
 
@@ -52,10 +54,10 @@
         $("#Li5").css("background-color", "#dcdcdc");
 
     });
-    
+
 });
 function TraerArbolDeGestion() {
-    var IdPadre = "7";
+    var IdPadre = "22";
 
     $.ajax({
         type: "POST",
@@ -93,125 +95,12 @@ function TraerArbolDeGestion() {
     });
 
 }
-function TraerCanalDeIngreso() {
-    var IdPadre = "5";
-
-    $.ajax({
-        type: "POST",
-        url: UrlArbolDeGestion,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ IdPadre: IdPadre }),
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            for (var index = 0, len = json.length; index < len; index++) {
-                $('#CanalDeIngreso').append($('<option>', {
-                    value: json[index].IdArbol,
-                    text: json[index].Descripcion
-                }));
-
-            }
-            // creamos un variable que hace referencia al select
-            var select = document.getElementById("CanalDeIngreso");
-            // obtenemos el valor a buscar
-            var buscar = document.getElementById("CanalDeIngreso1").value;
-            // recorremos todos los valores del select
-            for (var i = 1; i < select.length; i++) {
-                if (select.options[i].text == buscar) {
-                    // seleccionamos el valor que coincide
-                    select.selectedIndex = i;
-                }
-            }
-
-        },
-        error: function (request, status, error) {
-            alert(request.responseText);
-        }
-    });
-
-    $('#CanalDeIngreso').find('option:not(:first)').remove();
-
-}
-function TraerArbolTipoDeError() {
-    var IdPadre = "8";
-
-    $.ajax({
-        type: "POST",
-        url: UrlArbolDeGestion,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ IdPadre: IdPadre }),
-        dataType: "JSON",
-        success: function (result) {
-            var json = JSON.parse(result);
-            for (var index = 0, len = json.length; index < len; index++) {
-                $('#TipoDeError').append($('<option>', {
-                    value: json[index].IdArbol,
-                    text: json[index].Descripcion
-                }));
-
-            }
-            // creamos un variable que hace referencia al select
-            var select = document.getElementById("TipoDeError");
-            // obtenemos el valor a buscar
-            var buscar = document.getElementById("TipoDeError1").value;
-            // recorremos todos los valores del select
-            for (var i = 1; i < select.length; i++) {
-                if (select.options[i].text == buscar) {
-                    // seleccionamos el valor que coincide
-                    select.selectedIndex = i;
-                }
-            }
-        },
-        error: function (request, status, error) {
-            alert(request.responseText);
-        }
-    });
-    $("#TipoDeError").append("<option value=''>--SELECCIONE--</option>");
-    $("#TipoDeError").append("<option value='NO APLICA'>--NO APLICA--</option>");
-    $('#TipoDeError').find('option:not(:first)').remove();
-
-}
-$('#TipoDeError').change(function () {
-    var NuevaIdSelesct = document.getElementById("TipoDeError");
-    var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
-    $('#TipoDeError1').val(NuevoText);
-})
-$('#CanalDeIngreso').change(function () {
-    var NuevaIdSelesct = document.getElementById("CanalDeIngreso");
-    var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
-    $('#CanalDeIngreso1').val(NuevoText);
-})
-$('#ErrorSolicitud').change(function () {
-    var Eserror = $('#ErrorSolicitud').val();
-    var val1 = "NO APLICA";
-    var val2 = "";
-    if (Eserror == "SI") {
-        $('#UsuarioSolicitud').prop('readonly', false); $('#UsuarioSolicitud').val(val2);
-        $('#UsuarioSolicitud').prop('placeholder', 'Ingrese el usuario');
-        $("#TipoDeError").empty();
-        TraerArbolTipoDeError();
-    } else {
-        $('#UsuarioSolicitud').prop('readonly', true); $('#UsuarioSolicitud').val(val1);
-        $("#TipoDeError").empty();
-        $('#TipoDeError').prop('readonly', true);
-        $("#TipoDeError").append("<option value='NO APLICA'>NO APLICA</option>");
-        $('#TipoDeError1').val(val1);
-    }
-})
-$('#SelectGestion').change(function () {
-    $('#Subrazon').find('option:not(:first)').remove();
-    ListaSubrazones();
-    var NuevaIdGestion = document.getElementById("SelectGestion");
-        var NuevaGestion = NuevaIdGestion.options[NuevaIdGestion.selectedIndex].text;
-        $('#SelectGestion1').val(NuevaGestion);
-  
-})
 function ListaSubrazones() {
     var IdPadre = $('#SelectGestion').val();
     console.log(IdPadre);
     if (IdPadre == "--SELECCIONE--" || IdPadre == "" || IdPadre == " ") {
         $('#Subrazon').find('option:not(:first)').remove();
-        
+
     } else {
         $.ajax({
             type: "POST",
@@ -238,6 +127,7 @@ function ListaSubrazones() {
                     if (select.options[i].text == buscar) {
                         // seleccionamos el valor que coincide
                         select.selectedIndex = i;
+                        $('#Subrazon').val(select.options[i].value);
                         DatosDeLaGestion();
                     }
                 }
@@ -246,9 +136,201 @@ function ListaSubrazones() {
                 alert(request.responseText);
             }
         });
-        
+
     }
 }
+function TraerCanalDeIngreso() {
+    var IdPadre = "26";
+
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#CanalDeIngreso').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("CanalDeIngreso");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("CanalDeIngreso1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#CanalDeIngreso').val(select.options[i].value);
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+    $('#CanalDeIngreso').find('option:not(:first)').remove();
+
+}
+function TraerMotivoSuspension() {
+    var IdPadre = "33";
+
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#MotivosSuspension').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("MotivosSuspension");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("MotivosSuspension1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#MotivosSuspension').val(select.options[i].value);
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+    $('#MotivosSuspension').find('option:not(:first)').remove();
+
+}
+function TraerMesesDeSuspension() {
+    var IdPadre = "29";
+
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#MesesSuspender').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("MesesSuspender");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("MesesSuspender1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#MesesSuspender').val(select.options[i].value);
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+    $('#MesesSuspender').find('option:not(:first)').remove();
+
+}
+function TraerServiciosASuspender() {
+    var IdPadre = "35";
+
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#ServiciosSuspender').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("ServiciosSuspender");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("ServiciosSuspender1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#ServiciosSuspender').val(select.options[i].value);
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+    $('#ServiciosSuspender').find('option:not(:first)').remove();
+
+}
+$('#ServiciosSuspender').change(function () {
+    var NuevaIdSelesct = document.getElementById("ServiciosSuspender");
+    var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
+    $('#ServiciosSuspender1').val(NuevoText);
+
+})
+$('#CanalDeIngreso').change(function () {
+    var NuevaIdSelesct = document.getElementById("CanalDeIngreso");
+    var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
+    $('#CanalDeIngreso1').val(NuevoText);
+
+})
+$('#MotivosSuspension').change(function () {
+    var NuevaIdSelesct = document.getElementById("MotivosSuspension");
+    var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
+    $('#MotivosSuspension1').val(NuevoText);
+
+})
+$('#MesesSuspender').change(function () {
+    var NuevaIdSelesct = document.getElementById("MesesSuspender");
+    var NuevoText = NuevaIdSelesct.options[NuevaIdSelesct.selectedIndex].text;
+    $('#MesesSuspender1').val(NuevoText);
+
+})
+$('#SelectGestion').change(function () {
+    $('#Subrazon').find('option:not(:first)').remove();
+    ListaSubrazones();
+    var NuevaIdGestion = document.getElementById("SelectGestion");
+    var NuevaGestion = NuevaIdGestion.options[NuevaIdGestion.selectedIndex].text;
+    $('#SelectGestion1').val(NuevaGestion);
+
+})
 $('#Subrazon').change(function () {
     DatosDeLaGestion();
     var NuevaIdSubrazon = document.getElementById("Subrazon");
@@ -265,7 +347,6 @@ function DatosDeLaGestion() {
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
-            
             $('#Estado').val(json.EstadoDeGestion);
             ValidarEstado(json.EstadoDeGestion);
         }
@@ -273,7 +354,7 @@ function DatosDeLaGestion() {
 
 }
 function ValidarEstado(Estado) {
-    
+
     if (Estado == "SEGUIMIENTO") {
         document.getElementById('TituloSeguimiento').style.display = 'inline-block';
         document.getElementById('TituloSeguimiento').style.width = '100%';
@@ -283,19 +364,20 @@ function ValidarEstado(Estado) {
     else {
         document.getElementById('TituloSeguimiento').style.display = 'none';
         document.getElementById('CuerpoSeguimineto').style.display = 'none';
+        LimpiarFecha();
     }
-    $('#FechaDeSeguimiento').datetimepicker({
+    $('#FechaSeguimiento').datetimepicker({
         minDate: '0',
         dateFormat: 'd-m-Y 00:00',
         timepicker: true,
         step: 30
     });
-    LimpiarFecha();
+
 }
 function TraerListaGestionUsuario() {
     $.ajax({
         type: "GET",
-        url: UrlListaDeGestion,
+        url: UrlListaDeGestionSuspensiones,
         contentType: "application/json; charset=utf-8",
         dataType: "JSON",
         success: function (result) {
@@ -344,7 +426,6 @@ function cargargrilla(data) {
         { field: "Subrazon", title: "Subrazon", width: 100 },
         { field: "Estado", title: "Estado", width: 100 },
         { field: "Observaciones", title: "Observaciones", width: 100 }
-
         ]
 
     });
@@ -352,7 +433,7 @@ function cargargrilla(data) {
 function TraerListaSeguimientosUsuario() {
     $.ajax({
         type: "GET",
-        url: UrlListaDeSeguimientos,
+        url: UrlListaDeSeguimientosSuspensiones,
         contentType: "application/json; charset=utf-8",
         dataType: "JSON",
         success: function (result) {
@@ -367,8 +448,8 @@ function TraerListaSeguimientosUsuario() {
 }
 function cambiarfechasseg(data) {
     for (var i = 0; i < data.length; i++) {
-        data[i].FechaDeGestion = kendo.toString(kendo.parseDate(data[i].FechaDeGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-        data[i].FechaDeSeguimiento = kendo.toString(kendo.parseDate(data[i].FechaDeSeguimiento, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+        data[i].FechaGestion = kendo.toString(kendo.parseDate(data[i].FechaGestion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+        data[i].FechaSeguimiento = kendo.toString(kendo.parseDate(data[i].FechaSeguimiento, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
     }
 }
 function cargargrillaseg(data) {
@@ -396,13 +477,13 @@ function cargargrillaseg(data) {
         columns: [
         { command: { text: " Editar", click: ActualizarCasoSeg, imageClass: "fa fa-fw fa-pencil-square-o", }, title: "Editar", width: "100px" },
         { field: "IdGestion", title: "Id Gestion", width: 60 },
-        { field: "FechaDeGestion", title: "Fecha De Gestion", width: 100 },
+        { field: "FechaGestion", title: "Fecha De Gestion", width: 100 },
         { field: "CuentaCliente", title: "Cuenta Cliente", width: 100 },
         { field: "Gestion", title: "Gestion", width: 100 },
         { field: "Subrazon", title: "Subrazon", width: 100 },
         { field: "Estado", title: "Estado", width: 100 },
         { field: "Observaciones", title: "Observaciones", width: 100 },
-        { field: "FechaDeSeguimiento", title: "Fecha De Seguimiento", width: 100 },
+        { field: "FechaSeguimiento", title: "Fecha De Seguimiento", width: 100 }
         ]
 
     });
@@ -411,29 +492,58 @@ function ActualizarCasoSeg(e) {
     e.preventDefault();
     var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
     var seg = "Ture";
-    window.location.href = 'DesconexionesIn?IdGestion=' + dataItem.IdGestion;
+    window.location.href = 'SuspensionesTemporalesIn?IdGestion=' + dataItem.IdGestion;
 }
 function LimpiarFecha() {
-    var FechaSeguimiento = document.getElementById('FechaDeSeguimiento');
+    var FechaSeguimiento = document.getElementById('FechaSeguimiento');
     FechaSeguimiento.value = "";
+}
+function FormatoFechas() {
+    var IdGes = $("#IdAsignacion").val();
+    if (IdGes <= 0) {
+        $('#FechaCreacion').datetimepicker({
+            format: 'Y-m-d',
+            timepicker: false
+        });
+    }
+}
+function NoHayMasRegistros() {
+    if (RegistrosAsignados != null && RegistrosAsignados != "") {
+        $.alert({
+            theme: 'Modern',
+            icon: 'ion-happy-outline text-green',
+            boxWidth: '500px',
+            useBootstrap: false,
+            type: 'green',
+            title: '¡ Super !',
+            content: 'Ya No Existen Mas Registros Asignados',
+            buttons: {
+                Ok: {
+                    btnClass: 'btn-green',
+                    action: function () {
+
+                    }
+
+                },
+            }
+        });
+    }
 }
 $("#CuentaCliente").blur(function (event) {
     event.preventDefault();
     var Cuenta = $("#CuentaCliente").val();
     if (Cuenta == "" || Cuenta == null || Cuenta == "0") {
     } else {
-        var IdGes = $("#IdGestion").val();
-        if (IdGes <= 0) {
-            DatosClienteCuenta1(Cuenta);
-        }
+        
+            ValidarGestionDeCliente(Cuenta);
+        
     }
 
 });
-function DatosClienteCuenta1(Cuenta) {
-    $('#Nombre').focus();
+function ValidarGestionDeCliente(Cuenta) {
     $.ajax({
         type: "POST",
-        url: UrlInformacionCliente,
+        url: UrlGestionDeClienteSuspensiones,
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({ CuentaCliente: Cuenta }),
         dataType: "JSON",
@@ -449,7 +559,7 @@ function DatosClienteCuenta1(Cuenta) {
                     useBootstrap: false,
                     type: 'red',
                     title: '¡ Oops !',
-                    content: 'La cuenta que ingresaste ya fue gestionada en desconexiones durante el mes en curso, así que no es posible volver a registrarla.',
+                    content: 'La cuenta que ingresaste ya fue gestionada en suspensiones durante el mes en curso, así que no es posible volver a registrarla.',
                     buttons: {
                         Ok: {
                             btnClass: 'btn-red',
@@ -460,18 +570,17 @@ function DatosClienteCuenta1(Cuenta) {
                 });
             }
             else {
-                DatosClienteCuenta(Cuenta);
+                ValidarAsignacionDeCliente(Cuenta);
             }
-           
+
         }
     });
 
 }
-function DatosClienteCuenta(Cuenta) {
-    $('#Nombre').focus();
+function ValidarAsignacionDeCliente(Cuenta) {
     $.ajax({
         type: "POST",
-        url: UrlInformacionCliente2,
+        url: UrlAsignacionDeClienteSuspensiones,
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({ CuentaCliente: Cuenta }),
         dataType: "JSON",
@@ -479,7 +588,7 @@ function DatosClienteCuenta(Cuenta) {
             var json = JSON.parse(result);
             var Nota1 = json.Nota1;
             var Nota2 = json.Nota2;
-            if (json.Id > 0) {
+            if (json.IdAsignacion > 0) {
                 $.alert({
                     theme: 'Modern',
                     icon: 'fa fa-warning',
@@ -487,28 +596,20 @@ function DatosClienteCuenta(Cuenta) {
                     useBootstrap: false,
                     type: 'orange',
                     title: '¡ Bien !',
-                    content: 'La cuenta ingresada se encuentra actualmente asignada en la base de desconexiones, así que te vamos a mostrar esta información.',
+                    content: 'La cuenta ingresada se encuentra actualmente asignada en la base de suspensiones, así que te vamos a mostrar esta información',
                     buttons: {
                         Ok: {
                             btnClass: 'btn-orange',
                             action: function () {
                                 for (var i = 0; i < json.length; i++) {
-                                    json[i].FechaDeSolicitud = kendo.toString(kendo.parseDate(json[i].FechaDeSolicitud, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-                                    json[i].FechaDeCorte = kendo.toString(kendo.parseDate(json[i].FechaDeCorte, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-                                    json[i].FechaDePreaviso = kendo.toString(kendo.parseDate(json[i].FechaDePreaviso, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-                                    json[i].FechaDeAsignacion = kendo.toString(kendo.parseDate(json[i].FechaDeAsignacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+                                    json[i].FechaCreacion = kendo.toString(kendo.parseDate(json[i].FechaCreacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+                                    
                                 }
-                                $('#Id').val(json.Id);
-                                $('#Nota1').val(json.Nota1);
-                                $('#Nota2').val(json.Nota2);
-                                $('#FechaDeSolicitud').val(json.FechaDeSolicitud);
-                                $('#FechaDeSolicitud').prop('readonly', true);
-                                $('#FechaDeCorte').val(json.FechaDeCorte);
-                                $('#FechaDeCorte').prop('readonly', true);
-                                $('#FechaDePreaviso').val(json.FechaDePreaviso);
-                                $('#FechaDePreaviso').prop('readonly', true);
-                                $('#FechaDeAsignacion').val(json.FechaDeAsignacion);
-                                $('#FechaDeAsignacion').prop('readonly', true);
+                                $('#IdAsignacion').val(json.IdAsignacion);
+                                $('#FechaCreacion').val(json.FechaCreacion);
+                                $('#FechaCreacion').prop('readonly', true);
+                                $('#UsuarioCreacion').val(json.UsuarioCreacion);
+                                $('#UsuarioCreacion').prop('readonly', true);
                                 $('#CanalDeIngreso1').val(json.CanalDeIngreso);
                                 // creamos un variable que hace referencia al select
                                 var select = document.getElementById("CanalDeIngreso");
@@ -521,13 +622,15 @@ function DatosClienteCuenta(Cuenta) {
                                         select.selectedIndex = i;
                                     }
                                 }
+                                $('#CanalDeIngreso').prop('readonly', true);
+                                $('#MotivosSuspension').focus();
                                 FormatoFechas();
                             }
 
                         },
                     }
                 });
-                
+
             } else {
                 $.alert({
                     theme: 'Modern',
@@ -541,8 +644,9 @@ function DatosClienteCuenta(Cuenta) {
                         Ok: {
                             btnClass: 'btn-red',
                             action: function () {
-                                $('#Nota1').val(Nota1);
-                                $('#Nota2').val(Nota2);
+                                $('#FechaCreacion').prop('readonly', false);
+                                $('#UsuarioCreacion').prop('readonly', false);
+                                $('#CanalDeIngreso').prop('readonly', false);
                                 FormatoFechas();
                             }
                         },
@@ -552,51 +656,4 @@ function DatosClienteCuenta(Cuenta) {
         }
     });
 
-}
-function FormatoFechas() {
-    var IdGes = $("#Id").val();
-    if (IdGes <= 0) {
-        $('#FechaDeSolicitud').datetimepicker({
-            format: 'Y-m-d',
-            timepicker: false
-        });
-
-        $('#FechaDeCorte').datetimepicker({
-            format: 'Y-m-d',
-            timepicker: false
-        });
-        $('#FechaDePreaviso').datetimepicker({
-            format: 'Y-m-d',
-            timepicker: false
-        });
-        $('#FechaDeAsignacion').datetimepicker({
-            format: 'Y-m-d',
-            timepicker: false
-        });
-    }
-}
-function seleccionarNota1() {
-    document.getElementById("Nota1").selectionStart = 0;
-
-}
-function seleccionarNota2() {
-    document.getElementById("Nota2").selectionStart = 0;
-
-}
-function Limpiar() {
-    var valor1 = "";
-
-    $('#Id').val(valor1);
-    $('#Id').val(valor1);
-    $('#Nota1').val(valor1);
-    $('#Nota2').val(valor1);
-    $('#FechaDeSolicitud').val(valor1);
-    $('#FechaDeSolicitud').prop('readonly', true);
-    $('#FechaDeCorte').val(json.FechaDeCorte);
-    $('#FechaDeCorte').prop('readonly', true);
-    $('#FechaDePreaviso').val(json.FechaDePreaviso);
-    $('#FechaDePreaviso').prop('readonly', true);
-    $('#FechaDeAsignacion').val(json.FechaDeAsignacion);
-    $('#FechaDeAsignacion').prop('readonly', true);
-    $('#CanalDeIngreso1').val(json.CanalDeIngreso);
 }
