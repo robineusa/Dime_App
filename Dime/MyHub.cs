@@ -123,7 +123,7 @@ namespace Dime
             }
             if (TipoNotificacion == "Mensaje Global Buen Servicio")
             {
-                Clients.All.addMessage(result, Usuario, ContenidoAlerta);
+                Clients.All.addMessage(result, NombreUsuario, ContenidoAlerta);
                 
             }
         }

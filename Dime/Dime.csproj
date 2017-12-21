@@ -274,6 +274,13 @@
     <Content Include="AdminLTE\bootstrap\js\bootstrap.min.js" />
     <Content Include="AdminLTE\bootstrap\js\Jquery-confirm.js" />
     <Content Include="AdminLTE\bootstrap\js\ui-bootstrap-tpls-2.4.0.min.js" />
+    <Content Include="AdminLTE\bootstrap\sounds\beer_can_opening.aac" />
+    <Content Include="AdminLTE\bootstrap\sounds\beer_can_opening.mp3" />
+    <Content Include="AdminLTE\bootstrap\sounds\bell_ring.aac" />
+    <Content Include="AdminLTE\bootstrap\sounds\bell_ring.mp3" />
+    <Content Include="AdminLTE\bootstrap\sounds\Notificacion.aac" />
+    <Content Include="AdminLTE\bootstrap\sounds\Notificacion.mp3" />
+    <Content Include="AdminLTE\bootstrap\sounds\Notificacion.wav" />
     <Content Include="AdminLTE\dist\css\admin-lte.css" />
     <Content Include="AdminLTE\dist\css\admin-lte.min.css" />
     <Content Include="AdminLTE\dist\css\skins\skin-black-light.css" />
@@ -2989,6 +2996,10 @@
     <Content Include="AdminLTE\plugins\datatables\js\extensions\TableTools\Readme.md" />
     <Content Include="AdminLTE\plugins\input-mask\js\phone-codes\phone-be.json" />
     <Content Include="AdminLTE\plugins\input-mask\js\phone-codes\phone-codes.json" />
+    <Content Include="AdminLTE\bootstrap\sounds\beer_can_opening.ogg" />
+    <Content Include="AdminLTE\bootstrap\sounds\bell_ring.ogg" />
+    <Content Include="AdminLTE\bootstrap\sounds\desktop.ini" />
+    <Content Include="AdminLTE\bootstrap\sounds\Notificacion.ogg" />
     <None Include="AdminLTE\plugins\jquery-validate\js\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\Shared\_LockScreen.js" />
     <Content Include="Scripts\Signal\jquery.signalR-2.2.1.js" />

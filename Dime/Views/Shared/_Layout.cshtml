@@ -1215,9 +1215,9 @@
                 </section>
             }
             <section class="content" style="height:2000px;">
-                <div class="col-md-4" style="z-index:999; float: left; position: absolute; display:block">
+                <div class="col-md-4" style="z-index:999; float: left; position: absolute; display:block; margin-left: 10%; margin-top: 5%;">
                     <div id="ChatGeneral" style="display:none">
-                        <div id="ChatGeneral2" class="box box-danger direct-chat direct-chat-danger" style="display: block;">
+                        <div id="ChatGeneral2" class="box box-primary direct-chat direct-chat-danger" style="display: block;">
                             <div class="box-header with-border">
                                 <h3 class="box-title">Notificaciones Globales</h3>
                                 <div class="box-tools pull-right">
@@ -1253,14 +1253,7 @@
 
                         </div>
                     </div>
-                    <input type="text" id="IdMsj" style="display:none;" />
-                    <button id="BListNotify" style="display:none"></button>
-
                 </div>
-
-                <a id="BuenServicioHREF" href="#Buen_Servicio" data-toggle="modal" data-backdrop="static" data-keyboard="false">
-
-                </a>
                 @RenderBody()
                 <div class="col-md-3" style="z-index:999; float: left; position: absolute; display:block; left:20%;">
                     <div id="ChatPrivado" style="display:block">
@@ -1547,11 +1540,17 @@
                 </div>
             </div>
         </div>
+
+        @* NOTIFICACIONES SIGNALR *@
         <a id="lockScreenActivate" onclick="LockScreen(this)" style="display:none" value="LockScreenVal"></a>
         <div id="lockScreenDiv"></div>
         <button type="button" id="NotificaOfertaComercialCliente" style="display:none;"></button>
         <input id="IdOfertaComercial" type="text" style="display:none;"/>
-
+        <audio id="audioNotificacion" src="~/AdminLTE/bootstrap/sounds/Notificacion.aac" preload="auto" style="display: none"></audio>
+        <input type="text" id="IdMsj" style="display:none;" />
+        <button id="BListNotify" style="display:none"></button>
+        <a id="BuenServicioHREF" href="#Buen_Servicio" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+        </a>
     </div>
 
 
@@ -1567,7 +1566,7 @@
     <script>var Usuario = '@Session["Usuario"].ToString()';</script>
     <script>var NombreUsuario = '@Session["NombreUsuario"].ToString()';</script>
     <link href="~/AdminLTE/bootstrap/css/EstilosNotificaciones.css?1.0.1" rel="stylesheet" />
-    <script src="~/Scripts/Shared/_AlertasLayout.js?1.2.13"></script>
+    <script src="~/Scripts/Shared/_AlertasLayout.js?1.2.14"></script>
     <script src="~/ViewsAlr/app.js?1.0.3"></script>
     <script src="~/ControllersAlr/mainAccessController.js?1.0.3"></script>
     <script src="~/ControllersAlr/ConsultaGestionController.js?1.3.4"></script>
