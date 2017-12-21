@@ -362,19 +362,13 @@ function EjecutarCategorias(EsNodoFinal, Categoria, SubCategoria, Tipo) {
         $("#tipoStrong").removeAttr("hidden");
         $("#Tipo").append("<option value=''>--Select Option--</option>");
 
-
-
-
         //consulta por el id de la categoria padre
         CargarCategorias(0, "Categorias", Categoria);
         CargarCategorias(Categoria, "subCategoria", SubCategoria);
         CargarCategorias(SubCategoria, "Tipo", Tipo);
-
-
     }
     else {
         document.getElementById("nodoFinal").checked = false;
-
         LimpiarDesplegables();
     }
 }
@@ -644,21 +638,21 @@ function mostrarCategorias(obj) {
         for (var i = 0; i < objetosA.length ; i++) {
             if (objetosA[i].getAttribute("href") == "#CrearNodo") {
                 objetosA[i].setAttribute("hidden", "hidden");
-
             }
         }
 
         CargarCategorias(0, "Categorias");
-        //$("#Categorias").append("<option value=''>--Select Option--</option>");
+
         $("#Categorias").removeAttr("hidden");
         $("#categoriaStrong").removeAttr("hidden");
-
+        //REVISAR SI COMENTARIAR
         $("#Categorias").append("<option value=''>--Select Option--</option>");
         $("#subCategoria").append("<option value=''>--Select Option--</option>");
         $("#Tipo").append("<option value=''>--Select Option--</option>");
+        //
     }
     else {
-
+        //Oculta el boton crear si marcan el nodo como final
         for (var i = 0; i < objetosA.length ; i++) {
             if (objetosA[i].getAttribute("href") == "#CrearNodo") {
                 objetosA[i].removeAttribute("hidden");
@@ -666,19 +660,8 @@ function mostrarCategorias(obj) {
             }
         }
 
-        $("#Categorias").attr("hidden", "hidden");
-        $("#categoriaStrong").attr("hidden", "hidden");
-        $("#Categorias").empty();
-
-        $("#subCategoria").attr("hidden", "hidden");
-        $("#subCategoriaStrong").attr("hidden", "hidden");
-        $("#subCategoria").empty();
-
-        $("#Tipo").attr("hidden", "hidden");
-        $("#tipoStrong").attr("hidden", "hidden");
-        $("#Tipo").empty();
+        LimpiarDesplegables();
     }
-
 }
 
 function LimpiarDesplegables() {
