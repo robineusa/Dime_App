@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    NoHayMasRegistros();
     TraerArbolDeGestion();
     TraerArbolTipoDeError();
     TraerListaGestionUsuario();
@@ -376,4 +377,27 @@ function ActualizarCasoSeg(e) {
 function LimpiarFecha() {
     var FechaSeguimiento = document.getElementById('FechaDeSeguimiento');
     FechaSeguimiento.value = "";
+}
+
+function NoHayMasRegistros() {
+    if (RegistrosAsignados != null && RegistrosAsignados != "") {
+        $.alert({
+            theme: 'Modern',
+            icon: 'ion-happy-outline text-green',
+            boxWidth: '500px',
+            useBootstrap: false,
+            type: 'green',
+            title: '¡ Super !',
+            content: 'Ya no existen más registros asignados.',
+            buttons: {
+                Ok: {
+                    btnClass: 'btn-green',
+                    action: function () {
+
+                    }
+
+                },
+            }
+        });
+    }
 }

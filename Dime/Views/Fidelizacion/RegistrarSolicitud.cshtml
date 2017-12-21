@@ -16,7 +16,7 @@
             <div class="box-body">
                 <div class="col-md-4">
                     <small>Cuenta</small>
-                    @Html.TextBoxFor(c => c.FidelizacionRegistro.Cuenta, null, new { @class = "form-control input-sm ", Id = "txtCuenta" })
+                    @Html.TextBoxFor(c => c.FidelizacionRegistro.Cuenta, null, new { @class = "form-control input-sm ", Id = "txtCuenta", maxlength="9" })
                     @Html.ValidationMessageFor(c => c.FidelizacionRegistro.Cuenta, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-4">
@@ -126,61 +126,77 @@
                     </div>
                 </div>
                 @if (Session["Formulario Retencion"] != null || Session["Formulario Recuperacion"] != null){
-                <div class="col-md-2">
-                </div>
-
-                <div class="col-md-7 text-center">
-                    <small>Servicios Retenidos</small>
-                    <div class="col-md-12 btn-group">
-
-                        <label class="btn btn-danger disabled">
-                            @Html.CheckBoxFor(x => x.FidelizacionRegistro.InternetRet, new { @id = "chkInternetRet", @class = "", disabled = true }) INTERNET
-
-                        </label>
-                        <label class="btn btn-danger disabled">
-                            @Html.CheckBoxFor(x => x.FidelizacionRegistro.TelevisionRet, new { @id = "chkTelevisionRet", @class = "", disabled = true })  TELEVISIÓN
-
-                        </label>
-                        <label class="btn btn-danger disabled">
-                            @Html.CheckBoxFor(x => x.FidelizacionRegistro.TelefoniaRet, new { @id = "chkTelefoniaRet", @class = "", disabled = true }) TELEFONÍA
-                        </label>
-                        @ViewBag.errorServiciosRet
+                <div class="row">
+                    <div class="col-md-2">
                     </div>
 
-                </div>
-                <div class="col-md-3">
+                    <div class="col-md-7 text-center">
+                        <small>Servicios Retenidos</small>
+                        <div class="col-md-12 btn-group">
 
+                            <label class="btn btn-danger disabled">
+                                @Html.CheckBoxFor(x => x.FidelizacionRegistro.InternetRet, new { @id = "chkInternetRet", @class = "", disabled = true }) INTERNET
+
+                            </label>
+                            <label class="btn btn-danger disabled">
+                                @Html.CheckBoxFor(x => x.FidelizacionRegistro.TelevisionRet, new { @id = "chkTelevisionRet", @class = "", disabled = true })  TELEVISIÓN
+
+                            </label>
+                            <label class="btn btn-danger disabled">
+                                @Html.CheckBoxFor(x => x.FidelizacionRegistro.TelefoniaRet, new { @id = "chkTelefoniaRet", @class = "", disabled = true }) TELEFONÍA
+                            </label>
+                            @ViewBag.errorServiciosRet
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+
+                    </div>
                 </div>
                 }
+                <div class="row">
+                    <div class="col-md-3">
+                        <small>Ticket</small>
+                        @Html.TextBoxFor(c => c.FidelizacionRegistro.Ticket, new { @class = "form-control input-sm", Id = "txtTicket"})
+                        @Html.ValidationMessageFor(c => c.FidelizacionRegistro.Ticket, "", new { @class = "text-danger" })
+                        @ViewBag.errorTicket
+                    </div>
+                    @if (Session["Formulario Contencion"] != null){
+                    <div class="col-md-3">
+                        <small>Usuario Transfiere</small>
+                        @Html.TextBoxFor(c => c.FidelizacionRegistro.UsuarioTransfiere, new { @class = "form-control input-sm", Id="txtUserTransfer"})
+                        @Html.ValidationMessageFor(c => c.FidelizacionRegistro.UsuarioTransfiere, "", new { @class = "text-danger" })
+                        @ViewBag.errorUsuario
+                    </div>
+                    }
 
-                <div class="col-md-4">
-                    <small>Ticket</small>
-                    @Html.TextBoxFor(c => c.FidelizacionRegistro.Ticket, new { @class = "form-control input-sm", Id = "txtTicket"})
-                    @Html.ValidationMessageFor(c => c.FidelizacionRegistro.Ticket, "", new { @class = "text-danger" })
-                    @ViewBag.errorTicket
-                </div>
-                @if (Session["Formulario Contencion"] != null){
-                <div class="col-md-4">
-                    <small>Usuario Transfiere</small>
-                    @Html.TextBoxFor(c => c.FidelizacionRegistro.UsuarioTransfiere, new { @class = "form-control input-sm", Id="txtUserTransfer"})
-                    @Html.ValidationMessageFor(c => c.FidelizacionRegistro.UsuarioTransfiere, "", new { @class = "text-danger" })
-                    @ViewBag.errorUsuario
-                </div>
-                }
-                else if(Session["Formulario Recuperacion"] != null){
-                <div class="col-md-4">
-                    <small>Renta</small>
-                    @Html.TextBoxFor(c => c.FidelizacionRegistro.Renta, new { @class = "form-control input-sm", Id = "txtRenta"})
-                    @Html.ValidationMessageFor(c => c.FidelizacionRegistro.Renta, "", new { @class = "text-danger" })
-                </div>
-                }
+                    <div class="col-md-3">
+                        <small>Renta</small>
+                        @Html.TextBoxFor(c => c.FidelizacionRegistro.Renta, new { @class = "form-control input-sm", Id = "txtRenta"})
+                        @Html.ValidationMessageFor(c => c.FidelizacionRegistro.Renta, "", new { @class = "text-danger" })
+                        @ViewBag.errorRenta
+                    </div>
 
-                <div class="col-md-4">
+                    @if (Session["Formulario Contencion"] != null){
+                    <div class="col-md-3">
+                        <small>Cierre</small>
+                        @Html.DropDownListFor(c => c.FidelizacionRegistro.TipificacionId, new SelectList(ViewBag.sltAcuerdo, "Id", "Nombre"), "-SELECCIONE-", new { Id = "sltAcuerdo", @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(c => c.FidelizacionRegistro.TipificacionId, "", new { @class = "text-danger" })
+                    </div>
+                    }
+                    else{
+                    <div class="col-md-6">
+                        <small>Cierre</small>
+                        @Html.DropDownListFor(c => c.FidelizacionRegistro.TipificacionId, new SelectList(ViewBag.sltAcuerdo, "Id", "Nombre"), "-SELECCIONE-", new { Id = "sltAcuerdo", @class = "form-control input-sm" })
+                        @Html.ValidationMessageFor(c => c.FidelizacionRegistro.TipificacionId, "", new { @class = "text-danger" })
+                    </div>
+                    }
+                </div>
+                @*<div class="col-md-3">
                     <small>Acuerdo</small>
                     @Html.DropDownListFor(c => c.FidelizacionRegistro.TipificacionId, new SelectList(ViewBag.sltAcuerdo, "Id", "Nombre"), "-SELECCIONE-", new { Id = "sltAcuerdo", @class = "form-control input-sm" })
                     @Html.ValidationMessageFor(c => c.FidelizacionRegistro.TipificacionId, "", new { @class = "text-danger" })
-
-                </div>
+                </div>*@
 
 
                 <div class="col-md-12">
@@ -226,7 +242,7 @@
                             <br />
                             <div class="row">
                                 <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
-                                    <div>Número de cuenta no encontrada, digite un número de cuenta válido</div>
+                                    <div id="textModal">Número de cuenta no encontrada, digite un número de cuenta válido</div>
                                 </div>
                             </div>
                         </div>
@@ -270,7 +286,7 @@
     var urlGetChilds = '@Url.Action("getHijoRecursivaJson", "Fidelizacion")';
     var urlGetNotas = '@Url.Action("getNotasJson", "Fidelizacion")';
 </script>
-<script src="~/Scripts/Fidelizacion/RegistrarSolicitud.js?1.0.6"></script>
+<script src="~/Scripts/Fidelizacion/RegistrarSolicitud.js?1.0.7"></script>
     }
 
 

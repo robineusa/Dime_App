@@ -19007,6 +19007,38 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeRegistroAsignacionSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeRegistroAsignacionSuspensionesRe" +
             "sponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones> TraeRegistroAsignacionSuspensionesAsync(decimal IdAsignacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeSuspensionPorId", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeSuspensionPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.CEPSuspensiones TraeSuspensionPorId(decimal IdGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeSuspensionPorId", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeSuspensionPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> TraeSuspensionPorIdAsync(decimal IdGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaSuspensionesRe" +
+            "sponse")]
+        Telmexla.Servicios.DIME.Entity.CEPSuspensiones ConsultarGestionCuentaSuspensiones(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaSuspensionesRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> ConsultarGestionCuentaSuspensionesAsync(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionTicketsAgente", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionTicketsAgenteRes" +
+            "ponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets> ConsultaLogDeGestionTicketsAgente(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionTicketsAgente", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionTicketsAgenteRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets>> ConsultaLogDeGestionTicketsAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionSuspensionesAgen" +
+            "te", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionSuspensionesAgen" +
+            "teResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones> ConsultaLogDeGestionSuspensionesAgente(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionSuspensionesAgen" +
+            "te", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionSuspensionesAgen" +
+            "teResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones>> ConsultaLogDeGestionSuspensionesAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19306,6 +19338,38 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones> TraeRegistroAsignacionSuspensionesAsync(decimal IdAsignacion) {
             return base.Channel.TraeRegistroAsignacionSuspensionesAsync(IdAsignacion);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPSuspensiones TraeSuspensionPorId(decimal IdGestion) {
+            return base.Channel.TraeSuspensionPorId(IdGestion);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> TraeSuspensionPorIdAsync(decimal IdGestion) {
+            return base.Channel.TraeSuspensionPorIdAsync(IdGestion);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPSuspensiones ConsultarGestionCuentaSuspensiones(decimal Cuenta) {
+            return base.Channel.ConsultarGestionCuentaSuspensiones(Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> ConsultarGestionCuentaSuspensionesAsync(decimal Cuenta) {
+            return base.Channel.ConsultarGestionCuentaSuspensionesAsync(Cuenta);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets> ConsultaLogDeGestionTicketsAgente(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario) {
+            return base.Channel.ConsultaLogDeGestionTicketsAgente(FechaInicial, FechaFinal, Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets>> ConsultaLogDeGestionTicketsAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario) {
+            return base.Channel.ConsultaLogDeGestionTicketsAgenteAsync(FechaInicial, FechaFinal, Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones> ConsultaLogDeGestionSuspensionesAgente(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario) {
+            return base.Channel.ConsultaLogDeGestionSuspensionesAgente(FechaInicial, FechaFinal, Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones>> ConsultaLogDeGestionSuspensionesAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario) {
+            return base.Channel.ConsultaLogDeGestionSuspensionesAgenteAsync(FechaInicial, FechaFinal, Usuario);
         }
     }
 }

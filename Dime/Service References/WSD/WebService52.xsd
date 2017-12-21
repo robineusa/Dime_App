@@ -3902,6 +3902,7 @@
       <xs:element minOccurs="0" name="ContenidoAlerta" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FechaEntrega" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="NombreUsuarioNotifica" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TipoNotificacion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="UsuarioNotifica" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="usersNoti" nillable="true" type="tns:ArrayOfUsuariosNotificadosSignalR" />
@@ -3916,6 +3917,7 @@
   <xs:element name="ArrayOfUsuariosNotificadosSignalR" nillable="true" type="tns:ArrayOfUsuariosNotificadosSignalR" />
   <xs:complexType name="UsuariosNotificadosSignalR">
     <xs:sequence>
+      <xs:element minOccurs="0" name="FechaRevisado" nillable="true" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" type="xs:decimal" />
       <xs:element minOccurs="0" name="IdNotificacion" type="xs:decimal" />
       <xs:element minOccurs="0" name="UsuarioNotificado" type="xs:decimal" />

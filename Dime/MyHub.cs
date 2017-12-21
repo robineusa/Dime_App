@@ -107,12 +107,13 @@ namespace Dime
         //            UsuariosNoti.RemoveAt(0);
         //    }
         //}
-        public void InsertaNotificacion(string TipoNotificacion, string ContenidoAlerta, string Usuario)
+        public void InsertaNotificacion(string TipoNotificacion, string ContenidoAlerta, string Usuario, string NombreUsuario)
         {
             NotificacionSignalR model = new NotificacionSignalR();
             model.TipoNotificacion = TipoNotificacion;
             model.ContenidoAlerta = ContenidoAlerta;
             model.UsuarioNotifica = Usuario;
+            model.NombreUsuarioNotifica = NombreUsuario;
 
             var result = signalRService.InsertarNotificacionSignalR(model);
 
@@ -122,7 +123,7 @@ namespace Dime
             }
             if (TipoNotificacion == "Mensaje Global Buen Servicio")
             {
-                Clients.All.addMessage(result, Usuario, ContenidoAlerta);
+                Clients.All.addMessage(result, NombreUsuario, ContenidoAlerta);
                 
             }
         }

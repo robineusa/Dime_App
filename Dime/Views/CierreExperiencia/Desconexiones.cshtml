@@ -88,7 +88,7 @@
             </div>
         </div>
         <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
-            <i class="fa fa-sitemap"></i> Gestión Back Desconexiones
+            <i class="fa fa-eye"></i> Gestión Back Desconexiones
         </h2>
         <div id="ARBOL" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
             <br />
@@ -226,8 +226,9 @@
             var UrlListaDeSeguimientos = '@Url.Action("ListaDeSeguimientosDesconexionesAgente", "CierreExperiencia")';
             var UrlArbolDeGestion = '@Url.Action("ArbolesDeTipificacionDesconexion", "CierreExperiencia")';
             var UrlDatosArbol = '@Url.Action("TraerDatosDelArbol", "CierreExperiencia")';
+            var RegistrosAsignados = '@ViewBag.Asignacion';
         </script>
-<script src="~/Scripts/CierreExperiencia/Desconexiones.js?1.0.5"></script> 
+<script src="~/Scripts/CierreExperiencia/Desconexiones.js?1.0.7"></script> 
     <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
     <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />
