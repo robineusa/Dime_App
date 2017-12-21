@@ -8046,4 +8046,36 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ConsultaLogDeGestionTicketsAgente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Usuario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaLogDeGestionTicketsAgenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q562="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaLogDeGestionTicketsAgenteResult" nillable="true" type="q562:ArrayOfCELTickets" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaLogDeGestionSuspensionesAgente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Usuario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaLogDeGestionSuspensionesAgenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q563="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaLogDeGestionSuspensionesAgenteResult" nillable="true" type="q563:ArrayOfCELSuspensiones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

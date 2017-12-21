@@ -518,6 +518,33 @@ namespace Dime.Controllers
                 };
             }
         }
+        public JsonResult ConsultaDeGestionTicketsJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            decimal usuario = Convert.ToDecimal(Session["Usuario"]);
 
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ConsultaLogDeGestionTicketsAgente(FechaInicial, FechaFinal, usuario)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public ActionResult ConsultaGestionTickets()
+        {
+            return View();
+        }
+        public ActionResult ConsultaGestionSuspensiones()
+        {
+            return View();
+        }
+        public JsonResult ConsultaDeGestionSuspensionesJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            decimal usuario = Convert.ToDecimal(Session["Usuario"]);
+
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ConsultaLogDeGestionSuspensionesAgente(FechaInicial, FechaFinal, usuario)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }
