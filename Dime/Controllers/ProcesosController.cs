@@ -106,7 +106,7 @@ namespace Dime.Controllers
             return jsonResult;
         }
         [HttpPost]
-        public JsonResult CambiarNombreNodo(string IdNodo,string NombreNuevo)
+        public JsonResult CambiarNombreNodo(string IdNodo, string NombreNuevo)
         {
             int idNodo = Convert.ToInt32(IdNodo);
             ProcesosService.CambiarNombreNodo(idNodo, NombreNuevo);
@@ -131,9 +131,9 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
-        public JsonResult ConsultarCategorias(string idCategoriapadre)
+        public JsonResult ConsultarCategorias(string IdCategoria, bool ConsultarPadre)
         {
-            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarCategorias(Convert.ToInt32(idCategoriapadre))), JsonRequestBehavior.AllowGet);
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarCategorias(Convert.ToInt32(IdCategoria), ConsultarPadre)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }

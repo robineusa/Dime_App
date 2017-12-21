@@ -97,7 +97,7 @@
             </div>
         </div>
         <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
-            <i class="fa fa-sitemap"></i> Gestión Back Tickets
+            <i class="fa fa-tasks"></i> Gestión Back Tickets
         </h2>
         <div id="ARBOL" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
             <br />
@@ -182,7 +182,7 @@
             </div>
         </div>
         <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
-            <i class="fa fa-gift"></i> Seguimientos
+            <i class="fa fa-eye"></i> Seguimientos
 
         </h2>
         <div id="CuerpoSeguimineto" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
@@ -233,8 +233,6 @@
     </div>
 }
 @section Scripts{
-    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>*@
 
     <script>
             var UrlListaDeGestiontickets = '@Url.Action("ListaDeGestionAgenteTickets", "CierreExperiencia")';
@@ -247,7 +245,7 @@
         var UrlMarcaciones = '@Url.Action("ListaDeMarcaciones", "CierreExperiencia")';
         var UrlConsultarTicket = '@Url.Action("ConsultarTicketBaseDeGestion", "CierreExperiencia")';
     </script>
-    <script src="~/Scripts/CierreExperiencia/Tickets.js?1.0.4"></script>
+    <script src="~/Scripts/CierreExperiencia/Tickets.js?1.0.5"></script>
     <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
     <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />

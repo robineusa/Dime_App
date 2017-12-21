@@ -16,6 +16,9 @@ namespace Telmexla.Servicios.DIME.Entity
         CEPDesconexiones cEPDesconexiones;
         CEPTickets cEPTickets;
         CELTickets cELTickets;
+        CELSuspensiones cELSuspensiones;
+        CEPSuspensiones cEPSuspensiones;
+        CEPAsigSuspenciones cEPAsigSuspensiones;
         #endregion
 
         #region Constructores
@@ -27,6 +30,9 @@ namespace Telmexla.Servicios.DIME.Entity
             cEPDesconexiones = new CEPDesconexiones();
             cEPTickets = new CEPTickets();
             cELTickets = new CELTickets();
+            cEPSuspensiones = new CEPSuspensiones();
+            cELSuspensiones = new CELSuspensiones();
+            cEPAsigSuspensiones = new CEPAsigSuspenciones();
         }
 
 
@@ -108,6 +114,45 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 cELTickets = value;
+            }
+        }
+
+        public CELSuspensiones CELSuspensiones
+        {
+            get
+            {
+                return cELSuspensiones;
+            }
+
+            set
+            {
+                cELSuspensiones = value;
+            }
+        }
+
+        public CEPSuspensiones CEPSuspensiones
+        {
+            get
+            {
+                return cEPSuspensiones;
+            }
+
+            set
+            {
+                cEPSuspensiones = value;
+            }
+        }
+
+        public CEPAsigSuspenciones CEPAsigSuspensiones
+        {
+            get
+            {
+                return cEPAsigSuspensiones;
+            }
+
+            set
+            {
+                cEPAsigSuspensiones = value;
             }
         }
         #endregion

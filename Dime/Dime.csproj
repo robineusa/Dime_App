@@ -3153,6 +3153,9 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.Macroprocesos.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPTickets.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CELTickets.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CELSuspensiones.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPSuspensiones.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3290,9 +3293,6 @@
     <Content Include="Scripts\Procesos\dist\font\summernote.eot" />
     <Content Include="Scripts\Procesos\dist\font\summernote.ttf" />
     <Content Include="Scripts\Procesos\dist\font\summernote.woff" />
-    <Content Include="Service References\WSD\Dime.WSD.CEPTickets.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\WSD\WebService1.wsdl" />
     <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>

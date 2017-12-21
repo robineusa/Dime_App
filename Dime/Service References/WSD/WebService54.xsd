@@ -7284,7 +7284,8 @@
   <xs:element name="ConsultarCategorias">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="idCategoriaPadre" type="xs:int" />
+        <xs:element minOccurs="0" name="idCategoria" type="xs:int" />
+        <xs:element minOccurs="0" name="ConsultarPadre" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -7813,7 +7814,7 @@
   <xs:element name="ConsultaDeTicketPorNumero">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="NumeroTicket" type="xs:decimal" />
+        <xs:element minOccurs="0" name="IdGestion" type="xs:decimal" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -7821,6 +7822,213 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q545="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaDeTicketPorNumeroResult" nillable="true" type="q545:CEPTickets" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaDeGestionTicketsAgente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FechaInicial" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaFinal" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="Usuario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaDeGestionTicketsAgenteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q546="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaDeGestionTicketsAgenteResult" nillable="true" type="q546:ArrayOfCELTickets" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeGestionAgenteTicketsCierreExperiencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeGestionAgenteTicketsCierreExperienciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q547="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDeGestionAgenteTicketsCierreExperienciaResult" nillable="true" type="q547:ArrayOfCELTickets" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaSeguimientosAgenteTicketCierreExperiencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaSeguimientosAgenteTicketCierreExperienciaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q548="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSeguimientosAgenteTicketCierreExperienciaResult" nillable="true" type="q548:ArrayOfCEPTickets" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaSrcaus">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaSrcausResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q549="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSrcausResult" nillable="true" type="q549:ArrayOfMaestroMarcacione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaSrreas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Razon" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaSrreasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q550="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSrreasResult" nillable="true" type="q550:ArrayOfMaestroMarcacione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaMarcacionesTickets">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaMarcacionesTicketsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q551="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaMarcacionesTicketsResult" nillable="true" type="q551:ArrayOfMaestroMarcacione" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaDeTicketPorTicket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Ticket" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaDeTicketPorTicketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q552="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaDeTicketPorTicketResult" nillable="true" type="q552:CEPTickets" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarSuspencion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q553="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Suspencion" nillable="true" type="q553:CEPSuspensiones" />
+        <xs:element minOccurs="0" name="IdAsignacion" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarSuspencionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarSuspencion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q554="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Suspencion" nillable="true" type="q554:CEPSuspensiones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarSuspencionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeGestionAgenteSuspensiones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaDeGestionAgenteSuspensionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q555="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaDeGestionAgenteSuspensionesResult" nillable="true" type="q555:ArrayOfCELSuspensiones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaSeguimientosAgenteSuspensiones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Usuario" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListaSeguimientosAgenteSuspensionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q556="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListaSeguimientosAgenteSuspensionesResult" nillable="true" type="q556:ArrayOfCEPSuspensiones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarCuentaAsigSuspension">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Cedula" type="xs:decimal" />
+        <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ValidarCuentaAsigSuspensionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q557="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ValidarCuentaAsigSuspensionResult" nillable="true" type="q557:CEPAsigSuspenciones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApartarCuentadeSuspensiones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Cedula" type="xs:decimal" />
+        <xs:element minOccurs="0" name="noRecursividad" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ApartarCuentadeSuspensionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q558="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ApartarCuentadeSuspensionesResult" nillable="true" type="q558:CEPAsigSuspenciones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraeRegistroAsignacionSuspensiones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdAsignacion" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraeRegistroAsignacionSuspensionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q559="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraeRegistroAsignacionSuspensionesResult" nillable="true" type="q559:CEPAsigSuspenciones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraeSuspensionPorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdGestion" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraeSuspensionPorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q560="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraeSuspensionPorIdResult" nillable="true" type="q560:CEPSuspensiones" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
