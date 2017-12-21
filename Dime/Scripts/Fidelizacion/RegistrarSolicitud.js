@@ -136,6 +136,10 @@ enableBtn = function (srvId) {
 }
 
 $("#sltAcuerdo").change(function () {
+    if ($.isNumeric($("#txtCuenta").val()) == false) {
+        resetFields("Número de cuenta no encontrada, digite un número de cuenta válido")
+        return false;
+    }
     var internetRet = (($("#chkInternetRet").prop("checked") == true) ? '1' : '0');
     var tvRet = (($("#chkTelevisionRet").prop("checked") == true) ? '1' : '0');
     var telRet = (($("#chkTelefoniaRet").prop("checked") == true) ? '1' : '0');
@@ -149,8 +153,8 @@ $("#sltAcuerdo").change(function () {
 
     //alert($("#chkInternetRet").length);
     if (servRet == "000" && $("#chkInternetRet").length) {
-        alert("Seleccione los servicios a retener")
-        return;
+        resetFields("Seleccione los servicios a retener");
+        return false;
     }
     if ($(this).val() == 0)
         $("#FidelizacionRegistro_Notas").val("")
@@ -176,24 +180,11 @@ $("#sltAcuerdo").change(function () {
         type: 'get',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
-        //data: {
-        //'idSubmotivo': $("#sltSubmotivosCancelacion").val(),
-        //'permanencia': ($("input[name=rbPermanencia]:checked").val()),
-        //    'Corte': ($("input[name=rbCorte]:checked").val()),
-        //    'idServicios': serv,
-        //    'idE1':((!$("#sltEstrategiasA_4").val()) ? ((!$("#sltEstrategiasA_3").val()) ? '0' : $("#sltEstrategiasA_2").val()) : $("#sltEstrategiasA_1").val()),
-        //    'idE2':((!$("#sltEstrategiasB_4").val()) ? ((!$("#sltEstrategiasB_3").val()) ? '0' : $("#sltEstrategiasB_2").val()) : $("#sltEstrategiasB_1").val()),
-        //    'idE3':((!$("#sltEstrategiasC_4").val()) ? ((!$("#sltEstrategiasC_3").val()) ? '0' : $("#sltEstrategiasC_2").val()) : $("#sltEstrategiasC_1").val()),
-        //    'idNota': $(this).val(),
-        //},
+        
         success: function (data) {
             if (data == "0") {
-                $("#FidelizacionRegistro_Notas").val("");
-                $('#btnguardarpom').fadeOut('fast');
-                $("#txtCuenta").val("")
-                $("#txtCuenta").focus()
-                $('#myModal').modal()
-                $('#sltAcuerdo').val("");
+                resetFields("Número de cuenta no encontrada, digite un número de cuenta válido")
+                return false;
             }
             else {
                 $("#FidelizacionRegistro_Notas").val(data)
@@ -202,3 +193,11 @@ $("#sltAcuerdo").change(function () {
         }
     })
 })
+resetFields = function (txt) {
+    $("#FidelizacionRegistro_Notas").val("");
+    $('#btnguardarpom').fadeOut('fast');
+    $("#txtCuenta").focus()
+    $("#textModal").html(txt)
+    $('#myModal').modal()
+    $('#sltAcuerdo').val("");
+}

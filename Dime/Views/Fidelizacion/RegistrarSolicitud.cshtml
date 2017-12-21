@@ -16,7 +16,7 @@
             <div class="box-body">
                 <div class="col-md-4">
                     <small>Cuenta</small>
-                    @Html.TextBoxFor(c => c.FidelizacionRegistro.Cuenta, null, new { @class = "form-control input-sm ", Id = "txtCuenta" })
+                    @Html.TextBoxFor(c => c.FidelizacionRegistro.Cuenta, null, new { @class = "form-control input-sm ", Id = "txtCuenta", maxlength="9" })
                     @Html.ValidationMessageFor(c => c.FidelizacionRegistro.Cuenta, "", new { @class = "text-danger" })
                 </div>
                 <div class="col-md-4">
@@ -242,7 +242,7 @@
                             <br />
                             <div class="row">
                                 <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
-                                    <div>Número de cuenta no encontrada, digite un número de cuenta válido</div>
+                                    <div id="textModal">Número de cuenta no encontrada, digite un número de cuenta válido</div>
                                 </div>
                             </div>
                         </div>
