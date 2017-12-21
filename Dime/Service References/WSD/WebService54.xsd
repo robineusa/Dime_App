@@ -8032,4 +8032,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ConsultarGestionCuentaSuspensiones">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Cuenta" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarGestionCuentaSuspensionesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q561="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultarGestionCuentaSuspensionesResult" nillable="true" type="q561:CEPSuspensiones" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

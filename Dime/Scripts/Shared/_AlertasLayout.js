@@ -1,5 +1,4 @@
-﻿var MensajesaGuardar = [];
-
+﻿
 $(function Buen_Servicio() {
     var connect = $.connection.myHub;
     
@@ -17,6 +16,22 @@ function Registra_Eventos(connect) {
     });
     $('#NotificarBS').click(function () {
         connect.server.notificacion(NameImage, LinkDir, Id, Description);
+        $.alert({
+            theme: 'Modern',
+            icon: 'ion-happy-outline text-green',
+            boxWidth: '500px',
+            useBootstrap: false,
+            type: 'green',
+            title: '¡ Super !',
+            content: 'Imagen notificada exitosamente',
+            buttons: {
+                Ok: {
+                    btnClass: 'btn-green',
+                    action: function () {  }
+
+                },
+            }
+        });
     });
     $("#MensajeBS").keypress(function (e) {
         if (e.which == 13) {
@@ -50,9 +65,8 @@ function Registra_Eventos(connect) {
         }
     });
     
-    
     connect.server.consultaNotificacion(Usuario);
-    //connect.server.connect(UserConnect2);
+
 }
 
 function Llama_Metodos(connect, UserConnect) {
@@ -99,18 +113,23 @@ function Llama_Metodos(connect, UserConnect) {
                                             + V_Message +
                                         '</div>' +
                                     '</div>');
-        if (UserConnect2 != 'Buen Servicio') {
+        if (UserConnect2 != 'Buen Servicio')
+        {
             $("#ChatGeneral").css('display', 'block');
             $("#ChatGeneral2").css('display', 'block');
             $("#IdMsj").val('');
             $("#IdMsj").val(id);
             setTimeout('EjecutaBTN()', 0);
-        } else { /*$("#ChatGeneral2").css('display', 'block');*/ }
+            play_single_sound();
+        }
+        else
+        { }
         
     }
 
     connect.client.broadcastMessage = function (Nombre_Imagen, Ruta_Imagen, Id_Notificado, Descripcion_Imagen) {
         if (UserConnect2 != 'Buen Servicio') {
+            Cierramodal();
             var x = document.getElementById('BuenServicioHREF');
             x.click();
             $('#imgBS').attr("src", '../ImagesClient/' + Nombre_Imagen);
@@ -119,8 +138,9 @@ function Llama_Metodos(connect, UserConnect) {
             $('#Ruta_Imagen').val(Ruta_Imagen);
             $('#Id_Notificado').val(Id_Notificado);
             $('#Descripcion_Imagen').val(Descripcion_Imagen);
+            play_single_sound();
         }
-        //play_single_sound();
+        
     }
 
     connect.client.notificaMensajes = function (messages) {
@@ -136,12 +156,7 @@ function Llama_Metodos(connect, UserConnect) {
                         $("#IdMsj").val(messages[i].Id);
                     }
                 }
-
                 $('#MensajeCount').append('' + messages.length + '');
-                //for (i = 0; i < messages.length; i++) {
-                //    AddMessage(messages[i].Id, messages[i].UsuarioNotifica, messages[i].ContenidoAlerta);
-                //}
-
             }
         }
         else { $('#MensajeCount').empty(); }
@@ -151,7 +166,7 @@ function Llama_Metodos(connect, UserConnect) {
         if (messages.length > 0) {
                 $('#MensajesNoNotificados').empty();
                 for (i = messages.length-1; i > messages.length - 4; i--) {
-                    AddMessage(messages[i].Id, messages[i].UsuarioNotifica, messages[i].ContenidoAlerta);
+                    AddMessage(messages[i].Id, messages[i].NombreUsuarioNotifica, messages[i].ContenidoAlerta);
                 }
         }
         else {
@@ -186,6 +201,7 @@ function Llama_Metodos(connect, UserConnect) {
                     $("#IdOfertaComercial").val(result[i].Id);
                 }
             }
+            play_single_sound();
         }
         else
         {
@@ -204,7 +220,6 @@ function Llama_Metodos(connect, UserConnect) {
     connect.client.FinNotificaMensajes = function () {
         $("#IdMsj").val('');
         $('#MensajeCount').empty();
-        //$('#images_menu').removeClass("images_menu");
     }
 }
 
@@ -234,8 +249,6 @@ function GuardarUsuarioNotificado() {
         contentType: false,
         url: '../BuenServicio/Guardar_Usuario_Notificado',
         success: function (result) {
-            //$('#CerrarBS').click();
-            
 
         }
     });
@@ -251,3 +264,6 @@ function EjecutaBTN() {
     document.getElementById('BListNotify').click();
 }
 
+function play_single_sound() {
+    document.getElementById('audioNotificacion').play();
+}

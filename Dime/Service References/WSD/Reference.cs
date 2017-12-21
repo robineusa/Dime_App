@@ -19013,6 +19013,14 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeSuspensionPorId", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeSuspensionPorIdResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> TraeSuspensionPorIdAsync(decimal IdGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaSuspensionesRe" +
+            "sponse")]
+        Telmexla.Servicios.DIME.Entity.CEPSuspensiones ConsultarGestionCuentaSuspensiones(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaSuspensionesRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> ConsultarGestionCuentaSuspensionesAsync(decimal Cuenta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19320,6 +19328,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> TraeSuspensionPorIdAsync(decimal IdGestion) {
             return base.Channel.TraeSuspensionPorIdAsync(IdGestion);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPSuspensiones ConsultarGestionCuentaSuspensiones(decimal Cuenta) {
+            return base.Channel.ConsultarGestionCuentaSuspensiones(Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> ConsultarGestionCuentaSuspensionesAsync(decimal Cuenta) {
+            return base.Channel.ConsultarGestionCuentaSuspensionesAsync(Cuenta);
         }
     }
 }
