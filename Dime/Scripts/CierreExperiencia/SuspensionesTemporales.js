@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    NoHayMasRegistros();
     TraerCanalDeIngreso();
     TraerMotivoSuspension();
     TraerMesesDeSuspension();
@@ -479,9 +480,7 @@ function cargargrillaseg(data) {
         { field: "IdGestion", title: "Id Gestion", width: 60 },
         { field: "FechaGestion", title: "Fecha De Gestion", width: 100 },
         { field: "CuentaCliente", title: "Cuenta Cliente", width: 100 },
-        { field: "NumeroDeTicket", title: "Numero De Ticket", width: 100 },
         { field: "Gestion", title: "Gestion", width: 100 },
-        { field: "Razon", title: "Razon", width: 100 },
         { field: "Subrazon", title: "Subrazon", width: 100 },
         { field: "Estado", title: "Estado", width: 100 },
         { field: "Observaciones", title: "Observaciones", width: 100 },
@@ -507,4 +506,26 @@ function FormatoFechas() {
         timepicker: false
     });
 
+}
+function NoHayMasRegistros() {
+    if (RegistrosAsignados != null && RegistrosAsignados!=""){
+        $.alert({
+            theme: 'Modern',
+            icon: 'ion-happy-outline text-green',
+            boxWidth: '500px',
+            useBootstrap: false,
+            type: 'green',
+            title: '¡ Super !',
+            content: 'Ya No Existen Mas Registros Asignados',
+            buttons: {
+                Ok: {
+                    btnClass: 'btn-green',
+                    action: function () {
+
+                    }
+
+                },
+            }
+        });
+    }
 }

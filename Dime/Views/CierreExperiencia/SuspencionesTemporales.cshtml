@@ -17,7 +17,7 @@
         <div class="tab-content" style="padding-left:0; padding-top: 0">
             <div class="active tab-pane" id="Datos_Basicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
                 <br />
-                <table>
+               <table>
                     <tr>
                         <td width="200" style="padding:1px;">
                             <small>Cuenta del Cliente:  </small>
@@ -179,9 +179,9 @@
         var UrlListaDeSeguimientosSuspensiones = '@Url.Action("ListaDeSeguimientosAgenteSuspensiones", "CierreExperiencia")';
         var UrlArbolDeGestion = '@Url.Action("ArbolesDeTipificacionDesconexion", "CierreExperiencia")';
         var UrlDatosArbol = '@Url.Action("TraerDatosDelArbol", "CierreExperiencia")';
-
+        var RegistrosAsignados = '@ViewBag.Asignacion';
     </script>
-    <script src="~/Scripts/CierreExperiencia/SuspensionesTemporales.js?1.0.3"></script>
+    <script src="~/Scripts/CierreExperiencia/SuspensionesTemporales.js?1.0.5"></script>
     <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
     <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />
