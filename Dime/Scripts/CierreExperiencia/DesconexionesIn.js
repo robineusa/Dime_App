@@ -449,11 +449,11 @@ function DatosClienteCuenta1(Cuenta) {
                     useBootstrap: false,
                     type: 'red',
                     title: '¡ Oops !',
-                    content: 'La Cuenta ya Fue Gestionada Durante el Mes en Curso',
+                    content: 'La cuenta que ingresaste ya fue gestionada en desconexiones durante el mes en curso, así que no es posible volver a registrarla.',
                     buttons: {
                         Ok: {
                             btnClass: 'btn-red',
-                            action: function () { location.reload(); }
+                            action: function () { $('#CuentaCliente').val(0) }
 
                         },
                     }
@@ -485,12 +485,12 @@ function DatosClienteCuenta(Cuenta) {
                     icon: 'fa fa-warning',
                     boxWidth: '500px',
                     useBootstrap: false,
-                    type: 'red',
-                    title: '¡ Oops !',
-                    content: 'La Cuenta se Encuentra Asignada en la Base Potencial',
+                    type: 'orange',
+                    title: '¡ Bien !',
+                    content: 'La cuenta ingresada se encuentra actualmente asignada en la base de desconexiones, así que te vamos a mostrar esta información.',
                     buttons: {
                         Ok: {
-                            btnClass: 'btn-red',
+                            btnClass: 'btn-orange',
                             action: function () {
                                 for (var i = 0; i < json.length; i++) {
                                     json[i].FechaDeSolicitud = kendo.toString(kendo.parseDate(json[i].FechaDeSolicitud, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
@@ -536,7 +536,7 @@ function DatosClienteCuenta(Cuenta) {
                     useBootstrap: false,
                     type: 'red',
                     title: '¡ Oops !',
-                    content: 'No Existe Información de la Cuenta, Por Favor Suministrela',
+                    content: 'No existe información de la cuenta digitada, por favor asegúrate que sea un cuenta real e ingresa la información.',
                     buttons: {
                         Ok: {
                             btnClass: 'btn-red',

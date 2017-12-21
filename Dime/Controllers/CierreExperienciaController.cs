@@ -244,7 +244,7 @@ namespace Dime.Controllers
             return RedirectToAction("Tickets", "CierreExperiencia");
         }
         [HttpGet]
-        public ActionResult SuspencionesTemporales(string IdGestion)
+        public ActionResult SuspensionesTemporales(string IdGestion)
         {
             ViewModelCierreExperiencia modelo = new ViewModelCierreExperiencia();
             ViewBag.Asignacion = null;
@@ -273,7 +273,7 @@ namespace Dime.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SuspencionesTemporales(ViewModelCierreExperiencia modelo)
+        public ActionResult SuspensionesTemporales(ViewModelCierreExperiencia modelo)
         {
             modelo.CEPSuspensiones.UsuarioDeGestion = Convert.ToDecimal(Session["Usuario"]);
             modelo.CEPSuspensiones.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
@@ -286,7 +286,40 @@ namespace Dime.Controllers
             {
                 CierreService.RegistrarSuspencion(modelo.CEPSuspensiones,modelo.CEPAsigSuspensiones.IdAsignacion);
             }
-            return RedirectToAction("SuspencionesTemporales", "CierreExperiencia");
+            return RedirectToAction("SuspensionesTemporales", "CierreExperiencia");
+        }
+        [HttpGet]
+        public ActionResult SuspensionesTemporalesIn(string IdGestion)
+        {
+            ViewModelCierreExperiencia modelo = new ViewModelCierreExperiencia();
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            if (IdGestion == null || IdGestion.Equals(""))
+            {
+
+            }
+            else
+            {
+                modelo.CEPSuspensiones = CierreService.TraeSuspensionPorId(Convert.ToDecimal(IdGestion));
+                modelo.CEPSuspensiones.Observaciones = "";
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SuspensionesTemporalesIn(ViewModelCierreExperiencia modelo)
+        {
+            modelo.CEPSuspensiones.UsuarioDeGestion = Convert.ToDecimal(Session["Usuario"]);
+            modelo.CEPSuspensiones.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+
+            if (modelo.CEPSuspensiones.IdGestion > 0)
+            {
+                CierreService.ActualizarSuspencion(modelo.CEPSuspensiones);
+            }
+            else
+            {
+                CierreService.RegistrarSuspencion(modelo.CEPSuspensiones, Convert.ToDecimal(modelo.CEPAsigSuspensiones.IdAsignacion));
+            }
+            return RedirectToAction("SuspensionesTemporalesIn", "CierreExperiencia");
         }
         [HttpGet]
         public ActionResult ListaArboles(string IdPadre)
@@ -432,6 +465,58 @@ namespace Dime.Controllers
             var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ListaSeguimientosAgenteSuspensiones(Usuario)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
+        }
+        public JsonResult ValidarGestionDeClienteEnSuspensiones(int CuentaCliente)
+        {
+            CEPSuspensiones clientegestionado = new CEPSuspensiones();
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            decimal cuenta = Convert.ToDecimal(CuentaCliente);
+            clientegestionado = CierreService.ConsultarGestionCuentaSuspensiones(cuenta);
+
+            if (clientegestionado != null)
+            {
+                return new JsonResult()
+                {
+                    Data = JsonConvert.SerializeObject(clientegestionado),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
+            }
+            else
+            {
+                clientegestionado = new CEPSuspensiones();
+                clientegestionado.IdGestion = 0;
+                return new JsonResult()
+                {
+                    Data = JsonConvert.SerializeObject(clientegestionado),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
+            }
+        }
+        public JsonResult ValidarAsignacionDeClienteEnSuspensiones(int CuentaCliente)
+        {
+            CEPAsigSuspenciones clienteasignado = new CEPAsigSuspenciones();
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            decimal cuenta = Convert.ToDecimal(CuentaCliente);
+            clienteasignado = CierreService.ValidarCuentaAsigSuspension(Usuario,cuenta);
+
+            if (clienteasignado != null)
+            {
+                return new JsonResult()
+                {
+                    Data = JsonConvert.SerializeObject(clienteasignado),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
+            }
+            else
+            {
+                clienteasignado = new CEPAsigSuspenciones();
+                clienteasignado.IdAsignacion = 0;
+                return new JsonResult()
+                {
+                    Data = JsonConvert.SerializeObject(clienteasignado),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
+            }
         }
 
     }
