@@ -715,6 +715,9 @@ namespace Dime.Controllers
             if (Session["Formulario Contencion"] != null)
                 idNivel = 1;
 
+            int n;
+            bool isNumeric = int.TryParse(Convert.ToString(r.FidelizacionRegistro.Renta), out n);
+
             if ((r.FidelizacionRegistro.TipificacionId == 0))
             {
                 ViewBag.errorTipificacion = "Seleccione el acuerdo";
@@ -829,23 +832,40 @@ namespace Dime.Controllers
                 ViewBag.slEstrategia = s;
                 return View(r);
             }
+            else if (r.FidelizacionRegistro.Renta == null || isNumeric == false)
+            {
+                //seleccionar Renta
+
+                ViewBag.errorRenta = "Ingrese un valor para la renta";
+
+                ViewBag.sltMotivos = fidelizacionServicio.getMotivosCancelacionAll(0);
+
+                ViewBag.sltAcuerdo = fidelizacionServicio.getTipificacionAll(0, idNivel);
+                ViewBag.fields = fidelizacionServicio.getOtrosCamposAll(0, 1);
+                var s = fidelizacionServicio.getRecursivaAll(1, 0);
+                ViewBag.slEstrategia = s;
+                return View(r);
+            }
             var Tipificacion = fidelizacionServicio.getTipificacionById(Convert.ToInt32(r.FidelizacionRegistro.TipificacionId));
             var rest = ""
 ;
             var diasPreaviso = 5;
             var FechaSiguiente = "";
+
+            var test = fidelizacionServicio.getMaestrosByCorteId(diasPreaviso, Convert.ToInt16(Request.Form["rbCorte"]));
+            var iniciaConteo = Convert.ToDateTime(test[Convert.ToInt32(diasPreaviso - 1)].Fecha);
+            var esteMes = DateTime.Compare(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")), iniciaConteo);
+            if (esteMes < 0)///se puede radicar este mismo mes
+                FechaSiguiente = Convert.ToString(((DateTime.Now).AddMonths(1)).Year) + "-" + Convert.ToString(((DateTime.Now).AddMonths(1)).Month.ToString("d2")) + "-0" + Request.Form["rbCorte"];
+            else
+                FechaSiguiente = Convert.ToString(((DateTime.Now).AddMonths(2)).Year) + "-" + Convert.ToString(((DateTime.Now).AddMonths(2)).Month.ToString("d2")) + "-0" + Request.Form["rbCorte"];
+
             if (Tipificacion.ValidaRetencion == 1)
              {//Contenido o retenido
-                var test = fidelizacionServicio.getMaestrosByCorteId(diasPreaviso, Convert.ToInt16(Request.Form["rbCorte"]));
-
-                var iniciaConteo = Convert.ToDateTime(test[Convert.ToInt32(diasPreaviso - 1)].Fecha);
-                var esteMes = DateTime.Compare(Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd")), iniciaConteo);
                 
-                if (esteMes < 0)///se puede radicar este mismo mes
-                    FechaSiguiente = Convert.ToString(((DateTime.Now).AddMonths(1)).Year) + "-" + Convert.ToString(((DateTime.Now).AddMonths(1)).Month.ToString("d2")) + "-0" + Request.Form["rbCorte"];
-                else
-                    FechaSiguiente = Convert.ToString(((DateTime.Now).AddMonths(2)).Year) + "-" + Convert.ToString(((DateTime.Now).AddMonths(2)).Month.ToString("d2")) + "-0" + Request.Form["rbCorte"];
 
+                
+                
                 if (r.FidelizacionRegistro.RecursivaIdA == 0)
                 {
                     //seleccionar Estrategia1

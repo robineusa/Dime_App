@@ -193,6 +193,7 @@ $("#sltAcuerdo").change(function () {
                 $("#txtCuenta").val("")
                 $("#txtCuenta").focus()
                 $('#myModal').modal()
+                $('#sltAcuerdo').val("");
             }
             else {
                 $("#FidelizacionRegistro_Notas").val(data)
