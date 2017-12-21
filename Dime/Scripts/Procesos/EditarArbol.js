@@ -20,8 +20,7 @@
     });
 
     ConstruirArbol(IdArbol);
-    var cat = 0;
-    CargarCategorias(cat, "Categorias",true);
+
     //$('#Body_Layout').on('click', function () { });
 
 });
@@ -69,6 +68,7 @@ function evnt(objeto) {
     obj = objeto.parentNode;
     nodoSeleccionado.IdPadre = obj.id;
     nodoSeleccionado.Id = objeto.id;
+
     if (nodoSeleccionado.IdPadre == "") {
         var objAbuelo = obj.parentNode;
         nodoSeleccionado.IdPadre = objAbuelo.id;
@@ -235,6 +235,7 @@ function EditarTexo() {
 
     //Cambia el nombre visualmente
     var NombreCambiar = $('#Nombre_Cambiar').val();
+
     var nombreNodo;
     var objPadre = document.getElementById(nodoSeleccionado.Id);
     for (var i = 0; i < objPadre.childNodes.length; i++) {
@@ -245,6 +246,10 @@ function EditarTexo() {
             nombreNodo.childNodes[0].nodeValue = " " + NombreCambiar + " ";
         }
     }
+
+    //Revisa si el nombre que se va a cambiar es el del span seleccionado
+    if ($("#idnodo").text() == nodoSeleccionado.Id)
+        $('#NodoSeleccionado').val(NombreCambiar);
 
     $.ajax({
         type: "POST",
@@ -268,7 +273,7 @@ function EditarTexo() {
     //Actualiza el codigo html del arbol
     ActualizarHtml()
     $('#Nombre_Cambiar').val("");
-    //$("#Nombre_Cambiar").attr("disabled", "disabled");
+
 
 
 }
@@ -277,7 +282,7 @@ function seleccionadoConsultarHtml(obj) {
     SpanSeleccionado = obj;
 
     $('#NodoSeleccionado').val($(SpanSeleccionado).text());
-
+    $("#idnodo").text(nodoSeleccionado.Id);
     var objetoPadre = obj.parentNode;
     var tieneHijos = false;
 
@@ -319,32 +324,47 @@ function seleccionadoConsultarHtml(obj) {
     });
 }
 
-function EjecutarCategorias(EsNodoFinal,Categoria,SubCategoria,Tipo){
+function EjecutarCategorias(EsNodoFinal, Categoria, SubCategoria, Tipo) {
 
-    if (EsNodoFinal){
+    if (EsNodoFinal) {
+
+
+
         document.getElementById("nodoFinal").checked = true;
 
         $("#Categorias").removeAttr("hidden");
         $("#categoriaStrong").removeAttr("hidden");
 
 
-        $("#subCategoria").attr("hidden", "hidden");
+        $("#subCategoria").removeAttr("hidden");
         $("#subCategoriaStrong").removeAttr("hidden");
 
 
         $("#Tipo").removeAttr("hidden");
         $("#tipoStrong").removeAttr("hidden");
-        
-        CargarCategorias(Categoria, "Categorias", false);
-        CargarCategorias(SubCategoria, "subCategoria", false);
-        CargarCategorias(Categoria, "Tipo", false);
+
+        //consulta por el id de la categoria padre
+        CargarCategorias(0, "Categorias", Categoria);
+        CargarCategorias(Categoria, "subCategoria", SubCategoria);
+        CargarCategorias(SubCategoria, "Tipo", Tipo);
 
     }
-    else{
+    else {
         document.getElementById("nodoFinal").checked = false;
+
+        $("#Categorias").attr("hidden", "hidden");
+        $("#categoriaStrong").attr("hidden", "hidden");
+        $("#Categorias").empty();
+
+        $("#subCategoria").attr("hidden", "hidden");
+        $("#subCategoriaStrong").attr("hidden", "hidden");
+        $("#subCategoria").empty();
+
+        $("#Tipo").attr("hidden", "hidden");
+        $("#tipoStrong").attr("hidden", "hidden");
+        $("#Tipo").empty();
     }
 }
-
 
 function GuardarCodigoHtmlNodo() {
 
@@ -361,23 +381,23 @@ function GuardarCodigoHtmlNodo() {
             nodoFinalCheck = true;
 
             objetoCategoria = document.getElementById("Categorias");
-            categoria = objetoCategoria.options[objetoCategoria.selectedIndex].value!=null ? objetoCategoria.options[objetoCategoria.selectedIndex].value : " ";
-            alert(categoria);
+            categoria = objetoCategoria.options[objetoCategoria.selectedIndex].value != null ? objetoCategoria.options[objetoCategoria.selectedIndex].value : " ";
+
 
             objetoSubCategoria = document.getElementById("subCategoria");
             subcategoria = objetoSubCategoria.options[objetoSubCategoria.selectedIndex].value != null ? objetoSubCategoria.options[objetoSubCategoria.selectedIndex].value : " ";
-            alert(subcategoria);
+
 
             objetoTipo = document.getElementById("Tipo");
             tipo = objetoTipo.options[objetoTipo.selectedIndex].value != null ? objetoTipo.options[objetoTipo.selectedIndex].value : " ";
-            alert(tipo);
+
         }
 
         $.ajax({
             type: "POST",
             url: urlGuardarCodigoNodo,
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({ IdNodo: objetoPadre, CodigoHtml: codigoHtml, NodoFinal: nodoFinalCheck, Categoria:categoria, SubCategoria:subcategoria, Tipo:tipo }),
+            data: JSON.stringify({ IdNodo: objetoPadre, CodigoHtml: codigoHtml, NodoFinal: nodoFinalCheck, Categoria: categoria, SubCategoria: subcategoria, Tipo: tipo }),
             dataType: "JSON",
             success: function (result) {
                 var json = JSON.parse(result);
@@ -516,24 +536,34 @@ function ActualizarHtml() {
 
 }
 
-function CargarCategorias(idCategoria, lista, consultarPadre) {
-
+function CargarCategorias(idCategoria, lista, categoriaSeleccionada) {
+    var objetoCategoria;
     $.ajax({
         type: "POST",
         url: urlCargarCategorias,
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ IdCategoria: idCategoria, ConsultarPadre: consultarPadre }),
+        data: JSON.stringify({ IdCategoria: idCategoria }),
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
             var object = json[0];
             for (var index = 0, len = json.length; index < len; index++) {
-                $('#'+lista).append($('<option>', {
+                $('#' + lista).append($('<option>', {
                     value: json[index].IdCategoria,
                     text: json[index].Descripcion
                 }));
             }
 
+
+            objetoCategoria = document.getElementById(lista);
+
+
+            for (index = 0; index < objetoCategoria.length; index++) {
+
+                if (objetoCategoria[index].value == categoriaSeleccionada) {
+                    objetoCategoria.selectedIndex = index;
+                }
+            }
         },
         error: function (request, status, error) {
             alert(request.responseText);
@@ -554,21 +584,21 @@ function SetOpciones(obj) {
 
         $("#Tipo").empty();
         $("#Tipo").append("<option value=''>--Select Option--</option>");
-     
-        CargarCategorias(obj.options[obj.selectedIndex].value, "subCategoria",true);
+
+        CargarCategorias(obj.options[obj.selectedIndex].value, "subCategoria", true);
 
         $("#subCategoria").removeAttr("hidden");
         $("#subCategoriaStrong").removeAttr("hidden");
-        
+
     }
 
-    
+
     if (obj.getAttribute("id") == "subCategoria") {
 
         $("#Tipo").empty();
         $("#Tipo").append("<option value=''>--Select Option--</option>");
 
-        CargarCategorias(obj.options[obj.selectedIndex].value, "Tipo",true);
+        CargarCategorias(obj.options[obj.selectedIndex].value, "Tipo", true);
 
         $("#Tipo").removeAttr("hidden");
         $("#tipoStrong").removeAttr("hidden");
@@ -579,6 +609,7 @@ function mostrarCategorias(obj) {
 
     if (obj.checked) {
 
+        CargarCategorias(0, "Categorias");
         $("#Categorias").removeAttr("hidden");
         $("#categoriaStrong").removeAttr("hidden");
 
@@ -597,16 +628,14 @@ function mostrarCategorias(obj) {
         $("#Tipo").attr("hidden", "hidden");
         $("#tipoStrong").attr("hidden", "hidden");
         $("#Tipo").empty();
-        
-        
-        
+
+
+
 
         $("#Categorias").append("<option value=''>--Select Option--</option>");
         $("#subCategoria").append("<option value=''>--Select Option--</option>");
         $("#Tipo").append("<option value=''>--Select Option--</option>");
 
-        var cat = 0;
-        CargarCategorias(cat, "Categorias",true);
 
     }
 

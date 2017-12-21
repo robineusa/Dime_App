@@ -58,6 +58,7 @@
                                 Titulo:
                             </span>
                             <input type="text" id="NodoSeleccionado" class="form-control" style="width:250px;font-size:medium" readonly>
+                            <label id="idnodo" hidden></label>
                         </div>
 
 
@@ -90,12 +91,17 @@
 
                         <table>
                             <tr>
-                                <td colspan="3">
+                                <td width="200" style="padding:1px;" colspan="3">
                                     <button class="btn btn-success" onclick="GuardarCodigoHtmlNodo()">Guardar Cambios</button>
                                     <input class="checkbox-inline" type="checkbox" id="nodoFinal" disabled onclick="mostrarCategorias(this)">
                                     <label> Marcar como final </label>
                                 </td>
 
+                            </tr>
+                            <tr>
+                                <td>
+                                    <br>
+                                </td>
                             </tr>
                             <tr>
                                 <td width="200" style="padding:1px;">
@@ -109,7 +115,8 @@
                                 </td>
 
                             </tr>
-
+                          
+                            
                             <tr>
                                 <td style="padding:1px;">
                                     @Html.DropDownListFor(m => m.Descripcion, new List<SelectListItem> { },
@@ -133,7 +140,7 @@
 
                         <br />
                         <br />
-
+                        
                         <br />
 
 
@@ -236,7 +243,7 @@
             var urlCargarCategorias = '@Url.Action("ConsultarCategorias", "Procesos")';
 
         </script>
-        <script src="~/Scripts/Procesos/EditarArbol.js?1.0.3"></script>
+        <script src="~/Scripts/Procesos/EditarArbol.js?1.0.1"></script>
         <link href="~/Scripts/Procesos/dist/summernote.css" rel="stylesheet">
         <link href="~/AdminLTE/bootstrap/css/EditarArbol.css" rel="stylesheet">
         <script src="~/Scripts/Procesos/dist/summernote.js"></script>
