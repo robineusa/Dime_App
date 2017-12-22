@@ -2373,13 +2373,17 @@
     <Content Include="Scripts\DistribucionBlending\Rentabilizacion.js" />
     <Content Include="Scripts\EncuestaCav\ConsultaEncuestaCavs.js" />
     <Content Include="Scripts\EncuestaCav\EncuestadeSatisfaccion.js" />
+    <Content Include="Scripts\Fidelizacion\ActualizarRecursiva.js" />
     <Content Include="Scripts\Fidelizacion\ActualizarSubmotivoCancelacion.js" />
+    <Content Include="Scripts\Fidelizacion\ActualizarTipificacion.js" />
     <Content Include="Scripts\Fidelizacion\CrearRecursiva.js" />
     <Content Include="Scripts\Fidelizacion\CrearSubmotivoCancelacion.js" />
+    <Content Include="Scripts\Fidelizacion\CrearTipificacion.js" />
     <Content Include="Scripts\Fidelizacion\ListarMotivosCancelacion.js" />
     <Content Include="Scripts\Fidelizacion\ListarRecursiva.js" />
     <Content Include="Scripts\Fidelizacion\ListarSubmotivosCancelacion.js" />
     <Content Include="Scripts\Fidelizacion\ListarTipificacion.js" />
+    <Content Include="Scripts\Fidelizacion\RegistrarSolicitud.js" />
     <Content Include="Scripts\Gestion_Blending\AsignarBasesAdmin.js" />
     <Content Include="Scripts\Gestion_Blending\SkillsUsuariosAdmin.js" />
     <Content Include="Scripts\Inbound\Retencion.js" />
@@ -3705,6 +3709,7 @@
     <Content Include="Views\CierreExperiencia\SuspensionesTemporalesIn.cshtml" />
     <Content Include="Views\CierreExperiencia\ConsultaGestionTickets.cshtml" />
     <Content Include="Views\CierreExperiencia\ConsultaGestionSuspensiones.cshtml" />
+    <Content Include="Views\Fidelizacion\RegistrarSolicitud.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
