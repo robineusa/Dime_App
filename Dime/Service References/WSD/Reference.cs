@@ -9662,6 +9662,371 @@ namespace Dime.WSD {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CEPLiberaciones", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class CEPLiberaciones : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CanalDeIngresoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal CuentaClienteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FechaGestionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FechaSeguimientoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FechaSolicitudField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GestionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GrupoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal IdGestionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MotivoDesconexionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MotivoLiberacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreUsuarioGestionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal NumeroServiciosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ObservacionesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RegistroModuloField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SolicitudModuloField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SubrazonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsarioEscalaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal UsuarioDeGestionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UsuarioQueLiberoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VendedorField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CanalDeIngreso {
+            get {
+                return this.CanalDeIngresoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CanalDeIngresoField, value) != true)) {
+                    this.CanalDeIngresoField = value;
+                    this.RaisePropertyChanged("CanalDeIngreso");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal CuentaCliente {
+            get {
+                return this.CuentaClienteField;
+            }
+            set {
+                if ((this.CuentaClienteField.Equals(value) != true)) {
+                    this.CuentaClienteField = value;
+                    this.RaisePropertyChanged("CuentaCliente");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FechaGestion {
+            get {
+                return this.FechaGestionField;
+            }
+            set {
+                if ((this.FechaGestionField.Equals(value) != true)) {
+                    this.FechaGestionField = value;
+                    this.RaisePropertyChanged("FechaGestion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FechaSeguimiento {
+            get {
+                return this.FechaSeguimientoField;
+            }
+            set {
+                if ((this.FechaSeguimientoField.Equals(value) != true)) {
+                    this.FechaSeguimientoField = value;
+                    this.RaisePropertyChanged("FechaSeguimiento");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FechaSolicitud {
+            get {
+                return this.FechaSolicitudField;
+            }
+            set {
+                if ((this.FechaSolicitudField.Equals(value) != true)) {
+                    this.FechaSolicitudField = value;
+                    this.RaisePropertyChanged("FechaSolicitud");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Gestion {
+            get {
+                return this.GestionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GestionField, value) != true)) {
+                    this.GestionField = value;
+                    this.RaisePropertyChanged("Gestion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Grupo {
+            get {
+                return this.GrupoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GrupoField, value) != true)) {
+                    this.GrupoField = value;
+                    this.RaisePropertyChanged("Grupo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal IdGestion {
+            get {
+                return this.IdGestionField;
+            }
+            set {
+                if ((this.IdGestionField.Equals(value) != true)) {
+                    this.IdGestionField = value;
+                    this.RaisePropertyChanged("IdGestion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MotivoDesconexion {
+            get {
+                return this.MotivoDesconexionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MotivoDesconexionField, value) != true)) {
+                    this.MotivoDesconexionField = value;
+                    this.RaisePropertyChanged("MotivoDesconexion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MotivoLiberacion {
+            get {
+                return this.MotivoLiberacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MotivoLiberacionField, value) != true)) {
+                    this.MotivoLiberacionField = value;
+                    this.RaisePropertyChanged("MotivoLiberacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NombreUsuarioGestion {
+            get {
+                return this.NombreUsuarioGestionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreUsuarioGestionField, value) != true)) {
+                    this.NombreUsuarioGestionField = value;
+                    this.RaisePropertyChanged("NombreUsuarioGestion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal NumeroServicios {
+            get {
+                return this.NumeroServiciosField;
+            }
+            set {
+                if ((this.NumeroServiciosField.Equals(value) != true)) {
+                    this.NumeroServiciosField = value;
+                    this.RaisePropertyChanged("NumeroServicios");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Observaciones {
+            get {
+                return this.ObservacionesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ObservacionesField, value) != true)) {
+                    this.ObservacionesField = value;
+                    this.RaisePropertyChanged("Observaciones");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RegistroModulo {
+            get {
+                return this.RegistroModuloField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegistroModuloField, value) != true)) {
+                    this.RegistroModuloField = value;
+                    this.RaisePropertyChanged("RegistroModulo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SolicitudModulo {
+            get {
+                return this.SolicitudModuloField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SolicitudModuloField, value) != true)) {
+                    this.SolicitudModuloField = value;
+                    this.RaisePropertyChanged("SolicitudModulo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Subrazon {
+            get {
+                return this.SubrazonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubrazonField, value) != true)) {
+                    this.SubrazonField = value;
+                    this.RaisePropertyChanged("Subrazon");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UsarioEscala {
+            get {
+                return this.UsarioEscalaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsarioEscalaField, value) != true)) {
+                    this.UsarioEscalaField = value;
+                    this.RaisePropertyChanged("UsarioEscala");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal UsuarioDeGestion {
+            get {
+                return this.UsuarioDeGestionField;
+            }
+            set {
+                if ((this.UsuarioDeGestionField.Equals(value) != true)) {
+                    this.UsuarioDeGestionField = value;
+                    this.RaisePropertyChanged("UsuarioDeGestion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UsuarioQueLibero {
+            get {
+                return this.UsuarioQueLiberoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsuarioQueLiberoField, value) != true)) {
+                    this.UsuarioQueLiberoField = value;
+                    this.RaisePropertyChanged("UsuarioQueLibero");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Vendedor {
+            get {
+                return this.VendedorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VendedorField, value) != true)) {
+                    this.VendedorField = value;
+                    this.RaisePropertyChanged("Vendedor");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IWebService")]
     public interface IWebService {
@@ -19039,6 +19404,18 @@ namespace Dime.WSD {
             "te", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionSuspensionesAgen" +
             "teResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones>> ConsultaLogDeGestionSuspensionesAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/RegistrarLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/RegistrarLiberacionesResponse")]
+        void RegistrarLiberaciones(Dime.WSD.CEPLiberaciones Liberaciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/RegistrarLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/RegistrarLiberacionesResponse")]
+        System.Threading.Tasks.Task RegistrarLiberacionesAsync(Dime.WSD.CEPLiberaciones Liberaciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ActualizarLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ActualizarLiberacionesResponse")]
+        void ActualizarLiberaciones(Dime.WSD.CEPLiberaciones Liberaciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ActualizarLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ActualizarLiberacionesResponse")]
+        System.Threading.Tasks.Task ActualizarLiberacionesAsync(Dime.WSD.CEPLiberaciones Liberaciones);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19370,6 +19747,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones>> ConsultaLogDeGestionSuspensionesAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario) {
             return base.Channel.ConsultaLogDeGestionSuspensionesAgenteAsync(FechaInicial, FechaFinal, Usuario);
+        }
+        
+        public void RegistrarLiberaciones(Dime.WSD.CEPLiberaciones Liberaciones) {
+            base.Channel.RegistrarLiberaciones(Liberaciones);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarLiberacionesAsync(Dime.WSD.CEPLiberaciones Liberaciones) {
+            return base.Channel.RegistrarLiberacionesAsync(Liberaciones);
+        }
+        
+        public void ActualizarLiberaciones(Dime.WSD.CEPLiberaciones Liberaciones) {
+            base.Channel.ActualizarLiberaciones(Liberaciones);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarLiberacionesAsync(Dime.WSD.CEPLiberaciones Liberaciones) {
+            return base.Channel.ActualizarLiberacionesAsync(Liberaciones);
         }
     }
 }

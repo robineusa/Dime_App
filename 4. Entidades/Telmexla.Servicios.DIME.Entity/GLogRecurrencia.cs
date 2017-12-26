@@ -61,6 +61,6 @@ namespace Telmexla.Servicios.DIME.Entity
         public string FechaSesguimiento { get; set; }
         public decimal IdGprincipal { get; set; }
 
-        public virtual GPrincipalRecurrencia GPrincipalRecurrencia { get; set; }
+        //public virtual GPrincipalRecurrencia GPrincipalRecurrencia { get; set; }
     }
 }
