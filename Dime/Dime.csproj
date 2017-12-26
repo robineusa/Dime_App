@@ -2350,6 +2350,7 @@
     <Content Include="Scripts\CierreExperiencia\ConsultaGestionUsuario.js" />
     <Content Include="Scripts\CierreExperiencia\DesconexionesIn.js" />
     <Content Include="Scripts\CierreExperiencia\Desconexiones.js" />
+    <Content Include="Scripts\CierreExperiencia\LiberacionesDeHomePass.js" />
     <Content Include="Scripts\CierreExperiencia\ListaArboles.js" />
     <Content Include="Scripts\CierreExperiencia\SuspencionesTemporalesIn.js" />
     <Content Include="Scripts\CierreExperiencia\SuspensionesTemporales.js" />
@@ -3174,6 +3175,8 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CELSuspensiones.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPSuspensiones.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPLiberaciones.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CELLiberaciones.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />

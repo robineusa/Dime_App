@@ -1,0 +1,58 @@
+﻿
+.latir{
+    animation: 2.5s infinite latidico;
+    height:44px;
+    border-radius:5px;
+
+}
+
+@keyframes EfectoLatir {
+  0% {
+          transform: translate(0%,0%) scale(1);
+  }
+  94% {
+   
+          transform: translate(0%,0%) scale(1);
+  }
+  98% {
+   
+          transform: translate(0%,0%) scale(2); /* Alem do scale mantemos o translate, para o ponto continuar centrado ao variar de tamanho */
+  }
+  100% {
+    
+          transform: translate(0%,0%) scale(1);
+  }
+}
+
+
+@keyframes bounceInDown {
+ /* from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+*/
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  /*to {
+    transform: none;
+  }*/
+}
+.images_menu 
+{
+    animation: 1.5s infinite EfectoLatir;
+}

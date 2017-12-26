@@ -198,19 +198,6 @@ namespace Dime.Controllers
         }
 
         [HttpGet]
-        public ActionResult LiberacionesDeHomePass()
-        {
-            ViewModelCierreExperiencia modelo = new ViewModelCierreExperiencia();
-            return View(modelo);
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult LiberacionesDeHomePass(ViewModelCierreExperiencia modelo)
-        {
-        
-            return View();
-        }
-        [HttpGet]
         public ActionResult Tickets(string IdGestion)
         {
             ViewModelCierreExperiencia modelo = new ViewModelCierreExperiencia();
@@ -545,6 +532,79 @@ namespace Dime.Controllers
             var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ConsultaLogDeGestionSuspensionesAgente(FechaInicial, FechaFinal, usuario)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult LiberacionesDeHomePass(string IdGestion)
+        {
+            ViewModelCierreExperiencia modelo = new ViewModelCierreExperiencia();
+            
+            if (IdGestion == null || IdGestion.Equals(""))
+            {
+
+            }
+            else
+            {
+                modelo.CEPLiberaciones = CierreService.TraeLiberacionPorId(Convert.ToDecimal(IdGestion));
+                modelo.CEPLiberaciones.Observaciones = "";
+            }
+            return View(modelo);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult LiberacionesDeHomePass(ViewModelCierreExperiencia modelo)
+        {
+            modelo.CEPLiberaciones.UsuarioDeGestion = Convert.ToDecimal(Session["Usuario"]);
+            modelo.CEPLiberaciones.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+
+            if (modelo.CEPLiberaciones.IdGestion > 0)
+            {
+                CierreService.ActualizarLiberaciones(modelo.CEPLiberaciones);
+            }
+            else
+            {
+                CierreService.RegistrarLiberaciones(modelo.CEPLiberaciones);
+            }
+            return RedirectToAction("LiberacionesDeHomePass", "CierreExperiencia");
+        }
+        public JsonResult ListaDeGestionAgenteLiberaciones()
+        {
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ListaDeGestionAgenteLiberaciones(Usuario)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ListaDeSeguimientosAgenteLiberaciones()
+        {
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ListaSeguimientosAgenteLiberaciones(Usuario)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ValidarGestionDeClienteEnLiberaciones(int CuentaCliente)
+        {
+            CEPLiberaciones clientegestionado = new CEPLiberaciones();
+            decimal Usuario = Convert.ToDecimal(Session["Usuario"]);
+            decimal cuenta = Convert.ToDecimal(CuentaCliente);
+            clientegestionado = CierreService.ConsultarGestionCuentaLiberaciones(cuenta);
+
+            if (clientegestionado != null)
+            {
+                return new JsonResult()
+                {
+                    Data = JsonConvert.SerializeObject(clientegestionado),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
+            }
+            else
+            {
+                clientegestionado = new CEPLiberaciones();
+                clientegestionado.IdGestion = 0;
+                return new JsonResult()
+                {
+                    Data = JsonConvert.SerializeObject(clientegestionado),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
+            }
         }
     }
 }
