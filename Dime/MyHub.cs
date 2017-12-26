@@ -191,6 +191,13 @@ namespace Dime
 
             TodosMensajes = signalRService.ListTodosMensajes().ToList();
             Clients.Caller.connectEver(TodosMensajes);
+            
+        }
+        public void ConsultaTodosMensajesPagina()
+        {
+            List<NotificacionSignalR> TodosMensajes = new List<NotificacionSignalR>();
+
+            TodosMensajes = signalRService.ListTodosMensajes().OrderByDescending(x => x.Id).ToList();
             Clients.Caller.todosMsm(TodosMensajes);
         }
 

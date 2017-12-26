@@ -103,12 +103,10 @@ function crear() {
     }
 }
 
-
-
 function AgregaNodo(Data) {
     window.event.cancelBubble = true;
     if (nodoSeleccionado.IdPadre == "InsertaArbol") {
-        //onmouseover='return evnt(this)'
+
         $("#ulPrincipal").append(
 
            "<li id=' " + Data.Id + " ' onmousedown='return evnt(this)'  >" +
@@ -184,7 +182,14 @@ function AgregaNodo(Data) {
                 "</li>");
         }
     }
-    ActualizarHtml()
+
+    if ($("#idnodo").text() == nodoSeleccionado.Id) {
+        document.getElementById("nodoFinal").checked = false;
+        document.getElementById("nodoFinal").setAttribute("disabled", "disabled");
+        LimpiarDesplegables();
+    }
+    ActualizarHtml();
+
     $("#BotonCrear").attr("disabled", "disabled");
 }
 
@@ -208,8 +213,15 @@ function Eliminar() {
     }
     objPadre.removeChild(objPadre.childNodes[numeral]);
 
+
+    if ($("#idnodo").text() == nodoSeleccionado.Id)
+        $('#NodoSeleccionado').val("");
+    document.getElementById("nodoFinal").checked = false;
+    document.getElementById("nodoFinal").setAttribute("disabled", "disabled");
+    LimpiarDesplegables();
+
     //Actualiza el codigo html del arbol
-    ActualizarHtml()
+    ActualizarHtml();
 
     $.ajax({
         type: "POST",
@@ -230,7 +242,7 @@ function Eliminar() {
     });
 
 }
-//IdNodo: NodoSeleccionado.Id, NombreNuevo: NombreCambiar
+
 function EditarTexo() {
 
     //Cambia el nombre visualmente
@@ -284,11 +296,16 @@ function seleccionadoConsultarHtml(obj) {
     $('#NodoSeleccionado').val($(SpanSeleccionado).text());
     $("#idnodo").text(nodoSeleccionado.Id);
     var objetoPadre = obj.parentNode;
+    var objetoUl;
     var tieneHijos = false;
 
     for (var i = 0; i < objetoPadre.childNodes.length; i++) {
         if (objetoPadre.childNodes[i].nodeName == "UL") {
-            tieneHijos = true;
+            //Revisa que no tenga elementos dentro del ul del nodo seleccionado
+            objetoUl = objetoPadre.childNodes[i];
+            if (objetoUl.childNodes.length > 0) {
+                tieneHijos = true;
+            }
         }
     }
 
@@ -303,6 +320,9 @@ function seleccionadoConsultarHtml(obj) {
 
     var objetoPadre = obj.parentNode;
 
+    $("#Categorias").empty();
+    $("#subCategoria").empty();
+    $("#Tipo").empty();
 
     $.ajax({
         type: "POST",
@@ -328,41 +348,28 @@ function EjecutarCategorias(EsNodoFinal, Categoria, SubCategoria, Tipo) {
 
     if (EsNodoFinal) {
 
-
-
         document.getElementById("nodoFinal").checked = true;
 
         $("#Categorias").removeAttr("hidden");
         $("#categoriaStrong").removeAttr("hidden");
-
+        $("#Categorias").append("<option value=''>--Select Option--</option>");
 
         $("#subCategoria").removeAttr("hidden");
         $("#subCategoriaStrong").removeAttr("hidden");
-
+        $("#subCategoria").append("<option value=''>--Select Option--</option>");
 
         $("#Tipo").removeAttr("hidden");
         $("#tipoStrong").removeAttr("hidden");
+        $("#Tipo").append("<option value=''>--Select Option--</option>");
 
         //consulta por el id de la categoria padre
         CargarCategorias(0, "Categorias", Categoria);
         CargarCategorias(Categoria, "subCategoria", SubCategoria);
         CargarCategorias(SubCategoria, "Tipo", Tipo);
-
     }
     else {
         document.getElementById("nodoFinal").checked = false;
-
-        $("#Categorias").attr("hidden", "hidden");
-        $("#categoriaStrong").attr("hidden", "hidden");
-        $("#Categorias").empty();
-
-        $("#subCategoria").attr("hidden", "hidden");
-        $("#subCategoriaStrong").attr("hidden", "hidden");
-        $("#subCategoria").empty();
-
-        $("#Tipo").attr("hidden", "hidden");
-        $("#tipoStrong").attr("hidden", "hidden");
-        $("#Tipo").empty();
+        LimpiarDesplegables();
     }
 }
 
@@ -376,41 +383,53 @@ function GuardarCodigoHtmlNodo() {
         var categoria = 0;
         var subcategoria = 0;
         var tipo = 0;
+        var desplegablesVacio = "--Select Option--";
 
         if (document.getElementById("nodoFinal").checked == true) {
             nodoFinalCheck = true;
 
             objetoCategoria = document.getElementById("Categorias");
-            categoria = objetoCategoria.options[objetoCategoria.selectedIndex].value != null ? objetoCategoria.options[objetoCategoria.selectedIndex].value : " ";
-
+            categoria = objetoCategoria.options[objetoCategoria.selectedIndex].text == desplegablesVacio ? objetoCategoria.options[objetoCategoria.selectedIndex].text
+                            : objetoCategoria.options[objetoCategoria.selectedIndex].value;
 
             objetoSubCategoria = document.getElementById("subCategoria");
-            subcategoria = objetoSubCategoria.options[objetoSubCategoria.selectedIndex].value != null ? objetoSubCategoria.options[objetoSubCategoria.selectedIndex].value : " ";
-
+            subcategoria = objetoSubCategoria.options[objetoSubCategoria.selectedIndex].text == desplegablesVacio ? objetoSubCategoria.options[objetoSubCategoria.selectedIndex].text
+                            : objetoSubCategoria.options[objetoSubCategoria.selectedIndex].value;
 
             objetoTipo = document.getElementById("Tipo");
-            tipo = objetoTipo.options[objetoTipo.selectedIndex].value != null ? objetoTipo.options[objetoTipo.selectedIndex].value : " ";
+            tipo = objetoTipo.options[objetoTipo.selectedIndex].text == desplegablesVacio ? objetoTipo.options[objetoTipo.selectedIndex].text
+                            : objetoTipo.options[objetoTipo.selectedIndex].value;
+
+
 
         }
 
-        $.ajax({
-            type: "POST",
-            url: urlGuardarCodigoNodo,
-            contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({ IdNodo: objetoPadre, CodigoHtml: codigoHtml, NodoFinal: nodoFinalCheck, Categoria: categoria, SubCategoria: subcategoria, Tipo: tipo }),
-            dataType: "JSON",
-            success: function (result) {
-                var json = JSON.parse(result);
-                console.log(json);
+        if (categoria != desplegablesVacio && subcategoria != desplegablesVacio && tipo != desplegablesVacio) {
 
-                $("#mensaje").text(json);
-                $("#myModal").modal("toggle");
-            },
-            error: function (request, status, error) {
-                alert(request.responseText);
-            }
+            $.ajax({
+                type: "POST",
+                url: urlGuardarCodigoNodo,
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify({ IdNodo: objetoPadre, CodigoHtml: codigoHtml, NodoFinal: nodoFinalCheck, Categoria: categoria, SubCategoria: subcategoria, Tipo: tipo }),
+                dataType: "JSON",
+                success: function (result) {
+                    var json = JSON.parse(result);
+                    console.log(json);
 
-        });
+                    $("#mensaje").text(json);
+                    $("#myModal").modal("toggle");
+                },
+                error: function (request, status, error) {
+                    alert(request.responseText);
+                }
+
+            });
+        }
+        else {
+            alert("seleccione alguna categoria");
+
+        }
+
     }
     else {
         $("#mensaje").text("Debe primero seleccionar algun nodo");
@@ -430,6 +449,7 @@ function ValidarTexto(obj) {
         $("#BotonCrear").attr("disabled", "disabled");
     }
 }
+
 function ValidarTextoCambiar(obj) {
 
     if (obj.value != "") {
@@ -506,6 +526,7 @@ function ponerIconoC(obj) {
         obj.setAttribute("class", "fa fa-pencil-square-o fa-lg EditarI");
 
 }
+
 function quitarIconoC(obj) {
     if (obj.getAttribute("onclick") == null && obj.getAttribute("class") != "fa fa-pencil-square-o fa-lg EditarI")
         obj.setAttribute("class", "fa fa-plus-circle  agregarI");
@@ -538,6 +559,7 @@ function ActualizarHtml() {
 
 function CargarCategorias(idCategoria, lista, categoriaSeleccionada) {
     var objetoCategoria;
+
     $.ajax({
         type: "POST",
         url: urlCargarCategorias,
@@ -574,74 +596,89 @@ function CargarCategorias(idCategoria, lista, categoriaSeleccionada) {
 }
 
 function SetOpciones(obj) {
-    //alert(obj.getAttribute("id"));
+
 
 
     if (obj.getAttribute("id") == "Categorias") {
+        if (obj.options[obj.selectedIndex].text != '--Select Option--') {
+            $("#subCategoria").empty();
+            $("#subCategoria").append("<option value=''>--Select Option--</option>");
 
-        $("#subCategoria").empty();
-        $("#subCategoria").append("<option value=''>--Select Option--</option>");
+            $("#Tipo").empty();
+            $("#Tipo").append("<option value=''>--Select Option--</option>");
 
-        $("#Tipo").empty();
-        $("#Tipo").append("<option value=''>--Select Option--</option>");
+            CargarCategorias(obj.options[obj.selectedIndex].value, "subCategoria", true);
 
-        CargarCategorias(obj.options[obj.selectedIndex].value, "subCategoria", true);
-
-        $("#subCategoria").removeAttr("hidden");
-        $("#subCategoriaStrong").removeAttr("hidden");
-
+            $("#subCategoria").removeAttr("hidden");
+            $("#subCategoriaStrong").removeAttr("hidden");
+        }
     }
 
 
     if (obj.getAttribute("id") == "subCategoria") {
+        if (obj.options[obj.selectedIndex].text != '--Select Option--') {
+            $("#Tipo").empty();
+            $("#Tipo").append("<option value=''>--Select Option--</option>");
 
-        $("#Tipo").empty();
-        $("#Tipo").append("<option value=''>--Select Option--</option>");
+            CargarCategorias(obj.options[obj.selectedIndex].value, "Tipo", true);
 
-        CargarCategorias(obj.options[obj.selectedIndex].value, "Tipo", true);
-
-        $("#Tipo").removeAttr("hidden");
-        $("#tipoStrong").removeAttr("hidden");
+            $("#Tipo").removeAttr("hidden");
+            $("#tipoStrong").removeAttr("hidden");
+        }
     }
 }
 
 function mostrarCategorias(obj) {
 
+    var objetoLi = document.getElementById(nodoSeleccionado.Id);
+    var objetosA = objetoLi.getElementsByTagName('a');
+
     if (obj.checked) {
 
+        for (var i = 0; i < objetosA.length ; i++) {
+            if (objetosA[i].getAttribute("href") == "#CrearNodo") {
+                objetosA[i].setAttribute("hidden", "hidden");
+            }
+        }
+
         CargarCategorias(0, "Categorias");
+
         $("#Categorias").removeAttr("hidden");
         $("#categoriaStrong").removeAttr("hidden");
-
-
-    }
-    else {
-
-        $("#Categorias").attr("hidden", "hidden");
-        $("#categoriaStrong").attr("hidden", "hidden");
-        $("#Categorias").empty();
-
-        $("#subCategoria").attr("hidden", "hidden");
-        $("#subCategoriaStrong").attr("hidden", "hidden");
-        $("#subCategoria").empty();
-
-        $("#Tipo").attr("hidden", "hidden");
-        $("#tipoStrong").attr("hidden", "hidden");
-        $("#Tipo").empty();
-
-
-
-
+        //REVISAR SI COMENTARIAR
         $("#Categorias").append("<option value=''>--Select Option--</option>");
         $("#subCategoria").append("<option value=''>--Select Option--</option>");
         $("#Tipo").append("<option value=''>--Select Option--</option>");
-
-
+        //
     }
+    else {
+        //Oculta el boton crear si marcan el nodo como final
+        for (var i = 0; i < objetosA.length ; i++) {
+            if (objetosA[i].getAttribute("href") == "#CrearNodo") {
+                objetosA[i].removeAttribute("hidden");
+                ActualizarHtml();
+            }
+        }
 
+        LimpiarDesplegables();
+    }
 }
 
+function LimpiarDesplegables() {
 
+    $("#Categorias").attr("hidden", "hidden");
+    $("#categoriaStrong").attr("hidden", "hidden");
+    $("#Categorias").empty();
+
+    $("#subCategoria").attr("hidden", "hidden");
+    $("#subCategoriaStrong").attr("hidden", "hidden");
+    $("#subCategoria").empty();
+
+    $("#Tipo").attr("hidden", "hidden");
+    $("#tipoStrong").attr("hidden", "hidden");
+    $("#Tipo").empty();
+
+}
 
 $("#Nombre_Nodo").on("keyup", function (e) {
 
