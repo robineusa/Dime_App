@@ -553,8 +553,18 @@ namespace Dime.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LiberacionesDeHomePass(ViewModelCierreExperiencia modelo)
         {
+            modelo.CEPLiberaciones.UsuarioDeGestion = Convert.ToDecimal(Session["Usuario"]);
+            modelo.CEPLiberaciones.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
 
-            return View();
+            if (modelo.CEPLiberaciones.IdGestion > 0)
+            {
+                CierreService.ActualizarLiberaciones(modelo.CEPLiberaciones);
+            }
+            else
+            {
+                CierreService.RegistrarLiberaciones(modelo.CEPLiberaciones);
+            }
+            return RedirectToAction("LiberacionesDeHomePass", "CierreExperiencia");
         }
         public JsonResult ListaDeGestionAgenteLiberaciones()
         {
