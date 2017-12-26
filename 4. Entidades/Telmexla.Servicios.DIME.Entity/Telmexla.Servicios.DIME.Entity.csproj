@@ -120,12 +120,14 @@
     <Compile Include="CcResidencialPredictivoInfo.cs" />
     <Compile Include="CcSegundaTipificacion.cs" />
     <Compile Include="CELDesconexiones.cs" />
+    <Compile Include="CELLiberaciones.cs" />
     <Compile Include="CELSuspensiones.cs" />
     <Compile Include="CELTickets.cs" />
     <Compile Include="CEMArbolesDeGestion.cs" />
     <Compile Include="CEPAsigDesconexiones.cs" />
     <Compile Include="CEPAsigSuspenciones.cs" />
     <Compile Include="CEPDesconexiones.cs" />
+    <Compile Include="CEPLiberaciones.cs" />
     <Compile Include="CEPSuspensiones.cs" />
     <Compile Include="CEPTickets.cs" />
     <Compile Include="CierreCiclo.cs" />

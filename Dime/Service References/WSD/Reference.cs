@@ -18241,10 +18241,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task CrearCategoriaAsync(Telmexla.Servicios.DIME.Entity.Macroprocesos Categoria);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarCategorias", ReplyAction="http://tempuri.org/IProcesosService/ConsultarCategoriasResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos> ConsultarCategorias(int idCategoria, bool ConsultarPadre);
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos> ConsultarCategorias(int idCategoria);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarCategorias", ReplyAction="http://tempuri.org/IProcesosService/ConsultarCategoriasResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos>> ConsultarCategoriasAsync(int idCategoria, bool ConsultarPadre);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos>> ConsultarCategoriasAsync(int idCategoria);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/EliminarCategoria", ReplyAction="http://tempuri.org/IProcesosService/EliminarCategoriaResponse")]
         void EliminarCategoria(int idCategoria);
@@ -18376,12 +18376,12 @@ namespace Dime.WSD {
             return base.Channel.CrearCategoriaAsync(Categoria);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos> ConsultarCategorias(int idCategoria, bool ConsultarPadre) {
-            return base.Channel.ConsultarCategorias(idCategoria, ConsultarPadre);
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos> ConsultarCategorias(int idCategoria) {
+            return base.Channel.ConsultarCategorias(idCategoria);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos>> ConsultarCategoriasAsync(int idCategoria, bool ConsultarPadre) {
-            return base.Channel.ConsultarCategoriasAsync(idCategoria, ConsultarPadre);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos>> ConsultarCategoriasAsync(int idCategoria) {
+            return base.Channel.ConsultarCategoriasAsync(idCategoria);
         }
         
         public void EliminarCategoria(int idCategoria) {
@@ -19039,6 +19039,48 @@ namespace Dime.WSD {
             "te", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionSuspensionesAgen" +
             "teResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones>> ConsultaLogDeGestionSuspensionesAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/RegistrarLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/RegistrarLiberacionesResponse")]
+        void RegistrarLiberaciones(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/RegistrarLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/RegistrarLiberacionesResponse")]
+        System.Threading.Tasks.Task RegistrarLiberacionesAsync(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ActualizarLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ActualizarLiberacionesResponse")]
+        void ActualizarLiberaciones(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ActualizarLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ActualizarLiberacionesResponse")]
+        System.Threading.Tasks.Task ActualizarLiberacionesAsync(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeLiberacionPorId", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeLiberacionPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.CEPLiberaciones TraeLiberacionPorId(decimal IdGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeLiberacionPorId", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeLiberacionPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> TraeLiberacionPorIdAsync(decimal IdGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteLiberacionesResp" +
+            "onse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones> ListaDeGestionAgenteLiberaciones(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteLiberacionesResp" +
+            "onse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones>> ListaDeGestionAgenteLiberacionesAsync(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteLiberacionesR" +
+            "esponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> ListaSeguimientosAgenteLiberaciones(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteLiberacionesR" +
+            "esponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones>> ListaSeguimientosAgenteLiberacionesAsync(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaLiberacionesRe" +
+            "sponse")]
+        Telmexla.Servicios.DIME.Entity.CEPLiberaciones ConsultarGestionCuentaLiberaciones(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaLiberacionesRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> ConsultarGestionCuentaLiberacionesAsync(decimal Cuenta);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19370,6 +19412,54 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones>> ConsultaLogDeGestionSuspensionesAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario) {
             return base.Channel.ConsultaLogDeGestionSuspensionesAgenteAsync(FechaInicial, FechaFinal, Usuario);
+        }
+        
+        public void RegistrarLiberaciones(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones) {
+            base.Channel.RegistrarLiberaciones(Liberaciones);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarLiberacionesAsync(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones) {
+            return base.Channel.RegistrarLiberacionesAsync(Liberaciones);
+        }
+        
+        public void ActualizarLiberaciones(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones) {
+            base.Channel.ActualizarLiberaciones(Liberaciones);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarLiberacionesAsync(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones) {
+            return base.Channel.ActualizarLiberacionesAsync(Liberaciones);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPLiberaciones TraeLiberacionPorId(decimal IdGestion) {
+            return base.Channel.TraeLiberacionPorId(IdGestion);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> TraeLiberacionPorIdAsync(decimal IdGestion) {
+            return base.Channel.TraeLiberacionPorIdAsync(IdGestion);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones> ListaDeGestionAgenteLiberaciones(decimal Usuario) {
+            return base.Channel.ListaDeGestionAgenteLiberaciones(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones>> ListaDeGestionAgenteLiberacionesAsync(decimal Usuario) {
+            return base.Channel.ListaDeGestionAgenteLiberacionesAsync(Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> ListaSeguimientosAgenteLiberaciones(decimal Usuario) {
+            return base.Channel.ListaSeguimientosAgenteLiberaciones(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones>> ListaSeguimientosAgenteLiberacionesAsync(decimal Usuario) {
+            return base.Channel.ListaSeguimientosAgenteLiberacionesAsync(Usuario);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPLiberaciones ConsultarGestionCuentaLiberaciones(decimal Cuenta) {
+            return base.Channel.ConsultarGestionCuentaLiberaciones(Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> ConsultarGestionCuentaLiberacionesAsync(decimal Cuenta) {
+            return base.Channel.ConsultarGestionCuentaLiberacionesAsync(Cuenta);
         }
     }
 }

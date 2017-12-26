@@ -19,6 +19,8 @@ namespace Telmexla.Servicios.DIME.Entity
         CELSuspensiones cELSuspensiones;
         CEPSuspensiones cEPSuspensiones;
         CEPAsigSuspenciones cEPAsigSuspensiones;
+        CEPLiberaciones cEPLiberaciones;
+        CELLiberaciones cELLiberaciones;
         #endregion
 
         #region Constructores
@@ -33,6 +35,8 @@ namespace Telmexla.Servicios.DIME.Entity
             cEPSuspensiones = new CEPSuspensiones();
             cELSuspensiones = new CELSuspensiones();
             cEPAsigSuspensiones = new CEPAsigSuspenciones();
+            cELLiberaciones = new CELLiberaciones();
+            cEPLiberaciones = new CEPLiberaciones();
         }
 
 
@@ -153,6 +157,32 @@ namespace Telmexla.Servicios.DIME.Entity
             set
             {
                 cEPAsigSuspensiones = value;
+            }
+        }
+
+        public CEPLiberaciones CEPLiberaciones
+        {
+            get
+            {
+                return cEPLiberaciones;
+            }
+
+            set
+            {
+                cEPLiberaciones = value;
+            }
+        }
+
+        public CELLiberaciones CELLiberaciones
+        {
+            get
+            {
+                return cELLiberaciones;
+            }
+
+            set
+            {
+                cELLiberaciones = value;
             }
         }
         #endregion

@@ -2350,6 +2350,7 @@
     <Content Include="Scripts\CierreExperiencia\ConsultaGestionUsuario.js" />
     <Content Include="Scripts\CierreExperiencia\DesconexionesIn.js" />
     <Content Include="Scripts\CierreExperiencia\Desconexiones.js" />
+    <Content Include="Scripts\CierreExperiencia\LiberacionesDeHomePass.js" />
     <Content Include="Scripts\CierreExperiencia\ListaArboles.js" />
     <Content Include="Scripts\CierreExperiencia\SuspencionesTemporalesIn.js" />
     <Content Include="Scripts\CierreExperiencia\SuspensionesTemporales.js" />
@@ -3174,6 +3175,8 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CELSuspensiones.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPSuspensiones.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPAsigSuspenciones.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPLiberaciones.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CELLiberaciones.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3311,20 +3314,20 @@
     <Content Include="Scripts\Procesos\dist\font\summernote.eot" />
     <Content Include="Scripts\Procesos\dist\font\summernote.ttf" />
     <Content Include="Scripts\Procesos\dist\font\summernote.woff" />
-    <None Include="Service References\WSD\WebService.wsdl" />
-    <None Include="Service References\WSD\WebService.xsd">
+    <None Include="Service References\WSD\WebService1.wsdl" />
+    <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService1.xsd">
+    <None Include="Service References\WSD\WebService51.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService2.xsd">
+    <None Include="Service References\WSD\WebService52.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService3.xsd">
+    <None Include="Service References\WSD\WebService53.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService4.xsd">
+    <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\WSP\configuration91.svcinfo" />
@@ -3335,7 +3338,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService.disco" />
+    <None Include="Service References\WSD\WebService1.disco" />
     <Content Include="Service References\WSP\Dime.WSP.enviarEncuestaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
