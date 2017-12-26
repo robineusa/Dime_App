@@ -1,5 +1,4 @@
-﻿var MensajesaGuardar = [];
-
+﻿
 $(function Buen_Servicio() {
     var connect = $.connection.myHub;
     
@@ -11,37 +10,28 @@ $(function Buen_Servicio() {
 });
 
 function Registra_Eventos(connect) {
-    $('#EnviarMSGlobalBS').click(function () {
-        
-        var msg = $("#MensajeBS").val();
-        
-        if (msg.length > 0) {
-
-            var f = new Date();
-            var dd = f.getDate();
-            var mm = f.getMonth() + 1;
-            var yy = f.getFullYear();
-            var hh = f.getHours();
-            var m = f.getMinutes();
-            if (dd < 10) {
-                dd = '0' + dd
-            }
-            if (mm < 10) {
-                mm = '0' + mm
-            }
-            if (m < 10) {
-                m = '0' + m
-            }
-            var Fecha = dd + '-' + mm + '-' + yy + ' ' + hh + ':' + m;
-            
-            connect.server.sendMessagePublic(UserConnect, $("#MensajeBS").val(), Fecha.toString());
-            $("#MensajeBS").val('');
-            connect.server.connect(UserConnect2);
-            
-        }
+    $('#EnviarMSGlobalBS').click(function () {            
+        connect.server.insertaNotificacion("Mensaje Global Buen Servicio", $("#MensajeBS").val(), Usuario, NombreUsuario);
+        $("#MensajeBS").val('');
     });
     $('#NotificarBS').click(function () {
         connect.server.notificacion(NameImage, LinkDir, Id, Description);
+        $.alert({
+            theme: 'Modern',
+            icon: 'ion-happy-outline text-green',
+            boxWidth: '500px',
+            useBootstrap: false,
+            type: 'green',
+            title: '¡ Super !',
+            content: 'Imagen notificada exitosamente',
+            buttons: {
+                Ok: {
+                    btnClass: 'btn-green',
+                    action: function () {  }
+
+                },
+            }
+        });
     });
     $("#MensajeBS").keypress(function (e) {
         if (e.which == 13) {
@@ -49,22 +39,34 @@ function Registra_Eventos(connect) {
         }
     });
     $('#messages_menu').click(function () {
-        alert(MensajesaGuardar.length);
-        if (MensajesaGuardar.length > 0) {
-            for (i = 0; i < MensajesaGuardar.length; i++) {
-                connect.server.addMessageinCache2(MensajesaGuardar[i].Id, UserConnect2);
-            }
-        }
-        connect.server.connect(UserConnect2);
-        MensajesaGuardar = null;
-        $('#MensajeCount').empty();
-    });
-    $('#BListNotify').click(function () {
-        connect.server.usurioNotify($("#IdMsj").val(), UserConnect2);
-        //connect.server.connect(UserConnect2);
+        connect.server.guardaMensajeBuenServicio($("#IdMsj").val(), Usuario, "2");
         $("#IdMsj").val('');
     });
-    connect.server.connect(UserConnect2);
+    $('#BListNotify').click(function () {
+        connect.server.guardaMensajeBuenServicio($("#IdMsj").val(), Usuario, "1");
+        $("#IdMsj").val('');
+    });
+    $('#NotificaOfertas').click(function () {
+        var Estado = $('#EstadoImagen').val();
+        if (Estado == "ACTIVA")
+        {
+            var Contenido = $('#Link').val();
+            connect.server.insertaNotificacion("Notificacion Oferta Comercial", Contenido, Usuario, NombreUsuario);
+        }
+    });
+    $('#NotificaOfertaComercialCliente').click(function () {
+        connect.server.consultaNotificacion(Usuario);
+    });
+    $('#images_menu').click(function () {
+        
+        if ($("#IdOfertaComercial").val() != "")
+        {
+            connect.server.guardaNotificadoOfertaComercial($("#IdOfertaComercial").val(), Usuario);
+        }
+    });
+    
+    connect.server.consultaNotificacion(Usuario);
+
 }
 
 function Llama_Metodos(connect, UserConnect) {
@@ -72,6 +74,7 @@ function Llama_Metodos(connect, UserConnect) {
     connect.client.addMessage = function (id, userName, message) {
         var V_Usuario = $('<div/>').text(userName).html();
         var V_Message = $('<div/>').text(message).html();
+        
         var f = new Date();
         var dd = f.getDate();
         var mm = f.getMonth() + 1;
@@ -84,11 +87,9 @@ function Llama_Metodos(connect, UserConnect) {
         if (mm < 10) {
             mm = '0' + mm
         }
-
         if (m < 10) {
             m = '0' + m
         }
-
         var V_Fecha = dd + '-' + mm + '-' + yy + '&nbsp;&nbsp;' + hh + ':' + m;
 
         $("#Administrador").append('<div class="direct-chat-msg">' +
@@ -112,17 +113,23 @@ function Llama_Metodos(connect, UserConnect) {
                                             + V_Message +
                                         '</div>' +
                                     '</div>');
-        if (UserConnect2 != 'Buen Servicio') {
+        if (UserConnect2 != 'Buen Servicio')
+        {
             $("#ChatGeneral").css('display', 'block');
             $("#ChatGeneral2").css('display', 'block');
-            $('#IdMsj').val(id);
-            setTimeout('EjecutaBTN()', 1);
-        } else { /*$("#ChatGeneral2").css('display', 'block');*/ }
+            $("#IdMsj").val('');
+            $("#IdMsj").val(id);
+            setTimeout('EjecutaBTN()', 0);
+            play_single_sound();
+        }
+        else
+        { }
         
     }
 
     connect.client.broadcastMessage = function (Nombre_Imagen, Ruta_Imagen, Id_Notificado, Descripcion_Imagen) {
         if (UserConnect2 != 'Buen Servicio') {
+            Cierramodal();
             var x = document.getElementById('BuenServicioHREF');
             x.click();
             $('#imgBS').attr("src", '../ImagesClient/' + Nombre_Imagen);
@@ -131,37 +138,35 @@ function Llama_Metodos(connect, UserConnect) {
             $('#Ruta_Imagen').val(Ruta_Imagen);
             $('#Id_Notificado').val(Id_Notificado);
             $('#Descripcion_Imagen').val(Descripcion_Imagen);
+            play_single_sound();
         }
-        //play_single_sound();
+        
     }
 
-    connect.client.onConnected = function (messages) {
+    connect.client.notificaMensajes = function (messages) {
         if (messages.length > 0) {
             $('#MensajeCount').empty();
+            $("#IdMsj").val('');
             if (UserConnect2 != 'Buen Servicio') {
                 for (i = 0; i < messages.length; i++)
                 {
-                    MensajesaGuardar.push(messages[i]);
+                    if ($("#IdMsj").val() != "") {
+                        $("#IdMsj").val($("#IdMsj").val() + "-" + messages[i].Id);
+                    } else {
+                        $("#IdMsj").val(messages[i].Id);
+                    }
                 }
-                console.log(MensajesaGuardar);
                 $('#MensajeCount').append('' + messages.length + '');
-                for (i = 0; i < messages.length; i++) {
-                    AddMessage(messages[i].Id, messages[i].UserName, messages[i].Message);
-                }
-
             }
         }
-        else { alert('' + messages.length); $('#MensajeCount').empty(); }
+        else { $('#MensajeCount').empty(); }
     }
     
     connect.client.connectEver = function (messages) {
-        //if (UserConnect2 == 'Buen Servicio') {
-            
-        //}
         if (messages.length > 0) {
                 $('#MensajesNoNotificados').empty();
                 for (i = messages.length-1; i > messages.length - 4; i--) {
-                    AddMessage(messages[i].Id, messages[i].UserName, messages[i].Message);
+                    AddMessage(messages[i].Id, messages[i].NombreUsuarioNotifica, messages[i].ContenidoAlerta);
                 }
         }
         else {
@@ -171,9 +176,50 @@ function Llama_Metodos(connect, UserConnect) {
                                              '<h4 style="text-align: center;"> No existen Mensajes</h4>' +
                                          '</div>' +
                                      '</li>');
-            //$('#SeeAllmsn').empty();
-            
         }
+    }
+
+    connect.client.enviaCliente = function () {
+        var x = document.getElementById('NotificaOfertaComercialCliente');
+        x.click();
+    }
+
+    connect.client.notificaUsuarios = function (result) {
+        
+        if (result.length > 0) {
+            $("#images_menu").addClass("images_menu");
+            $('#OfertasCount').empty();
+            $('#OfertasCount').append('' + result.length + '');
+            $('#IdOfertaComercial').val('');
+            for (i = 0; i < result.length; i++)
+            {
+                if ($("#IdOfertaComercial").val() != "")
+                {
+                    $("#IdOfertaComercial").val($("#IdOfertaComercial").val() + "-" + result[i].Id);
+                } else
+                {
+                    $("#IdOfertaComercial").val(result[i].Id);
+                }
+            }
+            play_single_sound();
+        }
+        else
+        {
+            $('#IdOfertaComercial').val('');
+            $('#OfertasCount').empty();
+            $('#images_menu').removeClass("images_menu");
+        }
+    }
+
+    connect.client.FinNotifica = function () {
+        $('#IdOfertaComercial').val('');
+        $('#OfertasCount').empty();
+        $('#images_menu').removeClass("images_menu");
+    }
+
+    connect.client.FinNotificaMensajes = function () {
+        $("#IdMsj").val('');
+        $('#MensajeCount').empty();
     }
 }
 
@@ -203,8 +249,6 @@ function GuardarUsuarioNotificado() {
         contentType: false,
         url: '../BuenServicio/Guardar_Usuario_Notificado',
         success: function (result) {
-            //$('#CerrarBS').click();
-            
 
         }
     });
@@ -220,3 +264,6 @@ function EjecutaBTN() {
     document.getElementById('BListNotify').click();
 }
 
+function play_single_sound() {
+    document.getElementById('audioNotificacion').play();
+}

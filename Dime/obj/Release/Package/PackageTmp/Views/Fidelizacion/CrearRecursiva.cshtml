@@ -15,16 +15,18 @@
                 <div class="box box-danger">
                     <div class="box-body">
                         <div class="col-md-12">
+                            <small>Categoria Padre</small>
+                            @Html.DropDownListFor(m => m.Recursiva.ParentId, new SelectList(ViewBag.Lista, "Id", "Nombre"), "-Ninguno-", new {Id= "sltEstrategias_1", onchange = "getChild(this.value, 'label_1', '')", @class = "form-control input-sm" })
+                            @*@Html.DropDownListFor(m => m.Recursiva.ParentId, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "sltPadreRecursiva", @class = "form-control input-sm" })*@
+                            @Html.ValidationMessageFor(m => m.Recursiva.ParentId, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col-md-12" id="divEstrategias">
+                            
+                        </div>
+                        <div class="col-md-12">
                             <small>Opcion</small>
                             @Html.TextBoxFor(m => m.Recursiva.Nombre, null, new { @class = "form-control input-sm ", Id = "txtNombreRecursiva" })
                             @Html.ValidationMessageFor(m => m.Recursiva.Nombre, "", new { @class = "text-danger" })
-                        </div>
-                        <div class="col-md-12">
-                            <small>Padre</small>
-                            @Html.DropDownListFor(m => m.Recursiva.ParentId, new SelectList(ViewBag.Lista, "Id", "Nombre"), "-SELECCIONE-", new { Id = "sltPadreRecursiva", @class = "form-control input-sm" })
-                            @*@Html.DropDownListFor(m => m.Recursiva.ParentId, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "sltPadreRecursiva", @class = "form-control input-sm" })*@
-                            @Html.ValidationMessageFor(m => m.Recursiva.ParentId, "", new { @class = "text-danger" })
-
                         </div>
                         <div class="col-md-12">
                             <small>Etiqueta</small>
@@ -86,11 +88,14 @@
         </div>
     }
     @section Scripts{
-
-        @*<script>
-                var UrlListadoPadres = '@Url.Action("ListaPadresRecursivaJson", "Fidelizacion")';
-            </script>
-            <script src="~/Scripts/Fidelizacion/CrearRecursiva.js?v=1.0.1"></script>*@
-        @*<script src="http://malsup.github.com/jquery.form.js"></script>*@
+<script src="~/Scripts/Fidelizacion/CrearRecursiva.js?v=1.0.3"></script>
+        <script>
+            var urlGetChilds = '@Url.Action("getHijoRecursivaAdmonJson", "Fidelizacion")';
+        </script>
     }
 }
+<style>
+    #divEstrategias div {
+        padding:0px;
+    }
+    </style>

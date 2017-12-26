@@ -18241,10 +18241,10 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task CrearCategoriaAsync(Telmexla.Servicios.DIME.Entity.Macroprocesos Categoria);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarCategorias", ReplyAction="http://tempuri.org/IProcesosService/ConsultarCategoriasResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos> ConsultarCategorias(int idCategoria);
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos> ConsultarCategorias(int idCategoria, bool ConsultarPadre);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarCategorias", ReplyAction="http://tempuri.org/IProcesosService/ConsultarCategoriasResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos>> ConsultarCategoriasAsync(int idCategoria);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos>> ConsultarCategoriasAsync(int idCategoria, bool ConsultarPadre);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/EliminarCategoria", ReplyAction="http://tempuri.org/IProcesosService/EliminarCategoriaResponse")]
         void EliminarCategoria(int idCategoria);
@@ -18376,12 +18376,12 @@ namespace Dime.WSD {
             return base.Channel.CrearCategoriaAsync(Categoria);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos> ConsultarCategorias(int idCategoria) {
-            return base.Channel.ConsultarCategorias(idCategoria);
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos> ConsultarCategorias(int idCategoria, bool ConsultarPadre) {
+            return base.Channel.ConsultarCategorias(idCategoria, ConsultarPadre);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos>> ConsultarCategoriasAsync(int idCategoria) {
-            return base.Channel.ConsultarCategoriasAsync(idCategoria);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos>> ConsultarCategoriasAsync(int idCategoria, bool ConsultarPadre) {
+            return base.Channel.ConsultarCategoriasAsync(idCategoria, ConsultarPadre);
         }
         
         public void EliminarCategoria(int idCategoria) {
