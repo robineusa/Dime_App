@@ -37,8 +37,8 @@ function Titulo(idPadre, tipo) {
 
             $("#TituloTipo").text(json.nombreTipo);
             $("#TituloPadre").text(json.NombrePadre);
-            $("#IdPadreAnterior").text(json.IdPadre);
-            $("#IdTipoAnterior").text(json.IdTipo);
+            $("#IdPadreAnterior").text(json.IdAnterior);
+            $("#IdTipoAnterior").text(json.IdTipoAnterior);
         },
         error: function (request, status, error) {
             alert(request.responseText);

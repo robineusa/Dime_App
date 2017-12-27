@@ -238,6 +238,7 @@
     <Compile Include="SiguienteMejorOferta.cs" />
     <Compile Include="SkillsUsuariosBlending.cs" />
     <Compile Include="TablaActualizarInbound.cs" />
+    <Compile Include="TiposMacroprocesos.cs" />
     <Compile Include="TmpMaestroHobbiesCliente.cs" />
     <Compile Include="TraficoTraslado.cs" />
     <Compile Include="TraficoTrasladoCollection.cs" />

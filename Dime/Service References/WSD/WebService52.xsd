@@ -3789,6 +3789,7 @@
       <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdCategoria" type="xs:int" />
       <xs:element minOccurs="0" name="IdCategoriaPadre" type="xs:int" />
+      <xs:element minOccurs="0" name="TipoMacroproceso" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Macroprocesos" nillable="true" type="tns:Macroprocesos" />
@@ -3798,6 +3799,13 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfMacroprocesos" nillable="true" type="tns:ArrayOfMacroprocesos" />
+  <xs:complexType name="TiposMacroprocesos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdTipo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TiposMacroprocesos" nillable="true" type="tns:TiposMacroprocesos" />
   <xs:complexType name="RSPSeguimientos">
     <xs:sequence>
       <xs:element minOccurs="0" name="AliadoSolicitud" nillable="true" type="xs:string" />
@@ -4194,4 +4202,43 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="CEPLiberaciones" nillable="true" type="tns:CEPLiberaciones" />
+  <xs:complexType name="ArrayOfCELLiberaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CELLiberaciones" nillable="true" type="tns:CELLiberaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCELLiberaciones" nillable="true" type="tns:ArrayOfCELLiberaciones" />
+  <xs:complexType name="CELLiberaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CanalDeIngreso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaDeTransaccion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSeguimiento" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSolicitud" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Grupo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdGestion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdTransaccion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MotivoDesconexion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotivoLiberacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioTransaccion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroServicios" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistroModulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SolicitudModulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subrazon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsarioEscala" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioDeTransaccion" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsuarioQueLibero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Vendedor" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CELLiberaciones" nillable="true" type="tns:CELLiberaciones" />
+  <xs:complexType name="ArrayOfCEPLiberaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CEPLiberaciones" nillable="true" type="tns:CEPLiberaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCEPLiberaciones" nillable="true" type="tns:ArrayOfCEPLiberaciones" />
 </xs:schema>
