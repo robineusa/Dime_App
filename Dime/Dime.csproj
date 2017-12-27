@@ -2409,6 +2409,8 @@
     <Content Include="Scripts\OfertasComerciales\ListaDeImagenesAdmin.js" />
     <Content Include="Scripts\OfertasComerciales\RegistrarImagen.js" />
     <Content Include="Scripts\Procesos\AdminArboles.js" />
+    <Content Include="Scripts\Procesos\Categorias.js" />
+    <Content Include="Scripts\Procesos\CrearCategoria.js" />
     <Content Include="Scripts\Procesos\dist\lang\summernote-ar-AR.js" />
     <Content Include="Scripts\Procesos\dist\lang\summernote-bg-BG.js" />
     <Content Include="Scripts\Procesos\dist\lang\summernote-ca-ES.js" />
@@ -3316,9 +3318,6 @@
     <Content Include="Scripts\Procesos\dist\font\summernote.eot" />
     <Content Include="Scripts\Procesos\dist\font\summernote.ttf" />
     <Content Include="Scripts\Procesos\dist\font\summernote.woff" />
-    <Content Include="Service References\WSD\Dime.WSD.TiposMacroprocesos.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\WSD\WebService1.wsdl" />
     <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
@@ -3719,6 +3718,8 @@
     <Content Include="Views\CierreExperiencia\ConsultaGestionSuspensiones.cshtml" />
     <Content Include="Views\Fidelizacion\RegistrarSolicitud.cshtml" />
     <Content Include="Views\CierreExperiencia\ConsultaGestionLiberaciones.cshtml" />
+    <Content Include="Views\Procesos\Categorias.cshtml" />
+    <Content Include="Views\Procesos\CrearElementoMacroprocesos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

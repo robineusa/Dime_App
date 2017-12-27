@@ -193,7 +193,7 @@ namespace Dime.Controllers
             return jsonResult;
         }
 
-        public void CrearTipoCategorias(string IdPadre, string Tipo, string Descripcion)
+        public JsonResult CrearTipoCategorias(string IdPadre, string Tipo, string Descripcion)
         {
             int IdCategPadre = Convert.ToInt32(IdPadre);
             int IdTipo = Convert.ToInt32(Tipo);
@@ -204,6 +204,9 @@ namespace Dime.Controllers
             crearElemento.Descripcion = Descripcion;
 
             ProcesosService.CrearCategoria(crearElemento);
+            var jsonResult = Json("Creacion exitosa", JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
         public int TiposCategorias(int Tipo, int IdPadre)
         {
@@ -230,7 +233,14 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
-       
+
+        public JsonResult EliminarTiposMacroproceso(string IdCategoria)
+        {
+            ProcesosService.EliminarCategoria(Convert.ToInt32(IdCategoria));
+            var jsonResult = Json(JsonConvert.SerializeObject("Se elimino satisfactoriamente"), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 
 }

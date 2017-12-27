@@ -97,6 +97,24 @@ function Editar(e) {
 
 function Eliminar(e) {
 
+    e.preventDefault();
+    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+
+    $.ajax({
+        type: "POST",
+        url: urlEliminarTiposMacroproceso,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdCategoria: dataItem.IdCategoria }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+
+            window.location.href = '../Procesos/Categorias?IdPadre=' + $('#IdPadre').val() + '&Tipo=' + $('#Tipo').val();
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
 }
 
 function Dependencia(e) {
@@ -113,10 +131,10 @@ function CrearElemento() {
 }
 
 function ElementoAnterior() {
-   
-    var IdpadreAnterior=$("#IdPadreAnterior").text();
-    var IdTipoAnterior=$("#IdTipoAnterior").text();
+
+    var IdpadreAnterior = $("#IdPadreAnterior").text();
+    var IdTipoAnterior = $("#IdTipoAnterior").text();
 
     window.location.href = '../Procesos/Categorias?IdPadre=' + IdpadreAnterior + '&Tipo=' + IdTipoAnterior;
-    
+
 }

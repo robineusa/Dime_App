@@ -17,8 +17,8 @@
                     <br />
                     @Html.HiddenFor(m => m.IdCategoriaPadre, new { @Id = "IdPadre" })
                     @Html.HiddenFor(m => m.TipoMacroproceso, new { @Id = "Tipo" })
-                    <label id="IdPadreAnterior" ></label>
-                    <label id="IdTipoAnterior" ></label>
+                    <label id="IdPadreAnterior" hidden ></label>
+                    <label id="IdTipoAnterior" hidden ></label>
                    
                     <h2 class="page-header" style="margin-top:25px"><i class="fa fa-list-alt"></i> Lista de Dependencias Actuales:</h2>
                     <a href="#" onclick="CrearElemento()" id="CrearCateg" style="float:right;">
@@ -47,6 +47,7 @@
     <script>
         var urlListaATiposMacroproceso = '@Url.Action("ConsultarCategorias", "Procesos")';
         var urlConsultarTitulos = '@Url.Action("ConsultarTitulos", "Procesos")';
+        var urlEliminarTiposMacroproceso = '@Url.Action("EliminarTiposMacroproceso", "Procesos")';
 
     </script>
     <script src="~/Scripts/Procesos/Categorias.js?1.0.8"></script>

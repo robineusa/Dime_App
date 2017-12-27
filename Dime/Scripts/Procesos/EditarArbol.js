@@ -557,14 +557,14 @@ function ActualizarHtml() {
 
 }
 
-function CargarCategorias(idCategoria, lista, categoriaSeleccionada) {
+function CargarCategorias(idCategoria, lista, categoriaSeleccionada, tipo) {
     var objetoCategoria;
 
     $.ajax({
         type: "POST",
         url: urlCargarCategorias,
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ IdCategoria: idCategoria }),
+        data: JSON.stringify({ IdCategoria: idCategoria, Tipo:tipo }),
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
@@ -607,7 +607,7 @@ function SetOpciones(obj) {
             $("#Tipo").empty();
             $("#Tipo").append("<option value=''>--Select Option--</option>");
 
-            CargarCategorias(obj.options[obj.selectedIndex].value, "subCategoria", true);
+            CargarCategorias(obj.options[obj.selectedIndex].value, "subCategoria","","2");
 
             $("#subCategoria").removeAttr("hidden");
             $("#subCategoriaStrong").removeAttr("hidden");
@@ -620,7 +620,7 @@ function SetOpciones(obj) {
             $("#Tipo").empty();
             $("#Tipo").append("<option value=''>--Select Option--</option>");
 
-            CargarCategorias(obj.options[obj.selectedIndex].value, "Tipo", true);
+            CargarCategorias(obj.options[obj.selectedIndex].value, "Tipo", "","3");
 
             $("#Tipo").removeAttr("hidden");
             $("#tipoStrong").removeAttr("hidden");
@@ -641,7 +641,7 @@ function mostrarCategorias(obj) {
             }
         }
 
-        CargarCategorias(0, "Categorias");
+        CargarCategorias(0, "Categorias","","1");
 
         $("#Categorias").removeAttr("hidden");
         $("#categoriaStrong").removeAttr("hidden");
