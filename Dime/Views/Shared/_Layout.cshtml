@@ -882,12 +882,12 @@
                     @if (Session["Gestion Cierre de la Experiencia"] != null || Session["Admin Cierre de la Experiencia"] != null)
                     {
                         <li id="left-sidebar-menu-charts" class="treeview">
-                            <a href="#"><i class="fa fa-hand-peace-o text-gray"></i><span>Cierre Experiencia</span><i class="fa fa-angle-left pull-right"></i></a>
+                            <a href="#"><i class="glyphicon glyphicon-screenshot text-aqua"></i><span>Cierre Experiencia</span><i class="fa fa-angle-left pull-right"></i></a>
                             <ul class="treeview-menu">
                                 @if (Session["Admin Cierre de la Experiencia"] != null)
                                 {
                                     <li>
-                                        <a href="#"><i class="fa fa-floppy-o text-red" aria-hidden="true"></i>Administración<i class="fa fa-angle-left pull-right"></i></a>
+                                        <a href="#"><i class="fa fa-cog text-red" aria-hidden="true"></i>Administración<i class="fa fa-angle-left pull-right"></i></a>
                                         <ul class="treeview-menu">
                                             <li>
                                                 <a href="@Url.Action("ListaArboles", "CierreExperiencia")"><i class="fa fa-sitemap text-gray" aria-hidden="true"></i>Árboles</a>
@@ -898,7 +898,7 @@
                                         <a href="#"><i class="fa fa-search text-yellow" aria-hidden="true"></i>Consultas Administrador<i class="fa fa-angle-left pull-right"></i></a>
                                         <ul class="treeview-menu">
                                             <li>
-                                                <a href="#"><i class="fa ion-eye text-gray" aria-hidden="true"></i>Bases Principales<i class="fa fa-angle-left pull-right"></i></a>
+                                                <a href="#"><i class="fa fa-database text-orange" aria-hidden="true"></i>Bases Principales<i class="fa fa-angle-left pull-right"></i></a>
                                                 <ul class="treeview-menu">
                                                     <li>
                                                         <a href="@Url.Action("Index", "CierreExperiencia")"><i class="fa fa-user-times" aria-hidden="true"></i>Desconexiones</a>
@@ -909,7 +909,7 @@
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a href="#"><i class="fa fa-external-link-square text-gray" aria-hidden="true"></i>Bases Log<i class="fa fa-angle-left pull-right"></i></a>
+                                                <a href="#"><i class="fa fa-database text-orange" aria-hidden="true"></i>Bases Log<i class="fa fa-angle-left pull-right"></i></a>
                                                 <ul class="treeview-menu">
                                                     <li>
                                                         <a href="@Url.Action("Index", "CierreExperiencia")"><i class="fa fa-user-times" aria-hidden="true"></i>Desconexiones</a>
@@ -936,7 +936,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fa fa-share-square-o text-light-blue" aria-hidden="true"></i>Liberaciones<i class="fa fa-angle-left pull-right"></i></a>
+                                        <a href="#"><i class="fa fa-share-square-o text-aqua" aria-hidden="true"></i>Liberaciones<i class="fa fa-angle-left pull-right"></i></a>
                                         <ul class="treeview-menu">
                                             <li>
                                                 <a href="@Url.Action("LiberacionesDeHomePass", "CierreExperiencia")"><i class="fa fa-pencil-square text-gray" aria-hidden="true"></i>Gestión de Ingreso</a>
@@ -945,7 +945,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fa fa-scissors text-olive" aria-hidden="true"></i>Suspensiones<i class="fa fa-angle-left pull-right"></i></a>
+                                        <a href="#"><i class="fa fa-scissors text-orange" aria-hidden="true"></i>Suspensiones<i class="fa fa-angle-left pull-right"></i></a>
                                         <ul class="treeview-menu">
                                             <li>
                                                 <a href="@Url.Action("SuspensionesTemporales", "CierreExperiencia")"><i class="fa fa-database text-gray" aria-hidden="true"></i>Gestión de Base</a>
@@ -955,7 +955,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fa fa-sticky-note text-maroon" aria-hidden="true"></i>Tickets<i class="fa fa-angle-left pull-right"></i></a>
+                                        <a href="#"><i class="fa fa-sticky-note text-yellow" aria-hidden="true"></i>Tickets<i class="fa fa-angle-left pull-right"></i></a>
                                         <ul class="treeview-menu">
                                             <li>
                                                 <a href="@Url.Action("Tickets", "CierreExperiencia")"><i class="fa fa-pencil-square text-gray" aria-hidden="true"></i>Gestión de Ingreso</a>
