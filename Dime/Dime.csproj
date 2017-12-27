@@ -2408,6 +2408,8 @@
     <Content Include="Scripts\OfertasComerciales\ListaDeImagenesAdmin.js" />
     <Content Include="Scripts\OfertasComerciales\RegistrarImagen.js" />
     <Content Include="Scripts\Procesos\AdminArboles.js" />
+    <Content Include="Scripts\Procesos\Categorias.js" />
+    <Content Include="Scripts\Procesos\CrearCategoria.js" />
     <Content Include="Scripts\Procesos\dist\lang\summernote-ar-AR.js" />
     <Content Include="Scripts\Procesos\dist\lang\summernote-bg-BG.js" />
     <Content Include="Scripts\Procesos\dist\lang\summernote-ca-ES.js" />
@@ -3713,6 +3715,8 @@
     <Content Include="Views\CierreExperiencia\ConsultaGestionTickets.cshtml" />
     <Content Include="Views\CierreExperiencia\ConsultaGestionSuspensiones.cshtml" />
     <Content Include="Views\Fidelizacion\RegistrarSolicitud.cshtml" />
+    <Content Include="Views\Procesos\Categorias.cshtml" />
+    <Content Include="Views\Procesos\CrearElementoMacroprocesos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

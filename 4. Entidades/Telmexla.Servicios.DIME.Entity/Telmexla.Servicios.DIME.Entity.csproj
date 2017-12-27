@@ -257,6 +257,7 @@
     <Compile Include="ViewModelBlending.cs" />
     <Compile Include="ViewModelAdminUsuario.cs" />
     <Compile Include="ViewModelCambioEstrato.cs" />
+    <Compile Include="ViewModelCategoriasTipo.cs" />
     <Compile Include="ViewModelCierreExperiencia.cs" />
     <Compile Include="ViewModelCuentasSiembraHD.cs" />
     <Compile Include="ViewModelDistribucionesBlending.cs" />

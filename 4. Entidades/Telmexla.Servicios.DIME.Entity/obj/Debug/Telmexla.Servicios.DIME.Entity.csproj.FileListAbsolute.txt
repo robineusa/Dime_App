@@ -10,26 +10,4 @@ C:\Users\robin\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.En
 C:\Users\robin\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\obj\Debug\Telmexla.Servicios.DIME.Entity.dll
 C:\Users\robin\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\obj\Debug\Telmexla.Servicios.DIME.Entity.pdb
 C:\Users\David Gomez\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\obj\Debug\Telmexla.Servicios.DIME.Entity.csprojResolveAssemblyReference.cache
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\Telmexla.Servicios.DIME.Entity.dll.config
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\Telmexla.Servicios.DIME.Entity.dll
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\Telmexla.Servicios.DIME.Entity.pdb
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\EntityFramework.dll
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\Microsoft.Web.Infrastructure.dll
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\System.Web.Helpers.dll
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\System.Web.Mvc.dll
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\System.Web.Razor.dll
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\System.Web.WebPages.Deployment.dll
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\System.Web.WebPages.dll
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\System.Web.WebPages.Razor.dll
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\EntityFramework.xml
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\System.Web.Helpers.xml
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\System.Web.Mvc.xml
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\System.Web.Razor.xml
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\System.Web.WebPages.xml
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\System.Web.WebPages.Deployment.xml
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\obj\Debug\Telmexla.Servicios.DIME.Entity.csprojResolveAssemblyReference.cache
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\obj\Debug\Telmexla.Servicios.DIME.Entity.dll
-C:\Users\Robinson\Documents\GitHub\Dime_App\4. Entidades\Telmexla.Servicios.DIME.Entity\obj\Debug\Telmexla.Servicios.DIME.Entity.pdb
