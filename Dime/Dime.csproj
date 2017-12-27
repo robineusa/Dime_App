@@ -3316,9 +3316,6 @@
     <Content Include="Scripts\Procesos\dist\font\summernote.eot" />
     <Content Include="Scripts\Procesos\dist\font\summernote.ttf" />
     <Content Include="Scripts\Procesos\dist\font\summernote.woff" />
-    <Content Include="Service References\WSD\Dime.WSD.TiposMacroprocesos.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\WSD\WebService1.wsdl" />
     <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
