@@ -606,5 +606,19 @@ namespace Dime.Controllers
                 };
             }
         }
+        public ActionResult ConsultaGestionLiberaciones()
+        {
+            return View();
+        }
+        public JsonResult ConsultaDeGestionLiberacionesJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            decimal usuario = Convert.ToDecimal(Session["Usuario"]);
+
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ConsultaLogDeGestionLiberacionesAgente(FechaInicial, FechaFinal, usuario)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }
