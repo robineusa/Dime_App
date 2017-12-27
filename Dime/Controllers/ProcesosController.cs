@@ -161,6 +161,16 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        public JsonResult ConsultarCategoriasArbol(string IdCategoria, string Tipo, bool EsIdPadre = true)
+        {
+            List<Macroprocesos> Categorias = new List<Macroprocesos>();
+            int tipo = Convert.ToInt32(Tipo);
+            int categoria = Convert.ToInt32(IdCategoria);
+            
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarCategorias(categoria, tipo, EsIdPadre)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
 
         public JsonResult ConsultarTipoCategorias(string IdCategoria, string Tipo)
         {

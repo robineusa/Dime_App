@@ -363,9 +363,9 @@ function EjecutarCategorias(EsNodoFinal, Categoria, SubCategoria, Tipo) {
         $("#Tipo").append("<option value=''>--Select Option--</option>");
 
         //consulta por el id de la categoria padre
-        CargarCategorias(0, "Categorias", Categoria);
-        CargarCategorias(Categoria, "subCategoria", SubCategoria);
-        CargarCategorias(SubCategoria, "Tipo", Tipo);
+        CargarCategorias(0, "Categorias", Categoria,"1");
+        CargarCategorias(Categoria, "subCategoria", SubCategoria,"2");
+        CargarCategorias(SubCategoria, "Tipo", Tipo,"3");
     }
     else {
         document.getElementById("nodoFinal").checked = false;
@@ -418,6 +418,7 @@ function GuardarCodigoHtmlNodo() {
 
                     $("#mensaje").text(json);
                     $("#myModal").modal("toggle");
+                    ActualizarHtml();
                 },
                 error: function (request, status, error) {
                     alert(request.responseText);
