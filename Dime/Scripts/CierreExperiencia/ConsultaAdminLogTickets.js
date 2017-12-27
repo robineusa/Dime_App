@@ -35,7 +35,7 @@ function TraerDatosConsulta(F1, F2) {
     document.getElementById('dataLoading').style.display = 'inline-block';
     $.ajax({
         type: "GET",
-        url: UrlConsultaLiberacionesAgente,
+        url: UrlConsultaLogTickets,
         contentType: "application/json; charset=utf-8",
         data: { F1: F1, F2: F2 },
         dataType: "JSON",
@@ -54,8 +54,10 @@ function TraerDatosConsulta(F1, F2) {
 function cambiarfechas(data) {
     for (var i = 0; i < data.length; i++) {
         data[i].FechaDeTransaccion = kendo.toString(kendo.parseDate(data[i].FechaDeTransaccion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-        data[i].FechaSolicitud = kendo.toString(kendo.parseDate(data[i].FechaSolicitud, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
-        data[i].FechaSeguimiento = kendo.toString(kendo.parseDate(data[i].FechaSeguimiento, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+        data[i].FechaDeCreacion = kendo.toString(kendo.parseDate(data[i].FechaDeCreacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+        data[i].FechaDeSeguimiento = kendo.toString(kendo.parseDate(data[i].FechaDeSeguimiento, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+        data[i].FechaDeCancelacion = kendo.toString(kendo.parseDate(data[i].FechaDeCancelacion, 'yyyy-MM-ddTHH:mm:ss'), 'yyyy-MM-dd HH:mm:ss');
+
     }
 
 }
@@ -64,7 +66,7 @@ function cargargrilla(data) {
         autoBind: true,
         toolbar: ["excel"],
         excel: {
-            fileName: "ConsultaDeGestionLiberaciones.xlsx",
+            fileName: "ConsultaLogTickets.xlsx",
         },
         dataSource: {
             data: data,
@@ -92,22 +94,26 @@ function cargargrilla(data) {
         { field: "FechaDeTransaccion", title: "Fecha De Transaccion", width: 100 },
         { field: "UsuarioDeTransaccion", title: "Usuario De Transaccion", width: 100 },
         { field: "NombreUsuarioTransaccion", title: "Nombre Usuario Transaccion", width: 100 },
-        { field: "CanalDeIngreso", title: "Canal De Ingreso", width: 100 },
+        { field: "CanaldeIngreso", title: "Canal De Ingreso", width: 100 },
         { field: "CuentaCliente", title: "Cuenta Cliente", width: 100 },
-        { field: "RegistroModulo", title: "Registro Modulo", width: 100 },
-        { field: "UsarioEscala", title: "Usario Escala", width: 100 },
-        { field: "NumeroServicios", title: "Numero Servicios", width: 100 },
-        { field: "FechaSolicitud", title: "Fecha Solicitud", width: 100 },
-        { field: "SolicitudModulo", title: "Solicitud Modulo", width: 100 },
-        { field: "MotivoDesconexion", title: "Motivo Desconexion", width: 100 },
-        { field: "Vendedor", title: "Vendedor", width: 100 },
-        { field: "Grupo", title: "Grupo", width: 100 },
+        { field: "NumeroDeTicket", title: "Numero De Ticket", width: 100 },
+        { field: "UsuarioDeCreacion", title: "Usuario De Creacion", width: 100 },
+        { field: "FechaDeCreacion", title: "Fecha De Creacion", width: 100 },
+        { field: "Srcaus", title: "Srcaus", width: 100 },
+        { field: "Srreas", title: "Srreas", width: 100 },
+        { field: "Nota1", title: "Nota1", width: 100 },
+        { field: "Nota2", title: "Nota2", width: 100 },
         { field: "Gestion", title: "Gestion", width: 100 },
+        { field: "Razon", title: "Razon", width: 100 },
         { field: "Subrazon", title: "Subrazon", width: 100 },
         { field: "Estado", title: "Estado", width: 100 },
-        { field: "MotivoLiberacion", title: "Motivo Liberacion", width: 100 },
-        { field: "UsuarioQueLibero", title: "Usuario QueLibero", width: 100 },
-        { field: "FechaSeguimiento", title: "Fecha De Seguimiento", width: 100 },
+        { field: "Ajuste", title: "Ajuste", width: 100 },
+        { field: "FechaDeSeguimiento", title: "Fecha De Seguimiento", width: 100 },
+        { field: "FechaDeCancelacion", title: "Fecha De Cancelacion", width: 100 },
+        { field: "MarcacionCancelacion", title: "Marcacion Cancelacion", width: 100 },
+        { field: "UsuarioDeCancelacion", title: "Usuario De Cancelacion", width: 100 },
+        { field: "UsuarioDeRetencion", title: "Usuario De Retencion", width: 100 },
+        { field: "ServiciosDesconectados", title: "Servicios Desconectados", width: 100 },
         { field: "Observaciones", title: "Observaciones", width: 100 },
         ]
 

@@ -35,7 +35,7 @@ function TraerDatosConsulta(F1, F2) {
     document.getElementById('dataLoading').style.display = 'inline-block';
     $.ajax({
         type: "GET",
-        url: UrlConsultaLiberacionesAgente,
+        url: UrlConsultaLogLiberaciones,
         contentType: "application/json; charset=utf-8",
         data: { F1: F1, F2: F2 },
         dataType: "JSON",
@@ -64,7 +64,7 @@ function cargargrilla(data) {
         autoBind: true,
         toolbar: ["excel"],
         excel: {
-            fileName: "ConsultaDeGestionLiberaciones.xlsx",
+            fileName: "ConsultaLogLiberaciones.xlsx",
         },
         dataSource: {
             data: data,

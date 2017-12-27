@@ -620,5 +620,109 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+        public ActionResult ConsultaAdminPrincipalDesconexiones()
+        {
+            return View();
+        }
+        public JsonResult ConsultaAdminPrincipalDesconexionesJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ConsultaAdminPrincipalDesconexiones(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public ActionResult ConsultaAdminLogDesconexiones()
+        {
+            return View();
+        }
+        public JsonResult ConsultaAdminLogDesconexionesJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ConsultaAdminLogDesconexiones(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public ActionResult ConsultaAdminPrincipalLiberaciones()
+        {
+            return View();
+        }
+        public JsonResult ConsultaAdminPrincipalLiberacionesJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ConsultaAdminPrincipalLiberaciones(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public ActionResult ConsultaAdminLogLiberaciones()
+        {
+            return View();
+        }
+        public JsonResult ConsultaAdminLogLiberacionesJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ConsultaAdminLogLiberaciones(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public ActionResult ConsultaAdminPrincipalSuspensiones()
+        {
+            return View();
+        }
+        public JsonResult ConsultaAdminPrincipalSuspensionesJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ConsultaAdminPrincipalSuspensiones(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public ActionResult ConsultaAdminLogSuspensiones()
+        {
+            return View();
+        }
+        public JsonResult ConsultaAdminLogSuspensionesJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ConsultaAdminLogSuspensiones(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public ActionResult ConsultaAdminPrincipalTickets()
+        {
+            return View();
+        }
+        public JsonResult ConsultaAdminPrincipalTicketsJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ConsultaAdminPrincipalTickets(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public ActionResult ConsultaAdminLogTickets()
+        {
+            return View();
+        }
+        public JsonResult ConsultaAdminLogTicketsJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+
+            var jsonResult = Json(JsonConvert.SerializeObject(CierreService.ConsultaAdminLogTickets(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }
