@@ -16,7 +16,7 @@
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.common.min.css" rel="stylesheet" />
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.min.css" rel="stylesheet" />
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.mobile.min.css" rel="stylesheet" />
-    
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <link rel="shortcut icon" href="~/favicon.ico">
     <script>
@@ -879,6 +879,96 @@
                         </li>
                     }
 
+                    @if (Session["Gestion Cierre de la Experiencia"] != null || Session["Admin Cierre de la Experiencia"] != null)
+                    {
+                        <li id="left-sidebar-menu-charts" class="treeview">
+                            <a href="#"><i class="fa fa-hand-peace-o text-gray"></i><span>Cierre Experiencia</span><i class="fa fa-angle-left pull-right"></i></a>
+                            <ul class="treeview-menu">
+                                @if (Session["Admin Cierre de la Experiencia"] != null)
+                                {
+                                    <li>
+                                        <a href="#"><i class="fa fa-external-link-square text-gray" aria-hidden="true"></i>Administración<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="@Url.Action("ListaArboles", "CierreExperiencia")"><i class="fa fa-arrow-circle-right text-gray" aria-hidden="true"></i>Árboles</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-search text-gray" aria-hidden="true"></i>Consultas Administrador<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="#"><i class="fa ion-eye text-aqua" aria-hidden="true"></i>Bases Principales<i class="fa fa-angle-left pull-right"></i></a>
+                                                <ul class="treeview-menu">
+                                                    <li>
+                                                        <a href="@Url.Action("Index", "CierreExperiencia")"><i class="fa fa-search" aria-hidden="true"></i>Desconexiones</a>
+                                                        <a href="@Url.Action("Index", "CierreExperiencia")"><i class="fa fa-searc" aria-hidden="true"></i>Liberaciones</a>
+                                                        <a href="@Url.Action("Index", "CierreExperiencia")"><i class="fa fa-searcy" aria-hidden="true"></i>Suspensiones</a>
+                                                        <a href="@Url.Action("Index", "CierreExperiencia")"><i class="fa fa-searc" aria-hidden="true"></i>Tickets</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fa fa-external-link-square text-gray" aria-hidden="true"></i>Bases Log<i class="fa fa-angle-left pull-right"></i></a>
+                                                <ul class="treeview-menu">
+                                                    <li>
+                                                        <a href="@Url.Action("Index", "CierreExperiencia")"><i class="fa ion-ios-paperplane" aria-hidden="true"></i>Desconexiones</a>
+                                                        <a href="@Url.Action("Index", "CierreExperiencia")"><i class="fa ion-ios-paperplane" aria-hidden="true"></i>Liberaciones</a>
+                                                        <a href="@Url.Action("Index", "CierreExperiencia")"><i class="fa ion-ios-paperplane" aria-hidden="true"></i>Suspensiones</a>
+                                                        <a href="@Url.Action("Index", "CierreExperiencia")"><i class="fa ion-ios-paperplane" aria-hidden="true"></i>Tickets</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                }
+
+                                @if (Session["Admin Cierre de la Experiencia"] != null)
+                                {
+                                    <li>
+                                        <a href="#"><i class="fa fa-external-link-square text-gray" aria-hidden="true"></i>Desconexiones<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="@Url.Action("Desconexiones", "CierreExperiencia")"><i class="fa fa-arrow-circle-right text-gray" aria-hidden="true"></i>Gestión de Base</a>
+                                                <a href="@Url.Action("DesconexionesIn", "CierreExperiencia")"><i class="fa fa-arrow-circle-right text-gray" aria-hidden="true"></i>Gestión de Ingreso</a>
+                                                <a href="@Url.Action("ConsultaGestionUsuario", "CierreExperiencia")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-external-link-square text-gray" aria-hidden="true"></i>Liberaciones<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="@Url.Action("LiberacionesDeHomePass", "CierreExperiencia")"><i class="fa fa-arrow-circle-right text-gray" aria-hidden="true"></i>Gestión de Ingreso</a>
+                                                <a href="@Url.Action("ConsultaGestionLiberaciones", "CierreExperiencia")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-external-link-square text-gray" aria-hidden="true"></i>Suspensiones<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="@Url.Action("SuspensionesTemporales", "CierreExperiencia")"><i class="fa fa-arrow-circle-right text-gray" aria-hidden="true"></i>Gestión de Base</a>
+                                                <a href="@Url.Action("SuspensionesTemporalesIn", "CierreExperiencia")"><i class="fa fa-arrow-circle-right text-gray" aria-hidden="true"></i>Gestión de Ingreso</a>
+                                                <a href="@Url.Action("ConsultaGestionSuspensiones", "CierreExperiencia")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-external-link-square text-gray" aria-hidden="true"></i>Tickets<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="@Url.Action("Tickets", "CierreExperiencia")"><i class="fa fa-arrow-circle-right text-gray" aria-hidden="true"></i>Gestión de Ingreso</a>
+                                                <a href="@Url.Action("ConsultaGestionTickets", "CierreExperiencia")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                }
+
+                            </ul>
+                        </li>
+                    }
+
                     @if (Session["Procesos Check"] != null)
                     {
                         <li id="left-sidebar-menu-multilevel" class="treeview">
@@ -1339,14 +1429,14 @@
             <div class="modal-content" style="width:1000px;background-color:transparent;">
                 <div class="modal-header" style="width:1000px;background-color:transparent;border-color:transparent;">
                     <button type="button" class="close" style="color:white;" data-dismiss="modal">&times;</button>
-                    
+
                 </div>
                 <div class="modal-body" style="width:1000px;">
                     <br />
                     <div class="row">
                         <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
                             @*<iframe id="ismo" style="width:100%;height:5000px;margin-left:-10px;margin-top:-30px;" src="@Url.Action("VerImagen", "OfertasComerciales")" frameborder="0" allowFullScreen="true"></iframe>
-                            @Html.Action("VerImagen", "OfertasComerciales");*@
+                                @Html.Action("VerImagen", "OfertasComerciales");*@
                             <div id="Viewimagenes">
 
                             </div>
@@ -1545,7 +1635,7 @@
         <a id="lockScreenActivate" onclick="LockScreen(this)" style="display:none" value="LockScreenVal"></a>
         <div id="lockScreenDiv"></div>
         <button type="button" id="NotificaOfertaComercialCliente" style="display:none;"></button>
-        <input id="IdOfertaComercial" type="text" style="display:none;"/>
+        <input id="IdOfertaComercial" type="text" style="display:none;" />
         <audio id="audioNotificacion" src="~/AdminLTE/bootstrap/sounds/Notificacion.aac" preload="auto" style="display: none"></audio>
         <input type="text" id="IdMsj" style="display:none;" />
         <button id="BListNotify" style="display:none"></button>

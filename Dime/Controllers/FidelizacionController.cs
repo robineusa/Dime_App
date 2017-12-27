@@ -215,7 +215,7 @@ namespace Dime.Controllers
             ViewBag.Lista = termsList;
             ViewBag.Label = labelList;
 
-            var est = "";
+            //var est = "";
             return View(modelo);
         }
         [HttpPost]
@@ -336,7 +336,7 @@ namespace Dime.Controllers
                 objTipificacion.UsuarioId = Convert.ToInt32(Session["IdUsuario"]);
                 objTipificacion.Registro = DateTime.Now;
                 fidelizacionServicio.updateTipificacion(objTipificacion);
-                var test = ";;";
+                //var test = ";;";
                 return RedirectToAction("ListarTipificacion");
 
             }
@@ -422,7 +422,7 @@ namespace Dime.Controllers
         {
             ViewModelRecursiva modelo = new ViewModelRecursiva();
             ViewBag.Lista = fidelizacionServicio.getRecursivaAll(1,0);
-            var y = "";
+            //var y = "";
             return View(modelo);
         }
         [HttpPost]
@@ -847,7 +847,7 @@ namespace Dime.Controllers
                 return View(r);
             }
             var Tipificacion = fidelizacionServicio.getTipificacionById(Convert.ToInt32(r.FidelizacionRegistro.TipificacionId));
-            var rest = ""
+            //var rest = ""
 ;
             var diasPreaviso = 5;
             var FechaSiguiente = "";
@@ -1049,14 +1049,14 @@ namespace Dime.Controllers
 
             //var s = fidelizacionServicio.getRecursivaAll(1);
             var Motivos = fidelizacionServicio.getRecursivaAll(idPadre, nivel);
-            var testc = "";
+            //var testc = "";
             return Json(Motivos, JsonRequestBehavior.AllowGet);
         }
         public JsonResult getHijoRecursivaAdmonJson(int idPadre)
         {
             //var s = fidelizacionServicio.getRecursivaAll(1);
             var Motivos = fidelizacionServicio.getRecursivaAll(idPadre, 0);
-            var testc = "";
+            //var testc = "";
             return Json(Motivos, JsonRequestBehavior.AllowGet);
         }
         public JsonResult getNotasJson(decimal idNota, decimal idSubmotivo, string idServicios, string idServiciosRet, decimal idE1, decimal idE2, decimal idE3, string permanencia, int idTicket, string userTransfer, int renta, int Corte, int Cuenta)
@@ -1200,7 +1200,7 @@ namespace Dime.Controllers
                     //});
                 }
             }
-            var y = "";
+            //var y = "";
             return elements;
             //var selectList = new List<SelectListItem>();
 

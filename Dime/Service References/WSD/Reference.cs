@@ -9664,75 +9664,18 @@ namespace Dime.WSD {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CEPLiberaciones", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TiposMacroprocesos", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
     [System.SerializableAttribute()]
-    public partial class CEPLiberaciones : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class TiposMacroprocesos : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CanalDeIngresoField;
+        private string DescripcionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal CuentaClienteField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EstadoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> FechaGestionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> FechaSeguimientoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> FechaSolicitudField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string GestionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string GrupoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal IdGestionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MotivoDesconexionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MotivoLiberacionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreUsuarioGestionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal NumeroServiciosField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ObservacionesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RegistroModuloField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SolicitudModuloField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SubrazonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UsarioEscalaField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal UsuarioDeGestionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UsuarioQueLiberoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string VendedorField;
+        private int IdTipoField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -9745,274 +9688,27 @@ namespace Dime.WSD {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CanalDeIngreso {
+        public string Descripcion {
             get {
-                return this.CanalDeIngresoField;
+                return this.DescripcionField;
             }
             set {
-                if ((object.ReferenceEquals(this.CanalDeIngresoField, value) != true)) {
-                    this.CanalDeIngresoField = value;
-                    this.RaisePropertyChanged("CanalDeIngreso");
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal CuentaCliente {
+        public int IdTipo {
             get {
-                return this.CuentaClienteField;
+                return this.IdTipoField;
             }
             set {
-                if ((this.CuentaClienteField.Equals(value) != true)) {
-                    this.CuentaClienteField = value;
-                    this.RaisePropertyChanged("CuentaCliente");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Estado {
-            get {
-                return this.EstadoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EstadoField, value) != true)) {
-                    this.EstadoField = value;
-                    this.RaisePropertyChanged("Estado");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> FechaGestion {
-            get {
-                return this.FechaGestionField;
-            }
-            set {
-                if ((this.FechaGestionField.Equals(value) != true)) {
-                    this.FechaGestionField = value;
-                    this.RaisePropertyChanged("FechaGestion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> FechaSeguimiento {
-            get {
-                return this.FechaSeguimientoField;
-            }
-            set {
-                if ((this.FechaSeguimientoField.Equals(value) != true)) {
-                    this.FechaSeguimientoField = value;
-                    this.RaisePropertyChanged("FechaSeguimiento");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> FechaSolicitud {
-            get {
-                return this.FechaSolicitudField;
-            }
-            set {
-                if ((this.FechaSolicitudField.Equals(value) != true)) {
-                    this.FechaSolicitudField = value;
-                    this.RaisePropertyChanged("FechaSolicitud");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Gestion {
-            get {
-                return this.GestionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.GestionField, value) != true)) {
-                    this.GestionField = value;
-                    this.RaisePropertyChanged("Gestion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Grupo {
-            get {
-                return this.GrupoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.GrupoField, value) != true)) {
-                    this.GrupoField = value;
-                    this.RaisePropertyChanged("Grupo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal IdGestion {
-            get {
-                return this.IdGestionField;
-            }
-            set {
-                if ((this.IdGestionField.Equals(value) != true)) {
-                    this.IdGestionField = value;
-                    this.RaisePropertyChanged("IdGestion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MotivoDesconexion {
-            get {
-                return this.MotivoDesconexionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MotivoDesconexionField, value) != true)) {
-                    this.MotivoDesconexionField = value;
-                    this.RaisePropertyChanged("MotivoDesconexion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MotivoLiberacion {
-            get {
-                return this.MotivoLiberacionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MotivoLiberacionField, value) != true)) {
-                    this.MotivoLiberacionField = value;
-                    this.RaisePropertyChanged("MotivoLiberacion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NombreUsuarioGestion {
-            get {
-                return this.NombreUsuarioGestionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreUsuarioGestionField, value) != true)) {
-                    this.NombreUsuarioGestionField = value;
-                    this.RaisePropertyChanged("NombreUsuarioGestion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal NumeroServicios {
-            get {
-                return this.NumeroServiciosField;
-            }
-            set {
-                if ((this.NumeroServiciosField.Equals(value) != true)) {
-                    this.NumeroServiciosField = value;
-                    this.RaisePropertyChanged("NumeroServicios");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Observaciones {
-            get {
-                return this.ObservacionesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ObservacionesField, value) != true)) {
-                    this.ObservacionesField = value;
-                    this.RaisePropertyChanged("Observaciones");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RegistroModulo {
-            get {
-                return this.RegistroModuloField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RegistroModuloField, value) != true)) {
-                    this.RegistroModuloField = value;
-                    this.RaisePropertyChanged("RegistroModulo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SolicitudModulo {
-            get {
-                return this.SolicitudModuloField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SolicitudModuloField, value) != true)) {
-                    this.SolicitudModuloField = value;
-                    this.RaisePropertyChanged("SolicitudModulo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Subrazon {
-            get {
-                return this.SubrazonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SubrazonField, value) != true)) {
-                    this.SubrazonField = value;
-                    this.RaisePropertyChanged("Subrazon");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UsarioEscala {
-            get {
-                return this.UsarioEscalaField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UsarioEscalaField, value) != true)) {
-                    this.UsarioEscalaField = value;
-                    this.RaisePropertyChanged("UsarioEscala");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal UsuarioDeGestion {
-            get {
-                return this.UsuarioDeGestionField;
-            }
-            set {
-                if ((this.UsuarioDeGestionField.Equals(value) != true)) {
-                    this.UsuarioDeGestionField = value;
-                    this.RaisePropertyChanged("UsuarioDeGestion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UsuarioQueLibero {
-            get {
-                return this.UsuarioQueLiberoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UsuarioQueLiberoField, value) != true)) {
-                    this.UsuarioQueLiberoField = value;
-                    this.RaisePropertyChanged("UsuarioQueLibero");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Vendedor {
-            get {
-                return this.VendedorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.VendedorField, value) != true)) {
-                    this.VendedorField = value;
-                    this.RaisePropertyChanged("Vendedor");
+                if ((this.IdTipoField.Equals(value) != true)) {
+                    this.IdTipoField = value;
+                    this.RaisePropertyChanged("IdTipo");
                 }
             }
         }
@@ -18606,16 +18302,28 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task CrearCategoriaAsync(Telmexla.Servicios.DIME.Entity.Macroprocesos Categoria);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarCategorias", ReplyAction="http://tempuri.org/IProcesosService/ConsultarCategoriasResponse")]
-        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos> ConsultarCategorias(int idCategoria);
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos> ConsultarCategorias(int idCategoria, int Tipo, bool EsIdPadre);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarCategorias", ReplyAction="http://tempuri.org/IProcesosService/ConsultarCategoriasResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos>> ConsultarCategoriasAsync(int idCategoria);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos>> ConsultarCategoriasAsync(int idCategoria, int Tipo, bool EsIdPadre);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/EliminarCategoria", ReplyAction="http://tempuri.org/IProcesosService/EliminarCategoriaResponse")]
         void EliminarCategoria(int idCategoria);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/EliminarCategoria", ReplyAction="http://tempuri.org/IProcesosService/EliminarCategoriaResponse")]
         System.Threading.Tasks.Task EliminarCategoriaAsync(int idCategoria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarTipoMacroproceso", ReplyAction="http://tempuri.org/IProcesosService/ConsultarTipoMacroprocesoResponse")]
+        Dime.WSD.TiposMacroprocesos ConsultarTipoMacroproceso(int IdTipo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarTipoMacroproceso", ReplyAction="http://tempuri.org/IProcesosService/ConsultarTipoMacroprocesoResponse")]
+        System.Threading.Tasks.Task<Dime.WSD.TiposMacroprocesos> ConsultarTipoMacroprocesoAsync(int IdTipo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarTitulos", ReplyAction="http://tempuri.org/IProcesosService/ConsultarTitulosResponse")]
+        System.Collections.Generic.Dictionary<string, string> ConsultarTitulos(int idPadre, int idTipo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarTitulos", ReplyAction="http://tempuri.org/IProcesosService/ConsultarTitulosResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, string>> ConsultarTitulosAsync(int idPadre, int idTipo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18741,12 +18449,12 @@ namespace Dime.WSD {
             return base.Channel.CrearCategoriaAsync(Categoria);
         }
         
-        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos> ConsultarCategorias(int idCategoria) {
-            return base.Channel.ConsultarCategorias(idCategoria);
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos> ConsultarCategorias(int idCategoria, int Tipo, bool EsIdPadre) {
+            return base.Channel.ConsultarCategorias(idCategoria, Tipo, EsIdPadre);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos>> ConsultarCategoriasAsync(int idCategoria) {
-            return base.Channel.ConsultarCategoriasAsync(idCategoria);
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Macroprocesos>> ConsultarCategoriasAsync(int idCategoria, int Tipo, bool EsIdPadre) {
+            return base.Channel.ConsultarCategoriasAsync(idCategoria, Tipo, EsIdPadre);
         }
         
         public void EliminarCategoria(int idCategoria) {
@@ -18755,6 +18463,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task EliminarCategoriaAsync(int idCategoria) {
             return base.Channel.EliminarCategoriaAsync(idCategoria);
+        }
+        
+        public Dime.WSD.TiposMacroprocesos ConsultarTipoMacroproceso(int IdTipo) {
+            return base.Channel.ConsultarTipoMacroproceso(IdTipo);
+        }
+        
+        public System.Threading.Tasks.Task<Dime.WSD.TiposMacroprocesos> ConsultarTipoMacroprocesoAsync(int IdTipo) {
+            return base.Channel.ConsultarTipoMacroprocesoAsync(IdTipo);
+        }
+        
+        public System.Collections.Generic.Dictionary<string, string> ConsultarTitulos(int idPadre, int idTipo) {
+            return base.Channel.ConsultarTitulos(idPadre, idTipo);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, string>> ConsultarTitulosAsync(int idPadre, int idTipo) {
+            return base.Channel.ConsultarTitulosAsync(idPadre, idTipo);
         }
     }
     
@@ -19406,16 +19130,118 @@ namespace Dime.WSD {
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones>> ConsultaLogDeGestionSuspensionesAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/RegistrarLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/RegistrarLiberacionesResponse")]
-        void RegistrarLiberaciones(Dime.WSD.CEPLiberaciones Liberaciones);
+        void RegistrarLiberaciones(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/RegistrarLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/RegistrarLiberacionesResponse")]
-        System.Threading.Tasks.Task RegistrarLiberacionesAsync(Dime.WSD.CEPLiberaciones Liberaciones);
+        System.Threading.Tasks.Task RegistrarLiberacionesAsync(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ActualizarLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ActualizarLiberacionesResponse")]
-        void ActualizarLiberaciones(Dime.WSD.CEPLiberaciones Liberaciones);
+        void ActualizarLiberaciones(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ActualizarLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ActualizarLiberacionesResponse")]
-        System.Threading.Tasks.Task ActualizarLiberacionesAsync(Dime.WSD.CEPLiberaciones Liberaciones);
+        System.Threading.Tasks.Task ActualizarLiberacionesAsync(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeLiberacionPorId", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeLiberacionPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.CEPLiberaciones TraeLiberacionPorId(decimal IdGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/TraeLiberacionPorId", ReplyAction="http://tempuri.org/ICierreExperienciaService/TraeLiberacionPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> TraeLiberacionPorIdAsync(decimal IdGestion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteLiberacionesResp" +
+            "onse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones> ListaDeGestionAgenteLiberaciones(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaDeGestionAgenteLiberacionesResp" +
+            "onse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones>> ListaDeGestionAgenteLiberacionesAsync(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteLiberacionesR" +
+            "esponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> ListaSeguimientosAgenteLiberaciones(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ListaSeguimientosAgenteLiberacionesR" +
+            "esponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones>> ListaSeguimientosAgenteLiberacionesAsync(decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaLiberacionesRe" +
+            "sponse")]
+        Telmexla.Servicios.DIME.Entity.CEPLiberaciones ConsultarGestionCuentaLiberaciones(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaLiberacionesRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> ConsultarGestionCuentaLiberacionesAsync(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionLiberacionesAgen" +
+            "te", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionLiberacionesAgen" +
+            "teResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones> ConsultaLogDeGestionLiberacionesAgente(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionLiberacionesAgen" +
+            "te", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionLiberacionesAgen" +
+            "teResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones>> ConsultaLogDeGestionLiberacionesAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalDesconexiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalDesconexionesR" +
+            "esponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> ConsultaAdminPrincipalDesconexiones(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalDesconexiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalDesconexionesR" +
+            "esponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones>> ConsultaAdminPrincipalDesconexionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalLiberacionesRe" +
+            "sponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> ConsultaAdminPrincipalLiberaciones(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalLiberacionesRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones>> ConsultaAdminPrincipalLiberacionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalSuspensionesRe" +
+            "sponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> ConsultaAdminPrincipalSuspensiones(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalSuspensionesRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPSuspensiones>> ConsultaAdminPrincipalSuspensionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalTickets", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalTicketsRespons" +
+            "e")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPTickets> ConsultaAdminPrincipalTickets(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalTickets", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalTicketsRespons" +
+            "e")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPTickets>> ConsultaAdminPrincipalTicketsAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogDesconexiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogDesconexionesRespons" +
+            "e")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones> ConsultaAdminLogDesconexiones(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogDesconexiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogDesconexionesRespons" +
+            "e")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones>> ConsultaAdminLogDesconexionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogLiberacionesResponse" +
+            "")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones> ConsultaAdminLogLiberaciones(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogLiberacionesResponse" +
+            "")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones>> ConsultaAdminLogLiberacionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogSuspensionesResponse" +
+            "")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones> ConsultaAdminLogSuspensiones(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogSuspensionesResponse" +
+            "")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones>> ConsultaAdminLogSuspensionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogTickets", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogTicketsResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets> ConsultaAdminLogTickets(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogTickets", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogTicketsResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets>> ConsultaAdminLogTicketsAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19749,20 +19575,124 @@ namespace Dime.WSD {
             return base.Channel.ConsultaLogDeGestionSuspensionesAgenteAsync(FechaInicial, FechaFinal, Usuario);
         }
         
-        public void RegistrarLiberaciones(Dime.WSD.CEPLiberaciones Liberaciones) {
+        public void RegistrarLiberaciones(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones) {
             base.Channel.RegistrarLiberaciones(Liberaciones);
         }
         
-        public System.Threading.Tasks.Task RegistrarLiberacionesAsync(Dime.WSD.CEPLiberaciones Liberaciones) {
+        public System.Threading.Tasks.Task RegistrarLiberacionesAsync(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones) {
             return base.Channel.RegistrarLiberacionesAsync(Liberaciones);
         }
         
-        public void ActualizarLiberaciones(Dime.WSD.CEPLiberaciones Liberaciones) {
+        public void ActualizarLiberaciones(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones) {
             base.Channel.ActualizarLiberaciones(Liberaciones);
         }
         
-        public System.Threading.Tasks.Task ActualizarLiberacionesAsync(Dime.WSD.CEPLiberaciones Liberaciones) {
+        public System.Threading.Tasks.Task ActualizarLiberacionesAsync(Telmexla.Servicios.DIME.Entity.CEPLiberaciones Liberaciones) {
             return base.Channel.ActualizarLiberacionesAsync(Liberaciones);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPLiberaciones TraeLiberacionPorId(decimal IdGestion) {
+            return base.Channel.TraeLiberacionPorId(IdGestion);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> TraeLiberacionPorIdAsync(decimal IdGestion) {
+            return base.Channel.TraeLiberacionPorIdAsync(IdGestion);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones> ListaDeGestionAgenteLiberaciones(decimal Usuario) {
+            return base.Channel.ListaDeGestionAgenteLiberaciones(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones>> ListaDeGestionAgenteLiberacionesAsync(decimal Usuario) {
+            return base.Channel.ListaDeGestionAgenteLiberacionesAsync(Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> ListaSeguimientosAgenteLiberaciones(decimal Usuario) {
+            return base.Channel.ListaSeguimientosAgenteLiberaciones(Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones>> ListaSeguimientosAgenteLiberacionesAsync(decimal Usuario) {
+            return base.Channel.ListaSeguimientosAgenteLiberacionesAsync(Usuario);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CEPLiberaciones ConsultarGestionCuentaLiberaciones(decimal Cuenta) {
+            return base.Channel.ConsultarGestionCuentaLiberaciones(Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> ConsultarGestionCuentaLiberacionesAsync(decimal Cuenta) {
+            return base.Channel.ConsultarGestionCuentaLiberacionesAsync(Cuenta);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones> ConsultaLogDeGestionLiberacionesAgente(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario) {
+            return base.Channel.ConsultaLogDeGestionLiberacionesAgente(FechaInicial, FechaFinal, Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones>> ConsultaLogDeGestionLiberacionesAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario) {
+            return base.Channel.ConsultaLogDeGestionLiberacionesAgenteAsync(FechaInicial, FechaFinal, Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> ConsultaAdminPrincipalDesconexiones(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalDesconexiones(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones>> ConsultaAdminPrincipalDesconexionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalDesconexionesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> ConsultaAdminPrincipalLiberaciones(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalLiberaciones(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones>> ConsultaAdminPrincipalLiberacionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalLiberacionesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> ConsultaAdminPrincipalSuspensiones(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalSuspensiones(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPSuspensiones>> ConsultaAdminPrincipalSuspensionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalSuspensionesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPTickets> ConsultaAdminPrincipalTickets(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalTickets(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPTickets>> ConsultaAdminPrincipalTicketsAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalTicketsAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones> ConsultaAdminLogDesconexiones(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogDesconexiones(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones>> ConsultaAdminLogDesconexionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogDesconexionesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones> ConsultaAdminLogLiberaciones(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogLiberaciones(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones>> ConsultaAdminLogLiberacionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogLiberacionesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones> ConsultaAdminLogSuspensiones(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogSuspensiones(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones>> ConsultaAdminLogSuspensionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogSuspensionesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets> ConsultaAdminLogTickets(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogTickets(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets>> ConsultaAdminLogTicketsAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogTicketsAsync(FechaInicial, FechaFinal);
         }
     }
 }
