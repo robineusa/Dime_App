@@ -54,8 +54,25 @@ namespace Dime.Controllers
             Macroprocesos macro = new Macroprocesos();
             return View(macro);
         }
+        [HttpGet]
+        public ActionResult Categorias(string IdPadre, string Tipo, bool EsIdPadre = true)
+        {
+            Macroprocesos macro = new Macroprocesos();
+            int idpadre = Convert.ToInt32(IdPadre);
+            int tipo = Convert.ToInt32(Tipo);
 
+            tipo = tipo > 0 ? tipo : 1;
 
+            macro.IdCategoriaPadre = idpadre;
+            macro.TipoMacroproceso = tipo;
+            return View(macro);
+        }
+        [HttpGet]
+        public ActionResult CrearElementoMacroprocesos(string IdPadre, string Tipo)
+        {
+
+            return View();
+        }
 
         public JsonResult LLamarArbolId(string IDdArbol)
         {
@@ -131,12 +148,89 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
-        //public JsonResult ConsultarCategorias(string IdCategoria)
-        //{
-        //    var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarCategorias(Convert.ToInt32(IdCategoria))), JsonRequestBehavior.AllowGet);
-        //    jsonResult.MaxJsonLength = int.MaxValue;
-        //    return jsonResult;
-        //}
 
+
+        public JsonResult ConsultarCategorias(string IdCategoria, string Tipo, bool EsIdPadre = true)
+        {
+            List<Macroprocesos> Categorias = new List<Macroprocesos>();
+            int tipo = Convert.ToInt32(Tipo);
+            int categoria = Convert.ToInt32(IdCategoria);
+            int idTipo = TiposCategorias(tipo, categoria);
+
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarCategorias(categoria, idTipo, EsIdPadre)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
+        public JsonResult ConsultarTipoCategorias(string IdCategoria, string Tipo)
+        {
+            ViewModelCategoriasTipo categoriasTipo = new ViewModelCategoriasTipo();
+            List<Macroprocesos> Categorias = new List<Macroprocesos>();
+            TiposMacroprocesos tipo = new TiposMacroprocesos();
+            int valorTipo = Convert.ToInt32(Tipo);
+            int CategoriaValor = Convert.ToInt32(IdCategoria);
+            int tipoConsultar = 0;
+
+            Categorias = ProcesosService.ConsultarCategorias(CategoriaValor, valorTipo, false);
+            tipoConsultar = TiposCategorias(valorTipo, CategoriaValor);
+
+            tipo = ProcesosService.ConsultarTipoMacroproceso(tipoConsultar);
+
+            if (Categorias.Count > 0)
+            {
+                categoriasTipo.Categorias = Categorias.FirstOrDefault();
+            }
+            else
+            {
+                Macroprocesos elementoVacio = new Macroprocesos();
+                categoriasTipo.Categorias = elementoVacio;
+            }
+
+            categoriasTipo.Tipos = tipo;
+
+            var jsonResult = Json(JsonConvert.SerializeObject(categoriasTipo), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
+        public void CrearTipoCategorias(string IdPadre, string Tipo, string Descripcion)
+        {
+            int IdCategPadre = Convert.ToInt32(IdPadre);
+            int IdTipo = Convert.ToInt32(Tipo);
+
+            Macroprocesos crearElemento = new Macroprocesos();
+            crearElemento.IdCategoriaPadre = IdCategPadre;
+            crearElemento.TipoMacroproceso = IdTipo;
+            crearElemento.Descripcion = Descripcion;
+
+            ProcesosService.CrearCategoria(crearElemento);
+        }
+        public int TiposCategorias(int Tipo, int IdPadre)
+        {
+            int idpadre = Convert.ToInt32(IdPadre);
+            int tipo = Convert.ToInt32(Tipo); ;
+            int idTipo = 0;
+
+            if (idpadre == 0)
+                idTipo = 1;
+            else if (tipo == 1 && idpadre > 0)
+                idTipo = 2;
+            else if (tipo == 2 && idpadre > 0)
+                idTipo = 3;
+
+            return idTipo;
+        }
+
+        public JsonResult ConsultarTitulos(string IdCategoria, string Tipo)
+        {
+            int idCategoria = Convert.ToInt32(IdCategoria);
+            int idTipo = TiposCategorias(Convert.ToInt32(Tipo), idCategoria);
+
+            var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarTitulos(idCategoria, idTipo)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+       
     }
+
 }
