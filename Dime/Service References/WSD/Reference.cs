@@ -19109,6 +19109,78 @@ namespace Dime.WSD {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultarGestionCuentaLiberacionesRe" +
             "sponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> ConsultarGestionCuentaLiberacionesAsync(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionLiberacionesAgen" +
+            "te", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionLiberacionesAgen" +
+            "teResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones> ConsultaLogDeGestionLiberacionesAgente(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionLiberacionesAgen" +
+            "te", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaLogDeGestionLiberacionesAgen" +
+            "teResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones>> ConsultaLogDeGestionLiberacionesAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalDesconexiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalDesconexionesR" +
+            "esponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> ConsultaAdminPrincipalDesconexiones(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalDesconexiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalDesconexionesR" +
+            "esponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones>> ConsultaAdminPrincipalDesconexionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalLiberacionesRe" +
+            "sponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> ConsultaAdminPrincipalLiberaciones(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalLiberacionesRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones>> ConsultaAdminPrincipalLiberacionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalSuspensionesRe" +
+            "sponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> ConsultaAdminPrincipalSuspensiones(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalSuspensionesRe" +
+            "sponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPSuspensiones>> ConsultaAdminPrincipalSuspensionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalTickets", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalTicketsRespons" +
+            "e")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPTickets> ConsultaAdminPrincipalTickets(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalTickets", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminPrincipalTicketsRespons" +
+            "e")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPTickets>> ConsultaAdminPrincipalTicketsAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogDesconexiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogDesconexionesRespons" +
+            "e")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones> ConsultaAdminLogDesconexiones(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogDesconexiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogDesconexionesRespons" +
+            "e")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones>> ConsultaAdminLogDesconexionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogLiberacionesResponse" +
+            "")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones> ConsultaAdminLogLiberaciones(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogLiberaciones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogLiberacionesResponse" +
+            "")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones>> ConsultaAdminLogLiberacionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogSuspensionesResponse" +
+            "")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones> ConsultaAdminLogSuspensiones(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogSuspensiones", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogSuspensionesResponse" +
+            "")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones>> ConsultaAdminLogSuspensionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogTickets", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogTicketsResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets> ConsultaAdminLogTickets(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogTickets", ReplyAction="http://tempuri.org/ICierreExperienciaService/ConsultaAdminLogTicketsResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets>> ConsultaAdminLogTicketsAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19488,6 +19560,78 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> ConsultarGestionCuentaLiberacionesAsync(decimal Cuenta) {
             return base.Channel.ConsultarGestionCuentaLiberacionesAsync(Cuenta);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones> ConsultaLogDeGestionLiberacionesAgente(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario) {
+            return base.Channel.ConsultaLogDeGestionLiberacionesAgente(FechaInicial, FechaFinal, Usuario);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones>> ConsultaLogDeGestionLiberacionesAgenteAsync(System.DateTime FechaInicial, System.DateTime FechaFinal, decimal Usuario) {
+            return base.Channel.ConsultaLogDeGestionLiberacionesAgenteAsync(FechaInicial, FechaFinal, Usuario);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones> ConsultaAdminPrincipalDesconexiones(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalDesconexiones(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPDesconexiones>> ConsultaAdminPrincipalDesconexionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalDesconexionesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones> ConsultaAdminPrincipalLiberaciones(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalLiberaciones(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPLiberaciones>> ConsultaAdminPrincipalLiberacionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalLiberacionesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPSuspensiones> ConsultaAdminPrincipalSuspensiones(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalSuspensiones(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPSuspensiones>> ConsultaAdminPrincipalSuspensionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalSuspensionesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPTickets> ConsultaAdminPrincipalTickets(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalTickets(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CEPTickets>> ConsultaAdminPrincipalTicketsAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminPrincipalTicketsAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones> ConsultaAdminLogDesconexiones(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogDesconexiones(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELDesconexiones>> ConsultaAdminLogDesconexionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogDesconexionesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones> ConsultaAdminLogLiberaciones(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogLiberaciones(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELLiberaciones>> ConsultaAdminLogLiberacionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogLiberacionesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones> ConsultaAdminLogSuspensiones(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogSuspensiones(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELSuspensiones>> ConsultaAdminLogSuspensionesAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogSuspensionesAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets> ConsultaAdminLogTickets(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogTickets(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.CELTickets>> ConsultaAdminLogTicketsAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaAdminLogTicketsAsync(FechaInicial, FechaFinal);
         }
     }
 }

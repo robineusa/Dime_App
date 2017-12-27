@@ -2345,6 +2345,14 @@
     <Content Include="Scripts\Calculadoras\Rentas.js" />
     <Content Include="Scripts\CierreDeCiclo\ConsultaGestiones.js" />
     <Content Include="Scripts\CierreDeCiclo\HistorialGestiones.js" />
+    <Content Include="Scripts\CierreExperiencia\ConsultaAdminLogDesconexiones.js" />
+    <Content Include="Scripts\CierreExperiencia\ConsultaAdminLogLiberaciones.js" />
+    <Content Include="Scripts\CierreExperiencia\ConsultaAdminLogSuspensiones.js" />
+    <Content Include="Scripts\CierreExperiencia\ConsultaAdminLogTickets.js" />
+    <Content Include="Scripts\CierreExperiencia\ConsultaAdminPrincipalDesconexiones.js" />
+    <Content Include="Scripts\CierreExperiencia\ConsultaAdminPrincipalLiberaciones.js" />
+    <Content Include="Scripts\CierreExperiencia\ConsultaAdminPrincipalSuspensiones.js" />
+    <Content Include="Scripts\CierreExperiencia\ConsultaAdminPrincipalTickets.js" />
     <Content Include="Scripts\CierreExperiencia\ConsultaGestionLiberaciones.js" />
     <Content Include="Scripts\CierreExperiencia\ConsultaGestionSuspensiones.js" />
     <Content Include="Scripts\CierreExperiencia\ConsultaGestionTickets.js" />
@@ -3316,9 +3324,6 @@
     <Content Include="Scripts\Procesos\dist\font\summernote.eot" />
     <Content Include="Scripts\Procesos\dist\font\summernote.ttf" />
     <Content Include="Scripts\Procesos\dist\font\summernote.woff" />
-    <Content Include="Service References\WSD\Dime.WSD.TiposMacroprocesos.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\WSD\WebService1.wsdl" />
     <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
@@ -3719,6 +3724,14 @@
     <Content Include="Views\CierreExperiencia\ConsultaGestionSuspensiones.cshtml" />
     <Content Include="Views\Fidelizacion\RegistrarSolicitud.cshtml" />
     <Content Include="Views\CierreExperiencia\ConsultaGestionLiberaciones.cshtml" />
+    <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalDesconexiones.cshtml" />
+    <Content Include="Views\CierreExperiencia\ConsultaAdminLogDesconexiones.cshtml" />
+    <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalLiberaciones.cshtml" />
+    <Content Include="Views\CierreExperiencia\ConsultaAdminLogLiberaciones.cshtml" />
+    <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalSuspensiones.cshtml" />
+    <Content Include="Views\CierreExperiencia\ConsultaAdminLogSuspensiones.cshtml" />
+    <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalTickets.cshtml" />
+    <Content Include="Views\CierreExperiencia\ConsultaAdminLogTickets.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
