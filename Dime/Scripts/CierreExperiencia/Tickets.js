@@ -339,6 +339,7 @@ function cargargrilla(data) {
             buttonCount: 5
         },
         columns: [
+        { command: { text: " Editar", click: ActualizarCasoSeg, imageClass: "fa fa-fw fa-pencil-square-o", }, title: "Editar", width: "100px" },
         { field: "IdTransaccion", title: "Id Transacción", width: 100 },
         { field: "IdGestion", title: "Id Gestion", width: 100 },
         { field: "FechaDeTransaccion", title: "Fecha De Transaccion", width: 100 },
@@ -636,7 +637,16 @@ function ConsultarTicketBase(data) {
                         buttons: {
                             Ok: {
                                 btnClass: 'btn-red',
-                                action: function () { location.reload(); }
+                                action: function () {
+                                    var val = 0;
+                                    var val2 = "";
+                                    $("#NumeroDeTicket").val(val);
+                                    $("#CuentaCliente").val(val);
+                                    $("#Nota1").val(val2);
+                                    $("#Nota2").val(val2);
+                                    $("#CuentaCliente").focus();
+                                    
+                                }
 
                             },
                         }

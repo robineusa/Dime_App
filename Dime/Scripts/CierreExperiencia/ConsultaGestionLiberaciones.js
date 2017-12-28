@@ -87,6 +87,7 @@ function cargargrilla(data) {
             buttonCount: 5
         },
         columns: [
+        { command: { text: " Editar", click: ActualizarCasoSeg, imageClass: "fa fa-fw fa-pencil-square-o", }, title: "Editar", width: "100px" },
         { field: "IdTransaccion", title: "Id Transaccion", width: 100 },
         { field: "IdGestion", title: "Id Gestion", width: 100 },
         { field: "FechaDeTransaccion", title: "Fecha De Transaccion", width: 100 },
@@ -116,4 +117,10 @@ function cargargrilla(data) {
 function finalizaconsulta() {
     document.getElementById('dataLoading').style.display = 'none';
 
+}
+function ActualizarCasoSeg(e) {
+    e.preventDefault();
+    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    var seg = "Ture";
+    window.location.href = 'LiberacionesDeHomePass?IdGestion=' + dataItem.IdGestion;
 }
