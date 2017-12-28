@@ -4241,4 +4241,30 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfCEPLiberaciones" nillable="true" type="tns:ArrayOfCEPLiberaciones" />
+  <xs:complexType name="CargueBaseMidas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BlindajeInternet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Campaña1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Campaña2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Campaña3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsumosPPV" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FechaAsignacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaUltimaMarca1" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaUltimaMarca2" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaUltimaMarcaCancelacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Ofrecimiento1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiembraHD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SiembraVoz" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimaMarca1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimaMarca2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimaMarcaCancelacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UltimoPPV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestionando" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CargueBaseMidas" nillable="true" type="tns:CargueBaseMidas" />
 </xs:schema>

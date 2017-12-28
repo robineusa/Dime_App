@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Telmexla.Servicios.DIME.Entity.ViewModelMidas
+@{
     ViewBag.Title = "Tipificador";
     ViewBag.Subtitle = "MIDAS";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -15,7 +16,7 @@
                 <table>
                     <tr>
                         <td style="min-width:200px; padding:1px;">
-                            @*@Html.TextBoxFor(m => m.GPrincipalRecurrencia.CuentaCliente, new { @class = "form-control input-sm", placeholder = "Ingrese la cuenta", id = "inputCuenta", Value = Model.ClientesTodos.Cuenta })*@
+                            @Html.TextBoxFor(m => m.GPMMidas.CuentaCliente, new { @class = "form-control input-sm", placeholder = "Ingrese la cuenta", id = "CuentaCliente" })
                         </td>
 
                     </tr>
@@ -59,7 +60,7 @@
                         </tr>
                         <tr>
                             <td>
-
+                                @Html.TextBoxFor(m => m.CargueBaseMidas.ConsumosPPV, new { @class = "form-control input-sm", placeholder = "Ingrese la cuenta"})
                             </td>
                         </tr>
                         <tr>
@@ -313,7 +314,13 @@
     
 </div>
 @section Scripts{
-    <script src="~/Scripts/Midas/Tipificador.js?1.0.1"></script>
+
+    <script>
+        var UrlInformacionClienteTipificadorMidas = '@Url.Action("TraerInformacionCliente", "Midas")';
+    </script>
+
+    <script src="~/Scripts/Midas/Tipificador.js?1.0.2"></script>
+
 }
 
 

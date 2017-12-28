@@ -8337,4 +8337,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="TraeCuentaMidas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraeCuentaMidasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q581="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraeCuentaMidasResult" nillable="true" type="q581:CargueBaseMidas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

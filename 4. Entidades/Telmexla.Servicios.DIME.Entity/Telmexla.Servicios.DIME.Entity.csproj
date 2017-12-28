@@ -114,6 +114,7 @@
     <Compile Include="CambioEstrato.cs" />
     <Compile Include="CambioEstratoCollection.cs" />
     <Compile Include="CargaBaseFoxInbound.cs" />
+    <Compile Include="CargueBaseMidas.cs" />
     <Compile Include="CcBaseMejoramiento.cs" />
     <Compile Include="CCConsultaGestionesViewModel.cs" />
     <Compile Include="CcGestionResidencialPredictivo.cs" />
@@ -185,6 +186,7 @@
     <Compile Include="GestionMatrizColleciton.cs" />
     <Compile Include="GestionOutbound.cs" />
     <Compile Include="GLogRecurrencia.cs" />
+    <Compile Include="GPMMidas.cs" />
     <Compile Include="GPrincipalRecurrencia.cs" />
     <Compile Include="GPrincipalRecurrenciaInbound.cs" />
     <Compile Include="Graficos.cs" />
@@ -267,6 +269,7 @@
     <Compile Include="ViewModelIncidentesOperaciones.cs" />
     <Compile Include="ViewModelMec.cs" />
     <Compile Include="ViewModelBanner.cs" />
+    <Compile Include="ViewModelMidas.cs" />
     <Compile Include="ViewModelMultiPlay.cs" />
     <Compile Include="ViewModelNodos.cs" />
     <Compile Include="ViewModelNotificacionesBS.cs" />

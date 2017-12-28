@@ -3193,6 +3193,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CEPLiberaciones.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CELLiberaciones.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.TiposMacroprocesos.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CargueBaseMidas.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />

@@ -19648,4 +19648,51 @@ namespace Dime.WSD {
             return base.Channel.ConsultaAdminLogTicketsAsync(FechaInicial, FechaFinal);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IMidasService")]
+    public interface IMidasService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraeCuentaMidas", ReplyAction="http://tempuri.org/IMidasService/TraeCuentaMidasResponse")]
+        Telmexla.Servicios.DIME.Entity.CargueBaseMidas TraeCuentaMidas(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraeCuentaMidas", ReplyAction="http://tempuri.org/IMidasService/TraeCuentaMidasResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CargueBaseMidas> TraeCuentaMidasAsync(decimal CuentaCliente);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IMidasServiceChannel : Dime.WSD.IMidasService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class MidasServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IMidasService>, Dime.WSD.IMidasService {
+        
+        public MidasServiceClient() {
+        }
+        
+        public MidasServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public MidasServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MidasServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public MidasServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.CargueBaseMidas TraeCuentaMidas(decimal CuentaCliente) {
+            return base.Channel.TraeCuentaMidas(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CargueBaseMidas> TraeCuentaMidasAsync(decimal CuentaCliente) {
+            return base.Channel.TraeCuentaMidasAsync(CuentaCliente);
+        }
+    }
 }

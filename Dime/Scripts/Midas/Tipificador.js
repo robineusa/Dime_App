@@ -12,3 +12,32 @@
         $("#Li1").css("border-color", "transparent");
     });
 });
+
+$("#CuentaCliente").blur(function (event) {
+    event.preventDefault();
+    var Cuenta = $("#CuentaCliente").val();
+    if (Cuenta == "" || Cuenta == null || Cuenta == "0") {
+    } else {
+        DatosClienteCuenta(Cuenta);
+    }
+
+});
+
+function DatosClienteCuenta(Cuenta) {
+
+    $.ajax({
+        type: "POST",
+        url: UrlInformacionClienteTipificadorMidas,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ CuentaCliente: Cuenta }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            console.log(json);
+            //$('#Nota1').val(json.Nota1);
+            //$('#Nota2').val(json.Nota2);
+
+        }
+    });
+
+}
