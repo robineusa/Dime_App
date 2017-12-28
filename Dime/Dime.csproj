@@ -215,6 +215,7 @@
     <Compile Include="Controllers\ManualesController.cs" />
     <Compile Include="Controllers\MarcacionesController.cs" />
     <Compile Include="Controllers\MecController.cs" />
+    <Compile Include="Controllers\MidasController.cs" />
     <Compile Include="Controllers\MultiPlayController.cs" />
     <Compile Include="Controllers\OfertasComercialesController.cs" />
     <Compile Include="Controllers\ProcesosController.cs" />
@@ -2403,6 +2404,8 @@
     <Content Include="Scripts\Mec\ListaMonitoreosAdmin.js" />
     <Content Include="Scripts\Mec\ListaTipoAlarmas.js" />
     <Content Include="Scripts\Mec\RegistrarMonitoreo.js" />
+    <Content Include="Scripts\Midas\AdministrarArboles.js" />
+    <Content Include="Scripts\Midas\Tipificador.js" />
     <Content Include="Scripts\MultiPlay\ConsultasAdminMultiPlay.js" />
     <Content Include="Scripts\MultiPlay\MultiPlay.js" />
     <Content Include="Scripts\OfertasComerciales\EditarImagen.js" />
@@ -3721,7 +3724,12 @@
     <Content Include="Views\CierreExperiencia\ConsultaGestionLiberaciones.cshtml" />
     <Content Include="Views\Procesos\Categorias.cshtml" />
     <Content Include="Views\Procesos\CrearElementoMacroprocesos.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Procesos\EditarCategorias.cshtml" />
+=======
+    <Content Include="Views\Midas\Tipificador.cshtml" />
+    <Content Include="Views\Midas\AdministrarArboles.cshtml" />
+>>>>>>> b6326561ac87022e2ee47753bbedcb4cf9d7b096
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

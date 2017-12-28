@@ -1,0 +1,321 @@
+﻿@{
+    ViewBag.Title = "Tipificador";
+    ViewBag.Subtitle = "MIDAS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
+    <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
+        <div class="row" style="margin-left: 10px;">
+            <div class="col-xs-2" style="width:200px; padding:1px;">
+                <small>Número de Cuenta:</small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4" style="width:450px;">
+                <table>
+                    <tr>
+                        <td style="min-width:200px; padding:1px;">
+                            @*@Html.TextBoxFor(m => m.GPrincipalRecurrencia.CuentaCliente, new { @class = "form-control input-sm", placeholder = "Ingrese la cuenta", id = "inputCuenta", Value = Model.ClientesTodos.Cuenta })*@
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<div class="row">
+    <div class="col-md-9" style="width:100%; ">
+        <div class="nav-tabs-custom">
+            <ul class="nav nav-tabs">
+                <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321"><a href="#datosBasicos" aria-controls="datosBasicos" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Básicos</a></li>
+                <li id="Li2" class=""><a href="#Mi_Historial" aria-controls="Mi_Historial" data-toggle="tab" role="tab" style="background-color:transparent;">Mi Historial</a></li>
+            </ul>
+            <div class="tab-content" style="padding-left:0; padding-top: 0">
+                <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosBasicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                    <table>
+                        <tr>
+                            <td width="200" style="padding:1px;">
+                                <small>Nombre del Cliente:  </small>
+                            </td>
+                            <td width="200" style="padding:1px;">
+                                <small>Apellido del Cliente:  </small>
+                            </td>
+
+                            <td width="200" style="padding:1px;">
+                                <small>Teléfono Telmex:  </small>
+                            </td>
+                            <td width="200" style="padding:1px;">
+                                <small>Teléfono 1:  </small>
+                            </td>
+                            <td width="200" style="padding:1px;">
+                                <small>Teléfono 2: </small>
+                            </td>
+                            <td width="200" style="padding:1px;">
+                                <small>Teléfono 3:</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td style="padding:1px;">
+                                <small>Dirección de Instalación: </small>
+                            </td>
+                            <td style="padding:1px;">
+                                <small>Correspondencia:  </small>
+                            </td>
+
+                            <td style="padding:1px;">
+                                <small>Nodo: </small>
+                            </td>
+                            <td style="padding:1px;">
+                                <small>Red:  </small>
+                            </td>
+                            <td style="padding:1px;">
+                                <small>División:  </small>
+                            </td>
+                            <td style="padding:1px;">
+                                <small>Área:  </small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:1px;">
+                                <small>Zona:</small>
+                            </td>
+                            <td style="padding:1px;">
+                                <small>Distrito:  </small>
+                            </td>
+                            <td style="padding:1px;">
+                                <small>Nombre Comunidad: </small>
+                            </td>
+                            <td style="padding:1px;">
+                                <small>Estrato:  </small>
+                            </td>
+                            <td style="padding:1px;">
+                                <small>Tipo de Cliente:  </small>
+                            </td>
+                            <td style="padding:1px;">
+                                <small>Descripción:  </small>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane tab-dime-first active " id="Mi_Historial" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                    <br /><div id="MiHistorialGrid"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="page-header" style="margin-top:25px">
+                            <i class="fa fa-gift"></i> Ofrecimiento
+                        </h2>
+                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                            <br />
+                            <table style="width:100%;">
+                                <tr>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" style="margin-left:5px; width:100%; height:70px;" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <small>El cliente acepto el ofrecimiento</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select>
+                                            <option value="SI">SI</option>
+                                            <option value="NO">NO</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="page-header" style="margin-top:25px">
+                            <i class="fa fa-sitemap"></i> Árbol de Tipificación
+                        </h2>
+                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                            <br />
+                            <table>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <small>Gestión: </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Cierre: </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Razón: </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Motivo: </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="page-header" style="margin-top:25px">
+                            <i class="fa fa-exchange"></i> Soporte
+                        </h2>
+                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                            <br />
+                            <table>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <small>Falla Servicios Principales:  </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Falla Servicios Adicionales:  </small>
+                                    </td>
+                                    <td style="padding:1px;">
+                                        <small>Tipo Falla:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <small>Observaciones:  </small>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" style="margin-left:0px; width:100%; height:70px;" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="page-header" style="margin-top:25px">
+                            <i class="fa fa-times-circle-o"></i> Cancelación
+                        </h2>
+                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                            <br />
+                            <table>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <small>Cliente con  Intención de Cancelación:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <small>Observaciónes:  </small>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" style="margin-left:0px; width:100%; height:70px;" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="box box-danger">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="page-header" style="margin-top:25px">
+                            <i class="fa fa-ticket"></i> Facturación
+                        </h2>
+                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                            <br />
+                            <table>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <small>Problema de facturación:  </small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:1px;">
+                                        <small>Observaciónes:  </small>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" style="margin-left:0px; width:100%; height:70px;" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <button type="submit" style="display:block;" class="btn btn-primary" name="BotonEnvia" value="GuardaDatos" id="BotonEnvia">Guardar</button>
+    </div>
+    
+</div>
+@section Scripts{
+    <script src="~/Scripts/Midas/Tipificador.js?1.0.1"></script>
+}
+
+
+
+
