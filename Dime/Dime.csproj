@@ -2466,6 +2466,7 @@
     <Content Include="Scripts\Procesos\dist\summernote.js" />
     <Content Include="Scripts\Procesos\dist\summernote.min.js" />
     <Content Include="Scripts\Procesos\EditarArbol.js" />
+    <Content Include="Scripts\Procesos\EditarCategoria.js" />
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorLog.js" />
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorLogInbound.js" />
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorPrincipal.js" />
@@ -3720,6 +3721,7 @@
     <Content Include="Views\CierreExperiencia\ConsultaGestionLiberaciones.cshtml" />
     <Content Include="Views\Procesos\Categorias.cshtml" />
     <Content Include="Views\Procesos\CrearElementoMacroprocesos.cshtml" />
+    <Content Include="Views\Procesos\EditarCategorias.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -18263,6 +18263,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ConsultarTitulos", ReplyAction="http://tempuri.org/IProcesosService/ConsultarTitulosResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, string>> ConsultarTitulosAsync(int idPadre, int idTipo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/EditarCategoria", ReplyAction="http://tempuri.org/IProcesosService/EditarCategoriaResponse")]
+        void EditarCategoria(int IdCategoria, string nombreNuevo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/EditarCategoria", ReplyAction="http://tempuri.org/IProcesosService/EditarCategoriaResponse")]
+        System.Threading.Tasks.Task EditarCategoriaAsync(int IdCategoria, string nombreNuevo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18418,6 +18424,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<string, string>> ConsultarTitulosAsync(int idPadre, int idTipo) {
             return base.Channel.ConsultarTitulosAsync(idPadre, idTipo);
+        }
+        
+        public void EditarCategoria(int IdCategoria, string nombreNuevo) {
+            base.Channel.EditarCategoria(IdCategoria, nombreNuevo);
+        }
+        
+        public System.Threading.Tasks.Task EditarCategoriaAsync(int IdCategoria, string nombreNuevo) {
+            return base.Channel.EditarCategoriaAsync(IdCategoria, nombreNuevo);
         }
     }
     

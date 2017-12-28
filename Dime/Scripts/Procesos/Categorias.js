@@ -92,7 +92,12 @@ function cargarCategorias(data) {
 }
 
 function Editar(e) {
+    var idPadre = $('#IdPadre').val();
+    var tipo = $('#Tipo').val();
 
+    e.preventDefault();
+    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    window.location.href = '../Procesos/EditarCategorias?IdEditar=' + dataItem.IdCategoria + '&TipoEditar=' + dataItem.TipoMacroproceso + '&IdPadre=' + idPadre + '&Tipo=' + tipo;
 }
 
 function Eliminar(e) {

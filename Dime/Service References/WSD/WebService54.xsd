@@ -7338,6 +7338,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="EditarCategoria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdCategoria" type="xs:int" />
+        <xs:element minOccurs="0" name="nombreNuevo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditarCategoriaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RegistrarSolicitudRetencionAutomatico">
     <xs:complexType>
       <xs:sequence>

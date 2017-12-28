@@ -31,6 +31,12 @@ namespace Dime.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult EditarCategorias()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AdminArboles(Arbol model, string Envia)
@@ -172,7 +178,7 @@ namespace Dime.Controllers
             return jsonResult;
         }
 
-        public JsonResult ConsultarTipoCategorias(string IdCategoria, string Tipo)
+        public JsonResult ConsultarTipoCategorias(string IdCategoria, string Tipo,bool ConsultaTipoCategoria=true)
         {
             ViewModelCategoriasTipo categoriasTipo = new ViewModelCategoriasTipo();
             List<Macroprocesos> Categorias = new List<Macroprocesos>();
@@ -182,7 +188,7 @@ namespace Dime.Controllers
             int tipoConsultar = 0;
 
             Categorias = ProcesosService.ConsultarCategorias(CategoriaValor, valorTipo, false);
-            tipoConsultar = TiposCategorias(valorTipo, CategoriaValor);
+            tipoConsultar = ConsultaTipoCategoria==true ? TiposCategorias(valorTipo, CategoriaValor): valorTipo;
 
             tipo = ProcesosService.ConsultarTipoMacroproceso(tipoConsultar);
 
@@ -248,6 +254,16 @@ namespace Dime.Controllers
         {
             ProcesosService.EliminarCategoria(Convert.ToInt32(IdCategoria));
             var jsonResult = Json(JsonConvert.SerializeObject("Se elimino satisfactoriamente"), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
+        public JsonResult EditarCategoria(string IdCategoria, string nombreNuevo)
+        {
+            int idCategoria = Convert.ToInt32(IdCategoria);
+            ProcesosService.EditarCategoria(idCategoria, nombreNuevo);
+
+            var jsonResult = Json(JsonConvert.SerializeObject("modificacion exitosa"), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }

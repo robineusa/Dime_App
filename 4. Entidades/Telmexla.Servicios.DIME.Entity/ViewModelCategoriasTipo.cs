@@ -45,17 +45,6 @@ namespace Telmexla.Servicios.DIME.Entity
             }
         }
 
-        public List<Macroprocesos> ListaCategorias
-        {
-
-            get
-            {
-                return listaCategorias;
-            }
-            set
-            {
-                listaCategorias = value;
-            }
-        }
+       
     }
 }
