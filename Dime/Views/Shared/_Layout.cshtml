@@ -1391,7 +1391,9 @@
                             <div class="icono_carrete_4" id="Div4"></div>
                         </a>
                     </div>
-
+                    <a href="#fechas" onclick="" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                        <div id="Calculadora6" class="fa fa-calendar fa-3x"></div>
+                    </a>
                 </div>
                 <div class="tab-pane" id="control-sidebar-stats-tab">
 
@@ -1630,6 +1632,55 @@
                 </div>
             </div>
         </div>
+        <div id="fechas" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="color: #f8f8f8;">
+                            CALCULADORA FECHA SAP
+                            <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="">&times;</button>
+                        </h4>
+
+                    </div>
+                    <div class="modal-body">
+                        <br />
+
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="align-items: center;display: flex;justify-content: center;">
+
+                                <div id="fechasbody">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="width:150px; background-color:#686868;color: #f8f8f8;font-size: medium;font-weight: bold;">
+                                            <strong>FECHA INICIAL</strong>
+                                        </span>
+                                        <input type="text" id="fechaInicial" class="form-control" style="width:250px;" onblur="FechaSap()" />
+                                        <label id="idnodo" hidden></label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="width:150px;background-color: #686868;color: #f8f8f8;font-size: medium;font-weight: bold;">
+                                            <strong>DIAS LEGALES</strong>
+                                        </span>
+                                        <input type="text" id="diasHabiles" class="form-control" style="width:250px;" onblur="FechaSap()" />
+                                        <label id="idnodo" hidden></label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="width:150px;background-color: #686868;color: #f8f8f8;font-size: medium;font-weight: bold;">
+                                            <strong>FECHA SAP</strong>
+                                        </span>
+                                        <input type="text" id="fechasap" class="form-control" style="width:250px;" disabled />
+                                        <label id="idnodo" hidden></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
 
         @* NOTIFICACIONES SIGNALR *@
         <a id="lockScreenActivate" onclick="LockScreen(this)" style="display:none" value="LockScreenVal"></a>
@@ -1662,7 +1713,8 @@
     <script src="~/ControllersAlr/ConsultaGestionController.js?1.3.4"></script>
     <script src="~/ControllersAlr/DepuraCasosCellController.js?1.1.3"></script>
     <script src="~/ControllersAlr/AdminCasosController.js?1.1.6"></script>
-
+    <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.2"></script>
+    <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.2" rel="stylesheet" />
 
 
     <script>
@@ -1671,8 +1723,10 @@
         var urlDiferenciaTarifasView = '@Url.Action("DiferenciaTarifas", "Calculadoras")';
         var urlProrrateosView = '@Url.Action("Prorrateos", "Calculadoras")';
         var urlRentasView = '@Url.Action("Rentas", "Calculadoras")';
+        var urlConsultarDiasFestivos = '@Url.Action("ConsultarDiasFestivos", "Calculadoras")';
         var urlLockScreen = '@Url.Action("SLockScreen", "Account")';
         var urlVisualizadorImagenes = '@Url.Action("VerImagen", "OfertasComerciales")';
+
         $(function () {
             $('#ChatGeneral').draggable();
             $('#Drag').draggable();

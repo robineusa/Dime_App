@@ -15,6 +15,7 @@ namespace Dime.Controllers
 
         WSD.InboundServiceClient inboundService;
         WSD.ActivacionSiembraHDServiceClient siembraHdService;
+        WSD.DiasFestivosServiceClient diasFestivos;
 
         public CalculadorasController()
         {
@@ -22,6 +23,8 @@ namespace Dime.Controllers
             inboundService.ClientCredentials.Authenticate();
             siembraHdService = new WSD.ActivacionSiembraHDServiceClient();
             siembraHdService.ClientCredentials.Authenticate();
+            diasFestivos = new WSD.DiasFestivosServiceClient();
+            diasFestivos.ClientCredentials.Authenticate();
         }
 
         // GET: Calculadoras
@@ -42,14 +45,14 @@ namespace Dime.Controllers
 
         [HttpPost]
         public PartialViewResult DatosClientePorCuenta(string cuenta)
-        {  
+        {
             ClientesTodo model = new ClientesTodo();
             model = inboundService.TraerClienteCompletoPorCuenta(int.Parse(cuenta));
             return PartialView("DatosClientePorCuenta", model);
         }
 
 
-       
+
         [HttpGet]
         public ViewResult DiferenciaTarifas()
         {
@@ -58,7 +61,7 @@ namespace Dime.Controllers
         }
 
 
-       
+
         [HttpGet]
         public ViewResult Prorrateos()
         {
@@ -77,7 +80,7 @@ namespace Dime.Controllers
 
         public JsonResult DatosActualesCliente(string cuenta)
         {
-           
+
             var result = siembraHdService.RentaActualPorCuentaCalRentas(cuenta);
             return new JsonResult
             {
@@ -88,14 +91,26 @@ namespace Dime.Controllers
 
         public JsonResult DatosActualesTarifa(string estrato, string voz, string tv, string internet)
         {
-           
-            var result = siembraHdService.TarifaActualDeDatos(estrato,voz,tv,internet);
+
+            var result = siembraHdService.TarifaActualDeDatos(estrato, voz, tv, internet);
             return new JsonResult
             {
                 Data = JsonConvert.SerializeObject(result),
                 JsonRequestBehavior = JsonRequestBehavior.AllowGet
             };
         }
+        public JsonResult ConsultarDiasFestivos(string FechaInicio, string dias)
+        {
+            DateTime fechaInicio = Convert.ToDateTime(FechaInicio);
+            int Dias = !string.IsNullOrEmpty(dias) ? Convert.ToInt32(dias) : 0;
+            string CantDiasFestivos = string.Empty;
 
+            if (!string.IsNullOrEmpty(FechaInicio) && Dias > 0)
+                CantDiasFestivos = diasFestivos.ConsultarDiasFestivos(fechaInicio, Dias);
+
+            var jsonResult = Json(JsonConvert.SerializeObject(CantDiasFestivos), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
     }
 }

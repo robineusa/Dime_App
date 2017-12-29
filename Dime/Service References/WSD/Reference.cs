@@ -19695,4 +19695,51 @@ namespace Dime.WSD {
             return base.Channel.TraeCuentaMidasAsync(CuentaCliente);
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IDiasFestivosService")]
+    public interface IDiasFestivosService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDiasFestivosService/ConsultarDiasFestivos", ReplyAction="http://tempuri.org/IDiasFestivosService/ConsultarDiasFestivosResponse")]
+        string ConsultarDiasFestivos(System.DateTime FechaInicio, int Dias);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDiasFestivosService/ConsultarDiasFestivos", ReplyAction="http://tempuri.org/IDiasFestivosService/ConsultarDiasFestivosResponse")]
+        System.Threading.Tasks.Task<string> ConsultarDiasFestivosAsync(System.DateTime FechaInicio, int Dias);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IDiasFestivosServiceChannel : Dime.WSD.IDiasFestivosService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class DiasFestivosServiceClient : System.ServiceModel.ClientBase<Dime.WSD.IDiasFestivosService>, Dime.WSD.IDiasFestivosService {
+        
+        public DiasFestivosServiceClient() {
+        }
+        
+        public DiasFestivosServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public DiasFestivosServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public DiasFestivosServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public DiasFestivosServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public string ConsultarDiasFestivos(System.DateTime FechaInicio, int Dias) {
+            return base.Channel.ConsultarDiasFestivos(FechaInicio, Dias);
+        }
+        
+        public System.Threading.Tasks.Task<string> ConsultarDiasFestivosAsync(System.DateTime FechaInicio, int Dias) {
+            return base.Channel.ConsultarDiasFestivosAsync(FechaInicio, Dias);
+        }
+    }
 }
