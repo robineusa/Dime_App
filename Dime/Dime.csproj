@@ -2343,6 +2343,7 @@
     <Content Include="Scripts\BitacoraIncidentes\VisualizadordeIncidentes.js" />
     <Content Include="Scripts\BuenServicio\Visualizador_Imagenes.js" />
     <Content Include="Scripts\Calculadoras\Advanced.js" />
+    <Content Include="Scripts\Calculadoras\FechaSap.js" />
     <Content Include="Scripts\Calculadoras\Rentas.js" />
     <Content Include="Scripts\CierreDeCiclo\ConsultaGestiones.js" />
     <Content Include="Scripts\CierreDeCiclo\HistorialGestiones.js" />
@@ -3331,20 +3332,20 @@
     <Content Include="Scripts\Procesos\dist\font\summernote.eot" />
     <Content Include="Scripts\Procesos\dist\font\summernote.ttf" />
     <Content Include="Scripts\Procesos\dist\font\summernote.woff" />
-    <None Include="Service References\WSD\WebService.wsdl" />
-    <None Include="Service References\WSD\WebService.xsd">
+    <None Include="Service References\WSD\WebService1.wsdl" />
+    <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService1.xsd">
+    <None Include="Service References\WSD\WebService51.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService2.xsd">
+    <None Include="Service References\WSD\WebService52.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService3.xsd">
+    <None Include="Service References\WSD\WebService53.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService4.xsd">
+    <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\WSP\configuration91.svcinfo" />
@@ -3355,7 +3356,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService.disco" />
+    <None Include="Service References\WSD\WebService1.disco" />
     <Content Include="Service References\WSP\Dime.WSP.enviarEncuestaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -3744,6 +3745,7 @@
     <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalLiberaciones.cshtml" />
     <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalSuspensiones.cshtml" />
     <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalTickets.cshtml" />
+    <Content Include="Views\Calculadoras\FechaSap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

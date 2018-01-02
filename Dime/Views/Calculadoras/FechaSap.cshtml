@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fecha Sap</title>
+</head>
+<body>
+    
+    <div>
+        <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:gainsboro !important; border-color:#da0e08; color: black !important">
+            <div class="row">
+                <div class="col-xs-2" style="width:auto;color:black">
+                    <small>Por favor ingrese la información solicitada, para la fecha de radicación seleccione la fecha del calendario, y para los días hábiles ingrese la cantidad de días hábiles a calcular.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <small>Fecha de Radicación:</small>
+                    <input type="text" id="fechaInicial" class="form-control" placeholder="Seleccione la fecha de radicación" style="width:250px;"  />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <small>Días Hábiles:</small>
+                    <input type="text" id="diasHabiles" class="form-control" placeholder="Ingrese los días" autocomplete="off" style="width:250px;" onblur="FechaSap()" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <small>Fecha SAP:</small>
+                    <input type="text" id="fecharesul" class="form-control" style="width:250px;" disabled />
+                </td>
+            </tr>
+            
+        </table>
+        </div>
+        <hr />
+    <div id="InfoGuion" class="callout callout-danger" style="display:none; margin-bottom: 0 ; background-color:gainsboro !important; border-color:#da0e08; color: black !important">
+        <div class="row">
+            <div class="col-xs-2" style="width:auto;color:black">
+                <span class="info-box-number">Guión de Atención:</span>
+                <br />
+                <p id="Guion" style="font-size:13px;"> </p>
+                <p style="font-size:13px;">Podrá presentar recurso de reposición y en subsidio apelación dentro de los siguientes diez (10) días hábiles contados a partir de que tenga conocimiento de la decisión de TELEMEX verbalmente a través de la línea gratuita de atención al usuario, por escrito, web o Facebook SOLUCIONES CLARO. En caso que no esté conforme con la actuación de TELEMEX podrá presentar queja ante la SIC en Bogotá Tel 5920400, línea gratuita nacional 018000910165, contáctenos@sic.gov.co o en la página www.sic.gov.co. </p>
+            </div>
+        </div>
+    </div>
+       
+   
+
+    <script>
+         var urlConsultarDiasFestivos = '@Url.Action("ConsultarDiasFestivos", "Calculadoras")';
+    </script>
+    
+    <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
+    <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+    <script src="~/Scripts/Calculadoras/FechaSap.js?1.0.2"></script>
+
+</body>
+</html>
