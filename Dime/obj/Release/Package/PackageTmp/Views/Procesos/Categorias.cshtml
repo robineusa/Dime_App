@@ -1,0 +1,57 @@
+﻿@model Telmexla.Servicios.DIME.Entity.Macroprocesos
+@{
+    ViewBag.Title = "Categorias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="row">
+    <div class="col-md-12" style="overflow:auto;max-height: 50%;">
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h2 class="page-header" style="margin-top:40px" id="TituloTipo"></h2>
+               
+                <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                    <br />
+                    @Html.HiddenFor(m => m.IdCategoriaPadre, new { @Id = "IdPadre" })
+                    @Html.HiddenFor(m => m.TipoMacroproceso, new { @Id = "Tipo" })
+                    <label id="IdPadreAnterior" hidden ></label>
+                    <label id="IdTipoAnterior" hidden ></label>
+                   
+                    <h2 class="page-header" style="margin-top:25px"><i class="fa fa-list-alt"></i> Lista de Dependencias Actuales:</h2>
+                    <a href="#" onclick="CrearElemento()" id="CrearCateg" style="float:right;">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        <span class="glyphicon-class" style="font-size:medium;font-family:'Lucida Sans','Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
+                                  Geneva, Verdana, sans-serif">
+                            Nuevo Elemento
+                        </span>
+                    </a>
+                    <h4  style="margin-top:25px">
+                        <i class=""></i> <strong>Elemento Padre:</strong>
+                        <label id="TituloPadre"></label>
+
+                    </h4>
+                    
+                    <div id="TiposMacroproceso"></div>
+                    <br />
+                    <button onclick="ElementoAnterior()" class="btn btn-success">Elemento Anterior</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var urlListaATiposMacroproceso = '@Url.Action("ConsultarCategorias", "Procesos")';
+        var urlConsultarTitulos = '@Url.Action("ConsultarTitulos", "Procesos")';
+        var urlEliminarTiposMacroproceso = '@Url.Action("EliminarTiposMacroproceso", "Procesos")';
+        var urlEditarCategoria = '@Url.Action("EditarCategoria", "Procesos")';
+
+    </script>
+    <script src="~/Scripts/Procesos/Categorias.js?1.0.1"></script>
+
+}
+

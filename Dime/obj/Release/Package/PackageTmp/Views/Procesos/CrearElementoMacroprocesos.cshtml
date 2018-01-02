@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "Crear Categorias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12" style="overflow:auto;max-height: 50%;">
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h2 class="page-header" style="margin-top:40px">
+                    <i class="fa fa-fw fa-plus-square text-green"></i> Creacion de elemento
+                </h2>
+                <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                    <table>
+                        <tr>
+                            <td width="200" style="padding:1px;">
+                                <strong id="categoriaStrong" >Elemento Padre: </strong>
+                            </td>
+                            <td width="200" style="padding:1px;">
+                                <strong id="categoriaStrong" >Tipo elemento a crear: </strong>
+                            </td>
+                            <td width="200" style="padding:1px;">
+                                <strong id="categoriaStrong" >Descripcion: </strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:1px;">
+                                <input type="text"  id="NombrePadre" class="form-control" disabled  />
+                                <label id="IdPadre" hidden></label>
+                                <label id="IdTipoPadre" hidden></label>
+                            </td> 
+                            <td style="padding:1px;">
+                                <input type="text" id="NombreTipo" class="form-control" disabled />
+                                <label id="IdTipo" hidden></label>
+                            </td>
+                            <td style="padding:1px;">
+                                <input type="text" id="Descripcion" class="form-control" />
+                                <label id="Descripcion" hidden></label>
+                            </td>
+                        </tr>
+
+                    </table>
+                    <button onclick="CrearElemento()" class="btn btn-success">Crear Elemento</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var urlConsultarTipoCategorias = '@Url.Action("ConsultarTipoCategorias", "Procesos")';
+        var urlCrearTipoCategorias = '@Url.Action("CrearTipoCategorias", "Procesos")';
+    </script>
+    <script src="~/Scripts/Procesos/CrearCategoria.js?1.0.6"></script>
+
+}

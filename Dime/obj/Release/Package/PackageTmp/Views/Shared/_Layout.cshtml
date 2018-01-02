@@ -16,7 +16,7 @@
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.common.min.css" rel="stylesheet" />
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.min.css" rel="stylesheet" />
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.default.mobile.min.css" rel="stylesheet" />
-    
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <link rel="shortcut icon" href="~/favicon.ico">
     <script>
@@ -879,6 +879,96 @@
                         </li>
                     }
 
+                    @if (Session["Gestion Cierre de la Experiencia"] != null || Session["Admin Cierre de la Experiencia"] != null)
+                    {
+                        <li id="left-sidebar-menu-charts" class="treeview">
+                            <a href="#"><i class="fa fa-tasks text-aqua"></i><span>Cierre Experiencia</span><i class="fa fa-angle-left pull-right"></i></a>
+                            <ul class="treeview-menu">
+                                @if (Session["Admin Cierre de la Experiencia"] != null)
+                                {
+                                    <li>
+                                        <a href="#"><i class="fa fa-cog text-red" aria-hidden="true"></i>Administración<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="@Url.Action("ListaArboles", "CierreExperiencia")"><i class="fa fa-sitemap text-gray" aria-hidden="true"></i>Árboles</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-search text-yellow" aria-hidden="true"></i>Consultas Administrador<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="#"><i class="fa fa-database text-orange" aria-hidden="true"></i>Bases Principales<i class="fa fa-angle-left pull-right"></i></a>
+                                                <ul class="treeview-menu">
+                                                    <li>
+                                                        <a href="@Url.Action("ConsultaAdminPrincipalDesconexiones", "CierreExperiencia")"><i class="fa fa-user-times" aria-hidden="true"></i>Desconexiones</a>
+                                                        <a href="@Url.Action("ConsultaAdminPrincipalLiberaciones", "CierreExperiencia")"><i class="fa fa-share-square-o" aria-hidden="true"></i>Liberaciones</a>
+                                                        <a href="@Url.Action("ConsultaAdminPrincipalSuspensiones", "CierreExperiencia")"><i class="fa fa-scissors" aria-hidden="true"></i>Suspensiones</a>
+                                                        <a href="@Url.Action("ConsultaAdminPrincipalTickets", "CierreExperiencia")"><i class="fa fa-sticky-note" aria-hidden="true"></i>Tickets</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#"><i class="fa fa-database text-orange" aria-hidden="true"></i>Bases Log<i class="fa fa-angle-left pull-right"></i></a>
+                                                <ul class="treeview-menu">
+                                                    <li>
+                                                        <a href="@Url.Action("ConsultaAdminLogDesconexiones", "CierreExperiencia")"><i class="fa fa-user-times" aria-hidden="true"></i>Desconexiones</a>
+                                                        <a href="@Url.Action("ConsultaAdminLogLiberaciones", "CierreExperiencia")"><i class="fa fa-share-square-o" aria-hidden="true"></i>Liberaciones</a>
+                                                        <a href="@Url.Action("ConsultaAdminLogSuspensiones", "CierreExperiencia")"><i class="fa fa-scissors" aria-hidden="true"></i>Suspensiones</a>
+                                                        <a href="@Url.Action("ConsultaAdminLogTickets", "CierreExperiencia")"><i class="fa fa-sticky-note" aria-hidden="true"></i>Tickets</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                }
+
+                                @if (Session["Admin Cierre de la Experiencia"] != null)
+                                {
+                                    <li>
+                                        <a href="#"><i class="fa fa-user-times text-green" aria-hidden="true"></i>Desconexiones<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="@Url.Action("Desconexiones", "CierreExperiencia")"><i class="fa fa-database text-gray" aria-hidden="true"></i>Gestión de Base</a>
+                                                <a href="@Url.Action("DesconexionesIn", "CierreExperiencia")"><i class="fa fa-pencil-square text-gray" aria-hidden="true"></i>Gestión de Ingreso</a>
+                                                <a href="@Url.Action("ConsultaGestionUsuario", "CierreExperiencia")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-share-square-o text-aqua" aria-hidden="true"></i>Liberaciones<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="@Url.Action("LiberacionesDeHomePass", "CierreExperiencia")"><i class="fa fa-pencil-square text-gray" aria-hidden="true"></i>Gestión de Ingreso</a>
+                                                <a href="@Url.Action("ConsultaGestionLiberaciones", "CierreExperiencia")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-scissors text-orange" aria-hidden="true"></i>Suspensiones<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="@Url.Action("SuspensionesTemporales", "CierreExperiencia")"><i class="fa fa-database text-gray" aria-hidden="true"></i>Gestión de Base</a>
+                                                <a href="@Url.Action("SuspensionesTemporalesIn", "CierreExperiencia")"><i class="fa fa-pencil-square text-gray" aria-hidden="true"></i>Gestión de Ingreso</a>
+                                                <a href="@Url.Action("ConsultaGestionSuspensiones", "CierreExperiencia")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-sticky-note text-yellow" aria-hidden="true"></i>Tickets<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li>
+                                                <a href="@Url.Action("Tickets", "CierreExperiencia")"><i class="fa fa-pencil-square text-gray" aria-hidden="true"></i>Gestión de Ingreso</a>
+                                                <a href="@Url.Action("ConsultaGestionTickets", "CierreExperiencia")"><i class="fa fa-search" aria-hidden="true"></i>Consulta de Gestión</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                }
+
+                            </ul>
+                        </li>
+                    }
+
                     @if (Session["Procesos Check"] != null)
                     {
                         <li id="left-sidebar-menu-multilevel" class="treeview">
@@ -1301,7 +1391,9 @@
                             <div class="icono_carrete_4" id="Div4"></div>
                         </a>
                     </div>
-
+                    <a href="#fechas" onclick="" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                        <div id="Calculadora6" class="fa fa-calendar fa-3x"></div>
+                    </a>
                 </div>
                 <div class="tab-pane" id="control-sidebar-stats-tab">
 
@@ -1339,14 +1431,14 @@
             <div class="modal-content" style="width:1000px;background-color:transparent;">
                 <div class="modal-header" style="width:1000px;background-color:transparent;border-color:transparent;">
                     <button type="button" class="close" style="color:white;" data-dismiss="modal">&times;</button>
-                    
+
                 </div>
                 <div class="modal-body" style="width:1000px;">
                     <br />
                     <div class="row">
                         <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
                             @*<iframe id="ismo" style="width:100%;height:5000px;margin-left:-10px;margin-top:-30px;" src="@Url.Action("VerImagen", "OfertasComerciales")" frameborder="0" allowFullScreen="true"></iframe>
-                            @Html.Action("VerImagen", "OfertasComerciales");*@
+                                @Html.Action("VerImagen", "OfertasComerciales");*@
                             <div id="Viewimagenes">
 
                             </div>
@@ -1540,12 +1632,61 @@
                 </div>
             </div>
         </div>
+        <div id="fechas" class="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="color: #f8f8f8;">
+                            CALCULADORA FECHA SAP
+                            <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="">&times;</button>
+                        </h4>
+
+                    </div>
+                    <div class="modal-body">
+                        <br />
+
+                        <div class="row">
+                            <div class="col-lg-offset-1" style="align-items: center;display: flex;justify-content: center;">
+
+                                <div id="fechasbody">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="width:150px; background-color:#686868;color: #f8f8f8;font-size: medium;font-weight: bold;">
+                                            <strong>FECHA INICIAL</strong>
+                                        </span>
+                                        <input type="text" id="fechaInicial" class="form-control" style="width:250px;" onblur="FechaSap()" />
+                                        <label id="idnodo" hidden></label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="width:150px;background-color: #686868;color: #f8f8f8;font-size: medium;font-weight: bold;">
+                                            <strong>DIAS LEGALES</strong>
+                                        </span>
+                                        <input type="text" id="diasHabiles" class="form-control" style="width:250px;" onblur="FechaSap()" />
+                                        <label id="idnodo" hidden></label>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon" style="width:150px;background-color: #686868;color: #f8f8f8;font-size: medium;font-weight: bold;">
+                                            <strong>FECHA SAP</strong>
+                                        </span>
+                                        <input type="text" id="fechasap" class="form-control" style="width:250px;" disabled />
+                                        <label id="idnodo" hidden></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
 
         @* NOTIFICACIONES SIGNALR *@
         <a id="lockScreenActivate" onclick="LockScreen(this)" style="display:none" value="LockScreenVal"></a>
         <div id="lockScreenDiv"></div>
         <button type="button" id="NotificaOfertaComercialCliente" style="display:none;"></button>
-        <input id="IdOfertaComercial" type="text" style="display:none;"/>
+        <input id="IdOfertaComercial" type="text" style="display:none;" />
         <audio id="audioNotificacion" src="~/AdminLTE/bootstrap/sounds/Notificacion.aac" preload="auto" style="display: none"></audio>
         <input type="text" id="IdMsj" style="display:none;" />
         <button id="BListNotify" style="display:none"></button>
@@ -1572,7 +1713,8 @@
     <script src="~/ControllersAlr/ConsultaGestionController.js?1.3.4"></script>
     <script src="~/ControllersAlr/DepuraCasosCellController.js?1.1.3"></script>
     <script src="~/ControllersAlr/AdminCasosController.js?1.1.6"></script>
-
+    <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.2"></script>
+    <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.2" rel="stylesheet" />
 
 
     <script>
@@ -1581,8 +1723,10 @@
         var urlDiferenciaTarifasView = '@Url.Action("DiferenciaTarifas", "Calculadoras")';
         var urlProrrateosView = '@Url.Action("Prorrateos", "Calculadoras")';
         var urlRentasView = '@Url.Action("Rentas", "Calculadoras")';
+        var urlConsultarDiasFestivos = '@Url.Action("ConsultarDiasFestivos", "Calculadoras")';
         var urlLockScreen = '@Url.Action("SLockScreen", "Account")';
         var urlVisualizadorImagenes = '@Url.Action("VerImagen", "OfertasComerciales")';
+
         $(function () {
             $('#ChatGeneral').draggable();
             $('#Drag').draggable();

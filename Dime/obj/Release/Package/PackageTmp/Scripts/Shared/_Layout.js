@@ -3,23 +3,31 @@ var lockScreenShow = false;
 var closingPage = false;
 var mouseMovedTimeAgo = false;
 var lockScreenTrigger = setTimeout(function () {
-}, (20000*3*20));
+}, (20000 * 3 * 20));
 
 
 $(document).ready(function () {
     ResetearDivs();
+    FormatoFechas();
     if (closingPage == false) {
         ResetearTiempoLockScreen();
     }
+   
 });
 
 
 window.onbeforeunload = function (e) {
     KillTimeLockScreen();
 };
+function FormatoFechas() {
+    $('#fechaInicial').datetimepicker({
+        format: 'd/m/Y',
+        timepicker: false,
+        currentText: "Now"
+    });
 
-function KillTimeLockScreen()
-{
+}
+function KillTimeLockScreen() {
     closingPage = true;
     clearTimeout(lockScreenTrigger);
     lockScreenTrigger = setTimeout(function () {
@@ -509,6 +517,30 @@ function ResetearDivs() {
 
     }
 })(jQuery, $.AdminLTE);
+
+function FechaSap() {
+    var fechaInicial = $("#fechaInicial").val();
+    var Dias = $("#diasHabiles").val();
+    
+    $.ajax({
+        type: "POST",
+        url: urlConsultarDiasFestivos,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ FechaInicio: fechaInicial, dias: Dias }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            console.log(json);
+            $("#fechasap").val(json);
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+
+    });
+}
+
+
 
 //window.onbeforeunload = preguntarAntesDeSalir;
 //function preguntarAntesDeSalir() {

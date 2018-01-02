@@ -419,6 +419,7 @@ function cargargrilla(data) {
             buttonCount: 5
         },
         columns: [
+        { command: { text: " Editar", click: ActualizarCasoSeg, imageClass: "fa fa-fw fa-pencil-square-o", }, title: "Editar", width: "100px" },
         { field: "IdTransaccion", title: "Id Transacción", width: 100 },
         { field: "IdGestion", title: "Id Gestion", width: 100 },
         { field: "FechaDeTransaccion", title: "Fecha De Transaccion", width: 100 },

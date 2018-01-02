@@ -4,151 +4,216 @@
     ViewBag.Subtitle = "Procesos - Cierre de la Experiencia";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="row">
+@using (Html.BeginForm("LiberacionesDeHomePass", "CierreExperiencia", FormMethod.Post, new { id = "liberacionesdehomepass", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li id="Li1" class="active" style="background-color: #dcdcdc;"><a href="#Datos_Basicos" style="background-color: transparent;" data-toggle="tab">Formulario de Gestión</a></li>
+            <li id="Li4"><a style="background-color: transparent;" href="#Historial" data-toggle="tab">Mi Historial</a></li>
+            <li id="Li5"><a style="background-color: transparent;" href="#Seguimientos" data-toggle="tab">Mis Seguimientos</a></li>
 
-    <div class="col-md-9" style="width:100%; ">
-        <div class="box box-danger">
+        </ul>
+        <div class="tab-content" style="padding-left:0; padding-top: 0">
+            <div class="active tab-pane" id="Datos_Basicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                <br />
+                <table>
+                    <tr>
+                        <td width="200" style="padding:1px;">
+                            <small>Cuenta del Cliente:  </small>
+                            @Html.TextBoxFor(m => m.CEPLiberaciones.CuentaCliente, new { @class = "form-control input-sm", @Id = "CuentaCliente", @placeholder = "Ingrese la cuenta" })
+                            @Html.HiddenFor(m => m.CEPLiberaciones.IdGestion)
+                        </td>
+                        <td width="200" style="padding:1px;">
+                            <small>Registro del Módulo:  </small>
+                            @Html.TextBoxFor(m => m.CEPLiberaciones.RegistroModulo, new { @class = "form-control input-sm", @Id = "RegistroModulo", @placeholder = "Ingrese información" })
+                        </td>
+                        <td width="200" style="padding:1px;">
+                            <small>Canal de Ingreso:</small>
+                            @Html.HiddenFor(m => m.CEPLiberaciones.CanalDeIngreso, new { @class = "form-control input-sm", @Id = "CanalDeIngreso1" })
+                            @Html.DropDownListFor(m => m.CEPLiberaciones.CanalDeIngreso, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "CanalDeIngreso", @class = "form-control input-sm" })
+                        </td>
+                        <td width="200" style="padding:1px;">
+                            <small>Usuario que Escala:  </small>
+                            @Html.TextBoxFor(m => m.CEPLiberaciones.UsarioEscala, new { @class = "form-control input-sm", @Id = "UsarioEscala", placeholder = "Ingrese el usuario" })
 
-            <div class="tab-content" style="padding-left:0; padding-top: 0">
-                <div class="active tab-pane" id="Datos_Usuario" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                        </td>
+                        <td style="padding-left:1px; width:200px;">
+                            <small>Servicios Desconectados:</small>
+                            @Html.DropDownListFor(m => m.CEPLiberaciones.NumeroServicios, new List<SelectListItem> {new SelectListItem{Text="0", Value="0" },
+                                                                                             new SelectListItem{Text="1", Value="1" },
+                                                                                             new SelectListItem{Text="2", Value="2" },
+                                                                                             new SelectListItem{Text="3", Value="3" }},
+                                                                                                              "--SELECCIONE--", new { @class = "form-control input-sm" })
 
-                        <small><strong>Cuenta:</strong></small>
-                        <input type="text" class="form-control" style="width:200px;"/>
+                        </td>
+                        <td width="200" style="padding:1px;">
+                            <small>Fecha de Solicitud:  </small>
+                            @Html.TextBoxFor(m => m.CEPLiberaciones.FechaSolicitud, new { @class = "form-control input-sm", @Id = "FechaSolicitud", placeholder = "Seleccione la Fecha" })
+                        </td>
+                        
+                    </tr>
+                    <tr>
+                        <td style="padding-left:1px; width:200px;">
+                            <small>Solicitud Módulo:</small>
+                            @Html.DropDownListFor(m => m.CEPLiberaciones.SolicitudModulo, new List<SelectListItem> {new SelectListItem{Text="NO", Value="NO" },
+                                                                                             new SelectListItem{Text="SI", Value="SI" }},
+                                                                                                              "--SELECCIONE--", new { @class = "form-control input-sm" })
+
+                        </td>
+                        <td width="200" style="padding:1px;">
+                            <small>Motivo de Desconexión:</small>
+                            @Html.HiddenFor(m => m.CEPLiberaciones.MotivoDesconexion, new { @class = "form-control input-sm", @Id = "MotivoDesconexion1" })
+                            @Html.DropDownListFor(m => m.CEPLiberaciones.MotivoDesconexion, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "MotivoDesconexion", @class = "form-control input-sm" })
+                        </td>
+                        <td width="200" style="padding:1px;">
+                            <small>Vendedor:  </small>
+                            @Html.TextBoxFor(m => m.CEPLiberaciones.Vendedor, new { @class = "form-control input-sm", @Id = "Vendedor", placeholder = "Ingrese el vendedor" })
+
+                        </td>
+                        <td width="200" style="padding:1px;">
+                            <small>Grupo:</small>
+                            @Html.HiddenFor(m => m.CEPLiberaciones.Grupo, new { @class = "form-control input-sm", @Id = "Grupo1" })
+                            @Html.DropDownListFor(m => m.CEPLiberaciones.Grupo, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Grupo", @class = "form-control input-sm" })
+                        </td>
+                        <td width="200" style="padding:1px;">
+                            <small>Motivo de Liberación:</small>
+                            @Html.HiddenFor(m => m.CEPLiberaciones.MotivoLiberacion, new { @class = "form-control input-sm", @Id = "MotivoLiberacion1" })
+                            @Html.DropDownListFor(m => m.CEPLiberaciones.MotivoLiberacion, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "MotivoLiberacion", @class = "form-control input-sm" })
+                        </td>
+                        <td width="200" style="padding:1px;">
+                            <small>Usuario que Liberó:</small>
+                            @Html.TextBoxFor(m => m.CEPLiberaciones.UsuarioQueLibero, new { @class = "form-control input-sm", @Id = "UsuarioQueLibero", placeholder = "Ingrese el usuario" })
+
+                        </td>
+                    </tr>
+
+                </table>
+
+
+            </div>
+            <div class="tab-pane" id="Historial" style="background-color:#dcdcdc; padding-left:10px; padding-right:10px; padding-top:10px; padding-bottom:10px;">
+
+                <div id="historicoGrid"></div>
+            </div>
+            <div class="tab-pane" id="Seguimientos" style="background-color:#dcdcdc; padding-left:10px; padding-right:10px; padding-top:10px; padding-bottom:10px;">
+                <div id="seguimientosGrid"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="box box-primary" style="padding-left:5px;">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-xs-12">
 
                 </div>
             </div>
         </div>
+        <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
+            <i class="fa fa-tasks"></i> Gestión Back Liberaciones
+        </h2>
+        <div id="ARBOL" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+            <br />
+            <table>
+                <tr>
+                    <td style="padding-left:1px; width:350px;">
+                        <smmall>Gestión:</smmall>
+                        @Html.HiddenFor(m => m.CEPLiberaciones.Gestion, new { @class = "form-control input-sm", @Id = "SelectGestion1" })
+                        @Html.DropDownListFor(m => m.CEPLiberaciones.Gestion, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "SelectGestion", @class = "form-control input-sm" })
+
+                    </td>
+                    <td style="padding-left:1px; width:350px;">
+                        <small>Subrazón:</small>
+                        @Html.HiddenFor(m => m.CEPLiberaciones.Subrazon, new { @class = "form-control input-sm", @Id = "Subrazon1" })
+                        @Html.DropDownListFor(m => m.CEPLiberaciones.Subrazon, new List<SelectListItem> { }, "--SELECCIONE--", new { Id = "Subrazon", @class = "form-control input-sm" })
+
+                    </td>
+                    <td style="padding-left:1px; width:200px;">
+                        <small>Estado</small>
+                        @Html.TextBoxFor(m => m.CEPLiberaciones.Estado, new { @class = "form-control input-sm", @readonly = "true", Id = "Estado" })
+
+                    </td>
+
+                </tr>
+            </table>
+
+        </div>
+        <br />
     </div>
-</div>
 
-<br />
+    <div class="box box-primary" id="TituloSeguimiento" style="display:none; padding-left:5px;">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-xs-12">
 
-<div class="row">
-
-    <div class="col-md-9" style="width:100%; ">
-        <div class="box box-danger">
-
-            <div class="tab-content" style="padding-left:0; padding-top: 0">
-                <div class="active tab-pane" id="Datos_Usuario" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
-
-
-                    <table>
-                        <tr>
-                            <td width="200" style="padding:1px;">
-                                <small><strong> Canal de ingreso:</strong></small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small><strong>Usuario que escala:</strong></small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small><strong>Numero de servicios:</strong></small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small><strong>Fecha de solicitud:</strong></small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small><strong>Solicitud Modulo:</strong></small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small><strong>Motivo de desconexion:</strong></small>
-                            </td>
-                            @**@
-
-                        </tr>
-                        <tr>
-                            <td style="padding:1px;">
-                                @Html.DropDownList("cuentaingreso", new List<SelectListItem> {new SelectListItem{Text="Base", Value="Base" },
-                                                                                               new SelectListItem{Text="Correo", Value="Correo" }}, new { @class = "form-control" })
-                            </td>
-                            <td style="padding:1px;">
-                                <input type="text" class="form-control" />
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.DropDownList("NumeroServicio", new List<SelectListItem> {new SelectListItem{Text="1", Value="1" },
-                                                                                                new SelectListItem{Text="2", Value="2" }}, new { @class = "form-control" })
-                            </td>
-                            <td style="padding:1px;">
-                                <input type="text" class="form-control" id="FechaSolicitud" placeholder="Fecha de solicitud" />
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.DropDownList("SolicitudModulo", new List<SelectListItem> {new SelectListItem{Text="Si", Value="1" },
-                                                                                                 new SelectListItem{Text="No", Value="2" }}, new { @class = "form-control" })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.DropDownList("MotivoDesconexion", new List<SelectListItem> {new SelectListItem{Text="D1", Value="1" },
-                                                                                                 new SelectListItem{Text="D2", Value="2" }}, new { @class = "form-control" })
-                            </td>
-                            @**@
-                        </tr>
-                        <tr>
-                            <td width="200" style="padding:1px;">
-                                <small><strong>Grupo:</strong></small>
-                            </td>
-                            <td colspan="2" width="200" style="padding:1px; text-align:center;">
-                                <small><strong>Gestion:</strong></small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small><strong>Motivo de Liberacion:</strong></small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small><strong>Usuario que libero:</strong></small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small><strong>Observaciones:</strong></small>
-                            </td>
-                            @**@
-                        </tr>
-                        <tr>
-                            <td style="padding:1px;">
-                                @Html.DropDownList("Grupo", new List<SelectListItem> {new SelectListItem{Text="Call Center", Value="1" },
-                                                                                                 new SelectListItem{Text="Directos", Value="2" }}, new { @class = "form-control" })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.DropDownList("Grupo1", new List<SelectListItem> {new SelectListItem{Text="Home Pass Liberado", Value="1" },
-                                                                                                         new SelectListItem{Text="Home Pass No Liberado", Value="2" }}, new { @class = "form-control" })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.DropDownList("Grupo2", new List<SelectListItem> {new SelectListItem{Text="Se genera deconexion por sistema", Value="1" },
-                                                                                                         new SelectListItem{Text="No Cumple preaviso", Value="2" }}, new { @class = "form-control" })
-                            </td>
-                            <td style="padding:1px;">
-                                @Html.DropDownList("MotivoLiberacion", new List<SelectListItem> {new SelectListItem{Text="Traslado", Value="1" },
-                                                                                                     new SelectListItem{Text="Venta nueva", Value="2" }}, new { @class = "form-control" })
-                            </td>
-                            <td>
-                                <input type="text" class="form-control" />
-                            </td>
-                            <td style="padding:1px;">
-                                <input type="text" class="form-control" />
-                            </td>
-                            @**@
-                        </tr>
-                        <tr>
-                            <td width="200" style="padding:1px;">
-                                <small><strong>Vendedor:</strong></small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small><strong>Fecha de Seguimiento:</strong></small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:1px;">
-                                <input type="text" class="form-control" />
-                            </td>
-                            <td>
-                                <input type="text" class="form-control" id="FechaSeguimiento" placeholder="Fecha de Seguimiento" />
-                            </td>
-                        </tr>
-
-
-                    </table>
                 </div>
             </div>
         </div>
+        <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
+            <i class="fa fa-eye"></i> Seguimientos
+
+        </h2>
+        <div id="CuerpoSeguimineto" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+            <table id="Calendario_Seguimiento" style="display:block; margin-bottom: 0px;">
+                <tr>
+                    <td style="padding:1px;">
+                        <small>Seleccione Fecha y Hora del Seguimiento: </small>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:1px;">
+                        @Html.TextBoxFor(m => m.CEPLiberaciones.FechaSeguimiento, new { @class = "form-control input-sm", id = "FechaSeguimiento", placeholder = "Seleccione Fecha" })
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br />
     </div>
-</div>
-@section scripts{
-    <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js?1.0.2"></script>
-    <link href="~/Styles/Elements/jquery.datetimepicker.css?1.0.2" rel="stylesheet" />
-    <script src="~/Scripts/LiberacionesHomePass/LiberacionesHomePass.js?1.0.1"></script>
+
+    <div class="box box-primary" style="padding-left:5px;">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-xs-12">
+
+                </div>
+            </div>
+        </div>
+        <h2 class="page-header" style="margin-top: 0px; margin-left:1px;">
+            <i class="fa fa-comment"></i> Observaciones
+
+        </h2>
+        <div id="CuerpoSeguimineto" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; padding-right:10px;">
+            <br />
+            <table width="100%">
+                <tr>
+                    <td style="padding:1px;">
+                        @Html.TextAreaFor(m => m.CEPLiberaciones.Observaciones, new { @class = "form-control input-sm", placeholder = "", style = "width:100%; height:70px;text-transform:uppercase;", @onkeyup = "javascript:this.value=this.value.toUpperCase();" })
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <br />
+        <button id="guardardesconexion" type="submit" class="btn btn-primary" name="guardar" value="true" style="width:10%; height:40px;">Guardar</button>
+        <br />
+        <br />
+    </div>
+}
+@section Scripts{
+
+    <script>
+        var UrlListaDeGestionLiberaciones = '@Url.Action("ListaDeGestionAgenteLiberaciones", "CierreExperiencia")';
+        var UrlListaDeSeguimientosLiberaciones = '@Url.Action("ListaDeSeguimientosAgenteLiberaciones", "CierreExperiencia")';
+        var UrlArbolDeGestion = '@Url.Action("ArbolesDeTipificacionDesconexion", "CierreExperiencia")';
+        var UrlDatosArbol = '@Url.Action("TraerDatosDelArbol", "CierreExperiencia")';
+        var UrlGestionDeClienteLiberaciones = '@Url.Action("ValidarGestionDeClienteEnLiberaciones", "CierreExperiencia")';
+        
+    </script>
+    <script src="~/Scripts/CierreExperiencia/LiberacionesDeHomePass.js?1.0.8"></script>
+    <script src="~/Scripts/Gestion_Blending/jquery.datetimepicker.full.js"></script>
+    <link href="~/Styles/Elements/jquery.datetimepicker.css" rel="stylesheet" />
+    <link href="~/AdminLTE/plugins/icheck/css/all.css" rel="stylesheet" />
+
 }
