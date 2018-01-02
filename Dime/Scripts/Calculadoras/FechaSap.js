@@ -12,6 +12,7 @@ function FormatoFechas() {
 
 }
 function FechaSap() {
+    $("#Guion").html('');
     var fechaInicial = $("#fechaInicial").val();
     var Dias = $("#diasHabiles").val();
         $.ajax({
