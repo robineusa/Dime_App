@@ -101,17 +101,15 @@ namespace Dime.Controllers
             };
         }
         public JsonResult ConsultarDiasFestivos(string FechaInicio, string dias)
-        {
-            DateTime fechaInicio = Convert.ToDateTime(FechaInicio);
-            DateTime FechaFinal = DateTime.Now;
+        {   
+            var result = "";
             int Dias = !string.IsNullOrEmpty(dias) ? Convert.ToInt32(dias) : 0;
-            string CantDiasFestivos = string.Empty;
             
             if (!string.IsNullOrEmpty(FechaInicio) && Dias > 0)
-            FechaFinal = Convert.ToDateTime(diasFestivos.ConsultarDiasFestivos(fechaInicio, Dias));
-            
-            var nombremes = MonthName(FechaFinal.Month);
-            var FechaSap = FechaFinal.Day + " de " + nombremes + " de " + FechaFinal.Year;
+            result = diasFestivos.ConsultarDiasFestivos(FechaInicio, Dias);
+            string[] objeto = result.Split('-');
+            var nombremes = MonthName(Convert.ToInt32(objeto[1]));
+            var FechaSap = objeto[2] + " de " + nombremes + " de " + objeto[0];
             var jsonResult = Json(JsonConvert.SerializeObject(FechaSap), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;

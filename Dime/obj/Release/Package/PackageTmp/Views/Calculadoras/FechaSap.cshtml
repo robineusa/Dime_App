@@ -14,7 +14,7 @@
         <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:gainsboro !important; border-color:#da0e08; color: black !important">
             <div class="row">
                 <div class="col-xs-2" style="width:auto;color:black">
-                    <small>Por favor ingrese la información solicitada, para la fecha de radicación seleccione la fecha del calendario, y para los días hábiles ingrese la cantidad de días hábiles a calcular.</small>
+                    <small>Por favor seleccione la fecha de radicación del calendario.</small>
                 </div>
             </div>
         </div>
@@ -24,14 +24,14 @@
             <tr>
                 <td>
                     <small>Fecha de Radicación:</small>
-                    <input type="text" id="fechaInicial" class="form-control" placeholder="Seleccione la fecha de radicación" style="width:250px;"  />
+                    <input type="text" id="fechaInicial" class="form-control" placeholder="Seleccione la fecha de radicación" style="width:250px;" onblur="FechaSap()" />
                 </td>
             </tr>
             <tr>
-                <td>
+                @*<td>
                     <small>Días Hábiles:</small>
                     <input type="text" id="diasHabiles" class="form-control" placeholder="Ingrese los días" autocomplete="off" style="width:250px;" onblur="FechaSap()" />
-                </td>
+                </td>*@
             </tr>
             <tr>
                 <td>
@@ -62,7 +62,7 @@
     
     <script src="~/AdminLTE/documentation/js/jquery.datetimepicker.full.js"></script>
     <link href="~/AdminLTE/documentation/css/jquery.datetimepicker.css" rel="stylesheet" />
-    <script src="~/Scripts/Calculadoras/FechaSap.js?1.0.3"></script>
+    <script src="~/Scripts/Calculadoras/FechaSap.js?1.0.8"></script>
 
 </body>
 </html>

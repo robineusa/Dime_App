@@ -6,14 +6,15 @@
 function FormatoFechas() {
     $('#fechaInicial').datetimepicker({
         format: 'd/m/Y',
-        timepicker: false,
-        currentText: "Now"
+        timepicker: false
+        
     });
 
 }
 function FechaSap() {
+    $("#Guion").empty();
     var fechaInicial = $("#fechaInicial").val();
-    var Dias = $("#diasHabiles").val();
+    var Dias = '15';
         $.ajax({
             type: "POST",
             url: urlConsultarDiasFestivos,
@@ -33,12 +34,4 @@ function FechaSap() {
 
         });
     
-}
-
-
-// @param string (string) : Fecha en formato YYYY-MM-DD
-// @return (string)       : Fecha en formato DD/MM/YYYY
-function convertDateFormat(string) {
-    var info = string.split('-');
-    return info[0] + '/' + info[1] + '/' + info[2];
 }
