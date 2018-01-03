@@ -19701,10 +19701,10 @@ namespace Dime.WSD {
     public interface IDiasFestivosService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDiasFestivosService/ConsultarDiasFestivos", ReplyAction="http://tempuri.org/IDiasFestivosService/ConsultarDiasFestivosResponse")]
-        string ConsultarDiasFestivos(System.DateTime FechaInicio, int Dias);
+        string ConsultarDiasFestivos(string FechaInicio, int Dias);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDiasFestivosService/ConsultarDiasFestivos", ReplyAction="http://tempuri.org/IDiasFestivosService/ConsultarDiasFestivosResponse")]
-        System.Threading.Tasks.Task<string> ConsultarDiasFestivosAsync(System.DateTime FechaInicio, int Dias);
+        System.Threading.Tasks.Task<string> ConsultarDiasFestivosAsync(string FechaInicio, int Dias);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19734,11 +19734,11 @@ namespace Dime.WSD {
                 base(binding, remoteAddress) {
         }
         
-        public string ConsultarDiasFestivos(System.DateTime FechaInicio, int Dias) {
+        public string ConsultarDiasFestivos(string FechaInicio, int Dias) {
             return base.Channel.ConsultarDiasFestivos(FechaInicio, Dias);
         }
         
-        public System.Threading.Tasks.Task<string> ConsultarDiasFestivosAsync(System.DateTime FechaInicio, int Dias) {
+        public System.Threading.Tasks.Task<string> ConsultarDiasFestivosAsync(string FechaInicio, int Dias) {
             return base.Channel.ConsultarDiasFestivosAsync(FechaInicio, Dias);
         }
     }

@@ -10,7 +10,7 @@
     @Styles.Render("~/AdminLTEdist/css")
     @Styles.Render("~/AdminLTEdist/css/skins")
     @Styles.Render("~/AdminLTEbootstrap/js/jquery-confirm/css")
-    <link href="~/Styles/Elements/Dime2.css?1.1.6" rel="stylesheet" />
+    <link href="~/Styles/Elements/Dime2.css?1.1.7" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
     <link href="~/AdminLTE/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/AdminLTE/Kendo2016.3.11/css/kendo.common.min.css" rel="stylesheet" />
@@ -1391,8 +1391,8 @@
                             <div class="icono_carrete_4" id="Div4"></div>
                         </a>
                     </div>
-                    <a href="#fechas" onclick="" data-toggle="modal" data-backdrop="static" data-keyboard="false">
-                        <div id="Calculadora6" class="fa fa-calendar fa-3x"></div>
+                    <a href="#fechasap"  onclick="return LlamarCalculosRentas()" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+                        <div id="Calculadora6" class="icono_carrete_10"></div>
                     </a>
                 </div>
                 <div class="tab-pane" id="control-sidebar-stats-tab">
@@ -1449,13 +1449,13 @@
         </div>
     </div>
     <!--paneles calculadoras-->
-    <div>
+   
         <div id="campanas" class="modal">
             <div class="modal-dialog" style="width:1000px;">
                 <div class="modal-content" style="width:1000px;">
                     <div class="modal-header" style="width:1000px;">
                         <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
-
+                        <h2 class="modal-title"><i class="fa fa-calculator" style="color:#a41e34;" aria-hidden="true"></i>  Calculadora de Ajustes por Campañas</h2>
                     </div>
                     <div class="modal-body" style="width:1000px;">
                         <br />
@@ -1632,54 +1632,27 @@
                 </div>
             </div>
         </div>
-        <div id="fechas" class="modal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" style="color: #f8f8f8;">
-                            CALCULADORA FECHA SAP
-                            <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="">&times;</button>
-                        </h4>
 
-                    </div>
-                    <div class="modal-body">
-                        <br />
-
-                        <div class="row">
-                            <div class="col-lg-offset-1" style="align-items: center;display: flex;justify-content: center;">
-
-                                <div id="fechasbody">
-                                    <div class="input-group">
-                                        <span class="input-group-addon" style="width:150px; background-color:#686868;color: #f8f8f8;font-size: medium;font-weight: bold;">
-                                            <strong>FECHA INICIAL</strong>
-                                        </span>
-                                        <input type="text" id="fechaInicial" class="form-control" style="width:250px;" onblur="FechaSap()" />
-                                        <label id="idnodo" hidden></label>
-                                    </div>
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon" style="width:150px;background-color: #686868;color: #f8f8f8;font-size: medium;font-weight: bold;">
-                                            <strong>DIAS LEGALES</strong>
-                                        </span>
-                                        <input type="text" id="diasHabiles" class="form-control" style="width:250px;" onblur="FechaSap()" />
-                                        <label id="idnodo" hidden></label>
-                                    </div>
-
-                                    <div class="input-group">
-                                        <span class="input-group-addon" style="width:150px;background-color: #686868;color: #f8f8f8;font-size: medium;font-weight: bold;">
-                                            <strong>FECHA SAP</strong>
-                                        </span>
-                                        <input type="text" id="fechasap" class="form-control" style="width:250px;" disabled />
-                                        <label id="idnodo" hidden></label>
-                                    </div>
-                                </div>
-                            </div>
+    <div id="fechasap" class="modal">
+        <div class="modal-dialog" style="width:1000px;">
+            <div class="modal-content" style="width:1000px;">
+                <div class="modal-header" style="width:1000px;">
+                    <button type="button" class="close" style="color:white;" data-dismiss="modal" onclick="ResetearDivs();">&times;</button>
+                    <h2 class="modal-title"><i class="fa fa-calendar text-red" style="color:#de584d;" aria-hidden="true"></i>  Calculadora de Fecha SAP</h2>
+                </div>
+                <div class="modal-body" style="width:1000px;">
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-offset-1" style="width:950px; margin-left:25px;">
+                            <div id="fechasapbody"></div>
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
+    </div>
+
 
 
         @* NOTIFICACIONES SIGNALR *@
@@ -1702,7 +1675,7 @@
     <script src="~/Scripts/Signal/jquery.signalR-2.2.1.min.js"></script>
     <script src="~/signalr/hubs"></script>
     <script src="~/Scripts/Shared/Helper.js?1.1.9"></script>
-    <script src="~/Scripts/Shared/_Layout.js?1.4.6"></script>
+    <script src="~/Scripts/Shared/_Layout.js?1.4.7"></script>
 
     <script>var Usuario = '@Session["Usuario"].ToString()';</script>
     <script>var NombreUsuario = '@Session["NombreUsuario"].ToString()';</script>
@@ -1723,7 +1696,7 @@
         var urlDiferenciaTarifasView = '@Url.Action("DiferenciaTarifas", "Calculadoras")';
         var urlProrrateosView = '@Url.Action("Prorrateos", "Calculadoras")';
         var urlRentasView = '@Url.Action("Rentas", "Calculadoras")';
-        var urlConsultarDiasFestivos = '@Url.Action("ConsultarDiasFestivos", "Calculadoras")';
+        var urlFechaSapView = '@Url.Action("FechaSap", "Calculadoras")';
         var urlLockScreen = '@Url.Action("SLockScreen", "Account")';
         var urlVisualizadorImagenes = '@Url.Action("VerImagen", "OfertasComerciales")';
 

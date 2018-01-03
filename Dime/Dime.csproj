@@ -2298,6 +2298,7 @@
     <Content Include="Resources\Images\Layout\apc4.png" />
     <Content Include="Resources\Images\Layout\Dam_Modificado1.png" />
     <Content Include="Resources\Images\Layout\Logo_BS.png" />
+    <Content Include="Resources\Images\Layout\Sap.png" />
     <Content Include="Resources\Images\Layout\user.jpg" />
     <Content Include="Resources\Images\Layout\User_Orange.png" />
     <Content Include="Resources\Images\Loading.gif" />
@@ -2343,6 +2344,7 @@
     <Content Include="Scripts\BitacoraIncidentes\VisualizadordeIncidentes.js" />
     <Content Include="Scripts\BuenServicio\Visualizador_Imagenes.js" />
     <Content Include="Scripts\Calculadoras\Advanced.js" />
+    <Content Include="Scripts\Calculadoras\FechaSap.js" />
     <Content Include="Scripts\Calculadoras\Rentas.js" />
     <Content Include="Scripts\CierreDeCiclo\ConsultaGestiones.js" />
     <Content Include="Scripts\CierreDeCiclo\HistorialGestiones.js" />
@@ -3744,6 +3746,7 @@
     <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalLiberaciones.cshtml" />
     <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalSuspensiones.cshtml" />
     <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalTickets.cshtml" />
+    <Content Include="Views\Calculadoras\FechaSap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
