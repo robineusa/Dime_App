@@ -13,11 +13,14 @@ namespace Dime.Controllers
     public class MidasController : Controller
     {
         WSD.MidasServiceClient midasService;
+        WSD.InboundServiceClient inboundservice;
 
         public MidasController()
         {
             midasService = new WSD.MidasServiceClient();
             midasService.ClientCredentials.Authenticate();
+            inboundservice = new WSD.InboundServiceClient();
+            inboundservice.ClientCredentials.Authenticate();
         }
 
         [HttpGet]
@@ -51,6 +54,29 @@ namespace Dime.Controllers
                 return new JsonResult()
                 {
                     Data = JsonConvert.SerializeObject(cargueBaseMidas),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
+            }
+        }
+        public JsonResult TraerInformacionClienteClientesTodo(int CuentaCliente)
+        {
+            ClientesTodo Cliente = new ClientesTodo();
+            Cliente = inboundservice.TraerClienteCompletoPorCuenta(CuentaCliente);
+
+            if (Cliente != null)
+            {
+                return new JsonResult()
+                {
+                    Data = JsonConvert.SerializeObject(Cliente),
+                    JsonRequestBehavior = JsonRequestBehavior.DenyGet
+                };
+            }
+            else
+            {
+                Cliente = new ClientesTodo();
+                return new JsonResult()
+                {
+                    Data = JsonConvert.SerializeObject(Cliente),
                     JsonRequestBehavior = JsonRequestBehavior.DenyGet
                 };
             }
