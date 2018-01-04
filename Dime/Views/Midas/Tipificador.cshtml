@@ -348,23 +348,25 @@
                                 </tr>
                                 <tr>
                                     <td style="padding-left:1px; width:250px;">
-                                        @Html.DropDownListFor(m => m.GPMMidas.FallaServPrincipalesSoporte, new List<SelectListItem> { },
+                                        @Html.DropDownListFor(m => m.GPMMidas.FallaServPrincipalesSoporte, new List<SelectListItem> { }, "--SELECCIONE--",
                                                 new { @Id = "FallaServPrincipalesSoporte", @class = "form-control input-sm" })
                                     </td>
                                     <td style="padding-left:1px; width:250px;">
-                                        @Html.DropDownListFor(m => m.GPMMidas.FallaServAdicionalesSoporte, new List<SelectListItem> { },
+                                        @Html.DropDownListFor(m => m.GPMMidas.FallaServAdicionalesSoporte, new List<SelectListItem> { }, "--SELECCIONE--",
                                                 new { @Id = "FallaServAdicionalesSoporte", @class = "form-control input-sm" })
                                     </td>
                                     <td style="padding-left:1px; width:250px;">
-                                        @Html.DropDownListFor(m => m.GPMMidas.TipoFallaSoporte, new List<SelectListItem> { },
+                                        @Html.DropDownListFor(m => m.GPMMidas.TipoFallaSoporte, new List<SelectListItem> { }, "--SELECCIONE--",
                                                 new { @Id = "TipoFallaSoporte", @class = "form-control input-sm" })
                                     </td>
                                     <td style="padding-left:1px; width:250px;">
-                                        @Html.DropDownListFor(m => m.GPMMidas.SolucionEspecificaSoporte, new List<SelectListItem> { },
+                                        @Html.DropDownListFor(m => m.GPMMidas.SolucionEspecificaSoporte, new List<SelectListItem> { }, "--SELECCIONE--",
                                                 new { @Id = "SolucionEspecificaSoporte", @class = "form-control input-sm" })
                                     </td>
                                     <td style="padding-left:1px; width:250px;">
-                                        @Html.DropDownListFor(m => m.GPMMidas.EstadoSoporte, new List<SelectListItem> { },
+                                        @Html.DropDownListFor(m => m.GPMMidas.EstadoSoporte, new List<SelectListItem> {
+                                                                            new SelectListItem{Text="FINALIZADO", Value="FINALIZADO" },
+                                                                            new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" } }, "--SELECCIONE--",
                                                 new { @Id = "EstadoSoporte", @class = "form-control input-sm" })
                                     </td>
                                 </tr>
@@ -411,15 +413,17 @@
                                 </tr>
                                 <tr>
                                     <td style="padding-left:1px; width:250px;">
-                                        @Html.DropDownListFor(m => m.GPMMidas.ProblemaFacturacion, new List<SelectListItem> { },
+                                        @Html.DropDownListFor(m => m.GPMMidas.ProblemaFacturacion, new List<SelectListItem> { }, "--SELECCIONE--",
                                                 new { @Id = "ProblemaFacturacion", @class = "form-control input-sm" })
                                     </td>
                                     <td style="padding-left:1px; width:250px;">
-                                        @Html.DropDownListFor(m => m.GPMMidas.SolucionFacturacion, new List<SelectListItem> { },
+                                        @Html.DropDownListFor(m => m.GPMMidas.SolucionFacturacion, new List<SelectListItem> { }, "--SELECCIONE--",
                                                 new { @Id = "SolucionFacturacion", @class = "form-control input-sm" })
                                     </td>
                                     <td style="padding-left:1px; width:250px;">
-                                        @Html.DropDownListFor(m => m.GPMMidas.EstadoFacturacion, new List<SelectListItem> { },
+                                        @Html.DropDownListFor(m => m.GPMMidas.EstadoFacturacion, new List<SelectListItem> {
+                                                                            new SelectListItem{Text="FINALIZADO", Value="FINALIZADO" },
+                                                                            new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" }}, "--SELECCIONE--",
                                                 new { @Id = "EstadoFacturacion", @class = "form-control input-sm" })
                                     </td>
                                 </tr>
@@ -507,10 +511,11 @@
     <script>
         var UrlInformacionClienteTipificadorMidas = '@Url.Action("TraerInformacionCliente", "Midas")';
         var UrlTraerInformacionClienteClientesTodo = '@Url.Action("TraerInformacionClienteClientesTodo", "Midas")';
-        
+        var UrlArbolDeGestion = '@Url.Action("ArbolesDeTipificacionTipificador", "Midas")';
+
     </script>
 
-    <script src="~/Scripts/Midas/Tipificador.js?1.0.3"></script>
+    <script src="~/Scripts/Midas/Tipificador.js?1.0.4"></script>
 
 }
 

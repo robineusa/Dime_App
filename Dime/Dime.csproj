@@ -3196,6 +3196,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CELLiberaciones.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.TiposMacroprocesos.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CargueBaseMidas.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ArbolesMidas.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3333,9 +3334,6 @@
     <Content Include="Scripts\Procesos\dist\font\summernote.eot" />
     <Content Include="Scripts\Procesos\dist\font\summernote.ttf" />
     <Content Include="Scripts\Procesos\dist\font\summernote.woff" />
-    <Content Include="Service References\WSD\Dime.WSD.ArbolesMidas.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\WSD\WebService1.wsdl" />
     <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
@@ -3397,7 +3395,6 @@
     <Content Include="Styles\Slider\css\style.css" />
     <Content Include="Styles\Slider\images\ajax-loader.gif" />
     <Content Include="Styles\Slider\images\black.png" />
-    <Content Include="Styles\Slider\images\ImageAttribution.txt" />
     <Content Include="Styles\Slider\images\nav.png" />
     <Content Include="Styles\Slider\images\nav_thumbs.png" />
     <Content Include="Styles\Slider\images\pattern.png" />

@@ -18,7 +18,22 @@ function ListaDeArboles() {
             finalizaconsulta();
         },
         error: function (request, status, error) {
-            alert(request.responseText);
+            
+            $.alert({
+                theme: 'Modern',
+                icon: 'fa fa-warning',
+                boxWidth: '500px',
+                useBootstrap: false,
+                type: 'red',
+                title: '¡ Oops !',
+                content: 'Error en la carga de los arboles' + request.responseText+'',
+                buttons: {
+                    Ok: {
+                        btnClass: 'btn-red',
+                        action: function () { }
+                    },
+                }
+            });
         }
     });
 }
@@ -60,15 +75,37 @@ function finalizaconsulta() {
 
 }
 function ActualizarProceso(e) {
-    //e.preventDefault();
-    //var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    //window.location.href = 'AdministrarArboles?IdPadre=' + dataItem.IdPadre + '&IdArbol=' + dataItem.IdArbol;
+    e.preventDefault();
+    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    window.location.href = 'AdministrarArboles?IdPadre=' + dataItem.IdPadre + '&IdArbol=' + dataItem.IdArbol;
 
 };
 
 function ActualizarProceso2(e) {
-    //e.preventDefault();
-    //var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
-    //window.location.href = 'ListaArboles?IdPadre=' + dataItem.IdArbol;
+    e.preventDefault();
+    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    window.location.href = 'ArbolesMidas?IdPadre=' + dataItem.IdArbol;
 
 };
+
+function ListaDeArbolesAnterior() {
+    var IdPadre = $('#IdPadre').val();
+    if (IdPadre == "--SELECCIONE--" || IdPadre == "" || IdPadre == "0") { }
+    else {
+        $.ajax({
+            type: "POST",
+            url: urllistaarbolesanterior,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ IdArbol: IdPadre }),
+            dataType: "JSON",
+            success: function (result) {
+                var json = JSON.parse(result);
+                window.location.href = 'ArbolesMidas?IdPadre=' + json;
+
+            },
+            error: function (request, status, error) {
+                alert(request.responseText);
+            }
+        });
+    }
+}

@@ -8403,6 +8403,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ArbolDeGestionAgenteMidas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdPadre" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ArbolDeGestionAgenteMidasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q586="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ArbolDeGestionAgenteMidasResult" nillable="true" type="q586:ArrayOfArbolesMidas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ConsultarDiasFestivos">
     <xs:complexType>
       <xs:sequence>

@@ -11,6 +11,13 @@
         $("#Li2").css("border-color", "#c23321");
         $("#Li1").css("border-color", "transparent");
     });
+
+    TraerArbolDeSoporteServiciosPrincipales();
+    TraerArbolDeSoporteServiciosAdicionales();
+    TraerArbolDeSoporteTipoFalla();
+    TraerArbolDeSoporteSolucionEspecifica();
+    TraerArbolDeFacturacionProblemaFacturacion();
+    TraerArbolDeFacturacionSolucionFacturacion();
 });
 
 $("#CuentaCliente").blur(function (event) {
@@ -182,5 +189,235 @@ function LimpiarCampos()
     $('#Division').val('');
     $('#TipoCliente').val('');
     $('#Descripcion').val('');
+
+}
+function TraerArbolDeSoporteServiciosPrincipales() {
+    var IdPadre = "4";
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#FallaServPrincipalesSoporte').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("FallaServPrincipalesSoporte");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("SelectGestion1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#FallaServPrincipalesSoporte').val(select.options[i].value);
+                    //ListaSubrazones();
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+}
+function TraerArbolDeSoporteServiciosAdicionales() {
+    var IdPadre = "5";
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#FallaServAdicionalesSoporte').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("FallaServAdicionalesSoporte");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("SelectGestion1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#FallaServAdicionalesSoporte').val(select.options[i].value);
+                    //ListaSubrazones();
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+}
+function TraerArbolDeSoporteTipoFalla() {
+    var IdPadre = "6";
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#TipoFallaSoporte').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("TipoFallaSoporte");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("SelectGestion1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#TipoFallaSoporte').val(select.options[i].value);
+                    //ListaSubrazones();
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+}
+function TraerArbolDeSoporteSolucionEspecifica() {
+    var IdPadre = "7";
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#SolucionEspecificaSoporte').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("SolucionEspecificaSoporte");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("SelectGestion1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#SolucionEspecificaSoporte').val(select.options[i].value);
+                    //ListaSubrazones();
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+}
+
+function TraerArbolDeFacturacionProblemaFacturacion() {
+    var IdPadre = "8";
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#ProblemaFacturacion').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("ProblemaFacturacion");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("SelectGestion1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#ProblemaFacturacion').val(select.options[i].value);
+                    //ListaSubrazones();
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+}
+
+function TraerArbolDeFacturacionSolucionFacturacion() {
+    var IdPadre = "9";
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#SolucionFacturacion').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("SolucionFacturacion");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("SelectGestion1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#SolucionFacturacion').val(select.options[i].value);
+                    //ListaSubrazones();
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
 
 }
