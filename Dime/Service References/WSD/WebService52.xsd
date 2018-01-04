@@ -4241,6 +4241,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfCEPLiberaciones" nillable="true" type="tns:ArrayOfCEPLiberaciones" />
+  <xs:complexType name="ArrayOfArbolesMidas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArbolesMidas" nillable="true" type="tns:ArbolesMidas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArbolesMidas" nillable="true" type="tns:ArrayOfArbolesMidas" />
+  <xs:complexType name="ArbolesMidas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoArbol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdArbol" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdPadre" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArbolesMidas" nillable="true" type="tns:ArbolesMidas" />
   <xs:complexType name="CargueBaseMidas">
     <xs:sequence>
       <xs:element minOccurs="0" name="BlindajeInternet" nillable="true" type="xs:string" />

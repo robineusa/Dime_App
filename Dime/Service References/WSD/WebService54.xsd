@@ -8337,6 +8337,58 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListasDeArbolesMidasAdmin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdPadre" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListasDeArbolesMidasAdminResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q581="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ListasDeArbolesMidasAdminResult" nillable="true" type="q581:ArrayOfArbolesMidas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarArbolesMidas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q582="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Arbol" nillable="true" type="q582:ArbolesMidas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarArbolesMidasResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarNuevoArbolesMidas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q583="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="Arbol" nillable="true" type="q583:ArbolesMidas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarNuevoArbolesMidasResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraerArbolMidasPorId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdArbol" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraerArbolMidasPorIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q584="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerArbolMidasPorIdResult" nillable="true" type="q584:ArbolesMidas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="TraeCuentaMidas">
     <xs:complexType>
       <xs:sequence>
@@ -8347,14 +8399,14 @@
   <xs:element name="TraeCuentaMidasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q581="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraeCuentaMidasResult" nillable="true" type="q581:CargueBaseMidas" />
+        <xs:element xmlns:q585="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraeCuentaMidasResult" nillable="true" type="q585:CargueBaseMidas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ConsultarDiasFestivos">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="FechaInicio" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="FechaInicio" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Dias" type="xs:int" />
       </xs:sequence>
     </xs:complexType>

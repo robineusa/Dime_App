@@ -26712,6 +26712,158 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMidasService_ListasDeArbolesMidasAdmin_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMidasService_ListasDeArbolesMidasAdmin_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMidasService_ActualizarArbolesMidas_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMidasService_ActualizarArbolesMidas_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMidasService_RegistrarNuevoArbolesMidas_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMidasService_RegistrarNuevoArbolesMidas_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMidasService_TraerArbolMidasPorId_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMidasService_TraerArbolMidasPorId_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IMidasService_TraeCuentaMidas_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -30556,6 +30708,30 @@
   <wsdl:message name="ICierreExperienciaService_ConsultaAdminLogTickets_OutputMessage">
     <wsdl:part name="parameters" element="tns:ConsultaAdminLogTicketsResponse" />
   </wsdl:message>
+  <wsdl:message name="IMidasService_ListasDeArbolesMidasAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListasDeArbolesMidasAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IMidasService_ListasDeArbolesMidasAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListasDeArbolesMidasAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMidasService_ActualizarArbolesMidas_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarArbolesMidas" />
+  </wsdl:message>
+  <wsdl:message name="IMidasService_ActualizarArbolesMidas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarArbolesMidasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMidasService_RegistrarNuevoArbolesMidas_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarNuevoArbolesMidas" />
+  </wsdl:message>
+  <wsdl:message name="IMidasService_RegistrarNuevoArbolesMidas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarNuevoArbolesMidasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMidasService_TraerArbolMidasPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:TraerArbolMidasPorId" />
+  </wsdl:message>
+  <wsdl:message name="IMidasService_TraerArbolMidasPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TraerArbolMidasPorIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IMidasService_TraeCuentaMidas_InputMessage">
     <wsdl:part name="parameters" element="tns:TraeCuentaMidas" />
   </wsdl:message>
@@ -33071,6 +33247,22 @@
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IMidasService">
+    <wsdl:operation name="ListasDeArbolesMidasAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidasService/ListasDeArbolesMidasAdmin" message="tns:IMidasService_ListasDeArbolesMidasAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidasService/ListasDeArbolesMidasAdminResponse" message="tns:IMidasService_ListasDeArbolesMidasAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarArbolesMidas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidasService/ActualizarArbolesMidas" message="tns:IMidasService_ActualizarArbolesMidas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidasService/ActualizarArbolesMidasResponse" message="tns:IMidasService_ActualizarArbolesMidas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarNuevoArbolesMidas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidasService/RegistrarNuevoArbolesMidas" message="tns:IMidasService_RegistrarNuevoArbolesMidas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidasService/RegistrarNuevoArbolesMidasResponse" message="tns:IMidasService_RegistrarNuevoArbolesMidas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TraerArbolMidasPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidasService/TraerArbolMidasPorId" message="tns:IMidasService_TraerArbolMidasPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidasService/TraerArbolMidasPorIdResponse" message="tns:IMidasService_TraerArbolMidasPorId_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="TraeCuentaMidas">
       <wsdl:input wsaw:Action="http://tempuri.org/IMidasService/TraeCuentaMidas" message="tns:IMidasService_TraeCuentaMidas_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMidasService/TraeCuentaMidasResponse" message="tns:IMidasService_TraeCuentaMidas_OutputMessage" />
@@ -39916,6 +40108,50 @@
   <wsdl:binding name="WSHttpBinding_IMidasService" type="tns:IMidasService">
     <wsp:PolicyReference URI="#WSHttpBinding_IMidasService_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListasDeArbolesMidasAdmin">
+      <soap12:operation soapAction="http://tempuri.org/IMidasService/ListasDeArbolesMidasAdmin" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMidasService_ListasDeArbolesMidasAdmin_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMidasService_ListasDeArbolesMidasAdmin_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarArbolesMidas">
+      <soap12:operation soapAction="http://tempuri.org/IMidasService/ActualizarArbolesMidas" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMidasService_ActualizarArbolesMidas_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMidasService_ActualizarArbolesMidas_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarNuevoArbolesMidas">
+      <soap12:operation soapAction="http://tempuri.org/IMidasService/RegistrarNuevoArbolesMidas" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMidasService_RegistrarNuevoArbolesMidas_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMidasService_RegistrarNuevoArbolesMidas_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraerArbolMidasPorId">
+      <soap12:operation soapAction="http://tempuri.org/IMidasService/TraerArbolMidasPorId" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMidasService_TraerArbolMidasPorId_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMidasService_TraerArbolMidasPorId_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="TraeCuentaMidas">
       <soap12:operation soapAction="http://tempuri.org/IMidasService/TraeCuentaMidas" style="document" />
       <wsdl:input>

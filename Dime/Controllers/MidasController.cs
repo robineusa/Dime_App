@@ -81,5 +81,20 @@ namespace Dime.Controllers
                 };
             }
         }
+        //[HttpGet]
+        //public ActionResult ArbolesMidas(string IdPadre)
+        //{
+        //    ViewModelMidas model = new ViewModelMidas();
+        //    modelo.IdPadre = Convert.ToDecimal(IdPadre);
+        //    return View(modelo);
+        //}
+        //public JsonResult ArbolesDeTipificacionaAdmin(int IdPadre)
+        //{
+        //    return new JsonResult()
+        //    {
+        //        Data = JsonConvert.SerializeObject(midasService.ListasDeArbolesMidasAdmin(IdPadre)),
+        //        JsonRequestBehavior = JsonRequestBehavior.DenyGet
+        //    };
+        //}
     }
 }
