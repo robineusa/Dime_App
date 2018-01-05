@@ -3197,6 +3197,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.TiposMacroprocesos.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CargueBaseMidas.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.IndiceNodoArbol.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ArbolesMidas1.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3334,9 +3335,6 @@
     <Content Include="Scripts\Procesos\dist\font\summernote.eot" />
     <Content Include="Scripts\Procesos\dist\font\summernote.ttf" />
     <Content Include="Scripts\Procesos\dist\font\summernote.woff" />
-    <Content Include="Service References\WSD\Dime.WSD.ArbolesMidas.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\WSD\WebService1.wsdl" />
     <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
