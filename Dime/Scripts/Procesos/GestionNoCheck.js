@@ -7,9 +7,12 @@
 
 $(document).ready(function () {
     var urlParams = new URLSearchParams(window.location.search);
-    var IdPadre = urlParams.get('IdPadre');
-    ArbolAsesor(1, IdPadre);
-    CargarIndice(IdPadre);
+    //var IdPadre = urlParams.get('IdPadre');
+    var IdArbol = urlParams.get('IdArbol');
+    if (IdNodoSesion == "" || IdNodoSesion == null)
+        IdNodoSesion = 0;
+    ArbolAsesor(1, IdNodoSesion);
+    CargarIndice(IdNodoSesion);
 });
 
 function ArbolAsesor(IdArbol, IdPadre) {
@@ -42,7 +45,7 @@ function ArbolAsesor(IdArbol, IdPadre) {
                 if (json[i].NodosHijos.length > 0) {
                     for (var f = 0; f < json[i].NodosHijos.length; f++) {
                         $('#contenedor').append(
-                     "<div id='" + json[i].NodosHijos[f].Id + "' onmouseup='ConsultarNodo(this)'  class='callout button' style='margin-left:35px ;border-color:#a41e34 !important; background-color:gainsboro !important; color: black !important;width:500px;'>" +
+                     "<div id='" + json[i].NodosHijos[f].Id + "' onclick='ConsultarNodo(this)'  class='callout button' style='margin-left:35px ;border-color:#a41e34 !important; background-color:gainsboro !important; color: black !important;width:500px;'>" +
                         "<div class='row'>" +
                             "<div style='width:auto;color:black;padding-left:20px;'>" +
                                 "<p>" + json[i].NodosHijos[f].NombreNodo + "</p>" +
@@ -61,9 +64,10 @@ function ArbolAsesor(IdArbol, IdPadre) {
 }
 
 function ConsultarNodo(obj) {
-
-    window.location.href = '../Procesos/GestionNoCheck?IdPadre=' + obj.getAttribute("id");
-
+    $("#Indice").empty();
+    $("#contenedor").empty();
+    ArbolAsesor(IdArbolActual, obj.getAttribute("id"));
+    CargarIndice(obj.getAttribute("id"));
 }
 
 function CargarIndice(IdNodoActual) {
@@ -75,14 +79,14 @@ function CargarIndice(IdNodoActual) {
         dataType: "JSON",
         success: function (result) {
             var json = JSON.parse(result);
-            $("#breadcrumbs-one").append(
+            var json = JSON.parse(result);
+            $("#Indice").append(
                   "<li id='0' onmouseup='ConsultarNodo(this)'><a href=''><i class='fa fa-home'></i></a></li>"
                   );
             if (json[0].IdNodo != -1) {
-
                 for (var i = 0; i < json.length; i++) {
-                    $("#breadcrumbs-one").append(
-                        "<li id='" + json[i].IdNodo + "' onmouseup='ConsultarNodo(this)'><a href=''>" + json[i].NombreNodo + "</a></li>"
+                    $("#Indice").append(
+                        "<li id='" + json[i].IdNodo + "' onclick='ConsultarNodo(this)'><a href=''>" + json[i].NombreNodo + "</a></li>"
                         );
                 }
             }
@@ -91,4 +95,5 @@ function CargarIndice(IdNodoActual) {
             alert(request.responseText);
         }
     });
+
 }

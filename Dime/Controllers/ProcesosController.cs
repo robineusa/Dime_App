@@ -22,6 +22,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult GestionNoCheck()
         {
+            Session["IdNodoArbol"] = 0;
             return View();
         }
 
@@ -272,6 +273,7 @@ namespace Dime.Controllers
         {
             int IdArbol = 1;
             int IdPadre = Convert.ToInt32(idPadre);
+            Session["IdNodoArbol"] = IdPadre;
             ViewModelNodoArbol nodo;
             List<ViewModelNodoArbol> resultado = new List<ViewModelNodoArbol>();
             List<Nodo> lista = new List<Nodo>();
