@@ -2299,6 +2299,7 @@
     <Content Include="Resources\Images\Layout\apc4.png" />
     <Content Include="Resources\Images\Layout\Dam_Modificado1.png" />
     <Content Include="Resources\Images\Layout\Logo_BS.png" />
+    <Content Include="Resources\Images\Layout\Sap.png" />
     <Content Include="Resources\Images\Layout\user.jpg" />
     <Content Include="Resources\Images\Layout\User_Orange.png" />
     <Content Include="Resources\Images\Loading.gif" />
@@ -2344,6 +2345,7 @@
     <Content Include="Scripts\BitacoraIncidentes\VisualizadordeIncidentes.js" />
     <Content Include="Scripts\BuenServicio\Visualizador_Imagenes.js" />
     <Content Include="Scripts\Calculadoras\Advanced.js" />
+    <Content Include="Scripts\Calculadoras\FechaSap.js" />
     <Content Include="Scripts\Calculadoras\Rentas.js" />
     <Content Include="Scripts\CierreDeCiclo\ConsultaGestiones.js" />
     <Content Include="Scripts\CierreDeCiclo\HistorialGestiones.js" />
@@ -2413,7 +2415,7 @@
     <Content Include="Scripts\Mec\ListaMonitoreosAdmin.js" />
     <Content Include="Scripts\Mec\ListaTipoAlarmas.js" />
     <Content Include="Scripts\Mec\RegistrarMonitoreo.js" />
-    <Content Include="Scripts\Midas\AdministrarArboles.js" />
+    <Content Include="Scripts\Midas\ArbolesMidas.js" />
     <Content Include="Scripts\Midas\Tipificador.js" />
     <Content Include="Scripts\MultiPlay\ConsultasAdminMultiPlay.js" />
     <Content Include="Scripts\MultiPlay\MultiPlay.js" />
@@ -3196,7 +3198,11 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CELLiberaciones.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.TiposMacroprocesos.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CargueBaseMidas.datasource" />
+<<<<<<< HEAD
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.IndiceNodoArbol.datasource" />
+=======
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ArbolesMidas.datasource" />
+>>>>>>> fc44a1cd6c71cd8af4f943904ed0176bf5d36f71
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3334,9 +3340,12 @@
     <Content Include="Scripts\Procesos\dist\font\summernote.eot" />
     <Content Include="Scripts\Procesos\dist\font\summernote.ttf" />
     <Content Include="Scripts\Procesos\dist\font\summernote.woff" />
+<<<<<<< HEAD
     <Content Include="Service References\WSD\Dime.WSD.ArbolesMidas.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+=======
+>>>>>>> fc44a1cd6c71cd8af4f943904ed0176bf5d36f71
     <None Include="Service References\WSD\WebService1.wsdl" />
     <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
@@ -3398,7 +3407,6 @@
     <Content Include="Styles\Slider\css\style.css" />
     <Content Include="Styles\Slider\images\ajax-loader.gif" />
     <Content Include="Styles\Slider\images\black.png" />
-    <Content Include="Styles\Slider\images\ImageAttribution.txt" />
     <Content Include="Styles\Slider\images\nav.png" />
     <Content Include="Styles\Slider\images\nav_thumbs.png" />
     <Content Include="Styles\Slider\images\pattern.png" />
@@ -3750,6 +3758,8 @@
     <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalLiberaciones.cshtml" />
     <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalSuspensiones.cshtml" />
     <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalTickets.cshtml" />
+    <Content Include="Views\Calculadoras\FechaSap.cshtml" />
+    <Content Include="Views\Midas\ArbolesMidas.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
