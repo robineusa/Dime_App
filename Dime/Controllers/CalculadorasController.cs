@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -100,17 +101,29 @@ namespace Dime.Controllers
             };
         }
         public JsonResult ConsultarDiasFestivos(string FechaInicio, string dias)
-        {
-            DateTime fechaInicio = Convert.ToDateTime(FechaInicio);
+        {   
+            var result = "";
             int Dias = !string.IsNullOrEmpty(dias) ? Convert.ToInt32(dias) : 0;
-            string CantDiasFestivos = string.Empty;
-
+            
             if (!string.IsNullOrEmpty(FechaInicio) && Dias > 0)
-                CantDiasFestivos = diasFestivos.ConsultarDiasFestivos(fechaInicio, Dias);
-
-            var jsonResult = Json(JsonConvert.SerializeObject(CantDiasFestivos), JsonRequestBehavior.AllowGet);
+            result = diasFestivos.ConsultarDiasFestivos(FechaInicio, Dias);
+            string[] objeto = result.Split('-');
+            var nombremes = MonthName(Convert.ToInt32(objeto[1]));
+            var FechaSap = objeto[2] + " de " + nombremes + " de " + objeto[0];
+            var jsonResult = Json(JsonConvert.SerializeObject(FechaSap), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
+        }
+        public string MonthName(int month)
+        {
+            DateTimeFormatInfo dtinfo = new CultureInfo("es-ES", false).DateTimeFormat;
+            return dtinfo.GetMonthName(month);
+        }
+
+        [HttpGet]
+        public ViewResult FechaSap()
+        {
+            return View("FechaSap");
         }
     }
 }

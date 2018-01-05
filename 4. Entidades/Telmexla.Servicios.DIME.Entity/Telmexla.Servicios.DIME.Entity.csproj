@@ -85,6 +85,7 @@
     <Compile Include="ActivacionClaroVideoCollection.cs" />
     <Compile Include="ActualizarUsuarioGestionBackIngresoReturnModel.cs" />
     <Compile Include="Arbol.cs" />
+    <Compile Include="ArbolesMidas.cs" />
     <Compile Include="BACActualizarDatos.cs" />
     <Compile Include="BalanceScoreCard.cs" />
     <Compile Include="BalanceScoreCardCollection.cs" />

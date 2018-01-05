@@ -4,322 +4,523 @@
     ViewBag.Subtitle = "MIDAS";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
-    <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
-        <div class="row" style="margin-left: 10px;">
-            <div class="col-xs-2" style="width:200px; padding:1px;">
-                <small>Número de Cuenta:</small>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-4" style="width:450px;">
-                <table>
-                    <tr>
-                        <td style="min-width:200px; padding:1px;">
-                            @Html.TextBoxFor(m => m.GPMMidas.CuentaCliente, new { @class = "form-control input-sm", placeholder = "Ingrese la cuenta", id = "CuentaCliente" })
-                        </td>
 
-                    </tr>
-                </table>
+@using (Html.BeginForm("Tipificador", "Midas", FormMethod.Post, new { id = "tipificadormidas", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="callout callout-danger" style="margin-bottom: 0 ; background-color:rgb(255, 255, 255) !important; padding: 0 0 0 0; color: black !important;">
+        <div style="background-color:#dcdcdc; padding-top:15px; padding-left:15px; padding-bottom:15px;">
+            <div class="row" style="margin-left: 10px;">
+                <div class="col-xs-2" style="width:200px; padding:1px;">
+                    <small>Número de Cuenta:</small>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
-<br />
-<br />
-<div class="row">
-    <div class="col-md-9" style="width:100%; ">
-        <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs">
-                <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321"><a href="#datosBasicos" aria-controls="datosBasicos" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Básicos</a></li>
-                <li id="Li2" class=""><a href="#Mi_Historial" aria-controls="Mi_Historial" data-toggle="tab" role="tab" style="background-color:transparent;">Mi Historial</a></li>
-            </ul>
-            <div class="tab-content" style="padding-left:0; padding-top: 0">
-                <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosBasicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+            <div class="row">
+                <div class="col-xs-4" style="width:450px;">
                     <table>
                         <tr>
-                            <td width="200" style="padding:1px;">
-                                <small>Nombre del Cliente:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Apellido del Cliente:  </small>
-                            </td>
-
-                            <td width="200" style="padding:1px;">
-                                <small>Teléfono Telmex:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Teléfono 1:  </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Teléfono 2: </small>
-                            </td>
-                            <td width="200" style="padding:1px;">
-                                <small>Teléfono 3:</small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                @Html.TextBoxFor(m => m.CargueBaseMidas.ConsumosPPV, new { @class = "form-control input-sm", placeholder = "Ingrese la cuenta"})
-                            </td>
-                        </tr>
-                        <tr>
-
-                            <td style="padding:1px;">
-                                <small>Dirección de Instalación: </small>
-                            </td>
-                            <td style="padding:1px;">
-                                <small>Correspondencia:  </small>
-                            </td>
-
-                            <td style="padding:1px;">
-                                <small>Nodo: </small>
-                            </td>
-                            <td style="padding:1px;">
-                                <small>Red:  </small>
-                            </td>
-                            <td style="padding:1px;">
-                                <small>División:  </small>
-                            </td>
-                            <td style="padding:1px;">
-                                <small>Área:  </small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding:1px;">
-                                <small>Zona:</small>
-                            </td>
-                            <td style="padding:1px;">
-                                <small>Distrito:  </small>
-                            </td>
-                            <td style="padding:1px;">
-                                <small>Nombre Comunidad: </small>
-                            </td>
-                            <td style="padding:1px;">
-                                <small>Estrato:  </small>
-                            </td>
-                            <td style="padding:1px;">
-                                <small>Tipo de Cliente:  </small>
-                            </td>
-                            <td style="padding:1px;">
-                                <small>Descripción:  </small>
+                            <td style="min-width:200px; padding:1px;">
+                                @Html.TextBoxFor(m => m.GPMMidas.CuentaCliente, new { @class = "form-control input-sm", placeholder = "Ingrese la cuenta", id = "CuentaCliente" })
                             </td>
                         </tr>
                     </table>
                 </div>
-                <div role="tabpanel" class="tab-pane tab-dime-first active " id="Mi_Historial" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
-                    <br /><div id="MiHistorialGrid"></div>
-                </div>
             </div>
         </div>
     </div>
-    <div class="col-md-12">
-        <div class="box box-danger">
-            <div class="box-body">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h2 class="page-header" style="margin-top:25px">
-                            <i class="fa fa-gift"></i> Ofrecimiento
-                        </h2>
-                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
-                            <br />
-                            <table style="width:100%;">
-                                <tr>
-                                    <td>
-                                        <input type="text" class="form-control input-sm" style="margin-left:5px; width:100%; height:70px;" />
-                                    </td>
-                                </tr>
-                            </table>
-                            <table>
-                                <tr>
-                                    <td style="padding:1px;">
-                                        <small>El cliente acepto el ofrecimiento</small>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <select>
-                                            <option value="SI">SI</option>
-                                            <option value="NO">NO</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
+    <br />
+    <br />
+    @Html.HiddenFor(m => m.GPMMidas.Id, new { @Id = "Id" })
+    <div class="row">
+        <div class="col-md-9" style="width:100%; ">
+            <div class="nav-tabs-custom">
+                <ul class="nav nav-tabs">
+                    <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321"><a href="#datosBasicos" aria-controls="datosBasicos" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Básicos</a></li>
+                    <li id="Li2" class=""><a href="#Seguimientos" aria-controls="Seguimientos" data-toggle="tab" role="tab" style="background-color:transparent;">Seguimientos</a></li>
+                </ul>
+                <div class="tab-content" style="padding-left:0; padding-top: 0">
+                    <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosBasicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                        <table>
+                            <tr>
+                                <td width="200" style="padding:1px;">
+                                    <small>Nombre del Cliente:  </small>
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    <small>Apellido del Cliente:  </small>
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    <small>Dirección Instalación:  </small>
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    <small>Dirección Correspondencia:  </small>
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    <small>Teléfono 1: </small>
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    <small>Teléfono 2:</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.Nombre, new { @class = "form-control input-sm", placeholder = "Nombre Cliente", id = "NombreCliente", ReadOnly = "true" })
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.Apellido, new { @class = "form-control input-sm", placeholder = "Apellido Cliente", id = "ApellidoCliente", ReadOnly = "true" })
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.DirInstalacion, new { @class = "form-control input-sm", placeholder = "Dirección Instalación", id = "DirInstalacion", ReadOnly = "true" })
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.DirCorrespondencia, new { @class = "form-control input-sm", placeholder = "Dirección Correspondencia", id = "DirCorrespondencia", ReadOnly = "true" })
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.Telefono1, new { @class = "form-control input-sm", placeholder = "Telefono 1", id = "Telefono1", ReadOnly = "true" })
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.Telefono2, new { @class = "form-control input-sm", placeholder = "Telefono 2", id = "Telefono2", ReadOnly = "true" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:1px;">
+                                    <small>Teléfono 3: </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Movil 1: </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Movil 2: </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Correo:  </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Estrato:  </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Paquete Actual:</small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.Telefono3, new { @class = "form-control input-sm", placeholder = "Telefono 3", id = "Telefono3", ReadOnly = "true" })
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.Celular1, new { @class = "form-control input-sm", placeholder = "Movil 1", id = "Celular1", ReadOnly = "true" })
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.Celular2, new { @class = "form-control input-sm", placeholder = "Movil 2", id = "Celular2", ReadOnly = "true" })
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.Correo, new { @class = "form-control input-sm", placeholder = "Correo", id = "Correo", ReadOnly = "true" })
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.Estrato, new { @class = "form-control input-sm", placeholder = "Estrato", id = "Estrato", ReadOnly = "true" })
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.Productos, new { @class = "form-control input-sm", placeholder = "Productos", id = "Productos", ReadOnly = "true" })
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:1px;">
+                                    <small>Nodo:  </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Nombre Comunidad: </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>División:  </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Tipo de Cliente:  </small>
+                                </td>
+                                <td style="padding:1px;">
+                                    <small>Descripción:  </small>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.Nodo, new { @class = "form-control input-sm", placeholder = "Nodo", id = "Nodo", ReadOnly = "true" })
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.NombreComunidad, new { @class = "form-control input-sm", placeholder = "NombreComunidad", id = "NombreComunidad", ReadOnly = "true" })
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.Division, new { @class = "form-control input-sm", placeholder = "Division", id = "Division", ReadOnly = "true" })
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.TipoCliente, new { @class = "form-control input-sm", placeholder = "Tipo Cliente", id = "TipoCliente", ReadOnly = "true" })
+                                </td>
+                                <td width="200" style="padding:1px;">
+                                    @Html.TextBoxFor(m => m.ClientesTodo.Descripcion, new { @class = "form-control input-sm", placeholder = "Descripcion", id = "Descripcion", ReadOnly = "true" })
+                                </td>
+                            </tr>
+                        </table>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-12">
-        <div class="box box-danger">
-            <div class="box-body">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h2 class="page-header" style="margin-top:25px">
-                            <i class="fa fa-sitemap"></i> Árbol de Tipificación
-                        </h2>
-                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
-                            <br />
-                            <table>
-                                <tr>
-                                    <td style="padding:1px;">
-                                        <small>Gestión: </small>
-                                    </td>
-                                    <td style="padding:1px;">
-                                        <small>Cierre: </small>
-                                    </td>
-                                    <td style="padding:1px;">
-                                        <small>Razón: </small>
-                                    </td>
-                                    <td style="padding:1px;">
-                                        <small>Motivo: </small>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
+                    <div role="tabpanel" class="tab-pane tab-dime-first active " id="Mi_Historial" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                        <br />
+                        <div id="datosBasicos">
 
-                                    </td>
-                                </tr>
-                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-12">
-        <div class="box box-danger">
-            <div class="box-body">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h2 class="page-header" style="margin-top:25px">
-                            <i class="fa fa-exchange"></i> Soporte
-                        </h2>
-                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
-                            <br />
-                            <table>
-                                <tr>
-                                    <td style="padding:1px;">
-                                        <small>Falla Servicios Principales:  </small>
-                                    </td>
-                                    <td style="padding:1px;">
-                                        <small>Falla Servicios Adicionales:  </small>
-                                    </td>
-                                    <td style="padding:1px;">
-                                        <small>Tipo Falla:  </small>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top:25px">
+                                <i class="fa fa-fax"></i> Información Adicional
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <br />
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td style="padding:1px; width:200px;" colspan="2">
+                                            <small>Consumo PPV:  </small>
+                                        </td>
+                                        <td style="padding:1px; width:200px;" colspan="2">
+                                            <small>Ultima PPV:  </small>
+                                        </td>
+                                        <td style="padding:1px; width:200px;" colspan="2">
+                                            <small>Siembra HD:  </small>
+                                        </td>
+                                        <td style="padding:1px; width:200px;" colspan="2">
+                                            <small>Siembra Voz:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px; width:200px;" colspan="2">
+                                            @Html.TextBoxFor(m => m.CargueBaseMidas.ConsumosPPV, new { @class = "form-control input-sm", placeholder = "ConsumosPPV", id = "ConsumosPPV", ReadOnly = "true" })
+                                        </td>
+                                        <td style="padding:1px; width:200px;" colspan="2">
+                                            @Html.TextBoxFor(m => m.CargueBaseMidas.UltimoPPV, new { @class = "form-control input-sm", placeholder = "UltimoPPV", id = "UltimoPPV", ReadOnly = "true" })
+                                        </td>
+                                        <td style="padding:1px; width:200px;" colspan="2">
+                                            @Html.TextBoxFor(m => m.CargueBaseMidas.SiembraHD, new { @class = "form-control input-sm", placeholder = "SiembraHD", id = "SiembraHD", ReadOnly = "true" })
+                                        </td>
+                                        <td style="padding:1px; width:200px;">
+                                            @Html.TextBoxFor(m => m.CargueBaseMidas.SiembraVoz, new { @class = "form-control input-sm", placeholder = "SiembraVoz", id = "SiembraVoz", ReadOnly = "true" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px; width:200px;" colspan="2">
+                                            <small>Blindaje Internet:  </small>
+                                        </td>
+                                        <td style="padding:1px; width:200px;" colspan="2">
+                                            <small>Ultimas dos marcaciones:  </small>
+                                        </td>
+                                        <td style="padding:1px; width:200px;" colspan="2">
+                                            <small>Ultima Marcación Cancelación: </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px; width:200px;" colspan="2">
+                                            @Html.TextBoxFor(m => m.CargueBaseMidas.BlindajeInternet, new { @class = "form-control input-sm", placeholder = "BlindajeInternet", id = "BlindajeInternet", ReadOnly = "true" })
+                                        </td>
+                                        <td style="padding:1px; width:200px;" colspan="2">
+                                            @Html.TextBoxFor(m => m.CargueBaseMidas.UltimaMarca1, new { @class = "form-control input-sm", placeholder = "Ultimas 2 Marcaciones", id = "Ultimas2Marcaciones", ReadOnly = "true" })
+                                        </td>
+                                        <td style="padding:1px; width:200px;" colspan="2">
+                                            @Html.TextBoxFor(m => m.CargueBaseMidas.UltimaMarcaCancelacion, new { @class = "form-control input-sm", placeholder = "UltimaMarcaCancelacion", id = "UltimaMarcaCancelacion", ReadOnly = "true" })
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top:25px">
+                                <i class="fa fa-gift"></i> Ofrecimiento
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <br />
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.GPMMidas.Ofrecimiento1, new { @class = "form-control input-sm", style = "margin-left:5px; width:100%; height:70px;", id = "Ofrecimiento1", ReadOnly = "true" })
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <small>El cliente acepto el ofrecimiento</small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:1px; width:200px;">
+                                            @Html.DropDownListFor(m => m.GPMMidas.AceptacionOfrecimiento1, new List<SelectListItem> {
+                                                 new SelectListItem{Text="SI", Value="SI" },
+                                                 new SelectListItem{Text="NO", Value="NO" } },
+                 "--SELECCIONE--",
+                 new { @Id = "AceptacionOfrecimiento1", @class = "form-control input-sm" })
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top:25px">
+                                <i class="fa fa-sitemap"></i> Árbol de Tipificación
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <br />
+                                <table>
+                                    <tr>
+                                        <td style="padding-left:1px; width:300px;">
+                                            <small>Gestión: </small>
+                                        </td>
+                                        <td style="padding-left:1px; width:300px;">
+                                            <small>Cierre: </small>
+                                        </td>
+                                        <td style="padding-left:1px; width:300px;">
+                                            <small>Razón: </small>
+                                        </td>
+                                        <td style="padding-left:1px; width:300px;">
+                                            <small>Motivo: </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:1px; width:300px;">
+                                            @Html.DropDownListFor(m => m.GPMMidas.Gestion, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "Gestion", @class = "form-control input-sm", onchange = "TraerArbolTipificacionCierre();" })
+                                        </td>
+                                        <td style="padding-left:1px; width:300px;">
+                                            @Html.DropDownListFor(m => m.GPMMidas.Cierre, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "Cierre", @class = "form-control input-sm", onchange = "TraerArbolTipificacionRazon();" })
+                                        </td>
+                                        <td style="padding-left:1px; width:300px;">
+                                            @Html.DropDownListFor(m => m.GPMMidas.Razon, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "Razon", @class = "form-control input-sm", onchange = "TraerArbolTipificacionMotivo();" })
+                                        </td>
+                                        <td style="padding-left:1px; width:300px;">
+                                            @Html.DropDownListFor(m => m.GPMMidas.Motivo, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "Motivo", @class = "form-control input-sm" })
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top:25px">
+                                <i class="fa fa-exchange"></i> Soporte
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <br />
+                                <table>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <small>Falla Servicios Principales:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Falla Servicios Adicionales:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Tipo Falla:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Solución Especifica:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Estado:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:1px; width:250px;">
+                                            @Html.DropDownListFor(m => m.GPMMidas.FallaServPrincipalesSoporte, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "FallaServPrincipalesSoporte", @class = "form-control input-sm" })
+                                        </td>
+                                        <td style="padding-left:1px; width:250px;">
+                                            @Html.DropDownListFor(m => m.GPMMidas.FallaServAdicionalesSoporte, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "FallaServAdicionalesSoporte", @class = "form-control input-sm" })
+                                        </td>
+                                        <td style="padding-left:1px; width:250px;">
+                                            @Html.DropDownListFor(m => m.GPMMidas.TipoFallaSoporte, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "TipoFallaSoporte", @class = "form-control input-sm" })
+                                        </td>
+                                        <td style="padding-left:1px; width:250px;">
+                                            @Html.DropDownListFor(m => m.GPMMidas.SolucionEspecificaSoporte, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "SolucionEspecificaSoporte", @class = "form-control input-sm" })
+                                        </td>
+                                        <td style="padding-left:1px; width:250px;">
+                                            @Html.DropDownListFor(m => m.GPMMidas.EstadoSoporte, new List<SelectListItem> {
+                                                                            new SelectListItem{Text="FINALIZADO", Value="FINALIZADO" },
+                                                                            new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" } }, "--SELECCIONE--",
+                 new { @Id = "EstadoSoporte", @class = "form-control input-sm" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <small>Observaciones:  </small>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.GPMMidas.ObservacionesSoporte, new { id = "ObservacionesSoporte", @class = "form-control input-sm", @style = "margin-left:0px; width:100%; height:70px;" })
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top:25px">
+                                <i class="fa fa-ticket"></i> Facturación
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <br />
+                                <table>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <small>Problema de facturación:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Solución:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Estado:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:1px; width:250px;">
+                                            @Html.DropDownListFor(m => m.GPMMidas.ProblemaFacturacion, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "ProblemaFacturacion", @class = "form-control input-sm" })
+                                        </td>
+                                        <td style="padding-left:1px; width:250px;">
+                                            @Html.DropDownListFor(m => m.GPMMidas.SolucionFacturacion, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "SolucionFacturacion", @class = "form-control input-sm" })
+                                        </td>
+                                        <td style="padding-left:1px; width:250px;">
+                                            @Html.DropDownListFor(m => m.GPMMidas.EstadoFacturacion, new List<SelectListItem> {
+                                                                            new SelectListItem{Text="FINALIZADO", Value="FINALIZADO" },
+                                                                            new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" }}, "--SELECCIONE--",
+                 new { @Id = "EstadoFacturacion", @class = "form-control input-sm" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <small>Observaciónes:  </small>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.GPMMidas.ObservacionesFacturacion, new { id = "ObservacionesFacturacion", @class = "form-control input-sm", @style = "margin-left:0px; width:100%; height:70px;" })
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="box box-danger">
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h2 class="page-header" style="margin-top:25px">
+                                    <i class="fa fa-times-circle-o"></i> Cancelación
+                                </h2>
+                                <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                    <br />
+                                    <table>
+                                        <tr>
+                                            <td style="padding:1px;">
+                                                <small>Cliente con  Intención de Cancelación:  </small>
+                                            </td>
+                                            <td style="padding:1px;">
+                                                <small>Motivo:  </small>
+                                            </td>
+                                            <td style="padding:1px;">
+                                                <small>Razon:  </small>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding-left:1px; width:250px;">
+                                                @Html.DropDownListFor(m => m.GPMMidas.ClienteIntencionCancelacion, new List<SelectListItem> { }, "--SELECCIONE--",
+             new { @Id = "ClienteIntencionCancelacion", @class = "form-control input-sm" })
+                                            </td>
+                                            <td style="padding-left:1px; width:250px;">
+                                                @Html.DropDownListFor(m => m.GPMMidas.MotivoCancelacion, new List<SelectListItem> { }, "--SELECCIONE--",
+             new { @Id = "MotivoCancelacion", @class = "form-control input-sm", onchange = "TraerArbolDeCancelacionRazon()" })
+                                            </td>
+                                            <td style="padding-left:1px; width:250px;">
+                                                @Html.DropDownListFor(m => m.GPMMidas.RazonCancelacion, new List<SelectListItem> { }, "--SELECCIONE--",
+             new { @Id = "RazonCancelacion", @class = "form-control input-sm" })
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:1px;">
+                                                <small>Observaciónes:  </small>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table style="width:100%;">
+                                        <tr>
+                                            <td>
+                                                @Html.TextBoxFor(m => m.GPMMidas.ObservacionesCancelacion, new { id = "ObservacionesCancelacion", @class = "form-control input-sm", @style = "margin-left:0px; width:100%; height:70px;" })
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:1px;">
-                                        <small>Observaciones:  </small>
-                                    </td>
-                                </tr>
-                            </table>
-                            <table style="width:100%;">
-                                <tr>
-                                    <td>
-                                        <input type="text" class="form-control input-sm" style="margin-left:0px; width:100%; height:70px;" />
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <br />
+            <button type="submit" style="display:block;" class="btn btn-primary" name="BotonEnvia" value="GuardaDatos" id="BotonEnvia">Guardar</button>
         </div>
     </div>
-    <div class="col-md-12">
-        <div class="box box-danger">
-            <div class="box-body">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h2 class="page-header" style="margin-top:25px">
-                            <i class="fa fa-times-circle-o"></i> Cancelación
-                        </h2>
-                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
-                            <br />
-                            <table>
-                                <tr>
-                                    <td style="padding:1px;">
-                                        <small>Cliente con  Intención de Cancelación:  </small>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:1px;">
-                                        <small>Observaciónes:  </small>
-                                    </td>
-                                </tr>
-                            </table>
-                            <table style="width:100%;">
-                                <tr>
-                                    <td>
-                                        <input type="text" class="form-control input-sm" style="margin-left:0px; width:100%; height:70px;" />
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-12">
-        <div class="box box-danger">
-            <div class="box-body">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h2 class="page-header" style="margin-top:25px">
-                            <i class="fa fa-ticket"></i> Facturación
-                        </h2>
-                        <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
-                            <br />
-                            <table>
-                                <tr>
-                                    <td style="padding:1px;">
-                                        <small>Problema de facturación:  </small>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:1px;">
-                                        <small>Observaciónes:  </small>
-                                    </td>
-                                </tr>
-                            </table>
-                            <table style="width:100%;">
-                                <tr>
-                                    <td>
-                                        <input type="text" class="form-control input-sm" style="margin-left:0px; width:100%; height:70px;" />
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br />
-        <button type="submit" style="display:block;" class="btn btn-primary" name="BotonEnvia" value="GuardaDatos" id="BotonEnvia">Guardar</button>
-    </div>
-    
-</div>
+}
 @section Scripts{
 
     <script>
         var UrlInformacionClienteTipificadorMidas = '@Url.Action("TraerInformacionCliente", "Midas")';
+        var UrlTraerInformacionClienteClientesTodo = '@Url.Action("TraerInformacionClienteClientesTodo", "Midas")';
+        var UrlArbolDeGestion = '@Url.Action("ArbolesDeTipificacionTipificador", "Midas")';
+
     </script>
 
-    <script src="~/Scripts/Midas/Tipificador.js?1.0.2"></script>
+    <script src="~/Scripts/Midas/Tipificador.js?1.0.4"></script>
 
 }
 
