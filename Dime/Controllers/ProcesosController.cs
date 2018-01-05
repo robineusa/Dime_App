@@ -296,10 +296,10 @@ namespace Dime.Controllers
             int IdNodoActual = Convert.ToInt32(idNodoActual);
             List<IndiceNodoArbol> resultadoFinal = new List<IndiceNodoArbol>();
 
-            if (IdNodoActual != 0)
-                resultadoFinal = ProcesosService.IndiceNodosArbol(IdNodoActual);
+            if (IdNodoActual != 0) { }
+            //resultadoFinal = ProcesosService.IndiceNodosArbol(IdNodoActual);
             else
-                resultadoFinal.Add(new IndiceNodoArbol {IdNodo= -1, NombreNodo="NodosPrincipal" });
+                resultadoFinal.Add(new IndiceNodoArbol { IdNodo = -1, NombreNodo = "NodosPrincipal" });
 
             var jsonResult = Json(JsonConvert.SerializeObject(resultadoFinal), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;

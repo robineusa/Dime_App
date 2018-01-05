@@ -2414,6 +2414,7 @@
     <Content Include="Scripts\Mec\ListaTipoAlarmas.js" />
     <Content Include="Scripts\Mec\RegistrarMonitoreo.js" />
     <Content Include="Scripts\Midas\AdministrarArboles.js" />
+    <Content Include="Scripts\Midas\ArbolesMidas.js" />
     <Content Include="Scripts\Midas\Tipificador.js" />
     <Content Include="Scripts\MultiPlay\ConsultasAdminMultiPlay.js" />
     <Content Include="Scripts\MultiPlay\MultiPlay.js" />
@@ -3198,6 +3199,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CargueBaseMidas.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.IndiceNodoArbol.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.ArbolesMidas1.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.GPMMidas.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />

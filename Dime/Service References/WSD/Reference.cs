@@ -19728,6 +19728,24 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ActualizarMidasTipificador", ReplyAction="http://tempuri.org/IMidasService/ActualizarMidasTipificadorResponse")]
         System.Threading.Tasks.Task ActualizarMidasTipificadorAsync(Telmexla.Servicios.DIME.Entity.GPMMidas model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraerSeguimientosTipificador", ReplyAction="http://tempuri.org/IMidasService/TraerSeguimientosTipificadorResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas> TraerSeguimientosTipificador();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraerSeguimientosTipificador", ReplyAction="http://tempuri.org/IMidasService/TraerSeguimientosTipificadorResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas>> TraerSeguimientosTipificadorAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/CargaHistorialCuenta", ReplyAction="http://tempuri.org/IMidasService/CargaHistorialCuentaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas> CargaHistorialCuenta(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/CargaHistorialCuenta", ReplyAction="http://tempuri.org/IMidasService/CargaHistorialCuentaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas>> CargaHistorialCuentaAsync(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/VerificaCliente", ReplyAction="http://tempuri.org/IMidasService/VerificaClienteResponse")]
+        Telmexla.Servicios.DIME.Entity.GPMMidas VerificaCliente(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/VerificaCliente", ReplyAction="http://tempuri.org/IMidasService/VerificaClienteResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GPMMidas> VerificaClienteAsync(decimal CuentaCliente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19819,6 +19837,30 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task ActualizarMidasTipificadorAsync(Telmexla.Servicios.DIME.Entity.GPMMidas model) {
             return base.Channel.ActualizarMidasTipificadorAsync(model);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas> TraerSeguimientosTipificador() {
+            return base.Channel.TraerSeguimientosTipificador();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas>> TraerSeguimientosTipificadorAsync() {
+            return base.Channel.TraerSeguimientosTipificadorAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas> CargaHistorialCuenta(decimal Cuenta) {
+            return base.Channel.CargaHistorialCuenta(Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas>> CargaHistorialCuentaAsync(decimal Cuenta) {
+            return base.Channel.CargaHistorialCuentaAsync(Cuenta);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GPMMidas VerificaCliente(decimal CuentaCliente) {
+            return base.Channel.VerificaCliente(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GPMMidas> VerificaClienteAsync(decimal CuentaCliente) {
+            return base.Channel.VerificaClienteAsync(CuentaCliente);
         }
     }
     

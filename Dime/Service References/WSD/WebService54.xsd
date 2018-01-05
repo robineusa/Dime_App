@@ -8470,6 +8470,46 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="TraerSeguimientosTipificador">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TraerSeguimientosTipificadorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q591="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerSeguimientosTipificadorResult" nillable="true" type="q591:ArrayOfGPMMidas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CargaHistorialCuenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Cuenta" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CargaHistorialCuentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q592="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="CargaHistorialCuentaResult" nillable="true" type="q592:ArrayOfGPMMidas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificaCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificaClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q593="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="VerificaClienteResult" nillable="true" type="q593:GPMMidas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ConsultarDiasFestivos">
     <xs:complexType>
       <xs:sequence>

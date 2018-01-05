@@ -20,7 +20,9 @@
                     <table>
                         <tr>
                             <td style="min-width:200px; padding:1px;">
+                                @Html.HiddenFor(m => m.GPMMidas.Id, new { @class = "form-control input-sm", @Id = "Id" })
                                 @Html.TextBoxFor(m => m.GPMMidas.CuentaCliente, new { @class = "form-control input-sm", placeholder = "Ingrese la cuenta", id = "CuentaCliente" })
+                                @*@Html.ValidationMessageFor(m => m.GPMMidas.CuentaCliente, "", new { @class = "text-danger" })*@
                             </td>
                         </tr>
                     </table>
@@ -37,6 +39,7 @@
                 <ul class="nav nav-tabs">
                     <li id="Li1" class="active" style="background-color: #dcdcdc; border-color: #c23321"><a href="#datosBasicos" aria-controls="datosBasicos" data-toggle="tab" role="tab" style="background-color:transparent;">Datos Básicos</a></li>
                     <li id="Li2" class=""><a href="#Seguimientos" aria-controls="Seguimientos" data-toggle="tab" role="tab" style="background-color:transparent;">Seguimientos</a></li>
+                    <li id="Li3" class="" style="display:none;"><a href="#Historial" aria-controls="Historial" data-toggle="tab" role="tab" style="background-color:transparent;">Historial</a></li>
                 </ul>
                 <div class="tab-content" style="padding-left:0; padding-top: 0">
                     <div role="tabpanel" class="tab-pane tab-dime-first active " id="datosBasicos" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
@@ -157,11 +160,11 @@
                             </tr>
                         </table>
                     </div>
-                    <div role="tabpanel" class="tab-pane tab-dime-first active " id="Mi_Historial" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
-                        <br />
-                        <div id="datosBasicos">
-
-                        </div>
+                    <div id="Seguimientos" class="tab-pane" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                        <br /><div id="GridSeguimientosTipificadorMidas"></div>
+                    </div>
+                    <div id="Historial" class="tab-pane" style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px;">
+                        <br /><div id="HistorialGrid"></div>
                     </div>
                 </div>
             </div>
@@ -259,61 +262,12 @@
                                     </tr>
                                     <tr>
                                         <td style="padding-left:1px; width:200px;">
-                                            @Html.DropDownListFor(m => m.GPMMidas.AceptacionOfrecimiento1, new List<SelectListItem> {
+                                            @Html.TextBoxFor(m => m.GPMMidas.AceptacionOfrecimiento1 , new { @class = "form-control input-sm", @Id = "AceptacionOfrecimiento11" })
+                                            @Html.DropDownListFor(m => m.GPMMidas.AceptacionOfrecimiento1R, new List<SelectListItem> {
                                                  new SelectListItem{Text="SI", Value="SI" },
                                                  new SelectListItem{Text="NO", Value="NO" } },
                  "--SELECCIONE--",
-                 new { @Id = "AceptacionOfrecimiento1", @class = "form-control input-sm" })
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="box box-danger">
-                <div class="box-body">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h2 class="page-header" style="margin-top:25px">
-                                <i class="fa fa-sitemap"></i> Árbol de Tipificación
-                            </h2>
-                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
-                                <br />
-                                <table>
-                                    <tr>
-                                        <td style="padding-left:1px; width:300px;">
-                                            <small>Gestión: </small>
-                                        </td>
-                                        <td style="padding-left:1px; width:300px;">
-                                            <small>Cierre: </small>
-                                        </td>
-                                        <td style="padding-left:1px; width:300px;">
-                                            <small>Razón: </small>
-                                        </td>
-                                        <td style="padding-left:1px; width:300px;">
-                                            <small>Motivo: </small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding-left:1px; width:300px;">
-                                            @Html.DropDownListFor(m => m.GPMMidas.Gestion, new List<SelectListItem> { }, "--SELECCIONE--",
-                 new { @Id = "Gestion", @class = "form-control input-sm", onchange = "TraerArbolTipificacionCierre();" })
-                                        </td>
-                                        <td style="padding-left:1px; width:300px;">
-                                            @Html.DropDownListFor(m => m.GPMMidas.Cierre, new List<SelectListItem> { }, "--SELECCIONE--",
-                 new { @Id = "Cierre", @class = "form-control input-sm", onchange = "TraerArbolTipificacionRazon();" })
-                                        </td>
-                                        <td style="padding-left:1px; width:300px;">
-                                            @Html.DropDownListFor(m => m.GPMMidas.Razon, new List<SelectListItem> { }, "--SELECCIONE--",
-                 new { @Id = "Razon", @class = "form-control input-sm", onchange = "TraerArbolTipificacionMotivo();" })
-                                        </td>
-                                        <td style="padding-left:1px; width:300px;">
-                                            @Html.DropDownListFor(m => m.GPMMidas.Motivo, new List<SelectListItem> { }, "--SELECCIONE--",
-                 new { @Id = "Motivo", @class = "form-control input-sm" })
+                 new { @Id = "AceptacionOfrecimiento1", @class = "form-control input-sm", onchange= "AceptacionOfrecimiento1Reemplazo();"})
                                         </td>
                                     </tr>
                                 </table>
@@ -353,26 +307,31 @@
                                     </tr>
                                     <tr>
                                         <td style="padding-left:1px; width:250px;">
-                                            @Html.DropDownListFor(m => m.GPMMidas.FallaServPrincipalesSoporte, new List<SelectListItem> { }, "--SELECCIONE--",
-                 new { @Id = "FallaServPrincipalesSoporte", @class = "form-control input-sm" })
+                                            @Html.TextBoxFor(m => m.GPMMidas.FallaServPrincipalesSoporte, new { @class = "form-control input-sm", @Id = "FallaServPrincipalesSoporte1" })
+                                            @Html.DropDownListFor(m => m.GPMMidas.FallaServPrincipalesSoporteR, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "FallaServPrincipalesSoporte", @class = "form-control input-sm", onchange= "FallaServPrincipalesSoporteReemplazo();" })
                                         </td>
                                         <td style="padding-left:1px; width:250px;">
-                                            @Html.DropDownListFor(m => m.GPMMidas.FallaServAdicionalesSoporte, new List<SelectListItem> { }, "--SELECCIONE--",
-                 new { @Id = "FallaServAdicionalesSoporte", @class = "form-control input-sm" })
+                                            @Html.TextBoxFor(m => m.GPMMidas.FallaServAdicionalesSoporte, new { @class = "form-control input-sm", @Id = "FallaServAdicionalesSoporte1" })
+                                            @Html.DropDownListFor(m => m.GPMMidas.FallaServAdicionalesSoporteR, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "FallaServAdicionalesSoporte", @class = "form-control input-sm", onchange = "FallaServAdicionalesSoporteReemplazo();" })
                                         </td>
                                         <td style="padding-left:1px; width:250px;">
-                                            @Html.DropDownListFor(m => m.GPMMidas.TipoFallaSoporte, new List<SelectListItem> { }, "--SELECCIONE--",
-                 new { @Id = "TipoFallaSoporte", @class = "form-control input-sm" })
+                                            @Html.TextBoxFor(m => m.GPMMidas.TipoFallaSoporte, new { @class = "form-control input-sm", @Id = "TipoFallaSoporte1" })
+                                            @Html.DropDownListFor(m => m.GPMMidas.TipoFallaSoporteR, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "TipoFallaSoporte", @class = "form-control input-sm", onchange = "TipoFallaSoporteReemplazo();" })
                                         </td>
                                         <td style="padding-left:1px; width:250px;">
-                                            @Html.DropDownListFor(m => m.GPMMidas.SolucionEspecificaSoporte, new List<SelectListItem> { }, "--SELECCIONE--",
-                 new { @Id = "SolucionEspecificaSoporte", @class = "form-control input-sm" })
+                                            @Html.TextBoxFor(m => m.GPMMidas.SolucionEspecificaSoporte, new { @class = "form-control input-sm", @Id = "SolucionEspecificaSoporte1" })
+                                            @Html.DropDownListFor(m => m.GPMMidas.SolucionEspecificaSoporteR, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "SolucionEspecificaSoporte", @class = "form-control input-sm", onchange = "SolucionEspecificaSoporteReemplazo();" })
                                         </td>
                                         <td style="padding-left:1px; width:250px;">
+                                            @Html.TextBoxFor(m => m.GPMMidas.EstadoSoporteR, new { @class = "form-control input-sm", @Id = "EstadoSoporte1" })
                                             @Html.DropDownListFor(m => m.GPMMidas.EstadoSoporte, new List<SelectListItem> {
                                                                             new SelectListItem{Text="FINALIZADO", Value="FINALIZADO" },
                                                                             new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" } }, "--SELECCIONE--",
-                 new { @Id = "EstadoSoporte", @class = "form-control input-sm" })
+                 new { @Id = "EstadoSoporte", @class = "form-control input-sm", @onchange = "CambiaArbolTipificacion();" })
                                         </td>
                                     </tr>
                                     <tr>
@@ -418,18 +377,21 @@
                                     </tr>
                                     <tr>
                                         <td style="padding-left:1px; width:250px;">
-                                            @Html.DropDownListFor(m => m.GPMMidas.ProblemaFacturacion, new List<SelectListItem> { }, "--SELECCIONE--",
-                 new { @Id = "ProblemaFacturacion", @class = "form-control input-sm" })
+                                            @Html.TextBoxFor(m => m.GPMMidas.ProblemaFacturacion, new { @class = "form-control input-sm", @Id = "ProblemaFacturacion1" })
+                                            @Html.DropDownListFor(m => m.GPMMidas.ProblemaFacturacionR, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "ProblemaFacturacion", @class = "form-control input-sm", onchange = "ProblemaFacturacionReemplazo();" })
                                         </td>
                                         <td style="padding-left:1px; width:250px;">
-                                            @Html.DropDownListFor(m => m.GPMMidas.SolucionFacturacion, new List<SelectListItem> { }, "--SELECCIONE--",
-                 new { @Id = "SolucionFacturacion", @class = "form-control input-sm" })
+                                            @Html.TextBoxFor(m => m.GPMMidas.SolucionFacturacion, new { @class = "form-control input-sm", @Id = "SolucionFacturacion1" })
+                                            @Html.DropDownListFor(m => m.GPMMidas.SolucionFacturacionR, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "SolucionFacturacion", @class = "form-control input-sm", onchange = "SolucionFacturacionReemplazo();" })
                                         </td>
                                         <td style="padding-left:1px; width:250px;">
+                                            @Html.TextBoxFor(m => m.GPMMidas.EstadoFacturacionR, new { @class = "form-control input-sm", @Id = "EstadoFacturacion1" })
                                             @Html.DropDownListFor(m => m.GPMMidas.EstadoFacturacion, new List<SelectListItem> {
                                                                             new SelectListItem{Text="FINALIZADO", Value="FINALIZADO" },
                                                                             new SelectListItem{Text="SEGUIMIENTO", Value="SEGUIMIENTO" }}, "--SELECCIONE--",
-                 new { @Id = "EstadoFacturacion", @class = "form-control input-sm" })
+                 new { @Id = "EstadoFacturacion", @class = "form-control input-sm", @onchange = "CambiaArbolTipificacion();" })
                                         </td>
                                     </tr>
                                     <tr>
@@ -450,77 +412,145 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="box box-danger">
-                    <div class="box-body">
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <h2 class="page-header" style="margin-top:25px">
-                                    <i class="fa fa-times-circle-o"></i> Cancelación
-                                </h2>
-                                <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
-                                    <br />
-                                    <table>
-                                        <tr>
-                                            <td style="padding:1px;">
-                                                <small>Cliente con  Intención de Cancelación:  </small>
-                                            </td>
-                                            <td style="padding:1px;">
-                                                <small>Motivo:  </small>
-                                            </td>
-                                            <td style="padding:1px;">
-                                                <small>Razon:  </small>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding-left:1px; width:250px;">
-                                                @Html.DropDownListFor(m => m.GPMMidas.ClienteIntencionCancelacion, new List<SelectListItem> { }, "--SELECCIONE--",
-             new { @Id = "ClienteIntencionCancelacion", @class = "form-control input-sm" })
-                                            </td>
-                                            <td style="padding-left:1px; width:250px;">
-                                                @Html.DropDownListFor(m => m.GPMMidas.MotivoCancelacion, new List<SelectListItem> { }, "--SELECCIONE--",
+        </div>
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top:25px">
+                                <i class="fa fa-times-circle-o"></i> Cancelación
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <br />
+                                <table>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <small>Cliente con  Intención de Cancelación:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Motivo:  </small>
+                                        </td>
+                                        <td style="padding:1px;">
+                                            <small>Razon:  </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:1px; width:250px;">
+                                            @Html.TextBoxFor(m => m.GPMMidas.ClienteIntencionCancelacion, new { @class = "form-control input-sm", @Id = "ClienteIntencionCancelacion1" })
+                                            @Html.DropDownListFor(m => m.GPMMidas.ClienteIntencionCancelacionR, new List<SelectListItem> { }, "--SELECCIONE--",
+             new { @Id = "ClienteIntencionCancelacion", @class = "form-control input-sm", @onchange = "ClienteIntencionCancelacionReemplazo();" })
+                                        </td>
+                                        <td style="padding-left:1px; width:250px;">
+                                            @Html.TextBoxFor(m => m.GPMMidas.MotivoCancelacion, new { @class = "form-control input-sm", @Id = "MotivoCancelacion1" })
+                                            @Html.DropDownListFor(m => m.GPMMidas.MotivoCancelacionR, new List<SelectListItem> { }, "--SELECCIONE--",
              new { @Id = "MotivoCancelacion", @class = "form-control input-sm", onchange = "TraerArbolDeCancelacionRazon()" })
-                                            </td>
-                                            <td style="padding-left:1px; width:250px;">
-                                                @Html.DropDownListFor(m => m.GPMMidas.RazonCancelacion, new List<SelectListItem> { }, "--SELECCIONE--",
-             new { @Id = "RazonCancelacion", @class = "form-control input-sm" })
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="padding:1px;">
-                                                <small>Observaciónes:  </small>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <table style="width:100%;">
-                                        <tr>
-                                            <td>
-                                                @Html.TextBoxFor(m => m.GPMMidas.ObservacionesCancelacion, new { id = "ObservacionesCancelacion", @class = "form-control input-sm", @style = "margin-left:0px; width:100%; height:70px;" })
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
+                                        </td>
+                                        <td style="padding-left:1px; width:250px;">
+                                            @Html.TextBoxFor(m => m.GPMMidas.RazonCancelacion, new { @class = "form-control input-sm", @Id = "RazonCancelacion1" })
+                                            @Html.DropDownListFor(m => m.GPMMidas.RazonCancelacionR, new List<SelectListItem> { }, "--SELECCIONE--",
+             new { @Id = "RazonCancelacion", @class = "form-control input-sm", @onchange = "RazonCancelacionReemplazo();" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:1px;">
+                                            <small>Observaciónes:  </small>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td>
+                                            @Html.TextBoxFor(m => m.GPMMidas.ObservacionesCancelacion, new { id = "ObservacionesCancelacion", @class = "form-control input-sm", @style = "margin-left:0px; width:100%; height:70px;" })
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <br />
-            <button type="submit" style="display:block;" class="btn btn-primary" name="BotonEnvia" value="GuardaDatos" id="BotonEnvia">Guardar</button>
         </div>
+        <div class="col-md-12">
+            <div class="box box-danger">
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="page-header" style="margin-top:25px">
+                                <i class="fa fa-sitemap"></i> Árbol de Tipificación
+                            </h2>
+                            <div style="background-color:#dcdcdc; padding-left:10px; padding-bottom:10px; margin-top:-10px; margin-left: -10px; padding-right:10px;">
+                                <br />
+                                <table>
+                                    <tr>
+                                        <td style="padding-left:1px; width:300px;">
+                                            <small>Gestión: </small>
+                                        </td>
+                                        <td style="padding-left:1px; width:300px;">
+                                            <small>Cierre: </small>
+                                        </td>
+                                        <td style="padding-left:1px; width:300px;">
+                                            <small>Razón: </small>
+                                        </td>
+                                        <td style="padding-left:1px; width:300px;">
+                                            <small>Motivo: </small>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:1px; width:300px;">
+                                            @Html.TextBoxFor(m => m.GPMMidas.Gestion, new { @class = "form-control input-sm", @Id = "Gestion1" })
+                                            @Html.DropDownListFor(m => m.GPMMidas.GestionR, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "Gestion", @class = "form-control input-sm", onchange = "TraerArbolTipificacionCierre();" })
+                                            @Html.ValidationMessageFor(m => m.GPMMidas.GestionR, "", new { @class = "text-danger" })
+                                        </td>
+                                        <td style="padding-left:1px; width:300px;">
+                                            @Html.TextBoxFor(m => m.GPMMidas.Cierre, new { @class = "form-control input-sm", @Id = "Cierre1" })
+                                            @Html.DropDownListFor(m => m.GPMMidas.CierreR, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "Cierre", @class = "form-control input-sm", onchange = "TraerArbolTipificacionRazon();" })
+                                            @Html.ValidationMessageFor(m => m.GPMMidas.CierreR, "", new { @class = "text-danger" })
+                                        </td>
+                                        <td style="padding-left:1px; width:300px;">
+                                            @Html.TextBoxFor(m => m.GPMMidas.Razon, new { @class = "form-control input-sm", @Id = "Razon1" })
+                                            @Html.DropDownListFor(m => m.GPMMidas.RazonR, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "Razon", @class = "form-control input-sm", onchange = "TraerArbolTipificacionMotivo();" })
+                                            @Html.ValidationMessageFor(m => m.GPMMidas.RazonR, "", new { @class = "text-danger" })
+                                        </td>
+                                        <td style="padding-left:1px; width:300px;">
+                                            @Html.TextBoxFor(m => m.GPMMidas.Motivo, new { @class = "form-control input-sm", @Id = "Motivo1" })
+                                            @Html.DropDownListFor(m => m.GPMMidas.MotivoR, new List<SelectListItem> { }, "--SELECCIONE--",
+                 new { @Id = "Motivo", @class = "form-control input-sm", @onchange = "MotivoReemplazo();" })
+                                            @Html.ValidationMessageFor(m => m.GPMMidas.MotivoR, "", new { @class = "text-danger" })
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <button type="submit" style="display:none;" class="btn btn-primary" name="BotonEnvia" value="GuardaDatos" id="BotonEnvia">Guardar</button>
+            <br />
+            <br />
+            <br />
+        </div>
+        
     </div>
+
 }
 @section Scripts{
-
+    @Scripts.Render("~/AdminLTEplugins/jquery-validate/js")
     <script>
         var UrlInformacionClienteTipificadorMidas = '@Url.Action("TraerInformacionCliente", "Midas")';
         var UrlTraerInformacionClienteClientesTodo = '@Url.Action("TraerInformacionClienteClientesTodo", "Midas")';
         var UrlArbolDeGestion = '@Url.Action("ArbolesDeTipificacionTipificador", "Midas")';
+        var UrlListaSeguimientosTipificador = '@Url.Action("ListaSeguimientosTipificador", "Midas")';
+        var UrlListaHistorialCuentasTpificador = '@Url.Action("ListaHistorialCuentasTpificador", "Midas")';
+        var UrlVerificarCLiente = '@Url.Action("VerificarCLiente", "Midas")';        
 
     </script>
 
-    <script src="~/Scripts/Midas/Tipificador.js?1.0.4"></script>
+    <script src="~/Scripts/Midas/Tipificador.js?1.0.8"></script>
 
 }
 
