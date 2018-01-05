@@ -260,6 +260,7 @@
     <Compile Include="UsersNotify.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminLTE\bootstrap\css\ArbolAsesor.css" />
     <Content Include="AdminLTE\bootstrap\css\bootstrap.css" />
     <Content Include="AdminLTE\bootstrap\css\bootstrap.css.map" />
     <Content Include="AdminLTE\bootstrap\css\bootstrap.min.css" />
@@ -2478,6 +2479,7 @@
     <Content Include="Scripts\Procesos\dist\summernote.min.js" />
     <Content Include="Scripts\Procesos\EditarArbol.js" />
     <Content Include="Scripts\Procesos\EditarCategoria.js" />
+    <Content Include="Scripts\Procesos\GestionNoCheck.js" />
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorLog.js" />
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorLogInbound.js" />
     <Content Include="Scripts\Recurrencia\ConsultaAdministradorPrincipal.js" />
@@ -3194,6 +3196,7 @@
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CELLiberaciones.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.TiposMacroprocesos.datasource" />
     <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.CargueBaseMidas.datasource" />
+    <Content Include="Properties\DataSources\Telmexla.Servicios.DIME.Entity.IndiceNodoArbol.datasource" />
     <None Include="Properties\PublishProfiles\DIME.pubxml" />
     <None Include="Properties\PublishProfiles\DIME_PRUEBAS.pubxml" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
@@ -3331,20 +3334,23 @@
     <Content Include="Scripts\Procesos\dist\font\summernote.eot" />
     <Content Include="Scripts\Procesos\dist\font\summernote.ttf" />
     <Content Include="Scripts\Procesos\dist\font\summernote.woff" />
-    <None Include="Service References\WSD\WebService.wsdl" />
-    <None Include="Service References\WSD\WebService.xsd">
+    <Content Include="Service References\WSD\Dime.WSD.ArbolesMidas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\WSD\WebService1.wsdl" />
+    <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService1.xsd">
+    <None Include="Service References\WSD\WebService51.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService2.xsd">
+    <None Include="Service References\WSD\WebService52.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService3.xsd">
+    <None Include="Service References\WSD\WebService53.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\WSD\WebService4.xsd">
+    <None Include="Service References\WSD\WebService54.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\WSP\configuration91.svcinfo" />
@@ -3355,7 +3361,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSD\WebService.disco" />
+    <None Include="Service References\WSD\WebService1.disco" />
     <Content Include="Service References\WSP\Dime.WSP.enviarEncuestaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>

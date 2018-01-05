@@ -9662,6 +9662,99 @@ namespace Dime.WSD {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ArbolesMidas", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class ArbolesMidas : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescripcionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoArbolField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal IdArbolField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal IdPadreField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descripcion {
+            get {
+                return this.DescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EstadoArbol {
+            get {
+                return this.EstadoArbolField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoArbolField, value) != true)) {
+                    this.EstadoArbolField = value;
+                    this.RaisePropertyChanged("EstadoArbol");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal IdArbol {
+            get {
+                return this.IdArbolField;
+            }
+            set {
+                if ((this.IdArbolField.Equals(value) != true)) {
+                    this.IdArbolField = value;
+                    this.RaisePropertyChanged("IdArbol");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal IdPadre {
+            get {
+                return this.IdPadreField;
+            }
+            set {
+                if ((this.IdPadreField.Equals(value) != true)) {
+                    this.IdPadreField = value;
+                    this.RaisePropertyChanged("IdPadre");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IWebService")]
     public interface IWebService {
@@ -18269,6 +18362,18 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/EditarCategoria", ReplyAction="http://tempuri.org/IProcesosService/EditarCategoriaResponse")]
         System.Threading.Tasks.Task EditarCategoriaAsync(int IdCategoria, string nombreNuevo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/consultarNodosArbol", ReplyAction="http://tempuri.org/IProcesosService/consultarNodosArbolResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Nodo> consultarNodosArbol(int idArbol, int idNodoPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/consultarNodosArbol", ReplyAction="http://tempuri.org/IProcesosService/consultarNodosArbolResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Nodo>> consultarNodosArbolAsync(int idArbol, int idNodoPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/IndiceNodosArbol", ReplyAction="http://tempuri.org/IProcesosService/IndiceNodosArbolResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IndiceNodoArbol> IndiceNodosArbol(int idNodoActual);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/IndiceNodosArbol", ReplyAction="http://tempuri.org/IProcesosService/IndiceNodosArbolResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IndiceNodoArbol>> IndiceNodosArbolAsync(int idNodoActual);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18432,6 +18537,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task EditarCategoriaAsync(int IdCategoria, string nombreNuevo) {
             return base.Channel.EditarCategoriaAsync(IdCategoria, nombreNuevo);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Nodo> consultarNodosArbol(int idArbol, int idNodoPadre) {
+            return base.Channel.consultarNodosArbol(idArbol, idNodoPadre);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Nodo>> consultarNodosArbolAsync(int idArbol, int idNodoPadre) {
+            return base.Channel.consultarNodosArbolAsync(idArbol, idNodoPadre);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IndiceNodoArbol> IndiceNodosArbol(int idNodoActual) {
+            return base.Channel.IndiceNodosArbol(idNodoActual);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IndiceNodoArbol>> IndiceNodosArbolAsync(int idNodoActual) {
+            return base.Channel.IndiceNodosArbolAsync(idNodoActual);
         }
     }
     
@@ -19653,11 +19774,53 @@ namespace Dime.WSD {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IMidasService")]
     public interface IMidasService {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ListasDeArbolesMidasAdmin", ReplyAction="http://tempuri.org/IMidasService/ListasDeArbolesMidasAdminResponse")]
+        System.Collections.Generic.List<Dime.WSD.ArbolesMidas> ListasDeArbolesMidasAdmin(decimal IdPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ListasDeArbolesMidasAdmin", ReplyAction="http://tempuri.org/IMidasService/ListasDeArbolesMidasAdminResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.ArbolesMidas>> ListasDeArbolesMidasAdminAsync(decimal IdPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ActualizarArbolesMidas", ReplyAction="http://tempuri.org/IMidasService/ActualizarArbolesMidasResponse")]
+        void ActualizarArbolesMidas(Dime.WSD.ArbolesMidas Arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ActualizarArbolesMidas", ReplyAction="http://tempuri.org/IMidasService/ActualizarArbolesMidasResponse")]
+        System.Threading.Tasks.Task ActualizarArbolesMidasAsync(Dime.WSD.ArbolesMidas Arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/RegistrarNuevoArbolesMidas", ReplyAction="http://tempuri.org/IMidasService/RegistrarNuevoArbolesMidasResponse")]
+        void RegistrarNuevoArbolesMidas(Dime.WSD.ArbolesMidas Arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/RegistrarNuevoArbolesMidas", ReplyAction="http://tempuri.org/IMidasService/RegistrarNuevoArbolesMidasResponse")]
+        System.Threading.Tasks.Task RegistrarNuevoArbolesMidasAsync(Dime.WSD.ArbolesMidas Arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraerArbolMidasPorId", ReplyAction="http://tempuri.org/IMidasService/TraerArbolMidasPorIdResponse")]
+        Dime.WSD.ArbolesMidas TraerArbolMidasPorId(decimal IdArbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraerArbolMidasPorId", ReplyAction="http://tempuri.org/IMidasService/TraerArbolMidasPorIdResponse")]
+        System.Threading.Tasks.Task<Dime.WSD.ArbolesMidas> TraerArbolMidasPorIdAsync(decimal IdArbol);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraeCuentaMidas", ReplyAction="http://tempuri.org/IMidasService/TraeCuentaMidasResponse")]
         Telmexla.Servicios.DIME.Entity.CargueBaseMidas TraeCuentaMidas(decimal CuentaCliente);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraeCuentaMidas", ReplyAction="http://tempuri.org/IMidasService/TraeCuentaMidasResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CargueBaseMidas> TraeCuentaMidasAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ArbolDeGestionAgenteMidas", ReplyAction="http://tempuri.org/IMidasService/ArbolDeGestionAgenteMidasResponse")]
+        System.Collections.Generic.List<Dime.WSD.ArbolesMidas> ArbolDeGestionAgenteMidas(decimal IdPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ArbolDeGestionAgenteMidas", ReplyAction="http://tempuri.org/IMidasService/ArbolDeGestionAgenteMidasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.ArbolesMidas>> ArbolDeGestionAgenteMidasAsync(decimal IdPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/RegistrarMidasTipificador", ReplyAction="http://tempuri.org/IMidasService/RegistrarMidasTipificadorResponse")]
+        void RegistrarMidasTipificador(Telmexla.Servicios.DIME.Entity.GPMMidas model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/RegistrarMidasTipificador", ReplyAction="http://tempuri.org/IMidasService/RegistrarMidasTipificadorResponse")]
+        System.Threading.Tasks.Task RegistrarMidasTipificadorAsync(Telmexla.Servicios.DIME.Entity.GPMMidas model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ActualizarMidasTipificador", ReplyAction="http://tempuri.org/IMidasService/ActualizarMidasTipificadorResponse")]
+        void ActualizarMidasTipificador(Telmexla.Servicios.DIME.Entity.GPMMidas model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ActualizarMidasTipificador", ReplyAction="http://tempuri.org/IMidasService/ActualizarMidasTipificadorResponse")]
+        System.Threading.Tasks.Task ActualizarMidasTipificadorAsync(Telmexla.Servicios.DIME.Entity.GPMMidas model);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19687,12 +19850,68 @@ namespace Dime.WSD {
                 base(binding, remoteAddress) {
         }
         
+        public System.Collections.Generic.List<Dime.WSD.ArbolesMidas> ListasDeArbolesMidasAdmin(decimal IdPadre) {
+            return base.Channel.ListasDeArbolesMidasAdmin(IdPadre);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.ArbolesMidas>> ListasDeArbolesMidasAdminAsync(decimal IdPadre) {
+            return base.Channel.ListasDeArbolesMidasAdminAsync(IdPadre);
+        }
+        
+        public void ActualizarArbolesMidas(Dime.WSD.ArbolesMidas Arbol) {
+            base.Channel.ActualizarArbolesMidas(Arbol);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarArbolesMidasAsync(Dime.WSD.ArbolesMidas Arbol) {
+            return base.Channel.ActualizarArbolesMidasAsync(Arbol);
+        }
+        
+        public void RegistrarNuevoArbolesMidas(Dime.WSD.ArbolesMidas Arbol) {
+            base.Channel.RegistrarNuevoArbolesMidas(Arbol);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarNuevoArbolesMidasAsync(Dime.WSD.ArbolesMidas Arbol) {
+            return base.Channel.RegistrarNuevoArbolesMidasAsync(Arbol);
+        }
+        
+        public Dime.WSD.ArbolesMidas TraerArbolMidasPorId(decimal IdArbol) {
+            return base.Channel.TraerArbolMidasPorId(IdArbol);
+        }
+        
+        public System.Threading.Tasks.Task<Dime.WSD.ArbolesMidas> TraerArbolMidasPorIdAsync(decimal IdArbol) {
+            return base.Channel.TraerArbolMidasPorIdAsync(IdArbol);
+        }
+        
         public Telmexla.Servicios.DIME.Entity.CargueBaseMidas TraeCuentaMidas(decimal CuentaCliente) {
             return base.Channel.TraeCuentaMidas(CuentaCliente);
         }
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CargueBaseMidas> TraeCuentaMidasAsync(decimal CuentaCliente) {
             return base.Channel.TraeCuentaMidasAsync(CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Dime.WSD.ArbolesMidas> ArbolDeGestionAgenteMidas(decimal IdPadre) {
+            return base.Channel.ArbolDeGestionAgenteMidas(IdPadre);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.ArbolesMidas>> ArbolDeGestionAgenteMidasAsync(decimal IdPadre) {
+            return base.Channel.ArbolDeGestionAgenteMidasAsync(IdPadre);
+        }
+        
+        public void RegistrarMidasTipificador(Telmexla.Servicios.DIME.Entity.GPMMidas model) {
+            base.Channel.RegistrarMidasTipificador(model);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarMidasTipificadorAsync(Telmexla.Servicios.DIME.Entity.GPMMidas model) {
+            return base.Channel.RegistrarMidasTipificadorAsync(model);
+        }
+        
+        public void ActualizarMidasTipificador(Telmexla.Servicios.DIME.Entity.GPMMidas model) {
+            base.Channel.ActualizarMidasTipificador(model);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarMidasTipificadorAsync(Telmexla.Servicios.DIME.Entity.GPMMidas model) {
+            return base.Channel.ActualizarMidasTipificadorAsync(model);
         }
     }
     
@@ -19701,10 +19920,10 @@ namespace Dime.WSD {
     public interface IDiasFestivosService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDiasFestivosService/ConsultarDiasFestivos", ReplyAction="http://tempuri.org/IDiasFestivosService/ConsultarDiasFestivosResponse")]
-        string ConsultarDiasFestivos(System.DateTime FechaInicio, int Dias);
+        string ConsultarDiasFestivos(string FechaInicio, int Dias);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDiasFestivosService/ConsultarDiasFestivos", ReplyAction="http://tempuri.org/IDiasFestivosService/ConsultarDiasFestivosResponse")]
-        System.Threading.Tasks.Task<string> ConsultarDiasFestivosAsync(System.DateTime FechaInicio, int Dias);
+        System.Threading.Tasks.Task<string> ConsultarDiasFestivosAsync(string FechaInicio, int Dias);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19734,11 +19953,11 @@ namespace Dime.WSD {
                 base(binding, remoteAddress) {
         }
         
-        public string ConsultarDiasFestivos(System.DateTime FechaInicio, int Dias) {
+        public string ConsultarDiasFestivos(string FechaInicio, int Dias) {
             return base.Channel.ConsultarDiasFestivos(FechaInicio, Dias);
         }
         
-        public System.Threading.Tasks.Task<string> ConsultarDiasFestivosAsync(System.DateTime FechaInicio, int Dias) {
+        public System.Threading.Tasks.Task<string> ConsultarDiasFestivosAsync(string FechaInicio, int Dias) {
             return base.Channel.ConsultarDiasFestivosAsync(FechaInicio, Dias);
         }
     }

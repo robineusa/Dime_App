@@ -7,3 +7,21 @@
 
 
 
+<div class="container">
+    <ul id="breadcrumbs-one"></ul>
+    <br />
+    <div id="contenedor-nodos" style="padding:15px 15px;-webkit-box-shadow: -7px 10px 15px 0px rgba(0,0,0,0.61);-moz-box-shadow: -7px 10px 15px 0px rgba(0,0,0,0.61);
+    box-shadow: -7px 10px 15px 0px rgba(0,0,0,0.61);border-radius: 10px 10px 10px 10px;-moz-border-radius: 10px 10px 10px 10px;-webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;">
+        <div id="contenedor"></div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        var urlConsultarNodosArbol = '@Url.Action("ConsultarNodosArbol", "Procesos")';
+        var urlIndiceNodosArbol = '@Url.Action("IndiceNodosArbol", "Procesos")';
+    </script>
+
+    <link href="~/AdminLTE/bootstrap/css/ArbolAsesor.css" rel="stylesheet">
+    <script src="~/Scripts/Procesos/GestionNoCheck.js?1.0.6"></script>
+}
