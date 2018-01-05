@@ -28,6 +28,28 @@ namespace Dime.Controllers
             ViewModelMidas model = new ViewModelMidas();
             return View(model);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Tipificador(ViewModelMidas modelo)
+        {
+            modelo.GPMMidas.UsuarioGestion = Convert.ToDecimal(Session["Usuario"]);
+            modelo.GPMMidas.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+            modelo.GPMMidas.AliadoGestion = Session["AliadoLogeado"].ToString();
+
+            if (modelo.GPMMidas.Id > 0)
+            {
+                midasService.ActualizarMidasTipificador(modelo.GPMMidas);
+                modelo.GPMMidas = new GPMMidas();
+                modelo.ClientesTodo = new ClientesTodo();
+            }
+            else
+            {
+                midasService.RegistrarMidasTipificador(modelo.GPMMidas);
+                modelo.GPMMidas = new GPMMidas();
+                modelo.ClientesTodo = new ClientesTodo();
+            }
+            return View(modelo);
+        }
         [HttpGet]
         public ActionResult AdministrarArboles(string IdPadre, string IdArbol)
         {

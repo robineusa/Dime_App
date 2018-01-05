@@ -11,6 +11,9 @@
         $("#Li2").css("border-color", "#c23321");
         $("#Li1").css("border-color", "transparent");
     });
+    LimpiarCampos();
+
+    TraerArbolTipificacionGestion();
 
     TraerArbolDeSoporteServiciosPrincipales();
     TraerArbolDeSoporteServiciosAdicionales();
@@ -18,6 +21,8 @@
     TraerArbolDeSoporteSolucionEspecifica();
     TraerArbolDeFacturacionProblemaFacturacion();
     TraerArbolDeFacturacionSolucionFacturacion();
+    TraerArbolDeCancelacionIntencion();
+    TraerArbolDeCancelacionMotivo();
 });
 
 $("#CuentaCliente").blur(function (event) {
@@ -345,7 +350,7 @@ function TraerArbolDeSoporteSolucionEspecifica() {
 }
 
 function TraerArbolDeFacturacionProblemaFacturacion() {
-    var IdPadre = "8";
+    var IdPadre = "25";
     $.ajax({
         type: "POST",
         url: UrlArbolDeGestion,
@@ -384,7 +389,7 @@ function TraerArbolDeFacturacionProblemaFacturacion() {
 }
 
 function TraerArbolDeFacturacionSolucionFacturacion() {
-    var IdPadre = "9";
+    var IdPadre = "26";
     $.ajax({
         type: "POST",
         url: UrlArbolDeGestion,
@@ -410,6 +415,278 @@ function TraerArbolDeFacturacionSolucionFacturacion() {
                     // seleccionamos el valor que coincide
                     select.selectedIndex = i;
                     $('#SolucionFacturacion').val(select.options[i].value);
+                    //ListaSubrazones();
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+}
+function TraerArbolDeCancelacionIntencion() {
+    var IdPadre = "29";
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#ClienteIntencionCancelacion').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("ClienteIntencionCancelacion");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("SelectGestion1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#ClienteIntencionCancelacion').val(select.options[i].value);
+                    //ListaSubrazones();
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+}
+function TraerArbolDeCancelacionMotivo() {
+    var IdPadre = "30";
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#MotivoCancelacion').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("MotivoCancelacion");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("SelectGestion1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#MotivoCancelacion').val(select.options[i].value);
+                    //ListaSubrazones();
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+}
+function TraerArbolDeCancelacionRazon() {
+    var IdPadre = $('#MotivoCancelacion').val();
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#RazonCancelacion').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("RazonCancelacion");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("SelectGestion1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#RazonCancelacion').val(select.options[i].value);
+                    //ListaSubrazones();
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+}
+function TraerArbolTipificacionGestion() {
+    var IdPadre = "8";
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#Gestion').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("Gestion");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("SelectGestion1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#Gestion').val(select.options[i].value);
+                    //ListaSubrazones();
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+}
+function TraerArbolTipificacionCierre() {
+    var IdPadre = $('#Gestion').val();
+    $('#Cierre').empty();
+    $("#Cierre").append("<option value=''>--SELECCIONE--</option>");
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#Cierre').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("Cierre");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("SelectGestion1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#Cierre').val(select.options[i].value);
+                    //ListaSubrazones();
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+}
+function TraerArbolTipificacionRazon() {
+    var IdPadre = $('#Cierre').val();
+    $('#Razon').empty();
+    $("#Razon").append("<option value=''>--SELECCIONE--</option>");
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#Razon').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("Razon");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("SelectGestion1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#Razon').val(select.options[i].value);
+                    //ListaSubrazones();
+                }
+            }
+
+        },
+        error: function (request, status, error) {
+            alert(request.responseText);
+        }
+    });
+
+}
+function TraerArbolTipificacionMotivo() {
+    var IdPadre = $('#Razon').val();
+    $('#Motivo').empty();
+    $("#Motivo").append("<option value=''>--SELECCIONE--</option>");
+    $.ajax({
+        type: "POST",
+        url: UrlArbolDeGestion,
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ IdPadre: IdPadre }),
+        dataType: "JSON",
+        success: function (result) {
+            var json = JSON.parse(result);
+            for (var index = 0, len = json.length; index < len; index++) {
+                $('#Motivo').append($('<option>', {
+                    value: json[index].IdArbol,
+                    text: json[index].Descripcion
+                }));
+
+            }
+            // creamos un variable que hace referencia al select
+            var select = document.getElementById("Motivo");
+            // obtenemos el valor a buscar
+            var buscar = document.getElementById("SelectGestion1").value;
+            // recorremos todos los valores del select
+            for (var i = 1; i < select.length; i++) {
+                if (select.options[i].text == buscar) {
+                    // seleccionamos el valor que coincide
+                    select.selectedIndex = i;
+                    $('#Motivo').val(select.options[i].value);
                     //ListaSubrazones();
                 }
             }

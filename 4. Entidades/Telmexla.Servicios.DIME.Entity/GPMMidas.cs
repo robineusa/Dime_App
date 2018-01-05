@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,20 @@ namespace Telmexla.Servicios.DIME.Entity
         public decimal UsuarioGestion { get; set; }
         public string NombreUsuarioGestion { get; set; }
         public string AliadoGestion { get; set; }
+
+        [Required(ErrorMessage = "Busque un Cliente antes de guardar")]
         public decimal CuentaCliente { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una Opcion")]
         public string Gestion { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una Opcion")]
         public string Cierre { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una Opcion")]
         public string Razon { get; set; }
+
+        [Required(ErrorMessage = "Seleccione una Opcion")]
         public string Motivo { get; set; }
         public string FallaServPrincipalesSoporte { get; set; }
         public string FallaServAdicionalesSoporte { get; set; }

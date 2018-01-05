@@ -8417,6 +8417,30 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="RegistrarMidasTipificador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q587="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="model" nillable="true" type="q587:GPMMidas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrarMidasTipificadorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarMidasTipificador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q588="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="model" nillable="true" type="q588:GPMMidas" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActualizarMidasTipificadorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ConsultarDiasFestivos">
     <xs:complexType>
       <xs:sequence>
