@@ -9662,6 +9662,131 @@ namespace Dime.WSD {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TrazabilidadArbol", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class TrazabilidadArbol : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CuentaAsociadaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool FinalizoProcesoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdUsuarioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NodoActualField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreUsuarioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CuentaAsociada {
+            get {
+                return this.CuentaAsociadaField;
+            }
+            set {
+                if ((this.CuentaAsociadaField.Equals(value) != true)) {
+                    this.CuentaAsociadaField = value;
+                    this.RaisePropertyChanged("CuentaAsociada");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool FinalizoProceso {
+            get {
+                return this.FinalizoProcesoField;
+            }
+            set {
+                if ((this.FinalizoProcesoField.Equals(value) != true)) {
+                    this.FinalizoProcesoField = value;
+                    this.RaisePropertyChanged("FinalizoProceso");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdUsuario {
+            get {
+                return this.IdUsuarioField;
+            }
+            set {
+                if ((this.IdUsuarioField.Equals(value) != true)) {
+                    this.IdUsuarioField = value;
+                    this.RaisePropertyChanged("IdUsuario");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NodoActual {
+            get {
+                return this.NodoActualField;
+            }
+            set {
+                if ((this.NodoActualField.Equals(value) != true)) {
+                    this.NodoActualField = value;
+                    this.RaisePropertyChanged("NodoActual");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NombreUsuario {
+            get {
+                return this.NombreUsuarioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreUsuarioField, value) != true)) {
+                    this.NombreUsuarioField = value;
+                    this.RaisePropertyChanged("NombreUsuario");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IWebService")]
     public interface IWebService {
@@ -18281,6 +18406,12 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/IndiceNodosArbol", ReplyAction="http://tempuri.org/IProcesosService/IndiceNodosArbolResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IndiceNodoArbol>> IndiceNodosArbolAsync(int idNodoActual);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ActualizarTrazabilidad", ReplyAction="http://tempuri.org/IProcesosService/ActualizarTrazabilidadResponse")]
+        void ActualizarTrazabilidad(Dime.WSD.TrazabilidadArbol TrazaArbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/ActualizarTrazabilidad", ReplyAction="http://tempuri.org/IProcesosService/ActualizarTrazabilidadResponse")]
+        System.Threading.Tasks.Task ActualizarTrazabilidadAsync(Dime.WSD.TrazabilidadArbol TrazaArbol);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18460,6 +18591,14 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IndiceNodoArbol>> IndiceNodosArbolAsync(int idNodoActual) {
             return base.Channel.IndiceNodosArbolAsync(idNodoActual);
+        }
+        
+        public void ActualizarTrazabilidad(Dime.WSD.TrazabilidadArbol TrazaArbol) {
+            base.Channel.ActualizarTrazabilidad(TrazaArbol);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarTrazabilidadAsync(Dime.WSD.TrazabilidadArbol TrazaArbol) {
+            return base.Channel.ActualizarTrazabilidadAsync(TrazaArbol);
         }
     }
     
@@ -19728,6 +19867,24 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ActualizarMidasTipificador", ReplyAction="http://tempuri.org/IMidasService/ActualizarMidasTipificadorResponse")]
         System.Threading.Tasks.Task ActualizarMidasTipificadorAsync(Telmexla.Servicios.DIME.Entity.GPMMidas model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraerSeguimientosTipificador", ReplyAction="http://tempuri.org/IMidasService/TraerSeguimientosTipificadorResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas> TraerSeguimientosTipificador();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraerSeguimientosTipificador", ReplyAction="http://tempuri.org/IMidasService/TraerSeguimientosTipificadorResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas>> TraerSeguimientosTipificadorAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/CargaHistorialCuenta", ReplyAction="http://tempuri.org/IMidasService/CargaHistorialCuentaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas> CargaHistorialCuenta(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/CargaHistorialCuenta", ReplyAction="http://tempuri.org/IMidasService/CargaHistorialCuentaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas>> CargaHistorialCuentaAsync(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/VerificaCliente", ReplyAction="http://tempuri.org/IMidasService/VerificaClienteResponse")]
+        Telmexla.Servicios.DIME.Entity.GPMMidas VerificaCliente(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/VerificaCliente", ReplyAction="http://tempuri.org/IMidasService/VerificaClienteResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GPMMidas> VerificaClienteAsync(decimal CuentaCliente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19819,6 +19976,30 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task ActualizarMidasTipificadorAsync(Telmexla.Servicios.DIME.Entity.GPMMidas model) {
             return base.Channel.ActualizarMidasTipificadorAsync(model);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas> TraerSeguimientosTipificador() {
+            return base.Channel.TraerSeguimientosTipificador();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas>> TraerSeguimientosTipificadorAsync() {
+            return base.Channel.TraerSeguimientosTipificadorAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas> CargaHistorialCuenta(decimal Cuenta) {
+            return base.Channel.CargaHistorialCuenta(Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas>> CargaHistorialCuentaAsync(decimal Cuenta) {
+            return base.Channel.CargaHistorialCuentaAsync(Cuenta);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GPMMidas VerificaCliente(decimal CuentaCliente) {
+            return base.Channel.VerificaCliente(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GPMMidas> VerificaClienteAsync(decimal CuentaCliente) {
+            return base.Channel.VerificaClienteAsync(CuentaCliente);
         }
     }
     

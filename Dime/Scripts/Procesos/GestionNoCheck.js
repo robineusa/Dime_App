@@ -16,7 +16,7 @@ $(document).ready(function () {
 });
 
 function ArbolAsesor(IdArbol, IdPadre) {
-
+    window.event.cancelBubble = true;
     $.ajax({
         type: "POST",
         url: urlConsultarNodosArbol,
@@ -26,33 +26,49 @@ function ArbolAsesor(IdArbol, IdPadre) {
         success: function (result) {
             var json = JSON.parse(result);
             console.log(result);
-            var hijos;
+            var NodoFinal = "";
+            var NodoFinalHijo = "";
+            var funcion = "ConsultarNodo(this)";
+
             for (var i = 0; i < json.length; i++) {
+
+                if (json[i].Nodo.EsNodoFinal) {
+                    NodoFinal = "<button class='btn-success' onclick='finalizar()'>Finalizar</button>";
+
+                }
+
 
                 $('#contenedor').append(
                     "<div id='" + json[i].Nodo.Id + "' class='callout ' style='border-color:#a41e34 !important; background-color:gainsboro !important; color: black !important;width:500px;'>" +
                     "<div class='row'>" +
                         "<div style='width:auto;color:black;padding-left:20px;'>" +
                              "<p><strong>" + json[i].Nodo.NombreNodo + "</strong></p>" +
-                             "<p>" + json[i].Nodo.CodigoHtml + "</p>" +
+                             "<p>" + json[i].Nodo.CodigoHtml + NodoFinal + "</p>" +
 
                         "</div>" +
                     "</div>" +
                 "</div>" +
 
                 "<br/>");
-
+                NodoFinal = "";
                 if (json[i].NodosHijos.length > 0) {
                     for (var f = 0; f < json[i].NodosHijos.length; f++) {
+
+                        if (json[i].NodosHijos[f].EsNodoFinal) {
+                            NodoFinalHijo = "<button class='btn-success'>Finalizar</button>";
+                            funcion = "finalizar()";
+                        }
+
                         $('#contenedor').append(
-                     "<div id='" + json[i].NodosHijos[f].Id + "' onclick='ConsultarNodo(this)'  class='callout button' style='margin-left:35px ;border-color:#a41e34 !important; background-color:gainsboro !important; color: black !important;width:500px;'>" +
+                     "<div id='" + json[i].NodosHijos[f].Id + "' onclick= '" + funcion + "'  class='callout button' style='margin-left:35px ;border-color:#a41e34 !important; background-color:gainsboro !important; color: black !important;width:500px;'>" +
                         "<div class='row'>" +
                             "<div style='width:auto;color:black;padding-left:20px;'>" +
-                                "<p>" + json[i].NodosHijos[f].NombreNodo + "</p>" +
+                                "<p>" + json[i].NodosHijos[f].NombreNodo + NodoFinalHijo + "</p>" +
                             "</div>" +
                         "</div>" +
                     "</div>" +
                 "<br/>");
+                        NodoFinalHijo = "";
                     }
                 }
             }
@@ -96,4 +112,21 @@ function CargarIndice(IdNodoActual) {
         }
     });
 
+}
+function finalizar() {
+    $.alert({
+        theme: 'Modern',
+        icon: 'fa fa-check-circle',
+        boxWidth: '500px',
+        useBootstrap: false,
+        type: 'green',
+        title: 'Gestion finalizada',
+        content: 'Se a finalizado el proceso satisfactoriamente',
+        buttons: {
+            Ok: {
+                btnClass: 'btn-success',
+                action: function () { }
+            },
+        }
+    });
 }

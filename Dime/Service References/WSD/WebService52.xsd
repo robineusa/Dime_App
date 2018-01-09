@@ -3820,6 +3820,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="IndiceNodoArbol" nillable="true" type="tns:IndiceNodoArbol" />
+  <xs:complexType name="TrazabilidadArbol">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CuentaAsociada" type="xs:int" />
+      <xs:element minOccurs="0" name="FinalizoProceso" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="NodoActual" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreUsuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrazabilidadArbol" nillable="true" type="tns:TrazabilidadArbol" />
   <xs:complexType name="RSPSeguimientos">
     <xs:sequence>
       <xs:element minOccurs="0" name="AliadoSolicitud" nillable="true" type="xs:string" />
@@ -4308,6 +4319,7 @@
       <xs:element minOccurs="0" name="Cierre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ClienteIntencionCancelacion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstadoCaso" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="EstadoFacturacion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="EstadoSoporte" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="FallaServAdicionalesSoporte" nillable="true" type="xs:string" />
@@ -4336,4 +4348,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GPMMidas" nillable="true" type="tns:GPMMidas" />
+  <xs:complexType name="ArrayOfGPMMidas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GPMMidas" nillable="true" type="tns:GPMMidas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGPMMidas" nillable="true" type="tns:ArrayOfGPMMidas" />
 </xs:schema>
