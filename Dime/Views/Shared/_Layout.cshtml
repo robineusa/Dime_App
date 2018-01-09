@@ -1000,6 +1000,43 @@
                         </li>
                     }
 
+                    @if (Session["Procesos Midas"] != null)
+                    {
+                        <li id="left-sidebar-menu-multilevel" class="treeview">
+                            <a href="#">
+                                <i class="fa fa-map-marker text-blue"></i> <span>Procesos Midas</span><i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                @if (Session["Gestion Midas"] != null)
+                                {
+                                    <li>
+                                        <a href="#"><i class="fa fa-sticky-note" aria-hidden="true"></i>Gestión<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="@Url.Action("Tipificador", "Midas")"><i class="fa fa-phone"></i>Tipificador</a></li>
+                                        </ul>
+                                    </li>
+                                }
+                                @if (Session["Admin Midas"] != null)
+                                {
+                                    <li>
+                                        <a href="#"><i class="fa fa-wrench" aria-hidden="true"></i>Administrar Árboles<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="@Url.Action("ArbolesMidas", "Midas")"><i class="fa fa-cog"></i>Administración </a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-search" aria-hidden="true"></i>Consultas<i class="fa fa-angle-left pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="@Url.Action("ConsultaMidasAdminPrincipal", "Midas")"><i class="fa-circle-o"></i>Consulta Principal</a></li>
+                                            <li><a href="@Url.Action("ConsultaMidasAdminLog", "Midas")"><i class="fa-circle-o"></i>Consulta Log</a></li>
+                                        </ul>
+                                    </li>
+
+                                }
+                            </ul>
+                        </li>
+                    }
+
 
                     <li class="header">CONSULTAS</li>
                     @if (Session["Consultas Asesor"] != null)

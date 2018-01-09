@@ -55,7 +55,7 @@ namespace Dime.Controllers
                     modelo.ClientesTodo = new ClientesTodo();
                 }
             }
-            return View(modelo);
+            return RedirectToAction("Tipificador", "Midas");
         }
         [HttpGet]
         public ActionResult AdministrarArboles(string IdPadre, string IdArbol)
@@ -180,6 +180,33 @@ namespace Dime.Controllers
         public JsonResult VerificarCLiente(string CuentaCliente)
         {
             var jsonResult = Json(JsonConvert.SerializeObject(midasService.VerificaCliente(Convert.ToDecimal(CuentaCliente))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult ConsultaMidasAdminPrincipal()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult ConsultaMidasAdminLog()
+        {
+            return View();
+        }
+        
+        public JsonResult ConsultaMidasAdminPrincipalJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(midasService.ConsultaMidasAdminPrincipal(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ConsultaMidasAdminLogJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(midasService.ConsultaMidasAdminLog(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }

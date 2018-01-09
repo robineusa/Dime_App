@@ -27206,6 +27206,82 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMidasService_ConsultaMidasAdminPrincipal_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMidasService_ConsultaMidasAdminPrincipal_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMidasService_ConsultaMidasAdminLog_Input_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IMidasService_ConsultaMidasAdminLog_output_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+          <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+        </sp:SignedParts>
+        <sp:EncryptedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <sp:Body />
+        </sp:EncryptedParts>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="WSHttpBinding_IDiasFestivosService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -31090,6 +31166,18 @@
   <wsdl:message name="IMidasService_VerificaCliente_OutputMessage">
     <wsdl:part name="parameters" element="tns:VerificaClienteResponse" />
   </wsdl:message>
+  <wsdl:message name="IMidasService_ConsultaMidasAdminPrincipal_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaMidasAdminPrincipal" />
+  </wsdl:message>
+  <wsdl:message name="IMidasService_ConsultaMidasAdminPrincipal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaMidasAdminPrincipalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMidasService_ConsultaMidasAdminLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaMidasAdminLog" />
+  </wsdl:message>
+  <wsdl:message name="IMidasService_ConsultaMidasAdminLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaMidasAdminLogResponse" />
+  </wsdl:message>
   <wsdl:message name="IDiasFestivosService_ConsultarDiasFestivos_InputMessage">
     <wsdl:part name="parameters" element="tns:ConsultarDiasFestivos" />
   </wsdl:message>
@@ -33650,6 +33738,14 @@
     <wsdl:operation name="VerificaCliente">
       <wsdl:input wsaw:Action="http://tempuri.org/IMidasService/VerificaCliente" message="tns:IMidasService_VerificaCliente_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IMidasService/VerificaClienteResponse" message="tns:IMidasService_VerificaCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMidasAdminPrincipal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidasService/ConsultaMidasAdminPrincipal" message="tns:IMidasService_ConsultaMidasAdminPrincipal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidasService/ConsultaMidasAdminPrincipalResponse" message="tns:IMidasService_ConsultaMidasAdminPrincipal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMidasAdminLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMidasService/ConsultaMidasAdminLog" message="tns:IMidasService_ConsultaMidasAdminLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMidasService/ConsultaMidasAdminLogResponse" message="tns:IMidasService_ConsultaMidasAdminLog_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="IDiasFestivosService">
@@ -40632,6 +40728,28 @@
       </wsdl:input>
       <wsdl:output>
         <wsp:PolicyReference URI="#WSHttpBinding_IMidasService_VerificaCliente_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMidasAdminPrincipal">
+      <soap12:operation soapAction="http://tempuri.org/IMidasService/ConsultaMidasAdminPrincipal" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMidasService_ConsultaMidasAdminPrincipal_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMidasService_ConsultaMidasAdminPrincipal_output_policy" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaMidasAdminLog">
+      <soap12:operation soapAction="http://tempuri.org/IMidasService/ConsultaMidasAdminLog" style="document" />
+      <wsdl:input>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMidasService_ConsultaMidasAdminLog_Input_policy" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsp:PolicyReference URI="#WSHttpBinding_IMidasService_ConsultaMidasAdminLog_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>

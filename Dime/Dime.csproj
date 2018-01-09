@@ -2413,8 +2413,9 @@
     <Content Include="Scripts\Mec\ListaMonitoreosAdmin.js" />
     <Content Include="Scripts\Mec\ListaTipoAlarmas.js" />
     <Content Include="Scripts\Mec\RegistrarMonitoreo.js" />
-    <Content Include="Scripts\Midas\AdministrarArboles.js" />
     <Content Include="Scripts\Midas\ArbolesMidas.js" />
+    <Content Include="Scripts\Midas\ConsultaMidasAdminPrincipal.js" />
+    <Content Include="Scripts\Midas\ConsultaMidasAdminLog.js" />
     <Content Include="Scripts\Midas\Tipificador.js" />
     <Content Include="Scripts\MultiPlay\ConsultasAdminMultiPlay.js" />
     <Content Include="Scripts\MultiPlay\MultiPlay.js" />
@@ -3337,6 +3338,9 @@
     <Content Include="Scripts\Procesos\dist\font\summernote.eot" />
     <Content Include="Scripts\Procesos\dist\font\summernote.ttf" />
     <Content Include="Scripts\Procesos\dist\font\summernote.woff" />
+    <Content Include="Service References\WSD\Dime.WSD.GLMMidas.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\WSD\WebService1.wsdl" />
     <None Include="Service References\WSD\WebService5.xsd">
       <SubType>Designer</SubType>
@@ -3750,6 +3754,9 @@
     <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalLiberaciones.cshtml" />
     <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalSuspensiones.cshtml" />
     <Content Include="Views\CierreExperiencia\ConsultaAdminPrincipalTickets.cshtml" />
+    <Content Include="Views\Midas\ArbolesMidas.cshtml" />
+    <Content Include="Views\Midas\ConsultaMidasAdminPrincipal.cshtml" />
+    <Content Include="Views\Midas\ConsultaMidasAdminLog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

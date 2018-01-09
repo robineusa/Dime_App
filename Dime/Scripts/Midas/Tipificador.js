@@ -39,8 +39,28 @@ $("#CuentaCliente").blur(function (event) {
 
 });
 
-function DatosClienteCuenta(Cuenta) {
+function LimpiarDesplegables()
+{
+    $("#FallaServPrincipalesSoporte").empty();
+    $("#FallaServAdicionalesSoporte").empty();
+    $("#TipoFallaSoporte").empty();
+    $("#SolucionEspecificaSoporte").empty();
+    $("#EstadoSoporte").empty();
+    $("#ProblemaFacturacion").empty();
+    $("#SolucionFacturacion").empty();
+    $("#EstadoFacturacion").empty();
+    $("#ClienteIntencionCancelacion").empty();
+    $("#MotivoCancelacion").empty();
+    $("#RazonCancelacion").empty();
+    $("#Gestion").empty();
+    $("#Cierre").empty();
+    $("#Razon").empty();
+    $("#Motivo").empty();
+    
+}
 
+function DatosClienteCuenta(Cuenta) {
+    LimpiarDesplegables();
     $.ajax({
         type: "POST",
         url: UrlInformacionClienteTipificadorMidas,
@@ -208,7 +228,19 @@ function VerificaCliente(Cuenta)
                 $('#TipoFallaSoporte1').val(json.TipoFallaSoporte);
                 $('#SolucionEspecificaSoporte1').val(json.SolucionEspecificaSoporte);
                 $('#EstadoSoporte1').val(json.EstadoSoporte);
+                $('#ObservacionesSoporte').val(json.ObservacionesSoporte);
+                $('#ProblemaFacturacion1').val(json.ProblemaFacturacion);
+                $('#SolucionFacturacion1').val(json.SolucionFacturacion);
                 $('#EstadoFacturacion1').val(json.EstadoFacturacion);
+                $('#ObservacionesFacturacion').val(json.ObservacionesFacturacion);
+                $('#ClienteIntencionCancelacion1').val(json.ClienteIntencionCancelacion);
+                $('#MotivoCancelacion1').val(json.MotivoCancelacion);
+                $('#RazonCancelacion1').val(json.RazonCancelacion);
+                $('#ObservacionesCancelacion').val(json.ObservacionesCancelacion);
+                $('#Gestion1').val(json.Gestion);
+                $('#Cierre1').val(json.Cierre);
+                $('#Razon1').val(json.Razon);
+                $('#Motivo1').val(json.Motivo);
                 
                 TraeAceptacionOfrecimientos();
                 TraerEstados();
@@ -266,12 +298,11 @@ function TraerEstados() {
     var buscar = document.getElementById("EstadoSoporte1").value;
     // recorremos todos los valores del select
     for (var i = 1; i < select.length; i++) {
-        alert(select.options[i].text);
+        
         if (select.options[i].text == buscar) {
             // seleccionamos el valor que coincide
             select.selectedIndex = i;
             $('#EstadoSoporte').val(select.options[i].value);
-            //ListaSubrazones();
         }
     }
     $("#EstadoFacturacion").empty();
@@ -286,8 +317,7 @@ function TraerEstados() {
         if (select.options[i].text == buscar) {
             // seleccionamos el valor que coincide
             select.selectedIndex = i;
-            $('#EstadoSoporte').val(select.options[i].value);
-            //ListaSubrazones();
+            $('#EstadoFacturacion').val(select.options[i].value);
         }
     }
 }
@@ -324,6 +354,7 @@ function LimpiarCampos()
 }
 function TraerArbolDeSoporteServiciosPrincipales() {
     var IdPadre = "4";
+    $("#FallaServPrincipalesSoporte").append("<option value=''>--SELECCIONE--</option>");
     $.ajax({
         type: "POST",
         url: UrlArbolDeGestion,
@@ -362,6 +393,7 @@ function TraerArbolDeSoporteServiciosPrincipales() {
 }
 function TraerArbolDeSoporteServiciosAdicionales() {
     var IdPadre = "5";
+    $("#FallaServAdicionalesSoporte").append("<option value=''>--SELECCIONE--</option>");
     $.ajax({
         type: "POST",
         url: UrlArbolDeGestion,
@@ -400,6 +432,7 @@ function TraerArbolDeSoporteServiciosAdicionales() {
 }
 function TraerArbolDeSoporteTipoFalla() {
     var IdPadre = "6";
+    $("#TipoFallaSoporte").append("<option value=''>--SELECCIONE--</option>");
     $.ajax({
         type: "POST",
         url: UrlArbolDeGestion,
@@ -438,6 +471,7 @@ function TraerArbolDeSoporteTipoFalla() {
 }
 function TraerArbolDeSoporteSolucionEspecifica() {
     var IdPadre = "7";
+    $("#SolucionEspecificaSoporte").append("<option value=''>--SELECCIONE--</option>");
     $.ajax({
         type: "POST",
         url: UrlArbolDeGestion,
@@ -477,6 +511,7 @@ function TraerArbolDeSoporteSolucionEspecifica() {
 
 function TraerArbolDeFacturacionProblemaFacturacion() {
     var IdPadre = "25";
+    $("#ProblemaFacturacion").append("<option value=''>--SELECCIONE--</option>");
     $.ajax({
         type: "POST",
         url: UrlArbolDeGestion,
@@ -495,7 +530,7 @@ function TraerArbolDeFacturacionProblemaFacturacion() {
             // creamos un variable que hace referencia al select
             var select = document.getElementById("ProblemaFacturacion");
             // obtenemos el valor a buscar
-            var buscar = document.getElementById("SelectGestion1").value;
+            var buscar = document.getElementById("ProblemaFacturacion1").value;
             // recorremos todos los valores del select
             for (var i = 1; i < select.length; i++) {
                 if (select.options[i].text == buscar) {
@@ -516,6 +551,7 @@ function TraerArbolDeFacturacionProblemaFacturacion() {
 
 function TraerArbolDeFacturacionSolucionFacturacion() {
     var IdPadre = "26";
+    $("#SolucionFacturacion").append("<option value=''>--SELECCIONE--</option>");
     $.ajax({
         type: "POST",
         url: UrlArbolDeGestion,
@@ -534,7 +570,7 @@ function TraerArbolDeFacturacionSolucionFacturacion() {
             // creamos un variable que hace referencia al select
             var select = document.getElementById("SolucionFacturacion");
             // obtenemos el valor a buscar
-            var buscar = document.getElementById("SelectGestion1").value;
+            var buscar = document.getElementById("SolucionFacturacion1").value;
             // recorremos todos los valores del select
             for (var i = 1; i < select.length; i++) {
                 if (select.options[i].text == buscar) {
@@ -554,6 +590,7 @@ function TraerArbolDeFacturacionSolucionFacturacion() {
 }
 function TraerArbolDeCancelacionIntencion() {
     var IdPadre = "29";
+    $("#ClienteIntencionCancelacion").append("<option value=''>--SELECCIONE--</option>");
     $.ajax({
         type: "POST",
         url: UrlArbolDeGestion,
@@ -572,7 +609,7 @@ function TraerArbolDeCancelacionIntencion() {
             // creamos un variable que hace referencia al select
             var select = document.getElementById("ClienteIntencionCancelacion");
             // obtenemos el valor a buscar
-            var buscar = document.getElementById("SelectGestion1").value;
+            var buscar = document.getElementById("ClienteIntencionCancelacion1").value;
             // recorremos todos los valores del select
             for (var i = 1; i < select.length; i++) {
                 if (select.options[i].text == buscar) {
@@ -592,6 +629,7 @@ function TraerArbolDeCancelacionIntencion() {
 }
 function TraerArbolDeCancelacionMotivo() {
     var IdPadre = "30";
+    $("#MotivoCancelacion").append("<option value=''>--SELECCIONE--</option>");
     $.ajax({
         type: "POST",
         url: UrlArbolDeGestion,
@@ -610,14 +648,14 @@ function TraerArbolDeCancelacionMotivo() {
             // creamos un variable que hace referencia al select
             var select = document.getElementById("MotivoCancelacion");
             // obtenemos el valor a buscar
-            var buscar = document.getElementById("SelectGestion1").value;
+            var buscar = document.getElementById("MotivoCancelacion1").value;
             // recorremos todos los valores del select
             for (var i = 1; i < select.length; i++) {
                 if (select.options[i].text == buscar) {
                     // seleccionamos el valor que coincide
                     select.selectedIndex = i;
                     $('#MotivoCancelacion').val(select.options[i].value);
-                    //ListaSubrazones();
+                    TraerArbolDeCancelacionRazon();
                 }
             }
 
@@ -635,6 +673,7 @@ function TraerArbolDeCancelacionRazon() {
         $('#MotivoCancelacion1').val(MotivoCancelacionRText);
 
         var IdPadre = $('#MotivoCancelacion').val();
+        $("#RazonCancelacion").append("<option value=''>--SELECCIONE--</option>");
         $.ajax({
             type: "POST",
             url: UrlArbolDeGestion,
@@ -653,7 +692,7 @@ function TraerArbolDeCancelacionRazon() {
                 // creamos un variable que hace referencia al select
                 var select = document.getElementById("RazonCancelacion");
                 // obtenemos el valor a buscar
-                var buscar = document.getElementById("SelectGestion1").value;
+                var buscar = document.getElementById("RazonCancelacion1").value;
                 // recorremos todos los valores del select
                 for (var i = 1; i < select.length; i++) {
                     if (select.options[i].text == buscar) {
@@ -678,6 +717,8 @@ function TraerArbolDeCancelacionRazon() {
 
 }
 function TraerArbolTipificacionGestion() {
+
+    $("#Gestion").append("<option value=''>--SELECCIONE--</option>");
     var IdPadre = "8";
     $.ajax({
         type: "POST",
@@ -697,14 +738,14 @@ function TraerArbolTipificacionGestion() {
             // creamos un variable que hace referencia al select
             var select = document.getElementById("Gestion");
             // obtenemos el valor a buscar
-            var buscar = document.getElementById("SelectGestion1").value;
+            var buscar = document.getElementById("Gestion1").value;
             // recorremos todos los valores del select
             for (var i = 1; i < select.length; i++) {
                 if (select.options[i].text == buscar) {
                     // seleccionamos el valor que coincide
                     select.selectedIndex = i;
                     $('#Gestion').val(select.options[i].value);
-                    //ListaSubrazones();
+                    TraerArbolTipificacionCierre();
                 }
             }
 
@@ -717,6 +758,7 @@ function TraerArbolTipificacionGestion() {
 }
 function TraerArbolTipificacionCierre() {
 
+    
     if ($('#Gestion').val() != "") {
         var GestionR = document.getElementById("Gestion");
         var GestionRText = GestionR.options[GestionR.selectedIndex].text;
@@ -743,14 +785,14 @@ function TraerArbolTipificacionCierre() {
                 // creamos un variable que hace referencia al select
                 var select = document.getElementById("Cierre");
                 // obtenemos el valor a buscar
-                var buscar = document.getElementById("SelectGestion1").value;
+                var buscar = document.getElementById("Cierre1").value;
                 // recorremos todos los valores del select
                 for (var i = 1; i < select.length; i++) {
                     if (select.options[i].text == buscar) {
                         // seleccionamos el valor que coincide
                         select.selectedIndex = i;
                         $('#Cierre').val(select.options[i].value);
-                        //ListaSubrazones();
+                        TraerArbolTipificacionRazon();
                     }
                 }
 
@@ -796,14 +838,14 @@ function TraerArbolTipificacionRazon() {
                 // creamos un variable que hace referencia al select
                 var select = document.getElementById("Razon");
                 // obtenemos el valor a buscar
-                var buscar = document.getElementById("SelectGestion1").value;
+                var buscar = document.getElementById("Razon1").value;
                 // recorremos todos los valores del select
                 for (var i = 1; i < select.length; i++) {
                     if (select.options[i].text == buscar) {
                         // seleccionamos el valor que coincide
                         select.selectedIndex = i;
                         $('#Razon').val(select.options[i].value);
-                        //ListaSubrazones();
+                        TraerArbolTipificacionMotivo();
                     }
                 }
 
@@ -848,14 +890,13 @@ function TraerArbolTipificacionMotivo() {
                 // creamos un variable que hace referencia al select
                 var select = document.getElementById("Motivo");
                 // obtenemos el valor a buscar
-                var buscar = document.getElementById("SelectGestion1").value;
+                var buscar = document.getElementById("Motivo1").value;
                 // recorremos todos los valores del select
                 for (var i = 1; i < select.length; i++) {
                     if (select.options[i].text == buscar) {
                         // seleccionamos el valor que coincide
                         select.selectedIndex = i;
                         $('#Motivo').val(select.options[i].value);
-                        //ListaSubrazones();
                     }
                 }
 
@@ -920,6 +961,7 @@ function ShowGridSeguimientos(data)
             buttonCount: 5
         },
         columns: [
+            { command: { text: " ", click: CargaSeguimiento, imageClass: "k-icon k-i-pencil", }, title: "Editar", width: "90px" },
             { field: "Id", title: "Id", headerAttributes: { style: "white-space: normal" }, width: 80 },
        { field: "FechaGestion", title: "Fecha de Gestión", headerAttributes: { style: "white-space: normal" }, width: 100 },
        { field: "NombreUsuarioGestion", title: "Nombre Usuario Gestion", headerAttributes: { style: "white-space: normal" }, width: 130 },
@@ -940,6 +982,19 @@ function ShowGridSeguimientos(data)
         }
 
     }
+}
+function CargaSeguimiento(e)
+{
+    e.preventDefault();
+    var dataItem = this.dataItem($(e.currentTarget).closest("tr"));
+    $("#CuentaCliente").val(dataItem.CuentaCliente);
+    $("#Id").val(dataItem.Id);    
+    var Cuenta = $("#CuentaCliente").val();
+    DatosClienteCuenta(Cuenta);
+    var x = document.getElementById('Li1');
+    x.click();
+    var y = document.getElementById('HrefdatosBasicos');
+    y.click();
 }
 function CambiaArbolTipificacion()
 {
@@ -995,6 +1050,7 @@ function CargaHistorial()
         success: function (result) {
             var json = JSON.parse(result);
             ShowGridHistorialCuentas(json);
+            MuestraUltimoEstado(json);
         },
         error: function (request, status, error) {
             alert(request.responseText);
@@ -1167,6 +1223,27 @@ function AceptacionOfrecimiento1Reemplazo() {
     else
     {
         $('#AceptacionOfrecimiento11').val('');
+    }
+}
+
+function MuestraUltimoEstado(data)
+{
+    if (data != null)
+    {
+        var UltimaInteraccionCaso = data.pop();
+        if (UltimaInteraccionCaso.EstadoCaso == "FINALIZADO") {
+            $("#EstadoCasoGeneral").empty();
+            $("#EstadoCasoGeneral").append("Finalizado");
+        }
+        else {
+            $("#EstadoCasoGeneral").empty();
+            $("#EstadoCasoGeneral").append("Seguimiento");
+        }
+    }
+    else
+    {
+        $("#EstadoCasoGeneral").empty();
+        alert();
     }
 }
 
