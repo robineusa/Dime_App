@@ -8490,11 +8490,7 @@
   <xs:element name="TraerSeguimientosTipificadorResponse">
     <xs:complexType>
       <xs:sequence>
-<<<<<<< HEAD
         <xs:element xmlns:q592="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerSeguimientosTipificadorResult" nillable="true" type="q592:ArrayOfGPMMidas" />
-=======
-        <xs:element xmlns:q591="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="TraerSeguimientosTipificadorResult" nillable="true" type="q591:ArrayOfGPMMidas" />
->>>>>>> ef61a0fe1a697bf93c6e5a5924a245728c625f45
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -8508,11 +8504,7 @@
   <xs:element name="CargaHistorialCuentaResponse">
     <xs:complexType>
       <xs:sequence>
-<<<<<<< HEAD
         <xs:element xmlns:q593="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="CargaHistorialCuentaResult" nillable="true" type="q593:ArrayOfGPMMidas" />
-=======
-        <xs:element xmlns:q592="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="CargaHistorialCuentaResult" nillable="true" type="q592:ArrayOfGPMMidas" />
->>>>>>> ef61a0fe1a697bf93c6e5a5924a245728c625f45
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -8526,10 +8518,7 @@
   <xs:element name="VerificaClienteResponse">
     <xs:complexType>
       <xs:sequence>
-<<<<<<< HEAD
         <xs:element xmlns:q594="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="VerificaClienteResult" nillable="true" type="q594:GPMMidas" />
-=======
-        <xs:element xmlns:q593="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="VerificaClienteResult" nillable="true" type="q593:GPMMidas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -8544,7 +8533,7 @@
   <xs:element name="ConsultaMidasAdminPrincipalResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q594="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaMidasAdminPrincipalResult" nillable="true" type="q594:ArrayOfGPMMidas" />
+        <xs:element xmlns:q595="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaMidasAdminPrincipalResult" nillable="true" type="q595:ArrayOfGPMMidas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -8559,8 +8548,7 @@
   <xs:element name="ConsultaMidasAdminLogResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q595="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaMidasAdminLogResult" nillable="true" type="q595:ArrayOfGLMMidas" />
->>>>>>> ef61a0fe1a697bf93c6e5a5924a245728c625f45
+        <xs:element xmlns:q596="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity" minOccurs="0" name="ConsultaMidasAdminLogResult" nillable="true" type="q596:ArrayOfGLMMidas" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

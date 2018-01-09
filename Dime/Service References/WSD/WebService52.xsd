@@ -4354,8 +4354,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfGPMMidas" nillable="true" type="tns:ArrayOfGPMMidas" />
-<<<<<<< HEAD
-=======
   <xs:complexType name="ArrayOfGLMMidas">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="GLMMidas" nillable="true" type="tns:GLMMidas" />
@@ -4404,5 +4402,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GLMMidas" nillable="true" type="tns:GLMMidas" />
->>>>>>> ef61a0fe1a697bf93c6e5a5924a245728c625f45
 </xs:schema>
