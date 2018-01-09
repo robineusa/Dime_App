@@ -9664,14 +9664,21 @@ namespace Dime.WSD {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+<<<<<<< HEAD
     [System.Runtime.Serialization.DataContractAttribute(Name="TrazabilidadArbol", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
     [System.SerializableAttribute()]
     public partial class TrazabilidadArbol : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+=======
+    [System.Runtime.Serialization.DataContractAttribute(Name="GLMMidas", Namespace="http://schemas.datacontract.org/2004/07/Telmexla.Servicios.DIME.Entity")]
+    [System.SerializableAttribute()]
+    public partial class GLMMidas : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+>>>>>>> ef61a0fe1a697bf93c6e5a5924a245728c625f45
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+<<<<<<< HEAD
         private int CuentaAsociadaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -9688,6 +9695,117 @@ namespace Dime.WSD {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreUsuarioField;
+=======
+        private string AceptacionOfrecimiento1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AceptacionOfrecimiento2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AceptacionOfrecimiento3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AliadoGestionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Campaña1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Campaña2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Campaña3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CierreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ClienteIntencionCancelacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal CuentaClienteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoCasoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoFacturacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EstadoSoporteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FallaServAdicionalesSoporteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FallaServPrincipalesSoporteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FechaGestionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FechaSeguimientoFacturacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> FechaSeguimientoSoporteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GestionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal IdGestionPrincipalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MotivoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MotivoCancelacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreUsuarioGestionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ObservacionesCancelacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ObservacionesFacturacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ObservacionesSoporteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Ofrecimiento1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Ofrecimiento2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Ofrecimiento3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProblemaFacturacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RazonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RazonCancelacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SolucionEspecificaSoporteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SolucionFacturacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TipoFallaSoporteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal UsuarioGestionField;
+>>>>>>> ef61a0fe1a697bf93c6e5a5924a245728c625f45
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -9700,6 +9818,7 @@ namespace Dime.WSD {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+<<<<<<< HEAD
         public int CuentaAsociada {
             get {
                 return this.CuentaAsociadaField;
@@ -9708,11 +9827,243 @@ namespace Dime.WSD {
                 if ((this.CuentaAsociadaField.Equals(value) != true)) {
                     this.CuentaAsociadaField = value;
                     this.RaisePropertyChanged("CuentaAsociada");
+=======
+        public string AceptacionOfrecimiento1 {
+            get {
+                return this.AceptacionOfrecimiento1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AceptacionOfrecimiento1Field, value) != true)) {
+                    this.AceptacionOfrecimiento1Field = value;
+                    this.RaisePropertyChanged("AceptacionOfrecimiento1");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AceptacionOfrecimiento2 {
+            get {
+                return this.AceptacionOfrecimiento2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AceptacionOfrecimiento2Field, value) != true)) {
+                    this.AceptacionOfrecimiento2Field = value;
+                    this.RaisePropertyChanged("AceptacionOfrecimiento2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AceptacionOfrecimiento3 {
+            get {
+                return this.AceptacionOfrecimiento3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AceptacionOfrecimiento3Field, value) != true)) {
+                    this.AceptacionOfrecimiento3Field = value;
+                    this.RaisePropertyChanged("AceptacionOfrecimiento3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AliadoGestion {
+            get {
+                return this.AliadoGestionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AliadoGestionField, value) != true)) {
+                    this.AliadoGestionField = value;
+                    this.RaisePropertyChanged("AliadoGestion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Campaña1 {
+            get {
+                return this.Campaña1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Campaña1Field, value) != true)) {
+                    this.Campaña1Field = value;
+                    this.RaisePropertyChanged("Campaña1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Campaña2 {
+            get {
+                return this.Campaña2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Campaña2Field, value) != true)) {
+                    this.Campaña2Field = value;
+                    this.RaisePropertyChanged("Campaña2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Campaña3 {
+            get {
+                return this.Campaña3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Campaña3Field, value) != true)) {
+                    this.Campaña3Field = value;
+                    this.RaisePropertyChanged("Campaña3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Cierre {
+            get {
+                return this.CierreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CierreField, value) != true)) {
+                    this.CierreField = value;
+                    this.RaisePropertyChanged("Cierre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ClienteIntencionCancelacion {
+            get {
+                return this.ClienteIntencionCancelacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClienteIntencionCancelacionField, value) != true)) {
+                    this.ClienteIntencionCancelacionField = value;
+                    this.RaisePropertyChanged("ClienteIntencionCancelacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal CuentaCliente {
+            get {
+                return this.CuentaClienteField;
+            }
+            set {
+                if ((this.CuentaClienteField.Equals(value) != true)) {
+                    this.CuentaClienteField = value;
+                    this.RaisePropertyChanged("CuentaCliente");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EstadoCaso {
+            get {
+                return this.EstadoCasoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoCasoField, value) != true)) {
+                    this.EstadoCasoField = value;
+                    this.RaisePropertyChanged("EstadoCaso");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EstadoFacturacion {
+            get {
+                return this.EstadoFacturacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoFacturacionField, value) != true)) {
+                    this.EstadoFacturacionField = value;
+                    this.RaisePropertyChanged("EstadoFacturacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EstadoSoporte {
+            get {
+                return this.EstadoSoporteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstadoSoporteField, value) != true)) {
+                    this.EstadoSoporteField = value;
+                    this.RaisePropertyChanged("EstadoSoporte");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FallaServAdicionalesSoporte {
+            get {
+                return this.FallaServAdicionalesSoporteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FallaServAdicionalesSoporteField, value) != true)) {
+                    this.FallaServAdicionalesSoporteField = value;
+                    this.RaisePropertyChanged("FallaServAdicionalesSoporte");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FallaServPrincipalesSoporte {
+            get {
+                return this.FallaServPrincipalesSoporteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FallaServPrincipalesSoporteField, value) != true)) {
+                    this.FallaServPrincipalesSoporteField = value;
+                    this.RaisePropertyChanged("FallaServPrincipalesSoporte");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FechaGestion {
+            get {
+                return this.FechaGestionField;
+            }
+            set {
+                if ((this.FechaGestionField.Equals(value) != true)) {
+                    this.FechaGestionField = value;
+                    this.RaisePropertyChanged("FechaGestion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FechaSeguimientoFacturacion {
+            get {
+                return this.FechaSeguimientoFacturacionField;
+            }
+            set {
+                if ((this.FechaSeguimientoFacturacionField.Equals(value) != true)) {
+                    this.FechaSeguimientoFacturacionField = value;
+                    this.RaisePropertyChanged("FechaSeguimientoFacturacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> FechaSeguimientoSoporte {
+            get {
+                return this.FechaSeguimientoSoporteField;
+            }
+            set {
+                if ((this.FechaSeguimientoSoporteField.Equals(value) != true)) {
+                    this.FechaSeguimientoSoporteField = value;
+                    this.RaisePropertyChanged("FechaSeguimientoSoporte");
+>>>>>>> ef61a0fe1a697bf93c6e5a5924a245728c625f45
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+<<<<<<< HEAD
         public bool FinalizoProceso {
             get {
                 return this.FinalizoProcesoField;
@@ -9721,12 +10072,26 @@ namespace Dime.WSD {
                 if ((this.FinalizoProcesoField.Equals(value) != true)) {
                     this.FinalizoProcesoField = value;
                     this.RaisePropertyChanged("FinalizoProceso");
+=======
+        public string Gestion {
+            get {
+                return this.GestionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GestionField, value) != true)) {
+                    this.GestionField = value;
+                    this.RaisePropertyChanged("Gestion");
+>>>>>>> ef61a0fe1a697bf93c6e5a5924a245728c625f45
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+<<<<<<< HEAD
         public int Id {
+=======
+        public decimal Id {
+>>>>>>> ef61a0fe1a697bf93c6e5a5924a245728c625f45
             get {
                 return this.IdField;
             }
@@ -9739,6 +10104,7 @@ namespace Dime.WSD {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+<<<<<<< HEAD
         public int IdUsuario {
             get {
                 return this.IdUsuarioField;
@@ -9747,11 +10113,204 @@ namespace Dime.WSD {
                 if ((this.IdUsuarioField.Equals(value) != true)) {
                     this.IdUsuarioField = value;
                     this.RaisePropertyChanged("IdUsuario");
+=======
+        public decimal IdGestionPrincipal {
+            get {
+                return this.IdGestionPrincipalField;
+            }
+            set {
+                if ((this.IdGestionPrincipalField.Equals(value) != true)) {
+                    this.IdGestionPrincipalField = value;
+                    this.RaisePropertyChanged("IdGestionPrincipal");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Motivo {
+            get {
+                return this.MotivoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MotivoField, value) != true)) {
+                    this.MotivoField = value;
+                    this.RaisePropertyChanged("Motivo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MotivoCancelacion {
+            get {
+                return this.MotivoCancelacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MotivoCancelacionField, value) != true)) {
+                    this.MotivoCancelacionField = value;
+                    this.RaisePropertyChanged("MotivoCancelacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string NombreUsuarioGestion {
+            get {
+                return this.NombreUsuarioGestionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreUsuarioGestionField, value) != true)) {
+                    this.NombreUsuarioGestionField = value;
+                    this.RaisePropertyChanged("NombreUsuarioGestion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ObservacionesCancelacion {
+            get {
+                return this.ObservacionesCancelacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ObservacionesCancelacionField, value) != true)) {
+                    this.ObservacionesCancelacionField = value;
+                    this.RaisePropertyChanged("ObservacionesCancelacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ObservacionesFacturacion {
+            get {
+                return this.ObservacionesFacturacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ObservacionesFacturacionField, value) != true)) {
+                    this.ObservacionesFacturacionField = value;
+                    this.RaisePropertyChanged("ObservacionesFacturacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ObservacionesSoporte {
+            get {
+                return this.ObservacionesSoporteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ObservacionesSoporteField, value) != true)) {
+                    this.ObservacionesSoporteField = value;
+                    this.RaisePropertyChanged("ObservacionesSoporte");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Ofrecimiento1 {
+            get {
+                return this.Ofrecimiento1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Ofrecimiento1Field, value) != true)) {
+                    this.Ofrecimiento1Field = value;
+                    this.RaisePropertyChanged("Ofrecimiento1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Ofrecimiento2 {
+            get {
+                return this.Ofrecimiento2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Ofrecimiento2Field, value) != true)) {
+                    this.Ofrecimiento2Field = value;
+                    this.RaisePropertyChanged("Ofrecimiento2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Ofrecimiento3 {
+            get {
+                return this.Ofrecimiento3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Ofrecimiento3Field, value) != true)) {
+                    this.Ofrecimiento3Field = value;
+                    this.RaisePropertyChanged("Ofrecimiento3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProblemaFacturacion {
+            get {
+                return this.ProblemaFacturacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProblemaFacturacionField, value) != true)) {
+                    this.ProblemaFacturacionField = value;
+                    this.RaisePropertyChanged("ProblemaFacturacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Razon {
+            get {
+                return this.RazonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RazonField, value) != true)) {
+                    this.RazonField = value;
+                    this.RaisePropertyChanged("Razon");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RazonCancelacion {
+            get {
+                return this.RazonCancelacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RazonCancelacionField, value) != true)) {
+                    this.RazonCancelacionField = value;
+                    this.RaisePropertyChanged("RazonCancelacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SolucionEspecificaSoporte {
+            get {
+                return this.SolucionEspecificaSoporteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SolucionEspecificaSoporteField, value) != true)) {
+                    this.SolucionEspecificaSoporteField = value;
+                    this.RaisePropertyChanged("SolucionEspecificaSoporte");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SolucionFacturacion {
+            get {
+                return this.SolucionFacturacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SolucionFacturacionField, value) != true)) {
+                    this.SolucionFacturacionField = value;
+                    this.RaisePropertyChanged("SolucionFacturacion");
+>>>>>>> ef61a0fe1a697bf93c6e5a5924a245728c625f45
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+<<<<<<< HEAD
         public int NodoActual {
             get {
                 return this.NodoActualField;
@@ -9760,11 +10319,22 @@ namespace Dime.WSD {
                 if ((this.NodoActualField.Equals(value) != true)) {
                     this.NodoActualField = value;
                     this.RaisePropertyChanged("NodoActual");
+=======
+        public string TipoFallaSoporte {
+            get {
+                return this.TipoFallaSoporteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TipoFallaSoporteField, value) != true)) {
+                    this.TipoFallaSoporteField = value;
+                    this.RaisePropertyChanged("TipoFallaSoporte");
+>>>>>>> ef61a0fe1a697bf93c6e5a5924a245728c625f45
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+<<<<<<< HEAD
         public string NombreUsuario {
             get {
                 return this.NombreUsuarioField;
@@ -9773,6 +10343,16 @@ namespace Dime.WSD {
                 if ((object.ReferenceEquals(this.NombreUsuarioField, value) != true)) {
                     this.NombreUsuarioField = value;
                     this.RaisePropertyChanged("NombreUsuario");
+=======
+        public decimal UsuarioGestion {
+            get {
+                return this.UsuarioGestionField;
+            }
+            set {
+                if ((this.UsuarioGestionField.Equals(value) != true)) {
+                    this.UsuarioGestionField = value;
+                    this.RaisePropertyChanged("UsuarioGestion");
+>>>>>>> ef61a0fe1a697bf93c6e5a5924a245728c625f45
                 }
             }
         }
@@ -19885,6 +20465,21 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/VerificaCliente", ReplyAction="http://tempuri.org/IMidasService/VerificaClienteResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GPMMidas> VerificaClienteAsync(decimal CuentaCliente);
+<<<<<<< HEAD
+=======
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ConsultaMidasAdminPrincipal", ReplyAction="http://tempuri.org/IMidasService/ConsultaMidasAdminPrincipalResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas> ConsultaMidasAdminPrincipal(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ConsultaMidasAdminPrincipal", ReplyAction="http://tempuri.org/IMidasService/ConsultaMidasAdminPrincipalResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas>> ConsultaMidasAdminPrincipalAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ConsultaMidasAdminLog", ReplyAction="http://tempuri.org/IMidasService/ConsultaMidasAdminLogResponse")]
+        System.Collections.Generic.List<Dime.WSD.GLMMidas> ConsultaMidasAdminLog(System.DateTime FechaInicial, System.DateTime FechaFinal);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ConsultaMidasAdminLog", ReplyAction="http://tempuri.org/IMidasService/ConsultaMidasAdminLogResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.GLMMidas>> ConsultaMidasAdminLogAsync(System.DateTime FechaInicial, System.DateTime FechaFinal);
+>>>>>>> ef61a0fe1a697bf93c6e5a5924a245728c625f45
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -20001,6 +20596,25 @@ namespace Dime.WSD {
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GPMMidas> VerificaClienteAsync(decimal CuentaCliente) {
             return base.Channel.VerificaClienteAsync(CuentaCliente);
         }
+<<<<<<< HEAD
+=======
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas> ConsultaMidasAdminPrincipal(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaMidasAdminPrincipal(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas>> ConsultaMidasAdminPrincipalAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaMidasAdminPrincipalAsync(FechaInicial, FechaFinal);
+        }
+        
+        public System.Collections.Generic.List<Dime.WSD.GLMMidas> ConsultaMidasAdminLog(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaMidasAdminLog(FechaInicial, FechaFinal);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Dime.WSD.GLMMidas>> ConsultaMidasAdminLogAsync(System.DateTime FechaInicial, System.DateTime FechaFinal) {
+            return base.Channel.ConsultaMidasAdminLogAsync(FechaInicial, FechaFinal);
+        }
+>>>>>>> ef61a0fe1a697bf93c6e5a5924a245728c625f45
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]

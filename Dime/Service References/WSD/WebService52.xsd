@@ -4354,4 +4354,55 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfGPMMidas" nillable="true" type="tns:ArrayOfGPMMidas" />
+<<<<<<< HEAD
+=======
+  <xs:complexType name="ArrayOfGLMMidas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GLMMidas" nillable="true" type="tns:GLMMidas" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGLMMidas" nillable="true" type="tns:ArrayOfGLMMidas" />
+  <xs:complexType name="GLMMidas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AceptacionOfrecimiento1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AceptacionOfrecimiento2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AceptacionOfrecimiento3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AliadoGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Campaña1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Campaña2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Campaña3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cierre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClienteIntencionCancelacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaCliente" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EstadoCaso" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoFacturacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EstadoSoporte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FallaServAdicionalesSoporte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FallaServPrincipalesSoporte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaGestion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSeguimientoFacturacion" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FechaSeguimientoSoporte" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Gestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IdGestionPrincipal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Motivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MotivoCancelacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreUsuarioGestion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservacionesCancelacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservacionesFacturacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObservacionesSoporte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ofrecimiento3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProblemaFacturacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Razon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RazonCancelacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SolucionEspecificaSoporte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SolucionFacturacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoFallaSoporte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UsuarioGestion" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GLMMidas" nillable="true" type="tns:GLMMidas" />
+>>>>>>> ef61a0fe1a697bf93c6e5a5924a245728c625f45
 </xs:schema>

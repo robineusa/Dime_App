@@ -30,25 +30,32 @@ namespace Dime.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Tipificador(ViewModelMidas modelo)
+        public ActionResult Tipificador(ViewModelMidas modelo, string BotonEnvia)
         {
-            modelo.GPMMidas.UsuarioGestion = Convert.ToDecimal(Session["Usuario"]);
-            modelo.GPMMidas.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
-            modelo.GPMMidas.AliadoGestion = Session["AliadoLogeado"].ToString();
+            if (BotonEnvia == "GuardaDatos")
+            {
+                modelo.GPMMidas.UsuarioGestion = Convert.ToDecimal(Session["Usuario"]);
+                modelo.GPMMidas.NombreUsuarioGestion = Session["NombreUsuario"].ToString();
+                modelo.GPMMidas.AliadoGestion = Session["AliadoLogeado"].ToString();
+                if (modelo.GPMMidas.Cierre == "SEGUIMIENTO")
+                    modelo.GPMMidas.EstadoCaso = "SEGUIMIENTO";
+                else
+                    modelo.GPMMidas.EstadoCaso = "FINALIZADO";
 
-            if (modelo.GPMMidas.Id > 0)
-            {
-                midasService.ActualizarMidasTipificador(modelo.GPMMidas);
-                modelo.GPMMidas = new GPMMidas();
-                modelo.ClientesTodo = new ClientesTodo();
+                if (modelo.GPMMidas.Id > 0)
+                {
+                    midasService.ActualizarMidasTipificador(modelo.GPMMidas);
+                    modelo.GPMMidas = new GPMMidas();
+                    modelo.ClientesTodo = new ClientesTodo();
+                }
+                else
+                {
+                    midasService.RegistrarMidasTipificador(modelo.GPMMidas);
+                    modelo.GPMMidas = new GPMMidas();
+                    modelo.ClientesTodo = new ClientesTodo();
+                }
             }
-            else
-            {
-                midasService.RegistrarMidasTipificador(modelo.GPMMidas);
-                modelo.GPMMidas = new GPMMidas();
-                modelo.ClientesTodo = new ClientesTodo();
-            }
-            return View(modelo);
+            return RedirectToAction("Tipificador", "Midas");
         }
         [HttpGet]
         public ActionResult AdministrarArboles(string IdPadre, string IdArbol)
@@ -157,6 +164,51 @@ namespace Dime.Controllers
                 Data = JsonConvert.SerializeObject(midasService.ArbolDeGestionAgenteMidas(IdPadre)),
                 JsonRequestBehavior = JsonRequestBehavior.DenyGet
             };
+        }
+        public JsonResult ListaSeguimientosTipificador()
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(midasService.TraerSeguimientosTipificador()), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ListaHistorialCuentasTpificador(string CuentaCliente)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(midasService.CargaHistorialCuenta(Convert.ToDecimal(CuentaCliente))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult VerificarCLiente(string CuentaCliente)
+        {
+            var jsonResult = Json(JsonConvert.SerializeObject(midasService.VerificaCliente(Convert.ToDecimal(CuentaCliente))), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        [HttpGet]
+        public ActionResult ConsultaMidasAdminPrincipal()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult ConsultaMidasAdminLog()
+        {
+            return View();
+        }
+        
+        public JsonResult ConsultaMidasAdminPrincipalJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(midasService.ConsultaMidasAdminPrincipal(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+        public JsonResult ConsultaMidasAdminLogJson(string F1, string F2)
+        {
+            DateTime FechaInicial = Convert.ToDateTime(F1);
+            DateTime FechaFinal = Convert.ToDateTime(F2);
+            var jsonResult = Json(JsonConvert.SerializeObject(midasService.ConsultaMidasAdminLog(FechaInicial, FechaFinal)), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
     }
 }
