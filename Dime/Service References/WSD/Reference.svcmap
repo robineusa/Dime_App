@@ -21,16 +21,16 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://172.18.175.56/WSD_PRU/WebService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:49400/WebService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WebService.xsd" MetadataType="Schema" ID="8210e722-b518-4705-a8c8-83b01b960876" SourceId="1" SourceUrl="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd4" />
-    <MetadataFile FileName="WebService.wsdl" MetadataType="Wsdl" ID="c0232e88-db23-46c1-b1b1-80b5fff0e134" SourceId="1" SourceUrl="http://172.18.175.56/WSD_PRU/WebService.svc?wsdl" />
-    <MetadataFile FileName="WebService1.xsd" MetadataType="Schema" ID="53d4c991-5ac3-414e-be47-4ab3849e6312" SourceId="1" SourceUrl="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd2" />
-    <MetadataFile FileName="WebService2.xsd" MetadataType="Schema" ID="8b7bb9cd-7ed9-4f0b-8ed5-16fcd65bd196" SourceId="1" SourceUrl="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd1" />
-    <MetadataFile FileName="WebService3.xsd" MetadataType="Schema" ID="e88a1b6a-b655-418f-b510-65da77fa68fb" SourceId="1" SourceUrl="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd0" />
-    <MetadataFile FileName="WebService.disco" MetadataType="Disco" ID="5f82089d-dbfa-4384-98bd-e8b7c5892d12" SourceId="1" SourceUrl="http://172.18.175.56/WSD_PRU/WebService.svc?disco" />
-    <MetadataFile FileName="WebService4.xsd" MetadataType="Schema" ID="4fe428d8-023f-4c1c-813e-58c3ebeaa49c" SourceId="1" SourceUrl="http://172.18.175.56/WSD_PRU/WebService.svc?xsd=xsd3" />
+    <MetadataFile FileName="WebService5.xsd" MetadataType="Schema" ID="1b0073a8-0976-43a4-9235-19b08d05a168" SourceId="1" SourceUrl="http://localhost:49400/WebService.svc?xsd=xsd4" />
+    <MetadataFile FileName="WebService1.disco" MetadataType="Disco" ID="6c87bf73-d16d-4899-88ea-37f51d78b859" SourceId="1" SourceUrl="http://localhost:49400/WebService.svc?disco" />
+    <MetadataFile FileName="WebService1.wsdl" MetadataType="Wsdl" ID="a1916af4-2400-46da-8f6c-6bef47d9b43a" SourceId="1" SourceUrl="http://localhost:49400/WebService.svc?wsdl" />
+    <MetadataFile FileName="WebService51.xsd" MetadataType="Schema" ID="c3fe719e-3b8f-4b99-adee-4fb060cf34fb" SourceId="1" SourceUrl="http://localhost:49400/WebService.svc?xsd=xsd3" />
+    <MetadataFile FileName="WebService52.xsd" MetadataType="Schema" ID="6e5aaf9c-2b8a-4058-91a1-f19295578135" SourceId="1" SourceUrl="http://localhost:49400/WebService.svc?xsd=xsd2" />
+    <MetadataFile FileName="WebService53.xsd" MetadataType="Schema" ID="7c170533-76e7-471a-8664-521f9c9300fe" SourceId="1" SourceUrl="http://localhost:49400/WebService.svc?xsd=xsd1" />
+    <MetadataFile FileName="WebService54.xsd" MetadataType="Schema" ID="e409eb6b-af9d-4e77-8be5-b331fa982f88" SourceId="1" SourceUrl="http://localhost:49400/WebService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

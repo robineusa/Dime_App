@@ -85,6 +85,7 @@
     <Compile Include="ActivacionClaroVideoCollection.cs" />
     <Compile Include="ActualizarUsuarioGestionBackIngresoReturnModel.cs" />
     <Compile Include="Arbol.cs" />
+    <Compile Include="ArbolesMidas.cs" />
     <Compile Include="BACActualizarDatos.cs" />
     <Compile Include="BalanceScoreCard.cs" />
     <Compile Include="BalanceScoreCardCollection.cs" />
@@ -192,6 +193,7 @@
     <Compile Include="Graficos.cs" />
     <Compile Include="IMGOfertasComeciales.cs" />
     <Compile Include="InboundModel.cs" />
+    <Compile Include="IndiceNodoArbol.cs" />
     <Compile Include="Ingreso.cs" />
     <Compile Include="IngresosSoporte.cs" />
     <Compile Include="IngresoTraslado.cs" />
@@ -271,6 +273,7 @@
     <Compile Include="ViewModelBanner.cs" />
     <Compile Include="ViewModelMidas.cs" />
     <Compile Include="ViewModelMultiPlay.cs" />
+    <Compile Include="ViewModelNodo.cs" />
     <Compile Include="ViewModelNodos.cs" />
     <Compile Include="ViewModelNotificacionesBS.cs" />
     <Compile Include="ViewModelRecurrencia.cs" />

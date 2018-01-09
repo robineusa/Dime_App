@@ -22,6 +22,7 @@ namespace Dime.Controllers
         [HttpGet]
         public ActionResult GestionNoCheck()
         {
+            Session["IdNodoArbol"] = 0;
             return View();
         }
 
@@ -172,13 +173,13 @@ namespace Dime.Controllers
             List<Macroprocesos> Categorias = new List<Macroprocesos>();
             int tipo = Convert.ToInt32(Tipo);
             int categoria = Convert.ToInt32(IdCategoria);
-            
+
             var jsonResult = Json(JsonConvert.SerializeObject(ProcesosService.ConsultarCategorias(categoria, tipo, EsIdPadre)), JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
 
-        public JsonResult ConsultarTipoCategorias(string IdCategoria, string Tipo,bool ConsultaTipoCategoria=true)
+        public JsonResult ConsultarTipoCategorias(string IdCategoria, string Tipo, bool ConsultaTipoCategoria = true)
         {
             ViewModelCategoriasTipo categoriasTipo = new ViewModelCategoriasTipo();
             List<Macroprocesos> Categorias = new List<Macroprocesos>();
@@ -188,7 +189,7 @@ namespace Dime.Controllers
             int tipoConsultar = 0;
 
             Categorias = ProcesosService.ConsultarCategorias(CategoriaValor, valorTipo, false);
-            tipoConsultar = ConsultaTipoCategoria==true ? TiposCategorias(valorTipo, CategoriaValor): valorTipo;
+            tipoConsultar = ConsultaTipoCategoria == true ? TiposCategorias(valorTipo, CategoriaValor) : valorTipo;
 
             tipo = ProcesosService.ConsultarTipoMacroproceso(tipoConsultar);
 
@@ -267,6 +268,48 @@ namespace Dime.Controllers
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;
         }
+
+        public JsonResult ConsultarNodosArbol(string idArbol, string idPadre)
+        {
+            int IdArbol = 1;
+            int IdPadre = Convert.ToInt32(idPadre);
+            Session["IdNodoArbol"] = IdPadre;
+            ViewModelNodoArbol nodo;
+            List<ViewModelNodoArbol> resultado = new List<ViewModelNodoArbol>();
+            List<Nodo> lista = new List<Nodo>();
+
+            lista = ProcesosService.consultarNodosArbol(IdArbol, IdPadre);
+
+            foreach (var item in lista)
+            {
+                nodo = new ViewModelNodoArbol();
+                nodo.Nodo = item;
+                nodo.NodosHijos = ProcesosService.consultarNodosArbol(IdArbol, item.Id);
+                resultado.Add(nodo);
+            }
+            var jsonResult = Json(JsonConvert.SerializeObject(resultado), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+        public JsonResult IndiceNodosArbol(string idNodoActual)
+        {
+            int IdArbol = 1;
+            int IdNodoActual = Convert.ToInt32(idNodoActual);
+            List<IndiceNodoArbol> resultadoFinal = new List<IndiceNodoArbol>();
+
+            if (IdNodoActual != 0) { }
+            //resultadoFinal = ProcesosService.IndiceNodosArbol(IdNodoActual);
+            else
+                resultadoFinal.Add(new IndiceNodoArbol { IdNodo = -1, NombreNodo = "NodosPrincipal" });
+
+            var jsonResult = Json(JsonConvert.SerializeObject(resultadoFinal), JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+
+        }
+
+
     }
 
 }

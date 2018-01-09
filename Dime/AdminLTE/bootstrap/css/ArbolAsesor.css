@@ -1,0 +1,96 @@
+﻿.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button {
+    position: relative;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+    .button:before {
+        content: '';
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 0px;
+        height: 100%;
+        background: rgba(255,255,255,0.3);
+        border-radius: 5px;
+        transition: all 0.5s;
+    }
+
+    .button:hover:before {
+        width: 100%;
+    }
+
+* {
+    list-style: none;
+}
+
+.cont_principal {
+    margin: -10px -7em;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc',GradientType=0 );
+}
+
+.cont_breadcrumbs {
+    margin: -10px -7em;
+    text-align: center;
+    padding: 0px;
+    list-style: none;
+    font-family: 'Open Sans';
+    width: 100%;
+}
+
+.cont_breadcrumbs_1 {
+    width: 100%;
+    float: left;
+    margin: 0px 0px;
+}
+
+    .cont_breadcrumbs_1 > ul > li {
+        position: relative;
+        float: left;
+        transform: skewX(-15deg);
+        background-color: #fff;
+        box-shadow: -2px 0px 20px -6px rgba(0,0,0,0.5);
+        z-index: 1;
+        width: auto;
+        margin-left: -18px;
+        transition: all 0.5s;
+    }
+
+        .cont_breadcrumbs_1 > ul > li > a {
+            display: block;
+            padding: 4px 7px;
+            font-size: 16px;
+            transform: skewX(15deg);
+            text-decoration: none;
+            color: #444;
+            font-weight: 300;
+        }
+
+        .cont_breadcrumbs_1 > ul > li:first-child {
+            margin-left: 0px;
+        }
+
+        .cont_breadcrumbs_1 > ul > li:hover {
+            background-color: #CFD8DC;
+        }
+
+        .cont_breadcrumbs_1 > ul > li:last-child {
+            background-color: #78909C;
+        }
+
+            .cont_breadcrumbs_1 > ul > li:last-child > a {
+                color: #fff;
+            }
+
+
+    .cont_breadcrumbs_1 > ul:hover > li {
+        margin-left: 0px;
+    }

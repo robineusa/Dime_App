@@ -11,6 +11,7 @@ namespace Telmexla.Servicios.DIME.Entity
         private ClientesTodo clientesTodo;
         private CargueBaseMidas cargueBaseMidas;
         private GPMMidas gPMMidas;
+        private ArbolesMidas arbolesMidas;
 
         public ClientesTodo ClientesTodo
         {
@@ -51,5 +52,17 @@ namespace Telmexla.Servicios.DIME.Entity
             }
         }
 
+        public ArbolesMidas ArbolesMidas
+        {
+            get
+            {
+                return arbolesMidas;
+            }
+
+            set
+            {
+                arbolesMidas = value;
+            }
+        }
     }
 }

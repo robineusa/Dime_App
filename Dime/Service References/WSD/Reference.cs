@@ -18269,6 +18269,18 @@ namespace Dime.WSD {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/EditarCategoria", ReplyAction="http://tempuri.org/IProcesosService/EditarCategoriaResponse")]
         System.Threading.Tasks.Task EditarCategoriaAsync(int IdCategoria, string nombreNuevo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/consultarNodosArbol", ReplyAction="http://tempuri.org/IProcesosService/consultarNodosArbolResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Nodo> consultarNodosArbol(int idArbol, int idNodoPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/consultarNodosArbol", ReplyAction="http://tempuri.org/IProcesosService/consultarNodosArbolResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Nodo>> consultarNodosArbolAsync(int idArbol, int idNodoPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/IndiceNodosArbol", ReplyAction="http://tempuri.org/IProcesosService/IndiceNodosArbolResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IndiceNodoArbol> IndiceNodosArbol(int idNodoActual);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProcesosService/IndiceNodosArbol", ReplyAction="http://tempuri.org/IProcesosService/IndiceNodosArbolResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IndiceNodoArbol>> IndiceNodosArbolAsync(int idNodoActual);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -18432,6 +18444,22 @@ namespace Dime.WSD {
         
         public System.Threading.Tasks.Task EditarCategoriaAsync(int IdCategoria, string nombreNuevo) {
             return base.Channel.EditarCategoriaAsync(IdCategoria, nombreNuevo);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Nodo> consultarNodosArbol(int idArbol, int idNodoPadre) {
+            return base.Channel.consultarNodosArbol(idArbol, idNodoPadre);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.Nodo>> consultarNodosArbolAsync(int idArbol, int idNodoPadre) {
+            return base.Channel.consultarNodosArbolAsync(idArbol, idNodoPadre);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IndiceNodoArbol> IndiceNodosArbol(int idNodoActual) {
+            return base.Channel.IndiceNodosArbol(idNodoActual);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.IndiceNodoArbol>> IndiceNodosArbolAsync(int idNodoActual) {
+            return base.Channel.IndiceNodosArbolAsync(idNodoActual);
         }
     }
     
@@ -19653,11 +19681,71 @@ namespace Dime.WSD {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WSD.IMidasService")]
     public interface IMidasService {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ListasDeArbolesMidasAdmin", ReplyAction="http://tempuri.org/IMidasService/ListasDeArbolesMidasAdminResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ArbolesMidas> ListasDeArbolesMidasAdmin(decimal IdPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ListasDeArbolesMidasAdmin", ReplyAction="http://tempuri.org/IMidasService/ListasDeArbolesMidasAdminResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ArbolesMidas>> ListasDeArbolesMidasAdminAsync(decimal IdPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ActualizarArbolesMidas", ReplyAction="http://tempuri.org/IMidasService/ActualizarArbolesMidasResponse")]
+        void ActualizarArbolesMidas(Telmexla.Servicios.DIME.Entity.ArbolesMidas Arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ActualizarArbolesMidas", ReplyAction="http://tempuri.org/IMidasService/ActualizarArbolesMidasResponse")]
+        System.Threading.Tasks.Task ActualizarArbolesMidasAsync(Telmexla.Servicios.DIME.Entity.ArbolesMidas Arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/RegistrarNuevoArbolesMidas", ReplyAction="http://tempuri.org/IMidasService/RegistrarNuevoArbolesMidasResponse")]
+        void RegistrarNuevoArbolesMidas(Telmexla.Servicios.DIME.Entity.ArbolesMidas Arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/RegistrarNuevoArbolesMidas", ReplyAction="http://tempuri.org/IMidasService/RegistrarNuevoArbolesMidasResponse")]
+        System.Threading.Tasks.Task RegistrarNuevoArbolesMidasAsync(Telmexla.Servicios.DIME.Entity.ArbolesMidas Arbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraerArbolMidasPorId", ReplyAction="http://tempuri.org/IMidasService/TraerArbolMidasPorIdResponse")]
+        Telmexla.Servicios.DIME.Entity.ArbolesMidas TraerArbolMidasPorId(decimal IdArbol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraerArbolMidasPorId", ReplyAction="http://tempuri.org/IMidasService/TraerArbolMidasPorIdResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.ArbolesMidas> TraerArbolMidasPorIdAsync(decimal IdArbol);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraeCuentaMidas", ReplyAction="http://tempuri.org/IMidasService/TraeCuentaMidasResponse")]
         Telmexla.Servicios.DIME.Entity.CargueBaseMidas TraeCuentaMidas(decimal CuentaCliente);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraeCuentaMidas", ReplyAction="http://tempuri.org/IMidasService/TraeCuentaMidasResponse")]
         System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CargueBaseMidas> TraeCuentaMidasAsync(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ArbolDeGestionAgenteMidas", ReplyAction="http://tempuri.org/IMidasService/ArbolDeGestionAgenteMidasResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ArbolesMidas> ArbolDeGestionAgenteMidas(decimal IdPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ArbolDeGestionAgenteMidas", ReplyAction="http://tempuri.org/IMidasService/ArbolDeGestionAgenteMidasResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ArbolesMidas>> ArbolDeGestionAgenteMidasAsync(decimal IdPadre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/RegistrarMidasTipificador", ReplyAction="http://tempuri.org/IMidasService/RegistrarMidasTipificadorResponse")]
+        void RegistrarMidasTipificador(Telmexla.Servicios.DIME.Entity.GPMMidas model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/RegistrarMidasTipificador", ReplyAction="http://tempuri.org/IMidasService/RegistrarMidasTipificadorResponse")]
+        System.Threading.Tasks.Task RegistrarMidasTipificadorAsync(Telmexla.Servicios.DIME.Entity.GPMMidas model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ActualizarMidasTipificador", ReplyAction="http://tempuri.org/IMidasService/ActualizarMidasTipificadorResponse")]
+        void ActualizarMidasTipificador(Telmexla.Servicios.DIME.Entity.GPMMidas model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/ActualizarMidasTipificador", ReplyAction="http://tempuri.org/IMidasService/ActualizarMidasTipificadorResponse")]
+        System.Threading.Tasks.Task ActualizarMidasTipificadorAsync(Telmexla.Servicios.DIME.Entity.GPMMidas model);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraerSeguimientosTipificador", ReplyAction="http://tempuri.org/IMidasService/TraerSeguimientosTipificadorResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas> TraerSeguimientosTipificador();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/TraerSeguimientosTipificador", ReplyAction="http://tempuri.org/IMidasService/TraerSeguimientosTipificadorResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas>> TraerSeguimientosTipificadorAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/CargaHistorialCuenta", ReplyAction="http://tempuri.org/IMidasService/CargaHistorialCuentaResponse")]
+        System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas> CargaHistorialCuenta(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/CargaHistorialCuenta", ReplyAction="http://tempuri.org/IMidasService/CargaHistorialCuentaResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas>> CargaHistorialCuentaAsync(decimal Cuenta);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/VerificaCliente", ReplyAction="http://tempuri.org/IMidasService/VerificaClienteResponse")]
+        Telmexla.Servicios.DIME.Entity.GPMMidas VerificaCliente(decimal CuentaCliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IMidasService/VerificaCliente", ReplyAction="http://tempuri.org/IMidasService/VerificaClienteResponse")]
+        System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GPMMidas> VerificaClienteAsync(decimal CuentaCliente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -19687,12 +19775,92 @@ namespace Dime.WSD {
                 base(binding, remoteAddress) {
         }
         
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ArbolesMidas> ListasDeArbolesMidasAdmin(decimal IdPadre) {
+            return base.Channel.ListasDeArbolesMidasAdmin(IdPadre);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ArbolesMidas>> ListasDeArbolesMidasAdminAsync(decimal IdPadre) {
+            return base.Channel.ListasDeArbolesMidasAdminAsync(IdPadre);
+        }
+        
+        public void ActualizarArbolesMidas(Telmexla.Servicios.DIME.Entity.ArbolesMidas Arbol) {
+            base.Channel.ActualizarArbolesMidas(Arbol);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarArbolesMidasAsync(Telmexla.Servicios.DIME.Entity.ArbolesMidas Arbol) {
+            return base.Channel.ActualizarArbolesMidasAsync(Arbol);
+        }
+        
+        public void RegistrarNuevoArbolesMidas(Telmexla.Servicios.DIME.Entity.ArbolesMidas Arbol) {
+            base.Channel.RegistrarNuevoArbolesMidas(Arbol);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarNuevoArbolesMidasAsync(Telmexla.Servicios.DIME.Entity.ArbolesMidas Arbol) {
+            return base.Channel.RegistrarNuevoArbolesMidasAsync(Arbol);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.ArbolesMidas TraerArbolMidasPorId(decimal IdArbol) {
+            return base.Channel.TraerArbolMidasPorId(IdArbol);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.ArbolesMidas> TraerArbolMidasPorIdAsync(decimal IdArbol) {
+            return base.Channel.TraerArbolMidasPorIdAsync(IdArbol);
+        }
+        
         public Telmexla.Servicios.DIME.Entity.CargueBaseMidas TraeCuentaMidas(decimal CuentaCliente) {
             return base.Channel.TraeCuentaMidas(CuentaCliente);
         }
         
         public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.CargueBaseMidas> TraeCuentaMidasAsync(decimal CuentaCliente) {
             return base.Channel.TraeCuentaMidasAsync(CuentaCliente);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ArbolesMidas> ArbolDeGestionAgenteMidas(decimal IdPadre) {
+            return base.Channel.ArbolDeGestionAgenteMidas(IdPadre);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.ArbolesMidas>> ArbolDeGestionAgenteMidasAsync(decimal IdPadre) {
+            return base.Channel.ArbolDeGestionAgenteMidasAsync(IdPadre);
+        }
+        
+        public void RegistrarMidasTipificador(Telmexla.Servicios.DIME.Entity.GPMMidas model) {
+            base.Channel.RegistrarMidasTipificador(model);
+        }
+        
+        public System.Threading.Tasks.Task RegistrarMidasTipificadorAsync(Telmexla.Servicios.DIME.Entity.GPMMidas model) {
+            return base.Channel.RegistrarMidasTipificadorAsync(model);
+        }
+        
+        public void ActualizarMidasTipificador(Telmexla.Servicios.DIME.Entity.GPMMidas model) {
+            base.Channel.ActualizarMidasTipificador(model);
+        }
+        
+        public System.Threading.Tasks.Task ActualizarMidasTipificadorAsync(Telmexla.Servicios.DIME.Entity.GPMMidas model) {
+            return base.Channel.ActualizarMidasTipificadorAsync(model);
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas> TraerSeguimientosTipificador() {
+            return base.Channel.TraerSeguimientosTipificador();
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas>> TraerSeguimientosTipificadorAsync() {
+            return base.Channel.TraerSeguimientosTipificadorAsync();
+        }
+        
+        public System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas> CargaHistorialCuenta(decimal Cuenta) {
+            return base.Channel.CargaHistorialCuenta(Cuenta);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<Telmexla.Servicios.DIME.Entity.GPMMidas>> CargaHistorialCuentaAsync(decimal Cuenta) {
+            return base.Channel.CargaHistorialCuentaAsync(Cuenta);
+        }
+        
+        public Telmexla.Servicios.DIME.Entity.GPMMidas VerificaCliente(decimal CuentaCliente) {
+            return base.Channel.VerificaCliente(CuentaCliente);
+        }
+        
+        public System.Threading.Tasks.Task<Telmexla.Servicios.DIME.Entity.GPMMidas> VerificaClienteAsync(decimal CuentaCliente) {
+            return base.Channel.VerificaClienteAsync(CuentaCliente);
         }
     }
     
